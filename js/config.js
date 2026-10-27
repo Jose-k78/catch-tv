@@ -25,4 +25,4 @@ export const firebaseConfig = {
 
 // 2) Ton identifiant d'admin (UID). Tu le trouves dans l'app :
 //    Mon profil > Paramètres > « Ton identifiant ». Mets le même dans firestore.rules.
-export const ADMIN_UID = "";
+export const ADMIN_UID = "gYOlkXsJc3WedSykoBNyeWg2ELx1";

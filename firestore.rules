@@ -7,7 +7,7 @@ service cloud.firestore {
 
     function signedIn() { return request.auth != null; }
     function isMe(uid) { return signedIn() && request.auth.uid == uid; }
-    function isAdmin() { return signedIn() && request.auth.uid == "COLLE_TON_UID_ICI"; }
+    function isAdmin() { return signedIn() && request.auth.uid == "gYOlkXsJc3WedSykoBNyeWg2ELx1"; }
     function str(v, max) { return v is string && v.size() <= max; }
     function okText(v) { return v is string && v.size() > 0 && v.size() <= 1000; }
 
