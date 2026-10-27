@@ -1,0 +1,374 @@
+{
+ "updated": "2026-10-27",
+ "promotions": {
+  "WWE": {
+   "c": [
+    "#34343e",
+    "#0e0e12"
+   ],
+   "l": "https://www.wwe.com/",
+   "x": [
+    "WWEFrance",
+    "WWE"
+   ],
+   "e": [
+    {
+     "t": "Money in the Bank",
+     "d": "2026-10-10",
+     "w": "La Nouvelle-Orléans",
+     "v": "Smoothie King Center"
+    },
+    {
+     "t": "NXT Halloween Havoc",
+     "d": "2026-10-31",
+     "w": "Orlando",
+     "br": "NXT",
+     "v": "WWE Performance Center",
+     "card": [
+      "Titre féminin de NXT : Kelani Jordan contre Wren Sinclair",
+      "Titre de NXT : Grayson Waller contre Tony D’Angelo ou Myles Borne"
+     ]
+    },
+    {
+     "t": "Crown Jewel",
+     "d": "2026-11-07",
+     "w": "Riyad",
+     "v": "Riyadh skyline",
+     "card": [
+      "Crown Jewel Championship masculin : champion de Raw contre champion de SmackDown",
+      "Crown Jewel Championship féminin : championne de Raw contre championne de SmackDown",
+      "Last Man Standing : Cody Rhodes contre Randy Orton",
+      "Titres mondiaux par équipe : The Vision contre Penta et Je’Von Evans"
+     ]
+    },
+    {
+     "t": "Survivor Series: WarGames",
+     "d": "2026-11-28",
+     "w": "Houston",
+     "v": "Minute Maid Park"
+    },
+    {
+     "t": "Wrestlepalooza",
+     "d": "2026-12-12",
+     "w": "Perth",
+     "v": "RAC Arena Perth"
+    },
+    {
+     "t": "NXT Deadline",
+     "d": "",
+     "w": "décembre (habituel)",
+     "br": "NXT"
+    }
+   ],
+   "s": {
+    "Raw": {
+     "x": [
+      "WWEFrance"
+     ],
+     "j": "Chaque lundi",
+     "wd": 1,
+     "p": "Netflix",
+     "l": "https://www.netflix.com/",
+     "e": [
+      {
+       "t": "Raw — Greenville",
+       "d": "2026-11-09"
+      }
+     ],
+     "c": [
+      "#e3141f",
+      "#6e0007"
+     ]
+    },
+    "SmackDown": {
+     "x": [
+      "WWEFrance"
+     ],
+     "j": "Chaque vendredi",
+     "wd": 5,
+     "p": "USA Network",
+     "l": "https://www.usanetwork.com/",
+     "e": [
+      {
+       "t": "SmackDown — Fort Lauderdale",
+       "d": "2026-11-13"
+      }
+     ],
+     "c": [
+      "#1a63db",
+      "#0a2766"
+     ]
+    },
+    "NXT": {
+     "x": [
+      "WWENXT"
+     ],
+     "j": "Chaque mardi",
+     "wd": 2,
+     "p": "The CW",
+     "l": "https://www.cwtv.com/",
+     "e": [],
+     "c": [
+      "#f2c200",
+      "#7d6200"
+     ]
+    },
+    "Evolve": {
+     "j": "Chaque mercredi",
+     "wd": 3,
+     "p": "Tubi",
+     "l": "https://tubitv.com/",
+     "e": [],
+     "c": [
+      "#14a89c",
+      "#06443e"
+     ]
+    },
+    "Main Event": {
+     "j": "Chaque jeudi",
+     "wd": 4,
+     "p": "YouTube",
+     "l": "https://www.youtube.com/@WWE",
+     "e": [],
+     "c": [
+      "#5d6c84",
+      "#1d2531"
+     ]
+    }
+   }
+  },
+  "AEW": {
+   "c": [
+    "#d1a52a",
+    "#111111"
+   ],
+   "l": "https://www.allelitewrestling.com/",
+   "x": [
+    "AEW"
+   ],
+   "e": [
+    {
+     "t": "WrestleDream",
+     "d": "2026-10-17",
+     "w": "Orlando",
+     "v": "Addition Financial Arena"
+    },
+    {
+     "t": "Full Gear",
+     "d": "2026-11-14",
+     "w": "Phoenix",
+     "v": "Footprint Center",
+     "card": [
+      "Titres féminins par équipe : The Brawling Birds contre Wrathlander",
+      "Titres mondiaux par équipe : The Young Bucks contre Mark Davis et Jake Doyle",
+      "Titres trios : Hangman Page et Brodido contre Swerve Strickland et The New Level"
+     ]
+    },
+    {
+     "t": "Worlds End",
+     "d": "2026-12-19",
+     "w": "Minneapolis",
+     "v": "Target Center Minneapolis"
+    }
+   ],
+   "s": {
+    "Dynamite": {
+     "j": "Chaque mercredi",
+     "wd": 3,
+     "p": "TBS · HBO Max",
+     "l": "https://www.hbomax.com/",
+     "e": []
+    },
+    "Collision": {
+     "j": "Chaque samedi",
+     "wd": 6,
+     "p": "TNT · HBO Max",
+     "l": "https://www.hbomax.com/",
+     "e": []
+    }
+   }
+  },
+  "AAA": {
+   "c": [
+    "#006847",
+    "#f2f2f2",
+    "#ce1126"
+   ],
+   "l": "https://www.luchalibreaaa.com/",
+   "x": [
+    "luchalibreaaa"
+   ],
+   "e": [
+    {
+     "t": "Héroes Inmortales",
+     "d": "2026-10-24",
+     "w": "Mexico",
+     "v": "Gimnasio Juan de la Barrera"
+    },
+    {
+     "t": "Guerra de Titanes",
+     "d": "2026-12-19",
+     "w": "Guadalajara",
+     "v": "Arena Guadalajara"
+    }
+   ],
+   "s": {
+    "Lucha Libre AAA": {
+     "j": "Chaque samedi",
+     "wd": 6,
+     "p": "YouTube · FOX (Amérique latine)",
+     "l": "https://www.youtube.com/results?search_query=Lucha+Libre+AAA",
+     "e": []
+    }
+   }
+  },
+  "TNA": {
+   "c": [
+    "#c8102e",
+    "#4d000c"
+   ],
+   "l": "https://tnawrestling.com/",
+   "x": [
+    "ThisIsTNA"
+   ],
+   "e": [
+    {
+     "t": "Bound for Glory",
+     "d": "2026-10-11",
+     "w": "Tampa",
+     "v": "Yuengling Center"
+    },
+    {
+     "t": "Destination X",
+     "d": "2026-11-15",
+     "w": "Edmonton",
+     "v": "Edmonton Expo Centre",
+     "card": [
+      "Titre mondial de la TNA : Leon Slater contre Trey Miguel"
+     ]
+    }
+   ],
+   "s": {
+    "Impact": {
+     "j": "Chaque jeudi",
+     "wd": 4,
+     "p": "AMC · AMC+",
+     "l": "https://www.amc.com/",
+     "e": []
+    }
+   }
+  },
+  "NJPW": {
+   "c": [
+    "#f77f00",
+    "#7a3000"
+   ],
+   "l": "https://www.njpw1972.com/",
+   "x": [
+    "njpwglobal"
+   ],
+   "e": [
+    {
+     "t": "King of Pro-Wrestling",
+     "d": "2026-10-12",
+     "w": "Tokyo",
+     "v": "Ryōgoku Kokugikan"
+    },
+    {
+     "t": "Power Struggle",
+     "d": "2026-11-03",
+     "w": "Hiroshima",
+     "v": "Hiroshima Sun Plaza",
+     "card": [
+      "Titre IWGP Global : Gabe Kidd contre Taichi",
+      "Match à trois : Kenny Omega contre Tsuji contre Oleg (chance au titre au Tokyo Dome)",
+      "Finale du Super Jr. Tag League",
+      "Retour de Jon Moxley"
+     ]
+    },
+    {
+     "t": "Lucha Kingdom",
+     "d": "2026-11-16",
+     "w": "Mexico",
+     "v": "Arena México"
+    },
+    {
+     "t": "World Tag League — finale",
+     "d": "2026-12-13",
+     "w": "Kumamoto",
+     "v": "Grand Messe Kumamoto"
+    },
+    {
+     "t": "Wrestle Kingdom 21",
+     "d": "2027-01-04",
+     "w": "Tokyo Dome",
+     "v": "Tokyo Dome"
+    }
+   ]
+  },
+  "Stardom": {
+   "c": [
+    "#8f45d9",
+    "#36105e"
+   ],
+   "l": "https://wwr-stardom.com/",
+   "x": [
+    "wwr_stardom"
+   ],
+   "e": [
+    {
+     "t": "Path of Thunder",
+     "d": "2026-10-18",
+     "w": "Utsunomiya",
+     "v": "Utsunomiya"
+    },
+    {
+     "t": "Crimson Nightmare",
+     "d": "2026-10-29",
+     "w": "Tokyo",
+     "v": "Ota City General Gymnasium",
+     "card": [
+      "World of Stardom Championship : Suzu Suzuki contre Starlight Kid",
+      "Match mixte : Natsupoi et Shingo Takagi contre Yuna Mizumori et Hirooki Goto"
+     ]
+    },
+    {
+     "t": "Dream Queendom",
+     "d": "2026-12-29",
+     "w": "Tokyo",
+     "v": "Ryōgoku Kokugikan"
+    },
+    {
+     "t": "New Year Dream",
+     "d": "2027-01-03",
+     "w": "Yokohama",
+     "v": "Yokohama Budokan"
+    }
+   ]
+  },
+  "Marigold": {
+   "c": [
+    "#f0c03a",
+    "#946400"
+   ],
+   "l": "https://www.wrestle-universe.com/",
+   "x": [
+    "Marigold_Joshi",
+    "DSF_Marigold"
+   ],
+   "e": [
+    {
+     "t": "Grand Destiny",
+     "d": "2026-10-24",
+     "w": "Tokyo",
+     "v": "Ryōgoku Kokugikan"
+    },
+    {
+     "t": "True Victory",
+     "d": "",
+     "w": "décembre (habituel)"
+    }
+   ]
+  }
+ }
+}

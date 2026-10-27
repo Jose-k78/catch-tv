@@ -1,0 +1,92 @@
+rules_version = '2';
+
+// Règles de sécurité Catch TV.
+// ⚠️ Remplace COLLE_TON_UID_ICI par ton identifiant (affiché dans l'app : Mon profil > Paramètres).
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+    function isMe(uid) { return signedIn() && request.auth.uid == uid; }
+    function isAdmin() { return signedIn() && request.auth.uid == "COLLE_TON_UID_ICI"; }
+    function str(v, max) { return v is string && v.size() <= max; }
+    function okText(v) { return v is string && v.size() > 0 && v.size() <= 1000; }
+
+    // ---------- Profils (visibles par les membres connectés) ----------
+    match /users/{uid} {
+      function okProfile(d) {
+        return d.keys().hasOnly(['pseudo','pseudoLower','bio','favShow','favWrestler','favWrestlerF','photo','createdAt'])
+          && str(d.pseudo, 30) && d.pseudo.size() > 0 && str(d.pseudoLower, 30)
+          && str(d.bio, 300) && str(d.favShow, 60) && str(d.favWrestler, 40) && str(d.favWrestlerF, 40)
+          && str(d.photo, 400000);
+      }
+      allow read: if signedIn();
+      allow create: if isMe(uid) && okProfile(request.resource.data) && request.resource.data.createdAt == request.time;
+      allow update: if isMe(uid) && okProfile(request.resource.data) && request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if false;
+
+      // Historique « déjà vu » + notes (visible par les membres, modifiable par soi seulement)
+      match /history/{itemId} {
+        allow read: if signedIn();
+        allow create, update: if isMe(uid)
+          && request.resource.data.keys().hasOnly(['title','k','show','d','rating','comment','seenAt'])
+          && str(request.resource.data.title, 150) && str(request.resource.data.k, 30)
+          && str(request.resource.data.show, 40) && str(request.resource.data.d, 10)
+          && request.resource.data.rating is int && request.resource.data.rating >= 0 && request.resource.data.rating <= 5
+          && (!('comment' in request.resource.data) || str(request.resource.data.comment, 300))
+          && request.resource.data.seenAt == request.time;
+        allow delete: if isMe(uid);
+      }
+    }
+
+    // ---------- Messages lus (privé) ----------
+    match /reads/{uid} {
+      allow read, write: if isMe(uid);
+    }
+
+    // ---------- Images des vignettes : tout le monde voit, seul l'admin modifie ----------
+    match /images/{imageId} {
+      allow read: if true;
+      allow write: if isAdmin() && request.resource.data.src is string && request.resource.data.src.size() < 900000;
+      allow delete: if isAdmin();
+    }
+
+    // ---------- Salon commun ----------
+    match /rooms/{room}/messages/{msgId} {
+      allow read: if signedIn();
+      allow create: if signedIn() && room == 'general'
+        && request.resource.data.keys().hasOnly(['uid','text','at'])
+        && request.resource.data.uid == request.auth.uid
+        && okText(request.resource.data.text)
+        && request.resource.data.at == request.time;
+      allow update: if false;
+      allow delete: if isAdmin();
+    }
+
+    // ---------- Messages privés ----------
+    match /dms/{pairId} {
+      function inPair() { return signedIn() && request.auth.uid in pairId.split('_'); }
+      allow get: if inPair();
+      allow list: if signedIn() && request.auth.uid in resource.data.members;
+      allow create: if inPair()
+        && request.resource.data.members is list && request.resource.data.members.size() == 2
+        && pairId == request.resource.data.members[0] + '_' + request.resource.data.members[1]
+        && request.resource.data.members[0] < request.resource.data.members[1];
+      allow update: if inPair()
+        && request.resource.data.members == resource.data.members
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['last','updatedAt','unread']);
+      allow delete: if false;
+
+      match /messages/{msgId} {
+        allow read: if signedIn() && request.auth.uid in pairId.split('_');
+        allow create: if signedIn() && request.auth.uid in pairId.split('_')
+          && exists(/databases/$(database)/documents/dms/$(pairId))
+          && request.resource.data.keys().hasOnly(['uid','text','at'])
+          && request.resource.data.uid == request.auth.uid
+          && okText(request.resource.data.text)
+          && request.resource.data.at == request.time;
+        allow update: if false;
+        allow delete: if isAdmin();
+      }
+    }
+  }
+}
