@@ -10,7 +10,7 @@ export function recapOf(e) {
   const r = S.recaps[e.k + "|" + (e.show || "PLE") + "|" + (e.d || "")];
   return r && typeof r.txt === "string" ? r : null;
 }
-function colorOf(k, n) { const pr = S.P[k], s = n && pr.s && pr.s[n]; return (s && s.c) || pr.c; }
+export function colorOf(k, n) { const pr = S.P[k], s = n && pr.s && pr.s[n]; return (s && s.c) || pr.c; }
 
 function pleOf(k) {
   const pr = S.P[k];
@@ -52,7 +52,7 @@ function look(e, strong) {
     : im.src ? "linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,.12) 62%)" : "linear-gradient(to top,rgba(0,0,0,.6),rgba(0,0,0,0) 64%)";
   return { style: "background:" + shade + "," + (im.src ? cssUrl(im.src) + " center/cover," : "") + colors(e.c), poster: !!im.poster, credit: im.credit || null };
 }
-const plain = c => "background:linear-gradient(to top,rgba(0,0,0,.35),rgba(0,0,0,0))," + colors(c);
+export const plain = c => "background:linear-gradient(to top,rgba(0,0,0,.35),rgba(0,0,0,0))," + colors(c);
 function creditLine(cr) {
   return cr ? '<small class="credit">Photo : ' + (okHttp(cr.link) ? '<a href="' + esc(cr.link) + '" target="_blank" rel="noopener">' + esc(cr.author) + "</a>" : esc(cr.author)) + " · " + esc(cr.lic) + "</small>" : "";
 }
@@ -74,7 +74,7 @@ function fit(title, width, max, poster) {
 // ---------- vignettes horizontales ----------
 function pleCard(e, showK) {
   const h = seenOf(e), n = diff(e.d), lk = look(e);
-  return '<div class="card' + (lk.poster ? " poster" : "") + (e.d && n < 0 && !h ? " done" : "") + (S.isAdmin ? " hasedit" : "") + '" style="' + esc(lk.style) + '">' +
+  return '<div class="card' + (lk.poster ? " poster" : "") + (e.d && n < 0 ? " past" : "") + (h ? " seen" : "") + (S.isAdmin ? " hasedit" : "") + '" style="' + esc(lk.style) + '">' +
     '<a class="cover" href="' + esc(e.l) + '" target="_blank" rel="noopener" aria-label="' + esc(e.t) + '"></a>' +
     '<span class="tag">' + (showK ? esc(e.k) + " · " : "") + cd(e.d) + "</span>" + editBtn(e, e.t) +
     "<b" + fit(e.t, 126, 27, lk.poster) + ">" + esc(e.t) + "</b><small>" + fmt(e.d) + (place(e) ? " · " + place(e) : "") + "</small>" + seenMark(h) +
@@ -90,12 +90,13 @@ function showCard(k, n, withK, big) {
     const isToday = diff(next) === 0, d = isToday ? next : ymd(new Date(dt(next).getTime() - 7 * 864e5));
     tag = (withK ? esc(k) + " · " : "") + (isToday ? "CE SOIR" : "DERNIER ÉPISODE");
     const r = recapOf({ k: k, show: n, d: d });
+    big = S.history[seenId({ k: k, show: n, d: d, t: (s.e || []).filter(x => x.d === d).map(x => x.t)[0] || n })] ? "seen" : true;
     extra = '<small class="when">' + fmt(d) + " · " + esc(s.p) + "</small>" + (r ? '<p class="snip">' + esc(r.txt) + "</p>" : "");
   }
-  return '<div class="card' + (big ? " big" : "") + (lk.poster ? " poster" : "") + (S.isAdmin ? " hasedit" : "") + '" style="' + esc(lk.style) + '">' +
+  return '<div class="card' + (big ? " big" : "") + (big === "seen" ? " seen" : "") + (lk.poster ? " poster" : "") + (S.isAdmin ? " hasedit" : "") + '" style="' + esc(lk.style) + '">' +
     '<a class="cover" href="#/p/' + encodeURIComponent(k) + "/" + encodeURIComponent(n) + '" aria-label="' + esc(n) + '"></a>' +
     '<span class="tag' + (big ? " hot" : "") + '">' + tag + "</span>" + editBtn(showItem(k, n), k + " " + n) +
-    "<b" + fit(n, big ? 270 : 126, big ? 34 : 27, lk.poster) + ">" + esc(n) + "</b>" + (big ? extra : "<small>" + (withK ? fmt(next) : esc(s.j)) + " · " + esc(s.p) + "</small>") + "</div>";
+    "<b" + fit(n, big ? 300 : 126, big ? 40 : 27, lk.poster) + ">" + esc(n) + "</b>" + (big ? extra : "<small>" + (withK ? fmt(next) : esc(s.j)) + " · " + esc(s.p) + "</small>") + "</div>";
 }
 // Rangée des shows : ceux du jour (ou le plus récent) en premier et en grand
 function showRow(list, withK) {
@@ -109,6 +110,20 @@ function promoCard(k) {
   const e = { kind: "promo", k: k, t: k, c: S.P[k].c }, lk = look(e);
   return '<div class="card' + (lk.poster ? " poster" : "") + (S.isAdmin ? " hasedit" : "") + '" style="' + esc(lk.style) + '"><a class="cover" href="#/p/' + encodeURIComponent(k) + '" aria-label="' + esc(k) + '"></a>' + editBtn(e, k) +
     "<b" + fit(k, 126, 27, lk.poster) + ">" + esc(k) + "</b><small>" + S.P[k].e.length + " événement(s)</small></div>";
+}
+// Vignette « Titres » : champions actuels de la promotion ou du show
+export function titlesFor(k, n) {
+  const all = (S.titles || []).filter(t => t && t.k === k);
+  if (!n) return all;
+  const own = all.filter(t => t.show === n || (Array.isArray(t.shows) && t.shows.indexOf(n) >= 0));
+  return own.length ? own : all.filter(t => !t.show);
+}
+function titlesTile(k, n) {
+  const list = titlesFor(k, n); if (!list.length) return "";
+  const names = list.slice(0, 3).map(t => t.c.replace(/\s*\(.*\)$/, "")).join(", ");
+  return '<a class="titletile" href="#/titres/' + encodeURIComponent(k) + (n ? "/" + encodeURIComponent(n) : "") + '"><span class="tt-belt" style="' + esc(plain(colorOf(k, n))) + '">🏆</span>' +
+    '<span class="tt-txt"><b>Titres' + (n ? " de " + esc(n) : " " + esc(k)) + "</b><small>" + list.length + " ceinture" + (list.length > 1 ? "s" : "") + " · " + esc(names) + (list.length > 3 ? "…" : "") + "</small></span>" +
+    '<span class="chev">›</span></a>';
 }
 function matchTile() {
   return '<a class="matchtile" href="#/matchs"><span class="mt-k">Matchs à revoir</span><b>La sélection de la semaine</b><small>' + S.matches.length +
@@ -134,7 +149,7 @@ function cardList(e) {
 function epCard(e) {
   const h = seenOf(e), r = recapOf(e), x = e.d ? dt(e.d) : null, past = e.d && diff(e.d) < 0;
   const meta = [e.t !== e.ty ? esc(e.ty) : "", place(e), e.d ? cd(e.d) : ""].filter(Boolean).join(" · ");
-  return '<article class="ep' + (past ? " past" : "") + '">' +
+  return '<article class="ep' + (past ? " past" : "") + (h ? " seen" : "") + '">' +
     '<div class="epdate" style="' + esc(plain(e.c)) + '">' + (x ? "<b>" + x.getDate() + "</b><small>" + MOIS[x.getMonth()] + "</small>" : "<b>?</b><small>date</small>") + "</div>" +
     '<div class="epbody"><a class="eptitle" href="' + esc(e.l) + '" target="_blank" rel="noopener">' + esc(e.t) + "</a>" +
     '<small class="epmeta">' + (meta || "À confirmer") + "</small>" + cardList(e) +
@@ -147,7 +162,7 @@ function epList(list) { return '<div class="eps">' + list.map(epCard).join("") +
 // Grande carte « à regarder »
 function feature(e, label, next) {
   const h = seenOf(e), r = recapOf(e), lk = look(e, true);
-  return '<section class="feature' + (lk.poster ? " poster" : "") + (S.isAdmin ? " hasedit" : "") + '" style="' + esc(lk.style) + '">' + editBtn(e, e.k + " " + (e.show || e.t)) +
+  return '<section class="feature' + (lk.poster ? " poster" : "") + (h ? " seen" : "") + (S.isAdmin ? " hasedit" : "") + '" style="' + esc(lk.style) + '">' + editBtn(e, e.k + " " + (e.show || e.t)) +
     '<span class="eyebrow">' + label + "</span><h2" + fit(e.t, 320, 46, lk.poster) + ">" + esc(e.t) + "</h2>" +
     "<small>" + fmt(e.d) + (place(e) ? " · " + place(e) : "") + " · " + cd(e.d) + "</small>" + cardList(e) +
     (r ? '<p class="recap">' + esc(r.txt) + "</p>" : '<p class="recap muted">Le résumé de cet épisode arrive bientôt.</p>') +
@@ -188,8 +203,8 @@ export function homeView() {
   Object.keys(P).forEach(k => { const s = P[k].s; if (s) Object.keys(s).forEach(n => weekly.push({ k: k, n: n })); });
   let first = sp[0].filter(e => e.d)[0], h = "";
   if (first) h += hero(first, "PROCHAIN ÉVÉNEMENT · " + esc(first.k));
-  h += '<h2>À venir</h2><div class="row">' + sp[0].map(e => pleCard(e, true)).join("") + "</div>";
   h += "<h2>Shows de la semaine</h2>" + showRow(weekly, true);
+  h += '<h2>À venir</h2><div class="row">' + sp[0].map(e => pleCard(e, true)).join("") + "</div>";
   h += artSection("Dernières infos", articles([], 6));
   h += '<h2>Promotions</h2><div class="row">' + Object.keys(P).map(promoCard).join("") + "</div>";
   if (S.matches.length) h += matchTile();
@@ -204,6 +219,7 @@ export function promoView(k) {
   const first = sortUp(ple[0].concat(ep[0]).filter(e => e.d))[0];
   if (first) h += hero(first, "PROCHAINEMENT · " + esc(k));
   if (pr.s) h += "<h2>Shows hebdo</h2>" + showRow(Object.keys(pr.s).map(n => ({ k: k, n: n })), false);
+  h += titlesTile(k, "");
   h += "<h2>PLE à venir</h2>" + (ple[0].length ? epList(ple[0]) : '<p class="note">Aucun PLE annoncé pour l’instant.</p>');
   if (ep[0].length) h += "<h2>Cette semaine</h2>" + epList(ep[0]);
   const past = split(ple[1].concat(ep[1]))[1];
@@ -221,6 +237,7 @@ export function showView(k, n) {
   const label = esc(n.toUpperCase()) + " · " + (today ? (feat.show ? "CE SOIR" : "AUJOURD’HUI") : "DERNIER ÉPISODE");
   let h = feat ? feature(feat, label, today ? null : up.filter(e => e.d)[0]) : "";
   h += '<p class="note showinfo">' + esc(s.j) + " · " + esc(s.p) + " · " + '<a href="' + esc(s.l) + '" target="_blank" rel="noopener">Où regarder ↗</a></p>';
+  h += titlesTile(k, n);
   if (up.length) h += "<h2>À venir</h2>" + epList(up);
   if (past.length) h += "<h2>Épisodes précédents</h2>" + epList(past);
   let al = articles([k, n], 5); if (!al.length) al = articles([k], 5);

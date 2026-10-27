@@ -283,3 +283,40 @@ body.inconv .toast:not(.top){bottom:calc(84px + env(safe-area-inset-bottom,0px))
 .wikicard p{margin:0;font-size:14.5px;line-height:1.55}
 .wikicard a{color:var(--red);font-weight:600;font-size:14px}
 footer a{color:inherit}
+
+/* Passés et déjà vus : effacés */
+.card.past,.card.seen{filter:grayscale(.85) brightness(.82);opacity:.62}
+.card.big.seen{opacity:.7}
+.ep.past,.ep.seen{opacity:.6}
+.ep.past .epdate,.ep.seen .epdate{filter:grayscale(1)}
+.feature.seen{filter:grayscale(.6);opacity:.78}
+
+/* Show du jour / le plus récent : encore plus grand */
+.card.big{flex:0 0 min(340px,86vw);height:250px}
+.card.big .snip{-webkit-line-clamp:4;font-size:13px}
+.card.big:not(.poster) b{font-size:24px}
+
+/* Titres */
+.titletile{display:flex;align-items:center;gap:12px;margin:14px 16px 0;padding:12px 14px;border-radius:14px;background:var(--card);border:1px solid var(--line);color:var(--text);text-decoration:none}
+.tt-belt{flex:none;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px}
+.tt-txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.tt-txt b{font-size:16px}
+.tt-txt small{color:var(--mute);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.belts{display:flex;flex-direction:column;gap:10px;margin:0 16px}
+.belt{display:flex;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.beltbar{flex:none;width:8px}
+.beltbody{flex:1;min-width:0;padding:12px 14px;display:flex;flex-direction:column;gap:4px}
+.beltname{font-weight:700;font-size:15px;color:var(--text);text-decoration:none}
+.champs{font-size:17px;font-weight:800;line-height:1.3;overflow-wrap:anywhere}
+.champs.big{font-size:20px}
+.champs .team{color:var(--mute);font-weight:600;font-size:14px}
+.champ{color:var(--red);text-decoration:none}
+.champ:hover,.champ:focus-visible{text-decoration:underline}
+.amp{color:var(--mute);font-weight:400}
+.beltbody small{color:var(--mute);font-size:13px}
+.beltheader{margin:4px 16px 0;border-radius:16px;padding:18px;color:#fff;display:flex;flex-direction:column;gap:6px}
+.beltheader .eyebrow{font-size:12px;font-weight:800;letter-spacing:.08em;background:rgba(255,255,255,.18);padding:4px 10px;border-radius:99px;width:fit-content}
+.beltheader h1{margin:0;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:34px;line-height:.95;text-wrap:balance}
+.hist{margin:0 16px;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;counter-reset:h}
+.hist li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;display:flex;flex-direction:column;gap:2px;font-weight:700}
+.hist li small{color:var(--mute);font-weight:400;font-size:13px}

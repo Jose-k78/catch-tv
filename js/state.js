@@ -13,6 +13,8 @@ export const S = {
   images: {},            // images des vignettes (id -> src)
   free: {},              // photos libres trouvées (requête -> {src, author, lic, link})
   matches: [],           // matchs à revoir (vidéos officielles)
+  titles: [],            // titres et champions actuels
+  titlesUpdated: "",
   room: [],              // messages du salon
   convs: [],             // mes conversations privées
   convMsgs: {},          // messages des conversations ouvertes

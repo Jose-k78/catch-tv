@@ -50,6 +50,7 @@ Ouvre l'adresse dans Safari (iPhone) ou Chrome (Android), puis **Partager > Sur 
 | `data/calendar.json` | Le calendrier (PLE, shows hebdo, couleurs, liens, comptes X) |
 | `news.json` | Les articles en français, mis à jour automatiquement |
 | `data/recaps.json` | Les résumés sans spoiler des épisodes et PLE, mis à jour automatiquement |
+| `data/titles.json` | Les titres, champions actuels et anciens champions, mis à jour automatiquement |
 | `data/matches.json` | Les matchs à revoir (vidéos des chaînes YouTube officielles), renouvelés chaque semaine |
 | `js/images.js` | Images des vignettes : héritage, photos libres Wikimedia Commons, affiches maison |
 | `js/config.js` | Configuration Firebase et identifiant admin |

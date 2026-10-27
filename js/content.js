@@ -5,5 +5,6 @@ export async function loadContent() {
   const [cal, news, recaps, matches] = await Promise.all([
     get("data/calendar.json", { promotions: {} }), get("news.json", { items: [], updated: "" }),
     get("data/recaps.json", { items: {} }), get("data/matches.json", { items: [] })]);
-  return { P: cal.promotions || {}, news: news, recaps: recaps.items || {}, matches: matches.items || [] };
+  const titles = await get("data/titles.json", { titles: [] });
+  return { P: cal.promotions || {}, news: news, recaps: recaps.items || {}, matches: matches.items || [], titles: titles.titles || [], titlesUpdated: titles.updated || "" };
 }

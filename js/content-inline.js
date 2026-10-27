@@ -3,5 +3,6 @@ import cal from "../data/calendar.json";
 import news from "../news.json";
 import recaps from "../data/recaps.json";
 import matches from "../data/matches.json";
+import titles from "../data/titles.json";
 export const PREVIEW = true;
-export async function loadContent() { return { P: cal.promotions || {}, news: news, recaps: recaps.items || {}, matches: matches.items || [] }; }
+export async function loadContent() { return { P: cal.promotions || {}, news: news, recaps: recaps.items || {}, matches: matches.items || [], titles: titles.titles || [], titlesUpdated: titles.updated || "" }; }

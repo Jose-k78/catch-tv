@@ -1,0 +1,1043 @@
+{
+ "updated": "2026-10-27",
+ "note": "Champions actuels : peut révéler des résultats récents.",
+ "titles": [
+  {
+   "id": "wwe-whc",
+   "k": "WWE",
+   "show": "Raw",
+   "n": "World Heavyweight Championship",
+   "c": "Roman Reigns",
+   "who": [
+    "Roman Reigns"
+   ],
+   "since": "2026-04-19",
+   "ev": "WrestleMania 42",
+   "hist": [
+    {
+     "c": "CM Punk",
+     "d": "2025-11-01",
+     "ev": "Saturday Night’s Main Event XLI"
+    },
+    {
+     "c": "Seth Rollins",
+     "d": "2025-08-02",
+     "ev": "SummerSlam"
+    },
+    {
+     "c": "CM Punk",
+     "d": "2025-08-02",
+     "ev": "SummerSlam"
+    },
+    {
+     "c": "Gunther",
+     "d": "2025-06-09",
+     "ev": "Raw"
+    },
+    {
+     "c": "Jey Uso",
+     "d": "2025-04-19",
+     "ev": "WrestleMania 41"
+    }
+   ],
+   "src": "The SmackDown Hotel",
+   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe"
+  },
+  {
+   "id": "wwe-wwc",
+   "k": "WWE",
+   "show": "Raw",
+   "n": "Women’s World Championship",
+   "c": "Liv Morgan",
+   "who": [
+    "Liv Morgan"
+   ],
+   "since": "2026-10-10",
+   "ev": "Money in the Bank",
+   "hist": [
+    {
+     "c": "Stephanie Vaquer",
+     "d": "2026-09-12",
+     "ev": "Live event à Santiago (Chili)"
+    },
+    {
+     "c": "Liv Morgan",
+     "d": "2026-04-18",
+     "ev": "WrestleMania 42"
+    }
+   ],
+   "src": "The SmackDown Hotel",
+   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe"
+  },
+  {
+   "id": "wwe-ic",
+   "k": "WWE",
+   "show": "Raw",
+   "n": "Intercontinental Championship",
+   "c": "Chad Gable",
+   "who": [
+    "Chad Gable"
+   ],
+   "since": "2026-08-02",
+   "ev": "",
+   "hist": [],
+   "src": "The SmackDown Hotel",
+   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe"
+  },
+  {
+   "id": "wwe-wic",
+   "k": "WWE",
+   "show": "Raw",
+   "n": "Women’s Intercontinental Championship",
+   "c": "Raquel Rodriguez",
+   "who": [
+    "Raquel Rodriguez"
+   ],
+   "since": "2026-07-27",
+   "ev": "",
+   "hist": [],
+   "src": "The SmackDown Hotel",
+   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe"
+  },
+  {
+   "id": "wwe-wtt",
+   "k": "WWE",
+   "show": "Raw",
+   "n": "World Tag Team Championship",
+   "c": "The Vision (Bron Breakker et Austin Theory)",
+   "who": [
+    "Bron Breakker",
+    "Austin Theory"
+   ],
+   "since": "2026-07-06",
+   "ev": "",
+   "hist": [],
+   "src": "The SmackDown Hotel",
+   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe"
+  },
+  {
+   "id": "wwe-wwe",
+   "k": "WWE",
+   "show": "SmackDown",
+   "n": "Undisputed WWE Championship",
+   "c": "Sami Zayn",
+   "who": [
+    "Sami Zayn"
+   ],
+   "since": "2026-09-11",
+   "ev": "SmackDown à Mexico",
+   "hist": [
+    {
+     "c": "CM Punk",
+     "d": "2026-07-06",
+     "ev": "Raw"
+    },
+    {
+     "c": "Sami Zayn",
+     "d": "2026-06-27",
+     "ev": "Night of Champions"
+    },
+    {
+     "c": "Cody Rhodes",
+     "d": "2026-03-06",
+     "ev": "SmackDown"
+    },
+    {
+     "c": "Drew McIntyre",
+     "d": "2026-01-09",
+     "ev": "SmackDown à Berlin"
+    },
+    {
+     "c": "Cody Rhodes",
+     "d": "2025-08-03",
+     "ev": "SummerSlam"
+    }
+   ],
+   "src": "The SmackDown Hotel",
+   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe"
+  },
+  {
+   "id": "wwe-wc",
+   "k": "WWE",
+   "show": "SmackDown",
+   "n": "WWE Women’s Championship",
+   "c": "Chelsea Green",
+   "who": [
+    "Chelsea Green"
+   ],
+   "since": "2026-08-02",
+   "ev": "",
+   "hist": [],
+   "src": "The SmackDown Hotel",
+   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe"
+  },
+  {
+   "id": "wwe-us",
+   "k": "WWE",
+   "show": "SmackDown",
+   "n": "United States Championship",
+   "c": "Trick Williams",
+   "who": [
+    "Trick Williams"
+   ],
+   "since": "2026-09-06",
+   "ev": "",
+   "hist": [],
+   "src": "The SmackDown Hotel",
+   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe"
+  },
+  {
+   "id": "wwe-wus",
+   "k": "WWE",
+   "show": "SmackDown",
+   "n": "Women’s United States Championship",
+   "c": "Jacy Jayne",
+   "who": [
+    "Jacy Jayne"
+   ],
+   "since": "2026-08-14",
+   "ev": "",
+   "hist": [],
+   "src": "The SmackDown Hotel",
+   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe"
+  },
+  {
+   "id": "wwe-tt",
+   "k": "WWE",
+   "show": "SmackDown",
+   "n": "WWE Tag Team Championship",
+   "c": "The MFTs (Tama Tonga et Talla Tonga)",
+   "who": [
+    "Tama Tonga",
+    "Talla Tonga"
+   ],
+   "since": "2026-08-14",
+   "ev": "",
+   "hist": [],
+   "src": "The SmackDown Hotel",
+   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe"
+  },
+  {
+   "id": "wwe-wtag",
+   "k": "WWE",
+   "show": "",
+   "n": "Women’s Tag Team Championship (Raw et SmackDown)",
+   "c": "The Baddies (Michin et B-Fab)",
+   "who": [
+    "Michin",
+    "B-Fab"
+   ],
+   "since": "2026-10-23",
+   "ev": "SmackDown",
+   "hist": [],
+   "src": "The SmackDown Hotel",
+   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe",
+   "shows": [
+    "Raw",
+    "SmackDown"
+   ]
+  },
+  {
+   "id": "nxt",
+   "k": "WWE",
+   "show": "NXT",
+   "n": "NXT Championship",
+   "c": "Grayson Waller",
+   "who": [
+    "Grayson Waller"
+   ],
+   "since": "2026-08-30",
+   "ev": "Heatwave",
+   "hist": [
+    {
+     "c": "Tony D’Angelo",
+     "d": "2026-04-04",
+     "ev": "Stand & Deliver"
+    },
+    {
+     "c": "Joe Hendry",
+     "d": "2026-02-03",
+     "ev": "NXT"
+    },
+    {
+     "c": "Oba Femi",
+     "d": "2025-12-06",
+     "ev": "Deadline"
+    },
+    {
+     "c": "Ricky Saints",
+     "d": "2025-09-27",
+     "ev": "No Mercy"
+    }
+   ],
+   "src": "The SmackDown Hotel",
+   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe"
+  },
+  {
+   "id": "nxt-w",
+   "k": "WWE",
+   "show": "NXT",
+   "n": "NXT Women’s Championship",
+   "c": "Kelani Jordan",
+   "who": [
+    "Kelani Jordan"
+   ],
+   "since": "2026-08-30",
+   "ev": "Heatwave",
+   "hist": [],
+   "src": "The SmackDown Hotel",
+   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe"
+  },
+  {
+   "id": "nxt-na",
+   "k": "WWE",
+   "show": "NXT",
+   "n": "NXT North American Championship",
+   "c": "Jackson Drake",
+   "who": [
+    "Jackson Drake"
+   ],
+   "since": "2026-08-30",
+   "ev": "Heatwave",
+   "hist": [],
+   "src": "The SmackDown Hotel",
+   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe"
+  },
+  {
+   "id": "nxt-wna",
+   "k": "WWE",
+   "show": "NXT",
+   "n": "NXT Women’s North American Championship",
+   "c": "Zaria",
+   "who": [
+    "Zaria"
+   ],
+   "since": "2026-06-09",
+   "ev": "",
+   "hist": [],
+   "src": "The SmackDown Hotel",
+   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe"
+  },
+  {
+   "id": "nxt-tt",
+   "k": "WWE",
+   "show": "NXT",
+   "n": "NXT Tag Team Championship",
+   "c": "The Vanity Project (Brad Baylor et Ricky Smokes)",
+   "who": [
+    "Brad Baylor",
+    "Ricky Smokes"
+   ],
+   "since": "2026-08-30",
+   "ev": "Heatwave",
+   "hist": [],
+   "src": "The SmackDown Hotel",
+   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe"
+  },
+  {
+   "id": "evolve",
+   "k": "WWE",
+   "show": "Evolve",
+   "n": "WWE Evolve Championship",
+   "c": "Harlem Lewis",
+   "who": [
+    "Harlem Lewis"
+   ],
+   "since": "2026-07-15",
+   "ev": "",
+   "hist": [],
+   "src": "The SmackDown Hotel",
+   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe"
+  },
+  {
+   "id": "evolve-w",
+   "k": "WWE",
+   "show": "Evolve",
+   "n": "WWE Evolve Women’s Championship",
+   "c": "Nikkita Lyons",
+   "who": [
+    "Nikkita Lyons"
+   ],
+   "since": "2026-06-24",
+   "ev": "",
+   "hist": [],
+   "src": "The SmackDown Hotel",
+   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe"
+  },
+  {
+   "id": "aew-world",
+   "k": "AEW",
+   "show": "",
+   "n": "AEW World Championship",
+   "c": "Will Ospreay",
+   "who": [
+    "Will Ospreay"
+   ],
+   "since": "2026-08-30",
+   "ev": "All In",
+   "hist": [
+    {
+     "c": "Kenny Omega",
+     "d": "2026-07-08",
+     "ev": "Dynamite: Beach Break"
+    },
+    {
+     "c": "MJF",
+     "d": "2026-05-24",
+     "ev": "Double or Nothing"
+    },
+    {
+     "c": "Darby Allin",
+     "d": "2026-04-15",
+     "ev": "Dynamite: Spring BreakThru"
+    },
+    {
+     "c": "MJF",
+     "d": "2025-12-27",
+     "ev": "Worlds End"
+    },
+    {
+     "c": "Samoa Joe",
+     "d": "2025-11-22",
+     "ev": "Full Gear"
+    }
+   ],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_All_Elite_Wrestling"
+  },
+  {
+   "id": "aew-women",
+   "k": "AEW",
+   "show": "",
+   "n": "AEW Women’s World Championship",
+   "c": "Mercedes Moné",
+   "who": [
+    "Mercedes Moné"
+   ],
+   "since": "2026-08-30",
+   "ev": "All In",
+   "hist": [
+    {
+     "c": "Willow Nightingale",
+     "d": "",
+     "ev": ""
+    }
+   ],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_All_Elite_Wrestling"
+  },
+  {
+   "id": "aew-intl",
+   "k": "AEW",
+   "show": "",
+   "n": "AEW International Championship",
+   "c": "Kazuchika Okada",
+   "who": [
+    "Kazuchika Okada"
+   ],
+   "since": "2026-08-30",
+   "ev": "All In",
+   "hist": [
+    {
+     "c": "Kyle Fletcher",
+     "d": "",
+     "ev": ""
+    }
+   ],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_All_Elite_Wrestling"
+  },
+  {
+   "id": "aew-tnt",
+   "k": "AEW",
+   "show": "",
+   "n": "AEW TNT Championship",
+   "c": "Darby Allin",
+   "who": [
+    "Darby Allin"
+   ],
+   "since": "2026-08-30",
+   "ev": "All In",
+   "hist": [
+    {
+     "c": "Kevin Knight",
+     "d": "",
+     "ev": ""
+    }
+   ],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_All_Elite_Wrestling"
+  },
+  {
+   "id": "aew-tbs",
+   "k": "AEW",
+   "show": "",
+   "n": "AEW TBS Championship",
+   "c": "Persephone",
+   "who": [
+    "Persephone"
+   ],
+   "since": "2026-08-30",
+   "ev": "All In",
+   "hist": [
+    {
+     "c": "Maya World",
+     "d": "",
+     "ev": ""
+    }
+   ],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_All_Elite_Wrestling"
+  },
+  {
+   "id": "aew-cont",
+   "k": "AEW",
+   "show": "",
+   "n": "AEW Continental Championship",
+   "c": "Jon Moxley",
+   "who": [
+    "Jon Moxley"
+   ],
+   "since": "2025-12-27",
+   "ev": "Worlds End",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_All_Elite_Wrestling"
+  },
+  {
+   "id": "aew-nat",
+   "k": "AEW",
+   "show": "",
+   "n": "AEW National Championship",
+   "c": "Andrade El Ídolo",
+   "who": [
+    "Andrade El Ídolo"
+   ],
+   "since": "2026-07-26",
+   "ev": "",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_All_Elite_Wrestling"
+  },
+  {
+   "id": "aew-tag",
+   "k": "AEW",
+   "show": "",
+   "n": "AEW World Tag Team Championship",
+   "c": "The Young Bucks (Matt et Nick Jackson)",
+   "who": [
+    "The Young Bucks"
+   ],
+   "since": "2026-09-26",
+   "ev": "",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_All_Elite_Wrestling"
+  },
+  {
+   "id": "aew-trios",
+   "k": "AEW",
+   "show": "",
+   "n": "AEW World Trios Championship",
+   "c": "Hangman Page, Brody King et Bandido",
+   "who": [
+    "Hangman Adam Page",
+    "Brody King",
+    "Bandido"
+   ],
+   "since": "2026-10-17",
+   "ev": "WrestleDream",
+   "hist": [
+    {
+     "c": "The New Level (Swerve Strickland, Kofi et Austin Creed)",
+     "d": "",
+     "ev": ""
+    }
+   ],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_All_Elite_Wrestling"
+  },
+  {
+   "id": "aew-wtag",
+   "k": "AEW",
+   "show": "",
+   "n": "AEW Women’s World Tag Team Championship",
+   "c": "The Brawling Birds (Jamie Hayter et Alex Windsor)",
+   "who": [
+    "Jamie Hayter",
+    "Alex Windsor"
+   ],
+   "since": "2026-08-30",
+   "ev": "All In",
+   "hist": [
+    {
+     "c": "Divine Dominion (Megan Bayne et Lena Kross)",
+     "d": "",
+     "ev": ""
+    }
+   ],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_All_Elite_Wrestling"
+  },
+  {
+   "id": "tna-world",
+   "k": "TNA",
+   "show": "",
+   "n": "TNA World Championship",
+   "c": "Leon Slater",
+   "who": [
+    "Leon Slater"
+   ],
+   "since": "2026-10-11",
+   "ev": "Bound for Glory",
+   "hist": [
+    {
+     "c": "Nic Nemeth",
+     "d": "2026-06-28",
+     "ev": "Slammiversary"
+    },
+    {
+     "c": "Mike Santana",
+     "d": "2026-01-15",
+     "ev": "Impact (première sur AMC)"
+    },
+    {
+     "c": "Frankie Kazarian",
+     "d": "2025-11-13",
+     "ev": "Impact"
+    },
+    {
+     "c": "Mike Santana",
+     "d": "2025-10-12",
+     "ev": "Bound for Glory"
+    },
+    {
+     "c": "Trick Williams",
+     "d": "2025-05-25",
+     "ev": "NXT Battleground"
+    }
+   ],
+   "src": "ChaseYourSport (Bound for Glory)",
+   "u": "https://chaseyoursport.com/pro-wrestling/tna-bound-for-glory-2026-results/13629"
+  },
+  {
+   "id": "tna-x",
+   "k": "TNA",
+   "show": "",
+   "n": "TNA X Division Championship",
+   "c": "Amazing Red",
+   "who": [
+    "Amazing Red"
+   ],
+   "since": "2026-10-11",
+   "ev": "Bound for Glory",
+   "hist": [],
+   "src": "ChaseYourSport (Bound for Glory)",
+   "u": "https://chaseyoursport.com/pro-wrestling/tna-bound-for-glory-2026-results/13629"
+  },
+  {
+   "id": "tna-intl",
+   "k": "TNA",
+   "show": "",
+   "n": "TNA International Championship",
+   "c": "Jason Hotch",
+   "who": [
+    "Jason Hotch"
+   ],
+   "since": "2026-10-11",
+   "ev": "Bound for Glory",
+   "hist": [
+    {
+     "c": "Mustafa Ali",
+     "d": "2026-08-23",
+     "ev": ""
+    }
+   ],
+   "src": "ChaseYourSport (Bound for Glory)",
+   "u": "https://chaseyoursport.com/pro-wrestling/tna-bound-for-glory-2026-results/13629"
+  },
+  {
+   "id": "tna-ko",
+   "k": "TNA",
+   "show": "",
+   "n": "TNA Knockouts World Championship",
+   "c": "Indi Hartwell",
+   "who": [
+    "Indi Hartwell"
+   ],
+   "since": "2026-10-11",
+   "ev": "Bound for Glory",
+   "hist": [
+    {
+     "c": "Xia Brookside",
+     "d": "2026-06-28",
+     "ev": "Slammiversary"
+    }
+   ],
+   "src": "ChaseYourSport (Bound for Glory)",
+   "u": "https://chaseyoursport.com/pro-wrestling/tna-bound-for-glory-2026-results/13629"
+  },
+  {
+   "id": "tna-kotag",
+   "k": "TNA",
+   "show": "",
+   "n": "TNA Knockouts World Tag Team Championship",
+   "c": "Shayna Baszler et Zoey Serrano",
+   "who": [
+    "Shayna Baszler",
+    "Zoey Serrano"
+   ],
+   "since": "2026-10-11",
+   "ev": "Bound for Glory",
+   "hist": [
+    {
+     "c": "Allie et Kiera Hogan",
+     "d": "2026-06-28",
+     "ev": ""
+    }
+   ],
+   "src": "ChaseYourSport (Bound for Glory)",
+   "u": "https://chaseyoursport.com/pro-wrestling/tna-bound-for-glory-2026-results/13629"
+  },
+  {
+   "id": "tna-tag",
+   "k": "TNA",
+   "show": "",
+   "n": "TNA World Tag Team Championship",
+   "c": "Nic Nemeth et Ryan Nemeth",
+   "who": [
+    "Nic Nemeth",
+    "Ryan Nemeth"
+   ],
+   "since": "2026-08-23",
+   "ev": "",
+   "hist": [
+    {
+     "c": "The Hardys (Matt et Jeff Hardy)",
+     "d": "",
+     "ev": ""
+    }
+   ],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_TNA_Wrestling"
+  },
+  {
+   "id": "tna-kotv",
+   "k": "TNA",
+   "show": "",
+   "n": "TNA Knockouts Television Championship",
+   "c": "M by Elegance",
+   "who": [
+    "M by Elegance"
+   ],
+   "since": "2026-08-27",
+   "ev": "",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_TNA_Wrestling"
+  },
+  {
+   "id": "njpw-hw",
+   "k": "NJPW",
+   "show": "",
+   "n": "IWGP Heavyweight Championship",
+   "c": "Yota Tsuji",
+   "who": [
+    "Yota Tsuji"
+   ],
+   "since": "2026-06-14",
+   "ev": "Dominion",
+   "hist": [
+    {
+     "c": "Callum Newman",
+     "d": "2026-04-04",
+     "ev": "Sakura Genesis"
+    },
+    {
+     "c": "Yota Tsuji",
+     "d": "2026-01-04",
+     "ev": "Wrestle Kingdom 20"
+    },
+    {
+     "c": "Konosuke Takeshita",
+     "d": "2025-10-13",
+     "ev": "King of Pro-Wrestling"
+    },
+    {
+     "c": "Zack Sabre Jr.",
+     "d": "2025-06-29",
+     "ev": "Tanahashi Jam"
+    },
+    {
+     "c": "Hirooki Goto",
+     "d": "2025-02-11",
+     "ev": "The New Beginning in Osaka"
+    }
+   ],
+   "src": "PWTorch (King of Pro-Wrestling)",
+   "u": "https://www.pwtorch.com/site/2026/10/12/njpw-king-of-pro-wrestling-2026-results-10-12-lansdells-report-and-analysis-of-tsuji-vs-oiwa-kidd-vs-umino-yoh-vs-eagles-and-more/"
+  },
+  {
+   "id": "njpw-global",
+   "k": "NJPW",
+   "show": "",
+   "n": "IWGP Global Heavyweight Championship",
+   "c": "Gabe Kidd",
+   "who": [
+    "Gabe Kidd"
+   ],
+   "since": "",
+   "ev": "",
+   "hist": [],
+   "src": "PWTorch (King of Pro-Wrestling)",
+   "u": "https://www.pwtorch.com/site/2026/10/12/njpw-king-of-pro-wrestling-2026-results-10-12-lansdells-report-and-analysis-of-tsuji-vs-oiwa-kidd-vs-umino-yoh-vs-eagles-and-more/"
+  },
+  {
+   "id": "njpw-jr",
+   "k": "NJPW",
+   "show": "",
+   "n": "IWGP Junior Heavyweight Championship",
+   "c": "Yoh",
+   "who": [
+    "Yoh"
+   ],
+   "since": "2026-06-14",
+   "ev": "Dominion",
+   "hist": [],
+   "src": "PWTorch (King of Pro-Wrestling)",
+   "u": "https://www.pwtorch.com/site/2026/10/12/njpw-king-of-pro-wrestling-2026-results-10-12-lansdells-report-and-analysis-of-tsuji-vs-oiwa-kidd-vs-umino-yoh-vs-eagles-and-more/"
+  },
+  {
+   "id": "njpw-never",
+   "k": "NJPW",
+   "show": "",
+   "n": "NEVER Openweight Championship",
+   "c": "Aaron Wolf",
+   "who": [
+    "Aaron Wolf"
+   ],
+   "since": "2026-06-14",
+   "ev": "Dominion",
+   "hist": [],
+   "src": "PWTorch (King of Pro-Wrestling)",
+   "u": "https://www.pwtorch.com/site/2026/10/12/njpw-king-of-pro-wrestling-2026-results-10-12-lansdells-report-and-analysis-of-tsuji-vs-oiwa-kidd-vs-umino-yoh-vs-eagles-and-more/"
+  },
+  {
+   "id": "njpw-6man",
+   "k": "NJPW",
+   "show": "",
+   "n": "NEVER Openweight 6-Man Tag Team Championship",
+   "c": "Unbound Co. (Yuto-Ice, Oskar et Jeff Cobb)",
+   "who": [
+    "Yuto-Ice",
+    "Oskar",
+    "Jeff Cobb"
+   ],
+   "since": "2026-10-12",
+   "ev": "King of Pro-Wrestling",
+   "hist": [
+    {
+     "c": "United Empire (Will Ospreay, Great-O-Khan et Henare)",
+     "d": "2026-05-04",
+     "ev": "Wrestling Dontaku"
+    }
+   ],
+   "src": "PWTorch (King of Pro-Wrestling)",
+   "u": "https://www.pwtorch.com/site/2026/10/12/njpw-king-of-pro-wrestling-2026-results-10-12-lansdells-report-and-analysis-of-tsuji-vs-oiwa-kidd-vs-umino-yoh-vs-eagles-and-more/"
+  },
+  {
+   "id": "aaa-mega",
+   "k": "AAA",
+   "show": "",
+   "n": "AAA Mega Championship",
+   "c": "El Grande Americano",
+   "who": [
+    "El Grande Americano"
+   ],
+   "since": "",
+   "ev": "",
+   "hist": [
+    {
+     "c": "Dominik Mysterio",
+     "d": "2025-09-12",
+     "ev": ""
+    }
+   ],
+   "src": "Fightful (Héroes Inmortales)",
+   "u": "https://www.fightful.com/wrestling/aaa-heroes-inmortales-results-10-24/"
+  },
+  {
+   "id": "aaa-reina",
+   "k": "AAA",
+   "show": "",
+   "n": "AAA Reina de Reinas Championship",
+   "c": "La Catalina",
+   "who": [
+    "La Catalina"
+   ],
+   "since": "",
+   "ev": "",
+   "hist": [],
+   "src": "Fightful (Héroes Inmortales)",
+   "u": "https://www.fightful.com/wrestling/aaa-heroes-inmortales-results-10-24/"
+  },
+  {
+   "id": "aaa-latin",
+   "k": "AAA",
+   "show": "",
+   "n": "AAA Latin American Championship",
+   "c": "La Parka",
+   "who": [
+    "La Parka"
+   ],
+   "since": "2026-08-30",
+   "ev": "",
+   "hist": [
+    {
+     "c": "El Hijo del Vikingo",
+     "d": "",
+     "ev": ""
+    }
+   ],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Lucha_Libre_AAA_Worldwide"
+  },
+  {
+   "id": "aaa-cruiser",
+   "k": "AAA",
+   "show": "",
+   "n": "AAA World Cruiserweight Championship",
+   "c": "Rey Fénix",
+   "who": [
+    "Rey Fénix"
+   ],
+   "since": "2026-05-30",
+   "ev": "",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Lucha_Libre_AAA_Worldwide"
+  },
+  {
+   "id": "aaa-tag",
+   "k": "AAA",
+   "show": "",
+   "n": "AAA World Tag Team Championship",
+   "c": "War Raiders (Erik et Ivar)",
+   "who": [
+    "Erik",
+    "Ivar"
+   ],
+   "since": "2026-05-30",
+   "ev": "",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Lucha_Libre_AAA_Worldwide"
+  },
+  {
+   "id": "aaa-mixed",
+   "k": "AAA",
+   "show": "",
+   "n": "AAA World Mixed Tag Team Championship",
+   "c": "La Hiedra et Laredo Kid",
+   "who": [
+    "La Hiedra",
+    "Laredo Kid"
+   ],
+   "since": "2026-07-25",
+   "ev": "",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Lucha_Libre_AAA_Worldwide"
+  },
+  {
+   "id": "aaa-trios",
+   "k": "AAA",
+   "show": "",
+   "n": "AAA World Trios Championship",
+   "c": "Los Perros del Mal (Daga, Ángel et Berto)",
+   "who": [
+    "Daga",
+    "Ángel",
+    "Berto"
+   ],
+   "since": "2026-09-11",
+   "ev": "",
+   "hist": [
+    {
+     "c": "Los Psycho Circus",
+     "d": "",
+     "ev": ""
+    }
+   ],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Lucha_Libre_AAA_Worldwide"
+  },
+  {
+   "id": "stardom-world",
+   "k": "Stardom",
+   "show": "",
+   "n": "World of Stardom Championship",
+   "c": "Suzu Suzuki",
+   "who": [
+    "Suzu Suzuki"
+   ],
+   "since": "2026-06-20",
+   "ev": "The Conversion",
+   "hist": [
+    {
+     "c": "Sayaka Kurara",
+     "d": "2026-04-26",
+     "ev": ""
+    },
+    {
+     "c": "Saya Kamitani",
+     "d": "2024-12-29",
+     "ev": "Dream Queendom"
+    },
+    {
+     "c": "Tam Nakano",
+     "d": "2024-08-31",
+     "ev": ""
+    },
+    {
+     "c": "Natsuko Tora",
+     "d": "2024-07-28",
+     "ev": ""
+    },
+    {
+     "c": "Maika",
+     "d": "2023-12-29",
+     "ev": "Dream Queendom"
+    }
+   ],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/World_of_Stardom_Championship"
+  },
+  {
+   "id": "marigold-world",
+   "k": "Marigold",
+   "show": "",
+   "n": "Marigold World, United National et Super Fly Championships",
+   "c": "Mayu Iwatani",
+   "who": [
+    "Mayu Iwatani"
+   ],
+   "since": "2026-10-24",
+   "ev": "Grand Destiny",
+   "hist": [
+    {
+     "c": "Miku Aono (World)",
+     "d": "2025-10-26",
+     "ev": "Grand Destiny 2025"
+    },
+    {
+     "c": "Victoria Yuzuki (United National)",
+     "d": "",
+     "ev": ""
+    }
+   ],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/Dream_Star_Fighting_Marigold"
+  }
+ ]
+}

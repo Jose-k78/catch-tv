@@ -5,6 +5,7 @@ import { loadContent } from "./content.js";
 import { ICON, toast } from "./util.js";
 import { homeView, promoView, showView, tabsView, creditsView } from "./views/catalog.js";
 import { matchesView } from "./views/matches.js";
+import { titlesView, titleView } from "./views/titles.js";
 import { searchView, wrestlerView, fillWiki } from "./views/search.js";
 import { authView, settingsView, profileView, editProfileView, applyTheme } from "./views/account.js";
 import { chatListView, newChatView, convView, renderMsgs, setupComposer, loadUsers, roomUnread, dmUnread, validConv } from "./views/chat.js";
@@ -18,7 +19,7 @@ const REL = {
   home: ["content", "images", "history", "auth"], promo: ["content", "images", "history", "auth"],
   profile: ["profile", "profiles", "history", "otherHistory", "auth"], chat: ["room", "convs", "reads", "profiles", "auth"],
   newchat: ["users", "auth"], settings: ["auth", "route"], editprofile: ["profile", "auth"], auth: ["auth"],
-  matches: ["route"], credits: ["images"], wrestler: [], search: [],
+  matches: ["route"], credits: ["images"], wrestler: [], search: [], titles: [], title: [],
 };
 
 // ---------- navigation ----------
@@ -35,6 +36,8 @@ function parse() {
     case "recherche": return { name: "search", q: parts.slice(1).join("/") };
     case "catcheur": return parts[1] ? { name: "wrestler", q: parts.slice(1).join("/").slice(0, 60) } : { name: "search", q: "" };
     case "matchs": return { name: "matches" };
+    case "titres": return S.P[parts[1]] ? { name: "titles", k: parts[1], n: parts[2] || "" } : { name: "home" };
+    case "titre": return { name: "title", id: parts[1] || "" };
     case "credits": return { name: "credits" };
     default: return { name: "home" };
   }
@@ -89,6 +92,8 @@ function render() {
     case "search": h = searchView(route.q); break;
     case "wrestler": h = wrestlerView(route.q); break;
     case "matches": h = matchesView(); break;
+    case "titles": h = titlesView(route.k, route.n); break;
+    case "title": h = titleView(route.id); break;
     case "credits": h = creditsView(); break;
   }
   app.innerHTML = h;
@@ -198,7 +203,7 @@ async function boot() {
   applyTheme();
   document.getElementById("chatbtn").innerHTML = ICON.chat + '<span class="badge" id="badge" hidden></span>';
   document.getElementById("searchbtn").innerHTML = ICON.search;
-  const c = await loadContent(); S.P = c.P; S.news = c.news; S.recaps = c.recaps || {}; S.matches = c.matches || [];
+  const c = await loadContent(); S.P = c.P; S.news = c.news; S.recaps = c.recaps || {}; S.matches = c.matches || []; S.titles = c.titles || []; S.titlesUpdated = c.titlesUpdated || "";
   let backend = null;
   if (firebaseConfig) {
     try { backend = await import("./backend/firebase.js"); await backend.init(firebaseConfig); }
