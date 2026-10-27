@@ -3,7 +3,15 @@
 //    (Console Firebase > Paramètres du projet > Tes applications > Config).
 //    Tant que c'est null, l'app tourne en « mode démo » : tout est enregistré
 //    seulement dans ce navigateur.
-export const firebaseConfig = null;
+export const firebaseConfig = {
+  apiKey: "AIzaSyCN-O04bc7r5l5l4W88X6XW3Szu4VQAgns",
+  authDomain: "catch-ttc-tv.firebaseapp.com",
+  projectId: "catch-ttc-tv",
+  storageBucket: "catch-ttc-tv.firebasestorage.app",
+  messagingSenderId: "817081331415",
+  appId: "1:817081331415:web:d79adc645429eb5f350a92",
+  measurementId: "G-L4HVXLZCLS"
+};
 /* Exemple :
 export const firebaseConfig = {
   apiKey: "AIza...",
