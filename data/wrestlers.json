@@ -1342,6 +1342,45 @@
      "ev": "TNA Lockdown, 2026"
     }
    ]
+  },
+  "Sting": {
+   "k": "WCW, TNA, WWE, AEW",
+   "a": [
+    "Steve Borden"
+   ],
+   "era": "1985–2024",
+   "disc": true,
+   "txt": "Icône de la WCW au maquillage de corbeau, surnommé « The Franchise of WCW », il a aussi marqué la TNA, la WWE et la AEW avant de prendre sa retraite invaincu en équipe avec Darby Allin à Revolution 2024.",
+   "nick": "The Franchise of WCW, Every Man’s Nightmare",
+   "from": "Venice Beach (Californie)",
+   "ht": "1,88 m",
+   "wt": "113 kg",
+   "debut": "1985",
+   "fin": "Scorpion Death Drop, Scorpion Deathlock",
+   "teams": "Four Horsemen, nWo Wolfpac, Main Event Mafia, Sting et Lex Luger",
+   "trainer": "Red Bastien, Rick Bassman",
+   "ref": [
+    {
+     "t": "Sting contre Hollywood Hogan",
+     "ev": "Starrcade, 1997"
+    },
+    {
+     "t": "Sting et Lex Luger contre The Steiner Brothers",
+     "ev": "SuperBrawl, 1991"
+    },
+    {
+     "t": "Sting’s Squadron contre Dangerous Alliance — WarGames",
+     "ev": "WrestleWar, 1992"
+    },
+    {
+     "t": "Sting contre Ric Flair",
+     "ev": "Dernier WCW Monday Nitro, 2001"
+    },
+    {
+     "t": "Sting contre AJ Styles — titre mondial de la TNA",
+     "ev": "Bound for Glory, 2009"
+    }
+   ]
   }
  }
 }
