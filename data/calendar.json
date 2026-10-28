@@ -203,12 +203,16 @@
      "t": "Full Gear",
      "d": "2026-11-14",
      "w": "Phoenix",
-     "v": "Footprint Center",
+     "v": "Mortgage Matchup Center",
      "card": [
-      "Titres féminins par équipe : The Brawling Birds contre Wrathlander",
+      "Titre Continental : Jon Moxley contre Jay White",
+      "Titres trios : Hangman Page, Brody King et Bandido contre Swerve Strickland, Kofi Kingston et Austin Creed",
       "Titres mondiaux par équipe : The Young Bucks contre Mark Davis et Jake Doyle",
-      "Titres trios : Hangman Page et Brodido contre Swerve Strickland et The New Level"
-     ]
+      "Titres féminins par équipe : The Brawling Birds contre Wrathlander"
+     ],
+     "h": "19:00",
+     "tz": "America/New_York",
+     "dur": 240
     },
     {
      "t": "Worlds End",
@@ -367,10 +371,11 @@
      "w": "Hiroshima",
      "v": "Hiroshima Sun Plaza",
      "card": [
-      "Titre IWGP Global : Gabe Kidd contre Taichi",
-      "Match à trois : Kenny Omega contre Tsuji contre Oleg (chance au titre au Tokyo Dome)",
-      "Finale du Super Jr. Tag League",
-      "Retour de Jon Moxley"
+      "Match à trois : Yota Tsuji contre Kenny Omega contre Boltin Oleg (chance au titre IWGP poids lourds au Tokyo Dome pour Omega)",
+      "Titre IWGP Global : Gabe Kidd contre Taichi (Kidd doit quitter la NJPW s’il perd)",
+      "Titres IWGP par équipe : Knockout Brothers (OSKAR et Yuto-Ice) contre United Empire (Will Ospreay et Callum Newman)",
+      "Unbound Co. (Shingo Takagi et Jeff Cobb) contre Death Riders (Jon Moxley et Wheeler Yuta)",
+      "Finale du Super Jr. Tag League"
      ]
     },
     {
