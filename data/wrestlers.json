@@ -1245,6 +1245,103 @@
      "ev": "The Conversion, 2026"
     }
    ]
+  },
+  "Chelsea Green": {
+   "k": "WWE",
+   "sh": [
+    "SmackDown"
+   ],
+   "a": [
+    "Laurel Van Ness",
+    "Jaida"
+   ],
+   "era": "depuis 2014",
+   "al": "face",
+   "alD": "2026-05-22",
+   "txt": "Catcheuse canadienne passée par la TNA (Laurel Van Ness) avant la WWE, connue pour son personnage excentrique ; elle défie Liv Morgan à Crown Jewel 2026.",
+   "nick": "Hot Mess",
+   "from": "Victoria (Colombie-Britannique)",
+   "ht": "1,73 m",
+   "wt": "57 kg",
+   "fin": "Unpretty-Her (double underhook facebuster modifié)",
+   "teams": "The Green Regime (avec Piper Niven et Alba Fyre), Chelsea Green et Piper Niven"
+  },
+  "Tony D’Angelo": {
+   "k": "WWE",
+   "sh": [
+    "NXT"
+   ],
+   "a": [
+    "Joey Ariola",
+    "The Don",
+    "Tony D"
+   ],
+   "era": "depuis 2019",
+   "txt": "Ancien champion de NXT au personnage de mafieux de Chicago, premier Grand Slam Champion de NXT ; il veut récupérer son titre face à Grayson Waller à Halloween Havoc 2026.",
+   "nick": "The Don",
+   "from": "Chicago (Illinois)",
+   "ht": "1,83 m",
+   "wt": "109 kg",
+   "debut": "2019",
+   "trainer": "WWE Performance Center",
+   "teams": "The D’Angelo Family, Team 2.0",
+   "ref": [
+    {
+     "t": "Tony D’Angelo contre Pete Dunne — Crowbar on a Pole",
+     "ev": "NXT, 2022"
+    },
+    {
+     "t": "Tony D’Angelo contre Santos Escobar — Street Fight",
+     "ev": "NXT Heatwave, 2022"
+    },
+    {
+     "t": "Tony D’Angelo contre Dijak — Jailhouse Street Fight",
+     "ev": "NXT Roadblock, 2023"
+    },
+    {
+     "t": "Tony D’Angelo contre Oba Femi — titre nord-américain de NXT",
+     "ev": "NXT, 2024"
+    },
+    {
+     "t": "Tony D’Angelo contre Joe Hendry contre Ethan Page contre Ricky Saints — titre de NXT",
+     "ev": "NXT Stand & Deliver, 2026"
+    }
+   ]
+  },
+  "Leon Slater": {
+   "k": "TNA",
+   "a": [
+    "Leon Blade"
+   ],
+   "era": "depuis 2019",
+   "txt": "Voltigeur anglais de Bradford, deux fois champion de la X Division de la TNA, plus jeune détenteur de ce titre ; il est à l’affiche du titre mondial de la TNA à Destination X 2026.",
+   "from": "Bradford (Angleterre)",
+   "ht": "1,85 m",
+   "wt": "89 kg",
+   "debut": "2019",
+   "trainer": "Liam Slater",
+   "ref": [
+    {
+     "t": "Leon Slater contre Moose — titre de la X Division",
+     "ev": "TNA Slammiversary, 2025"
+    },
+    {
+     "t": "Leon Slater contre Oba Femi — titre de NXT",
+     "ev": "NXT New Year’s Evil, 2026"
+    },
+    {
+     "t": "Leon Slater contre Carmelo Hayes — titre des États-Unis",
+     "ev": "SmackDown, 2026"
+    },
+    {
+     "t": "Leon Slater contre Cedric Alexander — 2 out of 3 Falls, titre de la X Division",
+     "ev": "TNA, 2026"
+    },
+    {
+     "t": "Leon Slater contre Cedric Alexander — Last Man Standing en cage, titre de la X Division",
+     "ev": "TNA Lockdown, 2026"
+    }
+   ]
   }
  }
 }
