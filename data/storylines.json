@@ -3,6 +3,42 @@
  "note": "Une storyline par jour (la plus récente en premier) : grandes histoires, rivalités, anecdotes de coulisses, faits marquants. txt = paragraphes écrits en français à partir des sources ; v = vidéos officielles ; q = recherches sur la chaîne officielle.",
  "items": [
   {
+   "id": "okada-omega",
+   "d": "2026-10-28",
+   "type": "Rivalité",
+   "t": "Okada contre Omega",
+   "k": "NJPW",
+   "years": "2017-2018",
+   "hook": "Quatre combats en dix-huit mois, plus de deux heures et demie de lutte cumulée, et des notes qui ont fait exploser l'échelle : la rivalité qui a redéfini le catch japonais moderne.",
+   "txt": [
+    "Fin 2016, Kazuchika Okada est le visage de la New Japan Pro-Wrestling et le champion IWGP poids lourd. Face à lui, Kenny Omega, Canadien devenu leader du Bullet Club, vient de remporter le G1 Climax, ce qui lui offre le main event du plus grand show de l'année.",
+    "Le 4 janvier 2017, à Wrestle Kingdom 11 au Tokyo Dome, les deux hommes livrent un combat d'environ 46 minutes. Okada conserve son titre grâce à son Rainmaker, mais le match marque les esprits : le journaliste Dave Meltzer lui attribue 6 étoiles, une note jamais donnée jusque-là dans son barème censé s'arrêter à 5.",
+    "La revanche a lieu le 11 juin 2017 à Dominion, à Osaka. Cette fois, rien ne départage les deux rivaux : ils luttent les 60 minutes réglementaires et le match se termine sur un nul. Quelques semaines plus tard, au G1 Climax 27, Omega prend enfin le dessus : dans un match limité à 30 minutes, il bat un Okada diminué par une blessure au cou grâce à son One-Winged Angel.",
+    "Il faut attendre Dominion, le 9 juin 2018, pour le chapitre final. Pour garantir un vainqueur, la NJPW impose un match sans limite de temps en deux chutes gagnantes sur trois. Okada prend la première, Omega égalise, puis l'emporte au bout de près de 65 minutes avec un dernier One-Winged Angel. Il met ainsi fin au règne record d'Okada et devient champion IWGP poids lourd.",
+    "Cette série a contribué à faire connaître la NJPW bien au-delà du Japon et a consacré les deux hommes parmi les meilleurs lutteurs de leur génération. Leurs chemins se sont recroisés plus tard à l'AEW, où un nouveau duel avec deux ceintures en jeu a été officialisé pour All In en 2025."
+   ],
+   "key": "Le 9 juin 2018 à Dominion, Omega remporte la troisième chute d'un match sans limite de temps et détrône enfin Okada.",
+   "v": [],
+   "q": [
+    "Kazuchika Okada vs Kenny Omega Wrestle Kingdom 11",
+    "Okada vs Omega Dominion 2018 2 out of 3 falls"
+   ],
+   "src": [
+    {
+     "n": "WrestleInn – From Kingdom to Dominion",
+     "u": "https://wrestleinn.com/2022/01/03/from-kingdom-to-dominion/"
+    },
+    {
+     "n": "TheSportster – Okada vs Omega, classement des matchs",
+     "u": "https://www.thesportster.com/kazuchika-okada-vs-kenny-omega-matches-njpw-ranked-worst-best/"
+    },
+    {
+     "n": "F4W Online – Omega vs Okada à All In",
+     "u": "https://www.f4wonline.com/news/aew/omega-vs-okada-aew-all-in-double-title-match-official"
+    }
+   ]
+  },
+  {
    "id": "kofimania",
    "t": "La KofiMania",
    "k": "WWE",
