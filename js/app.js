@@ -11,15 +11,22 @@ import { authView, settingsView, profileView, editProfileView, applyTheme } from
 import { chatListView, newChatView, convView, renderMsgs, setupComposer, loadUsers, roomUnread, dmUnread, validConv } from "./views/chat.js";
 import "./modals.js";
 import * as demoBackend from "./backend/demo.js";
+import { membersView, loadMembers } from "./views/members.js";
+import { favsView } from "./views/favs.js";
+import { hlView } from "./views/highlights.js";
+import { liveNow } from "./views/catalog.js";
+import { onFriends, onFeuds, resetSocial, socialBadge } from "./social.js";
+import { parisDay, parisHour } from "./time.js";
 
 let route = { name: "home" }, routeSubs = [], userSubs = [], dirty = false, searchFocused = false;
-const NEEDS_USER = { settings: 1, editprofile: 1, chat: 1, newchat: 1, conv: 1, profile: 1 };
+const NEEDS_USER = { settings: 1, editprofile: 1, chat: 1, newchat: 1, conv: 1, profile: 1, members: 1, favs: 1 };
 const FORM_VIEWS = { auth: 1, settings: 1, editprofile: 1 };
 const REL = {
-  home: ["content", "images", "history", "auth"], promo: ["content", "images", "history", "auth"],
-  profile: ["profile", "profiles", "history", "otherHistory", "auth"], chat: ["room", "convs", "reads", "profiles", "auth"],
-  newchat: ["users", "auth"], settings: ["auth", "route"], editprofile: ["profile", "auth"], auth: ["auth"],
-  matches: ["route"], credits: ["images"], wrestler: [], search: [], titles: [], title: [],
+  home: ["content", "images", "history", "auth", "tick", "profile", "spoil"], promo: ["content", "images", "history", "auth", "tick", "spoil"],
+  profile: ["profile", "profiles", "history", "otherHistory", "auth", "friends", "feuds", "blocks", "memberFriends", "tick"], chat: ["room", "convs", "reads", "profiles", "auth", "blocks"],
+  newchat: ["users", "auth"], settings: ["auth", "route", "reports", "blocks", "profiles"], editprofile: ["profile", "auth"], auth: ["auth"],
+  matches: ["route"], credits: ["images"], wrestler: ["profile", "spoil", "history"], search: [], titles: ["history", "spoil"], title: ["history", "spoil"],
+  members: ["users", "friends", "feuds", "blocks", "profiles", "auth", "tick"], favs: ["profile", "profiles", "friends", "auth"], hl: ["history", "spoil"],
 };
 
 // ---------- navigation ----------
@@ -39,6 +46,9 @@ function parse() {
     case "titres": return S.P[parts[1]] ? { name: "titles", k: parts[1], n: parts[2] || "" } : { name: "home" };
     case "titre": return { name: "title", id: parts[1] || "" };
     case "credits": return { name: "credits" };
+    case "membres": return { name: "members", tab: parts[1] || "" };
+    case "favoris": return { name: "favs" };
+    case "hl": return S.P[parts[1]] ? { name: "hl", k: parts[1], show: parts[2] || "PLE", d: parts[3] || "" } : { name: "home" };
     default: return { name: "home" };
   }
 }
@@ -56,7 +66,9 @@ function onRoute() {
     if (!route.uid) route.uid = S.user.uid;
     if (route.uid !== S.user.uid) {
       need(route.uid);
-      routeSubs.push(B.watchHistory(route.uid, list => { S.otherHistory[route.uid] = list; changed("otherHistory"); }));
+      const id = route.uid;
+      routeSubs.push(B.watchHistory(id, list => { S.otherHistory[id] = list; changed("otherHistory"); }));
+      routeSubs.push(B.watchFriends(id, list => { S.memberFriends[id] = list; list.forEach(f => f.members.forEach(need)); changed("memberFriends"); }));
     }
   }
   if (route.name === "conv" && S.user) {
@@ -67,6 +79,7 @@ function onRoute() {
     }
   }
   if (route.name === "newchat" && S.user) loadUsers();
+  if (route.name === "members" && S.user) loadMembers(true);
   render();
   if (route.name !== "conv") window.scrollTo(0, 0);
 }
@@ -76,6 +89,7 @@ function render() {
   const app = document.getElementById("app"), tabs = document.getElementById("tabs");
   document.body.classList.toggle("inconv", route.name === "conv");
   tabs.innerHTML = (route.name === "home" || route.name === "promo") ? tabsView(route) : "";
+  document.body.classList.toggle("wide", route.name === "home");
   let h = "";
   const waiting = NEEDS_USER[route.name] && !S.user;
   if (waiting) h = '<p class="empty">Chargement…</p>';
@@ -95,6 +109,9 @@ function render() {
     case "titles": h = titlesView(route.k, route.n); break;
     case "title": h = titleView(route.id); break;
     case "credits": h = creditsView(); break;
+    case "members": h = membersView(route.tab); break;
+    case "favs": h = favsView(); break;
+    case "hl": h = hlView(route.k, route.show, route.d); break;
   }
   app.innerHTML = h;
   if (route.name === "conv" && !waiting) { renderMsgs(route.id, true); setupComposer(); markRead(); }
@@ -107,12 +124,30 @@ function render() {
   updateHeader();
 }
 
+// Barre de navigation du bas : Accueil · Recherche · Membres · Messages · Profil
+const NAV = [["home", "#/", "Accueil", "home"], ["search", "#/recherche", "Recherche", "search"], ["members", "#/membres", "Membres", "globe"], ["chat", "#/chat", "Messages", "chat"], ["me", "#/profil", "Profil", "user"]];
+function navOn(id) {
+  const r = route.name;
+  if (id === "home") return r === "home" || r === "promo" || r === "titles" || r === "title" || r === "matches" || r === "hl";
+  if (id === "search") return r === "search" || r === "wrestler";
+  if (id === "members") return r === "members" || (r === "profile" && S.user && route.uid && route.uid !== S.user.uid);
+  if (id === "chat") return r === "chat" || r === "conv" || r === "newchat";
+  if (id === "me") return (r === "profile" && (!S.user || !route.uid || route.uid === S.user.uid)) || r === "settings" || r === "editprofile" || r === "auth";
+  return false;
+}
+const cnt = n => n > 99 ? "99+" : String(n);
 function updateHeader() {
-  const me = document.getElementById("mebtn"), badge = document.getElementById("badge");
-  if (me) me.innerHTML = avatar(S.user ? (S.profile || {}) : null, 34);
-  const n = S.user ? roomUnread() + dmUnread() : 0;
-  if (badge) { badge.hidden = !n; badge.textContent = n > 99 ? "99+" : String(n); }
-  document.title = (n ? "(" + n + ") " : "") + "Catch TV";
+  const n = S.user ? roomUnread() + dmUnread() : 0, soc = socialBadge();
+  const nav = document.getElementById("bnav");
+  if (nav) nav.innerHTML = NAV.map(x => {
+    const badge = x[0] === "chat" ? n : x[0] === "members" ? soc : 0;
+    const href = x[0] === "me" && !S.user ? "#/connexion" : x[1];
+    const ico = x[0] === "me" && S.user ? avatar(S.profile || {}, 26) : ICON[x[3]];
+    return '<a class="bn' + (navOn(x[0]) ? " on" : "") + '" href="' + href + '"' + (navOn(x[0]) ? ' aria-current="page"' : "") + '><span class="bni">' + ico + (badge ? '<span class="badge">' + cnt(badge) + "</span>" : "") + "</span><small>" + x[2] + "</small></a>";
+  }).join("");
+  const fav = document.getElementById("favbtn");
+  if (fav) fav.classList.toggle("on", route.name === "favs");
+  document.title = (n + soc ? "(" + (n + soc) + ") " : "") + "Catch TV";
 }
 
 onChange(what => {
@@ -155,6 +190,7 @@ function popup(m, convId) {
 function onUser(u) {
   userSubs.forEach(f => f()); userSubs = [];
   S.user = u; S.authReady = true; S.profile = null; S.history = {}; S.room = []; S.convs = []; S.reads = {}; S.convMsgs = {};
+  S.friends = []; S.feuds = []; S.blocks = []; S.reports = []; S.users = null; S.memberFriends = {}; resetSocial();
   S.isAdmin = !!u && (S.demo ? u.uid === B.demoAdmin() : (!!ADMIN_UID && u.uid === ADMIN_UID));
   if (u) {
     const me = u.uid;
@@ -165,7 +201,7 @@ function onUser(u) {
     let roomInit = false, roomMax = 0;
     userSubs.push(B.watchRoom(list => {
       S.room = list; list.forEach(m => need(m.uid));
-      if (roomInit) list.filter(m => m.at > roomMax && m.uid !== me).slice(-1).forEach(m => popup(m, "general"));
+      if (roomInit) list.filter(m => m.at > roomMax && m.uid !== me && S.blocks.indexOf(m.uid) < 0).slice(-1).forEach(m => popup(m, "general"));
       roomInit = true; list.forEach(m => { if (m.at > roomMax) roomMax = m.at; });
       changed("room");
     }));
@@ -174,11 +210,15 @@ function onUser(u) {
       S.convs = list;
       list.forEach(c => {
         c.members.forEach(need);
-        if (convInit && c.last && c.last.uid !== me && c.last.at > (lastAt[c.id] || 0)) popup(c.last, c.id);
+        if (convInit && c.last && c.last.uid !== me && c.last.at > (lastAt[c.id] || 0) && S.blocks.indexOf(c.last.uid) < 0) popup(c.last, c.id);
         if (c.last) lastAt[c.id] = Math.max(lastAt[c.id] || 0, c.last.at);
       });
       convInit = true; changed("convs");
     }));
+    userSubs.push(B.watchBlocks(me, list => { S.blocks = list || []; changed("blocks"); }));
+    userSubs.push(B.watchFriends(me, onFriends));
+    userSubs.push(B.watchFeuds(me, onFeuds));
+    if (S.isAdmin) userSubs.push(B.watchReports(list => { S.reports = list || []; list.forEach(r => { need(r.by); need(r.target); }); changed("reports"); }));
   }
   changed("auth");
   onRoute();
@@ -194,16 +234,22 @@ document.addEventListener("submit", e => {
   const f = e.target.closest("form[data-form]");
   if (f && FORM[f.dataset.form]) { e.preventDefault(); FORM[f.dataset.form](f); }
 });
-ACT.chat = () => { if (S.user) location.hash = "#/chat"; else { toast("Connecte-toi pour discuter"); location.hash = "#/connexion"; } };
-ACT.me = () => { location.hash = S.user ? "#/profil" : "#/connexion"; };
-ACT.search = () => { location.hash = "#/recherche"; };
+ACT.favs = () => { if (S.user) location.hash = "#/favoris"; else { toast("Connecte-toi pour suivre tes catcheurs favoris"); location.hash = "#/connexion"; } };
+
+// Toutes les minutes : direct qui commence ou se termine, sablier ⏳ des feuds à 18 h, nouveau jour (minuit à Paris)
+let tickSig = "";
+function tick() {
+  const sig = liveNow().map(e => e.k + e.show + e.d).join(",") + "|" + (parisHour() >= 18) + "|" + parisDay();
+  if (sig !== tickSig) { const first = !tickSig; tickSig = sig; if (!first) changed("tick"); }
+}
 
 // ---------- démarrage ----------
 async function boot() {
   applyTheme();
-  document.getElementById("chatbtn").innerHTML = ICON.chat + '<span class="badge" id="badge" hidden></span>';
-  document.getElementById("searchbtn").innerHTML = ICON.search;
+  document.getElementById("favbtn").innerHTML = ICON.starF;
   const c = await loadContent(); S.P = c.P; S.news = c.news; S.recaps = c.recaps || {}; S.matches = c.matches || []; S.titles = c.titles || []; S.titlesUpdated = c.titlesUpdated || "";
+  S.highlights = c.highlights || {}; S.wrestlers = c.wrestlers || {};
+  tick(); setInterval(tick, 60000);
   let backend = null;
   if (firebaseConfig) {
     try { backend = await import("./backend/firebase.js"); await backend.init(firebaseConfig); }

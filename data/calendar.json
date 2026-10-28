@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-27",
+ "updated": "2026-10-28",
  "promotions": {
   "WWE": {
    "c": [
@@ -25,9 +25,12 @@
      "br": "NXT",
      "v": "WWE Performance Center",
      "card": [
-      "Titre féminin de NXT : Kelani Jordan contre Wren Sinclair",
-      "Titre de NXT : Grayson Waller contre Tony D’Angelo ou Myles Borne"
-     ]
+      "Titre de NXT : Grayson Waller contre Tony D’Angelo",
+      "Titre féminin de NXT : Kelani Jordan contre Wren Sinclair"
+     ],
+     "h": "19:00",
+     "tz": "America/New_York",
+     "dur": 180
     },
     {
      "t": "Crown Jewel",
@@ -39,7 +42,10 @@
       "Crown Jewel Championship féminin : championne de Raw contre championne de SmackDown",
       "Last Man Standing : Cody Rhodes contre Randy Orton",
       "Titres mondiaux par équipe : The Vision contre Penta et Je’Von Evans"
-     ]
+     ],
+     "h": "22:00",
+     "tz": "Asia/Riyadh",
+     "dur": 240
     },
     {
      "t": "Survivor Series: WarGames",
@@ -78,7 +84,10 @@
      "c": [
       "#e3141f",
       "#6e0007"
-     ]
+     ],
+     "h": "20:00",
+     "tz": "America/New_York",
+     "dur": 150
     },
     "SmackDown": {
      "x": [
@@ -97,7 +106,10 @@
      "c": [
       "#1a63db",
       "#0a2766"
-     ]
+     ],
+     "h": "20:00",
+     "tz": "America/New_York",
+     "dur": 120
     },
     "NXT": {
      "x": [
@@ -111,7 +123,10 @@
      "c": [
       "#f2c200",
       "#7d6200"
-     ]
+     ],
+     "h": "20:00",
+     "tz": "America/New_York",
+     "dur": 120
     },
     "Evolve": {
      "j": "Chaque mercredi",
@@ -122,6 +137,15 @@
      "c": [
       "#14a89c",
       "#06443e"
+     ],
+     "h": "20:00",
+     "tz": "America/New_York",
+     "dur": 60,
+     "fr": [
+      {
+       "n": "YouTube (chaîne WWE)",
+       "u": "https://www.youtube.com/@WWE"
+      }
      ]
     },
     "Main Event": {
@@ -133,9 +157,22 @@
      "c": [
       "#5d6c84",
       "#1d2531"
+     ],
+     "fr": [
+      {
+       "n": "YouTube (chaîne WWE)",
+       "u": "https://www.youtube.com/@WWE"
+      }
      ]
     }
-   }
+   },
+   "fr": [
+    {
+     "n": "Netflix",
+     "u": "https://www.netflix.com/"
+    }
+   ],
+   "yt": "UCJ5v_MCY6GNUBTO8-D3XoAg"
   },
   "AEW": {
    "c": [
@@ -177,16 +214,38 @@
      "wd": 3,
      "p": "TBS · HBO Max",
      "l": "https://www.hbomax.com/",
-     "e": []
+     "e": [
+      {
+       "t": "Dynamite — Fright Night",
+       "d": "2026-10-28"
+      },
+      {
+       "t": "Dynamite — Blood & Guts",
+       "d": "2026-11-04"
+      }
+     ],
+     "h": "20:00",
+     "tz": "America/New_York",
+     "dur": 120
     },
     "Collision": {
      "j": "Chaque samedi",
      "wd": 6,
      "p": "TNT · HBO Max",
      "l": "https://www.hbomax.com/",
-     "e": []
+     "e": [],
+     "h": "20:00",
+     "tz": "America/New_York",
+     "dur": 120
     }
-   }
+   },
+   "fr": [
+    {
+     "n": "MyAEW",
+     "u": "https://www.allelitewrestling.com/"
+    }
+   ],
+   "yt": "UCFN4JkGP_bVhAdBsoV9xftA"
   },
   "AAA": {
    "c": [
@@ -216,11 +275,21 @@
     "Lucha Libre AAA": {
      "j": "Chaque samedi",
      "wd": 6,
-     "p": "YouTube · FOX (Amérique latine)",
-     "l": "https://www.youtube.com/results?search_query=Lucha+Libre+AAA",
-     "e": []
+     "p": "YouTube (chaîne WWE) · FOX (Amérique latine)",
+     "l": "https://www.youtube.com/@WWE",
+     "e": [],
+     "h": "22:00",
+     "tz": "America/New_York",
+     "dur": 120
     }
-   }
+   },
+   "fr": [
+    {
+     "n": "YouTube (chaîne WWE)",
+     "u": "https://www.youtube.com/@WWE"
+    }
+   ],
+   "yt": "UCJ5v_MCY6GNUBTO8-D3XoAg"
   },
   "TNA": {
    "c": [
@@ -254,9 +323,18 @@
      "wd": 4,
      "p": "AMC · AMC+",
      "l": "https://www.amc.com/",
-     "e": []
+     "e": [],
+     "h": "21:00",
+     "tz": "America/New_York",
+     "dur": 120
     }
-   }
+   },
+   "fr": [
+    {
+     "n": "TNA+",
+     "u": "https://tnawrestling.com/"
+    }
+   ]
   },
   "NJPW": {
    "c": [
@@ -304,6 +382,12 @@
      "w": "Tokyo Dome",
      "v": "Tokyo Dome"
     }
+   ],
+   "fr": [
+    {
+     "n": "NJPW World",
+     "u": "https://njpwworld.com/"
+    }
    ]
   },
   "Stardom": {
@@ -330,7 +414,10 @@
      "card": [
       "World of Stardom Championship : Suzu Suzuki contre Starlight Kid",
       "Match mixte : Natsupoi et Shingo Takagi contre Yuna Mizumori et Hirooki Goto"
-     ]
+     ],
+     "h": "19:00",
+     "tz": "Asia/Tokyo",
+     "dur": 210
     },
     {
      "t": "Dream Queendom",
@@ -343,6 +430,12 @@
      "d": "2027-01-03",
      "w": "Yokohama",
      "v": "Yokohama Budokan"
+    }
+   ],
+   "fr": [
+    {
+     "n": "Stardom World",
+     "u": "https://www.stardom-world.com/"
     }
    ]
   },
@@ -367,6 +460,12 @@
      "t": "True Victory",
      "d": "",
      "w": "décembre (habituel)"
+    }
+   ],
+   "fr": [
+    {
+     "n": "Wrestle Universe",
+     "u": "https://www.wrestle-universe.com/"
     }
    ]
   }

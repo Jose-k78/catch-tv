@@ -1,0 +1,356 @@
+{
+ "updated": "2026-10-28",
+ "note": "Catcheurs suivis (champions, cartes annoncées, favoris des membres). ref = 5 matchs de référence (renouvelés au fil du temps), last = 3 derniers matchs (r = résultat, spoiler), v = vidéo YouTube d'une chaîne officielle.",
+ "items": {
+  "Roman Reigns": {
+   "k": "WWE",
+   "sh": [
+    "Raw"
+   ],
+   "ref": [
+    {
+     "t": "Roman Reigns contre Cody Rhodes",
+     "ev": "WrestleMania XL, 2024"
+    },
+    {
+     "t": "Roman Reigns contre Brock Lesnar — Last Man Standing",
+     "ev": "SummerSlam 2022"
+    },
+    {
+     "t": "Roman Reigns contre Edge et Daniel Bryan",
+     "ev": "WrestleMania 37, 2021"
+    },
+    {
+     "t": "Roman Reigns contre Jey Uso — « I Quit »",
+     "ev": "Hell in a Cell 2020"
+    },
+    {
+     "t": "Roman Reigns contre CM Punk et Seth Rollins",
+     "ev": "WrestleMania 41, 2025"
+    }
+   ]
+  },
+  "Cody Rhodes": {
+   "k": "WWE",
+   "sh": [
+    "SmackDown"
+   ],
+   "a": [
+    "Cody"
+   ],
+   "ref": [
+    {
+     "t": "Cody Rhodes contre Roman Reigns",
+     "ev": "WrestleMania XL, 2024"
+    },
+    {
+     "t": "Cody Rhodes contre Seth Rollins — Hell in a Cell",
+     "ev": "Hell in a Cell 2022"
+    },
+    {
+     "t": "Cody Rhodes contre John Cena",
+     "ev": "WrestleMania 41, 2025"
+    },
+    {
+     "t": "Cody Rhodes contre Brock Lesnar",
+     "ev": "SummerSlam 2023"
+    },
+    {
+     "t": "Kenny Omega contre Cody",
+     "ev": "NJPW G1 Special in San Francisco, 2018",
+     "v": "muM94dA93wg"
+    }
+   ],
+   "last": [
+    {
+     "t": "Cody Rhodes et Randy Orton : face-à-face",
+     "ev": "SmackDown",
+     "d": "2026-10-23",
+     "r": "Le match Cody Rhodes contre Randy Orton est officialisé à Crown Jewel, en Last Man Standing"
+    }
+   ]
+  },
+  "CM Punk": {
+   "k": "WWE",
+   "ref": [
+    {
+     "t": "CM Punk contre John Cena",
+     "ev": "Money in the Bank 2011"
+    },
+    {
+     "t": "CM Punk contre Drew McIntyre — Hell in a Cell",
+     "ev": "Bad Blood 2024"
+    },
+    {
+     "t": "CM Punk contre Gunther",
+     "ev": "SummerSlam 2025"
+    },
+    {
+     "t": "CM Punk contre MJF — Dog Collar",
+     "ev": "AEW Revolution 2022"
+    },
+    {
+     "t": "CM Punk contre Samoa Joe",
+     "ev": "AEW All In 2023"
+    }
+   ]
+  },
+  "Sami Zayn": {
+   "k": "WWE",
+   "sh": [
+    "SmackDown"
+   ],
+   "ref": [
+    {
+     "t": "Sami Zayn contre Cesaro",
+     "ev": "NXT ArRival, 2014"
+    },
+    {
+     "t": "Sami Zayn contre Adrian Neville — titre de NXT",
+     "ev": "NXT TakeOver: R Evolution, 2014"
+    },
+    {
+     "t": "Sami Zayn contre Kevin Owens",
+     "ev": "Battleground 2016"
+    },
+    {
+     "t": "Sami Zayn et Kevin Owens contre The Usos",
+     "ev": "WrestleMania 39, 2023"
+    },
+    {
+     "t": "Sami Zayn contre Gunther — titre Intercontinental",
+     "ev": "WrestleMania XL, 2024"
+    }
+   ]
+  },
+  "Liv Morgan": {
+   "k": "WWE",
+   "sh": [
+    "Raw"
+   ],
+   "ref": [
+    {
+     "t": "Liv Morgan contre Ronda Rousey — encaissement de la mallette",
+     "ev": "Money in the Bank 2022"
+    },
+    {
+     "t": "Liv Morgan contre Ronda Rousey",
+     "ev": "SummerSlam 2022"
+    },
+    {
+     "t": "Liv Morgan contre Becky Lynch",
+     "ev": "King and Queen of the Ring 2024"
+    },
+    {
+     "t": "Liv Morgan contre Rhea Ripley",
+     "ev": "SummerSlam 2024"
+    }
+   ]
+  },
+  "Becky Lynch": {
+   "k": "WWE",
+   "sh": [
+    "Raw"
+   ],
+   "ref": [
+    {
+     "t": "Becky Lynch contre Charlotte Flair et Ronda Rousey",
+     "ev": "WrestleMania 35, 2019"
+    },
+    {
+     "t": "Becky Lynch contre Charlotte Flair — Last Woman Standing",
+     "ev": "Evolution 2018"
+    },
+    {
+     "t": "Becky Lynch contre Asuka",
+     "ev": "Royal Rumble 2019"
+    },
+    {
+     "t": "Becky Lynch contre Trish Stratus — Steel Cage",
+     "ev": "Payback 2023"
+    },
+    {
+     "t": "Becky Lynch contre Tiffany Stratton — titre de NXT",
+     "ev": "NXT No Mercy 2023"
+    }
+   ]
+  },
+  "Will Ospreay": {
+   "k": "AEW",
+   "ref": [
+    {
+     "t": "Will Ospreay contre Ricochet contre Konosuke Takeshita",
+     "ev": "AEW",
+     "v": "jXZm7rJp0RU"
+    },
+    {
+     "t": "Will Ospreay contre Kenny Omega",
+     "ev": "Wrestle Kingdom 17, 2023"
+    },
+    {
+     "t": "Will Ospreay contre Kazuchika Okada",
+     "ev": "Wrestle Kingdom 16, 2022"
+    },
+    {
+     "t": "Will Ospreay contre Bryan Danielson",
+     "ev": "AEW Dynasty 2024"
+    }
+   ]
+  },
+  "Jon Moxley": {
+   "k": "AEW",
+   "ref": [
+    {
+     "t": "Bryan Danielson contre Jon Moxley",
+     "ev": "AEW",
+     "v": "LAxR8MI7baM"
+    },
+    {
+     "t": "Darby Allin contre Jon Moxley",
+     "ev": "AEW",
+     "v": "VpUuD7YiCYk"
+    },
+    {
+     "t": "Jon Moxley contre Kenny Omega — Lights Out",
+     "ev": "AEW Full Gear 2019"
+    },
+    {
+     "t": "Jon Moxley contre Eddie Kingston — « I Quit »",
+     "ev": "AEW Full Gear 2020"
+    }
+   ]
+  },
+  "Kenny Omega": {
+   "k": "AEW",
+   "ref": [
+    {
+     "t": "Kenny Omega contre PAC",
+     "ev": "AEW",
+     "v": "Se2xpIRI9uk"
+    },
+    {
+     "t": "Kenny Omega contre Cody",
+     "ev": "NJPW G1 Special in San Francisco, 2018",
+     "v": "muM94dA93wg"
+    },
+    {
+     "t": "Kenny Omega contre Kazuchika Okada — 2 tombés sur 3",
+     "ev": "NJPW Dominion 2018"
+    },
+    {
+     "t": "Kenny Omega contre Will Ospreay",
+     "ev": "Wrestle Kingdom 17, 2023"
+    },
+    {
+     "t": "Kenny Omega contre Bryan Danielson",
+     "ev": "AEW Winter Is Coming 2021"
+    }
+   ]
+  },
+  "Darby Allin": {
+   "k": "AEW",
+   "ref": [
+    {
+     "t": "Darby Allin contre Jon Moxley",
+     "ev": "AEW",
+     "v": "VpUuD7YiCYk"
+    },
+    {
+     "t": "Darby Allin contre Cody Rhodes — titre TNT",
+     "ev": "AEW Full Gear 2020"
+    }
+   ]
+  },
+  "Mercedes Moné": {
+   "k": "AEW",
+   "a": [
+    "Sasha Banks"
+   ],
+   "ref": [
+    {
+     "t": "Sasha Banks contre Bayley — titre féminin de NXT",
+     "ev": "NXT TakeOver: Brooklyn, 2015"
+    },
+    {
+     "t": "Sasha Banks contre Bayley — Iron Woman",
+     "ev": "NXT TakeOver: Respect, 2015"
+    },
+    {
+     "t": "Mercedes Moné contre Willow Nightingale — titre TBS",
+     "ev": "AEW Double or Nothing 2024"
+    }
+   ]
+  },
+  "Konosuke Takeshita": {
+   "k": "NJPW",
+   "ref": [
+    {
+     "t": "El Phantasmo contre Konosuke Takeshita — titre NJPW World TV",
+     "ev": "The New Beginning USA, 2026",
+     "v": "14XjixxzNvc"
+    },
+    {
+     "t": "Konosuke Takeshita contre SANADA — titre NJPW World TV",
+     "ev": "Dominion 2026",
+     "v": "JaYvjmqDuhg"
+    },
+    {
+     "t": "Konosuke Takeshita contre Chase Owens — titre NJPW World TV",
+     "ev": "Wrestling Dontaku 2026",
+     "v": "gsG4HwFkgS8"
+    },
+    {
+     "t": "Will Ospreay contre Ricochet contre Konosuke Takeshita",
+     "ev": "AEW",
+     "v": "jXZm7rJp0RU"
+    }
+   ]
+  },
+  "Yota Tsuji": {
+   "k": "NJPW",
+   "ref": [
+    {
+     "t": "Yota Tsuji contre Ryohei Oiwa — titre IWGP Heavyweight",
+     "ev": "King of Pro-Wrestling 2026"
+    }
+   ]
+  },
+  "Mayu Iwatani": {
+   "k": "Marigold",
+   "ref": [
+    {
+     "t": "Mayu Iwatani contre IYO SKY",
+     "ev": "Marigold Grand Destiny 2025"
+    }
+   ]
+  },
+  "Saya Kamitani": {
+   "k": "Stardom",
+   "ref": [
+    {
+     "t": "Saya Kamitani contre Tam Nakano — World of Stardom",
+     "ev": "Stardom",
+     "v": "J4fNyNr1XUU"
+    },
+    {
+     "t": "Saya Kamitani contre Momo Watanabe — World of Stardom",
+     "ev": "Stardom",
+     "v": "1qRxblbn-Wo"
+    }
+   ]
+  },
+  "Giulia": {
+   "k": "WWE",
+   "sh": [
+    "SmackDown"
+   ],
+   "ref": [
+    {
+     "t": "Giulia contre Mariah May",
+     "ev": "Stardom 5★STAR GP 2023",
+     "v": "uvHbUAHNc74"
+    }
+   ]
+  }
+ }
+}

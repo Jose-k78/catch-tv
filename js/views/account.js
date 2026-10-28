@@ -3,6 +3,9 @@ import { S, B, ACT, FORM, prof, avatar, changed } from "../state.js";
 import { esc, toast, fmt, fmtMs, ICON, stars, lsGet, lsSet, fileToDataUrl } from "../util.js";
 import { showOptions } from "./catalog.js";
 import { ADMIN_UID } from "../config.js";
+import { friendState, friendsOf, feudInfo, feudBadge, isBlocked, requestsIn } from "../social.js";
+import { favChips } from "./favs.js";
+import { noSpoil, setNoSpoil } from "../spoil.js";
 
 const ERR = {
   "auth/invalid-email": "Adresse e-mail invalide",
@@ -26,7 +29,7 @@ const ERR = {
   "demo/reset": "Disponible une fois Firebase installé",
   "demo/quota": "Espace de la démo plein (image trop lourde ?)",
 };
-export function errText(e) { return (e && ERR[e.code]) || "Une erreur est survenue"; }
+export function errText(e) { return (e && ERR[e.code]) || "Une erreur est survenue" + (e && e.code ? " (" + e.code + ")" : ""); }
 const field = (id, label, attrs) => '<label class="fld">' + label + '<input id="' + id + '" ' + attrs + "></label>";
 
 // ---------------- connexion ----------------
@@ -89,6 +92,23 @@ export function settingsView(sub) {
       field("s_new2", "Confirmer le nouveau mot de passe", 'type="password" autocomplete="new-password" minlength="6" required') +
       '<p class="err" id="ferr"></p><button class="btn wide">Changer mon mot de passe</button></form>');
   }
+  if (sub === "spoiler") {
+    const on = noSpoil();
+    return h + '<h1>Mode sans spoiler</h1><p class="note" style="margin-bottom:14px">Cache les champions couronnés récemment, les résultats et les highlights tant que tu n’as pas marqué le show comme vu (bouton œil). Réglage enregistré sur cet appareil.</p>' +
+      '<div class="list"><button class="item" data-act="nospoil" data-v="1"><span class="lbl"><b>Activé</b><small>Je veux tout découvrir en regardant</small></span><span class="chev">' + (on ? "✓" : "") + "</span></button>" +
+      '<button class="item" data-act="nospoil" data-v="0"><span class="lbl"><b>Désactivé</b><small>Les résultats restent quand même derrière le bouton « spoiler »</small></span><span class="chev">' + (on ? "" : "✓") + "</span></button></div>";
+  }
+  if (sub === "bloques") {
+    return h + "<h1>Membres bloqués</h1>" + (S.blocks.length ? '<div class="list">' + S.blocks.map(uid => '<div class="item"><span class="lbl favfriend">' + avatar(prof(uid), 32) + "<b>" + esc((prof(uid) || {}).pseudo || "Membre") +
+      '</b></span><button class="btn small ghost" data-act="block" data-uid="' + esc(uid) + '">Débloquer</button></div>').join("") + "</div>" : '<p class="note">Tu n’as bloqué personne.</p>');
+  }
+  if (sub === "signalements" && S.isAdmin) {
+    return h + "<h1>Signalements</h1>" + (S.reports.length ? '<div class="list">' + S.reports.map(r => '<div class="item rep"><span class="lbl"><b>' + esc(r.reason || "Signalement") + "</b><small>" +
+      "Par " + esc((prof(r.by) || {}).pseudo || "un membre") + " · visé : " + (r.target ? '<a href="#/profil/' + encodeURIComponent(r.target) + '">' + esc((prof(r.target) || {}).pseudo || "membre") + "</a>" : "–") + (r.at ? " · " + fmtMs(r.at) : "") + "</small>" +
+      (r.msgText ? '<q class="mycom">' + esc(r.msgText) + "</q>" : "") + (r.text ? '<small>« ' + esc(r.text) + " »</small>" : "") + '</span><span class="repbtns">' +
+      (r.msg ? '<button class="btn small" data-act="repdelmsg" data-id="' + esc(r.id) + '">Supprimer le message</button>' : "") +
+      '<button class="btn small ghost" data-act="repdone" data-id="' + esc(r.id) + '">Classer</button></span></div>').join("") + "</div>" : '<p class="note">Aucun signalement. 👍</p>');
+  }
   if (sub === "apparence") {
     const t = lsGet("ctv.theme") || "auto";
     return h + '<h1>Apparence</h1><div class="list">' + ["auto", "light", "dark"].map(k => '<button class="item" data-act="theme" data-v="' + k + '"><span class="lbl"><b>' + TH[k] +
@@ -97,8 +117,12 @@ export function settingsView(sub) {
   const row = (href, t, s) => '<a class="item" href="' + href + '"><span class="lbl"><b>' + t + "</b><small>" + esc(s) + '</small></span><span class="chev">›</span></a>';
   h += '<h1>Paramètres</h1><div class="list">' + row("#/profil-modifier", "Modifier mon profil", "Photo, pseudo, description, favoris") +
     row("#/parametres/email", "Adresse e-mail", u.email) + row("#/parametres/motdepasse", "Mot de passe", google ? "Connecté avec Google" : "Modifier") +
-    row("#/parametres/apparence", "Apparence", TH[lsGet("ctv.theme") || "auto"]) + "</div>";
+    row("#/parametres/apparence", "Apparence", TH[lsGet("ctv.theme") || "auto"]) +
+    row("#/parametres/spoiler", "Mode sans spoiler", noSpoil() ? "Activé" : "Désactivé") +
+    row("#/parametres/bloques", "Membres bloqués", S.blocks.length ? S.blocks.length + " membre" + (S.blocks.length > 1 ? "s" : "") : "Aucun") + "</div>" +
+    '<p class="note small" style="margin-top:10px">Notifications sur le téléphone quand l’app est fermée : pas encore disponibles (elles demandent un serveur, voir le guide). En attendant, les alertes s’affichent dans l’app.</p>';
   if (!ADMIN_UID || S.isAdmin) {
+    if (S.isAdmin) h += '<h2>Modération</h2><div class="list">' + row("#/parametres/signalements", "Signalements", S.reports.length ? S.reports.length + " en attente" : "Aucun") + "</div>";
     h += "<h2>" + (S.isAdmin ? "Admin" : "Installation") + '</h2><p class="note">' + (S.isAdmin ? "Tu es l’admin de l’app." : "Ton identifiant, à recopier dans la configuration pour devenir admin (voir le guide) :") + "</p>" +
       '<div class="uid" id="myuid">' + esc(u.uid) + '</div><div class="btns"><button class="btn ghost" data-act="copyuid">Copier l’identifiant</button></div>';
   }
@@ -115,6 +139,15 @@ FORM.pass = f => busy(f, async () => {
   if (n !== document.getElementById("s_new2").value) { ferr("Les deux mots de passe ne correspondent pas"); return; }
   await B.changePassword(document.getElementById("s_cur").value, n); toast("Mot de passe modifié"); location.hash = "#/parametres";
 });
+ACT.nospoil = el => { setNoSpoil(el.dataset.v === "1"); toast(el.dataset.v === "1" ? "🙈 Mode sans spoiler activé" : "Mode sans spoiler désactivé"); changed("route"); };
+ACT.repdone = async el => { try { await B.deleteReport(el.dataset.id); toast("Signalement classé"); } catch (e) { toast(errText(e)); } };
+ACT.repdelmsg = async el => {
+  const r = S.reports.find(x => x.id === el.dataset.id); if (!r) return;
+  try {
+    if (r.conv === "general") await B.deleteRoomMsg(r.msg); else await B.deleteDM(r.conv, r.msg);
+    await B.deleteReport(r.id); toast("Message supprimé");
+  } catch (e) { toast(errText(e)); }
+};
 ACT.theme = el => { lsSet("ctv.theme", el.dataset.v === "auto" ? null : el.dataset.v); applyTheme(); changed("route"); };
 ACT.logout = async () => { await B.signOut(); toast("Déconnecté"); location.hash = "#/"; };
 ACT.copyuid = async () => { try { await navigator.clipboard.writeText(S.user.uid); toast("Identifiant copié"); } catch (e) { toast("Sélectionne et copie le texte"); } };
@@ -125,20 +158,50 @@ export function profileView(uid) {
   const p = prof(uid);
   let h = '<a class="back" href="' + (me ? "#/" : "javascript:history.back()") + '">' + ICON.back + (me ? " Accueil" : " Retour") + "</a>";
   if (!p) return h + '<p class="empty">' + (S.profiles[uid] === null ? "Profil introuvable." : "Chargement…") + "</p>";
+  const blocked = !me && isBlocked(uid);
   const hist = me ? Object.values(S.history) : (S.otherHistory[uid] || []);
   hist.sort((a, b) => (b.seenAt || 0) - (a.seenAt || 0));
   const rated = hist.filter(x => x.rating);
   const avg = rated.length ? (rated.reduce((s, x) => s + x.rating, 0) / rated.length).toFixed(1).replace(".", ",") : "–";
-  h += '<div class="prof">' + avatar(p, 96) + '<b class="name">' + esc(p.pseudo || "Membre") + "</b>" +
-    (p.createdAt ? '<span class="since">Membre depuis le ' + fmtMs(p.createdAt, true) + "</span>" : "") + "</div>";
+  h += '<div class="prof">' + (!me && S.user ? '<button class="iconbtn profmenu" data-act="membermenu" data-uid="' + esc(uid) + '" aria-label="Plus d’options">' + ICON.dots + "</button>" : "") +
+    avatar(p, 96) + '<b class="name">' + esc(p.pseudo || "Membre") + "</b>" +
+    (p.createdAt ? '<span class="since">Membre depuis le ' + fmtMs(p.createdAt, true) + "</span>" : "") + (!me && S.user ? feudBadge(uid, true) : "") + "</div>";
+  if (blocked) return h + '<p class="note" style="text-align:center">Tu as bloqué ce membre.</p><div class="btns"><button class="btn ghost" data-act="block" data-uid="' + esc(uid) + '">Débloquer</button></div>';
   if (p.bio) h += '<p class="bio">' + esc(p.bio) + "</p>";
   else if (me) h += '<p class="note" style="text-align:center">Ajoute une description depuis « Modifier mon profil ».</p>';
+  // boutons : ami, message, feud
+  if (me) h += '<div class="btns" style="margin:4px 16px 0"><a class="btn" href="#/profil-modifier">Modifier mon profil</a><a class="btn ghost" href="#/parametres">Paramètres</a></div>';
+  else if (S.user) {
+    const st = friendState(uid), fi = feudInfo(uid);
+    const fb = st === "ok" ? '<button class="btn ghost" data-act="frienddel" data-uid="' + esc(uid) + '">✓ Amis</button>'
+      : st === "out" ? '<button class="btn ghost" data-act="frienddel" data-uid="' + esc(uid) + '">Demande envoyée · annuler</button>'
+      : st === "in" ? '<button class="btn" data-act="friendok" data-uid="' + esc(uid) + '">Accepter</button><button class="btn ghost" data-act="frienddel" data-uid="' + esc(uid) + '">Refuser</button>'
+      : '<button class="btn" data-act="friendadd" data-uid="' + esc(uid) + '">Ajouter en ami</button>';
+    h += '<div class="btns" style="margin:4px 16px 0">' + fb + '<button class="btn ghost" data-act="dm" data-uid="' + esc(uid) + '">Message</button>' +
+      '<button class="btn feudbtn' + (fi.mine ? " done" : "") + '" data-act="feud" data-uid="' + esc(uid) + '">🔥 ' + (fi.mine ? (fi.theirs ? "Feud du jour faite" : "Feud lancée") : fi.theirs ? "Renvoyer la feud" : "Lancer une feud") + "</button></div>";
+    if (fi.count || fi.mine || fi.theirs) h += '<p class="note small" style="text-align:center;margin-top:8px">' + (fi.count ? "🔥 " + fi.count + " jour" + (fi.count > 1 ? "s" : "") + " de feud d’affilée" : "Feud en cours") +
+      (fi.best > fi.count ? " · record : " + fi.best : "") + (fi.hourglass ? " · ⏳ pensez à la feud du jour avant minuit" : "") + "</p>";
+  }
   h += '<div class="favs">' + [["Show préféré", p.favShow], ["Catcheur préféré", p.favWrestler], ["Catcheuse préférée", p.favWrestlerF]]
     .map(f => '<div class="fav"><small>' + f[0] + "</small><b>" + (f[1] ? esc(f[1]) : "–") + "</b></div>").join("") + "</div>";
   h += '<div class="stats"><div><b>' + hist.length + "</b><small>vu" + (hist.length > 1 ? "s" : "") + "</small></div><div><b>" + rated.length + "</b><small>noté" + (rated.length > 1 ? "s" : "") +
-    "</small></div><div><b>" + avg + "</b><small>note moyenne</small></div></div>";
-  h += '<div class="btns" style="margin-top:16px">' + (me ? '<a class="btn" href="#/profil-modifier">Modifier mon profil</a><a class="btn ghost" href="#/parametres">Paramètres</a>'
-    : (S.user ? '<button class="btn" data-act="dm" data-uid="' + esc(uid) + '">' + "Envoyer un message</button>" : "")) + "</div>";
+    "</small></div><div><b>" + avg + "</b><small>note moyenne</small></div><div><b>" + friendsOf(uid).length + "</b><small>ami" + (friendsOf(uid).length > 1 ? "s" : "") + "</small></div></div>";
+  // favoris ⭐
+  const fc = favChips(p);
+  h += "<h2>⭐ Favoris</h2>" + (fc || '<p class="note">' + (me ? "Appuie sur l’étoile d’un catcheur pour le suivre." : "Pas encore de favori.") + "</p>");
+  // amis
+  const fr = friendsOf(uid);
+  h += "<h2>Amis" + (fr.length ? " (" + fr.length + ")" : "") + "</h2>";
+  if (me && requestsIn().length) h += '<a class="titletile" style="margin-top:0;margin-bottom:10px" href="#/membres/demandes"><span class="tt-belt" style="background:var(--red);color:#fff">👋</span><span class="tt-txt"><b>' +
+    requestsIn().length + " demande" + (requestsIn().length > 1 ? "s" : "") + ' d’ami</b><small>Accepter ou refuser</small></span><span class="chev">›</span></a>';
+  h += fr.length ? '<div class="frow">' + fr.map(o => '<a class="fitem" href="#/profil/' + encodeURIComponent(o) + '">' + avatar(prof(o), 54) + "<small>" + esc((prof(o) || {}).pseudo || "…") + "</small>" + (S.user && o !== S.user.uid ? feudBadge(o) : "") + "</a>").join("") + "</div>"
+    : '<p class="note">' + (me ? "Trouve des membres avec l’onglet Membres." : "Pas encore d’amis.") + "</p>";
+  // mes feuds
+  if (me) {
+    const act = S.feuds.map(f => { const o = f.members[0] === uid ? f.members[1] : f.members[0]; return { o: o, i: feudInfo(o) }; }).filter(x => (x.i.count || x.i.mine || x.i.theirs) && !isBlocked(x.o)).sort((a, b) => b.i.count - a.i.count);
+    if (act.length) h += "<h2>🔥 Mes feuds</h2><div class=\"list\">" + act.map(x => '<a class="item" href="#/profil/' + encodeURIComponent(x.o) + '"><span class="lbl favfriend">' + avatar(prof(x.o), 32) + "<b>" + esc((prof(x.o) || {}).pseudo || "Membre") + "</b></span>" +
+      '<span class="rt">' + (x.i.mine && x.i.theirs ? "✓ faite aujourd’hui" : x.i.theirs ? "à renvoyer !" : x.i.mine ? "en attente" : "à lancer") + "</span>" + feudBadge(x.o) + "</a>").join("") + "</div>";
+  }
   h += "<h2>Historique des notes</h2>";
   h += hist.length ? '<div class="list">' + hist.map(x => '<div class="item"><span class="lbl"><b>' + esc(x.title) + "</b><small>" + esc(x.k) + (x.show ? " · " + esc(x.show) : " · PLE") +
     (x.d ? " · " + fmt(x.d) : "") + "</small>" + (x.comment ? '<q class="mycom">' + esc(x.comment) + "</q>" : "") + '</span><span class="rt">' + (x.rating ? stars(x.rating) : "Pas noté") + "<br>vu le " + fmtMs(x.seenAt) + "</span></div>").join("") + "</div>"

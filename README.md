@@ -38,7 +38,19 @@ Pour que n'importe qui puisse s'inscrire et discuter, suis les étapes ci-dessou
 
 Toi seul verras alors les boutons pour changer les images des vignettes. Les règles refusent toute modification venant d'un autre compte.
 
-## 6. Installer l'app sur ton téléphone
+## 6. Mettre à jour les règles après une nouvelle version
+
+Quand une nouvelle version ajoute des fonctions qui touchent à la base (amis, feuds, favoris, blocages, signalements…), le fichier `firestore.rules` change.
+Copie tout son contenu dans **Firestore Database > Règles**, puis **Publier**. Sans ça, Firebase refuse les nouvelles actions (« Action non autorisée »).
+
+## 7. Notifications sur le téléphone quand l'app est fermée
+
+Pour l'instant, les alertes (messages, demandes d'amis, feuds) s'affichent seulement quand l'app est ouverte.
+Les vraies notifications push demandent un petit serveur qui les envoie : avec Firebase, ce sont les **Cloud Functions** + **Firebase Cloud Messaging**,
+qui exigent de passer le projet au forfait **Blaze** (paiement à l'usage, avec une carte bancaire ; gratuit en dessous de quotas larges, mais une carte est obligatoire).
+Sur iPhone, il faut aussi que l'app soit ajoutée à l'écran d'accueil (iOS 16.4 ou plus récent).
+
+## 8. Installer l'app sur ton téléphone
 
 Ouvre l'adresse dans Safari (iPhone) ou Chrome (Android), puis **Partager > Sur l'écran d'accueil** ou **Menu > Ajouter à l'écran d'accueil**.
 
@@ -52,6 +64,9 @@ Ouvre l'adresse dans Safari (iPhone) ou Chrome (Android), puis **Partager > Sur 
 | `data/recaps.json` | Les résumés sans spoiler des épisodes et PLE, mis à jour automatiquement |
 | `data/titles.json` | Les titres, champions actuels et anciens champions, mis à jour automatiquement |
 | `data/matches.json` | Les matchs à revoir (vidéos des chaînes YouTube officielles), renouvelés chaque semaine |
+| `data/titles.json` | Les champions actuels et l'historique des titres |
+| `data/highlights.json` | Highlights officiels et résultats (cachés derrière le bouton spoiler) des derniers shows |
+| `data/wrestlers.json` | Catcheurs suivis : matchs de référence, derniers matchs, actu |
 | `js/images.js` | Images des vignettes : héritage, photos libres Wikimedia Commons, affiches maison |
 | `js/config.js` | Configuration Firebase et identifiant admin |
 | `firestore.rules` | Règles de sécurité de la base de données |

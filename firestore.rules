@@ -1,7 +1,7 @@
 rules_version = '2';
 
-// Règles de sécurité Catch TV.
-// ⚠️ Remplace COLLE_TON_UID_ICI par ton identifiant (affiché dans l'app : Mon profil > Paramètres).
+// Règles de sécurité Catch TV (version 2 : amis, feuds, favoris, blocages, signalements).
+// À coller en entier dans Firebase > Firestore Database > Règles, puis « Publier ».
 service cloud.firestore {
   match /databases/{database}/documents {
 
@@ -10,14 +10,24 @@ service cloud.firestore {
     function isAdmin() { return signedIn() && request.auth.uid == "gYOlkXsJc3WedSykoBNyeWg2ELx1"; }
     function str(v, max) { return v is string && v.size() <= max; }
     function okText(v) { return v is string && v.size() > 0 && v.size() <= 1000; }
+    // paire « uidA_uidB » (triée) : en fait-on partie, et qui est l'autre ?
+    function inPairId(p) { return signedIn() && request.auth.uid in p.split('_'); }
+    function otherIn(p) { return p.split('_')[0] == request.auth.uid ? p.split('_')[1] : p.split('_')[0]; }
+    function okPair(p, m) { return m is list && m.size() == 2 && m[0] < m[1] && p == m[0] + '_' + m[1]; }
+    // l'autre membre m'a-t-il bloqué ?
+    function blockedBy(u) {
+      return exists(/databases/$(database)/documents/blocks/$(u))
+        && request.auth.uid in get(/databases/$(database)/documents/blocks/$(u)).data.list;
+    }
 
     // ---------- Profils (visibles par les membres connectés) ----------
     match /users/{uid} {
       function okProfile(d) {
-        return d.keys().hasOnly(['pseudo','pseudoLower','bio','favShow','favWrestler','favWrestlerF','photo','createdAt'])
+        return d.keys().hasOnly(['pseudo','pseudoLower','bio','favShow','favWrestler','favWrestlerF','photo','createdAt','favs'])
           && str(d.pseudo, 30) && d.pseudo.size() > 0 && str(d.pseudoLower, 30)
           && str(d.bio, 300) && str(d.favShow, 60) && str(d.favWrestler, 40) && str(d.favWrestlerF, 40)
-          && str(d.photo, 400000);
+          && str(d.photo, 400000)
+          && (!('favs' in d) || (d.favs is list && d.favs.size() <= 30));
       }
       allow read: if signedIn();
       allow create: if isMe(uid) && okProfile(request.resource.data) && request.resource.data.createdAt == request.time;
@@ -59,7 +69,7 @@ service cloud.firestore {
         && okText(request.resource.data.text)
         && request.resource.data.at == request.time;
       allow update: if false;
-      allow delete: if isAdmin();
+      allow delete: if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
     }
 
     // ---------- Messages privés ----------
@@ -80,13 +90,80 @@ service cloud.firestore {
         allow read: if signedIn() && request.auth.uid in pairId.split('_');
         allow create: if signedIn() && request.auth.uid in pairId.split('_')
           && exists(/databases/$(database)/documents/dms/$(pairId))
+          && !blockedBy(otherIn(pairId))
           && request.resource.data.keys().hasOnly(['uid','text','at'])
           && request.resource.data.uid == request.auth.uid
           && okText(request.resource.data.text)
           && request.resource.data.at == request.time;
         allow update: if false;
-        allow delete: if isAdmin();
+        allow delete: if isAdmin() || (inPairId(pairId) && resource.data.uid == request.auth.uid);
       }
+    }
+
+    // ---------- Amis : demande -> acceptée (visible par les membres connectés) ----------
+    match /friends/{pairId} {
+      allow read: if signedIn();
+      allow create: if inPairId(pairId) && okPair(pairId, request.resource.data.members)
+        && request.resource.data.keys().hasOnly(['members','from','status','at'])
+        && request.resource.data.from == request.auth.uid
+        && request.resource.data.status == 'pending'
+        && request.resource.data.at == request.time
+        && !blockedBy(otherIn(pairId));
+      allow update: if inPairId(pairId) && resource.data.status == 'pending'
+        && request.auth.uid != resource.data.from
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status','okAt'])
+        && request.resource.data.status == 'ok' && request.resource.data.okAt == request.time;
+      allow delete: if inPairId(pairId);
+    }
+
+    // ---------- Feuds (compteur de jours d'affilée, visible par les deux membres) ----------
+    match /feuds/{pairId} {
+      function okFeud(d) {
+        return d.count is int && d.count >= 0 && d.best is int && d.best >= d.count
+          && str(d.countDay, 10) && d.days is map && d.days.size() <= 2
+          && str(d.days.get(request.auth.uid, ''), 10) && d.updatedAt == request.time;
+      }
+      allow get: if inPairId(pairId);
+      allow list: if signedIn() && request.auth.uid in resource.data.members;
+      allow create: if inPairId(pairId) && okPair(pairId, request.resource.data.members)
+        && request.resource.data.keys().hasOnly(['members','days','count','countDay','best','updatedAt'])
+        && request.resource.data.days.keys().hasOnly([request.auth.uid])
+        && request.resource.data.count == 0 && okFeud(request.resource.data)
+        && !blockedBy(otherIn(pairId));
+      allow update: if inPairId(pairId)
+        && request.resource.data.members == resource.data.members
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['days','count','countDay','best','updatedAt'])
+        && request.resource.data.days.get(otherIn(pairId), '') == resource.data.days.get(otherIn(pairId), '')
+        && request.resource.data.days.keys().hasOnly([request.auth.uid, otherIn(pairId)])
+        && request.resource.data.count <= resource.data.count + 1
+        && okFeud(request.resource.data)
+        && !blockedBy(otherIn(pairId));
+      allow delete: if false;
+    }
+
+    // ---------- Membres bloqués (liste privée) ----------
+    match /blocks/{uid} {
+      allow read, delete: if isMe(uid);
+      allow create, update: if isMe(uid) && request.resource.data.keys().hasOnly(['list'])
+        && request.resource.data.list is list && request.resource.data.list.size() <= 500;
+    }
+
+    // ---------- Signalements : n'importe quel membre signale, seul l'admin lit ----------
+    match /reports/{id} {
+      allow create: if signedIn() && request.resource.data.by == request.auth.uid
+        && request.resource.data.keys().hasOnly(['by','target','reason','text','conv','msg','msgText','at'])
+        && str(request.resource.data.target, 60) && str(request.resource.data.reason, 40) && str(request.resource.data.text, 500)
+        && str(request.resource.data.conv, 140) && str(request.resource.data.msg, 60) && str(request.resource.data.msgText, 1000)
+        && request.resource.data.at == request.time;
+      allow read, delete: if isAdmin();
+      allow update: if false;
+    }
+
+    // ---------- Catcheurs suivis (favoris de tous les membres, pour la mise à jour quotidienne) ----------
+    match /followed/{id} {
+      allow read: if true;
+      allow write: if signedIn() && id == 'list' && request.resource.data.keys().hasOnly(['names'])
+        && request.resource.data.names is list && request.resource.data.names.size() <= 1000;
     }
   }
 }

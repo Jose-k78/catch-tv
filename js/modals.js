@@ -55,6 +55,12 @@ export function cleanImageUrl(raw) {
 }
 const looksLikeImage = u => /\.(jpe?g|png|webp|gif|avif)(\?|#|$)/i.test(u) || /(pinimg\.com|googleusercontent\.com|gstatic\.com\/images|upload\.wikimedia\.org|imgur\.com\/\w+\.)/i.test(u);
 
+// Message clair si Firebase refuse l'enregistrement de l'image
+function imgErr(err) {
+  if (err && err.code === "permission-denied") return "Refusé par Firebase : publie les dernières règles (fichier firestore.rules) avec ton identifiant admin, puis réessaie.";
+  if (err && err.code === "demo/quota") return errText(err);
+  return "Image non enregistrée : " + errText(err);
+}
 ACT.img = el => {
   if (!S.isAdmin) return;
   const d = el.dataset, label = d.label;
@@ -80,11 +86,12 @@ ACT.img = el => {
     draw();
     const save = async src => {
       try { await B.setImage(docId(chain[level].key), src, S.user.uid); close(); toast("Image mise à jour" + (chain[level].label.indexOf("Tou") === 0 ? " pour " + chain[level].label.replace(/^Tou(te|s|t)( la| les)? /, "") : "")); }
-      catch (err) { toast(errText(err)); }
+      catch (err) { toast(imgErr(err), { ms: 7000 }); }
     };
     box.addEventListener("change", async e => {
       if (e.target.id !== "imgfile" || !e.target.files[0]) return;
-      try { await save(await fileToDataUrl(e.target.files[0], 900, 900, false)); } catch (err) { toast("Image illisible"); }
+      let src; try { src = await fileToDataUrl(e.target.files[0], 900, 900, false); } catch (err) { toast("Image illisible (essaie une photo JPEG ou PNG)"); return; }
+      await save(src);
     });
     box.addEventListener("click", async e => {
       const lv = e.target.closest("[data-lvl]");
@@ -111,7 +118,7 @@ ACT.img = el => {
         };
         test.src = u;
       } else if (e.target.closest("[data-rm]")) {
-        try { await B.removeImage(docId(chain[level].key)); close(); toast("Image retirée"); } catch (err) { toast(errText(err)); }
+        try { await B.removeImage(docId(chain[level].key)); close(); toast("Image retirée"); } catch (err) { toast(imgErr(err), { ms: 7000 }); }
       }
     });
   });

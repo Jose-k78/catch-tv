@@ -2,15 +2,17 @@
 import { S, B, ACT, FORM, prof, nameOf, avatar, changed } from "../state.js";
 import { esc, ICON, timeLabel, dayLabel, hhmm, toast } from "../util.js";
 import { errText } from "./account.js";
+import { isBlocked } from "../social.js";
+import { modal } from "../util.js";
 
 let USERS = null;
 
 export function roomUnread() {
   if (!S.user) return 0;
   const r = S.reads.general || 0;
-  return S.room.filter(m => m.uid !== S.user.uid && m.at > r).length;
+  return S.room.filter(m => m.uid !== S.user.uid && m.at > r && !isBlocked(m.uid)).length;
 }
-export function dmUnread() { return S.user ? S.convs.reduce((s, c) => s + ((c.unread && c.unread[S.user.uid]) || 0), 0) : 0; }
+export function dmUnread() { return S.user ? S.convs.filter(c => !isBlocked(otherOf(c.id))).reduce((s, c) => s + ((c.unread && c.unread[S.user.uid]) || 0), 0) : 0; }
 export function otherOf(convId) { const p = convId.split("_"); return p[0] === S.user.uid ? p[1] : p[0]; }
 export function validConv(convId) { return convId === "general" || (S.user && convId.split("_").length === 2 && convId.split("_").indexOf(S.user.uid) >= 0); }
 
@@ -22,10 +24,11 @@ export function chatListView() {
   let h = '<div class="chathead"><h1>Messages</h1><a class="iconbtn" href="#/chat/nouveau" aria-label="Nouveau message">' + ICON.pen + "</a></div><div class=\"convs\">";
   const item = (href, av, name, sub, time, un) => '<a class="conv-item' + (un ? " unread" : "") + '" href="' + href + '">' + av +
     '<span class="mid"><b>' + esc(name) + "</b><small>" + esc(sub) + '</small></span><span class="end">' + esc(time) + (un ? '<span class="dot">' + cnt(un) + "</span>" : "") + "</span></a>";
-  const lr = S.room[S.room.length - 1];
+  const vis = S.room.filter(m => !isBlocked(m.uid)), lr = vis[vis.length - 1];
   h += item("#/chat/general", grpAv(52), "Salon commun", lr ? (lr.uid === me ? "Toi : " : nameOf(lr.uid) + " : ") + lr.text : "Discute avec tous les membres", lr ? timeLabel(lr.at) : "", roomUnread());
   S.convs.forEach(c => {
     const o = c.members.find(x => x !== me) || me;
+    if (isBlocked(o)) return;
     h += item("#/chat/" + encodeURIComponent(c.id), avatar(prof(o), 52), nameOf(o), c.last ? (c.last.uid === me ? "Toi : " : "") + c.last.text : "Nouvelle conversation",
       c.last ? timeLabel(c.last.at) : "", (c.unread && c.unread[me]) || 0);
   });
@@ -56,16 +59,18 @@ export function convView(convId) {
   let who;
   if (room) who = grpAv(36) + '<span style="text-align:left"><b>Salon commun</b><small>Tous les membres</small></span>';
   else { const o = otherOf(convId); who = avatar(prof(o), 36) + '<span style="text-align:left;min-width:0"><b>' + esc(nameOf(o)) + "</b><small>Voir le profil</small></span>"; }
+  const blocked = !room && isBlocked(otherOf(convId));
   return '<div class="convhead"><a class="back" href="#/chat" aria-label="Retour">' + ICON.back + "</a>" +
     (room ? '<div class="who">' + who + "</div>" : '<button class="who" data-act="profile" data-uid="' + esc(otherOf(convId)) + '">' + who + "</button>") + "</div>" +
     '<div class="msgs" id="msgs"></div>' +
+    (blocked ? '<div class="composer blockedbar">Tu as bloqué ce membre. <button class="linkbtn" data-act="block" data-uid="' + esc(otherOf(convId)) + '">Débloquer</button></div>' :
     '<form class="composer" data-form="send" data-conv="' + esc(convId) + '"><textarea id="msgin" rows="1" maxlength="1000" placeholder="Écris un message…" aria-label="Message"></textarea>' +
-    '<button class="sendbtn" id="sendbtn" disabled aria-label="Envoyer">' + ICON.send + "</button></form>";
+    '<button class="sendbtn" id="sendbtn" disabled aria-label="Envoyer">' + ICON.send + "</button></form>");
 }
 
 export function renderMsgs(convId, force) {
   const box = document.getElementById("msgs"); if (!box) return;
-  const room = convId === "general", list = room ? S.room : (S.convMsgs[convId] || []), me = S.user.uid;
+  const room = convId === "general", list = (room ? S.room : (S.convMsgs[convId] || [])).filter(m => !isBlocked(m.uid)), me = S.user.uid;
   const nearBottom = force || (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 160);
   let h = "", lastDay = "";
   if (!list.length) h = '<p class="empty">' + (room ? "Le salon est calme… Lance la discussion !" : "Pas encore de message. Dis bonjour !") + "</p>";
@@ -77,7 +82,7 @@ export function renderMsgs(convId, force) {
     const cls = (mine ? "me " : "") + (!sp ? "first " : "") + (!sn ? "last " : "") + (sp && sn ? "mid" : "");
     h += '<div class="mrow ' + cls + '">';
     if (!mine) h += '<div class="avslot">' + (!sn ? '<button class="avbtn" data-act="profile" data-uid="' + esc(m.uid) + '" aria-label="Profil">' + avatar(prof(m.uid), 28) + "</button>" : "") + "</div>";
-    h += '<div class="mcol">' + (room && !mine && !sp ? '<div class="sender">' + esc(nameOf(m.uid)) + "</div>" : "") + '<div class="bub">' + esc(m.text) + "</div>" +
+    h += '<div class="mcol">' + (room && !mine && !sp ? '<div class="sender">' + esc(nameOf(m.uid)) + "</div>" : "") + '<button class="bub" data-act="msgmenu" data-id="' + esc(m.id) + '" data-uid="' + esc(m.uid) + '" data-conv="' + esc(convId) + '">' + esc(m.text) + "</button>" +
       (!sn ? '<div class="mtime">' + hhmm(m.at) + "</div>" : "") + "</div></div>";
   });
   box.innerHTML = h;
@@ -112,3 +117,37 @@ ACT.dm = async el => {
   catch (e) { toast(errText(e)); }
 };
 ACT.profile = el => { location.hash = "#/profil/" + encodeURIComponent(el.dataset.uid); };
+
+// Appui sur une bulle : copier, supprimer (son message ou admin), signaler, bloquer
+ACT.msgmenu = el => {
+  const d = el.dataset, mine = S.user && d.uid === S.user.uid, room = d.conv === "general";
+  const list = room ? S.room : (S.convMsgs[d.conv] || []), m = list.find(x => x.id === d.id); if (!m) return;
+  const canDel = mine || S.isAdmin;
+  modal((box, close) => {
+    box.innerHTML = '<p class="sub" style="margin-top:4px"><q class="mycom" style="text-align:left">' + esc(m.text.slice(0, 300)) + '</q></p><div class="sheet">' +
+      '<button class="item" data-a="copy">Copier le texte</button>' +
+      (canDel ? '<button class="item danger" data-a="del">Supprimer le message' + (!mine ? " (admin)" : "") + "</button>" : "") +
+      (!mine ? '<button class="item" data-a="report">Signaler ce message</button><button class="item" data-a="block">Bloquer ' + esc(nameOf(m.uid)) + "</button>" : "") +
+      '</div><button class="btn wide ghost" style="margin-top:12px" data-no>Fermer</button>';
+    box.addEventListener("click", async e => {
+      const a = e.target.closest("[data-a]");
+      if (e.target.closest("[data-no]")) return close();
+      if (!a) return;
+      close();
+      if (a.dataset.a === "copy") { try { await navigator.clipboard.writeText(m.text); toast("Texte copié"); } catch (err) { toast("Copie impossible"); } }
+      else if (a.dataset.a === "del") {
+        try {
+          if (room) await B.deleteRoomMsg(m.id);
+          else {
+            await B.deleteDM(d.conv, m.id);
+            const c = S.convs.find(x => x.id === d.conv);
+            if (c && c.last && list[list.length - 1] === m) B.fixLast(d.conv, "Message supprimé").catch(() => {});
+          }
+          toast("Message supprimé");
+        } catch (err) { toast(errText(err)); }
+      }
+      else if (a.dataset.a === "report") ACT.report({ dataset: { uid: m.uid, conv: d.conv, msg: m.id, text: m.text } });
+      else if (a.dataset.a === "block") ACT.block({ dataset: { uid: m.uid } });
+    });
+  });
+};

@@ -1,8 +1,9 @@
 // Backend « mode démo » : même interface que firebase.js, mais tout reste
 // dans le navigateur (localStorage). Les onglets ouverts se synchronisent entre eux.
+import { feudNext } from "../feud.js";
 const KEY = "ctv.demo.db";
 const SKEY = "ctv.demo.uid";
-const EMPTY = () => ({ accounts: {}, users: {}, history: {}, images: {}, room: [], dms: {}, msgs: {}, reads: {}, admin: "" });
+const EMPTY = () => ({ accounts: {}, users: {}, history: {}, images: {}, room: [], dms: {}, msgs: {}, reads: {}, admin: "", friends: {}, feuds: {}, blocks: {}, reports: [], followed: [] });
 
 let DB = EMPTY();
 const subs = new Set();
@@ -120,3 +121,31 @@ export async function markDMRead(convId, uid) { const c = DB.dms[convId]; if (c 
 export function watchReads(uid, cb) { return watch(() => cb(clone(DB.reads[uid] || {}))); }
 export async function markRoomRead(uid) { DB.reads[uid] = { general: Date.now() }; save(); }
 export async function ensureProfile() {}
+
+// ---- Modération des messages ----
+export async function deleteRoomMsg(id) { DB.room = DB.room.filter(m => m.id !== id); save(); }
+export async function deleteDM(convId, id) { DB.msgs[convId] = (DB.msgs[convId] || []).filter(m => m.id !== id); save(); }
+export async function fixLast(convId, text) { const c = DB.dms[convId]; if (c && c.last) { c.last.text = text; save(); } }
+
+// ---- Amis ----
+export function watchFriends(uid, cb) { return watch(() => cb(Object.keys(DB.friends).map(id => Object.assign(clone(DB.friends[id]), { id: id })).filter(f => f.members.indexOf(uid) >= 0))); }
+export async function requestFriend(me, other) { const m = [me, other].sort(); DB.friends[m.join("_")] = { members: m, from: me, status: "pending", at: Date.now() }; save(); }
+export async function acceptFriend(id) { if (DB.friends[id]) { DB.friends[id].status = "ok"; save(); } }
+export async function removeFriend(id) { delete DB.friends[id]; save(); }
+
+// ---- Feuds ----
+export function watchFeuds(uid, cb) { return watch(() => cb(Object.keys(DB.feuds).map(id => Object.assign(clone(DB.feuds[id]), { id: id })).filter(f => f.members.indexOf(uid) >= 0))); }
+export async function sendFeud(me, other, day) {
+  const m = [me, other].sort(), id = m.join("_"), cur = DB.feuds[id] || null;
+  const nx = feudNext(cur, me, other, day); if (!nx) return null;
+  DB.feuds[id] = Object.assign({ members: m }, nx, { updatedAt: Date.now() }); save();
+  return nx;
+}
+
+// ---- Bloqués, signalements, catcheurs suivis ----
+export function watchBlocks(uid, cb) { return watch(() => cb(clone(DB.blocks[uid] || []))); }
+export async function setBlocks(uid, list) { DB.blocks[uid] = list.slice(0, 500); save(); }
+export async function report(by, r) { DB.reports.unshift(Object.assign({ id: uidGen(), by: by, at: Date.now() }, r)); save(); }
+export function watchReports(cb) { return watch(() => cb(clone(DB.reports))); }
+export async function deleteReport(id) { DB.reports = DB.reports.filter(r => r.id !== id); save(); }
+export async function addFollowed(name) { if (DB.followed.indexOf(name) < 0) { DB.followed.push(name); save(); } }

@@ -1,0 +1,212 @@
+{
+ "updated": "2026-10-28",
+ "note": "Vidéos des chaînes officielles uniquement. res = résultats (spoilers, affichés seulement à la demande). m = résumé match par match (promotions japonaises).",
+ "items": {
+  "WWE|Raw|2026-10-26": {
+   "v": [
+    {
+     "id": "YsK4AsNyxbA",
+     "t": "Je’Von Evans face à Sami Zayn"
+    },
+    {
+     "id": "OUDC43vqCBI",
+     "t": "Sami Zayn contre Je’Von Evans — titre incontesté de la WWE"
+    },
+    {
+     "id": "yCmeKlPzfWE",
+     "t": "The Vision, Penta et Je’Von Evans : l’après-match"
+    },
+    {
+     "id": "GJ7M7aZt-YA",
+     "t": "Bayley contre Lyra Valkyria — sans disqualification"
+    },
+    {
+     "id": "TsTbp1YYTJI",
+     "t": "IYO SKY contre Raquel Rodriguez"
+    },
+    {
+     "id": "4O2hDs54I2U",
+     "t": "Chad Gable et Dragon Lee contre Ethan Page et Big Cass"
+    }
+   ],
+   "res": [
+    "Sami Zayn a battu Je’Von Evans et conserve le titre incontesté de la WWE, sur une fin contestée (Penta a tenté d’encaisser sa mallette, Bron Breakker l’en a empêché)",
+    "Après le match, Bron Breakker et Bronson Reed ont attaqué Penta et Je’Von Evans",
+    "Bayley a battu Lyra Valkyria par soumission dans un match sans disqualification",
+    "IYO SKY a battu Raquel Rodriguez (sans titre en jeu), puis Raquel Rodriguez et Roxanne Perez l’ont attaquée",
+    "Ethan Page et Big Cass ont battu Chad Gable et Dragon Lee",
+    "Becky Lynch a battu Liv Morgan par disqualification après l’intervention du Judgment Day : Liv Morgan conserve le titre mondial féminin",
+    "Tiffany Stratton a tenté d’encaisser sa mallette sur Liv Morgan, mais Dominik Mysterio l’a mise à l’abri"
+   ],
+   "s": "WWE.com",
+   "u": "https://www.wwe.com/shows/raw/2026-10-26"
+  },
+  "WWE|SmackDown|2026-10-23": {
+   "v": [
+    {
+     "id": "J8-LoOkVlu8",
+     "t": "Sami Zayn et Trick Williams : face-à-face"
+    },
+    {
+     "id": "tQfH8D-Fc_g",
+     "t": "Chelsea Green, Tiffany Stratton et le Judgment Day"
+    },
+    {
+     "id": "kdt3Uc3G0rc",
+     "t": "Trick Williams et Rey Fenix contre Sami Zayn et Johnny Gargano"
+    }
+   ],
+   "res": [
+    "Chelsea Green a battu Roxanne Perez et conserve le titre féminin de la WWE",
+    "Après le match, Tiffany Stratton a sauvé Chelsea Green et IYO SKY du Judgment Day et a failli encaisser sa mallette sur Liv Morgan",
+    "Blake Monroe a battu Giulia dans un Street Fight",
+    "Cody Rhodes contre Randy Orton est officialisé à Crown Jewel, en Last Man Standing",
+    "Michin et B-Fab ont battu Alexa Bliss et Tatum Paxley et deviennent championnes féminines par équipe (aide de Jade Cargill)",
+    "Trick Williams et Rey Fenix ont battu Sami Zayn et Johnny Gargano par disqualification (attaque de Ricky Saints)",
+    "Penta, Trick Williams et Rey Fenix ont battu Sami Zayn, Johnny Gargano et Ricky Saints ; Trick Williams affrontera Sami Zayn pour le titre la semaine prochaine"
+   ],
+   "s": "WWE.com",
+   "u": "https://www.wwe.com/shows/smackdown/2026-10-23/results"
+  },
+  "AEW|Dynamite|2026-10-21": {
+   "v": [],
+   "res": [
+    "Mark Davis et Jake Doyle ont battu les Young Bucks (match qualificatif pour les titres par équipe)",
+    "Kyle Fletcher et Kevin Knight ont battu Will Ospreay et Adam Copeland après une intervention de Kazuchika Okada",
+    "Swerve Strickland a battu Tome Filip",
+    "Jay White et Orange Cassidy ont battu Wheeler Yuta et Daniel Garcia",
+    "Jon Moxley a battu Roderick Strong par soumission (qualificatif pour le titre Continental)",
+    "Queen Aminata a battu Maya World",
+    "Ilja Dragunov a battu Mike Bailey pour son premier match à la AEW",
+    "Le Bang Bang Gang s’allie aux Dogs ; Jay White se retourne contre Orange Cassidy puis attaque Jon Moxley",
+    "Blood & Guts officialisé pour le Dynamite du 4 novembre"
+   ],
+   "s": "Wrestle Purists",
+   "u": "https://wrestlepurists.com/aew-dynamite-results-october-21-2026-ilja-dragunov-wins-in-ring-debut-bang-bang-gang-align-with-the-dogs/"
+  },
+  "AEW|Collision|2026-10-24": {
+   "v": [],
+   "res": [
+    "FTR a battu les Motor City Machine Guns (2e match de la série au meilleur des cinq : 1-1)",
+    "Les Death Riders ont battu STP",
+    "Josh Alexander a battu Blade Brown, puis a défié Darby Allin pour le titre TNT",
+    "Swerve Strickland a battu Myron Reed",
+    "United Empire (Mike Bailey et Andrade El Idolo) ont battu Steve et Robert Allen",
+    "Wrathlander ont battu Divine Dominion par disqualification",
+    "Jay White a battu Kyle O’Reilly ; le Bang Bang Gang et les Dogs s’appellent désormais « The Last Outfit »"
+   ],
+   "s": "Fightful",
+   "u": "https://www.fightful.com/wrestling/aew-collision-results-10-24-2026-mcmg-vs-ftr-divine-dominion-vs-wrathlander-jay-white-speak-swerve-strickalnd-more/"
+  },
+  "TNA|Impact|2026-10-22": {
+   "v": [],
+   "res": [
+    "Indi Hartwell a battu Xia Brookside et conserve le titre mondial des Knockouts, puis Shayna Baszler et Zoey Serrano l’ont attaquée",
+    "Cedric Alexander a remporté le match à quatre et devient aspirant n°1 au titre X-Division",
+    "Avery Styles a battu Joe Alonzo",
+    "Jason Hotch a battu Mustafa Ali en deux tombés sur trois et conserve le titre International"
+   ],
+   "s": "Wrestling Inc.",
+   "u": "https://www.wrestlinginc.com/2293763/tna-thursday-night-impact-october-22-2026-results/"
+  },
+  "WWE|PLE|2026-10-10": {
+   "v": [],
+   "res": [
+    "Liv Morgan remporte le titre mondial féminin",
+    "Penta remporte la mallette Money in the Bank masculine",
+    "Tiffany Stratton remporte la mallette Money in the Bank féminine"
+   ],
+   "s": "Sacnilk",
+   "u": "https://www.sacnilk.com/news/5-wwe-money-in-the-bank-2026-takeaways-penta-wins-big-tiffany-stratton-makes-history-and-liv-morgan-reclaims-gold"
+  },
+  "AEW|PLE|2026-10-17": {
+   "v": [],
+   "res": [
+    "Les Motor City Machine Guns ont battu FTR (1er match de la série au meilleur des cinq)",
+    "Hangman Page, Brody King et Bandido remportent les titres Trios",
+    "Ilja Dragunov fait ses débuts à la AEW"
+   ],
+   "s": "Wrestling Inc.",
+   "u": "https://www.wrestlinginc.com/2289656/aew-wrestledream-2026-motor-city-machine-guns-ftr-1-0-series-lead/"
+  },
+  "TNA|PLE|2026-10-11": {
+   "v": [],
+   "res": [
+    "Leon Slater remporte le titre mondial de la TNA",
+    "Amazing Red remporte le titre X-Division",
+    "Jason Hotch remporte le titre International",
+    "Indi Hartwell remporte le titre mondial des Knockouts",
+    "Shayna Baszler et Zoey Serrano remportent les titres par équipe des Knockouts"
+   ]
+  },
+  "AAA|PLE|2026-10-24": {
+   "v": [],
+   "res": [
+    "El Grande Americano conserve le Mega Championship face à Dominik Mysterio",
+    "Los Perros del Mal conservent les titres Trios",
+    "La Catalina conserve le titre Reina de Reinas"
+   ]
+  },
+  "NJPW|PLE|2026-10-12": {
+   "v": [],
+   "m": [
+    {
+     "t": "Unbound Co. (Shingo Takagi et Daiki Nagai) contre Goto Revolutionary Army (Hirooki Goto et Tatsuya Matsumoto)",
+     "r": "Takagi et Nagai l’emportent par tombé."
+    },
+    {
+     "t": "Yuya Uemura, Taichi et El Desperado contre House of Torture (SANADA, Yujiro Takahashi et Yoshinobu Kanemaru)",
+     "r": "Uemura, Taichi et Desperado l’emportent par tombé."
+    },
+    {
+     "t": "Hechicero et Boltin Oleg contre TMDK (Zack Sabre Jr. et Hartley Jackson)",
+     "r": "Hechicero et Oleg l’emportent par tombé."
+    },
+    {
+     "t": "Konosuke Takeshita et Toru Yano contre House of Torture (Ren Narita et Shun Skywalker)",
+     "r": "Takeshita et Yano l’emportent par tombé."
+    },
+    {
+     "t": "Titres NEVER 6-Man : United Empire (Will Ospreay, Great-O-Khan et HENARE) contre Unbound Co. (Jeff Cobb, OSKAR et Yuto-Ice)",
+     "r": "Unbound Co. l’emporte par tombé et remporte les titres."
+    },
+    {
+     "t": "Titre NEVER Openweight : Aaron Wolf contre Kosei Fujita",
+     "r": "Aaron Wolf conserve son titre par tombé."
+    },
+    {
+     "t": "Titre IWGP Global : Gabe Kidd contre Shota Umino",
+     "r": "Gabe Kidd conserve son titre par tombé."
+    },
+    {
+     "t": "Titre IWGP Junior Heavyweight : YOH contre Robbie Eagles",
+     "r": "YOH conserve son titre par tombé."
+    },
+    {
+     "t": "Titre IWGP Heavyweight : Yota Tsuji contre Ryohei Oiwa",
+     "r": "Yota Tsuji conserve son titre par tombé. Après le match, Kenny Omega apparaît, met KO Boltin Oleg puis Tsuji (V-Trigger et One Winged Angel) et réclame un match pour le titre."
+    }
+   ],
+   "res": [
+    "Yota Tsuji conserve le titre IWGP Heavyweight face à Ryohei Oiwa",
+    "Unbound Co. remporte les titres NEVER 6-Man face à United Empire",
+    "Gabe Kidd, YOH et Aaron Wolf conservent leurs titres",
+    "Kenny Omega attaque Yota Tsuji après le match"
+   ],
+   "s": "The SmackDown Hotel · Fightful",
+   "u": "https://www.thesmackdownhotel.com/events-results/ppv-special/njpw-king-of-pro-wrestling-2026"
+  },
+  "Marigold|PLE|2026-10-24": {
+   "v": [],
+   "m": [
+    {
+     "t": "Winner takes all : titres Marigold World, United National et Super Fly",
+     "r": "Mayu Iwatani l’emporte et réunit les trois ceintures."
+    }
+   ],
+   "res": [
+    "Mayu Iwatani remporte le match « winner takes all » et détient les titres Marigold World, United National et Super Fly"
+   ]
+  }
+ }
+}

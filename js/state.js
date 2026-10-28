@@ -19,6 +19,14 @@ export const S = {
   convs: [],             // mes conversations privées
   convMsgs: {},          // messages des conversations ouvertes
   reads: {},             // { general: ms }
+  highlights: {},        // vidéos + résultats (clé "promo|show|date")
+  wrestlers: {},         // fiches des catcheurs suivis (matchs de référence, derniers matchs, actu)
+  friends: [],           // mes liens d'amitié {id, members, from, status}
+  feuds: [],             // mes feuds {id, members, days, count, countDay, best}
+  blocks: [],            // membres que j'ai bloqués
+  reports: [],           // signalements (admin)
+  memberFriends: {},     // amis d'un autre membre (uid -> [liens])
+  users: null,           // liste des membres
   isAdmin: false,
   demo: false,
   authReady: false,

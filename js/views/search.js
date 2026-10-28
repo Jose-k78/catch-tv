@@ -1,10 +1,12 @@
 // Recherche : shows, PLE, promotions, catcheurs (fiche Wikipédia en français + actus + prochains matchs)
 import { S } from "../state.js";
-import { esc, ICON, fmt, diff, okHttp } from "../util.js";
-import { allPle, epis, recapOf, articles, artList } from "./catalog.js";
+import { esc, ICON, fmt, okHttp } from "../util.js";
+import { allPle } from "./catalog.js";
 import { PREVIEW } from "../content.js";
-
-const norm = s => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
+import { norm, canonical, wInfo, wShows, wTitles, upcomingFor, lastMatches, wNews } from "../wrestlers.js";
+import { starBtn } from "./favs.js";
+import { okVid, ytSearch, hlHref } from "./highlights.js";
+import { noSpoil, champHidden } from "../spoil.js";
 let lastQ = "";
 
 function localResults(q) {
@@ -57,22 +59,41 @@ async function wiki(name) {
   }
   return (wikiCache[name] = { none: true });
 }
-export function wrestlerView(name) {
-  const n = norm(name);
-  // prochains matchs annoncés : cartes et résumés des événements à venir (ou du jour) qui le mentionnent
-  let evs = allPle();
-  Object.keys(S.P).forEach(k => { const s = S.P[k].s || {}; Object.keys(s).forEach(x => { evs = evs.concat(epis(k, x, 0, 2)); }); });
-  const up = evs.filter(e => e.d && diff(e.d) >= 0).filter(e => {
-    const r = recapOf(e); return norm((e.card || []).join(" ") + " " + (r ? r.txt : "")).indexOf(n) >= 0;
-  }).sort((a, b) => diff(a.d) - diff(b.d));
-  const arts = articles([], 8, name);
+export function wrestlerView(raw) {
+  const name = canonical(raw), n = norm(name);
+  const up = upcomingFor(name), shows = wShows(name), held = wTitles(name), w = wInfo(name);
+  const arts = wNews(name, 6);
   const vids = S.matches.filter(m => norm(m.t).indexOf(n) >= 0).slice(0, 5);
-  let h = '<a class="back" href="#/recherche/' + encodeURIComponent(name) + '">' + ICON.back + " Recherche</a><h1>" + esc(name) + "</h1>" +
-    '<div id="wiki" class="wiki"><p class="note">' + (PREVIEW ? "La fiche Wikipédia s’affichera une fois l’app en ligne (l’aperçu bloque les connexions vers d’autres sites)." : "Recherche de sa fiche…") + "</p></div>";
+  const k = (w && w.k) || (shows[0] && shows[0].k) || "WWE";
+  let h = '<a class="back" href="#/recherche/' + encodeURIComponent(raw) + '">' + ICON.back + " Recherche</a>" +
+    '<div class="whead"><h1>' + esc(name) + "</h1>" + starBtn(name) + "</div>";
+  if (shows.length || held.length) h += '<div class="chips wrap" style="margin:0 16px 10px">' + shows.map(s => '<a class="chip" href="#/p/' + encodeURIComponent(s.k) + (s.n ? "/" + encodeURIComponent(s.n) : "") + '">' + esc(s.n ? s.k + " · " + s.n : s.k) + "</a>").join("") +
+    held.map(t => champHidden(t) ? "" : '<a class="chip gold" href="#/titre/' + encodeURIComponent(t.id) + '">🏆 ' + esc(t.n) + "</a>").join("") + "</div>";
+  h += '<div id="wiki" class="wiki"><p class="note">' + (PREVIEW ? "La fiche Wikipédia s’affichera une fois l’app en ligne (l’aperçu bloque les connexions vers d’autres sites)." : "Recherche de sa fiche…") + "</p></div>";
   h += "<h2>Prochains matchs annoncés</h2>" + (up.length ? '<div class="list">' + up.map(e => '<a class="item" href="#/p/' + encodeURIComponent(e.k) + (e.show ? "/" + encodeURIComponent(e.show) : "") +
-    '"><span class="lbl"><b>' + esc(e.t) + "</b><small>" + esc(e.k) + " · " + fmt(e.d) + '</small></span><span class="chev">›</span></a>').join("") + "</div>"
+    '"><span class="lbl"><b>' + esc(e.t) + "</b><small>" + esc(e.k) + " · " + fmt(e.d) + (e.line ? " · " + esc(e.line) : "") + '</small></span><span class="chev">›</span></a>').join("") + "</div>"
     : '<p class="note">Rien d’annoncé dans l’app pour l’instant.</p>');
-  h += "<h2>Son actu</h2>" + (arts.length ? artList(arts) : '<p class="note">Pas d’article en français dans l’app qui parle de lui ou d’elle.</p>') +
+  // 3 derniers matchs : résultats derrière le bouton spoiler
+  const last = lastMatches(name, 3), lock = noSpoil();
+  h += "<h2>Ses 3 derniers matchs</h2>";
+  if (last.length) {
+    h += '<div class="list">' + last.map(m => '<div class="item"><span class="lbl"><b>' + esc(m.t || ((m.ev || m.k) + (m.d ? " du " + fmt(m.d) : ""))) + "</b><small>" + esc([m.k, m.ev].filter(Boolean).join(" · ")) + (m.d ? " · " + fmt(m.d) : "") + "</small>" +
+      (m.r ? '<span class="spoil inline"><button class="linkbtn spoilbtn" data-act="reveal">👀 Voir le résultat (spoiler)</button><span class="spoilbody">' + esc(m.r) + "</span></span>" : "") + "</span>" +
+      (okVid(m.v) && !lock ? '<button class="btn small ghost" data-act="play" data-id="' + esc(m.v) + '" data-t="' + esc(m.vt || m.t || name) + '">▶</button>' : "") +
+      (m.d && m.k ? '<a class="chev" href="' + hlHref(m.k, m.show || (m.ev && S.P[m.k] && S.P[m.k].s && S.P[m.k].s[m.ev] ? m.ev : "PLE"), m.d) + '" aria-label="Highlights">›</a>' : "") + "</div>").join("") + "</div>";
+  } else h += '<p class="note">Pas encore de résultat récent dans l’app.</p>';
+  // 5 matchs de référence (vidéo officielle si connue, sinon recherche sur la chaîne officielle)
+  const ref = (w && Array.isArray(w.ref) ? w.ref : []).slice(0, 5);
+  h += "<h2>Ses matchs de référence</h2>";
+  if (ref.length) h += '<div class="list">' + ref.map(m => {
+    const go = okVid(m.v) ? '<button class="btn small" data-act="play" data-id="' + esc(m.v) + '" data-t="' + esc(m.t) + '">▶ Voir</button>'
+      : '<a class="btn small ghost" href="' + esc(ytSearch(w.k || k, m.t.replace(/ contre /g, " vs ").replace(/ — .*$/, "") + " highlights")) + '" target="_blank" rel="noopener">Chercher ↗</a>';
+    return '<div class="item"><span class="lbl"><b>' + esc(m.t) + "</b><small>" + esc(m.ev || "") + "</small></span>" + go + "</div>";
+  }).join("") + "</div>";
+  else h += '<p class="note">Ses matchs de référence seront ajoutés lors d’une prochaine mise à jour' + (S.user ? " (ajoute-le à tes favoris pour qu’il soit suivi)" : "") + ".</p>";
+  h += '<p class="note small" style="margin-top:8px"><a class="linkbtn" style="padding:0" href="' + esc(ytSearch(k, name + " highlights")) + '" target="_blank" rel="noopener">Ses vidéos sur la chaîne YouTube officielle ↗</a></p>';
+  h += "<h2>Son actu</h2>" + (arts.length ? '<div class="list">' + arts.map(a => '<a class="item" href="' + esc(a.u) + '" target="_blank" rel="noopener"><span class="lbl"><b>' + esc(a.t) +
+    "</b><small>" + esc(a.s || "") + (a.tr ? " · titre traduit" : "") + '</small></span><span class="rt">' + (a.d ? fmt(a.d) : "") + "</span></a>").join("") + "</div>" : '<p class="note">Pas d’article en français dans l’app qui parle de lui ou d’elle.</p>') +
     '<p class="note" style="margin-top:8px"><a class="linkbtn" style="padding:0" href="https://news.google.com/search?q=' + encodeURIComponent('"' + name + '"') + '&hl=fr&gl=FR&ceid=FR:fr" target="_blank" rel="noopener">Plus d’actu sur Google Actualités ↗</a></p>';
   if (vids.length) h += '<h2>Ses matchs à revoir</h2><div class="list">' + vids.map(m => '<button class="item" data-act="play" data-id="' + esc(m.id) + '" data-t="' + esc(m.t) + '"><span class="lbl"><b>' + esc(m.t) +
     "</b><small>" + esc(m.k) + (m.ev ? " · " + esc(m.ev) : "") + '</small></span><span class="chev">▶</span></button>').join("") + "</div>";

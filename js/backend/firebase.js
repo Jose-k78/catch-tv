@@ -1,4 +1,5 @@
 // Backend Firebase (Authentication + Cloud Firestore), chargé depuis le CDN officiel.
+import { feudNext } from "../feud.js";
 const V = "10.14.1";
 const BASE = "https://www.gstatic.com/firebasejs/" + V + "/";
 
@@ -147,3 +148,56 @@ export function watchReads(uid, cb) {
   }, () => cb({}));
 }
 export function markRoomRead(uid) { return F.setDoc(F.doc(db, "reads", uid), { general: F.serverTimestamp() }, { merge: true }); }
+
+// ---- Modération des messages ----
+export function deleteRoomMsg(id) { return F.deleteDoc(F.doc(db, "rooms", "general", "messages", id)); }
+export function deleteDM(convId, id) { return F.deleteDoc(F.doc(db, "dms", convId, "messages", id)); }
+export function fixLast(convId, text) { return F.updateDoc(F.doc(db, "dms", convId), { "last.text": text }); }
+
+// ---- Amis ----
+const mapFriend = s => { const d = data(s); return { id: s.id, members: d.members || [], from: d.from || "", status: d.status || "pending", at: ms(d.at) }; };
+export function watchFriends(uid, cb) {
+  const q = F.query(F.collection(db, "friends"), F.where("members", "array-contains", uid));
+  return F.onSnapshot(q, r => cb(r.docs.map(mapFriend)), () => cb([]));
+}
+export function requestFriend(me, other) {
+  const members = [me, other].sort();
+  return F.setDoc(F.doc(db, "friends", members.join("_")), { members: members, from: me, status: "pending", at: F.serverTimestamp() });
+}
+export function acceptFriend(id) { return F.updateDoc(F.doc(db, "friends", id), { status: "ok", okAt: F.serverTimestamp() }); }
+export function removeFriend(id) { return F.deleteDoc(F.doc(db, "friends", id)); }
+
+// ---- Feuds ----
+export function watchFeuds(uid, cb) {
+  const q = F.query(F.collection(db, "feuds"), F.where("members", "array-contains", uid));
+  return F.onSnapshot(q, r => cb(r.docs.map(s => { const d = data(s); return { id: s.id, members: d.members || [], days: d.days || {}, count: d.count || 0, countDay: d.countDay || "", best: d.best || 0, updatedAt: ms(d.updatedAt) }; })), () => cb([]));
+}
+export function sendFeud(me, other, day) {
+  const members = [me, other].sort(), ref = F.doc(db, "feuds", members.join("_"));
+  return F.runTransaction(db, async tx => {
+    const s = await tx.get(ref);
+    const cur = s.exists() ? s.data() : null;
+    const nx = feudNext(cur, me, other, day);
+    if (!nx) return null;
+    const docData = { days: nx.days, count: nx.count, countDay: nx.countDay, best: nx.best, updatedAt: F.serverTimestamp() };
+    if (cur) tx.update(ref, docData); else tx.set(ref, Object.assign({ members: members }, docData));
+    return nx;
+  });
+}
+
+// ---- Membres bloqués (liste privée) ----
+export function watchBlocks(uid, cb) { return F.onSnapshot(F.doc(db, "blocks", uid), s => cb(s.exists() ? (s.data().list || []) : []), () => cb([])); }
+export function setBlocks(uid, list) { return F.setDoc(F.doc(db, "blocks", uid), { list: list.slice(0, 500) }); }
+
+// ---- Signalements (lus par l'admin seulement) ----
+export function report(by, r) {
+  return F.addDoc(F.collection(db, "reports"), { by: by, target: r.target || "", reason: r.reason || "", text: r.text || "", conv: r.conv || "", msg: r.msg || "", msgText: r.msgText || "", at: F.serverTimestamp() });
+}
+export function watchReports(cb) {
+  const q = F.query(F.collection(db, "reports"), F.orderBy("at", "desc"), F.limit(100));
+  return F.onSnapshot(q, r => cb(r.docs.map(s => { const d = data(s); d.id = s.id; d.at = ms(d.at); return d; })), () => cb([]));
+}
+export function deleteReport(id) { return F.deleteDoc(F.doc(db, "reports", id)); }
+
+// ---- Catcheurs suivis par les membres (lu par la mise à jour quotidienne) ----
+export function addFollowed(name) { return F.setDoc(F.doc(db, "followed", "list"), { names: F.arrayUnion(String(name).slice(0, 40)) }, { merge: true }); }

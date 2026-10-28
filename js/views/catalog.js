@@ -1,7 +1,11 @@
 // Accueil, pages promotion et pages show
-import { S } from "../state.js";
-import { esc, cssUrl, okHttp, okDay, fmt, diff, cd, nextWeekday, dt, ymd, ICON, stars, docId, MOIS } from "../util.js";
+import { S, ACT } from "../state.js";
+import { esc, cssUrl, okHttp, okDay, fmt, diff, cd, nextWeekday, dt, ymd, ICON, stars, docId, MOIS, modal, toast } from "../util.js";
 import { resolveImage, usedCredits } from "../images.js";
+import { PARIS, startOf, endOf, isLive, whenParts, fmtAt, hourAt, cityOf, downloadIcs } from "../time.js";
+import { hlOf, hlHref } from "./highlights.js";
+import { favAside } from "./favs.js";
+import { champHidden } from "../spoil.js";
 
 // ---------- données ----------
 export function seenId(e) { return docId(e.k + "|" + (e.show || "PLE") + "|" + (e.d || "") + "|" + e.t); }
@@ -14,13 +18,19 @@ export function colorOf(k, n) { const pr = S.P[k], s = n && pr.s && pr.s[n]; ret
 
 function pleOf(k) {
   const pr = S.P[k];
-  return pr.e.map(e => ({ kind: "ple", k: k, show: "", br: e.br || "", t: e.t, d: e.d, w: e.w, v: e.v || "", card: e.card || null,
-    c: colorOf(k, e.br), l: pr.l, ty: e.br ? "PLE " + e.br : "PLE" }));
+  return pr.e.map(e => {
+    const bs = e.br && pr.s && pr.s[e.br];
+    return { kind: "ple", k: k, show: "", br: e.br || "", t: e.t, d: e.d, w: e.w, v: e.v || "", card: e.card || null,
+      c: colorOf(k, e.br), l: pr.l, ty: e.br ? "PLE " + e.br : "PLE",
+      h: e.h || "", tz: e.tz || "", dur: e.dur || 240, city: e.w && e.w !== "—" && !/habituel|confirmer/.test(e.w) ? e.w : "",
+      fr: e.fr || (bs && bs.fr) || pr.fr || [], p: "", pl: "" };
+  });
 }
 export function allPle() { let a = []; Object.keys(S.P).forEach(k => { a = a.concat(pleOf(k)); }); return a; }
 export function epis(k, n, nb, na) {
   const pr = S.P[k], s = pr.s[n], out = [], base = dt(nextWeekday(s.wd));
-  const mk = (t, d) => ({ kind: "ep", k: k, show: n, t: t, d: d, w: s.p, c: colorOf(k, n), l: s.l, ty: n });
+  const mk = (t, d) => ({ kind: "ep", k: k, show: n, t: t, d: d, w: frName({ fr: s.fr || pr.fr, p: s.p }), c: colorOf(k, n), l: s.l, ty: n,
+    h: s.h || "", tz: s.tz || "", dur: s.dur || 120, fr: s.fr || pr.fr || [], p: s.p || "", pl: s.l || "" });
   for (let i = -nb; i < na; i++) {
     const x = new Date(base); x.setDate(x.getDate() + 7 * i);
     const d = ymd(x), sp = (s.e || []).filter(e => e.d === d)[0];
@@ -33,6 +43,70 @@ function sortUp(a) { return a.slice().sort((x, y) => diff(x.d) - diff(y.d)); }
 function split(a) {
   return [sortUp(a.filter(e => !e.d || diff(e.d) >= 0)), a.filter(e => e.d && diff(e.d) < 0).sort((x, y) => diff(y.d) - diff(x.d))];
 }
+// ---------- diffusion, horaires, direct ----------
+export function frName(e) { const f = (e.fr || [])[0]; return (f && f.n) || e.p || ""; }
+// Ligne « 🕗 mar. 4 nov. 02 h 00 à Paris · lun. 3 nov. 20 h 00 à New York » (événements à venir ou du jour)
+export function timeLine(e, light) {
+  if (!e.d || diff(e.d) < -1) return "";
+  const w = whenParts(e);
+  if (!w) return e.d && diff(e.d) >= 0 && e.kind === "ple" ? '<small class="when2' + (light ? " light" : "") + '">🕗 Horaire à confirmer</small>' : "";
+  return '<small class="when2' + (light ? " light" : "") + '">🕗 <b>' + w.paris + "</b> à Paris" + (w.local ? '<span class="loc"> · ' + esc(w.local) + "</span>" : "") + "</small>";
+}
+// Date courte d'une vignette : heure de Paris si connue
+function shortWhen(e) { const t = startOf(e); return t ? fmtAt(t, PARIS) : fmt(e.d); }
+export function liveNow() {
+  let a = allPle();
+  Object.keys(S.P).forEach(k => { const s = S.P[k].s; if (s) Object.keys(s).forEach(n => { a = a.concat(epis(k, n, 1, 1)); }); });
+  const seen = {};
+  return a.filter(e => isLive(e)).filter(e => { const id = e.k + e.show + e.d + e.t; if (seen[id]) return false; return (seen[id] = true); });
+}
+function findItem(d) {
+  let a = allPle();
+  if (d.show) a = epis(d.k, d.show, 2, 2);
+  return a.find(e => e.k === d.k && (e.show || "") === (d.show || "") && e.d === d.d && (!d.t || e.t === d.t)) || null;
+}
+function itemData(e) { return ' data-k="' + esc(e.k) + '" data-show="' + esc(e.show || "") + '" data-d="' + esc(e.d || "") + '" data-t="' + esc(e.t) + '"'; }
+function liveCard(e) {
+  const lk = look(e, true);
+  return '<button class="live' + (lk.poster ? " poster" : "") + '" style="' + esc(lk.style) + '" data-act="watch"' + itemData(e) + ">" +
+    '<span class="livebadge"><i></i>EN DIRECT</span><b' + fit(e.t, 320, 44, lk.poster) + ">" + esc(e.t) + "</b>" +
+    "<small>" + esc(e.k) + (e.show ? " · " + esc(e.show) : "") + " · depuis " + hourAt(startOf(e), PARIS) + " · jusqu’à " + hourAt(endOf(e), PARIS) + " environ (heure de Paris)</small>" +
+    '<span class="livego">' + ICON.play + " Regarder" + (frName(e) ? " sur " + esc(frName(e)) : "") + "</span></button>";
+}
+export function liveSection(filter) {
+  const list = liveNow().filter(filter || (() => true));
+  return list.length ? '<div class="lives">' + list.map(liveCard).join("") + "</div>" : "";
+}
+// Où regarder : plateformes officielles en France, puis aux États-Unis
+ACT.watch = el => {
+  const e = findItem(el.dataset); if (!e) return;
+  const fr = (e.fr || []).filter(f => okHttp(f.u));
+  modal((box, close) => {
+    box.innerHTML = "<h3>" + esc(e.t) + '</h3><p class="sub">' + (isLive(e) ? "🔴 En direct maintenant" : esc(e.k)) + "</p>" +
+      (fr.length ? '<p class="sub" style="margin-bottom:6px">En France</p>' + fr.map(f => '<a class="btn wide" href="' + esc(f.u) + '" target="_blank" rel="noopener">Regarder sur ' + esc(f.n) + " ↗</a>").join("") : "") +
+      (e.p && okHttp(e.pl) ? '<p class="sub" style="margin:14px 16px 6px">Aux États-Unis</p><a class="btn wide ghost" href="' + esc(e.pl) + '" target="_blank" rel="noopener">' + esc(e.p) + " ↗</a>" : "") +
+      (!fr.length && !(e.p && okHttp(e.pl)) && okHttp(e.l) ? '<a class="btn wide" href="' + esc(e.l) + '" target="_blank" rel="noopener">Site officiel ↗</a>' : "") +
+      '<button class="btn wide ghost" style="margin-top:12px" data-close>Fermer</button>';
+    box.addEventListener("click", ev => { if (ev.target.closest("[data-close]")) close(); });
+  });
+};
+// « Me rappeler » : ajoute l'événement au calendrier du téléphone
+function remindBtn(e, cls) {
+  if (!e.d || diff(e.d) < 0) return "";
+  return '<button class="' + (cls || "remind") + '" data-act="remind"' + itemData(e) + ' aria-label="Me rappeler">' + ICON.bell + (cls && cls.indexOf("btn ") !== 0 ? "" : " Me rappeler") + "</button>";
+}
+ACT.remind = el => {
+  const e = findItem(el.dataset); if (!e) return;
+  const fr = frName(e);
+  downloadIcs(e, (fr ? "À regarder sur " + fr + ". " : "") + "Ajouté depuis Catch TV.");
+  toast("Ouvre le fichier pour l’ajouter à ton calendrier" + (startOf(e) ? " (rappel 1 h avant)" : ""), { ms: 4000 });
+};
+// Bouton « Highlights » (vidéos + résultats) d'un show passé
+function hlBtn(k, show, d, cls) {
+  if (!d || !hlOf(k, show, d)) return "";
+  return '<a class="' + (cls || "hlbtn") + '" href="' + hlHref(k, show, d) + '" aria-label="Highlights">' + ICON.play + "<span>Highlights</span></a>";
+}
+
 export function showOptions() {
   const o = [];
   Object.keys(S.P).forEach(k => { const s = S.P[k].s; if (s) Object.keys(s).forEach(n => o.push(k + " " + n)); else o.push(k); });
@@ -77,8 +151,8 @@ function pleCard(e, showK) {
   return '<div class="card' + (lk.poster ? " poster" : "") + (e.d && n < 0 ? " past" : "") + (h ? " seen" : "") + (S.isAdmin ? " hasedit" : "") + '" style="' + esc(lk.style) + '">' +
     '<a class="cover" href="' + esc(e.l) + '" target="_blank" rel="noopener" aria-label="' + esc(e.t) + '"></a>' +
     '<span class="tag">' + (showK ? esc(e.k) + " · " : "") + cd(e.d) + "</span>" + editBtn(e, e.t) +
-    "<b" + fit(e.t, 126, 27, lk.poster) + ">" + esc(e.t) + "</b><small>" + fmt(e.d) + (place(e) ? " · " + place(e) : "") + "</small>" + seenMark(h) +
-    (aired(e) ? '<button class="cbtn seen' + (h ? " on" : "") + '" data-act="seen"' + dataItem(e) + ' aria-label="Je l’ai vu">' + (h ? ICON.check : ICON.eye) + "</button>" : "") +
+    "<b" + fit(e.t, 126, 27, lk.poster) + ">" + esc(e.t) + "</b><small>" + (n >= 0 ? shortWhen(e) : fmt(e.d)) + (place(e) ? " · " + place(e) : "") + "</small>" + seenMark(h) +
+    (aired(e) ? '<button class="cbtn seen' + (h ? " on" : "") + '" data-act="seen"' + dataItem(e) + ' aria-label="Je l’ai vu">' + (h ? ICON.check : ICON.eye) + "</button>" : remindBtn(e, "cbtn seen")) +
     "</div>";
 }
 function showItem(k, n) { return { kind: "show", k: k, show: n, t: n, c: colorOf(k, n) }; }
@@ -91,12 +165,17 @@ function showCard(k, n, withK, big) {
     tag = (withK ? esc(k) + " · " : "") + (isToday ? "CE SOIR" : "DERNIER ÉPISODE");
     const r = recapOf({ k: k, show: n, d: d });
     big = S.history[seenId({ k: k, show: n, d: d, t: (s.e || []).filter(x => x.d === d).map(x => x.t)[0] || n })] ? "seen" : true;
-    extra = '<small class="when">' + fmt(d) + " · " + esc(s.p) + "</small>" + (r ? '<p class="snip">' + esc(r.txt) + "</p>" : "");
+    const ep = epis(k, n, 1, 1).find(x => x.d === d) || { d: d };
+    const st = startOf(ep);
+    extra = '<small class="when">' + fmt(d) + " · " + esc(frName(ep) || s.p) + (st && diff(d) >= 0 ? " · " + fmtAt(st, PARIS) + " à Paris" : "") + "</small>" + (r ? '<p class="snip">' + esc(r.txt) + "</p>" : "");
+    // highlights de cet épisode, sinon du précédent
+    const prev = ymd(new Date(dt(d).getTime() - 7 * 864e5));
+    extra += hlBtn(k, n, d, "hlbtn side") || hlBtn(k, n, prev, "hlbtn side");
   }
   return '<div class="card' + (big ? " big" : "") + (big === "seen" ? " seen" : "") + (lk.poster ? " poster" : "") + (S.isAdmin ? " hasedit" : "") + '" style="' + esc(lk.style) + '">' +
     '<a class="cover" href="#/p/' + encodeURIComponent(k) + "/" + encodeURIComponent(n) + '" aria-label="' + esc(n) + '"></a>' +
     '<span class="tag' + (big ? " hot" : "") + '">' + tag + "</span>" + editBtn(showItem(k, n), k + " " + n) +
-    "<b" + fit(n, big ? 300 : 126, big ? 40 : 27, lk.poster) + ">" + esc(n) + "</b>" + (big ? extra : "<small>" + (withK ? fmt(next) : esc(s.j)) + " · " + esc(s.p) + "</small>") + "</div>";
+    "<b" + fit(n, big ? 300 : 126, big ? 40 : 27, lk.poster) + ">" + esc(n) + "</b>" + (big ? extra : "<small>" + (withK ? fmt(next) : esc(s.j)) + " · " + esc(frName({ fr: s.fr || S.P[k].fr, p: s.p })) + "</small>") + "</div>";
 }
 // Rangée des shows : ceux du jour (ou le plus récent) en premier et en grand
 function showRow(list, withK) {
@@ -120,7 +199,7 @@ export function titlesFor(k, n) {
 }
 function titlesTile(k, n) {
   const list = titlesFor(k, n); if (!list.length) return "";
-  const names = list.slice(0, 3).map(t => t.c.replace(/\s*\(.*\)$/, "")).join(", ");
+  const names = list.some(champHidden) ? "champions masqués (mode sans spoiler)" : list.slice(0, 3).map(t => t.c.replace(/\s*\(.*\)$/, "")).join(", ");
   return '<a class="titletile" href="#/titres/' + encodeURIComponent(k) + (n ? "/" + encodeURIComponent(n) : "") + '"><span class="tt-belt" style="' + esc(plain(colorOf(k, n))) + '">🏆</span>' +
     '<span class="tt-txt"><b>Titres' + (n ? " de " + esc(n) : " " + esc(k)) + "</b><small>" + list.length + " ceinture" + (list.length > 1 ? "s" : "") + " · " + esc(names) + (list.length > 3 ? "…" : "") + "</small></span>" +
     '<span class="chev">›</span></a>';
@@ -132,7 +211,7 @@ function matchTile() {
 function hero(e, label) {
   const lk = look(e);
   return '<a class="hero' + (lk.poster ? " poster" : "") + '" style="' + esc(lk.style) + '" href="' + esc(e.l) + '" target="_blank" rel="noopener"><small>' + label + "</small><b" + fit(e.t, 320, 44, lk.poster) + ">" + esc(e.t) +
-    "</b><small>" + fmt(e.d) + (place(e) ? " · " + place(e) : "") + '</small><span class="cd">' + cd(e.d) + "</span>" + (lk.credit ? creditLine(lk.credit).replace(/<a [^>]*>|<\/a>/g, "") : "") + "</a>";
+    "</b><small>" + fmt(e.d) + (place(e) ? " · " + place(e) : "") + "</small>" + timeLine(e, true) + '<span class="cd">' + cd(e.d) + "</span>" + (lk.credit ? creditLine(lk.credit).replace(/<a [^>]*>|<\/a>/g, "") : "") + "</a>";
 }
 
 // ---------- cartes verticales ----------
@@ -152,8 +231,9 @@ function epCard(e) {
   return '<article class="ep' + (past ? " past" : "") + (h ? " seen" : "") + '">' +
     '<div class="epdate" style="' + esc(plain(e.c)) + '">' + (x ? "<b>" + x.getDate() + "</b><small>" + MOIS[x.getMonth()] + "</small>" : "<b>?</b><small>date</small>") + "</div>" +
     '<div class="epbody"><a class="eptitle" href="' + esc(e.l) + '" target="_blank" rel="noopener">' + esc(e.t) + "</a>" +
-    '<small class="epmeta">' + (meta || "À confirmer") + "</small>" + cardList(e) +
-    (r ? '<p class="recap">' + esc(r.txt) + "</p>" + srcLine(r) : "") + seenInfo(h) + "</div>" +
+    '<small class="epmeta">' + (meta || "À confirmer") + "</small>" + (past ? "" : timeLine(e)) + cardList(e) +
+    (r ? '<p class="recap">' + esc(r.txt) + "</p>" + srcLine(r) : "") + seenInfo(h) +
+    '<div class="eplinks">' + (aired(e) ? hlBtn(e.k, e.show || "PLE", e.d, "hllink") : "") + (e.kind === "ple" ? remindBtn(e) : "") + "</div></div>" +
     (aired(e) ? '<button class="seenbtn' + (h ? " on" : "") + '" data-act="seen"' + dataItem(e) + ' aria-label="Je l’ai vu">' + (h ? ICON.check : ICON.eye) + "</button>" : "") +
     "</article>";
 }
@@ -164,9 +244,11 @@ function feature(e, label, next) {
   const h = seenOf(e), r = recapOf(e), lk = look(e, true);
   return '<section class="feature' + (lk.poster ? " poster" : "") + (h ? " seen" : "") + (S.isAdmin ? " hasedit" : "") + '" style="' + esc(lk.style) + '">' + editBtn(e, e.k + " " + (e.show || e.t)) +
     '<span class="eyebrow">' + label + "</span><h2" + fit(e.t, 320, 46, lk.poster) + ">" + esc(e.t) + "</h2>" +
-    "<small>" + fmt(e.d) + (place(e) ? " · " + place(e) : "") + " · " + cd(e.d) + "</small>" + cardList(e) +
+    "<small>" + fmt(e.d) + (place(e) ? " · " + place(e) : "") + " · " + cd(e.d) + "</small>" + timeLine(e, true) + cardList(e) +
     (r ? '<p class="recap">' + esc(r.txt) + "</p>" : '<p class="recap muted">Le résumé de cet épisode arrive bientôt.</p>') +
-    '<div class="factions"><a class="btn light" href="' + esc(e.l) + '" target="_blank" rel="noopener">Regarder ↗</a>' +
+    hlBtn(e.k, e.show || "PLE", e.d, "hlbtn side") +
+    '<div class="factions"><button class="btn light" data-act="watch"' + itemData(e) + ">Regarder" + (frName(e) ? " sur " + esc(frName(e)) : "") + " ↗</button>" +
+    (e.kind === "ple" ? remindBtn(e, "btn glass") : "") +
     (aired(e) ? '<button class="btn glass' + (h ? " on" : "") + '" data-act="seen"' + dataItem(e) + ">" + (h ? ICON.check + " Vu" + (h.rating ? " " + stars(h.rating) : "") : ICON.eye + " Je l’ai vu") + "</button>" : "") + "</div>" +
     (h && h.comment ? '<q class="mycom light">' + esc(h.comment) + "</q>" : "") +
     (r ? srcLine(r) : "") + creditLine(lk.credit) +
@@ -201,7 +283,7 @@ export function homeView() {
   const P = S.P, sp = split(allPle());
   const weekly = [];
   Object.keys(P).forEach(k => { const s = P[k].s; if (s) Object.keys(s).forEach(n => weekly.push({ k: k, n: n })); });
-  let first = sp[0].filter(e => e.d)[0], h = "";
+  let first = sp[0].filter(e => e.d)[0], h = liveSection();
   if (first) h += hero(first, "PROCHAIN ÉVÉNEMENT · " + esc(first.k));
   h += "<h2>Shows de la semaine</h2>" + showRow(weekly, true);
   h += '<h2>À venir</h2><div class="row">' + sp[0].map(e => pleCard(e, true)).join("") + "</div>";
@@ -209,7 +291,7 @@ export function homeView() {
   h += '<h2>Promotions</h2><div class="row">' + Object.keys(P).map(promoCard).join("") + "</div>";
   if (S.matches.length) h += matchTile();
   if (sp[1].length) h += '<h2>Déjà sorti</h2><div class="row">' + sp[1].map(e => pleCard(e, true)).join("") + "</div>";
-  return h;
+  return '<div class="withside"><div class="mainc">' + h + "</div>" + favAside() + "</div>";
 }
 export function promoView(k) {
   const pr = S.P[k]; if (!pr) return '<p class="empty">Promotion introuvable.</p>';
@@ -217,6 +299,7 @@ export function promoView(k) {
   if (pr.s) Object.keys(pr.s).forEach(n => { eps = eps.concat(epis(k, n, 1, 1)); });
   const ple = split(pleOf(k)), ep = split(eps.filter(e => diff(e.d) < 7));
   const first = sortUp(ple[0].concat(ep[0]).filter(e => e.d))[0];
+  h += liveSection(e => e.k === k);
   if (first) h += hero(first, "PROCHAINEMENT · " + esc(k));
   if (pr.s) h += "<h2>Shows hebdo</h2>" + showRow(Object.keys(pr.s).map(n => ({ k: k, n: n })), false);
   h += titlesTile(k, "");
@@ -235,8 +318,12 @@ export function showView(k, n) {
   const feat = today || sp[1][0];
   const up = sp[0].filter(e => e !== feat), past = sp[1].filter(e => e !== feat);
   const label = esc(n.toUpperCase()) + " · " + (today ? (feat.show ? "CE SOIR" : "AUJOURD’HUI") : "DERNIER ÉPISODE");
-  let h = feat ? feature(feat, label, today ? null : up.filter(e => e.d)[0]) : "";
-  h += '<p class="note showinfo">' + esc(s.j) + " · " + esc(s.p) + " · " + '<a href="' + esc(s.l) + '" target="_blank" rel="noopener">Où regarder ↗</a></p>';
+  let h = liveSection(e => e.k === k && (e.show === n || e.br === n));
+  h += feat ? feature(feat, label, today ? null : up.filter(e => e.d)[0]) : "";
+  const nx = sp[0].filter(e => e.d && e.kind === "ep")[0], st = nx ? startOf(nx) : 0, fr = (s.fr || pr.fr || []).map(f => f.n).join(", ");
+  h += '<p class="note showinfo">' + esc(s.j) + (s.h ? " à " + esc(s.h.replace(":", " h ")) + (s.tz ? " (heure de " + esc(cityOf(s.tz)) + ")" : "") : "") +
+    (st ? ", soit <b>" + fmtAt(st, PARIS) + "</b> à Paris pour le prochain" : "") + "<br>" +
+    (fr ? "En France : " + esc(fr) + " · " : "") + "Aux États-Unis : " + esc(s.p) + " · " + '<button class="linkbtn inline" data-act="watch"' + (nx ? itemData(nx) : "") + ">Où regarder ↗</button></p>";
   h += titlesTile(k, n);
   if (up.length) h += "<h2>À venir</h2>" + epList(up);
   if (past.length) h += "<h2>Épisodes précédents</h2>" + epList(past);
