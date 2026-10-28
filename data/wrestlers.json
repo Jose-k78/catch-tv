@@ -1174,6 +1174,77 @@
      "ev": "AJW, 1998"
     }
    ]
+  },
+  "Swerve Strickland": {
+   "k": "AEW",
+   "a": [
+    "Isaiah « Swerve » Scott",
+    "Shane Strickland",
+    "Killshot"
+   ],
+   "era": "Depuis 2009",
+   "from": "Tacoma (Washington)",
+   "ht": "1,85 m",
+   "wt": "109 kg",
+   "debut": "2009",
+   "teams": "Hit Row, Swerve In Our Glory (avec Keith Lee), Mogul Embassy, New Level (avec Kofi et Austin Creed)",
+   "trainer": "Combat Zone Wrestling, D. J. Hyde, Ground Xero Wrestling",
+   "txt": "Ancien champion du monde de l’AEW passé par la WWE et Lucha Underground, il mène désormais New Level aux côtés de Kofi et Austin Creed.",
+   "ref": [
+    {
+     "t": "Swerve Strickland contre Hangman Page — Texas Deathmatch",
+     "ev": "AEW Full Gear, 2023"
+    },
+    {
+     "t": "Swerve Strickland contre Samoa Joe — Titre mondial de l’AEW",
+     "ev": "AEW Dynasty, 2024"
+    },
+    {
+     "t": "Swerve Strickland contre Hangman Page — Lights Out Steel Cage",
+     "ev": "AEW All Out, 2024"
+    },
+    {
+     "t": "Killshot contre Son of Havoc — masque contre masque",
+     "ev": "Lucha Underground Ultima Lucha Cuatro, 2018"
+    },
+    {
+     "t": "Killshot contre Dante Fox — Hell of War",
+     "ev": "Lucha Underground Ultima Lucha Tres"
+    }
+   ]
+  },
+  "Suzu Suzuki": {
+   "k": "Stardom",
+   "era": "Depuis 2018",
+   "from": "Miyazaki (Japon)",
+   "ht": "1,57 m",
+   "wt": "65 kg",
+   "debut": "31 décembre 2018 (RibbonMania 2018, Ice Ribbon)",
+   "teams": "Prominence, Crazy Star (avec Mei Seira), Neo Genesis, Mi Vida Loca",
+   "trainer": "Tequila Saya",
+   "txt": "Révélée à Ice Ribbon puis au sein de Prominence, elle a remporté le 5★STAR GP 2023 et dirige le clan Mi Vida Loca, championne World of Stardom depuis 2026.",
+   "ref": [
+    {
+     "t": "Suzu Suzuki contre Maya Yukihi — ICE Cross Infinity Championship",
+     "ev": "Ice Ribbon, Yokohama Bunka Gymnasium Final, 2020"
+    },
+    {
+     "t": "Suzu Suzuki contre Miyuki Takase — finale de Catch the Wave",
+     "ev": "Wave, 2022"
+    },
+    {
+     "t": "Suzu Suzuki et Risa Sera contre Giulia et Mai Sakurai — hardcore match",
+     "ev": "Stardom in Showcase vol.1, 2022"
+    },
+    {
+     "t": "Suzu Suzuki contre Maika — finale du 5★STAR GP",
+     "ev": "Stardom, 2023"
+    },
+    {
+     "t": "Suzu Suzuki contre Sayaka Kurara — World of Stardom Championship",
+     "ev": "The Conversion, 2026"
+    }
+   ]
   }
  }
 }
