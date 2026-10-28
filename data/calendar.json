@@ -39,10 +39,10 @@
      "w": "Riyad",
      "v": "Riyadh skyline",
      "card": [
-      "Crown Jewel Championship masculin : champion de Raw contre champion de SmackDown",
-      "Crown Jewel Championship féminin : championne de Raw contre championne de SmackDown",
+      "Crown Jewel Championship masculin : Roman Reigns contre Sami Zayn",
+      "Crown Jewel Championship féminin : Liv Morgan contre Chelsea Green",
       "Last Man Standing : Cody Rhodes contre Randy Orton",
-      "Titres mondiaux par équipe : The Vision contre Penta et Je’Von Evans"
+      "Titres mondiaux par équipe : The Vision (Bron Breakker et Austin Theory) contre Penta et Je’Von Evans"
      ],
      "h": "22:00",
      "tz": "Asia/Riyadh",
@@ -327,7 +327,10 @@
      "v": "Edmonton Expo Centre",
      "card": [
       "Titre mondial de la TNA : Leon Slater contre Trey Miguel"
-     ]
+     ],
+     "h": "17:00",
+     "tz": "America/Edmonton",
+     "dur": 180
     }
    ],
    "s": {
