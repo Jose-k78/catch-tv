@@ -33,6 +33,8 @@ export const S = {
   storylines: [],        // storylines du jour (la plus récente en premier)
   rosters: {},           // rosters par promotion et par show / division
   rostersSrc: {},
+  sources: [],           // sources de données choisies par l'admin (data/sources.json)
+  updated: {},           // date de mise à jour de chaque fichier de données
   isAdmin: false,
   demo: false,
   authReady: false,

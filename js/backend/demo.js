@@ -179,6 +179,7 @@ export async function setBlocks(uid, list) { DB.blocks[uid] = list.slice(0, 500)
 export async function report(by, r) { DB.reports.unshift(Object.assign({ id: uidGen(), by: by, at: Date.now() }, r)); save(); }
 export function watchReports(cb) { return watch(() => cb(clone(DB.reports))); }
 export async function deleteReport(id) { DB.reports = DB.reports.filter(r => r.id !== id); save(); }
+export async function getFollowed() { return (DB.followed || []).slice(); }
 export async function addFollowed(name) { if (DB.followed.indexOf(name) < 0) { DB.followed.push(name); save(); } }
 
 

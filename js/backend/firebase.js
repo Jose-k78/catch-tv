@@ -246,6 +246,7 @@ export function watchReports(cb) {
 export function deleteReport(id) { return F.deleteDoc(F.doc(db, "reports", id)); }
 
 // ---- Catcheurs suivis par les membres (lu par la mise à jour quotidienne) ----
+export async function getFollowed() { const s = await F.getDoc(F.doc(db, "followed", "list")); return s.exists() ? ((s.data() || {}).names || []) : []; }
 export function addFollowed(name) { return F.setDoc(F.doc(db, "followed", "list"), { names: F.arrayUnion(String(name).slice(0, 40)) }, { merge: true }); }
 
 

@@ -8,5 +8,7 @@ import hl from "../data/highlights.json";
 import wr from "../data/wrestlers.json";
 import st from "../data/storylines.json";
 import ro from "../data/rosters.json";
+import so from "../data/sources.json";
 export const PREVIEW = true;
-export async function loadContent() { return { P: cal.promotions || {}, news: news, recaps: recaps.items || {}, matches: matches.items || [], titles: titles.titles || [], titlesUpdated: titles.updated || "", highlights: hl.items || {}, wrestlers: wr.items || {}, storylines: st.items || [], rosters: ro.items || {}, rostersSrc: ro.src || {} }; }
+export async function loadContent() { return { P: cal.promotions || {}, news: news, recaps: recaps.items || {}, matches: matches.items || [], titles: titles.titles || [], titlesUpdated: titles.updated || "", highlights: hl.items || {}, wrestlers: wr.items || {}, storylines: st.items || [], rosters: ro.items || {}, rostersSrc: ro.src || {}, sources: so.items || [],
+  updated: { news: news.updated || "", recaps: recaps.updated || "", calendar: cal.updated || "", titles: titles.updated || "", highlights: hl.updated || "", wrestlers: wr.updated || "", storylines: st.updated || "", rosters: ro.updated || "", matches: matches.updated || "" } }; }

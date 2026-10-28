@@ -1,4 +1,5 @@
 // Point d'entrée : chargement, navigation, abonnements temps réel, en-tête, notifications
+import "./intro.js"; // en premier : l'intro démarre pendant que le reste se charge
 import { firebaseConfig, ADMIN_UID } from "./config.js";
 import { S, setBackend, B, ACT, FORM, onChange, changed, prof, avatar, need, nameOf } from "./state.js";
 import { loadContent } from "./content.js";
@@ -6,7 +7,9 @@ import { ICON, toast } from "./util.js";
 import { homeView, promoView, showView, tabsView, creditsView } from "./views/catalog.js";
 import { matchesView } from "./views/matches.js";
 import { titlesView, titleView } from "./views/titles.js";
-import { searchView, wrestlerView, fillWiki } from "./views/search.js";
+import { searchView, wrestlerView, fillWiki, afterSearch } from "./views/search.js";
+import { eventView, fillEvent } from "./views/event.js";
+import { syncFollowed } from "./views/admin.js";
 import { authView, settingsView, profileView, editProfileView, applyTheme } from "./views/account.js";
 import { chatListView, newChatView, convView, renderMsgs, setupComposer, loadUsers, validConv, chatBadge, isMuted, convInfoView, afterConvInfo, applyTheme as applyChatTheme, refreshQuickEmoji } from "./views/chat.js";
 import "./modals.js";
@@ -34,6 +37,7 @@ const REL = {
   matches: ["route", "history", "auth"], credits: ["images"], wrestler: ["profile", "spoil", "history", "auth"], search: [], titles: ["history", "spoil"], title: ["history", "spoil"],
   notifs: ["notifs", "profiles", "reads", "blocks"], activity: ["activity", "profiles", "blocks"], storyline: [], roster: ["profile"],
   members: ["users", "friends", "feuds", "blocks", "profiles", "auth", "tick"], favs: ["profile", "profiles", "friends", "auth"], hl: ["history", "spoil"],
+  event: ["event", "history", "auth"],
 };
 
 // ---------- navigation ----------
@@ -60,6 +64,7 @@ function parse() {
     case "storyline": return { name: "storyline", id: parts[1] || "" };
     case "roster": return S.P[parts[1]] ? { name: "roster", k: parts[1], g: parts[2] || "" } : { name: "home" };
     case "hl": return S.P[parts[1]] ? { name: "hl", k: parts[1], show: parts[2] || "PLE", d: parts[3] || "" } : { name: "home" };
+    case "evenement": return parts[1] ? { name: "event", ref: parts.slice(1).join("/").slice(0, 160) } : { name: "search", q: "" };
     default: return { name: "home" };
   }
 }
@@ -132,12 +137,15 @@ function render() {
     case "activity": h = activityView(); break;
     case "storyline": h = storylineView(route.id); break;
     case "roster": h = rosterView(route.k, route.g); break;
+    case "event": h = eventView(route.ref); break;
   }
   app.innerHTML = h;
   if (route.name !== "conv") applyChatTheme("");
   if (route.name === "conv" && !waiting) { renderMsgs(route.id, true); setupComposer(); markRead(); }
   if (route.name === "convinfo" && !waiting) afterConvInfo(route.id);
   if (route.name === "wrestler") { fillWiki(route.q, route.wt); renderWComments(); }
+  if (route.name === "event") fillEvent(route.ref);
+  if (route.name === "search") afterSearch();
   if (route.name === "notifs") markNotifsSeen();
   if (route.name === "search" && !searchFocused) { searchFocused = true; const q = document.getElementById("q"); if (q) { q.focus(); q.setSelectionRange(q.value.length, q.value.length); } }
   const foot = document.getElementById("foot");
@@ -152,7 +160,7 @@ const NAV = [["home", "#/", "Accueil", "home"], ["search", "#/recherche", "Reche
 function navOn(id) {
   const r = route.name;
   if (id === "home") return r === "home" || r === "promo" || r === "titles" || r === "title" || r === "matches" || r === "hl";
-  if (id === "search") return r === "search" || r === "wrestler";
+  if (id === "search") return r === "search" || r === "wrestler" || r === "event";
   if (id === "members") return r === "members" || (r === "profile" && S.user && route.uid && route.uid !== S.user.uid);
   if (id === "chat") return r === "chat" || r === "conv" || r === "newchat" || r === "convinfo";
   if (id === "me") return (r === "profile" && (!S.user || !route.uid || route.uid === S.user.uid)) || r === "settings" || r === "editprofile" || r === "auth";
@@ -229,6 +237,7 @@ function onUser(u) {
   S.isAdmin = !!u && (S.demo ? u.uid === B.demoAdmin() : (!!ADMIN_UID && u.uid === ADMIN_UID));
   if (u) {
     const me = u.uid;
+    if (S.isAdmin) setTimeout(() => syncFollowed(false), 4000);
     userSubs.push(B.watchUser(me, p => { S.profile = p; changed("profile"); }));
     userSubs.push(B.watchHistory(me, list => { const m = {}; list.forEach(x => { m[x.id] = x; }); S.history = m; changed("history"); }));
     let readsInit = false;
@@ -291,6 +300,7 @@ async function boot() {
   document.getElementById("favbtn").innerHTML = ICON.starF;
   const c = await loadContent(); S.P = c.P; S.news = c.news; S.recaps = c.recaps || {}; S.matches = c.matches || []; S.titles = c.titles || []; S.titlesUpdated = c.titlesUpdated || "";
   S.highlights = c.highlights || {}; S.wrestlers = c.wrestlers || {}; S.storylines = c.storylines || []; S.rosters = c.rosters || {}; S.rostersSrc = c.rostersSrc || {};
+  S.sources = c.sources || []; S.updated = c.updated || {};
   tick(); setInterval(tick, 60000);
   let backend = null;
   if (firebaseConfig) {

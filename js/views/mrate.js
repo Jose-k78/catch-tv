@@ -4,7 +4,7 @@
 import { S, B, ACT } from "../state.js";
 import { esc, modal, toast, fmt, ICON, stars, docId, okDay } from "../util.js";
 import { errText } from "./account.js";
-import { hlHref, okVid, titleAt } from "./highlights.js";
+import { hlHref, hlOf, okVid, titleAt } from "./highlights.js";
 
 const N = s => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[’']/g, "'").replace(/\s+/g, " ").trim();
 // « Titre IWGP : A & B contre C — Ladder match (WrestleMania) » -> ["a", "b", "c"]
@@ -44,16 +44,30 @@ export function matchLinks(k, title, d) {
   return out;
 }
 
-// « X a battu Y et conserve… » -> « X contre Y » ; les deux camps sont classés par ordre alphabétique pour ne pas trahir le vainqueur
+// « X a battu Y et conserve… » / « X defeated Y to win… » -> « X contre Y » ;
+// les deux camps sont classés par ordre alphabétique pour ne pas trahir le vainqueur
+const R_FR = /^(.+?)\s+(?:a|ont)\s+(?:battu|vaincu|éliminé|dominé)\s+(.+)$/i;
+const R_EN = /^(.+?)\s+(?:defeated|defeat|def\.|beat|pinned|submitted|eliminated|outlasted)\s+(.+)$/i;
+const R_TITLE = /^(.+?)\s+(?:conserve|conservent|remporte|remportent|retained|retains|won|wins)\s+[^,;]+?\s+(?:face à|face a|contre|against|over)\s+(.+)$/i;
+const R_DRAW_VS = /^(.+?)\s+(?:vs\.?|versus|contre)\s+(.+?)\s+(?:ended|went|fought|se termin|s'est termin|s’est termin|en match nul|time limit|à égalité)/i;
+const R_DRAW_AND = /^(.+?)\s+(?:and|et)\s+(.+?)\s+(?:fought to a|wrestled to a|went to a|ended in a|font match nul|se neutralisent)/i;
+const CUT = /\s+(?:et (?:conserve|remporte|devien|se qualifie|rejoi|décroche|gagne|s'empare|s’empare|garde|signe|avance|obtien)|en (?:demi|finale|quart|huiti|deux|trois|\d)|pour |par |après |dans |lors |grâce |au terme |malgré |avec |sur (?:un|une|décision|tapis|soumission|tombé|compte)|à (?:l'issue|l’issue|la suite)|by |via |to (?:retain|win|become|earn|qualify|advance|capture|claim|keep|remain)|in (?=[a-z0-9])|after |following |when |with (?=[a-z])|at (?=[a-z0-9])|for (?:the|a) |and (?=[a-zà-ÿ])|et (?=[a-zà-ÿ]))|,\s+(?=[a-zà-ÿ])|\s*[;:—–]\s*|\s+-\s+|\s+puis\s+/; // sensible à la casse : un nom commence par une majuscule, une suite de phrase par une minuscule
+const PREFIX = /^(?:in|at|on|during|after|before|après|lors|dans|en|au|pendant)\b[^,]*,\s*/i;
 export function fromResult(line) {
-  const s = String(line || "").replace(/\([^)]*\)/g, "").replace(/\s+/g, " ").trim();
-  // « X a battu Y… » ou « X conserve / remporte le titre … face à Y »
-  const m = s.match(/^(.+?)\s+(?:a|ont)\s+(?:battu|vaincu|éliminé|dominé)\s+(.+)$/i) || s.match(/^(.+?)\s+(?:conserve|conservent|remporte|remportent)\s+[^,;]+?\s+(?:face à|face a|contre)\s+(.+)$/i);
-  if (!m) return "";
-  const a = m[1].replace(/,[^,]*,/g, "").replace(/\s*,.*$/, "").trim();
-  const b = m[2].split(/\s+(?:et (?:conserve|remporte|devien|se qualifie|rejoi|décroche|gagne|s'empare|s’empare|garde|signe|avance|obtien)|en (?:demi|finale|quart|huiti|deux|trois|\d)|pour |par |après |dans |lors |grâce |au terme |malgré |avec |sur (?:un|une|décision|tapis|soumission|tombé|compte)|à (?:l'issue|l’issue|la suite))|\s*[,;:—–]\s*|\s+puis\s+/i)[0].trim();
-  if (!a || !b || a.length > 90 || b.length > 90 || /\b(?:match|bagarre|segment)\b/i.test(a)) return "";
-  const sides = [a, b].sort((x, y) => N(x).localeCompare(N(y)));
+  const s = String(line || "").replace(/\([^)]*\)/g, " ").replace(/\s+/g, " ").replace(/[.\s]+$/, "").trim();
+  if (!s) return "";
+  let m = s.match(R_DRAW_VS) || s.match(R_DRAW_AND), a, b;
+  if (m) { a = m[1]; b = m[2]; }
+  else {
+    m = s.match(R_FR) || s.match(R_EN) || s.match(R_TITLE);
+    if (!m) return "";
+    a = m[1]; b = m[2].split(CUT)[0];
+  }
+  // « X, venue d'Evolve, a battu… » : on retire l'apposition ; « In a dark match, X defeated… » : on retire le début de phrase
+  a = a.replace(PREFIX, "").replace(/,\s*[a-zà-ÿ][^,]*,/g, "").trim();
+  b = b.trim();
+  if (!a || !b || a.length > 110 || b.length > 110 || /\b(?:match|bagarre|segment)\b/i.test(a)) return "";
+  const sides = [a, b].map(x => x.replace(/\s+and\s+/g, " et ").replace(/^["«“\s]+|["»”\s]+$/g, "")).sort((x, y) => N(x).localeCompare(N(y)));
   const t = sides[0] + " contre " + sides[1];
   return t.charAt(0).toUpperCase() + t.slice(1);
 }
@@ -110,6 +124,36 @@ ACT.mrate = el => {
     });
   });
 };
+
+// Où mène une note de l'historique (show vu ou combat noté) : page highlights du show, page du show,
+// page d'archives de l'événement (générée depuis Wikipédia), sinon la vidéo du match complet
+const enc = encodeURIComponent;
+export const evQuery = (name, d) => (/\d/.test(name) || !okDay(d) ? name : name + " " + d.slice(0, 4));
+export function noteTarget(h) {
+  if (!h || !h.k) return null;
+  const k = h.k, d = okDay(h.d) ? h.d : "", pr = S.P[k], weekly = !!(pr && pr.s && h.show && pr.s[h.show]);
+  if (!isMatchNote(h)) {
+    const sh = h.show || "PLE";
+    if (d && hlOf(k, sh, d)) return { href: hlHref(k, sh, d) };
+    if (weekly) return { href: "#/p/" + enc(k) + "/" + enc(h.show) };
+    return pr ? { href: "#/p/" + enc(k) } : null;
+  }
+  if (d && pr) {
+    if (weekly && hlOf(k, h.show, d)) return { href: hlHref(k, h.show, d) };
+    if (hlOf(k, "PLE", d)) return { href: hlHref(k, "PLE", d) };
+  }
+  if (weekly) return { href: "#/p/" + enc(k) + "/" + enc(h.show) };
+  if (h.show) return { href: "#/evenement/" + enc(evQuery(h.show, d)) };
+  const L = matchLinks(k, h.title, h.d);
+  return L.full ? { play: L.full } : null;
+}
+// Titre cliquable (lien ou bouton vidéo)
+export function noteTitle(h, label) {
+  const t = noteTarget(h);
+  if (!t) return label;
+  if (t.play) return '<button class="histlink" data-act="play" data-id="' + esc(t.play.id) + '" data-t="' + esc(t.play.t) + '">' + label + "</button>";
+  return '<a class="histlink" href="' + esc(t.href) + '">' + label + "</a>";
+}
 
 // Ligne d'un combat noté dans l'historique : liens vers le match complet, la vidéo, le résumé
 export function matchNoteLinks(h) {

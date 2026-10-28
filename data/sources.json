@@ -1,0 +1,17 @@
+{
+ "updated": "2026-10-28",
+ "items": [
+  {"n": "The SmackDown Hotel", "u": "https://www.thesmackdownhotel.com/", "use": ["rosters", "titres", "fiches", "resultats", "archives"], "on": true, "note": "Rosters, champions, face/heel, profils des catcheurs (taille, poids, prises, alignement), historique des titres et des événements"},
+  {"n": "Wikipédia (français)", "u": "https://fr.wikipedia.org/", "use": ["fiches", "storylines", "archives", "titres"], "on": true, "note": ""},
+  {"n": "Wikipedia (anglais)", "u": "https://en.wikipedia.org/", "use": ["fiches", "storylines", "archives", "titres", "rosters"], "on": true, "note": ""},
+  {"n": "Pro Wrestling Wiki", "u": "https://prowrestling.fandom.com/", "use": ["fiches", "storylines"], "on": true, "note": ""},
+  {"n": "Catch-Newz", "u": "https://www.catch-newz.com/", "use": ["actu", "resultats"], "on": true, "note": ""},
+  {"n": "VOXcatch", "u": "https://www.voxcatch.fr/", "use": ["actu", "resultats"], "on": true, "note": ""},
+  {"n": "WWE", "u": "https://www.wwe.com/", "use": ["resultats", "calendrier", "videos", "rosters"], "on": true, "note": ""},
+  {"n": "AEW", "u": "https://www.allelitewrestling.com/", "use": ["resultats", "calendrier", "rosters"], "on": true, "note": ""},
+  {"n": "TNA", "u": "https://tnawrestling.com/", "use": ["resultats", "calendrier", "rosters"], "on": true, "note": ""},
+  {"n": "NJPW", "u": "https://www.njpw1972.com/", "use": ["resultats", "calendrier", "rosters"], "on": true, "note": ""},
+  {"n": "Stardom", "u": "https://wwr-stardom.com/", "use": ["resultats", "calendrier", "rosters"], "on": true, "note": ""},
+  {"n": "Fightful", "u": "https://www.fightful.com/", "use": ["resultats", "calendrier"], "on": true, "note": "Horaires de début des PLE, résultats"}
+ ]
+}

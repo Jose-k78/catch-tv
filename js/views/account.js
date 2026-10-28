@@ -8,7 +8,9 @@ import { ADMIN_UID } from "../config.js";
 import { friendState, friendsOf, feudInfo, feudBadge, isBlocked, requestsIn } from "../social.js";
 import { favChips } from "./favs.js";
 import { noSpoil, setNoSpoil } from "../spoil.js";
-import { isMatchNote, matchNoteLinks } from "./mrate.js";
+import { isMatchNote, matchNoteLinks, noteTitle } from "./mrate.js";
+import { sourcesView, statusView } from "./admin.js";
+import { introMode, INTRO } from "../intro.js";
 
 const ERR = {
   "auth/invalid-email": "Adresse e-mail invalide",
@@ -132,21 +134,28 @@ export function settingsView(sub) {
           (own ? '<button class="btn small ghost" data-act="logodel" data-k="' + esc(r[0]) + '" data-n="' + esc(r[1]) + '">Retirer</button>' : "") + "</span></div>";
       }).join("") + "</div>";
   }
+  if (sub === "sources" && S.isAdmin) return h + sourcesView();
+  if (sub === "etat" && S.isAdmin) return h + statusView();
   if (sub === "apparence") {
-    const t = lsGet("ctv.theme") || "auto";
-    return h + '<h1>Apparence</h1><div class="list">' + ["auto", "light", "dark"].map(k => '<button class="item" data-act="theme" data-v="' + k + '"><span class="lbl"><b>' + TH[k] +
-      '</b></span><span class="chev">' + (t === k ? "✓" : "") + "</span></button>").join("") + "</div>";
+    const t = lsGet("ctv.theme") || "auto", im = introMode();
+    return h + '<h1>Apparence</h1><h2 style="margin-top:4px">Thème</h2><div class="list">' + ["auto", "light", "dark"].map(k => '<button class="item" data-act="theme" data-v="' + k + '"><span class="lbl"><b>' + TH[k] +
+      '</b></span><span class="chev">' + (t === k ? "✓" : "") + "</span></button>").join("") + "</div>" +
+      '<h2>Intro au démarrage</h2><div class="list">' + Object.keys(INTRO).map(k => '<button class="item" data-act="intromode" data-v="' + k + '"><span class="lbl"><b>' + INTRO[k][0] + "</b><small>" + INTRO[k][1] +
+      '</small></span><span class="chev">' + (im === k ? "✓" : "") + "</span></button>").join("") + '</div><div class="btns" style="justify-content:flex-start;margin:10px 16px 0"><button class="btn ghost" data-act="introplay">▶ Revoir l’intro</button></div>' +
+      '<p class="note small" style="margin-top:8px">Sur téléphone, le son de la cloche ne peut partir qu’après un appui sur l’écran : touche l’écran pendant l’intro pour l’entendre.</p>';
   }
   const row = (href, t, s) => '<a class="item" href="' + href + '"><span class="lbl"><b>' + t + "</b><small>" + esc(s) + '</small></span><span class="chev">›</span></a>';
   h += '<h1>Paramètres</h1><div class="list">' + row("#/profil-modifier", "Modifier mon profil", "Photo, pseudo, description, favoris") +
     row("#/parametres/email", "Adresse e-mail", u.email) + row("#/parametres/motdepasse", "Mot de passe", google ? "Connecté avec Google" : "Modifier") +
-    row("#/parametres/apparence", "Apparence", TH[lsGet("ctv.theme") || "auto"]) +
+    row("#/parametres/apparence", "Apparence", TH[lsGet("ctv.theme") || "auto"] + " · intro " + INTRO[introMode()][2]) +
     row("#/parametres/spoiler", "Mode sans spoiler", noSpoil() ? "Activé" : "Désactivé") +
     row("#/parametres/bloques", "Membres bloqués", S.blocks.length ? S.blocks.length + " membre" + (S.blocks.length > 1 ? "s" : "") : "Aucun") + "</div>" +
     '<p class="note small" style="margin-top:10px">Notifications sur le téléphone quand l’app est fermée : pas encore disponibles (elles demandent un serveur, voir le guide). En attendant, les alertes s’affichent dans l’app.</p>';
   if (!ADMIN_UID || S.isAdmin) {
     if (S.isAdmin) h += '<h2>Modération</h2><div class="list">' + row("#/parametres/signalements", "Signalements", S.reports.length ? S.reports.length + " en attente" : "Aucun") +
-      row("#/parametres/logos", "Logos des onglets", "Remplacer les noms des promotions et des shows par leur logo") + "</div>";
+      row("#/parametres/logos", "Logos des onglets", "Remplacer les noms des promotions et des shows par leur logo") +
+      row("#/parametres/sources", "Sources des données", (S.sources || []).filter(x => x.on !== false).length + " sites utilisés par les mises à jour") +
+      row("#/parametres/etat", "État des mises à jour", "Date de chaque donnée et derniers envois") + "</div>";
     h += "<h2>" + (S.isAdmin ? "Admin" : "Installation") + '</h2><p class="note">' + (S.isAdmin ? "Tu es l’admin de l’app." : "Ton identifiant, à recopier dans la configuration pour devenir admin (voir le guide) :") + "</p>" +
       '<div class="uid" id="myuid">' + esc(u.uid) + '</div><div class="btns"><button class="btn ghost" data-act="copyuid">Copier l’identifiant</button></div>';
   }
@@ -267,7 +276,7 @@ export function profileView(uid) {
   h += "<h2>Historique des notes" + (all.length ? ' <small class="cnt">' + all.length + "</small>" : "") + "</h2>";
   h += all.length ? '<div class="list histlist">' + all.map((x, i) => {
     const fight = isMatchNote(x);
-    return '<div class="item' + (fight ? " fightnote" : "") + '"' + (i >= HIST_MAX && !histOpen ? " hidden" : "") + '><span class="lbl"><b>' + (fight ? "🤼 " : "") + esc(x.title) + "</b><small>" + esc(x.k) +
+    return '<div class="item' + (fight ? " fightnote" : "") + '"' + (i >= HIST_MAX && !histOpen ? " hidden" : "") + '><span class="lbl"><b>' + noteTitle(x, (fight ? "🤼 " : "") + esc(x.title)) + "</b><small>" + esc(x.k) +
       (fight ? (x.show ? " · " + esc(x.show) : "") : x.show ? " · " + esc(x.show) : " · PLE") + (x.d ? " · " + fmt(x.d) : "") + "</small>" + (x.comment ? '<q class="mycom">' + esc(x.comment) + "</q>" : "") +
       (fight ? matchNoteLinks(x) : "") + '</span><span class="rt">' + (x.rating ? stars(x.rating) : fight ? "Pas noté" : "Pas noté") + "<br>" + (fight ? "noté le " : "vu le ") + fmtMs(x.seenAt) + "</span></div>";
   }).join("") + "</div>" + (all.length > HIST_MAX ? '<div class="btns" style="margin:10px 16px 0"><button class="btn ghost" data-act="histmore">' + (histOpen ? "Voir moins" : "Voir plus (" + (all.length - HIST_MAX) + ")") + "</button></div>" : "")

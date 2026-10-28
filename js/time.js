@@ -37,6 +37,8 @@ export function zoned(day, hm, tz) {
 export function dayIn(ms, tz) { const p = parts(ms, tz); return p.y + "-" + pad(p.m) + "-" + pad(p.d); }
 export function parisDay(ms) { return dayIn(ms || Date.now(), PARIS); }
 export function parisHour(ms) { return parts(ms || Date.now(), PARIS).h; }
+export function parisMin(ms) { const p = parts(ms || Date.now(), PARIS); return p.h * 60 + p.mi; }
+export function parisWeekday(ms) { return parts(ms || Date.now(), PARIS).wd; }
 export function prevDay(d) { const x = new Date(d + "T12:00:00Z"); x.setUTCDate(x.getUTCDate() - 1); return x.toISOString().slice(0, 10); }
 const hm = p => pad(p.h) + " h " + pad(p.mi);
 export function fmtAt(ms, tz) { const p = parts(ms, tz); return JOURS[p.wd] + " " + p.d + " " + MOIS[p.m - 1] + " " + hm(p); }

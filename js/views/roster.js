@@ -3,6 +3,7 @@ import { S } from "../state.js";
 import { esc, ICON, okHttp } from "../util.js";
 import { plain, colorOf } from "./catalog.js";
 import { isFav } from "./favs.js";
+import { alignOf } from "../wrestlers.js";
 
 const norm = s => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
 export function rosterOf(k) { const r = S.rosters && S.rosters[k]; return r && typeof r === "object" ? r : null; }
@@ -33,11 +34,12 @@ export function rosterView(k, g) {
   const order = Object.keys(r).sort((a, b) => (a === g ? -1 : b === g ? 1 : 0));
   h += '<div class="search"><input id="rq" type="search" placeholder="Chercher dans le roster" autocomplete="off" value="' + esc(lastQ) + '"></div>';
   h += order.map(grp => '<h2>' + esc(grp) + ' <small class="cnt">' + (r[grp] || []).length + '</small></h2><div class="chips wrap rgrid">' + (r[grp] || []).map(nm => {
-    const c = ch[norm(nm)], f = S.user && isFav(nm);
-    return '<a class="chip rn' + (c ? " gold" : "") + '" data-n="' + esc(norm(nm)) + '" href="#/catcheur/' + encodeURIComponent(nm) + '"' + (q && norm(nm).indexOf(q) < 0 ? " hidden" : "") + ">" + (f ? "⭐ " : "") + (c ? "🏆 " : "") + esc(nm) + "</a>";
+    const c = ch[norm(nm)], f = S.user && isFav(nm), al = alignOf(nm);
+    return '<a class="chip rn' + (c ? " gold" : "") + (al && al.k ? " al-" + al.k : "") + (al && al.inj ? " inj" : "") + '" data-n="' + esc(norm(nm)) + '" href="#/catcheur/' + encodeURIComponent(nm) + '"' + (q && norm(nm).indexOf(q) < 0 ? " hidden" : "") + ">" + (f ? "⭐ " : "") + (c ? "🏆 " : "") + esc(nm) + (al && al.inj ? " 🤕" : "") + "</a>";
   }).join("") + "</div>").join("");
   const src = S.rostersSrc && S.rostersSrc[k];
-  h += '<p class="note small" style="margin-top:14px">🏆 = champion actuel · ⭐ = dans tes favoris. ' + (okHttp(src) ? 'Source : <a href="' + esc(src) + '" target="_blank" rel="noopener">' + esc(src.replace(/^https?:\/\/(www\.)?/, "").split("/")[0]) + "</a>, mis à jour automatiquement." : "") + "</p>";
+  const anyAl = Object.keys(r).some(grp => (r[grp] || []).some(nm => alignOf(nm)));
+  h += '<p class="note small" style="margin-top:14px">🏆 = champion actuel · ⭐ = dans tes favoris.' + (anyAl ? ' Pastille <span class="dotk al-face"></span> face · <span class="dotk al-heel"></span> heel · <span class="dotk al-tweener"></span> tweener · 🤕 blessé (d’après The SmackDown Hotel, complété au fil des mises à jour).' : "") + ' ' + (okHttp(src) ? 'Source : <a href="' + esc(src) + '" target="_blank" rel="noopener">' + esc(src.replace(/^https?:\/\/(www\.)?/, "").split("/")[0]) + "</a>, mis à jour automatiquement." : "") + "</p>";
   return h;
 }
 document.addEventListener("input", e => {

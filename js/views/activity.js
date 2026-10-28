@@ -2,17 +2,20 @@
 import { S, avatar, prof, nameOf } from "../state.js";
 import { esc, ICON, fmt, stars, timeLabel } from "../util.js";
 import { isBlocked } from "../social.js";
-import { hlHref } from "./highlights.js";
+import { noteTarget } from "./mrate.js";
+
+// lien vers la page du show ou de l'événement concerné (comme dans l'historique des notes)
+const hrefOf = (a, fallback) => { const t = noteTarget(Object.assign({}, a, { id: a.kind === "mrate" ? "m_" : "" })); return t && t.href ? t.href : fallback; };
 
 function what(a) {
   if (a.kind === "wcom") return { txt: "a commenté <b>" + esc(a.name) + "</b>", href: "#/catcheur/" + encodeURIComponent(a.name) };
   if (a.kind === "mrate") {
     const where = [a.show, a.d ? fmt(a.d) : ""].filter(Boolean).join(" du ");
     return { txt: (a.rating ? "a noté " + stars(a.rating) + " le combat " : "a donné son avis sur le combat ") + "<b>" + esc(a.title) + "</b>" + (where ? " (" + esc(a.k) + " · " + esc(where) + ")" : " (" + esc(a.k) + ")"),
-      href: a.d && S.P[a.k] ? hlHref(a.k, S.P[a.k].s && S.P[a.k].s[a.show] ? a.show : "PLE", a.d) : "#/matchs" };
+      href: hrefOf(a, "#/matchs") };
   }
   const isPle = !a.show, label = isPle ? esc(a.title) + " (" + esc(a.k) + ")" : "le " + esc(a.title && a.title !== a.show ? a.title : a.show) + " du " + fmt(a.d);
-  const href = "#/p/" + encodeURIComponent(a.k) + (isPle ? "" : "/" + encodeURIComponent(a.show));
+  const href = hrefOf(a, "#/p/" + encodeURIComponent(a.k) + (isPle ? "" : "/" + encodeURIComponent(a.show)));
   return { txt: (a.rating ? "a noté " + stars(a.rating) + " " : "a commenté ") + "<b>" + label + "</b>", href: href };
 }
 function line(a) {

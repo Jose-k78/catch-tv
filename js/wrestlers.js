@@ -6,14 +6,27 @@ import { okVid } from "./views/highlights.js";
 
 export const norm = s => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[’']/g, "'").trim();
 
-export function wInfo(name) {
-  const n = norm(name), W = S.wrestlers || {};
-  for (const k of Object.keys(W)) {
-    const w = W[k]; if (!w) continue;
-    if (norm(k) === n || (Array.isArray(w.a) && w.a.some(a => norm(a) === n))) return Object.assign({ name: k }, w);
-  }
-  return null;
+// index nom (et autres noms) -> clé de la fiche, reconstruit quand les données changent
+let idx = null, idxOf = null;
+function index() {
+  const W = S.wrestlers || {};
+  if (idxOf === W && idx) return idx;
+  idx = new Map(); idxOf = W;
+  Object.keys(W).forEach(k => { const w = W[k]; if (!w) return; if (!idx.has(norm(k))) idx.set(norm(k), k); (Array.isArray(w.a) ? w.a : []).forEach(a => { if (!idx.has(norm(a))) idx.set(norm(a), k); }); });
+  return idx;
 }
+export function wInfo(name) {
+  const k = index().get(norm(name)), W = S.wrestlers || {};
+  return k && W[k] ? Object.assign({ name: k }, W[k]) : null;
+}
+// Face / heel / tweener (d'après The SmackDown Hotel, préparé par la mise à jour quotidienne)
+export const ALIGN = { face: ["😇", "Face", "gentil"], heel: ["😈", "Heel", "méchant"], tweener: ["🔀", "Tweener", "entre les deux"] };
+export function alignOf(name) { const w = wInfo(name), a = w && String(w.al || "").toLowerCase(); return ALIGN[a] ? { k: a, since: w.alD || "", inj: !!w.inj } : (w && w.inj ? { k: "", since: "", inj: true } : null); }
+// Promotion reconnue dans un texte (« World Wrestling Federation » -> WWE…)
+const PROMOS = [["WWE", /\bwwe\b|\bwwf\b|world wrestling/], ["AEW", /\baew\b|all elite/], ["TNA", /\btna\b|total nonstop|impact wrestling/], ["NJPW", /\bnjpw\b|new japan/],
+  ["Stardom", /stardom/], ["Marigold", /marigold/], ["AAA", /\baaa\b|asistencia asesoria|lucha libre aaa/], ["CMLL", /\bcmll\b|consejo mundial/], ["ROH", /ring of honor|\broh\b/], ["WCW", /\bwcw\b|world championship wrestling/],
+  ["ECW", /\becw\b|extreme championship/], ["NWA", /\bnwa\b|national wrestling alliance/], ["NOAH", /pro wrestling noah/], ["All Japan", /all japan/]];
+export const promoIn = txt => { const t = norm(txt), f = PROMOS.find(p => p[1].test(t)); return f ? f[0] : ""; };
 // Nom « officiel » (celui de la fiche suivie si elle existe)
 export function canonical(name) { const w = wInfo(name); return w ? w.name : String(name).trim(); }
 const mentions = (txt, name) => {

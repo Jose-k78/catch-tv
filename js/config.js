@@ -29,3 +29,6 @@ export const ADMIN_UID = "gYOlkXsJc3WedSykoBNyeWg2ELx1";
 
 // Clé GIPHY (gratuite) pour la recherche de GIFs dans le chat. Vide = recherche désactivée (envoi depuis la galerie ou par lien seulement).
 export const GIPHY_KEY = "";
+
+// Dépôt GitHub de l'app (page « Sources » de l'admin, état des mises à jour)
+export const GH_REPO = "Jose-k78/catch-tv";

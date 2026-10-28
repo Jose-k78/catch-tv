@@ -4,12 +4,13 @@ import { S } from "../state.js";
 import { esc, ICON, fmt, okHttp } from "../util.js";
 import { allPle } from "./catalog.js";
 import { PREVIEW } from "../content.js";
-import { norm, canonical, wInfo, wShows, wTitles, upcomingFor, lastMatches, wNews, lastShow, knownNames } from "../wrestlers.js";
+import { norm, canonical, wInfo, wShows, wTitles, upcomingFor, lastMatches, wNews, lastShow, knownNames, promoIn, alignOf, ALIGN } from "../wrestlers.js";
 import { starBtn } from "./favs.js";
 import { okVid, ytSearch, hlHref } from "./highlights.js";
 import { noSpoil, champHidden } from "../spoil.js";
 import { commentsBox } from "./comments.js";
 import { TECH, techHTML, fillTech } from "../tech.js";
+import { searchEvents, EVENT_WORDS } from "./event.js";
 
 // Champs de fiche technique préparés en français dans data/wrestlers.json
 function localTech(w) { const f = {}; if (w) TECH.forEach(t => { if (w[t[0]]) f[t[0]] = w[t[0]]; }); return f; }
@@ -36,7 +37,7 @@ export function searchView(q) {
   return '<div class="searchbar"><input id="q" type="search" enterkeyhint="search" autocomplete="off" placeholder="Show, PLE, catcheur, catcheuse…" value="' + esc(lastQ) + '" aria-label="Rechercher"></div><div id="sres">' + resultsHTML(lastQ) + "</div>";
 }
 function resultsHTML(q) {
-  if (!norm(q)) return '<p class="note">Tape le nom d’un show (Raw, Dynamite…), d’un PLE (Crown Jewel…) ou d’un catcheur (Roman Reigns, Mayu Iwatani…), puis valide.</p>';
+  if (!norm(q)) return '<p class="note">Tape le nom d’un show (Raw, Dynamite…), d’un PLE (Crown Jewel…), d’un événement passé (WrestleMania 13, Starrcade 1997…) ou d’un catcheur (Roman Reigns, Mayu Iwatani…), puis valide.</p>';
   const loc = localResults(q), names = nameResults(q);
   let h = "";
   h += '<h2>Catcheurs et catcheuses</h2><div class="list">' + names.map(x => '<a class="item" href="#/catcheur/' + encodeURIComponent(x.n) + '"><span class="lbl"><b>' + esc(x.n) + "</b><small>" + esc(x.s) +
@@ -44,6 +45,8 @@ function resultsHTML(q) {
     (names.some(x => norm(x.n) === norm(q)) ? "" : '<a class="item" href="#/catcheur/' + encodeURIComponent(q.trim()) + '"><span class="lbl"><b>' + esc(q.trim()) +
     "</b><small>Voir sa fiche : résumé, derniers matchs, matchs de référence</small></span><span class=\"chev\">›</span></a>") + "</div>";
   if (loc.length) h += '<h2>Shows et événements</h2><div class="list">' + loc.map(r => '<a class="item" href="' + r.h + '"><span class="lbl"><b>' + esc(r.t) + "</b><small>" + esc(r.s) + '</small></span><span class="chev">›</span></a>').join("") + "</div>";
+  // archives : PLE et shows passés trouvés sur Wikipédia (WrestleMania 13, Starrcade 1997…)
+  if (norm(q).length >= 3 && !PREVIEW) h += '<h2>Archives <small class="cnt">Wikipédia</small></h2><div id="evres"><p class="note small">Recherche des événements passés…</p></div>';
   return h;
 }
 document.addEventListener("input", e => {
@@ -51,22 +54,42 @@ document.addEventListener("input", e => {
   lastQ = e.target.value;
   const r = document.getElementById("sres"); if (r) r.innerHTML = resultsHTML(lastQ);
   try { history.replaceState(null, "", "#/recherche/" + encodeURIComponent(lastQ)); } catch (err) {}
+  afterSearch();
 });
+// Résultats d'archives (Wikipédia), demandés 450 ms après la dernière lettre tapée
+let evT = null;
+export function afterSearch() {
+  clearTimeout(evT);
+  const q = lastQ.trim(); if (norm(q).length < 3 || PREVIEW) return;
+  evT = setTimeout(async () => {
+    const list = await searchEvents(q);
+    const box = document.getElementById("evres"); if (!box || lastQ.trim() !== q) return;
+    box.innerHTML = list.length ? '<div class="list">' + list.map(x => '<a class="item" href="#/evenement/' + encodeURIComponent(x.l + ":" + x.title) + '"><span class="lbl"><b>' + esc(x.title.replace(/\s*\((?:catch|professional wrestling|wrestling)\)$/i, "")) +
+      "</b><small>" + esc(x.sn.slice(0, 110)) + (x.sn.length > 110 ? "…" : "") + '</small></span><span class="chev">›</span></a>').join("") + "</div>"
+      : '<p class="note small">Aucun événement passé trouvé. Essaie avec le numéro ou l’année (ex. : WrestleMania 13, Starrcade 1997).</p>';
+  }, 450);
+}
 // Valider = ouvrir la fiche du catcheur (sauf si la recherche correspond exactement à un show ou une promotion)
 document.addEventListener("keydown", e => {
   if (e.target.id !== "q" || e.key !== "Enter" || !norm(e.target.value)) return;
   const v = e.target.value.trim(), loc = localResults(v), names = nameResults(v);
   const exact = loc.find(r => norm(r.t) === norm(v));
   if (exact) { location.hash = exact.h; return; }
+  // nom d'événement (WrestleMania 13, Starrcade 1997…) : page d'archives générée depuis Wikipédia
+  if (EVENT_WORDS.test(v) && !names.some(x => norm(x.n) === norm(v))) { location.hash = "#/evenement/" + encodeURIComponent(v); return; }
   const nm = names.find(x => norm(x.n) === norm(v) || (x.a || []).some(a => norm(a) === norm(v)));
   location.hash = "#/catcheur/" + encodeURIComponent(nm ? nm.n : v);
 });
 
 // ---------- fiche catcheur ----------
-const PROMOS = [["WWE", /\bwwe\b|\bwwf\b|world wrestling/], ["AEW", /\baew\b|all elite/], ["TNA", /\btna\b|total nonstop|impact wrestling/], ["NJPW", /\bnjpw\b|new japan/],
-  ["Stardom", /stardom/], ["Marigold", /marigold/], ["AAA", /\baaa\b|asistencia asesoria/], ["CMLL", /\bcmll\b/], ["ROH", /ring of honor/], ["WCW", /\bwcw\b/], ["NOAH", /pro wrestling noah/], ["All Japan", /all japan/]];
-const promoIn = txt => { const t = norm(txt), f = PROMOS.find(p => p[1].test(t)); return f ? f[0] : ""; };
 
+// Rôle actuel : face, heel ou tweener (et blessé)
+function alignFact(name) {
+  const a = alignOf(name); if (!a) return "";
+  const A = ALIGN[a.k];
+  return '<div class="walign' + (a.k ? " al-" + a.k : "") + '"><small>Rôle actuel</small><b>' + (A ? A[0] + " " + A[1] + " <span class=\"alx\">(" + A[2] + ")</span>" : "") + (a.inj ? (A ? " · " : "") + "🤕 Blessé" : "") + "</b>" +
+    (a.since ? "<small class=\"alsince\">depuis le " + esc(fmt(a.since)) + "</small>" : "") + "</div>";
+}
 export function wrestlerView(raw, wt) {
   const name = canonical(raw), n = norm(name), w = wInfo(name);
   const up = upcomingFor(name), shows = wShows(name), held = wTitles(name);
@@ -82,7 +105,7 @@ export function wrestlerView(raw, wt) {
     (w && w.txt ? '<p class="wtxt">' + esc(w.txt) + "</p>" : "") +
     '<div id="wiki" class="wiki">' + (PREVIEW ? (w && w.txt ? "" : '<p class="note">Le résumé Wikipédia s’affichera une fois l’app en ligne (l’aperçu bloque les connexions vers d’autres sites).</p>') : '<p class="note">Recherche de son résumé…</p>') + "</div>" +
     '<div class="wfacts"><div><small>Promotion</small><b id="wpromo">' + esc(k || "–") + "</b></div>" +
-    "<div><small>Dernière apparition</small>" + (ls ? '<a href="' + esc(ls.href) + '"><b>' + esc(ls.label) + "</b></a>" : "<b>–</b>") + "</div></div>" +
+    "<div><small>Dernière apparition</small>" + (ls ? '<a href="' + esc(ls.href) + '"><b>' + esc(ls.label) + "</b></a>" : "<b>–</b>") + "</div>" + alignFact(name) + "</div>" +
     '<div id="wtech" class="wtech">' + techHTML(localTech(w), Object.keys(localTech(w)).length ? [{ n: "TCC TV" }] : []) + "</div>";
   if (shows.length || held.length) h += '<div class="chips wrap" style="margin:10px 0 0">' + shows.filter(s => s.n).map(s => '<a class="chip" href="#/p/' + encodeURIComponent(s.k) + "/" + encodeURIComponent(s.n) + '">' + esc(s.k + " · " + s.n) + "</a>").join("") +
     held.map(t => champHidden(t) ? "" : '<a class="chip gold" href="#/titre/' + encodeURIComponent(t.id) + '">🏆 ' + esc(t.n) + "</a>").join("") + "</div>";

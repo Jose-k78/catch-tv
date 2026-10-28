@@ -34,15 +34,17 @@ export function cleanWiki(v) {
     .replace(/'{2,}/g, "").replace(/<[^>]+>/g, "").replace(/^\s*[*#]\s*/gm, "").replace(/\n+/g, ", ").replace(/,\s*[*#]+\s*/g, ", ").replace(/\s+/g, " ")
     .replace(/(?:\s*,\s*){2,}/g, ", ").replace(/^[,\s*#]+|[,\s]+$/g, "").trim();
 }
-// Premier modèle « Infobox » d'une page wiki -> { champ: valeur nettoyée }
-export function parseInfobox(wt) {
-  const start = String(wt || "").search(/\{\{\s*(infobox|wrestler|professional wrestler)/i); if (start < 0) return null;
+// Paramètres bruts (non nettoyés) du premier modèle dont le nom correspond à re : { "nom du paramètre": "valeur" }
+export function templateParams(wt, re) {
+  wt = String(wt || "");
+  const m = wt.match(re); if (!m) return null;
+  const start = m.index;
   let depth = 0, end = -1;
   for (let i = start; i < wt.length - 1; i++) {
     if (wt[i] === "{" && wt[i + 1] === "{") { depth++; i++; }
     else if (wt[i] === "}" && wt[i + 1] === "}") { depth--; i++; if (depth === 0) { end = i - 1; break; } }
   }
-  const body = wt.slice(start + 2, end > 0 ? end : start + 8000), parts = [];
+  const body = wt.slice(start + 2, end > 0 ? end : start + 20000), parts = [];
   let cur = "", d = 0, b = 0;
   for (let k = 0; k < body.length; k++) {
     const two = body.substr(k, 2);
@@ -55,7 +57,14 @@ export function parseInfobox(wt) {
   }
   parts.push(cur);
   const raw = {};
-  parts.slice(1).forEach(p => { const m = p.match(/^\s*([^=]+?)\s*=\s*([\s\S]*)$/); if (m) raw[m[1].toLowerCase().trim()] = cleanWiki(m[2]); });
+  parts.slice(1).forEach(p => { const x = p.match(/^\s*([^=]+?)\s*=\s*([\s\S]*)$/); if (x) raw[x[1].toLowerCase().trim()] = x[2].trim(); });
+  return raw;
+}
+// Premier modèle « Infobox » d'une page wiki -> { champ: valeur nettoyée }
+export function parseInfobox(wt) {
+  const params = templateParams(wt, /\{\{\s*(infobox|wrestler|professional wrestler)/i); if (!params) return null;
+  const raw = {};
+  Object.keys(params).forEach(k => { raw[k] = cleanWiki(params[k]); });
   const out = {};
   Object.keys(raw).forEach(key => { Object.keys(KEYS).forEach(f => { if (!out[f] && KEYS[f].test(key) && raw[key]) out[f] = raw[key].slice(0, 200); }); });
   // taille et poids : on garde le système métrique quand il est donné entre parenthèses

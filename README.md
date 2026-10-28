@@ -49,6 +49,15 @@ Sans clé, on peut déjà envoyer des GIFs depuis sa galerie ou par lien. Pour a
 crée un compte gratuit sur [developers.giphy.com](https://developers.giphy.com), clique sur **Create an API Key**, choisis **API**, donne un nom à l'app,
 puis copie la clé dans `js/config.js` (`GIPHY_KEY`) ou envoie-la à Claude.
 
+## 7 bis. Sources des données et clé GitHub (admin)
+
+Dans **Paramètres › Modération › Sources des données**, l'admin choisit les sites que les mises à jour automatiques utilisent en priorité (actu, résultats, titres, rosters, fiches…).
+La liste est enregistrée dans `data/sources.json`, sur GitHub : pour la modifier depuis l'app, il faut une fois une **clé GitHub** personnelle
+(github.com › Settings › Developer settings › Fine-grained tokens › Generate new token ; accès au seul dépôt `catch-tv`, droit « Contents : Read and write »).
+La clé reste sur le téléphone de l'admin. Elle sert aussi à transmettre chaque jour les catcheurs favoris des membres (`data/followed.json`) aux mises à jour.
+
+**Paramètres › Modération › État des mises à jour** montre la date de chaque donnée et les derniers envois sur GitHub.
+
 ## 8. Notifications sur le téléphone quand l'app est fermée
 
 Pour l'instant, les alertes (messages, demandes d'amis, feuds) s'affichent seulement quand l'app est ouverte.
@@ -73,7 +82,9 @@ Ouvre l'adresse dans Safari (iPhone) ou Chrome (Android), puis **Partager > Sur 
 | `data/titles.json` | Les champions actuels et l'historique des titres |
 | `data/highlights.json` | Highlights officiels et résultats (cachés derrière le bouton spoiler) des derniers shows |
 | `data/wrestlers.json` | Catcheurs suivis et catcheurs à découvrir : résumé, matchs de référence, derniers matchs, actu |
-| `data/storylines.json` | La storyline de la semaine et les précédentes |
+| `data/storylines.json` | La storyline du jour et les précédentes |
+| `data/sources.json` | Les sites utilisés en priorité par les mises à jour (choisis par l'admin) |
+| `data/followed.json` | Les catcheurs favoris des membres, suivis en priorité par les mises à jour |
 | `img/logos/` | Logos par défaut des onglets (l'admin peut les changer dans Paramètres › Logos des onglets) |
 | `js/images.js` | Images des vignettes : héritage, photos libres Wikimedia Commons, affiches maison |
 | `js/config.js` | Configuration Firebase et identifiant admin |
