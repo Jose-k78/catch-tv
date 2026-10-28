@@ -1068,6 +1068,77 @@
     }
    ],
    "disc": true
+  },
+  "Randy Orton": {
+   "k": "WWE",
+   "era": "Depuis 2000",
+   "nick": "The Viper, The Apex Predator, Legend Killer",
+   "from": "St. Louis (Missouri)",
+   "ht": "1,96 m",
+   "wt": "125 kg",
+   "debut": "18 mars 2000",
+   "fin": "RKO, Punt Kick",
+   "teams": "Evolution, The Legacy, Rated-RKO, The Wyatt Family, RK-Bro",
+   "trainer": "Bob Orton Jr., Fit Finlay, Ohio Valley Wrestling",
+   "txt": "Fils et petit-fils de catcheurs, « The Viper » est l’un des catcheurs les plus titrés de l’histoire de la WWE, célèbre pour son RKO.",
+   "ref": [
+    {
+     "t": "Randy Orton contre Mick Foley — Hardcore match",
+     "ev": "Backlash, 2004"
+    },
+    {
+     "t": "Randy Orton contre Chris Benoit — Titre mondial poids lourds",
+     "ev": "SummerSlam, 2004"
+    },
+    {
+     "t": "Randy Orton contre Shawn Michaels",
+     "ev": "Unforgiven, 2003"
+    },
+    {
+     "t": "Randy Orton contre The Undertaker — Hell in a Cell",
+     "ev": "Armageddon, 2005"
+    },
+    {
+     "t": "Randy Orton contre Edge",
+     "ev": "Backlash, 2020"
+    }
+   ]
+  },
+  "Gabe Kidd": {
+   "k": "NJPW, AEW",
+   "a": [
+    "Gabriel Kidd"
+   ],
+   "era": "Depuis 2011",
+   "from": "Nottingham (Angleterre)",
+   "ht": "1,83 m",
+   "wt": "107 kg",
+   "debut": "12 novembre 2011",
+   "teams": "Bullet Club War Dogs, Death Riders, Unbound Co.",
+   "trainer": "Marty Jones, Stixx, Katsuyori Shibata, NJPW L.A. Dojo",
+   "txt": "Bagarreur anglais formé au dojo de Los Angeles de la NJPW, champion IWGP Global et membre des Death Riders de Jon Moxley.",
+   "ref": [
+    {
+     "t": "Gabe Kidd contre Eddie Kingston — No Ropes Last Man Standing",
+     "ev": "NJPW Resurgence, 2024"
+    },
+    {
+     "t": "Gabe Kidd contre Kaito Kiyomiya — Titre GHC poids lourds",
+     "ev": "NOAH Grand Ship in Yokohama, 2024"
+    },
+    {
+     "t": "Gabe Kidd contre Kenny Omega",
+     "ev": "Wrestle Dynasty, 2025"
+    },
+    {
+     "t": "Gabe Kidd contre Yota Tsuji — Titre IWGP Global",
+     "ev": "Dominion 6.15 in Osaka-jo Hall, 2025"
+    },
+    {
+     "t": "Gabe Kidd contre Darby Allin — Coffin match",
+     "ev": "AEW Dynamite, 2026"
+    }
+   ]
   }
  }
 }
