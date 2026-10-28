@@ -2,6 +2,7 @@
 import { S, ACT, changed } from "../state.js";
 import { esc, ICON, modal } from "../util.js";
 import { PREVIEW } from "../content.js";
+import { rateBtn } from "./mrate.js";
 
 let filter = "";
 function weekNo(d) { const t = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate())); const day = t.getUTCDay() || 7; t.setUTCDate(t.getUTCDate() + 4 - day);
@@ -16,7 +17,7 @@ function colorOf(k) { const c = (S.P[k] && S.P[k].c) || ["#444", "#111"]; return
 function matchRow(m) {
   return '<article class="mrowc"><div class="mbadge" style="background:' + colorOf(m.k) + '">' + esc(m.k) + '</div><div class="epbody"><b class="eptitle">' + esc(m.t) + "</b>" +
     '<small class="epmeta">' + (m.ev ? esc(m.ev) + " · " : "") + "Match complet · chaîne officielle</small></div>" +
-    '<button class="btn small" data-act="play" data-id="' + esc(m.id) + '" data-t="' + esc(m.t) + '">▶ Voir</button></article>';
+    '<div class="mrbtns"><button class="btn small" data-act="play" data-id="' + esc(m.id) + '" data-t="' + esc(m.t) + '">▶ Voir</button>' + rateBtn(m.k, m.t, m.ev || "", "") + "</div></article>";
 }
 export function matchesView() {
   const all = pool(), week = shuffle(all, weekNo(new Date()) + filter.length * 7919).slice(0, 10);
@@ -26,7 +27,7 @@ export function matchesView() {
     '<div class="btns" style="justify-content:flex-start;margin:4px 16px 0"><button class="btn" data-act="mrandom">🎲 Un match au hasard</button></div>' +
     "<h2>La sélection de la semaine</h2>";
   h += week.length ? '<div class="eps">' + week.map(matchRow).join("") + "</div>" : '<p class="note">Pas encore de match pour cette promotion.</p>';
-  h += '<p class="note small" style="margin-top:12px">Nouvelle sélection chaque lundi. Uniquement des vidéos publiées par les chaînes YouTube officielles des promotions.</p>';
+  h += '<p class="note small" style="margin-top:12px">☆ Note les matchs que tu as vus : ils rejoignent ton historique des notes. Nouvelle sélection chaque lundi. Uniquement des vidéos publiées par les chaînes YouTube officielles des promotions.</p>';
   return h;
 }
 ACT.mfilter = el => { filter = el.dataset.k || ""; changed("route"); };

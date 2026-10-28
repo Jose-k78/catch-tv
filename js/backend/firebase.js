@@ -141,8 +141,10 @@ export function watchConvs(uid, cb) {
   return F.onSnapshot(q, r => {
     cb(r.docs.map(s => {
       const d = data(s);
+      const seen = {}; Object.keys(d.seen || {}).forEach(u => { seen[u] = ms(d.seen[u]); });
       return { id: s.id, members: d.members || [], unread: d.unread || {}, updatedAt: ms(d.updatedAt),
-        last: d.last ? { text: d.last.text, uid: d.last.uid, at: ms(d.last.at) } : null };
+        last: d.last ? { text: d.last.text, uid: d.last.uid, at: ms(d.last.at) } : null,
+        theme: d.theme || "", emoji: d.emoji || "", nicks: d.nicks || {}, seen: seen };
     }).sort((a, b) => b.updatedAt - a.updatedAt));
   }, () => cb([]));
 }
@@ -169,15 +171,28 @@ export async function sendDM(convId, uid, other, text, extra) {
   b.update(F.doc(db, "dms", convId), patch);
   await b.commit();
 }
-export function markDMRead(convId, uid) {
+// seen = true : on envoie aussi « Vu » à l'autre membre
+export function markDMRead(convId, uid, seen) {
   const p = {}; p["unread." + uid] = 0;
+  if (seen) p["seen." + uid] = F.serverTimestamp();
+  return F.updateDoc(F.doc(db, "dms", convId), p);
+}
+// Réglages partagés d'une conversation privée : couleur, emoji rapide, surnoms
+export function setConvStyle(convId, patch) {
+  const p = {};
+  if (patch.theme != null) p.theme = String(patch.theme).slice(0, 20);
+  if (patch.emoji != null) p.emoji = String(patch.emoji).slice(0, 16);
+  if (patch.nicks) Object.keys(patch.nicks).forEach(u => { p["nicks." + u] = String(patch.nicks[u] || "").slice(0, 30); });
   return F.updateDoc(F.doc(db, "dms", convId), p);
 }
 export function watchReads(uid, cb) {
   return F.onSnapshot(F.doc(db, "reads", uid), s => {
-    const d = s.exists() ? data(s) : {}; cb({ general: ms(d.general), notifs: ms(d.notifs) });
+    const d = s.exists() ? data(s) : {}; cb({ general: ms(d.general), notifs: ms(d.notifs), cp: d.cp || {}, rrOff: !!d.rrOff });
   }, () => cb({}));
 }
+// Réglages personnels d'une discussion (épinglée, sourdine, archivée, supprimée de son côté, non lue…)
+export function setChatPref(uid, convId, patch) { const cp = {}; cp[convId] = patch; return F.setDoc(F.doc(db, "reads", uid), { cp: cp }, { merge: true }); }
+export function setReadReceipts(uid, on) { return F.setDoc(F.doc(db, "reads", uid), { rrOff: !on }, { merge: true }); }
 export function markRoomRead(uid) { return F.setDoc(F.doc(db, "reads", uid), { general: F.serverTimestamp() }, { merge: true }); }
 
 // ---- Modération des messages ----

@@ -12,9 +12,11 @@ export function isUnlocked(key) { return unlocked.has(key); }
 // A-t-on marqué « vu » ce show ce jour-là ? (show = "PLE" ou "" pour un PLE)
 export function seenDay(k, show, d) {
   const sh = !show || show === "PLE" ? "" : show;
-  return Object.values(S.history).some(h => h.k === k && (h.show || "") === sh && h.d === d);
+  return shows().some(h => h.k === k && (h.show || "") === sh && h.d === d);
 }
-function seenSince(k, d) { return Object.values(S.history).some(h => h.k === k && okDay(h.d) && h.d >= d); }
+function seenSince(k, d) { return shows().some(h => h.k === k && okDay(h.d) && h.d >= d); }
+// les notes de combats (« m_… ») ne comptent pas comme un show vu
+const shows = () => Object.values(S.history).filter(h => !(typeof h.id === "string" && h.id.indexOf("m_") === 0));
 
 // Highlights / résultats d'un show cachés ?
 export function hlHidden(key, k, show, d) { return noSpoil() && !seenDay(k, show, d) && !unlocked.has("hl:" + key); }

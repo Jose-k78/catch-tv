@@ -16,7 +16,8 @@
      "t": "Money in the Bank",
      "d": "2026-10-10",
      "w": "La Nouvelle-Orléans",
-     "v": "Smoothie King Center"
+     "v": "Smoothie King Center",
+     "nf": "81929883"
     },
     {
      "t": "NXT Halloween Havoc",
@@ -45,19 +46,22 @@
      ],
      "h": "22:00",
      "tz": "Asia/Riyadh",
-     "dur": 240
+     "dur": 240,
+     "nf": "81930079"
     },
     {
      "t": "Survivor Series: WarGames",
      "d": "2026-11-28",
      "w": "Houston",
-     "v": "Minute Maid Park"
+     "v": "Minute Maid Park",
+     "nf": "81930099"
     },
     {
      "t": "Wrestlepalooza",
      "d": "2026-12-12",
      "w": "Perth",
-     "v": "RAC Arena Perth"
+     "v": "RAC Arena Perth",
+     "nf": "82135686"
     },
     {
      "t": "NXT Deadline",
@@ -87,7 +91,8 @@
      ],
      "h": "20:00",
      "tz": "America/New_York",
-     "dur": 150
+     "dur": 150,
+     "nf": "81788927"
     },
     "SmackDown": {
      "x": [
@@ -109,7 +114,8 @@
      ],
      "h": "20:00",
      "tz": "America/New_York",
-     "dur": 120
+     "dur": 120,
+     "nf": "81788930"
     },
     "NXT": {
      "x": [
@@ -126,7 +132,8 @@
      ],
      "h": "20:00",
      "tz": "America/New_York",
-     "dur": 120
+     "dur": 120,
+     "nf": "81788953"
     },
     "Evolve": {
      "j": "Chaque mercredi",
@@ -173,7 +180,8 @@
     }
    ],
    "yt": "UCJ5v_MCY6GNUBTO8-D3XoAg",
-   "logo": "img/logos/wwe.png"
+   "logo": "img/logos/wwe.png",
+   "nfhub": "81921064"
   },
   "AEW": {
    "c": [

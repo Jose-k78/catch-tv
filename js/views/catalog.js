@@ -2,7 +2,7 @@
 import { S, ACT, imageFor } from "../state.js";
 import { esc, cssUrl, okHttp, okDay, fmt, diff, cd, nextWeekday, dt, ymd, ICON, stars, docId, MOIS, modal, toast } from "../util.js";
 import { resolveImage, usedCredits } from "../images.js";
-import { PARIS, startOf, endOf, isLive, whenParts, fmtAt, hourAt, cityOf, downloadIcs } from "../time.js";
+import { PARIS, startOf, endOf, isLive, whenParts, fmtAt, hourAt, cityOf, downloadIcs, parisDay } from "../time.js";
 import { hlOf, hlHref } from "./highlights.js";
 import { favAside } from "./favs.js";
 import { champHidden } from "../spoil.js";
@@ -27,14 +27,14 @@ function pleOf(k) {
     return { kind: "ple", k: k, show: "", br: e.br || "", t: e.t, d: e.d, w: e.w, v: e.v || "", card: e.card || null,
       c: colorOf(k, e.br), l: pr.l, ty: e.br ? "PLE " + e.br : "PLE",
       h: e.h || "", tz: e.tz || "", dur: e.dur || 240, city: e.w && e.w !== "—" && !/habituel|confirmer/.test(e.w) ? e.w : "",
-      fr: e.fr || (bs && bs.fr) || pr.fr || [], p: "", pl: "" };
+      fr: e.fr || (bs && bs.fr) || pr.fr || [], p: "", pl: "", nf: e.nf || "", nfhub: pr.nfhub || "" };
   });
 }
 export function allPle() { let a = []; Object.keys(S.P).forEach(k => { a = a.concat(pleOf(k)); }); return a; }
 export function epis(k, n, nb, na) {
   const pr = S.P[k], s = pr.s[n], out = [], base = dt(nextWeekday(s.wd));
   const mk = (t, d) => ({ kind: "ep", k: k, show: n, t: t, d: d, w: frName({ fr: s.fr || pr.fr, p: s.p }), c: colorOf(k, n), l: s.l, ty: n,
-    h: s.h || "", tz: s.tz || "", dur: s.dur || 120, fr: s.fr || pr.fr || [], p: s.p || "", pl: s.l || "" });
+    h: s.h || "", tz: s.tz || "", dur: s.dur || 120, fr: s.fr || pr.fr || [], p: s.p || "", pl: s.l || "", nf: s.nf || "", nfhub: pr.nfhub || "" });
   for (let i = -nb; i < na; i++) {
     const x = new Date(base); x.setDate(x.getDate() + 7 * i);
     const d = ymd(x), sp = (s.e || []).filter(e => e.d === d)[0];
@@ -81,15 +81,21 @@ export function liveSection(filter) {
   const list = liveNow().filter(filter || (() => true));
   return list.length ? '<div class="lives">' + list.map(liveCard).join("") + "</div>" : "";
 }
+// Netflix : page du show (Raw, SmackDown, NXT, chaque PLE), sinon la page WWE de Netflix, sinon la recherche
+const NFID = /^\d{5,10}$/;
+export function netflixUrl(e) {
+  if (NFID.test(e.nf || "")) return "https://www.netflix.com/title/" + e.nf;
+  if (NFID.test(e.nfhub || "")) return "https://www.netflix.com/browse/genre/" + e.nfhub;
+  return "https://www.netflix.com/search?q=" + encodeURIComponent(e.k + " " + (e.show || e.t));
+}
 // Où regarder : plateformes officielles en France, puis aux États-Unis
 ACT.watch = el => {
   const e = findItem(el.dataset); if (!e) return;
-  // Netflix : on ouvre directement la recherche du show (« WWE Raw », « WWE Crown Jewel »…)
-  const fr = (e.fr || []).filter(f => okHttp(f.u)).map(f => /netflix\.com/.test(f.u) ? { n: f.n, u: "https://www.netflix.com/search?q=" + encodeURIComponent(e.k + " " + (e.show || e.t)) } : f);
+  const fr = (e.fr || []).filter(f => okHttp(f.u)).map(f => /netflix\.com/.test(f.u) ? { n: f.n, u: netflixUrl(e) } : f);
   modal((box, close) => {
     box.innerHTML = "<h3>" + esc(e.t) + '</h3><p class="sub">' + (isLive(e) ? "🔴 En direct maintenant" : esc(e.k)) + "</p>" +
       (fr.length ? '<p class="sub" style="margin-bottom:6px">En France</p>' + fr.map(f => '<a class="btn wide" href="' + esc(f.u) + '" target="_blank" rel="noopener">Regarder sur ' + esc(f.n) + " ↗</a>").join("") : "") +
-      (e.p && okHttp(e.pl) ? '<p class="sub" style="margin:14px 16px 6px">Aux États-Unis</p><a class="btn wide ghost" href="' + esc(e.pl) + '" target="_blank" rel="noopener">' + esc(e.p) + " ↗</a>" : "") +
+      (e.p && okHttp(e.pl) ? '<p class="sub" style="margin:14px 16px 6px">Aux États-Unis</p><a class="btn wide ghost" href="' + esc(/netflix\.com/.test(e.pl) ? netflixUrl(e) : e.pl) + '" target="_blank" rel="noopener">' + esc(e.p) + " ↗</a>" : "") +
       (!fr.length && !(e.p && okHttp(e.pl)) && okHttp(e.l) ? '<a class="btn wide" href="' + esc(e.l) + '" target="_blank" rel="noopener">Site officiel ↗</a>' : "") +
       '<button class="btn wide ghost" style="margin-top:12px" data-close>Fermer</button>';
     box.addEventListener("click", ev => { if (ev.target.closest("[data-close]")) close(); });
@@ -160,6 +166,59 @@ function pleCard(e, showK) {
     (aired(e) ? '<button class="cbtn seen' + (h ? " on" : "") + '" data-act="seen"' + dataItem(e) + ' aria-label="Je l’ai vu">' + (h ? ICON.check : ICON.eye) + "</button>" : remindBtn(e, "cbtn seen")) +
     "</div>";
 }
+// ---------- Sortis récemment (7 derniers jours), puis Déjà sorti ----------
+const RECENT_DAYS = 7, PAST_DAYS = 28;
+// Jours écoulés depuis la diffusion (jour de Paris quand l'heure est connue)
+function agoDays(e) {
+  const t = startOf(e);
+  if (t) return Math.round((Date.parse(parisDay() + "T12:00:00Z") - Date.parse(parisDay(t) + "T12:00:00Z")) / 864e5);
+  return -diff(e.d);
+}
+// Diffusé et terminé (sans heure connue : à partir du lendemain)
+function isOut(e) { const t = endOf(e); return t ? Date.now() >= t : !!e.d && diff(e.d) < 0; }
+function agoLabel(n) { return n <= 0 ? "AUJOURD’HUI" : n === 1 ? "HIER" : "IL Y A " + n + " JOURS"; }
+function catOf(e) { return e.kind === "ple" ? "ple" : e.t !== e.show ? "spec" : "hebdo"; }
+function outItems() {
+  let a = allPle().filter(e => okDay(e.d));
+  Object.keys(S.P).forEach(k => { const s = S.P[k].s; if (s) Object.keys(s).forEach(n => { a = a.concat(epis(k, n, Math.ceil(PAST_DAYS / 7) + 1, 1)); }); });
+  const seen = {};
+  return a.filter(e => okDay(e.d) && isOut(e))
+    .filter(e => { const id = e.k + "|" + (e.show || "PLE") + "|" + e.d; if (seen[id]) return false; return (seen[id] = true); })
+    .map(e => Object.assign({ ago: agoDays(e) }, e)).filter(e => e.kind === "ple" || e.ago <= PAST_DAYS)
+    .sort((x, y) => y.d.localeCompare(x.d) || (startOf(y) - startOf(x)));
+}
+let pastF = "";
+function outCard(e, recent) {
+  const h = seenOf(e), lk = look(e), sh = e.show || "PLE", hl = hlOf(e.k, sh, e.d), cat = catOf(e);
+  const href = hl ? hlHref(e.k, sh, e.d) : e.kind === "ple" ? e.l : "#/p/" + encodeURIComponent(e.k) + "/" + encodeURIComponent(e.show);
+  const ext = !hl && e.kind === "ple";
+  const tag = recent ? agoLabel(e.ago) : esc(e.k) + " · " + (cat === "ple" ? "PLE" : cat === "spec" ? "Spécial" : esc(e.show));
+  return '<div class="card out' + (recent ? " fresh" : " past") + (lk.poster ? " poster" : "") + (h ? " seen" : "") + '" data-cat="' + cat + '" style="' + esc(lk.style) + '"' +
+    (!recent && pastF && pastF !== cat ? " hidden" : "") + ">" +
+    '<a class="cover" href="' + esc(href) + '"' + (ext ? ' target="_blank" rel="noopener"' : "") + ' aria-label="' + esc(e.t) + '"></a>' +
+    '<span class="tag' + (recent && e.ago <= 1 ? " hot" : "") + '">' + tag + "</span>" +
+    "<b" + fit(e.t, 126, 27, lk.poster) + ">" + esc(e.t) + "</b><small>" + (recent ? esc(e.k) + " · " : "") + (e.kind === "ep" ? (recent ? "" : "Épisode du ") + fmt(e.d) : fmt(e.d) + (place(e) ? " · " + place(e) : "")) + "</small>" + seenMark(h) +
+    (hl ? '<span class="hlmini">' + ICON.play + " Highlights</span>" : "") +
+    '<button class="cbtn seen' + (h ? " on" : "") + '" data-act="seen"' + dataItem(e) + ' aria-label="Je l’ai vu">' + (h ? ICON.check : ICON.eye) + "</button></div>";
+}
+function recentSection(list) {
+  list = list.filter(e => e.ago <= RECENT_DAYS - 1);
+  return list.length ? '<h2>Sortis récemment</h2><div class="row">' + list.map(e => outCard(e, true)).join("") + "</div>" : "";
+}
+function pastSection(list) {
+  list = list.filter(e => e.ago > RECENT_DAYS - 1);
+  if (!list.length) return "";
+  if (pastF && !list.some(e => catOf(e) === pastF)) pastF = "";
+  const cats = [["", "Tout"], ["hebdo", "Shows hebdo"], ["ple", "PLE"], ["spec", "Épisodes spéciaux"]].filter(c => !c[0] || list.some(e => catOf(e) === c[0]));
+  return "<h2>Déjà sorti</h2>" + (cats.length > 2 ? '<nav class="tabs pastf" style="padding-top:0">' + cats.map(c => '<button class="tab' + (pastF === c[0] ? " on" : "") + '" data-act="pastf" data-c="' + c[0] + '">' + c[1] + "</button>").join("") + "</nav>" : "") +
+    '<div class="row pastrow">' + list.map(e => outCard(e, false)).join("") + "</div>";
+}
+ACT.pastf = el => {
+  pastF = el.dataset.c || "";
+  document.querySelectorAll(".pastf .tab").forEach(b => b.classList.toggle("on", b === el));
+  document.querySelectorAll(".pastrow .card").forEach(c => { c.hidden = !!pastF && c.dataset.cat !== pastF; });
+  const r = document.querySelector(".pastrow"); if (r) r.scrollLeft = 0;
+};
 function showItem(k, n) { return { kind: "show", k: k, show: n, t: n, c: colorOf(k, n) }; }
 // big = show du jour ou le plus récent (vignette large)
 function showCard(k, n, withK, big) {
@@ -291,6 +350,8 @@ export function homeView() {
   let first = sp[0].filter(e => e.d)[0], h = liveSection();
   if (first) h += hero(first, "PROCHAIN ÉVÉNEMENT · " + esc(first.k));
   h += "<h2>Shows de la semaine</h2>" + showRow(weekly, true);
+  const out = outItems();
+  h += recentSection(out);
   h += '<h2>À venir</h2><div class="row">' + sp[0].map(e => pleCard(e, true)).join("") + "</div>";
   const st = storylineTile(), dc = discoverTile();
   if (st || dc) h += '<div class="tiles2">' + st + dc + "</div>";
@@ -298,7 +359,7 @@ export function homeView() {
   h += '<div class="actsec">' + activitySection() + "</div>";
   h += '<h2>Promotions</h2><div class="row">' + Object.keys(P).map(promoCard).join("") + "</div>";
   if (S.matches.length) h += matchTile();
-  if (sp[1].length) h += '<h2>Déjà sorti</h2><div class="row">' + sp[1].map(e => pleCard(e, true)).join("") + "</div>";
+  h += pastSection(out);
   const side = favAside().replace("</aside>", S.user ? '<h2>Activité des membres</h2>' + activityList(12) + "</aside>" : "</aside>");
   return '<div class="withside"><div class="mainc">' + h + "</div>" + side + "</div>";
 }

@@ -131,7 +131,24 @@ export async function sendDM(convId, uid, other, text, extra) {
   (DB.msgs[convId] = DB.msgs[convId] || []).push(m);
   const c = DB.dms[convId]; c.last = { text: text ? text.slice(0, 140) : (extra && extra.gif ? "GIF" : "📷 Photo"), uid: uid, at: now }; c.updatedAt = now; c.unread[other] = (c.unread[other] || 0) + 1; save();
 }
-export async function markDMRead(convId, uid) { const c = DB.dms[convId]; if (c && c.unread[uid]) { c.unread[uid] = 0; save(); } }
+export async function markDMRead(convId, uid, seen) {
+  const c = DB.dms[convId]; if (!c) return;
+  if (c.unread[uid]) c.unread[uid] = 0;
+  if (seen) { c.seen = c.seen || {}; c.seen[uid] = Date.now(); }
+  save();
+}
+export async function setConvStyle(convId, patch) {
+  const c = DB.dms[convId]; if (!c) return;
+  if (patch.theme != null) c.theme = String(patch.theme).slice(0, 20);
+  if (patch.emoji != null) c.emoji = String(patch.emoji).slice(0, 16);
+  if (patch.nicks) { c.nicks = c.nicks || {}; Object.keys(patch.nicks).forEach(u => { c.nicks[u] = String(patch.nicks[u] || "").slice(0, 30); }); }
+  save();
+}
+export async function setChatPref(uid, convId, patch) {
+  const r = DB.reads[uid] = DB.reads[uid] || {}; r.cp = r.cp || {};
+  r.cp[convId] = Object.assign(r.cp[convId] || {}, patch); save();
+}
+export async function setReadReceipts(uid, on) { const r = DB.reads[uid] = DB.reads[uid] || {}; r.rrOff = !on; save(); }
 export function watchReads(uid, cb) { return watch(() => cb(clone(DB.reads[uid] || {}))); }
 export async function markRoomRead(uid) { DB.reads[uid] = Object.assign(DB.reads[uid] || {}, { general: Date.now() }); save(); }
 export async function ensureProfile() {}

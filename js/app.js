@@ -8,7 +8,7 @@ import { matchesView } from "./views/matches.js";
 import { titlesView, titleView } from "./views/titles.js";
 import { searchView, wrestlerView, fillWiki } from "./views/search.js";
 import { authView, settingsView, profileView, editProfileView, applyTheme } from "./views/account.js";
-import { chatListView, newChatView, convView, renderMsgs, setupComposer, loadUsers, roomUnread, dmUnread, validConv } from "./views/chat.js";
+import { chatListView, newChatView, convView, renderMsgs, setupComposer, loadUsers, validConv, chatBadge, isMuted, convInfoView, afterConvInfo, applyTheme as applyChatTheme, refreshQuickEmoji } from "./views/chat.js";
 import "./modals.js";
 import "./applinks.js";
 import * as demoBackend from "./backend/demo.js";
@@ -25,13 +25,13 @@ import { renderWComments, wslug } from "./views/comments.js";
 import { rosterView } from "./views/roster.js";
 
 let route = { name: "home" }, routeSubs = [], userSubs = [], dirty = false, searchFocused = false;
-const NEEDS_USER = { settings: 1, editprofile: 1, chat: 1, newchat: 1, conv: 1, profile: 1, members: 1, favs: 1, notifs: 1, activity: 1 };
+const NEEDS_USER = { settings: 1, editprofile: 1, chat: 1, newchat: 1, conv: 1, convinfo: 1, profile: 1, members: 1, favs: 1, notifs: 1, activity: 1 };
 const FORM_VIEWS = { auth: 1, settings: 1, editprofile: 1 };
 const REL = {
   home: ["content", "images", "history", "auth", "tick", "profile", "spoil", "activity"], promo: ["content", "images", "history", "auth", "tick", "spoil"],
   profile: ["profile", "profiles", "history", "otherHistory", "auth", "friends", "feuds", "blocks", "memberFriends", "tick"], chat: ["room", "convs", "reads", "profiles", "auth", "blocks"],
-  newchat: ["users", "auth"], settings: ["auth", "route", "reports", "blocks", "profiles", "images"], editprofile: ["profile", "auth"], auth: ["auth"],
-  matches: ["route"], credits: ["images"], wrestler: ["profile", "spoil", "history", "auth"], search: [], titles: ["history", "spoil"], title: ["history", "spoil"],
+  convinfo: ["convs", "reads", "profiles", "auth", "blocks", "room", "msgs"], newchat: ["users", "auth"], settings: ["auth", "route", "reports", "blocks", "profiles", "images"], editprofile: ["profile", "auth"], auth: ["auth"],
+  matches: ["route", "history", "auth"], credits: ["images"], wrestler: ["profile", "spoil", "history", "auth"], search: [], titles: ["history", "spoil"], title: ["history", "spoil"],
   notifs: ["notifs", "profiles", "reads", "blocks"], activity: ["activity", "profiles", "blocks"], storyline: [], roster: ["profile"],
   members: ["users", "friends", "feuds", "blocks", "profiles", "auth", "tick"], favs: ["profile", "profiles", "friends", "auth"], hl: ["history", "spoil"],
 };
@@ -46,7 +46,7 @@ function parse() {
     case "parametres": return { name: "settings", sub: parts[1] || "" };
     case "profil": return { name: "profile", uid: parts[1] || "" };
     case "profil-modifier": return { name: "editprofile" };
-    case "chat": return parts[1] === "nouveau" ? { name: "newchat" } : parts[1] ? { name: "conv", id: parts[1] } : { name: "chat" };
+    case "chat": return parts[1] === "nouveau" ? { name: "newchat" } : parts[1] ? (parts[2] === "infos" ? { name: "convinfo", id: parts[1] } : { name: "conv", id: parts[1] }) : { name: "chat" };
     case "recherche": return { name: "search", q: parts.slice(1).join("/") };
     case "catcheur": return parts[1] ? { name: "wrestler", q: parts[1].slice(0, 60), wt: parts[2] === "w" ? parts.slice(3).join("/").slice(0, 120) : "" } : { name: "search", q: "" };
     case "matchs": return { name: "matches" };
@@ -82,7 +82,7 @@ function onRoute() {
       routeSubs.push(B.watchFriends(id, list => { S.memberFriends[id] = list; list.forEach(f => f.members.forEach(need)); changed("memberFriends"); }));
     }
   }
-  if (route.name === "conv" && S.user) {
+  if ((route.name === "conv" || route.name === "convinfo") && S.user) {
     if (!validConv(route.id)) { location.replace("#/chat"); return; }
     if (route.id !== "general") {
       const id = route.id;
@@ -118,6 +118,7 @@ function render() {
     case "chat": h = chatListView(); break;
     case "newchat": h = newChatView(); break;
     case "conv": h = convView(route.id); break;
+    case "convinfo": h = convInfoView(route.id); break;
     case "search": h = searchView(route.q); break;
     case "wrestler": h = wrestlerView(route.q); break;
     case "matches": h = matchesView(); break;
@@ -133,7 +134,9 @@ function render() {
     case "roster": h = rosterView(route.k, route.g); break;
   }
   app.innerHTML = h;
+  if (route.name !== "conv") applyChatTheme("");
   if (route.name === "conv" && !waiting) { renderMsgs(route.id, true); setupComposer(); markRead(); }
+  if (route.name === "convinfo" && !waiting) afterConvInfo(route.id);
   if (route.name === "wrestler") { fillWiki(route.q, route.wt); renderWComments(); }
   if (route.name === "notifs") markNotifsSeen();
   if (route.name === "search" && !searchFocused) { searchFocused = true; const q = document.getElementById("q"); if (q) { q.focus(); q.setSelectionRange(q.value.length, q.value.length); } }
@@ -151,13 +154,13 @@ function navOn(id) {
   if (id === "home") return r === "home" || r === "promo" || r === "titles" || r === "title" || r === "matches" || r === "hl";
   if (id === "search") return r === "search" || r === "wrestler";
   if (id === "members") return r === "members" || (r === "profile" && S.user && route.uid && route.uid !== S.user.uid);
-  if (id === "chat") return r === "chat" || r === "conv" || r === "newchat";
+  if (id === "chat") return r === "chat" || r === "conv" || r === "newchat" || r === "convinfo";
   if (id === "me") return (r === "profile" && (!S.user || !route.uid || route.uid === S.user.uid)) || r === "settings" || r === "editprofile" || r === "auth";
   return false;
 }
 const cnt = n => n > 99 ? "99+" : String(n);
 function updateHeader() {
-  const n = S.user ? roomUnread() + dmUnread() : 0, soc = socialBadge();
+  const n = chatBadge(), soc = socialBadge();
   const nav = document.getElementById("bnav");
   if (nav) nav.innerHTML = NAV.map(x => {
     const badge = x[0] === "chat" ? n : x[0] === "members" ? soc : 0;
@@ -177,11 +180,13 @@ onChange(what => {
   if (route.name === "wrestler" && (what === "profiles" || what === "blocks")) { renderWComments(); return; }
   if (route.name === "notifs" && what === "notifs") markNotifsSeen();
   if (route.name === "conv") {
-    if (["room", "msgs", "profiles", "convs", "reads"].indexOf(what) >= 0) { renderMsgs(route.id); markRead(); }
-    if (what === "profiles" || what === "auth") { const hd = document.querySelector(".convhead"); if (hd && S.user) { const tmp = document.createElement("div"); tmp.innerHTML = convView(route.id); hd.replaceWith(tmp.firstChild); } }
+    if (["room", "msgs", "profiles", "convs", "reads"].indexOf(what) >= 0) { renderMsgs(route.id); markRead(); refreshQuickEmoji(route.id); }
+    if (what === "profiles" || what === "auth" || what === "convs" || what === "reads") { const hd = document.querySelector(".convhead"); if (hd && S.user) { const tmp = document.createElement("div"); tmp.innerHTML = convView(route.id); hd.replaceWith(tmp.firstChild); } }
     return;
   }
   if (what === "route") return render();
+  // recherche en cours dans les paramètres d'une discussion : on ne redessine pas sous les doigts
+  if (route.name === "convinfo" && document.activeElement && document.activeElement.id === "cq") return;
   if (FORM_VIEWS[route.name] && dirty) return;
   if ((REL[route.name] || []).indexOf(what) >= 0) render();
 });
@@ -195,17 +200,23 @@ function markRead() {
     const last = S.room[S.room.length - 1];
     if (last && last.at > (S.reads.general || 0) && !marking.general) { marking.general = 1; B.markRoomRead(S.user.uid).catch(() => {}).finally(() => { marking.general = 0; }); }
   } else {
-    const c = S.convs.find(x => x.id === route.id);
-    if (c && c.unread && c.unread[S.user.uid] > 0 && !marking[c.id]) { marking[c.id] = 1; B.markDMRead(c.id, S.user.uid).catch(() => {}).finally(() => { marking[c.id] = 0; }); }
+    const c = S.convs.find(x => x.id === route.id), me = S.user.uid, rr = !S.reads.rrOff;
+    // « Vu » : on prévient l'autre qu'on a lu son dernier message (si les confirmations de lecture sont activées)
+    const needSeen = c && rr && c.last && c.last.uid !== me && c.last.at > ((c.seen || {})[me] || 0);
+    if (c && ((c.unread && c.unread[me] > 0) || needSeen) && !marking[c.id]) { marking[c.id] = 1; B.markDMRead(c.id, me, rr).catch(() => {}).finally(() => { marking[c.id] = 0; }); }
   }
+  // discussion marquée « non lue » : redevient lue à l'ouverture
+  const cp = (S.reads.cp || {})[route.id];
+  if (cp && cp.unr && !marking["u" + route.id]) { marking["u" + route.id] = 1; B.setChatPref(S.user.uid, route.id, { unr: false }).catch(() => {}).finally(() => { marking["u" + route.id] = 0; }); }
 }
 document.addEventListener("visibilitychange", markRead);
 
 popup.tries = {};
 function popup(m, convId) {
   if (route.name === "conv" && route.id === convId && !document.hidden) return;
+  if (isMuted(convId)) return;
   if (!S.profiles[m.uid] && (popup.tries[m.at] = (popup.tries[m.at] || 0) + 1) < 6) { setTimeout(() => popup(m, convId), 300); return; }
-  const n = roomUnread() + dmUnread();
+  const n = chatBadge();
   toast("💬 " + (convId === "general" ? "Gorilla Position · " : "") + nameOf(m.uid) + " : " + (m.text || (m.gif ? "GIF" : "📷 Photo")).slice(0, 90) + (n ? "\n" + n + " message" + (n > 1 ? "s" : "") + " à lire" : ""),
     { top: true, ms: 5000, onClick: () => { location.hash = "#/chat/" + encodeURIComponent(convId); } });
 }

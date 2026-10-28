@@ -8,6 +8,7 @@ import { ADMIN_UID } from "../config.js";
 import { friendState, friendsOf, feudInfo, feudBadge, isBlocked, requestsIn } from "../social.js";
 import { favChips } from "./favs.js";
 import { noSpoil, setNoSpoil } from "../spoil.js";
+import { isMatchNote, matchNoteLinks } from "./mrate.js";
 
 const ERR = {
   "auth/invalid-email": "Adresse e-mail invalide",
@@ -219,9 +220,9 @@ export function profileView(uid) {
   let h = '<a class="back" href="' + (me ? "#/" : "javascript:history.back()") + '">' + ICON.back + (me ? " Accueil" : " Retour") + "</a>";
   if (!p) return h + '<p class="empty">' + (S.profiles[uid] === null ? "Profil introuvable." : "Chargement…") + "</p>";
   const blocked = !me && isBlocked(uid);
-  const hist = me ? Object.values(S.history) : (S.otherHistory[uid] || []);
-  hist.sort((a, b) => (b.seenAt || 0) - (a.seenAt || 0));
-  const rated = hist.filter(x => x.rating);
+  const all = (me ? Object.values(S.history) : (S.otherHistory[uid] || []).slice()).sort((a, b) => (b.seenAt || 0) - (a.seenAt || 0));
+  const hist = all.filter(x => !isMatchNote(x)), fights = all.filter(isMatchNote);
+  const rated = all.filter(x => x.rating);
   const avg = rated.length ? (rated.reduce((s, x) => s + x.rating, 0) / rated.length).toFixed(1).replace(".", ",") : "–";
   h += '<div class="prof">' + (!me && S.user ? '<button class="iconbtn profmenu" data-act="membermenu" data-uid="' + esc(uid) + '" aria-label="Plus d’options">' + ICON.dots + "</button>" : "") +
     avatar(p, 96) + '<b class="name">' + esc(p.pseudo || "Membre") + "</b>" +
@@ -244,7 +245,7 @@ export function profileView(uid) {
   }
   h += '<div class="favs">' + [["Show préféré", p.favShow], ["Catcheur préféré", p.favWrestler], ["Catcheuse préférée", p.favWrestlerF]]
     .map(f => '<div class="fav"><small>' + f[0] + "</small><b>" + (f[1] ? esc(f[1]) : "–") + "</b></div>").join("") + "</div>";
-  h += '<div class="stats"><div><b>' + hist.length + "</b><small>vu" + (hist.length > 1 ? "s" : "") + "</small></div><div><b>" + rated.length + "</b><small>noté" + (rated.length > 1 ? "s" : "") +
+  h += '<div class="stats"><div><b>' + hist.length + "</b><small>show" + (hist.length > 1 ? "s" : "") + " vu" + (hist.length > 1 ? "s" : "") + "</small></div><div><b>" + fights.length + "</b><small>combat" + (fights.length > 1 ? "s" : "") + " noté" + (fights.length > 1 ? "s" : "") +
     "</small></div><div><b>" + avg + "</b><small>note moyenne</small></div><div><b>" + friendsOf(uid).length + "</b><small>ami" + (friendsOf(uid).length > 1 ? "s" : "") + "</small></div></div>";
   // favoris ⭐
   const fc = favChips(p);
@@ -262,12 +263,27 @@ export function profileView(uid) {
     if (act.length) h += "<h2>🔥 Mes feuds</h2><div class=\"list\">" + act.map(x => '<a class="item" href="#/profil/' + encodeURIComponent(x.o) + '"><span class="lbl favfriend">' + avatar(prof(x.o), 32) + "<b>" + esc((prof(x.o) || {}).pseudo || "Membre") + "</b></span>" +
       '<span class="rt">' + (x.i.mine && x.i.theirs ? "✓ faite aujourd’hui" : x.i.theirs ? "à renvoyer !" : x.i.mine ? "en attente" : "à lancer") + "</span>" + feudBadge(x.o) + "</a>").join("") + "</div>";
   }
-  h += "<h2>Historique des notes</h2>";
-  h += hist.length ? '<div class="list">' + hist.map(x => '<div class="item"><span class="lbl"><b>' + esc(x.title) + "</b><small>" + esc(x.k) + (x.show ? " · " + esc(x.show) : " · PLE") +
-    (x.d ? " · " + fmt(x.d) : "") + "</small>" + (x.comment ? '<q class="mycom">' + esc(x.comment) + "</q>" : "") + '</span><span class="rt">' + (x.rating ? stars(x.rating) : "Pas noté") + "<br>vu le " + fmtMs(x.seenAt) + "</span></div>").join("") + "</div>"
-    : '<p class="note">' + (me ? "Appuie sur l’œil à côté d’un épisode ou d’un PLE pour le marquer comme vu et le noter." : "Rien pour l’instant.") + "</p>";
+  // historique : shows et combats mêlés, les plus récents d'abord ; 10 visibles, le reste derrière « Voir plus »
+  h += "<h2>Historique des notes" + (all.length ? ' <small class="cnt">' + all.length + "</small>" : "") + "</h2>";
+  h += all.length ? '<div class="list histlist">' + all.map((x, i) => {
+    const fight = isMatchNote(x);
+    return '<div class="item' + (fight ? " fightnote" : "") + '"' + (i >= HIST_MAX && !histOpen ? " hidden" : "") + '><span class="lbl"><b>' + (fight ? "🤼 " : "") + esc(x.title) + "</b><small>" + esc(x.k) +
+      (fight ? (x.show ? " · " + esc(x.show) : "") : x.show ? " · " + esc(x.show) : " · PLE") + (x.d ? " · " + fmt(x.d) : "") + "</small>" + (x.comment ? '<q class="mycom">' + esc(x.comment) + "</q>" : "") +
+      (fight ? matchNoteLinks(x) : "") + '</span><span class="rt">' + (x.rating ? stars(x.rating) : fight ? "Pas noté" : "Pas noté") + "<br>" + (fight ? "noté le " : "vu le ") + fmtMs(x.seenAt) + "</span></div>";
+  }).join("") + "</div>" + (all.length > HIST_MAX ? '<div class="btns" style="margin:10px 16px 0"><button class="btn ghost" data-act="histmore">' + (histOpen ? "Voir moins" : "Voir plus (" + (all.length - HIST_MAX) + ")") + "</button></div>" : "")
+    : '<p class="note">' + (me ? "Appuie sur l’œil à côté d’un épisode ou d’un PLE pour le marquer comme vu et le noter. Tu peux aussi noter chaque combat depuis les highlights et les matchs à revoir." : "Rien pour l’instant.") + "</p>";
   return h;
 }
+
+const HIST_MAX = 10;
+let histOpen = false;
+ACT.histmore = el => {
+  histOpen = !histOpen;
+  const items = document.querySelectorAll(".histlist .item");
+  items.forEach((it, i) => { it.hidden = !histOpen && i >= HIST_MAX; });
+  el.textContent = histOpen ? "Voir moins" : "Voir plus (" + (items.length - HIST_MAX) + ")";
+  if (!histOpen) { const l = document.querySelector(".histlist"); if (l) l.scrollIntoView({ block: "start", behavior: "smooth" }); }
+};
 
 export function editProfileView() {
   const p = S.profile || {};
