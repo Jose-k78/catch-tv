@@ -52,6 +52,29 @@ async function reauth(current) {
   await A.reauthenticateWithCredential(u, A.EmailAuthProvider.credential(u.email, current));
   return u;
 }
+// Suppression définitive du compte et de toutes ses données
+export async function deleteAccount(password) {
+  const u = auth.currentUser, uid = u.uid;
+  if ((u.providerData || []).some(p => p.providerId === "password")) await A.reauthenticateWithCredential(u, A.EmailAuthProvider.credential(u.email, password));
+  else await A.reauthenticateWithPopup(u, new A.GoogleAuthProvider());
+  const wipe = async q => { const r = await F.getDocs(q); for (const d of r.docs) await F.deleteDoc(d.ref).catch(() => {}); };
+  const C = (...p) => F.collection(db, ...p), W = (c, f, op, v) => F.query(c, F.where(f, op, v));
+  await wipe(C("users", uid, "history"));
+  await wipe(W(C("friends"), "members", "array-contains", uid));
+  await wipe(W(C("feuds"), "members", "array-contains", uid));
+  await wipe(W(C("wcomments"), "uid", "==", uid));
+  await wipe(W(C("activity"), "uid", "==", uid));
+  await wipe(C("notifs", uid, "items"));
+  await wipe(W(C("rooms", "general", "messages"), "uid", "==", uid));
+  const dms = await F.getDocs(W(C("dms"), "members", "array-contains", uid));
+  for (const d of dms.docs) await wipe(W(C("dms", d.id, "messages"), "uid", "==", uid)).catch(() => {});
+  const liked = await F.getDocs(W(C("wcomments"), "likes", "array-contains", uid));
+  for (const d of liked.docs) await F.updateDoc(d.ref, { likes: F.arrayRemove(uid) }).catch(() => {});
+  await F.deleteDoc(F.doc(db, "blocks", uid)).catch(() => {});
+  await F.deleteDoc(F.doc(db, "reads", uid)).catch(() => {});
+  await F.deleteDoc(F.doc(db, "users", uid));
+  await A.deleteUser(u);
+}
 export async function changePassword(current, next) { const u = await reauth(current); await A.updatePassword(u, next); }
 export async function changeEmail(newEmail, current) { const u = await reauth(current); await A.verifyBeforeUpdateEmail(u, newEmail); return "verify"; }
 

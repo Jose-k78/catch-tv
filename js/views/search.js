@@ -9,6 +9,10 @@ import { starBtn } from "./favs.js";
 import { okVid, ytSearch, hlHref } from "./highlights.js";
 import { noSpoil, champHidden } from "../spoil.js";
 import { commentsBox } from "./comments.js";
+import { TECH, techHTML, fillTech } from "../tech.js";
+
+// Champs de fiche technique préparés en français dans data/wrestlers.json
+function localTech(w) { const f = {}; if (w) TECH.forEach(t => { if (w[t[0]]) f[t[0]] = w[t[0]]; }); return f; }
 let lastQ = "";
 
 function localResults(q) {
@@ -78,7 +82,8 @@ export function wrestlerView(raw, wt) {
     (w && w.txt ? '<p class="wtxt">' + esc(w.txt) + "</p>" : "") +
     '<div id="wiki" class="wiki">' + (PREVIEW ? (w && w.txt ? "" : '<p class="note">Le résumé Wikipédia s’affichera une fois l’app en ligne (l’aperçu bloque les connexions vers d’autres sites).</p>') : '<p class="note">Recherche de son résumé…</p>') + "</div>" +
     '<div class="wfacts"><div><small>Promotion</small><b id="wpromo">' + esc(k || "–") + "</b></div>" +
-    "<div><small>Dernière apparition</small>" + (ls ? '<a href="' + esc(ls.href) + '"><b>' + esc(ls.label) + "</b></a>" : "<b>–</b>") + "</div></div>";
+    "<div><small>Dernière apparition</small>" + (ls ? '<a href="' + esc(ls.href) + '"><b>' + esc(ls.label) + "</b></a>" : "<b>–</b>") + "</div></div>" +
+    '<div id="wtech" class="wtech">' + techHTML(localTech(w), Object.keys(localTech(w)).length ? [{ n: "TCC TV" }] : []) + "</div>";
   if (shows.length || held.length) h += '<div class="chips wrap" style="margin:10px 0 0">' + shows.filter(s => s.n).map(s => '<a class="chip" href="#/p/' + encodeURIComponent(s.k) + "/" + encodeURIComponent(s.n) + '">' + esc(s.k + " · " + s.n) + "</a>").join("") +
     held.map(t => champHidden(t) ? "" : '<a class="chip gold" href="#/titre/' + encodeURIComponent(t.id) + '">🏆 ' + esc(t.n) + "</a>").join("") + "</div>";
   h += "</section>";
@@ -117,7 +122,7 @@ export function wrestlerView(raw, wt) {
 const wikiCache = {};
 const isPerson = sj => /catcheu|lutteu|wrestler|luchador/.test(norm(sj.description || ""));
 const isCatch = sj => /catcheu|lutteu|catch professionnel|wrestl|luchador/.test(norm((sj.description || "") + " " + (sj.extract || "")));
-const pick = sj => ({ title: sj.title, desc: sj.description || "", extract: sj.extract || "", url: sj.content_urls && sj.content_urls.desktop && sj.content_urls.desktop.page });
+const pick = sj => ({ title: sj.title, desc: sj.description || "", extract: sj.extract || "", qid: sj.wikibase_item || "", url: sj.content_urls && sj.content_urls.desktop && sj.content_urls.desktop.page });
 async function summary(title) { return (await fetch("https://fr.wikipedia.org/api/rest_v1/page/summary/" + encodeURIComponent(title.replace(/ /g, "_")))).json(); }
 // Tous les catcheurs dont la fiche correspond au nom tapé (pour proposer le bon en cas d'homonymes)
 async function candidates(name) {
@@ -138,6 +143,7 @@ const wikiCard = w => '<div class="wikicard">' + (w.desc ? "<small>" + esc(w.des
 
 export async function fillWiki(name, wt) {
   if (PREVIEW) return;
+  const loc = localTech(wInfo(canonical(name)));
   const box = () => document.getElementById("wiki"), local = wInfo(name);
   try {
     let w = null;
@@ -152,10 +158,14 @@ export async function fillWiki(name, wt) {
           '<a class="choice" href="#/catcheur/' + encodeURIComponent(c.title.replace(/\s*\(.*\)$/, "")) + "/w/" + encodeURIComponent(c.title) + '"><b>' + esc(c.title) + "</b><small>" + esc(c.desc || c.extract.slice(0, 90)) + "</small></a>").join("") + "</div>";
       }
     }
+    fillTech(canonical(name), loc, w && w.qid);
     if (!box()) return;
     if (!w) { box().innerHTML = local && local.txt ? "" : '<p class="note">Pas de fiche Wikipédia en français trouvée pour ce nom. Vérifie l’orthographe ou essaie son nom de ring complet.</p>'; return; }
     box().innerHTML = wikiCard(w);
     const pr = document.getElementById("wpromo");
     if (pr && pr.textContent === "–") { const f = promoIn(w.desc + " " + w.extract); if (f) pr.textContent = f; }
-  } catch (e) { if (box()) box().innerHTML = local && local.txt ? "" : '<p class="note">Impossible de joindre Wikipédia pour le moment.</p>'; }
+  } catch (e) {
+    fillTech(canonical(name), loc, "");
+    if (box()) box().innerHTML = local && local.txt ? "" : '<p class="note">Impossible de joindre Wikipédia pour le moment.</p>';
+  }
 }

@@ -10,6 +10,7 @@ import { searchView, wrestlerView, fillWiki } from "./views/search.js";
 import { authView, settingsView, profileView, editProfileView, applyTheme } from "./views/account.js";
 import { chatListView, newChatView, convView, renderMsgs, setupComposer, loadUsers, roomUnread, dmUnread, validConv } from "./views/chat.js";
 import "./modals.js";
+import "./applinks.js";
 import * as demoBackend from "./backend/demo.js";
 import { membersView, loadMembers } from "./views/members.js";
 import { favsView } from "./views/favs.js";
@@ -21,6 +22,7 @@ import { notifsView, notifUnread, popNotif, markNotifsSeen } from "./views/notif
 import { activityView } from "./views/activity.js";
 import { storylineView } from "./views/storyline.js";
 import { renderWComments, wslug } from "./views/comments.js";
+import { rosterView } from "./views/roster.js";
 
 let route = { name: "home" }, routeSubs = [], userSubs = [], dirty = false, searchFocused = false;
 const NEEDS_USER = { settings: 1, editprofile: 1, chat: 1, newchat: 1, conv: 1, profile: 1, members: 1, favs: 1, notifs: 1, activity: 1 };
@@ -30,7 +32,7 @@ const REL = {
   profile: ["profile", "profiles", "history", "otherHistory", "auth", "friends", "feuds", "blocks", "memberFriends", "tick"], chat: ["room", "convs", "reads", "profiles", "auth", "blocks"],
   newchat: ["users", "auth"], settings: ["auth", "route", "reports", "blocks", "profiles", "images"], editprofile: ["profile", "auth"], auth: ["auth"],
   matches: ["route"], credits: ["images"], wrestler: ["profile", "spoil", "history", "auth"], search: [], titles: ["history", "spoil"], title: ["history", "spoil"],
-  notifs: ["notifs", "profiles", "reads", "blocks"], activity: ["activity", "profiles", "blocks"], storyline: [],
+  notifs: ["notifs", "profiles", "reads", "blocks"], activity: ["activity", "profiles", "blocks"], storyline: [], roster: ["profile"],
   members: ["users", "friends", "feuds", "blocks", "profiles", "auth", "tick"], favs: ["profile", "profiles", "friends", "auth"], hl: ["history", "spoil"],
 };
 
@@ -56,6 +58,7 @@ function parse() {
     case "notifs": return { name: "notifs" };
     case "activite": return { name: "activity" };
     case "storyline": return { name: "storyline", id: parts[1] || "" };
+    case "roster": return S.P[parts[1]] ? { name: "roster", k: parts[1], g: parts[2] || "" } : { name: "home" };
     case "hl": return S.P[parts[1]] ? { name: "hl", k: parts[1], show: parts[2] || "PLE", d: parts[3] || "" } : { name: "home" };
     default: return { name: "home" };
   }
@@ -127,6 +130,7 @@ function render() {
     case "notifs": h = notifsView(); break;
     case "activity": h = activityView(); break;
     case "storyline": h = storylineView(route.id); break;
+    case "roster": h = rosterView(route.k, route.g); break;
   }
   app.innerHTML = h;
   if (route.name === "conv" && !waiting) { renderMsgs(route.id, true); setupComposer(); markRead(); }
@@ -165,7 +169,7 @@ function updateHeader() {
   if (fav) fav.classList.toggle("on", route.name === "favs");
   const nb = document.getElementById("notifbtn"), nu = notifUnread();
   if (nb) { nb.hidden = !S.user; nb.innerHTML = ICON.bell + (nu ? '<span class="badge">' + cnt(nu) + "</span>" : ""); nb.classList.toggle("on", route.name === "notifs"); }
-  document.title = (n + soc + nu ? "(" + (n + soc + nu) + ") " : "") + "Catch TV";
+  document.title = (n + soc + nu ? "(" + (n + soc + nu) + ") " : "") + "TCC TV";
 }
 
 onChange(what => {
@@ -275,7 +279,7 @@ async function boot() {
   applyTheme();
   document.getElementById("favbtn").innerHTML = ICON.starF;
   const c = await loadContent(); S.P = c.P; S.news = c.news; S.recaps = c.recaps || {}; S.matches = c.matches || []; S.titles = c.titles || []; S.titlesUpdated = c.titlesUpdated || "";
-  S.highlights = c.highlights || {}; S.wrestlers = c.wrestlers || {}; S.storylines = c.storylines || [];
+  S.highlights = c.highlights || {}; S.wrestlers = c.wrestlers || {}; S.storylines = c.storylines || []; S.rosters = c.rosters || {}; S.rostersSrc = c.rostersSrc || {};
   tick(); setInterval(tick, 60000);
   let backend = null;
   if (firebaseConfig) {

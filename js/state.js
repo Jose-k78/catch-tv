@@ -30,7 +30,9 @@ export const S = {
   wcomments: {},         // commentaires des fiches catcheurs (slug -> [commentaires])
   notifs: [],            // mes notifications (likes, réponses)
   activity: [],          // activité des membres (notes, commentaires)
-  storylines: [],        // storylines de la semaine (la plus récente en premier)
+  storylines: [],        // storylines du jour (la plus récente en premier)
+  rosters: {},           // rosters par promotion et par show / division
+  rostersSrc: {},
   isAdmin: false,
   demo: false,
   authReady: false,

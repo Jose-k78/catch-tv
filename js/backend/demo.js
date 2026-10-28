@@ -80,6 +80,19 @@ export async function changeEmail(newEmail, current) {
   delete DB.accounts[k]; a.email = newEmail; DB.accounts[newEmail.toLowerCase()] = a; save(); fireAuth();
   return "done";
 }
+export async function deleteAccount(password) {
+  const u = current_(), k = u.email.toLowerCase(), a = DB.accounts[k], uid = u.uid;
+  if (a.pass !== await hash(password || "")) throw { code: "auth/invalid-credential" };
+  delete DB.accounts[k]; delete DB.users[uid]; delete DB.history[uid]; delete DB.blocks[uid]; delete DB.reads[uid]; delete DB.notifs[uid];
+  Object.keys(DB.friends).forEach(id => { if (DB.friends[id].members.indexOf(uid) >= 0) delete DB.friends[id]; });
+  Object.keys(DB.feuds).forEach(id => { if (DB.feuds[id].members.indexOf(uid) >= 0) delete DB.feuds[id]; });
+  Object.keys(DB.wcomments).forEach(id => { const c = DB.wcomments[id]; if (c.uid === uid) delete DB.wcomments[id]; else c.likes = c.likes.filter(x => x !== uid); });
+  Object.keys(DB.activity).forEach(id => { if (DB.activity[id].uid === uid) delete DB.activity[id]; });
+  DB.room = DB.room.filter(m => m.uid !== uid);
+  Object.keys(DB.msgs).forEach(c => { DB.msgs[c] = DB.msgs[c].filter(m => m.uid !== uid); });
+  if (DB.admin === uid) DB.admin = "";
+  save(); setSess(null); fireAuth();
+}
 function current_() { const u = current(); if (!u) throw { code: "auth/no-user" }; return u; }
 
 export function watchUser(uid, cb) { return watch(() => { const u = DB.users[uid]; cb(u ? Object.assign(clone(u), { uid: uid }) : null); }); }

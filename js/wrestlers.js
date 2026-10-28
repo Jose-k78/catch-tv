@@ -32,6 +32,14 @@ export function wShows(name) {
       if (!t.show && !(t.shows || []).length && !out.some(o => o.k === t.k)) out.push({ k: t.k, n: "" });
     }
   });
+  // rosters : show (Raw, SmackDown…) ou promotion
+  Object.keys(S.rosters || {}).forEach(k => { const r = S.rosters[k] || {}; Object.keys(r).forEach(g => {
+    if ((r[g] || []).some(x => norm(x) === norm(name))) {
+      const isShow = S.P[k] && S.P[k].s && S.P[k].s[g];
+      if (isShow && !out.some(o => o.k === k && o.n === g)) out.push({ k: k, n: g });
+      else if (!isShow && !out.some(o => o.k === k)) out.push({ k: k, n: "" });
+    }
+  }); });
   if (!out.length && w && w.k) out.push({ k: w.k, n: "" });
   return out;
 }
@@ -62,7 +70,8 @@ export function lastMatches(name, n) {
       const res = (h.res || []).filter(r => mentions(r, name));
       if (!res.length || out.some(o => o.d === p[2] && o.k === p[0])) return;
       const vid = (h.v || []).find(v => okVid(v.id) && mentions(v.t, name));
-      out.push({ k: p[0], show: p[1], d: p[2], ev: p[1] === "PLE" ? "" : p[1], t: "", r: res.join(" · "), v: vid ? vid.id : "", vt: vid ? vid.t : "" });
+      const ple = p[1] === "PLE" && S.P[p[0]] ? (S.P[p[0]].e || []).find(x => x.d === p[2]) : null;
+      out.push({ k: p[0], show: p[1], d: p[2], ev: p[1] === "PLE" ? (ple ? ple.t : "") : p[1], t: "", r: res.join(" · "), v: vid ? vid.id : "", vt: vid ? vid.t : "" });
     });
   }
   return out.slice(0, n);
@@ -113,5 +122,6 @@ export function knownNames() {
   const W = S.wrestlers || {};
   Object.keys(W).forEach(k => { const w = W[k] || {}; add(k, [w.k, w.era].filter(Boolean).join(" · ") || "Fiche catcheur", w.a); });
   (S.titles || []).forEach(t => (t.who || []).forEach(x => add(x, t.k + " · " + t.n)));
+  Object.keys(S.rosters || {}).forEach(k => { const r = S.rosters[k] || {}; Object.keys(r).forEach(g => (r[g] || []).forEach(x => add(x, k + " · " + g))); });
   return out;
 }

@@ -1,4 +1,4 @@
-// Storyline de la semaine : une histoire culte racontée en français, avec une vidéo, renouvelée chaque lundi
+// Storyline du jour : histoires, rivalités, anecdotes de coulisses et faits marquants, racontés en français, une nouvelle chaque jour
 import { S } from "../state.js";
 import { esc, ICON, fmt, okHttp } from "../util.js";
 import { okVid, ytSearch } from "./highlights.js";
@@ -6,15 +6,15 @@ import { okVid, ytSearch } from "./highlights.js";
 const list = () => (S.storylines || []).filter(s => s && s.id && s.t && Array.isArray(s.txt));
 export function storylineTile() {
   const s = list()[0]; if (!s) return "";
-  return '<a class="storytile" href="#/storyline"><span class="eyebrow">📖 STORYLINE DE LA SEMAINE</span><b>' + esc(s.t) + "</b><small>" + esc([s.k, s.years].filter(Boolean).join(" · ")) + "</small>" +
+  return '<a class="storytile" href="#/storyline"><span class="eyebrow">📖 LA STORYLINE DU JOUR</span><b>' + esc(s.t) + "</b><small>" + esc([s.type, s.k, s.years].filter(Boolean).join(" · ")) + "</small>" +
     "<p>" + esc(s.hook || s.txt[0]) + '</p><span class="discgo">Lire l’histoire ›</span></a>';
 }
 export function storylineView(id) {
   const all = list(), s = id ? all.find(x => x.id === id) : all[0];
   let h = '<a class="back" href="#/">' + ICON.back + " Accueil</a>";
-  if (!s) return h + '<p class="empty">La storyline de la semaine arrive bientôt.</p>';
+  if (!s) return h + '<p class="empty">La storyline du jour arrive bientôt.</p>';
   const k = S.P[s.k] ? s.k : "WWE";
-  h += '<section class="storyhead"><span class="eyebrow">STORYLINE' + (s === all[0] ? " DE LA SEMAINE" : "") + "</span><h1>" + esc(s.t) + "</h1><small>" + esc([s.k, s.years].filter(Boolean).join(" · ")) + "</small></section>";
+  h += '<section class="storyhead"><span class="eyebrow">STORYLINE' + (s === all[0] ? " DU JOUR" : "") + "</span><h1>" + esc(s.t) + "</h1><small>" + esc([s.type, s.k, s.years].filter(Boolean).join(" · ")) + "</small></section>";
   h += '<article class="story">' + s.txt.map(p => "<p>" + esc(p) + "</p>").join("") + "</article>";
   if (s.key) h += '<div class="storykey"><small>Le moment clé</small><p>' + esc(s.key) + "</p></div>";
   h += "<h2>En vidéo</h2>";
@@ -26,6 +26,6 @@ export function storylineView(id) {
     ". Texte écrit par Claude à partir de ces sources.</p>";
   const others = all.filter(x => x !== s);
   if (others.length) h += '<h2>Les storylines précédentes</h2><div class="list">' + others.map(x => '<a class="item" href="#/storyline/' + encodeURIComponent(x.id) + '"><span class="lbl"><b>' + esc(x.t) +
-    "</b><small>" + esc([x.k, x.years].filter(Boolean).join(" · ")) + (x.week ? " · semaine du " + fmt(x.week) : "") + '</small></span><span class="chev">›</span></a>').join("") + "</div>";
+    "</b><small>" + esc([x.k, x.years].filter(Boolean).join(" · ")) + ((x.d || x.week) ? " · " + fmt(x.d || x.week) : "") + '</small></span><span class="chev">›</span></a>').join("") + "</div>";
   return h;
 }

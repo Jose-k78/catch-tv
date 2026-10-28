@@ -24,7 +24,7 @@ if (process.argv[3] === "--artifact") {
   // la plateforme ajoute elle-même doctype/html/head/body
   html = html.replace(/<!doctype html>\s*/i, "").replace(/<\/?html[^>]*>\s*/g, "").replace(/<\/?head>\s*/g, "").replace(/<\/?body>\s*/g, "")
     .replace(/<meta charset="utf-8">\s*/, "").replace(/<meta name="viewport"[^>]*>\s*/, "");
-  html = html.replace("<title>Catch TV</title>", "<title>Catch TV v3</title>");
+  html = html.replace("<title>TCC TV</title>", "<title>TCC TV</title>");
   html = html.replace(/^/, "");
 }
 fs.writeFileSync(out, html);

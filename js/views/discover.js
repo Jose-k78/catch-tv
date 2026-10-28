@@ -1,4 +1,4 @@
-// « Catcheur ou catcheuse à découvrir » : tirage au hasard parmi toutes les fédérations et toutes les époques
+// « Wrestlers à découvrir » : tirage au hasard parmi toutes les fédérations et toutes les époques
 import { S, ACT } from "../state.js";
 import { esc } from "../util.js";
 
@@ -14,7 +14,7 @@ export function discoverTile() {
   if (!cur || !S.wrestlers[cur]) cur = pickOne();
   if (!cur) return "";
   const w = S.wrestlers[cur];
-  return '<section class="disc"><span class="eyebrow">🎲 CATCHEUR OU CATCHEUSE À DÉCOUVRIR</span><a class="disclink" href="#/catcheur/' + encodeURIComponent(cur) + '"><b>' + esc(cur) + "</b>" +
+  return '<section class="disc"><span class="eyebrow">🎲 WRESTLERS À DÉCOUVRIR</span><a class="disclink" href="#/catcheur/' + encodeURIComponent(cur) + '"><b>' + esc(cur) + "</b>" +
     "<small>" + esc([w.era, w.k].filter(Boolean).join(" · ")) + "</small><p>" + esc(w.txt) + '</p><span class="discgo">Voir sa fiche ›</span></a>' +
     '<button class="btn small glass" data-act="discover">🎲 Un autre</button></section>';
 }

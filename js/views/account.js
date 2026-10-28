@@ -94,6 +94,14 @@ export function settingsView(sub) {
       field("s_new2", "Confirmer le nouveau mot de passe", 'type="password" autocomplete="new-password" minlength="6" required') +
       '<p class="err" id="ferr"></p><button class="btn wide">Changer mon mot de passe</button></form>');
   }
+  if (sub === "supprimer") {
+    return h + '<h1>Supprimer mon compte</h1><div class="lockbox" style="margin:0 16px 14px;text-align:left;align-items:flex-start"><b>⚠️ C’est définitif</b><p>Ton compte et toutes tes données seront effacés et ne pourront pas être récupérés :</p>' +
+      '<ul class="dellist"><li>ton profil, ta photo et ta description</li><li>ton historique « déjà vu » et tes notes</li><li>tes favoris, tes amis et tes feuds</li><li>tes commentaires, tes likes et ton activité</li><li>tes notifications et tes messages (Gorilla Position et messages privés)</li></ul></div>' +
+      '<form data-form="delacc">' + (google ? '<p class="note" style="margin-bottom:12px">Tu es connecté avec Google : une fenêtre Google va s’ouvrir pour confirmer que c’est bien toi.</p>'
+        : field("d_pass", "Ton mot de passe (pour confirmer)", 'type="password" autocomplete="current-password" required')) +
+      '<label class="chk"><input type="checkbox" id="d_ok"> Je comprends que tout sera supprimé définitivement</label>' +
+      '<p class="err" id="ferr"></p><button class="btn wide danger">Supprimer définitivement mon compte</button></form>';
+  }
   if (sub === "spoiler") {
     const on = noSpoil();
     return h + '<h1>Mode sans spoiler</h1><p class="note" style="margin-bottom:14px">Cache les champions couronnés récemment, les résultats et les highlights tant que tu n’as pas marqué le show comme vu (bouton œil). Réglage enregistré sur cet appareil.</p>' +
@@ -141,9 +149,16 @@ export function settingsView(sub) {
     h += "<h2>" + (S.isAdmin ? "Admin" : "Installation") + '</h2><p class="note">' + (S.isAdmin ? "Tu es l’admin de l’app." : "Ton identifiant, à recopier dans la configuration pour devenir admin (voir le guide) :") + "</p>" +
       '<div class="uid" id="myuid">' + esc(u.uid) + '</div><div class="btns"><button class="btn ghost" data-act="copyuid">Copier l’identifiant</button></div>';
   }
-  h += '<div style="height:18px"></div><button class="btn wide ghost" data-act="logout">Se déconnecter</button>';
+  h += '<div style="height:18px"></div><button class="btn wide ghost" data-act="logout">Se déconnecter</button>' +
+    '<p style="text-align:center;margin-top:14px"><a class="linkbtn" href="#/parametres/supprimer">Supprimer mon compte</a></p>';
   return h;
 }
+FORM.delacc = f => busy(f, async () => {
+  if (!document.getElementById("d_ok").checked) { ferr("Coche la case pour confirmer"); return; }
+  const pw = document.getElementById("d_pass");
+  await B.deleteAccount(pw ? pw.value : "");
+  toast("Ton compte a été supprimé. À bientôt peut-être !", { ms: 5000 }); location.hash = "#/";
+});
 FORM.email = f => busy(f, async () => {
   const r = await B.changeEmail(v("s_email"), document.getElementById("s_pass").value);
   toast(r === "verify" ? "Clique sur le lien reçu sur ta nouvelle adresse pour confirmer" : "E-mail modifié", { ms: 5000 });

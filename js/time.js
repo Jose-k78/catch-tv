@@ -59,8 +59,8 @@ const icsEsc = s => String(s || "").replace(/\\/g, "\\\\").replace(/\n/g, "\\n")
 const stamp = ms => new Date(ms).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
 function fold(line) { let out = "", s = line; while (s.length > 74) { out += s.slice(0, 74) + "\r\n "; s = s.slice(74); } return out + s; }
 export function icsFor(e, desc) {
-  const t = startOf(e), uid = (e.k + "-" + e.t + "-" + (e.d || "")).replace(/[^\w-]+/g, "-") + "@catch-tv";
-  const L = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Catch TV//FR", "CALSCALE:GREGORIAN", "METHOD:PUBLISH", "BEGIN:VEVENT", "UID:" + uid, "DTSTAMP:" + stamp(Date.now())];
+  const t = startOf(e), uid = (e.k + "-" + e.t + "-" + (e.d || "")).replace(/[^\w-]+/g, "-") + "@tcc-tv";
+  const L = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//TCC TV//FR", "CALSCALE:GREGORIAN", "METHOD:PUBLISH", "BEGIN:VEVENT", "UID:" + uid, "DTSTAMP:" + stamp(Date.now())];
   if (t) { L.push("DTSTART:" + stamp(t), "DTEND:" + stamp(t + (e.dur || 180) * 6e4)); }
   else {
     const d = String(e.d).replace(/-/g, ""), x = new Date(e.d + "T12:00:00Z"); x.setUTCDate(x.getUTCDate() + 1);

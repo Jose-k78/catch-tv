@@ -1,10 +1,9 @@
 {
  "updated": "2026-10-28",
- "note": "Une storyline par semaine (la plus récente en premier). txt = paragraphes écrits en français à partir des sources ; v = vidéos des chaînes officielles ; q = recherches sur la chaîne officielle.",
+ "note": "Une storyline par jour (la plus récente en premier) : grandes histoires, rivalités, anecdotes de coulisses, faits marquants. txt = paragraphes écrits en français à partir des sources ; v = vidéos officielles ; q = recherches sur la chaîne officielle.",
  "items": [
   {
    "id": "kofimania",
-   "week": "2026-10-26",
    "t": "La KofiMania",
    "k": "WWE",
    "years": "2019",
@@ -39,7 +38,9 @@
      "n": "The Ringer",
      "u": "https://www.theringer.com/2019/04/01/mma/wrestlemania-35-match-book-daniel-bryan-vs-kofi-kingston"
     }
-   ]
+   ],
+   "d": "2026-10-26",
+   "type": "Grande histoire"
   }
  ]
 }

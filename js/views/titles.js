@@ -26,7 +26,7 @@ function card(t) {
 }
 const noteSpoil = () => '<p class="note small" style="margin-top:12px">' + (noSpoil() ? "🙈 Mode sans spoiler activé : les champions couronnés récemment restent masqués tant que tu n’as pas vu un show de la promotion depuis."
   : "⚠️ Les champions actuels peuvent dévoiler des résultats récents. Active le « mode sans spoiler » dans les paramètres pour les masquer.") +
-  (okDay(S.titlesUpdated) ? " Mis à jour le " + fmt(S.titlesUpdated) + "." : "") + "</p>";
+  (okDay(S.titlesUpdated) ? " Mis à jour le " + fmt(S.titlesUpdated).replace(/\.$/, "") + "." : "") + "</p>";
 
 export function titlesView(k, n) {
   if (!S.P[k]) return '<p class="empty">Promotion introuvable.</p>';

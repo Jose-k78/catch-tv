@@ -9,6 +9,7 @@ import { champHidden } from "../spoil.js";
 import { discoverTile } from "./discover.js";
 import { storylineTile } from "./storyline.js";
 import { activitySection, activityList } from "./activity.js";
+import { rosterTile } from "./roster.js";
 
 // ---------- données ----------
 export function seenId(e) { return docId(e.k + "|" + (e.show || "PLE") + "|" + (e.d || "") + "|" + e.t); }
@@ -83,7 +84,8 @@ export function liveSection(filter) {
 // Où regarder : plateformes officielles en France, puis aux États-Unis
 ACT.watch = el => {
   const e = findItem(el.dataset); if (!e) return;
-  const fr = (e.fr || []).filter(f => okHttp(f.u));
+  // Netflix : on ouvre directement la recherche du show (« WWE Raw », « WWE Crown Jewel »…)
+  const fr = (e.fr || []).filter(f => okHttp(f.u)).map(f => /netflix\.com/.test(f.u) ? { n: f.n, u: "https://www.netflix.com/search?q=" + encodeURIComponent(e.k + " " + (e.show || e.t)) } : f);
   modal((box, close) => {
     box.innerHTML = "<h3>" + esc(e.t) + '</h3><p class="sub">' + (isLive(e) ? "🔴 En direct maintenant" : esc(e.k)) + "</p>" +
       (fr.length ? '<p class="sub" style="margin-bottom:6px">En France</p>' + fr.map(f => '<a class="btn wide" href="' + esc(f.u) + '" target="_blank" rel="noopener">Regarder sur ' + esc(f.n) + " ↗</a>").join("") : "") +
@@ -101,7 +103,7 @@ function remindBtn(e, cls) {
 ACT.remind = el => {
   const e = findItem(el.dataset); if (!e) return;
   const fr = frName(e);
-  downloadIcs(e, (fr ? "À regarder sur " + fr + ". " : "") + "Ajouté depuis Catch TV.");
+  downloadIcs(e, (fr ? "À regarder sur " + fr + ". " : "") + "Ajouté depuis TCC TV.");
   toast("Ouvre le fichier pour l’ajouter à ton calendrier" + (startOf(e) ? " (rappel 1 h avant)" : ""), { ms: 4000 });
 };
 // Bouton « Highlights » (vidéos + résultats) d'un show passé
@@ -309,7 +311,7 @@ export function promoView(k) {
   h += liveSection(e => e.k === k);
   if (first) h += hero(first, "PROCHAINEMENT · " + esc(k));
   if (pr.s) h += "<h2>Shows hebdo</h2>" + showRow(Object.keys(pr.s).map(n => ({ k: k, n: n })), false);
-  h += titlesTile(k, "");
+  h += titlesTile(k, "") + rosterTile(k, "");
   h += "<h2>PLE à venir</h2>" + (ple[0].length ? epList(ple[0]) : '<p class="note">Aucun PLE annoncé pour l’instant.</p>');
   if (ep[0].length) h += "<h2>Cette semaine</h2>" + epList(ep[0]);
   const past = split(ple[1].concat(ep[1]))[1];
@@ -331,7 +333,7 @@ export function showView(k, n) {
   h += '<p class="note showinfo">' + esc(s.j) + (s.h ? " à " + esc(s.h.replace(":", " h ")) + (s.tz ? " (heure de " + esc(cityOf(s.tz)) + ")" : "") : "") +
     (st ? ", soit <b>" + fmtAt(st, PARIS) + "</b> à Paris pour le prochain" : "") + "<br>" +
     (fr ? "En France : " + esc(fr) + " · " : "") + "Aux États-Unis : " + esc(s.p) + " · " + '<button class="linkbtn inline" data-act="watch"' + (nx ? itemData(nx) : "") + ">Où regarder ↗</button></p>";
-  h += titlesTile(k, n);
+  h += titlesTile(k, n) + rosterTile(k, n);
   if (up.length) h += "<h2>À venir</h2>" + epList(up);
   if (past.length) h += "<h2>Épisodes précédents</h2>" + epList(past);
   let al = articles([k, n], 5); if (!al.length) al = articles([k], 5);

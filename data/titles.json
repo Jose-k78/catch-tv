@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-27",
+ "updated": "2026-10-28",
  "note": "Champions actuels : peut révéler des résultats récents.",
  "titles": [
   {
@@ -846,6 +846,68 @@
    "u": "https://www.pwtorch.com/site/2026/10/12/njpw-king-of-pro-wrestling-2026-results-10-12-lansdells-report-and-analysis-of-tsuji-vs-oiwa-kidd-vs-umino-yoh-vs-eagles-and-more/"
   },
   {
+   "id": "njpw-tag",
+   "k": "NJPW",
+   "show": "",
+   "n": "IWGP Tag Team Championship",
+   "c": "United Empire (Great-O-Khan et Henare)",
+   "who": [
+    "Great-O-Khan",
+    "Henare"
+   ],
+   "since": "2026-06-14",
+   "ev": "Dominion",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_New_Japan_Pro-Wrestling"
+  },
+  {
+   "id": "njpw-jrtag",
+   "k": "NJPW",
+   "show": "",
+   "n": "IWGP Junior Heavyweight Tag Team Championship",
+   "c": "El Desperado et Místico",
+   "who": [
+    "El Desperado",
+    "Místico"
+   ],
+   "since": "2026-05-04",
+   "ev": "Wrestling Dontaku",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_New_Japan_Pro-Wrestling"
+  },
+  {
+   "id": "njpw-tv",
+   "k": "NJPW",
+   "show": "",
+   "n": "NJPW World Television Championship",
+   "c": "Konosuke Takeshita",
+   "who": [
+    "Konosuke Takeshita"
+   ],
+   "since": "2026-02-27",
+   "ev": "The New Beginning USA",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_New_Japan_Pro-Wrestling"
+  },
+  {
+   "id": "njpw-strong",
+   "k": "NJPW",
+   "show": "",
+   "n": "Strong Openweight Championship",
+   "c": "Boltin Oleg",
+   "who": [
+    "Boltin Oleg"
+   ],
+   "since": "2026-02-27",
+   "ev": "The New Beginning USA",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_New_Japan_Pro-Wrestling"
+  },
+  {
    "id": "aaa-mega",
    "k": "AAA",
    "show": "",
@@ -987,7 +1049,7 @@
     {
      "c": "Sayaka Kurara",
      "d": "2026-04-26",
-     "ev": ""
+     "ev": "All Star Grand Queendom"
     },
     {
      "c": "Saya Kamitani",
@@ -997,12 +1059,12 @@
     {
      "c": "Tam Nakano",
      "d": "2024-08-31",
-     "ev": ""
+     "ev": "5★Star Grand Prix"
     },
     {
      "c": "Natsuko Tora",
      "d": "2024-07-28",
-     "ev": ""
+     "ev": "Sapporo World Rendezvous"
     },
     {
      "c": "Maika",
@@ -1014,10 +1076,193 @@
    "u": "https://en.wikipedia.org/wiki/World_of_Stardom_Championship"
   },
   {
+   "id": "stardom-wonder",
+   "k": "Stardom",
+   "show": "",
+   "n": "Wonder of Stardom Championship",
+   "c": "Hanan",
+   "who": [
+    "Hanan"
+   ],
+   "since": "2026-04-26",
+   "ev": "All Star Grand Queendom",
+   "hist": [
+    {
+     "c": "Konami",
+     "d": "2025-11-03",
+     "ev": "Crimson Nightmare"
+    },
+    {
+     "c": "Starlight Kid",
+     "d": "2024-12-29",
+     "ev": "Dream Queendom"
+    },
+    {
+     "c": "Natsupoi",
+     "d": "2024-07-27",
+     "ev": "Sapporo World Rendezvous"
+    },
+    {
+     "c": "Saori Anou",
+     "d": "2024-07-15",
+     "ev": ""
+    }
+   ],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/Wonder_of_Stardom_Championship"
+  },
+  {
+   "id": "stardom-goddesses",
+   "k": "Stardom",
+   "show": "",
+   "n": "Goddesses of Stardom Championship (par équipe)",
+   "c": "02line (AZM et Miyu Amasaki)",
+   "who": [
+    "AZM",
+    "Miyu Amasaki"
+   ],
+   "since": "2026-04-26",
+   "ev": "All Star Grand Queendom",
+   "hist": [
+    {
+     "c": "BMI2000 (Natsuko Tora et Ruaka)",
+     "d": "2025-07-24",
+     "ev": "Nighter in Korakuen"
+    },
+    {
+     "c": "wing★gori (Hanan et Saya Iida)",
+     "d": "2024-12-29",
+     "ev": "Dream Queendom"
+    },
+    {
+     "c": "Momo Watanabe et Thekla",
+     "d": "2024-07-23",
+     "ev": "Nighter in Korakuen"
+    },
+    {
+     "c": "God’s Eye (Syuri et Konami)",
+     "d": "2024-06-29",
+     "ev": ""
+    }
+   ],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/Goddesses_of_Stardom_Championship"
+  },
+  {
+   "id": "stardom-artist",
+   "k": "Stardom",
+   "show": "",
+   "n": "Artist of Stardom Championship (trios)",
+   "c": "Triangle of Madness (Thekla, Julia Hart et Skye Blue)",
+   "who": [
+    "Thekla",
+    "Julia Hart",
+    "Skye Blue"
+   ],
+   "since": "2026-07-18",
+   "ev": "5★Star Grand Prix",
+   "hist": [
+    {
+     "c": "Dream Trine (Ami Sohrei, Hina et Lady C)",
+     "d": "2026-05-26",
+     "ev": "Nighter in Korakuen"
+    },
+    {
+     "c": "H.A.T.E. (Konami, Rina et Fukigen Death)",
+     "d": "2025-09-10",
+     "ev": "Nighter in Korakuen"
+    },
+    {
+     "c": "Neo Genesis (Starlight Kid, AZM et Miyu Amasaki)",
+     "d": "2025-02-02",
+     "ev": "Supreme Fight"
+    },
+    {
+     "c": "Cosmic Angels (Tam Nakano, Saori Anou et Natsupoi)",
+     "d": "2024-08-04",
+     "ev": ""
+    }
+   ],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/Artist_of_Stardom_Championship"
+  },
+  {
+   "id": "stardom-future",
+   "k": "Stardom",
+   "show": "",
+   "n": "Future of Stardom Championship",
+   "c": "Ranna Yagami",
+   "who": [
+    "Ranna Yagami"
+   ],
+   "since": "2026-03-15",
+   "ev": "Cinderella Tournament",
+   "hist": [
+    {
+     "c": "Hanako",
+     "d": "2025-09-27",
+     "ev": ""
+    },
+    {
+     "c": "Hina",
+     "d": "2025-02-24",
+     "ev": "Path of Thunder"
+    },
+    {
+     "c": "Miyu Amasaki",
+     "d": "2024-10-05",
+     "ev": "Nagoya Golden Fight"
+    },
+    {
+     "c": "Rina",
+     "d": "2023-05-12",
+     "ev": "New Blood 8"
+    }
+   ],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/Future_of_Stardom_Championship"
+  },
+  {
+   "id": "stardom-iwgpw",
+   "k": "Stardom",
+   "show": "",
+   "n": "IWGP Women’s Championship (NJPW et Stardom)",
+   "c": "Syuri",
+   "who": [
+    "Syuri"
+   ],
+   "since": "2025-10-13",
+   "ev": "King of Pro-Wrestling",
+   "hist": [
+    {
+     "c": "Sareee",
+     "d": "2025-06-21",
+     "ev": "The Conversion"
+    },
+    {
+     "c": "Syuri",
+     "d": "2025-04-27",
+     "ev": "All Star Grand Queendom"
+    },
+    {
+     "c": "Mayu Iwatani",
+     "d": "2023-04-23",
+     "ev": "All Star Grand Queendom"
+    },
+    {
+     "c": "Mercedes Moné",
+     "d": "2023-02-18",
+     "ev": "Battle in the Valley"
+    }
+   ],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/IWGP_Women%27s_Championship"
+  },
+  {
    "id": "marigold-world",
    "k": "Marigold",
    "show": "",
-   "n": "Marigold World, United National et Super Fly Championships",
+   "n": "Marigold World Championship",
    "c": "Mayu Iwatani",
    "who": [
     "Mayu Iwatani"
@@ -1026,18 +1271,112 @@
    "ev": "Grand Destiny",
    "hist": [
     {
-     "c": "Miku Aono (World)",
+     "c": "Miku Aono",
      "d": "2025-10-26",
-     "ev": "Grand Destiny 2025"
+     "ev": "Grand Destiny"
     },
     {
-     "c": "Victoria Yuzuki (United National)",
-     "d": "",
-     "ev": ""
+     "c": "Utami Hayashishita",
+     "d": "2025-01-03",
+     "ev": "First Dream"
+    },
+    {
+     "c": "Sareee",
+     "d": "2024-07-13",
+     "ev": "Summer Destiny"
     }
    ],
    "src": "Wikipédia",
-   "u": "https://en.wikipedia.org/wiki/Dream_Star_Fighting_Marigold"
+   "u": "https://en.wikipedia.org/wiki/Marigold_World_Championship"
+  },
+  {
+   "id": "marigold-un",
+   "k": "Marigold",
+   "show": "",
+   "n": "Marigold United National Championship",
+   "c": "Mayu Iwatani",
+   "who": [
+    "Mayu Iwatani"
+   ],
+   "since": "2026-10-24",
+   "ev": "Grand Destiny",
+   "hist": [
+    {
+     "c": "Victoria Yuzuki",
+     "d": "2025-10-26",
+     "ev": "Grand Destiny"
+    },
+    {
+     "c": "Mai Sakurai",
+     "d": "2025-01-03",
+     "ev": "First Dream"
+    },
+    {
+     "c": "Miku Aono",
+     "d": "2024-07-13",
+     "ev": "Summer Destiny"
+    }
+   ],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/Marigold_United_National_Championship"
+  },
+  {
+   "id": "marigold-superfly",
+   "k": "Marigold",
+   "show": "",
+   "n": "Marigold Super Fly Championship",
+   "c": "Mayu Iwatani",
+   "who": [
+    "Mayu Iwatani"
+   ],
+   "since": "2025-05-24",
+   "ev": "Shine Forever",
+   "hist": [
+    {
+     "c": "Victoria Yuzuki",
+     "d": "2025-01-03",
+     "ev": "First Dream"
+    },
+    {
+     "c": "Natsumi Showzuki",
+     "d": "2024-07-13",
+     "ev": "Summer Destiny"
+    }
+   ],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/Marigold_Super_Fly_Championship"
+  },
+  {
+   "id": "marigold-twinstar",
+   "k": "Marigold",
+   "show": "",
+   "n": "Marigold Twin Star Championship (par équipe)",
+   "c": "tWin toWer (Kouki Amarei et Chika Goto)",
+   "who": [
+    "Kouki Amarei",
+    "Chika Goto"
+   ],
+   "since": "2026-05-23",
+   "ev": "Shine Forever",
+   "hist": [
+    {
+     "c": "Darkness Revolution (Misa Matsui et Chiaki)",
+     "d": "2025-10-26",
+     "ev": "Grand Destiny"
+    },
+    {
+     "c": "Magenta (Riko Kawahata et Maria)",
+     "d": "2025-05-10",
+     "ev": "Rising Spirit"
+    },
+    {
+     "c": "Passion Parent&Child (Nanae Takahashi et Seri Yamaoka)",
+     "d": "2025-01-19",
+     "ev": "New Year’s Golden Garden"
+    }
+   ],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/Marigold_Twin_Star_Championship"
   }
  ]
 }
