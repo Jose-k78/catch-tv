@@ -81,7 +81,7 @@ export function modal(build) {
 }
 
 // Recadre / réduit une image choisie et renvoie une data URL JPEG
-export function fileToDataUrl(file, maxW, maxH, square) {
+export function fileToDataUrl(file, maxW, maxH, square, maxLen) {
   return new Promise((resolve, reject) => {
     const img = new Image(), u = URL.createObjectURL(file);
     img.onload = () => {
@@ -93,7 +93,14 @@ export function fileToDataUrl(file, maxW, maxH, square) {
       c.width = Math.round(sw * r); c.height = Math.round(sh * r);
       c.getContext("2d").drawImage(img, sx, sy, sw, sh, 0, 0, c.width, c.height);
       let q = 0.85, out = c.toDataURL("image/jpeg", q);
-      while (out.length > 700000 && q > 0.4) { q -= 0.1; out = c.toDataURL("image/jpeg", q); }
+      const lim = maxLen || 700000;
+      while (out.length > lim && q > 0.4) { q -= 0.1; out = c.toDataURL("image/jpeg", q); }
+      // encore trop lourde : on réduit la taille
+      let sc = 0.8;
+      while (out.length > lim && sc > 0.3) {
+        const c2 = document.createElement("canvas"); c2.width = Math.round(c.width * sc); c2.height = Math.round(c.height * sc);
+        c2.getContext("2d").drawImage(c, 0, 0, c2.width, c2.height); out = c2.toDataURL("image/jpeg", 0.7); sc -= 0.15;
+      }
       resolve(out);
     };
     img.onerror = () => { URL.revokeObjectURL(u); reject(new Error("image")); };

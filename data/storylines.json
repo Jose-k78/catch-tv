@@ -1,0 +1,45 @@
+{
+ "updated": "2026-10-28",
+ "note": "Une storyline par semaine (la plus récente en premier). txt = paragraphes écrits en français à partir des sources ; v = vidéos des chaînes officielles ; q = recherches sur la chaîne officielle.",
+ "items": [
+  {
+   "id": "kofimania",
+   "week": "2026-10-26",
+   "t": "La KofiMania",
+   "k": "WWE",
+   "years": "2019",
+   "hook": "Plus de dix ans à attendre sa chance, puis deux mois où tout le public s’est rangé derrière lui : l’histoire qui a mené Kofi Kingston au sommet de WrestleMania.",
+   "txt": [
+    "Début 2019, Kofi Kingston est un pilier de la WWE depuis plus de dix ans. Champion par équipe à de nombreuses reprises avec le New Day, il n’a pourtant jamais eu de vraie chance au titre suprême : tout le monde l’apprécie, mais personne ne l’imagine à la première place.",
+    "Tout bascule en février 2019. Mustafa Ali, blessé, doit renoncer à l’Elimination Chamber et Kofi le remplace au pied levé. Lors du SmackDown qui précède, il participe à un gauntlet match : il enchaîne les adversaires pendant de longues minutes et ne s’incline qu’à la toute fin face à AJ Styles, sous les ovations. Quelques jours plus tard, dans la Chamber, il est le dernier à tomber face au champion Daniel Bryan. Une étoile est née.",
+    "Le public réclame Kofi, mais Vince McMahon, le patron dans l’histoire, refuse de le voir en champion. Semaine après semaine, il lui retire son match, ajoute des obstacles et lui impose des défis impossibles. Le 19 mars, Kofi doit battre cinq adversaires d’affilée pour obtenir sa chance : il vient à bout de Sheamus, Cesaro, Rowan (par disqualification), Samoa Joe et Randy Orton… avant que McMahon n’ajoute Daniel Bryan en personne, qui l’achève.",
+    "Ses partenaires Big E et Xavier Woods prennent alors le relais : le 26 mars, ils remportent à leur tour un gauntlet par équipe et forcent McMahon à accorder à Kofi son match de championnat à WrestleMania 35.",
+    "Le 7 avril 2019, au MetLife Stadium, Kofi Kingston bat Daniel Bryan et devient champion de la WWE, le premier né en Afrique (il est originaire du Ghana). Ses fils le rejoignent sur le ring pour une célébration restée dans toutes les mémoires. La « KofiMania » reste l’un des plus beaux exemples d’histoire portée par le public."
+   ],
+   "key": "Le gauntlet du 19 mars 2019 : cinq victoires d’affilée, puis l’entrée surprise de Daniel Bryan imposée par Vince McMahon.",
+   "v": [],
+   "q": [
+    "Kofi Kingston vs Daniel Bryan WrestleMania 35",
+    "Kofi Kingston gauntlet SmackDown 2019"
+   ],
+   "src": [
+    {
+     "n": "WWE.com (gauntlet du 19 mars 2019)",
+     "u": "https://www.wwe.com/shows/smackdown/2019-03-19/article/gauntlet-match"
+    },
+    {
+     "n": "WWE.com (WrestleMania 35)",
+     "u": "https://wwe.com/shows/wrestlemania/wrestlemania-35/daniel-bryan-vs-kofi-kingston-results"
+    },
+    {
+     "n": "Fightful",
+     "u": "https://www.fightful.com/wrestling/new-day-run-gauntlet-kofi-kingston-challenges-daniel-bryan-wwe-title-wrestlemania-35-updated-card"
+    },
+    {
+     "n": "The Ringer",
+     "u": "https://www.theringer.com/2019/04/01/mma/wrestlemania-35-match-book-daniel-bryan-vs-kofi-kingston"
+    }
+   ]
+  }
+ ]
+}

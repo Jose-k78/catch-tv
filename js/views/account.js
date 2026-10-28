@@ -1,7 +1,9 @@
 // Connexion / inscription, paramètres du compte, page de profil
 import { S, B, ACT, FORM, prof, avatar, changed } from "../state.js";
-import { esc, toast, fmt, fmtMs, ICON, stars, lsGet, lsSet, fileToDataUrl } from "../util.js";
-import { showOptions } from "./catalog.js";
+import { esc, toast, fmt, fmtMs, ICON, stars, lsGet, lsSet, fileToDataUrl, modal } from "../util.js";
+import { showOptions, logoOf } from "./catalog.js";
+import { docId, okHttp } from "../util.js";
+import { cleanImageUrl } from "../modals.js";
 import { ADMIN_UID } from "../config.js";
 import { friendState, friendsOf, feudInfo, feudBadge, isBlocked, requestsIn } from "../social.js";
 import { favChips } from "./favs.js";
@@ -109,6 +111,18 @@ export function settingsView(sub) {
       (r.msg ? '<button class="btn small" data-act="repdelmsg" data-id="' + esc(r.id) + '">Supprimer le message</button>' : "") +
       '<button class="btn small ghost" data-act="repdone" data-id="' + esc(r.id) + '">Classer</button></span></div>').join("") + "</div>" : '<p class="note">Aucun signalement. 👍</p>');
   }
+  if (sub === "logos" && S.isAdmin) {
+    const rows = [];
+    Object.keys(S.P).forEach(k => { rows.push([k, ""]); Object.keys(S.P[k].s || {}).forEach(n => rows.push([k, n])); });
+    return h + '<h1>Logos des onglets</h1><p class="note" style="margin-bottom:14px">Le logo remplace le nom dans les onglets en haut de l’accueil (promotions) et des pages promotion (shows). Une image PNG au fond transparent ou blanc rend le mieux.</p>' +
+      '<div class="list">' + rows.map(r => {
+        const lg = logoOf(r[0], r[1]), own = S.images[docId("logo:" + r[0] + (r[1] ? "|" + r[1] : ""))];
+        return '<div class="item logorow"><span class="lbl"><b>' + esc(r[1] ? r[0] + " · " + r[1] : r[0]) + "</b><small>" + (own ? "Logo choisi par toi" : lg ? "Logo par défaut" : "Nom écrit (pas de logo)") + "</small></span>" +
+          (lg ? '<span class="logoprev"><img src="' + esc(lg) + '" alt=""></span>' : "") +
+          '<span class="repbtns"><button class="btn small" data-act="logoset" data-k="' + esc(r[0]) + '" data-n="' + esc(r[1]) + '">' + (lg ? "Changer" : "Ajouter") + "</button>" +
+          (own ? '<button class="btn small ghost" data-act="logodel" data-k="' + esc(r[0]) + '" data-n="' + esc(r[1]) + '">Retirer</button>' : "") + "</span></div>";
+      }).join("") + "</div>";
+  }
   if (sub === "apparence") {
     const t = lsGet("ctv.theme") || "auto";
     return h + '<h1>Apparence</h1><div class="list">' + ["auto", "light", "dark"].map(k => '<button class="item" data-act="theme" data-v="' + k + '"><span class="lbl"><b>' + TH[k] +
@@ -122,7 +136,8 @@ export function settingsView(sub) {
     row("#/parametres/bloques", "Membres bloqués", S.blocks.length ? S.blocks.length + " membre" + (S.blocks.length > 1 ? "s" : "") : "Aucun") + "</div>" +
     '<p class="note small" style="margin-top:10px">Notifications sur le téléphone quand l’app est fermée : pas encore disponibles (elles demandent un serveur, voir le guide). En attendant, les alertes s’affichent dans l’app.</p>';
   if (!ADMIN_UID || S.isAdmin) {
-    if (S.isAdmin) h += '<h2>Modération</h2><div class="list">' + row("#/parametres/signalements", "Signalements", S.reports.length ? S.reports.length + " en attente" : "Aucun") + "</div>";
+    if (S.isAdmin) h += '<h2>Modération</h2><div class="list">' + row("#/parametres/signalements", "Signalements", S.reports.length ? S.reports.length + " en attente" : "Aucun") +
+      row("#/parametres/logos", "Logos des onglets", "Remplacer les noms des promotions et des shows par leur logo") + "</div>";
     h += "<h2>" + (S.isAdmin ? "Admin" : "Installation") + '</h2><p class="note">' + (S.isAdmin ? "Tu es l’admin de l’app." : "Ton identifiant, à recopier dans la configuration pour devenir admin (voir le guide) :") + "</p>" +
       '<div class="uid" id="myuid">' + esc(u.uid) + '</div><div class="btns"><button class="btn ghost" data-act="copyuid">Copier l’identifiant</button></div>';
   }
@@ -148,6 +163,36 @@ ACT.repdelmsg = async el => {
     await B.deleteReport(r.id); toast("Message supprimé");
   } catch (e) { toast(errText(e)); }
 };
+// Logo PNG (transparence conservée), 96 px de haut maximum
+function fileToPng(file) {
+  return new Promise((resolve, reject) => {
+    const img = new Image(), u = URL.createObjectURL(file);
+    img.onload = () => {
+      URL.revokeObjectURL(u);
+      const r = Math.min(1, 96 / img.naturalHeight, 400 / img.naturalWidth), c = document.createElement("canvas");
+      c.width = Math.max(1, Math.round(img.naturalWidth * r)); c.height = Math.max(1, Math.round(img.naturalHeight * r));
+      c.getContext("2d").drawImage(img, 0, 0, c.width, c.height); resolve(c.toDataURL("image/png"));
+    };
+    img.onerror = () => { URL.revokeObjectURL(u); reject(new Error("image")); };
+    img.src = u;
+  });
+}
+ACT.logoset = el => {
+  const key = docId("logo:" + el.dataset.k + (el.dataset.n ? "|" + el.dataset.n : "")), label = el.dataset.n || el.dataset.k;
+  modal((box, close) => {
+    box.innerHTML = "<h3>Logo · " + esc(label) + '</h3><button class="btn wide" data-gal>Choisir dans ma galerie</button><div class="sep">ou</div>' +
+      '<label class="fld">Lien de l’image<input id="logourl" type="url" inputmode="url" placeholder="https://…"></label><p class="err" id="logoerr"></p>' +
+      '<button class="btn wide ghost" data-url>Utiliser ce lien</button><button class="btn wide ghost" style="margin-top:10px" data-no>Annuler</button><input type="file" accept="image/*" hidden id="logofile">';
+    const save = async src => { try { await B.setImage(key, src, S.user.uid); close(); toast("Logo enregistré"); } catch (e) { box.querySelector("#logoerr").textContent = e && e.code === "permission-denied" ? "Refusé par Firebase : publie les dernières règles, puis réessaie." : errText(e); } };
+    box.addEventListener("change", async e => { if (e.target.id === "logofile" && e.target.files[0]) { try { await save(await fileToPng(e.target.files[0])); } catch (x) { box.querySelector("#logoerr").textContent = "Image illisible"; } } });
+    box.addEventListener("click", e => {
+      if (e.target.closest("[data-gal]")) box.querySelector("#logofile").click();
+      else if (e.target.closest("[data-no]")) close();
+      else if (e.target.closest("[data-url]")) { const u = cleanImageUrl(box.querySelector("#logourl").value); if (!okHttp(u)) { box.querySelector("#logoerr").textContent = "Colle un lien qui commence par https://"; return; } save(u); }
+    });
+  });
+};
+ACT.logodel = async el => { try { await B.removeImage(docId("logo:" + el.dataset.k + (el.dataset.n ? "|" + el.dataset.n : ""))); toast("Logo retiré"); } catch (e) { toast(errText(e)); } };
 ACT.theme = el => { lsSet("ctv.theme", el.dataset.v === "auto" ? null : el.dataset.v); applyTheme(); changed("route"); };
 ACT.logout = async () => { await B.signOut(); toast("Déconnecté"); location.hash = "#/"; };
 ACT.copyuid = async () => { try { await navigator.clipboard.writeText(S.user.uid); toast("Identifiant copié"); } catch (e) { toast("Sélectionne et copie le texte"); } };

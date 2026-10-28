@@ -27,6 +27,10 @@ export const S = {
   reports: [],           // signalements (admin)
   memberFriends: {},     // amis d'un autre membre (uid -> [liens])
   users: null,           // liste des membres
+  wcomments: {},         // commentaires des fiches catcheurs (slug -> [commentaires])
+  notifs: [],            // mes notifications (likes, réponses)
+  activity: [],          // activité des membres (notes, commentaires)
+  storylines: [],        // storylines de la semaine (la plus récente en premier)
   isAdmin: false,
   demo: false,
   authReady: false,

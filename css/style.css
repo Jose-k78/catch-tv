@@ -483,3 +483,109 @@ button.bub{border:0;font:inherit;font-size:15px;color:var(--text);text-align:lef
   .withside .side .note{margin:0}
 }
 .maskbtn{border:1px dashed var(--line);background:var(--bg);color:var(--mute);padding:8px 10px;border-radius:10px;font-size:13.5px;cursor:pointer;text-align:left;font-family:inherit}
+
+/* ---------- Onglets avec logos ---------- */
+.tab.home{display:inline-flex;align-items:center;justify-content:center;padding:5px 12px}
+.tab.home svg{width:20px;height:20px}
+.tab.logo{display:inline-flex;align-items:center;justify-content:center;background:#fff;border-color:var(--line);padding:3px 12px;height:34px}
+.tab.logo img{height:26px;width:auto;max-width:96px;object-fit:contain;display:block}
+.tab.logo.on{background:#fff;border-color:var(--red);box-shadow:0 0 0 2px var(--red)}
+.sub .tab.logo{height:30px;padding:2px 10px}
+.sub .tab.logo img{height:22px}
+.sub .tab.logo.on{background:#fff;border-color:var(--red)}
+.logorow{flex-wrap:wrap}
+.logoprev{flex:none;background:#fff;border:1px solid var(--line);border-radius:8px;padding:3px 8px;height:34px;display:flex;align-items:center}
+.logoprev img{height:26px;max-width:90px;object-fit:contain}
+
+/* ---------- Fiche catcheur ---------- */
+.wcard{margin:4px 16px 0;padding:16px;border-radius:18px;background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.wtop{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.wtt{min-width:0}
+.wtt .eyebrow{font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--red)}
+.wtt h1{margin:2px 0 0;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:36px;line-height:.95;text-wrap:balance}
+.wera{display:block;color:var(--mute);font-size:13px;margin-top:4px}
+.wtxt{margin:0;font-size:15px;line-height:1.55}
+.wcard .wikicard{margin:0;padding:12px;background:var(--bg)}
+.wcard .wiki .note{margin:0}
+.wfacts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.wfacts>div{background:var(--bg);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.wfacts small{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.wfacts b{font-size:15px;overflow-wrap:anywhere}
+.wfacts a{color:var(--red);text-decoration:none}
+.choose{display:flex;flex-direction:column;gap:8px;padding:12px;border-radius:12px;border:2px solid var(--red);background:var(--bg)}
+.choose>b{font-size:14px}
+.choice{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:10px;background:var(--card);border:1px solid var(--line);text-decoration:none;color:var(--text)}
+.choice small{color:var(--mute);font-size:13px}
+
+/* ---------- Commentaires ---------- */
+.wcom{margin:0 16px;display:flex;flex-direction:column;gap:12px}
+.wcom>.note{margin:0}
+.comform{display:flex;gap:8px;align-items:flex-end}
+.comform textarea{flex:1;resize:vertical;min-height:44px;padding:10px 12px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--text);font-size:16px;font-family:inherit}
+.com{display:flex;gap:10px;align-items:flex-start}
+.comav{flex:none;line-height:0}
+.combody{flex:1;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:4px 14px 14px 14px;padding:8px 12px}
+.comhead{display:flex;align-items:baseline;gap:8px}
+.comhead a{color:var(--text);text-decoration:none}
+.comhead small{color:var(--mute);font-size:12px}
+.comtxt{margin:3px 0 0;font-size:14.5px;line-height:1.45;white-space:pre-wrap;overflow-wrap:anywhere}
+.comacts{display:flex;align-items:center;gap:4px;margin-top:4px;flex-wrap:wrap}
+.comacts .linkbtn{padding:4px 8px;font-size:13px;text-decoration:none;color:var(--mute)}
+.like{display:inline-flex;align-items:center;gap:4px;border:0;background:none;color:var(--mute);cursor:pointer;padding:4px 6px;font-size:13px;font-weight:700;font-family:inherit}
+.like svg{width:18px;height:18px}
+.like.on{color:#e0245e}
+.reps{margin-left:46px;display:flex;flex-direction:column;gap:8px}
+.reps:empty{display:none}
+.com.rep .combody{padding:6px 10px}
+
+/* ---------- Activité des membres ---------- */
+.acth{display:flex;align-items:center;justify-content:space-between}
+.acth .linkbtn{font-size:13px;text-decoration:none;font-weight:600}
+.acts{margin:0 16px;display:flex;flex-direction:column;gap:10px}
+.act{display:flex;gap:10px;align-items:flex-start}
+.actav{flex:none;line-height:0}
+.actbody{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px;font-size:14px;line-height:1.4}
+.acttxt{color:var(--text);text-decoration:none}
+.acttxt .stars svg{width:12px;height:12px}
+.actbody small{color:var(--mute);font-size:12px}
+.actbody .mycom{margin-top:2px}
+.side .acts{margin:0}
+@media (min-width:1100px){.withside .mainc .actsec{display:none}}
+
+/* ---------- Storyline + catcheur à découvrir ---------- */
+.tiles2{display:grid;grid-template-columns:1fr;gap:12px;margin:18px 16px 0}
+@media (min-width:700px){.tiles2{grid-template-columns:1fr 1fr}}
+.storytile,.disc{position:relative;overflow:hidden;border-radius:18px;padding:18px;color:#fff;text-decoration:none;display:flex;flex-direction:column;gap:6px;min-height:200px}
+.storytile{background:radial-gradient(ellipse 90% 70% at 100% 0,rgba(255,200,80,.35),transparent 60%),linear-gradient(150deg,#3a1d0e,#120a06)}
+.disc{background:radial-gradient(ellipse 90% 70% at 0 0,rgba(120,180,255,.35),transparent 60%),linear-gradient(150deg,#13213f,#090d18)}
+.storytile .eyebrow,.disc .eyebrow{font-size:11px;font-weight:800;letter-spacing:.08em;opacity:.9}
+.storytile b,.disc b{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:34px;line-height:.92}
+.storytile small,.disc small{opacity:.8;font-size:13px}
+.storytile p,.disc p{margin:4px 0 0;font-size:14px;line-height:1.45;opacity:.92;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.disclink{color:#fff;text-decoration:none;display:flex;flex-direction:column;gap:6px}
+.discgo{margin-top:6px;font-weight:700;font-size:14px}
+.disc .btn{position:absolute;right:14px;bottom:14px}
+.storyhead{margin:4px 16px 0;border-radius:18px;padding:20px 18px;color:#fff;display:flex;flex-direction:column;gap:6px;background:radial-gradient(ellipse 90% 70% at 100% 0,rgba(255,200,80,.35),transparent 60%),linear-gradient(150deg,#3a1d0e,#120a06)}
+.storyhead .eyebrow{font-size:11px;font-weight:800;letter-spacing:.08em;background:rgba(255,255,255,.16);padding:4px 10px;border-radius:99px;width:fit-content}
+.storyhead h1{margin:0;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:42px;line-height:.92}
+.storyhead small{opacity:.85}
+.story{margin:16px 16px 0;font-size:16px;line-height:1.65;max-width:720px}
+.story p{margin:0 0 14px}
+.storykey{margin:4px 16px 0;padding:12px 14px;border-left:4px solid var(--star);background:var(--card);border-radius:0 12px 12px 0;max-width:720px}
+.storykey small{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.storykey p{margin:4px 0 0;font-size:15px;line-height:1.5}
+
+/* ---------- Chat : photos et GIFs ---------- */
+.attbtn{flex:none;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--text);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+.attbtn svg{width:20px;height:20px}
+button.bub.media{padding:4px;background:var(--bubble);display:flex;flex-direction:column;gap:4px;overflow:hidden}
+.mrow.me button.bub.media{background:linear-gradient(135deg,#ff2a3a,var(--red2))}
+.mimg{display:block;max-width:min(260px,62vw);max-height:320px;border-radius:16px;object-fit:cover;background:rgba(0,0,0,.08)}
+.bub.media .mtxt{padding:2px 8px 4px}
+.mbig{display:block;max-width:calc(100% - 32px);max-height:60vh;margin:0 auto 12px;border-radius:12px}
+.gifgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:0 16px 8px;max-height:300px;overflow:auto}
+.gifbtn{border:0;padding:0;background:var(--card);border-radius:8px;overflow:hidden;cursor:pointer;aspect-ratio:1}
+.gifbtn img{width:100%;height:100%;object-fit:cover;display:block}
+.gifgrid .note{grid-column:1/-1;margin:0}
+#notifbtn svg{width:24px;height:24px}
+#notifbtn.on{background:var(--card)}

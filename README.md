@@ -43,14 +43,20 @@ Toi seul verras alors les boutons pour changer les images des vignettes. Les rè
 Quand une nouvelle version ajoute des fonctions qui touchent à la base (amis, feuds, favoris, blocages, signalements…), le fichier `firestore.rules` change.
 Copie tout son contenu dans **Firestore Database > Règles**, puis **Publier**. Sans ça, Firebase refuse les nouvelles actions (« Action non autorisée »).
 
-## 7. Notifications sur le téléphone quand l'app est fermée
+## 7. Recherche de GIFs dans le chat (facultatif)
+
+Sans clé, on peut déjà envoyer des GIFs depuis sa galerie ou par lien. Pour avoir une barre de recherche de GIFs :
+crée un compte gratuit sur [developers.giphy.com](https://developers.giphy.com), clique sur **Create an API Key**, choisis **API**, donne un nom à l'app,
+puis copie la clé dans `js/config.js` (`GIPHY_KEY`) ou envoie-la à Claude.
+
+## 8. Notifications sur le téléphone quand l'app est fermée
 
 Pour l'instant, les alertes (messages, demandes d'amis, feuds) s'affichent seulement quand l'app est ouverte.
 Les vraies notifications push demandent un petit serveur qui les envoie : avec Firebase, ce sont les **Cloud Functions** + **Firebase Cloud Messaging**,
 qui exigent de passer le projet au forfait **Blaze** (paiement à l'usage, avec une carte bancaire ; gratuit en dessous de quotas larges, mais une carte est obligatoire).
 Sur iPhone, il faut aussi que l'app soit ajoutée à l'écran d'accueil (iOS 16.4 ou plus récent).
 
-## 8. Installer l'app sur ton téléphone
+## 9. Installer l'app sur ton téléphone
 
 Ouvre l'adresse dans Safari (iPhone) ou Chrome (Android), puis **Partager > Sur l'écran d'accueil** ou **Menu > Ajouter à l'écran d'accueil**.
 
@@ -66,7 +72,9 @@ Ouvre l'adresse dans Safari (iPhone) ou Chrome (Android), puis **Partager > Sur 
 | `data/matches.json` | Les matchs à revoir (vidéos des chaînes YouTube officielles), renouvelés chaque semaine |
 | `data/titles.json` | Les champions actuels et l'historique des titres |
 | `data/highlights.json` | Highlights officiels et résultats (cachés derrière le bouton spoiler) des derniers shows |
-| `data/wrestlers.json` | Catcheurs suivis : matchs de référence, derniers matchs, actu |
+| `data/wrestlers.json` | Catcheurs suivis et catcheurs à découvrir : résumé, matchs de référence, derniers matchs, actu |
+| `data/storylines.json` | La storyline de la semaine et les précédentes |
+| `img/logos/` | Logos par défaut des onglets (l'admin peut les changer dans Paramètres › Logos des onglets) |
 | `js/images.js` | Images des vignettes : héritage, photos libres Wikimedia Commons, affiches maison |
 | `js/config.js` | Configuration Firebase et identifiant admin |
 | `firestore.rules` | Règles de sécurité de la base de données |

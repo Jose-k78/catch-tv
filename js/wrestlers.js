@@ -77,3 +77,41 @@ export function wNews(name, n) {
   if (list.length < n) articles([], 8, name).forEach(a => { if (list.length < n && !list.some(x => x.u === a.u)) list.push(Object.assign({ fr: true }, a)); });
   return list.slice(0, n);
 }
+
+// Dernier show où il ou elle est apparu : résultats et vidéos des highlights, résumés des épisodes passés, fiche suivie
+export function lastShow(name) {
+  let best = null;
+  const take = (k, show, d) => { if (okDay(d) && diff(d) <= 0 && (!best || d > best.d)) best = { k: k, show: show, d: d }; };
+  const H = S.highlights || {};
+  Object.keys(H).forEach(key => {
+    const h = H[key], p = key.split("|"); if (!h) return;
+    const txt = (h.res || []).join(" ") + " " + (h.v || []).map(v => v.t).join(" ") + " " + (h.m || []).map(m => m.t + " " + (m.r || "")).join(" ");
+    if (mentions(txt, name)) take(p[0], p[1], p[2]);
+  });
+  const R = S.recaps || {};
+  Object.keys(R).forEach(key => { const r = R[key], p = key.split("|"); if (r && typeof r.txt === "string" && mentions(r.txt, name)) take(p[0], p[1], p[2]); });
+  const w = wInfo(name);
+  if (w && Array.isArray(w.last) && w.last[0] && w.last[0].d) {
+    const l = w.last[0], k = w.k || "", sh = l.ev && S.P[k] && S.P[k].s && S.P[k].s[l.ev] ? l.ev : "PLE";
+    take(k, sh, l.d);
+  }
+  if (!best) return null;
+  const pr = S.P[best.k], isPle = best.show === "PLE";
+  let title = best.show;
+  if (pr && isPle) { const e = (pr.e || []).find(x => x.d === best.d); title = e ? e.t : "PLE"; }
+  const H2 = H[best.k + "|" + best.show + "|" + best.d];
+  const href = H2 ? "#/hl/" + encodeURIComponent(best.k) + "/" + encodeURIComponent(best.show) + "/" + best.d
+    : "#/p/" + encodeURIComponent(best.k) + (isPle ? "" : "/" + encodeURIComponent(best.show));
+  const MO = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."], p = best.d.split("-");
+  return Object.assign(best, { label: (isPle ? title : best.k + " " + title) + " · " + (+p[2]) + " " + MO[+p[1] - 1], href: href });
+}
+
+// Noms connus de l'app (fiches suivies, catcheurs à découvrir, champions) pour les suggestions de recherche
+export function knownNames() {
+  const out = [], seen = {};
+  const add = (n, s, a) => { const k = norm(n); if (!n || seen[k]) return; seen[k] = 1; out.push({ n: n, s: s, a: a || [] }); };
+  const W = S.wrestlers || {};
+  Object.keys(W).forEach(k => { const w = W[k] || {}; add(k, [w.k, w.era].filter(Boolean).join(" · ") || "Fiche catcheur", w.a); });
+  (S.titles || []).forEach(t => (t.who || []).forEach(x => add(x, t.k + " · " + t.n)));
+  return out;
+}

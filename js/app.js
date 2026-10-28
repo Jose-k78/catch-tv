@@ -17,15 +17,20 @@ import { hlView } from "./views/highlights.js";
 import { liveNow } from "./views/catalog.js";
 import { onFriends, onFeuds, resetSocial, socialBadge } from "./social.js";
 import { parisDay, parisHour } from "./time.js";
+import { notifsView, notifUnread, popNotif, markNotifsSeen } from "./views/notifs.js";
+import { activityView } from "./views/activity.js";
+import { storylineView } from "./views/storyline.js";
+import { renderWComments, wslug } from "./views/comments.js";
 
 let route = { name: "home" }, routeSubs = [], userSubs = [], dirty = false, searchFocused = false;
-const NEEDS_USER = { settings: 1, editprofile: 1, chat: 1, newchat: 1, conv: 1, profile: 1, members: 1, favs: 1 };
+const NEEDS_USER = { settings: 1, editprofile: 1, chat: 1, newchat: 1, conv: 1, profile: 1, members: 1, favs: 1, notifs: 1, activity: 1 };
 const FORM_VIEWS = { auth: 1, settings: 1, editprofile: 1 };
 const REL = {
-  home: ["content", "images", "history", "auth", "tick", "profile", "spoil"], promo: ["content", "images", "history", "auth", "tick", "spoil"],
+  home: ["content", "images", "history", "auth", "tick", "profile", "spoil", "activity"], promo: ["content", "images", "history", "auth", "tick", "spoil"],
   profile: ["profile", "profiles", "history", "otherHistory", "auth", "friends", "feuds", "blocks", "memberFriends", "tick"], chat: ["room", "convs", "reads", "profiles", "auth", "blocks"],
-  newchat: ["users", "auth"], settings: ["auth", "route", "reports", "blocks", "profiles"], editprofile: ["profile", "auth"], auth: ["auth"],
-  matches: ["route"], credits: ["images"], wrestler: ["profile", "spoil", "history"], search: [], titles: ["history", "spoil"], title: ["history", "spoil"],
+  newchat: ["users", "auth"], settings: ["auth", "route", "reports", "blocks", "profiles", "images"], editprofile: ["profile", "auth"], auth: ["auth"],
+  matches: ["route"], credits: ["images"], wrestler: ["profile", "spoil", "history", "auth"], search: [], titles: ["history", "spoil"], title: ["history", "spoil"],
+  notifs: ["notifs", "profiles", "reads", "blocks"], activity: ["activity", "profiles", "blocks"], storyline: [],
   members: ["users", "friends", "feuds", "blocks", "profiles", "auth", "tick"], favs: ["profile", "profiles", "friends", "auth"], hl: ["history", "spoil"],
 };
 
@@ -41,13 +46,16 @@ function parse() {
     case "profil-modifier": return { name: "editprofile" };
     case "chat": return parts[1] === "nouveau" ? { name: "newchat" } : parts[1] ? { name: "conv", id: parts[1] } : { name: "chat" };
     case "recherche": return { name: "search", q: parts.slice(1).join("/") };
-    case "catcheur": return parts[1] ? { name: "wrestler", q: parts.slice(1).join("/").slice(0, 60) } : { name: "search", q: "" };
+    case "catcheur": return parts[1] ? { name: "wrestler", q: parts[1].slice(0, 60), wt: parts[2] === "w" ? parts.slice(3).join("/").slice(0, 120) : "" } : { name: "search", q: "" };
     case "matchs": return { name: "matches" };
     case "titres": return S.P[parts[1]] ? { name: "titles", k: parts[1], n: parts[2] || "" } : { name: "home" };
     case "titre": return { name: "title", id: parts[1] || "" };
     case "credits": return { name: "credits" };
     case "membres": return { name: "members", tab: parts[1] || "" };
     case "favoris": return { name: "favs" };
+    case "notifs": return { name: "notifs" };
+    case "activite": return { name: "activity" };
+    case "storyline": return { name: "storyline", id: parts[1] || "" };
     case "hl": return S.P[parts[1]] ? { name: "hl", k: parts[1], show: parts[2] || "PLE", d: parts[3] || "" } : { name: "home" };
     default: return { name: "home" };
   }
@@ -80,6 +88,10 @@ function onRoute() {
   }
   if (route.name === "newchat" && S.user) loadUsers();
   if (route.name === "members" && S.user) loadMembers(true);
+  if (route.name === "wrestler") {
+    const w = wslug(route.q);
+    routeSubs.push(B.watchWComments(w, list => { S.wcomments[w] = list; list.forEach(c => need(c.uid)); renderWComments(); }));
+  }
   render();
   if (route.name !== "conv") window.scrollTo(0, 0);
 }
@@ -112,10 +124,14 @@ function render() {
     case "members": h = membersView(route.tab); break;
     case "favs": h = favsView(); break;
     case "hl": h = hlView(route.k, route.show, route.d); break;
+    case "notifs": h = notifsView(); break;
+    case "activity": h = activityView(); break;
+    case "storyline": h = storylineView(route.id); break;
   }
   app.innerHTML = h;
   if (route.name === "conv" && !waiting) { renderMsgs(route.id, true); setupComposer(); markRead(); }
-  if (route.name === "wrestler") fillWiki(route.q);
+  if (route.name === "wrestler") { fillWiki(route.q, route.wt); renderWComments(); }
+  if (route.name === "notifs") markNotifsSeen();
   if (route.name === "search" && !searchFocused) { searchFocused = true; const q = document.getElementById("q"); if (q) { q.focus(); q.setSelectionRange(q.value.length, q.value.length); } }
   const foot = document.getElementById("foot");
   foot.innerHTML = (S.demo ? '<div class="demo">' + (S.fbError ? "<b>Connexion à Firebase impossible</b> (vérifie js/config.js). " : "") +
@@ -147,11 +163,15 @@ function updateHeader() {
   }).join("");
   const fav = document.getElementById("favbtn");
   if (fav) fav.classList.toggle("on", route.name === "favs");
-  document.title = (n + soc ? "(" + (n + soc) + ") " : "") + "Catch TV";
+  const nb = document.getElementById("notifbtn"), nu = notifUnread();
+  if (nb) { nb.hidden = !S.user; nb.innerHTML = ICON.bell + (nu ? '<span class="badge">' + cnt(nu) + "</span>" : ""); nb.classList.toggle("on", route.name === "notifs"); }
+  document.title = (n + soc + nu ? "(" + (n + soc + nu) + ") " : "") + "Catch TV";
 }
 
 onChange(what => {
   updateHeader();
+  if (route.name === "wrestler" && (what === "profiles" || what === "blocks")) { renderWComments(); return; }
+  if (route.name === "notifs" && what === "notifs") markNotifsSeen();
   if (route.name === "conv") {
     if (["room", "msgs", "profiles", "convs", "reads"].indexOf(what) >= 0) { renderMsgs(route.id); markRead(); }
     if (what === "profiles" || what === "auth") { const hd = document.querySelector(".convhead"); if (hd && S.user) { const tmp = document.createElement("div"); tmp.innerHTML = convView(route.id); hd.replaceWith(tmp.firstChild); } }
@@ -182,7 +202,7 @@ function popup(m, convId) {
   if (route.name === "conv" && route.id === convId && !document.hidden) return;
   if (!S.profiles[m.uid] && (popup.tries[m.at] = (popup.tries[m.at] || 0) + 1) < 6) { setTimeout(() => popup(m, convId), 300); return; }
   const n = roomUnread() + dmUnread();
-  toast("💬 " + (convId === "general" ? "Salon · " : "") + nameOf(m.uid) + " : " + m.text.slice(0, 90) + (n ? "\n" + n + " message" + (n > 1 ? "s" : "") + " à lire" : ""),
+  toast("💬 " + (convId === "general" ? "Gorilla Position · " : "") + nameOf(m.uid) + " : " + (m.text || (m.gif ? "GIF" : "📷 Photo")).slice(0, 90) + (n ? "\n" + n + " message" + (n > 1 ? "s" : "") + " à lire" : ""),
     { top: true, ms: 5000, onClick: () => { location.hash = "#/chat/" + encodeURIComponent(convId); } });
 }
 
@@ -190,7 +210,7 @@ function popup(m, convId) {
 function onUser(u) {
   userSubs.forEach(f => f()); userSubs = [];
   S.user = u; S.authReady = true; S.profile = null; S.history = {}; S.room = []; S.convs = []; S.reads = {}; S.convMsgs = {};
-  S.friends = []; S.feuds = []; S.blocks = []; S.reports = []; S.users = null; S.memberFriends = {}; resetSocial();
+  S.friends = []; S.feuds = []; S.blocks = []; S.reports = []; S.users = null; S.memberFriends = {}; S.notifs = []; S.activity = []; resetSocial();
   S.isAdmin = !!u && (S.demo ? u.uid === B.demoAdmin() : (!!ADMIN_UID && u.uid === ADMIN_UID));
   if (u) {
     const me = u.uid;
@@ -218,6 +238,13 @@ function onUser(u) {
     userSubs.push(B.watchBlocks(me, list => { S.blocks = list || []; changed("blocks"); }));
     userSubs.push(B.watchFriends(me, onFriends));
     userSubs.push(B.watchFeuds(me, onFeuds));
+    let nInit = false; const nSeen = {};
+    userSubs.push(B.watchNotifs(me, list => {
+      S.notifs = list || [];
+      S.notifs.forEach(x => { need(x.from); if (nInit && !nSeen[x.id] && route.name !== "notifs") popNotif(x); nSeen[x.id] = 1; });
+      nInit = true; changed("notifs");
+    }));
+    userSubs.push(B.watchActivity(list => { S.activity = list || []; S.activity.forEach(a => need(a.uid)); changed("activity"); }));
     if (S.isAdmin) userSubs.push(B.watchReports(list => { S.reports = list || []; list.forEach(r => { need(r.by); need(r.target); }); changed("reports"); }));
   }
   changed("auth");
@@ -248,7 +275,7 @@ async function boot() {
   applyTheme();
   document.getElementById("favbtn").innerHTML = ICON.starF;
   const c = await loadContent(); S.P = c.P; S.news = c.news; S.recaps = c.recaps || {}; S.matches = c.matches || []; S.titles = c.titles || []; S.titlesUpdated = c.titlesUpdated || "";
-  S.highlights = c.highlights || {}; S.wrestlers = c.wrestlers || {};
+  S.highlights = c.highlights || {}; S.wrestlers = c.wrestlers || {}; S.storylines = c.storylines || [];
   tick(); setInterval(tick, 60000);
   let backend = null;
   if (firebaseConfig) {

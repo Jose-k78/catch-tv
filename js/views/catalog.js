@@ -1,11 +1,14 @@
 // Accueil, pages promotion et pages show
-import { S, ACT } from "../state.js";
+import { S, ACT, imageFor } from "../state.js";
 import { esc, cssUrl, okHttp, okDay, fmt, diff, cd, nextWeekday, dt, ymd, ICON, stars, docId, MOIS, modal, toast } from "../util.js";
 import { resolveImage, usedCredits } from "../images.js";
 import { PARIS, startOf, endOf, isLive, whenParts, fmtAt, hourAt, cityOf, downloadIcs } from "../time.js";
 import { hlOf, hlHref } from "./highlights.js";
 import { favAside } from "./favs.js";
 import { champHidden } from "../spoil.js";
+import { discoverTile } from "./discover.js";
+import { storylineTile } from "./storyline.js";
+import { activitySection, activityList } from "./activity.js";
 
 // ---------- données ----------
 export function seenId(e) { return docId(e.k + "|" + (e.show || "PLE") + "|" + (e.d || "") + "|" + e.t); }
@@ -287,11 +290,15 @@ export function homeView() {
   if (first) h += hero(first, "PROCHAIN ÉVÉNEMENT · " + esc(first.k));
   h += "<h2>Shows de la semaine</h2>" + showRow(weekly, true);
   h += '<h2>À venir</h2><div class="row">' + sp[0].map(e => pleCard(e, true)).join("") + "</div>";
+  const st = storylineTile(), dc = discoverTile();
+  if (st || dc) h += '<div class="tiles2">' + st + dc + "</div>";
   h += artSection("Dernières infos", articles([], 6));
+  h += '<div class="actsec">' + activitySection() + "</div>";
   h += '<h2>Promotions</h2><div class="row">' + Object.keys(P).map(promoCard).join("") + "</div>";
   if (S.matches.length) h += matchTile();
   if (sp[1].length) h += '<h2>Déjà sorti</h2><div class="row">' + sp[1].map(e => pleCard(e, true)).join("") + "</div>";
-  return '<div class="withside"><div class="mainc">' + h + "</div>" + favAside() + "</div>";
+  const side = favAside().replace("</aside>", S.user ? '<h2>Activité des membres</h2>' + activityList(12) + "</aside>" : "</aside>");
+  return '<div class="withside"><div class="mainc">' + h + "</div>" + side + "</div>";
 }
 export function promoView(k) {
   const pr = S.P[k]; if (!pr) return '<p class="empty">Promotion introuvable.</p>';
@@ -339,14 +346,25 @@ export function creditsView() {
       "</b><small>" + esc(f.author) + " · " + esc(f.lic) + '</small></span><span class="chev">↗</span></a>').join("") + "</div>"
       : '<p class="note">Aucune photo libre utilisée pour l’instant.</p>');
 }
+// Logo d'un onglet : choisi par l'admin, sinon celui du calendrier (img/logos/…), sinon rien (nom écrit)
+export function logoOf(k, n) {
+  const own = imageFor("logo:" + k + (n ? "|" + n : ""));
+  if (own) return own;
+  const pr = S.P[k], f = n ? (pr && pr.s && pr.s[n] && pr.s[n].logo) : (pr && pr.logo);
+  return typeof f === "string" && (/^img\/[\w\/.-]+\.(png|jpe?g|webp|svg)$/.test(f) || /^data:image\//.test(f)) ? f : "";
+}
+function tab(label, href, on, logo) {
+  if (label === "Accueil") return '<a class="tab home' + (on ? " on" : "") + '" href="' + href + '" aria-label="Accueil">' + ICON.home + "</a>";
+  return logo ? '<a class="tab logo' + (on ? " on" : "") + '" href="' + href + '" aria-label="' + esc(label) + '"><img src="' + esc(logo) + '" alt="' + esc(label) + '"></a>'
+    : '<a class="tab' + (on ? " on" : "") + '" href="' + href + '">' + esc(label) + "</a>";
+}
 export function tabsView(route) {
   const cur = route.name === "promo" ? route.k : "Accueil";
-  let h = '<nav class="tabs">' + ["Accueil"].concat(Object.keys(S.P)).map(t =>
-    '<a class="tab' + (t === cur ? " on" : "") + '" href="' + (t === "Accueil" ? "#/" : "#/p/" + encodeURIComponent(t)) + '">' + esc(t) + "</a>").join("") + "</nav>";
+  let h = '<nav class="tabs">' + ["Accueil"].concat(Object.keys(S.P)).map(t => tab(t, t === "Accueil" ? "#/" : "#/p/" + encodeURIComponent(t), t === cur, t === "Accueil" ? "" : logoOf(t, ""))).join("") + "</nav>";
   if (route.name === "promo" && S.P[route.k] && S.P[route.k].s) {
     h += '<nav class="tabs sub">' + ["Tout"].concat(Object.keys(S.P[route.k].s)).map(t => {
       const on = (t === "Tout" && !route.n) || t === route.n;
-      return '<a class="tab' + (on ? " on" : "") + '" href="#/p/' + encodeURIComponent(route.k) + (t === "Tout" ? "" : "/" + encodeURIComponent(t)) + '">' + esc(t) + "</a>";
+      return tab(t, "#/p/" + encodeURIComponent(route.k) + (t === "Tout" ? "" : "/" + encodeURIComponent(t)), on, t === "Tout" ? "" : logoOf(route.k, t));
     }).join("") + "</nav>";
   }
   return h;

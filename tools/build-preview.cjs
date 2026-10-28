@@ -6,7 +6,14 @@ const out = process.argv[2] || path.join(root, "preview.html");
 (async () => {
 const r = await esbuild.build({
   entryPoints: [path.join(root, "js/app.js")], bundle: true, format: "iife", write: false, minify: true, target: "es2019",
-  plugins: [{ name: "inline-content", setup(b) { b.onResolve({ filter: /\/content\.js$/ }, () => ({ path: path.join(root, "js/content-inline.js") })); } }],
+  plugins: [{ name: "inline-content", setup(b) {
+    b.onResolve({ filter: /\/content\.js$/ }, () => ({ path: path.join(root, "js/content-inline.js") }));
+    // logos (img/logos/…) intégrés en data URL pour que l'aperçu tout-en-un les affiche
+    b.onLoad({ filter: /calendar\.json$/ }, a => {
+      const txt = fs.readFileSync(a.path, "utf8").replace(/"(img\/logos\/[\w.-]+\.png)"/g, (m, f) => '"data:image/png;base64,' + fs.readFileSync(path.join(root, f)).toString("base64") + '"');
+      return { contents: txt, loader: "json" };
+    });
+  } }],
 });
 let html = fs.readFileSync(path.join(root, "index.html"), "utf8");
 const css = fs.readFileSync(path.join(root, "css/style.css"), "utf8");

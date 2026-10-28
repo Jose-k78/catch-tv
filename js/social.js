@@ -51,7 +51,7 @@ export function socialBadge() { return S.user ? requestsIn().length + feudsToRet
 // ---------- actions ----------
 function needUser() { if (S.user) return true; toast("Connecte-toi d’abord"); location.hash = "#/connexion"; return false; }
 async function run(p, ok) { try { const r = await p; if (ok) toast(typeof ok === "function" ? ok(r) : ok); return r; } catch (e) { console.error(e); toast(errText(e)); } }
-function confirmBox(title, sub, okLabel, onOk, danger) {
+export function confirmBox(title, sub, okLabel, onOk, danger) {
   modal((box, close) => {
     box.innerHTML = "<h3>" + esc(title) + "</h3>" + (sub ? '<p class="sub">' + esc(sub) + "</p>" : "") +
       '<button class="btn wide' + (danger ? " danger" : "") + '" data-ok>' + esc(okLabel) + '</button><button class="btn wide ghost" style="margin-top:10px" data-no>Annuler</button>';

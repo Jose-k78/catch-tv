@@ -96,14 +96,22 @@ export function setImage(id, src, uid) { return F.setDoc(F.doc(db, "images", id)
 export function removeImage(id) { return F.deleteDoc(F.doc(db, "images", id)); }
 
 // ---- Messagerie ----
-const mapMsg = s => { const d = data(s); return { id: s.id, uid: d.uid, text: d.text, at: ms(d.at) || Date.now() }; };
+const mapMsg = s => { const d = data(s); return { id: s.id, uid: d.uid, text: d.text || "", img: d.img || "", gif: d.gif || "", at: ms(d.at) || Date.now() }; };
+// message : texte + éventuellement une image (data URL compressée) ou un GIF (lien)
+function msgDoc(uid, text, extra) {
+  const d = { uid: uid, text: text, at: F.serverTimestamp() };
+  if (extra && extra.img) d.img = extra.img;
+  if (extra && extra.gif) d.gif = extra.gif;
+  return d;
+}
+const lastText = (text, extra) => text ? text.slice(0, 140) : (extra && extra.gif ? "GIF" : "📷 Photo");
 
 export function watchRoom(cb) {
   const q = F.query(F.collection(db, "rooms", "general", "messages"), F.orderBy("at", "desc"), F.limit(60));
   return F.onSnapshot(q, r => cb(r.docs.map(mapMsg).reverse()), () => cb([]));
 }
-export function sendRoom(uid, text) {
-  return F.addDoc(F.collection(db, "rooms", "general", "messages"), { uid: uid, text: text, at: F.serverTimestamp() });
+export function sendRoom(uid, text, extra) {
+  return F.addDoc(F.collection(db, "rooms", "general", "messages"), msgDoc(uid, text, extra));
 }
 export function watchConvs(uid, cb) {
   const q = F.query(F.collection(db, "dms"), F.where("members", "array-contains", uid));
@@ -130,10 +138,10 @@ export function watchMessages(convId, cb) {
   const q = F.query(F.collection(db, "dms", convId, "messages"), F.orderBy("at", "desc"), F.limit(100));
   return F.onSnapshot(q, r => cb(r.docs.map(mapMsg).reverse()), () => cb([]));
 }
-export async function sendDM(convId, uid, other, text) {
+export async function sendDM(convId, uid, other, text, extra) {
   const b = F.writeBatch(db);
-  b.set(F.doc(F.collection(db, "dms", convId, "messages")), { uid: uid, text: text, at: F.serverTimestamp() });
-  const patch = { last: { text: text.slice(0, 140), uid: uid, at: F.serverTimestamp() }, updatedAt: F.serverTimestamp() };
+  b.set(F.doc(F.collection(db, "dms", convId, "messages")), msgDoc(uid, text, extra));
+  const patch = { last: { text: lastText(text, extra), uid: uid, at: F.serverTimestamp() }, updatedAt: F.serverTimestamp() };
   patch["unread." + other] = F.increment(1);
   b.update(F.doc(db, "dms", convId), patch);
   await b.commit();
@@ -144,7 +152,7 @@ export function markDMRead(convId, uid) {
 }
 export function watchReads(uid, cb) {
   return F.onSnapshot(F.doc(db, "reads", uid), s => {
-    const d = s.exists() ? data(s) : {}; cb({ general: ms(d.general) });
+    const d = s.exists() ? data(s) : {}; cb({ general: ms(d.general), notifs: ms(d.notifs) });
   }, () => cb({}));
 }
 export function markRoomRead(uid) { return F.setDoc(F.doc(db, "reads", uid), { general: F.serverTimestamp() }, { merge: true }); }
@@ -201,3 +209,34 @@ export function deleteReport(id) { return F.deleteDoc(F.doc(db, "reports", id));
 
 // ---- Catcheurs suivis par les membres (lu par la mise à jour quotidienne) ----
 export function addFollowed(name) { return F.setDoc(F.doc(db, "followed", "list"), { names: F.arrayUnion(String(name).slice(0, 40)) }, { merge: true }); }
+
+
+// ---- Commentaires sur les fiches catcheurs (likes + réponses) ----
+const mapCom = s => { const d = data(s); return { id: s.id, w: d.w, name: d.name || "", uid: d.uid, text: d.text || "", parent: d.parent || "", likes: d.likes || [], at: ms(d.at) || Date.now() }; };
+export function watchWComments(w, cb) {
+  const q = F.query(F.collection(db, "wcomments"), F.where("w", "==", w), F.limit(300));
+  return F.onSnapshot(q, r => cb(r.docs.map(mapCom)), () => cb([]));
+}
+export async function addWComment(uid, w, name, text, parent) {
+  const ref = await F.addDoc(F.collection(db, "wcomments"), { w: w, name: name, uid: uid, text: text, parent: parent || "", likes: [], at: F.serverTimestamp() });
+  return ref.id;
+}
+export function likeWComment(id, uid, on) { return F.updateDoc(F.doc(db, "wcomments", id), { likes: on ? F.arrayUnion(uid) : F.arrayRemove(uid) }); }
+export function deleteWComment(id) { return F.deleteDoc(F.doc(db, "wcomments", id)); }
+
+// ---- Notifications (likes, réponses) ----
+export function watchNotifs(uid, cb) {
+  const q = F.query(F.collection(db, "notifs", uid, "items"), F.orderBy("at", "desc"), F.limit(40));
+  return F.onSnapshot(q, r => cb(r.docs.map(s => { const d = data(s); d.id = s.id; d.at = ms(d.at) || Date.now(); return d; })), () => cb([]));
+}
+export function pushNotif(to, id, n) { return F.setDoc(F.doc(db, "notifs", to, "items", id), Object.assign({}, n, { at: F.serverTimestamp() })); }
+export function deleteNotif(uid, id) { return F.deleteDoc(F.doc(db, "notifs", uid, "items", id)); }
+export function markNotifsRead(uid) { return F.setDoc(F.doc(db, "reads", uid), { notifs: F.serverTimestamp() }, { merge: true }); }
+
+// ---- Activité des membres (notes, commentaires) ----
+export function watchActivity(cb) {
+  const q = F.query(F.collection(db, "activity"), F.orderBy("at", "desc"), F.limit(40));
+  return F.onSnapshot(q, r => cb(r.docs.map(s => { const d = data(s); d.id = s.id; d.at = ms(d.at) || Date.now(); return d; })), () => cb([]));
+}
+export function setActivity(id, a) { return F.setDoc(F.doc(db, "activity", id), Object.assign({}, a, { at: F.serverTimestamp() })); }
+export function removeActivity(id) { return F.deleteDoc(F.doc(db, "activity", id)); }

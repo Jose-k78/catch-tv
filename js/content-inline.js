@@ -6,5 +6,6 @@ import matches from "../data/matches.json";
 import titles from "../data/titles.json";
 import hl from "../data/highlights.json";
 import wr from "../data/wrestlers.json";
+import st from "../data/storylines.json";
 export const PREVIEW = true;
-export async function loadContent() { return { P: cal.promotions || {}, news: news, recaps: recaps.items || {}, matches: matches.items || [], titles: titles.titles || [], titlesUpdated: titles.updated || "", highlights: hl.items || {}, wrestlers: wr.items || {} }; }
+export async function loadContent() { return { P: cal.promotions || {}, news: news, recaps: recaps.items || {}, matches: matches.items || [], titles: titles.titles || [], titlesUpdated: titles.updated || "", highlights: hl.items || {}, wrestlers: wr.items || {}, storylines: st.items || [] }; }

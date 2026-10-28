@@ -3,7 +3,7 @@
 import { feudNext } from "../feud.js";
 const KEY = "ctv.demo.db";
 const SKEY = "ctv.demo.uid";
-const EMPTY = () => ({ accounts: {}, users: {}, history: {}, images: {}, room: [], dms: {}, msgs: {}, reads: {}, admin: "", friends: {}, feuds: {}, blocks: {}, reports: [], followed: [] });
+const EMPTY = () => ({ accounts: {}, users: {}, history: {}, images: {}, room: [], dms: {}, msgs: {}, reads: {}, admin: "", friends: {}, feuds: {}, blocks: {}, reports: [], followed: [], wcomments: {}, notifs: {}, activity: {} });
 
 let DB = EMPTY();
 const subs = new Set();
@@ -101,7 +101,8 @@ export async function setImage(id, src) { DB.images[id] = src; save(); }
 export async function removeImage(id) { delete DB.images[id]; save(); }
 
 export function watchRoom(cb) { return watch(() => cb(clone(DB.room.slice(-60)))); }
-export async function sendRoom(uid, text) { DB.room.push({ id: uidGen(), uid: uid, text: text, at: Date.now() }); save(); }
+const msgDoc = (uid, text, extra) => Object.assign({ id: uidGen(), uid: uid, text: text, at: Date.now() }, extra && extra.img ? { img: extra.img } : {}, extra && extra.gif ? { gif: extra.gif } : {});
+export async function sendRoom(uid, text, extra) { DB.room.push(msgDoc(uid, text, extra)); DB.room = DB.room.slice(-200); save(); }
 export function watchConvs(uid, cb) {
   return watch(() => cb(Object.keys(DB.dms).map(id => Object.assign(clone(DB.dms[id]), { id: id }))
     .filter(c => c.members.indexOf(uid) >= 0).sort((a, b) => b.updatedAt - a.updatedAt)));
@@ -112,14 +113,14 @@ export async function openDM(me, other) {
   return id;
 }
 export function watchMessages(convId, cb) { return watch(() => cb(clone((DB.msgs[convId] || []).slice(-100)))); }
-export async function sendDM(convId, uid, other, text) {
-  const now = Date.now();
-  (DB.msgs[convId] = DB.msgs[convId] || []).push({ id: uidGen(), uid: uid, text: text, at: now });
-  const c = DB.dms[convId]; c.last = { text: text.slice(0, 140), uid: uid, at: now }; c.updatedAt = now; c.unread[other] = (c.unread[other] || 0) + 1; save();
+export async function sendDM(convId, uid, other, text, extra) {
+  const m = msgDoc(uid, text, extra), now = m.at;
+  (DB.msgs[convId] = DB.msgs[convId] || []).push(m);
+  const c = DB.dms[convId]; c.last = { text: text ? text.slice(0, 140) : (extra && extra.gif ? "GIF" : "📷 Photo"), uid: uid, at: now }; c.updatedAt = now; c.unread[other] = (c.unread[other] || 0) + 1; save();
 }
 export async function markDMRead(convId, uid) { const c = DB.dms[convId]; if (c && c.unread[uid]) { c.unread[uid] = 0; save(); } }
 export function watchReads(uid, cb) { return watch(() => cb(clone(DB.reads[uid] || {}))); }
-export async function markRoomRead(uid) { DB.reads[uid] = { general: Date.now() }; save(); }
+export async function markRoomRead(uid) { DB.reads[uid] = Object.assign(DB.reads[uid] || {}, { general: Date.now() }); save(); }
 export async function ensureProfile() {}
 
 // ---- Modération des messages ----
@@ -149,3 +150,24 @@ export async function report(by, r) { DB.reports.unshift(Object.assign({ id: uid
 export function watchReports(cb) { return watch(() => cb(clone(DB.reports))); }
 export async function deleteReport(id) { DB.reports = DB.reports.filter(r => r.id !== id); save(); }
 export async function addFollowed(name) { if (DB.followed.indexOf(name) < 0) { DB.followed.push(name); save(); } }
+
+
+// ---- Commentaires sur les fiches catcheurs ----
+export function watchWComments(w, cb) { return watch(() => cb(Object.keys(DB.wcomments).map(id => Object.assign(clone(DB.wcomments[id]), { id: id })).filter(c => c.w === w))); }
+export async function addWComment(uid, w, name, text, parent) { const id = uidGen(); DB.wcomments[id] = { w: w, name: name, uid: uid, text: text, parent: parent || "", likes: [], at: Date.now() }; save(); return id; }
+export async function likeWComment(id, uid, on) {
+  const c = DB.wcomments[id]; if (!c) return;
+  c.likes = c.likes.filter(x => x !== uid); if (on) c.likes.push(uid); save();
+}
+export async function deleteWComment(id) { delete DB.wcomments[id]; save(); }
+
+// ---- Notifications ----
+export function watchNotifs(uid, cb) { return watch(() => { const n = DB.notifs[uid] || {}; cb(Object.keys(n).map(id => Object.assign(clone(n[id]), { id: id })).sort((a, b) => b.at - a.at).slice(0, 40)); }); }
+export async function pushNotif(to, id, n) { (DB.notifs[to] = DB.notifs[to] || {})[id] = Object.assign({}, n, { at: Date.now() }); save(); }
+export async function deleteNotif(uid, id) { if (DB.notifs[uid]) { delete DB.notifs[uid][id]; save(); } }
+export async function markNotifsRead(uid) { DB.reads[uid] = Object.assign(DB.reads[uid] || {}, { notifs: Date.now() }); save(); }
+
+// ---- Activité des membres ----
+export function watchActivity(cb) { return watch(() => cb(Object.keys(DB.activity).map(id => Object.assign(clone(DB.activity[id]), { id: id })).sort((a, b) => b.at - a.at).slice(0, 40))); }
+export async function setActivity(id, a) { DB.activity[id] = Object.assign({}, a, { at: Date.now() }); save(); }
+export async function removeActivity(id) { delete DB.activity[id]; save(); }

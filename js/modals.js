@@ -35,8 +35,13 @@ ACT.seen = el => {
           comment = (box.querySelector("#seencom") || { value: comment }).value.trim().slice(0, 280);
           await B.setSeen(S.user.uid, id, { title: it.t, k: it.k, show: it.show, d: it.d, rating: rating, comment: comment });
           close(); toast(had ? "Note enregistrée" : "Ajouté à ton historique");
+          // activité des membres : visible par tous quand il y a une note ou un commentaire
+          const aid = S.user.uid + "_r_" + id;
+          if (rating || comment) B.setActivity(aid, { uid: S.user.uid, kind: "rate", k: it.k, show: it.show || "", d: it.d || "", title: String(it.t).slice(0, 150), rating: rating, comment: comment.slice(0, 500), w: "", name: "" }).catch(() => {});
+          else B.removeActivity(aid).catch(() => {});
         } else if (e.target.closest("[data-del]")) {
           await B.unsetSeen(S.user.uid, id); close(); toast("Retiré de l’historique");
+          B.removeActivity(S.user.uid + "_r_" + id).catch(() => {});
         }
       } catch (err) { toast(errText(err)); }
     });
