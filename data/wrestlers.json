@@ -1139,6 +1139,41 @@
      "ev": "AEW Dynamite, 2026"
     }
    ]
+  },
+  "Manami Toyota": {
+   "k": "AJW (All Japan Women)",
+   "era": "1987-2017",
+   "disc": true,
+   "from": "Masuda (Shimane, Japon)",
+   "ht": "1,67 m",
+   "wt": "68 kg",
+   "debut": "5 août 1987",
+   "fin": "Japanese Ocean Cyclone Suplex, Japanese Ocean Queen Bee Bomb",
+   "teams": "Tokyo Sweethearts (avec Mima Shimoda), équipe avec Toshiyo Yamada",
+   "trainer": "Jaguar Yokota",
+   "txt": "Icône du catch féminin japonais (joshi) des années 1990 à la All Japan Women, réputée pour son rythme effréné et ses suplexes spectaculaires ; elle a pris sa retraite en 2017.",
+   "ref": [
+    {
+     "t": "Tokyo Sweethearts contre Etsuko Mita et Toshiyo Yamada",
+     "ev": "Wrestlemarinpiad, 1989"
+    },
+    {
+     "t": "Manami Toyota contre Toshiyo Yamada — cheveux contre cheveux",
+     "ev": "AJW Mid Summer Typhoon, 1992"
+    },
+    {
+     "t": "Manami Toyota et Toshiyo Yamada contre Dynamite Kansai et Mayumi Ozaki — 2 tombés sur 3",
+     "ev": "Dreamslam II, 1993"
+    },
+    {
+     "t": "Manami Toyota contre Kyoko Inoue — Titre WWWA",
+     "ev": "AJW, 1995"
+    },
+    {
+     "t": "Manami Toyota contre Chigusa Nagayo",
+     "ev": "AJW, 1998"
+    }
+   ]
   }
  }
 }
