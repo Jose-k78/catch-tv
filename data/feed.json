@@ -1,5 +1,5 @@
 {
- "at": "2026-10-29T16:09:39.906Z",
+ "at": "2026-10-29T16:12:44.052Z",
  "items": [
   {
    "t": "AEW Dynamite du 28 octobre : Queen Aminata championne TBS, Ospreay vs. Fletcher à Full Gear",
@@ -73,15 +73,15 @@
   "ROH|ROH TV|2026-10-22": [
    {
     "id": "ogM-fmXX8d0",
-    "t": "FULL MATCH Isla Dawn contre Mina Shirakawa"
+    "t": "Isla Dawn contre Mina Shirakawa"
    },
    {
     "id": "WkZAP6Ae4HU",
-    "t": "FULL MATCH Xanti Li contre Zayda Steel"
+    "t": "Xanti Li contre Zayda Steel"
    },
    {
     "id": "qGrINCcGIRI",
-    "t": "FULL MATCH Isla Dawn contre Robyn Renegade"
+    "t": "Isla Dawn contre Robyn Renegade"
    }
   ]
  },
@@ -90,5 +90,17 @@
  },
  "ch": {
   "Stardom": "UCNJPhlFT0DzU5I3OAvE223Q"
+ },
+ "diag": {
+  "Catch-Newz": "pas de flux RSS trouvé",
+  "VOXcatch": "5 articles (7 j)",
+  "YouTube WWE": "0 nouvelles vidéos",
+  "YouTube AEW": "0 nouvelles vidéos",
+  "YouTube ROH": "0 nouvelles vidéos",
+  "YouTube CMLL": "0 nouvelles vidéos",
+  "YouTube TNA": "0 nouvelles vidéos",
+  "YouTube NJPW": "0 nouvelles vidéos",
+  "YouTube Stardom": "0 nouvelles vidéos",
+  "YouTube Marigold": "chaîne introuvable"
  }
 }
