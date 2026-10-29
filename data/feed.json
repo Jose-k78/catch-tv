@@ -1,6 +1,36 @@
 {
- "at": "2026-10-29T16:12:44.052Z",
+ "at": "2026-10-29T16:14:19.670Z",
  "items": [
+  {
+   "t": "Pourquoi John Cena sera de retour à WWE RAW le 2 novembre 2026 ?",
+   "u": "https://www.catch-newz.com/wwe/newz/60745-pourquoi-john-cena-sera-de-retour-a-wwe-raw-le-2-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-02",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
+  {
+   "t": "Spoilers de AEW Collision du 31 octobre 2026",
+   "u": "https://www.catch-newz.com/aew/resultats/60803-spoilers-aew-collision-31-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-31",
+   "tags": [
+    "AEW",
+    "Collision"
+   ]
+  },
+  {
+   "t": "Preview : TNA Impact du 29 octobre 2026",
+   "u": "https://www.catch-newz.com/international/newz/60794-preview-tna-impact-29-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-29",
+   "tags": [
+    "TNA",
+    "Impact"
+   ]
+  },
   {
    "t": "AEW Dynamite du 28 octobre : Queen Aminata championne TBS, Ospreay vs. Fletcher à Full Gear",
    "u": "https://www.voxcatch.fr/2026/10/29/resultats-aew-dynamite-28-octobre-2026/",
@@ -12,10 +42,30 @@
    ]
   },
   {
+   "t": "Résultats de AEW Dynamite du 28 octobre 2026",
+   "u": "https://www.catch-newz.com/aew/resultats/60789-aew-dynamite-28-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-28",
+   "tags": [
+    "AEW",
+    "Dynamite"
+   ]
+  },
+  {
    "t": "WWE NXT du 27 octobre : Demi-finales du Dusty Classic, dernier épisode avant Halloween Havoc",
    "u": "https://www.voxcatch.fr/2026/10/28/resultats-wwe-nxt-du-27-octobre-2026/",
    "s": "VOXcatch",
    "d": "2026-10-28",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
+   "t": "Résultats de WWE NXT du 27 octobre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/60759-wwe-nxt-27-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-27",
    "tags": [
     "WWE",
     "NXT"
@@ -91,8 +141,39 @@
  "ch": {
   "Stardom": "UCNJPhlFT0DzU5I3OAvE223Q"
  },
+ "seen": {
+  "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/aew/resultats/60789-aew-dynamite-28-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60774-wwe-crown-jewel-2026-change-de-lieu",
+   "https://www.catch-newz.com/wwe/newz/60760-wwe-nxt-invite-john-cena-face-a-aew-dynamite",
+   "https://www.catch-newz.com/wwe/newz/60761-elio-lefleur-de-retour-de-blessure-avant-wwe-nxt-du-27-octobre",
+   "https://www.catch-newz.com/wwe/resultats/60759-wwe-nxt-27-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60745-pourquoi-john-cena-sera-de-retour-a-wwe-raw-le-2-novembre-2026",
+   "https://www.catch-newz.com/aew/resultats/60803-spoilers-aew-collision-31-octobre-2026",
+   "https://www.catch-newz.com/international/newz/60790-starboyz-vont-defier-les-champions-par-equipe-lwa-a-requiem",
+   "https://www.catch-newz.com/wwe/newz/60800-blake-monroe-exprime-sa-frustration-concernant-sa-mise-a-lecart-des-programmes-de-smackdown",
+   "https://www.catch-newz.com/wwe/newz/60801-grayson-waller-veut-confronter-cm-punk-au-micro-un-jour",
+   "https://www.catch-newz.com/international/newz/60794-preview-tna-impact-29-octobre-2026",
+   "https://www.catch-newz.com/culture/gaming/60799-royce-keys-cest-sans-aucun-doute-une-grande-reussite-pour-moi",
+   "https://www.catch-newz.com/wwe/newz/60798-bronson-reed-a-battu-joe-hendry-a-wwe-main-event-en-seulement-32-secondes",
+   "https://www.catch-newz.com/wwe/newz/60797-jackson-drake-reagit-a-sa-victoire-contre-ek-prosper-a-nxt",
+   "https://www.catch-newz.com/wwe/newz/60796-qui-serait-ladversaire-ideal-de-tony-dangelo-dans-le-roster-principal",
+   "https://www.catch-newz.com/wwe/newz/60795-pourquoi-la-promo-de-solo-sikoa-a-raw-fait-polemique",
+   "https://www.catch-newz.com/aew/newz/60792-le-main-event-de-aew-full-gear-2026-sannonce",
+   "https://www.catch-newz.com/wwe/newz/60788-le-changement-de-lieu-de-wwe-crown-jewel-2026-a-surpris-tout-le-monde",
+   "https://www.catch-newz.com/culture/gaming/60787-wwe-2k26-maj-1-20-pour-la-saison-six-et-street-fighter",
+   "https://www.catch-newz.com/international/resultats/60758-resultats-de-produce-by-orange-crush-volume-6-hell-comes-to-dogtown",
+   "https://www.catch-newz.com/newz/11984-100-derniers-commentaires-sur-catch-newz",
+   "https://www.catch-newz.com/international/newz/60781-carte-du-jour-7-de-la-njpw-super-junior-tag-league-2026",
+   "https://www.catch-newz.com/international/resultats/60785-resultats-de-rcw-bound-by-blood",
+   "https://www.catch-newz.com/international/resultats/60783-resultats-de-ovw-hell-night-2026",
+   "https://www.catch-newz.com/culture/gaming/60768-le-sixieme-et-dernier-ringside-pass-de-wwe-2k26-est-lance",
+   "https://www.catch-newz.com/culture/gossip/60748-rusev-et-cj-perry-attendent-leur-premier-enfant",
+   "https://www.catch-newz.com/culture/cineserie/60639-chris-jericho-aura-un-role-dans-la-serie-the-greatest-sur-prime-video"
+  ]
+ },
  "diag": {
-  "Catch-Newz": "pas de flux RSS trouvé",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (27 liens)",
   "VOXcatch": "5 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
