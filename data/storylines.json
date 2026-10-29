@@ -1,82 +1,123 @@
 {
- "updated": "2026-10-28",
- "note": "Une storyline par jour (la plus récente en premier) : grandes histoires, rivalités, anecdotes de coulisses, faits marquants. txt = paragraphes écrits en français à partir des sources ; v = vidéos officielles ; q = recherches sur la chaîne officielle.",
- "items": [
-  {
-   "id": "okada-omega",
-   "d": "2026-10-28",
-   "type": "Rivalité",
-   "t": "Okada contre Omega",
-   "k": "NJPW",
-   "years": "2017-2018",
-   "hook": "Quatre combats en dix-huit mois, plus de deux heures et demie de lutte cumulée, et des notes qui ont fait exploser l'échelle : la rivalité qui a redéfini le catch japonais moderne.",
-   "txt": [
-    "Fin 2016, Kazuchika Okada est le visage de la New Japan Pro-Wrestling et le champion IWGP poids lourd. Face à lui, Kenny Omega, Canadien devenu leader du Bullet Club, vient de remporter le G1 Climax, ce qui lui offre le main event du plus grand show de l'année.",
-    "Le 4 janvier 2017, à Wrestle Kingdom 11 au Tokyo Dome, les deux hommes livrent un combat d'environ 46 minutes. Okada conserve son titre grâce à son Rainmaker, mais le match marque les esprits : le journaliste Dave Meltzer lui attribue 6 étoiles, une note jamais donnée jusque-là dans son barème censé s'arrêter à 5.",
-    "La revanche a lieu le 11 juin 2017 à Dominion, à Osaka. Cette fois, rien ne départage les deux rivaux : ils luttent les 60 minutes réglementaires et le match se termine sur un nul. Quelques semaines plus tard, au G1 Climax 27, Omega prend enfin le dessus : dans un match limité à 30 minutes, il bat un Okada diminué par une blessure au cou grâce à son One-Winged Angel.",
-    "Il faut attendre Dominion, le 9 juin 2018, pour le chapitre final. Pour garantir un vainqueur, la NJPW impose un match sans limite de temps en deux chutes gagnantes sur trois. Okada prend la première, Omega égalise, puis l'emporte au bout de près de 65 minutes avec un dernier One-Winged Angel. Il met ainsi fin au règne record d'Okada et devient champion IWGP poids lourd.",
-    "Cette série a contribué à faire connaître la NJPW bien au-delà du Japon et a consacré les deux hommes parmi les meilleurs lutteurs de leur génération. Leurs chemins se sont recroisés plus tard à l'AEW, où un nouveau duel avec deux ceintures en jeu a été officialisé pour All In en 2025."
-   ],
-   "key": "Le 9 juin 2018 à Dominion, Omega remporte la troisième chute d'un match sans limite de temps et détrône enfin Okada.",
-   "v": [],
-   "q": [
-    "Kazuchika Okada vs Kenny Omega Wrestle Kingdom 11",
-    "Okada vs Omega Dominion 2018 2 out of 3 falls"
-   ],
-   "src": [
+  "updated": "2026-10-29",
+  "note": "Une storyline par jour (la plus récente en premier) : grandes histoires, rivalités, anecdotes de coulisses, faits marquants. txt = paragraphes écrits en français à partir des sources ; v = vidéos officielles ; q = recherches sur la chaîne officielle.",
+  "items": [
     {
-     "n": "WrestleInn – From Kingdom to Dominion",
-     "u": "https://wrestleinn.com/2022/01/03/from-kingdom-to-dominion/"
+      "id": "halloween-havoc-1995",
+      "d": "2026-10-29",
+      "type": "Anecdote",
+      "t": "Halloween Havoc 1995 : des monster trucks sur un toit et un géant qui tombe du ciel",
+      "k": "WCW",
+      "years": "1995",
+      "hook": "Un duel de camions géants sur le toit d'un bâtiment, une chute « mortelle » et un débutant qui repart champion du monde : bienvenue dans la soirée la plus folle de la WCW.",
+      "txt": [
+        "En 1995, la WCW mise tout sur Hulk Hogan et lui oppose un adversaire hors normes : The Giant, un colosse de plus de 2,10 m (futur Big Show), membre du Dungeon of Doom de Kevin Sullivan, ce clan de « monstres » décidé à détrôner l'icône. Lors de Fall Brawl, le Giant écrase la précieuse Harley-Davidson de Hogan, et la rivalité est lancée.",
+        "Pour faire monter la tension avant Halloween Havoc, la WCW imagine un affrontement inédit : un « Sumo Monster Truck match ». Le principe ressemble au sumo : chacun pilote un monster truck — « Hulkster » contre « Dungeon of Doom » — et doit pousser le véhicule adverse hors d'un grand cercle. Le duel, enregistré la veille, se déroule sur le toit du Cobo Hall, à Détroit.",
+        "Hogan remporte le duel de camions, mais la bagarre continue à pied sur le toit. En se libérant d'une prise d'étranglement, il fait basculer le Giant dans le vide ; Hogan tente de le retenir, en vain, et la réalisation montre l'eau en contrebas. À l'antenne, on laisse planer le doute sur le sort du géant…",
+        "Le 29 octobre 1995, au Joe Louis Arena de Détroit, le Giant se présente pourtant tranquillement pour le main event, sans une égratignure — la WCW n'expliquera jamais vraiment sa « survie ». C'est son tout premier match à la WCW, et il défie Hogan pour le championnat du monde.",
+        "Le combat bascule dans le chaos : Jimmy Hart, le manager de Hogan, le trahit en le frappant avec son mégaphone, le Dungeon of Doom s'en mêle et un étrange personnage, The Yeti, enveloppé de bandelettes comme une momie, serre Hogan dans une étreinte à deux avec le Giant. Lex Luger, lui, se retourne contre Randy Savage. Le Giant l'emporte par disqualification.",
+        "Normalement, un titre ne change pas de mains sur une disqualification, mais le Giant repart avec la ceinture grâce à une clause glissée par Jimmy Hart dans le contrat du match. Le titre est rapidement déclaré vacant en raison de cette fin controversée. La soirée reste aujourd'hui l'une des plus improbables de l'histoire du catch, entre camions géants, chute du toit et momie-yéti."
+      ],
+      "key": "Après avoir « chuté » du toit du Cobo Hall la veille, le Giant revient indemne et bat Hulk Hogan par disqualification pour son tout premier match à la WCW.",
+      "v": [],
+      "q": [
+        "WCW Halloween Havoc 1995 Monster Truck Sumo Hogan Giant",
+        "Hulk Hogan vs The Giant Halloween Havoc 1995"
+      ],
+      "src": [
+        {
+          "n": "Philadelphia Inquirer – Throwback Thursday : Halloween Havoc 1995",
+          "u": "https://inquirer.com/philly/blogs/the-squared-circle/Throwback-Thursday-Looking-back-at-WCW-Halloween-Havoc-1995.html"
+        },
+        {
+          "n": "WWE.com – Best and Worst of WCW Halloween Havoc",
+          "u": "https://www.wwe.com/classics/classic-lists/best-worst-wcw-halloween-havoc"
+        },
+        {
+          "n": "WrestleCrap – Monster Truck Sumo Match",
+          "u": "https://www.wrestlecrap.com/inductions/monster-truck-sumo-match/"
+        },
+        {
+          "n": "TJR Wrestling – 29 octobre dans l'histoire du catch",
+          "u": "https://tjrwrestling.net/wrestling-history/october-29/"
+        }
+      ]
     },
     {
-     "n": "TheSportster – Okada vs Omega, classement des matchs",
-     "u": "https://www.thesportster.com/kazuchika-okada-vs-kenny-omega-matches-njpw-ranked-worst-best/"
+      "id": "okada-omega",
+      "d": "2026-10-28",
+      "type": "Rivalité",
+      "t": "Okada contre Omega",
+      "k": "NJPW",
+      "years": "2017-2018",
+      "hook": "Quatre combats en dix-huit mois, plus de deux heures et demie de lutte cumulée, et des notes qui ont fait exploser l'échelle : la rivalité qui a redéfini le catch japonais moderne.",
+      "txt": [
+        "Fin 2016, Kazuchika Okada est le visage de la New Japan Pro-Wrestling et le champion IWGP poids lourd. Face à lui, Kenny Omega, Canadien devenu leader du Bullet Club, vient de remporter le G1 Climax, ce qui lui offre le main event du plus grand show de l'année.",
+        "Le 4 janvier 2017, à Wrestle Kingdom 11 au Tokyo Dome, les deux hommes livrent un combat d'environ 46 minutes. Okada conserve son titre grâce à son Rainmaker, mais le match marque les esprits : le journaliste Dave Meltzer lui attribue 6 étoiles, une note jamais donnée jusque-là dans son barème censé s'arrêter à 5.",
+        "La revanche a lieu le 11 juin 2017 à Dominion, à Osaka. Cette fois, rien ne départage les deux rivaux : ils luttent les 60 minutes réglementaires et le match se termine sur un nul. Quelques semaines plus tard, au G1 Climax 27, Omega prend enfin le dessus : dans un match limité à 30 minutes, il bat un Okada diminué par une blessure au cou grâce à son One-Winged Angel.",
+        "Il faut attendre Dominion, le 9 juin 2018, pour le chapitre final. Pour garantir un vainqueur, la NJPW impose un match sans limite de temps en deux chutes gagnantes sur trois. Okada prend la première, Omega égalise, puis l'emporte au bout de près de 65 minutes avec un dernier One-Winged Angel. Il met ainsi fin au règne record d'Okada et devient champion IWGP poids lourd.",
+        "Cette série a contribué à faire connaître la NJPW bien au-delà du Japon et a consacré les deux hommes parmi les meilleurs lutteurs de leur génération. Leurs chemins se sont recroisés plus tard à l'AEW, où un nouveau duel avec deux ceintures en jeu a été officialisé pour All In en 2025."
+      ],
+      "key": "Le 9 juin 2018 à Dominion, Omega remporte la troisième chute d'un match sans limite de temps et détrône enfin Okada.",
+      "v": [],
+      "q": [
+        "Kazuchika Okada vs Kenny Omega Wrestle Kingdom 11",
+        "Okada vs Omega Dominion 2018 2 out of 3 falls"
+      ],
+      "src": [
+        {
+          "n": "WrestleInn – From Kingdom to Dominion",
+          "u": "https://wrestleinn.com/2022/01/03/from-kingdom-to-dominion/"
+        },
+        {
+          "n": "TheSportster – Okada vs Omega, classement des matchs",
+          "u": "https://www.thesportster.com/kazuchika-okada-vs-kenny-omega-matches-njpw-ranked-worst-best/"
+        },
+        {
+          "n": "F4W Online – Omega vs Okada à All In",
+          "u": "https://www.f4wonline.com/news/aew/omega-vs-okada-aew-all-in-double-title-match-official"
+        }
+      ]
     },
     {
-     "n": "F4W Online – Omega vs Okada à All In",
-     "u": "https://www.f4wonline.com/news/aew/omega-vs-okada-aew-all-in-double-title-match-official"
+      "id": "kofimania",
+      "t": "La KofiMania",
+      "k": "WWE",
+      "years": "2019",
+      "hook": "Plus de dix ans à attendre sa chance, puis deux mois où tout le public s’est rangé derrière lui : l’histoire qui a mené Kofi Kingston au sommet de WrestleMania.",
+      "txt": [
+        "Début 2019, Kofi Kingston est un pilier de la WWE depuis plus de dix ans. Champion par équipe à de nombreuses reprises avec le New Day, il n’a pourtant jamais eu de vraie chance au titre suprême : tout le monde l’apprécie, mais personne ne l’imagine à la première place.",
+        "Tout bascule en février 2019. Mustafa Ali, blessé, doit renoncer à l’Elimination Chamber et Kofi le remplace au pied levé. Lors du SmackDown qui précède, il participe à un gauntlet match : il enchaîne les adversaires pendant de longues minutes et ne s’incline qu’à la toute fin face à AJ Styles, sous les ovations. Quelques jours plus tard, dans la Chamber, il est le dernier à tomber face au champion Daniel Bryan. Une étoile est née.",
+        "Le public réclame Kofi, mais Vince McMahon, le patron dans l’histoire, refuse de le voir en champion. Semaine après semaine, il lui retire son match, ajoute des obstacles et lui impose des défis impossibles. Le 19 mars, Kofi doit battre cinq adversaires d’affilée pour obtenir sa chance : il vient à bout de Sheamus, Cesaro, Rowan (par disqualification), Samoa Joe et Randy Orton… avant que McMahon n’ajoute Daniel Bryan en personne, qui l’achève.",
+        "Ses partenaires Big E et Xavier Woods prennent alors le relais : le 26 mars, ils remportent à leur tour un gauntlet par équipe et forcent McMahon à accorder à Kofi son match de championnat à WrestleMania 35.",
+        "Le 7 avril 2019, au MetLife Stadium, Kofi Kingston bat Daniel Bryan et devient champion de la WWE, le premier né en Afrique (il est originaire du Ghana). Ses fils le rejoignent sur le ring pour une célébration restée dans toutes les mémoires. La « KofiMania » reste l’un des plus beaux exemples d’histoire portée par le public."
+      ],
+      "key": "Le gauntlet du 19 mars 2019 : cinq victoires d’affilée, puis l’entrée surprise de Daniel Bryan imposée par Vince McMahon.",
+      "v": [],
+      "q": [
+        "Kofi Kingston vs Daniel Bryan WrestleMania 35",
+        "Kofi Kingston gauntlet SmackDown 2019"
+      ],
+      "src": [
+        {
+          "n": "WWE.com (gauntlet du 19 mars 2019)",
+          "u": "https://www.wwe.com/shows/smackdown/2019-03-19/article/gauntlet-match"
+        },
+        {
+          "n": "WWE.com (WrestleMania 35)",
+          "u": "https://wwe.com/shows/wrestlemania/wrestlemania-35/daniel-bryan-vs-kofi-kingston-results"
+        },
+        {
+          "n": "Fightful",
+          "u": "https://www.fightful.com/wrestling/new-day-run-gauntlet-kofi-kingston-challenges-daniel-bryan-wwe-title-wrestlemania-35-updated-card"
+        },
+        {
+          "n": "The Ringer",
+          "u": "https://www.theringer.com/2019/04/01/mma/wrestlemania-35-match-book-daniel-bryan-vs-kofi-kingston"
+        }
+      ],
+      "d": "2026-10-26",
+      "type": "Grande histoire"
     }
-   ]
-  },
-  {
-   "id": "kofimania",
-   "t": "La KofiMania",
-   "k": "WWE",
-   "years": "2019",
-   "hook": "Plus de dix ans à attendre sa chance, puis deux mois où tout le public s’est rangé derrière lui : l’histoire qui a mené Kofi Kingston au sommet de WrestleMania.",
-   "txt": [
-    "Début 2019, Kofi Kingston est un pilier de la WWE depuis plus de dix ans. Champion par équipe à de nombreuses reprises avec le New Day, il n’a pourtant jamais eu de vraie chance au titre suprême : tout le monde l’apprécie, mais personne ne l’imagine à la première place.",
-    "Tout bascule en février 2019. Mustafa Ali, blessé, doit renoncer à l’Elimination Chamber et Kofi le remplace au pied levé. Lors du SmackDown qui précède, il participe à un gauntlet match : il enchaîne les adversaires pendant de longues minutes et ne s’incline qu’à la toute fin face à AJ Styles, sous les ovations. Quelques jours plus tard, dans la Chamber, il est le dernier à tomber face au champion Daniel Bryan. Une étoile est née.",
-    "Le public réclame Kofi, mais Vince McMahon, le patron dans l’histoire, refuse de le voir en champion. Semaine après semaine, il lui retire son match, ajoute des obstacles et lui impose des défis impossibles. Le 19 mars, Kofi doit battre cinq adversaires d’affilée pour obtenir sa chance : il vient à bout de Sheamus, Cesaro, Rowan (par disqualification), Samoa Joe et Randy Orton… avant que McMahon n’ajoute Daniel Bryan en personne, qui l’achève.",
-    "Ses partenaires Big E et Xavier Woods prennent alors le relais : le 26 mars, ils remportent à leur tour un gauntlet par équipe et forcent McMahon à accorder à Kofi son match de championnat à WrestleMania 35.",
-    "Le 7 avril 2019, au MetLife Stadium, Kofi Kingston bat Daniel Bryan et devient champion de la WWE, le premier né en Afrique (il est originaire du Ghana). Ses fils le rejoignent sur le ring pour une célébration restée dans toutes les mémoires. La « KofiMania » reste l’un des plus beaux exemples d’histoire portée par le public."
-   ],
-   "key": "Le gauntlet du 19 mars 2019 : cinq victoires d’affilée, puis l’entrée surprise de Daniel Bryan imposée par Vince McMahon.",
-   "v": [],
-   "q": [
-    "Kofi Kingston vs Daniel Bryan WrestleMania 35",
-    "Kofi Kingston gauntlet SmackDown 2019"
-   ],
-   "src": [
-    {
-     "n": "WWE.com (gauntlet du 19 mars 2019)",
-     "u": "https://www.wwe.com/shows/smackdown/2019-03-19/article/gauntlet-match"
-    },
-    {
-     "n": "WWE.com (WrestleMania 35)",
-     "u": "https://wwe.com/shows/wrestlemania/wrestlemania-35/daniel-bryan-vs-kofi-kingston-results"
-    },
-    {
-     "n": "Fightful",
-     "u": "https://www.fightful.com/wrestling/new-day-run-gauntlet-kofi-kingston-challenges-daniel-bryan-wwe-title-wrestlemania-35-updated-card"
-    },
-    {
-     "n": "The Ringer",
-     "u": "https://www.theringer.com/2019/04/01/mma/wrestlemania-35-match-book-daniel-bryan-vs-kofi-kingston"
-    }
-   ],
-   "d": "2026-10-26",
-   "type": "Grande histoire"
-  }
- ]
+  ]
 }
