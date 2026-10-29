@@ -1,5 +1,5 @@
 {
- "at": "2026-10-29T16:15:23.448Z",
+ "at": "2026-10-29T17:22:54.481Z",
  "items": [
   {
    "t": "Pourquoi John Cena sera de retour à WWE RAW le 2 novembre 2026 ?",
@@ -9,6 +9,24 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Le John Cena Classic méticuleusement préparé",
+   "u": "https://www.catch-newz.com/wwe/newz/60805-le-john-cena-classic-meticuleusement-prepare",
+   "s": "Catch-Newz",
+   "d": "2026-10-29",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "La WWE a bien un plan de secours pour relocaliser WrestleMania 43",
+   "u": "https://www.catch-newz.com/wwe/newz/60804-la-wwe-a-bien-un-plan-de-secours-pour-relocaliser-wrestlemania-43",
+   "s": "Catch-Newz",
+   "d": "2026-10-29",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -146,6 +164,8 @@
    "https://www.catch-newz.com/aew/resultats/60789-aew-dynamite-28-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/60759-wwe-nxt-27-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60745-pourquoi-john-cena-sera-de-retour-a-wwe-raw-le-2-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/60805-le-john-cena-classic-meticuleusement-prepare",
+   "https://www.catch-newz.com/wwe/newz/60804-la-wwe-a-bien-un-plan-de-secours-pour-relocaliser-wrestlemania-43",
    "https://www.catch-newz.com/aew/resultats/60803-spoilers-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/international/newz/60794-preview-tna-impact-29-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60774-wwe-crown-jewel-2026-change-de-lieu",
@@ -173,7 +193,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "5 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
