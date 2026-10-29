@@ -1,5 +1,5 @@
 {
- "at": "2026-10-29T21:15:18.066Z",
+ "at": "2026-10-29T22:12:48.045Z",
  "items": [
   {
    "t": "Preview : AEW Collision du 31 octobre 2026",
@@ -40,6 +40,36 @@
     "TNA",
     "Impact"
    ]
+  },
+  {
+   "t": "Résultats de Marigold Grand Destiny 2026",
+   "u": "https://www.catch-newz.com/international/resultats/60811-resultats-de-marigold-grand-destiny-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-29",
+   "tags": [
+    "Marigold"
+   ]
+  },
+  {
+   "t": "Résultats du jour 1 du HOP Spooktober Tour 2026",
+   "u": "https://www.catch-newz.com/international/resultats/60812-resultats-du-jour-1-du-hop-spooktober-tour-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-29",
+   "tags": []
+  },
+  {
+   "t": "Résultats de CCW vs 2econd Wrestling",
+   "u": "https://www.catch-newz.com/international/resultats/60810-resultats-de-ccw-vs-2econd-wrestling",
+   "s": "Catch-Newz",
+   "d": "2026-10-29",
+   "tags": []
+  },
+  {
+   "t": "Résultats de CCW Havoc & Haze 30",
+   "u": "https://www.catch-newz.com/international/resultats/60809-resultats-de-ccw-havoc-haze-30",
+   "s": "Catch-Newz",
+   "d": "2026-10-29",
+   "tags": []
   },
   {
    "t": "AEW Dynamite du 28 octobre : Queen Aminata championne TBS, Ospreay vs. Fletcher à Full Gear",
@@ -220,6 +250,10 @@
    "https://www.catch-newz.com/aew/newz/60808-preview-roh-du-29-octobre-2026",
    "https://www.catch-newz.com/aew/resultats/60803-spoilers-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/international/newz/60794-preview-tna-impact-29-octobre-2026",
+   "https://www.catch-newz.com/international/resultats/60811-resultats-de-marigold-grand-destiny-2026",
+   "https://www.catch-newz.com/international/resultats/60812-resultats-du-jour-1-du-hop-spooktober-tour-2026",
+   "https://www.catch-newz.com/international/resultats/60810-resultats-de-ccw-vs-2econd-wrestling",
+   "https://www.catch-newz.com/international/resultats/60809-resultats-de-ccw-havoc-haze-30",
    "https://www.catch-newz.com/wwe/newz/60807-qui-pourrait-remplacer-bruce-prichard-a-la-wwe",
    "https://www.catch-newz.com/wwe/resultats/60759-wwe-nxt-27-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60745-pourquoi-john-cena-sera-de-retour-a-wwe-raw-le-2-novembre-2026",
@@ -251,7 +285,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
   "VOXcatch": "5 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
