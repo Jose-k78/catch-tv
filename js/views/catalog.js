@@ -451,19 +451,24 @@ function tab(label, href, on, logo) {
   return logo ? '<a class="tab logo' + (on ? " on" : "") + '" href="' + href + '" aria-label="' + esc(label) + '"><img src="' + esc(logo) + '" alt="' + esc(label) + '"></a>'
     : '<a class="tab' + (on ? " on" : "") + '" href="' + href + '">' + esc(label) + "</a>";
 }
-// Promotions rangées dans l'onglet d'une autre (la AAA appartient à la WWE)
-export const PARENT = { AAA: "WWE" };
-const hostOf = k => (PARENT[k] && S.P[PARENT[k]] ? PARENT[k] : k);
+// Promotions rangées dans l'onglet d'une autre : la AAA dans la WWE (après NXT), la ROH dans l'AEW (après Collision)
+export const PARENT = { AAA: "WWE", ROH: "AEW" };
+const AFTER = { AAA: "NXT", ROH: "Collision" };
+export const hostOf = k => (PARENT[k] && S.P[PARENT[k]] ? PARENT[k] : k);
 export function tabsView(route) {
   const cur = route.name === "promo" ? hostOf(route.k) : "Accueil";
   const top = Object.keys(S.P).filter(k => hostOf(k) === k);
   let h = '<nav class="tabs">' + ["Accueil"].concat(top).map(t => tab(t, t === "Accueil" ? "#/" : "#/p/" + encodeURIComponent(t), t === cur, t === "Accueil" ? "" : logoOf(t, ""))).join("") + "</nav>";
   if (route.name === "promo" && S.P[cur]) {
     const kids = Object.keys(PARENT).filter(c => PARENT[c] === cur && S.P[c]), shows = Object.keys(S.P[cur].s || {});
-    if (shows.length || kids.length) h += '<nav class="tabs sub">' + ["Tout"].concat(shows).map(t => {
+    // ordre : Tout, les shows, et chaque promotion rangée juste après le show indiqué (sinon à la fin)
+    const items = ["Tout"].concat(shows);
+    kids.forEach(c => { const i = items.indexOf(AFTER[c]); items.splice(i >= 0 ? i + 1 : items.length, 0, { kid: c }); });
+    if (shows.length || kids.length) h += '<nav class="tabs sub">' + items.map(t => {
+      if (t.kid) return tab(t.kid, "#/p/" + encodeURIComponent(t.kid), route.k === t.kid, logoOf(t.kid, ""));
       const on = route.k === cur && ((t === "Tout" && !route.n) || t === route.n);
       return tab(t, "#/p/" + encodeURIComponent(cur) + (t === "Tout" ? "" : "/" + encodeURIComponent(t)), on, t === "Tout" ? "" : logoOf(cur, t));
-    }).join("") + kids.map(c => tab(c, "#/p/" + encodeURIComponent(c), route.k === c, logoOf(c, ""))).join("") + "</nav>";
+    }).join("") + "</nav>";
     // les shows de la promotion rangée (Lucha Libre AAA…)
     if (route.k !== cur && S.P[route.k].s) h += '<nav class="tabs sub">' + ["Tout " + route.k].concat(Object.keys(S.P[route.k].s)).map((t, i) => {
       const on = (i === 0 && !route.n) || t === route.n;

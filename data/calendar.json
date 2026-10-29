@@ -304,6 +304,62 @@
    ],
    "yt": "UCJ5v_MCY6GNUBTO8-D3XoAg"
   },
+  "ROH": {
+   "c": [
+    "#b3121c",
+    "#2a0407"
+   ],
+   "l": "https://www.ringofhonor.com/",
+   "x": [
+    "ringofhonor"
+   ],
+   "e": [
+    {
+     "t": "Supercard of Honor",
+     "d": "2026-05-15",
+     "w": "Salisbury (Maryland)"
+    },
+    {
+     "t": "Death Before Dishonor",
+     "d": "2026-08-21",
+     "w": "Philadelphie (Pennsylvanie)"
+    },
+    {
+     "t": "Final Battle",
+     "d": "2026-12-04",
+     "w": "San Antonio (Texas)",
+     "v": "Boeing Center"
+    }
+   ],
+   "s": {
+    "ROH TV": {
+     "x": [
+      "ringofhonor"
+     ],
+     "j": "Chaque jeudi",
+     "wd": 4,
+     "p": "HonorClub",
+     "l": "https://www.watchroh.com/",
+     "e": [],
+     "h": "20:00",
+     "tz": "America/New_York",
+     "dur": 120,
+     "fr": [
+      {
+       "n": "MyAEW",
+       "u": "https://www.allelitewrestling.com/"
+      }
+     ]
+    }
+   },
+   "fr": [
+    {
+     "n": "MyAEW",
+     "u": "https://www.allelitewrestling.com/"
+    }
+   ],
+   "yt": "UC4_uDa6w1kOyzsikIzReCKQ"
+  },
   "TNA": {
    "c": [
     "#c8102e",
@@ -351,6 +407,124 @@
      "u": "https://tnawrestling.com/"
     }
    ]
+  },
+  "CMLL": {
+   "c": [
+    "#1f56b3",
+    "#0a1d42"
+   ],
+   "l": "https://cmll.com/",
+   "x": [
+    "CMLL_OFICIAL"
+   ],
+   "e": [
+    {
+     "t": "La Noche de las Amazonas",
+     "d": "2026-03-06",
+     "w": "Mexico",
+     "v": "Arena México"
+    },
+    {
+     "t": "Homenaje a Dos Leyendas",
+     "d": "2026-03-20",
+     "w": "Mexico",
+     "v": "Arena México"
+    },
+    {
+     "t": "Grand Prix",
+     "d": "2026-08-07",
+     "w": "Mexico",
+     "v": "Arena México"
+    },
+    {
+     "t": "93 Aniversario",
+     "d": "2026-09-18",
+     "w": "Mexico",
+     "v": "Arena México"
+    },
+    {
+     "t": "Rey del Inframundo — finale",
+     "d": "2026-10-30",
+     "w": "Mexico",
+     "v": "Arena México"
+    },
+    {
+     "t": "Día de Muertos — Tzompantli de máscaras",
+     "d": "2026-11-02",
+     "w": "Mexico",
+     "v": "Arena México"
+    }
+   ],
+   "s": {
+    "Viernes Espectacular": {
+     "j": "Chaque vendredi",
+     "wd": 5,
+     "p": "FOX Sports (Mexique) · YouTube CMLL",
+     "l": "https://cmll.com/",
+     "e": [],
+     "h": "20:30",
+     "tz": "America/Mexico_City",
+     "dur": 150,
+     "fr": [
+      {
+       "n": "YouTube CMLL (abonnement)",
+       "u": "https://www.youtube.com/channel/UC3lOpKjW4_j4PGXWLNTt4iQ"
+      }
+     ]
+    },
+    "Martes de Arena México": {
+     "j": "Chaque mardi",
+     "wd": 2,
+     "p": "YouTube CMLL (abonnement)",
+     "l": "https://www.youtube.com/channel/UC3lOpKjW4_j4PGXWLNTt4iQ",
+     "e": [],
+     "fr": [
+      {
+       "n": "YouTube CMLL (abonnement)",
+       "u": "https://www.youtube.com/channel/UC3lOpKjW4_j4PGXWLNTt4iQ"
+      }
+     ]
+    },
+    "Sábado de Coliseo": {
+     "j": "Chaque samedi",
+     "wd": 6,
+     "p": "YouTube CMLL (abonnement Leyenda)",
+     "l": "https://www.youtube.com/channel/UC3lOpKjW4_j4PGXWLNTt4iQ",
+     "e": [],
+     "h": "19:30",
+     "tz": "America/Mexico_City",
+     "dur": 150,
+     "fr": [
+      {
+       "n": "YouTube CMLL (abonnement)",
+       "u": "https://www.youtube.com/channel/UC3lOpKjW4_j4PGXWLNTt4iQ"
+      }
+     ]
+    },
+    "Domingo Familiar": {
+     "j": "Chaque dimanche",
+     "wd": 0,
+     "p": "YouTube CMLL (abonnement Leyenda)",
+     "l": "https://www.youtube.com/channel/UC3lOpKjW4_j4PGXWLNTt4iQ",
+     "e": [],
+     "h": "17:00",
+     "tz": "America/Mexico_City",
+     "dur": 150,
+     "fr": [
+      {
+       "n": "YouTube CMLL (abonnement)",
+       "u": "https://www.youtube.com/channel/UC3lOpKjW4_j4PGXWLNTt4iQ"
+      }
+     ]
+    }
+   },
+   "fr": [
+    {
+     "n": "YouTube CMLL (abonnement)",
+     "u": "https://www.youtube.com/channel/UC3lOpKjW4_j4PGXWLNTt4iQ"
+    }
+   ],
+   "yt": "UC3lOpKjW4_j4PGXWLNTt4iQ"
   },
   "NJPW": {
    "c": [

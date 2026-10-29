@@ -72,9 +72,16 @@ export function hlView(k, show, d) {
   if (Array.isArray(h.res) && h.res.length) {
     out += "<h2>Résultats</h2>" + spoilBlock("Voir les résultats (spoiler)", '<ul class="res">' + h.res.map(r => "<li>" + esc(r) + "</li>").join("") + "</ul>");
   } else if (!h.m) out += '<p class="note" style="margin-top:14px">Les résultats seront ajoutés lors de la prochaine mise à jour.</p>';
+  // le reste du show : promos, interviews, attaques, face-à-face, retours… dans l'ordre du show
+  const seg = (Array.isArray(h.seg) ? h.seg : []).filter(x => x && (x.t || typeof x === "string"));
+  if (seg.length) out += "<h2>Les segments du show</h2>" + spoilBlock("Voir les segments (spoiler)", '<ul class="segs">' + seg.map(x => {
+    const ty = typeof x === "string" ? "" : String(x.k || ""), t = typeof x === "string" ? x : x.t;
+    return "<li>" + (ty ? '<span class="segk">' + esc(SEGICO[ty] || "🎬") + " " + esc(ty) + "</span>" : "") + "<span>" + esc(t) + "</span></li>";
+  }).join("") + "</ul>");
   if (h.s) out += '<p class="note small" style="margin-top:12px">Source : ' + (okHttp(h.u) ? '<a href="' + esc(h.u) + '" target="_blank" rel="noopener">' + esc(h.s) + "</a>" : esc(h.s)) + "</p>";
   out += '<p class="note small" style="margin-top:10px">☆ Note les combats que tu as vus : ils rejoignent ton historique des notes, avec le match complet dès qu’il est publié.</p>';
   if (!noSpoil()) out += '<p class="note small" style="margin-top:6px">Astuce : active le « mode sans spoiler » dans les paramètres pour tout cacher tant que tu n’as pas vu le show.</p>';
   return out;
 }
+const SEGICO = { "Promo": "🎤", "Interview": "🎙️", "Attaque": "💥", "Face-à-face": "🔥", "Retour": "😱", "Débuts": "✨", "Annonce": "📢", "Contrat": "✍️", "Célébration": "🎉", "Backstage": "🚪", "Trahison": "🗡️", "Blessure": "🤕" };
 ACT.unlockhl = el => unlock("hl:" + el.dataset.key);

@@ -26,25 +26,29 @@ import { activityView } from "./views/activity.js";
 import { storylineView } from "./views/storyline.js";
 import { renderWComments, wslug } from "./views/comments.js";
 import { rosterView } from "./views/roster.js";
-import { pollsView } from "./views/polls.js";
+import { pollsView, syncBabies } from "./views/polls.js";
 import { picksView, pickView } from "./views/picks.js";
 import { ideasView } from "./views/ideas.js";
 import { loadThread } from "./views/activity.js";
 import { mountBg, armMusic, refreshMedia, updateMusicBtn } from "./media.js";
+import { trophiesView, checkTrophies } from "./views/trophies.js";
+import { mountTicker } from "./views/ticker.js";
+import { renderWImage } from "./views/wimage.js";
 
 let route = { name: "home" }, routeSubs = [], userSubs = [], dirty = false, searchFocused = false;
-const NEEDS_USER = { settings: 1, editprofile: 1, chat: 1, newchat: 1, conv: 1, convinfo: 1, profile: 1, members: 1, favs: 1, notifs: 1, activity: 1, ideas: 1 };
+const NEEDS_USER = { settings: 1, editprofile: 1, chat: 1, newchat: 1, conv: 1, convinfo: 1, profile: 1, members: 1, favs: 1, notifs: 1, activity: 1, ideas: 1, trophies: 1 };
 const FORM_VIEWS = { auth: 1, settings: 1, editprofile: 1 };
 const REL = {
-  home: ["content", "images", "history", "auth", "tick", "profile", "spoil", "activity", "polls", "pollVotes", "picks"], promo: ["content", "images", "history", "auth", "tick", "spoil"],
-  profile: ["profile", "profiles", "history", "otherHistory", "auth", "friends", "feuds", "blocks", "memberFriends", "tick"], chat: ["room", "convs", "reads", "profiles", "auth", "blocks"],
-  convinfo: ["convs", "reads", "profiles", "auth", "blocks", "room", "msgs"], newchat: ["users", "auth"], settings: ["auth", "route", "reports", "blocks", "profiles", "images", "media", "ideas"], editprofile: ["profile", "auth"], auth: ["auth"],
+  home: ["content", "images", "history", "auth", "tick", "profile", "spoil", "activity", "polls", "pollVotes", "picks", "hof"], promo: ["content", "images", "history", "auth", "tick", "spoil"],
+  profile: ["profile", "profiles", "history", "otherHistory", "auth", "friends", "feuds", "blocks", "memberFriends", "tick", "slammys", "myact", "pollVotes", "ideas"], chat: ["room", "convs", "reads", "profiles", "auth", "blocks"],
+  convinfo: ["convs", "reads", "profiles", "auth", "blocks", "room", "msgs"], newchat: ["users", "auth"], settings: ["auth", "route", "reports", "blocks", "profiles", "images", "media", "ideas"], editprofile: ["profile", "auth", "profiles"], auth: ["auth"],
   matches: ["route", "history", "auth"], credits: ["images"], wrestler: ["profile", "spoil", "history", "auth"], search: [], titles: ["history", "spoil"], title: ["history", "spoil"],
   notifs: ["notifs", "profiles", "reads", "blocks"], activity: ["activity", "profiles", "blocks", "areplies"], storyline: [], roster: ["profile"],
   members: ["users", "friends", "feuds", "blocks", "profiles", "auth", "tick"], favs: ["profile", "profiles", "friends", "auth"], hl: ["history", "spoil"],
   event: ["event", "history", "auth"],
-  polls: ["polls", "pollVotes", "auth", "blocks"], picks: ["content", "picks", "profiles", "auth", "blocks", "tick"], pick: ["content", "picks", "profiles", "auth", "blocks", "tick"],
+  polls: ["polls", "pollVotes", "auth", "blocks", "hof"], picks: ["content", "picks", "profiles", "auth", "blocks", "tick"], pick: ["content", "picks", "profiles", "auth", "blocks", "tick"],
   ideas: ["ideas", "profiles", "auth", "blocks"],
+  trophies: ["profile", "profiles", "history", "pollVotes", "picks", "friends", "feuds", "ideas", "myact", "slammys", "auth", "content"],
 };
 
 // ---------- navigation ----------
@@ -72,6 +76,7 @@ function parse() {
     case "pronostics": return { name: "picks" };
     case "pronostic": return S.P[parts[1]] && parts[2] ? { name: "pick", k: parts[1], d: parts[2] } : { name: "picks" };
     case "idees": return { name: "ideas" };
+    case "trophees": return { name: "trophies", uid: parts[1] || "" };
     case "storyline": return { name: "storyline", id: parts[1] || "" };
     case "roster": return S.P[parts[1]] ? { name: "roster", k: parts[1], g: parts[2] || "" } : { name: "home" };
     case "hl": return S.P[parts[1]] ? { name: "hl", k: parts[1], show: parts[2] || "PLE", d: parts[3] || "" } : { name: "home" };
@@ -98,6 +103,10 @@ function onRoute() {
       routeSubs.push(B.watchFriends(id, list => { S.memberFriends[id] = list; list.forEach(f => f.members.forEach(need)); changed("memberFriends"); }));
     }
   }
+  if ((route.name === "profile" || route.name === "editprofile") && S.user) {
+    const bu = route.name === "profile" ? route.uid : S.user.uid;
+    if (S.banners[bu] === undefined) B.getBanner(bu).then(src => { S.banners[bu] = src || ""; changed("profiles"); }).catch(() => { S.banners[bu] = ""; });
+  }
   if ((route.name === "conv" || route.name === "convinfo") && S.user) {
     if (!validConv(route.id)) { location.replace("#/chat"); return; }
     if (route.id !== "general") {
@@ -110,12 +119,12 @@ function onRoute() {
     routeSubs.push(B.watchReplies(id, list => { S.areplies[id] = list; changed("areplies"); }));
     loadThread(id);
   }
-  if (route.name === "ideas" && S.user && !S.isAdmin) routeSubs.push(B.watchIdeas(list => { S.ideas = list || []; changed("ideas"); }));
   if (route.name === "newchat" && S.user) loadUsers();
   if (route.name === "members" && S.user) loadMembers(true);
   if (route.name === "wrestler") {
     const w = wslug(route.q);
     routeSubs.push(B.watchWComments(w, list => { S.wcomments[w] = list; list.forEach(c => need(c.uid)); renderWComments(); }));
+    routeSubs.push(B.watchWImage(w, d => { S.wimg = S.wimg || {}; S.wimg[w] = d; renderWImage(); }));
   }
   render();
   if (route.name !== "conv") window.scrollTo(0, 0);
@@ -127,6 +136,7 @@ function render() {
   document.body.classList.toggle("inconv", route.name === "conv");
   tabs.innerHTML = (route.name === "home" || route.name === "promo") ? tabsView(route) : "";
   mountBg(route);
+  mountTicker(route);
   document.body.classList.toggle("wide", route.name === "home");
   let h = "";
   const waiting = NEEDS_USER[route.name] && !S.user;
@@ -157,6 +167,7 @@ function render() {
     case "picks": h = picksView(); break;
     case "pick": h = pickView(route.k, route.d); break;
     case "ideas": h = ideasView(); break;
+    case "trophies": h = trophiesView(route.uid); break;
     case "storyline": h = storylineView(route.id); break;
     case "roster": h = rosterView(route.k, route.g); break;
     case "event": h = eventView(route.ref); break;
@@ -165,7 +176,7 @@ function render() {
   if (route.name !== "conv") applyChatTheme("");
   if (route.name === "conv" && !waiting) { renderMsgs(route.id, true); setupComposer(); markRead(); }
   if (route.name === "convinfo" && !waiting) afterConvInfo(route.id);
-  if (route.name === "wrestler") { fillWiki(route.q, route.wt); renderWComments(); }
+  if (route.name === "wrestler") { fillWiki(route.q, route.wt); renderWComments(); renderWImage(); }
   if (route.name === "event") fillEvent(route.ref);
   if (route.name === "search") afterSearch();
   if (route.name === "notifs") markNotifsSeen();
@@ -185,7 +196,7 @@ function navOn(id) {
   if (id === "search") return r === "search" || r === "wrestler" || r === "event";
   if (id === "members") return r === "members" || (r === "profile" && S.user && route.uid && route.uid !== S.user.uid);
   if (id === "chat") return r === "chat" || r === "conv" || r === "newchat" || r === "convinfo";
-  if (id === "me") return (r === "profile" && (!S.user || !route.uid || route.uid === S.user.uid)) || r === "settings" || r === "editprofile" || r === "auth" || r === "ideas";
+  if (id === "me") return (r === "profile" && (!S.user || !route.uid || route.uid === S.user.uid)) || r === "settings" || r === "editprofile" || r === "auth" || r === "ideas" || r === "trophies";
   return false;
 }
 const cnt = n => n > 99 ? "99+" : String(n);
@@ -201,14 +212,20 @@ function updateHeader() {
   const fav = document.getElementById("favbtn");
   if (fav) fav.classList.toggle("on", route.name === "favs");
   const nb = document.getElementById("notifbtn"), nu = notifUnread();
+  const tb = document.getElementById("trobtn"); if (tb) { tb.hidden = !S.user; tb.classList.toggle("on", route.name === "trophies"); }
   if (nb) { nb.hidden = !S.user; nb.innerHTML = ICON.bell + (nu ? '<span class="badge">' + cnt(nu) + "</span>" : ""); nb.classList.toggle("on", route.name === "notifs"); }
   document.title = (n + soc + nu ? "(" + (n + soc + nu) + ") " : "") + "TCC TV";
 }
 
+// trophées : on recalcule (en différé) quand mes données changent
+let babT = null;
+const TRO_KEYS = { history: 1, pollVotes: 1, picks: 1, feuds: 1, myact: 1, ideas: 1, profile: 1, content: 1 };
 onChange(what => {
+  if (TRO_KEYS[what]) checkTrophies();
+  if (what === "hof" || what === "pollVotes" || what === "polls") { clearTimeout(babT); babT = setTimeout(syncBabies, 3000); }
   updateHeader();
   if (what === "media") refreshMedia(route);
-  if (route.name === "wrestler" && (what === "profiles" || what === "blocks")) { renderWComments(); return; }
+  if (route.name === "wrestler" && (what === "profiles" || what === "blocks")) { renderWComments(); renderWImage(); return; }
   if (route.name === "notifs" && what === "notifs") markNotifsSeen();
   if (route.name === "conv") {
     if (["room", "msgs", "profiles", "convs", "reads"].indexOf(what) >= 0) { renderMsgs(route.id); markRead(); refreshQuickEmoji(route.id); }
@@ -257,7 +274,7 @@ function onUser(u) {
   userSubs.forEach(f => f()); userSubs = [];
   S.user = u; S.authReady = true; S.profile = null; S.history = {}; S.room = []; S.convs = []; S.reads = {}; S.convMsgs = {};
   S.friends = []; S.feuds = []; S.blocks = []; S.reports = []; S.users = null; S.memberFriends = {}; S.notifs = []; S.activity = []; resetSocial();
-  S.fsPolls = []; S.pollVotes = []; S.picks = []; S.ideas = []; S.areplies = {}; S.athread = {};
+  S.fsPolls = []; S.pollVotes = []; S.picks = []; S.ideas = []; S.areplies = {}; S.athread = {}; S.banners = {}; S.myAct = []; S.slammys = []; S.hof = {}; S.hofReady = false;
   S.isAdmin = !!u && (S.demo ? u.uid === B.demoAdmin() : (!!ADMIN_UID && u.uid === ADMIN_UID));
   if (u) {
     const me = u.uid;
@@ -296,7 +313,10 @@ function onUser(u) {
     userSubs.push(B.watchPolls(list => { S.fsPolls = list || []; changed("polls"); }));
     userSubs.push(B.watchPollVotes(list => { S.pollVotes = list || []; changed("pollVotes"); }));
     userSubs.push(B.watchPicks(list => { S.picks = list || []; changed("picks"); }));
-    if (S.isAdmin) userSubs.push(B.watchIdeas(list => { S.ideas = list || []; changed("ideas"); }));
+    userSubs.push(B.watchIdeas(list => { S.ideas = list || []; changed("ideas"); }));
+    userSubs.push(B.watchMyActivity(me, list => { S.myAct = list || []; changed("myact"); }));
+    userSubs.push(B.watchHof(m => { S.hof = m || {}; S.hofReady = true; changed("hof"); }));
+    userSubs.push(B.watchSlammys(list => { S.slammys = list || []; (list || []).forEach(x => need(x.uid)); changed("slammys"); }));
     if (S.isAdmin) userSubs.push(B.watchReports(list => { S.reports = list || []; list.forEach(r => { need(r.by); need(r.target); }); changed("reports"); }));
   }
   changed("auth");

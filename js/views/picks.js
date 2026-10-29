@@ -150,3 +150,15 @@ ACT.pickside = async el => {
   el.closest(".pside").querySelectorAll(".pk").forEach(b => b.classList.toggle("on", b.dataset.s === el.dataset.s && !!p[el.dataset.m]));
   try { await B.setPick(id, { uid: doc.uid, ev: doc.ev, k: k, d: d, t: doc.t, p: p }); } catch (err) { toast(errText(err)); }
 };
+
+// Cartes de PLE pronostiquées à 100 % par un membre : tous les matchs pronostiqués, tous les résultats connus, tous justes
+export function perfectCards(uid) {
+  let n = 0;
+  allPle().forEach(e => {
+    const ls = lines(e); if (ls.length < 2 || !locked(e)) return;
+    const p = (S.picks || []).find(x => x.uid === uid && x.k === e.k && x.d === e.d); if (!p || !p.p) return;
+    const res = results(e); if (Object.keys(res).length < ls.length) return;
+    if (ls.every(m => p.p[m.id] && res[m.id] !== "draw" && norm(m.sides[res[m.id]]) === norm(p.p[m.id]))) n++;
+  });
+  return n;
+}

@@ -70,11 +70,14 @@ export function chatListView() {
   const item = r => '<a class="conv-item' + (r.un ? " unread" : "") + (r.mute ? " muted" : "") + '" href="#/chat/' + encodeURIComponent(r.id) + '" data-conv="' + esc(r.id) + '">' + r.av +
     '<span class="mid"><b>' + esc(r.name) + (r.pin ? '<i class="cico" title="Épinglée">📌</i>' : "") + (r.mute ? '<i class="cico" title="En sourdine">🔕</i>' : "") + "</b><small>" + esc(r.sub) + "</small></span>" +
     '<span class="end">' + esc(r.at ? timeLabel(r.at) : "") + (r.un ? '<span class="dot' + (r.mute ? " grey" : "") + '">' + cnt(r.un) + "</span>" : "") + "</span></a>";
-  const main = rows.filter(r => !r.arch), arch = rows.filter(r => r.arch);
-  h += '<div class="convs">' + main.map(item).join("") + "</div>";
+  // la Gorilla Position toujours en haut, séparée des messages privés par un bandeau rouge
+  const room = rows.filter(r => r.id === "general"), main = rows.filter(r => !r.arch && r.id !== "general"), arch = rows.filter(r => r.arch);
+  h += '<div class="convs gorilla">' + room.map(item).join("") + '</div><div class="dmband">Messages privés</div>';
+  h += main.length ? '<div class="convs">' + main.map(item).join("") + "</div>" : "";
   if (arch.length) h += '<button class="linkbtn archtoggle" data-act="archshow">' + (archOpen ? "▾" : "▸") + " Discussions archivées (" + arch.length + ")</button>" +
     (archOpen ? '<div class="convs archived">' + arch.map(item).join("") + "</div>" : "");
   if (!S.convs.length) h += '<p class="note" style="margin-top:12px">Pour écrire en privé à quelqu’un, appuie sur le crayon en haut ou sur « Envoyer un message » depuis son profil.</p>';
+  h += '<div class="chatshort"><a class="shortbtn" href="#/pronostics">🎯 Pronostics</a><a class="shortbtn" href="#/sondages">📊 Sondages</a></div>';
   h += '<p class="note small" style="margin-top:14px">Astuce : reste appuyé sur une discussion (clic droit sur ordinateur) pour l’épingler, la mettre en sourdine, l’archiver ou la supprimer.</p>';
   return h;
 }

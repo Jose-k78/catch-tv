@@ -854,6 +854,406 @@
    "def": 0
   },
   {
+   "id": "cmll-heavy",
+   "k": "CMLL",
+   "show": "",
+   "n": "CMLL World Heavyweight Championship",
+   "c": "Hechicero",
+   "who": [
+    "Hechicero"
+   ],
+   "since": "2026-03-20",
+   "ev": "Homenaje a Dos Leyendas",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL",
+   "defs": [
+    {
+     "d": "2026-09-18",
+     "ev": "93 Aniversario",
+     "vs": "Claudio Castagnoli et Zack Sabre Jr."
+    }
+   ],
+   "def": 1
+  },
+  {
+   "id": "cmll-lightheavy",
+   "k": "CMLL",
+   "show": "",
+   "n": "CMLL World Light Heavyweight Championship",
+   "c": "Místico",
+   "who": [
+    "Místico"
+   ],
+   "since": "2025-09-19",
+   "ev": "92 Aniversario",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL"
+  },
+  {
+   "id": "cmll-middle",
+   "k": "CMLL",
+   "show": "",
+   "n": "CMLL World Middleweight Championship",
+   "c": "Templario",
+   "who": [
+    "Templario"
+   ],
+   "since": "2023-05-12",
+   "ev": "Viernes Espectacular",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL"
+  },
+  {
+   "id": "cmll-welter",
+   "k": "CMLL",
+   "show": "",
+   "n": "CMLL World Welterweight Championship",
+   "c": "Titán",
+   "who": [
+    "Titán"
+   ],
+   "since": "2019-12-08",
+   "ev": "Domingos Arena México",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL",
+   "defs": [
+    {
+     "d": "2026-09-18",
+     "ev": "93 Aniversario",
+     "vs": "Komander"
+    }
+   ],
+   "def": 1
+  },
+  {
+   "id": "cmll-light",
+   "k": "CMLL",
+   "show": "",
+   "n": "CMLL World Lightweight Championship",
+   "c": "Stigma",
+   "who": [
+    "Stigma"
+   ],
+   "since": "2022-03-15",
+   "ev": "Martes Populares",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL"
+  },
+  {
+   "id": "cmll-mini",
+   "k": "CMLL",
+   "show": "",
+   "n": "CMLL World Mini-Estrellas Championship",
+   "c": "Pequeño Volador Jr.",
+   "who": [
+    "Pequeño Volador Jr."
+   ],
+   "since": "2025-09-26",
+   "ev": "Super Viernes",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL"
+  },
+  {
+   "id": "cmll-micro",
+   "k": "CMLL",
+   "show": "",
+   "n": "CMLL World Micro-Estrellas Championship",
+   "c": "KeMalito",
+   "who": [
+    "KeMalito"
+   ],
+   "since": "2025-09-26",
+   "ev": "Super Viernes",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL"
+  },
+  {
+   "id": "cmll-nwa-lightheavy",
+   "k": "CMLL",
+   "show": "",
+   "n": "NWA World Historic Light Heavyweight Championship",
+   "c": "Averno",
+   "who": [
+    "Averno"
+   ],
+   "since": "2026-02-26",
+   "ev": "Fantastica Mania (Tokyo)",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL"
+  },
+  {
+   "id": "cmll-nwa-middle",
+   "k": "CMLL",
+   "show": "",
+   "n": "NWA World Historic Middleweight Championship",
+   "c": "Volador Jr.",
+   "who": [
+    "Volador Jr."
+   ],
+   "since": "2026-07-03",
+   "ev": "Super Viernes",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL"
+  },
+  {
+   "id": "cmll-nwa-welter",
+   "k": "CMLL",
+   "show": "",
+   "n": "NWA World Historic Welterweight Championship",
+   "c": "Máscara Dorada",
+   "who": [
+    "Máscara Dorada"
+   ],
+   "since": "2023-12-16",
+   "ev": "Super Viernes Espectacular",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL"
+  },
+  {
+   "id": "cmll-tag",
+   "k": "CMLL",
+   "show": "",
+   "n": "CMLL World Tag Team Championship",
+   "c": "Los Hermanos Chávez (Ángel de Oro et Niebla Roja)",
+   "who": [
+    "Ángel de Oro",
+    "Niebla Roja"
+   ],
+   "since": "2022-01-23",
+   "ev": "Domingos Arena México",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL",
+   "defs": [
+    {
+     "d": "2026-09-18",
+     "ev": "93 Aniversario",
+     "vs": "Calavera Jr. I et Calavera Jr. II"
+    }
+   ],
+   "def": 1
+  },
+  {
+   "id": "cmll-trios",
+   "k": "CMLL",
+   "show": "",
+   "n": "CMLL World Trios Championship",
+   "c": "El Sky Team (Máscara Dorada, Místico et Neón)",
+   "who": [
+    "Máscara Dorada",
+    "Místico",
+    "Neón"
+   ],
+   "since": "2025-05-16",
+   "ev": "Viernes Espectacular",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL"
+  },
+  {
+   "id": "cmll-women",
+   "k": "CMLL",
+   "show": "",
+   "n": "CMLL World Women's Championship",
+   "c": "Persephone",
+   "who": [
+    "Persephone"
+   ],
+   "since": "2026-03-06",
+   "ev": "La Noche de las Amazonas",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL",
+   "defs": [
+    {
+     "d": "2026-09-18",
+     "ev": "93 Aniversario",
+     "vs": "Tessa Blanchard, Mina Shirakawa et Starlight Kid"
+    }
+   ],
+   "def": 1
+  },
+  {
+   "id": "cmll-japan-women",
+   "k": "CMLL",
+   "show": "",
+   "n": "CMLL Japan Women's Championship",
+   "c": "India Sioux",
+   "who": [
+    "India Sioux"
+   ],
+   "since": "2026-03-15",
+   "ev": "Stardom Cinderella Tournament (Tokyo)",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL"
+  },
+  {
+   "id": "cmll-women-tag",
+   "k": "CMLL",
+   "show": "",
+   "n": "CMLL World Women's Tag Team Championship",
+   "c": "Lluvia et La Jarochita",
+   "who": [
+    "Lluvia",
+    "La Jarochita"
+   ],
+   "since": "2025-03-21",
+   "ev": "Homenaje a Dos Leyendas",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL"
+  },
+  {
+   "id": "mex-heavy",
+   "k": "CMLL",
+   "show": "",
+   "n": "Mexican National Heavyweight Championship",
+   "c": "Akuma",
+   "who": [
+    "Akuma"
+   ],
+   "since": "2025-03-28",
+   "ev": "",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL"
+  },
+  {
+   "id": "mex-lightheavy",
+   "k": "CMLL",
+   "show": "",
+   "n": "Mexican National Light Heavyweight Championship",
+   "c": "Esfinge",
+   "who": [
+    "Esfinge"
+   ],
+   "since": "2023-05-25",
+   "ev": "",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL"
+  },
+  {
+   "id": "mex-middle",
+   "k": "CMLL",
+   "show": "",
+   "n": "Mexican National Middleweight Championship",
+   "c": "Guerrero Maya Jr.",
+   "who": [
+    "Guerrero Maya Jr."
+   ],
+   "since": "2023-06-02",
+   "ev": "",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL"
+  },
+  {
+   "id": "mex-welter",
+   "k": "CMLL",
+   "show": "",
+   "n": "Mexican National Welterweight Championship",
+   "c": "Capitán Suicida",
+   "who": [
+    "Capitán Suicida"
+   ],
+   "since": "2026-03-31",
+   "ev": "",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL"
+  },
+  {
+   "id": "mex-light",
+   "k": "CMLL",
+   "show": "",
+   "n": "Mexican National Lightweight Championship",
+   "c": "Calavera Jr. I",
+   "who": [
+    "Calavera Jr. I"
+   ],
+   "since": "2026-03-23",
+   "ev": "",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL"
+  },
+  {
+   "id": "mex-tag",
+   "k": "CMLL",
+   "show": "",
+   "n": "Mexican National Tag Team Championship",
+   "c": "Los Depredadores (Rugido et Magnus)",
+   "who": [
+    "Rugido",
+    "Magnus"
+   ],
+   "since": "2023-07-09",
+   "ev": "",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL"
+  },
+  {
+   "id": "mex-trios",
+   "k": "CMLL",
+   "show": "",
+   "n": "Mexican National Trios Championship",
+   "c": "Los Herederos (Felino Jr., Hijo de Stuka Jr. et El Cobarde)",
+   "who": [
+    "Felino Jr.",
+    "Hijo de Stuka Jr.",
+    "El Cobarde"
+   ],
+   "since": "2025-06-16",
+   "ev": "",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL"
+  },
+  {
+   "id": "mex-women",
+   "k": "CMLL",
+   "show": "",
+   "n": "Mexican National Women's Championship",
+   "c": "Thunder Rosa",
+   "who": [
+    "Thunder Rosa"
+   ],
+   "since": "2026-07-31",
+   "ev": "",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL"
+  },
+  {
+   "id": "mex-women-tag",
+   "k": "CMLL",
+   "show": "",
+   "n": "Mexican National Women's Tag Team Championship",
+   "c": "Kira et Skadi",
+   "who": [
+    "Kira",
+    "Skadi"
+   ],
+   "since": "2024-03-08",
+   "ev": "",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_CMLL"
+  },
+  {
    "id": "njpw-hw",
    "k": "NJPW",
    "show": "",
@@ -1206,6 +1606,129 @@
     }
    ],
    "def": 1
+  },
+  {
+   "id": "roh-world",
+   "k": "ROH",
+   "show": "",
+   "n": "ROH World Championship",
+   "c": "Bandido",
+   "who": [
+    "Bandido"
+   ],
+   "since": "2025-04-06",
+   "ev": "AEW Dynasty",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Ring_of_Honor"
+  },
+  {
+   "id": "roh-tv",
+   "k": "ROH",
+   "show": "",
+   "n": "ROH World Television Championship",
+   "c": "Action Andretti",
+   "who": [
+    "Action Andretti"
+   ],
+   "since": "2026-08-21",
+   "ev": "Death Before Dishonor",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Ring_of_Honor"
+  },
+  {
+   "id": "roh-pure",
+   "k": "ROH",
+   "show": "",
+   "n": "ROH Pure Championship",
+   "c": "Lee Moriarty",
+   "who": [
+    "Lee Moriarty"
+   ],
+   "since": "2024-07-26",
+   "ev": "Death Before Dishonor",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Ring_of_Honor"
+  },
+  {
+   "id": "roh-tag",
+   "k": "ROH",
+   "show": "",
+   "n": "ROH World Tag Team Championship",
+   "c": "El Sky Team (Místico et Máscara Dorada)",
+   "who": [
+    "Místico",
+    "Máscara Dorada"
+   ],
+   "since": "2026-06-26",
+   "ev": "CMLL Super Viernes",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Ring_of_Honor"
+  },
+  {
+   "id": "roh-six",
+   "k": "ROH",
+   "show": "",
+   "n": "ROH World Six-Man Tag Team Championship",
+   "c": "The Lethal Twist (Jay Lethal, Blake Christian et Lee Johnson)",
+   "who": [
+    "Jay Lethal",
+    "Blake Christian",
+    "Lee Johnson"
+   ],
+   "since": "2026-08-21",
+   "ev": "Death Before Dishonor",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Ring_of_Honor"
+  },
+  {
+   "id": "roh-women",
+   "k": "ROH",
+   "show": "",
+   "n": "ROH Women's World Championship",
+   "c": "Athena",
+   "who": [
+    "Athena"
+   ],
+   "since": "2022-12-10",
+   "ev": "Final Battle",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Ring_of_Honor"
+  },
+  {
+   "id": "roh-women-tv",
+   "k": "ROH",
+   "show": "",
+   "n": "ROH Women's World Television Championship",
+   "c": "Red Velvet",
+   "who": [
+    "Red Velvet"
+   ],
+   "since": "2025-12-05",
+   "ev": "Final Battle",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Ring_of_Honor"
+  },
+  {
+   "id": "roh-women-pure",
+   "k": "ROH",
+   "show": "",
+   "n": "ROH Women's Pure Championship",
+   "c": "Deonna Purrazzo",
+   "who": [
+    "Deonna Purrazzo"
+   ],
+   "since": "2025-12-05",
+   "ev": "Final Battle",
+   "hist": [],
+   "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Ring_of_Honor"
   },
   {
    "id": "stardom-world",

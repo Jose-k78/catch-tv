@@ -76,6 +76,9 @@ export async function deleteAccount(password) {
   await wipe(W(C("ideas"), "uid", "==", uid)).catch(() => {});
   const voted = await F.getDocs(W(C("ideas"), "votes", "array-contains", uid)).catch(() => ({ docs: [] }));
   for (const d of voted.docs) await F.updateDoc(d.ref, { votes: F.arrayRemove(uid) }).catch(() => {});
+  await wipe(W(C("wimages"), "uid", "==", uid)).catch(() => {});
+  await wipe(W(C("slammy"), "uid", "==", uid)).catch(() => {});
+  await F.deleteDoc(F.doc(db, "banners", uid)).catch(() => {});
   await F.deleteDoc(F.doc(db, "blocks", uid)).catch(() => {});
   await F.deleteDoc(F.doc(db, "reads", uid)).catch(() => {});
   await F.deleteDoc(F.doc(db, "users", uid));
@@ -318,3 +321,31 @@ export function voteIdea(id, uid, on) { return F.updateDoc(F.doc(db, "ideas", id
 export function setIdeaStatus(id, st) { return F.updateDoc(F.doc(db, "ideas", id), { st: st }); }
 export function deleteIdea(id) { return F.deleteDoc(F.doc(db, "ideas", id)); }
 export function removeActivity(id) { return F.deleteDoc(F.doc(db, "activity", id)); }
+// Mes notes et commentaires (réactions et réponses reçues, pour le trophée Populaire)
+export function watchMyActivity(uid, cb) {
+  const q = F.query(F.collection(db, "activity"), F.where("uid", "==", uid), F.limit(1000));
+  return F.onSnapshot(q, r => cb(r.docs.map(s => { const d = data(s); d.id = s.id; return d; })), () => cb([]));
+}
+
+// ---- Bannière du profil (document à part : elle n'alourdit pas la liste des membres) ----
+export async function getBanner(uid) { const s = await F.getDoc(F.doc(db, "banners", uid)); return s.exists() ? (data(s).src || "") : ""; }
+export function setBanner(uid, src) { return src ? F.setDoc(F.doc(db, "banners", uid), { src: src, at: F.serverTimestamp() }) : F.deleteDoc(F.doc(db, "banners", uid)); }
+
+// ---- Trophées gagnés (gardés dans le profil : id du palier -> date) ----
+export function addTrophies(uid, map) {
+  const p = {}; Object.keys(map).forEach(k => { p["tro." + k] = String(map[k]).slice(0, 10); });
+  return F.updateDoc(F.doc(db, "users", uid), p);
+}
+// Slammy : trophée spécial donné par l'admin
+export function watchSlammys(cb) { return list("slammy", cb, 500); }
+export function giveSlammy(uid, n) { return F.addDoc(F.collection(db, "slammy"), { uid: uid, n: String(n).slice(0, 60), at: F.serverTimestamp() }); }
+export function deleteSlammy(id) { return F.deleteDoc(F.doc(db, "slammy", id)); }
+
+// ---- Image d'une fiche catcheur (ajoutée par un membre) ----
+export function watchWImage(slug, cb) { return F.onSnapshot(F.doc(db, "wimages", slug), s => { if (!s.exists()) return cb(null); const d = data(s); d.id = s.id; d.at = ms(d.at) || 0; cb(d); }, () => cb(null)); }
+export function setWImage(slug, d) { return F.setDoc(F.doc(db, "wimages", slug), Object.assign({}, d, { at: F.serverTimestamp() })); }
+export function deleteWImage(slug) { return F.deleteDoc(F.doc(db, "wimages", slug)); }
+
+// ---- Hall of Fame : gagnantes de la Babies du mois ----
+export function watchHof(cb) { return F.onSnapshot(F.doc(db, "hof", "babies"), s => cb(s.exists() ? (data(s).months || {}) : {}), () => cb({})); }
+export function setHofMonth(month, rec) { const p = {}; p["months." + month] = rec; return F.setDoc(F.doc(db, "hof", "babies"), { months: {} }, { merge: true }).then(() => F.updateDoc(F.doc(db, "hof", "babies"), p)); }

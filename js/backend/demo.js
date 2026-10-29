@@ -3,7 +3,7 @@
 import { feudNext } from "../feud.js";
 const KEY = "ctv.demo.db";
 const SKEY = "ctv.demo.uid";
-const EMPTY = () => ({ accounts: {}, users: {}, history: {}, images: {}, room: [], dms: {}, msgs: {}, reads: {}, admin: "", friends: {}, feuds: {}, blocks: {}, reports: [], followed: [], wcomments: {}, notifs: {}, activity: {}, areplies: {}, polls: {}, pollvotes: {}, picks: {}, ideas: {} });
+const EMPTY = () => ({ accounts: {}, users: {}, history: {}, images: {}, room: [], dms: {}, msgs: {}, reads: {}, admin: "", friends: {}, feuds: {}, blocks: {}, reports: [], followed: [], wcomments: {}, notifs: {}, activity: {}, areplies: {}, polls: {}, pollvotes: {}, picks: {}, ideas: {}, banners: {}, slammy: {}, wimages: {}, hof: {} });
 
 let DB = EMPTY();
 const subs = new Set();
@@ -88,7 +88,8 @@ export async function deleteAccount(password) {
   Object.keys(DB.feuds).forEach(id => { if (DB.feuds[id].members.indexOf(uid) >= 0) delete DB.feuds[id]; });
   Object.keys(DB.wcomments).forEach(id => { const c = DB.wcomments[id]; if (c.uid === uid) delete DB.wcomments[id]; else c.likes = c.likes.filter(x => x !== uid); });
   Object.keys(DB.activity).forEach(id => { if (DB.activity[id].uid === uid) delete DB.activity[id]; });
-  ["areplies", "pollvotes", "picks", "ideas"].forEach(c => Object.keys(DB[c] || {}).forEach(id => { if (DB[c][id].uid === uid) delete DB[c][id]; }));
+  delete DB.banners[uid];
+  ["areplies", "pollvotes", "picks", "ideas", "wimages", "slammy"].forEach(c => Object.keys(DB[c] || {}).forEach(id => { if (DB[c][id].uid === uid) delete DB[c][id]; }));
   Object.keys(DB.ideas || {}).forEach(id => { DB.ideas[id].votes = (DB.ideas[id].votes || []).filter(x => x !== uid); });
   DB.room = DB.room.filter(m => m.uid !== uid);
   Object.keys(DB.msgs).forEach(c => { DB.msgs[c] = DB.msgs[c].filter(m => m.uid !== uid); });
@@ -222,3 +223,15 @@ export async function voteIdea(id, uid, on) { const i = DB.ideas[id]; if (!i) re
 export async function setIdeaStatus(id, st) { if (DB.ideas[id]) { DB.ideas[id].st = st; save(); } }
 export async function deleteIdea(id) { delete DB.ideas[id]; save(); }
 export async function removeActivity(id) { delete DB.activity[id]; save(); }
+export function watchMyActivity(uid, cb) { return watch(() => cb(all("activity").filter(a => a.uid === uid))); }
+export async function getBanner(uid) { return (DB.banners[uid] || {}).src || ""; }
+export async function setBanner(uid, src) { if (src) DB.banners[uid] = { src: src, at: Date.now() }; else delete DB.banners[uid]; save(); }
+export async function addTrophies(uid, map) { const u = DB.users[uid]; if (!u) return; u.tro = Object.assign({}, u.tro || {}, map); save(); }
+export function watchSlammys(cb) { return watch(() => cb(all("slammy"))); }
+export async function giveSlammy(uid, n) { DB.slammy[uidGen()] = { uid: uid, n: String(n).slice(0, 60), at: Date.now() }; save(); }
+export async function deleteSlammy(id) { delete DB.slammy[id]; save(); }
+export function watchWImage(slug, cb) { return watch(() => { const d = DB.wimages[slug]; cb(d ? Object.assign(clone(d), { id: slug }) : null); }); }
+export async function setWImage(slug, d) { DB.wimages[slug] = Object.assign({}, d, { at: Date.now() }); save(); }
+export async function deleteWImage(slug) { delete DB.wimages[slug]; save(); }
+export function watchHof(cb) { return watch(() => cb(clone((DB.hof.babies || {}).months || {}))); }
+export async function setHofMonth(month, rec) { DB.hof.babies = DB.hof.babies || { months: {} }; DB.hof.babies.months[month] = rec; save(); }

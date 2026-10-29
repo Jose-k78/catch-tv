@@ -145,6 +145,50 @@
    ],
    "on": true,
    "note": "Événements de Marigold à venir et passés, avec le lien direct de chaque show (pages /lives/ et /videos/)"
+  },
+  {
+   "n": "CMLL (site officiel)",
+   "u": "https://cmll.com/",
+   "use": [
+    "calendrier",
+    "rosters",
+    "titres",
+    "resultats"
+   ],
+   "on": true,
+   "note": "Carteleras de la Arena México, Arena Coliseo, Arena Puebla et Guadalajara, champions"
+  },
+  {
+   "n": "Ring of Honor (site officiel)",
+   "u": "https://www.ringofhonor.com/",
+   "use": [
+    "calendrier",
+    "rosters",
+    "titres",
+    "resultats"
+   ],
+   "on": true,
+   "note": "ROH TV sur HonorClub (jeudi), PLE (Supercard of Honor, Death Before Dishonor, Final Battle), champions"
+  },
+  {
+   "n": "Excélsior (lucha libre)",
+   "u": "https://www.excelsior.com.mx/lucha-libre",
+   "use": [
+    "resultats",
+    "calendrier"
+   ],
+   "on": true,
+   "note": "Résultats et cartes du CMLL, en espagnol"
+  },
+  {
+   "n": "Fox Sports México (CMLL)",
+   "u": "https://www.foxsports.com.mx/tags/cmll/",
+   "use": [
+    "calendrier",
+    "resultats"
+   ],
+   "on": true,
+   "note": "Cartes et horaires des funciones du CMLL"
   }
  ]
 }

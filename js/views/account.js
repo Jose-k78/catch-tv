@@ -11,6 +11,7 @@ import { noSpoil, setNoSpoil } from "../spoil.js";
 import { isMatchNote, matchNoteLinks, noteTitle } from "./mrate.js";
 import { sourcesView, statusView, mediaView } from "./admin.js";
 import { introMode, INTRO } from "../intro.js";
+import { showcase } from "./trophies.js";
 
 const ERR = {
   "auth/invalid-email": "Adresse e-mail invalide",
@@ -120,6 +121,7 @@ export function settingsView(sub) {
       "Par " + esc((prof(r.by) || {}).pseudo || "un membre") + " · visé : " + (r.target ? '<a href="#/profil/' + encodeURIComponent(r.target) + '">' + esc((prof(r.target) || {}).pseudo || "membre") + "</a>" : "–") + (r.at ? " · " + fmtMs(r.at) : "") + "</small>" +
       (r.msgText ? '<q class="mycom">' + esc(r.msgText) + "</q>" : "") + (r.text ? '<small>« ' + esc(r.text) + " »</small>" : "") + '</span><span class="repbtns">' +
       (r.msg ? '<button class="btn small" data-act="repdelmsg" data-id="' + esc(r.id) + '">Supprimer le message</button>' : "") +
+      (String(r.conv || "").indexOf("wimg:") === 0 ? '<button class="btn small" data-act="repdelimg" data-id="' + esc(r.id) + '">Supprimer l’image</button>' : "") +
       '<button class="btn small ghost" data-act="repdone" data-id="' + esc(r.id) + '">Classer</button></span></div>').join("") + "</div>" : '<p class="note">Aucun signalement. 👍</p>');
   }
   if (sub === "logos" && S.isAdmin) {
@@ -185,6 +187,10 @@ FORM.pass = f => busy(f, async () => {
   await B.changePassword(document.getElementById("s_cur").value, n); toast("Mot de passe modifié"); location.hash = "#/parametres";
 });
 ACT.nospoil = el => { setNoSpoil(el.dataset.v === "1"); toast(el.dataset.v === "1" ? "🙈 Mode sans spoiler activé" : "Mode sans spoiler désactivé"); changed("route"); };
+ACT.repdelimg = async el => {
+  const r = S.reports.find(x => x.id === el.dataset.id); if (!r) return;
+  try { await B.deleteWImage(String(r.conv).slice(5)); await B.deleteReport(r.id); toast("Image supprimée"); } catch (e) { toast(errText(e)); }
+};
 ACT.repdone = async el => { try { await B.deleteReport(el.dataset.id); toast("Signalement classé"); } catch (e) { toast(errText(e)); } };
 ACT.repdelmsg = async el => {
   const r = S.reports.find(x => x.id === el.dataset.id); if (!r) return;
@@ -238,7 +244,11 @@ export function profileView(uid) {
   const hist = all.filter(x => !isMatchNote(x)), fights = all.filter(isMatchNote);
   const rated = all.filter(x => x.rating);
   const avg = rated.length ? (rated.reduce((s, x) => s + x.rating, 0) / rated.length).toFixed(1).replace(".", ",") : "–";
-  h += '<div class="prof">' + (!me && S.user ? '<button class="iconbtn profmenu" data-act="membermenu" data-uid="' + esc(uid) + '" aria-label="Plus d’options">' + ICON.dots + "</button>" : "") +
+  // bannière horizontale (comme sur Twitter), chargée à part
+  const bn = (S.banners || {})[uid];
+  if (bn) h += '<div class="pbanner" style="background-image:url(\'' + esc(bn) + '\')"></div>';
+  else if (me && bn === "") h += '<a class="pbanner empty" href="#/profil-modifier">＋ Ajouter une bannière</a>';
+  h += '<div class="prof' + (bn ? " withbanner" : "") + '">' + (!me && S.user ? '<button class="iconbtn profmenu" data-act="membermenu" data-uid="' + esc(uid) + '" aria-label="Plus d’options">' + ICON.dots + "</button>" : "") +
     avatar(p, 96) + '<b class="name">' + esc(p.pseudo || "Membre") + "</b>" +
     (p.createdAt ? '<span class="since">Membre depuis le ' + fmtMs(p.createdAt, true) + "</span>" : "") + (!me && S.user ? feudBadge(uid, true) : "") + "</div>";
   if (blocked) return h + '<p class="note" style="text-align:center">Tu as bloqué ce membre.</p><div class="btns"><button class="btn ghost" data-act="block" data-uid="' + esc(uid) + '">Débloquer</button></div>';
@@ -261,6 +271,8 @@ export function profileView(uid) {
     .map(f => '<div class="fav"><small>' + f[0] + "</small><b>" + (f[1] ? esc(f[1]) : "–") + "</b></div>").join("") + "</div>";
   h += '<div class="stats"><div><b>' + hist.length + "</b><small>show" + (hist.length > 1 ? "s" : "") + " vu" + (hist.length > 1 ? "s" : "") + "</small></div><div><b>" + fights.length + "</b><small>combat" + (fights.length > 1 ? "s" : "") + " noté" + (fights.length > 1 ? "s" : "") +
     "</small></div><div><b>" + avg + "</b><small>note moyenne</small></div><div><b>" + friendsOf(uid).length + "</b><small>ami" + (friendsOf(uid).length > 1 ? "s" : "") + "</small></div></div>";
+  // vitrine des trophées
+  h += showcase(uid);
   // favoris ⭐
   const fc = favChips(p);
   h += "<h2>⭐ Favoris</h2>" + (fc || '<p class="note">' + (me ? "Appuie sur l’étoile d’un catcheur pour le suivre." : "Pas encore de favori.") + "</p>");
@@ -289,7 +301,7 @@ export function profileView(uid) {
   return h;
 }
 
-const HIST_MAX = 10;
+const HIST_MAX = 5;
 let histOpen = false;
 ACT.histmore = el => {
   histOpen = !histOpen;
@@ -303,6 +315,9 @@ export function editProfileView() {
   const p = S.profile || {};
   const opts = showOptions();
   return '<a class="back" href="#/profil">' + ICON.back + " Mon profil</a><h1>Modifier mon profil</h1>" +
+    '<h2 style="margin-top:4px">Bannière</h2><div class="pbanner edit' + (bnOf() ? "" : " empty") + '" id="bnprev"' + (bnOf() ? ' style="background-image:url(\'' + esc(bnOf()) + '\')"' : "") + ">" + (bnOf() ? "" : "Pas encore de bannière") + "</div>" +
+    '<div class="btns" style="margin:8px 16px 0"><button type="button" class="btn" data-act="banner">' + (bnOf() ? "Changer la bannière" : "Ajouter une bannière") + "</button>" + (bnOf() ? '<button type="button" class="btn ghost" data-act="nobanner">Supprimer</button>' : "") +
+    '</div><p class="note small" style="margin-top:6px">Photo horizontale, recadrée en 3:1 (comme sur Twitter).</p><input type="file" accept="image/*" hidden id="bannerfile">' +
     '<form data-form="profile"><div class="prof">' + avatar(p, 96) + '<div class="btns"><button type="button" class="btn" data-act="photo">' + (p.photo ? "Changer la photo" : "Ajouter une photo") + "</button>" +
     (p.photo ? '<button type="button" class="btn ghost" data-act="nophoto">Supprimer</button>' : "") + '</div><input type="file" accept="image/*" hidden id="photofile"></div>' +
     field("e_pseudo", "Pseudo", 'maxlength="30" required value="' + esc(p.pseudo || "") + '"') +
@@ -334,4 +349,19 @@ ACT.photo = () => {
   };
   inp.click();
 };
+const bnOf = () => (S.banners || {})[S.user ? S.user.uid : ""] || "";
+ACT.banner = () => {
+  const inp = document.getElementById("bannerfile"); if (!inp) return;
+  inp.onchange = async () => {
+    const file = inp.files[0]; inp.value = ""; if (!file) return;
+    try {
+      const src = await fileToDataUrl(file, 1500, 500, 3, 380000);
+      await B.setBanner(S.user.uid, src);
+      S.banners = S.banners || {}; S.banners[S.user.uid] = src; changed("profiles");
+      toast("Bannière mise à jour");
+    } catch (e) { toast(e && e.code ? errText(e) : "Image illisible"); }
+  };
+  inp.click();
+};
+ACT.nobanner = async () => { try { await B.setBanner(S.user.uid, ""); S.banners[S.user.uid] = ""; changed("profiles"); toast("Bannière supprimée"); } catch (e) { toast(errText(e)); } };
 ACT.nophoto = async () => { try { await B.saveProfile(S.user.uid, { photo: "" }); toast("Photo supprimée"); } catch (e) { toast(errText(e)); } };

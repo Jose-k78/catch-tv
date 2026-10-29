@@ -5,12 +5,13 @@ import { esc, ICON, fmt, stars, timeLabel, toast, modal } from "../util.js";
 import { isBlocked } from "../social.js";
 import { noteTarget } from "./mrate.js";
 import { errText } from "./account.js";
+import { trophyActivity, slammyIcon } from "./trophies.js";
 
 export const EMOJIS = ["👍", "🔥", "😂", "😮", "👏", "💯"];
 // titre court de ce qui a été noté ou commenté (pour les notifications)
 export function titleOf(a) {
   if (a.kind === "wcom") return String(a.name || "");
-  if (a.kind === "mrate") return String(a.title || "");
+  if (a.kind === "mrate" || a.kind === "trophy" || a.kind === "slammy" || a.kind === "babies") return String(a.title || "");
   return !a.show ? String(a.title || "") : (a.title && a.title !== a.show ? a.title : a.show) + " du " + fmt(a.d);
 }
 const rxCounts = a => { const c = {}; Object.keys(a.rx || {}).forEach(u => { if (isBlocked(u)) return; const e = a.rx[u]; c[e] = (c[e] || 0) + 1; }); return c; };
@@ -31,6 +32,10 @@ function actBar(a) {
 const hrefOf = (a, fallback) => { const t = noteTarget(Object.assign({}, a, { id: a.kind === "mrate" ? "m_" : "" })); return t && t.href ? t.href : fallback; };
 
 function what(a) {
+  if (a.kind === "trophy") return trophyActivity(a);
+  // Slammy remis par l'admin : le membre qui le reçoit est mis en avant
+  if (a.kind === "slammy") return { actor: a.w, txt: "reçoit le Slammy " + slammyIcon(20) + " <b>« " + esc(a.title) + " »</b>", href: "#/trophees/" + encodeURIComponent(a.w || "") };
+  if (a.kind === "babies") return { solo: "👑", txt: "<b>Babies " + esc(a.name) + "</b> : " + esc(a.title) + " termine en tête des votes", href: "#/sondages" };
   if (a.kind === "wcom") return { txt: "a commenté <b>" + esc(a.name) + "</b>", href: "#/catcheur/" + encodeURIComponent(a.name) };
   if (a.kind === "mrate") {
     const where = [a.show, a.d ? fmt(a.d) : ""].filter(Boolean).join(" du ");
@@ -42,9 +47,10 @@ function what(a) {
   return { txt: (a.rating ? "a noté " + stars(a.rating) + " " : "a commenté ") + "<b>" + label + "</b>", href: href };
 }
 function line(a) {
-  const w = what(a);
-  return '<div class="act"><a class="actav" href="#/profil/' + encodeURIComponent(a.uid) + '">' + avatar(prof(a.uid), 32) + '</a><div class="actbody"><a class="acttxt" href="' + w.href + '"><b>' +
-    esc(nameOf(a.uid)) + "</b> " + w.txt + "</a>" + (a.comment ? '<q class="mycom">' + esc(a.comment) + "</q>" : "") + "<small>" + esc(timeLabel(a.at)) + "</small>" + actBar(a) + "</div></div>";
+  const w = what(a), who = w.actor || a.uid;
+  if (w.actor) need(w.actor);
+  return '<div class="act"><a class="actav" href="' + (w.solo ? w.href : "#/profil/" + encodeURIComponent(who)) + '">' + (w.solo ? '<span class="actsolo">' + w.solo + "</span>" : avatar(prof(who), 32)) + '</a><div class="actbody"><a class="acttxt" href="' + w.href + '">' +
+    (w.solo ? "" : "<b>" + esc(nameOf(who)) + "</b> ") + w.txt + "</a>" + (a.comment ? '<q class="mycom">' + esc(a.comment) + "</q>" : "") + "<small>" + esc(timeLabel(a.at)) + "</small>" + actBar(a) + "</div></div>";
 }
 export function activityList(n) {
   const list = (S.activity || []).filter(a => !isBlocked(a.uid)).slice(0, n || 40);
@@ -72,8 +78,9 @@ function threadView(id) {
   if (a.gone || isBlocked(a.uid)) return h + '<p class="empty">Cette note ou ce commentaire a été supprimé.</p>';
   const w = what(a), reps = ((S.areplies || {})[id] || []).filter(r => !isBlocked(r.uid));
   reps.forEach(r => need(r.uid));
-  h += '<div class="thread"><div class="act big"><a class="actav" href="#/profil/' + encodeURIComponent(a.uid) + '">' + avatar(prof(a.uid), 40) + '</a><div class="actbody"><a class="acttxt" href="' + w.href + '"><b>' +
-    esc(nameOf(a.uid)) + "</b> " + w.txt + "</a>" + (a.comment ? '<q class="mycom">' + esc(a.comment) + "</q>" : "") + "<small>" + esc(timeLabel(a.at)) + "</small></div></div>" +
+  const who = w.actor || a.uid;
+  h += '<div class="thread"><div class="act big"><a class="actav" href="#/profil/' + encodeURIComponent(who) + '">' + (w.solo ? '<span class="actsolo">' + w.solo + "</span>" : avatar(prof(who), 40)) + '</a><div class="actbody"><a class="acttxt" href="' + w.href + '">' +
+    (w.solo ? "" : "<b>" + esc(nameOf(who)) + "</b> ") + w.txt + "</a>" + (a.comment ? '<q class="mycom">' + esc(a.comment) + "</q>" : "") + "<small>" + esc(timeLabel(a.at)) + "</small></div></div>" +
     '<div class="rxbar">' + rxChips(a, true) + "</div>" + rxWho(a) + "</div>";
   h += "<h2>Réponses" + (reps.length ? ' <small class="cnt">' + reps.length + "</small>" : "") + "</h2>";
   h += reps.length ? '<div class="replies">' + reps.map(r => '<div class="reply"><a href="#/profil/' + encodeURIComponent(r.uid) + '">' + avatar(prof(r.uid), 30) + '</a><div class="rbody"><b>' + esc(nameOf(r.uid)) + "</b><p>" + esc(r.text) + "</p><small>" + esc(timeLabel(r.at)) +

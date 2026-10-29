@@ -39,7 +39,8 @@ const bar = (label, n, tot, mine, lead) => '<div class="pbar' + (mine ? " mine" 
 function pollCard(p) {
   const open = isOpen(p), mv = myVote(p.id), r = tally(p), showRes = !!mv || !open;
   const max = Math.max.apply(null, r.opts.map(x => x.n).concat(r.other.map(x => x.n), [0]));
-  let h = '<div class="poll' + (open ? "" : " closed") + '" id="poll-' + esc(p.id) + '"><small class="eyebrow">' + esc([p.k, open ? (p.end ? "jusqu’au " + fmt(p.end) : "ouvert") : "terminé"].filter(Boolean).join(" · ")) + "</small><b class=\"pq\">" + esc(p.q) + "</b>";
+  const tag = p.type === "babies" ? "👑 Babies du mois" : p.type === "match" ? "🥊 Dream match" : "";
+  let h = '<div class="poll' + (open ? "" : " closed") + (p.type ? " t-" + esc(p.type) : "") + '" id="poll-' + esc(p.id) + '"><small class="eyebrow">' + esc([tag, p.k, open ? (p.end ? "jusqu’au " + fmt(p.end) : "ouvert") : "terminé"].filter(Boolean).join(" · ")) + "</small><b class=\"pq\">" + esc(p.q) + "</b>";
   if (!showRes || (open && mv && mv.edit)) {
     h += '<div class="popts">' + p.opts.map((t, i) => '<button class="popt" data-act="pvote" data-p="' + esc(p.id) + '" data-c="' + i + '">' + esc(t) + "</button>").join("") + "</div>";
     if (p.other) h += '<form class="pother" data-form="pother" data-p="' + esc(p.id) + '"><input name="o" maxlength="40" autocomplete="off" placeholder="Autre : …" aria-label="Autre réponse"><button class="btn small">Voter</button></form>';
@@ -62,8 +63,52 @@ export function pollsView() {
     '<p class="note small">De nouveaux sondages arrivent avec l’actu du jour. Un vote par membre, tu peux le changer tant que le sondage est ouvert.</p>';
   if (S.isAdmin) h += '<button class="btn small" data-act="pnew" style="margin:6px 16px 12px">＋ Créer un sondage</button>';
   h += open.length ? '<div class="polls">' + open.map(pollCard).join("") + "</div>" : '<p class="note">Pas de sondage ouvert pour l’instant.</p>';
+  h += babiesSection();
   if (done.length) h += "<h2>Terminés</h2><div class=\"polls\">" + done.map(pollCard).join("") + "</div>";
   return h;
+}
+
+// ---------- Babies du mois : classement des catcheuses qui ont reçu le plus de votes dans les sondages « babies » du mois ----------
+const MOIS_L = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+const monthLabel = m => { const n = MOIS_L[+m.slice(5, 7) - 1] || ""; return (/^[aeiouyéè]/.test(n) ? "d’" : "de ") + n; };
+const prevMonth = m => { let y = +m.slice(0, 4), mo = +m.slice(5, 7) - 1; if (!mo) { mo = 12; y--; } return y + "-" + String(mo).padStart(2, "0"); };
+export function babiesRanking(month) {
+  const tot = {};
+  allPolls().filter(p => p.type === "babies" && String(p.d || "").slice(0, 7) === month).forEach(p => {
+    votesOf(p.id).forEach(v => {
+      const name = v.c >= 0 && v.c < p.opts.length ? p.opts[v.c] : String(v.o || "").trim(); if (!name) return;
+      const k = norm(name).replace(/\s+/g, " "); (tot[k] = tot[k] || { n: name, v: 0 }).v++;
+    });
+  });
+  return Object.keys(tot).map(k => tot[k]).sort((a, b) => b.v - a.v);
+}
+// gagnante du mois dernier, annoncée les 3 premiers jours du mois
+export function babiesLast() {
+  const day = parisDay(); if (+day.slice(8, 10) > 3) return null;
+  const pm = prevMonth(day.slice(0, 7)), h = (S.hof || {})[pm], r = h && h.n ? h : babiesRanking(pm)[0];
+  return r && r.n ? { label: monthLabel(pm), n: r.n } : null;
+}
+function babiesSection() {
+  const m = parisDay().slice(0, 7), rk = babiesRanking(m), hof = S.hof || {};
+  const arch = Object.keys(hof).filter(k => k < m && hof[k] && hof[k].n).sort().reverse().slice(0, 12);
+  if (!rk.length && !arch.length && !allPolls().some(p => p.type === "babies")) return "";
+  let h = "<h2>👑 Babies du mois " + esc(monthLabel(m)) + "</h2>";
+  h += rk.length ? '<div class="board">' + rk.slice(0, 10).map((x, i) => '<div class="brow"><span class="brk">' + (i < 3 ? ["👑", "🥈", "🥉"][i] : i + 1) + "</span><b>" + esc(x.n) + '</b><span class="bpts">' + x.v + " vote" + (x.v > 1 ? "s" : "") + "</span></div>").join("") + "</div>"
+    : '<p class="note">Le classement se remplit avec les votes des sondages « babies » du mois.</p>';
+  if (arch.length) h += '<p class="note small" style="margin-top:8px">Les gagnantes : ' + arch.map(k => "<b>" + esc(hof[k].n) + "</b> (" + esc(MOIS_L[+k.slice(5, 7) - 1]) + " " + k.slice(0, 4) + ")").join(" · ") + "</p>";
+  return h;
+}
+// L'admin enregistre la gagnante du mois écoulé (une fois), avec une annonce dans l'activité
+let hofBusy = false;
+export async function syncBabies() {
+  if (!S.isAdmin || hofBusy || !S.hofReady) return;
+  const pm = prevMonth(parisDay().slice(0, 7)); if ((S.hof || {})[pm]) return;
+  const top = babiesRanking(pm)[0]; if (!top) return;
+  hofBusy = true;
+  try {
+    await B.setHofMonth(pm, { n: top.n.slice(0, 60), v: top.v });
+    B.setActivity(S.user.uid + "_b_" + pm, { uid: S.user.uid, kind: "babies", k: "", show: "", d: pm + "-01", title: top.n.slice(0, 150), rating: 0, comment: "", w: "", name: monthLabel(pm).slice(0, 60) }).catch(() => {});
+  } catch (e) {} finally { hofBusy = false; }
 }
 // Tuile de l'accueil : le premier sondage ouvert auquel je n'ai pas encore répondu
 export function pollTile() {
@@ -104,13 +149,14 @@ ACT.pdel = el => {
     });
   });
 };
-const strip = p => ({ q: String(p.q).slice(0, 200), k: p.k || "", d: p.d || parisDay(), opts: p.opts.slice(0, 4).map(x => String(x).slice(0, 80)), other: !!p.other, end: p.end || "", closed: !!p.closed, del: !!p.del });
+const strip = p => ({ q: String(p.q).slice(0, 200), k: p.k || "", d: p.d || parisDay(), opts: p.opts.slice(0, 4).map(x => String(x).slice(0, 80)), other: !!p.other, end: p.end || "", closed: !!p.closed, del: !!p.del, type: ["match", "babies"].indexOf(p.type) >= 0 ? p.type : "" });
 ACT.pnew = () => {
   if (!S.isAdmin) return;
   modal((box, close) => {
     box.innerHTML = '<h3>Nouveau sondage</h3><form class="pform" data-pform><label>Question<input name="q" maxlength="200" required placeholder="Qui va gagner le Royal Rumble ?"></label>' +
       '<label>Choix 1<input name="o0" maxlength="80" required></label><label>Choix 2<input name="o1" maxlength="80" required></label><label>Choix 3 (facultatif)<input name="o2" maxlength="80"></label>' +
       '<label class="chk"><input type="checkbox" name="other" checked> Ajouter une case « Autre : … » à remplir</label>' +
+      '<label>Type<select name="type"><option value="">Sondage classique</option><option value="match">🥊 Dream match (qui gagne ?)</option><option value="babies">👑 Babies du mois</option></select></label>' +
       '<label>Promotion<select name="k"><option value="">Toutes</option>' + Object.keys(S.P).map(k => "<option>" + esc(k) + "</option>").join("") + "</select></label>" +
       '<label>Fin du vote (facultatif)<input type="date" name="end"></label><button class="btn wide">Publier</button></form><button class="btn wide ghost" data-close>Annuler</button>';
     box.addEventListener("click", ev => { if (ev.target.closest("[data-close]")) close(); });
@@ -118,7 +164,7 @@ ACT.pnew = () => {
       ev.preventDefault();
       const f = ev.target, opts = [f.o0.value, f.o1.value, f.o2.value].map(x => x.trim()).filter(Boolean);
       if (!f.q.value.trim() || opts.length < 2) { toast("Une question et au moins 2 choix"); return; }
-      try { await B.savePoll("a-" + Date.now().toString(36), strip({ q: f.q.value.trim(), opts: opts, other: f.other.checked, k: f.k.value, end: f.end.value })); close(); toast("Sondage publié ✓"); }
+      try { await B.savePoll("a-" + Date.now().toString(36), strip({ q: f.q.value.trim(), opts: opts, other: f.other.checked, k: f.k.value, end: f.end.value, type: f.type.value })); close(); toast("Sondage publié ✓"); }
       catch (e) { toast(errText(e)); }
     });
   });

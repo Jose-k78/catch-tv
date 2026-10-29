@@ -87,7 +87,11 @@ export function fileToDataUrl(file, maxW, maxH, square, maxLen) {
     img.onload = () => {
       URL.revokeObjectURL(u);
       let sx = 0, sy = 0, sw = img.naturalWidth, sh = img.naturalHeight;
-      if (square) { const m = Math.min(sw, sh); sx = (sw - m) / 2; sy = (sh - m) / 2; sw = sh = m; }
+      // square = true : carré ; square = 3 : bandeau 3:1 (recadré au centre)
+      if (square) {
+        const ratio = square === true ? 1 : +square;
+        if (sw / sh > ratio) { const w = sh * ratio; sx = (sw - w) / 2; sw = w; } else { const h = sw / ratio; sy = (sh - h) / 2; sh = h; }
+      }
       const r = Math.min(1, maxW / sw, maxH / sh);
       const c = document.createElement("canvas");
       c.width = Math.round(sw * r); c.height = Math.round(sh * r);

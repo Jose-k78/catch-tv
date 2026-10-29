@@ -124,6 +124,7 @@ ACT.membermenu = el => {
   modal((box, close) => {
     box.innerHTML = "<h3>" + esc(name) + '</h3><div class="sheet">' +
       (st === "ok" ? '<button class="item" data-a="frienddel">Retirer de mes amis</button>' : "") +
+      (S.isAdmin ? '<button class="item" data-a="slammygive">🏆 Donner un Slammy</button>' : "") +
       '<button class="item" data-a="block">' + (isBlocked(uid) ? "Débloquer" : "Bloquer") + "</button>" +
       '<button class="item danger" data-a="report">Signaler</button></div><button class="btn wide ghost" style="margin-top:12px" data-no>Fermer</button>';
     box.addEventListener("click", e => {

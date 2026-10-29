@@ -1,7 +1,7 @@
 rules_version = '2';
 
-// Règles de sécurité TCC TV (version 6 : sondages, pronostics, réactions et réponses sous les notes, idées des membres).
-// (version 5 : réglages des discussions, notes des combats ; version 4 : suppression du compte ;
+// Règles de sécurité TCC TV (version 7 : trophées, Slammy, bannière du profil, images des fiches catcheurs, Babies du mois).
+// (version 6 : sondages, pronostics, réactions et réponses, idées ; version 5 : réglages des discussions, notes des combats ; version 4 : suppression du compte ;
 //  version 3 : commentaires, likes, notifications, activité, images et GIFs dans le chat)
 // À coller en entier dans Firebase > Firestore Database > Règles, puis « Publier ».
 service cloud.firestore {
@@ -34,11 +34,12 @@ service cloud.firestore {
     // ---------- Profils (visibles par les membres connectés) ----------
     match /users/{uid} {
       function okProfile(d) {
-        return d.keys().hasOnly(['pseudo','pseudoLower','bio','favShow','favWrestler','favWrestlerF','photo','createdAt','favs'])
+        return d.keys().hasOnly(['pseudo','pseudoLower','bio','favShow','favWrestler','favWrestlerF','photo','createdAt','favs','tro'])
           && str(d.pseudo, 30) && d.pseudo.size() > 0 && str(d.pseudoLower, 30)
           && str(d.bio, 300) && str(d.favShow, 60) && str(d.favWrestler, 40) && str(d.favWrestlerF, 40)
           && str(d.photo, 400000)
-          && (!('favs' in d) || (d.favs is list && d.favs.size() <= 30));
+          && (!('favs' in d) || (d.favs is list && d.favs.size() <= 30))
+          && (!('tro' in d) || (d.tro is map && d.tro.size() <= 60));
       }
       allow read: if signedIn();
       allow create: if isMe(uid) && okProfile(request.resource.data) && request.resource.data.createdAt == request.time;
@@ -195,7 +196,7 @@ service cloud.firestore {
       allow create, update: if signedIn() && uid != request.auth.uid
         && request.resource.data.keys().hasOnly(['type','from','w','name','cid','text','a','at'])
         && request.resource.data.from == request.auth.uid
-        && request.resource.data.type in ['like','reply','areply','areact']
+        && request.resource.data.type in ['like','reply','areply','areact','slammy']
         && str(request.resource.data.get('w', ''), 80) && str(request.resource.data.name, 60)
         && str(request.resource.data.get('cid', ''), 40) && str(request.resource.data.text, 160)
         && str(request.resource.data.get('a', ''), 300)
@@ -208,7 +209,7 @@ service cloud.firestore {
       function okAct(d) {
         return d.keys().hasOnly(['uid','kind','k','show','d','title','rating','comment','w','name','at','rx','rn'])
           && d.uid == request.auth.uid
-          && d.kind in ['rate','wcom','mrate']
+          && d.kind in ['rate','wcom','mrate','trophy','slammy','babies']
           && str(d.k, 30) && str(d.show, 40) && str(d.d, 10)
           && str(d.title, 150) && d.rating is int && d.rating >= 0 && d.rating <= 5
           && str(d.comment, 500) && str(d.w, 80) && str(d.name, 60)
@@ -298,6 +299,48 @@ service cloud.firestore {
         || (isAdmin() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['st'])
           && request.resource.data.st in ['', 'prévu', 'fait', 'refusé']);
       allow delete: if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
+    }
+
+    // ---------- Bannière du profil (image compressée, à part pour ne pas alourdir la liste des membres) ----------
+    match /banners/{uid} {
+      allow read: if signedIn();
+      allow create, update: if isMe(uid)
+        && request.resource.data.keys().hasOnly(['src','at'])
+        && request.resource.data.src is string && request.resource.data.src.size() < 400000
+        && request.resource.data.src.matches('data:image/.*')
+        && request.resource.data.at == request.time;
+      allow delete: if isMe(uid) || isAdmin();
+    }
+
+    // ---------- Slammy : trophée spécial remis par l'admin ----------
+    match /slammy/{id} {
+      allow read: if signedIn();
+      allow create: if isAdmin()
+        && request.resource.data.keys().hasOnly(['uid','n','at'])
+        && str(request.resource.data.uid, 60) && str(request.resource.data.n, 60) && request.resource.data.n.size() > 0
+        && request.resource.data.at == request.time;
+      allow update: if false;
+      allow delete: if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
+    }
+
+    // ---------- Image d'une fiche catcheur : ajoutée par n'importe quel membre, enlevée par l'admin ou par son auteur ----------
+    match /wimages/{slug} {
+      allow read: if signedIn();
+      allow create, update: if signedIn()
+        && request.resource.data.keys().hasOnly(['w','name','uid','src','at'])
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.w == slug && str(request.resource.data.name, 60)
+        && request.resource.data.src is string
+        && ((request.resource.data.src.size() < 400000 && request.resource.data.src.matches('data:image/.*'))
+            || (request.resource.data.src.size() <= 600 && request.resource.data.src.matches('https://.*')))
+        && request.resource.data.at == request.time;
+      allow delete: if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
+    }
+
+    // ---------- Hall of Fame (gagnantes de la Babies du mois) : enregistré par l'admin ----------
+    match /hof/{id} {
+      allow read: if signedIn();
+      allow write: if isAdmin();
     }
 
     // ---------- Catcheurs suivis (favoris de tous les membres, pour la mise à jour quotidienne) ----------

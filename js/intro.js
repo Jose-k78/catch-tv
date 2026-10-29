@@ -17,6 +17,8 @@ function audio() {
   try { ctx = new AC(); } catch (e) { ctx = null; }
   return ctx;
 }
+// un coup de cloche (trophée gagné…), si le son est permis
+export function ding() { try { const c = audio(); if (c && c.state === "suspended") c.resume(); bell(0); } catch (e) {} }
 // coup de cloche de ring : frappe métallique (partiels inharmoniques qui s'éteignent) + petit claquement
 function bell(at) {
   const c = audio(); if (!c) return;

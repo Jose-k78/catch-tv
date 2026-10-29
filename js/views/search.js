@@ -11,6 +11,7 @@ import { noSpoil, champHidden } from "../spoil.js";
 import { commentsBox } from "./comments.js";
 import { TECH, techHTML, fillTech } from "../tech.js";
 import { searchEvents, EVENT_WORDS } from "./event.js";
+import { wImageBox } from "./wimage.js";
 
 // Champs de fiche technique préparés en français dans data/wrestlers.json
 function localTech(w) { const f = {}; if (w) TECH.forEach(t => { if (w[t[0]]) f[t[0]] = w[t[0]]; }); return f; }
@@ -108,7 +109,7 @@ export function wrestlerView(raw, wt) {
   // fiche résumé
   h += '<section class="wcard"><div class="wtop"><div class="wtt"><span class="eyebrow">FICHE CATCHEUR</span><h1>' + esc(name) + "</h1>" +
     (w && w.era ? '<small class="wera">' + esc(w.era) + "</small>" : "") + "</div>" + starBtn(name) + "</div>" +
-    '<div id="wchoose"></div>' +
+    '<div id="wchoose"></div>' + wImageBox(name) +
     (w && w.txt ? '<p class="wtxt">' + esc(w.txt) + "</p>" : "") +
     '<div id="wiki" class="wiki">' + (PREVIEW ? (w && w.txt ? "" : '<p class="note">Le résumé Wikipédia s’affichera une fois l’app en ligne (l’aperçu bloque les connexions vers d’autres sites).</p>') : '<p class="note">Recherche de son résumé…</p>') + "</div>" +
     '<div class="wfacts"><div><small>Promotion</small><b id="wpromo">' + esc(k || "–") + "</b></div>" +
