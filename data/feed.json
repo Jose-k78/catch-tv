@@ -1,15 +1,6 @@
 {
- "at": "2026-10-29T19:26:42.819Z",
+ "at": "2026-10-29T20:15:05.018Z",
  "items": [
-  {
-   "t": "Qui pourrait remplacer Bruce Prichard à la WWE ?",
-   "u": "https://www.catch-newz.com/wwe/newz/60807-qui-pourrait-remplacer-bruce-prichard-a-la-wwe",
-   "s": "Catch-Newz",
-   "d": "2026-10-29",
-   "tags": [
-    "WWE"
-   ]
-  },
   {
    "t": "Spoilers de AEW Collision du 31 octobre 2026",
    "u": "https://www.catch-newz.com/aew/resultats/60803-spoilers-aew-collision-31-octobre-2026",
@@ -38,6 +29,15 @@
    "tags": [
     "AEW",
     "Dynamite"
+   ]
+  },
+  {
+   "t": "Qui pourrait remplacer Bruce Prichard à la WWE ?",
+   "u": "https://www.catch-newz.com/wwe/newz/60807-qui-pourrait-remplacer-bruce-prichard-a-la-wwe",
+   "s": "Catch-Newz",
+   "d": "2026-10-29",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -195,10 +195,10 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/wwe/newz/60807-qui-pourrait-remplacer-bruce-prichard-a-la-wwe",
    "https://www.catch-newz.com/aew/resultats/60789-aew-dynamite-28-octobre-2026",
    "https://www.catch-newz.com/aew/resultats/60803-spoilers-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/international/newz/60794-preview-tna-impact-29-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60807-qui-pourrait-remplacer-bruce-prichard-a-la-wwe",
    "https://www.catch-newz.com/wwe/resultats/60759-wwe-nxt-27-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60745-pourquoi-john-cena-sera-de-retour-a-wwe-raw-le-2-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60806-une-nouvelle-storyline-est-sur-la-table-pour-paul-heyman",
@@ -229,9 +229,9 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 3 nouveaux articles lus sur la page d'accueil (3 liens)",
   "VOXcatch": "5 articles (7 j)",
-  "YouTube WWE": "2 nouvelles vidéos",
+  "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
