@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-28",
+ "updated": "2026-10-29",
  "note": "Rosters par promotion et par show (ou par division / clan). Sources : The SmackDown Hotel, Wikipédia, sites officiels.",
  "src": {
   "WWE": "https://thesmackdownhotel.com/roster/wwe/",
@@ -663,11 +663,13 @@
     "Adrenalina",
     "Akuma",
     "Arkalis",
+    "Arlequín",
     "Atlantis",
     "Atlantis Jr.",
     "Averno",
     "Barboza",
     "Bestia Negra",
+    "Black Boy",
     "Black Tiger IV",
     "Blue Panther",
     "Calavera Jr. I",
@@ -675,6 +677,7 @@
     "Capitán Suicida",
     "Difunto",
     "El Cobarde",
+    "El Coyote",
     "El Valiente",
     "Esfinge",
     "Fantástico",
