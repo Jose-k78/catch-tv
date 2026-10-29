@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28",
+  "updated": "2026-10-29",
   "items": [
     {
       "t": "Résultats de WWE NXT du 27 octobre 2026",
@@ -26,6 +26,15 @@
     {
       "t": "Un nouveau match bientôt annoncé pour WWE Crown Jewel 2026 ?",
       "u": "https://catch-newz.com/wwe/newz/60766-un-nouveau-match-bientot-annonce-pour-wwe-crown-jewel-2026",
+      "s": "Catch-Newz",
+      "d": "2026-10-28",
+      "tags": [
+        "WWE"
+      ]
+    },
+    {
+      "t": "WWE Crown Jewel 2026 change de lieu",
+      "u": "https://catch-newz.com/wwe/newz/60774-wwe-crown-jewel-2026-change-de-lieu",
       "s": "Catch-Newz",
       "d": "2026-10-28",
       "tags": [
@@ -103,12 +112,31 @@
       ]
     },
     {
+      "t": "Cody Rhodes et Randy Orton s'ajoutent à la carte de WWE Crown Jewel 2026",
+      "u": "https://catch-newz.com/wwe/newz/60663-cody-rhodes-et-randy-orton-sajoutent-a-la-carte-de-wwe-crown-jewel-2026",
+      "s": "Catch-Newz",
+      "d": "2026-10-24",
+      "tags": [
+        "WWE",
+        "SmackDown"
+      ]
+    },
+    {
       "t": "Preview : AAA Heroes Inmortales du 24 octobre 2026",
       "u": "https://catch-newz.com/wwe/newz/60661-preview-aaa-heroes-inmortales-du-24-octobre-2026",
       "s": "Catch-Newz",
       "d": "2026-10-23",
       "tags": [
         "AAA"
+      ]
+    },
+    {
+      "t": "Résultats de WWE Road To Survivor Series du 22 octobre 2026",
+      "u": "https://catch-newz.com/wwe/resultats/60644-resultats-de-wwe-road-to-survivor-series-du-22-octobre-2026",
+      "s": "Catch-Newz",
+      "d": "2026-10-23",
+      "tags": [
+        "WWE"
       ]
     },
     {
@@ -129,6 +157,15 @@
       "tags": [
         "WWE",
         "Main Event"
+      ]
+    },
+    {
+      "t": "La construction du stade de WWE Crown Jewel 2026 est lancée",
+      "u": "https://catch-newz.com/wwe/newz/60637-la-construction-du-stade-de-wwe-crown-jewel-2026-est-lancee",
+      "s": "Catch-Newz",
+      "d": "2026-10-22",
+      "tags": [
+        "WWE"
       ]
     },
     {
@@ -161,6 +198,25 @@
       ]
     },
     {
+      "t": "AEW : Ilja Dragunov est All Elite : « J'ai cette envie irrépressible de me battre »",
+      "u": "https://www.voxcatch.fr/2026/10/18/aew-ilja-dragunov-est-all-elite-jai-cette-envie-irrepressible-de-me-battre/",
+      "s": "VoxCatch",
+      "d": "2026-10-18",
+      "tags": [
+        "AEW"
+      ]
+    },
+    {
+      "t": "WWE SmackDown du 16 octobre : Sami Zayn méfiant, Cody Rhodes dégaine le Punt Kick",
+      "u": "https://www.voxcatch.fr/2026/10/17/resultats-wwe-smackdown-16-octobre-2026/",
+      "s": "VoxCatch",
+      "d": "2026-10-17",
+      "tags": [
+        "WWE",
+        "SmackDown"
+      ]
+    },
+    {
       "t": "Résultats de TNA Impact du 15 octobre 2026",
       "u": "https://catch-newz.com/international/resultats/60464-tna-impact-15-octobre-2026",
       "s": "Catch-Newz",
@@ -168,6 +224,15 @@
       "tags": [
         "TNA",
         "Impact"
+      ]
+    },
+    {
+      "t": "AEW : Adam Copeland en retraite en 2027 : Quand aura lieu son dernier match ?",
+      "u": "https://www.voxcatch.fr/2026/10/16/aew-adam-copeland-retraite-2027-dernier-match-toronto/",
+      "s": "VoxCatch",
+      "d": "2026-10-16",
+      "tags": [
+        "AEW"
       ]
     },
     {
@@ -187,6 +252,43 @@
       "d": "2026-10-14",
       "tags": [
         "NJPW"
+      ]
+    },
+    {
+      "t": "NJPW : Kenny Omega vise Wrestle Kingdom 21 et le titre poids lourds",
+      "u": "https://www.voxcatch.fr/2026/10/12/njpw-kenny-omega-vise-wrestle-kingdom-21/",
+      "s": "VoxCatch",
+      "d": "2026-10-12",
+      "tags": [
+        "NJPW"
+      ]
+    },
+    {
+      "t": "WrestleMania 45 pourrait avoir lieu à la Nouvelle-Orléans",
+      "u": "https://www.voxcatch.fr/2026/10/08/wwe-wrestlemania-45-nouvelle-orleans/",
+      "s": "VoxCatch",
+      "d": "2026-10-08",
+      "tags": [
+        "WWE"
+      ]
+    },
+    {
+      "t": "AEW Grand Slam France : Une semaine 100% AEW sur Warner TV Next",
+      "u": "https://www.voxcatch.fr/2026/10/05/aew-grand-slam-france-une-semaine-100-aew-sur-warner-tv-next/",
+      "s": "VoxCatch",
+      "d": "2026-10-05",
+      "tags": [
+        "AEW"
+      ]
+    },
+    {
+      "t": "The Rock obligé de s'expliquer sur son hommage à PAC et l'AEW",
+      "u": "https://www.voxcatch.fr/2026/10/04/the-rock-hommage-pac-aew-wwe/",
+      "s": "VoxCatch",
+      "d": "2026-10-04",
+      "tags": [
+        "WWE",
+        "AEW"
       ]
     }
   ]
