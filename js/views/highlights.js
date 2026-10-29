@@ -34,9 +34,11 @@ ACT.reveal = el => { const b = el.closest(".spoil"); if (b) b.classList.add("ope
 
 // ctx = {k, show, d} : ajoute « ☆ Noter » à chaque combat (pas aux segments sans adversaires)
 export function vidList(list, ctx) {
-  return '<div class="list">' + list.filter(v => okVid(v.id)).map(v => '<div class="item vid"><button class="vmain" data-act="play" data-id="' + esc(v.id) + '" data-t="' + esc(v.t) + '">' +
-    '<span class="vplay">' + ICON.play + '</span><span class="lbl"><b>' + esc(v.t) + "</b><small>" + esc(v.ch || "Chaîne officielle") + "</small></span></button>" +
-    (ctx && fighters(v.t) ? rateBtn(ctx.k, v.t, ctx.show, ctx.d) : "") + "</div>").join("") + "</div>";
+  // titre qui dévoile un résultat (vidéo ajoutée par le robot) : caché derrière le bouton spoiler
+  return '<div class="list">' + list.filter(v => okVid(v.id)).map(v => '<div class="item vid"><button class="vmain" data-act="play" data-id="' + esc(v.id) + '" data-t="' + esc(v.sp ? "Vidéo officielle" : v.t) + '">' +
+    '<span class="vplay">' + ICON.play + '</span><span class="lbl">' + (v.sp ? '<b class="spoil inline"><span class="spoilbody">' + esc(v.t) + '</span><span class="vsp" data-act="reveal">🙈 Titre caché (spoiler) · toucher pour voir</span></b>' : "<b>" + esc(v.t) + "</b>") +
+    "<small>" + esc(v.ch || "Chaîne officielle") + "</small></span></button>" +
+    (ctx && !v.sp && fighters(v.t) ? rateBtn(ctx.k, v.t, ctx.show, ctx.d) : "") + "</div>").join("") + "</div>";
 }
 
 export function hlView(k, show, d) {

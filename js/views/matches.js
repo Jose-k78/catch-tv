@@ -1,4 +1,4 @@
-// Matchs à revoir : sélection de la semaine (tirée au hasard), filtre par promotion, match au hasard
+// Matchs à découvrir : sélection de la semaine (tirée au hasard), filtre par promotion, match au hasard
 import { S, ACT, changed } from "../state.js";
 import { esc, ICON, modal } from "../util.js";
 import { PREVIEW } from "../content.js";
@@ -22,7 +22,7 @@ function matchRow(m) {
 export function matchesView() {
   const all = pool(), week = shuffle(all, weekNo(new Date()) + filter.length * 7919).slice(0, 10);
   const proms = Array.from(new Set(S.matches.map(m => m.k))).filter(k => S.P[k]);
-  let h = '<a class="back" href="#/">' + ICON.back + " Accueil</a><h1>Matchs à revoir</h1>" +
+  let h = '<a class="back" href="#/">' + ICON.back + " Accueil</a><h1>Matchs à découvrir</h1>" +
     '<nav class="tabs" style="padding-top:0">' + [""].concat(proms).map(k => '<button class="tab' + (k === filter ? " on" : "") + '" data-act="mfilter" data-k="' + esc(k) + '">' + (k ? esc(k) : "Tout") + "</button>").join("") + "</nav>" +
     '<div class="btns" style="justify-content:flex-start;margin:4px 16px 0"><button class="btn" data-act="mrandom">🎲 Un match au hasard</button></div>' +
     "<h2>La sélection de la semaine</h2>";

@@ -1,4 +1,4 @@
-// Notes des combats : depuis les highlights d'un show et les matchs à revoir.
+// Notes des combats : depuis les highlights d'un show et les matchs à découvrir.
 // Rangées dans l'historique des notes (identifiant « m_… »), et reliées automatiquement au match complet,
 // à la vidéo de highlights ou au résumé match par match dès qu'ils apparaissent dans l'app.
 import { S, B, ACT } from "../state.js";

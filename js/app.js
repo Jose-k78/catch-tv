@@ -39,7 +39,7 @@ let route = { name: "home" }, routeSubs = [], userSubs = [], dirty = false, sear
 const NEEDS_USER = { settings: 1, editprofile: 1, chat: 1, newchat: 1, conv: 1, convinfo: 1, profile: 1, members: 1, favs: 1, notifs: 1, activity: 1, ideas: 1, trophies: 1 };
 const FORM_VIEWS = { auth: 1, settings: 1, editprofile: 1 };
 const REL = {
-  home: ["content", "images", "history", "auth", "tick", "profile", "spoil", "activity", "polls", "pollVotes", "picks", "hof"], promo: ["content", "images", "history", "auth", "tick", "spoil"],
+  home: ["content", "images", "history", "auth", "tick", "profile", "spoil", "activity", "polls", "pollVotes", "picks", "hof"], promo: ["content", "images", "history", "auth", "tick", "spoil", "polls"],
   profile: ["profile", "profiles", "history", "otherHistory", "auth", "friends", "feuds", "blocks", "memberFriends", "tick", "slammys", "myact", "pollVotes", "ideas"], chat: ["room", "convs", "reads", "profiles", "auth", "blocks"],
   convinfo: ["convs", "reads", "profiles", "auth", "blocks", "room", "msgs"], newchat: ["users", "auth"], settings: ["auth", "route", "reports", "blocks", "profiles", "images", "media", "ideas"], editprofile: ["profile", "auth", "profiles"], auth: ["auth"],
   matches: ["route", "history", "auth"], credits: ["images"], wrestler: ["profile", "spoil", "history", "auth"], search: [], titles: ["history", "spoil"], title: ["history", "spoil"],
@@ -342,6 +342,22 @@ function tick() {
   if (sig !== tickSig) { const first = !tickSig; tickSig = sig; if (!first) changed("tick"); }
 }
 
+// Robot GitHub (data/feed.json) : articles ajoutés à l'actu, vidéos officielles ajoutées aux highlights de chaque show
+function mergeFeed(f) {
+  if (!f) return;
+  S.feedAt = f.at || "";
+  const news = (S.news && S.news.items) || [], seen = {};
+  news.forEach(a => { seen[a.u] = 1; });
+  const add = (f.items || []).filter(a => a && a.u && a.t && !seen[a.u]);
+  if (add.length) S.news = Object.assign({}, S.news, { items: news.concat(add).sort((a, b) => String(b.d).localeCompare(String(a.d))) });
+  Object.keys(f.yt || {}).forEach(key => {
+    const h = S.highlights[key] && typeof S.highlights[key] === "object" ? S.highlights[key] : {}, v = Array.isArray(h.v) ? h.v : [], ids = {};
+    v.forEach(x => { ids[x.id] = 1; });
+    const more = (f.yt[key] || []).filter(x => x && x.id && !ids[x.id]);
+    if (more.length) S.highlights[key] = Object.assign({}, h, { v: v.concat(more) });
+  });
+}
+
 // ---------- démarrage ----------
 async function boot() {
   applyTheme();
@@ -349,6 +365,7 @@ async function boot() {
   const c = await loadContent(); S.P = c.P; S.news = c.news; S.recaps = c.recaps || {}; S.matches = c.matches || []; S.titles = c.titles || []; S.titlesUpdated = c.titlesUpdated || "";
   S.highlights = c.highlights || {}; S.wrestlers = c.wrestlers || {}; S.storylines = c.storylines || []; S.rosters = c.rosters || {}; S.rostersSrc = c.rostersSrc || {};
   S.sources = c.sources || []; S.updated = c.updated || {}; S.polls = c.polls || []; S.media = c.media || { bg: {}, music: null };
+  mergeFeed(c.feed);
   tick(); setInterval(tick, 60000);
   armMusic();
   let backend = null;

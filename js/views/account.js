@@ -12,6 +12,7 @@ import { isMatchNote, matchNoteLinks, noteTitle } from "./mrate.js";
 import { sourcesView, statusView, mediaView } from "./admin.js";
 import { introMode, INTRO } from "../intro.js";
 import { showcase } from "./trophies.js";
+import { cropImage } from "../crop.js";
 
 const ERR = {
   "auth/invalid-email": "Adresse e-mail invalide",
@@ -297,7 +298,7 @@ export function profileView(uid) {
       (fight ? (x.show ? " · " + esc(x.show) : "") : x.show ? " · " + esc(x.show) : " · PLE") + (x.d ? " · " + fmt(x.d) : "") + "</small>" + (x.comment ? '<q class="mycom">' + esc(x.comment) + "</q>" : "") +
       (fight ? matchNoteLinks(x) : "") + (S.user && (x.rating || x.comment) ? '<a class="arep small" href="#/activite/' + encodeURIComponent(uid + "_r_" + x.id) + '">💬 Réactions et réponses</a>' : "") + '</span><span class="rt">' + (x.rating ? stars(x.rating) : fight ? "Pas noté" : "Pas noté") + "<br>" + (fight ? "noté le " : "vu le ") + fmtMs(x.seenAt) + "</span></div>";
   }).join("") + "</div>" + (all.length > HIST_MAX ? '<div class="btns" style="margin:10px 16px 0"><button class="btn ghost" data-act="histmore">' + (histOpen ? "Voir moins" : "Voir plus (" + (all.length - HIST_MAX) + ")") + "</button></div>" : "")
-    : '<p class="note">' + (me ? "Appuie sur l’œil à côté d’un épisode ou d’un PLE pour le marquer comme vu et le noter. Tu peux aussi noter chaque combat depuis les highlights et les matchs à revoir." : "Rien pour l’instant.") + "</p>";
+    : '<p class="note">' + (me ? "Appuie sur l’œil à côté d’un épisode ou d’un PLE pour le marquer comme vu et le noter. Tu peux aussi noter chaque combat depuis les highlights et les matchs à découvrir." : "Rien pour l’instant.") + "</p>";
   return h;
 }
 
@@ -339,7 +340,8 @@ ACT.photo = () => {
   inp.onchange = async () => {
     const file = inp.files[0]; inp.value = ""; if (!file) return;
     try {
-      const photo = await fileToDataUrl(file, 320, 320, true);
+      const photo = await cropImage(file, { ratio: 1, round: true, out: 400, maxLen: 300000, title: "Recadrer ta photo" });
+      if (!photo) return;
       await B.saveProfile(S.user.uid, { photo: photo });
       const old = document.querySelector("form[data-form=profile] .prof .av");
       if (old) old.outerHTML = avatar({ photo: photo }, 96);
@@ -355,7 +357,8 @@ ACT.banner = () => {
   inp.onchange = async () => {
     const file = inp.files[0]; inp.value = ""; if (!file) return;
     try {
-      const src = await fileToDataUrl(file, 1500, 500, 3, 380000);
+      const src = await cropImage(file, { ratio: 3, out: 1500, maxLen: 380000, title: "Recadrer ta bannière" });
+      if (!src) return;
       await B.setBanner(S.user.uid, src);
       S.banners = S.banners || {}; S.banners[S.user.uid] = src; changed("profiles");
       toast("Bannière mise à jour");

@@ -143,7 +143,7 @@ export function wrestlerView(raw, wt) {
   h += "<h2>Son actu</h2>" + (arts.length ? '<div class="list">' + arts.map(a => '<a class="item" href="' + esc(a.u) + '" target="_blank" rel="noopener"><span class="lbl"><b>' + esc(a.t) +
     "</b><small>" + esc(a.s || "") + (a.tr ? " · titre traduit" : "") + '</small></span><span class="rt">' + (a.d ? fmt(a.d) : "") + "</span></a>").join("") + "</div>" : '<p class="note">Pas d’article en français dans l’app qui parle de lui ou d’elle.</p>') +
     '<p class="note" style="margin-top:8px"><a class="linkbtn" style="padding:0" href="https://news.google.com/search?q=' + encodeURIComponent('"' + name + '"') + '&hl=fr&gl=FR&ceid=FR:fr" target="_blank" rel="noopener">Plus d’actu sur Google Actualités ↗</a></p>';
-  if (vids.length) h += '<h2>Ses matchs à revoir</h2><div class="list">' + vids.map(m => '<button class="item" data-act="play" data-id="' + esc(m.id) + '" data-t="' + esc(m.t) + '"><span class="lbl"><b>' + esc(m.t) +
+  if (vids.length) h += '<h2>Ses matchs à découvrir</h2><div class="list">' + vids.map(m => '<button class="item" data-act="play" data-id="' + esc(m.id) + '" data-t="' + esc(m.t) + '"><span class="lbl"><b>' + esc(m.t) +
     "</b><small>" + esc(m.k) + (m.ev ? " · " + esc(m.ev) : "") + '</small></span><span class="chev">▶</span></button>').join("") + "</div>";
   h += commentsBox(name);
   return h;

@@ -189,6 +189,18 @@
    ],
    "on": true,
    "note": "Cartes et horaires des funciones du CMLL"
+  },
+  {
+   "n": "Wrestling Profiles",
+   "u": "https://wrestlingprofiles.com/",
+   "use": [
+    "titres",
+    "fiches",
+    "calendrier",
+    "archives"
+   ],
+   "on": true,
+   "note": "Historiques des règnes et champions actuels, fiches catcheurs, événements à venir. Base en partie communautaire : toujours croiser avec The SmackDown Hotel et Wikipédia."
   }
  ]
 }

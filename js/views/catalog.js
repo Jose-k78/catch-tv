@@ -296,7 +296,7 @@ function titlesTile(k, n) {
     '<span class="chev">›</span></a>';
 }
 function matchTile() {
-  return '<a class="matchtile" href="#/matchs"><span class="mt-k">Matchs à revoir</span><b>La sélection de la semaine</b><small>' + S.matches.length +
+  return '<a class="matchtile" href="#/matchs"><span class="mt-k">Matchs à découvrir</span><b>La sélection de la semaine</b><small>' + S.matches.length +
     " matchs complets sur les chaînes officielles · un match au hasard</small><span class=\"mt-go\">Voir ›</span></a>";
 }
 function hero(e, label) {

@@ -103,7 +103,7 @@ export async function syncFollowed(force) {
 // ---------- État des mises à jour ----------
 // [clé dans S.updated, nom, heure prévue (minutes, heure de Paris), hebdomadaire]
 const SETS = [["news", "Actu en français", 464], ["storylines", "Storyline du jour", 464], ["polls", "Sondages du jour", 464], ["highlights", "Résultats et highlights", 501], ["titles", "Titres et champions", 501],
-  ["recaps", "Résumés sans spoiler", 501], ["calendar", "Calendrier, horaires, pages Netflix", 1163], ["rosters", "Rosters", 1163], ["wrestlers", "Fiches catcheurs", 1163], ["matches", "Matchs à revoir", 1163, true]];
+  ["recaps", "Résumés sans spoiler", 501], ["calendar", "Calendrier, horaires, pages Netflix", 1163], ["rosters", "Rosters", 1163], ["wrestlers", "Fiches catcheurs", 1163], ["matches", "Matchs à découvrir", 1163, true]];
 const MARGIN = 45;
 function expected(at, weekly) {
   const today = parisDay(), now = parisMin();
@@ -118,6 +118,9 @@ let commits = null, commitsAt = 0, commitsErr = "";
 export function statusView() {
   const U = S.updated || {};
   let h = '<h1>État des mises à jour</h1><p class="note" style="margin-bottom:12px">Chaque donnée de l’app et la date de sa dernière mise à jour automatique. ⚠ = elle aurait dû être mise à jour et ne l’a pas été.</p><div class="list">';
+  // robot GitHub : actu et vidéos toutes les 30 min (il écrit au moins toutes les 3 h)
+  const fa = S.feedAt ? Date.parse(S.feedAt) : 0, fok = fa && Date.now() - fa < 4 * 3600e3;
+  h += '<div class="item stat' + (fok ? " ok" : " late") + '"><span class="lbl"><b>🤖 Robot : actu et vidéos officielles</b><small>' + (fa ? "Dernier passage : " + esc(fmtAt(fa, PARIS)) : "Pas encore passé") + " · toutes les 30 min</small></span><span class=\"rt\">" + (fok ? "✓" : "⚠") + "</span></div>";
   h += SETS.map(s => {
     const d = U[s[0]] || "", exp = expected(s[2], s[3]);
     let ok = !!d && d >= exp;

@@ -12,7 +12,7 @@ export const S = {
   otherHistory: {},      // historique d'autres membres (uid -> [items])
   images: {},            // images des vignettes (id -> src)
   free: {},              // photos libres trouvées (requête -> {src, author, lic, link})
-  matches: [],           // matchs à revoir (vidéos officielles)
+  matches: [],           // matchs à découvrir (vidéos officielles)
   titles: [],            // titres et champions actuels
   titlesUpdated: "",
   room: [],              // messages du salon
@@ -43,6 +43,7 @@ export const S = {
   banners: {},
   myAct: [],             // mes notes et commentaires (réactions et réponses reçues)
   slammys: [],
+  feedAt: "",            // dernier passage du robot GitHub (data/feed.json)
   hof: {},               // gagnantes de la Babies du mois (mois -> { n, v })           // Slammys remis par l'admin           // bannières des profils (uid -> image, "" = pas de bannière)
   areplies: {},          // réponses sous une note ou un commentaire (id d'activité -> [réponses])
   athread: {},           // activités ouvertes qui ne sont plus dans les 40 dernières
