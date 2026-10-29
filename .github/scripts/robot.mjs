@@ -49,10 +49,36 @@ async function feedUrl(s) {
   for (const c of cands) { const x = await get(c); if (/<(rss|feed)[\s>]/i.test(x)) return c; }
   return "";
 }
+// Site sans flux RSS (Catch-Newz…) : on lit les liens d'articles de la page d'accueil. Un lien jamais vu est daté du jour
+// où le robot le découvre (il passe toutes les 30 min) ; au tout premier passage, on ne garde que ceux dont la date est écrite.
+const FR_M = { janvier: 1, fevrier: 2, mars: 3, avril: 4, mai: 5, juin: 6, juillet: 7, aout: 8, septembre: 9, octobre: 10, novembre: 11, decembre: 12 };
+function frDate(t) { const m = norm(t).match(/\b(\d{1,2})(?:er)?[\s-]+(janvier|fevrier|mars|avril|mai|juin|juillet|aout|septembre|octobre|novembre|decembre)[\s-]+(20\d\d)\b/); return m ? m[3] + "-" + pad(FR_M[m[2]]) + "-" + pad(m[1]) : ""; }
+async function scrape(s, seen) {
+  const html = await get(s.u), host = new URL(s.u).host.replace(/^www\./, ""), out = [], first = !seen.length;
+  const re = /<a\b[^>]*href=["']([^"'#]+)["'][^>]*>([\s\S]*?)<\/a>/gi; let m;
+  while ((m = re.exec(html))) {
+    let u; try { u = new URL(m[1], s.u); } catch (e) { continue; }
+    if (u.host.replace(/^www\./, "") !== host || !/\/\d{3,}-[a-z0-9-]{8,}/i.test(u.pathname)) continue;
+    const t = decode(m[2]); if (t.length < 20 || t.length > 220) continue;
+    const href = "https://" + u.host + u.pathname, d = frDate(t) || frDate(u.pathname);
+    if (out.some(x => x.u === href)) continue;
+    if (seen.indexOf(href) >= 0 && !d) continue;           // déjà vu : on garde la date du premier passage
+    if (first && !d) { out.push({ u: href, skip: true }); continue; }
+    out.push({ t: t.slice(0, 200), u: href, s: s.n, d: d || parisDay(new Date()), tags: tagsOf(t + " " + u.pathname.replace(/[/-]/g, " ")) });
+  }
+  return out;
+}
 async function news() {
-  const out = [], rss = {};
+  const out = [], rss = {}, seenAll = Object.assign({}, prev.seen || {});
   for (const s of sources.filter(x => x.on !== false && (x.use || []).indexOf("actu") >= 0)) {
-    const u = await feedUrl(s); if (!u) { log("pas de flux pour", s.n); diag[s.n] = "pas de flux RSS trouvé"; continue; }
+    const u = await feedUrl(s);
+    if (!u) {
+      const seen = seenAll[s.u] || [], got = await scrape(s, seen), keep = got.filter(x => !x.skip);
+      keep.forEach(x => out.push(x));
+      seenAll[s.u] = got.map(x => x.u).concat(seen).filter((x, i, a) => a.indexOf(x) === i).slice(0, 300);
+      diag[s.n] = "pas de flux RSS : " + keep.length + " nouveaux articles lus sur la page d'accueil (" + got.length + " liens)";
+      continue;
+    }
     rss[s.u] = u;
     const x = await get(u); let n = 0;
     (x.match(/<item[\s>][\s\S]*?<\/item>|<entry[\s>][\s\S]*?<\/entry>/gi) || []).forEach(it => {
@@ -70,7 +96,7 @@ async function news() {
   // fusion avec les articles déjà trouvés (même adresse = même article), 7 jours, 60 au plus
   const seen = {}, all = out.concat(prev.items || []).filter(a => { if (seen[a.u] || a.d < daysAgo(7)) return false; return (seen[a.u] = 1); });
   all.sort((a, b) => b.d.localeCompare(a.d));
-  return { items: all.slice(0, 60), rss: rss };
+  return { items: all.slice(0, 60), rss: rss, seen: seenAll };
 }
 
 // ---------- 2) vidéos : flux des chaînes YouTube officielles ----------
@@ -152,10 +178,10 @@ async function videos() {
 }
 
 // ---------- écriture (seulement si quelque chose a changé, ou une fois toutes les 3 h pour montrer que le robot tourne) ----------
-export { neutral, placeVideo, tagsOf, dateIn };
+export { neutral, placeVideo, tagsOf, dateIn, scrape };
 if (!process.env.ROBOT_TEST) {
   const a = await news(), v = await videos();
-  const next = { at: "", items: a.items, yt: v.yt, rss: Object.assign({}, prev.rss || {}, a.rss), ch: Object.assign({}, prev.ch || {}, v.ch) };
+  const next = { at: "", items: a.items, yt: v.yt, rss: Object.assign({}, prev.rss || {}, a.rss), ch: Object.assign({}, prev.ch || {}, v.ch), seen: a.seen };
   const same = JSON.stringify(Object.assign({}, prev, { at: "", diag: undefined })) === JSON.stringify(next);
   const old = !prev.at || Date.now() - Date.parse(prev.at) > 3 * 3600e3 || process.env.ROBOT_FORCE === "true";
   if (same && !old) log("rien de neuf");
