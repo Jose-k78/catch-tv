@@ -1,24 +1,46 @@
 {
- "at": "2026-10-29T22:38:15.768Z",
+ "at": "2026-10-29T23:11:28.522Z",
  "items": [
-  {
-   "t": "Lilian Garcia se remémore le premier WWE Evolution en 2018",
-   "u": "https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018",
-   "s": "Catch-Newz",
-   "d": "2026-10-29",
-   "tags": [
-    "WWE"
-   ]
-  },
   {
    "t": "Preview : AEW Collision du 31 octobre 2026",
    "u": "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026",
    "s": "Catch-Newz",
-   "d": "2026-10-29",
+   "d": "2026-10-30",
    "tags": [
     "AEW",
     "Collision"
    ]
+  },
+  {
+   "t": "Spoilers de AEW Collision du 31 octobre 2026",
+   "u": "https://www.catch-newz.com/aew/resultats/60803-spoilers-aew-collision-31-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-30",
+   "tags": [
+    "AEW",
+    "Collision"
+   ]
+  },
+  {
+   "t": "Résultats du jour 2 du HOP Spooktober Tour 2026",
+   "u": "https://www.catch-newz.com/international/resultats/60814-resultats-du-jour-2-du-hop-spooktober-tour-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-30",
+   "tags": []
+  },
+  {
+   "t": "Résultats de OTT Pure Deadly",
+   "u": "https://www.catch-newz.com/international/resultats/60817-resultats-de-ott-pure-deadly",
+   "s": "Catch-Newz",
+   "d": "2026-10-30",
+   "tags": []
+  },
+  {
+   "t": "Résultats du jour 3 de DG The Gate Of Victory 2026",
+   "u": "https://www.catch-newz.com/international/resultats/60818-resultats-du-jour-3-de-dg-the-gate-of-victory-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-30",
+   "tags": []
   },
   {
    "t": "Preview : ROH du 29 octobre 2026",
@@ -31,16 +53,6 @@
    ]
   },
   {
-   "t": "Spoilers de AEW Collision du 31 octobre 2026",
-   "u": "https://www.catch-newz.com/aew/resultats/60803-spoilers-aew-collision-31-octobre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-29",
-   "tags": [
-    "AEW",
-    "Collision"
-   ]
-  },
-  {
    "t": "Preview : TNA Impact du 29 octobre 2026",
    "u": "https://www.catch-newz.com/international/newz/60794-preview-tna-impact-29-octobre-2026",
    "s": "Catch-Newz",
@@ -48,6 +60,25 @@
    "tags": [
     "TNA",
     "Impact"
+   ]
+  },
+  {
+   "t": "AEW Dynamite du 28 octobre : Queen Aminata championne TBS, Ospreay vs. Fletcher à Full Gear",
+   "u": "https://www.voxcatch.fr/2026/10/29/resultats-aew-dynamite-28-octobre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-10-29",
+   "tags": [
+    "AEW",
+    "Dynamite"
+   ]
+  },
+  {
+   "t": "Lilian Garcia se remémore le premier WWE Evolution en 2018",
+   "u": "https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018",
+   "s": "Catch-Newz",
+   "d": "2026-10-29",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -63,16 +94,6 @@
    "s": "Catch-Newz",
    "d": "2026-10-29",
    "tags": []
-  },
-  {
-   "t": "AEW Dynamite du 28 octobre : Queen Aminata championne TBS, Ospreay vs. Fletcher à Full Gear",
-   "u": "https://www.voxcatch.fr/2026/10/29/resultats-aew-dynamite-28-octobre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-10-29",
-   "tags": [
-    "AEW",
-    "Dynamite"
-   ]
   },
   {
    "t": "Résultats de Marigold Grand Destiny 2026",
@@ -269,11 +290,14 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/60789-aew-dynamite-28-octobre-2026",
-   "https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018",
    "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/aew/newz/60808-preview-roh-du-29-octobre-2026",
    "https://www.catch-newz.com/aew/resultats/60803-spoilers-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/international/newz/60794-preview-tna-impact-29-octobre-2026",
+   "https://www.catch-newz.com/international/resultats/60814-resultats-du-jour-2-du-hop-spooktober-tour-2026",
+   "https://www.catch-newz.com/international/resultats/60817-resultats-de-ott-pure-deadly",
+   "https://www.catch-newz.com/international/resultats/60818-resultats-du-jour-3-de-dg-the-gate-of-victory-2026",
+   "https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018",
    "https://www.catch-newz.com/international/resultats/60816-resultats-du-jour-1-de-rcw-rise-of-legends",
    "https://www.catch-newz.com/international/resultats/60813-resultats-de-noah-wrestle-odyssey-ii",
    "https://www.catch-newz.com/international/resultats/60811-resultats-de-marigold-grand-destiny-2026",
