@@ -1413,6 +1413,32 @@
    "ht": "1,80 m",
    "wt": "94 kg",
    "fin": "Sacrifice, Penta Driver"
+  },
+  "Chigusa Nagayo": {
+   "k": "AJW, GAEA Japan, Marvelous",
+   "era": "1980–2024",
+   "disc": true,
+   "txt": "Moitié des Crush Gals avec Lioness Asuka, elle a fait exploser la popularité du catch féminin japonais dans les années 1980, notamment grâce à sa rivalité avec Dump Matsumoto. Elle a ensuite fondé la GAEA Japan en 1995 puis la Marvelous.",
+   "from": "Ōmura (Nagasaki, Japon)",
+   "ht": "1,65 m",
+   "wt": "87 kg",
+   "debut": "8 août 1980",
+   "teams": "Crush Gals (avec Lioness Asuka)",
+   "trainer": "All Japan Women's Pro-Wrestling",
+   "ref": [
+    {
+     "t": "Chigusa Nagayo contre Dump Matsumoto — cheveux contre cheveux",
+     "ev": "AJW, 1985"
+    },
+    {
+     "t": "Chigusa Nagayo contre Dump Matsumoto — cheveux contre cheveux",
+     "ev": "AJW, 1986"
+    },
+    {
+     "t": "Chigusa Nagayo contre Yukari Omori — titre contre titre (WWWA World Single)",
+     "ev": "AJW, 1987"
+    }
+   ]
   }
  }
 }
