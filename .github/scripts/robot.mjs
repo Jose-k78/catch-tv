@@ -130,7 +130,7 @@ function placeVideo(ks, title, pub) {
 }
 async function videos() {
   const yt = {}, ch = {};
-  Object.keys(prev.yt || {}).forEach(key => { if (key.slice(-10) >= daysAgo(30)) yt[key] = prev.yt[key]; });
+  Object.keys(prev.yt || {}).forEach(key => { if (key.slice(-10) >= daysAgo(30)) yt[key] = prev.yt[key].map(v => Object.assign({}, v, { t: String(v.t).replace(/^full (?:match|segment)\s*[:\-–—|]?\s*/i, "") })); });
   for (const c of CHANNELS) {
     const id = await resolve(c); if (!id) { log("chaîne introuvable :", c.k[0]); diag["YouTube " + c.k[0]] = "chaîne introuvable"; continue; }
     if (!c.id) ch[c.k[0]] = id;
@@ -157,7 +157,7 @@ if (!process.env.ROBOT_TEST) {
   const a = await news(), v = await videos();
   const next = { at: "", items: a.items, yt: v.yt, rss: Object.assign({}, prev.rss || {}, a.rss), ch: Object.assign({}, prev.ch || {}, v.ch) };
   const same = JSON.stringify(Object.assign({}, prev, { at: "", diag: undefined })) === JSON.stringify(next);
-  const old = !prev.at || Date.now() - Date.parse(prev.at) > 3 * 3600e3;
+  const old = !prev.at || Date.now() - Date.parse(prev.at) > 3 * 3600e3 || process.env.ROBOT_FORCE === "true";
   if (same && !old) log("rien de neuf");
   else {
     next.at = new Date().toISOString(); next.diag = diag;

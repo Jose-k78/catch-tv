@@ -21,6 +21,8 @@ jobs:
           node-version: 20
       - name: Actu et vidéos
         run: node .github/scripts/robot.mjs
+        env:
+          ROBOT_FORCE: ${{ github.event_name == 'workflow_dispatch' }}
       - name: Envoi sur le dépôt
         run: |
           if git diff --quiet -- data/feed.json; then echo "Rien de neuf"; exit 0; fi
