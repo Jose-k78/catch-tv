@@ -3,7 +3,7 @@
 import { feudNext } from "../feud.js";
 const KEY = "ctv.demo.db";
 const SKEY = "ctv.demo.uid";
-const EMPTY = () => ({ accounts: {}, users: {}, history: {}, images: {}, room: [], dms: {}, msgs: {}, reads: {}, admin: "", friends: {}, feuds: {}, blocks: {}, reports: [], followed: [], wcomments: {}, notifs: {}, activity: {} });
+const EMPTY = () => ({ accounts: {}, users: {}, history: {}, images: {}, room: [], dms: {}, msgs: {}, reads: {}, admin: "", friends: {}, feuds: {}, blocks: {}, reports: [], followed: [], wcomments: {}, notifs: {}, activity: {}, areplies: {}, polls: {}, pollvotes: {}, picks: {}, ideas: {} });
 
 let DB = EMPTY();
 const subs = new Set();
@@ -88,6 +88,8 @@ export async function deleteAccount(password) {
   Object.keys(DB.feuds).forEach(id => { if (DB.feuds[id].members.indexOf(uid) >= 0) delete DB.feuds[id]; });
   Object.keys(DB.wcomments).forEach(id => { const c = DB.wcomments[id]; if (c.uid === uid) delete DB.wcomments[id]; else c.likes = c.likes.filter(x => x !== uid); });
   Object.keys(DB.activity).forEach(id => { if (DB.activity[id].uid === uid) delete DB.activity[id]; });
+  ["areplies", "pollvotes", "picks", "ideas"].forEach(c => Object.keys(DB[c] || {}).forEach(id => { if (DB[c][id].uid === uid) delete DB[c][id]; }));
+  Object.keys(DB.ideas || {}).forEach(id => { DB.ideas[id].votes = (DB.ideas[id].votes || []).filter(x => x !== uid); });
   DB.room = DB.room.filter(m => m.uid !== uid);
   Object.keys(DB.msgs).forEach(c => { DB.msgs[c] = DB.msgs[c].filter(m => m.uid !== uid); });
   if (DB.admin === uid) DB.admin = "";
@@ -200,5 +202,23 @@ export async function markNotifsRead(uid) { DB.reads[uid] = Object.assign(DB.rea
 
 // ---- Activité des membres ----
 export function watchActivity(cb) { return watch(() => cb(Object.keys(DB.activity).map(id => Object.assign(clone(DB.activity[id]), { id: id })).sort((a, b) => b.at - a.at).slice(0, 40))); }
-export async function setActivity(id, a) { DB.activity[id] = Object.assign({}, a, { at: Date.now() }); save(); }
+export async function setActivity(id, a) { DB.activity[id] = Object.assign({}, DB.activity[id] || {}, a, { at: Date.now() }); save(); }
+export async function getActivity(id) { const a = DB.activity[id]; return a ? Object.assign(clone(a), { id: id }) : null; }
+export async function reactActivity(id, uid, emo) { const a = DB.activity[id]; if (!a) return; a.rx = a.rx || {}; if (emo) a.rx[uid] = emo; else delete a.rx[uid]; save(); }
+export function watchReplies(aid, cb) { return watch(() => cb(Object.keys(DB.areplies).map(id => Object.assign(clone(DB.areplies[id]), { id: id })).filter(r => r.a === aid).sort((x, y) => x.at - y.at))); }
+export async function addReply(aid, uid, text) { const id = uidGen(); DB.areplies[id] = { a: aid, uid: uid, text: text, at: Date.now() }; if (DB.activity[aid]) DB.activity[aid].rn = (DB.activity[aid].rn || 0) + 1; save(); return id; }
+export async function deleteReply(rid, aid) { delete DB.areplies[rid]; if (DB.activity[aid]) DB.activity[aid].rn = Math.max(0, (DB.activity[aid].rn || 1) - 1); save(); }
+const all = c => Object.keys(DB[c] || {}).map(id => Object.assign(clone(DB[c][id]), { id: id }));
+export function watchPolls(cb) { return watch(() => cb(all("polls"))); }
+export async function savePoll(id, p) { DB.polls[id] = Object.assign({}, p, { at: Date.now() }); save(); }
+export async function deletePoll(id) { delete DB.polls[id]; save(); }
+export function watchPollVotes(cb) { return watch(() => cb(all("pollvotes"))); }
+export async function votePoll(poll, uid, c, o) { DB.pollvotes[poll + "_" + uid] = { poll: poll, uid: uid, c: c, o: String(o || "").slice(0, 40), at: Date.now() }; save(); }
+export function watchPicks(cb) { return watch(() => cb(all("picks"))); }
+export async function setPick(id, p) { DB.picks[id] = Object.assign({}, p, { at: Date.now() }); save(); }
+export function watchIdeas(cb) { return watch(() => cb(all("ideas"))); }
+export async function addIdea(uid, text) { DB.ideas[uidGen()] = { uid: uid, text: text, votes: [], st: "", at: Date.now() }; save(); }
+export async function voteIdea(id, uid, on) { const i = DB.ideas[id]; if (!i) return; i.votes = (i.votes || []).filter(x => x !== uid); if (on) i.votes.push(uid); save(); }
+export async function setIdeaStatus(id, st) { if (DB.ideas[id]) { DB.ideas[id].st = st; save(); } }
+export async function deleteIdea(id) { delete DB.ideas[id]; save(); }
 export async function removeActivity(id) { delete DB.activity[id]; save(); }

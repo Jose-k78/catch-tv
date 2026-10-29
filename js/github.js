@@ -44,3 +44,27 @@ export async function ghCommits(n) {
   if (!r.ok) throw fail(r);
   return (await r.json()).map(c => ({ sha: c.sha, msg: String((c.commit && c.commit.message) || "").split("\n")[0], at: Date.parse((c.commit && c.commit.committer && c.commit.committer.date) || "") || 0 }));
 }
+// Fichier binaire (vidéo MP4, musique MP3) envoyé depuis le téléphone de l'admin : contenu déjà en base64
+export async function ghPutBinary(path, b64content, message) {
+  const t = ghToken(); if (!t) throw new Error("nokey");
+  const r = await fetch(BASE + "/contents/" + path, { method: "PUT", headers: Object.assign({ "Content-Type": "application/json" }, H(t)), body: JSON.stringify({ message: message, branch: "main", content: b64content }) });
+  if (!r.ok) throw fail(r, "Envoi du fichier");
+  return true;
+}
+// Supprime un fichier du dépôt (ancien fond animé ou ancienne musique) ; sans erreur s'il n'existe plus
+export async function ghDelete(path, message) {
+  const t = ghToken(); if (!t) throw new Error("nokey");
+  const g = await fetch(BASE + "/contents/" + path + "?ref=main", { headers: H(t), cache: "no-store" });
+  if (g.status === 404) return false;
+  if (!g.ok) throw fail(g);
+  const j = await g.json();
+  const r = await fetch(BASE + "/contents/" + path, { method: "DELETE", headers: Object.assign({ "Content-Type": "application/json" }, H(t)), body: JSON.stringify({ message: message, branch: "main", sha: j.sha }) });
+  if (!r.ok && r.status !== 404) throw fail(r, "Suppression");
+  return true;
+}
+// ArrayBuffer -> base64, par morceaux (un fichier de quelques Mo dépasse la taille d'appel de String.fromCharCode)
+export function bufToB64(buf) {
+  const u = new Uint8Array(buf); let s = "";
+  for (let i = 0; i < u.length; i += 0x8000) s += String.fromCharCode.apply(null, u.subarray(i, i + 0x8000));
+  return btoa(s);
+}

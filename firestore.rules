@@ -1,7 +1,8 @@
 rules_version = '2';
 
-// Règles de sécurité TCC TV (version 5 : réglages des discussions — couleur, emoji, surnoms, « Vu » —, notes des combats dans l'activité).
-// (version 4 : suppression du compte ; version 3 : commentaires, likes, notifications, activité, images et GIFs dans le chat)
+// Règles de sécurité TCC TV (version 6 : sondages, pronostics, réactions et réponses sous les notes, idées des membres).
+// (version 5 : réglages des discussions, notes des combats ; version 4 : suppression du compte ;
+//  version 3 : commentaires, likes, notifications, activité, images et GIFs dans le chat)
 // À coller en entier dans Firebase > Firestore Database > Règles, puis « Publier ».
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -188,30 +189,114 @@ service cloud.firestore {
       allow delete: if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
     }
 
-    // ---------- Notifications (like, réponse) : n'importe quel membre en envoie, seul le destinataire les lit ----------
+    // ---------- Notifications (like, réponse, réaction) : n'importe quel membre en envoie, seul le destinataire les lit ----------
     match /notifs/{uid}/items/{id} {
       allow read, delete: if isMe(uid);
       allow create, update: if signedIn() && uid != request.auth.uid
-        && request.resource.data.keys().hasOnly(['type','from','w','name','cid','text','at'])
+        && request.resource.data.keys().hasOnly(['type','from','w','name','cid','text','a','at'])
         && request.resource.data.from == request.auth.uid
-        && request.resource.data.type in ['like','reply']
-        && str(request.resource.data.w, 80) && str(request.resource.data.name, 60)
-        && str(request.resource.data.cid, 40) && str(request.resource.data.text, 160)
+        && request.resource.data.type in ['like','reply','areply','areact']
+        && str(request.resource.data.get('w', ''), 80) && str(request.resource.data.name, 60)
+        && str(request.resource.data.get('cid', ''), 40) && str(request.resource.data.text, 160)
+        && str(request.resource.data.get('a', ''), 300)
         && request.resource.data.at == request.time;
     }
 
     // ---------- Activité des membres (notes et commentaires), visible par les membres connectés ----------
+    // l'auteur écrit sa note ; les autres membres ne peuvent qu'ajouter / retirer LEUR réaction (rx) et compter les réponses (rn)
     match /activity/{id} {
+      function okAct(d) {
+        return d.keys().hasOnly(['uid','kind','k','show','d','title','rating','comment','w','name','at','rx','rn'])
+          && d.uid == request.auth.uid
+          && d.kind in ['rate','wcom','mrate']
+          && str(d.k, 30) && str(d.show, 40) && str(d.d, 10)
+          && str(d.title, 150) && d.rating is int && d.rating >= 0 && d.rating <= 5
+          && str(d.comment, 500) && str(d.w, 80) && str(d.name, 60)
+          && d.at == request.time;
+      }
+      allow read: if signedIn();
+      allow create: if signedIn() && id.split('_')[0] == request.auth.uid && okAct(request.resource.data)
+        && !('rx' in request.resource.data) && !('rn' in request.resource.data);
+      allow update: if
+        // l'auteur modifie sa note (sans toucher aux réactions ni au nombre de réponses)
+        (signedIn() && id.split('_')[0] == request.auth.uid && okAct(request.resource.data)
+          && request.resource.data.get('rx', {}) == resource.data.get('rx', {})
+          && request.resource.data.get('rn', 0) == resource.data.get('rn', 0))
+        // un membre ajoute, change ou retire sa propre réaction
+        || (signedIn() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['rx'])
+          && request.resource.data.rx is map && request.resource.data.rx.size() <= 500
+          && request.resource.data.rx.diff(resource.data.get('rx', {})).affectedKeys().hasOnly([request.auth.uid])
+          && (!(request.auth.uid in request.resource.data.rx) || str(request.resource.data.rx[request.auth.uid], 8)))
+        // une réponse ajoutée (+1) ou supprimée (-1)
+        || (signedIn() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['rn'])
+          && request.resource.data.rn is int && request.resource.data.rn >= 0
+          && (request.resource.data.rn == resource.data.get('rn', 0) + 1 || request.resource.data.rn == resource.data.get('rn', 0) - 1));
+      allow delete: if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
+    }
+
+    // ---------- Réponses sous une note ou un commentaire ----------
+    match /areplies/{id} {
+      allow read: if signedIn();
+      allow create: if signedIn()
+        && request.resource.data.keys().hasOnly(['a','uid','text','at'])
+        && request.resource.data.uid == request.auth.uid
+        && str(request.resource.data.a, 300) && request.resource.data.a.size() > 0
+        && okText(request.resource.data.text) && request.resource.data.text.size() <= 300
+        && request.resource.data.at == request.time;
+      allow update: if false;
+      // l'auteur de la réponse, l'auteur de la note (début de l'identifiant de l'activité) ou l'admin
+      allow delete: if isAdmin() || (signedIn() && (resource.data.uid == request.auth.uid || resource.data.a.split('_')[0] == request.auth.uid));
+    }
+
+    // ---------- Sondages : l'admin crée, clôt et supprime ; les membres votent (un vote chacun, modifiable) ----------
+    match /polls/{id} {
+      allow read: if signedIn();
+      allow write: if isAdmin();
+    }
+    match /pollvotes/{id} {
+      allow read: if signedIn();
+      allow create, update: if signedIn()
+        && request.resource.data.keys().hasOnly(['poll','uid','c','o','at'])
+        && request.resource.data.uid == request.auth.uid
+        && id == request.resource.data.poll + '_' + request.auth.uid
+        && str(request.resource.data.poll, 100)
+        && request.resource.data.c is int && request.resource.data.c >= -1 && request.resource.data.c <= 5
+        && str(request.resource.data.o, 40)
+        && request.resource.data.at == request.time;
+      allow delete: if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
+    }
+
+    // ---------- Pronostics : chacun les siens, fermés au début du show ----------
+    match /picks/{id} {
       allow read: if signedIn();
       allow create, update: if signedIn() && id.split('_')[0] == request.auth.uid
-        && request.resource.data.keys().hasOnly(['uid','kind','k','show','d','title','rating','comment','w','name','at'])
+        && request.resource.data.keys().hasOnly(['uid','ev','k','d','t','p','at'])
         && request.resource.data.uid == request.auth.uid
-        && request.resource.data.kind in ['rate','wcom','mrate']
-        && str(request.resource.data.k, 30) && str(request.resource.data.show, 40) && str(request.resource.data.d, 10)
-        && str(request.resource.data.title, 150) && request.resource.data.rating is int
-        && request.resource.data.rating >= 0 && request.resource.data.rating <= 5
-        && str(request.resource.data.comment, 500) && str(request.resource.data.w, 80) && str(request.resource.data.name, 60)
+        && str(request.resource.data.ev, 120) && str(request.resource.data.k, 30) && str(request.resource.data.d, 10)
+        && request.resource.data.t is number && request.time.toMillis() < request.resource.data.t
+        && request.resource.data.p is map && request.resource.data.p.size() <= 20
         && request.resource.data.at == request.time;
+      allow delete: if signedIn() && resource.data.uid == request.auth.uid;
+    }
+
+    // ---------- « Partagez vos idées » : les membres proposent et votent, l'admin donne un statut ----------
+    match /ideas/{id} {
+      allow read: if signedIn();
+      allow create: if signedIn()
+        && request.resource.data.keys().hasOnly(['uid','text','votes','st','at'])
+        && request.resource.data.uid == request.auth.uid
+        && okText(request.resource.data.text) && request.resource.data.text.size() <= 500
+        && request.resource.data.votes is list && request.resource.data.votes.size() == 0
+        && request.resource.data.st == ''
+        && request.resource.data.at == request.time;
+      allow update: if
+        // voter / retirer son vote : on ne peut ajouter ou retirer que soi-même
+        (signedIn() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['votes'])
+          && request.resource.data.votes is list && request.resource.data.votes.size() <= 2000
+          && request.resource.data.votes.toSet().difference(resource.data.votes.toSet()).hasOnly([request.auth.uid])
+          && resource.data.votes.toSet().difference(request.resource.data.votes.toSet()).hasOnly([request.auth.uid]))
+        || (isAdmin() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['st'])
+          && request.resource.data.st in ['', 'prévu', 'fait', 'refusé']);
       allow delete: if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
     }
 

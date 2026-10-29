@@ -3,7 +3,8 @@
 import { S, B, ACT, changed } from "../state.js";
 import { esc, fmt, okHttp, modal, toast } from "../util.js";
 import { PARIS, parisDay, parisMin, parisWeekday, prevDay, fmtAt } from "../time.js";
-import { ghToken, setGhToken, ghCheck, ghGetJson, ghPutJson, ghCommits } from "../github.js";
+import { ghToken, setGhToken, ghCheck, ghGetJson, ghPutJson, ghCommits, ghPutBinary, ghDelete, bufToB64 } from "../github.js";
+import { bgKey } from "../media.js";
 import { PREVIEW } from "../content.js";
 
 export const USES = [["actu", "Actu"], ["resultats", "Résultats et highlights"], ["titres", "Titres"], ["calendrier", "Calendrier et horaires"], ["rosters", "Rosters"],
@@ -101,7 +102,7 @@ export async function syncFollowed(force) {
 
 // ---------- État des mises à jour ----------
 // [clé dans S.updated, nom, heure prévue (minutes, heure de Paris), hebdomadaire]
-const SETS = [["news", "Actu en français", 464], ["storylines", "Storyline du jour", 464], ["highlights", "Résultats et highlights", 501], ["titles", "Titres et champions", 501],
+const SETS = [["news", "Actu en français", 464], ["storylines", "Storyline du jour", 464], ["polls", "Sondages du jour", 464], ["highlights", "Résultats et highlights", 501], ["titles", "Titres et champions", 501],
   ["recaps", "Résumés sans spoiler", 501], ["calendar", "Calendrier, horaires, pages Netflix", 1163], ["rosters", "Rosters", 1163], ["wrestlers", "Fiches catcheurs", 1163], ["matches", "Matchs à revoir", 1163, true]];
 const MARGIN = 45;
 function expected(at, weekly) {
@@ -144,3 +145,108 @@ async function loadCommits() {
   const box = document.getElementById("ghcommits"); if (box) box.innerHTML = commitsHTML();
 }
 ACT.reloadapp = () => location.reload();
+
+// ---------- Fonds animés des onglets et musique de fond ----------
+// Fichiers rangés dans media/ sur GitHub (avec la clé GitHub), liste dans data/media.json
+const MB = 1024 * 1024;
+const kb = n => n >= MB ? (n / MB).toFixed(1).replace(".", ",") + " Mo" : Math.round(n / 1024) + " Ko";
+const slug = s => String(s).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "home";
+export function mediaView() {
+  const M = S.media || { bg: {}, music: null }, bg = M.bg || {}, mu = M.music, key = !!ghToken();
+  let h = '<h1>Fonds animés et musique</h1>';
+  if (!key) h += '<div class="lockbox" style="margin:0 16px 14px;text-align:left;align-items:flex-start"><b>🔑 Clé GitHub nécessaire</b><p>Les vidéos et la musique sont rangées avec les fichiers de l’app sur GitHub. Ajoute une fois ta clé GitHub pour les envoyer depuis ce téléphone.</p><button class="btn" data-act="ghkey">Ajouter ma clé GitHub</button></div>';
+  h += '<h2 style="margin-top:4px">Musique de fond</h2><p class="note small">MP3 de 1 à 2 minutes qui tourne en boucle, 3 Mo maximum conseillé (5 Mo au plus). Elle démarre au premier appui sur l’écran ; chaque membre peut la couper avec 🔊 en haut.</p>' +
+    '<div class="list"><div class="item mediarow"><span class="lbl"><b>' + (mu ? "🎵 " + esc(mu.n || "Musique") : "Pas de musique") + "</b><small>" + (mu ? esc(kb(mu.size || 0)) + (mu.at ? " · envoyée le " + esc(fmt(mu.at)) : "") : "Silence par défaut") + "</small>" +
+    (mu ? '<audio controls preload="none" src="' + esc(mu.u) + '"></audio>' : "") + "</span>" +
+    '<span class="repbtns"><button class="btn small" data-act="mediapick" data-kind="music">' + (mu ? "Changer" : "Choisir un MP3") + "</button>" + (mu ? '<button class="btn small ghost" data-act="mediadel" data-kind="music">Retirer</button>' : "") + "</span></div>" +
+    (mu ? '<div class="item"><span class="lbl"><b>Volume par défaut</b><small id="volv">' + Math.round((mu.vol == null ? 0.4 : mu.vol) * 100) + ' %</small><input type="range" id="mvol" min="5" max="100" step="5" value="' + Math.round((mu.vol == null ? 0.4 : mu.vol) * 100) + '" aria-label="Volume"></span><span class="repbtns"><button class="btn small" data-act="mediavol">Enregistrer</button></span></div>' : "") + "</div>";
+  const rows = [["", ""]];
+  Object.keys(S.P).forEach(k => { rows.push([k, ""]); Object.keys(S.P[k].s || {}).forEach(n => rows.push([k, n])); });
+  h += '<h2>Fonds animés des onglets</h2><p class="note small">Une petite vidéo qui tourne en boucle derrière les onglets, sans le son. Idéal : MP4 de 3 à 8 secondes, 720 pixels de large, 2 Mo maximum conseillé (4 Mo au plus). Un show sans vidéo reprend celle de sa promotion.</p>' +
+    '<div class="list">' + rows.map(r => {
+      const k = bgKey(r[0], r[1]), b = bg[k];
+      return '<div class="item mediarow"><span class="lbl"><b>' + esc(!r[0] ? "Accueil" : r[1] ? r[0] + " · " + r[1] : r[0]) + "</b><small>" + (b ? esc(kb(b.size || 0)) + (b.at ? " · " + esc(fmt(b.at)) : "") : r[1] && bg[r[0]] ? "Reprend la vidéo de " + esc(r[0]) : "Pas de vidéo") + "</small></span>" +
+        (b ? '<span class="vidprev"><video muted loop playsinline autoplay preload="metadata" src="' + esc(b.u) + '"></video></span>' : "") +
+        '<span class="repbtns"><button class="btn small" data-act="mediapick" data-kind="bg" data-key="' + esc(k) + '">' + (b ? "Changer" : "Choisir") + "</button>" +
+        (b ? '<button class="btn small ghost" data-act="mediadel" data-kind="bg" data-key="' + esc(k) + '">Retirer</button>' : "") + "</span></div>";
+    }).join("") + "</div>" +
+    '<p class="note small" style="margin-top:8px">Après un envoi, la vidéo ou la musique apparaît chez tout le monde d’ici 1 à 2 minutes (le temps que GitHub publie le fichier).</p>';
+  return h;
+}
+document.addEventListener("input", e => { if (e.target.id === "mvol") { const o = document.getElementById("volv"); if (o) o.textContent = e.target.value + " %"; } });
+// Durée et largeur d'une vidéo ou durée d'un son, lues sur le téléphone avant l'envoi
+function probe(file, kind) {
+  return new Promise(res => {
+    const el = document.createElement(kind === "bg" ? "video" : "audio"), u = URL.createObjectURL(file);
+    const done = x => { URL.revokeObjectURL(u); res(x); };
+    el.preload = "metadata"; el.muted = true;
+    el.onloadedmetadata = () => done({ dur: el.duration || 0, w: el.videoWidth || 0 });
+    el.onerror = () => done(null);
+    setTimeout(() => done(null), 6000);
+    el.src = u;
+  });
+}
+async function saveMedia(next, msg) {
+  await ghPutJson("data/media.json", Object.assign({ updated: parisDay() }, next), msg);
+  S.media = next; changed("media");
+}
+ACT.mediapick = el => {
+  if (!ghToken()) { ghKeyModal(); return; }
+  const kind = el.dataset.kind, k = el.dataset.key || "";
+  const inp = document.createElement("input");
+  inp.type = "file"; inp.accept = kind === "bg" ? "video/mp4,video/quicktime,.mp4,.mov" : "audio/mpeg,audio/mp3,audio/mp4,audio/x-m4a,.mp3,.m4a";
+  inp.addEventListener("change", async () => {
+    const f = inp.files && inp.files[0]; if (!f) return;
+    const max = kind === "bg" ? 4 * MB : 5 * MB, ideal = kind === "bg" ? 2 * MB : 3 * MB;
+    const ext = (f.name.match(/\.(mp4|mov|mp3|m4a)$/i) || [])[1] || (/quicktime/.test(f.type) ? "mov" : kind === "bg" ? "mp4" : /mp4|m4a/.test(f.type) ? "m4a" : "mp3");
+    if (kind === "bg" ? !/^(mp4|mov)$/i.test(ext) : !/^(mp3|m4a)$/i.test(ext)) { toast(kind === "bg" ? "Choisis une vidéo MP4" : "Choisis un fichier MP3"); return; }
+    if (f.size > max) { toast("Fichier trop lourd (" + kb(f.size) + ") : " + (kind === "bg" ? "4 Mo" : "5 Mo") + " au plus. Raccourcis-le ou compresse-le.", { ms: 6000 }); return; }
+    const info = await probe(f, kind), warn = [];
+    if (f.size > ideal) warn.push("un peu lourd (" + kb(f.size) + ", idéal " + kb(ideal) + ") : plus long à charger");
+    if (info && kind === "bg" && info.dur > 10) warn.push("dure " + Math.round(info.dur) + " s (idéal 3 à 8 s)");
+    if (info && kind === "bg" && info.w > 1280) warn.push("très large (" + info.w + " px, idéal 720 px)");
+    if (info && kind === "music" && info.dur > 150) warn.push("dure " + Math.round(info.dur / 60) + " min (idéal 1 à 2 min)");
+    if (kind === "bg" && /^mov$/i.test(ext)) warn.push("format .MOV : il peut ne pas s’afficher sur Android, un MP4 est plus sûr");
+    if (kind === "bg" && !info) warn.push("ce téléphone n’arrive pas à lire cette vidéo : vérifie qu’elle s’affiche après l’envoi");
+    modal((box, close) => {
+      box.innerHTML = "<h3>" + (kind === "bg" ? "Envoyer ce fond animé ?" : "Envoyer cette musique ?") + '</h3><p class="sub">' + esc(f.name) + " · " + esc(kb(f.size)) + (info && info.dur ? " · " + Math.round(info.dur) + " s" : "") + "</p>" +
+        (warn.length ? '<ul class="dellist">' + warn.map(w => "<li>⚠ " + esc(w) + "</li>").join("") + "</ul>" : '<p class="note small">✓ Taille et durée idéales</p>') +
+        '<p class="err" id="mderr"></p><button class="btn wide" data-ok>Envoyer</button><button class="btn wide ghost" style="margin-top:10px" data-no>Annuler</button>';
+      box.addEventListener("click", async e => {
+        if (e.target.closest("[data-no]")) return close();
+        const ok = e.target.closest("[data-ok]"); if (!ok || ok.disabled) return;
+        ok.disabled = true; ok.textContent = "Envoi en cours…";
+        try {
+          const b64 = bufToB64(await f.arrayBuffer()), ts = Date.now().toString(36);
+          const path = kind === "bg" ? "media/bg/" + slug(k) + "-" + ts + "." + ext.toLowerCase() : "media/music-" + ts + "." + ext.toLowerCase();
+          await ghPutBinary(path, b64, kind === "bg" ? "Fond animé TCC TV : " + (k === "home" ? "accueil" : k) : "Musique de fond TCC TV");
+          const cur = S.media || { bg: {}, music: null }, next = { bg: Object.assign({}, cur.bg || {}), music: cur.music || null };
+          const old = kind === "bg" ? next.bg[k] : next.music;
+          if (kind === "bg") next.bg[k] = { u: path, size: f.size, at: parisDay() };
+          else next.music = { u: path, n: f.name.replace(/\.[^.]+$/, "").slice(0, 60), size: f.size, vol: cur.music && cur.music.vol != null ? cur.music.vol : 0.4, at: parisDay() };
+          await saveMedia(next, kind === "bg" ? "Fonds animés TCC TV : " + (k === "home" ? "accueil" : k) : "Musique de fond TCC TV");
+          if (old && old.u && old.u !== path && /^media\//.test(old.u)) ghDelete(old.u, "Ancien fichier remplacé").catch(() => {});
+          close(); toast("Envoyé ✓ Visible chez tout le monde d’ici 1 à 2 minutes", { ms: 5000 });
+        } catch (x) { ok.disabled = false; ok.textContent = "Envoyer"; box.querySelector("#mderr").textContent = x.message === "nokey" ? "Ajoute d’abord ta clé GitHub" : x.message; }
+      });
+    });
+  });
+  inp.click();
+};
+ACT.mediadel = async el => {
+  if (!ghToken()) { ghKeyModal(); return; }
+  const kind = el.dataset.kind, k = el.dataset.key || "";
+  const cur = S.media || { bg: {}, music: null }, next = { bg: Object.assign({}, cur.bg || {}), music: cur.music || null };
+  const old = kind === "bg" ? next.bg[k] : next.music;
+  if (kind === "bg") delete next.bg[k]; else next.music = null;
+  try {
+    await saveMedia(next, kind === "bg" ? "Fonds animés TCC TV : retrait (" + k + ")" : "Musique de fond TCC TV : retrait");
+    if (old && old.u && /^media\//.test(old.u)) ghDelete(old.u, "Fichier retiré").catch(() => {});
+    toast("Retiré ✓");
+  } catch (x) { toast(x.message === "nokey" ? "Ajoute d’abord ta clé GitHub" : x.message); }
+};
+ACT.mediavol = async () => {
+  const v = document.getElementById("mvol"), cur = S.media || {}; if (!v || !cur.music) return;
+  try { await saveMedia({ bg: cur.bg || {}, music: Object.assign({}, cur.music, { vol: Math.round(+v.value) / 100 }) }, "Musique de fond TCC TV : volume " + v.value + " %"); toast("Volume enregistré ✓"); }
+  catch (x) { toast(x.message === "nokey" ? "Ajoute d’abord ta clé GitHub" : x.message); }
+};

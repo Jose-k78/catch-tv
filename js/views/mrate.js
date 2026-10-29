@@ -71,6 +71,22 @@ export function fromResult(line) {
   const t = sides[0] + " contre " + sides[1];
   return t.charAt(0).toUpperCase() + t.slice(1);
 }
+// Vainqueur d'une ligne de résultat : { w: camp gagnant, l: camp perdant } ; { draw: true } pour un nul ; null si illisible
+export function resultWinner(line) {
+  const s = String(line || "").replace(/\([^)]*\)/g, " ").replace(/\s+/g, " ").replace(/[.\s]+$/, "").trim();
+  if (!s) return null;
+  if (s.match(R_DRAW_VS) || s.match(R_DRAW_AND)) return { draw: true };
+  const m = s.match(R_FR) || s.match(R_EN) || s.match(R_TITLE);
+  if (!m) return null;
+  return { w: m[1].replace(PREFIX, "").replace(/,\s*[a-zà-ÿ][^,]*,/g, "").trim(), l: m[2].split(CUT)[0].trim() };
+}
+// Noms (normalisés) d'un camp : « Bron Breakker et Austin Theory » -> ["austin theory", "bron breakker"]
+export function sideNames(side) {
+  const out = [];
+  String(side || "").replace(/\([^)]*\)/g, " ").split(/\s*(?:&|,|\bet\b|\band\b)\s*/i).forEach(x => { x = N(x).replace(/[^a-z0-9' .-]/g, "").replace(/^(?:les|le|la) /, "").trim(); if (x) out.push(x); });
+  return out;
+}
+
 // Combats à noter sur la page highlights d'un show (sans doublon avec les vidéos et le match par match)
 export function showFights(k, show, d, h, skip) {
   const seen = {}, out = [];

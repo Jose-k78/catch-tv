@@ -70,6 +70,12 @@ export async function deleteAccount(password) {
   for (const d of dms.docs) await wipe(W(C("dms", d.id, "messages"), "uid", "==", uid)).catch(() => {});
   const liked = await F.getDocs(W(C("wcomments"), "likes", "array-contains", uid));
   for (const d of liked.docs) await F.updateDoc(d.ref, { likes: F.arrayRemove(uid) }).catch(() => {});
+  await wipe(W(C("areplies"), "uid", "==", uid)).catch(() => {});
+  await wipe(W(C("pollvotes"), "uid", "==", uid)).catch(() => {});
+  await wipe(W(C("picks"), "uid", "==", uid)).catch(() => {});
+  await wipe(W(C("ideas"), "uid", "==", uid)).catch(() => {});
+  const voted = await F.getDocs(W(C("ideas"), "votes", "array-contains", uid)).catch(() => ({ docs: [] }));
+  for (const d of voted.docs) await F.updateDoc(d.ref, { votes: F.arrayRemove(uid) }).catch(() => {});
   await F.deleteDoc(F.doc(db, "blocks", uid)).catch(() => {});
   await F.deleteDoc(F.doc(db, "reads", uid)).catch(() => {});
   await F.deleteDoc(F.doc(db, "users", uid));
@@ -277,5 +283,38 @@ export function watchActivity(cb) {
   const q = F.query(F.collection(db, "activity"), F.orderBy("at", "desc"), F.limit(40));
   return F.onSnapshot(q, r => cb(r.docs.map(s => { const d = data(s); d.id = s.id; d.at = ms(d.at) || Date.now(); return d; })), () => cb([]));
 }
-export function setActivity(id, a) { return F.setDoc(F.doc(db, "activity", id), Object.assign({}, a, { at: F.serverTimestamp() })); }
+// merge : garde les réactions (rx) et le nombre de réponses (rn) des autres membres
+export function setActivity(id, a) { return F.setDoc(F.doc(db, "activity", id), Object.assign({}, a, { at: F.serverTimestamp() }), { merge: true }); }
+export async function getActivity(id) { const s = await F.getDoc(F.doc(db, "activity", id)); if (!s.exists()) return null; const d = data(s); d.id = s.id; d.at = ms(d.at) || Date.now(); return d; }
+// Réactions (une par membre) et réponses sous une note ou un commentaire
+export function reactActivity(id, uid, emo) { const p = {}; p["rx." + uid] = emo ? String(emo).slice(0, 8) : F.deleteField(); return F.updateDoc(F.doc(db, "activity", id), p); }
+export function watchReplies(aid, cb) {
+  const q = F.query(F.collection(db, "areplies"), F.where("a", "==", aid), F.limit(300));
+  return F.onSnapshot(q, r => cb(r.docs.map(s => { const d = data(s); return { id: s.id, a: d.a, uid: d.uid, text: d.text || "", at: ms(d.at) || Date.now() }; }).sort((x, y) => x.at - y.at)), () => cb([]));
+}
+export async function addReply(aid, uid, text) {
+  const ref = await F.addDoc(F.collection(db, "areplies"), { a: aid, uid: uid, text: text, at: F.serverTimestamp() });
+  await F.updateDoc(F.doc(db, "activity", aid), { rn: F.increment(1) }).catch(() => {});
+  return ref.id;
+}
+export async function deleteReply(rid, aid) { await F.deleteDoc(F.doc(db, "areplies", rid)); await F.updateDoc(F.doc(db, "activity", aid), { rn: F.increment(-1) }).catch(() => {}); }
+
+// ---- Sondages (ceux de l'admin ; ceux de la mise à jour sont dans data/polls.json) et votes ----
+const list = (c, cb, lim) => F.onSnapshot(F.query(F.collection(db, c), F.limit(lim || 3000)), r => cb(r.docs.map(s => { const d = data(s); d.id = s.id; d.at = ms(d.at) || 0; return d; })), () => cb([]));
+export function watchPolls(cb) { return list("polls", cb, 200); }
+export function savePoll(id, p) { return F.setDoc(F.doc(db, "polls", id), Object.assign({}, p, { at: F.serverTimestamp() })); }
+export function deletePoll(id) { return F.deleteDoc(F.doc(db, "polls", id)); }
+export function watchPollVotes(cb) { return list("pollvotes", cb); }
+export function votePoll(poll, uid, c, o) { return F.setDoc(F.doc(db, "pollvotes", poll + "_" + uid), { poll: poll, uid: uid, c: c, o: String(o || "").slice(0, 40), at: F.serverTimestamp() }); }
+
+// ---- Pronostics ----
+export function watchPicks(cb) { return list("picks", cb); }
+export function setPick(id, p) { return F.setDoc(F.doc(db, "picks", id), Object.assign({}, p, { at: F.serverTimestamp() })); }
+
+// ---- Idées des membres ----
+export function watchIdeas(cb) { return list("ideas", cb, 500); }
+export function addIdea(uid, text) { return F.addDoc(F.collection(db, "ideas"), { uid: uid, text: text, votes: [], st: "", at: F.serverTimestamp() }); }
+export function voteIdea(id, uid, on) { return F.updateDoc(F.doc(db, "ideas", id), { votes: on ? F.arrayUnion(uid) : F.arrayRemove(uid) }); }
+export function setIdeaStatus(id, st) { return F.updateDoc(F.doc(db, "ideas", id), { st: st }); }
+export function deleteIdea(id) { return F.deleteDoc(F.doc(db, "ideas", id)); }
 export function removeActivity(id) { return F.deleteDoc(F.doc(db, "activity", id)); }

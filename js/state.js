@@ -35,6 +35,14 @@ export const S = {
   rostersSrc: {},
   sources: [],           // sources de données choisies par l'admin (data/sources.json)
   updated: {},           // date de mise à jour de chaque fichier de données
+  polls: [],             // sondages préparés par la mise à jour (data/polls.json)
+  fsPolls: [],           // sondages créés par l'admin (Firebase)
+  pollVotes: [],         // votes des membres
+  picks: [],             // pronostics des membres
+  ideas: [],             // idées des membres
+  areplies: {},          // réponses sous une note ou un commentaire (id d'activité -> [réponses])
+  athread: {},           // activités ouvertes qui ne sont plus dans les 40 dernières
+  media: { bg: {}, music: null }, // fonds animés des onglets et musique (data/media.json)
   isAdmin: false,
   demo: false,
   authReady: false,

@@ -26,18 +26,25 @@ import { activityView } from "./views/activity.js";
 import { storylineView } from "./views/storyline.js";
 import { renderWComments, wslug } from "./views/comments.js";
 import { rosterView } from "./views/roster.js";
+import { pollsView } from "./views/polls.js";
+import { picksView, pickView } from "./views/picks.js";
+import { ideasView } from "./views/ideas.js";
+import { loadThread } from "./views/activity.js";
+import { mountBg, armMusic, refreshMedia, updateMusicBtn } from "./media.js";
 
 let route = { name: "home" }, routeSubs = [], userSubs = [], dirty = false, searchFocused = false;
-const NEEDS_USER = { settings: 1, editprofile: 1, chat: 1, newchat: 1, conv: 1, convinfo: 1, profile: 1, members: 1, favs: 1, notifs: 1, activity: 1 };
+const NEEDS_USER = { settings: 1, editprofile: 1, chat: 1, newchat: 1, conv: 1, convinfo: 1, profile: 1, members: 1, favs: 1, notifs: 1, activity: 1, ideas: 1 };
 const FORM_VIEWS = { auth: 1, settings: 1, editprofile: 1 };
 const REL = {
-  home: ["content", "images", "history", "auth", "tick", "profile", "spoil", "activity"], promo: ["content", "images", "history", "auth", "tick", "spoil"],
+  home: ["content", "images", "history", "auth", "tick", "profile", "spoil", "activity", "polls", "pollVotes", "picks"], promo: ["content", "images", "history", "auth", "tick", "spoil"],
   profile: ["profile", "profiles", "history", "otherHistory", "auth", "friends", "feuds", "blocks", "memberFriends", "tick"], chat: ["room", "convs", "reads", "profiles", "auth", "blocks"],
-  convinfo: ["convs", "reads", "profiles", "auth", "blocks", "room", "msgs"], newchat: ["users", "auth"], settings: ["auth", "route", "reports", "blocks", "profiles", "images"], editprofile: ["profile", "auth"], auth: ["auth"],
+  convinfo: ["convs", "reads", "profiles", "auth", "blocks", "room", "msgs"], newchat: ["users", "auth"], settings: ["auth", "route", "reports", "blocks", "profiles", "images", "media", "ideas"], editprofile: ["profile", "auth"], auth: ["auth"],
   matches: ["route", "history", "auth"], credits: ["images"], wrestler: ["profile", "spoil", "history", "auth"], search: [], titles: ["history", "spoil"], title: ["history", "spoil"],
-  notifs: ["notifs", "profiles", "reads", "blocks"], activity: ["activity", "profiles", "blocks"], storyline: [], roster: ["profile"],
+  notifs: ["notifs", "profiles", "reads", "blocks"], activity: ["activity", "profiles", "blocks", "areplies"], storyline: [], roster: ["profile"],
   members: ["users", "friends", "feuds", "blocks", "profiles", "auth", "tick"], favs: ["profile", "profiles", "friends", "auth"], hl: ["history", "spoil"],
   event: ["event", "history", "auth"],
+  polls: ["polls", "pollVotes", "auth", "blocks"], picks: ["content", "picks", "profiles", "auth", "blocks", "tick"], pick: ["content", "picks", "profiles", "auth", "blocks", "tick"],
+  ideas: ["ideas", "profiles", "auth", "blocks"],
 };
 
 // ---------- navigation ----------
@@ -60,7 +67,11 @@ function parse() {
     case "membres": return { name: "members", tab: parts[1] || "" };
     case "favoris": return { name: "favs" };
     case "notifs": return { name: "notifs" };
-    case "activite": return { name: "activity" };
+    case "activite": return { name: "activity", id: parts[1] || "" };
+    case "sondages": return { name: "polls" };
+    case "pronostics": return { name: "picks" };
+    case "pronostic": return S.P[parts[1]] && parts[2] ? { name: "pick", k: parts[1], d: parts[2] } : { name: "picks" };
+    case "idees": return { name: "ideas" };
     case "storyline": return { name: "storyline", id: parts[1] || "" };
     case "roster": return S.P[parts[1]] ? { name: "roster", k: parts[1], g: parts[2] || "" } : { name: "home" };
     case "hl": return S.P[parts[1]] ? { name: "hl", k: parts[1], show: parts[2] || "PLE", d: parts[3] || "" } : { name: "home" };
@@ -94,6 +105,12 @@ function onRoute() {
       routeSubs.push(B.watchMessages(id, list => { S.convMsgs[id] = list; list.forEach(m => need(m.uid)); changed("msgs"); }));
     }
   }
+  if (route.name === "activity" && route.id && S.user) {
+    const id = route.id;
+    routeSubs.push(B.watchReplies(id, list => { S.areplies[id] = list; changed("areplies"); }));
+    loadThread(id);
+  }
+  if (route.name === "ideas" && S.user && !S.isAdmin) routeSubs.push(B.watchIdeas(list => { S.ideas = list || []; changed("ideas"); }));
   if (route.name === "newchat" && S.user) loadUsers();
   if (route.name === "members" && S.user) loadMembers(true);
   if (route.name === "wrestler") {
@@ -109,6 +126,7 @@ function render() {
   const app = document.getElementById("app"), tabs = document.getElementById("tabs");
   document.body.classList.toggle("inconv", route.name === "conv");
   tabs.innerHTML = (route.name === "home" || route.name === "promo") ? tabsView(route) : "";
+  mountBg(route);
   document.body.classList.toggle("wide", route.name === "home");
   let h = "";
   const waiting = NEEDS_USER[route.name] && !S.user;
@@ -134,7 +152,11 @@ function render() {
     case "favs": h = favsView(); break;
     case "hl": h = hlView(route.k, route.show, route.d); break;
     case "notifs": h = notifsView(); break;
-    case "activity": h = activityView(); break;
+    case "activity": h = activityView(route.id); break;
+    case "polls": h = pollsView(); break;
+    case "picks": h = picksView(); break;
+    case "pick": h = pickView(route.k, route.d); break;
+    case "ideas": h = ideasView(); break;
     case "storyline": h = storylineView(route.id); break;
     case "roster": h = rosterView(route.k, route.g); break;
     case "event": h = eventView(route.ref); break;
@@ -159,11 +181,11 @@ function render() {
 const NAV = [["home", "#/", "Accueil", "home"], ["search", "#/recherche", "Recherche", "search"], ["members", "#/membres", "Membres", "globe"], ["chat", "#/chat", "Messages", "chat"], ["me", "#/profil", "Profil", "user"]];
 function navOn(id) {
   const r = route.name;
-  if (id === "home") return r === "home" || r === "promo" || r === "titles" || r === "title" || r === "matches" || r === "hl";
+  if (id === "home") return r === "home" || r === "promo" || r === "titles" || r === "title" || r === "matches" || r === "hl" || r === "polls" || r === "picks" || r === "pick";
   if (id === "search") return r === "search" || r === "wrestler" || r === "event";
   if (id === "members") return r === "members" || (r === "profile" && S.user && route.uid && route.uid !== S.user.uid);
   if (id === "chat") return r === "chat" || r === "conv" || r === "newchat" || r === "convinfo";
-  if (id === "me") return (r === "profile" && (!S.user || !route.uid || route.uid === S.user.uid)) || r === "settings" || r === "editprofile" || r === "auth";
+  if (id === "me") return (r === "profile" && (!S.user || !route.uid || route.uid === S.user.uid)) || r === "settings" || r === "editprofile" || r === "auth" || r === "ideas";
   return false;
 }
 const cnt = n => n > 99 ? "99+" : String(n);
@@ -185,6 +207,7 @@ function updateHeader() {
 
 onChange(what => {
   updateHeader();
+  if (what === "media") refreshMedia(route);
   if (route.name === "wrestler" && (what === "profiles" || what === "blocks")) { renderWComments(); return; }
   if (route.name === "notifs" && what === "notifs") markNotifsSeen();
   if (route.name === "conv") {
@@ -234,6 +257,7 @@ function onUser(u) {
   userSubs.forEach(f => f()); userSubs = [];
   S.user = u; S.authReady = true; S.profile = null; S.history = {}; S.room = []; S.convs = []; S.reads = {}; S.convMsgs = {};
   S.friends = []; S.feuds = []; S.blocks = []; S.reports = []; S.users = null; S.memberFriends = {}; S.notifs = []; S.activity = []; resetSocial();
+  S.fsPolls = []; S.pollVotes = []; S.picks = []; S.ideas = []; S.areplies = {}; S.athread = {};
   S.isAdmin = !!u && (S.demo ? u.uid === B.demoAdmin() : (!!ADMIN_UID && u.uid === ADMIN_UID));
   if (u) {
     const me = u.uid;
@@ -269,6 +293,10 @@ function onUser(u) {
       nInit = true; changed("notifs");
     }));
     userSubs.push(B.watchActivity(list => { S.activity = list || []; S.activity.forEach(a => need(a.uid)); changed("activity"); }));
+    userSubs.push(B.watchPolls(list => { S.fsPolls = list || []; changed("polls"); }));
+    userSubs.push(B.watchPollVotes(list => { S.pollVotes = list || []; changed("pollVotes"); }));
+    userSubs.push(B.watchPicks(list => { S.picks = list || []; changed("picks"); }));
+    if (S.isAdmin) userSubs.push(B.watchIdeas(list => { S.ideas = list || []; changed("ideas"); }));
     if (S.isAdmin) userSubs.push(B.watchReports(list => { S.reports = list || []; list.forEach(r => { need(r.by); need(r.target); }); changed("reports"); }));
   }
   changed("auth");
@@ -300,8 +328,9 @@ async function boot() {
   document.getElementById("favbtn").innerHTML = ICON.starF;
   const c = await loadContent(); S.P = c.P; S.news = c.news; S.recaps = c.recaps || {}; S.matches = c.matches || []; S.titles = c.titles || []; S.titlesUpdated = c.titlesUpdated || "";
   S.highlights = c.highlights || {}; S.wrestlers = c.wrestlers || {}; S.storylines = c.storylines || []; S.rosters = c.rosters || {}; S.rostersSrc = c.rostersSrc || {};
-  S.sources = c.sources || []; S.updated = c.updated || {};
+  S.sources = c.sources || []; S.updated = c.updated || {}; S.polls = c.polls || []; S.media = c.media || { bg: {}, music: null };
   tick(); setInterval(tick, 60000);
+  armMusic();
   let backend = null;
   if (firebaseConfig) {
     try { backend = await import("./backend/firebase.js"); await backend.init(firebaseConfig); }

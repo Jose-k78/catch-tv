@@ -36,18 +36,25 @@ export function searchView(q) {
   lastQ = q || "";
   return '<div class="searchbar"><input id="q" type="search" enterkeyhint="search" autocomplete="off" placeholder="Show, PLE, catcheur, catcheuse…" value="' + esc(lastQ) + '" aria-label="Rechercher"></div><div id="sres">' + resultsHTML(lastQ) + "</div>";
 }
+// La recherche ressemble-t-elle à un show ou un événement (WrestleMania 13, Raw, Crown Jewel…) plutôt qu'à un catcheur ?
+function eventLike(q, loc, names) {
+  const n = norm(q);
+  if (names.some(x => norm(x.n) === n || (x.a || []).some(a => norm(a) === n))) return false;
+  return EVENT_WORDS.test(q) || loc.some(r => norm(r.t) === n || norm(r.t).indexOf(n) === 0);
+}
 function resultsHTML(q) {
   if (!norm(q)) return '<p class="note">Tape le nom d’un show (Raw, Dynamite…), d’un PLE (Crown Jewel…), d’un événement passé (WrestleMania 13, Starrcade 1997…) ou d’un catcheur (Roman Reigns, Mayu Iwatani…), puis valide.</p>';
-  const loc = localResults(q), names = nameResults(q);
-  let h = "";
-  h += '<h2>Catcheurs et catcheuses</h2><div class="list">' + names.map(x => '<a class="item" href="#/catcheur/' + encodeURIComponent(x.n) + '"><span class="lbl"><b>' + esc(x.n) + "</b><small>" + esc(x.s) +
-    '</small></span><span class="chev">›</span></a>').join("") +
-    (names.some(x => norm(x.n) === norm(q)) ? "" : '<a class="item" href="#/catcheur/' + encodeURIComponent(q.trim()) + '"><span class="lbl"><b>' + esc(q.trim()) +
-    "</b><small>Voir sa fiche : résumé, derniers matchs, matchs de référence</small></span><span class=\"chev\">›</span></a>") + "</div>";
-  if (loc.length) h += '<h2>Shows et événements</h2><div class="list">' + loc.map(r => '<a class="item" href="' + r.h + '"><span class="lbl"><b>' + esc(r.t) + "</b><small>" + esc(r.s) + '</small></span><span class="chev">›</span></a>').join("") + "</div>";
+  const loc = localResults(q), names = nameResults(q), ev = eventLike(q, loc, names);
+  const showsH = loc.length ? '<h2>Shows et événements</h2><div class="list">' + loc.map(r => '<a class="item" href="' + r.h + '"><span class="lbl"><b>' + esc(r.t) + "</b><small>" + esc(r.s) + '</small></span><span class="chev">›</span></a>').join("") + "</div>" : "";
   // archives : PLE et shows passés trouvés sur Wikipédia (WrestleMania 13, Starrcade 1997…)
-  if (norm(q).length >= 3 && !PREVIEW) h += '<h2>Archives <small class="cnt">Wikipédia</small></h2><div id="evres"><p class="note small">Recherche des événements passés…</p></div>';
-  return h;
+  const archH = norm(q).length >= 3 && !PREVIEW ? '<h2>' + (ev ? "Événements passés" : "Archives") + ' <small class="cnt">Wikipédia</small></h2><div id="evres"><p class="note small">Recherche des événements passés…</p></div>' : "";
+  // un nom de show ou d'événement ne propose jamais de fiche catcheur
+  const offer = !ev && !names.some(x => norm(x.n) === norm(q));
+  const wH = names.length || offer ? '<h2>Catcheurs et catcheuses</h2><div class="list">' + names.map(x => '<a class="item" href="#/catcheur/' + encodeURIComponent(x.n) + '"><span class="lbl"><b>' + esc(x.n) + "</b><small>" + esc(x.s) +
+    '</small></span><span class="chev">›</span></a>').join("") +
+    (offer ? '<a class="item" href="#/catcheur/' + encodeURIComponent(q.trim()) + '"><span class="lbl"><b>' + esc(q.trim()) +
+    "</b><small>Voir sa fiche : résumé, derniers matchs, matchs de référence</small></span><span class=\"chev\">›</span></a>" : "") + "</div>" : "";
+  return ev ? showsH + archH + wH : wH + showsH + archH;
 }
 document.addEventListener("input", e => {
   if (e.target.id !== "q") return;

@@ -10,6 +10,9 @@ import { discoverTile } from "./discover.js";
 import { storylineTile } from "./storyline.js";
 import { activitySection, activityList } from "./activity.js";
 import { rosterTile } from "./roster.js";
+import { openOut } from "../applinks.js";
+import { pickable, pickTile } from "./picks.js";
+import { pollTile } from "./polls.js";
 
 // ---------- données ----------
 export function seenId(e) { return docId(e.k + "|" + (e.show || "PLE") + "|" + (e.d || "") + "|" + e.t); }
@@ -27,7 +30,7 @@ function pleOf(k) {
     return { kind: "ple", k: k, show: "", br: e.br || "", t: e.t, d: e.d, w: e.w, v: e.v || "", card: e.card || null,
       c: colorOf(k, e.br), l: pr.l, ty: e.br ? "PLE " + e.br : "PLE",
       h: e.h || "", tz: e.tz || "", dur: e.dur || 240, city: e.w && e.w !== "—" && !/habituel|confirmer/.test(e.w) ? e.w : "",
-      fr: e.fr || (bs && bs.fr) || pr.fr || [], p: "", pl: "", nf: e.nf || "", nfhub: pr.nfhub || "" };
+      fr: e.fr || (bs && bs.fr) || pr.fr || [], p: "", pl: "", nf: e.nf || "", nfhub: pr.nfhub || "", wl: Array.isArray(e.wl) ? e.wl : null };
   });
 }
 export function allPle() { let a = []; Object.keys(S.P).forEach(k => { a = a.concat(pleOf(k)); }); return a; }
@@ -66,7 +69,7 @@ export function liveNow() {
 }
 function findItem(d) {
   let a = allPle();
-  if (d.show) a = epis(d.k, d.show, 2, 2);
+  if (d.show) a = epis(d.k, d.show, 6, 2);
   return a.find(e => e.k === d.k && (e.show || "") === (d.show || "") && e.d === d.d && (!d.t || e.t === d.t)) || null;
 }
 function itemData(e) { return ' data-k="' + esc(e.k) + '" data-show="' + esc(e.show || "") + '" data-d="' + esc(e.d || "") + '" data-t="' + esc(e.t) + '"'; }
@@ -88,15 +91,37 @@ export function netflixUrl(e) {
   if (NFID.test(e.nfhub || "")) return "https://www.netflix.com/browse/genre/" + e.nfhub;
   return "https://www.netflix.com/search?q=" + encodeURIComponent(e.k + " " + (e.show || e.t));
 }
-// Où regarder : plateformes officielles en France, puis aux États-Unis
+// Où regarder : lien direct de l'épisode (préparé par la mise à jour), plateformes officielles en France, puis aux États-Unis
+export function watchLinks(e) {
+  const out = [], seen = {};
+  const add = (n, u, extra) => { if (!okHttp(u) || seen[u]) return; seen[u] = 1; out.push(Object.assign({ n: n, u: u }, extra || {})); };
+  const h = e.d ? hlOf(e.k, e.show || "PLE", e.d) : null;
+  (h && Array.isArray(h.w) ? h.w : []).forEach(x => { if (x) add(x.n || "Vidéo", x.u, { direct: true }); });
+  (Array.isArray(e.wl) ? e.wl : []).forEach(x => { if (x) add(x.n || "Vidéo", x.u, { direct: true }); });
+  (e.fr || []).forEach(f => { if (!okHttp(f.u)) return; const nf = /netflix\.com/.test(f.u); add(f.n, nf ? netflixUrl(e) : f.u, { fr: true, nf: nf }); });
+  if (e.p && okHttp(e.pl)) { const nf = /netflix\.com/.test(e.pl); add(e.p, nf ? netflixUrl(e) : e.pl, { us: true, nf: nf }); }
+  if (!out.length && okHttp(e.l)) add("Site officiel", e.l, {});
+  return out;
+}
+// Netflix ne donne pas de lien par épisode : la page du show s'ouvre, on indique la date à choisir
+const epNote = (e, x) => x.nf && e.kind === "ep" ? " · épisode du " + fmt(e.d) : "";
+function openLink(u) { if (!openOut(u)) window.open(u, "_blank", "noopener"); }
 ACT.watch = el => {
   const e = findItem(el.dataset); if (!e) return;
-  const fr = (e.fr || []).filter(f => okHttp(f.u)).map(f => /netflix\.com/.test(f.u) ? { n: f.n, u: netflixUrl(e) } : f);
+  const links = watchLinks(e), fr = links.filter(x => x.fr), us = links.filter(x => x.us), direct = links.filter(x => x.direct), other = links.filter(x => !x.fr && !x.us && !x.direct);
+  // « Voir le show » : un seul choix possible -> on ouvre directement l'appli ou la page
+  if (el.dataset.direct === "1") {
+    const one = direct[0] || (fr.length === 1 ? fr[0] : null) || (links.length === 1 ? links[0] : null);
+    if (one) { if (one.nf && e.kind === "ep") toast("Netflix : choisis l’épisode du " + fmt(e.d) + " dans la liste", { ms: 4500 }); openLink(one.u); return; }
+  }
+  const btn = (x, ghost) => '<a class="btn wide' + (ghost ? " ghost" : "") + '" href="' + esc(x.u) + '" target="_blank" rel="noopener">Regarder sur ' + esc(x.n) + esc(epNote(e, x)) + " ↗</a>";
   modal((box, close) => {
-    box.innerHTML = "<h3>" + esc(e.t) + '</h3><p class="sub">' + (isLive(e) ? "🔴 En direct maintenant" : esc(e.k)) + "</p>" +
-      (fr.length ? '<p class="sub" style="margin-bottom:6px">En France</p>' + fr.map(f => '<a class="btn wide" href="' + esc(f.u) + '" target="_blank" rel="noopener">Regarder sur ' + esc(f.n) + " ↗</a>").join("") : "") +
-      (e.p && okHttp(e.pl) ? '<p class="sub" style="margin:14px 16px 6px">Aux États-Unis</p><a class="btn wide ghost" href="' + esc(/netflix\.com/.test(e.pl) ? netflixUrl(e) : e.pl) + '" target="_blank" rel="noopener">' + esc(e.p) + " ↗</a>" : "") +
-      (!fr.length && !(e.p && okHttp(e.pl)) && okHttp(e.l) ? '<a class="btn wide" href="' + esc(e.l) + '" target="_blank" rel="noopener">Site officiel ↗</a>' : "") +
+    box.innerHTML = "<h3>" + esc(e.t) + '</h3><p class="sub">' + (isLive(e) ? "🔴 En direct maintenant" : esc(e.k) + (e.d ? " · " + fmt(e.d) : "")) + "</p>" +
+      (direct.length ? '<p class="sub" style="margin-bottom:6px">Ce show directement</p>' + direct.map(x => btn(x)).join("") : "") +
+      (fr.length ? '<p class="sub" style="margin:' + (direct.length ? "14px 16px 6px" : "0 0 6px") + '">En France</p>' + fr.map(x => btn(x, direct.length > 0)).join("") : "") +
+      (fr.some(x => x.nf) && e.kind === "ep" ? '<p class="note small" style="margin:6px 16px 0">Netflix ouvre la page de ' + esc(e.show) + " : choisis l’épisode du " + esc(fmt(e.d)) + " dans la liste.</p>" : "") +
+      (us.length ? '<p class="sub" style="margin:14px 16px 6px">Aux États-Unis</p>' + us.map(x => btn(x, true)).join("") : "") +
+      other.map(x => '<a class="btn wide" href="' + esc(x.u) + '" target="_blank" rel="noopener">' + esc(x.n) + " ↗</a>").join("") +
       '<button class="btn wide ghost" style="margin-top:12px" data-close>Fermer</button>';
     box.addEventListener("click", ev => { if (ev.target.closest("[data-close]")) close(); });
   });
@@ -163,6 +188,7 @@ function pleCard(e, showK) {
     '<a class="cover" href="' + esc(e.l) + '" target="_blank" rel="noopener" aria-label="' + esc(e.t) + '"></a>' +
     '<span class="tag">' + (showK ? esc(e.k) + " · " : "") + cd(e.d) + "</span>" + editBtn(e, e.t) +
     "<b" + fit(e.t, 126, 27, lk.poster) + ">" + esc(e.t) + "</b><small>" + (n >= 0 ? shortWhen(e) : fmt(e.d)) + (place(e) ? " · " + place(e) : "") + "</small>" + seenMark(h) +
+    (n >= 0 && pickable(e) ? '<button class="minibtn" data-act="pick"' + dataItem(e) + ">🎯 Pronostic</button>" : "") +
     (aired(e) ? '<button class="cbtn seen' + (h ? " on" : "") + '" data-act="seen"' + dataItem(e) + ' aria-label="Je l’ai vu">' + (h ? ICON.check : ICON.eye) + "</button>" : remindBtn(e, "cbtn seen")) +
     "</div>";
 }
@@ -198,6 +224,7 @@ function outCard(e, recent) {
     '<a class="cover" href="' + esc(href) + '"' + (ext ? ' target="_blank" rel="noopener"' : "") + ' aria-label="' + esc(e.t) + '"></a>' +
     '<span class="tag' + (recent && e.ago <= 1 ? " hot" : "") + '">' + tag + "</span>" +
     "<b" + fit(e.t, 126, 27, lk.poster) + ">" + esc(e.t) + "</b><small>" + (recent ? esc(e.k) + " · " : "") + (e.kind === "ep" ? (recent ? "" : "Épisode du ") + fmt(e.d) : fmt(e.d) + (place(e) ? " · " + place(e) : "")) + "</small>" + seenMark(h) +
+    '<button class="minibtn" data-act="watch" data-direct="1"' + dataItem(e) + ">" + ICON.play + " Voir le show</button>" +
     (hl ? '<span class="hlmini">' + ICON.play + " Highlights</span>" : "") +
     '<button class="cbtn seen' + (h ? " on" : "") + '" data-act="seen"' + dataItem(e) + ' aria-label="Je l’ai vu">' + (h ? ICON.check : ICON.eye) + "</button></div>";
 }
@@ -287,7 +314,8 @@ function seenInfo(h) {
 function srcLine(r) { return r && r.s ? '<small class="src">Source : ' + (okHttp(r.u) ? '<a href="' + esc(r.u) + '" target="_blank" rel="noopener">' + esc(r.s) + "</a>" : esc(r.s)) + "</small>" : ""; }
 function cardList(e) {
   if (!e.card || !e.card.length || (e.d && diff(e.d) < 0)) return "";
-  return '<div class="matchcard"><small>Carte annoncée</small><ul>' + e.card.map(m => "<li>" + esc(m) + "</li>").join("") + "</ul></div>";
+  return '<div class="matchcard"><small>Carte annoncée</small><ul>' + e.card.map(m => "<li>" + esc(m) + "</li>").join("") + "</ul>" +
+    (e.kind === "ple" && pickable(e) ? '<button class="btn small pickbtn" data-act="pick"' + itemData(e) + ">🎯 Faire mon pronostic</button>" : "") + "</div>";
 }
 function epCard(e) {
   const h = seenOf(e), r = recapOf(e), x = e.d ? dt(e.d) : null, past = e.d && diff(e.d) < 0;
@@ -297,7 +325,7 @@ function epCard(e) {
     '<div class="epbody"><a class="eptitle" href="' + esc(e.l) + '" target="_blank" rel="noopener">' + esc(e.t) + "</a>" +
     '<small class="epmeta">' + (meta || "À confirmer") + "</small>" + (past ? "" : timeLine(e)) + cardList(e) +
     (r ? '<p class="recap">' + esc(r.txt) + "</p>" + srcLine(r) : "") + seenInfo(h) +
-    '<div class="eplinks">' + (aired(e) ? hlBtn(e.k, e.show || "PLE", e.d, "hllink") : "") + (e.kind === "ple" ? remindBtn(e) : "") + "</div></div>" +
+    '<div class="eplinks">' + (aired(e) ? '<button class="hllink watchlink" data-act="watch" data-direct="1"' + itemData(e) + ">" + ICON.play + " Voir le show</button>" + hlBtn(e.k, e.show || "PLE", e.d, "hllink") : "") + (e.kind === "ple" ? remindBtn(e) : "") + "</div></div>" +
     (aired(e) ? '<button class="seenbtn' + (h ? " on" : "") + '" data-act="seen"' + dataItem(e) + ' aria-label="Je l’ai vu">' + (h ? ICON.check : ICON.eye) + "</button>" : "") +
     "</article>";
 }
@@ -355,6 +383,8 @@ export function homeView() {
   h += '<h2>À venir</h2><div class="row">' + sp[0].map(e => pleCard(e, true)).join("") + "</div>";
   const st = storylineTile(), dc = discoverTile();
   if (st || dc) h += '<div class="tiles2">' + st + dc + "</div>";
+  const pt = pollTile(), pk = pickTile();
+  if (pt || pk) h += '<div class="tiles2 play">' + pt + pk + "</div>";
   h += artSection("Dernières infos", articles([], 6));
   h += '<div class="actsec">' + activitySection() + "</div>";
   h += '<h2>Promotions</h2><div class="row">' + Object.keys(P).map(promoCard).join("") + "</div>";
@@ -421,13 +451,23 @@ function tab(label, href, on, logo) {
   return logo ? '<a class="tab logo' + (on ? " on" : "") + '" href="' + href + '" aria-label="' + esc(label) + '"><img src="' + esc(logo) + '" alt="' + esc(label) + '"></a>'
     : '<a class="tab' + (on ? " on" : "") + '" href="' + href + '">' + esc(label) + "</a>";
 }
+// Promotions rangées dans l'onglet d'une autre (la AAA appartient à la WWE)
+export const PARENT = { AAA: "WWE" };
+const hostOf = k => (PARENT[k] && S.P[PARENT[k]] ? PARENT[k] : k);
 export function tabsView(route) {
-  const cur = route.name === "promo" ? route.k : "Accueil";
-  let h = '<nav class="tabs">' + ["Accueil"].concat(Object.keys(S.P)).map(t => tab(t, t === "Accueil" ? "#/" : "#/p/" + encodeURIComponent(t), t === cur, t === "Accueil" ? "" : logoOf(t, ""))).join("") + "</nav>";
-  if (route.name === "promo" && S.P[route.k] && S.P[route.k].s) {
-    h += '<nav class="tabs sub">' + ["Tout"].concat(Object.keys(S.P[route.k].s)).map(t => {
-      const on = (t === "Tout" && !route.n) || t === route.n;
-      return tab(t, "#/p/" + encodeURIComponent(route.k) + (t === "Tout" ? "" : "/" + encodeURIComponent(t)), on, t === "Tout" ? "" : logoOf(route.k, t));
+  const cur = route.name === "promo" ? hostOf(route.k) : "Accueil";
+  const top = Object.keys(S.P).filter(k => hostOf(k) === k);
+  let h = '<nav class="tabs">' + ["Accueil"].concat(top).map(t => tab(t, t === "Accueil" ? "#/" : "#/p/" + encodeURIComponent(t), t === cur, t === "Accueil" ? "" : logoOf(t, ""))).join("") + "</nav>";
+  if (route.name === "promo" && S.P[cur]) {
+    const kids = Object.keys(PARENT).filter(c => PARENT[c] === cur && S.P[c]), shows = Object.keys(S.P[cur].s || {});
+    if (shows.length || kids.length) h += '<nav class="tabs sub">' + ["Tout"].concat(shows).map(t => {
+      const on = route.k === cur && ((t === "Tout" && !route.n) || t === route.n);
+      return tab(t, "#/p/" + encodeURIComponent(cur) + (t === "Tout" ? "" : "/" + encodeURIComponent(t)), on, t === "Tout" ? "" : logoOf(cur, t));
+    }).join("") + kids.map(c => tab(c, "#/p/" + encodeURIComponent(c), route.k === c, logoOf(c, ""))).join("") + "</nav>";
+    // les shows de la promotion rangée (Lucha Libre AAA…)
+    if (route.k !== cur && S.P[route.k].s) h += '<nav class="tabs sub">' + ["Tout " + route.k].concat(Object.keys(S.P[route.k].s)).map((t, i) => {
+      const on = (i === 0 && !route.n) || t === route.n;
+      return tab(t, "#/p/" + encodeURIComponent(route.k) + (i === 0 ? "" : "/" + encodeURIComponent(t)), on, i === 0 ? "" : logoOf(route.k, t));
     }).join("") + "</nav>";
   }
   return h;
