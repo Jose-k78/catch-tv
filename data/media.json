@@ -1,6 +1,12 @@
 {
  "updated": "2026-10-29",
- "bg": {},
+ "bg": {
+  "home": {
+   "u": "media/bg/home-mvt85gph.mp4",
+   "size": 1927084,
+   "at": "2026-10-29"
+  }
+ },
  "music": {
   "u": "media/music-mvt80edn.mp3",
   "n": "MARIGOLD「MARIGOLD GO!」 (1)",
