@@ -11,6 +11,7 @@ const sources = read("data/sources.json", { items: [] }).items || [];
 const prev = read(OUT, { at: "", items: [], yt: {}, rss: {}, ch: {} });
 const UA = { "User-Agent": "Mozilla/5.0 (compatible; TCC-TV-robot/1.0; +https://jose-k78.github.io/catch-tv/)", "Accept-Language": "fr-FR,fr;q=0.9,en;q=0.8" };
 const get = async (u, ms) => { const c = new AbortController(), t = setTimeout(() => c.abort(), ms || 15000); try { const r = await fetch(u, { headers: UA, signal: c.signal, redirect: "follow" }); return r.ok ? await r.text() : ""; } catch (e) { return ""; } finally { clearTimeout(t); } };
+const diag = {};                    // compte rendu du passage (gardé dans data/feed.json, visible pour le débogage)
 const log = (...a) => console.log(...a);
 
 // ---------- petits outils ----------
@@ -44,14 +45,14 @@ async function feedUrl(s) {
   const home = await get(s.u);
   const m = home.match(/<link[^>]+type=["']application\/(?:rss|atom)\+xml["'][^>]*>/i);
   const href = m && (m[0].match(/href=["']([^"']+)["']/i) || [])[1];
-  const cands = (href ? [new URL(href, s.u).href] : []).concat([new URL("feed/", s.u).href, new URL("/feed", s.u).href, new URL("/rss", s.u).href, new URL("/rss.xml", s.u).href]);
+  const cands = (href ? [new URL(href, s.u).href] : []).concat(["feed/", "/feed", "/rss", "/rss.xml", "/feed.xml", "/rss.php", "/index.xml", "/feed/rss", "/actualites/rss", "/rss/actualites"].map(x => new URL(x, s.u).href));
   for (const c of cands) { const x = await get(c); if (/<(rss|feed)[\s>]/i.test(x)) return c; }
   return "";
 }
 async function news() {
   const out = [], rss = {};
   for (const s of sources.filter(x => x.on !== false && (x.use || []).indexOf("actu") >= 0)) {
-    const u = await feedUrl(s); if (!u) { log("pas de flux pour", s.n); continue; }
+    const u = await feedUrl(s); if (!u) { log("pas de flux pour", s.n); diag[s.n] = "pas de flux RSS trouvé"; continue; }
     rss[s.u] = u;
     const x = await get(u); let n = 0;
     (x.match(/<item[\s>][\s\S]*?<\/item>|<entry[\s>][\s\S]*?<\/entry>/gi) || []).forEach(it => {
@@ -64,7 +65,7 @@ async function news() {
       const cats = (it.match(/<category[^>]*>([\s\S]*?)<\/category>/gi) || []).map(decode).join(" ");
       out.push({ t: t.slice(0, 200), u: link, s: s.n, d: d, tags: tagsOf(t + " " + cats) }); n++;
     });
-    log(s.n, ":", n, "articles", u);
+    log(s.n, ":", n, "articles", u); diag[s.n] = n + " articles (7 j)";
   }
   // fusion avec les articles déjà trouvés (même adresse = même article), 7 jours, 60 au plus
   const seen = {}, all = out.concat(prev.items || []).filter(a => { if (seen[a.u] || a.d < daysAgo(7)) return false; return (seen[a.u] = 1); });
@@ -108,7 +109,7 @@ function airDay(s, pub) {
 const WIN = /\b(wins?|won|defeats?|defeated|retains?|retained|crowned|new champion|beats?|victorious|captures?|dethrones?|triumphs?)\b/i;
 // titre neutre « A contre B » (sans vainqueur) ; sinon le titre d'origine, marqué spoiler s'il dévoile un résultat
 function neutral(t) {
-  let x = t.replace(/^(?:full match|full segment|wwe|aew|roh|tna|cmll|njpw)\s*[:\-–—|]\s*/i, "").replace(/^[^:]{0,60}:\s*(?=[^:]*\bvs\b)/i, "");
+  let x = t.replace(/^(?:full match|full segment|wwe|aew|roh|tna|cmll|njpw)\s*[:\-–—|]?\s*/i, "").replace(/^[^:]{0,60}:\s*(?=[^:]*\bvs\b)/i, "");
   const vs = x.match(/^(.{2,80}?)\s+vs\.?\s+(.{2,120}?)(?:\s*(?:[:\-–—|(]|\bat\b|\bon\b|\bin\b)|$)/i);
   if (vs) return { t: (vs[1] + " contre " + vs[2]).replace(/\s+/g, " ").trim().slice(0, 150) };
   return { t: x.slice(0, 150), sp: WIN.test(x) };
@@ -131,7 +132,7 @@ async function videos() {
   const yt = {}, ch = {};
   Object.keys(prev.yt || {}).forEach(key => { if (key.slice(-10) >= daysAgo(30)) yt[key] = prev.yt[key]; });
   for (const c of CHANNELS) {
-    const id = await resolve(c); if (!id) { log("chaîne introuvable :", c.k[0]); continue; }
+    const id = await resolve(c); if (!id) { log("chaîne introuvable :", c.k[0]); diag["YouTube " + c.k[0]] = "chaîne introuvable"; continue; }
     if (!c.id) ch[c.k[0]] = id;
     const x = await get("https://www.youtube.com/feeds/videos.xml?channel_id=" + id); let n = 0;
     (x.match(/<entry>[\s\S]*?<\/entry>/g) || []).forEach(en => {
@@ -145,7 +146,7 @@ async function videos() {
       const nt = neutral(title);
       list.push(Object.assign({ id: vid, t: nt.t }, nt.sp ? { sp: true } : {})); n++;
     });
-    log(c.k[0], ":", n, "nouvelles vidéos rangées");
+    log(c.k[0], ":", n, "nouvelles vidéos rangées"); diag["YouTube " + c.k[0]] = n + " nouvelles vidéos";
   }
   return { yt: yt, ch: ch };
 }
@@ -155,11 +156,11 @@ export { neutral, placeVideo, tagsOf, dateIn };
 if (!process.env.ROBOT_TEST) {
   const a = await news(), v = await videos();
   const next = { at: "", items: a.items, yt: v.yt, rss: Object.assign({}, prev.rss || {}, a.rss), ch: Object.assign({}, prev.ch || {}, v.ch) };
-  const same = JSON.stringify(Object.assign({}, prev, { at: "" })) === JSON.stringify(next);
+  const same = JSON.stringify(Object.assign({}, prev, { at: "", diag: undefined })) === JSON.stringify(next);
   const old = !prev.at || Date.now() - Date.parse(prev.at) > 3 * 3600e3;
   if (same && !old) log("rien de neuf");
   else {
-    next.at = new Date().toISOString();
+    next.at = new Date().toISOString(); next.diag = diag;
     fs.writeFileSync(OUT, JSON.stringify(next, null, 1) + "\n");
     log("data/feed.json écrit :", next.items.length, "articles,", Object.keys(next.yt).length, "shows avec vidéos");
   }
