@@ -1,5 +1,11 @@
 {
- "updated": "",
+ "updated": "2026-10-29",
  "bg": {},
- "music": null
+ "music": {
+  "u": "media/music-mvt80edn.mp3",
+  "n": "MARIGOLD「MARIGOLD GO!」 (1)",
+  "size": 3452478,
+  "vol": 0.4,
+  "at": "2026-10-29"
+ }
 }
