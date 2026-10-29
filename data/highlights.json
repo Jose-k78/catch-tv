@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-28",
+ "updated": "2026-10-29",
  "note": "Vidéos des chaînes officielles uniquement. res = résultats (spoilers, affichés seulement à la demande). m = résumé match par match (promotions japonaises).",
  "items": {
   "WWE|Raw|2026-10-26": {
@@ -222,6 +222,22 @@
    ],
    "s": "PWTorch",
    "u": "https://www.pwtorch.com/site/2026/10/27/nxt-tv-results-10-27-wellss-live-report-on-ek-prosper-vs-jackson-drake-dusty-classic-semifinals-evolves-chantel-monroe-debuts-more/"
+  },
+  "AEW|Dynamite|2026-10-28": {
+   "v": [],
+   "res": [
+    "The Cut (Jay White et David Finlay) a battu les Death Riders (Jon Moxley et Daniel Garcia)",
+    "The Cut et leurs alliés ont attaqué les Death Riders après le match ; Claudio Castagnoli est venu à la rescousse",
+    "Kyle Fletcher a battu Jungle Jack Perry",
+    "Les Motor City Machine Guns (Alex Shelley et Chris Sabin) ont battu FTR (Dax Harwood et Cash Wheeler) dans le 3e match de leur série au meilleur des cinq (2-1 pour MCMG)",
+    "Marina Shafir a battu Rachel Armstrong par soumission",
+    "Darby Allin a battu Josh Alexander et conserve le titre TNT",
+    "Queen Aminata a battu Persephone et remporte le titre TBS",
+    "Will Ospreay contre Kyle Fletcher pour le titre mondial AEW officialisé pour Full Gear ; Swerve Strickland réclame un Texas Death Match à Full Gear",
+    "Jay White a projeté Jon Moxley sur le béton ; Claudio Castagnoli évacué sur civière après une bagarre générale"
+   ],
+   "s": "WrestleView",
+   "u": "https://www.wrestleview.com/top-story/396143-aew-fright-night-dynamite-results-two-title-matches-10-28-26/"
   }
  }
 }
