@@ -1,19 +1,9 @@
 {
- "at": "2026-10-29T18:15:25.012Z",
+ "at": "2026-10-29T19:26:42.819Z",
  "items": [
   {
-   "t": "Pourquoi John Cena sera de retour à WWE RAW le 2 novembre 2026 ?",
-   "u": "https://www.catch-newz.com/wwe/newz/60745-pourquoi-john-cena-sera-de-retour-a-wwe-raw-le-2-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-29",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
-  },
-  {
-   "t": "Une nouvelle storyline est sur la table pour Paul Heyman",
-   "u": "https://www.catch-newz.com/wwe/newz/60806-une-nouvelle-storyline-est-sur-la-table-pour-paul-heyman",
+   "t": "Qui pourrait remplacer Bruce Prichard à la WWE ?",
+   "u": "https://www.catch-newz.com/wwe/newz/60807-qui-pourrait-remplacer-bruce-prichard-a-la-wwe",
    "s": "Catch-Newz",
    "d": "2026-10-29",
    "tags": [
@@ -48,6 +38,25 @@
    "tags": [
     "AEW",
     "Dynamite"
+   ]
+  },
+  {
+   "t": "Pourquoi John Cena sera de retour à WWE RAW le 2 novembre 2026 ?",
+   "u": "https://www.catch-newz.com/wwe/newz/60745-pourquoi-john-cena-sera-de-retour-a-wwe-raw-le-2-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-29",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
+  {
+   "t": "Une nouvelle storyline est sur la table pour Paul Heyman",
+   "u": "https://www.catch-newz.com/wwe/newz/60806-une-nouvelle-storyline-est-sur-la-table-pour-paul-heyman",
+   "s": "Catch-Newz",
+   "d": "2026-10-29",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -89,16 +98,6 @@
    ]
   },
   {
-   "t": "Résultats de WWE NXT du 27 octobre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/60759-wwe-nxt-27-octobre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-27",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
-  },
-  {
    "t": "WWE Raw du 26 octobre : Liv Morgan contre Becky Lynch, Sami Zayn défend son titre",
    "u": "https://www.voxcatch.fr/2026/10/27/resultats-wwe-raw-26-octobre-2026/",
    "s": "VOXcatch",
@@ -106,6 +105,16 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Résultats de WWE NXT du 27 octobre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/60759-wwe-nxt-27-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-27",
+   "tags": [
+    "WWE",
+    "NXT"
    ]
   },
   {
@@ -164,6 +173,18 @@
     "id": "qGrINCcGIRI",
     "t": "Isla Dawn contre Robyn Renegade"
    }
+  ],
+  "WWE|Evolve|2026-10-28": [
+   {
+    "id": "qtEVkuho5WY",
+    "t": "Sloane Jacobs holds an Admiration Ceremony for Nikkita Lyons: Evolve highlights, Oct. 28, 2026"
+   }
+  ],
+  "WWE|SmackDown|2026-10-28": [
+   {
+    "id": "Wm53CCZILWg",
+    "t": "EXCLUSIVE: Jade Cargill, Michin & B-Fab vow to run SmackDown: Main Event highlights, Oct. 28, 2026"
+   }
   ]
  },
  "rss": {
@@ -174,12 +195,13 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/newz/60807-qui-pourrait-remplacer-bruce-prichard-a-la-wwe",
    "https://www.catch-newz.com/aew/resultats/60789-aew-dynamite-28-octobre-2026",
+   "https://www.catch-newz.com/aew/resultats/60803-spoilers-aew-collision-31-octobre-2026",
+   "https://www.catch-newz.com/international/newz/60794-preview-tna-impact-29-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/60759-wwe-nxt-27-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60745-pourquoi-john-cena-sera-de-retour-a-wwe-raw-le-2-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60806-une-nouvelle-storyline-est-sur-la-table-pour-paul-heyman",
-   "https://www.catch-newz.com/aew/resultats/60803-spoilers-aew-collision-31-octobre-2026",
-   "https://www.catch-newz.com/international/newz/60794-preview-tna-impact-29-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60805-le-john-cena-classic-meticuleusement-prepare",
    "https://www.catch-newz.com/wwe/newz/60804-la-wwe-a-bien-un-plan-de-secours-pour-relocaliser-wrestlemania-43",
    "https://www.catch-newz.com/wwe/newz/60774-wwe-crown-jewel-2026-change-de-lieu",
@@ -207,9 +229,9 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "5 articles (7 j)",
-  "YouTube WWE": "1 nouvelles vidéos",
+  "YouTube WWE": "2 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
