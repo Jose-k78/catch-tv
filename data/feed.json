@@ -1,6 +1,26 @@
 {
- "at": "2026-10-29T20:15:05.018Z",
+ "at": "2026-10-29T21:15:18.066Z",
  "items": [
+  {
+   "t": "Preview : AEW Collision du 31 octobre 2026",
+   "u": "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-29",
+   "tags": [
+    "AEW",
+    "Collision"
+   ]
+  },
+  {
+   "t": "Preview : ROH du 29 octobre 2026",
+   "u": "https://www.catch-newz.com/aew/newz/60808-preview-roh-du-29-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-29",
+   "tags": [
+    "AEW",
+    "ROH"
+   ]
+  },
   {
    "t": "Spoilers de AEW Collision du 31 octobre 2026",
    "u": "https://www.catch-newz.com/aew/resultats/60803-spoilers-aew-collision-31-octobre-2026",
@@ -196,6 +216,8 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/60789-aew-dynamite-28-octobre-2026",
+   "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026",
+   "https://www.catch-newz.com/aew/newz/60808-preview-roh-du-29-octobre-2026",
    "https://www.catch-newz.com/aew/resultats/60803-spoilers-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/international/newz/60794-preview-tna-impact-29-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60807-qui-pourrait-remplacer-bruce-prichard-a-la-wwe",
@@ -229,7 +251,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 3 nouveaux articles lus sur la page d'accueil (3 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "5 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
