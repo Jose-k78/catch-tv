@@ -4,7 +4,7 @@ import { firebaseConfig, ADMIN_UID } from "./config.js";
 import { S, setBackend, B, ACT, FORM, onChange, changed, prof, avatar, need, nameOf } from "./state.js";
 import { loadContent } from "./content.js";
 import { ICON, toast } from "./util.js";
-import { homeView, promoView, showView, tabsView, creditsView } from "./views/catalog.js";
+import { homeView, promoView, showView, tabsView, creditsView, evPageView } from "./views/catalog.js";
 import { matchesView } from "./views/matches.js";
 import { titlesView, titleView } from "./views/titles.js";
 import { searchView, wrestlerView, fillWiki, afterSearch } from "./views/search.js";
@@ -34,19 +34,21 @@ import { mountBg, armMusic, refreshMedia, updateMusicBtn } from "./media.js";
 import { trophiesView, checkTrophies } from "./views/trophies.js";
 import { mountTicker } from "./views/ticker.js";
 import { renderWImage } from "./views/wimage.js";
+import { loadPushCfg, syncPush, resetPushSync } from "./push.js";
+import "./share.js";
 
 let route = { name: "home" }, routeSubs = [], userSubs = [], dirty = false, searchFocused = false;
 const NEEDS_USER = { settings: 1, editprofile: 1, chat: 1, newchat: 1, conv: 1, convinfo: 1, profile: 1, members: 1, favs: 1, notifs: 1, activity: 1, ideas: 1, trophies: 1 };
 const FORM_VIEWS = { auth: 1, settings: 1, editprofile: 1 };
 const REL = {
-  home: ["content", "images", "history", "auth", "tick", "profile", "spoil", "activity", "polls", "pollVotes", "picks", "hof"], promo: ["content", "images", "history", "auth", "tick", "spoil", "polls"],
+  home: ["content", "images", "history", "auth", "tick", "profile", "spoil", "activity", "polls", "pollVotes", "picks", "hof", "push", "ann"], promo: ["content", "images", "history", "auth", "tick", "spoil", "polls"],
   profile: ["profile", "profiles", "history", "otherHistory", "auth", "friends", "feuds", "blocks", "memberFriends", "tick", "slammys", "myact", "pollVotes", "ideas"], chat: ["room", "convs", "reads", "profiles", "auth", "blocks"],
-  convinfo: ["convs", "reads", "profiles", "auth", "blocks", "room", "msgs"], newchat: ["users", "auth"], settings: ["auth", "route", "reports", "blocks", "profiles", "images", "media", "ideas"], editprofile: ["profile", "auth", "profiles"], auth: ["auth"],
-  matches: ["route", "history", "auth"], credits: ["images"], wrestler: ["profile", "spoil", "history", "auth"], search: [], titles: ["history", "spoil"], title: ["history", "spoil"],
-  notifs: ["notifs", "profiles", "reads", "blocks"], activity: ["activity", "profiles", "blocks", "areplies"], storyline: [], roster: ["profile"],
-  members: ["users", "friends", "feuds", "blocks", "profiles", "auth", "tick"], favs: ["profile", "profiles", "friends", "auth"], hl: ["history", "spoil"],
-  event: ["event", "history", "auth"],
-  polls: ["polls", "pollVotes", "auth", "blocks", "hof"], picks: ["content", "picks", "profiles", "auth", "blocks", "tick"], pick: ["content", "picks", "profiles", "auth", "blocks", "tick"],
+  convinfo: ["convs", "reads", "profiles", "auth", "blocks", "room", "msgs"], newchat: ["users", "auth"], settings: ["auth", "route", "reports", "blocks", "profiles", "images", "media", "ideas", "push", "ann"], editprofile: ["profile", "auth", "profiles"], auth: ["auth"],
+  matches: ["route", "history", "auth", "content"], credits: ["images"], wrestler: ["profile", "spoil", "history", "auth", "content"], search: [], titles: ["history", "spoil", "content"], title: ["history", "spoil", "content"],
+  notifs: ["notifs", "profiles", "reads", "blocks", "ann"], activity: ["activity", "profiles", "blocks", "areplies"], storyline: ["content"], roster: ["profile", "content"],
+  members: ["users", "friends", "feuds", "blocks", "profiles", "auth", "tick"], favs: ["profile", "profiles", "friends", "auth", "content"], hl: ["history", "spoil", "content"],
+  event: ["event", "history", "auth"], cal: ["content", "history", "auth", "images", "spoil", "tick", "picks"],
+  polls: ["polls", "pollVotes", "auth", "blocks", "hof", "content"], picks: ["content", "picks", "profiles", "auth", "blocks", "tick"], pick: ["content", "picks", "profiles", "auth", "blocks", "tick"],
   ideas: ["ideas", "profiles", "auth", "blocks"],
   trophies: ["profile", "profiles", "history", "pollVotes", "picks", "friends", "feuds", "ideas", "myact", "slammys", "auth", "content"],
 };
@@ -81,6 +83,7 @@ function parse() {
     case "roster": return S.P[parts[1]] ? { name: "roster", k: parts[1], g: parts[2] || "" } : { name: "home" };
     case "hl": return S.P[parts[1]] ? { name: "hl", k: parts[1], show: parts[2] || "PLE", d: parts[3] || "" } : { name: "home" };
     case "evenement": return parts[1] ? { name: "event", ref: parts.slice(1).join("/").slice(0, 160) } : { name: "search", q: "" };
+    case "ev": return S.P[parts[1]] ? { name: "cal", k: parts[1], show: parts[2] || "PLE", d: parts[3] || "", t: parts[3] === "-" ? (parts[4] || "") : "" } : { name: "home" };
     default: return { name: "home" };
   }
 }
@@ -171,6 +174,7 @@ function render() {
     case "storyline": h = storylineView(route.id); break;
     case "roster": h = rosterView(route.k, route.g); break;
     case "event": h = eventView(route.ref); break;
+    case "cal": h = evPageView(route.k, route.show, route.d, route.t); break;
   }
   app.innerHTML = h;
   if (route.name !== "conv") applyChatTheme("");
@@ -192,7 +196,7 @@ function render() {
 const NAV = [["home", "#/", "Accueil", "home"], ["search", "#/recherche", "Recherche", "search"], ["members", "#/membres", "Membres", "globe"], ["chat", "#/chat", "Messages", "chat"], ["me", "#/profil", "Profil", "user"]];
 function navOn(id) {
   const r = route.name;
-  if (id === "home") return r === "home" || r === "promo" || r === "titles" || r === "title" || r === "matches" || r === "hl" || r === "polls" || r === "picks" || r === "pick";
+  if (id === "home") return r === "home" || r === "promo" || r === "titles" || r === "title" || r === "matches" || r === "hl" || r === "polls" || r === "picks" || r === "pick" || r === "cal";
   if (id === "search") return r === "search" || r === "wrestler" || r === "event";
   if (id === "members") return r === "members" || (r === "profile" && S.user && route.uid && route.uid !== S.user.uid);
   if (id === "chat") return r === "chat" || r === "conv" || r === "newchat" || r === "convinfo";
@@ -275,6 +279,7 @@ function onUser(u) {
   S.user = u; S.authReady = true; S.profile = null; S.history = {}; S.room = []; S.convs = []; S.reads = {}; S.convMsgs = {};
   S.friends = []; S.feuds = []; S.blocks = []; S.reports = []; S.users = null; S.memberFriends = {}; S.notifs = []; S.activity = []; resetSocial();
   S.fsPolls = []; S.pollVotes = []; S.picks = []; S.ideas = []; S.areplies = {}; S.athread = {}; S.banners = {}; S.myAct = []; S.slammys = []; S.hof = {}; S.hofReady = false;
+  S.push = null; S.ann = []; resetPushSync();
   S.isAdmin = !!u && (S.demo ? u.uid === B.demoAdmin() : (!!ADMIN_UID && u.uid === ADMIN_UID));
   if (u) {
     const me = u.uid;
@@ -317,6 +322,14 @@ function onUser(u) {
     userSubs.push(B.watchMyActivity(me, list => { S.myAct = list || []; changed("myact"); }));
     userSubs.push(B.watchHof(m => { S.hof = m || {}; S.hofReady = true; changed("hof"); }));
     userSubs.push(B.watchSlammys(list => { S.slammys = list || []; (list || []).forEach(x => need(x.uid)); changed("slammys"); }));
+    userSubs.push(B.watchPush(me, d => { S.push = d || {}; changed("push"); syncPush(); }));
+    let annInit = false; const annSeen = {};
+    userSubs.push(B.watchAnnonces(list => {
+      S.ann = list || [];
+      // nouvelle annonce pendant que l'app est ouverte : petit message en haut
+      if (annInit) S.ann.filter(a => !annSeen[a.id] && a.by !== me && Date.now() - a.at < 3600e3).slice(0, 1).forEach(a => toast("📣 " + a.t + (a.x ? "\n" + a.x.slice(0, 120) : ""), { top: true, ms: 7000, onClick: () => { location.hash = a.h && a.h.indexOf("#/") === 0 ? a.h : "#/notifs"; } }));
+      S.ann.forEach(a => { annSeen[a.id] = 1; }); annInit = true; changed("ann");
+    }));
     if (S.isAdmin) userSubs.push(B.watchReports(list => { S.reports = list || []; list.forEach(r => { need(r.by); need(r.target); }); changed("reports"); }));
   }
   changed("auth");
@@ -358,6 +371,33 @@ function mergeFeed(f) {
   });
 }
 
+// ---------- rechargement automatique des infos (retour sur l'app, et toutes les 30 min) ----------
+let contentSig = "", lastRefresh = Date.now(), refreshing = false;
+const sigOf = c => [JSON.stringify(c.updated || {}), (c.feed && c.feed.at) || "", ((c.news && c.news.items) || []).length, JSON.stringify(c.highlights || {}).length, JSON.stringify(c.titles || []).length,
+  JSON.stringify(c.P || {}).length, (c.polls || []).length, (c.storylines || []).length, JSON.stringify(c.recaps || {}).length, (c.matches || []).length, JSON.stringify(c.media || {}).length].join("|");
+const typing = () => document.activeElement && /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName);
+async function refreshContent() {
+  if (refreshing) return;
+  // pas de redessin sous les doigts pendant qu'on écrit : on réessaie dans une minute
+  if (typing()) { setTimeout(refreshContent, 60e3); return; }
+  refreshing = true; lastRefresh = Date.now();
+  try {
+    const c = await loadContent(), sig = sigOf(c);
+    if (sig === contentSig) return;
+    const oldNews = ((S.news && S.news.items) || []).length;
+    contentSig = sig;
+    S.P = c.P; S.news = c.news; S.recaps = c.recaps || {}; S.matches = c.matches || []; S.titles = c.titles || []; S.titlesUpdated = c.titlesUpdated || "";
+    S.highlights = c.highlights || {}; S.wrestlers = c.wrestlers || {}; S.storylines = c.storylines || []; S.rosters = c.rosters || {}; S.rostersSrc = c.rostersSrc || {};
+    const mediaNew = c.media && JSON.stringify(c.media) !== JSON.stringify(S.media);
+    S.sources = c.sources || []; S.updated = c.updated || {}; S.polls = c.polls || []; if (mediaNew) S.media = c.media;
+    mergeFeed(c.feed);
+    changed("content"); if (mediaNew) changed("media");
+    const more = ((S.news && S.news.items) || []).length - oldNews;
+    toast("🆕 Nouvelles infos" + (more > 0 ? " · " + more + " article" + (more > 1 ? "s" : "") : ""), { ms: 3500 });
+  } catch (e) {} finally { refreshing = false; }
+}
+document.addEventListener("visibilitychange", () => { if (!document.hidden && Date.now() - lastRefresh > 2 * 60e3) refreshContent(); });
+
 // ---------- démarrage ----------
 async function boot() {
   applyTheme();
@@ -365,8 +405,10 @@ async function boot() {
   const c = await loadContent(); S.P = c.P; S.news = c.news; S.recaps = c.recaps || {}; S.matches = c.matches || []; S.titles = c.titles || []; S.titlesUpdated = c.titlesUpdated || "";
   S.highlights = c.highlights || {}; S.wrestlers = c.wrestlers || {}; S.storylines = c.storylines || []; S.rosters = c.rosters || {}; S.rostersSrc = c.rostersSrc || {};
   S.sources = c.sources || []; S.updated = c.updated || {}; S.polls = c.polls || []; S.media = c.media || { bg: {}, music: null };
-  mergeFeed(c.feed);
+  mergeFeed(c.feed); contentSig = sigOf(c);
   tick(); setInterval(tick, 60000);
+  loadPushCfg();
+  setInterval(() => { if (!document.hidden) refreshContent(); }, 30 * 60e3);
   armMusic();
   let backend = null;
   if (firebaseConfig) {

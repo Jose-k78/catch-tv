@@ -1,0 +1,9 @@
+# Service Cloudflare des notifications TCC TV (installé par .github/workflows/push-worker.yml)
+name = "tcc-tv-push"
+main = "worker.mjs"
+compatibility_date = "2024-09-23"
+workers_dev = true
+
+[vars]
+ADMIN_UID = "gYOlkXsJc3WedSykoBNyeWg2ELx1"
+ORIGINS = "https://jose-k78.github.io"

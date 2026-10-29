@@ -8,10 +8,12 @@ import { isBlocked, confirmBox } from "../social.js";
 import { modal, okImg, okHttp, fileToDataUrl } from "../util.js";
 import { GIPHY_KEY } from "../config.js";
 import { cleanImageUrl } from "../modals.js";
+import { cardHTML, cardLabel, revealCard, cleanCard } from "../share.js";
+import { pushPing } from "../push.js";
 
 export const ROOM_NAME = "Gorilla Position";
 // texte affiché pour un message (photo / GIF sans texte)
-export const msgLabel = m => m.text || (m.gif ? "GIF" : m.img ? "📷 Photo" : "");
+export const msgLabel = m => m.text || (m.gif ? "GIF" : m.img ? "📷 Photo" : m.card && cleanCard(m.card) ? cardLabel(cleanCard(m.card)) : "");
 
 let USERS = null;
 const INFO = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6"/><path d="M12 7.6v.01"/></svg>';
@@ -283,8 +285,12 @@ export function renderMsgs(convId, force) {
     h += '<div class="mrow ' + cls + (m.id === flashId && Date.now() < flashUntil ? " flash" : "") + '" id="m-' + esc(m.id) + '">';
     if (!mine) h += '<div class="avslot">' + (!sn ? '<button class="avbtn" data-act="profile" data-uid="' + esc(m.uid) + '" aria-label="Profil">' + avatar(prof(m.uid), 28) + "</button>" : "") + "</div>";
     const big = !media(m) && /^\p{Extended_Pictographic}[\p{Extended_Pictographic}‍️\s]{0,6}$/u.test(m.text || "");
-    h += '<div class="mcol">' + (room && !mine && !sp ? '<div class="sender">' + esc(nickOf(convId, m.uid)) + "</div>" : "") + '<button class="bub' + (media(m) ? " media" : "") + (big ? " bigemo" : "") + '" data-act="msgmenu" data-id="' + esc(m.id) + '" data-uid="' + esc(m.uid) + '" data-conv="' + esc(convId) + '">' +
-      (media(m) ? '<img class="mimg" src="' + esc(media(m)) + '" alt="' + (m.gif ? "GIF" : "Photo") + '" loading="lazy">' : "") + (m.text ? '<span class="mtxt">' + esc(m.text) + "</span>" : "") + "</button>" +
+    // carte partagée (article, fiche, PLE…) : au-dessus du message ; sans message, un petit bouton « ⋯ » pour les options
+    const card = m.card ? cardHTML(m.card, m.id) : "", bubOn = !!(media(m) || m.text), mdata = ' data-id="' + esc(m.id) + '" data-uid="' + esc(m.uid) + '" data-conv="' + esc(convId) + '"';
+    h += '<div class="mcol">' + (room && !mine && !sp ? '<div class="sender">' + esc(nickOf(convId, m.uid)) + "</div>" : "") +
+      (card ? '<div class="mcardw">' + card + (!bubOn ? '<button class="mcmenu" data-act="msgmenu"' + mdata + ' aria-label="Options du message">⋯</button>' : "") + "</div>" : "") +
+      (bubOn || !card ? '<button class="bub' + (media(m) ? " media" : "") + (big ? " bigemo" : "") + '" data-act="msgmenu"' + mdata + ">" +
+      (media(m) ? '<img class="mimg" src="' + esc(media(m)) + '" alt="' + (m.gif ? "GIF" : "Photo") + '" loading="lazy">' : "") + (m.text ? '<span class="mtxt">' + esc(m.text) + "</span>" : "") + "</button>" : "") +
       (!sn || m.id === seenId ? '<div class="mtime">' + hhmm(m.at) + (m.id === seenId ? ' · <span class="vu">Vu</span>' : "") + "</div>" : "") + "</div></div>";
   });
   box.innerHTML = h;
@@ -326,8 +332,10 @@ export function refreshQuickEmoji(convId) {
 
 async function sendText(convId, text, extra) {
   if (convId === "general") await B.sendRoom(S.user.uid, text, extra);
-  else await B.sendDM(convId, S.user.uid, otherOf(convId), text, extra);
+  else { await B.sendDM(convId, S.user.uid, otherOf(convId), text, extra); pushPing({ type: "dm", conv: convId }); }
 }
+// carte spoiler touchée : on la dévoile
+ACT.cardsp = el => { revealCard(el.dataset.k); const f = document.querySelector("form.composer[data-conv]"); const id = f ? f.dataset.conv : (location.hash.split("/")[2] || "general"); renderMsgs(decodeURIComponent(id)); };
 FORM.send = async f => {
   const ta = document.getElementById("msgin"), text = ta.value.trim().slice(0, 1000), convId = f.dataset.conv;
   if (!text || !S.user) return;

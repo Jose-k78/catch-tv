@@ -1,6 +1,6 @@
 // Données d'un catcheur : fiche suivie (data/wrestlers.json), shows, prochain combat, derniers matchs, actu
 import { S } from "./state.js";
-import { diff, okHttp, okDay } from "./util.js";
+import { diff, okHttp, okDay, esc } from "./util.js";
 import { allPle, epis, recapOf, articles } from "./views/catalog.js";
 import { okVid } from "./views/highlights.js";
 
@@ -126,6 +126,55 @@ export function lastShow(name) {
     : "#/p/" + encodeURIComponent(best.k) + (isPle ? "" : "/" + encodeURIComponent(best.show));
   const MO = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."], p = best.d.split("-");
   return Object.assign(best, { label: (isPle ? title : best.k + " " + title) + " · " + (+p[2]) + " " + MO[+p[1] - 1], href: href });
+}
+
+// ---------- noms cliquables : chaque nom de catcheur connu de l'app mène à sa fiche ----------
+// (fiches, autres noms, champions, rosters de toutes les promotions ; le nom le plus long l'emporte : « Hijo de Stuka Jr. » avant « Stuka Jr. »)
+// Sensible à la casse : « Sting » ou « Rush » ne sont reconnus qu'avec leur majuscule.
+const STOP = new Set(["raw", "nxt", "aew", "wwe", "roh", "tna", "aaa", "cmll", "njpw", "impact", "evolve", "dynamite", "collision", "stardom", "marigold", "main event", "smackdown", "the", "les", "champion", "championne", "vacant"]);
+let lnRe = null, lnMap = null, lnOf = null;
+const rxq = s => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const plainA = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "");
+function nameIndex() {
+  const W = S.wrestlers || {}, R = S.rosters || {}, T = S.titles || [];
+  if (lnOf && lnOf[0] === W && lnOf[1] === R && lnOf[2] === T) return;
+  lnOf = [W, R, T]; lnMap = new Map();
+  const add = (alias, canon) => {
+    alias = String(alias || "").replace(/\s+/g, " ").trim();
+    if (alias.length < 3 || alias.length > 60 || !/\p{Lu}|\d/u.test(alias.charAt(0)) || STOP.has(alias.toLowerCase())) return;
+    if (!lnMap.has(alias)) lnMap.set(alias, canon);
+    const p = plainA(alias); if (p !== alias && !lnMap.has(p)) lnMap.set(p, canon);
+    // apostrophe droite ou typographique (Je'Von / Je’Von)
+    [alias.replace(/'/g, "’"), alias.replace(/’/g, "'")].forEach(v => { if (v !== alias && !lnMap.has(v)) lnMap.set(v, canon); });
+  };
+  Object.keys(W).forEach(k => { const w = W[k]; if (!w) return; add(k, k); (Array.isArray(w.a) ? w.a : []).forEach(a => add(a, k)); });
+  T.forEach(t => (Array.isArray(t.who) ? t.who : []).forEach(x => { x = String(x).replace(/\s*\(.*\)$/, ""); add(x, canonical(x)); }));
+  Object.keys(R).forEach(k => { const r = R[k] || {}; Object.keys(r).forEach(g => (Array.isArray(r[g]) ? r[g] : []).forEach(x => add(x, canonical(x)))); });
+  const keys = Array.from(lnMap.keys()).sort((a, b) => b.length - a.length);
+  try { lnRe = keys.length ? new RegExp("(^|[^\\p{L}\\p{N}])(" + keys.map(rxq).join("|") + ")(?=[^\\p{L}\\p{N}]|$)", "gu") : null; } catch (e) { lnRe = null; }
+}
+// texte -> HTML (échappé) avec les noms en liens
+export function linkNames(text) {
+  const s = String(text == null ? "" : text);
+  if (!s) return "";
+  nameIndex();
+  if (!lnRe) return esc(s);
+  let out = "", last = 0, m;
+  lnRe.lastIndex = 0;
+  while ((m = lnRe.exec(s))) {
+    const at = m.index + m[1].length;
+    out += esc(s.slice(last, at)) + '<a class="wl" href="#/catcheur/' + encodeURIComponent(lnMap.get(m[2])) + '">' + esc(m[2]) + "</a>";
+    last = at + m[2].length; lnRe.lastIndex = last;
+  }
+  return out + esc(s.slice(last));
+}
+// noms de catcheurs cités dans un texte (titre d'article…)
+export function namesIn(text) {
+  const s = String(text || ""), out = [];
+  nameIndex(); if (!lnRe || !s) return out;
+  let m; lnRe.lastIndex = 0;
+  while ((m = lnRe.exec(s))) { const c = lnMap.get(m[2]); if (out.indexOf(c) < 0) out.push(c); lnRe.lastIndex = m.index + m[1].length + m[2].length; }
+  return out;
 }
 
 // Noms connus de l'app (fiches suivies, catcheurs à découvrir, champions) pour les suggestions de recherche

@@ -1,6 +1,7 @@
 // Matchs à découvrir : sélection de la semaine (tirée au hasard), filtre par promotion, match au hasard
 import { S, ACT, changed } from "../state.js";
-import { esc, ICON, modal } from "../util.js";
+import { esc, ICON, modal, shAttr } from "../util.js";
+import { linkNames } from "../wrestlers.js";
 import { PREVIEW } from "../content.js";
 import { rateBtn } from "./mrate.js";
 
@@ -15,7 +16,7 @@ const ytUrl = id => "https://www.youtube.com/watch?v=" + id;
 function colorOf(k) { const c = (S.P[k] && S.P[k].c) || ["#444", "#111"]; return c.length >= 3 ? "linear-gradient(120deg," + c[0] + " 0 34%,#6b6b6b 34% 66%," + c[2] + " 66%)" : "linear-gradient(160deg," + c[0] + "," + c[1] + ")"; }
 
 function matchRow(m) {
-  return '<article class="mrowc"><div class="mbadge" style="background:' + colorOf(m.k) + '">' + esc(m.k) + '</div><div class="epbody"><b class="eptitle">' + esc(m.t) + "</b>" +
+  return '<article class="mrowc"' + shAttr({ ty: "vid", t: m.t, s: [m.k, m.ev].filter(Boolean).join(" · "), id: m.id }) + '><div class="mbadge" style="background:' + colorOf(m.k) + '">' + esc(m.k) + '</div><div class="epbody"><b class="eptitle">' + linkNames(m.t) + "</b>" +
     '<small class="epmeta">' + (m.ev ? esc(m.ev) + " · " : "") + "Match complet · chaîne officielle</small></div>" +
     '<div class="mrbtns"><button class="btn small" data-act="play" data-id="' + esc(m.id) + '" data-t="' + esc(m.t) + '">▶ Voir</button>' + rateBtn(m.k, m.t, m.ev || "", "") + "</div></article>";
 }

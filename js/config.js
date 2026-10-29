@@ -32,3 +32,7 @@ export const GIPHY_KEY = "";
 
 // Dépôt GitHub de l'app (page « Sources » de l'admin, état des mises à jour)
 export const GH_REPO = "Jose-k78/catch-tv";
+
+// Clé « push web » de Firebase (publique) pour les notifications. Laisse vide : l'admin la colle dans l'app
+// (Paramètres › Modération › Installer les notifications), elle est alors rangée dans data/push.json.
+export const VAPID_KEY = "";

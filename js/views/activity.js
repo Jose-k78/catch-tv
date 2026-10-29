@@ -6,6 +6,7 @@ import { isBlocked } from "../social.js";
 import { noteTarget } from "./mrate.js";
 import { errText } from "./account.js";
 import { trophyActivity, slammyIcon } from "./trophies.js";
+import { linkNames } from "../wrestlers.js";
 
 export const EMOJIS = ["👍", "🔥", "😂", "😮", "👏", "💯"];
 // titre court de ce qui a été noté ou commenté (pour les notifications)
@@ -50,7 +51,7 @@ function line(a) {
   const w = what(a), who = w.actor || a.uid;
   if (w.actor) need(w.actor);
   return '<div class="act"><a class="actav" href="' + (w.solo ? w.href : "#/profil/" + encodeURIComponent(who)) + '">' + (w.solo ? '<span class="actsolo">' + w.solo + "</span>" : avatar(prof(who), 32)) + '</a><div class="actbody"><a class="acttxt" href="' + w.href + '">' +
-    (w.solo ? "" : "<b>" + esc(nameOf(who)) + "</b> ") + w.txt + "</a>" + (a.comment ? '<q class="mycom">' + esc(a.comment) + "</q>" : "") + "<small>" + esc(timeLabel(a.at)) + "</small>" + actBar(a) + "</div></div>";
+    (w.solo ? "" : "<b>" + esc(nameOf(who)) + "</b> ") + w.txt + "</a>" + (a.comment ? '<q class="mycom">' + linkNames(a.comment) + "</q>" : "") + "<small>" + esc(timeLabel(a.at)) + "</small>" + actBar(a) + "</div></div>";
 }
 export function activityList(n) {
   const list = (S.activity || []).filter(a => !isBlocked(a.uid)).slice(0, n || 40);
@@ -80,10 +81,10 @@ function threadView(id) {
   reps.forEach(r => need(r.uid));
   const who = w.actor || a.uid;
   h += '<div class="thread"><div class="act big"><a class="actav" href="#/profil/' + encodeURIComponent(who) + '">' + (w.solo ? '<span class="actsolo">' + w.solo + "</span>" : avatar(prof(who), 40)) + '</a><div class="actbody"><a class="acttxt" href="' + w.href + '">' +
-    (w.solo ? "" : "<b>" + esc(nameOf(who)) + "</b> ") + w.txt + "</a>" + (a.comment ? '<q class="mycom">' + esc(a.comment) + "</q>" : "") + "<small>" + esc(timeLabel(a.at)) + "</small></div></div>" +
+    (w.solo ? "" : "<b>" + esc(nameOf(who)) + "</b> ") + w.txt + "</a>" + (a.comment ? '<q class="mycom">' + linkNames(a.comment) + "</q>" : "") + "<small>" + esc(timeLabel(a.at)) + "</small></div></div>" +
     '<div class="rxbar">' + rxChips(a, true) + "</div>" + rxWho(a) + "</div>";
   h += "<h2>Réponses" + (reps.length ? ' <small class="cnt">' + reps.length + "</small>" : "") + "</h2>";
-  h += reps.length ? '<div class="replies">' + reps.map(r => '<div class="reply"><a href="#/profil/' + encodeURIComponent(r.uid) + '">' + avatar(prof(r.uid), 30) + '</a><div class="rbody"><b>' + esc(nameOf(r.uid)) + "</b><p>" + esc(r.text) + "</p><small>" + esc(timeLabel(r.at)) +
+  h += reps.length ? '<div class="replies">' + reps.map(r => '<div class="reply"><a href="#/profil/' + encodeURIComponent(r.uid) + '">' + avatar(prof(r.uid), 30) + '</a><div class="rbody"><b>' + esc(nameOf(r.uid)) + "</b><p>" + linkNames(r.text) + "</p><small>" + esc(timeLabel(r.at)) +
     (S.user && (r.uid === S.user.uid || a.uid === S.user.uid || S.isAdmin) ? ' · <button class="linkbtn danger" data-act="ardel" data-id="' + esc(r.id) + '" data-a="' + esc(id) + '">Supprimer</button>' : "") + "</small></div></div>").join("") + "</div>"
     : '<p class="note">Pas encore de réponse.</p>';
   if (S.user) h += '<form class="replyform" data-form="areply" data-a="' + esc(id) + '"><input name="t" maxlength="300" autocomplete="off" placeholder="Ta réponse…" aria-label="Ta réponse" required><button class="btn small">Envoyer</button></form>';

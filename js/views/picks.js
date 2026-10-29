@@ -6,7 +6,7 @@ import { startOf, zoned, PARIS, whenParts } from "../time.js";
 import { allPle } from "./catalog.js";
 import { hlOf } from "./highlights.js";
 import { resultWinner, sideNames } from "./mrate.js";
-import { norm } from "../wrestlers.js";
+import { norm, linkNames } from "../wrestlers.js";
 import { errText } from "./account.js";
 
 // « Titre de NXT : Grayson Waller contre Tony D’Angelo » -> { label: "Titre de NXT", sides: ["Grayson Waller", "Tony D’Angelo"] }
@@ -85,7 +85,7 @@ export function pickView(k, d) {
     }).join("") + "</div>" + (w === "draw" ? '<small class="note small">Match nul</small>' : "") + "</div>";
   }).join("") + "</div>";
   const other = (e.card || []).filter(l => !sidesOf(l));
-  if (other.length) h += '<p class="note small">Aussi au programme : ' + other.map(esc).join(" · ") + "</p>";
+  if (other.length) h += '<p class="note small">Aussi au programme : ' + other.map(linkNames).join(" · ") + "</p>";
   if (mine && Object.keys(res).length) { const sc = scoreOf(mine, e, res); h += '<p class="pickscore">Ton score : <b>' + sc.ok + " / " + sc.n + "</b></p>"; }
   if (lk && all.length) h += "<h2>Classement de ce show</h2>" + board(all.map(p => ({ uid: p.uid, s: scoreOf(p, e, res) })));
   return h;

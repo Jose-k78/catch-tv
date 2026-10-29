@@ -3,7 +3,7 @@ import { S, B, ACT, FORM, prof, nameOf, avatar } from "../state.js";
 import { esc, toast, timeLabel } from "../util.js";
 import { errText } from "./account.js";
 import { isBlocked, confirmBox } from "../social.js";
-import { norm } from "../wrestlers.js";
+import { norm, linkNames } from "../wrestlers.js";
 
 export const wslug = name => norm(name).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 80) || "x";
 let replyTo = "";           // commentaire auquel on répond
@@ -20,7 +20,7 @@ function one(c, isReply) {
   const me = S.user && S.user.uid, liked = me && c.likes.indexOf(me) >= 0, mine = me === c.uid;
   return '<div class="com' + (isReply ? " rep" : "") + '"><a class="comav" href="#/profil/' + encodeURIComponent(c.uid) + '">' + avatar(prof(c.uid), isReply ? 28 : 36) + "</a>" +
     '<div class="combody"><div class="comhead"><a href="#/profil/' + encodeURIComponent(c.uid) + '"><b>' + esc(nameOf(c.uid)) + '</b></a><small>' + timeLabel(c.at) + "</small></div>" +
-    '<p class="comtxt">' + esc(c.text) + '</p><div class="comacts">' +
+    '<p class="comtxt">' + linkNames(c.text) + '</p><div class="comacts">' +
     '<button class="like' + (liked ? " on" : "") + '" data-act="clike" data-id="' + esc(c.id) + '" aria-pressed="' + !!liked + '" aria-label="J’aime">' + heart(liked) + "<span>" + (c.likes.length || "") + "</span></button>" +
     (!isReply ? '<button class="linkbtn" data-act="creply" data-id="' + esc(c.id) + '">Répondre</button>' : "") +
     (mine || S.isAdmin ? '<button class="linkbtn" data-act="cdel" data-id="' + esc(c.id) + '">Supprimer</button>' : "") +

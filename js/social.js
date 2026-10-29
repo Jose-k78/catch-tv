@@ -4,6 +4,7 @@ import { esc, modal, toast } from "./util.js";
 import { parisDay, parisHour } from "./time.js";
 import { feudCount } from "./feud.js";
 import { errText } from "./views/account.js";
+import { pushPing } from "./push.js";
 
 export const pairOf = (a, b) => [a, b].sort().join("_");
 const me = () => S.user && S.user.uid;
@@ -81,6 +82,7 @@ ACT.feud = el => {
     : "Une feud par jour : le compteur monte quand vous la lancez tous les deux le même jour (avant minuit, heure de Paris).";
   confirmBox("Vous voulez lancer une feud ?", sub, "🔥 Lancer la feud", () => run(B.sendFeud(me(), uid, parisDay()), r => {
     if (!r) return "Feud déjà lancée aujourd’hui";
+    pushPing({ type: "feud", other: uid });
     return r.countDay === parisDay() ? "🔥 " + r.count + " jour" + (r.count > 1 ? "s" : "") + " de feud avec " + name + " !" : "🔥 Feud lancée ! À " + name + " de répondre avant minuit";
   }));
 };

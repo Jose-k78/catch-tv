@@ -5,7 +5,7 @@ import { S, changed } from "../state.js";
 import { esc, ICON, fmt, okHttp, okDay } from "../util.js";
 import { PREVIEW } from "../content.js";
 import { templateParams, cleanWiki } from "../tech.js";
-import { promoIn, norm } from "../wrestlers.js";
+import { promoIn, norm, linkNames } from "../wrestlers.js";
 import { rateBtn, fromResult, mkey } from "./mrate.js";
 import { ytSearch, spoilBlock } from "./highlights.js";
 
@@ -199,12 +199,12 @@ export function eventView(ref) {
     '<small class="src">' + (e.sumLang === "en" ? "Résumé en anglais (pas de page en français). " : "") + "Source : Wikipédia (licence CC BY-SA)</small></div>";
   const show = e.title.slice(0, 40), yk = S.P[e.k] ? e.k : "";
   if (e.fights.length) {
-    h += '<h2>Les combats <small class="cnt">' + e.fights.length + '</small></h2><div class="list fights evfights">' + e.fights.map(f => '<div class="item"><span class="lbl"><b>' + esc(f.t) + "</b>" +
+    h += '<h2>Les combats <small class="cnt">' + e.fights.length + '</small></h2><div class="list fights evfights">' + e.fights.map(f => '<div class="item"><span class="lbl"><b>' + linkNames(f.t) + "</b>" +
       (f.stip || f.dark ? "<small>" + esc([f.dark ? "Avant-show" : "", f.stip].filter(Boolean).join(" · ")) + "</small>" : "") + "</span>" +
       '<span class="evbtns">' + rateBtn(e.k, f.t, show, e.d) + '<a class="chip ytchip" href="' + esc(ytSearch(yk || e.k, f.t.replace(/ contre /g, " vs ") + " " + e.title)) + '" target="_blank" rel="noopener" aria-label="Chercher la vidéo sur YouTube">▶ Vidéo</a></span></div>').join("") + "</div>" +
       '<p class="note small" style="margin-top:8px">☆ Note les combats que tu as vus : ils rejoignent ton historique des notes. Les titres sont neutres (noms par ordre alphabétique) pour ne pas trahir le vainqueur.</p>';
   } else h += '<p class="note" style="margin-top:14px">La page Wikipédia de cet événement ne contient pas de tableau des combats lisible par l’app.' + (okHttp(e.urlEn || e.url) ? ' <a href="' + esc(e.urlEn || e.url) + '" target="_blank" rel="noopener">Voir la page ↗</a>' : "") + "</p>";
-  if (e.res.length) h += "<h2>Résultats</h2>" + spoilBlock("Voir les résultats (spoiler)", '<ul class="res">' + e.res.map(r => "<li>" + esc(r) + "</li>").join("") + "</ul>") +
+  if (e.res.length) h += "<h2>Résultats</h2>" + spoilBlock("Voir les résultats (spoiler)", '<ul class="res">' + e.res.map(r => "<li>" + linkNames(r) + "</li>").join("") + "</ul>") +
     (e.resLang === "en" ? '<p class="note small" style="margin-top:8px">Résultats tirés de la page Wikipédia en anglais.</p>' : "");
   return h;
 }

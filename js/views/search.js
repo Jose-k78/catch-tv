@@ -1,10 +1,10 @@
 // Recherche : shows, PLE, promotions, catcheurs ; fiche catcheur (résumé, promotion, dernière apparition,
 // 3 derniers matchs, 5 matchs de référence, favori ⭐, commentaires) ; homonymes : choix du bon catcheur
 import { S } from "../state.js";
-import { esc, ICON, fmt, okHttp } from "../util.js";
-import { allPle } from "./catalog.js";
+import { esc, ICON, fmt, okHttp, shAttr } from "../util.js";
+import { allPle, evHref, artCard, evCard } from "./catalog.js";
 import { PREVIEW } from "../content.js";
-import { norm, canonical, wInfo, wShows, wTitles, upcomingFor, lastMatches, wNews, lastShow, knownNames, promoIn, alignOf, ALIGN } from "../wrestlers.js";
+import { norm, canonical, wInfo, wShows, wTitles, upcomingFor, lastMatches, wNews, lastShow, knownNames, promoIn, alignOf, ALIGN, linkNames } from "../wrestlers.js";
 import { starBtn } from "./favs.js";
 import { okVid, ytSearch, hlHref } from "./highlights.js";
 import { noSpoil, champHidden } from "../spoil.js";
@@ -25,7 +25,7 @@ function localResults(q) {
     const sh = S.P[k].s || {};
     Object.keys(sh).forEach(x => { if (norm(x).indexOf(n) >= 0 || norm(k + " " + x).indexOf(n) >= 0) out.push({ t: x, s: k + " · " + sh[x].j, h: "#/p/" + encodeURIComponent(k) + "/" + encodeURIComponent(x) }); });
   });
-  allPle().forEach(e => { if (norm(e.t).indexOf(n) >= 0) out.push({ t: e.t, s: e.k + " · " + fmt(e.d) + (e.w && e.w !== "—" ? " · " + e.w : ""), h: "#/p/" + encodeURIComponent(e.k) }); });
+  allPle().forEach(e => { if (norm(e.t).indexOf(n) >= 0) out.push({ t: e.t, s: e.k + " · " + fmt(e.d) + (e.w && e.w !== "—" ? " · " + e.w : ""), h: evHref(e) }); });
   return out.slice(0, 12);
 }
 // Catcheurs connus de l'app dont le nom contient la recherche
@@ -51,7 +51,7 @@ function resultsHTML(q) {
   const archH = norm(q).length >= 3 && !PREVIEW ? '<h2>' + (ev ? "Événements passés" : "Archives") + ' <small class="cnt">Wikipédia</small></h2><div id="evres"><p class="note small">Recherche des événements passés…</p></div>' : "";
   // un nom de show ou d'événement ne propose jamais de fiche catcheur
   const offer = !ev && !names.some(x => norm(x.n) === norm(q));
-  const wH = names.length || offer ? '<h2>Catcheurs et catcheuses</h2><div class="list">' + names.map(x => '<a class="item" href="#/catcheur/' + encodeURIComponent(x.n) + '"><span class="lbl"><b>' + esc(x.n) + "</b><small>" + esc(x.s) +
+  const wH = names.length || offer ? '<h2>Catcheurs et catcheuses</h2><div class="list">' + names.map(x => '<a class="item" href="#/catcheur/' + encodeURIComponent(x.n) + '"' + shAttr({ ty: "w", t: x.n, s: x.s, h: "#/catcheur/" + encodeURIComponent(x.n) }) + '><span class="lbl"><b>' + esc(x.n) + "</b><small>" + esc(x.s) +
     '</small></span><span class="chev">›</span></a>').join("") +
     (offer ? '<a class="item" href="#/catcheur/' + encodeURIComponent(q.trim()) + '"><span class="lbl"><b>' + esc(q.trim()) +
     "</b><small>Voir sa fiche : résumé, derniers matchs, matchs de référence</small></span><span class=\"chev\">›</span></a>" : "") + "</div>" : "";
@@ -107,8 +107,9 @@ export function wrestlerView(raw, wt) {
   const ls = lastShow(name), lock = noSpoil();
   let h = '<a class="back" href="#/recherche/' + encodeURIComponent(raw) + '">' + ICON.back + " Recherche</a>";
   // fiche résumé
+  const wcard = { ty: "w", t: name, s: [k, w && w.era].filter(Boolean).join(" · ") || "Fiche catcheur", h: "#/catcheur/" + encodeURIComponent(name) };
   h += '<section class="wcard"><div class="wtop"><div class="wtt"><span class="eyebrow">FICHE CATCHEUR</span><h1>' + esc(name) + "</h1>" +
-    (w && w.era ? '<small class="wera">' + esc(w.era) + "</small>" : "") + "</div>" + starBtn(name) + "</div>" +
+    (w && w.era ? '<small class="wera">' + esc(w.era) + "</small>" : "") + "</div>" + starBtn(name) + '<button class="iconbtn sharebtn" data-act="share"' + shAttr(wcard) + ' aria-label="Partager">↗</button></div>' +
     '<div id="wchoose"></div>' + wImageBox(name) +
     (w && w.txt ? '<p class="wtxt">' + esc(w.txt) + "</p>" : "") +
     '<div id="wiki" class="wiki">' + (PREVIEW ? (w && w.txt ? "" : '<p class="note">Le résumé Wikipédia s’affichera une fois l’app en ligne (l’aperçu bloque les connexions vers d’autres sites).</p>') : '<p class="note">Recherche de son résumé…</p>') + "</div>" +
@@ -123,7 +124,7 @@ export function wrestlerView(raw, wt) {
   h += "<h2>Ses 3 derniers matchs</h2>";
   if (last.length) {
     h += '<div class="list">' + last.map(m => '<div class="item"><span class="lbl"><b>' + esc(m.t || ((m.ev || m.k) + (m.d ? " du " + fmt(m.d) : ""))) + "</b><small>" + esc([m.k, m.ev].filter(Boolean).join(" · ")) + (m.d ? " · " + fmt(m.d) : "") + "</small>" +
-      (m.r ? '<span class="spoil inline"><button class="linkbtn spoilbtn" data-act="reveal">👀 Voir le résultat (spoiler)</button><span class="spoilbody">' + esc(m.r) + "</span></span>" : "") + "</span>" +
+      (m.r ? '<span class="spoil inline"><button class="linkbtn spoilbtn" data-act="reveal">👀 Voir le résultat (spoiler)</button><span class="spoilbody">' + linkNames(m.r) + "</span></span>" : "") + "</span>" +
       (okVid(m.v) && !lock ? '<button class="btn small ghost" data-act="play" data-id="' + esc(m.v) + '" data-t="' + esc(m.vt || m.t || name) + '">▶</button>' : "") +
       (m.d && m.k && S.P[m.k] ? '<a class="chev" href="' + hlHref(m.k, m.show || (m.ev && S.P[m.k].s && S.P[m.k].s[m.ev] ? m.ev : "PLE"), m.d) + '" aria-label="Highlights">›</a>' : "") + "</div>").join("") + "</div>";
   } else h += '<p class="note">Pas encore de résultat récent dans l’app.</p>';
@@ -133,17 +134,17 @@ export function wrestlerView(raw, wt) {
   if (ref.length) h += '<div class="list">' + ref.map(m => {
     const go = okVid(m.v) ? '<button class="btn small" data-act="play" data-id="' + esc(m.v) + '" data-t="' + esc(m.t) + '">▶ Voir</button>'
       : '<a class="btn small ghost" href="' + esc(ytSearch(kk, m.t.replace(/ contre /g, " vs ").replace(/ — .*$/, "") + " highlights")) + '" target="_blank" rel="noopener">Chercher ↗</a>';
-    return '<div class="item"><span class="lbl"><b>' + esc(m.t) + "</b><small>" + esc(m.ev || "") + "</small></span>" + go + "</div>";
+    return '<div class="item"><span class="lbl"><b>' + linkNames(m.t) + "</b><small>" + esc(m.ev || "") + "</small></span>" + go + "</div>";
   }).join("") + "</div>";
   else h += '<p class="note">Ses matchs de référence seront ajoutés lors d’une prochaine mise à jour' + (S.user ? " (ajoute-le à tes favoris pour qu’il soit suivi en priorité)" : "") + ".</p>";
   h += '<p class="note small" style="margin-top:8px"><a class="linkbtn" style="padding:0" href="' + esc(ytSearch(kk, name + " highlights")) + '" target="_blank" rel="noopener">Ses vidéos sur la chaîne YouTube officielle ↗</a></p>';
-  h += "<h2>Prochains matchs annoncés</h2>" + (up.length ? '<div class="list">' + up.map(e => '<a class="item" href="#/p/' + encodeURIComponent(e.k) + (e.show ? "/" + encodeURIComponent(e.show) : "") +
-    '"><span class="lbl"><b>' + esc(e.t) + "</b><small>" + esc(e.k) + " · " + fmt(e.d) + (e.line ? " · " + esc(e.line) : "") + '</small></span><span class="chev">›</span></a>').join("") + "</div>"
+  h += "<h2>Prochains matchs annoncés</h2>" + (up.length ? '<div class="list">' + up.map(e => '<a class="item" href="' + esc(evHref(e)) + '"' + shAttr(evCard(e)) +
+    '><span class="lbl"><b>' + esc(e.t) + "</b><small>" + esc(e.k) + " · " + fmt(e.d) + (e.line ? " · " + esc(e.line) : "") + '</small></span><span class="chev">›</span></a>').join("") + "</div>"
     : '<p class="note">Rien d’annoncé dans l’app pour l’instant.</p>');
-  h += "<h2>Son actu</h2>" + (arts.length ? '<div class="list">' + arts.map(a => '<a class="item" href="' + esc(a.u) + '" target="_blank" rel="noopener"><span class="lbl"><b>' + esc(a.t) +
+  h += "<h2>Son actu</h2>" + (arts.length ? '<div class="list">' + arts.map(a => '<a class="item" href="' + esc(a.u) + '" target="_blank" rel="noopener"' + shAttr(artCard(a)) + '><span class="lbl"><b>' + esc(a.t) +
     "</b><small>" + esc(a.s || "") + (a.tr ? " · titre traduit" : "") + '</small></span><span class="rt">' + (a.d ? fmt(a.d) : "") + "</span></a>").join("") + "</div>" : '<p class="note">Pas d’article en français dans l’app qui parle de lui ou d’elle.</p>') +
     '<p class="note" style="margin-top:8px"><a class="linkbtn" style="padding:0" href="https://news.google.com/search?q=' + encodeURIComponent('"' + name + '"') + '&hl=fr&gl=FR&ceid=FR:fr" target="_blank" rel="noopener">Plus d’actu sur Google Actualités ↗</a></p>';
-  if (vids.length) h += '<h2>Ses matchs à découvrir</h2><div class="list">' + vids.map(m => '<button class="item" data-act="play" data-id="' + esc(m.id) + '" data-t="' + esc(m.t) + '"><span class="lbl"><b>' + esc(m.t) +
+  if (vids.length) h += '<h2>Ses matchs à découvrir</h2><div class="list">' + vids.map(m => '<button class="item" data-act="play" data-id="' + esc(m.id) + '" data-t="' + esc(m.t) + '"' + shAttr({ ty: "vid", t: m.t, s: [m.k, m.ev].filter(Boolean).join(" · "), id: m.id }) + '><span class="lbl"><b>' + esc(m.t) +
     "</b><small>" + esc(m.k) + (m.ev ? " · " + esc(m.ev) : "") + '</small></span><span class="chev">▶</span></button>').join("") + "</div>";
   h += commentsBox(name);
   return h;

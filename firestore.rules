@@ -1,6 +1,7 @@
 rules_version = '2';
 
-// Règles de sécurité TCC TV (version 7 : trophées, Slammy, bannière du profil, images des fiches catcheurs, Babies du mois).
+// Règles de sécurité TCC TV (version 8 : cartes partagées dans le chat, notifications sur le téléphone, annonces du modérateur).
+// (version 7 : trophées, Slammy, bannière du profil, images des fiches catcheurs, Babies du mois)
 // (version 6 : sondages, pronostics, réactions et réponses, idées ; version 5 : réglages des discussions, notes des combats ; version 4 : suppression du compte ;
 //  version 3 : commentaires, likes, notifications, activité, images et GIFs dans le chat)
 // À coller en entier dans Firebase > Firestore Database > Règles, puis « Publier ».
@@ -12,14 +13,26 @@ service cloud.firestore {
     function isAdmin() { return signedIn() && request.auth.uid == "gYOlkXsJc3WedSykoBNyeWg2ELx1"; }
     function str(v, max) { return v is string && v.size() <= max; }
     function okText(v) { return v is string && v.size() > 0 && v.size() <= 1000; }
-    // message du chat : texte, et/ou image compressée, et/ou GIF (lien https)
+    // carte partagée (article, fiche catcheur, show, PLE, titre, storyline, sondage, vidéo) : lien dans l'app (#/…) ou article (https)
+    function okCard(c) {
+      return c is map && c.keys().hasOnly(['ty','t','s','h','u','id','sp','k'])
+        && c.ty in ['art','w','show','ev','title','story','poll','vid','hl'] && str(c.t, 160) && c.t.size() > 0
+        && (!('s' in c) || str(c.s, 120))
+        && (!('h' in c) || (str(c.h, 300) && c.h.matches('#/.*')))
+        && (!('u' in c) || (str(c.u, 600) && c.u.matches('https://.*')))
+        && (!('id' in c) || (c.id is string && c.id.matches('[A-Za-z0-9_-]{11}')))
+        && (!('sp' in c) || c.sp is bool)
+        && (!('k' in c) || str(c.k, 30));
+    }
+    // message du chat : texte, et/ou image compressée, et/ou GIF (lien https), et/ou carte partagée
     function okMsg(d) {
-      return d.keys().hasOnly(['uid','text','at','img','gif'])
+      return d.keys().hasOnly(['uid','text','at','img','gif','card'])
         && d.uid == request.auth.uid && d.at == request.time
         && d.text is string && d.text.size() <= 1000
         && (!('img' in d) || (d.img is string && d.img.size() > 30 && d.img.size() < 950000))
         && (!('gif' in d) || (d.gif is string && d.gif.size() > 10 && d.gif.size() <= 600 && d.gif.matches('https://.*')))
-        && (d.text.size() > 0 || 'img' in d || 'gif' in d);
+        && (!('card' in d) || okCard(d.card))
+        && (d.text.size() > 0 || 'img' in d || 'gif' in d || 'card' in d);
     }
     // paire « uidA_uidB » (triée) : en fait-on partie, et qui est l'autre ?
     function inPairId(p) { return signedIn() && request.auth.uid in p.split('_'); }
@@ -341,6 +354,30 @@ service cloud.firestore {
     match /hof/{id} {
       allow read: if signedIn();
       allow write: if isAdmin();
+    }
+
+    // ---------- Notifications sur le téléphone : jetons et réglages de chaque membre (lus aussi par le robot et le service Cloudflare) ----------
+    match /push/{uid} {
+      allow read, delete: if isMe(uid);
+      allow create, update: if isMe(uid)
+        && request.resource.data.keys().hasOnly(['tok','on','promos','quiet','at'])
+        && (!('tok' in request.resource.data) || (request.resource.data.tok is map && request.resource.data.tok.size() <= 10))
+        && (!('on' in request.resource.data) || (request.resource.data.on is map && request.resource.data.on.size() <= 10))
+        && (!('promos' in request.resource.data) || (request.resource.data.promos is list && request.resource.data.promos.size() <= 20))
+        && (!('quiet' in request.resource.data) || request.resource.data.quiet is bool)
+        && (!('at' in request.resource.data) || request.resource.data.at is number);
+    }
+
+    // ---------- Annonces du modérateur : tout le monde les lit, seul l'admin les publie ----------
+    match /annonces/{id} {
+      allow read: if signedIn();
+      allow create: if isAdmin()
+        && request.resource.data.keys().hasOnly(['t','x','h','by','at'])
+        && str(request.resource.data.t, 60) && request.resource.data.t.size() > 0
+        && str(request.resource.data.x, 300) && str(request.resource.data.h, 300)
+        && request.resource.data.by == request.auth.uid && request.resource.data.at == request.time;
+      allow update: if false;
+      allow delete: if isAdmin();
     }
 
     // ---------- Catcheurs suivis (favoris de tous les membres, pour la mise à jour quotidienne) ----------

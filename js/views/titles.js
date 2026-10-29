@@ -1,10 +1,10 @@
 // Titres : champions actuels par promotion / show, historique d'un titre
 import { S, ACT } from "../state.js";
-import { esc, ICON, fmt, today, dt, okHttp, okDay } from "../util.js";
+import { esc, ICON, fmt, today, dt, okHttp, okDay, shAttr } from "../util.js";
 import { titlesFor, plain, colorOf } from "./catalog.js";
 import { champHidden, unlock, noSpoil } from "../spoil.js";
 import { resultWinner } from "./mrate.js";
-import { norm } from "../wrestlers.js";
+import { norm, linkNames } from "../wrestlers.js";
 import { hlHref } from "./highlights.js";
 
 // ---------- défenses de titre ----------
@@ -53,7 +53,7 @@ function sinceLine(t) {
   return okDay(t.since) ? "Depuis le " + fmt(t.since) + (t.ev ? " (" + esc(t.ev) + ")" : "") + " · " + n + " jour" + (n > 1 ? "s" : "") : "Date de début du règne à confirmer";
 }
 function card(t) {
-  return '<article class="belt"><div class="beltbar" style="' + esc(plain(colorOf(t.k, t.show || ""))) + '"></div><div class="beltbody">' +
+  return '<article class="belt"' + shAttr({ ty: "title", t: t.n, s: t.k + (t.show ? " · " + t.show : ""), h: "#/titre/" + encodeURIComponent(t.id), k: t.k }) + '><div class="beltbar" style="' + esc(plain(colorOf(t.k, t.show || ""))) + '"></div><div class="beltbody">' +
     '<a class="beltname" href="#/titre/' + encodeURIComponent(t.id) + '">' + esc(t.n) + ' <span class="chev">›</span></a>' +
     (champHidden(t) ? masked(t) : '<div class="champs">' + champLinks(t) + "</div><small>" + sinceLine(t) + defLine(t) + "</small>") + "</div></article>";
 }
@@ -82,12 +82,13 @@ export function titleView(id) {
   const t = (S.titles || []).find(x => x.id === id);
   if (!t) return '<a class="back" href="#/">' + ICON.back + ' Accueil</a><p class="empty">Titre introuvable.</p>';
   let h = '<a class="back" href="#/titres/' + encodeURIComponent(t.k) + (t.show ? "/" + encodeURIComponent(t.show) : "") + '">' + ICON.back + " Titres</a>";
-  h += '<section class="beltheader" style="' + esc(plain(colorOf(t.k, t.show || ""))) + '"><span class="eyebrow">' + esc(t.k) + (t.show ? " · " + esc(t.show) : "") + "</span><h1>" + esc(t.n) + "</h1></section>";
+  h += '<section class="beltheader" style="' + esc(plain(colorOf(t.k, t.show || ""))) + '"><span class="eyebrow">' + esc(t.k) + (t.show ? " · " + esc(t.show) : "") + "</span><h1>" + esc(t.n) + "</h1>" +
+    '<button class="iconbtn sharebtn light" data-act="share"' + shAttr({ ty: "title", t: t.n, s: t.k + (t.show ? " · " + t.show : ""), h: "#/titre/" + encodeURIComponent(t.id), k: t.k }) + ' aria-label="Partager">↗</button></section>';
   if (champHidden(t)) return h + '<h2>Champion actuel</h2><div class="belts"><article class="belt"><div class="beltbody">' + masked(t) + "</div></article></div>" + noteSpoil();
   h += '<h2>Champion actuel</h2><div class="belts"><article class="belt"><div class="beltbody"><div class="champs big">' + champLinks(t) + "</div><small>" + sinceLine(t) + "</small></div></article></div>";
   const defs = defensesOf(t), nd = defCount(t);
   h += "<h2>🛡️ Défenses du titre" + (nd ? ' <small class="cnt">' + nd + "</small>" : "") + "</h2>";
-  h += defs.length ? '<ol class="hist defs">' + defs.map(x => "<li><b>" + (x.vs ? "contre " + esc(x.vs) : "Titre conservé") + "</b><small>" + (okDay(x.d) ? fmt(x.d) : "") + (x.ev ? " · " + esc(x.ev) : "") +
+  h += defs.length ? '<ol class="hist defs">' + defs.map(x => "<li><b>" + (x.vs ? "contre " + linkNames(x.vs) : "Titre conservé") + "</b><small>" + (okDay(x.d) ? fmt(x.d) : "") + (x.ev ? " · " + esc(x.ev) : "") +
       (x.k && x.show && okDay(x.d) ? ' · <a href="' + hlHref(x.k, x.show, x.d) + '">résultats ›</a>' : "") + "</small></li>").join("") + "</ol>"
     : '<p class="note">' + (nd ? nd + " défense" + (nd > 1 ? "s" : "") + " réussie" + (nd > 1 ? "s" : "") + " depuis le début du règne." : "Pas encore de défense réussie depuis le début du règne (shows télévisés et PLE, hors live events).") + "</p>";
   h += "<h2>Champions précédents</h2>";

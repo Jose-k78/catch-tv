@@ -9,7 +9,9 @@ import { friendState, friendsOf, feudInfo, feudBadge, isBlocked, requestsIn } fr
 import { favChips } from "./favs.js";
 import { noSpoil, setNoSpoil } from "../spoil.js";
 import { isMatchNote, matchNoteLinks, noteTitle } from "./mrate.js";
-import { sourcesView, statusView, mediaView } from "./admin.js";
+import { sourcesView, statusView, mediaView, pushGuideView } from "./admin.js";
+import { notifSettingsView, pushOnHere, pushReady } from "../push.js";
+import { adminAnnView, annList } from "./annonces.js";
 import { introMode, INTRO } from "../intro.js";
 import { showcase } from "./trophies.js";
 import { cropImage } from "../crop.js";
@@ -140,6 +142,9 @@ export function settingsView(sub) {
   if (sub === "sources" && S.isAdmin) return h + sourcesView();
   if (sub === "etat" && S.isAdmin) return h + statusView();
   if (sub === "medias" && S.isAdmin) return h + mediaView();
+  if (sub === "notifs") return h + notifSettingsView();
+  if (sub === "annonces" && S.isAdmin) return h + adminAnnView();
+  if (sub === "notifs-install" && S.isAdmin) return h + pushGuideView();
   if (sub === "apparence") {
     const t = lsGet("ctv.theme") || "auto", im = introMode();
     return h + '<h1>Apparence</h1><h2 style="margin-top:4px">Thème</h2><div class="list">' + ["auto", "light", "dark"].map(k => '<button class="item" data-act="theme" data-v="' + k + '"><span class="lbl"><b>' + TH[k] +
@@ -153,17 +158,19 @@ export function settingsView(sub) {
     row("#/parametres/email", "Adresse e-mail", u.email) + row("#/parametres/motdepasse", "Mot de passe", google ? "Connecté avec Google" : "Modifier") +
     row("#/parametres/apparence", "Apparence", TH[lsGet("ctv.theme") || "auto"] + " · intro " + INTRO[introMode()][2]) +
     row("#/parametres/spoiler", "Mode sans spoiler", noSpoil() ? "Activé" : "Désactivé") +
+    row("#/parametres/notifs", "🔔 Notifications", pushOnHere() ? "Activées sur ce téléphone" : pushReady() ? "Pas encore activées sur ce téléphone" : "Bientôt disponibles") +
     row("#/parametres/bloques", "Membres bloqués", S.blocks.length ? S.blocks.length + " membre" + (S.blocks.length > 1 ? "s" : "") : "Aucun") + "</div>" +
     '<h2>Communauté</h2><div class="list">' + row("#/sondages", "📊 Sondages", "Vote et découvre l’avis des membres") + row("#/pronostics", "🎯 Pronostics", "Tes pronostics et le classement") +
-    row("#/idees", "💡 Partagez vos idées", "Propose des nouveautés pour l’app et vote pour celles des autres") + "</div>" +
-    '<p class="note small" style="margin-top:10px">Notifications sur le téléphone quand l’app est fermée : pas encore disponibles (elles demandent un serveur, voir le guide). En attendant, les alertes s’affichent dans l’app.</p>';
+    row("#/idees", "💡 Partagez vos idées", "Propose des nouveautés pour l’app et vote pour celles des autres") + "</div>";
   if (!ADMIN_UID || S.isAdmin) {
-    if (S.isAdmin) h += '<h2>Modération</h2><div class="list">' + row("#/parametres/signalements", "Signalements", S.reports.length ? S.reports.length + " en attente" : "Aucun") +
+    if (S.isAdmin) h += '<h2>Modération</h2><div class="list">' + row("#/parametres/annonces", "📣 Faire une annonce", annList().length ? "Dernière : " + annList()[0].t : "Notification à tous les membres") +
+      row("#/parametres/signalements", "Signalements", S.reports.length ? S.reports.length + " en attente" : "Aucun") +
       row("#/parametres/logos", "Logos des onglets", "Remplacer les noms des promotions et des shows par leur logo") +
       row("#/parametres/medias", "Fonds animés et musique", Object.keys((S.media && S.media.bg) || {}).length + " vidéo" + (Object.keys((S.media && S.media.bg) || {}).length > 1 ? "s" : "") + " · " + (S.media && S.media.music ? "musique choisie" : "pas de musique")) +
       row("#/idees", "Idées des membres", (S.ideas || []).length ? (S.ideas || []).filter(i => !i.st).length + " sans réponse · " + S.ideas.length + " au total" : "Voir les idées proposées") +
       row("#/parametres/sources", "Sources des données", (S.sources || []).filter(x => x.on !== false).length + " sites utilisés par les mises à jour") +
-      row("#/parametres/etat", "État des mises à jour", "Date de chaque donnée et derniers envois") + "</div>";
+      row("#/parametres/etat", "État des mises à jour", "Date de chaque donnée et derniers envois") +
+      row("#/parametres/notifs-install", "🔔 Installer les notifications", pushReady() ? "Clé push web enregistrée · voir les étapes" : "4 étapes, environ 10 minutes") + "</div>";
     h += "<h2>" + (S.isAdmin ? "Admin" : "Installation") + '</h2><p class="note">' + (S.isAdmin ? "Tu es l’admin de l’app." : "Ton identifiant, à recopier dans la configuration pour devenir admin (voir le guide) :") + "</p>" +
       '<div class="uid" id="myuid">' + esc(u.uid) + '</div><div class="btns"><button class="btn ghost" data-act="copyuid">Copier l’identifiant</button></div>';
   }

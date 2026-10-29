@@ -1,8 +1,9 @@
 // Favoris ⭐ : catcheurs suivis (profil), page des favoris, colonne de droite sur ordinateur, favoris des amis
 import { S, B, ACT, prof, avatar } from "../state.js";
-import { esc, ICON, fmt, toast } from "../util.js";
+import { esc, ICON, fmt, toast, shAttr } from "../util.js";
+import { evHref, artCard } from "./catalog.js";
 import { errText } from "./account.js";
-import { canonical, wShows, upcomingFor, lastMatches, wNews } from "../wrestlers.js";
+import { canonical, wShows, upcomingFor, lastMatches, wNews, linkNames } from "../wrestlers.js";
 import { friendsOf } from "../social.js";
 import { spoilBlock, okVid } from "./highlights.js";
 
@@ -33,14 +34,14 @@ const showHref = s => "#/p/" + encodeURIComponent(s.k) + (s.n ? "/" + encodeURIC
 // Carte verticale d'un favori : shows, match récent (spoiler), prochain combat, 2-3 news
 export function favCard(name, compact) {
   const shows = wShows(name), last = lastMatches(name, 1)[0], next = upcomingFor(name)[0], news = wNews(name, compact ? 2 : 3);
-  let h = '<article class="favcard"><a class="favname" href="' + wlink(name) + '">' + ICON.starF + "<b>" + esc(name) + '</b><span class="chev">›</span></a>';
+  let h = '<article class="favcard"><a class="favname" href="' + wlink(name) + '"' + shAttr({ ty: "w", t: name, s: "Fiche catcheur", h: wlink(name) }) + ">" + ICON.starF + "<b>" + esc(name) + '</b><span class="chev">›</span></a>';
   if (shows.length) h += '<div class="chips">' + shows.map(s => '<a class="chip" href="' + showHref(s) + '">' + esc(s.n ? s.n : s.k) + "</a>").join("") + "</div>";
-  h += '<div class="favrow"><small>Prochain combat</small>' + (next ? '<a href="#/p/' + encodeURIComponent(next.k) + (next.show ? "/" + encodeURIComponent(next.show) : "") + '"><b>' + esc(next.t) + "</b> · " + fmt(next.d) +
+  h += '<div class="favrow"><small>Prochain combat</small>' + (next ? '<a href="' + esc(evHref(next)) + '"><b>' + esc(next.t) + "</b> · " + fmt(next.d) +
     (next.line ? "<br><span>" + esc(next.line) + "</span>" : "") + "</a>" : "<span>Rien d’annoncé pour l’instant</span>") + "</div>";
   h += '<div class="favrow"><small>Match récent</small>' + (last ? "<b>" + esc(last.t || ((last.ev || last.k) + " · " + fmt(last.d))) + "</b>" + (last.t && last.d ? " · " + fmt(last.d) : "") +
-    (last.r ? spoilBlock("Voir le résultat (spoiler)", "<p>" + esc(last.r) + "</p>") : "") +
+    (last.r ? spoilBlock("Voir le résultat (spoiler)", "<p>" + linkNames(last.r) + "</p>") : "") +
     (okVid(last.v) ? '<button class="btn small ghost" data-act="play" data-id="' + esc(last.v) + '" data-t="' + esc(last.vt || last.t || name) + '">▶ Vidéo</button>' : "") : "<span>Pas encore de résultat dans l’app</span>") + "</div>";
-  if (news.length) h += '<div class="favrow"><small>Actu</small><ul class="favnews">' + news.map(a => '<li><a href="' + esc(a.u) + '" target="_blank" rel="noopener">' + esc(a.t) + "</a>" +
+  if (news.length) h += '<div class="favrow"><small>Actu</small><ul class="favnews">' + news.map(a => '<li><a href="' + esc(a.u) + '" target="_blank" rel="noopener"' + shAttr(artCard(a)) + ">" + esc(a.t) + "</a>" +
     '<span class="src">' + esc(a.s || "") + (a.tr ? " · titre traduit" : "") + (a.d ? " · " + fmt(a.d) : "") + "</span></li>").join("") + "</ul></div>";
   return h + "</article>";
 }

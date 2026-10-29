@@ -3,7 +3,7 @@ import { feudNext } from "../feud.js";
 const V = "10.14.1";
 const BASE = "https://www.gstatic.com/firebasejs/" + V + "/";
 
-let A, F, auth, db;
+let A, F, auth, db, app0;
 
 const ms = v => (v && typeof v.toMillis === "function") ? v.toMillis() : (typeof v === "number" ? v : 0);
 const data = s => s.data({ serverTimestamps: "estimate" });
@@ -12,7 +12,7 @@ export async function init(config) {
   const appMod = await import(BASE + "firebase-app.js");
   A = await import(BASE + "firebase-auth.js");
   F = await import(BASE + "firebase-firestore.js");
-  const app = appMod.initializeApp(config);
+  const app = appMod.initializeApp(config); app0 = app;
   auth = A.getAuth(app);
   auth.languageCode = "fr";
   db = F.getFirestore(app);
@@ -79,6 +79,7 @@ export async function deleteAccount(password) {
   await wipe(W(C("wimages"), "uid", "==", uid)).catch(() => {});
   await wipe(W(C("slammy"), "uid", "==", uid)).catch(() => {});
   await F.deleteDoc(F.doc(db, "banners", uid)).catch(() => {});
+  await F.deleteDoc(F.doc(db, "push", uid)).catch(() => {});
   await F.deleteDoc(F.doc(db, "blocks", uid)).catch(() => {});
   await F.deleteDoc(F.doc(db, "reads", uid)).catch(() => {});
   await F.deleteDoc(F.doc(db, "users", uid));
@@ -128,15 +129,23 @@ export function setImage(id, src, uid) { return F.setDoc(F.doc(db, "images", id)
 export function removeImage(id) { return F.deleteDoc(F.doc(db, "images", id)); }
 
 // ---- Messagerie ----
-const mapMsg = s => { const d = data(s); return { id: s.id, uid: d.uid, text: d.text || "", img: d.img || "", gif: d.gif || "", at: ms(d.at) || Date.now() }; };
+const mapMsg = s => { const d = data(s); return { id: s.id, uid: d.uid, text: d.text || "", img: d.img || "", gif: d.gif || "", card: d.card && typeof d.card === "object" ? d.card : null, at: ms(d.at) || Date.now() }; };
 // message : texte + éventuellement une image (data URL compressée) ou un GIF (lien)
 function msgDoc(uid, text, extra) {
   const d = { uid: uid, text: text, at: F.serverTimestamp() };
   if (extra && extra.img) d.img = extra.img;
   if (extra && extra.gif) d.gif = extra.gif;
+  if (extra && extra.card) d.card = cardDoc(extra.card);
   return d;
 }
-const lastText = (text, extra) => text ? text.slice(0, 140) : (extra && extra.gif ? "GIF" : "📷 Photo");
+// carte partagée : seulement les champs permis par les règles
+function cardDoc(c) {
+  const o = { ty: String(c.ty || "").slice(0, 10), t: String(c.t || "").slice(0, 160) };
+  ["s", "h", "u", "id", "k"].forEach(f => { if (c[f]) o[f] = String(c[f]).slice(0, f === "u" ? 600 : f === "h" ? 300 : f === "id" ? 11 : f === "k" ? 30 : 120); });
+  if (c.sp) o.sp = true;
+  return o;
+}
+export const lastText = (text, extra) => text ? text.slice(0, 140) : extra && extra.card ? (extra.card.sp ? "🙈 Spoiler partagé" : "📎 " + String(extra.card.t || "").slice(0, 120)) : (extra && extra.gif ? "GIF" : "📷 Photo");
 
 export function watchRoom(cb) {
   const q = F.query(F.collection(db, "rooms", "general", "messages"), F.orderBy("at", "desc"), F.limit(60));
@@ -345,6 +354,21 @@ export function deleteSlammy(id) { return F.deleteDoc(F.doc(db, "slammy", id)); 
 export function watchWImage(slug, cb) { return F.onSnapshot(F.doc(db, "wimages", slug), s => { if (!s.exists()) return cb(null); const d = data(s); d.id = s.id; d.at = ms(d.at) || 0; cb(d); }, () => cb(null)); }
 export function setWImage(slug, d) { return F.setDoc(F.doc(db, "wimages", slug), Object.assign({}, d, { at: F.serverTimestamp() })); }
 export function deleteWImage(slug) { return F.deleteDoc(F.doc(db, "wimages", slug)); }
+
+// ---- Notifications sur le téléphone (Firebase Cloud Messaging) ----
+export async function idToken() { return auth.currentUser ? auth.currentUser.getIdToken() : ""; }
+let M = null, messaging = null;
+async function msgMod() { if (!M) M = await import(BASE + "firebase-messaging.js"); if (!messaging) { if (M.isSupported && !(await M.isSupported())) throw new Error("navigateur non compatible"); messaging = M.getMessaging(app0); } return M; }
+export async function pushToken(vapidKey, reg) { const m = await msgMod(); return m.getToken(messaging, { vapidKey: vapidKey, serviceWorkerRegistration: reg }); }
+export async function dropPushToken() { const m = await msgMod(); return m.deleteToken(messaging); }
+// réglages et jetons de ce membre : push/{uid} = { tok: { clé: { t, at, ua } }, on: { dm, info, fav, feud, ann, prev }, promos: [], quiet }
+export function watchPush(uid, cb) { return F.onSnapshot(F.doc(db, "push", uid), s => cb(s.exists() ? data(s) : {}), e => cb(e && e.code === "permission-denied" ? { err: "rules" } : {})); }
+export function savePush(uid, patch) { return F.setDoc(F.doc(db, "push", uid), patch, { merge: true }); }
+export function removePushKey(uid, key) { const p = {}; p["tok." + key] = F.deleteField(); return F.updateDoc(F.doc(db, "push", uid), p); }
+// ---- Annonces du modérateur ----
+export function watchAnnonces(cb) { return F.onSnapshot(F.query(F.collection(db, "annonces"), F.orderBy("at", "desc"), F.limit(20)), r => cb(r.docs.map(s => { const d = data(s); d.id = s.id; d.at = ms(d.at) || Date.now(); return d; })), () => cb([])); }
+export async function addAnnonce(uid, a) { const ref = await F.addDoc(F.collection(db, "annonces"), { t: a.t, x: a.x || "", h: a.h || "", by: uid, at: F.serverTimestamp() }); return ref.id; }
+export function deleteAnnonce(id) { return F.deleteDoc(F.doc(db, "annonces", id)); }
 
 // ---- Hall of Fame : gagnantes de la Babies du mois ----
 export function watchHof(cb) { return F.onSnapshot(F.doc(db, "hof", "babies"), s => cb(s.exists() ? (data(s).months || {}) : {}), () => cb({})); }

@@ -3,7 +3,7 @@
 import { feudNext } from "../feud.js";
 const KEY = "ctv.demo.db";
 const SKEY = "ctv.demo.uid";
-const EMPTY = () => ({ accounts: {}, users: {}, history: {}, images: {}, room: [], dms: {}, msgs: {}, reads: {}, admin: "", friends: {}, feuds: {}, blocks: {}, reports: [], followed: [], wcomments: {}, notifs: {}, activity: {}, areplies: {}, polls: {}, pollvotes: {}, picks: {}, ideas: {}, banners: {}, slammy: {}, wimages: {}, hof: {} });
+const EMPTY = () => ({ accounts: {}, users: {}, history: {}, images: {}, room: [], dms: {}, msgs: {}, reads: {}, admin: "", friends: {}, feuds: {}, blocks: {}, reports: [], followed: [], wcomments: {}, notifs: {}, activity: {}, areplies: {}, polls: {}, pollvotes: {}, picks: {}, ideas: {}, banners: {}, slammy: {}, wimages: {}, hof: {}, push: {}, annonces: {} });
 
 let DB = EMPTY();
 const subs = new Set();
@@ -88,7 +88,7 @@ export async function deleteAccount(password) {
   Object.keys(DB.feuds).forEach(id => { if (DB.feuds[id].members.indexOf(uid) >= 0) delete DB.feuds[id]; });
   Object.keys(DB.wcomments).forEach(id => { const c = DB.wcomments[id]; if (c.uid === uid) delete DB.wcomments[id]; else c.likes = c.likes.filter(x => x !== uid); });
   Object.keys(DB.activity).forEach(id => { if (DB.activity[id].uid === uid) delete DB.activity[id]; });
-  delete DB.banners[uid];
+  delete DB.banners[uid]; delete DB.push[uid];
   ["areplies", "pollvotes", "picks", "ideas", "wimages", "slammy"].forEach(c => Object.keys(DB[c] || {}).forEach(id => { if (DB[c][id].uid === uid) delete DB[c][id]; }));
   Object.keys(DB.ideas || {}).forEach(id => { DB.ideas[id].votes = (DB.ideas[id].votes || []).filter(x => x !== uid); });
   DB.room = DB.room.filter(m => m.uid !== uid);
@@ -117,7 +117,7 @@ export async function setImage(id, src) { DB.images[id] = src; save(); }
 export async function removeImage(id) { delete DB.images[id]; save(); }
 
 export function watchRoom(cb) { return watch(() => cb(clone(DB.room.slice(-60)))); }
-const msgDoc = (uid, text, extra) => Object.assign({ id: uidGen(), uid: uid, text: text, at: Date.now() }, extra && extra.img ? { img: extra.img } : {}, extra && extra.gif ? { gif: extra.gif } : {});
+const msgDoc = (uid, text, extra) => Object.assign({ id: uidGen(), uid: uid, text: text, at: Date.now() }, extra && extra.img ? { img: extra.img } : {}, extra && extra.gif ? { gif: extra.gif } : {}, extra && extra.card ? { card: clone(extra.card) } : {});
 export async function sendRoom(uid, text, extra) { DB.room.push(msgDoc(uid, text, extra)); DB.room = DB.room.slice(-200); save(); }
 export function watchConvs(uid, cb) {
   return watch(() => cb(Object.keys(DB.dms).map(id => Object.assign(clone(DB.dms[id]), { id: id }))
@@ -132,7 +132,7 @@ export function watchMessages(convId, cb) { return watch(() => cb(clone((DB.msgs
 export async function sendDM(convId, uid, other, text, extra) {
   const m = msgDoc(uid, text, extra), now = m.at;
   (DB.msgs[convId] = DB.msgs[convId] || []).push(m);
-  const c = DB.dms[convId]; c.last = { text: text ? text.slice(0, 140) : (extra && extra.gif ? "GIF" : "📷 Photo"), uid: uid, at: now }; c.updatedAt = now; c.unread[other] = (c.unread[other] || 0) + 1; save();
+  const c = DB.dms[convId]; c.last = { text: text ? text.slice(0, 140) : extra && extra.card ? (extra.card.sp ? "🙈 Spoiler partagé" : "📎 " + String(extra.card.t || "").slice(0, 120)) : (extra && extra.gif ? "GIF" : "📷 Photo"), uid: uid, at: now }; c.updatedAt = now; c.unread[other] = (c.unread[other] || 0) + 1; save();
 }
 export async function markDMRead(convId, uid, seen) {
   const c = DB.dms[convId]; if (!c) return;
@@ -233,5 +233,16 @@ export async function deleteSlammy(id) { delete DB.slammy[id]; save(); }
 export function watchWImage(slug, cb) { return watch(() => { const d = DB.wimages[slug]; cb(d ? Object.assign(clone(d), { id: slug }) : null); }); }
 export async function setWImage(slug, d) { DB.wimages[slug] = Object.assign({}, d, { at: Date.now() }); save(); }
 export async function deleteWImage(slug) { delete DB.wimages[slug]; save(); }
+// ---- Notifications (en démo : réglages seulement, pas d'envoi) ----
+export async function idToken() { return ""; }
+export async function pushToken() { throw { code: "demo/push" }; }
+export async function dropPushToken() {}
+export function watchPush(uid, cb) { return watch(() => cb(clone(DB.push[uid] || {}))); }
+const deepMerge = (a, b) => { Object.keys(b).forEach(k => { if (b[k] && typeof b[k] === "object" && !Array.isArray(b[k])) a[k] = deepMerge(a[k] && typeof a[k] === "object" ? a[k] : {}, b[k]); else a[k] = b[k]; }); return a; };
+export async function savePush(uid, patch) { DB.push[uid] = deepMerge(DB.push[uid] || {}, clone(patch)); save(); }
+export async function removePushKey(uid, key) { if (DB.push[uid] && DB.push[uid].tok) { delete DB.push[uid].tok[key]; save(); } }
+export function watchAnnonces(cb) { return watch(() => cb(all("annonces").sort((a, b) => b.at - a.at).slice(0, 20))); }
+export async function addAnnonce(uid, a) { const id = uidGen(); DB.annonces[id] = { t: a.t, x: a.x || "", h: a.h || "", by: uid, at: Date.now() }; save(); return id; }
+export async function deleteAnnonce(id) { delete DB.annonces[id]; save(); }
 export function watchHof(cb) { return watch(() => cb(clone((DB.hof.babies || {}).months || {}))); }
 export async function setHofMonth(month, rec) { DB.hof.babies = DB.hof.babies || { months: {} }; DB.hof.babies.months[month] = rec; save(); }

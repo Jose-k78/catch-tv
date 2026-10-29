@@ -112,6 +112,8 @@ export function fileToDataUrl(file, maxW, maxH, square, maxLen) {
   });
 }
 
+// Carte à partager (appui long ou clic droit) : {ty, t, s, h (lien dans l'app) | u (lien externe), id (vidéo), sp (spoiler), k}
+export function shAttr(c) { return c ? ' data-sh="' + esc(JSON.stringify(c)) + '"' : ""; }
 export function docId(s) { return String(s).replace(/\//g, "∕").replace(/^\.+$/, "_").slice(0, 300); }
 
 export const ICON = {

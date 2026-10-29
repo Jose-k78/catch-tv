@@ -6,6 +6,8 @@ import { PARIS, parisDay, parisMin, parisWeekday, prevDay, fmtAt } from "../time
 import { ghToken, setGhToken, ghCheck, ghGetJson, ghPutJson, ghCommits, ghPutBinary, ghDelete, bufToB64 } from "../github.js";
 import { bgKey } from "../media.js";
 import { PREVIEW } from "../content.js";
+import { pushCfg, vapid, pushUrl, loadPushCfg } from "../push.js";
+import { GH_REPO } from "../config.js";
 
 export const USES = [["actu", "Actu"], ["resultats", "Résultats et highlights"], ["titres", "Titres"], ["calendrier", "Calendrier et horaires"], ["rosters", "Rosters"],
   ["fiches", "Fiches catcheurs"], ["storylines", "Storylines"], ["archives", "Archives"], ["videos", "Vidéos"], ["autre", "Autre"]];
@@ -148,6 +150,51 @@ async function loadCommits() {
   const box = document.getElementById("ghcommits"); if (box) box.innerHTML = commitsHTML();
 }
 ACT.reloadapp = () => location.reload();
+
+// ---------- Installer les notifications (guide pas à pas, avec l'état de chaque étape) ----------
+let pState = null, wState = null, gBusy = false;
+async function loadPushStatus() {
+  if (gBusy || PREVIEW) return; gBusy = true;
+  try { const r = await fetch("data/push-state.json", { cache: "no-cache" }); pState = r.ok ? await r.json() : {}; } catch (e) { pState = {}; }
+  const u = await pushUrl();
+  if (u) { try { const r = await fetch(u + "/", { cache: "no-store" }); wState = r.ok ? await r.json() : { error: r.status }; } catch (e) { wState = { error: "injoignable" }; } } else wState = null;
+  gBusy = false; changed("push");
+}
+export function pushGuideView() {
+  if (!pState && !gBusy) setTimeout(loadPushStatus, 0);
+  const V = vapid(), c = pushCfg(), url = c.url || "", rulesOk = !!S.push && S.push.err !== "rules", saOk = !!(pState && pState.sa), wOk = !!(wState && wState.ok && wState.ready);
+  const step = (n, ok, title, body) => '<div class="gstep' + (ok ? " ok" : "") + '"><span class="gnum">' + (ok ? "✓" : n) + '</span><div class="gbody"><b>' + title + "</b>" + (ok ? "" : body) + "</div></div>";
+  let h = '<h1>🔔 Installer les notifications</h1><p class="note" style="margin-bottom:12px">À faire une seule fois, sur un ordinateur de préférence. Les clés secrètes vont seulement dans GitHub : ne les envoie à personne, même pas à Claude.</p>';
+  h += step(1, rulesOk, "Publier les règles Firebase v8", '<p>Firebase › Firestore Database › Règles : colle tout le contenu du fichier <b>firestore.rules</b> du dépôt, puis « Publier ».</p>');
+  h += step(2, !!V, "Clé « push web » de Firebase (publique)", '<ol class="steps"><li><a href="https://console.firebase.google.com/project/catch-ttc-tv/settings/cloudmessaging" target="_blank" rel="noopener">Firebase › ⚙️ Paramètres du projet › Cloud Messaging ↗</a></li>' +
+    "<li>Vérifie que « API Firebase Cloud Messaging (V1) » est <b>activée</b></li><li>Tout en bas, « Configuration Web » › Certificats push Web › <b>Générer une paire de clés</b></li><li>Copie la clé (une longue suite de lettres) et colle-la ici :</li></ol>" +
+    '<label class="fld">Clé push web<input id="vapidin" autocomplete="off" spellcheck="false" placeholder="BEl62i…"></label><button class="btn small" data-act="vapidsave">Enregistrer la clé</button>' + (ghToken() ? "" : '<p class="note small">Il faut ta clé GitHub sur ce téléphone (Sources des données).</p>'));
+  h += step(3, saOk, "Clé du compte de service (secrète) dans GitHub", '<ol class="steps"><li><a href="https://console.firebase.google.com/project/catch-ttc-tv/settings/serviceaccounts/adminsdk" target="_blank" rel="noopener">Firebase › ⚙️ Paramètres du projet › Comptes de service ↗</a> › <b>Générer une nouvelle clé privée</b> : un fichier .json se télécharge</li>' +
+    '<li><a href="https://github.com/' + esc(GH_REPO) + '/settings/secrets/actions/new" target="_blank" rel="noopener">GitHub › catch-tv › Settings › Secrets and variables › Actions › New repository secret ↗</a></li><li>Name : <b>FIREBASE_SA</b> · Secret : ouvre le fichier .json et colle <b>tout</b> son contenu · Add secret</li>' +
+    "<li>Ensuite le robot (toutes les 30 min) envoie les infos, les favoris et le rappel des feuds. Cette étape passe au vert à son prochain passage.</li></ol>");
+  h += step(4, wOk, "Service Cloudflare (messages privés, feuds et annonces en direct)", '<ol class="steps"><li>Crée un compte gratuit sur <a href="https://dash.cloudflare.com/sign-up" target="_blank" rel="noopener">dash.cloudflare.com ↗</a>, ouvre « Workers & Pages » et choisis ton sous-domaine si on te le demande</li>' +
+    '<li><a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank" rel="noopener">Mon profil › API Tokens ↗</a> › Create Token › modèle <b>« Edit Cloudflare Workers »</b> › Account Resources : ton compte · Zone Resources : All zones › Create Token, puis copie le jeton</li>' +
+    "<li>Dans les secrets GitHub (comme à l’étape 3), ajoute <b>CLOUDFLARE_API_TOKEN</b> (le jeton) et <b>CLOUDFLARE_ACCOUNT_ID</b> (l’identifiant du compte, affiché à droite dans « Workers & Pages »)</li>" +
+    '<li>Puis appuie ici : GitHub installe le service tout seul (2 minutes environ)</li></ol><button class="btn small" data-act="workerdeploy">Installer le service maintenant</button>' +
+    (url ? '<p class="note small">Adresse : ' + esc(url) + (wState ? " · " + (wState.ok ? (wState.ready ? "prêt" : "installé, mais la clé FIREBASE_SA manque") : "ne répond pas (" + esc(String(wState.error || "")) + ")") : "") + "</p>" : ""));
+  h += step(5, false, "Activer sur ton téléphone et tester", '<p><a href="#/parametres/notifs">Paramètres › Notifications ›</a> Active-les, puis « Envoyer une notification de test ».</p>');
+  h += '<p class="note small" style="margin-top:10px">' + (pState && pState.at ? "Dernier passage du robot des notifications : " + esc(fmtAt(Date.parse(pState.at), PARIS)) + ". " : "") + '<button class="linkbtn" data-act="pushstat">Actualiser</button></p>';
+  return h;
+}
+ACT.pushstat = () => { pState = null; wState = null; loadPushCfg(true); loadPushStatus(); };
+ACT.vapidsave = async () => {
+  const v = (document.getElementById("vapidin") || {}).value.trim().replace(/\s+/g, "");
+  if (!/^[\w-]{60,120}$/.test(v)) { toast("Ça ne ressemble pas à une clé push web (une suite d’environ 88 lettres et chiffres)"); return; }
+  if (!ghToken()) { ghKeyModal(); return; }
+  try { const cur = await ghGetJson("data/push.json"); await ghPutJson("data/push.json", Object.assign({}, cur.data || {}, { vapid: v }), "Notifications TCC TV : clé push web"); await loadPushCfg(true); toast("Clé enregistrée ✓ (active chez tout le monde d’ici 1 à 2 minutes)", { ms: 5000 }); }
+  catch (e) { toast(e.message === "nokey" ? "Ajoute d’abord ta clé GitHub" : e.message); }
+};
+// une petite modification du dossier cloudflare/ relance l'installation du service par GitHub
+ACT.workerdeploy = async () => {
+  if (!ghToken()) { ghKeyModal(); return; }
+  try { await ghPutJson("cloudflare/deploy.json", { at: new Date().toISOString() }, "Notifications TCC TV : installation du service"); toast("C’est parti ✓ Reviens dans 2 à 3 minutes et appuie sur « Actualiser »", { ms: 6000 }); }
+  catch (e) { toast(e.message); }
+};
 
 // ---------- Fonds animés des onglets et musique de fond ----------
 // Fichiers rangés dans media/ sur GitHub (avec la clé GitHub), liste dans data/media.json
