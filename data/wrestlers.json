@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-28",
+ "updated": "2026-10-29",
  "note": "Catcheurs suivis (champions, cartes annoncées, favoris des membres) et catcheurs à découvrir (disc = true, toutes fédérations et époques). txt = petit résumé en français, era = époque, ref = matchs de référence, last = 3 derniers matchs (r = résultat, spoiler), v = vidéo YouTube d'une chaîne officielle.",
  "items": {
   "Roman Reigns": {
@@ -1381,6 +1381,38 @@
      "ev": "Bound for Glory, 2009"
     }
    ]
+  },
+  "Lyra Valkyria": {
+   "k": "WWE",
+   "sh": [
+    "Raw"
+   ],
+   "a": [
+    "Aoife Valkyrie",
+    "Valkyrie"
+   ],
+   "al": "heel",
+   "alD": "2026-06-22",
+   "nick": "Lady of the Opera",
+   "from": "Dublin (Irlande)",
+   "ht": "1,60 m",
+   "wt": "59 kg",
+   "fin": "Nightwing, Frog Splash, Roundhouse Kick",
+   "teams": "Bayley et Lyra Valkyria, The Woke Queens"
+  },
+  "Penta": {
+   "k": "WWE",
+   "sh": [
+    "Raw"
+   ],
+   "a": [
+    "Pentagón Jr.",
+    "Penta El Zero Miedo"
+   ],
+   "nick": "Penta Zero Miedo",
+   "ht": "1,80 m",
+   "wt": "94 kg",
+   "fin": "Sacrifice, Penta Driver"
   }
  }
 }
