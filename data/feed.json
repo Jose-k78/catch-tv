@@ -1,6 +1,15 @@
 {
- "at": "2026-10-29T22:12:48.045Z",
+ "at": "2026-10-29T22:38:15.768Z",
  "items": [
+  {
+   "t": "Lilian Garcia se remémore le premier WWE Evolution en 2018",
+   "u": "https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018",
+   "s": "Catch-Newz",
+   "d": "2026-10-29",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Preview : AEW Collision du 31 octobre 2026",
    "u": "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026",
@@ -42,6 +51,30 @@
    ]
   },
   {
+   "t": "Résultats du jour 1 de RCW Rise Of Legends",
+   "u": "https://www.catch-newz.com/international/resultats/60816-resultats-du-jour-1-de-rcw-rise-of-legends",
+   "s": "Catch-Newz",
+   "d": "2026-10-29",
+   "tags": []
+  },
+  {
+   "t": "Résultats de NOAH WRESTLE ODYSSEY Ⅱ",
+   "u": "https://www.catch-newz.com/international/resultats/60813-resultats-de-noah-wrestle-odyssey-ii",
+   "s": "Catch-Newz",
+   "d": "2026-10-29",
+   "tags": []
+  },
+  {
+   "t": "AEW Dynamite du 28 octobre : Queen Aminata championne TBS, Ospreay vs. Fletcher à Full Gear",
+   "u": "https://www.voxcatch.fr/2026/10/29/resultats-aew-dynamite-28-octobre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-10-29",
+   "tags": [
+    "AEW",
+    "Dynamite"
+   ]
+  },
+  {
    "t": "Résultats de Marigold Grand Destiny 2026",
    "u": "https://www.catch-newz.com/international/resultats/60811-resultats-de-marigold-grand-destiny-2026",
    "s": "Catch-Newz",
@@ -70,16 +103,6 @@
    "s": "Catch-Newz",
    "d": "2026-10-29",
    "tags": []
-  },
-  {
-   "t": "AEW Dynamite du 28 octobre : Queen Aminata championne TBS, Ospreay vs. Fletcher à Full Gear",
-   "u": "https://www.voxcatch.fr/2026/10/29/resultats-aew-dynamite-28-octobre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-10-29",
-   "tags": [
-    "AEW",
-    "Dynamite"
-   ]
   },
   {
    "t": "Qui pourrait remplacer Bruce Prichard à la WWE ?",
@@ -246,10 +269,13 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/60789-aew-dynamite-28-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018",
    "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/aew/newz/60808-preview-roh-du-29-octobre-2026",
    "https://www.catch-newz.com/aew/resultats/60803-spoilers-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/international/newz/60794-preview-tna-impact-29-octobre-2026",
+   "https://www.catch-newz.com/international/resultats/60816-resultats-du-jour-1-de-rcw-rise-of-legends",
+   "https://www.catch-newz.com/international/resultats/60813-resultats-de-noah-wrestle-odyssey-ii",
    "https://www.catch-newz.com/international/resultats/60811-resultats-de-marigold-grand-destiny-2026",
    "https://www.catch-newz.com/international/resultats/60812-resultats-du-jour-1-du-hop-spooktober-tour-2026",
    "https://www.catch-newz.com/international/resultats/60810-resultats-de-ccw-vs-2econd-wrestling",
@@ -285,7 +311,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "5 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
