@@ -60,7 +60,9 @@ async function scrape(s, seen) {
     let u; try { u = new URL(m[1], s.u); } catch (e) { continue; }
     if (u.host.replace(/^www\./, "") !== host || !/\/\d{3,}-[a-z0-9-]{8,}/i.test(u.pathname)) continue;
     const t = decode(m[2]); if (t.length < 20 || t.length > 220) continue;
-    const href = "https://" + u.host + u.pathname, d = frDate(t) || frDate(u.pathname);
+    const href = "https://" + u.host + u.pathname, today = parisDay(new Date());
+    // une date écrite dans le titre est souvent celle du show : jamais dans le futur
+    let d = frDate(t) || frDate(u.pathname); if (d && d > today) d = today;
     if (out.some(x => x.u === href)) continue;
     if (seen.indexOf(href) >= 0 && !d) continue;           // déjà vu : on garde la date du premier passage
     if (first && !d) { out.push({ u: href, skip: true }); continue; }
