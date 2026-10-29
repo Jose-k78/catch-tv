@@ -1,7 +1,94 @@
 {
- "at": "",
- "items": [],
- "yt": {},
- "rss": {},
- "ch": {}
+ "at": "2026-10-29T16:09:39.906Z",
+ "items": [
+  {
+   "t": "AEW Dynamite du 28 octobre : Queen Aminata championne TBS, Ospreay vs. Fletcher à Full Gear",
+   "u": "https://www.voxcatch.fr/2026/10/29/resultats-aew-dynamite-28-octobre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-10-29",
+   "tags": [
+    "AEW",
+    "Dynamite"
+   ]
+  },
+  {
+   "t": "WWE NXT du 27 octobre : Demi-finales du Dusty Classic, dernier épisode avant Halloween Havoc",
+   "u": "https://www.voxcatch.fr/2026/10/28/resultats-wwe-nxt-du-27-octobre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-10-28",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
+   "t": "WWE Raw du 26 octobre : Liv Morgan contre Becky Lynch, Sami Zayn défend son titre",
+   "u": "https://www.voxcatch.fr/2026/10/27/resultats-wwe-raw-26-octobre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-10-27",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
+  {
+   "t": "The FinalSlam : Les places du show d’AmineMaTue en vente ce lundi",
+   "u": "https://www.voxcatch.fr/2026/10/26/the-finalslam-places-vente-date/",
+   "s": "VOXcatch",
+   "d": "2026-10-26",
+   "tags": []
+  },
+  {
+   "t": "WWE SmackDown du 23 octobre : Cody Rhodes vs. Randy Orton à Crown Jewel, Nouvelles championnes par équipe",
+   "u": "https://www.voxcatch.fr/2026/10/24/resultats-wwe-smackdown-23-octobre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-10-24",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
+  }
+ ],
+ "yt": {
+  "WWE|Main Event|2026-10-28": [
+   {
+    "id": "unRpteFR0dQ",
+    "t": "Bronson Reed TSUNAMIS Joe Hendry after Logan Paul diss: Main Event highlights, Oct. 28, 2026"
+   },
+   {
+    "id": "fBTdeR6sHBE",
+    "t": "Los Americanos take on The Judgment Day: Main Event highlights, Oct. 28, 2026"
+   }
+  ],
+  "AEW|Dynamite|2026-10-28": [
+   {
+    "id": "aYJziQPSBiI",
+    "t": "FTR contre MCMG"
+   },
+   {
+    "id": "EFIrwCXb42Y",
+    "t": "FTR contre MCMG"
+   }
+  ],
+  "ROH|ROH TV|2026-10-22": [
+   {
+    "id": "ogM-fmXX8d0",
+    "t": "FULL MATCH Isla Dawn contre Mina Shirakawa"
+   },
+   {
+    "id": "WkZAP6Ae4HU",
+    "t": "FULL MATCH Xanti Li contre Zayda Steel"
+   },
+   {
+    "id": "qGrINCcGIRI",
+    "t": "FULL MATCH Isla Dawn contre Robyn Renegade"
+   }
+  ]
+ },
+ "rss": {
+  "https://www.voxcatch.fr/": "https://www.voxcatch.fr/feed/"
+ },
+ "ch": {
+  "Stardom": "UCNJPhlFT0DzU5I3OAvE223Q"
+ }
 }
