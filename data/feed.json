@@ -1,23 +1,14 @@
 {
- "at": "2026-10-30T13:34:41.790Z",
+ "at": "2026-10-30T14:28:17.996Z",
  "items": [
   {
-   "t": "WWE NXT Halloween Havoc 2026 : Heure et chaine pour regarder le show en direct",
-   "u": "https://www.catch-newz.com/wwe/newz/60822-wwe-nxt-halloween-havoc-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
+   "t": "Preview : WWE SmackDown ''Danhausen’s Very Nice, Very Evil'' du 30 octobre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
    "s": "Catch-Newz",
    "d": "2026-10-30",
    "tags": [
     "WWE",
-    "NXT"
-   ]
-  },
-  {
-   "t": "Sami Zayn : « J'apprécie vraiment ce que je fais en ce moment »",
-   "u": "https://www.catch-newz.com/wwe/newz/60821-sami-zayn-japprecie-vraiment-ce-que-je-fais-en-ce-moment",
-   "s": "Catch-Newz",
-   "d": "2026-10-30",
-   "tags": [
-    "WWE"
+    "SmackDown"
    ]
   },
   {
@@ -51,6 +42,25 @@
    ]
   },
   {
+   "t": "WWE NXT Halloween Havoc 2026 : Heure et chaine pour regarder le show en direct",
+   "u": "https://www.catch-newz.com/wwe/newz/60822-wwe-nxt-halloween-havoc-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
+   "s": "Catch-Newz",
+   "d": "2026-10-30",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
+   "t": "Sami Zayn : « J'apprécie vraiment ce que je fais en ce moment »",
+   "u": "https://www.catch-newz.com/wwe/newz/60821-sami-zayn-japprecie-vraiment-ce-que-je-fais-en-ce-moment",
+   "s": "Catch-Newz",
+   "d": "2026-10-30",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
    "t": "RKO, Styles Clash : Leedz Lewis attaque les influenceurs !",
    "u": "https://www.catch-newz.com/wwe/newz/60802-rko-styles-clash-leedz-lewis-attaque-les-influenceurs",
    "s": "Catch-Newz",
@@ -79,6 +89,15 @@
    "s": "Catch-Newz",
    "d": "2026-10-30",
    "tags": []
+  },
+  {
+   "t": "Résultats de WWE Road To Survivor Series du 29 octobre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/60823-resultats-de-wwe-road-to-survivor-series-du-29-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-29",
+   "tags": [
+    "WWE"
+   ]
   },
   {
    "t": "Résultats de TNA Impact du 29 octobre 2026",
@@ -333,6 +352,12 @@
     "id": "D_VqrXqjNow",
     "t": "Amazing Red contre Cedric Alexander"
    }
+  ],
+  "WWE|NXT|2026-10-27": [
+   {
+    "id": "I-WI3arBqDM",
+    "t": "NXT Champion Grayson Waller contre Tony D’Angelo"
+   }
   ]
  },
  "rss": {
@@ -343,14 +368,16 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
    "https://www.catch-newz.com/aew/resultats/60789-aew-dynamite-28-octobre-2026",
-   "https://www.catch-newz.com/wwe/newz/60822-wwe-nxt-halloween-havoc-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
-   "https://www.catch-newz.com/wwe/newz/60821-sami-zayn-japprecie-vraiment-ce-que-je-fais-en-ce-moment",
+   "https://www.catch-newz.com/wwe/resultats/60823-resultats-de-wwe-road-to-survivor-series-du-29-octobre-2026",
    "https://www.catch-newz.com/international/resultats/60820-tna-impact-29-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60819-wwe-smackdown-du-30-octobre-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
    "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/aew/newz/60808-preview-roh-du-29-octobre-2026",
    "https://www.catch-newz.com/aew/resultats/60803-spoilers-aew-collision-31-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60822-wwe-nxt-halloween-havoc-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
+   "https://www.catch-newz.com/wwe/newz/60821-sami-zayn-japprecie-vraiment-ce-que-je-fais-en-ce-moment",
    "https://www.catch-newz.com/wwe/newz/60802-rko-styles-clash-leedz-lewis-attaque-les-influenceurs",
    "https://www.catch-newz.com/international/newz/60794-preview-tna-impact-29-octobre-2026",
    "https://www.catch-newz.com/international/resultats/60814-resultats-du-jour-2-du-hop-spooktober-tour-2026",
@@ -396,7 +423,7 @@
  "diag": {
   "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "5 articles (7 j)",
-  "YouTube WWE": "0 nouvelles vidéos",
+  "YouTube WWE": "1 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
