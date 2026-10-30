@@ -1033,8 +1033,8 @@ a.evlink{color:inherit;text-decoration:none}
 .wpic{flex:none;width:96px;height:96px;border-radius:16px;object-fit:cover;object-position:50% 15%;background:var(--bg);border:1px solid var(--line)}
 .wtop .wtt{flex:1}
 .wacts{display:flex;align-items:center;flex:none}
-.wtop.haspic{display:grid;grid-template-columns:96px 1fr auto;grid-template-areas:"pic . act" "pic tt tt";column-gap:12px;row-gap:4px;align-items:start}
-.haspic .wpic{grid-area:pic}.haspic .wtt{grid-area:tt}.haspic .wacts{grid-area:act}
+.wtop.haspic{display:grid;grid-template-columns:144px 1fr auto;grid-template-areas:"pic . act" "pic tt tt";column-gap:12px;row-gap:4px;align-items:start}
+.haspic .wpicbox{grid-area:pic}.haspic .wtt{grid-area:tt}.haspic .wacts{grid-area:act}
 .haspic .wtt h1{font-size:32px}
 .pvs{display:flex;align-items:center;justify-content:center;gap:14px;margin:4px 0 10px}
 .pvs .wvsx{font-size:18px}
@@ -1044,4 +1044,96 @@ a.evlink{color:inherit;text-decoration:none}
 .evcard .wvs{margin-left:-2px}
 .evrecap p{margin:0}
 .epbody .wvs{margin:0 0 2px}
-@media (min-width:600px){.wpic{width:120px;height:120px}}
+
+
+/* ---------- Fiche catcheur : grande photo (agrandie au toucher), logo de ses groupes dans un coin ---------- */
+.wpicbox{position:relative;width:144px;height:144px}
+.wpicbtn{display:block;padding:0;border:0;background:none;cursor:zoom-in;border-radius:18px}
+.wpicbox .wpic{width:144px;height:144px;border-radius:18px}
+.wgcorner{position:absolute;right:-6px;bottom:-6px;display:flex;gap:4px}
+.wgcorner .gchip{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:3px 5px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.wgcorner.inline{position:static;margin-top:8px}
+.gchip{display:inline-flex;align-items:center;text-decoration:none;color:var(--text);font-size:12px;font-weight:700}
+.gchip img{display:block;width:auto;max-width:64px;object-fit:contain}
+.gchip span{padding:2px 4px}
+@media (max-width:380px){.wtop.haspic{grid-template-columns:118px 1fr auto}.wpicbox,.wpicbox .wpic{width:118px;height:118px}}
+.wgroups{margin-top:10px}
+.wgroups>small{display:block;color:var(--mute);font-size:12px;font-weight:700;margin-bottom:6px}
+.wgroups .chips.wrap{margin:0}
+.gpill{display:inline-flex;align-items:center;gap:6px}
+.gpill img{height:18px;width:auto;max-width:44px;object-fit:contain}
+.gpill.cur{border-color:var(--red)}
+.gpill .muted{color:var(--mute);font-weight:500}
+/* image ajoutée par un membre : en petit sous la photo du dossier */
+.wimg.small{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.wimg.small .wimgpic img{width:64px;height:64px;max-height:none;border-radius:12px}
+.wimg.small .wimgbar{margin-top:0;flex:1}
+.wimg.small .wimgadd{width:auto;padding:8px 12px;font-size:13px}
+.wimgpic{display:block;padding:0;border:0;background:none;cursor:zoom-in;width:100%}
+.wimg.small .wimgpic{width:auto}
+/* plein écran */
+.zoomov{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;opacity:0;transition:opacity .18s;cursor:zoom-out}
+.zoomov.on{opacity:1}
+.zoomov img{max-width:100%;max-height:82vh;object-fit:contain;border-radius:14px}
+.zoomov small{color:#ddd;font-size:14px;font-weight:600}
+.zoomx{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.16);color:#fff;font-size:18px;cursor:pointer}
+/* ---------- Fiche d'un groupe ---------- */
+.gcard .glogo{display:block;margin:0 auto 4px;padding:0;border:0;background:none;cursor:zoom-in}
+.gcard .glogo img{display:block;max-width:220px;max-height:180px;width:auto;object-fit:contain}
+.gcard .wtt{text-align:center}
+.gcard .wtt .eyebrow{display:block}
+.gfaces{justify-content:center;margin:4px 0 0}
+.glogos{display:flex;flex-wrap:wrap;gap:8px;margin:0 16px}
+.glogos button{padding:6px;border:1px solid var(--line);border-radius:12px;background:var(--card);cursor:zoom-in}
+.glogos img{display:block;height:64px;width:auto;max-width:120px;object-fit:contain}
+.glogos.belts2 img{height:72px}
+.glogo0{flex:none;width:44px;height:44px;object-fit:contain}
+.item .wnone{flex:none}
+.item.palm .glogo0{width:52px;height:40px}
+/* ---------- Titres : photo de la ceinture ---------- */
+.belt.hasimg .beltimg{flex:none;display:flex;align-items:center;justify-content:center;width:84px;padding:6px 0 6px 8px}
+.belt.hasimg .beltimg img{width:76px;height:64px;object-fit:contain}
+.beltheader.hasimg{align-items:center;text-align:center}
+.beltbig{padding:0;border:0;background:none;cursor:zoom-in}
+.beltbig img{display:block;width:min(260px,70vw);height:auto;max-height:200px;object-fit:contain;filter:drop-shadow(0 6px 14px rgba(0,0,0,.45))}
+.beltheader.hasimg .eyebrow{margin:0 auto}
+.recs{margin:0 16px}
+.recs small+small{display:block;margin-top:2px}
+
+/* ---------- Logos des shows et des grands événements ---------- */
+.card>.evlogo{position:absolute;top:38px;left:8px;width:calc(100% - 16px);height:64px;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5))}
+.card>.cardlogo{position:absolute;top:40px;left:50%;transform:translateX(-50%);width:62px;height:62px;object-fit:cover;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.4)}
+.card.big>.cardlogo{width:54px;height:54px;top:12px;left:auto;right:12px;transform:none}
+.card.hasedit.big>.cardlogo{right:52px}
+.bigl{display:block;width:min(280px,80%);height:auto;max-height:110px;object-fit:contain;margin:0 0 6px;filter:drop-shadow(0 3px 10px rgba(0,0,0,.55))}
+.bigl.sq{width:64px;height:64px;max-height:none;object-fit:cover;border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.4)}
+.hero .bigl{position:relative}
+
+/* ---------- Profil : catcheurs suivis avec leur photo ---------- */
+.favgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(76px,1fr));gap:10px;margin:0 16px}
+.favw{display:flex;flex-direction:column;align-items:center;gap:5px;text-decoration:none;color:var(--text);min-width:0}
+.favw img,.favx{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:50% 15%;border:2px solid var(--star);background:var(--card)}
+.favx{display:flex;align-items:center;justify-content:center;font-size:24px}
+.favw small{font-size:12px;font-weight:700;text-align:center;line-height:1.2;overflow-wrap:anywhere}
+.favpic{display:block;width:48px;height:48px;border-radius:50%;object-fit:cover;object-position:50% 15%;margin:4px auto 2px;border:2px solid var(--line)}
+
+/* ---------- Patch notes ---------- */
+.pdot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--red);vertical-align:2px;margin-left:4px}
+.badge.pdotb{min-width:12px;width:12px;height:12px;padding:0;top:-2px;right:-4px}
+.pnotes{display:flex;flex-direction:column;gap:10px;margin:0 16px}
+.pnote{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.pnhead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.pnhead b{font-size:16px}.pnhead small{color:var(--mute);font-size:12px}
+.pnote ul{margin:8px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:14.5px;line-height:1.45}
+.pnote .linkbtn{padding:0;margin-top:8px;font-size:13px}
+.pnform{margin:0 16px}
+.pnform textarea{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--text);font:inherit;font-size:15px}
+.pnform .chk{display:flex;align-items:center;gap:8px;margin:6px 0 12px;font-size:14px}
+
+/* les logos de groupes sont dessinés pour un fond sombre */
+.wgcorner .gchip{background:#17171c;border-color:#2a2a31}
+.gpill img{background:#17171c;border-radius:6px;padding:2px 3px}
+.gcard .glogo{background:radial-gradient(circle at 50% 40%,#2a2a32,#101014);border-radius:18px;padding:16px 22px}
+.glogos button{background:#17171c;border-color:#2a2a31}
+img.glogo0[src*="/groupes/"]{background:#17171c;border-radius:10px;padding:3px;box-sizing:border-box}
+.gchip span{background:#17171c;color:#fff;border-radius:6px}

@@ -6,6 +6,8 @@ import { champHidden, unlock, noSpoil } from "../spoil.js";
 import { resultWinner } from "./mrate.js";
 import { norm, linkNames } from "../wrestlers.js";
 import { hlHref } from "./highlights.js";
+import { beltOf, beltVersions, beltLabel, art, artVersions } from "../assets.js";
+import { reignsOf, recordsOf, daysTxt } from "./palmares.js";
 
 // ---------- défenses de titre ----------
 // +1 à chaque résultat de show télévisé ou de PLE où le champion « conserve » son titre (pas les live events) ;
@@ -47,13 +49,16 @@ function champLinks(t) {
   const team = t.c.match(/^(.+?)\s*\((.+)\)$/); // « Équipe (A et B) »
   return (team ? '<span class="team">' + esc(team[1]) + "</span> " : "") + who.map(wlink).join('<span class="amp"> · </span>');
 }
+const clean0 = s => String(s || "").replace(/\s*\(.*\)$/, "");
 function days(since) { return okDay(since) ? Math.max(0, Math.round((today() - dt(since)) / 864e5)) : null; }
 function sinceLine(t) {
   const n = days(t.since);
   return okDay(t.since) ? "Depuis le " + fmt(t.since) + (t.ev ? " (" + esc(t.ev) + ")" : "") + " · " + n + " jour" + (n > 1 ? "s" : "") : "Date de début du règne à confirmer";
 }
 function card(t) {
-  return '<article class="belt"' + shAttr({ ty: "title", t: t.n, s: t.k + (t.show ? " · " + t.show : ""), h: "#/titre/" + encodeURIComponent(t.id), k: t.k }) + '><div class="beltbar" style="' + esc(plain(colorOf(t.k, t.show || ""))) + '"></div><div class="beltbody">' +
+  const img = beltOf(t.id);
+  return '<article class="belt' + (img ? " hasimg" : "") + '"' + shAttr({ ty: "title", t: t.n, s: t.k + (t.show ? " · " + t.show : ""), h: "#/titre/" + encodeURIComponent(t.id), k: t.k }) + '><div class="beltbar" style="' + esc(plain(colorOf(t.k, t.show || ""))) + '"></div>' +
+    (img ? '<a class="beltimg" href="#/titre/' + encodeURIComponent(t.id) + '" aria-hidden="true" tabindex="-1"><img src="' + esc(img) + '" alt="" loading="lazy" onerror="this.parentNode.remove()"></a>' : "") + '<div class="beltbody">' +
     '<a class="beltname" href="#/titre/' + encodeURIComponent(t.id) + '">' + esc(t.n) + ' <span class="chev">›</span></a>' +
     (champHidden(t) ? masked(t) : '<div class="champs">' + champLinks(t) + "</div><small>" + sinceLine(t) + defLine(t) + "</small>") + "</div></article>";
 }
@@ -82,7 +87,9 @@ export function titleView(id) {
   const t = (S.titles || []).find(x => x.id === id);
   if (!t) return '<a class="back" href="#/">' + ICON.back + ' Accueil</a><p class="empty">Titre introuvable.</p>';
   let h = '<a class="back" href="#/titres/' + encodeURIComponent(t.k) + (t.show ? "/" + encodeURIComponent(t.show) : "") + '">' + ICON.back + " Titres</a>";
-  h += '<section class="beltheader" style="' + esc(plain(colorOf(t.k, t.show || ""))) + '"><span class="eyebrow">' + esc(t.k) + (t.show ? " · " + esc(t.show) : "") + "</span><h1>" + esc(t.n) + "</h1>" +
+  const img = beltOf(t.id);
+  h += '<section class="beltheader' + (img ? " hasimg" : "") + '" style="' + esc(plain(colorOf(t.k, t.show || ""))) + '">' + (img ? '<button class="beltbig" data-act="zoom" data-src="' + esc(img) + '" data-alt="' + esc(t.n) + '" aria-label="Agrandir la ceinture"><img src="' + esc(img) + '" alt="' + esc(t.n) + '"></button>' : "") +
+    '<span class="eyebrow">' + esc(t.k) + (t.show ? " · " + esc(t.show) : "") + "</span><h1>" + esc(t.n) + "</h1>" +
     '<button class="iconbtn sharebtn light" data-act="share"' + shAttr({ ty: "title", t: t.n, s: t.k + (t.show ? " · " + t.show : ""), h: "#/titre/" + encodeURIComponent(t.id), k: t.k }) + ' aria-label="Partager">↗</button></section>';
   if (champHidden(t)) return h + '<h2>Champion actuel</h2><div class="belts"><article class="belt"><div class="beltbody">' + masked(t) + "</div></article></div>" + noteSpoil();
   h += '<h2>Champion actuel</h2><div class="belts"><article class="belt"><div class="beltbody"><div class="champs big">' + champLinks(t) + "</div><small>" + sinceLine(t) + "</small></div></article></div>";
@@ -91,9 +98,29 @@ export function titleView(id) {
   h += defs.length ? '<ol class="hist defs">' + defs.map(x => "<li><b>" + (x.vs ? "contre " + linkNames(x.vs) : "Titre conservé") + "</b><small>" + (okDay(x.d) ? fmt(x.d) : "") + (x.ev ? " · " + esc(x.ev) : "") +
       (x.k && x.show && okDay(x.d) ? ' · <a href="' + hlHref(x.k, x.show, x.d) + '">résultats ›</a>' : "") + "</small></li>").join("") + "</ol>"
     : '<p class="note">' + (nd ? nd + " défense" + (nd > 1 ? "s" : "") + " réussie" + (nd > 1 ? "s" : "") + " depuis le début du règne." : "Pas encore de défense réussie depuis le début du règne (shows télévisés et PLE, hors live events).") + "</p>";
-  h += "<h2>Champions précédents</h2>";
-  h += (t.hist && t.hist.length) ? '<ol class="hist">' + t.hist.map(x => "<li>" + wlink(x.c) + "<small>" + (okDay(x.d) ? "Depuis le " + fmt(x.d) : "Date non précisée") + (x.ev ? " · " + esc(x.ev) : "") + "</small></li>").join("") + "</ol>"
+  const rs = reignsOf(t).filter(r => !r.cur), rec = recordsOf(t);
+  h += "<h2>Champions précédents" + (rs.length ? ' <small class="cnt">' + rs.length + "</small>" : "") + "</h2>";
+  h += rs.length ? '<ol class="hist">' + rs.map(x => "<li>" + wlink(x.c) + "<small>" + (okDay(x.d) ? "Depuis le " + fmt(x.d) : "Date non précisée") + (x.ev ? " · " + esc(x.ev) : "") + " · " + daysTxt(x.days) + "</small></li>").join("") + "</ol>"
     : '<p class="note">L’historique de ce titre sera ajouté lors d’une prochaine mise à jour.</p>';
+  if (rec.n > 1) h += '<h2>Records</h2><div class="wfacts recs"><div><small>Règnes connus</small><b>' + rec.n + "</b></div>" +
+    (rec.longest ? "<div><small>Plus long règne</small><b>" + esc(clean0(rec.longest.c)) + "</b><small>" + daysTxt(rec.longest.days) + "</small></div>" : "") +
+    (rec.most ? "<div><small>Le plus de règnes</small><b>" + esc(rec.most.c) + "</b><small>" + rec.most.x + " fois</small></div>" : "") + "</div>" +
+    '<p class="note small">D’après les règnes connus par l’app ; la mise à jour du soir complète l’historique.</p>';
+  const old = beltVersions(t.id);
+  if (old.length) h += '<h2>Anciens modèles de la ceinture</h2><div class="glogos belts2">' + old.map(s => '<button data-act="zoom" data-src="' + esc(s) + '" data-alt="' + esc(t.n) + '"><img src="' + esc(s) + '" alt="" loading="lazy"></button>').join("") + "</div>";
   if (t.src) h += '<p class="note small" style="margin-top:12px">Source : ' + (okHttp(t.u) ? '<a href="' + esc(t.u) + '" target="_blank" rel="noopener">' + esc(t.src) + "</a>" : esc(t.src)) + "</p>";
   return h + noteSpoil();
+}
+
+// Ancienne ceinture (archives, trouvée par la recherche) : #/ceinture/nom
+export function beltView(key) {
+  const src = art("titles", key);
+  if (!src) return '<a class="back" href="#/recherche">' + ICON.back + ' Recherche</a><p class="empty">Ceinture introuvable.</p>';
+  const lbl = beltLabel(key), old = artVersions("titles", key);
+  let h = '<a class="back" href="#/recherche/' + encodeURIComponent(lbl) + '">' + ICON.back + " Recherche</a>";
+  h += '<section class="beltheader hasimg" style="background:linear-gradient(160deg,#2a2a2a,#111)"><button class="beltbig" data-act="zoom" data-src="' + esc(src) + '" data-alt="' + esc(lbl) + '" aria-label="Agrandir"><img src="' + esc(src) + '" alt="' + esc(lbl) + '"></button>' +
+    '<span class="eyebrow">ARCHIVES · ' + esc(key.split(" ")[0]) + "</span><h1>" + esc(lbl) + "</h1></section>";
+  h += '<p class="note" style="margin:12px 16px">Ceinture qui n’est plus en jeu, ancien modèle ou trophée de tournoi. Elle reste dans les archives : on la retrouve en tapant son nom dans la recherche.</p>';
+  if (old.length) h += '<h2>Autres modèles</h2><div class="glogos belts2">' + old.map(s => '<button data-act="zoom" data-src="' + esc(s) + '" data-alt="' + esc(lbl) + '"><img src="' + esc(s) + '" alt="" loading="lazy"></button>').join("") + "</div>";
+  return h;
 }

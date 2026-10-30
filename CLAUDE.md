@@ -51,6 +51,21 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   Affichées sur la fiche, les résultats de recherche, les sondages, la page d'un événement (affiche + résumé), les résumés
   des shows et les highlights. Le robot tient la liste à jour (`.github/scripts/photos.mjs`, aussi lancé à chaque ajout
   dans le dossier) : nom de fichier = nom du catcheur, la photo la plus récente gagne, > 400 Ko → copie WebP légère.
+- `js/assets.js` : images des dossiers de Jose, liste `data/logos.json` = { shows, events, titles, groups } →
+  `img/shows/` (logos des shows), `img/events/` (logos des grands événements), `img/titres/` (ceintures), `img/groupes/`
+  (logos des tag teams / factions) ; `{ "Nom du fichier": { f, v: [anciennes versions] } }`, **la version la plus récente
+  toujours en premier** (`f`). `showLogo`, `eventLogo(e)`, `beltOf(id titre)` (table `BELT`), `archivedBelts()` (anciennes
+  ceintures : seulement dans les archives, trouvées par la recherche, page `#/ceinture/nom`), groupes (`groupsOf`, `groupChip`).
+- `js/views/groups.js` : fiche d'un tag team / d'une faction `#/groupe/id` (logo, membres actuels / anciens, années,
+  matchs de référence) d'après `data/groups.json` ; logo de ses groupes actuels dans un coin de la photo de la fiche catcheur.
+  Un membre peut ajouter un logo seulement si le groupe n'en a pas (Firestore `wimages/groupe-…`, l'admin l'enlève).
+- `js/views/palmares.js` : palmarès d'un catcheur (titres des 9 promotions, fois, jours — toujours derrière un spoiler) et
+  durée des règnes / records d'un titre, calculés d'après `hist` de `data/titles.json` (historique complet complété chaque
+  matin) ou le champ `tt` d'une fiche.
+- `js/views/patchnotes.js` : patch notes (`data/patchnotes.json`, `mod: true` = réservé au modérateur) ; Paramètres › Patch
+  notes pour tous, Modération › Patch notes pour écrire une note (clé GitHub de l'admin) ; point rouge tant que non lu.
+- Fiche catcheur : grande photo agrandie au toucher (`ACT.zoom`, plein écran), image d'un membre toujours possible (en petit
+  sous la photo du dossier), rubrique Palmarès. Profil d'un membre : ses catcheurs suivis avec leur photo.
 - `js/share.js` : appui long / clic droit sur un élément `[data-sh]` (carte JSON via `shAttr()` de util.js) →
   partage dans la Gorilla Position ou en privé ; champ `card` des messages.
 - `js/push.js` + `sw.js` (service worker sans cache) : notifications Firebase Cloud Messaging (petite icône Android :
@@ -64,8 +79,10 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
 ## Données et mises à jour automatiques
 
 - Fichiers JSON dans `data/` et `news.json`, mis à jour par 3 tâches planifiées (heure de Paris) :
-  7 h 44 (actu en secours, storyline, sondages), 8 h 21 (résultats/segments/vidéos, titres et défenses, résumés
-  d'avant-show), 19 h 23 (calendrier, heures, cartes, liens directs, rosters, fiches ; lundi : matchs à découvrir).
+  7 h 44 (actu en secours, storyline, sondages), 8 h 21 (résultats/segments/vidéos, titres et défenses, historique
+  complet de 2 titres par jour, résumés d'avant-show), 19 h 23 (calendrier, heures, cartes, liens directs, rosters, fiches,
+  8 groupes vérifiés par jour dans `data/groups.json` ; lundi : matchs à découvrir). Les tâches ne touchent jamais aux images
+  ni à `data/logos.json` / `data/photos.json`.
 - Robot GitHub Actions (`.github/workflows/robot.yml`, à xx h 07 et xx h 37) : `robot.mjs` écrit `data/feed.json`
   (actu RSS ou page d'accueil, vidéos YouTube officielles), puis `notify.mjs` envoie les notifications (infos,
   favoris, rappel des feuds à 21 h) et tient `data/push-state.json`.

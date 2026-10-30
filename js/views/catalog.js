@@ -8,6 +8,7 @@ import { favAside } from "./favs.js";
 import { champHidden, hlHidden } from "../spoil.js";
 import { linkNames, namesIn } from "../wrestlers.js";
 import { versus, faceRow } from "../photos.js";
+import { eventLogo, showLogo } from "../assets.js";
 import { discoverTile } from "./discover.js";
 import { storylineTile } from "./storyline.js";
 import { activitySection, activityList } from "./activity.js";
@@ -196,12 +197,23 @@ function fit(title, width, max, poster) {
   return ' style="font-size:' + Math.max(12, Math.min(max, Math.floor(width / (w * 0.8)))) + 'px"';
 }
 
+// Logo d'un événement (Royal Rumble…) ou d'un show (Raw…) : dossier de l'admin, version la plus récente
+function logoFor(e) {
+  if (!e) return "";
+  if (e.kind === "ple" || e.kind === "spec") return eventLogo(e);
+  if (e.kind === "promo") return showLogo(e.k, "");
+  return e.show ? showLogo(e.k, e.show) : eventLogo(e);
+}
+function logoImg(e, cls) {
+  const src = logoFor(e);
+  return src ? '<img class="' + cls + '" src="' + esc(src) + '" alt="" loading="lazy" onerror="this.remove()">' : "";
+}
 // ---------- vignettes horizontales ----------
 function pleCard(e, showK) {
   const h = seenOf(e), n = diff(e.d), lk = look(e);
   return '<div class="card' + (lk.poster ? " poster" : "") + (e.d && n < 0 ? " past" : "") + (h ? " seen" : "") + (S.isAdmin ? " hasedit" : "") + '" style="' + esc(lk.style) + '">' +
     '<a class="cover" href="' + esc(evHref(e)) + '" aria-label="' + esc(e.t) + '"' + shAttr(evCard(e)) + "></a>" +
-    '<span class="tag">' + (showK ? esc(e.k) + " · " : "") + cd(e.d) + "</span>" + editBtn(e, e.t) +
+    '<span class="tag">' + (showK ? esc(e.k) + " · " : "") + cd(e.d) + "</span>" + editBtn(e, e.t) + logoImg(e, "evlogo") +
     "<b" + fit(e.t, 126, 27, lk.poster) + ">" + esc(e.t) + "</b><small>" + (n >= 0 ? shortWhen(e) : fmt(e.d)) + (place(e) ? " · " + place(e) : "") + "</small>" + seenMark(h) +
     (n >= 0 && pickable(e) ? '<button class="minibtn" data-act="pick"' + dataItem(e) + ">🎯 Pronostic</button>" : "") +
     (aired(e) ? '<button class="cbtn seen' + (h ? " on" : "") + '" data-act="seen"' + dataItem(e) + ' aria-label="Je l’ai vu">' + (h ? ICON.check : ICON.eye) + "</button>" : remindBtn(e, "cbtn seen")) +
@@ -236,7 +248,7 @@ function outCard(e, recent) {
   return '<div class="card out' + (recent ? " fresh" : " past") + (lk.poster ? " poster" : "") + (h ? " seen" : "") + '" data-cat="' + cat + '" style="' + esc(lk.style) + '"' +
     (!recent && pastF && pastF !== cat ? " hidden" : "") + ">" +
     '<a class="cover" href="' + esc(href) + '" aria-label="' + esc(e.t) + '"' + shAttr(evCard(e)) + "></a>" +
-    '<span class="tag' + (recent && e.ago <= 1 ? " hot" : "") + '">' + tag + "</span>" +
+    '<span class="tag' + (recent && e.ago <= 1 ? " hot" : "") + '">' + tag + "</span>" + logoImg(e, e.kind === "ple" || e.kind === "spec" ? "evlogo" : "cardlogo") +
     "<b" + fit(e.t, 126, 27, lk.poster) + ">" + esc(e.t) + "</b><small>" + (recent ? esc(e.k) + " · " : "") + (e.kind === "ep" ? (recent ? "" : "Épisode du ") + fmt(e.d) : fmt(e.d) + (place(e) ? " · " + place(e) : "")) + "</small>" + seenMark(h) +
     '<button class="minibtn" data-act="watch" data-direct="1"' + dataItem(e) + ">" + ICON.play + " Voir le show</button>" +
     (hl ? '<span class="hlmini">' + ICON.play + " Highlights</span>" : "") +
@@ -279,7 +291,7 @@ function showCard(k, n, withK, big) {
   }
   return '<div class="card' + (big ? " big" : "") + (big === "seen" ? " seen" : "") + (lk.poster ? " poster" : "") + (S.isAdmin ? " hasedit" : "") + '" style="' + esc(lk.style) + '">' +
     '<a class="cover" href="#/p/' + encodeURIComponent(k) + "/" + encodeURIComponent(n) + '" aria-label="' + esc(n) + '"' + shAttr({ ty: "show", t: lblK(k, n), s: s.j, h: "#/p/" + encodeURIComponent(k) + "/" + encodeURIComponent(n), k: k }) + "></a>" +
-    '<span class="tag' + (big ? " hot" : "") + '">' + tag + "</span>" + editBtn(showItem(k, n), k + " " + n) +
+    '<span class="tag' + (big ? " hot" : "") + '">' + tag + "</span>" + editBtn(showItem(k, n), k + " " + n) + (showLogo(k, n) ? '<img class="cardlogo" src="' + esc(showLogo(k, n)) + '" alt="" loading="lazy" onerror="this.remove()">' : "") +
     "<b" + fit(n, big ? 300 : 126, big ? 40 : 27, lk.poster) + ">" + esc(n) + "</b>" + (big ? extra : "<small>" + (withK ? fmt(next) : esc(s.j)) + " · " + esc(frName({ fr: s.fr || S.P[k].fr, p: s.p })) + "</small>") + "</div>";
 }
 // Rangée des shows : ceux du jour (ou le plus récent) en premier et en grand
@@ -292,7 +304,7 @@ function showRow(list, withK) {
 }
 function promoCard(k) {
   const e = { kind: "promo", k: k, t: k, c: S.P[k].c }, lk = look(e);
-  return '<div class="card' + (lk.poster ? " poster" : "") + (S.isAdmin ? " hasedit" : "") + '" style="' + esc(lk.style) + '"><a class="cover" href="#/p/' + encodeURIComponent(k) + '" aria-label="' + esc(k) + '"' + shAttr({ ty: "show", t: k, s: "Promotion", h: "#/p/" + encodeURIComponent(k), k: k }) + "></a>" + editBtn(e, k) +
+  return '<div class="card' + (lk.poster ? " poster" : "") + (S.isAdmin ? " hasedit" : "") + '" style="' + esc(lk.style) + '"><a class="cover" href="#/p/' + encodeURIComponent(k) + '" aria-label="' + esc(k) + '"' + shAttr({ ty: "show", t: k, s: "Promotion", h: "#/p/" + encodeURIComponent(k), k: k }) + "></a>" + editBtn(e, k) + logoImg(e, "cardlogo") +
     "<b" + fit(k, 126, 27, lk.poster) + ">" + esc(k) + "</b><small>" + S.P[k].e.length + " événement(s)</small></div>";
 }
 // Vignette « Titres » : champions actuels de la promotion ou du show
@@ -315,7 +327,7 @@ function matchTile() {
 }
 function hero(e, label) {
   const lk = look(e);
-  return '<a class="hero' + (lk.poster ? " poster" : "") + '" style="' + esc(lk.style) + '" href="' + esc(evHref(e)) + '"' + shAttr(evCard(e)) + "><small>" + label + "</small><b" + fit(e.t, 320, 44, lk.poster) + ">" + esc(e.t) +
+  return '<a class="hero' + (lk.poster ? " poster" : "") + '" style="' + esc(lk.style) + '" href="' + esc(evHref(e)) + '"' + shAttr(evCard(e)) + ">" + logoImg(e, e.kind === "ple" || e.kind === "spec" ? "bigl" : "bigl sq") + "<small>" + label + "</small><b" + fit(e.t, 320, 44, lk.poster) + ">" + esc(e.t) +
     "</b><small>" + fmt(e.d) + (place(e) ? " · " + place(e) : "") + "</small>" + timeLine(e, true) + '<span class="cd">' + cd(e.d) + "</span>" + (lk.credit ? creditLine(lk.credit).replace(/<a [^>]*>|<\/a>/g, "") : "") + "</a>";
 }
 
@@ -349,7 +361,7 @@ function epList(list) { return '<div class="eps">' + list.map(epCard).join("") +
 function feature(e, label, next) {
   const h = seenOf(e), r = recapOf(e), lk = look(e, true);
   return '<section class="feature' + (lk.poster ? " poster" : "") + (h ? " seen" : "") + (S.isAdmin ? " hasedit" : "") + '" style="' + esc(lk.style) + '">' + editBtn(e, e.k + " " + (e.show || e.t)) +
-    '<span class="eyebrow">' + label + "</span><h2" + fit(e.t, 320, 46, lk.poster) + '><a class="evlink" href="' + esc(evHref(e)) + '"' + shAttr(evCard(e)) + ">" + esc(e.t) + "</a></h2>" +
+    logoImg(e, e.kind === "ple" || e.kind === "spec" ? "bigl" : "bigl sq") + '<span class="eyebrow">' + label + "</span><h2" + fit(e.t, 320, 46, lk.poster) + '><a class="evlink" href="' + esc(evHref(e)) + '"' + shAttr(evCard(e)) + ">" + esc(e.t) + "</a></h2>" +
     "<small>" + fmt(e.d) + (place(e) ? " · " + place(e) : "") + " · " + cd(e.d) + "</small>" + timeLine(e, true) + cardList(e) +
     (r ? faceRow(namesIn(r.txt), 34) + '<p class="recap">' + linkNames(r.txt) + "</p>" : '<p class="recap muted">Le résumé de cet épisode arrive bientôt.</p>') +
     hlBtn(e.k, e.show || "PLE", e.d, "hlbtn side") +
@@ -382,7 +394,7 @@ export function evPageView(k, show, d, t) {
   const eyebrow = e.kind === "ple" ? (e.br ? "PLE " + e.br : "PLE") + " · " + e.k : e.k + " · " + e.show;
   const place2 = [e.v, e.w && e.w !== "—" ? e.w : ""].filter(Boolean).join(" · ");
   h += '<section class="evpage feature' + (lk.poster ? " poster" : "") + (seen ? " seen" : "") + (S.isAdmin ? " hasedit" : "") + '" style="' + esc(lk.style) + '">' + editBtn(e, e.k + " " + (e.show || e.t)) +
-    (live ? '<span class="livebadge"><i></i>EN DIRECT</span>' : '<span class="eyebrow">' + esc(eyebrow) + "</span>") +
+    logoImg(e, e.kind === "ple" || e.kind === "spec" ? "bigl" : "bigl sq") + (live ? '<span class="livebadge"><i></i>EN DIRECT</span>' : '<span class="eyebrow">' + esc(eyebrow) + "</span>") +
     "<h2" + fit(e.t, 320, 46, lk.poster) + ">" + esc(e.t) + "</h2>" +
     "<small>" + (okDay(e.d) ? fmt(e.d) : "Date à confirmer") + (place2 ? " · " + esc(place2) : "") + "</small>" + (out ? "" : timeLine(e, true)) +
     '<span class="cd">' + (live ? "🔴 En direct maintenant" : cd(e.d)) + "</span>" + creditLine(lk.credit) + "</section>";

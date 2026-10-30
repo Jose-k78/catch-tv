@@ -13,6 +13,9 @@ import { TECH, techHTML, fillTech } from "../tech.js";
 import { searchEvents, EVENT_WORDS } from "./event.js";
 import { wImageBox } from "./wimage.js";
 import { photoOf, faceImg } from "../photos.js";
+import { wGroups, refButton } from "./groups.js";
+import { palmaresHTML } from "./palmares.js";
+import { searchGroups, groupById, groupLogo, groupHref, archivedBelts, beltOf } from "../assets.js";
 
 // Champs de fiche technique préparés en français dans data/wrestlers.json
 function localTech(w) { const f = {}; if (w) TECH.forEach(t => { if (w[t[0]]) f[t[0]] = w[t[0]]; }); return f; }
@@ -50,13 +53,23 @@ function resultsHTML(q) {
   const showsH = loc.length ? '<h2>Shows et événements</h2><div class="list">' + loc.map(r => '<a class="item" href="' + r.h + '"><span class="lbl"><b>' + esc(r.t) + "</b><small>" + esc(r.s) + '</small></span><span class="chev">›</span></a>').join("") + "</div>" : "";
   // archives : PLE et shows passés trouvés sur Wikipédia (WrestleMania 13, Starrcade 1997…)
   const archH = norm(q).length >= 3 && !PREVIEW ? '<h2>' + (ev ? "Événements passés" : "Archives") + ' <small class="cnt">Wikipédia</small></h2><div id="evres"><p class="note small">Recherche des événements passés…</p></div>' : "";
-  // un nom de show ou d'événement ne propose jamais de fiche catcheur
-  const offer = !ev && !names.some(x => norm(x.n) === norm(q));
+  // tag teams et factions, titres actuels, anciennes ceintures (archives : seulement quand on les cherche)
+  const nq = norm(q), gids = searchGroups(q);
+  const gH = gids.length ? '<h2>Tag teams et factions</h2><div class="list">' + gids.map(id => { const g = groupById(id), lg = groupLogo(id); return '<a class="item" href="' + groupHref(id) + '">' +
+    (lg ? '<img class="glogo0" src="' + esc(lg) + '" alt="" loading="lazy">' : '<span class="wnone">' + esc(g.n.replace(/^the\s+/i, "").slice(0, 2)) + "</span>") + '<span class="lbl"><b>' + esc(g.n) + "</b><small>" + esc([g.k, g.y].filter(Boolean).join(" · ")) + '</small></span><span class="chev">›</span></a>'; }).join("") + "</div>" : "";
+  const tl = nq.length >= 3 ? (S.titles || []).filter(t => norm(t.n).indexOf(nq) >= 0).slice(0, 8) : [];
+  const tH = tl.length ? '<h2>Titres</h2><div class="list">' + tl.map(t => '<a class="item" href="#/titre/' + encodeURIComponent(t.id) + '">' + (beltOf(t.id) ? '<img class="glogo0" src="' + esc(beltOf(t.id)) + '" alt="" loading="lazy">' : '<span class="wnone">🏆</span>') +
+    '<span class="lbl"><b>' + esc(t.n) + "</b><small>" + esc(t.k + (t.show ? " · " + t.show : "")) + '</small></span><span class="chev">›</span></a>').join("") + "</div>" : "";
+  const ab = nq.length >= 3 ? archivedBelts().filter(b => norm(b.label + " " + b.key).indexOf(nq) >= 0).slice(0, 12) : [];
+  const aH = ab.length ? '<h2>Anciennes ceintures <small class="cnt">archives</small></h2><div class="list">' + ab.map(b => '<a class="item" href="#/ceinture/' + encodeURIComponent(b.key) + '"><img class="glogo0" src="' + esc(b.src) + '" alt="" loading="lazy">' +
+    '<span class="lbl"><b>' + esc(b.label) + '</b><small>Archives · ceinture qui n’est plus en jeu ou ancien modèle</small></span><span class="chev">›</span></a>').join("") + "</div>" : "";
+  // un nom de show, d'événement ou de groupe ne propose jamais de fiche catcheur
+  const offer = !ev && !names.some(x => norm(x.n) === nq) && !gids.some(id => norm(groupById(id).n).replace(/^the /, "") === nq.replace(/^the /, "")) && !tl.length && !ab.length;
   const wH = names.length || offer ? '<h2>Catcheurs et catcheuses</h2><div class="list">' + names.map(x => '<a class="item" href="#/catcheur/' + encodeURIComponent(x.n) + '"' + shAttr({ ty: "w", t: x.n, s: x.s, h: "#/catcheur/" + encodeURIComponent(x.n) }) + '>' + faceImg(x.n, 40) + '<span class="lbl"><b>' + esc(x.n) + "</b><small>" + esc(x.s) +
     '</small></span><span class="chev">›</span></a>').join("") +
     (offer ? '<a class="item" href="#/catcheur/' + encodeURIComponent(q.trim()) + '">' + faceImg(q.trim(), 40) + '<span class="lbl"><b>' + esc(q.trim()) +
     "</b><small>Voir sa fiche : résumé, derniers matchs, matchs de référence</small></span><span class=\"chev\">›</span></a>" : "") + "</div>" : "";
-  return ev ? showsH + archH + wH : wH + showsH + archH;
+  return ev ? showsH + archH + wH + gH + tH + aH : wH + gH + tH + showsH + aH + archH;
 }
 document.addEventListener("input", e => {
   if (e.target.id !== "q") return;
@@ -110,18 +123,20 @@ export function wrestlerView(raw, wt) {
   // fiche résumé
   const wcard = { ty: "w", t: name, s: [k, w && w.era].filter(Boolean).join(" · ") || "Fiche catcheur", h: "#/catcheur/" + encodeURIComponent(name) };
   // photo du dossier de l'admin (prioritaire) ; sinon l'image ajoutée par un membre
-  const pic = photoOf(name);
-  h += '<section class="wcard"><div class="wtop' + (pic ? " haspic" : "") + '">' + (pic ? '<img class="wpic" src="' + esc(pic) + '" alt="' + esc(name) + '" onerror="this.remove()">' : "") + '<div class="wtt"><span class="eyebrow">FICHE CATCHEUR</span><h1>' + esc(name) + "</h1>" +
-    (w && w.era ? '<small class="wera">' + esc(w.era) + "</small>" : "") + "</div>" + '<span class="wacts">' + starBtn(name) + '<button class="iconbtn sharebtn" data-act="share"' + shAttr(wcard) + ' aria-label="Partager">↗</button></span></div>' +
-    '<div id="wchoose"></div>' + (pic ? "" : wImageBox(name)) +
+  const pic = photoOf(name), grp = wGroups(name);
+  h += '<section class="wcard"><div class="wtop' + (pic ? " haspic" : "") + '">' + (pic ? '<div class="wpicbox"><button class="wpicbtn" data-act="zoom" data-src="' + esc(pic) + '" data-alt="' + esc(name) + '" aria-label="Agrandir la photo"><img class="wpic" src="' + esc(pic) + '" alt="' + esc(name) + '" onerror="this.closest(\'.wpicbox\').remove()"></button>' +
+    (grp.corner ? '<span class="wgcorner">' + grp.corner + "</span>" : "") + "</div>" : "") + '<div class="wtt"><span class="eyebrow">FICHE CATCHEUR</span><h1>' + esc(name) + "</h1>" +
+    (w && w.era ? '<small class="wera">' + esc(w.era) + "</small>" : "") + (!pic && grp.corner ? '<span class="wgcorner inline">' + grp.corner + "</span>" : "") + "</div>" + '<span class="wacts">' + starBtn(name) + '<button class="iconbtn sharebtn" data-act="share"' + shAttr(wcard) + ' aria-label="Partager">↗</button></span></div>' +
+    '<div id="wchoose"></div>' + wImageBox(name, { small: !!pic }) +
     (w && w.txt ? '<p class="wtxt">' + esc(w.txt) + "</p>" : "") +
     '<div id="wiki" class="wiki">' + (PREVIEW ? (w && w.txt ? "" : '<p class="note">Le résumé Wikipédia s’affichera une fois l’app en ligne (l’aperçu bloque les connexions vers d’autres sites).</p>') : '<p class="note">Recherche de son résumé…</p>') + "</div>" +
     '<div class="wfacts"><div><small>Promotion</small><b id="wpromo">' + esc(k || "–") + "</b></div>" +
-    "<div><small>Dernière apparition</small>" + (ls ? '<a href="' + esc(ls.href) + '"><b>' + esc(ls.label) + "</b></a>" : "<b>–</b>") + "</div>" + alignFact(name) + "</div>" +
+    "<div><small>Dernière apparition</small>" + (ls ? '<a href="' + esc(ls.href) + '"><b>' + esc(ls.label) + "</b></a>" : "<b>–</b>") + "</div>" + alignFact(name) + "</div>" + grp.list +
     '<div id="wtech" class="wtech">' + techHTML(localTech(w), Object.keys(localTech(w)).length ? [{ n: "TCC TV" }] : []) + "</div>";
   if (shows.length || held.length) h += '<div class="chips wrap" style="margin:10px 0 0">' + shows.filter(s => s.n).map(s => '<a class="chip" href="#/p/' + encodeURIComponent(s.k) + "/" + encodeURIComponent(s.n) + '">' + esc(s.k + " · " + s.n) + "</a>").join("") +
     held.map(t => champHidden(t) ? "" : '<a class="chip gold" href="#/titre/' + encodeURIComponent(t.id) + '">🏆 ' + esc(t.n) + "</a>").join("") + "</div>";
   h += "</section>";
+  h += palmaresHTML(name);
   // 3 derniers matchs (résultat derrière le bouton spoiler)
   const last = lastMatches(name, 3);
   h += "<h2>Ses 3 derniers matchs</h2>";
@@ -137,9 +152,7 @@ export function wrestlerView(raw, wt) {
   if (ref.length) h += '<div class="list">' + ref.map(m => {
     // vidéo officielle connue -> on la regarde dans l'app ; sinon simple recherche YouTube du combat complet,
     // et c'est le membre qui choisit la vidéo
-    const q = m.t.replace(/^[^:]{1,80} : (?=.* (?:contre|vs) )/, "").replace(/ — .*$/, "").replace(/ contre /g, " vs ").replace(/ et /g, " & ") + (m.ev ? " " + m.ev : "") + " full match";
-    const go = okVid(m.v) ? '<button class="btn small" data-act="play" data-id="' + esc(m.v) + '" data-t="' + esc(m.t) + '">▶ Voir</button>'
-      : '<a class="btn small ghost" href="https://www.youtube.com/results?search_query=' + encodeURIComponent(q) + '" target="_blank" rel="noopener">🔎 Chercher le match</a>';
+    const go = refButton(m);
     return '<div class="item"><span class="lbl"><b>' + linkNames(m.t) + "</b><small>" + esc(m.ev || "") + "</small></span>" + go + "</div>";
   }).join("") + "</div>";
   else h += '<p class="note">Ses matchs de référence seront ajoutés lors d’une prochaine mise à jour' + (S.user ? " (ajoute-le à tes favoris pour qu’il soit suivi en priorité)" : "") + ".</p>";

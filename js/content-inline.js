@@ -13,6 +13,9 @@ import po from "../data/polls.json";
 import me from "../data/media.json";
 import fe from "../data/feed.json";
 import ph from "../data/photos.json";
+import lg from "../data/logos.json";
+import gr from "../data/groups.json";
+import pn from "../data/patchnotes.json";
 export const PREVIEW = true;
-export async function loadContent() { return { P: cal.promotions || {}, news: news, recaps: recaps.items || {}, matches: matches.items || [], titles: titles.titles || [], titlesUpdated: titles.updated || "", highlights: hl.items || {}, wrestlers: wr.items || {}, storylines: st.items || [], rosters: ro.items || {}, rostersSrc: ro.src || {}, sources: so.items || [], polls: po.items || [], media: me || { bg: {}, music: null }, feed: fe, photos: ph.items || {},
+export async function loadContent() { return { P: cal.promotions || {}, news: news, recaps: recaps.items || {}, matches: matches.items || [], titles: titles.titles || [], titlesUpdated: titles.updated || "", highlights: hl.items || {}, wrestlers: wr.items || {}, storylines: st.items || [], rosters: ro.items || {}, rostersSrc: ro.src || {}, sources: so.items || [], polls: po.items || [], media: me || { bg: {}, music: null }, feed: fe, photos: ph.items || {}, art: lg || {}, groups: gr.items || {}, patch: pn.items || [],
   updated: { news: news.updated || "", recaps: recaps.updated || "", calendar: cal.updated || "", titles: titles.updated || "", highlights: hl.updated || "", wrestlers: wr.updated || "", storylines: st.updated || "", rosters: ro.updated || "", matches: matches.updated || "", polls: po.updated || "" } }; }

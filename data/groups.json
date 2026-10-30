@@ -1,0 +1,2484 @@
+{
+ "updated": "2026-10-30",
+ "note": "Membres tenus à jour par la mise à jour du soir (19 h 23).",
+ "items": {
+  "3mb": {
+   "n": "3MB",
+   "lg": "3MB",
+   "k": "WWE",
+   "y": "2012–2014",
+   "on": 0,
+   "m": [
+    "Heath Slater",
+    "Drew McIntyre",
+    "Jinder Mahal"
+   ]
+  },
+  "absolution": {
+   "n": "Absolution",
+   "lg": "Absolution",
+   "k": "WWE",
+   "y": "2017–2018",
+   "on": 0,
+   "m": [
+    "Paige",
+    "Mandy Rose",
+    "Sonya Deville"
+   ]
+  },
+  "alpha-academy": {
+   "n": "Alpha Academy",
+   "lg": "Alpha Academy",
+   "k": "WWE",
+   "y": "depuis 2021",
+   "on": 1,
+   "m": [
+    "Otis",
+    "Akira Tozawa",
+    "Maxxine Dupri"
+   ],
+   "ex": [
+    "Chad Gable"
+   ]
+  },
+  "american-made": {
+   "n": "American Made",
+   "lg": "American Made",
+   "k": "WWE",
+   "y": "depuis 2024",
+   "on": 1,
+   "m": [
+    "Chad Gable",
+    "Brutus Creed",
+    "Julius Creed",
+    "Ivy Nile"
+   ]
+  },
+  "balor-club": {
+   "n": "The Bálor Club",
+   "lg": "Balor Club",
+   "k": "WWE",
+   "y": "2016–2017",
+   "on": 0,
+   "m": [
+    "Finn Bálor",
+    "Luke Gallows",
+    "Karl Anderson"
+   ],
+   "a": [
+    "Balor Club"
+   ]
+  },
+  "bloodline": {
+   "n": "The Bloodline",
+   "lg": "Bloodline",
+   "k": "WWE",
+   "y": "depuis 2020",
+   "on": 1,
+   "m": [
+    "Solo Sikoa",
+    "Tama Tonga",
+    "Tonga Loa",
+    "Talla Tonga"
+   ],
+   "ex": [
+    "Roman Reigns",
+    "Jey Uso",
+    "Jimmy Uso",
+    "Sami Zayn",
+    "Paul Heyman",
+    "Jacob Fatu"
+   ],
+   "a": [
+    "Bloodline",
+    "The Usos"
+   ],
+   "ref": [
+    {
+     "t": "The Bloodline contre The OG Bloodline — WarGames",
+     "ev": "Survivor Series 2024"
+    }
+   ]
+  },
+  "british-bulldogs": {
+   "n": "The British Bulldogs",
+   "lg": "British Bulldogs",
+   "k": "WWF",
+   "y": "1985–1990",
+   "on": 0,
+   "m": [
+    "Davey Boy Smith",
+    "Dynamite Kid"
+   ],
+   "ref": [
+    {
+     "t": "The British Bulldogs contre The Dream Team",
+     "ev": "WrestleMania 2"
+    }
+   ]
+  },
+  "british-strong-style": {
+   "n": "British Strong Style",
+   "lg": "British Strong Style",
+   "k": "WWE NXT UK",
+   "y": "2017–2021",
+   "on": 0,
+   "m": [
+    "Pete Dunne",
+    "Tyler Bate",
+    "Trent Seven"
+   ]
+  },
+  "brood": {
+   "n": "The Brood",
+   "lg": "Brood",
+   "k": "WWF",
+   "y": "1998–1999",
+   "on": 0,
+   "m": [
+    "Gangrel",
+    "Edge",
+    "Christian"
+   ]
+  },
+  "chase-university": {
+   "n": "Chase University",
+   "lg": "Chase U",
+   "k": "WWE NXT",
+   "y": "2023–2025",
+   "on": 0,
+   "m": [
+    "Andre Chase",
+    "Duke Hudson",
+    "Thea Hail",
+    "Riley Osborne"
+   ],
+   "a": [
+    "Chase U"
+   ]
+  },
+  "corre": {
+   "n": "The Corre",
+   "lg": "Corre",
+   "k": "WWE",
+   "y": "2011",
+   "on": 0,
+   "m": [
+    "Wade Barrett",
+    "Ezekiel Jackson",
+    "Heath Slater",
+    "Justin Gabriel"
+   ]
+  },
+  "d-generation-x": {
+   "n": "D-Generation X",
+   "lg": "DX",
+   "k": "WWF · WWE",
+   "y": "1997–2010",
+   "on": 0,
+   "m": [
+    "Shawn Michaels",
+    "Triple H",
+    "Chyna",
+    "X-Pac",
+    "Road Dogg",
+    "Billy Gunn"
+   ],
+   "a": [
+    "DX",
+    "D-X"
+   ],
+   "ref": [
+    {
+     "t": "D-Generation X contre Vince et Shane McMahon",
+     "ev": "Unforgiven 2006"
+    }
+   ]
+  },
+  "damage-ctrl": {
+   "n": "Damage CTRL",
+   "lg": "Damage CTRL",
+   "k": "WWE",
+   "y": "2022–2025",
+   "on": 0,
+   "m": [
+    "Bayley",
+    "Dakota Kai",
+    "IYO SKY",
+    "Kairi Sane",
+    "Asuka"
+   ],
+   "a": [
+    "Damage Control"
+   ]
+  },
+  "diamond-mine": {
+   "n": "Diamond Mine",
+   "lg": "Diamond Mine",
+   "k": "WWE NXT",
+   "y": "2021–2023",
+   "on": 0,
+   "m": [
+    "Roderick Strong",
+    "Brutus Creed",
+    "Julius Creed",
+    "Ivy Nile",
+    "Damon Kemp",
+    "Malcolm Bivens"
+   ]
+  },
+  "evolution": {
+   "n": "Evolution",
+   "lg": "Evolution",
+   "k": "WWE",
+   "y": "2003–2005",
+   "on": 0,
+   "m": [
+    "Triple H",
+    "Ric Flair",
+    "Batista",
+    "Randy Orton"
+   ],
+   "ref": [
+    {
+     "t": "Evolution contre The Shield",
+     "ev": "Extreme Rules 2014"
+    }
+   ]
+  },
+  "fatal-influence": {
+   "n": "Fatal Influence",
+   "lg": "Fatal Influence",
+   "k": "WWE NXT",
+   "y": "depuis 2024",
+   "on": 1,
+   "m": [
+    "Jacy Jayne",
+    "Fallon Henley",
+    "Jazmyn Nyx"
+   ]
+  },
+  "final-testament": {
+   "n": "The Final Testament",
+   "lg": "Final Testament",
+   "k": "WWE",
+   "y": "2024–2025",
+   "on": 0,
+   "m": [
+    "Karrion Kross",
+    "Scarlett",
+    "Akam",
+    "Rezar",
+    "Paul Ellering"
+   ]
+  },
+  "gallus": {
+   "n": "Gallus",
+   "lg": "Gallus",
+   "k": "WWE NXT UK",
+   "y": "2018–2022",
+   "on": 0,
+   "m": [
+    "Joe Coffey",
+    "Mark Coffey",
+    "Wolfgang"
+   ]
+  },
+  "hart-dynasty": {
+   "n": "The Hart Dynasty",
+   "lg": "Hart Dynasty",
+   "k": "WWE",
+   "y": "2009–2010",
+   "on": 0,
+   "m": [
+    "Tyson Kidd",
+    "David Hart Smith",
+    "Natalya"
+   ]
+  },
+  "hart-foundation": {
+   "n": "The Hart Foundation",
+   "lg": "Hart Foundation",
+   "k": "WWF",
+   "y": "1985–1997",
+   "on": 0,
+   "m": [
+    "Bret Hart",
+    "Jim Neidhart",
+    "Owen Hart",
+    "Davey Boy Smith",
+    "Brian Pillman"
+   ],
+   "ref": [
+    {
+     "t": "The Hart Foundation contre The British Bulldogs",
+     "ev": "Saturday Night’s Main Event 1987"
+    }
+   ]
+  },
+  "hit-row": {
+   "n": "Hit Row",
+   "lg": "Hit Row",
+   "k": "WWE",
+   "y": "2021–2023",
+   "on": 0,
+   "m": [
+    "Top Dolla",
+    "Ashante Thee Adonis",
+    "B-Fab",
+    "Swerve Strickland"
+   ]
+  },
+  "hurt-business": {
+   "n": "The Hurt Business",
+   "lg": "Hurt Business",
+   "k": "WWE",
+   "y": "2020–2023",
+   "on": 0,
+   "m": [
+    "MVP",
+    "Bobby Lashley",
+    "Cedric Alexander",
+    "Shelton Benjamin"
+   ]
+  },
+  "imperium": {
+   "n": "Imperium",
+   "lg": "Imperium",
+   "k": "WWE",
+   "y": "2018–2024",
+   "on": 0,
+   "m": [
+    "Gunther",
+    "Ludwig Kaiser",
+    "Giovanni Vinci",
+    "Alexander Wolfe"
+   ]
+  },
+  "indus-sher": {
+   "n": "Indus Sher",
+   "lg": "Indur Sher",
+   "k": "WWE",
+   "y": "2022–2024",
+   "on": 0,
+   "m": [
+    "Jinder Mahal",
+    "Veer Mahaan",
+    "Sanga"
+   ]
+  },
+  "j-o-b-squad": {
+   "n": "The J.O.B. Squad",
+   "lg": "JOB Squad",
+   "k": "WWF",
+   "y": "1998–1999",
+   "on": 0,
+   "m": [
+    "Al Snow",
+    "Bob Holly",
+    "Scorpio",
+    "Gillberg"
+   ]
+  },
+  "judgment-day": {
+   "n": "The Judgment Day",
+   "lg": "Judgement Day",
+   "k": "WWE",
+   "y": "depuis 2022",
+   "on": 1,
+   "m": [
+    "Finn Bálor",
+    "Dominik Mysterio",
+    "JD McDonagh",
+    "Raquel Rodriguez",
+    "Liv Morgan",
+    "Roxanne Perez"
+   ],
+   "ex": [
+    "Edge",
+    "Rhea Ripley",
+    "Damian Priest",
+    "Carlito"
+   ],
+   "a": [
+    "Judgment Day",
+    "Judgement Day"
+   ]
+  },
+  "legacy": {
+   "n": "The Legacy",
+   "lg": "Legacy",
+   "k": "WWE",
+   "y": "2008–2010",
+   "on": 0,
+   "m": [
+    "Randy Orton",
+    "Cody Rhodes",
+    "Ted DiBiase Jr.",
+    "Manu"
+   ]
+  },
+  "legado-del-fantasma": {
+   "n": "Legado del Fantasma",
+   "lg": "Legado del Fantasma",
+   "k": "WWE",
+   "y": "2020–2024",
+   "on": 0,
+   "m": [
+    "Santos Escobar",
+    "Joaquin Wilde",
+    "Cruz Del Toro",
+    "Elektra Lopez",
+    "Zelina Vega",
+    "Angel",
+    "Berto"
+   ]
+  },
+  "legion-of-doom": {
+   "n": "The Legion of Doom",
+   "lg": "Legion of Doom",
+   "k": "WWF · NWA",
+   "y": "1983–2003",
+   "on": 0,
+   "m": [
+    "Road Warrior Hawk",
+    "Road Warrior Animal",
+    "Paul Ellering"
+   ],
+   "a": [
+    "Road Warriors",
+    "LOD"
+   ],
+   "ref": [
+    {
+     "t": "The Legion of Doom contre The Nasty Boys",
+     "ev": "SummerSlam 1991"
+    }
+   ]
+  },
+  "los-americanos": {
+   "n": "Los Americanos",
+   "lg": "Los Americanos",
+   "k": "WWE · AAA",
+   "y": "depuis 2025",
+   "on": 1,
+   "m": [
+    "Bravo Americano",
+    "Rayo Americano",
+    "El Grande Americano"
+   ]
+  },
+  "latino-world-order": {
+   "n": "Latino World Order",
+   "lg": "LWO",
+   "k": "WWE",
+   "y": "depuis 2023",
+   "on": 1,
+   "m": [
+    "Rey Mysterio",
+    "Dragon Lee",
+    "Cruz Del Toro",
+    "Joaquin Wilde",
+    "Zelina Vega"
+   ],
+   "ex": [
+    "Santos Escobar",
+    "Carlito"
+   ],
+   "a": [
+    "LWO"
+   ]
+  },
+  "maximum-male-models": {
+   "n": "Maximum Male Models",
+   "lg": "Maximum Male Models",
+   "k": "WWE",
+   "y": "2022–2024",
+   "on": 0,
+   "m": [
+    "Mansoor",
+    "Mace",
+    "Maxxine Dupri"
+   ]
+  },
+  "mean-street-posse": {
+   "n": "The Mean Street Posse",
+   "lg": "Mean Street Posse",
+   "k": "WWF",
+   "y": "1999–2001",
+   "on": 0,
+   "m": [
+    "Pete Gas",
+    "Rodney",
+    "Joey Abs"
+   ]
+  },
+  "men-on-a-mission": {
+   "n": "Men on a Mission",
+   "lg": "Men on a Mission",
+   "k": "WWF",
+   "y": "1993–1995",
+   "on": 0,
+   "m": [
+    "Mabel",
+    "Mo",
+    "Oscar"
+   ]
+  },
+  "meta-four": {
+   "n": "Meta-Four",
+   "lg": "Meta Four",
+   "k": "WWE NXT",
+   "y": "2023–2024",
+   "on": 0,
+   "m": [
+    "Noam Dar",
+    "Lash Legend",
+    "Oro Mensah",
+    "Jakara Jackson"
+   ]
+  },
+  "ministry-of-darkness": {
+   "n": "The Ministry of Darkness",
+   "lg": "Ministry Of Darkness",
+   "k": "WWF",
+   "y": "1998–1999",
+   "on": 0,
+   "m": [
+    "The Undertaker",
+    "Paul Bearer",
+    "Bradshaw",
+    "Faarooq",
+    "Mideon",
+    "Viscera",
+    "Edge",
+    "Christian",
+    "Gangrel"
+   ]
+  },
+  "mnm": {
+   "n": "MNM",
+   "lg": "MNM",
+   "k": "WWE",
+   "y": "2005–2007",
+   "on": 0,
+   "m": [
+    "Johnny Nitro",
+    "Joey Mercury",
+    "Melina"
+   ]
+  },
+  "msk": {
+   "n": "MSK",
+   "lg": "MSK",
+   "k": "TNA · WWE NXT",
+   "y": "2020–2023",
+   "on": 0,
+   "m": [
+    "Nash Carter",
+    "Wes Lee"
+   ]
+  },
+  "mxm-collection": {
+   "n": "MxM Collection",
+   "lg": "MxM",
+   "k": "WWE",
+   "y": "depuis 2024",
+   "on": 1,
+   "m": [
+    "Mansoor",
+    "Mason Madden"
+   ],
+   "a": [
+    "MxM"
+   ]
+  },
+  "nasty-boys": {
+   "n": "The Nasty Boys",
+   "lg": "Nasty Boys",
+   "k": "WWF · WCW",
+   "y": "1985–2003",
+   "on": 0,
+   "m": [
+    "Brian Knobbs",
+    "Jerry Sags"
+   ]
+  },
+  "nexus": {
+   "n": "The Nexus",
+   "lg": "Nexus",
+   "k": "WWE",
+   "y": "2010–2011",
+   "on": 0,
+   "m": [
+    "Wade Barrett",
+    "David Otunga",
+    "Justin Gabriel",
+    "Heath Slater",
+    "Michael Tarver",
+    "Darren Young",
+    "Skip Sheffield"
+   ]
+  },
+  "new-nexus": {
+   "n": "The New Nexus",
+   "lg": "New Nexus",
+   "k": "WWE",
+   "y": "2011",
+   "on": 0,
+   "m": [
+    "CM Punk",
+    "David Otunga",
+    "Michael McGillicutty",
+    "Husky Harris",
+    "Mason Ryan"
+   ]
+  },
+  "nwo": {
+   "n": "nWo",
+   "lg": "New World Order",
+   "k": "WCW · WWF",
+   "y": "1996–2002",
+   "on": 0,
+   "m": [
+    "Hulk Hogan",
+    "Kevin Nash",
+    "Scott Hall",
+    "Sean Waltman",
+    "Eric Bischoff",
+    "Scott Steiner",
+    "Sting"
+   ],
+   "a": [
+    "New World Order",
+    "nWo Wolfpac"
+   ]
+  },
+  "outsiders": {
+   "n": "The Outsiders",
+   "lg": "Outsiders",
+   "k": "WCW",
+   "y": "1996–1999",
+   "on": 0,
+   "m": [
+    "Kevin Nash",
+    "Scott Hall"
+   ]
+  },
+  "pure-fusion-collective": {
+   "n": "Pure Fusion Collective",
+   "lg": "Pure Fusion Collective",
+   "k": "WWE",
+   "y": "2023",
+   "on": 0,
+   "m": [
+    "Sonya Deville",
+    "Shayna Baszler",
+    "Zoey Stark"
+   ]
+  },
+  "radicalz": {
+   "n": "The Radicalz",
+   "lg": "Radicalz",
+   "k": "WWF",
+   "y": "2000–2001",
+   "on": 0,
+   "m": [
+    "Eddie Guerrero",
+    "Chris Benoit",
+    "Dean Malenko",
+    "Perry Saturn"
+   ]
+  },
+  "riott-squad": {
+   "n": "The Riott Squad",
+   "lg": "Riott Squad",
+   "k": "WWE",
+   "y": "2017–2021",
+   "on": 0,
+   "m": [
+    "Ruby Riott",
+    "Liv Morgan",
+    "Sarah Logan"
+   ]
+  },
+  "sanity": {
+   "n": "SAnitY",
+   "lg": "Sanity",
+   "k": "WWE NXT",
+   "y": "2016–2019",
+   "on": 0,
+   "m": [
+    "Eric Young",
+    "Alexander Wolfe",
+    "Killian Dain",
+    "Nikki Cross"
+   ]
+  },
+  "spirit-squad": {
+   "n": "The Spirit Squad",
+   "lg": "Spirit Squad",
+   "k": "WWE",
+   "y": "2006",
+   "on": 0,
+   "m": [
+    "Kenny",
+    "Mikey",
+    "Johnny",
+    "Mitch",
+    "Dolph Ziggler"
+   ]
+  },
+  "straight-edge-society": {
+   "n": "The Straight Edge Society",
+   "lg": "Straight Edge Society",
+   "k": "WWE",
+   "y": "2009–2010",
+   "on": 0,
+   "m": [
+    "CM Punk",
+    "Luke Gallows",
+    "Serena",
+    "Joey Mercury"
+   ]
+  },
+  "team-angle": {
+   "n": "Team Angle",
+   "lg": "Team Angle",
+   "k": "WWE",
+   "y": "2002–2003",
+   "on": 0,
+   "m": [
+    "Kurt Angle",
+    "Shelton Benjamin",
+    "Charlie Haas"
+   ]
+  },
+  "team-gulak": {
+   "n": "Team Gulak",
+   "lg": "Team Gulak",
+   "k": "WWE NXT",
+   "y": "2023–2024",
+   "on": 0,
+   "m": [
+    "Drew Gulak",
+    "Charlie Dempsey",
+    "Damon Kemp"
+   ]
+  },
+  "ascension": {
+   "n": "The Ascension",
+   "lg": "The Ascension",
+   "k": "WWE",
+   "y": "2011–2020",
+   "on": 0,
+   "m": [
+    "Konnor",
+    "Viktor"
+   ]
+  },
+  "brawling-brutes": {
+   "n": "The Brawling Brutes",
+   "lg": "The Brawling Brutes",
+   "k": "WWE",
+   "y": "2022–2025",
+   "on": 0,
+   "m": [
+    "Sheamus",
+    "Ridge Holland",
+    "Butch"
+   ]
+  },
+  "corporation": {
+   "n": "The Corporation",
+   "lg": "The Corporation",
+   "k": "WWF",
+   "y": "1998–1999",
+   "on": 0,
+   "m": [
+    "Vince McMahon",
+    "Shane McMahon",
+    "The Rock",
+    "Big Boss Man",
+    "Ken Shamrock",
+    "Triple H"
+   ]
+  },
+  "new-day": {
+   "n": "The New Day",
+   "lg": "The New Day",
+   "k": "WWE",
+   "y": "depuis 2014",
+   "on": 1,
+   "m": [
+    "Kofi Kingston",
+    "Xavier Woods"
+   ],
+   "ex": [
+    "Big E"
+   ],
+   "a": [
+    "New Day"
+   ],
+   "ref": [
+    {
+     "t": "The New Day contre The Usos — Hell in a Cell",
+     "ev": "Hell in a Cell 2017"
+    }
+   ]
+  },
+  "pride": {
+   "n": "The Pride",
+   "lg": "The Pride",
+   "k": "WWE",
+   "y": "2023–2024",
+   "on": 0,
+   "m": [
+    "Bobby Lashley",
+    "Angelo Dawkins",
+    "Montez Ford"
+   ]
+  },
+  "shield": {
+   "n": "The Shield",
+   "lg": "The Shield",
+   "k": "WWE",
+   "y": "2012–2019",
+   "on": 0,
+   "m": [
+    "Roman Reigns",
+    "Seth Rollins",
+    "Dean Ambrose"
+   ],
+   "a": [
+    "Shield"
+   ],
+   "ref": [
+    {
+     "t": "The Shield contre Evolution",
+     "ev": "Extreme Rules 2014"
+    },
+    {
+     "t": "The Shield contre The Wyatt Family",
+     "ev": "Elimination Chamber 2014"
+    }
+   ]
+  },
+  "vision": {
+   "n": "The Vision",
+   "lg": "The Vision",
+   "k": "WWE",
+   "y": "depuis 2025",
+   "on": 1,
+   "m": [
+    "Bron Breakker",
+    "Austin Theory",
+    "Paul Heyman"
+   ],
+   "a": [
+    "Vision"
+   ]
+  },
+  "wyatt-family": {
+   "n": "The Wyatt Family",
+   "lg": "The Wyatt Family",
+   "k": "WWE",
+   "y": "2012–2018",
+   "on": 0,
+   "m": [
+    "Bray Wyatt",
+    "Luke Harper",
+    "Erick Rowan",
+    "Braun Strowman",
+    "Randy Orton"
+   ],
+   "a": [
+    "Wyatt Family"
+   ]
+  },
+  "wyatt-sicks": {
+   "n": "The Wyatt Sicks",
+   "lg": "Wyatt Sicks",
+   "k": "WWE",
+   "y": "depuis 2024",
+   "on": 1,
+   "m": [
+    "Uncle Howdy",
+    "Dexter Lumis",
+    "Joe Gacy",
+    "Erick Rowan",
+    "Nikki Cross"
+   ],
+   "a": [
+    "Wyatt 6"
+   ]
+  },
+  "too-cool": {
+   "n": "Too Cool",
+   "lg": "Too Cool",
+   "k": "WWF",
+   "y": "1999–2001",
+   "on": 0,
+   "m": [
+    "Scotty 2 Hotty",
+    "Grand Master Sexay",
+    "Rikishi"
+   ]
+  },
+  "toxic-attraction": {
+   "n": "Toxic Attraction",
+   "lg": "Toxic Attraction",
+   "k": "WWE NXT",
+   "y": "2021–2023",
+   "on": 0,
+   "m": [
+    "Mandy Rose",
+    "Gigi Dolin",
+    "Jacy Jayne"
+   ]
+  },
+  "undisputed-era": {
+   "n": "The Undisputed Era",
+   "lg": "Undisputed Era",
+   "k": "WWE NXT",
+   "y": "2017–2021",
+   "on": 0,
+   "m": [
+    "Adam Cole",
+    "Kyle O'Reilly",
+    "Bobby Fish",
+    "Roderick Strong"
+   ],
+   "a": [
+    "Undisputed Era"
+   ],
+   "ref": [
+    {
+     "t": "The Undisputed Era contre Team Ciampa — WarGames",
+     "ev": "NXT TakeOver: WarGames 2019"
+    }
+   ]
+  },
+  "viking-raiders": {
+   "n": "The Viking Raiders",
+   "lg": "Viking Raiders",
+   "k": "WWE",
+   "y": "depuis 2018",
+   "on": 1,
+   "m": [
+    "Erik",
+    "Ivar"
+   ],
+   "ex": [
+    "Valhalla"
+   ],
+   "a": [
+    "War Raiders"
+   ]
+  },
+  "four-horsemen": {
+   "n": "The Four Horsemen",
+   "lg": "The Four Horsemen",
+   "k": "NWA · WCW",
+   "y": "1985–1999",
+   "on": 0,
+   "m": [
+    "Ric Flair",
+    "Arn Anderson",
+    "Ole Anderson",
+    "Tully Blanchard",
+    "Barry Windham",
+    "Sting",
+    "Chris Benoit",
+    "Dean Malenko"
+   ],
+   "a": [
+    "Four Horsemen",
+    "Horsemen"
+   ]
+  },
+  "good-brothers": {
+   "n": "The Good Brothers",
+   "lg": "Good Brothers",
+   "k": "TNA · WWE",
+   "y": "depuis 2016",
+   "on": 1,
+   "m": [
+    "Luke Gallows",
+    "Karl Anderson"
+   ],
+   "a": [
+    "Good Brothers"
+   ]
+  },
+  "o-c": {
+   "n": "The O.C.",
+   "lg": "OC",
+   "k": "WWE",
+   "y": "2019–2024",
+   "on": 0,
+   "m": [
+    "AJ Styles",
+    "Luke Gallows",
+    "Karl Anderson",
+    "Michin"
+   ],
+   "a": [
+    "The OC"
+   ]
+  },
+  "club": {
+   "n": "The Club",
+   "lg": "The Club",
+   "k": "WWE",
+   "y": "2016",
+   "on": 0,
+   "m": [
+    "AJ Styles",
+    "Luke Gallows",
+    "Karl Anderson"
+   ]
+  },
+  "iinspiration": {
+   "n": "The IInspiration",
+   "lg": "IInspiration",
+   "k": "WWE · TNA",
+   "y": "depuis 2017",
+   "on": 1,
+   "m": [
+    "Cassie Lee",
+    "Jessie McKay"
+   ],
+   "a": [
+    "IIconics",
+    "The IIconics"
+   ]
+  },
+  "tmdk": {
+   "n": "TMDK",
+   "lg": "TMDK",
+   "k": "NJPW",
+   "y": "depuis 2012",
+   "on": 1,
+   "m": [
+    "Zack Sabre Jr.",
+    "Mikey Nicholls",
+    "Kosei Fujita",
+    "Ryohei Oiwa",
+    "Hartley Jackson",
+    "Robbie Eagles"
+   ]
+  },
+  "acclaimed": {
+   "n": "The Acclaimed",
+   "lg": "Acclaimed",
+   "k": "AEW",
+   "y": "depuis 2020",
+   "on": 1,
+   "m": [
+    "Max Caster",
+    "Anthony Bowens",
+    "Billy Gunn"
+   ],
+   "a": [
+    "Acclaimed"
+   ]
+  },
+  "bang-bang-gang": {
+   "n": "The Bang Bang Gang",
+   "lg": "Bang Bang Gang",
+   "k": "AEW",
+   "y": "2024",
+   "on": 0,
+   "m": [
+    "Jay White",
+    "Austin Gunn",
+    "Colten Gunn",
+    "Juice Robinson"
+   ]
+  },
+  "best-friends": {
+   "n": "Best Friends",
+   "lg": "Best Friends",
+   "k": "AEW",
+   "y": "2016–2024",
+   "on": 0,
+   "m": [
+    "Chuck Taylor",
+    "Trent Beretta",
+    "Orange Cassidy"
+   ]
+  },
+  "blackpool-combat-club": {
+   "n": "Blackpool Combat Club",
+   "lg": "Blackpool Combat Club",
+   "k": "AEW",
+   "y": "2022–2024",
+   "on": 0,
+   "m": [
+    "Bryan Danielson",
+    "Jon Moxley",
+    "Claudio Castagnoli",
+    "Wheeler Yuta",
+    "William Regal"
+   ],
+   "a": [
+    "BCC"
+   ]
+  },
+  "bullet-club-gold": {
+   "n": "Bullet Club Gold",
+   "lg": "Bullet Club Gold",
+   "k": "AEW",
+   "y": "2023–2024",
+   "on": 0,
+   "m": [
+    "Jay White",
+    "Austin Gunn",
+    "Colten Gunn",
+    "Juice Robinson"
+   ]
+  },
+  "cmftr": {
+   "n": "CMFTR",
+   "lg": "CMFTR",
+   "k": "AEW",
+   "y": "2022",
+   "on": 0,
+   "m": [
+    "CM Punk",
+    "Dax Harwood",
+    "Cash Wheeler"
+   ]
+  },
+  "dark-order": {
+   "n": "The Dark Order",
+   "lg": "Dark Order",
+   "k": "AEW",
+   "y": "2019–2025",
+   "on": 0,
+   "m": [
+    "Evil Uno",
+    "Stu Grayson",
+    "Alex Reynolds",
+    "John Silver",
+    "Alan Angels",
+    "Preston Vance",
+    "Anna Jay"
+   ],
+   "a": [
+    "Dark Order"
+   ]
+  },
+  "death-riders": {
+   "n": "Death Riders",
+   "lg": "Death Riders",
+   "k": "AEW",
+   "y": "depuis 2024",
+   "on": 1,
+   "m": [
+    "Jon Moxley",
+    "Claudio Castagnoli",
+    "Wheeler Yuta",
+    "Marina Shafir",
+    "PAC",
+    "Gabe Kidd"
+   ],
+   "ex": [
+    "Bryan Danielson"
+   ]
+  },
+  "death-triangle": {
+   "n": "Death Triangle",
+   "lg": "Death Triangle",
+   "k": "AEW",
+   "y": "2019–2023",
+   "on": 0,
+   "m": [
+    "PAC",
+    "Penta",
+    "Rey Fénix"
+   ]
+  },
+  "don-callis-family": {
+   "n": "The Don Callis Family",
+   "lg": "Don Callis Family",
+   "k": "AEW",
+   "y": "depuis 2023",
+   "on": 1,
+   "m": [
+    "Don Callis",
+    "Konosuke Takeshita",
+    "Kyle Fletcher",
+    "Josh Alexander",
+    "Hechicero",
+    "Lance Archer"
+   ],
+   "ex": [
+    "Will Ospreay",
+    "Powerhouse Hobbs",
+    "Rocky Romero"
+   ],
+   "a": [
+    "Don Callis Family"
+   ]
+  },
+  "elite": {
+   "n": "The Elite",
+   "lg": "Elite",
+   "k": "AEW",
+   "y": "depuis 2019",
+   "on": 1,
+   "m": [
+    "Matt Jackson",
+    "Nick Jackson",
+    "Kazuchika Okada"
+   ],
+   "ex": [
+    "Kenny Omega",
+    "Adam Page",
+    "Cody Rhodes",
+    "Jack Perry"
+   ],
+   "a": [
+    "The Elite"
+   ]
+  },
+  "golden-elite": {
+   "n": "The Golden Elite",
+   "lg": "Golden Elite",
+   "k": "AEW",
+   "y": "2021–2022",
+   "on": 0,
+   "m": [
+    "Kenny Omega",
+    "Matt Jackson",
+    "Nick Jackson",
+    "Kota Ibushi",
+    "Adam Page"
+   ]
+  },
+  "undisputed-elite": {
+   "n": "The Undisputed Elite",
+   "lg": "Undisputed Elite",
+   "k": "AEW",
+   "y": "2022",
+   "on": 0,
+   "m": [
+    "Adam Cole",
+    "Kyle O'Reilly",
+    "Bobby Fish",
+    "Matt Jackson",
+    "Nick Jackson"
+   ]
+  },
+  "ftr": {
+   "n": "FTR",
+   "lg": "FTR",
+   "k": "AEW",
+   "y": "depuis 2020",
+   "on": 1,
+   "m": [
+    "Dax Harwood",
+    "Cash Wheeler"
+   ],
+   "a": [
+    "The Revival"
+   ],
+   "ref": [
+    {
+     "t": "FTR contre The Briscoes — 2 sur 3",
+     "ev": "Death Before Dishonor 2022"
+    },
+    {
+     "t": "FTR contre The Young Bucks",
+     "ev": "Full Gear 2020"
+    }
+   ]
+  },
+  "gunn-club": {
+   "n": "The Gunn Club",
+   "lg": "Gunn Club",
+   "k": "AEW",
+   "y": "2021–2023",
+   "on": 0,
+   "m": [
+    "Billy Gunn",
+    "Austin Gunn",
+    "Colten Gunn"
+   ]
+  },
+  "house-of-black": {
+   "n": "The House of Black",
+   "lg": "House of Black",
+   "k": "AEW",
+   "y": "2022–2025",
+   "on": 0,
+   "m": [
+    "Malakai Black",
+    "Brody King",
+    "Buddy Matthews",
+    "Julia Hart"
+   ]
+  },
+  "hurt-syndicate": {
+   "n": "The Hurt Syndicate",
+   "lg": "Hurt Syndicate",
+   "k": "AEW",
+   "y": "depuis 2024",
+   "on": 1,
+   "m": [
+    "Bobby Lashley",
+    "Shelton Benjamin",
+    "MVP",
+    "MJF"
+   ]
+  },
+  "inner-circle": {
+   "n": "The Inner Circle",
+   "lg": "Inner Circle",
+   "k": "AEW",
+   "y": "2019–2021",
+   "on": 0,
+   "m": [
+    "Chris Jericho",
+    "Jake Hager",
+    "Sammy Guevara",
+    "Santana",
+    "Ortiz",
+    "MJF"
+   ]
+  },
+  "jericho-appreciation-society": {
+   "n": "Jericho Appreciation Society",
+   "lg": "Jericho Appreciation Society",
+   "k": "AEW",
+   "y": "2022–2023",
+   "on": 0,
+   "m": [
+    "Chris Jericho",
+    "Daniel Garcia",
+    "Jake Hager",
+    "Matt Menard",
+    "Angelo Parker",
+    "Sammy Guevara",
+    "Anna Jay"
+   ],
+   "a": [
+    "JAS"
+   ]
+  },
+  "jurassic-express": {
+   "n": "Jurassic Express",
+   "lg": "Jurassic Express",
+   "k": "AEW",
+   "y": "2019–2022",
+   "on": 0,
+   "m": [
+    "Jungle Boy",
+    "Luchasaurus",
+    "Marko Stunt"
+   ]
+  },
+  "learning-tree": {
+   "n": "The Learning Tree",
+   "lg": "Learning Tree",
+   "k": "AEW",
+   "y": "2024–2025",
+   "on": 0,
+   "m": [
+    "Chris Jericho",
+    "Big Bill",
+    "Bryan Keith"
+   ]
+  },
+  "lucha-brothers": {
+   "n": "Lucha Brothers",
+   "lg": "Lucha Bros",
+   "k": "AAA · AEW",
+   "y": "2018–2024",
+   "on": 0,
+   "m": [
+    "Penta",
+    "Rey Fénix"
+   ],
+   "a": [
+    "Lucha Brothers",
+    "Lucha Bros"
+   ],
+   "ref": [
+    {
+     "t": "Lucha Brothers contre The Young Bucks — Steel Cage",
+     "ev": "All Out 2021"
+    }
+   ]
+  },
+  "nightmare-family": {
+   "n": "The Nightmare Family",
+   "lg": "Nightmare Family",
+   "k": "AEW",
+   "y": "2019–2024",
+   "on": 0,
+   "m": [
+    "Dustin Rhodes",
+    "Cody Rhodes",
+    "Lance Archer",
+    "Arn Anderson",
+    "Brock Anderson",
+    "Lee Johnson"
+   ]
+  },
+  "outcasts": {
+   "n": "The Outcasts",
+   "lg": "Outcasts",
+   "k": "AEW",
+   "y": "2023–2024",
+   "on": 0,
+   "m": [
+    "Saraya",
+    "Toni Storm",
+    "Ruby Soho",
+    "Harley Cameron"
+   ]
+  },
+  "paragon": {
+   "n": "The Paragon",
+   "lg": "Paragon",
+   "k": "ROH · AEW",
+   "y": "2023–2024",
+   "on": 0,
+   "m": [
+    "Adam Cole",
+    "Kyle O'Reilly",
+    "Roderick Strong"
+   ]
+  },
+  "patriarchy": {
+   "n": "The Patriarchy",
+   "lg": "Patriarchy",
+   "k": "AEW",
+   "y": "2024–2025",
+   "on": 0,
+   "m": [
+    "Christian Cage",
+    "Nick Wayne",
+    "Killswitch",
+    "Mother Wayne"
+   ]
+  },
+  "pinnacle": {
+   "n": "The Pinnacle",
+   "lg": "Pinnacle",
+   "k": "AEW",
+   "y": "2021–2022",
+   "on": 0,
+   "m": [
+    "MJF",
+    "Shawn Spears",
+    "Wardlow",
+    "Dax Harwood",
+    "Cash Wheeler"
+   ]
+  },
+  "private-party": {
+   "n": "Private Party",
+   "lg": "Private Party",
+   "k": "AEW",
+   "y": "depuis 2019",
+   "on": 1,
+   "m": [
+    "Isiah Kassidy",
+    "Marq Quen"
+   ]
+  },
+  "qtv": {
+   "n": "QTV",
+   "lg": "QTV",
+   "k": "AEW",
+   "y": "2023–2024",
+   "on": 0,
+   "m": [
+    "QT Marshall",
+    "Aaron Solo",
+    "Johnny TV",
+    "Powerhouse Hobbs",
+    "Harley Cameron"
+   ]
+  },
+  "superkliq": {
+   "n": "The SuperKliq",
+   "lg": "SuperKliq",
+   "k": "AEW",
+   "y": "2021",
+   "on": 0,
+   "m": [
+    "Adam Cole",
+    "Matt Jackson",
+    "Nick Jackson"
+   ]
+  },
+  "conglomeration": {
+   "n": "The Conglomeration",
+   "lg": "The Conglomeration",
+   "k": "AEW",
+   "y": "2024–2025",
+   "on": 0,
+   "m": [
+    "Orange Cassidy",
+    "Kyle O'Reilly",
+    "Roderick Strong",
+    "Mark Briscoe",
+    "Tomohiro Ishii"
+   ],
+   "a": [
+    "Conglomeration"
+   ]
+  },
+  "opps": {
+   "n": "The Opps",
+   "lg": "The Opps",
+   "k": "AEW",
+   "y": "depuis 2024",
+   "on": 1,
+   "m": [
+    "Samoa Joe",
+    "Powerhouse Hobbs",
+    "Katsuyori Shibata"
+   ],
+   "a": [
+    "Opps"
+   ]
+  },
+  "top-flight": {
+   "n": "Top Flight",
+   "lg": "Top Flight",
+   "k": "AEW",
+   "y": "depuis 2020",
+   "on": 1,
+   "m": [
+    "Darius Martin",
+    "Dante Martin"
+   ]
+  },
+  "varsity-blondes": {
+   "n": "The Varsity Blondes",
+   "lg": "Varsity Blondes",
+   "k": "AEW",
+   "y": "2020–2022",
+   "on": 0,
+   "m": [
+    "Brian Pillman Jr.",
+    "Griff Garrison",
+    "Julia Hart"
+   ]
+  },
+  "wingmen": {
+   "n": "The Wingmen",
+   "lg": "Wingmen",
+   "k": "AEW",
+   "y": "2021–2022",
+   "on": 0,
+   "m": [
+    "Peter Avalon",
+    "Cezar Bononi",
+    "Ryan Nemeth",
+    "JD Drake"
+   ]
+  },
+  "young-bucks": {
+   "n": "The Young Bucks",
+   "lg": "Young Bucks",
+   "k": "AEW · ROH · NJPW",
+   "y": "depuis 2004",
+   "on": 1,
+   "m": [
+    "Matt Jackson",
+    "Nick Jackson"
+   ],
+   "a": [
+    "Young Bucks"
+   ],
+   "ref": [
+    {
+     "t": "The Young Bucks contre Lucha Brothers — Steel Cage",
+     "ev": "All Out 2021"
+    },
+    {
+     "t": "The Young Bucks contre FTR",
+     "ev": "Full Gear 2020"
+    }
+   ]
+  },
+  "factory": {
+   "n": "The Factory",
+   "lg": "Factory",
+   "k": "AEW",
+   "y": "2020–2022",
+   "on": 0,
+   "m": [
+    "QT Marshall",
+    "Aaron Solo",
+    "Nick Comoroto",
+    "Anthony Ogogo"
+   ]
+  },
+  "iron-savages": {
+   "n": "The Iron Savages",
+   "lg": "Iron Savages",
+   "k": "AEW",
+   "y": "2023",
+   "on": 0,
+   "m": [
+    "Boulder",
+    "Bronson",
+    "Jacked Jameson"
+   ]
+  },
+  "premier-athletes": {
+   "n": "The Premier Athletes",
+   "lg": "Premier Athletes",
+   "k": "ROH · AEW",
+   "y": "2021–2023",
+   "on": 0,
+   "m": [
+    "Tony Nese",
+    "Josh Woods",
+    "Ari Daivari",
+    "Mark Sterling"
+   ]
+  },
+  "mogul-embassy": {
+   "n": "The Mogul Embassy",
+   "lg": "The Mogul Embassy",
+   "k": "ROH · AEW",
+   "y": "2022–2023",
+   "on": 0,
+   "m": [
+    "Swerve Strickland",
+    "Prince Nana",
+    "Brian Cage",
+    "Toa Liona",
+    "Bishop Kaun"
+   ],
+   "a": [
+    "Mogul Embassy"
+   ]
+  },
+  "embassy": {
+   "n": "The Embassy",
+   "lg": "Embassy",
+   "k": "ROH",
+   "y": "2006–2010",
+   "on": 0,
+   "m": [
+    "Prince Nana",
+    "Jimmy Rave",
+    "Alex Shelley",
+    "Ernie Osiris"
+   ]
+  },
+  "sons-of-texas": {
+   "n": "Sons of Texas",
+   "lg": "Sons of Texas",
+   "k": "ROH",
+   "y": "2024",
+   "on": 0,
+   "m": [
+    "Dustin Rhodes",
+    "Sammy Guevara"
+   ]
+  },
+  "infantry": {
+   "n": "The Infantry",
+   "lg": "Infantry",
+   "k": "AEW · ROH",
+   "y": "depuis 2021",
+   "on": 1,
+   "m": [
+    "Shawn Dean",
+    "Carlie Bravo",
+    "Trish Adora"
+   ]
+  },
+  "house-of-truth": {
+   "n": "The House of Truth",
+   "lg": "House of Truth",
+   "k": "ROH",
+   "y": "2010–2013",
+   "on": 0,
+   "m": [
+    "Truth Martini",
+    "Roderick Strong",
+    "Jay Lethal",
+    "Michael Elgin",
+    "Tommaso Ciampa"
+   ]
+  },
+  "age-of-the-fall": {
+   "n": "The Age of the Fall",
+   "lg": "Age of the Fall",
+   "k": "ROH",
+   "y": "2007–2009",
+   "on": 0,
+   "m": [
+    "Jimmy Jacobs",
+    "Tyler Black",
+    "Necro Butcher",
+    "Lacey"
+   ]
+  },
+  "generation-next": {
+   "n": "Generation Next",
+   "lg": "Generation Next",
+   "k": "ROH",
+   "y": "2004–2006",
+   "on": 0,
+   "m": [
+    "Austin Aries",
+    "Roderick Strong",
+    "Alex Shelley",
+    "Jack Evans",
+    "Jimmy Jacobs"
+   ]
+  },
+  "honor-no-more": {
+   "n": "Honor No More",
+   "lg": "Honor No More",
+   "k": "ROH · TNA",
+   "y": "2022",
+   "on": 0,
+   "m": [
+    "Eddie Edwards",
+    "Matt Taven",
+    "Mike Bennett",
+    "Vincent",
+    "PCO",
+    "Maria Kanellis",
+    "Kenny King"
+   ]
+  },
+  "kingdom": {
+   "n": "The Kingdom",
+   "lg": "The Kingdom",
+   "k": "ROH",
+   "y": "2013–2019",
+   "on": 0,
+   "m": [
+    "Matt Taven",
+    "Mike Bennett",
+    "Vinny Marseglia",
+    "TK O'Ryan",
+    "Maria Kanellis"
+   ]
+  },
+  "righteous": {
+   "n": "The Righteous",
+   "lg": "The Righteous",
+   "k": "ROH",
+   "y": "2021–2024",
+   "on": 0,
+   "m": [
+    "Vincent",
+    "Dutch",
+    "Bateman",
+    "Vita VonStarr"
+   ]
+  },
+  "socal-uncensored": {
+   "n": "SoCal Uncensored",
+   "lg": "SoCal Uncensored",
+   "k": "ROH · AEW",
+   "y": "2015–2021",
+   "on": 0,
+   "m": [
+    "Christopher Daniels",
+    "Frankie Kazarian",
+    "Scorpio Sky"
+   ],
+   "a": [
+    "SCU"
+   ]
+  },
+  "athena-s-minions": {
+   "n": "Athena's Minions",
+   "lg": "Athenas Minion",
+   "k": "ROH",
+   "y": "depuis 2023",
+   "on": 1,
+   "m": [
+    "Athena",
+    "Billie Starkz"
+   ]
+  },
+  "aces-eights": {
+   "n": "Aces & Eights",
+   "lg": "Aces and Eights",
+   "k": "TNA",
+   "y": "2012–2013",
+   "on": 0,
+   "m": [
+    "Bully Ray",
+    "Devon",
+    "Mr. Anderson",
+    "Garett Bischoff",
+    "Wes Brisco",
+    "Doc",
+    "Knux"
+   ],
+   "a": [
+    "Aces and Eights"
+   ]
+  },
+  "british-invasion": {
+   "n": "The British Invasion",
+   "lg": "British Invasion",
+   "k": "TNA",
+   "y": "2009–2011",
+   "on": 0,
+   "m": [
+    "Doug Williams",
+    "Brutus Magnus",
+    "Rob Terry"
+   ]
+  },
+  "decay": {
+   "n": "Decay",
+   "lg": "Decay",
+   "k": "TNA",
+   "y": "2016–2018",
+   "on": 0,
+   "m": [
+    "Abyss",
+    "Crazzy Steve",
+    "Rosemary"
+   ]
+  },
+  "desi-hit-squad": {
+   "n": "Desi Hit Squad",
+   "lg": "Desi Hit Squad",
+   "k": "TNA",
+   "y": "2019–2021",
+   "on": 0,
+   "m": [
+    "Rohit Raju",
+    "Raj Singh",
+    "Shera",
+    "Gursinder Singh"
+   ]
+  },
+  "first-class": {
+   "n": "First Class",
+   "lg": "First Class",
+   "k": "TNA",
+   "y": "depuis 2024",
+   "on": 1,
+   "m": [
+    "AJ Francis",
+    "KC Navarro"
+   ]
+  },
+  "fortune": {
+   "n": "Fortune",
+   "lg": "Fortune",
+   "k": "TNA",
+   "y": "2010–2011",
+   "on": 0,
+   "m": [
+    "Ric Flair",
+    "AJ Styles",
+    "Kazarian",
+    "Robert Roode",
+    "James Storm",
+    "Christopher Daniels",
+    "Douglas Williams"
+   ]
+  },
+  "immortal": {
+   "n": "Immortal",
+   "lg": "Immortal",
+   "k": "TNA",
+   "y": "2010–2012",
+   "on": 0,
+   "m": [
+    "Hulk Hogan",
+    "Eric Bischoff",
+    "Jeff Hardy",
+    "Matt Hardy",
+    "Bully Ray",
+    "Abyss"
+   ]
+  },
+  "latin-american-xchange": {
+   "n": "Latin American Xchange",
+   "lg": "Latin American Xchange",
+   "k": "TNA",
+   "y": "2004–2018",
+   "on": 0,
+   "m": [
+    "Homicide",
+    "Hernandez",
+    "Konnan",
+    "Santana",
+    "Ortiz",
+    "Diamanté"
+   ],
+   "a": [
+    "LAX"
+   ]
+  },
+  "main-event-mafia": {
+   "n": "The Main Event Mafia",
+   "lg": "Main Event Mafia",
+   "k": "TNA",
+   "y": "2008–2013",
+   "on": 0,
+   "m": [
+    "Kurt Angle",
+    "Sting",
+    "Kevin Nash",
+    "Booker T",
+    "Scott Steiner",
+    "Samoa Joe",
+    "Magnus"
+   ]
+  },
+  "mexican-america": {
+   "n": "Mexican America",
+   "lg": "Mexican America",
+   "k": "TNA",
+   "y": "2011–2012",
+   "on": 0,
+   "m": [
+    "Hernandez",
+    "Anarquia",
+    "Sarita",
+    "Rosita"
+   ]
+  },
+  "motor-city-machine-guns": {
+   "n": "The Motor City Machine Guns",
+   "lg": "Motor City Machine Guns",
+   "k": "TNA · ROH · WWE",
+   "y": "depuis 2007",
+   "on": 1,
+   "m": [
+    "Alex Shelley",
+    "Chris Sabin"
+   ],
+   "a": [
+    "MCMG"
+   ],
+   "ref": [
+    {
+     "t": "Motor City Machine Guns contre Beer Money — 3 sur 5",
+     "ev": "TNA 2010"
+    }
+   ]
+  },
+  "rascalz": {
+   "n": "The Rascalz",
+   "lg": "Rascalz",
+   "k": "TNA",
+   "y": "2019–2021",
+   "on": 0,
+   "m": [
+    "Dezmond Xavier",
+    "Zachary Wentz",
+    "Trey Miguel",
+    "Myron Reed"
+   ]
+  },
+  "band": {
+   "n": "The Band",
+   "lg": "The Band",
+   "k": "TNA",
+   "y": "2010",
+   "on": 0,
+   "m": [
+    "Scott Hall",
+    "Kevin Nash",
+    "Sean Waltman"
+   ]
+  },
+  "design": {
+   "n": "The Design",
+   "lg": "The Design",
+   "k": "TNA",
+   "y": "2023–2024",
+   "on": 0,
+   "m": [
+    "Deaner",
+    "Angels",
+    "Kon"
+   ]
+  },
+  "elegance-brand": {
+   "n": "The Elegance Brand",
+   "lg": "The Elegance Brand",
+   "k": "TNA",
+   "y": "depuis 2024",
+   "on": 1,
+   "m": [
+    "Ash By Elegance",
+    "Heather By Elegance",
+    "M By Elegance",
+    "Mr. Elegance"
+   ],
+   "a": [
+    "Elegance Brand"
+   ]
+  },
+  "system": {
+   "n": "The System",
+   "lg": "The System",
+   "k": "TNA",
+   "y": "depuis 2024",
+   "on": 1,
+   "m": [
+    "Moose",
+    "Brian Myers",
+    "Eddie Edwards",
+    "Alisha Edwards",
+    "JDC"
+   ]
+  },
+  "violent-by-design": {
+   "n": "Violent By Design",
+   "lg": "Violent by Design",
+   "k": "TNA",
+   "y": "2021–2022",
+   "on": 0,
+   "m": [
+    "Eric Young",
+    "Deaner",
+    "Rhino",
+    "Joe Doering"
+   ]
+  },
+  "north": {
+   "n": "The North",
+   "lg": "North",
+   "k": "TNA",
+   "y": "2016–2020",
+   "on": 0,
+   "m": [
+    "Ethan Page",
+    "Josh Alexander"
+   ]
+  },
+  "dollhouse": {
+   "n": "The Dollhouse",
+   "lg": "The Dollhouse",
+   "k": "TNA",
+   "y": "2016",
+   "on": 0,
+   "m": [
+    "Jade",
+    "Marti Bell",
+    "Rebel"
+   ]
+  },
+  "hardy-family-office": {
+   "n": "Hardy Family Office",
+   "lg": "THFO",
+   "k": "AEW",
+   "y": "2020–2022",
+   "on": 0,
+   "m": [
+    "Matt Hardy",
+    "Isiah Kassidy",
+    "Marq Quen",
+    "Jeff Hardy",
+    "Ethan Page"
+   ],
+   "a": [
+    "HFO"
+   ]
+  },
+  "bullet-club": {
+   "n": "Bullet Club",
+   "lg": "Bullet Club",
+   "k": "NJPW",
+   "y": "depuis 2013",
+   "on": 1,
+   "m": [
+    "David Finlay",
+    "Drilla Moloney",
+    "Clark Connors",
+    "Gedo"
+   ],
+   "ex": [
+    "Finn Bálor",
+    "AJ Styles",
+    "Kenny Omega",
+    "Jay White",
+    "Gabe Kidd",
+    "Tama Tonga"
+   ]
+  },
+  "bullet-club-war-dogs": {
+   "n": "Bullet Club War Dogs",
+   "lg": "Bullet Club War Dogs",
+   "k": "NJPW",
+   "y": "depuis 2023",
+   "on": 1,
+   "m": [
+    "David Finlay",
+    "Drilla Moloney",
+    "Clark Connors",
+    "Gedo"
+   ],
+   "ex": [
+    "Gabe Kidd",
+    "Alex Coughlin"
+   ],
+   "a": [
+    "War Dogs"
+   ]
+  },
+  "chaos": {
+   "n": "CHAOS",
+   "lg": "CHAOS",
+   "k": "NJPW",
+   "y": "depuis 2009",
+   "on": 1,
+   "m": [
+    "Hirooki Goto",
+    "YOSHI-HASHI",
+    "Toru Yano",
+    "Rocky Romero",
+    "Yoh",
+    "Tomohiro Ishii"
+   ],
+   "ex": [
+    "Kazuchika Okada",
+    "Shinsuke Nakamura",
+    "Will Ospreay"
+   ]
+  },
+  "guerrillas-of-destiny": {
+   "n": "Guerrillas of Destiny",
+   "lg": "Guerrillas of Destiny",
+   "k": "NJPW",
+   "y": "2016–2024",
+   "on": 0,
+   "m": [
+    "Tama Tonga",
+    "Tanga Loa"
+   ],
+   "a": [
+    "G.O.D."
+   ]
+  },
+  "house-of-torture": {
+   "n": "House of Torture",
+   "lg": "House of Torture",
+   "k": "NJPW",
+   "y": "depuis 2020",
+   "on": 1,
+   "m": [
+    "Sho",
+    "Ren Narita",
+    "Yujiro Takahashi",
+    "Yoshinobu Kanemaru",
+    "Dick Togo"
+   ],
+   "ex": [
+    "EVIL"
+   ]
+  },
+  "just-5-guys": {
+   "n": "Just 5 Guys",
+   "lg": "Just 5 Guys",
+   "k": "NJPW",
+   "y": "2023–2024",
+   "on": 0,
+   "m": [
+    "SANADA",
+    "Taichi",
+    "Yuya Uemura",
+    "DOUKI",
+    "Yoshinobu Kanemaru",
+    "TAKA Michinoku"
+   ],
+   "a": [
+    "Just 4 Guys"
+   ]
+  },
+  "los-ingobernables-de-japon": {
+   "n": "Los Ingobernables de Japón",
+   "lg": "Los Ingobernables de Japon",
+   "k": "NJPW",
+   "y": "2015–2025",
+   "on": 0,
+   "m": [
+    "Tetsuya Naito",
+    "Hiromu Takahashi",
+    "BUSHI",
+    "Shingo Takagi",
+    "Yota Tsuji",
+    "Titán",
+    "EVIL",
+    "SANADA"
+   ],
+   "a": [
+    "LIJ",
+    "Los Ingobernables de Japón"
+   ]
+  },
+  "roppongi-3k": {
+   "n": "Roppongi 3K",
+   "lg": "Roppongi 3K",
+   "k": "NJPW",
+   "y": "2016–2021",
+   "on": 0,
+   "m": [
+    "SHO",
+    "YOH",
+    "Rocky Romero"
+   ]
+  },
+  "suzuki-gun": {
+   "n": "Suzuki-gun",
+   "lg": "Suzuki-gun",
+   "k": "NJPW",
+   "y": "2003–2022",
+   "on": 0,
+   "m": [
+    "Minoru Suzuki",
+    "Zack Sabre Jr.",
+    "Taichi",
+    "El Desperado",
+    "Yoshinobu Kanemaru",
+    "TAKA Michinoku",
+    "DOUKI",
+    "Lance Archer"
+   ]
+  },
+  "united-empire": {
+   "n": "United Empire",
+   "lg": "United Empire",
+   "k": "NJPW",
+   "y": "depuis 2021",
+   "on": 1,
+   "m": [
+    "Great-O-Khan",
+    "Jeff Cobb",
+    "Francesco Akira",
+    "TJP",
+    "Callum Newman",
+    "HENARE"
+   ],
+   "ex": [
+    "Will Ospreay",
+    "Kyle Fletcher",
+    "Mark Davis"
+   ]
+  },
+  "los-ingobernables": {
+   "n": "Los Ingobernables",
+   "lg": "Los Ingobernables",
+   "k": "CMLL",
+   "y": "2011–2015",
+   "on": 0,
+   "m": [
+    "La Sombra",
+    "Rush",
+    "La Máscara",
+    "El Terrible",
+    "Marco Corleone"
+   ]
+  },
+  "la-faccion-ingobernable": {
+   "n": "La Facción Ingobernable",
+   "lg": "La Faccion Ingobernable",
+   "k": "AAA · ROH",
+   "y": "2017–2020",
+   "on": 0,
+   "m": [
+    "Rush",
+    "Dragon Lee",
+    "Kenny King",
+    "La Bestia del Ring",
+    "Killer Kross"
+   ]
+  },
+  "los-perros-del-mal": {
+   "n": "Los Perros del Mal",
+   "lg": "Los Perros del Mal",
+   "k": "CMLL · AAA",
+   "y": "2004–2019",
+   "on": 0,
+   "m": [
+    "Perro Aguayo Jr.",
+    "Héctor Garza",
+    "Mr. Águila",
+    "Damián 666",
+    "Halloween",
+    "El Hijo del Fantasma"
+   ]
+  },
+  "club-venus": {
+   "n": "Club Venus",
+   "lg": "Club Venus",
+   "k": "Stardom",
+   "y": "2023–2024",
+   "on": 0,
+   "m": [
+    "Mina Shirakawa",
+    "Mariah May",
+    "Xia Brookside"
+   ]
+  },
+  "cosmic-angels": {
+   "n": "Cosmic Angels",
+   "lg": "Cosmic Angels",
+   "k": "Stardom",
+   "y": "depuis 2020",
+   "on": 1,
+   "m": [
+    "Saori Anou",
+    "Natsupoi",
+    "Sayaka Kurara",
+    "Yuna Mizumori",
+    "Momo Kohgo"
+   ],
+   "ex": [
+    "Tam Nakano",
+    "Mina Shirakawa",
+    "Unagi Sayaka"
+   ]
+  },
+  "donna-del-mondo": {
+   "n": "Donna del Mondo",
+   "lg": "Donna del Mondo",
+   "k": "Stardom",
+   "y": "2019–2022",
+   "on": 0,
+   "m": [
+    "Giulia",
+    "Syuri",
+    "Maika",
+    "Himeka",
+    "Thekla",
+    "Mai Sakurai"
+   ],
+   "a": [
+    "DDM"
+   ]
+  },
+  "god-s-eye": {
+   "n": "God's Eye",
+   "lg": "Gods Eye",
+   "k": "Stardom",
+   "y": "depuis 2022",
+   "on": 1,
+   "m": [
+    "Syuri",
+    "Ami Sohrei",
+    "Tomoka Inaba",
+    "Konami"
+   ],
+   "a": [
+    "God's Eye"
+   ]
+  },
+  "h-a-t-e": {
+   "n": "H.A.T.E.",
+   "lg": "HATE",
+   "k": "Stardom",
+   "y": "depuis 2023",
+   "on": 1,
+   "m": [
+    "Natsuko Tora",
+    "Saki Kashima",
+    "Momo Watanabe",
+    "Starlight Kid",
+    "Ruaka",
+    "Rina",
+    "Thekla",
+    "Fukigen Death"
+   ],
+   "a": [
+    "H.A.T.E."
+   ]
+  },
+  "neo-genesis": {
+   "n": "Neo Genesis",
+   "lg": "Neo Genesis",
+   "k": "Stardom",
+   "y": "depuis 2024",
+   "on": 1,
+   "m": [
+    "Suzu Suzuki",
+    "Mei Seira"
+   ]
+  },
+  "oedo-tai": {
+   "n": "Oedo Tai",
+   "lg": "Oedo Tai",
+   "k": "Stardom",
+   "y": "2016–2023",
+   "on": 0,
+   "m": [
+    "Kagetsu",
+    "Natsuko Tora",
+    "Starlight Kid",
+    "Momo Watanabe",
+    "Saki Kashima",
+    "Ruaka",
+    "Hazuki"
+   ]
+  },
+  "queen-s-quest": {
+   "n": "Queen's Quest",
+   "lg": "Queens Quest",
+   "k": "Stardom",
+   "y": "depuis 2016",
+   "on": 1,
+   "m": [
+    "Saya Kamitani",
+    "AZM",
+    "Hina",
+    "Lady C",
+    "Miyu Amasaki"
+   ],
+   "ex": [
+    "Io Shirai",
+    "Utami Hayashishita",
+    "Momo Watanabe"
+   ],
+   "a": [
+    "Queen's Quest"
+   ]
+  },
+  "stars": {
+   "n": "STARS",
+   "lg": "STARS",
+   "k": "Stardom",
+   "y": "2017–2023",
+   "on": 0,
+   "m": [
+    "Mayu Iwatani",
+    "Koguma",
+    "Hazuki",
+    "Saya Iida",
+    "Momo Kohgo",
+    "Hanan"
+   ]
+  },
+  "prominence": {
+   "n": "Prominence",
+   "lg": "Prominence",
+   "k": "Stardom",
+   "y": "depuis 2021",
+   "on": 1,
+   "m": [
+    "Suzu Suzuki",
+    "Risa Sera",
+    "Hiragi Kurumi",
+    "Akane Fujita"
+   ]
+  }
+ }
+}

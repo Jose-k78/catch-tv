@@ -6,6 +6,7 @@ import { errText } from "./account.js";
 import { canonical, wShows, upcomingFor, lastMatches, wNews, linkNames } from "../wrestlers.js";
 import { friendsOf } from "../social.js";
 import { spoilBlock, okVid } from "./highlights.js";
+import { photoOf } from "../photos.js";
 
 export function favsOf(p) { return (p && Array.isArray(p.favs) ? p.favs : []).filter(x => typeof x === "string" && x.trim()).slice(0, 30); }
 export function myFavs() { return S.user ? favsOf(S.profile) : []; }
@@ -71,5 +72,7 @@ export function favAside() {
 // Puces des favoris (profils)
 export function favChips(p) {
   const f = favsOf(p);
-  return f.length ? '<div class="chips wrap">' + f.map(n => '<a class="chip star" href="' + wlink(n) + '">⭐ ' + esc(n) + "</a>").join("") + "</div>" : "";
+  // avec leur photo (dossier de l'admin) quand elle existe
+  return f.length ? '<div class="favgrid">' + f.map(n => { const p = photoOf(n); return '<a class="favw" href="' + wlink(n) + '">' +
+    (p ? '<img src="' + esc(p) + '" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement(\'span\'),{className:\'favx\',textContent:\'⭐\'}))">' : '<span class="favx">⭐</span>') + "<small>" + esc(n) + "</small></a>"; }).join("") + "</div>" : "";
 }

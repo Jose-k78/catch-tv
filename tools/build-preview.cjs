@@ -26,6 +26,22 @@ const r = await esbuild.build({
       }
       return { contents: JSON.stringify({ updated: P.updated, items }), loader: "json" };
     });
+    // logos (ceintures des titres actuels, shows, événements à venir, groupes actifs) : en petit, intégrés
+    b.onLoad({ filter: /logos\.json$/ }, async a => {
+      const sharp = require("/opt/npm-tools/node_modules/sharp");
+      const L = JSON.parse(fs.readFileSync(a.path, "utf8")), out = { updated: L.updated, shows: {}, events: {}, titles: {}, groups: {} };
+      const DIR = { shows: "img/shows/", events: "img/events/", titles: "img/titres/", groups: "img/groupes/" }, SZ = { shows: 120, events: 220, titles: 150, groups: 110 };
+      const assets = fs.readFileSync(path.join(root, "js/assets.js"), "utf8");
+      const belts = new Set([...assets.matchAll(/"[\w-]+": "([^"]+)"/g)].map(m => m[1]));
+      const cal = fs.readFileSync(path.join(root, "data/calendar.json"), "utf8");
+      const G = JSON.parse(fs.readFileSync(path.join(root, "data/groups.json"), "utf8")).items, activeG = new Set(Object.values(G).filter(g => g.on).map(g => g.lg));
+      const want = { shows: n => true, titles: n => belts.has(n), groups: n => activeG.has(n), events: n => cal.indexOf(n.replace(/^\S+\s/, "").replace(/\s*\d+$/, "")) >= 0 && !/\d/.test(n.slice(-2)) };
+      for (const sec of Object.keys(out).filter(k => k !== "updated")) for (const n of Object.keys(L[sec] || {})) {
+        if (!want[sec](n)) continue;
+        try { out[sec][n] = { f: "data:image/webp;base64," + (await sharp(path.join(root, DIR[sec], L[sec][n].f)).resize(SZ[sec], SZ[sec], { fit: "inside" }).webp({ quality: 72 }).toBuffer()).toString("base64") }; } catch (e) {}
+      }
+      return { contents: JSON.stringify(out), loader: "json" };
+    });
   } }],
 });
 let html = fs.readFileSync(path.join(root, "index.html"), "utf8");

@@ -1,0 +1,57 @@
+{
+ "updated": "2026-10-30",
+ "items": [
+  {
+   "id": "2026-10-30-maj",
+   "d": "2026-10-30",
+   "t": "Mise à jour du 30 octobre",
+   "txt": [
+    "📸 Photos des catcheurs : sur leur fiche (appuie sur la photo pour l’agrandir), dans la recherche, les sondages, l’affiche des événements, les résumés et les highlights.",
+    "🛡️ Fiches des tag teams et des factions : logo, membres, anciens membres, années et matchs de référence. Leur logo apparaît dans un coin de la fiche de leurs membres.",
+    "🏆 Fiches des titres avec la photo de la ceinture, les champions, la durée des règnes et les records ; le palmarès de chaque catcheur sur sa fiche.",
+    "🗄️ Les anciennes ceintures sont dans les archives : tape leur nom dans la recherche.",
+    "🎬 Logos des shows et des grands événements (Royal Rumble, Wrestle Kingdom, All In…).",
+    "⭐ Les catcheurs suivis s’affichent avec leur photo sur ton profil.",
+    "🔎 Matchs de référence sans vidéo officielle : recherche YouTube du combat complet, c’est toi qui choisis la vidéo.",
+    "🔔 Notifications : la petite icône TCC remplace le carré blanc."
+   ]
+  },
+  {
+   "id": "2026-10-30-base",
+   "d": "2026-10-30",
+   "t": "Ce que TCC TV sait faire",
+   "txt": [
+    "📺 Le calendrier des 9 promotions (WWE, AEW, AAA, ROH, TNA, CMLL, NJPW, Stardom, Marigold) : shows de la semaine, grands événements, heures en France et où regarder.",
+    "🗓️ La page de chaque événement : l’affiche, le résumé d’avant-show, « Me rappeler », pronostic et partage.",
+    "🎥 Les highlights et les résultats de chaque show, toujours derrière un bouton spoiler, avec les vidéos officielles.",
+    "⭐ Note les combats et les shows que tu as vus : ton historique de notes est sur ton profil.",
+    "🏆 Les champions actuels de chaque promotion et les défenses de titre.",
+    "🔍 La recherche : catcheurs, shows et événements ; la fiche de chaque catcheur (résumé, derniers matchs, matchs de référence, actu, commentaires).",
+    "📰 Le bandeau défilant et l’actu du catch en français, mis à jour toute la journée.",
+    "💬 La Gorilla Position (discussion de tous les membres) et les messages privés ; partage d’un show, d’un catcheur ou d’un titre par appui long.",
+    "👥 Les membres, les amis et les feuds du jour 🔥 ; les trophées à gagner.",
+    "📊 Les sondages (dream match, babies du mois…) et 🎯 les pronostics avec leur classement.",
+    "💡 « Partagez vos idées » pour proposer des nouveautés et voter.",
+    "🙈 Le mode sans spoiler, les notifications (messages privés, infos, matchs de tes favoris, feuds, annonces) et l’apparence (thème, intro)."
+   ]
+  },
+  {
+   "id": "2026-10-30-modo",
+   "d": "2026-10-30",
+   "mod": true,
+   "t": "Ce que le modérateur peut faire",
+   "txt": [
+    "📣 Faire une annonce : tous les membres reçoivent une notification.",
+    "🚩 Traiter les signalements (messages, commentaires, images).",
+    "🖼️ Changer l’image d’un show, d’un événement ou d’une promotion (bouton image sur les vignettes) et les logos des onglets.",
+    "🧹 Enlever l’image ajoutée par un membre sur la fiche d’un catcheur ou le logo ajouté sur la fiche d’un groupe.",
+    "🎵 Choisir les fonds animés et la musique de l’app.",
+    "💡 Répondre aux idées des membres ; gérer les sondages (fermer, supprimer).",
+    "🌐 Choisir les sites utilisés par les mises à jour automatiques et voir l’état de chaque donnée.",
+    "🔔 Installer et vérifier les notifications.",
+    "📝 Écrire les patch notes : dans Modération › Patch notes, ajoute une note pour tout le monde ou réservée au modérateur.",
+    "📸 Ajouter des photos de catcheurs : dépose-les dans le dossier img/catcheurs sur GitHub (nom du fichier = nom du catcheur), le robot les ajoute tout seul."
+   ]
+  }
+ ]
+}

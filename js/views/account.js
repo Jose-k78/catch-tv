@@ -7,6 +7,8 @@ import { cleanImageUrl } from "../modals.js";
 import { ADMIN_UID } from "../config.js";
 import { friendState, friendsOf, feudInfo, feudBadge, isBlocked, requestsIn } from "../social.js";
 import { favChips } from "./favs.js";
+import { photoOf } from "../photos.js";
+import { patchView, patchModView, pnNew } from "./patchnotes.js";
 import { noSpoil, setNoSpoil } from "../spoil.js";
 import { isMatchNote, matchNoteLinks, noteTitle } from "./mrate.js";
 import { sourcesView, statusView, mediaView, pushGuideView } from "./admin.js";
@@ -143,6 +145,8 @@ export function settingsView(sub) {
   if (sub === "etat" && S.isAdmin) return h + statusView();
   if (sub === "medias" && S.isAdmin) return h + mediaView();
   if (sub === "notifs") return h + notifSettingsView();
+  if (sub === "patchnotes") return h + patchView();
+  if (sub === "patchnotes-modo" && S.isAdmin) return h + patchModView();
   if (sub === "annonces" && S.isAdmin) return h + adminAnnView();
   if (sub === "notifs-install" && S.isAdmin) return h + pushGuideView();
   if (sub === "apparence") {
@@ -159,11 +163,13 @@ export function settingsView(sub) {
     row("#/parametres/apparence", "Apparence", TH[lsGet("ctv.theme") || "auto"] + " · intro " + INTRO[introMode()][2]) +
     row("#/parametres/spoiler", "Mode sans spoiler", noSpoil() ? "Activé" : "Désactivé") +
     row("#/parametres/notifs", "🔔 Notifications", pushOnHere() ? "Activées sur ce téléphone" : pushReady() ? "Pas encore activées sur ce téléphone" : "Bientôt disponibles") +
-    row("#/parametres/bloques", "Membres bloqués", S.blocks.length ? S.blocks.length + " membre" + (S.blocks.length > 1 ? "s" : "") : "Aucun") + "</div>" +
+    row("#/parametres/bloques", "Membres bloqués", S.blocks.length ? S.blocks.length + " membre" + (S.blocks.length > 1 ? "s" : "") : "Aucun") +
+    row("#/parametres/patchnotes", "📝 Patch notes" + (pnNew() ? ' <span class="pdot" aria-label="nouveau"></span>' : ""), pnNew() ? "Nouveautés à découvrir" : "Les nouveautés de l’app") + "</div>" +
     '<h2>Communauté</h2><div class="list">' + row("#/sondages", "📊 Sondages", "Vote et découvre l’avis des membres") + row("#/pronostics", "🎯 Pronostics", "Tes pronostics et le classement") +
     row("#/idees", "💡 Partagez vos idées", "Propose des nouveautés pour l’app et vote pour celles des autres") + "</div>";
   if (!ADMIN_UID || S.isAdmin) {
     if (S.isAdmin) h += '<h2>Modération</h2><div class="list">' + row("#/parametres/annonces", "📣 Faire une annonce", annList().length ? "Dernière : " + annList()[0].t : "Notification à tous les membres") +
+      row("#/parametres/patchnotes-modo", "📝 Patch notes · modération", "Ce que peut faire le modérateur · écrire une note") +
       row("#/parametres/signalements", "Signalements", S.reports.length ? S.reports.length + " en attente" : "Aucun") +
       row("#/parametres/logos", "Logos des onglets", "Remplacer les noms des promotions et des shows par leur logo") +
       row("#/parametres/medias", "Fonds animés et musique", Object.keys((S.media && S.media.bg) || {}).length + " vidéo" + (Object.keys((S.media && S.media.bg) || {}).length > 1 ? "s" : "") + " · " + (S.media && S.media.music ? "musique choisie" : "pas de musique")) +
@@ -263,7 +269,7 @@ export function profileView(uid) {
   if (p.bio) h += '<p class="bio">' + esc(p.bio) + "</p>";
   else if (me) h += '<p class="note" style="text-align:center">Ajoute une description depuis « Modifier mon profil ».</p>';
   // boutons : ami, message, feud
-  if (me) h += '<div class="btns" style="margin:4px 16px 0"><a class="btn" href="#/profil-modifier">Modifier mon profil</a><a class="btn ghost" href="#/parametres">Paramètres</a></div>';
+  if (me) h += '<div class="btns" style="margin:4px 16px 0"><a class="btn" href="#/profil-modifier">Modifier mon profil</a><a class="btn ghost" href="#/parametres">Paramètres' + (pnNew() ? ' <span class="pdot" aria-label="nouveau"></span>' : "") + "</a></div>";
   else if (S.user) {
     const st = friendState(uid), fi = feudInfo(uid);
     const fb = st === "ok" ? '<button class="btn ghost" data-act="frienddel" data-uid="' + esc(uid) + '">✓ Amis</button>'
@@ -276,7 +282,7 @@ export function profileView(uid) {
       (fi.best > fi.count ? " · record : " + fi.best : "") + (fi.hourglass ? " · ⏳ pensez à la feud du jour avant minuit" : "") + "</p>";
   }
   h += '<div class="favs">' + [["Show préféré", p.favShow], ["Catcheur préféré", p.favWrestler], ["Catcheuse préférée", p.favWrestlerF]]
-    .map(f => '<div class="fav"><small>' + f[0] + "</small><b>" + (f[1] ? esc(f[1]) : "–") + "</b></div>").join("") + "</div>";
+    .map((f, i) => '<div class="fav"><small>' + f[0] + "</small>" + (i && f[1] && photoOf(f[1]) ? '<a href="#/catcheur/' + encodeURIComponent(f[1]) + '"><img class="favpic" src="' + esc(photoOf(f[1])) + '" alt="" loading="lazy" onerror="this.remove()"></a>' : "") + "<b>" + (f[1] ? esc(f[1]) : "–") + "</b></div>").join("") + "</div>";
   h += '<div class="stats"><div><b>' + hist.length + "</b><small>show" + (hist.length > 1 ? "s" : "") + " vu" + (hist.length > 1 ? "s" : "") + "</small></div><div><b>" + fights.length + "</b><small>combat" + (fights.length > 1 ? "s" : "") + " noté" + (fights.length > 1 ? "s" : "") +
     "</small></div><div><b>" + avg + "</b><small>note moyenne</small></div><div><b>" + friendsOf(uid).length + "</b><small>ami" + (friendsOf(uid).length > 1 ? "s" : "") + "</small></div></div>";
   // vitrine des trophées
