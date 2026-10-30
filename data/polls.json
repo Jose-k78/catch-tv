@@ -1,92 +1,144 @@
 {
- "updated": "2026-10-29",
- "items": [
-  {
-   "id": "p-20261029-dm-reigns-omega",
-   "d": "2026-10-29",
-   "k": "",
-   "type": "match",
-   "q": "Dream match : Roman Reigns contre Kenny Omega, qui gagne ?",
-   "opts": [
-    "Roman Reigns",
-    "Kenny Omega"
-   ],
-   "other": false,
-   "end": "2026-11-02"
-  },
-  {
-   "id": "p-20261029-babies-1",
-   "d": "2026-10-29",
-   "k": "",
-   "type": "babies",
-   "q": "Qui est la meilleure babies entre Tiffany Stratton et Mina Shirakawa ?",
-   "opts": [
-    "Tiffany Stratton",
-    "Mina Shirakawa"
-   ],
-   "other": false,
-   "end": "2026-10-31"
-  },
-  {
-   "id": "p-20261029-cj-men",
-   "d": "2026-10-29",
-   "k": "WWE",
-   "q": "Crown Jewel : qui remporte le Crown Jewel Championship masculin ?",
-   "opts": [
-    "Roman Reigns",
-    "Sami Zayn"
-   ],
-   "other": false,
-   "end": "2026-11-07"
-  },
-  {
-   "id": "p-20261029-cj-lms",
-   "d": "2026-10-29",
-   "k": "WWE",
-   "q": "Last Man Standing à Crown Jewel : qui reste debout à la fin ?",
-   "opts": [
-    "Cody Rhodes",
-    "Randy Orton"
-   ],
-   "other": false,
-   "end": "2026-11-07"
-  },
-  {
-   "id": "p-20261029-ps-3way",
-   "d": "2026-10-29",
-   "k": "NJPW",
-   "q": "Power Struggle : qui gagne le match à trois ?",
-   "opts": [
-    "Yota Tsuji",
-    "Kenny Omega",
-    "Boltin Oleg"
-   ],
-   "other": false,
-   "end": "2026-11-03"
-  },
-  {
-   "id": "p-20261029-rumble",
-   "d": "2026-10-29",
-   "k": "WWE",
-   "q": "Qui gagnera le prochain Royal Rumble masculin ?",
-   "opts": [
-    "Cody Rhodes",
-    "Bron Breakker"
-   ],
-   "other": true,
-   "end": ""
-  },
-  {
-   "id": "p-20261029-wm-best",
-   "d": "2026-10-29",
-   "k": "WWE",
-   "q": "Le plus grand match de l’histoire de WrestleMania ?",
-   "opts": [
-    "Shawn Michaels contre The Undertaker (WrestleMania 25)",
-    "The Rock contre Stone Cold Steve Austin (WrestleMania X-Seven)"
-   ],
-   "other": true,
-   "end": ""
-  }
- ]
+  "updated": "2026-10-30",
+  "items": [
+    {
+      "id": "p-20261030-havoc-nxt",
+      "d": "2026-10-30",
+      "type": "",
+      "k": "WWE",
+      "q": "Halloween Havoc : qui sort champion de NXT ?",
+      "opts": [
+        "Grayson Waller",
+        "Tony D’Angelo"
+      ],
+      "other": false,
+      "end": "2026-10-31"
+    },
+    {
+      "id": "p-20261030-fg-continental",
+      "d": "2026-10-30",
+      "type": "",
+      "k": "AEW",
+      "q": "Full Gear : qui gagne le titre Continental ?",
+      "opts": [
+        "Jon Moxley",
+        "Jay White"
+      ],
+      "other": false,
+      "end": "2026-11-14"
+    },
+    {
+      "id": "p-20261030-fg-ospreay",
+      "d": "2026-10-30",
+      "type": "",
+      "k": "AEW",
+      "q": "Full Gear : Will Ospreay contre Mark Fletcher, qui gagne ?",
+      "opts": [
+        "Will Ospreay",
+        "Mark Fletcher"
+      ],
+      "other": false,
+      "end": "2026-11-14"
+    },
+    {
+      "id": "p-20261030-babies",
+      "d": "2026-10-30",
+      "type": "babies",
+      "k": "",
+      "q": "Qui est la meilleure babies entre Mercedes Moné et Saya Kamitani ?",
+      "opts": [
+        "Mercedes Moné",
+        "Saya Kamitani"
+      ],
+      "other": false,
+      "end": "2026-11-01"
+    },
+    {
+      "id": "p-20261029-dm-reigns-omega",
+      "d": "2026-10-29",
+      "k": "",
+      "type": "match",
+      "q": "Dream match : Roman Reigns contre Kenny Omega, qui gagne ?",
+      "opts": [
+        "Roman Reigns",
+        "Kenny Omega"
+      ],
+      "other": false,
+      "end": "2026-11-02"
+    },
+    {
+      "id": "p-20261029-babies-1",
+      "d": "2026-10-29",
+      "k": "",
+      "type": "babies",
+      "q": "Qui est la meilleure babies entre Tiffany Stratton et Mina Shirakawa ?",
+      "opts": [
+        "Tiffany Stratton",
+        "Mina Shirakawa"
+      ],
+      "other": false,
+      "end": "2026-10-31"
+    },
+    {
+      "id": "p-20261029-cj-men",
+      "d": "2026-10-29",
+      "k": "WWE",
+      "q": "Crown Jewel : qui remporte le Crown Jewel Championship masculin ?",
+      "opts": [
+        "Roman Reigns",
+        "Sami Zayn"
+      ],
+      "other": false,
+      "end": "2026-11-07"
+    },
+    {
+      "id": "p-20261029-cj-lms",
+      "d": "2026-10-29",
+      "k": "WWE",
+      "q": "Last Man Standing à Crown Jewel : qui reste debout à la fin ?",
+      "opts": [
+        "Cody Rhodes",
+        "Randy Orton"
+      ],
+      "other": false,
+      "end": "2026-11-07"
+    },
+    {
+      "id": "p-20261029-ps-3way",
+      "d": "2026-10-29",
+      "k": "NJPW",
+      "q": "Power Struggle : qui gagne le match à trois ?",
+      "opts": [
+        "Yota Tsuji",
+        "Kenny Omega",
+        "Boltin Oleg"
+      ],
+      "other": false,
+      "end": "2026-11-03"
+    },
+    {
+      "id": "p-20261029-rumble",
+      "d": "2026-10-29",
+      "k": "WWE",
+      "q": "Qui gagnera le prochain Royal Rumble masculin ?",
+      "opts": [
+        "Cody Rhodes",
+        "Bron Breakker"
+      ],
+      "other": true,
+      "end": ""
+    },
+    {
+      "id": "p-20261029-wm-best",
+      "d": "2026-10-29",
+      "k": "WWE",
+      "q": "Le plus grand match de l’histoire de WrestleMania ?",
+      "opts": [
+        "Shawn Michaels contre The Undertaker (WrestleMania 25)",
+        "The Rock contre Stone Cold Steve Austin (WrestleMania X-Seven)"
+      ],
+      "other": true,
+      "end": ""
+    }
+  ]
 }
