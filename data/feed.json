@@ -1,6 +1,13 @@
 {
- "at": "2026-10-30T23:06:46.387Z",
+ "at": "2026-10-30T23:38:14.733Z",
  "items": [
+  {
+   "t": "Carte de Sendai Girls Pro Wrestling du 31 octobre 2026",
+   "u": "https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-31",
+   "tags": []
+  },
   {
    "t": "Carte de LOL Mischief Night Mayhem 5",
    "u": "https://www.catch-newz.com/international/newz/60844-carte-de-lol-mischief-night-mayhem-5",
@@ -18,13 +25,6 @@
   {
    "t": "Carte de IWRG Castillo Del Terror 2026",
    "u": "https://www.catch-newz.com/international/newz/60843-carte-de-iwrg-castillo-del-terror-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": []
-  },
-  {
-   "t": "Carte de Sendai Girls Pro Wrestling du 31 octobre 2026",
-   "u": "https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
    "s": "Catch-Newz",
    "d": "2026-10-31",
    "tags": []
@@ -525,12 +525,12 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
-   "https://www.catch-newz.com/international/newz/60844-carte-de-lol-mischief-night-mayhem-5",
-   "https://www.catch-newz.com/international/newz/60845-carte-de-new-texas-pro-wrestling-8-year-anniversary",
    "https://www.catch-newz.com/aew/resultats/60839-resultats-de-roh-du-29-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/60823-resultats-de-wwe-road-to-survivor-series-du-29-octobre-2026",
-   "https://www.catch-newz.com/international/newz/60843-carte-de-iwrg-castillo-del-terror-2026",
    "https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
+   "https://www.catch-newz.com/international/newz/60844-carte-de-lol-mischief-night-mayhem-5",
+   "https://www.catch-newz.com/international/newz/60845-carte-de-new-texas-pro-wrestling-8-year-anniversary",
+   "https://www.catch-newz.com/international/newz/60843-carte-de-iwrg-castillo-del-terror-2026",
    "https://www.catch-newz.com/international/resultats/60838-resultats-du-jour-5-de-la-njpw-super-junior-tag-league-2026",
    "https://www.catch-newz.com/international/resultats/60820-tna-impact-29-octobre-2026",
    "https://www.catch-newz.com/international/resultats/60836-resultats-du-jour-5-de-dg-the-gate-of-victory-2026",
@@ -595,7 +595,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "6 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
