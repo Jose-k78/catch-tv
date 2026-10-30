@@ -1,9 +1,19 @@
 {
- "at": "2026-10-30T12:13:31.071Z",
+ "at": "2026-10-30T13:34:41.790Z",
  "items": [
   {
-   "t": "RKO, Styles Clash : Leedz Lewis attaque les influenceurs !",
-   "u": "https://www.catch-newz.com/wwe/newz/60802-rko-styles-clash-leedz-lewis-attaque-les-influenceurs",
+   "t": "WWE NXT Halloween Havoc 2026 : Heure et chaine pour regarder le show en direct",
+   "u": "https://www.catch-newz.com/wwe/newz/60822-wwe-nxt-halloween-havoc-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
+   "s": "Catch-Newz",
+   "d": "2026-10-30",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
+   "t": "Sami Zayn : « J'apprécie vraiment ce que je fais en ce moment »",
+   "u": "https://www.catch-newz.com/wwe/newz/60821-sami-zayn-japprecie-vraiment-ce-que-je-fais-en-ce-moment",
    "s": "Catch-Newz",
    "d": "2026-10-30",
    "tags": [
@@ -38,6 +48,15 @@
    "tags": [
     "AEW",
     "Collision"
+   ]
+  },
+  {
+   "t": "RKO, Styles Clash : Leedz Lewis attaque les influenceurs !",
+   "u": "https://www.catch-newz.com/wwe/newz/60802-rko-styles-clash-leedz-lewis-attaque-les-influenceurs",
+   "s": "Catch-Newz",
+   "d": "2026-10-30",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -82,16 +101,6 @@
    ]
   },
   {
-   "t": "Preview : TNA Impact du 29 octobre 2026",
-   "u": "https://www.catch-newz.com/international/newz/60794-preview-tna-impact-29-octobre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-29",
-   "tags": [
-    "TNA",
-    "Impact"
-   ]
-  },
-  {
    "t": "AEW Dynamite du 28 octobre : Queen Aminata championne TBS, Ospreay vs. Fletcher à Full Gear",
    "u": "https://www.voxcatch.fr/2026/10/29/resultats-aew-dynamite-28-octobre-2026/",
    "s": "VOXcatch",
@@ -99,6 +108,16 @@
    "tags": [
     "AEW",
     "Dynamite"
+   ]
+  },
+  {
+   "t": "Preview : TNA Impact du 29 octobre 2026",
+   "u": "https://www.catch-newz.com/international/newz/60794-preview-tna-impact-29-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-29",
+   "tags": [
+    "TNA",
+    "Impact"
    ]
   },
   {
@@ -325,12 +344,14 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/60789-aew-dynamite-28-octobre-2026",
-   "https://www.catch-newz.com/wwe/newz/60802-rko-styles-clash-leedz-lewis-attaque-les-influenceurs",
+   "https://www.catch-newz.com/wwe/newz/60822-wwe-nxt-halloween-havoc-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
+   "https://www.catch-newz.com/wwe/newz/60821-sami-zayn-japprecie-vraiment-ce-que-je-fais-en-ce-moment",
    "https://www.catch-newz.com/international/resultats/60820-tna-impact-29-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60819-wwe-smackdown-du-30-octobre-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
    "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/aew/newz/60808-preview-roh-du-29-octobre-2026",
    "https://www.catch-newz.com/aew/resultats/60803-spoilers-aew-collision-31-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60802-rko-styles-clash-leedz-lewis-attaque-les-influenceurs",
    "https://www.catch-newz.com/international/newz/60794-preview-tna-impact-29-octobre-2026",
    "https://www.catch-newz.com/international/resultats/60814-resultats-du-jour-2-du-hop-spooktober-tour-2026",
    "https://www.catch-newz.com/international/resultats/60817-resultats-de-ott-pure-deadly",
