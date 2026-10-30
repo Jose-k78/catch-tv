@@ -176,7 +176,7 @@ export function pushGuideView() {
     '<li><a href="https://dash.cloudflare.com/profile/api-tokens" target="_blank" rel="noopener">Mon profil › API Tokens ↗</a> › Create Token › modèle <b>« Edit Cloudflare Workers »</b> › Account Resources : ton compte · Zone Resources : All zones › Create Token, puis copie le jeton</li>' +
     "<li>Dans les secrets GitHub (comme à l’étape 3), ajoute <b>CLOUDFLARE_API_TOKEN</b> (le jeton) et <b>CLOUDFLARE_ACCOUNT_ID</b> (l’identifiant du compte, affiché à droite dans « Workers & Pages »)</li>" +
     '<li>Puis appuie ici : GitHub installe le service tout seul (2 minutes environ)</li></ol><button class="btn small" data-act="workerdeploy">Installer le service maintenant</button>' +
-    (url ? '<p class="note small">Adresse : ' + esc(url) + (wState ? " · " + (wState.ok ? (wState.ready ? "prêt" : "installé, mais la clé FIREBASE_SA manque") : "ne répond pas (" + esc(String(wState.error || "")) + ")") : "") + "</p>" : ""));
+    (url ? '<p class="note small">Adresse : ' + esc(url) + (wState ? " · " + (wState.ok ? (wState.ready ? "prêt" : "installé, mais la clé FIREBASE_SA " + (wState.why ? "est illisible : " + esc(wState.why) : "manque")) : "ne répond pas (" + esc(String(wState.error || "")) + ")") : "") + "</p>" : ""));
   h += step(5, false, "Activer sur ton téléphone et tester", '<p><a href="#/parametres/notifs">Paramètres › Notifications ›</a> Active-les, puis « Envoyer une notification de test ».</p>');
   h += '<p class="note small" style="margin-top:10px">' + (pState && pState.at ? "Dernier passage du robot des notifications : " + esc(fmtAt(Date.parse(pState.at), PARIS)) + ". " : "") + '<button class="linkbtn" data-act="pushstat">Actualiser</button></p>';
   return h;

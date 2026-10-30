@@ -5,7 +5,7 @@
 // Chaque membre choisit ses notifications dans l'app (document push/{uid}) ; heures calmes de 23 h à 8 h pour les infos et les favoris.
 // Ce qui a déjà été envoyé est retenu dans data/push-state.json. Sans la clé FIREBASE_SA (secret GitHub), rien n'est envoyé.
 import fs from "node:fs";
-import { getDoc, listDocs, sendTo, wants, parisDay, parisHour, prevDay, PARIS } from "../../cloudflare/push-core.mjs";
+import { getDoc, listDocs, sendTo, wants, parisDay, parisHour, prevDay, PARIS, parseSA } from "../../cloudflare/push-core.mjs";
 
 const read = (p, d) => { try { return JSON.parse(fs.readFileSync(p, "utf8")); } catch (e) { return d; } };
 const norm = s => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[’']/g, "'");
@@ -100,7 +100,8 @@ const quietNow = (u, hour) => u.quiet !== false && (hour >= 23 || hour < 8);
 
 // ---------- passage ----------
 async function main() {
-  const SA = process.env.FIREBASE_SA ? JSON.parse(process.env.FIREBASE_SA) : null;
+  let SA = null;
+  try { SA = parseSA(process.env.FIREBASE_SA); } catch (e) { console.log("Notifications : clé FIREBASE_SA illisible (" + e.message + ")"); }
   const now = Date.now(), hour = parisHour(now), today = parisDay(now);
   const data = { cal: read("data/calendar.json", {}).promotions || {}, feed: read("data/feed.json", {}), news: read("news.json", {}), titles: read("data/titles.json", {}).titles || [],
     polls: read("data/polls.json", {}).items || [], stories: read("data/storylines.json", {}).items || [] };

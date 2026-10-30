@@ -1,7 +1,7 @@
 // TCC TV — notifications instantanées (service Cloudflare, gratuit) : messages privés, feuds, annonces du modérateur.
 // L'app appelle POST /notify avec le jeton de connexion du membre ; le service vérifie tout dans Firebase avant d'envoyer.
 // Installé et mis à jour automatiquement par GitHub (.github/workflows/push-worker.yml) : rien à modifier dans Cloudflare.
-import { verifyIdToken, getDoc, listDocs, lastMessage, sendTo, wants, parisDay, prevDay } from "./push-core.mjs";
+import { verifyIdToken, getDoc, listDocs, lastMessage, sendTo, wants, parisDay, prevDay, parseSA } from "./push-core.mjs";
 
 const json = (o, h, status) => new Response(JSON.stringify(o), { status: status || 200, headers: Object.assign({ "content-type": "application/json" }, h) });
 const cardLabel = c => !c ? "" : c.sp ? "🙈 Spoiler partagé" : "📎 " + String(c.t || "");
@@ -12,12 +12,12 @@ export default {
     const cors = { "Access-Control-Allow-Origin": allow.indexOf(origin) >= 0 ? origin : (allow[0] || "*"), "Access-Control-Allow-Methods": "GET, POST, OPTIONS", "Access-Control-Allow-Headers": "content-type", Vary: "Origin" };
     if (req.method === "OPTIONS") return new Response(null, { headers: cors });
     const url = new URL(req.url);
-    if (req.method === "GET") return json({ ok: true, service: "TCC TV notifications", ready: !!env.FIREBASE_SA }, cors);
+    if (req.method === "GET") { let ready = false, why = ""; try { ready = !!parseSA(env.FIREBASE_SA); } catch (e) { why = e.message; } return json({ ok: true, service: "TCC TV notifications", ready: ready, why: why }, cors); }
     if (url.pathname !== "/notify") return json({ error: "introuvable" }, cors, 404);
     if (allow.length && allow.indexOf(origin) < 0) return json({ error: "origine refusée" }, cors, 403);
     try {
       const body = JSON.parse(await req.text());
-      const sa = JSON.parse(env.FIREBASE_SA || "{}"); if (!sa.project_id) throw new Error("clé Firebase absente");
+      const sa = parseSA(env.FIREBASE_SA); if (!sa) throw new Error("clé Firebase absente");
       const uid = await verifyIdToken(body.idToken, sa.project_id);
       return json(await handle(body, uid, sa, env), cors);
     } catch (e) { return json({ error: String((e && e.message) || e) }, cors, 400); }

@@ -11,6 +11,33 @@ export const parisDay = ms => new Intl.DateTimeFormat("en-CA", { timeZone: PARIS
 export const parisHour = ms => +new Intl.DateTimeFormat("en-GB", { timeZone: PARIS, hour: "2-digit", hourCycle: "h23" }).format(new Date(ms || Date.now()));
 export const prevDay = d => { const x = new Date(d + "T12:00:00Z"); x.setUTCDate(x.getUTCDate() - 1); return x.toISOString().slice(0, 10); };
 
+// ---------- clé du compte de service (FIREBASE_SA) ----------
+// Collée depuis un téléphone, elle arrive parfois avec des retours à la ligne ou des espaces en trop, ou sans les accolades :
+// on la répare avant de la lire. Retours à la ligne et espaces sont ensuite sans effet sur la clé elle-même.
+export function parseSA(raw) {
+  let s = String(raw || "").replace(/^\uFEFF/, "").trim();
+  if (!s) return null;
+  s = s.replace(/[“”]/g, '"'); // guillemets « intelligents » du clavier
+  if (s[0] !== "{") s = "{" + s.replace(/,\s*$/, "") + "}";
+  try { return check(JSON.parse(s)); } catch (e) {}
+  // caractères de contrôle à l'intérieur des textes : retour à la ligne -> \n, le reste supprimé
+  let out = "", inStr = false, esc = false;
+  for (const ch of s) {
+    if (!inStr) { if (ch === '"') inStr = true; out += ch; continue; }
+    if (esc) { if (ch < " ") continue; out += ch; esc = false; continue; }
+    if (ch === "\\") { out += ch; esc = true; continue; }
+    if (ch === '"') { inStr = false; out += ch; continue; }
+    if (ch === "\n") { out += "\\n"; continue; }
+    if (ch < " ") continue;
+    out += ch;
+  }
+  return check(JSON.parse(out));
+}
+function check(sa) {
+  if (!sa || !sa.project_id || !sa.client_email || !/BEGIN PRIVATE KEY/.test(sa.private_key || "")) throw new Error("clé FIREBASE_SA incomplète (il manque project_id, client_email ou private_key)");
+  return sa;
+}
+
 // ---------- jeton d'accès Google (compte de service) ----------
 function pemToDer(pem) { return unb64u(String(pem).replace(/-----[^-]+-----/g, "").replace(/\s+/g, "").replace(/\+/g, "-").replace(/\//g, "_")); }
 let tokCache = null;
