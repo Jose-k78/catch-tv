@@ -1,5 +1,5 @@
 {
- "at": "2026-10-30T16:19:41.763Z",
+ "at": "2026-10-30T17:14:53.955Z",
  "items": [
   {
    "t": "Preview : WWE SmackDown ''Danhausen’s Very Nice, Very Evil'' du 30 octobre 2026",
@@ -10,6 +10,23 @@
     "WWE",
     "SmackDown"
    ]
+  },
+  {
+   "t": "WWE SmackDown du 30 octobre 2026 : Heure et chaine pour regarder le show en direct",
+   "u": "https://www.catch-newz.com/wwe/newz/60819-wwe-smackdown-du-30-octobre-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
+   "s": "Catch-Newz",
+   "d": "2026-10-30",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
+  },
+  {
+   "t": "Canelo – Mbilli : à quelle heure et sur quelle chaîne voir le combat de boxe en direct ?",
+   "u": "https://www.voxcatch.fr/2026/10/30/canelo-mbilli-a-quelle-heure-et-sur-quelle-chaine-voir-le-combat-de-boxe-en-direct/",
+   "s": "VOXcatch",
+   "d": "2026-10-30",
+   "tags": []
   },
   {
    "t": "Zuffa Boxing annonce son premier show en Arabie saoudite",
@@ -37,23 +54,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "WWE SmackDown du 30 octobre 2026 : Heure et chaine pour regarder le show en direct",
-   "u": "https://www.catch-newz.com/wwe/newz/60819-wwe-smackdown-du-30-octobre-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
-   "s": "Catch-Newz",
-   "d": "2026-10-30",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
-  },
-  {
-   "t": "Canelo – Mbilli : à quelle heure et sur quelle chaîne voir le combat de boxe en direct ?",
-   "u": "https://www.voxcatch.fr/2026/10/30/canelo-mbilli-a-quelle-heure-et-sur-quelle-chaine-voir-le-combat-de-boxe-en-direct/",
-   "s": "VOXcatch",
-   "d": "2026-10-30",
-   "tags": []
   },
   {
    "t": "L'Arabie saoudite annonce le nouveau lieu de WWE Crown Jewel 2026",
@@ -437,12 +437,12 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
-   "https://www.catch-newz.com/wwe/newz/60828-zuffa-boxing-annonce-son-premier-show-en-arabie-saoudite",
-   "https://www.catch-newz.com/international/newz/60829-ricky-sosa-annonce-son-retour-pour-tna-destination-x",
-   "https://www.catch-newz.com/wwe/newz/60830-sami-zayn-parle-de-son-alchimie-avec-kevin-owens",
    "https://www.catch-newz.com/wwe/resultats/60823-resultats-de-wwe-road-to-survivor-series-du-29-octobre-2026",
    "https://www.catch-newz.com/international/resultats/60820-tna-impact-29-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60819-wwe-smackdown-du-30-octobre-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
+   "https://www.catch-newz.com/wwe/newz/60828-zuffa-boxing-annonce-son-premier-show-en-arabie-saoudite",
+   "https://www.catch-newz.com/international/newz/60829-ricky-sosa-annonce-son-retour-pour-tna-destination-x",
+   "https://www.catch-newz.com/wwe/newz/60830-sami-zayn-parle-de-son-alchimie-avec-kevin-owens",
    "https://www.catch-newz.com/wwe/newz/60826-larabie-saoudite-annonce-le-nouveau-lieu-de-wwe-crown-jewel-2026",
    "https://www.catch-newz.com/wwe/newz/60827-lannee-2026-de-charlotte-flair-est-elle-une-reussite",
    "https://www.catch-newz.com/international/newz/60791-leedz-lewis-vs-big-sabri-j-le-couronnement-du-tout-premier-champion-lwa",
@@ -496,7 +496,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "6 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
