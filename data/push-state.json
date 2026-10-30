@@ -1,6 +1,6 @@
 {
- "at": "2026-10-29T22:38:15.814Z",
- "sa": false,
+ "at": "2026-10-30T00:08:50.934Z",
+ "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
   "a:https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026": "2026-10-29",
@@ -58,7 +58,21 @@
   "c:NJPW:2026-11-03:12k0uet": "2026-10-29",
   "c:Stardom:2026-10-29:1p14ts": "2026-10-29",
   "c:Stardom:2026-10-29:kaexer": "2026-10-29",
-  "fr:2026-10-29": "2026-10-29"
+  "fr:2026-10-29": "2026-10-29",
+  "a:https://www.catch-newz.com/international/resultats/60814-resultats-du-jour-2-du-hop-spooktober-tour-2026": "2026-10-30",
+  "a:https://www.catch-newz.com/international/resultats/60817-resultats-de-ott-pure-deadly": "2026-10-30",
+  "a:https://www.catch-newz.com/international/resultats/60818-resultats-du-jour-3-de-dg-the-gate-of-victory-2026": "2026-10-30"
  },
- "pend": {}
+ "pend": {
+  "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
+   {
+    "cat": "info",
+    "title": "📰 3 nouvelles infos",
+    "body": "Résultats du jour 2 du HOP Spooktober Tour 2026 · Résultats de OTT Pure Deadly · Résultats du jour 3 de DG The Gate Of Victory 2026",
+    "url": "#/",
+    "tag": "art",
+    "short": "3 nouvelles infos"
+   }
+  ]
+ }
 }
