@@ -1,7 +1,44 @@
 {
-  "updated": "2026-10-29",
+  "updated": "2026-10-30",
   "note": "Une storyline par jour (la plus récente en premier) : grandes histoires, rivalités, anecdotes de coulisses, faits marquants. txt = paragraphes écrits en français à partir des sources ; v = vidéos officielles ; q = recherches sur la chaîne officielle.",
   "items": [
+    {
+      "id": "hiac-2016-charlotte-sasha",
+      "d": "2026-10-30",
+      "type": "Fait marquant",
+      "t": "Charlotte contre Sasha Banks : les femmes en tête d'affiche dans la cellule",
+      "k": "WWE",
+      "years": "2016",
+      "hook": "Le 30 octobre 2016, pour la première fois, un match féminin ferme un pay-per-view de la WWE… et il se joue dans l'Enfer de la Cellule.",
+      "txt": [
+        "En avril 2016, à WrestleMania 32, Charlotte remporte le nouveau championnat féminin de la WWE et le garde près de quatre mois. Face à elle se dresse Sasha Banks, revenue de blessure pendant l'été : à Battleground, le 24 juillet, Sasha fait abandonner Charlotte dans un match par équipes avec Bayley.",
+        "Dès le lendemain, le 25 juillet à Raw, Sasha obtient son match de championnat et gagne la ceinture. Commence alors un incroyable chassé-croisé : Charlotte reprend le titre à SummerSlam, le conserve à Clash of Champions dans un match à trois, puis Sasha le lui reprend le 3 octobre à Raw. Aucune des deux n'arrive à défendre le titre en un contre un.",
+        "Pour départager les deux rivales, la WWE choisit le match le plus dur de son catalogue : Hell in a Cell, jamais disputé par des femmes. Et elle va plus loin : le match est placé en fin de soirée, le 30 octobre 2016 à Boston. C'est la première fois qu'un match féminin est le main event d'un pay-per-view de la WWE.",
+        "Le combat démarre avant même la descente de la cage. Charlotte projette Sasha à travers la table des commentateurs avec une powerbomb ; la championne est installée sur une civière avec une minerve. Au moment où l'arbitre s'apprête à donner le titre à Charlotte par forfait, Sasha saute de la civière, attaque son adversaire, et le match commence vraiment.",
+        "Chaises, tables, marches d'acier, grillage de la cellule : les deux femmes utilisent tout. À la fin, le dos de Sasha lâche pendant une tentative de powerbomb à travers une table ; Charlotte en profite et l'achève avec Natural Selection pour remporter son troisième titre féminin — le quatrième changement de champion en 98 jours.",
+        "Ce soir-là a ouvert une porte : les femmes ont ensuite eu leur propre match en cage, leur Royal Rumble, et, en 2019, le main event de WrestleMania."
+      ],
+      "key": "Sasha Banks se relève de sa civière pour lancer le premier Hell in a Cell féminin, qui devient le premier main event féminin d'un pay-per-view WWE.",
+      "v": [],
+      "q": [
+        "Charlotte vs Sasha Banks Hell in a Cell 2016 full match",
+        "Sasha Banks Charlotte Flair rivalry 2016 WWE"
+      ],
+      "src": [
+        {
+          "n": "Sportskeeda",
+          "u": "https://sportskeeda.com/wwe/remembering-sasha-banks-vs-charlotte-flair-the-first-women-s-hell-in-a-cell"
+        },
+        {
+          "n": "CBS Sports",
+          "u": "https://www.cbssports.com/general/news/wwe-hell-in-a-cell-2016-results-owens-retains-charlotte-wins-womens-title"
+        },
+        {
+          "n": "TJR Wrestling",
+          "u": "https://tjrwrestling.net/wrestling-history/october-30/"
+        }
+      ]
+    },
     {
       "id": "halloween-havoc-1995",
       "d": "2026-10-29",
