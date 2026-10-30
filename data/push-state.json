@@ -1,5 +1,5 @@
 {
- "at": "2026-10-30T22:08:21.908Z",
+ "at": "2026-10-30T23:06:46.436Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -91,7 +91,12 @@
   "a:https://www.catch-newz.com/international/resultats/60834-resultats-de-cmll-aull-fuego-vs-fuego": "2026-10-30",
   "a:https://www.catch-newz.com/international/resultats/60833-resultats-du-jour-4-de-dg-the-gate-of-victory-2026": "2026-10-30",
   "a:https://www.catch-newz.com/aew/resultats/60839-resultats-de-roh-du-29-octobre-2026": "2026-10-30",
-  "a:https://www.catch-newz.com/international/resultats/60835-resultats-de-cmll-jueves-de-glamour-du-29-octobre-2026": "2026-10-30"
+  "a:https://www.catch-newz.com/international/resultats/60835-resultats-de-cmll-jueves-de-glamour-du-29-octobre-2026": "2026-10-30",
+  "a:https://www.catch-newz.com/international/newz/60844-carte-de-lol-mischief-night-mayhem-5": "2026-10-31",
+  "a:https://www.catch-newz.com/international/newz/60845-carte-de-new-texas-pro-wrestling-8-year-anniversary": "2026-10-31",
+  "a:https://www.catch-newz.com/international/newz/60843-carte-de-iwrg-castillo-del-terror-2026": "2026-10-31",
+  "a:https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026": "2026-10-31",
+  "a:https://www.catch-newz.com/international/resultats/60838-resultats-du-jour-5-de-la-njpw-super-junior-tag-league-2026": "2026-10-31"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -102,6 +107,14 @@
     "url": "#/",
     "tag": "art",
     "short": "5 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 5 nouvelles infos",
+    "body": "Carte de LOL Mischief Night Mayhem 5 · Carte de New Texas Pro Wrestling 8 Year Anniversary · Carte de IWRG Castillo Del Terror 2026",
+    "url": "#/",
+    "tag": "art",
+    "short": "5 nouvelles infos"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -109,6 +122,14 @@
     "cat": "info",
     "title": "📰 5 nouvelles infos",
     "body": "Résultats du jour 5 de DG The Gate Of Victory 2026 · Résultats de CMLL/AULL Fuego vs Fuego · Résultats du jour 4 de DG The Gate Of Victory 2026",
+    "url": "#/",
+    "tag": "art",
+    "short": "5 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 5 nouvelles infos",
+    "body": "Carte de LOL Mischief Night Mayhem 5 · Carte de New Texas Pro Wrestling 8 Year Anniversary · Carte de IWRG Castillo Del Terror 2026",
     "url": "#/",
     "tag": "art",
     "short": "5 nouvelles infos"
