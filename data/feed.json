@@ -1,5 +1,5 @@
 {
- "at": "2026-10-30T21:12:37.751Z",
+ "at": "2026-10-30T22:08:21.852Z",
  "items": [
   {
    "t": "Preview : WWE SmackDown ''Danhausen’s Very Nice, Very Evil'' du 30 octobre 2026",
@@ -10,6 +10,36 @@
     "WWE",
     "SmackDown"
    ]
+  },
+  {
+   "t": "Résultats du jour 5 de DG The Gate Of Victory 2026",
+   "u": "https://www.catch-newz.com/international/resultats/60836-resultats-du-jour-5-de-dg-the-gate-of-victory-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-30",
+   "tags": []
+  },
+  {
+   "t": "Résultats de CMLL/AULL Fuego vs Fuego",
+   "u": "https://www.catch-newz.com/international/resultats/60834-resultats-de-cmll-aull-fuego-vs-fuego",
+   "s": "Catch-Newz",
+   "d": "2026-10-30",
+   "tags": [
+    "CMLL"
+   ]
+  },
+  {
+   "t": "Résultats du jour 4 de DG The Gate Of Victory 2026",
+   "u": "https://www.catch-newz.com/international/resultats/60833-resultats-du-jour-4-de-dg-the-gate-of-victory-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-30",
+   "tags": []
+  },
+  {
+   "t": "Canelo – Mbilli : à quelle heure et sur quelle chaîne voir le combat de boxe en direct ?",
+   "u": "https://www.voxcatch.fr/2026/10/30/canelo-mbilli-a-quelle-heure-et-sur-quelle-chaine-voir-le-combat-de-boxe-en-direct/",
+   "s": "VOXcatch",
+   "d": "2026-10-30",
+   "tags": []
   },
   {
    "t": "Vivez une intervention de Logan Paul caché sous le ring à Money in the Bank",
@@ -29,13 +59,6 @@
     "WWE",
     "SmackDown"
    ]
-  },
-  {
-   "t": "Canelo – Mbilli : à quelle heure et sur quelle chaîne voir le combat de boxe en direct ?",
-   "u": "https://www.voxcatch.fr/2026/10/30/canelo-mbilli-a-quelle-heure-et-sur-quelle-chaine-voir-le-combat-de-boxe-en-direct/",
-   "s": "VOXcatch",
-   "d": "2026-10-30",
-   "tags": []
   },
   {
    "t": "Zuffa Boxing annonce son premier show en Arabie saoudite",
@@ -168,6 +191,16 @@
    "tags": []
   },
   {
+   "t": "Résultats de ROH du 29 octobre 2026",
+   "u": "https://www.catch-newz.com/aew/resultats/60839-resultats-de-roh-du-29-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-29",
+   "tags": [
+    "AEW",
+    "ROH"
+   ]
+  },
+  {
    "t": "Résultats de WWE Road To Survivor Series du 29 octobre 2026",
    "u": "https://www.catch-newz.com/wwe/resultats/60823-resultats-de-wwe-road-to-survivor-series-du-29-octobre-2026",
    "s": "Catch-Newz",
@@ -184,6 +217,15 @@
    "tags": [
     "TNA",
     "Impact"
+   ]
+  },
+  {
+   "t": "Résultats de CMLL Jueves De Glamour du 29 octobre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/60835-resultats-de-cmll-jueves-de-glamour-du-29-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-29",
+   "tags": [
+    "CMLL"
    ]
   },
   {
@@ -446,9 +488,14 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
-   "https://www.catch-newz.com/wwe/newz/60831-vivez-une-intervention-de-logan-paul-cache-sous-le-ring-a-money-in-the-bank",
+   "https://www.catch-newz.com/aew/resultats/60839-resultats-de-roh-du-29-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/60823-resultats-de-wwe-road-to-survivor-series-du-29-octobre-2026",
    "https://www.catch-newz.com/international/resultats/60820-tna-impact-29-octobre-2026",
+   "https://www.catch-newz.com/international/resultats/60836-resultats-du-jour-5-de-dg-the-gate-of-victory-2026",
+   "https://www.catch-newz.com/international/resultats/60835-resultats-de-cmll-jueves-de-glamour-du-29-octobre-2026",
+   "https://www.catch-newz.com/international/resultats/60834-resultats-de-cmll-aull-fuego-vs-fuego",
+   "https://www.catch-newz.com/international/resultats/60833-resultats-du-jour-4-de-dg-the-gate-of-victory-2026",
+   "https://www.catch-newz.com/wwe/newz/60831-vivez-une-intervention-de-logan-paul-cache-sous-le-ring-a-money-in-the-bank",
    "https://www.catch-newz.com/wwe/newz/60819-wwe-smackdown-du-30-octobre-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
    "https://www.catch-newz.com/wwe/newz/60828-zuffa-boxing-annonce-son-premier-show-en-arabie-saoudite",
    "https://www.catch-newz.com/international/newz/60829-ricky-sosa-annonce-son-retour-pour-tna-destination-x",
@@ -506,7 +553,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "6 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",

@@ -1,5 +1,5 @@
 {
- "at": "2026-10-30T21:12:37.802Z",
+ "at": "2026-10-30T22:08:21.908Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -86,7 +86,33 @@
   "a:https://www.catch-newz.com/wwe/newz/60830-sami-zayn-parle-de-son-alchimie-avec-kevin-owens": "2026-10-30",
   "a:https://www.voxcatch.fr/2026/10/30/canelo-mbilli-a-quelle-heure-et-sur-quelle-chaine-voir-le-combat-de-boxe-en-direct/": "2026-10-30",
   "fr:2026-10-30": "2026-10-30",
-  "a:https://www.catch-newz.com/wwe/newz/60831-vivez-une-intervention-de-logan-paul-cache-sous-le-ring-a-money-in-the-bank": "2026-10-30"
+  "a:https://www.catch-newz.com/wwe/newz/60831-vivez-une-intervention-de-logan-paul-cache-sous-le-ring-a-money-in-the-bank": "2026-10-30",
+  "a:https://www.catch-newz.com/international/resultats/60836-resultats-du-jour-5-de-dg-the-gate-of-victory-2026": "2026-10-30",
+  "a:https://www.catch-newz.com/international/resultats/60834-resultats-de-cmll-aull-fuego-vs-fuego": "2026-10-30",
+  "a:https://www.catch-newz.com/international/resultats/60833-resultats-du-jour-4-de-dg-the-gate-of-victory-2026": "2026-10-30",
+  "a:https://www.catch-newz.com/aew/resultats/60839-resultats-de-roh-du-29-octobre-2026": "2026-10-30",
+  "a:https://www.catch-newz.com/international/resultats/60835-resultats-de-cmll-jueves-de-glamour-du-29-octobre-2026": "2026-10-30"
  },
- "pend": {}
+ "pend": {
+  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
+   {
+    "cat": "info",
+    "title": "📰 5 nouvelles infos",
+    "body": "Résultats du jour 5 de DG The Gate Of Victory 2026 · Résultats de CMLL/AULL Fuego vs Fuego · Résultats du jour 4 de DG The Gate Of Victory 2026",
+    "url": "#/",
+    "tag": "art",
+    "short": "5 nouvelles infos"
+   }
+  ],
+  "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
+   {
+    "cat": "info",
+    "title": "📰 5 nouvelles infos",
+    "body": "Résultats du jour 5 de DG The Gate Of Victory 2026 · Résultats de CMLL/AULL Fuego vs Fuego · Résultats du jour 4 de DG The Gate Of Victory 2026",
+    "url": "#/",
+    "tag": "art",
+    "short": "5 nouvelles infos"
+   }
+  ]
+ }
 }
