@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29",
+ "updated": "2026-10-30",
  "note": "Champions actuels : peut révéler des résultats récents.",
  "titles": [
   {
@@ -727,8 +727,14 @@
    "hist": [],
    "src": "ChaseYourSport (Bound for Glory)",
    "u": "https://chaseyoursport.com/pro-wrestling/tna-bound-for-glory-2026-results/13629",
-   "defs": [],
-   "def": 0
+   "defs": [
+    {
+     "d": "2026-10-29",
+     "ev": "Impact",
+     "vs": "Cedric Alexander"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "tna-intl",
@@ -850,8 +856,14 @@
    "hist": [],
    "src": "Wikipédia",
    "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_TNA_Wrestling",
-   "defs": [],
-   "def": 0
+   "defs": [
+    {
+     "d": "2026-10-29",
+     "ev": "Impact",
+     "vs": "Jada Stone"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "cmll-heavy",
