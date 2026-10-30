@@ -20,7 +20,7 @@ let files = fs.readdirSync(DIR).filter(f => IMG.test(f) && fs.statSync(path.join
 let idx = { updated: "", items: {} };
 try { idx = JSON.parse(fs.readFileSync(OUT, "utf8")); if (!idx.items) idx.items = {}; } catch (e) { console.log("photos.json illisible : on repart de zéro"); }
 
-const known = new Set(Object.values(idx.items).map(it => it && it.f));
+const known = new Set(Object.values(idx.items).flatMap(it => (it ? [it.f].concat(Array.isArray(it.v) ? it.v : []) : [])));
 let fresh = files.filter(f => !known.has(f));
 
 // photos neuves trop lourdes : copie légère en WebP (si l'outil s'installe ; sinon on garde le fichier tel quel)
@@ -43,20 +43,27 @@ if (heavy.length) {
   } catch (e) { console.log("Allègement impossible (" + e.message + ") : photos gardées telles quelles"); }
 }
 
-// photos disparues : retirées de la liste
+// photos disparues : retirées de la liste (si la photo affichée a disparu, la version suivante prend sa place)
 const have = new Set(files);
 let gone = 0;
-for (const s of Object.keys(idx.items)) { const it = idx.items[s]; if (!it || !have.has(it.f)) { delete idx.items[s]; gone++; } }
+for (const s of Object.keys(idx.items)) {
+  const it = idx.items[s]; if (!it) { delete idx.items[s]; continue; }
+  const v = (Array.isArray(it.v) ? it.v : []).filter(f => have.has(f));
+  if (v.length !== (it.v || []).length) gone++;
+  if (!have.has(it.f)) { gone++; if (v.length) it.f = v.shift(); else { delete idx.items[s]; continue; } }
+  if (v.length) it.v = v; else delete it.v;
+}
 
-// photos neuves : en tête de liste (la plus récente gagne), reprend les alias de l'ancienne photo du même catcheur
+// photos neuves : un catcheur déjà connu -> la nouvelle photo passe en avant, l'ancienne devient une version ;
+// sinon nouvelle entrée en tête de liste
 const head = {};
 for (const f of fresh) {
   const stem = f.replace(IMG, ""), name = nameOf(stem), k = key(name);
+  const old = Object.values(idx.items).find(it => [it.f.replace(IMG, "").replace(/-v\d+$/, "")].concat(it.n || []).some(n => key(n) === k));
+  if (old) { old.v = [old.f].concat(Array.isArray(old.v) ? old.v : []); old.f = f; console.log("Nouvelle photo en avant : " + f + " (" + (old.n || [])[0] + ")"); continue; }
   let slug = slugOf(stem); while (idx.items[slug] || head[slug]) slug += "-2";
-  const old = Object.values(idx.items).find(it => [it.f.replace(IMG, "")].concat(it.n || []).some(n => key(n) === k));
-  const names = [name].concat(old && old.n ? old.n.filter(n => key(n) !== k) : []);
-  head[slug] = { f, n: names };
-  console.log("Nouvelle photo : " + f + " -> " + names.join(", "));
+  head[slug] = { f, n: [name] };
+  console.log("Nouvelle photo : " + f + " -> " + name);
 }
 
 if (!fresh.length && !gone) { console.log("Photos : rien de neuf (" + files.length + ")"); process.exit(0); }

@@ -9,6 +9,7 @@ import { friendState, friendsOf, feudInfo, feudBadge, isBlocked, requestsIn, feu
 import { favChips } from "./favs.js";
 import { photoOf } from "../photos.js";
 import { patchView, patchModView, pnNew } from "./patchnotes.js";
+import { imagesView } from "./imagesadmin.js";
 import { noSpoil, setNoSpoil } from "../spoil.js";
 import { isMatchNote, matchNoteLinks, noteTitle } from "./mrate.js";
 import { sourcesView, statusView, mediaView, pushGuideView } from "./admin.js";
@@ -88,7 +89,7 @@ ACT.google = async () => { try { await B.signInGoogle(); location.hash = "#/prof
 const TH = { auto: "Automatique", light: "Clair", dark: "Sombre" };
 export function applyTheme() { const t = lsGet("ctv.theme"), r = document.documentElement; if (t === "light" || t === "dark") r.setAttribute("data-theme", t); else r.removeAttribute("data-theme"); }
 
-export function settingsView(sub) {
+export function settingsView(sub, x) {
   const u = S.user, google = u.providers.indexOf("password") < 0 && !S.demo;
   let h = '<a class="back" href="#/profil">' + ICON.back + " Mon profil</a>";
   if (sub === "email") {
@@ -147,6 +148,7 @@ export function settingsView(sub) {
   if (sub === "notifs") return h + notifSettingsView();
   if (sub === "patchnotes") return h + patchView();
   if (sub === "patchnotes-modo" && S.isAdmin) return h + patchModView();
+  if (sub === "images" && S.isAdmin) return h + imagesView(x);
   if (sub === "annonces" && S.isAdmin) return h + adminAnnView();
   if (sub === "notifs-install" && S.isAdmin) return h + pushGuideView();
   if (sub === "apparence") {
@@ -170,6 +172,7 @@ export function settingsView(sub) {
   if (!ADMIN_UID || S.isAdmin) {
     if (S.isAdmin) h += '<h2>Modération</h2><div class="list">' + row("#/parametres/annonces", "📣 Faire une annonce", annList().length ? "Dernière : " + annList()[0].t : "Notification à tous les membres") +
       row("#/parametres/patchnotes-modo", "📝 Patch notes · modération", "Ce que peut faire le modérateur · écrire une note") +
+      row("#/parametres/images", "🖼️ Images de l’app", "Photos des catcheurs, ceintures, logos : choisir la version, ajouter, supprimer") +
       row("#/parametres/signalements", "Signalements", S.reports.length ? S.reports.length + " en attente" : "Aucun") +
       row("#/parametres/logos", "Logos des onglets", "Remplacer les noms des promotions et des shows par leur logo") +
       row("#/parametres/medias", "Fonds animés et musique", Object.keys((S.media && S.media.bg) || {}).length + " vidéo" + (Object.keys((S.media && S.media.bg) || {}).length > 1 ? "s" : "") + " · " + (S.media && S.media.music ? "musique choisie" : "pas de musique")) +

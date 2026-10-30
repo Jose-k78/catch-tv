@@ -65,7 +65,7 @@ function parse() {
     case undefined: return { name: "home" };
     case "p": return S.P[parts[1]] ? { name: "promo", k: parts[1], n: parts[2] || "" } : { name: "home" };
     case "connexion": case "inscription": case "oubli": return { name: "auth", mode: parts[0] };
-    case "parametres": return { name: "settings", sub: parts[1] || "" };
+    case "parametres": return { name: "settings", sub: parts[1] || "", x: parts[2] || "" };
     case "profil": return { name: "profile", uid: parts[1] || "" };
     case "profil-modifier": return { name: "editprofile" };
     case "chat": return parts[1] === "nouveau" ? { name: "newchat" } : parts[1] ? (parts[2] === "infos" ? { name: "convinfo", id: parts[1] } : { name: "conv", id: parts[1] }) : { name: "chat" };
@@ -161,7 +161,7 @@ function render() {
     case "home": h = homeView(); break;
     case "promo": h = route.n ? showView(route.k, route.n) : promoView(route.k); break;
     case "auth": h = authView(route.mode); break;
-    case "settings": h = settingsView(route.sub); break;
+    case "settings": h = settingsView(route.sub, route.x); break;
     case "profile": h = profileView(route.uid); break;
     case "editprofile": h = editProfileView(); break;
     case "chat": h = chatListView(); break;
@@ -223,7 +223,7 @@ const cnt = n => n > 99 ? "99+" : String(n);
 function updateHeader() {
   const n = chatBadge(), soc = socialBadge();
   const nav = document.getElementById("bnav"), top = document.querySelector("header.top");
-  // mode TCCG (modérateur) : en-tête et barre du bas noir et doré
+  // mode TCCCG (modérateur) : en-tête et barre du bas noir et doré
   const tg = route.name === "tccg" && !!S.isAdmin;
   if (top) {
     if (tg) { if (!top.dataset.tv) top.dataset.tv = top.innerHTML; top.innerHTML = tccgTop(); }

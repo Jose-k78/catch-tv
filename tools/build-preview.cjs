@@ -44,7 +44,7 @@ const r = await esbuild.build({
     });
   } }],
 });
-let html = fs.readFileSync(path.join(root, "index.html"), "utf8");
+let html = fs.readFileSync(path.join(root, "dev.html"), "utf8").replace("<title>TCC TV (dev)</title>", "<title>TCC TV</title>");
 const css = fs.readFileSync(path.join(root, "css/style.css"), "utf8");
 html = html.replace(/<link rel="(manifest|icon|apple-touch-icon)"[^>]*>\n/g, "")
   .replace('<link rel="stylesheet" href="css/style.css">', "<style>\n" + css + "</style>")

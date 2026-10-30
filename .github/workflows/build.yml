@@ -1,0 +1,38 @@
+# Code regroupé : à chaque modification du code (js/), reconstruit js/app.min.js (un seul fichier compact, chargé par index.html)
+# pour que l'app s'ouvre plus vite. dev.html charge toujours les fichiers séparés.
+name: Code regroupé (app.min.js)
+on:
+  push:
+    branches: [main]
+    paths: ["js/**", "!js/app.min.js", "cloudflare/feud-acts.mjs", "tools/build-app.cjs"]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: build-tcc-tv
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Regrouper le code
+        run: |
+          npm i --prefix /tmp/eb esbuild@0.28.2 --no-save --no-audit --no-fund --silent
+          ESBUILD=/tmp/eb/node_modules/esbuild node tools/build-app.cjs
+      - name: Envoi sur le dépôt
+        run: |
+          if [ -z "$(git status --porcelain -- js/app.min.js)" ]; then echo "Déjà à jour"; exit 0; fi
+          git config user.name "TCC TV robot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add js/app.min.js
+          git commit -m "Robot TCC TV : code regroupé"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin main && exit 0
+            sleep 5
+          done
+          exit 1

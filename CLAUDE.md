@@ -70,11 +70,15 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   sous la photo du dossier), rubrique Palmarès. Profil d'un membre : ses catcheurs suivis avec leur photo.
 - Feuds : « Lancer une feud » puis « Continuer la feud » ; action du jour tirée au hasard dans `cloudflare/feud-acts.mjs`
   (partagé par l'app et le service des notifications : même action des deux côtés, différente pour chacun).
-- TCCG (`js/views/tccg.js`, `#/tccg/…`) : prototype de la partie cartes (TCG), réservé au modérateur, interface noir et
+- TCCCG (`js/views/tccg.js`, `#/tccg/…`) : prototype de la partie cartes (TCG), réservé au modérateur, interface noir et
   doré (`body.tccg`), onglets Accueil / Call Up / Roster / Échange / Shop « en chantier » ; icône « Bientôt » dans la barre du bas.
 - Plus de photos automatiques Wikimedia ni de page « Crédits photos » (retirées le 30 oct.) : seules les images choisies par
   le modérateur. Fonds animés et musique : copies légères (`media/bg/*-leger.mp4`, `media/music-leger.mp3`, originaux
   gardés), musique en pause par défaut.
+- Modération › Images de l'app (`js/views/imagesadmin.js`, `#/parametres/images/<rubrique>`) : choisir la version en
+  avant (`f`) parmi les versions (`v`) des photos des catcheurs (3 au plus : `slug-v2/-v3.webp`), ceintures, logos de shows,
+  d'événements et de groupes ; ajouter une image (WebP fait dans le navigateur, envoyé avec la clé GitHub de l'admin) ;
+  supprimer une version. Le robot `photos.mjs` connaît les versions (une photo déposée à la main passe en avant).
 - `js/share.js` : appui long / clic droit sur un élément `[data-sh]` (carte JSON via `shAttr()` de util.js) →
   partage dans la Gorilla Position ou en privé ; champ `card` des messages.
 - `js/push.js` + `sw.js` (service worker sans cache) : notifications Firebase Cloud Messaging (petite icône Android :
@@ -99,7 +103,10 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
 
 ## Tester
 
-- Bundle : `node -e` avec esbuild (`/opt/npm-tools/node_modules/esbuild`, entrée `js/app.js`).
+- **Code regroupé** : `index.html` charge `js/app.min.js` (tout le code en un fichier compact), reconstruit
+  automatiquement par `.github/workflows/build.yml` à chaque modification de `js/` ; à la main : `node tools/build-app.cjs`
+  (le refaire avant chaque envoi). `dev.html` charge les fichiers séparés de `js/` : c'est elle qu'on ouvre pour les tests.
+- Bundle de vérification : `node -e` avec esbuild (`/opt/npm-tools/node_modules/esbuild`, entrée `js/app.js`).
 - Aperçu tout-en-un (mode démo) : `node tools/build-preview.cjs sortie.html --artifact`.
 - Navigateur : serveur local `python3 -m http.server 8766` dans le dépôt + Playwright (Chromium préinstallé) ;
   bloquer gstatic/wikipedia/youtube (l'app passe alors en démo), servir un faux `feed.json` pour raw.githubusercontent.
