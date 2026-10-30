@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29",
+ "updated": "2026-10-30",
  "note": "Vidéos des chaînes officielles uniquement. res = résultats (spoilers, affichés seulement à la demande). m = résumé match par match (promotions japonaises).",
  "items": {
   "WWE|Raw|2026-10-26": {
@@ -238,6 +238,59 @@
    ],
    "s": "WrestleView",
    "u": "https://www.wrestleview.com/top-story/396143-aew-fright-night-dynamite-results-two-title-matches-10-28-26/"
+  },
+  "TNA|Impact|2026-10-29": {
+   "res": [
+    "M By Elegance a battu Jada Stone et conserve le titre Knockouts TV",
+    "Zero a battu BDE",
+    "Amazing Red a battu Cedric Alexander et conserve le titre X-Division",
+    "AJ Francis a battu John Skyler",
+    "Elijah a battu Ryan Nemeth"
+   ],
+   "seg": [
+    {
+     "k": "Backstage",
+     "t": "Au sein de The System, Eddie Edwards soutient Cedric Alexander avant son match pour le titre X-Division ; Eddie et Bear Bronson se disputent jusqu’à l’intervention de Brian Myers."
+    },
+    {
+     "k": "Annonce",
+     "t": "Ricky Sosa annonce qu’il représentera la Belgique à la TNA World X Cup ; Fabian Aichner représentera aussi son pays."
+    },
+    {
+     "k": "Backstage",
+     "t": "Elayna Black demande à Heather By Elegance jusqu’à quand elle supportera M et annonce qu’elle vise le titre Knockouts TV."
+    },
+    {
+     "k": "Annonce",
+     "t": "Après une attaque de Zoey Serrano sur un agent de sécurité et une menace de Shayna Baszler, Daria Rae annonce Indi Hartwell contre Shayna Baszler pour le titre mondial des Knockouts."
+    },
+    {
+     "k": "Promo",
+     "t": "Kiera Hogan et Tasha Steelz évoquent le retour de Fire & Flava et défient Shotzi Blackheart et Allie."
+    },
+    {
+     "k": "Contrat",
+     "t": "Bear Bronson défie Eddie Edwards : le vainqueur prendra le contrôle de The System. Eddie accepte."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Leon Slater invite Trey Miguel sur le ring ; après avoir parlé de leurs carrières, ils se serrent la main puis se fixent du regard."
+    },
+    {
+     "k": "Promo",
+     "t": "Mustafa Ali prévient Frankie Kazarian qu’Avery Styles finira par le trahir."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après le match d’Elijah, Nic Nemeth l’attaque ; Elijah brise ensuite une guitare sur la tête de Ryan Nemeth."
+    },
+    {
+     "k": "Autre",
+     "t": "Match cinématique « Slaughterhouse Syx » entre les Hardys et Syx : Jeff Hardy finit coincé sous une poubelle après une attaque à la hache."
+    }
+   ],
+   "s": "PWTorch",
+   "u": "https://www.pwtorch.com/site/2026/10/29/tna-impact-tv-results-10-29-hardys-vs-syx-red-vs-alexander-elijah-vs-nemeth-skyler-vs-francis/"
   }
  }
 }
