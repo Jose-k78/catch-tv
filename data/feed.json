@@ -1,5 +1,5 @@
 {
- "at": "2026-10-30T17:14:53.955Z",
+ "at": "2026-10-30T21:12:37.751Z",
  "items": [
   {
    "t": "Preview : WWE SmackDown ''Danhausen’s Very Nice, Very Evil'' du 30 octobre 2026",
@@ -9,6 +9,15 @@
    "tags": [
     "WWE",
     "SmackDown"
+   ]
+  },
+  {
+   "t": "Vivez une intervention de Logan Paul caché sous le ring à Money in the Bank",
+   "u": "https://www.catch-newz.com/wwe/newz/60831-vivez-une-intervention-de-logan-paul-cache-sous-le-ring-a-money-in-the-bank",
+   "s": "Catch-Newz",
+   "d": "2026-10-30",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -437,6 +446,7 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60831-vivez-une-intervention-de-logan-paul-cache-sous-le-ring-a-money-in-the-bank",
    "https://www.catch-newz.com/wwe/resultats/60823-resultats-de-wwe-road-to-survivor-series-du-29-octobre-2026",
    "https://www.catch-newz.com/international/resultats/60820-tna-impact-29-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60819-wwe-smackdown-du-30-octobre-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
@@ -496,7 +506,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "6 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
