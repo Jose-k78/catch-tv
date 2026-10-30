@@ -5,7 +5,7 @@ import { showOptions, logoOf } from "./catalog.js";
 import { docId, okHttp } from "../util.js";
 import { cleanImageUrl } from "../modals.js";
 import { ADMIN_UID } from "../config.js";
-import { friendState, friendsOf, feudInfo, feudBadge, isBlocked, requestsIn } from "../social.js";
+import { friendState, friendsOf, feudInfo, feudBadge, isBlocked, requestsIn, feudLabel, myFeudAct, theirFeudAct } from "../social.js";
 import { favChips } from "./favs.js";
 import { photoOf } from "../photos.js";
 import { patchView, patchModView, pnNew } from "./patchnotes.js";
@@ -277,7 +277,10 @@ export function profileView(uid) {
       : st === "in" ? '<button class="btn" data-act="friendok" data-uid="' + esc(uid) + '">Accepter</button><button class="btn ghost" data-act="frienddel" data-uid="' + esc(uid) + '">Refuser</button>'
       : '<button class="btn" data-act="friendadd" data-uid="' + esc(uid) + '">Ajouter en ami</button>';
     h += '<div class="btns" style="margin:4px 16px 0">' + fb + '<button class="btn ghost" data-act="dm" data-uid="' + esc(uid) + '">Message</button>' +
-      '<button class="btn feudbtn' + (fi.mine ? " done" : "") + '" data-act="feud" data-uid="' + esc(uid) + '">🔥 ' + (fi.mine ? (fi.theirs ? "Feud du jour faite" : "Feud lancée") : fi.theirs ? "Renvoyer la feud" : "Lancer une feud") + "</button></div>";
+      '<button class="btn feudbtn' + (fi.mine ? " done" : "") + '" data-act="feud" data-uid="' + esc(uid) + '">🔥 ' + (fi.mine ? (fi.theirs ? "Feud du jour faite" : "Feud du jour faite · à " + esc((prof(uid) || {}).pseudo || "lui") + " de jouer") : feudLabel(fi)) + "</button></div>";
+    // actions du jour : la sienne contre toi, la tienne contre lui
+    if (fi.theirs) h += '<p class="feudrecv">🔥 ' + esc(theirFeudAct(uid)) + "</p>";
+    if (fi.mine) h += '<p class="feudrecv mine">🔥 ' + esc(myFeudAct(uid)) + "</p>";
     if (fi.count || fi.mine || fi.theirs) h += '<p class="note small" style="text-align:center;margin-top:8px">' + (fi.count ? "🔥 " + fi.count + " jour" + (fi.count > 1 ? "s" : "") + " de feud d’affilée" : "Feud en cours") +
       (fi.best > fi.count ? " · record : " + fi.best : "") + (fi.hourglass ? " · ⏳ pensez à la feud du jour avant minuit" : "") + "</p>";
   }

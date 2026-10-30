@@ -152,7 +152,7 @@ export function wrestlerView(raw, wt) {
   if (ref.length) h += '<div class="list">' + ref.map(m => {
     // vidéo officielle connue -> on la regarde dans l'app ; sinon simple recherche YouTube du combat complet,
     // et c'est le membre qui choisit la vidéo
-    const go = refButton(m);
+    const go = refButton(m, k);
     return '<div class="item"><span class="lbl"><b>' + linkNames(m.t) + "</b><small>" + esc(m.ev || "") + "</small></span>" + go + "</div>";
   }).join("") + "</div>";
   else h += '<p class="note">Ses matchs de référence seront ajoutés lors d’une prochaine mise à jour' + (S.user ? " (ajoute-le à tes favoris pour qu’il soit suivi en priorité)" : "") + ".</p>";

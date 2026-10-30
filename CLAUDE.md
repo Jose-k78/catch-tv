@@ -26,7 +26,9 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   de catcheurs ajoutées automatiquement, pas de Smackdown Hotel pour les images). Les seules photos de catcheurs sont
   celles que Jose fournit lui-même : dossier `img/catcheurs/` (sa référence, prioritaire sur l'image d'un membre).
 - Matchs de référence d'une fiche : vidéo officielle connue → « ▶ Voir » dans l'app ; sinon simple recherche YouTube
-  « noms + événement + full match » (« 🔎 Chercher le match ») et c'est le membre qui choisit la vidéo.
+  « noms + événement + full match » (« 🔎 Chercher le match ») et c'est le membre qui choisit la vidéo. Pour NJPW, Stardom
+  et Marigold : choix entre YouTube, Dailymotion et la plateforme officielle (`refButton` de js/views/groups.js). Jamais
+  VK Video ni archive.org (copies non officielles), même si Jose le redemande.
 - Spoilers : résultats, champions récents, défenses de titre toujours derrière un spoiler. Dans le bandeau et les
   notifications, un changement de titre s'affiche comme une défense (« 🙈 Défense de titre · Raw du 27 oct. »), avec le
   même texte que le champion ait gardé ou perdu son titre.
@@ -66,6 +68,13 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   notes pour tous, Modération › Patch notes pour écrire une note (clé GitHub de l'admin) ; point rouge tant que non lu.
 - Fiche catcheur : grande photo agrandie au toucher (`ACT.zoom`, plein écran), image d'un membre toujours possible (en petit
   sous la photo du dossier), rubrique Palmarès. Profil d'un membre : ses catcheurs suivis avec leur photo.
+- Feuds : « Lancer une feud » puis « Continuer la feud » ; action du jour tirée au hasard dans `cloudflare/feud-acts.mjs`
+  (partagé par l'app et le service des notifications : même action des deux côtés, différente pour chacun).
+- TCCG (`js/views/tccg.js`, `#/tccg/…`) : prototype de la partie cartes (TCG), réservé au modérateur, interface noir et
+  doré (`body.tccg`), onglets Accueil / Call Up / Roster / Échange / Shop « en chantier » ; icône « Bientôt » dans la barre du bas.
+- Plus de photos automatiques Wikimedia ni de page « Crédits photos » (retirées le 30 oct.) : seules les images choisies par
+  le modérateur. Fonds animés et musique : copies légères (`media/bg/*-leger.mp4`, `media/music-leger.mp3`, originaux
+  gardés), musique en pause par défaut.
 - `js/share.js` : appui long / clic droit sur un élément `[data-sh]` (carte JSON via `shAttr()` de util.js) →
   partage dans la Gorilla Position ou en privé ; champ `card` des messages.
 - `js/push.js` + `sw.js` (service worker sans cache) : notifications Firebase Cloud Messaging (petite icône Android :

@@ -2,6 +2,7 @@
 // L'app appelle POST /notify avec le jeton de connexion du membre ; le service vérifie tout dans Firebase avant d'envoyer.
 // Installé et mis à jour automatiquement par GitHub (.github/workflows/push-worker.yml) : rien à modifier dans Cloudflare.
 import { verifyIdToken, getDoc, listDocs, lastMessage, sendTo, wants, parisDay, prevDay, parseSA } from "./push-core.mjs";
+import { feudAct } from "./feud-acts.mjs";
 
 const json = (o, h, status) => new Response(JSON.stringify(o), { status: status || 200, headers: Object.assign({ "content-type": "application/json" }, h) });
 const cardLabel = c => !c ? "" : c.sp ? "🙈 Spoiler partagé" : "📎 " + String(c.t || "");
@@ -53,7 +54,9 @@ async function handle(b, uid, sa, env) {
     if (!wants(push, "feud") || await blocked(sa, other, uid)) return { sent: 0 };
     const name = await pseudo(sa, uid), back = f.days[other] === day;
     const n = f.countDay === day || f.countDay === prevDay(day) ? (f.count || 0) : 0;
-    return { sent: await sendTo(sa, other, push, { title: "🔥 Feud", body: back ? name + " a renvoyé la feud : " + n + " jour" + (n > 1 ? "s" : "") + " d’affilée !" : name + " t’a lancé une feud ! Renvoie-la avant minuit", url: "#/profil/" + uid, tag: "feud-" + id }) };
+    // l'action du jour tirée au hasard (la même que celle affichée dans l'app)
+    const act = name + " " + feudAct(id, uid, day).b;
+    return { sent: await sendTo(sa, other, push, { title: back ? "🔥 Feud · " + n + " jour" + (n > 1 ? "s" : "") + " d’affilée" : "🔥 Feud", body: act + (back ? "" : " Réponds avant minuit !"), url: "#/profil/" + uid, tag: "feud-" + id }) };
   }
   // ---- annonce du modérateur : à tous les membres
   if (b.type === "ann") {

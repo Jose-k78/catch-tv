@@ -32,7 +32,7 @@ export function membersView(tab) {
     if (toReturn.length) {
       h += "<h2>Feuds à renvoyer aujourd’hui</h2><div class=\"mems\">" + toReturn.map(f => {
         const o = f.members[0] === meId ? f.members[1] : f.members[0], p = prof(o) || {};
-        return row(Object.assign({ uid: o }, p), '<button class="btn small" data-act="feud" data-uid="' + esc(o) + '">🔥 Renvoyer</button>');
+        return row(Object.assign({ uid: o }, p), '<button class="btn small" data-act="feud" data-uid="' + esc(o) + '">🔥 Continuer</button>');
       }).join("") + "</div>";
     }
     return h;

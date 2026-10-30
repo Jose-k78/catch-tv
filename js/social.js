@@ -3,6 +3,7 @@ import { S, B, ACT, changed, nameOf, need } from "./state.js";
 import { esc, modal, toast } from "./util.js";
 import { parisDay, parisHour } from "./time.js";
 import { feudCount } from "./feud.js";
+import { feudAct } from "../cloudflare/feud-acts.mjs";
 import { errText } from "./views/account.js";
 import { pushPing } from "./push.js";
 
@@ -74,17 +75,35 @@ ACT.frienddel = el => {
   else run(B.removeFriend(id), st === "in" ? "Demande refusée" : "Demande annulée");
 };
 
+// Action de feud du jour (tirée au hasard, la même des deux côtés) : vue de celui qui lance / de celui qui reçoit
+export const pairOfFeud = uid => [me(), uid].sort().join("_");
+export const myFeudAct = uid => feudAct(pairOfFeud(uid), me(), parisDay()).a;
+export const theirFeudAct = uid => nameOf(uid) + " " + feudAct(pairOfFeud(uid), uid, parisDay()).b;
+// « Lancer une feud » la première fois, puis « Continuer la feud »
+export const feudLabel = i => i.f ? "Continuer la feud" : "Lancer une feud";
+function feudActBox(uid, r) {
+  const name = nameOf(uid), cont = r && (r.count > 0 || (feudWith(uid) && feudWith(uid).best > 0));
+  modal((box, close) => {
+    box.innerHTML = '<div class="feudact"><span class="fire">🔥</span><h3>' + (cont ? "Tu continues la feud avec " : "Tu lances la feud contre ") + esc(name) + "</h3>" +
+      '<p class="act">' + esc(myFeudAct(uid)) + "</p>" + (r && r.countDay === parisDay() ? '<p class="sub">🔥 ' + r.count + " jour" + (r.count > 1 ? "s" : "") + " de feud d’affilée !</p>" : '<p class="sub">À ' + esc(name) + " de répondre avant minuit.</p>") +
+      '<button class="btn wide" data-no>Bien reçu</button></div>';
+    box.addEventListener("click", e => { if (e.target.closest("[data-no]")) close(); });
+  });
+}
 ACT.feud = el => {
   if (!needUser()) return;
   const uid = el.dataset.uid, i = feudInfo(uid), name = nameOf(uid);
-  if (i.mine) { toast(i.theirs ? "🔥 Feud du jour faite des deux côtés !" : "Tu as déjà lancé ta feud aujourd’hui. À " + name + " de répondre !"); return; }
-  const sub = i.theirs ? name + " t’a lancé une feud aujourd’hui. Renvoie-la pour faire monter le compteur !"
-    : "Une feud par jour : le compteur monte quand vous la lancez tous les deux le même jour (avant minuit, heure de Paris).";
-  confirmBox("Vous voulez lancer une feud ?", sub, "🔥 Lancer la feud", () => run(B.sendFeud(me(), uid, parisDay()), r => {
-    if (!r) return "Feud déjà lancée aujourd’hui";
-    pushPing({ type: "feud", other: uid });
-    return r.countDay === parisDay() ? "🔥 " + r.count + " jour" + (r.count > 1 ? "s" : "") + " de feud avec " + name + " !" : "🔥 Feud lancée ! À " + name + " de répondre avant minuit";
-  }));
+  if (i.mine) { toast(i.theirs ? "🔥 Feud du jour faite des deux côtés !" : "Tu as déjà fait ta feud aujourd’hui. À " + name + " de répondre !"); return; }
+  const sub = (i.theirs ? theirFeudAct(uid) + " Réponds pour faire monter le compteur !" : "")
+    || "Une feud par jour : le compteur monte quand vous la faites tous les deux le même jour (avant minuit, heure de Paris).";
+  confirmBox(i.f ? "Continuer la feud avec " + name + " ?" : "Lancer une feud contre " + name + " ?", sub, "🔥 " + feudLabel(i), async () => {
+    try {
+      const r = await B.sendFeud(me(), uid, parisDay());
+      if (!r) { toast("Feud déjà faite aujourd’hui"); return; }
+      pushPing({ type: "feud", other: uid });
+      feudActBox(uid, r);
+    } catch (e) { toast(errText(e)); }
+  });
 };
 
 ACT.block = el => {

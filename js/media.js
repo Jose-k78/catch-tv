@@ -34,7 +34,7 @@ document.addEventListener("visibilitychange", () => { const v = document.querySe
 // ---------- musique de fond ----------
 let audio = null, armed = false;
 const music = () => { const m = S.media && S.media.music; return m && okPath(m.u) ? m : null; };
-export const musicOn = () => lsGet("ctv.music") !== "off";
+export const musicOn = () => lsGet("ctv.music") === "on"; // en pause par défaut : seuls ceux qui l'allument la téléchargent
 // pas de musique pendant qu'une vidéo est en lecture dans l'app
 const videoPlaying = () => !!document.querySelector(".player iframe, .player video");
 function ensure() {
@@ -46,7 +46,7 @@ function ensure() {
   audio.volume = Math.min(1, Math.max(0, m.vol == null ? 0.4 : +m.vol));
   return audio;
 }
-function play() { const a = ensure(); if (!a || !musicOn() || videoPlaying() || document.hidden) return; a.dataset.started = "1"; const p = a.play(); if (p && p.catch) p.catch(() => {}); }
+function play() { if (!musicOn() || videoPlaying() || document.hidden) return; const a = ensure(); if (!a) return; a.dataset.started = "1"; const p = a.play(); if (p && p.catch) p.catch(() => {}); }
 function pause() { if (audio) audio.pause(); }
 // Les navigateurs n'autorisent le son qu'après un premier appui : on attend celui qui suit l'intro
 export function armMusic() {
@@ -69,7 +69,7 @@ export function updateMusicBtn() {
 }
 ACT.music = () => {
   const on = !musicOn();
-  lsSet("ctv.music", on ? null : "off");
+  lsSet("ctv.music", on ? "on" : null);
   if (on) play(); else pause();
   updateMusicBtn();
   toast(on ? "🔊 Musique activée" : "🔇 Musique coupée");

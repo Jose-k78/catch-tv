@@ -4,13 +4,14 @@ import { firebaseConfig, ADMIN_UID } from "./config.js";
 import { S, setBackend, B, ACT, FORM, onChange, changed, prof, avatar, need, nameOf } from "./state.js";
 import { loadContent } from "./content.js";
 import { ICON, toast } from "./util.js";
-import { homeView, promoView, showView, tabsView, creditsView, evPageView } from "./views/catalog.js";
+import { homeView, promoView, showView, tabsView, evPageView } from "./views/catalog.js";
 import { matchesView } from "./views/matches.js";
 import { titlesView, titleView, beltView } from "./views/titles.js";
 import { groupView } from "./views/groups.js";
 import { gslug } from "./views/wimage.js";
 import { groupLogo } from "./assets.js";
 import { pnNew } from "./views/patchnotes.js";
+import { tccgView, tccgTop, TICON, TNAV } from "./views/tccg.js";
 import { searchView, wrestlerView, fillWiki, afterSearch } from "./views/search.js";
 import { eventView, fillEvent } from "./views/event.js";
 import { syncFollowed } from "./views/admin.js";
@@ -48,7 +49,7 @@ const REL = {
   home: ["content", "images", "history", "auth", "tick", "profile", "spoil", "activity", "polls", "pollVotes", "picks", "hof", "push", "ann"], promo: ["content", "images", "history", "auth", "tick", "spoil", "polls"],
   profile: ["profile", "profiles", "history", "otherHistory", "auth", "friends", "feuds", "blocks", "memberFriends", "tick", "slammys", "myact", "pollVotes", "ideas"], chat: ["room", "convs", "reads", "profiles", "auth", "blocks"],
   convinfo: ["convs", "reads", "profiles", "auth", "blocks", "room", "msgs"], newchat: ["users", "auth"], settings: ["auth", "route", "reports", "blocks", "profiles", "images", "media", "ideas", "push", "ann", "content"], editprofile: ["profile", "auth", "profiles"], auth: ["auth"],
-  matches: ["route", "history", "auth", "content"], credits: ["images"], wrestler: ["profile", "spoil", "history", "auth", "content"], search: [], titles: ["history", "spoil", "content"], title: ["history", "spoil", "content"], belt: ["content"], group: ["content", "auth"],
+  matches: ["route", "history", "auth", "content"], wrestler: ["profile", "spoil", "history", "auth", "content"], search: [], titles: ["history", "spoil", "content"], title: ["history", "spoil", "content"], belt: ["content"], group: ["content", "auth"], tccg: ["auth", "profile"],
   notifs: ["notifs", "profiles", "reads", "blocks", "ann"], activity: ["activity", "profiles", "blocks", "areplies"], storyline: ["content"], roster: ["profile", "content"],
   members: ["users", "friends", "feuds", "blocks", "profiles", "auth", "tick"], favs: ["profile", "profiles", "friends", "auth", "content"], hl: ["history", "spoil", "content"],
   event: ["event", "history", "auth"], cal: ["content", "history", "auth", "images", "spoil", "tick", "picks"],
@@ -75,7 +76,7 @@ function parse() {
     case "titre": return { name: "title", id: parts[1] || "" };
     case "ceinture": return { name: "belt", key: (parts.slice(1).join("/") || "").slice(0, 80) };
     case "groupe": return parts[1] ? { name: "group", id: parts[1].slice(0, 80) } : { name: "search", q: "" };
-    case "credits": return { name: "credits" };
+    case "tccg": return { name: "tccg", tab: parts[1] || "" };
     case "membres": return { name: "members", tab: parts[1] || "" };
     case "favoris": return { name: "favs" };
     case "notifs": return { name: "notifs" };
@@ -152,6 +153,7 @@ function render() {
   mountBg(route);
   mountTicker(route);
   document.body.classList.toggle("wide", route.name === "home");
+  document.body.classList.toggle("tccg", route.name === "tccg" && !!S.isAdmin);
   let h = "";
   const waiting = NEEDS_USER[route.name] && !S.user;
   if (waiting) h = '<p class="empty">Chargement…</p>';
@@ -173,7 +175,7 @@ function render() {
     case "title": h = titleView(route.id); break;
     case "belt": h = beltView(route.key); break;
     case "group": h = groupView(route.id); break;
-    case "credits": h = creditsView(); break;
+    case "tccg": h = tccgView(route.tab); break;
     case "members": h = membersView(route.tab); break;
     case "favs": h = favsView(); break;
     case "hl": h = hlView(route.k, route.show, route.d); break;
@@ -202,12 +204,12 @@ function render() {
   const foot = document.getElementById("foot");
   foot.innerHTML = (S.demo ? '<div class="demo">' + (S.fbError ? "<b>Connexion à Firebase impossible</b> (vérifie js/config.js). " : "") +
     "Mode démo : les comptes, messages et notes sont enregistrés seulement dans ce navigateur. Pour que tout le monde puisse s’inscrire et discuter, suis le guide d’installation Firebase.</div>" : "") +
-    "<footer>Calendrier, articles et résumés mis à jour automatiquement. Dates susceptibles de changer. <a href=\"#/credits\">Crédits photos</a></footer>";
+    "<footer>Calendrier, articles et résumés mis à jour automatiquement. Dates susceptibles de changer.</footer>";
   updateHeader();
 }
 
 // Barre de navigation du bas : Accueil · Recherche · Membres · Messages · Profil
-const NAV = [["home", "#/", "Accueil", "home"], ["search", "#/recherche", "Recherche", "search"], ["members", "#/membres", "Membres", "globe"], ["chat", "#/chat", "Messages", "chat"], ["me", "#/profil", "Profil", "user"]];
+const NAV = [["home", "#/", "Accueil", "home"], ["search", "#/recherche", "Recherche", "search"], ["tccg", "#/tccg", "Bientôt", "cards"], ["members", "#/membres", "Membres", "globe"], ["chat", "#/chat", "Messages", "chat"], ["me", "#/profil", "Profil", "user"]];
 function navOn(id) {
   const r = route.name;
   if (id === "home") return r === "home" || r === "promo" || r === "titles" || r === "title" || r === "matches" || r === "hl" || r === "polls" || r === "picks" || r === "pick" || r === "cal";
@@ -220,11 +222,18 @@ function navOn(id) {
 const cnt = n => n > 99 ? "99+" : String(n);
 function updateHeader() {
   const n = chatBadge(), soc = socialBadge();
-  const nav = document.getElementById("bnav");
-  if (nav) nav.innerHTML = NAV.map(x => {
+  const nav = document.getElementById("bnav"), top = document.querySelector("header.top");
+  // mode TCCG (modérateur) : en-tête et barre du bas noir et doré
+  const tg = route.name === "tccg" && !!S.isAdmin;
+  if (top) {
+    if (tg) { if (!top.dataset.tv) top.dataset.tv = top.innerHTML; top.innerHTML = tccgTop(); }
+    else if (top.dataset.tv) { top.innerHTML = top.dataset.tv; delete top.dataset.tv; }
+  }
+  if (nav && tg) { nav.innerHTML = TNAV.map(x => '<a class="bn' + (route.tab === x[0] ? " on" : "") + '" href="#/tccg' + (x[0] ? "/" + x[0] : "") + '"><span class="bni">' + TICON[x[2]] + "</span><small>" + x[1] + "</small></a>").join(""); }
+  else if (nav) nav.innerHTML = NAV.map(x => {
     const badge = x[0] === "chat" ? n : x[0] === "members" ? soc : 0, pdot = x[0] === "me" && S.user && pnNew();
     const href = x[0] === "me" && !S.user ? "#/connexion" : x[1];
-    const ico = x[0] === "me" && S.user ? avatar(S.profile || {}, 26) : ICON[x[3]];
+    const ico = x[0] === "me" && S.user ? avatar(S.profile || {}, 26) : x[3] === "cards" ? TICON.cards : ICON[x[3]];
     return '<a class="bn' + (navOn(x[0]) ? " on" : "") + '" href="' + href + '"' + (navOn(x[0]) ? ' aria-current="page"' : "") + '><span class="bni">' + ico + (badge ? '<span class="badge">' + cnt(badge) + "</span>" : pdot ? '<span class="badge pdotb" aria-label="nouveauté"></span>' : "") + "</span><small>" + x[2] + "</small></a>";
   }).join("");
   const fav = document.getElementById("favbtn");

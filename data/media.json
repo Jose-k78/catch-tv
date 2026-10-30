@@ -1,22 +1,25 @@
 {
- "updated": "2026-10-29",
+ "updated": "2026-10-30",
  "bg": {
   "home": {
-   "u": "media/bg/home-mvu05w8w.mp4",
-   "size": 3335256,
-   "at": "2026-10-29"
+   "u": "media/bg/home-leger.mp4",
+   "size": 1481864,
+   "at": "2026-10-29",
+   "orig": "media/bg/home-mvu05w8w.mp4"
   },
   "WWE": {
-   "u": "media/bg/wwe-mvt8u92q.mp4",
-   "size": 2727453,
-   "at": "2026-10-29"
+   "u": "media/bg/wwe-leger.mp4",
+   "size": 532425,
+   "at": "2026-10-29",
+   "orig": "media/bg/wwe-mvt8u92q.mp4"
   }
  },
  "music": {
-  "u": "media/music-mvu06f0x.mp3",
+  "u": "media/music-leger.mp3",
   "n": "WWE RAW Early 2008 Intro",
-  "size": 1902803,
+  "size": 793384,
   "vol": 0.05,
-  "at": "2026-10-29"
+  "at": "2026-10-29",
+  "orig": "media/music-mvu06f0x.mp3"
  }
 }

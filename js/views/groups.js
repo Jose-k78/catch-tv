@@ -1,8 +1,8 @@
 // Fiche d'un tag team / d'une faction (#/groupe/id) : logo (dossier de l'admin, sinon ajouté par un membre, sinon le nom écrit),
 // membres actuels, anciens membres, années, matchs de référence. Données : data/groups.json (tenu à jour chaque soir).
 // Sur la fiche d'un catcheur : le logo de ses groupes actuels dans un coin de sa photo, et la liste de ses groupes.
-import { S } from "../state.js";
-import { esc, ICON } from "../util.js";
+import { S, ACT } from "../state.js";
+import { esc, ICON, modal } from "../util.js";
 import { linkNames } from "../wrestlers.js";
 import { okVid } from "./highlights.js";
 import { photoOf, face } from "../photos.js";
@@ -11,11 +11,27 @@ import { wImageBox, gslug } from "./wimage.js";
 
 // bouton d'un match de référence : vidéo officielle connue -> on la regarde dans l'app ;
 // sinon simple recherche YouTube du combat complet (« noms + événement + full match »), et c'est le membre qui choisit
-export function refButton(m) {
+// NJPW, Stardom, Marigold : le membre choisit où chercher (YouTube, Dailymotion ou la plateforme officielle).
+// Jamais de sites de copies non officielles (VK Video, archive.org…).
+const OFFICIAL = { NJPW: ["NJPW World", "https://njpwworld.com/"], Stardom: ["Stardom World", "https://www.stardom-world.com/"], Marigold: ["Wrestle Universe", "https://www.wrestle-universe.com/"] };
+export function refButton(m, k) {
   const q = String(m.t || "").replace(/^[^:]{1,80} : (?=.* (?:contre|vs) )/, "").replace(/ — .*$/, "").replace(/ contre /g, " vs ").replace(/ et /g, " & ") + (m.ev ? " " + m.ev : "") + " full match";
-  return okVid(m.v) ? '<button class="btn small" data-act="play" data-id="' + esc(m.v) + '" data-t="' + esc(m.t) + '">▶ Voir</button>'
-    : '<a class="btn small ghost" href="https://www.youtube.com/results?search_query=' + encodeURIComponent(q) + '" target="_blank" rel="noopener">🔎 Chercher le match</a>';
+  if (okVid(m.v)) return '<button class="btn small" data-act="play" data-id="' + esc(m.v) + '" data-t="' + esc(m.t) + '">▶ Voir</button>';
+  const ks = String(k || "").split(/\s*·\s*/), off = ks.map(x => OFFICIAL[x]).find(Boolean);
+  if (off) return '<button class="btn small ghost" data-act="refsearch" data-q="' + esc(q) + '" data-on="' + esc(off[0]) + '" data-ou="' + esc(off[1]) + '">🔎 Chercher le match</button>';
+  return '<a class="btn small ghost" href="https://www.youtube.com/results?search_query=' + encodeURIComponent(q) + '" target="_blank" rel="noopener">🔎 Chercher le match</a>';
 }
+ACT.refsearch = el => {
+  const q = el.dataset.q, on = el.dataset.on, ou = el.dataset.ou;
+  modal((box, close) => {
+    box.innerHTML = "<h3>Où chercher le match ?</h3><p class=\"sub\">" + esc(q.replace(/ full match$/, "")) + "</p>" +
+      '<a class="btn wide" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=' + encodeURIComponent(q) + '">YouTube</a>' +
+      '<a class="btn wide ghost" style="margin-top:8px" target="_blank" rel="noopener" href="https://www.dailymotion.com/search/' + encodeURIComponent(q) + '/videos">Dailymotion</a>' +
+      '<a class="btn wide ghost" style="margin-top:8px" target="_blank" rel="noopener" href="' + esc(ou) + '">' + esc(on) + " (plateforme officielle)</a>" +
+      '<p class="note small" style="margin-top:10px">C’est toi qui choisis la vidéo. Seulement les sites officiels ou grand public.</p><button class="btn wide ghost" style="margin-top:6px" data-no>Annuler</button>';
+    box.addEventListener("click", e => { if (e.target.closest("[data-no]") || e.target.closest("a")) close(); });
+  });
+};
 const wl = n => "#/catcheur/" + encodeURIComponent(n);
 function people(list) {
   return '<div class="list">' + list.map(n => '<a class="item" href="' + wl(n) + '">' + (photoOf(n) ? '<img class="wface0" src="' + esc(photoOf(n)) + '" alt="" loading="lazy" style="width:40px;height:40px" onerror="this.remove()">' : '<span class="wnone">?</span>') +
@@ -39,7 +55,7 @@ export function groupView(raw) {
   h += "<h2>" + (g.on ? "Membres actuels" : "Membres") + "</h2>" + ((g.m || []).length ? people(g.m) : '<p class="note">Les membres seront ajoutés lors d’une prochaine mise à jour.</p>');
   if ((g.ex || []).length) h += "<h2>Anciens membres</h2>" + people(g.ex);
   const ref = (Array.isArray(g.ref) ? g.ref : []).slice(0, 5);
-  h += "<h2>Matchs de référence</h2>" + (ref.length ? '<div class="list">' + ref.map(m => '<div class="item"><span class="lbl"><b>' + linkNames(m.t) + "</b><small>" + esc(m.ev || "") + "</small></span>" + refButton(m) + "</div>").join("") + "</div>"
+  h += "<h2>Matchs de référence</h2>" + (ref.length ? '<div class="list">' + ref.map(m => '<div class="item"><span class="lbl"><b>' + linkNames(m.t) + "</b><small>" + esc(m.ev || "") + "</small></span>" + refButton(m, g.k) + "</div>").join("") + "</div>"
     : '<p class="note">Ses matchs de référence seront ajoutés lors d’une prochaine mise à jour.</p>');
   const old = artVersions("groups", g.lg);
   if (old.length) h += '<h2>Anciens logos</h2><div class="glogos">' + old.map(s => '<button data-act="zoom" data-src="' + esc(s) + '" data-alt="' + esc(g.n) + '"><img src="' + esc(s) + '" alt="" loading="lazy"></button>').join("") + "</div>";

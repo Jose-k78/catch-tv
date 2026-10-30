@@ -1,7 +1,7 @@
 // Accueil, pages promotion et pages show
 import { S, ACT, imageFor } from "../state.js";
 import { esc, cssUrl, okHttp, okDay, fmt, diff, cd, nextWeekday, dt, ymd, ICON, stars, docId, MOIS, modal, toast, shAttr } from "../util.js";
-import { resolveImage, usedCredits } from "../images.js";
+import { resolveImage } from "../images.js";
 import { PARIS, startOf, endOf, isLive, whenParts, fmtAt, hourAt, cityOf, downloadIcs, parisDay } from "../time.js";
 import { hlOf, hlHref, spoilBlock } from "./highlights.js";
 import { favAside } from "./favs.js";
@@ -510,14 +510,6 @@ export function showView(k, n) {
   let al = articles([k, n], 5); if (!al.length) al = articles([k], 5);
   h += artSection("Actualité", al) + xSection(s.x || pr.x);
   return h;
-}
-export function creditsView() {
-  const list = usedCredits();
-  return '<a class="back" href="#/">' + ICON.back + " Accueil</a><h1>Crédits photos</h1>" +
-    '<p class="note" style="margin-bottom:14px">Les photos ajoutées automatiquement viennent de Wikimedia Commons, sous licence libre.</p>' +
-    (list.length ? '<div class="list">' + list.map(f => '<a class="item" href="' + esc(okHttp(f.link) ? f.link : "#") + '" target="_blank" rel="noopener"><span class="lbl"><b>' + esc(f.title || f.q) +
-      "</b><small>" + esc(f.author) + " · " + esc(f.lic) + '</small></span><span class="chev">↗</span></a>').join("") + "</div>"
-      : '<p class="note">Aucune photo libre utilisée pour l’instant.</p>');
 }
 // Logo d'un onglet : choisi par l'admin, sinon celui du calendrier (img/logos/…), sinon rien (nom écrit)
 export function logoOf(k, n) {
