@@ -1,15 +1,6 @@
 {
- "at": "2026-10-30T15:22:43.123Z",
+ "at": "2026-10-30T16:19:41.763Z",
  "items": [
-  {
-   "t": "L'Arabie saoudite annonce le nouveau lieu de WWE Crown Jewel 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/60826-larabie-saoudite-annonce-le-nouveau-lieu-de-wwe-crown-jewel-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-30",
-   "tags": [
-    "WWE"
-   ]
-  },
   {
    "t": "Preview : WWE SmackDown ''Danhausen’s Very Nice, Very Evil'' du 30 octobre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
@@ -18,6 +9,59 @@
    "tags": [
     "WWE",
     "SmackDown"
+   ]
+  },
+  {
+   "t": "Zuffa Boxing annonce son premier show en Arabie saoudite",
+   "u": "https://www.catch-newz.com/wwe/newz/60828-zuffa-boxing-annonce-son-premier-show-en-arabie-saoudite",
+   "s": "Catch-Newz",
+   "d": "2026-10-30",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Ricky Sosa annonce son retour pour TNA Destination X",
+   "u": "https://www.catch-newz.com/international/newz/60829-ricky-sosa-annonce-son-retour-pour-tna-destination-x",
+   "s": "Catch-Newz",
+   "d": "2026-10-30",
+   "tags": [
+    "TNA"
+   ]
+  },
+  {
+   "t": "Sami Zayn parle de son alchimie avec Kevin Owens",
+   "u": "https://www.catch-newz.com/wwe/newz/60830-sami-zayn-parle-de-son-alchimie-avec-kevin-owens",
+   "s": "Catch-Newz",
+   "d": "2026-10-30",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "WWE SmackDown du 30 octobre 2026 : Heure et chaine pour regarder le show en direct",
+   "u": "https://www.catch-newz.com/wwe/newz/60819-wwe-smackdown-du-30-octobre-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
+   "s": "Catch-Newz",
+   "d": "2026-10-30",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
+  },
+  {
+   "t": "Canelo – Mbilli : à quelle heure et sur quelle chaîne voir le combat de boxe en direct ?",
+   "u": "https://www.voxcatch.fr/2026/10/30/canelo-mbilli-a-quelle-heure-et-sur-quelle-chaine-voir-le-combat-de-boxe-en-direct/",
+   "s": "VOXcatch",
+   "d": "2026-10-30",
+   "tags": []
+  },
+  {
+   "t": "L'Arabie saoudite annonce le nouveau lieu de WWE Crown Jewel 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/60826-larabie-saoudite-annonce-le-nouveau-lieu-de-wwe-crown-jewel-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-30",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -43,16 +87,6 @@
    "d": "2026-10-30",
    "tags": [
     "WWE"
-   ]
-  },
-  {
-   "t": "WWE SmackDown du 30 octobre 2026 : Heure et chaine pour regarder le show en direct",
-   "u": "https://www.catch-newz.com/wwe/newz/60819-wwe-smackdown-du-30-octobre-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
-   "s": "Catch-Newz",
-   "d": "2026-10-30",
-   "tags": [
-    "WWE",
-    "SmackDown"
    ]
   },
   {
@@ -144,16 +178,6 @@
    ]
   },
   {
-   "t": "Preview : ROH du 29 octobre 2026",
-   "u": "https://www.catch-newz.com/aew/newz/60808-preview-roh-du-29-octobre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-29",
-   "tags": [
-    "AEW",
-    "ROH"
-   ]
-  },
-  {
    "t": "AEW Dynamite du 28 octobre : Queen Aminata championne TBS, Ospreay vs. Fletcher à Full Gear",
    "u": "https://www.voxcatch.fr/2026/10/29/resultats-aew-dynamite-28-octobre-2026/",
    "s": "VOXcatch",
@@ -161,6 +185,16 @@
    "tags": [
     "AEW",
     "Dynamite"
+   ]
+  },
+  {
+   "t": "Preview : ROH du 29 octobre 2026",
+   "u": "https://www.catch-newz.com/aew/newz/60808-preview-roh-du-29-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-29",
+   "tags": [
+    "AEW",
+    "ROH"
    ]
   },
   {
@@ -402,14 +436,17 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/wwe/newz/60826-larabie-saoudite-annonce-le-nouveau-lieu-de-wwe-crown-jewel-2026",
    "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
-   "https://www.catch-newz.com/wwe/newz/60827-lannee-2026-de-charlotte-flair-est-elle-une-reussite",
-   "https://www.catch-newz.com/international/newz/60791-leedz-lewis-vs-big-sabri-j-le-couronnement-du-tout-premier-champion-lwa",
-   "https://www.catch-newz.com/wwe/newz/60825-jevon-evans-veut-un-match-pour-le-titre-world-heavyweight-a-wrestlemania-avant-ses-24-ans",
+   "https://www.catch-newz.com/wwe/newz/60828-zuffa-boxing-annonce-son-premier-show-en-arabie-saoudite",
+   "https://www.catch-newz.com/international/newz/60829-ricky-sosa-annonce-son-retour-pour-tna-destination-x",
+   "https://www.catch-newz.com/wwe/newz/60830-sami-zayn-parle-de-son-alchimie-avec-kevin-owens",
    "https://www.catch-newz.com/wwe/resultats/60823-resultats-de-wwe-road-to-survivor-series-du-29-octobre-2026",
    "https://www.catch-newz.com/international/resultats/60820-tna-impact-29-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60819-wwe-smackdown-du-30-octobre-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
+   "https://www.catch-newz.com/wwe/newz/60826-larabie-saoudite-annonce-le-nouveau-lieu-de-wwe-crown-jewel-2026",
+   "https://www.catch-newz.com/wwe/newz/60827-lannee-2026-de-charlotte-flair-est-elle-une-reussite",
+   "https://www.catch-newz.com/international/newz/60791-leedz-lewis-vs-big-sabri-j-le-couronnement-du-tout-premier-champion-lwa",
+   "https://www.catch-newz.com/wwe/newz/60825-jevon-evans-veut-un-match-pour-le-titre-world-heavyweight-a-wrestlemania-avant-ses-24-ans",
    "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/aew/newz/60808-preview-roh-du-29-octobre-2026",
    "https://www.catch-newz.com/aew/resultats/60789-aew-dynamite-28-octobre-2026",
@@ -459,8 +496,8 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 10 nouveaux articles lus sur la page d'accueil (10 liens)",
-  "VOXcatch": "5 articles (7 j)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "VOXcatch": "6 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
