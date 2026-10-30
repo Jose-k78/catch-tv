@@ -1,6 +1,15 @@
 {
- "at": "2026-10-30T11:35:03.046Z",
+ "at": "2026-10-30T12:13:31.071Z",
  "items": [
+  {
+   "t": "RKO, Styles Clash : Leedz Lewis attaque les influenceurs !",
+   "u": "https://www.catch-newz.com/wwe/newz/60802-rko-styles-clash-leedz-lewis-attaque-les-influenceurs",
+   "s": "Catch-Newz",
+   "d": "2026-10-30",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "WWE SmackDown du 30 octobre 2026 : Heure et chaine pour regarder le show en direct",
    "u": "https://www.catch-newz.com/wwe/newz/60819-wwe-smackdown-du-30-octobre-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
@@ -316,6 +325,7 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/60789-aew-dynamite-28-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60802-rko-styles-clash-leedz-lewis-attaque-les-influenceurs",
    "https://www.catch-newz.com/international/resultats/60820-tna-impact-29-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60819-wwe-smackdown-du-30-octobre-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
    "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026",
@@ -363,7 +373,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "5 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
