@@ -3,6 +3,7 @@
 import { S, ACT } from "../state.js";
 import { esc, ICON, fmt, okHttp, okDay, shAttr } from "../util.js";
 import { linkNames } from "../wrestlers.js";
+import { versus } from "../photos.js";
 import { hlHidden, unlock, noSpoil } from "../spoil.js";
 import { rateBtn, fighters, showFights } from "./mrate.js";
 
@@ -63,7 +64,7 @@ export function hlView(k, show, d) {
   if (Array.isArray(h.m) && h.m.length) {
     // promotions japonaises : résumé classique de chaque match, la vidéo quand elle existe
     out += '<h2>Match par match</h2>';
-    out += '<div class="spoil mbm"><div class="mlist">' + h.m.map((m, i) => '<article class="mbmi"><span class="mno">' + (i + 1) + '</span><div class="epbody"><b class="eptitle">' + linkNames(m.t) + "</b>" +
+    out += '<div class="spoil mbm"><div class="mlist">' + h.m.map((m, i) => '<article class="mbmi"><span class="mno">' + (i + 1) + '</span><div class="epbody">' + versus(m.t, 32) + '<b class="eptitle">' + linkNames(m.t) + "</b>" +
       '<p class="recap spoilbody">' + linkNames(m.r || "") + "</p>" + '<div class="mbtns">' + (okVid(m.v) ? '<button class="btn small ghost" data-act="play" data-id="' + esc(m.v) + '" data-t="' + esc(m.t) + '">▶ Vidéo</button>' : "") +
       rateBtn(k, m.t, isPle ? title : show, d) + "</div></div></article>").join("") +
       '</div><button class="btn ghost spoilbtn" data-act="reveal">👀 Voir les résumés des matchs (spoiler)</button></div>';
@@ -72,7 +73,7 @@ export function hlView(k, show, d) {
   const skip = vids.map(v => v.t).concat((h.m || []).map(m => m && m.t)).filter(Boolean);
   const fights = showFights(k, show, d, h, skip), lbl = isPle ? title : show;
   if (fights.length) out += "<h2>" + (vids.length || (h.m || []).length ? "Les autres combats" : "Les combats du show") + '</h2><div class="list fights">' +
-    fights.map(t => '<div class="item"><span class="lbl"><b>' + linkNames(t) + "</b></span>" + rateBtn(k, t, lbl, d) + "</div>").join("") + "</div>";
+    fights.map(t => '<div class="item"><span class="lbl">' + versus(t, 30) + "<b>" + linkNames(t) + "</b></span>" + rateBtn(k, t, lbl, d) + "</div>").join("") + "</div>";
   if (Array.isArray(h.res) && h.res.length) {
     out += "<h2>Résultats</h2>" + spoilBlock("Voir les résultats (spoiler)", '<ul class="res">' + h.res.map(r => "<li>" + linkNames(r) + "</li>").join("") + "</ul>");
   } else if (!h.m) out += '<p class="note" style="margin-top:14px">Les résultats seront ajoutés lors de la prochaine mise à jour.</p>';

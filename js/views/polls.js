@@ -4,6 +4,7 @@ import { S, B, ACT, FORM, changed } from "../state.js";
 import { esc, ICON, fmt, toast, modal, shAttr } from "../util.js";
 import { parisDay } from "../time.js";
 import { norm, linkNames } from "../wrestlers.js";
+import { face, faceImg, photoOf } from "../photos.js";
 import { errText } from "./account.js";
 
 const okPoll = p => p && p.id && p.q && Array.isArray(p.opts);
@@ -34,15 +35,18 @@ export function tally(p) {
 }
 const pct = (n, tot) => tot ? Math.round(n * 100 / tot) : 0;
 const bar = (label, n, tot, mine, lead) => '<div class="pbar' + (mine ? " mine" : "") + (lead ? " lead" : "") + '"><span class="pfill" style="width:' + pct(n, tot) + '%"></span>' +
-  '<span class="plbl">' + linkNames(label) + (mine ? " ✓" : "") + '</span><span class="ppc">' + pct(n, tot) + " %</span></div>";
+  '<span class="plbl">' + faceImg(label, 22) + linkNames(label) + (mine ? " ✓" : "") + '</span><span class="ppc">' + pct(n, tot) + " %</span></div>";
 
 function pollCard(p) {
   const open = isOpen(p), mv = myVote(p.id), r = tally(p), showRes = !!mv || !open;
   const max = Math.max.apply(null, r.opts.map(x => x.n).concat(r.other.map(x => x.n), [0]));
   const tag = p.type === "babies" ? "👑 Babies du mois" : p.type === "match" ? "🥊 Dream match" : "";
   let h = '<div class="poll' + (open ? "" : " closed") + (p.type ? " t-" + esc(p.type) : "") + '" id="poll-' + esc(p.id) + '"' + shAttr({ ty: "poll", t: p.q, s: [tag || "Sondage", p.k].filter(Boolean).join(" · "), h: "#/sondages", k: p.k || "" }) + '><small class="eyebrow">' + esc([tag, p.k, open ? (p.end ? "jusqu’au " + fmt(p.end) : "ouvert") : "terminé"].filter(Boolean).join(" · ")) + "</small><b class=\"pq\">" + linkNames(p.q) + "</b>";
+  // dream match et babies : les deux visages face à face
+  if ((p.type === "match" || p.type === "babies") && p.opts.length === 2 && (photoOf(p.opts[0]) || photoOf(p.opts[1])))
+    h += '<div class="pvs">' + (face(p.opts[0], 72) || '<span class="wnone big">?</span>') + '<span class="wvsx">VS</span>' + (face(p.opts[1], 72) || '<span class="wnone big">?</span>') + "</div>";
   if (!showRes || (open && mv && mv.edit)) {
-    h += '<div class="popts">' + p.opts.map((t, i) => '<button class="popt" data-act="pvote" data-p="' + esc(p.id) + '" data-c="' + i + '">' + esc(t) + "</button>").join("") + "</div>";
+    h += '<div class="popts">' + p.opts.map((t, i) => '<button class="popt" data-act="pvote" data-p="' + esc(p.id) + '" data-c="' + i + '">' + faceImg(t, 26) + esc(t) + "</button>").join("") + "</div>";
     if (p.other) h += '<form class="pother" data-form="pother" data-p="' + esc(p.id) + '"><input name="o" maxlength="40" autocomplete="off" placeholder="Autre : …" aria-label="Autre réponse"><button class="btn small">Voter</button></form>';
   } else {
     h += '<div class="pres">' + r.opts.map((x, i) => bar(x.t, x.n, r.total, mv && mv.c === i, x.n && x.n === max)).join("") +

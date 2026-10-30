@@ -23,7 +23,10 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
 - **Vidéos officielles uniquement** (chaînes YouTube officielles, plateformes officielles). Jamais de copie piratée
   ou non officielle (VK Video, archive.org… refusés), même « cachée ».
 - **Jamais de photos de vraies personnes récupérées sur le web** (pas d'affiches officielles, pas de photos Wikipédia
-  de catcheurs ajoutées automatiquement, pas de Smackdown Hotel pour les images).
+  de catcheurs ajoutées automatiquement, pas de Smackdown Hotel pour les images). Les seules photos de catcheurs sont
+  celles que Jose fournit lui-même : dossier `img/catcheurs/` (sa référence, prioritaire sur l'image d'un membre).
+- Matchs de référence d'une fiche : vidéo officielle connue → « ▶ Voir » dans l'app ; sinon simple recherche YouTube
+  « noms + événement + full match » (« 🔎 Chercher le match ») et c'est le membre qui choisit la vidéo.
 - Spoilers : résultats, champions récents, défenses de titre toujours derrière un spoiler. Dans le bandeau et les
   notifications, un changement de titre s'affiche comme une défense (« 🙈 Défense de titre · Raw du 27 oct. »), avec le
   même texte que le champion ait gardé ou perdu son titre.
@@ -43,9 +46,15 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   account (profil, paramètres), admin (modération), annonces, trophies, activity, event (archives Wikipédia)…
 - `js/wrestlers.js` : `linkNames(texte)` rend cliquables les noms de catcheurs connus (fiches, rosters, champions) —
   partout sauf dans les messages du chat ; `namesIn(texte)`.
+- `js/photos.js` : photos des catcheurs (`photoOf(nom)`, `face`, `versus(ligne)` face à face, `faceRow`, `faceImg`) d'après
+  `data/photos.json` = { items: { slug: { f: fichier, n: [noms] } } } et les fichiers de `img/catcheurs/` (WebP 300×300).
+  Affichées sur la fiche, les résultats de recherche, les sondages, la page d'un événement (affiche + résumé), les résumés
+  des shows et les highlights. Le robot tient la liste à jour (`.github/scripts/photos.mjs`, aussi lancé à chaque ajout
+  dans le dossier) : nom de fichier = nom du catcheur, la photo la plus récente gagne, > 400 Ko → copie WebP légère.
 - `js/share.js` : appui long / clic droit sur un élément `[data-sh]` (carte JSON via `shAttr()` de util.js) →
   partage dans la Gorilla Position ou en privé ; champ `card` des messages.
-- `js/push.js` + `sw.js` (service worker sans cache) : notifications Firebase Cloud Messaging ; réglages dans
+- `js/push.js` + `sw.js` (service worker sans cache) : notifications Firebase Cloud Messaging (petite icône Android :
+  `icons/badge-96.png`, blanc sur transparent, sinon carré blanc) ; réglages dans
   `push/{uid}` ; bandeau « Installer l'app ». `data/push.json` = { vapid (clé publique), url (service Cloudflare) }.
 - `cloudflare/` : service des notifications instantanées (messages privés, feuds, annonces), installé par
   `.github/workflows/push-worker.yml`. `cloudflare/push-core.mjs` est partagé avec le robot.

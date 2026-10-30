@@ -6,7 +6,8 @@ import { PARIS, startOf, endOf, isLive, whenParts, fmtAt, hourAt, cityOf, downlo
 import { hlOf, hlHref, spoilBlock } from "./highlights.js";
 import { favAside } from "./favs.js";
 import { champHidden, hlHidden } from "../spoil.js";
-import { linkNames } from "../wrestlers.js";
+import { linkNames, namesIn } from "../wrestlers.js";
+import { versus, faceRow } from "../photos.js";
 import { discoverTile } from "./discover.js";
 import { storylineTile } from "./storyline.js";
 import { activitySection, activityList } from "./activity.js";
@@ -337,7 +338,7 @@ function epCard(e) {
     '<div class="epdate" style="' + esc(plain(e.c)) + '">' + (x ? "<b>" + x.getDate() + "</b><small>" + MOIS[x.getMonth()] + "</small>" : "<b>?</b><small>date</small>") + "</div>" +
     '<div class="epbody"><a class="eptitle" href="' + esc(evHref(e)) + '"' + shAttr(evCard(e)) + ">" + esc(e.t) + "</a>" +
     '<small class="epmeta">' + (meta || "À confirmer") + "</small>" + (past ? "" : timeLine(e)) + cardList(e) +
-    (r ? '<p class="recap">' + linkNames(r.txt) + "</p>" + srcLine(r) : "") + seenInfo(h) +
+    (r ? faceRow(namesIn(r.txt), 28) + '<p class="recap">' + linkNames(r.txt) + "</p>" + srcLine(r) : "") + seenInfo(h) +
     '<div class="eplinks">' + (aired(e) ? '<button class="hllink watchlink" data-act="watch" data-direct="1"' + itemData(e) + ">" + ICON.play + " Voir le show</button>" + hlBtn(e.k, e.show || "PLE", e.d, "hllink") : "") + (e.kind === "ple" ? remindBtn(e) : "") + "</div></div>" +
     (aired(e) ? '<button class="seenbtn' + (h ? " on" : "") + '" data-act="seen"' + dataItem(e) + ' aria-label="Je l’ai vu">' + (h ? ICON.check : ICON.eye) + "</button>" : "") +
     "</article>";
@@ -350,7 +351,7 @@ function feature(e, label, next) {
   return '<section class="feature' + (lk.poster ? " poster" : "") + (h ? " seen" : "") + (S.isAdmin ? " hasedit" : "") + '" style="' + esc(lk.style) + '">' + editBtn(e, e.k + " " + (e.show || e.t)) +
     '<span class="eyebrow">' + label + "</span><h2" + fit(e.t, 320, 46, lk.poster) + '><a class="evlink" href="' + esc(evHref(e)) + '"' + shAttr(evCard(e)) + ">" + esc(e.t) + "</a></h2>" +
     "<small>" + fmt(e.d) + (place(e) ? " · " + place(e) : "") + " · " + cd(e.d) + "</small>" + timeLine(e, true) + cardList(e) +
-    (r ? '<p class="recap">' + linkNames(r.txt) + "</p>" : '<p class="recap muted">Le résumé de cet épisode arrive bientôt.</p>') +
+    (r ? faceRow(namesIn(r.txt), 34) + '<p class="recap">' + linkNames(r.txt) + "</p>" : '<p class="recap muted">Le résumé de cet épisode arrive bientôt.</p>') +
     hlBtn(e.k, e.show || "PLE", e.d, "hlbtn side") +
     '<div class="factions"><button class="btn light" data-act="watch"' + itemData(e) + ">Regarder" + (frName(e) ? " sur " + esc(frName(e)) : "") + " ↗</button>" +
     (e.kind === "ple" ? remindBtn(e, "btn glass") : "") +
@@ -391,10 +392,10 @@ export function evPageView(k, show, d, t) {
     '<button class="btn ghost" data-act="share" data-sh="' + esc(JSON.stringify(evCard(e))) + '">↗ Partager</button></div>';
   // l'affiche (matchs annoncés)
   if (!out && Array.isArray(e.card) && e.card.length) {
-    h += "<h2>L’affiche</h2><ul class=\"evcard\">" + e.card.map(m => "<li>" + linkNames(m) + "</li>").join("") + "</ul>";
+    h += "<h2>L’affiche</h2><ul class=\"evcard\">" + e.card.map(m => "<li>" + versus(m, 40) + '<span class="evl">' + linkNames(m) + "</span></li>").join("") + "</ul>";
   } else if (!out && e.kind === "ple") h += "<h2>L’affiche</h2><p class=\"note\">Les matchs seront ajoutés dès qu’ils sont officiellement annoncés.</p>";
   // le résumé d'avant-show (sans spoiler)
-  if (r) h += "<h2>Le résumé d’avant-show</h2><p class=\"evrecap\">" + linkNames(r.txt) + "</p>" + (srcLine(r) ? '<div style="margin:0 16px">' + srcLine(r) + "</div>" : "");
+  if (r) h += "<h2>Le résumé d’avant-show</h2><div class=\"evrecap\">" + faceRow(namesIn(r.txt), 40) + "<p>" + linkNames(r.txt) + "</p></div>" + (srcLine(r) ? '<div style="margin:0 16px">' + srcLine(r) + "</div>" : "");
   else if (!out) h += '<h2>Le résumé d’avant-show</h2><p class="note">Il arrive avec la mise à jour du matin, dans les jours qui précèdent l’événement.</p>';
   // après l'événement : résultats et segments sous spoiler, highlights
   if (out && okDay(e.d)) {

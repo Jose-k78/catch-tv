@@ -12,6 +12,7 @@ import { commentsBox } from "./comments.js";
 import { TECH, techHTML, fillTech } from "../tech.js";
 import { searchEvents, EVENT_WORDS } from "./event.js";
 import { wImageBox } from "./wimage.js";
+import { photoOf, faceImg } from "../photos.js";
 
 // Champs de fiche technique préparés en français dans data/wrestlers.json
 function localTech(w) { const f = {}; if (w) TECH.forEach(t => { if (w[t[0]]) f[t[0]] = w[t[0]]; }); return f; }
@@ -51,9 +52,9 @@ function resultsHTML(q) {
   const archH = norm(q).length >= 3 && !PREVIEW ? '<h2>' + (ev ? "Événements passés" : "Archives") + ' <small class="cnt">Wikipédia</small></h2><div id="evres"><p class="note small">Recherche des événements passés…</p></div>' : "";
   // un nom de show ou d'événement ne propose jamais de fiche catcheur
   const offer = !ev && !names.some(x => norm(x.n) === norm(q));
-  const wH = names.length || offer ? '<h2>Catcheurs et catcheuses</h2><div class="list">' + names.map(x => '<a class="item" href="#/catcheur/' + encodeURIComponent(x.n) + '"' + shAttr({ ty: "w", t: x.n, s: x.s, h: "#/catcheur/" + encodeURIComponent(x.n) }) + '><span class="lbl"><b>' + esc(x.n) + "</b><small>" + esc(x.s) +
+  const wH = names.length || offer ? '<h2>Catcheurs et catcheuses</h2><div class="list">' + names.map(x => '<a class="item" href="#/catcheur/' + encodeURIComponent(x.n) + '"' + shAttr({ ty: "w", t: x.n, s: x.s, h: "#/catcheur/" + encodeURIComponent(x.n) }) + '>' + faceImg(x.n, 40) + '<span class="lbl"><b>' + esc(x.n) + "</b><small>" + esc(x.s) +
     '</small></span><span class="chev">›</span></a>').join("") +
-    (offer ? '<a class="item" href="#/catcheur/' + encodeURIComponent(q.trim()) + '"><span class="lbl"><b>' + esc(q.trim()) +
+    (offer ? '<a class="item" href="#/catcheur/' + encodeURIComponent(q.trim()) + '">' + faceImg(q.trim(), 40) + '<span class="lbl"><b>' + esc(q.trim()) +
     "</b><small>Voir sa fiche : résumé, derniers matchs, matchs de référence</small></span><span class=\"chev\">›</span></a>" : "") + "</div>" : "";
   return ev ? showsH + archH + wH : wH + showsH + archH;
 }
@@ -108,9 +109,11 @@ export function wrestlerView(raw, wt) {
   let h = '<a class="back" href="#/recherche/' + encodeURIComponent(raw) + '">' + ICON.back + " Recherche</a>";
   // fiche résumé
   const wcard = { ty: "w", t: name, s: [k, w && w.era].filter(Boolean).join(" · ") || "Fiche catcheur", h: "#/catcheur/" + encodeURIComponent(name) };
-  h += '<section class="wcard"><div class="wtop"><div class="wtt"><span class="eyebrow">FICHE CATCHEUR</span><h1>' + esc(name) + "</h1>" +
-    (w && w.era ? '<small class="wera">' + esc(w.era) + "</small>" : "") + "</div>" + starBtn(name) + '<button class="iconbtn sharebtn" data-act="share"' + shAttr(wcard) + ' aria-label="Partager">↗</button></div>' +
-    '<div id="wchoose"></div>' + wImageBox(name) +
+  // photo du dossier de l'admin (prioritaire) ; sinon l'image ajoutée par un membre
+  const pic = photoOf(name);
+  h += '<section class="wcard"><div class="wtop' + (pic ? " haspic" : "") + '">' + (pic ? '<img class="wpic" src="' + esc(pic) + '" alt="' + esc(name) + '" onerror="this.remove()">' : "") + '<div class="wtt"><span class="eyebrow">FICHE CATCHEUR</span><h1>' + esc(name) + "</h1>" +
+    (w && w.era ? '<small class="wera">' + esc(w.era) + "</small>" : "") + "</div>" + '<span class="wacts">' + starBtn(name) + '<button class="iconbtn sharebtn" data-act="share"' + shAttr(wcard) + ' aria-label="Partager">↗</button></span></div>' +
+    '<div id="wchoose"></div>' + (pic ? "" : wImageBox(name)) +
     (w && w.txt ? '<p class="wtxt">' + esc(w.txt) + "</p>" : "") +
     '<div id="wiki" class="wiki">' + (PREVIEW ? (w && w.txt ? "" : '<p class="note">Le résumé Wikipédia s’affichera une fois l’app en ligne (l’aperçu bloque les connexions vers d’autres sites).</p>') : '<p class="note">Recherche de son résumé…</p>') + "</div>" +
     '<div class="wfacts"><div><small>Promotion</small><b id="wpromo">' + esc(k || "–") + "</b></div>" +
@@ -132,8 +135,11 @@ export function wrestlerView(raw, wt) {
   const ref = (w && Array.isArray(w.ref) ? w.ref : []).slice(0, 5), kk = k && S.P[k] ? k : "WWE";
   h += "<h2>Ses 5 matchs de référence</h2>";
   if (ref.length) h += '<div class="list">' + ref.map(m => {
+    // vidéo officielle connue -> on la regarde dans l'app ; sinon simple recherche YouTube du combat complet,
+    // et c'est le membre qui choisit la vidéo
+    const q = m.t.replace(/^[^:]{1,80} : (?=.* (?:contre|vs) )/, "").replace(/ — .*$/, "").replace(/ contre /g, " vs ").replace(/ et /g, " & ") + (m.ev ? " " + m.ev : "") + " full match";
     const go = okVid(m.v) ? '<button class="btn small" data-act="play" data-id="' + esc(m.v) + '" data-t="' + esc(m.t) + '">▶ Voir</button>'
-      : '<a class="btn small ghost" href="' + esc(ytSearch(kk, m.t.replace(/ contre /g, " vs ").replace(/ — .*$/, "") + " highlights")) + '" target="_blank" rel="noopener">Chercher ↗</a>';
+      : '<a class="btn small ghost" href="https://www.youtube.com/results?search_query=' + encodeURIComponent(q) + '" target="_blank" rel="noopener">🔎 Chercher le match</a>';
     return '<div class="item"><span class="lbl"><b>' + linkNames(m.t) + "</b><small>" + esc(m.ev || "") + "</small></span>" + go + "</div>";
   }).join("") + "</div>";
   else h += '<p class="note">Ses matchs de référence seront ajoutés lors d’une prochaine mise à jour' + (S.user ? " (ajoute-le à tes favoris pour qu’il soit suivi en priorité)" : "") + ".</p>";

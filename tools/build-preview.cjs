@@ -13,6 +13,19 @@ const r = await esbuild.build({
       const txt = fs.readFileSync(a.path, "utf8").replace(/"(img\/logos\/[\w.-]+\.png)"/g, (m, f) => '"data:image/png;base64,' + fs.readFileSync(path.join(root, f)).toString("base64") + '"');
       return { contents: txt, loader: "json" };
     });
+    // photos des catcheurs : seulement celles des noms cités dans les données de démo, en petit (aperçu léger)
+    b.onLoad({ filter: /photos\.json$/ }, async a => {
+      const sharp = require("/opt/npm-tools/node_modules/sharp");
+      const key = s => " " + String(s).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim() + " ";
+      const txt = key(["calendar", "polls", "recaps", "highlights", "titles", "storylines", "matches", "wrestlers"].map(f => { try { return fs.readFileSync(path.join(root, "data", f + ".json"), "utf8"); } catch (e) { return ""; } }).join(" "));
+      const P = JSON.parse(fs.readFileSync(a.path, "utf8")), items = {};
+      for (const s of Object.keys(P.items)) {
+        const it = P.items[s];
+        if (![s.replace(/-/g, " ")].concat(it.n || []).some(n => txt.indexOf(key(n)) >= 0)) continue;
+        try { items[s] = { f: "data:image/webp;base64," + (await sharp(path.join(root, "img/catcheurs", it.f)).resize(120, 120).webp({ quality: 70 }).toBuffer()).toString("base64"), n: it.n }; } catch (e) {}
+      }
+      return { contents: JSON.stringify({ updated: P.updated, items }), loader: "json" };
+    });
   } }],
 });
 let html = fs.readFileSync(path.join(root, "index.html"), "utf8");

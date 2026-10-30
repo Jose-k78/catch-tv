@@ -1,11 +1,15 @@
 # Robot TCC TV : toutes les 30 minutes, copie l'actu (flux RSS des sites français) et les vidéos des chaînes YouTube officielles
 # dans data/feed.json, puis envoie les notifications (infos, favoris, rappel des feuds) aux membres qui les ont activées.
 # Gratuit (dépôt public), sans intelligence artificielle. Les notifications demandent le secret FIREBASE_SA (sinon elles sont sautées).
+# Il tient aussi à jour la liste des photos des catcheurs (data/photos.json) dès qu'une photo est ajoutée dans img/catcheurs/.
 name: Robot TCC TV (actu et vidéos)
 on:
   schedule:
     - cron: "7,37 * * * *"
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["img/catcheurs/**"]
 permissions:
   contents: write
 concurrency:
@@ -20,22 +24,27 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Photos des catcheurs
+        continue-on-error: true
+        run: node .github/scripts/photos.mjs
       - name: Actu et vidéos
+        if: github.event_name != 'push'
         run: node .github/scripts/robot.mjs
         env:
           ROBOT_FORCE: ${{ github.event_name == 'workflow_dispatch' }}
       - name: Notifications
+        if: github.event_name != 'push'
         continue-on-error: true
         run: node .github/scripts/notify.mjs
         env:
           FIREBASE_SA: ${{ secrets.FIREBASE_SA }}
       - name: Envoi sur le dépôt
         run: |
-          if [ -z "$(git status --porcelain -- data/feed.json data/push-state.json)" ]; then echo "Rien de neuf"; exit 0; fi
+          if [ -z "$(git status --porcelain -- data/feed.json data/push-state.json data/photos.json img/catcheurs)" ]; then echo "Rien de neuf"; exit 0; fi
           git config user.name "TCC TV robot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/feed.json data/push-state.json
-          git commit -m "Robot TCC TV : actu et vidéos"
+          git add -A data/feed.json data/push-state.json data/photos.json img/catcheurs
+          git commit -m "Robot TCC TV : actu, vidéos et photos"
           for i in 1 2 3; do
             git pull --rebase origin main && git push origin main && exit 0
             sleep 7

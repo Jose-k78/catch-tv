@@ -9,9 +9,9 @@ export async function loadContent() {
     get("data/calendar.json", { promotions: {} }), get("news.json", { items: [], updated: "" }),
     get("data/recaps.json", { items: {} }), get("data/matches.json", { items: [] })]);
   const [titles, hl, wr, st] = await Promise.all([get("data/titles.json", { titles: [] }), get("data/highlights.json", { items: {} }), get("data/wrestlers.json", { items: {} }), get("data/storylines.json", { items: [] }), ]);
-  const [ro, so, po, me, fe] = await Promise.all([get("data/rosters.json", { items: {} }), get("data/sources.json", { items: [] }), get("data/polls.json", { items: [] }), get("data/media.json", { bg: {}, music: null }), feedGet(get)]);
+  const [ro, so, po, me, fe, ph] = await Promise.all([get("data/rosters.json", { items: {} }), get("data/sources.json", { items: [] }), get("data/polls.json", { items: [] }), get("data/media.json", { bg: {}, music: null }), feedGet(get), get("data/photos.json", { items: {} })]);
   return { P: cal.promotions || {}, news: news, recaps: recaps.items || {}, matches: matches.items || [], titles: titles.titles || [], titlesUpdated: titles.updated || "",
-    highlights: hl.items || {}, wrestlers: wr.items || {}, storylines: st.items || [], rosters: ro.items || {}, rostersSrc: ro.src || {}, sources: so.items || [], polls: po.items || [], media: me || { bg: {}, music: null }, feed: fe || { items: [], yt: {} },
+    highlights: hl.items || {}, wrestlers: wr.items || {}, storylines: st.items || [], rosters: ro.items || {}, rostersSrc: ro.src || {}, sources: so.items || [], polls: po.items || [], media: me || { bg: {}, music: null }, feed: fe || { items: [], yt: {} }, photos: (ph && ph.items) || {},
     // dates de mise à jour de chaque fichier (page « État des mises à jour »)
     updated: { news: news.updated || "", recaps: recaps.updated || "", calendar: cal.updated || "", titles: titles.updated || "", highlights: hl.updated || "",
       wrestlers: wr.updated || "", storylines: st.updated || "", rosters: ro.updated || "", matches: matches.updated || "", polls: po.updated || "" } };

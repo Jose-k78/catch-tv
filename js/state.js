@@ -48,6 +48,7 @@ export const S = {
   areplies: {},          // réponses sous une note ou un commentaire (id d'activité -> [réponses])
   athread: {},           // activités ouvertes qui ne sont plus dans les 40 dernières
   media: { bg: {}, music: null }, // fonds animés des onglets et musique (data/media.json)
+  photos: {},            // photos des catcheurs choisies par l'admin (data/photos.json -> img/catcheurs/)
   isAdmin: false,
   demo: false,
   authReady: false,

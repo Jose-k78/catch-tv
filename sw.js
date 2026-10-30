@@ -7,7 +7,7 @@ self.addEventListener("push", e => {
   let p = {};
   try { p = e.data ? e.data.json() : {}; } catch (x) { p = { data: { title: "TCC TV", body: e.data ? e.data.text() : "" } }; }
   const d = p.data || p.notification || p;
-  const opt = { body: d.body || "", icon: "icons/icon-192.png", badge: "icons/icon-192.png", data: { url: d.url || "#/" } };
+  const opt = { body: d.body || "", icon: "icons/icon-192.png", badge: "icons/badge-96.png", data: { url: d.url || "#/" } };
   if (d.tag) { opt.tag = d.tag; opt.renotify = true; }
   e.waitUntil(self.registration.showNotification(d.title || "TCC TV", opt));
 });
