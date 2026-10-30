@@ -1,5 +1,5 @@
 {
- "at": "2026-10-30T02:44:21.858Z",
+ "at": "2026-10-30T04:43:19.970Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -62,7 +62,8 @@
   "a:https://www.catch-newz.com/international/resultats/60814-resultats-du-jour-2-du-hop-spooktober-tour-2026": "2026-10-30",
   "a:https://www.catch-newz.com/international/resultats/60817-resultats-de-ott-pure-deadly": "2026-10-30",
   "a:https://www.catch-newz.com/international/resultats/60818-resultats-du-jour-3-de-dg-the-gate-of-victory-2026": "2026-10-30",
-  "a:https://www.catch-newz.com/wwe/newz/60819-wwe-smackdown-du-30-octobre-2026-heure-et-chaine-pour-regarder-le-show-en-direct": "2026-10-30"
+  "a:https://www.catch-newz.com/wwe/newz/60819-wwe-smackdown-du-30-octobre-2026-heure-et-chaine-pour-regarder-le-show-en-direct": "2026-10-30",
+  "a:https://www.catch-newz.com/international/resultats/60820-tna-impact-29-octobre-2026": "2026-10-30"
  },
  "pend": {
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -81,6 +82,14 @@
     "url": "https://www.catch-newz.com/wwe/newz/60819-wwe-smackdown-du-30-octobre-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
     "tag": "art",
     "short": "WWE SmackDown du 30 octobre 2026 : Heure et chaine pour regarder le show en direct"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Catch-Newz",
+    "body": "Résultats de TNA Impact du 29 octobre 2026",
+    "url": "https://www.catch-newz.com/international/resultats/60820-tna-impact-29-octobre-2026",
+    "tag": "art",
+    "short": "Résultats de TNA Impact du 29 octobre 2026"
    }
   ]
  }

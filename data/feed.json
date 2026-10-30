@@ -1,5 +1,5 @@
 {
- "at": "2026-10-30T02:44:21.810Z",
+ "at": "2026-10-30T04:43:19.918Z",
  "items": [
   {
    "t": "WWE SmackDown du 30 octobre 2026 : Heure et chaine pour regarder le show en direct",
@@ -51,6 +51,16 @@
    "s": "Catch-Newz",
    "d": "2026-10-30",
    "tags": []
+  },
+  {
+   "t": "Résultats de TNA Impact du 29 octobre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/60820-tna-impact-29-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-29",
+   "tags": [
+    "TNA",
+    "Impact"
+   ]
   },
   {
    "t": "Preview : ROH du 29 octobre 2026",
@@ -300,6 +310,7 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/60789-aew-dynamite-28-octobre-2026",
+   "https://www.catch-newz.com/international/resultats/60820-tna-impact-29-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60819-wwe-smackdown-du-30-octobre-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
    "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/aew/newz/60808-preview-roh-du-29-octobre-2026",
@@ -346,7 +357,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "5 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
