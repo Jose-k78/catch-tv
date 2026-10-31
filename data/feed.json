@@ -1,5 +1,5 @@
 {
- "at": "2026-10-31T08:16:59.479Z",
+ "at": "2026-10-31T10:10:37.808Z",
  "items": [
   {
    "t": "Carte de Sendai Girls Pro Wrestling du 31 octobre 2026",
@@ -7,6 +7,16 @@
    "s": "Catch-Newz",
    "d": "2026-10-31",
    "tags": []
+  },
+  {
+   "t": "WWE SmackDown du 30 octobre : Sami Zayn vs. Trick Williams, Cody Rhodes et son pied vengeur",
+   "u": "https://www.voxcatch.fr/2026/10/31/resultats-wwe-smackdown-30-octobre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-10-31",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
   },
   {
    "t": "JBL : « Gunther est un catcheur de classe mondiale »",
@@ -706,7 +716,7 @@
  },
  "diag": {
   "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
-  "VOXcatch": "6 articles (7 j)",
+  "VOXcatch": "7 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
