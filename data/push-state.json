@@ -1,5 +1,5 @@
 {
- "at": "2026-10-31T00:52:18.695Z",
+ "at": "2026-10-31T02:44:11.732Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -98,7 +98,8 @@
   "a:https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026": "2026-10-31",
   "a:https://www.catch-newz.com/international/resultats/60838-resultats-du-jour-5-de-la-njpw-super-junior-tag-league-2026": "2026-10-31",
   "a:https://www.catch-newz.com/culture/gossip/60846-cm-punk-a-fete-ses-48-ans-a-la-salle-de-sport": "2026-10-31",
-  "a:https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026": "2026-10-31"
+  "a:https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026": "2026-10-31",
+  "a:https://www.catch-newz.com/wwe/newz/60849-wwe-smackdown-the-demon-finn-balor-est-de-retour-pour-halloween": "2026-10-31"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -125,6 +126,14 @@
     "url": "#/",
     "tag": "art",
     "short": "2 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Catch-Newz",
+    "body": "WWE SmackDown : The Demon Finn Balor est de retour pour Halloween !",
+    "url": "https://www.catch-newz.com/wwe/newz/60849-wwe-smackdown-the-demon-finn-balor-est-de-retour-pour-halloween",
+    "tag": "art",
+    "short": "WWE SmackDown : The Demon Finn Balor est de retour pour Halloween !"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -151,6 +160,14 @@
     "url": "#/",
     "tag": "art",
     "short": "2 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Catch-Newz",
+    "body": "WWE SmackDown : The Demon Finn Balor est de retour pour Halloween !",
+    "url": "https://www.catch-newz.com/wwe/newz/60849-wwe-smackdown-the-demon-finn-balor-est-de-retour-pour-halloween",
+    "tag": "art",
+    "short": "WWE SmackDown : The Demon Finn Balor est de retour pour Halloween !"
    }
   ]
  }

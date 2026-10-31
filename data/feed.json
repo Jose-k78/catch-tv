@@ -1,6 +1,16 @@
 {
- "at": "2026-10-31T01:53:41.723Z",
+ "at": "2026-10-31T02:44:11.685Z",
  "items": [
+  {
+   "t": "WWE SmackDown : The Demon Finn Balor est de retour pour Halloween !",
+   "u": "https://www.catch-newz.com/wwe/newz/60849-wwe-smackdown-the-demon-finn-balor-est-de-retour-pour-halloween",
+   "s": "Catch-Newz",
+   "d": "2026-10-31",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
+  },
   {
    "t": "Carte de Sendai Girls Pro Wrestling du 31 octobre 2026",
    "u": "https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
@@ -255,15 +265,6 @@
    ]
   },
   {
-   "t": "Résultats de WWE Road To Survivor Series du 29 octobre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/60823-resultats-de-wwe-road-to-survivor-series-du-29-octobre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-29",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
    "t": "AEW Dynamite du 28 octobre : Queen Aminata championne TBS, Ospreay vs. Fletcher à Full Gear",
    "u": "https://www.voxcatch.fr/2026/10/29/resultats-aew-dynamite-28-octobre-2026/",
    "s": "VOXcatch",
@@ -271,6 +272,15 @@
    "tags": [
     "AEW",
     "Dynamite"
+   ]
+  },
+  {
+   "t": "Résultats de WWE Road To Survivor Series du 29 octobre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/60823-resultats-de-wwe-road-to-survivor-series-du-29-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-29",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -531,6 +541,42 @@
     "id": "I-WI3arBqDM",
     "t": "NXT Champion Grayson Waller contre Tony D’Angelo"
    }
+  ],
+  "WWE|SmackDown|2026-10-30": [
+   {
+    "id": "lZMSLqmuvaU",
+    "t": "Sami Zayn contre Trick Williams"
+   },
+   {
+    "id": "nfrsKUHrmKI",
+    "t": "CM Punk and Kevin Owens prepare to No Holds Barred: SmackDown highlights, Oct. 30, 2026"
+   },
+   {
+    "id": "jZl5vbHFpjw",
+    "t": "Danhausen raises The Demon to put Gunther through announce table: SmackDown highlights"
+   },
+   {
+    "id": "sCd_ZzpuCuk",
+    "t": "Jade Cargill steals a win over Tatum Paxley: SmackDown highlights, Oct. 30, 2026",
+    "sp": true
+   },
+   {
+    "id": "h76JfeGwH38",
+    "t": "Chelsea Green defeats Nikki Bella to retain WWE Women’s Title: SmackDown highlights, Oct. 30, 2026",
+    "sp": true
+   },
+   {
+    "id": "7hR2OyHtWlM",
+    "t": "The Judgment Day repels Tiffany Stratton’s cash-in attempt: SmackDown highlights, Oct. 30, 2026"
+   },
+   {
+    "id": "UUbc7DtFsDA",
+    "t": "Cody Rhodes: “The Last Man Standing will be the only man punting. That’s me.”: SmackDown highlights"
+   },
+   {
+    "id": "NtpjqSDRfFE",
+    "t": "Danhausen give a very nice, very evil SmackDown introduction: SmackDown highlights, Oct. 30, 2026"
+   }
   ]
  },
  "rss": {
@@ -541,11 +587,12 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/newz/60849-wwe-smackdown-the-demon-finn-balor-est-de-retour-pour-halloween",
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
    "https://www.catch-newz.com/aew/resultats/60839-resultats-de-roh-du-29-octobre-2026",
-   "https://www.catch-newz.com/wwe/resultats/60823-resultats-de-wwe-road-to-survivor-series-du-29-octobre-2026",
    "https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
+   "https://www.catch-newz.com/wwe/resultats/60823-resultats-de-wwe-road-to-survivor-series-du-29-octobre-2026",
    "https://www.catch-newz.com/culture/gossip/60846-cm-punk-a-fete-ses-48-ans-a-la-salle-de-sport",
    "https://www.catch-newz.com/international/newz/60844-carte-de-lol-mischief-night-mayhem-5",
    "https://www.catch-newz.com/international/newz/60845-carte-de-new-texas-pro-wrestling-8-year-anniversary",
@@ -616,7 +663,7 @@
  "diag": {
   "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "6 articles (7 j)",
-  "YouTube WWE": "0 nouvelles vidéos",
+  "YouTube WWE": "8 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
