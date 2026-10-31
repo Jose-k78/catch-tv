@@ -220,6 +220,16 @@
    ],
    "on": true,
    "note": ""
+  },
+  {
+   "n": "Catch arena catcheur",
+   "u": "https://www.catch-arena.com/liste-catcheurs",
+   "use": [
+    "fiches",
+    "archives"
+   ],
+   "on": true,
+   "note": ""
   }
  ]
 }
