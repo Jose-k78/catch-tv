@@ -1,5 +1,5 @@
 {
- "at": "2026-10-31T22:34:46.158Z",
+ "at": "2026-10-31T23:04:59.428Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -131,7 +131,8 @@
   "a:https://www.catch-newz.com/international/newz/60861-carte-de-cmll-sabado-de-coliseo-du-31-octobre-2026-dia-de-muertos": "2026-10-31",
   "a:https://www.catch-arena.com/adam-copeland-aew-wrestler-a-maple-leaf-gardens-un-reve-enfin-realise/": "2026-10-31",
   "a:https://www.catch-arena.com/wwe-pourrait-ajouter-randy-orton-iyo-sky-et-les-usos-a-nxt-face-a-aew-blood-guts/": "2026-10-31",
-  "a:https://www.catch-newz.com/aew/resultats/60860-resultats-de-cmll-viernes-espectacular-du-30-octobre-2026-dia-de-muertos-rey-del-inframundo": "2026-10-31"
+  "a:https://www.catch-newz.com/aew/resultats/60860-resultats-de-cmll-viernes-espectacular-du-30-octobre-2026-dia-de-muertos-rey-del-inframundo": "2026-10-31",
+  "a:https://www.catch-newz.com/international/newz/60864-carte-de-hoh-a-nightmare-on-elmwood": "2026-11-01"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -142,6 +143,14 @@
     "url": "#/",
     "tag": "art",
     "short": "6 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Catch-Newz",
+    "body": "Carte de HOH A Nightmare On Elmwood",
+    "url": "https://www.catch-newz.com/international/newz/60864-carte-de-hoh-a-nightmare-on-elmwood",
+    "tag": "art",
+    "short": "Carte de HOH A Nightmare On Elmwood"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -152,6 +161,14 @@
     "url": "#/",
     "tag": "art",
     "short": "6 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Catch-Newz",
+    "body": "Carte de HOH A Nightmare On Elmwood",
+    "url": "https://www.catch-newz.com/international/newz/60864-carte-de-hoh-a-nightmare-on-elmwood",
+    "tag": "art",
+    "short": "Carte de HOH A Nightmare On Elmwood"
    }
   ]
  }
