@@ -1,6 +1,26 @@
 {
- "at": "2026-10-31T13:42:24.168Z",
+ "at": "2026-10-31T15:37:07.120Z",
  "items": [
+  {
+   "t": "Carte de WWE NXT Halloween Havoc 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/60271-carte-wwe-nxt-halloween-havoc-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-31",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
+   "t": "Preview : AEW Collision du 31 octobre 2026",
+   "u": "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-31",
+   "tags": [
+    "AEW",
+    "Collision"
+   ]
+  },
   {
    "t": "Carte de Sendai Girls Pro Wrestling du 31 octobre 2026",
    "u": "https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
@@ -229,16 +249,6 @@
    "d": "2026-10-30",
    "tags": [
     "WWE"
-   ]
-  },
-  {
-   "t": "Preview : AEW Collision du 31 octobre 2026",
-   "u": "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-30",
-   "tags": [
-    "AEW",
-    "Collision"
    ]
   },
   {
@@ -513,16 +523,6 @@
    "s": "VOXcatch",
    "d": "2026-10-26",
    "tags": []
-  },
-  {
-   "t": "WWE SmackDown du 23 octobre : Cody Rhodes vs. Randy Orton à Crown Jewel, Nouvelles championnes par équipe",
-   "u": "https://www.voxcatch.fr/2026/10/24/resultats-wwe-smackdown-23-octobre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-10-24",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
   }
  ],
  "yt": {
@@ -643,8 +643,10 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/newz/60271-carte-wwe-nxt-halloween-havoc-2026",
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
+   "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/aew/resultats/60839-resultats-de-roh-du-29-octobre-2026",
    "https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60848-jbl-gunther-est-un-catcheur-de-classe-mondiale",
@@ -672,7 +674,6 @@
    "https://www.catch-newz.com/wwe/newz/60827-lannee-2026-de-charlotte-flair-est-elle-une-reussite",
    "https://www.catch-newz.com/international/newz/60791-leedz-lewis-vs-big-sabri-j-le-couronnement-du-tout-premier-champion-lwa",
    "https://www.catch-newz.com/wwe/newz/60825-jevon-evans-veut-un-match-pour-le-titre-world-heavyweight-a-wrestlemania-avant-ses-24-ans",
-   "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/aew/newz/60808-preview-roh-du-29-octobre-2026",
    "https://www.catch-newz.com/aew/resultats/60789-aew-dynamite-28-octobre-2026",
    "https://www.catch-newz.com/aew/resultats/60803-spoilers-aew-collision-31-octobre-2026",
@@ -721,12 +722,12 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "7 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
-  "YouTube CMLL": "1 nouvelles vidéos",
+  "YouTube CMLL": "0 nouvelles vidéos",
   "YouTube TNA": "0 nouvelles vidéos",
   "YouTube NJPW": "0 nouvelles vidéos",
   "YouTube Stardom": "0 nouvelles vidéos",
