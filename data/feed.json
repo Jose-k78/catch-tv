@@ -1,6 +1,26 @@
 {
- "at": "2026-10-31T03:40:43.366Z",
+ "at": "2026-10-31T04:39:51.283Z",
  "items": [
+  {
+   "t": "Michael Chandler de l'UFC participera à un match à WWE NXT le 4 novembre",
+   "u": "https://www.catch-newz.com/wwe/newz/60850-michael-chandler-de-lufc-participera-a-un-match-a-wwe-nxt-le-4-novembre",
+   "s": "Catch-Newz",
+   "d": "2026-10-31",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
+   "t": "Tatum Paxley s'invite au NXT Halloween Havoc 2026 ce samedi 31 octobre",
+   "u": "https://www.catch-newz.com/wwe/newz/60847-tatum-paxley-sinvite-au-nxt-halloween-havoc-2026-ce-samedi-31-octobre",
+   "s": "Catch-Newz",
+   "d": "2026-10-31",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
   {
    "t": "Carte de Sendai Girls Pro Wrestling du 31 octobre 2026",
    "u": "https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
@@ -593,6 +613,8 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60850-michael-chandler-de-lufc-participera-a-un-match-a-wwe-nxt-le-4-novembre",
+   "https://www.catch-newz.com/wwe/newz/60847-tatum-paxley-sinvite-au-nxt-halloween-havoc-2026-ce-samedi-31-octobre",
    "https://www.catch-newz.com/aew/resultats/60839-resultats-de-roh-du-29-octobre-2026",
    "https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60849-wwe-smackdown-the-demon-finn-balor-est-de-retour-pour-halloween",
@@ -665,9 +687,9 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "6 articles (7 j)",
-  "YouTube WWE": "1 nouvelles vidéos",
+  "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
