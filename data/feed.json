@@ -1,6 +1,15 @@
 {
- "at": "2026-10-31T20:06:00.712Z",
+ "at": "2026-10-31T20:35:46.297Z",
  "items": [
+  {
+   "t": "Piper Niven de retour à l'entraînement au Performance Center",
+   "u": "https://www.catch-newz.com/wwe/newz/60859-piper-niven-de-retour-a-lentrainement-au-performance-center",
+   "s": "Catch-Newz",
+   "d": "2026-10-31",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Preview : AAA Heroes Inmortales du 31 octobre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/60854-preview-aaa-heroes-inmortales-31-octobre-2026",
@@ -29,6 +38,15 @@
    "tags": [
     "WWE",
     "SmackDown"
+   ]
+  },
+  {
+   "t": "Drew McIntyre revient sur sa chute marquante à Hell in a Cell 2020",
+   "u": "https://www.catch-arena.com/drew-mcintyre-revient-sur-sa-chute-marquante-a-hell-in-a-cell-2020/",
+   "s": "Catch Arena",
+   "d": "2026-10-31",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -519,20 +537,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Résultats du jour 1 de RCW Rise Of Legends",
-   "u": "https://www.catch-newz.com/international/resultats/60816-resultats-du-jour-1-de-rcw-rise-of-legends",
-   "s": "Catch-Newz",
-   "d": "2026-10-29",
-   "tags": []
-  },
-  {
-   "t": "Résultats de NOAH WRESTLE ODYSSEY Ⅱ",
-   "u": "https://www.catch-newz.com/international/resultats/60813-resultats-de-noah-wrestle-odyssey-ii",
-   "s": "Catch-Newz",
-   "d": "2026-10-29",
-   "tags": []
   }
  ],
  "yt": {
@@ -670,6 +674,7 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60859-piper-niven-de-retour-a-lentrainement-au-performance-center",
    "https://www.catch-newz.com/wwe/newz/60854-preview-aaa-heroes-inmortales-31-octobre-2026",
    "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60858-big-cass-confirme-que-son-retour-a-la-wwe-a-ete-difficile-sans-enzo-amore",
@@ -751,11 +756,11 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
-  "YouTube AEW": "1 nouvelles vidéos",
+  "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
   "YouTube TNA": "0 nouvelles vidéos",
