@@ -1,6 +1,16 @@
 {
- "at": "2026-10-31T16:09:12.320Z",
+ "at": "2026-10-31T17:07:11.894Z",
  "items": [
+  {
+   "t": "Des nouvelles de Jeff Hardy après l'attaque à la hache à TNA Impact",
+   "u": "https://www.catch-newz.com/international/newz/60856-des-nouvelles-de-jeff-hardy-apres-lattaque-a-la-hache-a-tna-impact",
+   "s": "Catch-Newz",
+   "d": "2026-10-31",
+   "tags": [
+    "TNA",
+    "Impact"
+   ]
+  },
   {
    "t": "Preview : AAA Heroes Inmortales du 31 octobre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/60854-preview-aaa-heroes-inmortales-31-octobre-2026",
@@ -22,13 +32,6 @@
    ]
   },
   {
-   "t": "Carte de Sendai Girls Pro Wrestling du 31 octobre 2026",
-   "u": "https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": []
-  },
-  {
    "t": "WWE SmackDown du 30 octobre : Sami Zayn vs. Trick Williams, Cody Rhodes et son pied vengeur",
    "u": "https://www.voxcatch.fr/2026/10/31/resultats-wwe-smackdown-30-octobre-2026/",
    "s": "VOXcatch",
@@ -37,6 +40,13 @@
     "WWE",
     "SmackDown"
    ]
+  },
+  {
+   "t": "Carte de Sendai Girls Pro Wrestling du 31 octobre 2026",
+   "u": "https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-31",
+   "tags": []
   },
   {
    "t": "Carte de WWE NXT Halloween Havoc 2026",
@@ -516,16 +526,6 @@
     "WWE",
     "Raw"
    ]
-  },
-  {
-   "t": "Résultats de WWE NXT du 27 octobre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/60759-wwe-nxt-27-octobre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-27",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
   }
  ],
  "yt": {
@@ -648,6 +648,7 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
+   "https://www.catch-newz.com/international/newz/60856-des-nouvelles-de-jeff-hardy-apres-lattaque-a-la-hache-a-tna-impact",
    "https://www.catch-newz.com/wwe/newz/60854-preview-aaa-heroes-inmortales-31-octobre-2026",
    "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/aew/resultats/60839-resultats-de-roh-du-29-octobre-2026",
