@@ -211,6 +211,15 @@
    ],
    "on": true,
    "note": ""
+  },
+  {
+   "n": "Catch Arena",
+   "u": "https://www.catch-arena.com/",
+   "use": [
+    "actu"
+   ],
+   "on": true,
+   "note": ""
   }
  ]
 }
