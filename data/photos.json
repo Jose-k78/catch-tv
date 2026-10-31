@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-30",
+ "updated": "2026-10-31",
  "items": {
   "aaron-wolf": {
    "f": "aaron-wolf.webp",
@@ -14,13 +14,13 @@
    ]
   },
   "ace-austin": {
-   "f": "ace-austin.webp",
+   "f": "ace-austin-v3.webp",
    "n": [
     "Ace Austin"
    ],
    "v": [
-    "ace-austin-v2.webp",
-    "ace-austin-v3.webp"
+    "ace-austin.webp",
+    "ace-austin-v2.webp"
    ]
   },
   "action-andretti": {
