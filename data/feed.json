@@ -1,14 +1,14 @@
 {
- "at": "2026-10-31T15:37:07.120Z",
+ "at": "2026-10-31T16:09:12.320Z",
  "items": [
   {
-   "t": "Carte de WWE NXT Halloween Havoc 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/60271-carte-wwe-nxt-halloween-havoc-2026",
+   "t": "Preview : AAA Heroes Inmortales du 31 octobre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/60854-preview-aaa-heroes-inmortales-31-octobre-2026",
    "s": "Catch-Newz",
    "d": "2026-10-31",
    "tags": [
     "WWE",
-    "NXT"
+    "AAA"
    ]
   },
   {
@@ -36,6 +36,16 @@
    "tags": [
     "WWE",
     "SmackDown"
+   ]
+  },
+  {
+   "t": "Carte de WWE NXT Halloween Havoc 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/60271-carte-wwe-nxt-halloween-havoc-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-31",
+   "tags": [
+    "WWE",
+    "NXT"
    ]
   },
   {
@@ -516,13 +526,6 @@
     "WWE",
     "NXT"
    ]
-  },
-  {
-   "t": "The FinalSlam : Les places du show d’AmineMaTue en vente ce lundi",
-   "u": "https://www.voxcatch.fr/2026/10/26/the-finalslam-places-vente-date/",
-   "s": "VOXcatch",
-   "d": "2026-10-26",
-   "tags": []
   }
  ],
  "yt": {
@@ -643,12 +646,13 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/wwe/newz/60271-carte-wwe-nxt-halloween-havoc-2026",
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60854-preview-aaa-heroes-inmortales-31-octobre-2026",
    "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/aew/resultats/60839-resultats-de-roh-du-29-octobre-2026",
    "https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60271-carte-wwe-nxt-halloween-havoc-2026",
    "https://www.catch-newz.com/wwe/newz/60848-jbl-gunther-est-un-catcheur-de-classe-mondiale",
    "https://www.catch-newz.com/international/newz/60851-lj-cleary-sera-absent-pour-une-bonne-partie-de-2027",
    "https://www.catch-newz.com/wwe/newz/60850-michael-chandler-de-lufc-participera-a-un-match-a-wwe-nxt-le-4-novembre",
