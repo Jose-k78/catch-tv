@@ -1,6 +1,13 @@
 {
- "at": "2026-10-31T04:39:51.283Z",
+ "at": "2026-10-31T05:36:30.056Z",
  "items": [
+  {
+   "t": "Carte de Sendai Girls Pro Wrestling du 31 octobre 2026",
+   "u": "https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-31",
+   "tags": []
+  },
   {
    "t": "Michael Chandler de l'UFC participera à un match à WWE NXT le 4 novembre",
    "u": "https://www.catch-newz.com/wwe/newz/60850-michael-chandler-de-lufc-participera-a-un-match-a-wwe-nxt-le-4-novembre",
@@ -20,13 +27,6 @@
     "WWE",
     "NXT"
    ]
-  },
-  {
-   "t": "Carte de Sendai Girls Pro Wrestling du 31 octobre 2026",
-   "u": "https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": []
   },
   {
    "t": "WWE SmackDown : The Demon Finn Balor est de retour pour Halloween !",
@@ -613,10 +613,10 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
-   "https://www.catch-newz.com/wwe/newz/60850-michael-chandler-de-lufc-participera-a-un-match-a-wwe-nxt-le-4-novembre",
-   "https://www.catch-newz.com/wwe/newz/60847-tatum-paxley-sinvite-au-nxt-halloween-havoc-2026-ce-samedi-31-octobre",
    "https://www.catch-newz.com/aew/resultats/60839-resultats-de-roh-du-29-octobre-2026",
    "https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60850-michael-chandler-de-lufc-participera-a-un-match-a-wwe-nxt-le-4-novembre",
+   "https://www.catch-newz.com/wwe/newz/60847-tatum-paxley-sinvite-au-nxt-halloween-havoc-2026-ce-samedi-31-octobre",
    "https://www.catch-newz.com/wwe/newz/60849-wwe-smackdown-the-demon-finn-balor-est-de-retour-pour-halloween",
    "https://www.catch-newz.com/wwe/resultats/60823-resultats-de-wwe-road-to-survivor-series-du-29-octobre-2026",
    "https://www.catch-newz.com/culture/gossip/60846-cm-punk-a-fete-ses-48-ans-a-la-salle-de-sport",
@@ -687,7 +687,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "6 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
