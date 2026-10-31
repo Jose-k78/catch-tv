@@ -1,14 +1,15 @@
 {
- "updated": "2026-10-28",
+ "updated": "2026-10-31",
  "items": [
   {
    "n": "The SmackDown Hotel",
    "u": "https://www.thesmackdownhotel.com/",
    "use": [
-    "rosters",
-    "titres",
-    "fiches",
     "resultats",
+    "titres",
+    "rosters",
+    "fiches",
+    "storylines",
     "archives"
    ],
    "on": true,
