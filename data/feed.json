@@ -1,16 +1,16 @@
 {
- "at": "2026-10-31T00:52:18.645Z",
+ "at": "2026-10-31T01:53:41.723Z",
  "items": [
   {
-   "t": "CM Punk a fêté ses 48 ans à la salle de sport",
-   "u": "https://www.catch-newz.com/culture/gossip/60846-cm-punk-a-fete-ses-48-ans-a-la-salle-de-sport",
+   "t": "Carte de Sendai Girls Pro Wrestling du 31 octobre 2026",
+   "u": "https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
    "s": "Catch-Newz",
    "d": "2026-10-31",
    "tags": []
   },
   {
-   "t": "Carte de Sendai Girls Pro Wrestling du 31 octobre 2026",
-   "u": "https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
+   "t": "CM Punk a fêté ses 48 ans à la salle de sport",
+   "u": "https://www.catch-newz.com/culture/gossip/60846-cm-punk-a-fete-ses-48-ans-a-la-salle-de-sport",
    "s": "Catch-Newz",
    "d": "2026-10-31",
    "tags": []
@@ -543,10 +543,10 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
-   "https://www.catch-newz.com/culture/gossip/60846-cm-punk-a-fete-ses-48-ans-a-la-salle-de-sport",
    "https://www.catch-newz.com/aew/resultats/60839-resultats-de-roh-du-29-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/60823-resultats-de-wwe-road-to-survivor-series-du-29-octobre-2026",
    "https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
+   "https://www.catch-newz.com/culture/gossip/60846-cm-punk-a-fete-ses-48-ans-a-la-salle-de-sport",
    "https://www.catch-newz.com/international/newz/60844-carte-de-lol-mischief-night-mayhem-5",
    "https://www.catch-newz.com/international/newz/60845-carte-de-new-texas-pro-wrestling-8-year-anniversary",
    "https://www.catch-newz.com/international/newz/60843-carte-de-iwrg-castillo-del-terror-2026",
@@ -614,7 +614,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "6 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
