@@ -1,6 +1,13 @@
 {
- "at": "2026-10-31T05:36:30.056Z",
+ "at": "2026-10-31T06:14:14.604Z",
  "items": [
+  {
+   "t": "LJ Cleary sera absent pour une bonne partie de 2027",
+   "u": "https://www.catch-newz.com/international/newz/60851-lj-cleary-sera-absent-pour-une-bonne-partie-de-2027",
+   "s": "Catch-Newz",
+   "d": "2026-10-31",
+   "tags": []
+  },
   {
    "t": "Carte de Sendai Girls Pro Wrestling du 31 octobre 2026",
    "u": "https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
@@ -613,6 +620,7 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
+   "https://www.catch-newz.com/international/newz/60851-lj-cleary-sera-absent-pour-une-bonne-partie-de-2027",
    "https://www.catch-newz.com/aew/resultats/60839-resultats-de-roh-du-29-octobre-2026",
    "https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60850-michael-chandler-de-lufc-participera-a-un-match-a-wwe-nxt-le-4-novembre",
@@ -687,7 +695,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "6 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
