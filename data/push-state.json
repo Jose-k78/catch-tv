@@ -1,5 +1,5 @@
 {
- "at": "2026-10-31T21:08:28.128Z",
+ "at": "2026-10-31T22:34:46.158Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -125,7 +125,34 @@
   "fr:2026-10-31": "2026-10-31",
   "a:https://www.catch-newz.com/wwe/newz/60859-piper-niven-de-retour-a-lentrainement-au-performance-center": "2026-10-31",
   "a:https://www.catch-arena.com/drew-mcintyre-revient-sur-sa-chute-marquante-a-hell-in-a-cell-2020/": "2026-10-31",
-  "pick:WWE:2026-10-31": "2026-10-31"
+  "pick:WWE:2026-10-31": "2026-10-31",
+  "a:https://www.catch-newz.com/international/resultats/60863-resultats-du-jour-6-de-la-njpw-super-junior-tag-league-2026": "2026-10-31",
+  "a:https://www.catch-newz.com/international/resultats/60862-resultats-de-sendai-girls-pro-wrestling-du-31-octobre-2026": "2026-10-31",
+  "a:https://www.catch-newz.com/international/newz/60861-carte-de-cmll-sabado-de-coliseo-du-31-octobre-2026-dia-de-muertos": "2026-10-31",
+  "a:https://www.catch-arena.com/adam-copeland-aew-wrestler-a-maple-leaf-gardens-un-reve-enfin-realise/": "2026-10-31",
+  "a:https://www.catch-arena.com/wwe-pourrait-ajouter-randy-orton-iyo-sky-et-les-usos-a-nxt-face-a-aew-blood-guts/": "2026-10-31",
+  "a:https://www.catch-newz.com/aew/resultats/60860-resultats-de-cmll-viernes-espectacular-du-30-octobre-2026-dia-de-muertos-rey-del-inframundo": "2026-10-31"
  },
- "pend": {}
+ "pend": {
+  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
+   {
+    "cat": "info",
+    "title": "📰 6 nouvelles infos",
+    "body": "Résultats du jour 6 de la NJPW Super Junior Tag League 2026 · Résultats de Sendai Girls Pro Wrestling du 31 octobre 2026 · Carte de CMLL Sabado De Coliseo du 31 octobre 2026 - Dia De Muertos",
+    "url": "#/",
+    "tag": "art",
+    "short": "6 nouvelles infos"
+   }
+  ],
+  "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
+   {
+    "cat": "info",
+    "title": "📰 6 nouvelles infos",
+    "body": "Résultats du jour 6 de la NJPW Super Junior Tag League 2026 · Résultats de Sendai Girls Pro Wrestling du 31 octobre 2026 · Carte de CMLL Sabado De Coliseo du 31 octobre 2026 - Dia De Muertos",
+    "url": "#/",
+    "tag": "art",
+    "short": "6 nouvelles infos"
+   }
+  ]
+ }
 }
