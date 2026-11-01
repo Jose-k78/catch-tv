@@ -1,14 +1,38 @@
 {
- "at": "2026-11-01T20:04:22.575Z",
+ "at": "2026-11-01T20:34:23.485Z",
  "items": [
   {
-   "t": "Tony D'Angelo : « Je veux intégrer le roster principal »",
-   "u": "https://www.catch-newz.com/wwe/newz/60895-tony-dangelo-je-veux-integrer-le-roster-principal",
+   "t": "Preview : WWE NXT du 4 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
+   "t": "Quel est le titre mondial préféré de Damian Priest ?",
+   "u": "https://www.catch-newz.com/wwe/newz/60899-quel-est-le-titre-mondial-prefere-de-damian-priest",
    "s": "Catch-Newz",
    "d": "2026-11-01",
    "tags": [
     "WWE"
    ]
+  },
+  {
+   "t": "Résultats de New Texas Pro Wrestling 8 Year Anniversary",
+   "u": "https://www.catch-newz.com/international/resultats/60894-resultats-de-new-texas-pro-wrestling-8-year-anniversary",
+   "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": []
+  },
+  {
+   "t": "Carte de Indy Wrestling Domingos Familiares Noche De Muertos",
+   "u": "https://www.catch-newz.com/international/newz/60896-carte-de-indy-wrestling-domingos-familiares-noche-de-muertos",
+   "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": []
   },
   {
    "t": "Carte de CMLL Domingo Familiar du 1er novembre 2026 - Tzompantli de Mascaras",
@@ -27,6 +51,15 @@
    "tags": [
     "WWE",
     "NXT"
+   ]
+  },
+  {
+   "t": "Tony D'Angelo : « Je veux intégrer le roster principal »",
+   "u": "https://www.catch-newz.com/wwe/newz/60895-tony-dangelo-je-veux-integrer-le-roster-principal",
+   "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -241,42 +274,6 @@
    "tags": []
   },
   {
-   "t": "Résultats de AEW Collision du 31 octobre 2026",
-   "u": "https://www.catch-newz.com/aew/resultats/60852-aew-collision-31-octobre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": [
-    "AEW",
-    "Collision"
-   ]
-  },
-  {
-   "t": "Résultats et streaming de AAA Heroes Inmortales du 31 octobre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/60855-resultats-et-streaming-aaa-heroes-inmortales-31-octobre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": [
-    "WWE",
-    "AAA"
-   ]
-  },
-  {
-   "t": "Résultats de CMLL Sabado De Coliseo du 31 octobre 2026 - Dia De Muertos",
-   "u": "https://www.catch-newz.com/international/resultats/60888-resultats-de-cmll-sabado-de-coliseo-du-31-octobre-2026-dia-de-muertos",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": [
-    "CMLL"
-   ]
-  },
-  {
-   "t": "Résultats de Lucha Libre Cabaret du 31 octobre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/60883-resultats-de-lucha-libre-cabaret-du-31-octobre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": []
-  },
-  {
    "t": "WWE SmackDown du 30 octobre : Sami Zayn vs. Trick Williams, Cody Rhodes et son pied vengeur",
    "u": "https://www.voxcatch.fr/2026/10/31/resultats-wwe-smackdown-30-octobre-2026/",
    "s": "VOXcatch",
@@ -372,6 +369,42 @@
    "tags": [
     "WWE"
    ]
+  },
+  {
+   "t": "Résultats de AEW Collision du 31 octobre 2026",
+   "u": "https://www.catch-newz.com/aew/resultats/60852-aew-collision-31-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-31",
+   "tags": [
+    "AEW",
+    "Collision"
+   ]
+  },
+  {
+   "t": "Résultats et streaming de AAA Heroes Inmortales du 31 octobre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/60855-resultats-et-streaming-aaa-heroes-inmortales-31-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-31",
+   "tags": [
+    "WWE",
+    "AAA"
+   ]
+  },
+  {
+   "t": "Résultats de CMLL Sabado De Coliseo du 31 octobre 2026 - Dia De Muertos",
+   "u": "https://www.catch-newz.com/international/resultats/60888-resultats-de-cmll-sabado-de-coliseo-du-31-octobre-2026-dia-de-muertos",
+   "s": "Catch-Newz",
+   "d": "2026-10-31",
+   "tags": [
+    "CMLL"
+   ]
+  },
+  {
+   "t": "Résultats de Lucha Libre Cabaret du 31 octobre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/60883-resultats-de-lucha-libre-cabaret-du-31-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-31",
+   "tags": []
   },
   {
    "t": "Preview : AAA Heroes Inmortales du 31 octobre 2026",
@@ -507,37 +540,6 @@
     "WWE",
     "NXT"
    ]
-  },
-  {
-   "t": "WWE SmackDown : The Demon Finn Balor est de retour pour Halloween !",
-   "u": "https://www.catch-newz.com/wwe/newz/60849-wwe-smackdown-the-demon-finn-balor-est-de-retour-pour-halloween",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
-  },
-  {
-   "t": "CM Punk a fêté ses 48 ans à la salle de sport",
-   "u": "https://www.catch-newz.com/culture/gossip/60846-cm-punk-a-fete-ses-48-ans-a-la-salle-de-sport",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": []
-  },
-  {
-   "t": "Carte de LOL Mischief Night Mayhem 5",
-   "u": "https://www.catch-newz.com/international/newz/60844-carte-de-lol-mischief-night-mayhem-5",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": []
-  },
-  {
-   "t": "Carte de New Texas Pro Wrestling 8 Year Anniversary",
-   "u": "https://www.catch-newz.com/international/newz/60845-carte-de-new-texas-pro-wrestling-8-year-anniversary",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": []
   }
  ],
  "yt": {
@@ -738,11 +740,15 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
-   "https://www.catch-newz.com/wwe/newz/60895-tony-dangelo-je-veux-integrer-le-roster-principal",
+   "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/60899-quel-est-le-titre-mondial-prefere-de-damian-priest",
    "https://www.catch-newz.com/wwe/resultats/60824-resultats-et-streaming-de-wwe-evolve-du-28-octobre-2026",
+   "https://www.catch-newz.com/international/resultats/60894-resultats-de-new-texas-pro-wrestling-8-year-anniversary",
+   "https://www.catch-newz.com/international/newz/60896-carte-de-indy-wrestling-domingos-familiares-noche-de-muertos",
+   "https://www.catch-newz.com/international/newz/60889-carte-de-cmll-domingo-familiar-du-1er-novembre-2026-tzompantli-de-mascaras",
+   "https://www.catch-newz.com/wwe/newz/60895-tony-dangelo-je-veux-integrer-le-roster-principal",
    "https://www.catch-newz.com/aew/resultats/60852-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/60855-resultats-et-streaming-aaa-heroes-inmortales-31-octobre-2026",
-   "https://www.catch-newz.com/international/newz/60889-carte-de-cmll-domingo-familiar-du-1er-novembre-2026-tzompantli-de-mascaras",
    "https://www.catch-newz.com/international/resultats/60888-resultats-de-cmll-sabado-de-coliseo-du-31-octobre-2026-dia-de-muertos",
    "https://www.catch-newz.com/international/resultats/60883-resultats-de-lucha-libre-cabaret-du-31-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60892-le-match-entre-chelsea-green-et-nikki-bella-obtient-une-note-catastrophique-sur-cagematch",
@@ -856,7 +862,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
