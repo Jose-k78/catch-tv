@@ -1,6 +1,51 @@
 {
- "at": "2026-11-01T18:37:18.472Z",
+ "at": "2026-11-01T19:18:09.188Z",
  "items": [
+  {
+   "t": "Le match entre Chelsea Green et Nikki Bella obtient une note catastrophique sur CageMatch",
+   "u": "https://www.catch-newz.com/wwe/newz/60892-le-match-entre-chelsea-green-et-nikki-bella-obtient-une-note-catastrophique-sur-cagematch",
+   "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Un premier match de championnat s'annonce pour AEW Collision du bateau",
+   "u": "https://www.catch-newz.com/aew/newz/60886-un-premier-match-de-championnat-sannonce-pour-aew-collision-du-bateau",
+   "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": [
+    "AEW",
+    "Collision"
+   ]
+  },
+  {
+   "t": "Carte de Mayhem On Mills Halloween Horror Fights 7: Dig Up Their Bones",
+   "u": "https://www.catch-newz.com/international/newz/60891-carte-de-mayhem-on-mills-halloween-horror-fights-7-dig-up-their-bones",
+   "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": []
+  },
+  {
+   "t": "Carte de CMLL Domingo Familiar du 1er novembre 2026 - Tzompantli de Mascaras",
+   "u": "https://www.catch-newz.com/international/newz/60889-carte-de-cmll-domingo-familiar-du-1er-novembre-2026-tzompantli-de-mascaras",
+   "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": [
+    "CMLL"
+   ]
+  },
+  {
+   "t": "Résultats de NXT Halloween Havoc 2026",
+   "u": "https://www.voxcatch.fr/2026/11/01/resultats-nxt-halloween-havoc-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-01",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
   {
    "t": "Les stars de the Final Slam dévoilent leurs catcheurs préférés",
    "u": "https://www.catch-newz.com/international/newz/60887-les-stars-de-the-final-slam-devoilent-leurs-catcheurs-preferes",
@@ -15,16 +60,6 @@
    "d": "2026-11-01",
    "tags": [
     "AEW"
-   ]
-  },
-  {
-   "t": "Résultats de NXT Halloween Havoc 2026",
-   "u": "https://www.voxcatch.fr/2026/11/01/resultats-nxt-halloween-havoc-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-01",
-   "tags": [
-    "WWE",
-    "NXT"
    ]
   },
   {
@@ -501,41 +536,6 @@
    "s": "Catch-Newz",
    "d": "2026-10-31",
    "tags": []
-  },
-  {
-   "t": "Résultats du jour 5 de la NJPW Super Junior Tag League 2026",
-   "u": "https://www.catch-newz.com/international/resultats/60838-resultats-du-jour-5-de-la-njpw-super-junior-tag-league-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": [
-    "NJPW"
-   ]
-  },
-  {
-   "t": "Résultats de WWE SmackDown du 30 octobre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-30",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
-  },
-  {
-   "t": "Canelo – Mbilli : à quelle heure et sur quelle chaîne voir le combat de boxe en direct ?",
-   "u": "https://www.voxcatch.fr/2026/10/30/canelo-mbilli-a-quelle-heure-et-sur-quelle-chaine-voir-le-combat-de-boxe-en-direct/",
-   "s": "VOXcatch",
-   "d": "2026-10-30",
-   "tags": []
-  },
-  {
-   "t": "Tammy Sytch (Sunny) demande à faire annuler sa condamnation pour DUI mortel",
-   "u": "https://www.catch-arena.com/tammy-sytch-sunny-demande-a-faire-annuler-sa-condamnation-pour-dui-mortel/",
-   "s": "Catch Arena",
-   "d": "2026-10-30",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -736,12 +736,17 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
-   "https://www.catch-newz.com/international/newz/60887-les-stars-de-the-final-slam-devoilent-leurs-catcheurs-preferes",
-   "https://www.catch-newz.com/aew/newz/60884-sheamus-je-fais-juste-profiter-de-mon-conge",
+   "https://www.catch-newz.com/wwe/resultats/60824-resultats-et-streaming-de-wwe-evolve-du-28-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60892-le-match-entre-chelsea-green-et-nikki-bella-obtient-une-note-catastrophique-sur-cagematch",
+   "https://www.catch-newz.com/aew/newz/60886-un-premier-match-de-championnat-sannonce-pour-aew-collision-du-bateau",
    "https://www.catch-newz.com/aew/resultats/60852-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/60855-resultats-et-streaming-aaa-heroes-inmortales-31-octobre-2026",
+   "https://www.catch-newz.com/international/newz/60891-carte-de-mayhem-on-mills-halloween-horror-fights-7-dig-up-their-bones",
+   "https://www.catch-newz.com/international/newz/60889-carte-de-cmll-domingo-familiar-du-1er-novembre-2026-tzompantli-de-mascaras",
    "https://www.catch-newz.com/international/resultats/60888-resultats-de-cmll-sabado-de-coliseo-du-31-octobre-2026-dia-de-muertos",
    "https://www.catch-newz.com/international/resultats/60883-resultats-de-lucha-libre-cabaret-du-31-octobre-2026",
+   "https://www.catch-newz.com/international/newz/60887-les-stars-de-the-final-slam-devoilent-leurs-catcheurs-preferes",
+   "https://www.catch-newz.com/aew/newz/60884-sheamus-je-fais-juste-profiter-de-mon-conge",
    "https://www.catch-newz.com/wwe/newz/60882-ethan-page-aura-finalement-son-match-pour-le-titre-intercontinental-a-wwe-raw",
    "https://www.catch-newz.com/aew/resultats/60860-resultats-de-cmll-viernes-espectacular-du-30-octobre-2026-dia-de-muertos-rey-del-inframundo",
    "https://www.catch-newz.com/international/newz/60408-carte-de-njpw-power-struggle-super-junior-tag-league-2026",
@@ -848,7 +853,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 10 nouveaux articles lus sur la page d'accueil (10 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
