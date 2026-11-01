@@ -1,5 +1,5 @@
 {
- "at": "2026-11-01T05:41:59.788Z",
+ "at": "2026-11-01T06:50:11.516Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -143,7 +143,9 @@
   "a:https://www.catch-newz.com/wwe/newz/60872-officiel-grayson-waller-defendra-son-titre-nxt-contre-cm-punk-ce-mercredi": "2026-11-01",
   "a:https://www.catch-newz.com/wwe/resultats/60853-wwe-nxt-halloween-havoc-2026": "2026-11-01",
   "a:https://www.catch-newz.com/aew/resultats/60852-aew-collision-31-octobre-2026": "2026-11-01",
-  "a:https://www.catch-newz.com/wwe/resultats/60855-resultats-et-streaming-aaa-heroes-inmortales-31-octobre-2026": "2026-11-01"
+  "a:https://www.catch-newz.com/wwe/resultats/60855-resultats-et-streaming-aaa-heroes-inmortales-31-octobre-2026": "2026-11-01",
+  "a:https://www.catch-newz.com/aew/newz/60606-carte-aew-full-gear-2026": "2026-11-01",
+  "a:https://www.catch-newz.com/wwe/newz/60873-wwe-tlc-fait-son-retour-a-nxt-en-2026": "2026-11-01"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -218,6 +220,14 @@
     "url": "#/",
     "tag": "art",
     "short": "2 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Carte de AEW Full Gear 2026 · WWE TLC fait son retour à NXT en 2026",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -289,6 +299,14 @@
     "cat": "info",
     "title": "📰 2 nouvelles infos",
     "body": "Résultats de AEW Collision du 31 octobre 2026 · Résultats et streaming de AAA Heroes Inmortales du 31 octobre 2026",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Carte de AEW Full Gear 2026 · WWE TLC fait son retour à NXT en 2026",
     "url": "#/",
     "tag": "art",
     "short": "2 nouvelles infos"
