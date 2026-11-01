@@ -1,15 +1,6 @@
 {
- "at": "2026-11-01T15:08:38.728Z",
+ "at": "2026-11-01T16:06:16.325Z",
  "items": [
-  {
-   "t": "Le Démon Finn Balor peut-il aller chercher un titre mondial en 2027 ?",
-   "u": "https://www.catch-newz.com/wwe/newz/60877-le-demon-finn-balor-peut-il-aller-chercher-un-titre-mondial-en-2027",
-   "s": "Catch-Newz",
-   "d": "2026-11-01",
-   "tags": [
-    "WWE"
-   ]
-  },
   {
    "t": "Résultats de NXT Halloween Havoc 2026",
    "u": "https://www.voxcatch.fr/2026/11/01/resultats-nxt-halloween-havoc-2026/",
@@ -18,6 +9,15 @@
    "tags": [
     "WWE",
     "NXT"
+   ]
+  },
+  {
+   "t": "Le Démon Finn Balor peut-il aller chercher un titre mondial en 2027 ?",
+   "u": "https://www.catch-newz.com/wwe/newz/60877-le-demon-finn-balor-peut-il-aller-chercher-un-titre-mondial-en-2027",
+   "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -735,10 +735,10 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
-   "https://www.catch-newz.com/wwe/newz/60877-le-demon-finn-balor-peut-il-aller-chercher-un-titre-mondial-en-2027",
    "https://www.catch-newz.com/aew/resultats/60852-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/60855-resultats-et-streaming-aaa-heroes-inmortales-31-octobre-2026",
    "https://www.catch-newz.com/aew/resultats/60860-resultats-de-cmll-viernes-espectacular-du-30-octobre-2026-dia-de-muertos-rey-del-inframundo",
+   "https://www.catch-newz.com/wwe/newz/60877-le-demon-finn-balor-peut-il-aller-chercher-un-titre-mondial-en-2027",
    "https://www.catch-newz.com/wwe/newz/60876-myles-borne-ce-soir-jai-prouve-que-javais-raison-cest-moi-le-meilleur",
    "https://www.catch-newz.com/wwe/newz/60854-preview-aaa-heroes-inmortales-31-octobre-2026",
    "https://www.catch-newz.com/aew/newz/60606-carte-aew-full-gear-2026",
@@ -838,7 +838,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
