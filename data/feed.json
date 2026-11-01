@@ -1,10 +1,41 @@
 {
- "at": "2026-11-01T21:08:47.424Z",
+ "at": "2026-11-01T22:06:42.055Z",
  "items": [
   {
    "t": "Preview : WWE NXT du 4 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
    "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
+   "t": "Résultats de DDT Wrestling Harvest 2026",
+   "u": "https://www.catch-newz.com/international/resultats/60906-resultats-de-ddt-wrestling-harvest-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": []
+  },
+  {
+   "t": "Carte de Last Resort - A Tribute To Mark Wolf",
+   "u": "https://www.catch-newz.com/international/newz/60905-carte-de-last-resort-a-tribute-to-mark-wolf",
+   "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": []
+  },
+  {
+   "t": "Carte de IWRG Funcion Espectacular du 1er novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/60898-carte-de-iwrg-funcion-espectacular-du-1er-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": []
+  },
+  {
+   "t": "Résultats de NXT Halloween Havoc 2026",
+   "u": "https://www.voxcatch.fr/2026/11/01/resultats-nxt-halloween-havoc-2026/",
+   "s": "VOXcatch",
    "d": "2026-11-01",
    "tags": [
     "WWE",
@@ -24,16 +55,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-01",
    "tags": []
-  },
-  {
-   "t": "Résultats de NXT Halloween Havoc 2026",
-   "u": "https://www.voxcatch.fr/2026/11/01/resultats-nxt-halloween-havoc-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-01",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
   },
   {
    "t": "Quel est le titre mondial préféré de Damian Priest ?",
@@ -508,32 +529,6 @@
    "s": "Catch-Newz",
    "d": "2026-10-31",
    "tags": []
-  },
-  {
-   "t": "Carte de WWE NXT Halloween Havoc 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/60271-carte-wwe-nxt-halloween-havoc-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
-  },
-  {
-   "t": "JBL : « Gunther est un catcheur de classe mondiale »",
-   "u": "https://www.catch-newz.com/wwe/newz/60848-jbl-gunther-est-un-catcheur-de-classe-mondiale",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "LJ Cleary sera absent pour une bonne partie de 2027",
-   "u": "https://www.catch-newz.com/international/newz/60851-lj-cleary-sera-absent-pour-une-bonne-partie-de-2027",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": []
   }
  ],
  "yt": {
@@ -734,8 +729,12 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
+   "https://www.catch-newz.com/international/resultats/60904-resultats-de-indy-wrestling-du-15-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60824-resultats-et-streaming-de-wwe-evolve-du-28-octobre-2026",
+   "https://www.catch-newz.com/international/resultats/60906-resultats-de-ddt-wrestling-harvest-2026",
+   "https://www.catch-newz.com/international/newz/60905-carte-de-last-resort-a-tribute-to-mark-wolf",
+   "https://www.catch-newz.com/international/newz/60898-carte-de-iwrg-funcion-espectacular-du-1er-novembre-2026",
    "https://www.catch-newz.com/international/newz/60903-carte-de-isdub-gremlins-is-a-christmas-movie",
    "https://www.catch-newz.com/international/newz/60902-carte-de-sup-fear-trembling",
    "https://www.catch-newz.com/wwe/newz/60899-quel-est-le-titre-mondial-prefere-de-damian-priest",
@@ -858,7 +857,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
