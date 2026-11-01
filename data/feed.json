@@ -1,5 +1,5 @@
 {
- "at": "2026-11-01T04:46:40.108Z",
+ "at": "2026-11-01T05:41:59.745Z",
  "items": [
   {
    "t": "Résultats de WWE NXT Halloween Havoc 2026",
@@ -85,6 +85,26 @@
    "s": "Catch-Newz",
    "d": "2026-11-01",
    "tags": []
+  },
+  {
+   "t": "Résultats de AEW Collision du 31 octobre 2026",
+   "u": "https://www.catch-newz.com/aew/resultats/60852-aew-collision-31-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-31",
+   "tags": [
+    "AEW",
+    "Collision"
+   ]
+  },
+  {
+   "t": "Résultats et streaming de AAA Heroes Inmortales du 31 octobre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/60855-resultats-et-streaming-aaa-heroes-inmortales-31-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-31",
+   "tags": [
+    "WWE",
+    "AAA"
+   ]
   },
   {
    "t": "Preview : AAA Heroes Inmortales du 31 octobre 2026",
@@ -518,22 +538,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "L'année 2026 de Charlotte Flair est-elle une réussite ?",
-   "u": "https://www.catch-newz.com/wwe/newz/60827-lannee-2026-de-charlotte-flair-est-elle-une-reussite",
-   "s": "Catch-Newz",
-   "d": "2026-10-30",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Leedz Lewis vs Big Sabri J : le couronnement du tout premier Champion LWA",
-   "u": "https://www.catch-newz.com/international/newz/60791-leedz-lewis-vs-big-sabri-j-le-couronnement-du-tout-premier-champion-lwa",
-   "s": "Catch-Newz",
-   "d": "2026-10-30",
-   "tags": []
   }
  ],
  "yt": {
@@ -679,12 +683,14 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/wwe/resultats/60853-wwe-nxt-halloween-havoc-2026",
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
+   "https://www.catch-newz.com/aew/resultats/60852-aew-collision-31-octobre-2026",
+   "https://www.catch-newz.com/wwe/resultats/60855-resultats-et-streaming-aaa-heroes-inmortales-31-octobre-2026",
    "https://www.catch-newz.com/aew/resultats/60860-resultats-de-cmll-viernes-espectacular-du-30-octobre-2026-dia-de-muertos-rey-del-inframundo",
    "https://www.catch-newz.com/wwe/newz/60854-preview-aaa-heroes-inmortales-31-octobre-2026",
    "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026",
+   "https://www.catch-newz.com/wwe/resultats/60853-wwe-nxt-halloween-havoc-2026",
    "https://www.catch-newz.com/wwe/newz/60872-officiel-grayson-waller-defendra-son-titre-nxt-contre-cm-punk-ce-mercredi",
    "https://www.catch-newz.com/wwe/newz/60871-nxt-halloween-havoc-grace-a-son-experience-kelani-jordan-conserve-son-titre-nxt-contre-wren-sinclair",
    "https://www.catch-newz.com/wwe/newz/60870-nxt-halloween-havoc-zilla-fatu-se-debarrasse-a-lui-tout-seul-de-charlie-dempsey-et-de-birthright",
@@ -777,7 +783,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",

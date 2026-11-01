@@ -1,5 +1,5 @@
 {
- "at": "2026-11-01T04:46:40.162Z",
+ "at": "2026-11-01T05:41:59.788Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -141,7 +141,9 @@
   "a:https://www.catch-newz.com/wwe/newz/60870-nxt-halloween-havoc-zilla-fatu-se-debarrasse-a-lui-tout-seul-de-charlie-dempsey-et-de-birthright": "2026-11-01",
   "a:https://www.catch-newz.com/wwe/newz/60871-nxt-halloween-havoc-grace-a-son-experience-kelani-jordan-conserve-son-titre-nxt-contre-wren-sinclair": "2026-11-01",
   "a:https://www.catch-newz.com/wwe/newz/60872-officiel-grayson-waller-defendra-son-titre-nxt-contre-cm-punk-ce-mercredi": "2026-11-01",
-  "a:https://www.catch-newz.com/wwe/resultats/60853-wwe-nxt-halloween-havoc-2026": "2026-11-01"
+  "a:https://www.catch-newz.com/wwe/resultats/60853-wwe-nxt-halloween-havoc-2026": "2026-11-01",
+  "a:https://www.catch-newz.com/aew/resultats/60852-aew-collision-31-octobre-2026": "2026-11-01",
+  "a:https://www.catch-newz.com/wwe/resultats/60855-resultats-et-streaming-aaa-heroes-inmortales-31-octobre-2026": "2026-11-01"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -208,6 +210,14 @@
     "url": "https://www.catch-newz.com/wwe/resultats/60853-wwe-nxt-halloween-havoc-2026",
     "tag": "art",
     "short": "Résultats de WWE NXT Halloween Havoc 2026"
+   },
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Résultats de AEW Collision du 31 octobre 2026 · Résultats et streaming de AAA Heroes Inmortales du 31 octobre 2026",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -274,6 +284,14 @@
     "url": "https://www.catch-newz.com/wwe/resultats/60853-wwe-nxt-halloween-havoc-2026",
     "tag": "art",
     "short": "Résultats de WWE NXT Halloween Havoc 2026"
+   },
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Résultats de AEW Collision du 31 octobre 2026 · Résultats et streaming de AAA Heroes Inmortales du 31 octobre 2026",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
    }
   ]
  }
