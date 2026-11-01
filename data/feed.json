@@ -1,6 +1,15 @@
 {
- "at": "2026-11-01T12:42:45.043Z",
+ "at": "2026-11-01T14:33:59.320Z",
  "items": [
+  {
+   "t": "Myles Borne : « Ce soir, j'ai prouvé que j'avais raison : c'est moi le meilleur »",
+   "u": "https://www.catch-newz.com/wwe/newz/60876-myles-borne-ce-soir-jai-prouve-que-javais-raison-cest-moi-le-meilleur",
+   "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Résultats de NXT Halloween Havoc 2026",
    "u": "https://www.voxcatch.fr/2026/11/01/resultats-nxt-halloween-havoc-2026/",
@@ -136,16 +145,6 @@
    ]
   },
   {
-   "t": "Preview : AAA Heroes Inmortales du 31 octobre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/60854-preview-aaa-heroes-inmortales-31-octobre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": [
-    "WWE",
-    "AAA"
-   ]
-  },
-  {
    "t": "WWE SmackDown du 30 octobre : Sami Zayn vs. Trick Williams, Cody Rhodes et son pied vengeur",
    "u": "https://www.voxcatch.fr/2026/10/31/resultats-wwe-smackdown-30-octobre-2026/",
    "s": "VOXcatch",
@@ -240,6 +239,16 @@
    "d": "2026-10-31",
    "tags": [
     "WWE"
+   ]
+  },
+  {
+   "t": "Preview : AAA Heroes Inmortales du 31 octobre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/60854-preview-aaa-heroes-inmortales-31-octobre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-10-31",
+   "tags": [
+    "WWE",
+    "AAA"
    ]
   },
   {
@@ -531,15 +540,6 @@
     "WWE",
     "SmackDown"
    ]
-  },
-  {
-   "t": "Zuffa Boxing annonce son premier show en Arabie saoudite",
-   "u": "https://www.catch-newz.com/wwe/newz/60828-zuffa-boxing-annonce-son-premier-show-en-arabie-saoudite",
-   "s": "Catch-Newz",
-   "d": "2026-10-30",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -736,6 +736,7 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60876-myles-borne-ce-soir-jai-prouve-que-javais-raison-cest-moi-le-meilleur",
    "https://www.catch-newz.com/aew/resultats/60852-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/60855-resultats-et-streaming-aaa-heroes-inmortales-31-octobre-2026",
    "https://www.catch-newz.com/aew/resultats/60860-resultats-de-cmll-viernes-espectacular-du-30-octobre-2026-dia-de-muertos-rey-del-inframundo",
@@ -841,7 +842,7 @@
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
-  "YouTube AEW": "1 nouvelles vidéos",
+  "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
   "YouTube TNA": "0 nouvelles vidéos",
