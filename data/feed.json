@@ -1,6 +1,16 @@
 {
- "at": "2026-11-01T07:54:17.758Z",
+ "at": "2026-11-01T10:36:43.783Z",
  "items": [
+  {
+   "t": "Résultats de NXT Halloween Havoc 2026",
+   "u": "https://www.voxcatch.fr/2026/11/01/resultats-nxt-halloween-havoc-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-01",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
   {
    "t": "Carte de AEW Full Gear 2026",
    "u": "https://www.catch-newz.com/aew/newz/60606-carte-aew-full-gear-2026",
@@ -530,15 +540,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Ricky Sosa annonce son retour pour TNA Destination X",
-   "u": "https://www.catch-newz.com/international/newz/60829-ricky-sosa-annonce-son-retour-pour-tna-destination-x",
-   "s": "Catch-Newz",
-   "d": "2026-10-30",
-   "tags": [
-    "TNA"
-   ]
   }
  ],
  "yt": {
@@ -833,10 +834,10 @@
  },
  "diag": {
   "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
-  "VOXcatch": "6 articles (7 j)",
+  "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
-  "YouTube AEW": "11 nouvelles vidéos",
+  "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
   "YouTube TNA": "0 nouvelles vidéos",
