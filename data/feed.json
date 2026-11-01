@@ -1,9 +1,9 @@
 {
- "at": "2026-11-01T14:33:59.320Z",
+ "at": "2026-11-01T15:08:38.728Z",
  "items": [
   {
-   "t": "Myles Borne : « Ce soir, j'ai prouvé que j'avais raison : c'est moi le meilleur »",
-   "u": "https://www.catch-newz.com/wwe/newz/60876-myles-borne-ce-soir-jai-prouve-que-javais-raison-cest-moi-le-meilleur",
+   "t": "Le Démon Finn Balor peut-il aller chercher un titre mondial en 2027 ?",
+   "u": "https://www.catch-newz.com/wwe/newz/60877-le-demon-finn-balor-peut-il-aller-chercher-un-titre-mondial-en-2027",
    "s": "Catch-Newz",
    "d": "2026-11-01",
    "tags": [
@@ -18,6 +18,15 @@
    "tags": [
     "WWE",
     "NXT"
+   ]
+  },
+  {
+   "t": "Myles Borne : « Ce soir, j'ai prouvé que j'avais raison : c'est moi le meilleur »",
+   "u": "https://www.catch-newz.com/wwe/newz/60876-myles-borne-ce-soir-jai-prouve-que-javais-raison-cest-moi-le-meilleur",
+   "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -530,16 +539,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "WWE SmackDown du 30 octobre 2026 : Heure et chaine pour regarder le show en direct",
-   "u": "https://www.catch-newz.com/wwe/newz/60819-wwe-smackdown-du-30-octobre-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
-   "s": "Catch-Newz",
-   "d": "2026-10-30",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
   }
  ],
  "yt": {
@@ -736,10 +735,11 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
-   "https://www.catch-newz.com/wwe/newz/60876-myles-borne-ce-soir-jai-prouve-que-javais-raison-cest-moi-le-meilleur",
+   "https://www.catch-newz.com/wwe/newz/60877-le-demon-finn-balor-peut-il-aller-chercher-un-titre-mondial-en-2027",
    "https://www.catch-newz.com/aew/resultats/60852-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/60855-resultats-et-streaming-aaa-heroes-inmortales-31-octobre-2026",
    "https://www.catch-newz.com/aew/resultats/60860-resultats-de-cmll-viernes-espectacular-du-30-octobre-2026-dia-de-muertos-rey-del-inframundo",
+   "https://www.catch-newz.com/wwe/newz/60876-myles-borne-ce-soir-jai-prouve-que-javais-raison-cest-moi-le-meilleur",
    "https://www.catch-newz.com/wwe/newz/60854-preview-aaa-heroes-inmortales-31-octobre-2026",
    "https://www.catch-newz.com/aew/newz/60606-carte-aew-full-gear-2026",
    "https://www.catch-newz.com/wwe/newz/60873-wwe-tlc-fait-son-retour-a-nxt-en-2026",
