@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-31",
+ "updated": "2026-11-01",
  "shows": {
   "205": {
    "f": "205.webp"
@@ -66,7 +66,6 @@
   "NXT": {
    "f": "nxt.webp",
    "v": [
-    "nxt-v2.webp",
     "nxt-v3.webp",
     "nxt-v4.webp",
     "nxt-v5.webp",
