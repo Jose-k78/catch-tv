@@ -1,5 +1,5 @@
 {
- "at": "2026-10-31T23:34:20.640Z",
+ "at": "2026-11-01T00:02:55.015Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -136,7 +136,8 @@
   "a:https://www.catch-newz.com/international/newz/60868-carte-de-tjpw-there-may-be-no-answers-but-lets-wish-for-happiness": "2026-11-01",
   "a:https://www.catch-newz.com/international/newz/60867-carte-du-jour-1-de-dg-the-gate-of-evolution-2026": "2026-11-01",
   "a:https://www.catch-newz.com/international/resultats/60866-resultats-de-iwrg-castillo-del-terror-2026": "2026-11-01",
-  "a:https://www.catch-newz.com/international/resultats/60865-resultats-du-jour-6-de-dg-the-gate-of-victory-2026": "2026-11-01"
+  "a:https://www.catch-newz.com/international/resultats/60865-resultats-du-jour-6-de-dg-the-gate-of-victory-2026": "2026-11-01",
+  "a:https://www.catch-newz.com/wwe/newz/60869-nxt-halloween-havoc-myles-borne-terrasse-son-rival-tavion-heights-au-terme-dun-weapons-wild-match-palpitant": "2026-11-01"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -163,6 +164,14 @@
     "url": "#/",
     "tag": "art",
     "short": "4 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Catch-Newz",
+    "body": "NXT Halloween Havoc : Myles Borne terrasse son rival Tavion Heights au terme d'un Weapons Wild match palpitant",
+    "url": "https://www.catch-newz.com/wwe/newz/60869-nxt-halloween-havoc-myles-borne-terrasse-son-rival-tavion-heights-au-terme-dun-weapons-wild-match-palpitant",
+    "tag": "art",
+    "short": "NXT Halloween Havoc : Myles Borne terrasse son rival Tavion Heights au terme d'un Weapons Wild match palpitant"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -189,6 +198,14 @@
     "url": "#/",
     "tag": "art",
     "short": "4 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Catch-Newz",
+    "body": "NXT Halloween Havoc : Myles Borne terrasse son rival Tavion Heights au terme d'un Weapons Wild match palpitant",
+    "url": "https://www.catch-newz.com/wwe/newz/60869-nxt-halloween-havoc-myles-borne-terrasse-son-rival-tavion-heights-au-terme-dun-weapons-wild-match-palpitant",
+    "tag": "art",
+    "short": "NXT Halloween Havoc : Myles Borne terrasse son rival Tavion Heights au terme d'un Weapons Wild match palpitant"
    }
   ]
  }
