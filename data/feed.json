@@ -1,6 +1,25 @@
 {
- "at": "2026-11-01T16:06:16.325Z",
+ "at": "2026-11-01T16:39:12.027Z",
  "items": [
+  {
+   "t": "Une première apparition à NXT pour la Française Zoé Hines",
+   "u": "https://www.catch-newz.com/wwe/newz/60881-une-premiere-apparition-a-nxt-pour-la-francaise-zoe-hines",
+   "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
+   "t": "Résultats du jour 7 de la NJPW Super Junior Tag League 2026",
+   "u": "https://www.catch-newz.com/international/resultats/60880-resultats-du-jour-7-de-la-njpw-super-junior-tag-league-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": [
+    "NJPW"
+   ]
+  },
   {
    "t": "Résultats de NXT Halloween Havoc 2026",
    "u": "https://www.voxcatch.fr/2026/11/01/resultats-nxt-halloween-havoc-2026/",
@@ -523,22 +542,6 @@
    "tags": [
     "CMLL"
    ]
-  },
-  {
-   "t": "Résultats du jour 4 de DG The Gate Of Victory 2026",
-   "u": "https://www.catch-newz.com/international/resultats/60833-resultats-du-jour-4-de-dg-the-gate-of-victory-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-30",
-   "tags": []
-  },
-  {
-   "t": "Vivez une intervention de Logan Paul caché sous le ring à Money in the Bank",
-   "u": "https://www.catch-newz.com/wwe/newz/60831-vivez-une-intervention-de-logan-paul-cache-sous-le-ring-a-money-in-the-bank",
-   "s": "Catch-Newz",
-   "d": "2026-10-30",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -735,9 +738,11 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60881-une-premiere-apparition-a-nxt-pour-la-francaise-zoe-hines",
    "https://www.catch-newz.com/aew/resultats/60852-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/60855-resultats-et-streaming-aaa-heroes-inmortales-31-octobre-2026",
    "https://www.catch-newz.com/aew/resultats/60860-resultats-de-cmll-viernes-espectacular-du-30-octobre-2026-dia-de-muertos-rey-del-inframundo",
+   "https://www.catch-newz.com/international/resultats/60880-resultats-du-jour-7-de-la-njpw-super-junior-tag-league-2026",
    "https://www.catch-newz.com/wwe/newz/60877-le-demon-finn-balor-peut-il-aller-chercher-un-titre-mondial-en-2027",
    "https://www.catch-newz.com/wwe/newz/60876-myles-borne-ce-soir-jai-prouve-que-javais-raison-cest-moi-le-meilleur",
    "https://www.catch-newz.com/wwe/newz/60854-preview-aaa-heroes-inmortales-31-octobre-2026",
@@ -838,7 +843,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
