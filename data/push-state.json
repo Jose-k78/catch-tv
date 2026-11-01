@@ -1,5 +1,5 @@
 {
- "at": "2026-11-01T00:55:41.523Z",
+ "at": "2026-11-01T01:57:08.335Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -138,7 +138,8 @@
   "a:https://www.catch-newz.com/international/resultats/60866-resultats-de-iwrg-castillo-del-terror-2026": "2026-11-01",
   "a:https://www.catch-newz.com/international/resultats/60865-resultats-du-jour-6-de-dg-the-gate-of-victory-2026": "2026-11-01",
   "a:https://www.catch-newz.com/wwe/newz/60869-nxt-halloween-havoc-myles-borne-terrasse-son-rival-tavion-heights-au-terme-dun-weapons-wild-match-palpitant": "2026-11-01",
-  "a:https://www.catch-newz.com/wwe/newz/60870-nxt-halloween-havoc-zilla-fatu-se-debarrasse-a-lui-tout-seul-de-charlie-dempsey-et-de-birthright": "2026-11-01"
+  "a:https://www.catch-newz.com/wwe/newz/60870-nxt-halloween-havoc-zilla-fatu-se-debarrasse-a-lui-tout-seul-de-charlie-dempsey-et-de-birthright": "2026-11-01",
+  "a:https://www.catch-newz.com/wwe/newz/60871-nxt-halloween-havoc-grace-a-son-experience-kelani-jordan-conserve-son-titre-nxt-contre-wren-sinclair": "2026-11-01"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -181,6 +182,14 @@
     "url": "https://www.catch-newz.com/wwe/newz/60870-nxt-halloween-havoc-zilla-fatu-se-debarrasse-a-lui-tout-seul-de-charlie-dempsey-et-de-birthright",
     "tag": "art",
     "short": "NXT Halloween Havoc : Zilla Fatu se débarrasse à lui tout seul de Charlie Dempsey et de BirthRight"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Catch-Newz",
+    "body": "NXT Halloween Havoc : Grâce à son expérience, Kelani Jordan conserve son titre NXT contre Wren Sinclair",
+    "url": "https://www.catch-newz.com/wwe/newz/60871-nxt-halloween-havoc-grace-a-son-experience-kelani-jordan-conserve-son-titre-nxt-contre-wren-sinclair",
+    "tag": "art",
+    "short": "NXT Halloween Havoc : Grâce à son expérience, Kelani Jordan conserve son titre NXT contre Wren Sinclair"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -223,6 +232,14 @@
     "url": "https://www.catch-newz.com/wwe/newz/60870-nxt-halloween-havoc-zilla-fatu-se-debarrasse-a-lui-tout-seul-de-charlie-dempsey-et-de-birthright",
     "tag": "art",
     "short": "NXT Halloween Havoc : Zilla Fatu se débarrasse à lui tout seul de Charlie Dempsey et de BirthRight"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Catch-Newz",
+    "body": "NXT Halloween Havoc : Grâce à son expérience, Kelani Jordan conserve son titre NXT contre Wren Sinclair",
+    "url": "https://www.catch-newz.com/wwe/newz/60871-nxt-halloween-havoc-grace-a-son-experience-kelani-jordan-conserve-son-titre-nxt-contre-wren-sinclair",
+    "tag": "art",
+    "short": "NXT Halloween Havoc : Grâce à son expérience, Kelani Jordan conserve son titre NXT contre Wren Sinclair"
    }
   ]
  }
