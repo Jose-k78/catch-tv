@@ -1,5 +1,5 @@
 {
- "at": "2026-11-01T06:50:11.467Z",
+ "at": "2026-11-01T07:54:17.758Z",
  "items": [
   {
    "t": "Carte de AEW Full Gear 2026",
@@ -673,6 +673,52 @@
     "id": "_8SvCo-seQw",
     "t": "Grayson Waller contre Tony D’Angelo"
    }
+  ],
+  "AEW|Collision|2026-10-31": [
+   {
+    "id": "tJIdxXIGeIM",
+    "t": "Konosuke Takeshita contre Adam Priest"
+   },
+   {
+    "id": "O5AkGAvvWdo",
+    "t": "Konosuke Takeshita contre Adam Priest MATCH HIGHLIGHTS"
+   },
+   {
+    "id": "RakjdGlw684",
+    "t": "\"Speedball\" Mike Bailey contre Darius Martin"
+   },
+   {
+    "id": "uJldUxPSxSA",
+    "t": "\"Speedball\" Mike Bailey contre Darius Martin MATCH HIGHLIGHTS"
+   },
+   {
+    "id": "zTHKH9C6rAQ",
+    "t": "Divine Dominion contre Nixi XS & Leela Feist"
+   },
+   {
+    "id": "KoBR0UD3i_Q",
+    "t": "Triangle of Madness contre Hazuki, Koguma & Fuwa"
+   },
+   {
+    "id": "PVT88CRbaiM",
+    "t": "Triangle of Madness contre Hazuki, Koguma & Fuwa"
+   },
+   {
+    "id": "ya8AybCuL2g",
+    "t": "Ilja Dragunov contre The Beast Mortos"
+   },
+   {
+    "id": "hmBXeSQBU0M",
+    "t": "Ilja Dragunov contre The Beast Mortos MATCH HIGHLIGHTS"
+   },
+   {
+    "id": "WlQvYfRES3E",
+    "t": "The Hurt Syndicate contre Soloroto"
+   },
+   {
+    "id": "aoaP-l94iL8",
+    "t": "Tommaso Ciampa contre Matt Sydal MATCH HIGHLIGHTS"
+   }
   ]
  },
  "rss": {
@@ -685,12 +731,12 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
-   "https://www.catch-newz.com/aew/newz/60606-carte-aew-full-gear-2026",
-   "https://www.catch-newz.com/wwe/newz/60873-wwe-tlc-fait-son-retour-a-nxt-en-2026",
    "https://www.catch-newz.com/aew/resultats/60852-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/60855-resultats-et-streaming-aaa-heroes-inmortales-31-octobre-2026",
    "https://www.catch-newz.com/aew/resultats/60860-resultats-de-cmll-viernes-espectacular-du-30-octobre-2026-dia-de-muertos-rey-del-inframundo",
    "https://www.catch-newz.com/wwe/newz/60854-preview-aaa-heroes-inmortales-31-octobre-2026",
+   "https://www.catch-newz.com/aew/newz/60606-carte-aew-full-gear-2026",
+   "https://www.catch-newz.com/wwe/newz/60873-wwe-tlc-fait-son-retour-a-nxt-en-2026",
    "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
    "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/60853-wwe-nxt-halloween-havoc-2026",
@@ -786,11 +832,11 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
-  "YouTube AEW": "0 nouvelles vidéos",
+  "YouTube AEW": "11 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
   "YouTube TNA": "0 nouvelles vidéos",
