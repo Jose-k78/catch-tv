@@ -1,6 +1,16 @@
 {
- "at": "2026-11-01T01:57:08.285Z",
+ "at": "2026-11-01T02:43:50.850Z",
  "items": [
+  {
+   "t": "OFFICIEL : Grayson Waller défendra son titre NXT contre CM Punk ce mercredi",
+   "u": "https://www.catch-newz.com/wwe/newz/60872-officiel-grayson-waller-defendra-son-titre-nxt-contre-cm-punk-ce-mercredi",
+   "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
   {
    "t": "NXT Halloween Havoc : Grâce à son expérience, Kelani Jordan conserve son titre NXT contre Wren Sinclair",
    "u": "https://www.catch-newz.com/wwe/newz/60871-nxt-halloween-havoc-grace-a-son-experience-kelani-jordan-conserve-son-titre-nxt-contre-wren-sinclair",
@@ -523,16 +533,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Spoilers de AEW Collision du 31 octobre 2026",
-   "u": "https://www.catch-newz.com/aew/resultats/60803-spoilers-aew-collision-31-octobre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-30",
-   "tags": [
-    "AEW",
-    "Collision"
-   ]
   }
  ],
  "yt": {
@@ -678,12 +678,13 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/newz/60872-officiel-grayson-waller-defendra-son-titre-nxt-contre-cm-punk-ce-mercredi",
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
-   "https://www.catch-newz.com/wwe/newz/60871-nxt-halloween-havoc-grace-a-son-experience-kelani-jordan-conserve-son-titre-nxt-contre-wren-sinclair",
    "https://www.catch-newz.com/aew/resultats/60860-resultats-de-cmll-viernes-espectacular-du-30-octobre-2026-dia-de-muertos-rey-del-inframundo",
    "https://www.catch-newz.com/wwe/newz/60854-preview-aaa-heroes-inmortales-31-octobre-2026",
    "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60871-nxt-halloween-havoc-grace-a-son-experience-kelani-jordan-conserve-son-titre-nxt-contre-wren-sinclair",
    "https://www.catch-newz.com/wwe/newz/60870-nxt-halloween-havoc-zilla-fatu-se-debarrasse-a-lui-tout-seul-de-charlie-dempsey-et-de-birthright",
    "https://www.catch-newz.com/wwe/newz/60869-nxt-halloween-havoc-myles-borne-terrasse-son-rival-tavion-heights-au-terme-dun-weapons-wild-match-palpitant",
    "https://www.catch-newz.com/international/newz/60868-carte-de-tjpw-there-may-be-no-answers-but-lets-wish-for-happiness",
@@ -776,7 +777,7 @@
  "diag": {
   "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "6 articles (7 j)",
-  "Catch Arena": "0 articles (7 j)",
+  "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
