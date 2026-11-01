@@ -1,14 +1,20 @@
 {
- "at": "2026-11-01T18:00:49.536Z",
+ "at": "2026-11-01T18:37:18.472Z",
  "items": [
   {
-   "t": "Ethan Page aura finalement son match pour le titre Intercontinental à WWE RAW",
-   "u": "https://www.catch-newz.com/wwe/newz/60882-ethan-page-aura-finalement-son-match-pour-le-titre-intercontinental-a-wwe-raw",
+   "t": "Les stars de the Final Slam dévoilent leurs catcheurs préférés",
+   "u": "https://www.catch-newz.com/international/newz/60887-les-stars-de-the-final-slam-devoilent-leurs-catcheurs-preferes",
+   "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": []
+  },
+  {
+   "t": "Sheamus : ''Je fais juste profiter de mon congé''",
+   "u": "https://www.catch-newz.com/aew/newz/60884-sheamus-je-fais-juste-profiter-de-mon-conge",
    "s": "Catch-Newz",
    "d": "2026-11-01",
    "tags": [
-    "WWE",
-    "Raw"
+    "AEW"
    ]
   },
   {
@@ -19,6 +25,16 @@
    "tags": [
     "WWE",
     "NXT"
+   ]
+  },
+  {
+   "t": "Ethan Page aura finalement son match pour le titre Intercontinental à WWE RAW",
+   "u": "https://www.catch-newz.com/wwe/newz/60882-ethan-page-aura-finalement-son-match-pour-le-titre-intercontinental-a-wwe-raw",
+   "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": [
+    "WWE",
+    "Raw"
    ]
   },
   {
@@ -198,6 +214,15 @@
    "tags": [
     "WWE",
     "AAA"
+   ]
+  },
+  {
+   "t": "Résultats de CMLL Sabado De Coliseo du 31 octobre 2026 - Dia De Muertos",
+   "u": "https://www.catch-newz.com/international/resultats/60888-resultats-de-cmll-sabado-de-coliseo-du-31-octobre-2026-dia-de-muertos",
+   "s": "Catch-Newz",
+   "d": "2026-10-31",
+   "tags": [
+    "CMLL"
    ]
   },
   {
@@ -497,17 +522,6 @@
    ]
   },
   {
-   "t": "Résultats de CMLL Viernes Espectacular du 30 octobre 2026 - Dia De Muertos/Rey Del Inframundo",
-   "u": "https://www.catch-newz.com/aew/resultats/60860-resultats-de-cmll-viernes-espectacular-du-30-octobre-2026-dia-de-muertos-rey-del-inframundo",
-   "s": "Catch-Newz",
-   "d": "2026-10-30",
-   "tags": [
-    "AEW",
-    "CMLL",
-    "Viernes Espectacular"
-   ]
-  },
-  {
    "t": "Canelo – Mbilli : à quelle heure et sur quelle chaîne voir le combat de boxe en direct ?",
    "u": "https://www.voxcatch.fr/2026/10/30/canelo-mbilli-a-quelle-heure-et-sur-quelle-chaine-voir-le-combat-de-boxe-en-direct/",
    "s": "VOXcatch",
@@ -517,25 +531,6 @@
   {
    "t": "Tammy Sytch (Sunny) demande à faire annuler sa condamnation pour DUI mortel",
    "u": "https://www.catch-arena.com/tammy-sytch-sunny-demande-a-faire-annuler-sa-condamnation-pour-dui-mortel/",
-   "s": "Catch Arena",
-   "d": "2026-10-30",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Preview : WWE SmackDown ''Danhausen’s Very Nice, Very Evil'' du 30 octobre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-30",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
-  },
-  {
-   "t": "WWE Crown Jewel 2026 déplacé à The Venue à Riyadh, nouvelle salle confirmée",
-   "u": "https://www.catch-arena.com/wwe-crown-jewel-2026-deplace-a-the-venue-a-riyadh-nouvelle-salle-confirmee/",
    "s": "Catch Arena",
    "d": "2026-10-30",
    "tags": [
@@ -741,11 +736,14 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
-   "https://www.catch-newz.com/wwe/newz/60882-ethan-page-aura-finalement-son-match-pour-le-titre-intercontinental-a-wwe-raw",
+   "https://www.catch-newz.com/international/newz/60887-les-stars-de-the-final-slam-devoilent-leurs-catcheurs-preferes",
+   "https://www.catch-newz.com/aew/newz/60884-sheamus-je-fais-juste-profiter-de-mon-conge",
    "https://www.catch-newz.com/aew/resultats/60852-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/60855-resultats-et-streaming-aaa-heroes-inmortales-31-octobre-2026",
-   "https://www.catch-newz.com/aew/resultats/60860-resultats-de-cmll-viernes-espectacular-du-30-octobre-2026-dia-de-muertos-rey-del-inframundo",
+   "https://www.catch-newz.com/international/resultats/60888-resultats-de-cmll-sabado-de-coliseo-du-31-octobre-2026-dia-de-muertos",
    "https://www.catch-newz.com/international/resultats/60883-resultats-de-lucha-libre-cabaret-du-31-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60882-ethan-page-aura-finalement-son-match-pour-le-titre-intercontinental-a-wwe-raw",
+   "https://www.catch-newz.com/aew/resultats/60860-resultats-de-cmll-viernes-espectacular-du-30-octobre-2026-dia-de-muertos-rey-del-inframundo",
    "https://www.catch-newz.com/international/newz/60408-carte-de-njpw-power-struggle-super-junior-tag-league-2026",
    "https://www.catch-newz.com/international/newz/60879-les-finalistes-de-la-njpw-super-junior-tag-league-2026-sont-connus",
    "https://www.catch-newz.com/wwe/newz/60881-une-premiere-apparition-a-nxt-pour-la-francaise-zoe-hines",
@@ -850,7 +848,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
