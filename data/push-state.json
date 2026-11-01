@@ -1,5 +1,5 @@
 {
- "at": "2026-11-01T02:43:50.888Z",
+ "at": "2026-11-01T04:46:40.162Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -140,7 +140,8 @@
   "a:https://www.catch-newz.com/wwe/newz/60869-nxt-halloween-havoc-myles-borne-terrasse-son-rival-tavion-heights-au-terme-dun-weapons-wild-match-palpitant": "2026-11-01",
   "a:https://www.catch-newz.com/wwe/newz/60870-nxt-halloween-havoc-zilla-fatu-se-debarrasse-a-lui-tout-seul-de-charlie-dempsey-et-de-birthright": "2026-11-01",
   "a:https://www.catch-newz.com/wwe/newz/60871-nxt-halloween-havoc-grace-a-son-experience-kelani-jordan-conserve-son-titre-nxt-contre-wren-sinclair": "2026-11-01",
-  "a:https://www.catch-newz.com/wwe/newz/60872-officiel-grayson-waller-defendra-son-titre-nxt-contre-cm-punk-ce-mercredi": "2026-11-01"
+  "a:https://www.catch-newz.com/wwe/newz/60872-officiel-grayson-waller-defendra-son-titre-nxt-contre-cm-punk-ce-mercredi": "2026-11-01",
+  "a:https://www.catch-newz.com/wwe/resultats/60853-wwe-nxt-halloween-havoc-2026": "2026-11-01"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -199,6 +200,14 @@
     "url": "https://www.catch-newz.com/wwe/newz/60872-officiel-grayson-waller-defendra-son-titre-nxt-contre-cm-punk-ce-mercredi",
     "tag": "art",
     "short": "OFFICIEL : Grayson Waller défendra son titre NXT contre CM Punk ce mercredi"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Catch-Newz",
+    "body": "Résultats de WWE NXT Halloween Havoc 2026",
+    "url": "https://www.catch-newz.com/wwe/resultats/60853-wwe-nxt-halloween-havoc-2026",
+    "tag": "art",
+    "short": "Résultats de WWE NXT Halloween Havoc 2026"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -257,6 +266,14 @@
     "url": "https://www.catch-newz.com/wwe/newz/60872-officiel-grayson-waller-defendra-son-titre-nxt-contre-cm-punk-ce-mercredi",
     "tag": "art",
     "short": "OFFICIEL : Grayson Waller défendra son titre NXT contre CM Punk ce mercredi"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Catch-Newz",
+    "body": "Résultats de WWE NXT Halloween Havoc 2026",
+    "url": "https://www.catch-newz.com/wwe/resultats/60853-wwe-nxt-halloween-havoc-2026",
+    "tag": "art",
+    "short": "Résultats de WWE NXT Halloween Havoc 2026"
    }
   ]
  }

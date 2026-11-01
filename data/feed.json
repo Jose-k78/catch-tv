@@ -1,6 +1,16 @@
 {
- "at": "2026-11-01T03:47:32.379Z",
+ "at": "2026-11-01T04:46:40.108Z",
  "items": [
+  {
+   "t": "Résultats de WWE NXT Halloween Havoc 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/60853-wwe-nxt-halloween-havoc-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
   {
    "t": "OFFICIEL : Grayson Waller défendra son titre NXT contre CM Punk ce mercredi",
    "u": "https://www.catch-newz.com/wwe/newz/60872-officiel-grayson-waller-defendra-son-titre-nxt-contre-cm-punk-ce-mercredi",
@@ -524,15 +534,6 @@
    "s": "Catch-Newz",
    "d": "2026-10-30",
    "tags": []
-  },
-  {
-   "t": "Je'Von Evans veut un match pour le titre World Heavyweight à WrestleMania avant ses 24 ans",
-   "u": "https://www.catch-newz.com/wwe/newz/60825-jevon-evans-veut-un-match-pour-le-titre-world-heavyweight-a-wrestlemania-avant-ses-24-ans",
-   "s": "Catch-Newz",
-   "d": "2026-10-30",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -678,6 +679,7 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/resultats/60853-wwe-nxt-halloween-havoc-2026",
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
    "https://www.catch-newz.com/aew/resultats/60860-resultats-de-cmll-viernes-espectacular-du-30-octobre-2026-dia-de-muertos-rey-del-inframundo",
@@ -775,7 +777,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
