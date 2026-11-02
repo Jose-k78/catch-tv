@@ -1,6 +1,24 @@
 {
- "at": "2026-11-02T08:40:37.578Z",
+ "at": "2026-11-02T09:57:59.982Z",
  "items": [
+  {
+   "t": "Rusev : « Si Penta devient champion, j’en serai plus qu’heureux pour lui et pour le milieu en général »",
+   "u": "https://www.catch-newz.com/wwe/newz/60911-rusev-si-penta-devient-champion-jen-serai-plus-quheureux-pour-lui-et-pour-le-milieu-en-general",
+   "s": "Catch-Newz",
+   "d": "2026-11-02",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Nikki Bella veut faire équipe avec Blake Monroe à la WWE",
+   "u": "https://www.catch-newz.com/wwe/newz/60910-nikki-bella-veut-faire-equipe-avec-blake-monroe-a-la-wwe",
+   "s": "Catch-Newz",
+   "d": "2026-11-02",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Preview : WWE NXT du 4 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
@@ -10,6 +28,20 @@
     "WWE",
     "NXT"
    ]
+  },
+  {
+   "t": "Carte de DDT Ultimate Party 2026",
+   "u": "https://www.catch-newz.com/international/newz/60897-carte-de-ddt-ultimate-party-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-02",
+   "tags": []
+  },
+  {
+   "t": "Résultats de AKOS/DDT In Front Of The Station Pro Wrestling",
+   "u": "https://www.catch-newz.com/international/resultats/60908-resultats-de-akos-ddt-in-front-of-the-station-pro-wrestling",
+   "s": "Catch-Newz",
+   "d": "2026-11-02",
+   "tags": []
   },
   {
    "t": "Résultats de DDT Yokohama Pro Wrestling Rhapsody 2026",
@@ -35,13 +67,6 @@
    ]
   },
   {
-   "t": "Carte de IWRG Funcion Espectacular du 1er novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/60898-carte-de-iwrg-funcion-espectacular-du-1er-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-01",
-   "tags": []
-  },
-  {
    "t": "Résultats de NXT Halloween Havoc 2026",
    "u": "https://www.voxcatch.fr/2026/11/01/resultats-nxt-halloween-havoc-2026/",
    "s": "VOXcatch",
@@ -50,6 +75,13 @@
     "WWE",
     "NXT"
    ]
+  },
+  {
+   "t": "Carte de IWRG Funcion Espectacular du 1er novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/60898-carte-de-iwrg-funcion-espectacular-du-1er-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": []
   },
   {
    "t": "Résultats de DDT Wrestling Harvest 2026",
@@ -490,42 +522,6 @@
    "s": "Catch-Newz",
    "d": "2026-10-31",
    "tags": []
-  },
-  {
-   "t": "Carte de CMLL Sabado De Coliseo du 31 octobre 2026 - Dia De Muertos",
-   "u": "https://www.catch-newz.com/international/newz/60861-carte-de-cmll-sabado-de-coliseo-du-31-octobre-2026-dia-de-muertos",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": [
-    "CMLL"
-   ]
-  },
-  {
-   "t": "Résultats du jour 6 de la NJPW Super Junior Tag League 2026",
-   "u": "https://www.catch-newz.com/international/resultats/60863-resultats-du-jour-6-de-la-njpw-super-junior-tag-league-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": [
-    "NJPW"
-   ]
-  },
-  {
-   "t": "Piper Niven de retour à l'entraînement au Performance Center",
-   "u": "https://www.catch-newz.com/wwe/newz/60859-piper-niven-de-retour-a-lentrainement-au-performance-center",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Big Cass confirme que son retour à la WWE a été difficile sans Enzo Amore",
-   "u": "https://www.catch-newz.com/wwe/newz/60858-big-cass-confirme-que-son-retour-a-la-wwe-a-ete-difficile-sans-enzo-amore",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -726,9 +722,13 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60911-rusev-si-penta-devient-champion-jen-serai-plus-quheureux-pour-lui-et-pour-le-milieu-en-general",
+   "https://www.catch-newz.com/wwe/newz/60910-nikki-bella-veut-faire-equipe-avec-blake-monroe-a-la-wwe",
    "https://www.catch-newz.com/international/resultats/60904-resultats-de-indy-wrestling-du-15-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60824-resultats-et-streaming-de-wwe-evolve-du-28-octobre-2026",
+   "https://www.catch-newz.com/international/newz/60897-carte-de-ddt-ultimate-party-2026",
+   "https://www.catch-newz.com/international/resultats/60908-resultats-de-akos-ddt-in-front-of-the-station-pro-wrestling",
    "https://www.catch-newz.com/international/newz/60898-carte-de-iwrg-funcion-espectacular-du-1er-novembre-2026",
    "https://www.catch-newz.com/international/resultats/60907-resultats-de-ddt-yokohama-pro-wrestling-rhapsody-2026",
    "https://www.catch-newz.com/international/resultats/60890-resultats-de-lol-mischief-night-mayhem-5",
@@ -857,7 +857,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
