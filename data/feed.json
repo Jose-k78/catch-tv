@@ -1,6 +1,23 @@
 {
- "at": "2026-11-02T09:57:59.982Z",
+ "at": "2026-11-02T10:55:17.649Z",
  "items": [
+  {
+   "t": "Preview : WWE NXT du 4 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-02",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
+   "t": "Résultats de TJPW There May Be No Answer, But Let's Wish For Happiness",
+   "u": "https://www.catch-newz.com/international/resultats/60878-resultats-de-tjpw-there-may-be-no-answer-but-lets-wish-for-happiness",
+   "s": "Catch-Newz",
+   "d": "2026-11-02",
+   "tags": []
+  },
   {
    "t": "Rusev : « Si Penta devient champion, j’en serai plus qu’heureux pour lui et pour le milieu en général »",
    "u": "https://www.catch-newz.com/wwe/newz/60911-rusev-si-penta-devient-champion-jen-serai-plus-quheureux-pour-lui-et-pour-le-milieu-en-general",
@@ -17,16 +34,6 @@
    "d": "2026-11-02",
    "tags": [
     "WWE"
-   ]
-  },
-  {
-   "t": "Preview : WWE NXT du 4 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-02",
-   "tags": [
-    "WWE",
-    "NXT"
    ]
   },
   {
@@ -515,13 +522,6 @@
     "AEW",
     "Collision"
    ]
-  },
-  {
-   "t": "Résultats de Sendai Girls Pro Wrestling du 31 octobre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/60862-resultats-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": []
   }
  ],
  "yt": {
@@ -722,11 +722,12 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
-   "https://www.catch-newz.com/wwe/newz/60911-rusev-si-penta-devient-champion-jen-serai-plus-quheureux-pour-lui-et-pour-le-milieu-en-general",
-   "https://www.catch-newz.com/wwe/newz/60910-nikki-bella-veut-faire-equipe-avec-blake-monroe-a-la-wwe",
    "https://www.catch-newz.com/international/resultats/60904-resultats-de-indy-wrestling-du-15-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60824-resultats-et-streaming-de-wwe-evolve-du-28-octobre-2026",
+   "https://www.catch-newz.com/international/resultats/60878-resultats-de-tjpw-there-may-be-no-answer-but-lets-wish-for-happiness",
+   "https://www.catch-newz.com/wwe/newz/60911-rusev-si-penta-devient-champion-jen-serai-plus-quheureux-pour-lui-et-pour-le-milieu-en-general",
+   "https://www.catch-newz.com/wwe/newz/60910-nikki-bella-veut-faire-equipe-avec-blake-monroe-a-la-wwe",
    "https://www.catch-newz.com/international/newz/60897-carte-de-ddt-ultimate-party-2026",
    "https://www.catch-newz.com/international/resultats/60908-resultats-de-akos-ddt-in-front-of-the-station-pro-wrestling",
    "https://www.catch-newz.com/international/newz/60898-carte-de-iwrg-funcion-espectacular-du-1er-novembre-2026",
@@ -857,7 +858,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
