@@ -1,5 +1,5 @@
 {
- "at": "2026-11-02T19:26:44.361Z",
+ "at": "2026-11-02T20:17:07.117Z",
  "items": [
   {
    "t": "Preview : WWE RAW du 2 novembre 2026",
@@ -30,6 +30,13 @@
     "WWE",
     "NXT"
    ]
+  },
+  {
+   "t": "Résultats de TJPW Lets Keep Going, Nanao! Noto! Noto Genki Women's Pro Wrestling",
+   "u": "https://www.catch-newz.com/international/resultats/60921-resultats-de-tjpw-lets-keep-going-nanao-noto-noto-genki-womens-pro-wrestling",
+   "s": "Catch-Newz",
+   "d": "2026-11-02",
+   "tags": []
   },
   {
    "t": "Regardez WSW MegaMania Adélaïde gratuitement",
@@ -506,15 +513,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "JBL revient sur sa longue amitié avec Savio Vega depuis SummerSlam 1996",
-   "u": "https://www.catch-arena.com/jbl-revient-sur-sa-longue-amitie-avec-savio-vega-depuis-summerslam-1996/",
-   "s": "Catch Arena",
-   "d": "2026-10-31",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -722,6 +720,7 @@
    "https://www.catch-newz.com/aew/newz/60874-preview-aew-dynamite-blood-and-guts-du-4-novembre-2026",
    "https://www.catch-newz.com/international/resultats/60904-resultats-de-indy-wrestling-du-15-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/60921-resultats-de-tjpw-lets-keep-going-nanao-noto-noto-genki-womens-pro-wrestling",
    "https://www.catch-newz.com/international/resultats/60901-resultats-de-cmll-domingo-familiar-du-1er-novembre-2026-tzompantli-de-mascaras",
    "https://www.catch-newz.com/international/resultats/60913-resultats-de-alto-voltaje-cmll-du-4-octobre-2026",
    "https://www.catch-newz.com/international/newz/60875-regardez-wsw-megamania-adelaide-gratuitement",
@@ -867,7 +866,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
