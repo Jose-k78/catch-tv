@@ -1,5 +1,5 @@
 {
- "at": "2026-11-02T16:31:03.517Z",
+ "at": "2026-11-02T17:25:31.702Z",
  "items": [
   {
    "t": "Preview : WWE RAW du 2 novembre 2026",
@@ -12,8 +12,8 @@
    ]
   },
   {
-   "t": "Cody Rhodes : « Bianca Belair est peut-être la plus grande athlète que la WWE ait jamais connue »",
-   "u": "https://www.catch-newz.com/wwe/newz/60919-cody-rhodes-bianca-belair-est-peut-etre-la-plus-grande-athlete-que-la-wwe-ait-jamais-connue",
+   "t": "Sami Zayn : « Je ne pense pas qu’il soit absurde de dire que j’aurais dû gagner »",
+   "u": "https://www.catch-newz.com/wwe/newz/60920-sami-zayn-je-ne-pense-pas-quil-soit-absurde-de-dire-que-jaurais-du-gagner",
    "s": "Catch-Newz",
    "d": "2026-11-02",
    "tags": [
@@ -38,6 +38,22 @@
    "tags": [
     "WWE",
     "NXT"
+   ]
+  },
+  {
+   "t": "Résultats de VKF Halloween Havoc 2026",
+   "u": "https://www.catch-newz.com/international/resultats/60893-resultats-de-vkf-halloween-havoc-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-02",
+   "tags": []
+  },
+  {
+   "t": "Cody Rhodes : « Bianca Belair est peut-être la plus grande athlète que la WWE ait jamais connue »",
+   "u": "https://www.catch-newz.com/wwe/newz/60919-cody-rhodes-bianca-belair-est-peut-etre-la-plus-grande-athlete-que-la-wwe-ait-jamais-connue",
+   "s": "Catch-Newz",
+   "d": "2026-11-02",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -501,26 +517,6 @@
    "tags": [
     "AEW"
    ]
-  },
-  {
-   "t": "NXT Halloween Havoc 2026 : Waller défend son titre face à D’Angelo",
-   "u": "https://www.catch-arena.com/nxt-halloween-havoc-2026-waller-defend-son-titre-face-a-dangelo/",
-   "s": "Catch Arena",
-   "d": "2026-10-31",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
-  },
-  {
-   "t": "AEW Dynamite Fright Night chute à 620 000 téléspectateurs, un plus bas en octobre",
-   "u": "https://www.catch-arena.com/aew-dynamite-fright-night-chute-a-620-000-telespectateurs-un-plus-bas-en-octobre/",
-   "s": "Catch Arena",
-   "d": "2026-10-31",
-   "tags": [
-    "AEW",
-    "Dynamite"
-   ]
   }
  ],
  "yt": {
@@ -644,6 +640,10 @@
    {
     "id": "gCbCmsn3gvg",
     "t": "Abadon contre Athena"
+   },
+   {
+    "id": "Zc-aisYVTgg",
+    "t": "Cassie Lee contre Lacey Lane"
    }
   ],
   "WWE|PLE|2026-10-31": [
@@ -721,14 +721,16 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/60918-preview-wwe-raw-2-novembre-2026",
-   "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
-   "https://www.catch-newz.com/wwe/newz/60919-cody-rhodes-bianca-belair-est-peut-etre-la-plus-grande-athlete-que-la-wwe-ait-jamais-connue",
+   "https://www.catch-newz.com/wwe/newz/60920-sami-zayn-je-ne-pense-pas-quil-soit-absurde-de-dire-que-jaurais-du-gagner",
    "https://www.catch-newz.com/aew/newz/60874-preview-aew-dynamite-blood-and-guts-du-4-novembre-2026",
    "https://www.catch-newz.com/international/resultats/60904-resultats-de-indy-wrestling-du-15-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60824-resultats-et-streaming-de-wwe-evolve-du-28-octobre-2026",
+   "https://www.catch-newz.com/international/resultats/60893-resultats-de-vkf-halloween-havoc-2026",
    "https://www.catch-newz.com/international/resultats/60901-resultats-de-cmll-domingo-familiar-du-1er-novembre-2026-tzompantli-de-mascaras",
    "https://www.catch-newz.com/international/resultats/60913-resultats-de-alto-voltaje-cmll-du-4-octobre-2026",
+   "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60919-cody-rhodes-bianca-belair-est-peut-etre-la-plus-grande-athlete-que-la-wwe-ait-jamais-connue",
    "https://www.catch-newz.com/wwe/newz/60917-danhausen-remercie-chaleureusement-les-fans-qui-se-sont-deguises-en-lui-pour-halloween",
    "https://www.catch-newz.com/wwe/newz/60916-santino-marella-donne-son-avis-sur-le-clan-birthright",
    "https://www.catch-newz.com/wwe/newz/60915-cody-rhodes-cetait-la-pire-periode-de-toute-ma-vie",
@@ -871,7 +873,7 @@
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
-  "YouTube ROH": "0 nouvelles vidéos",
+  "YouTube ROH": "1 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
   "YouTube TNA": "0 nouvelles vidéos",
   "YouTube NJPW": "0 nouvelles vidéos",
