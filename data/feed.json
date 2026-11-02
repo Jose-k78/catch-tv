@@ -1,9 +1,38 @@
 {
- "at": "2026-11-02T14:10:30.240Z",
+ "at": "2026-11-02T15:25:12.504Z",
  "items": [
   {
-   "t": "Cody Rhodes : « C'était la pire période de toute ma vie »",
-   "u": "https://www.catch-newz.com/wwe/newz/60915-cody-rhodes-cetait-la-pire-periode-de-toute-ma-vie",
+   "t": "Preview : WWE RAW du 2 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/60918-preview-wwe-raw-2-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-02",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
+  {
+   "t": "Preview : AEW Dynamite Blood and Guts du 4 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/newz/60874-preview-aew-dynamite-blood-and-guts-du-4-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-02",
+   "tags": [
+    "AEW",
+    "Dynamite"
+   ]
+  },
+  {
+   "t": "Danhausen remercie chaleureusement les fans qui se sont déguisés en lui pour Halloween",
+   "u": "https://www.catch-newz.com/wwe/newz/60917-danhausen-remercie-chaleureusement-les-fans-qui-se-sont-deguises-en-lui-pour-halloween",
+   "s": "Catch-Newz",
+   "d": "2026-11-02",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Santino Marella donne son avis sur le clan BirthRight",
+   "u": "https://www.catch-newz.com/wwe/newz/60916-santino-marella-donne-son-avis-sur-le-clan-birthright",
    "s": "Catch-Newz",
    "d": "2026-11-02",
    "tags": [
@@ -18,6 +47,15 @@
    "tags": [
     "WWE",
     "NXT"
+   ]
+  },
+  {
+   "t": "Cody Rhodes : « C'était la pire période de toute ma vie »",
+   "u": "https://www.catch-newz.com/wwe/newz/60915-cody-rhodes-cetait-la-pire-periode-de-toute-ma-vie",
+   "s": "Catch-Newz",
+   "d": "2026-11-02",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -484,44 +522,6 @@
     "WWE",
     "SmackDown"
    ]
-  },
-  {
-   "t": "Mark Shapiro confirme que TKO pourrait annuler Crown Jewel en Arabie Saoudite",
-   "u": "https://www.catch-arena.com/mark-shapiro-confirme-que-tko-pourrait-annuler-crown-jewel-en-arabie-saoudite/",
-   "s": "Catch Arena",
-   "d": "2026-10-31",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Résultats de AEW Collision du 31 octobre 2026",
-   "u": "https://www.catch-newz.com/aew/resultats/60852-aew-collision-31-octobre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": [
-    "AEW",
-    "Collision"
-   ]
-  },
-  {
-   "t": "Résultats et streaming de AAA Heroes Inmortales du 31 octobre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/60855-resultats-et-streaming-aaa-heroes-inmortales-31-octobre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": [
-    "WWE",
-    "AAA"
-   ]
-  },
-  {
-   "t": "Résultats de CMLL Sabado De Coliseo du 31 octobre 2026 - Dia De Muertos",
-   "u": "https://www.catch-newz.com/international/resultats/60888-resultats-de-cmll-sabado-de-coliseo-du-31-octobre-2026-dia-de-muertos",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": [
-    "CMLL"
-   ]
   }
  ],
  "yt": {
@@ -721,13 +721,17 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/newz/60918-preview-wwe-raw-2-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
-   "https://www.catch-newz.com/wwe/newz/60915-cody-rhodes-cetait-la-pire-periode-de-toute-ma-vie",
+   "https://www.catch-newz.com/aew/newz/60874-preview-aew-dynamite-blood-and-guts-du-4-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/60917-danhausen-remercie-chaleureusement-les-fans-qui-se-sont-deguises-en-lui-pour-halloween",
+   "https://www.catch-newz.com/wwe/newz/60916-santino-marella-donne-son-avis-sur-le-clan-birthright",
    "https://www.catch-newz.com/international/resultats/60904-resultats-de-indy-wrestling-du-15-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60824-resultats-et-streaming-de-wwe-evolve-du-28-octobre-2026",
    "https://www.catch-newz.com/international/resultats/60901-resultats-de-cmll-domingo-familiar-du-1er-novembre-2026-tzompantli-de-mascaras",
    "https://www.catch-newz.com/international/resultats/60913-resultats-de-alto-voltaje-cmll-du-4-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60915-cody-rhodes-cetait-la-pire-periode-de-toute-ma-vie",
    "https://www.catch-newz.com/wwe/newz/60912-grayson-waller-je-ne-vois-tout-simplement-pas-de-passion-chez-ces-gars-la",
    "https://www.catch-newz.com/international/resultats/60878-resultats-de-tjpw-there-may-be-no-answer-but-lets-wish-for-happiness",
    "https://www.catch-newz.com/wwe/newz/60911-rusev-si-penta-devient-champion-jen-serai-plus-quheureux-pour-lui-et-pour-le-milieu-en-general",
@@ -862,7 +866,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 10 nouveaux articles lus sur la page d'accueil (10 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
