@@ -1,5 +1,5 @@
 {
- "at": "2026-11-02T00:54:54.694Z",
+ "at": "2026-11-02T07:15:24.876Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -173,44 +173,9 @@
   "a:https://www.catch-newz.com/international/resultats/60906-resultats-de-ddt-wrestling-harvest-2026": "2026-11-01",
   "a:https://www.catch-newz.com/international/newz/60905-carte-de-last-resort-a-tribute-to-mark-wolf": "2026-11-01",
   "a:https://www.catch-newz.com/international/newz/60898-carte-de-iwrg-funcion-espectacular-du-1er-novembre-2026": "2026-11-01",
-  "a:https://www.catch-newz.com/aew/newz/60884-sheamus-je-profite-juste-de-mon-conge": "2026-11-02"
+  "a:https://www.catch-newz.com/aew/newz/60884-sheamus-je-profite-juste-de-mon-conge": "2026-11-02",
+  "a:https://www.catch-newz.com/international/resultats/60907-resultats-de-ddt-yokohama-pro-wrestling-rhapsody-2026": "2026-11-02",
+  "a:https://www.catch-newz.com/international/resultats/60890-resultats-de-lol-mischief-night-mayhem-5": "2026-11-02"
  },
- "pend": {
-  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
-   {
-    "cat": "info",
-    "title": "📰 3 nouvelles infos",
-    "body": "Résultats de DDT Wrestling Harvest 2026 · Carte de Last Resort - A Tribute To Mark Wolf · Carte de IWRG Funcion Espectacular du 1er novembre 2026",
-    "url": "#/",
-    "tag": "art",
-    "short": "3 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Catch-Newz",
-    "body": "Sheamus : ''Je profite juste de mon congé''",
-    "url": "https://www.catch-newz.com/aew/newz/60884-sheamus-je-profite-juste-de-mon-conge",
-    "tag": "art",
-    "short": "Sheamus : ''Je profite juste de mon congé''"
-   }
-  ],
-  "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
-   {
-    "cat": "info",
-    "title": "📰 3 nouvelles infos",
-    "body": "Résultats de DDT Wrestling Harvest 2026 · Carte de Last Resort - A Tribute To Mark Wolf · Carte de IWRG Funcion Espectacular du 1er novembre 2026",
-    "url": "#/",
-    "tag": "art",
-    "short": "3 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Catch-Newz",
-    "body": "Sheamus : ''Je profite juste de mon congé''",
-    "url": "https://www.catch-newz.com/aew/newz/60884-sheamus-je-profite-juste-de-mon-conge",
-    "tag": "art",
-    "short": "Sheamus : ''Je profite juste de mon congé''"
-   }
-  ]
- }
+ "pend": {}
 }

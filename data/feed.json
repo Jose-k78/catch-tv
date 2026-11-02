@@ -1,5 +1,5 @@
 {
- "at": "2026-11-02T05:56:53.482Z",
+ "at": "2026-11-02T07:15:24.824Z",
  "items": [
   {
    "t": "Preview : WWE NXT du 4 novembre 2026",
@@ -10,6 +10,20 @@
     "WWE",
     "NXT"
    ]
+  },
+  {
+   "t": "Résultats de DDT Yokohama Pro Wrestling Rhapsody 2026",
+   "u": "https://www.catch-newz.com/international/resultats/60907-resultats-de-ddt-yokohama-pro-wrestling-rhapsody-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-02",
+   "tags": []
+  },
+  {
+   "t": "Résultats de LOL Mischief Night Mayhem 5",
+   "u": "https://www.catch-newz.com/international/resultats/60890-resultats-de-lol-mischief-night-mayhem-5",
+   "s": "Catch-Newz",
+   "d": "2026-11-02",
+   "tags": []
   },
   {
    "t": "Sheamus : ''Je profite juste de mon congé''",
@@ -512,25 +526,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Le fils de Mark Henry bientôt prêt à se lancer à temps plein à la WWE",
-   "u": "https://www.catch-newz.com/wwe/newz/60857-le-fils-de-mark-henry-bientot-pret-a-se-lancer-a-temps-plein-a-la-wwe",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Des nouvelles de Jeff Hardy après l'attaque à la hache à TNA Impact",
-   "u": "https://www.catch-newz.com/international/newz/60856-des-nouvelles-de-jeff-hardy-apres-lattaque-a-la-hache-a-tna-impact",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": [
-    "TNA",
-    "Impact"
-   ]
   }
  ],
  "yt": {
@@ -734,6 +729,8 @@
    "https://www.catch-newz.com/international/resultats/60904-resultats-de-indy-wrestling-du-15-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60824-resultats-et-streaming-de-wwe-evolve-du-28-octobre-2026",
+   "https://www.catch-newz.com/international/resultats/60907-resultats-de-ddt-yokohama-pro-wrestling-rhapsody-2026",
+   "https://www.catch-newz.com/international/resultats/60890-resultats-de-lol-mischief-night-mayhem-5",
    "https://www.catch-newz.com/international/newz/60898-carte-de-iwrg-funcion-espectacular-du-1er-novembre-2026",
    "https://www.catch-newz.com/aew/newz/60884-sheamus-je-profite-juste-de-mon-conge",
    "https://www.catch-newz.com/international/resultats/60906-resultats-de-ddt-wrestling-harvest-2026",
@@ -860,7 +857,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
