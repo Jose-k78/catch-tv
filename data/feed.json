@@ -1,6 +1,15 @@
 {
- "at": "2026-11-02T12:57:21.811Z",
+ "at": "2026-11-02T14:10:30.240Z",
  "items": [
+  {
+   "t": "Cody Rhodes : « C'était la pire période de toute ma vie »",
+   "u": "https://www.catch-newz.com/wwe/newz/60915-cody-rhodes-cetait-la-pire-periode-de-toute-ma-vie",
+   "s": "Catch-Newz",
+   "d": "2026-11-02",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Preview : WWE NXT du 4 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
@@ -513,13 +522,6 @@
    "tags": [
     "CMLL"
    ]
-  },
-  {
-   "t": "Résultats de Lucha Libre Cabaret du 31 octobre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/60883-resultats-de-lucha-libre-cabaret-du-31-octobre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": []
   }
  ],
  "yt": {
@@ -720,6 +722,7 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60915-cody-rhodes-cetait-la-pire-periode-de-toute-ma-vie",
    "https://www.catch-newz.com/international/resultats/60904-resultats-de-indy-wrestling-du-15-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60824-resultats-et-streaming-de-wwe-evolve-du-28-octobre-2026",
@@ -859,7 +862,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
