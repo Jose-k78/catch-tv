@@ -1,15 +1,6 @@
 {
- "at": "2026-11-02T11:49:21.585Z",
+ "at": "2026-11-02T12:57:21.811Z",
  "items": [
-  {
-   "t": "Grayson Waller : « Je ne vois tout simplement pas de passion chez ces gars-là »",
-   "u": "https://www.catch-newz.com/wwe/newz/60912-grayson-waller-je-ne-vois-tout-simplement-pas-de-passion-chez-ces-gars-la",
-   "s": "Catch-Newz",
-   "d": "2026-11-02",
-   "tags": [
-    "WWE"
-   ]
-  },
   {
    "t": "Preview : WWE NXT du 4 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
@@ -18,6 +9,15 @@
    "tags": [
     "WWE",
     "NXT"
+   ]
+  },
+  {
+   "t": "Grayson Waller : « Je ne vois tout simplement pas de passion chez ces gars-là »",
+   "u": "https://www.catch-newz.com/wwe/newz/60912-grayson-waller-je-ne-vois-tout-simplement-pas-de-passion-chez-ces-gars-la",
+   "s": "Catch-Newz",
+   "d": "2026-11-02",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -80,6 +80,15 @@
    "d": "2026-11-02",
    "tags": [
     "AEW"
+   ]
+  },
+  {
+   "t": "Résultats de CMLL Domingo Familiar du 1er novembre 2026 - Tzompantli de Mascaras",
+   "u": "https://www.catch-newz.com/international/resultats/60901-resultats-de-cmll-domingo-familiar-du-1er-novembre-2026-tzompantli-de-mascaras",
+   "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": [
+    "CMLL"
    ]
   },
   {
@@ -511,16 +520,6 @@
    "s": "Catch-Newz",
    "d": "2026-10-31",
    "tags": []
-  },
-  {
-   "t": "Preview : AAA Heroes Inmortales du 31 octobre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/60854-preview-aaa-heroes-inmortales-31-octobre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-10-31",
-   "tags": [
-    "WWE",
-    "AAA"
-   ]
   }
  ],
  "yt": {
@@ -721,10 +720,12 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
-   "https://www.catch-newz.com/wwe/newz/60912-grayson-waller-je-ne-vois-tout-simplement-pas-de-passion-chez-ces-gars-la",
    "https://www.catch-newz.com/international/resultats/60904-resultats-de-indy-wrestling-du-15-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60824-resultats-et-streaming-de-wwe-evolve-du-28-octobre-2026",
+   "https://www.catch-newz.com/international/resultats/60901-resultats-de-cmll-domingo-familiar-du-1er-novembre-2026-tzompantli-de-mascaras",
+   "https://www.catch-newz.com/international/resultats/60913-resultats-de-alto-voltaje-cmll-du-4-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60912-grayson-waller-je-ne-vois-tout-simplement-pas-de-passion-chez-ces-gars-la",
    "https://www.catch-newz.com/international/resultats/60878-resultats-de-tjpw-there-may-be-no-answer-but-lets-wish-for-happiness",
    "https://www.catch-newz.com/wwe/newz/60911-rusev-si-penta-devient-champion-jen-serai-plus-quheureux-pour-lui-et-pour-le-milieu-en-general",
    "https://www.catch-newz.com/wwe/newz/60910-nikki-bella-veut-faire-equipe-avec-blake-monroe-a-la-wwe",
@@ -858,7 +859,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
