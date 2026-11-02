@@ -1,5 +1,5 @@
 {
- "at": "2026-11-02T18:22:28.386Z",
+ "at": "2026-11-02T19:26:44.361Z",
  "items": [
   {
    "t": "Preview : WWE RAW du 2 novembre 2026",
@@ -10,13 +10,6 @@
     "WWE",
     "Raw"
    ]
-  },
-  {
-   "t": "Regardez WSW MegaMania Adélaïde gratuitement",
-   "u": "https://www.catch-newz.com/international/newz/60875-regardez-wsw-megamania-adelaide-gratuitement",
-   "s": "Catch-Newz",
-   "d": "2026-11-02",
-   "tags": []
   },
   {
    "t": "Preview : AEW Dynamite Blood and Guts du 4 novembre 2026",
@@ -37,6 +30,13 @@
     "WWE",
     "NXT"
    ]
+  },
+  {
+   "t": "Regardez WSW MegaMania Adélaïde gratuitement",
+   "u": "https://www.catch-newz.com/international/newz/60875-regardez-wsw-megamania-adelaide-gratuitement",
+   "s": "Catch-Newz",
+   "d": "2026-11-02",
+   "tags": []
   },
   {
    "t": "Sami Zayn : « Je ne pense pas qu’il soit absurde de dire que j’aurais dû gagner »",
@@ -719,12 +719,12 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/60918-preview-wwe-raw-2-novembre-2026",
-   "https://www.catch-newz.com/international/newz/60875-regardez-wsw-megamania-adelaide-gratuitement",
    "https://www.catch-newz.com/aew/newz/60874-preview-aew-dynamite-blood-and-guts-du-4-novembre-2026",
    "https://www.catch-newz.com/international/resultats/60904-resultats-de-indy-wrestling-du-15-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
    "https://www.catch-newz.com/international/resultats/60901-resultats-de-cmll-domingo-familiar-du-1er-novembre-2026-tzompantli-de-mascaras",
    "https://www.catch-newz.com/international/resultats/60913-resultats-de-alto-voltaje-cmll-du-4-octobre-2026",
+   "https://www.catch-newz.com/international/newz/60875-regardez-wsw-megamania-adelaide-gratuitement",
    "https://www.catch-newz.com/wwe/newz/60920-sami-zayn-je-ne-pense-pas-quil-soit-absurde-de-dire-que-jaurais-du-gagner",
    "https://www.catch-newz.com/wwe/resultats/60824-resultats-et-streaming-de-wwe-evolve-du-28-octobre-2026",
    "https://www.catch-newz.com/international/resultats/60893-resultats-de-vkf-halloween-havoc-2026",
@@ -867,7 +867,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
