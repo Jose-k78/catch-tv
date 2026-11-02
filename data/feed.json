@@ -1,5 +1,5 @@
 {
- "at": "2026-11-02T17:25:31.702Z",
+ "at": "2026-11-02T18:22:28.386Z",
  "items": [
   {
    "t": "Preview : WWE RAW du 2 novembre 2026",
@@ -12,13 +12,11 @@
    ]
   },
   {
-   "t": "Sami Zayn : « Je ne pense pas qu’il soit absurde de dire que j’aurais dû gagner »",
-   "u": "https://www.catch-newz.com/wwe/newz/60920-sami-zayn-je-ne-pense-pas-quil-soit-absurde-de-dire-que-jaurais-du-gagner",
+   "t": "Regardez WSW MegaMania Adélaïde gratuitement",
+   "u": "https://www.catch-newz.com/international/newz/60875-regardez-wsw-megamania-adelaide-gratuitement",
    "s": "Catch-Newz",
    "d": "2026-11-02",
-   "tags": [
-    "WWE"
-   ]
+   "tags": []
   },
   {
    "t": "Preview : AEW Dynamite Blood and Guts du 4 novembre 2026",
@@ -38,6 +36,15 @@
    "tags": [
     "WWE",
     "NXT"
+   ]
+  },
+  {
+   "t": "Sami Zayn : « Je ne pense pas qu’il soit absurde de dire que j’aurais dû gagner »",
+   "u": "https://www.catch-newz.com/wwe/newz/60920-sami-zayn-je-ne-pense-pas-quil-soit-absurde-de-dire-que-jaurais-du-gagner",
+   "s": "Catch-Newz",
+   "d": "2026-11-02",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -508,15 +515,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Samoa Joe explique pourquoi le catch moderne surpasse celui du passé",
-   "u": "https://www.catch-arena.com/samoa-joe-explique-pourquoi-le-catch-moderne-surpasse-celui-du-passe/",
-   "s": "Catch Arena",
-   "d": "2026-10-31",
-   "tags": [
-    "AEW"
-   ]
   }
  ],
  "yt": {
@@ -721,14 +719,15 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/60918-preview-wwe-raw-2-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/60920-sami-zayn-je-ne-pense-pas-quil-soit-absurde-de-dire-que-jaurais-du-gagner",
+   "https://www.catch-newz.com/international/newz/60875-regardez-wsw-megamania-adelaide-gratuitement",
    "https://www.catch-newz.com/aew/newz/60874-preview-aew-dynamite-blood-and-guts-du-4-novembre-2026",
    "https://www.catch-newz.com/international/resultats/60904-resultats-de-indy-wrestling-du-15-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
-   "https://www.catch-newz.com/wwe/resultats/60824-resultats-et-streaming-de-wwe-evolve-du-28-octobre-2026",
-   "https://www.catch-newz.com/international/resultats/60893-resultats-de-vkf-halloween-havoc-2026",
    "https://www.catch-newz.com/international/resultats/60901-resultats-de-cmll-domingo-familiar-du-1er-novembre-2026-tzompantli-de-mascaras",
    "https://www.catch-newz.com/international/resultats/60913-resultats-de-alto-voltaje-cmll-du-4-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60920-sami-zayn-je-ne-pense-pas-quil-soit-absurde-de-dire-que-jaurais-du-gagner",
+   "https://www.catch-newz.com/wwe/resultats/60824-resultats-et-streaming-de-wwe-evolve-du-28-octobre-2026",
+   "https://www.catch-newz.com/international/resultats/60893-resultats-de-vkf-halloween-havoc-2026",
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60919-cody-rhodes-bianca-belair-est-peut-etre-la-plus-grande-athlete-que-la-wwe-ait-jamais-connue",
    "https://www.catch-newz.com/wwe/newz/60917-danhausen-remercie-chaleureusement-les-fans-qui-se-sont-deguises-en-lui-pour-halloween",
@@ -868,12 +867,12 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
-  "YouTube ROH": "1 nouvelles vidéos",
+  "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
   "YouTube TNA": "0 nouvelles vidéos",
   "YouTube NJPW": "0 nouvelles vidéos",
