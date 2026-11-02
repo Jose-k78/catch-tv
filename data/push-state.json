@@ -1,5 +1,5 @@
 {
- "at": "2026-11-02T21:16:03.904Z",
+ "at": "2026-11-02T22:16:08.279Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -200,7 +200,33 @@
   "a:https://www.catch-newz.com/wwe/newz/60924-date-et-lieu-du-wwe-royal-rumble-2027": "2026-11-02",
   "a:https://www.catch-newz.com/international/newz/60929-carte-de-lucha-fresca-numero-dos-los-hombres-importantes": "2026-11-02",
   "a:https://www.catch-newz.com/international/newz/60926-carte-de-produce-wrestling-x-assembly-100-fresh": "2026-11-02",
-  "a:https://www.catch-newz.com/international/resultats/60922-resultats-de-tjpw-fall-tour-2026-ray-of-hope-in-kasukabe": "2026-11-02"
+  "a:https://www.catch-newz.com/international/resultats/60922-resultats-de-tjpw-fall-tour-2026-ray-of-hope-in-kasukabe": "2026-11-02",
+  "a:https://www.catch-newz.com/wwe/newz/60934-izzi-dame-le-mental-de-zaria-est-fragile-je-lai-prouve-a-tout-le-monde": "2026-11-02",
+  "a:https://www.catch-newz.com/culture/cineserie/60928-dave-batista-sajoute-10-kilos-pour-son-role-de-kratos": "2026-11-02",
+  "a:https://www.catch-newz.com/international/newz/60923-produce-wrestling-suspend-ses-activites-jusquen-2027": "2026-11-02",
+  "a:https://www.catch-newz.com/international/newz/60900-carte-de-cmll-lunes-clasico-du-2-novembre-2026": "2026-11-02",
+  "a:https://www.catch-newz.com/international/resultats/60931-resultats-de-alto-voltaje-cmll-du-1er-novembre-2026": "2026-11-02"
  },
- "pend": {}
+ "pend": {
+  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
+   {
+    "cat": "info",
+    "title": "📰 5 nouvelles infos",
+    "body": "Izzi Dame : « Le mental de Zaria est fragile. Je l’ai prouvé à tout le monde » · Dave Batista s'ajoute 10 kilos pour son rôle de Kratos · PRODUCE Wrestling suspend ses activités jusqu'en 2027",
+    "url": "#/",
+    "tag": "art",
+    "short": "5 nouvelles infos"
+   }
+  ],
+  "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
+   {
+    "cat": "info",
+    "title": "📰 5 nouvelles infos",
+    "body": "Izzi Dame : « Le mental de Zaria est fragile. Je l’ai prouvé à tout le monde » · Dave Batista s'ajoute 10 kilos pour son rôle de Kratos · PRODUCE Wrestling suspend ses activités jusqu'en 2027",
+    "url": "#/",
+    "tag": "art",
+    "short": "5 nouvelles infos"
+   }
+  ]
+ }
 }
