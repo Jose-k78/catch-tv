@@ -1,9 +1,28 @@
 {
- "at": "2026-11-03T16:51:49.023Z",
+ "at": "2026-11-03T17:46:31.134Z",
  "items": [
+  {
+   "t": "Spoilers de WWE SmackDown du 6 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-03",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
+  },
   {
    "t": "The Champ ajoute des précisions au sujet du John Cena Classic qui aura lieu le 14 décembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/60942-the-champ-ajoute-des-precisions-au-sujet-du-john-cena-classic-qui-aura-lieu-le-14-decembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-03",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Les dates au calendrier de John Cena d'ici le ''John Cena Classic''",
+   "u": "https://www.catch-newz.com/wwe/newz/60959-les-dates-au-calendrier-de-john-cena-dici-le-john-cena-classic",
    "s": "Catch-Newz",
    "d": "2026-11-03",
    "tags": [
@@ -27,16 +46,6 @@
    "d": "2026-11-03",
    "tags": [
     "WWE"
-   ]
-  },
-  {
-   "t": "Spoilers de WWE SmackDown du 6 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE",
-    "SmackDown"
    ]
   },
   {
@@ -512,13 +521,6 @@
    "tags": [
     "CMLL"
    ]
-  },
-  {
-   "t": "Carte de IWRG Funcion Espectacular du 1er novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/60898-carte-de-iwrg-funcion-espectacular-du-1er-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-01",
-   "tags": []
   }
  ],
  "yt": {
@@ -646,6 +648,10 @@
    {
     "id": "Zc-aisYVTgg",
     "t": "Cassie Lee contre Lacey Lane"
+   },
+   {
+    "id": "-BpEyEZwH20",
+    "t": "FULL SHOW Lio Rush contre Charles Crowley"
    }
   ],
   "WWE|PLE|2026-10-31": [
@@ -748,13 +754,14 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60942-the-champ-ajoute-des-precisions-au-sujet-du-john-cena-classic-qui-aura-lieu-le-14-decembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60930-wwe-raw-2-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60925-lordre-des-matchs-de-wwe-raw-du-2-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/60959-les-dates-au-calendrier-de-john-cena-dici-le-john-cena-classic",
    "https://www.catch-newz.com/wwe/newz/60958-pourquoi-il-ny-a-pas-de-show-de-wwe-nxt-le-3-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60957-la-wwe-annonce-un-second-show-a-disney-world-le-15-decembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60909-resultats-de-wwe-main-event28-octobre-2026",
-   "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/international/resultats/60953-resultats-de-cmll-lunes-clasico-du-2-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60956-cruz-montana-va-t-il-quand-meme-combattre-dion-lennox-a-nxt-ce-mercredi-malgre-ses-debuts-a-raw",
    "https://www.catch-newz.com/international/resultats/60933-resultats-de-iwrg-funcion-espectacular-du-1er-novembre-2026",
@@ -935,12 +942,12 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
-  "YouTube ROH": "0 nouvelles vidéos",
+  "YouTube ROH": "1 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
   "YouTube TNA": "0 nouvelles vidéos",
   "YouTube NJPW": "0 nouvelles vidéos",
