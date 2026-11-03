@@ -127,7 +127,7 @@ export function settingsView(sub, x) {
   }
   if (sub === "signalements" && S.isAdmin) {
     return h + "<h1>Signalements</h1>" + (S.reports.length ? '<div class="list">' + S.reports.map(r => '<div class="item rep"><span class="lbl"><b>' + esc(r.reason || "Signalement") + "</b><small>" +
-      "Par " + esc((prof(r.by) || {}).pseudo || "un membre") + " · visé : " + (r.target ? '<a href="#/profil/' + encodeURIComponent(r.target) + '">' + esc((prof(r.target) || {}).pseudo || "membre") + "</a>" : "–") + (r.at ? " · " + fmtMs(r.at) : "") + "</small>" +
+      "Par " + esc((prof(r.by) || {}).pseudo || "un membre") + " · visé : " + (r.target && /^(voir|lien|catcheur|photo|entrance):/.test(r.target) ? repTarget(r.target) : r.target ? '<a href="#/profil/' + encodeURIComponent(r.target) + '">' + esc((prof(r.target) || {}).pseudo || "membre") + "</a>" : "–") + (r.at ? " · " + fmtMs(r.at) : "") + "</small>" +
       (r.msgText ? '<q class="mycom">' + esc(r.msgText) + "</q>" : "") + (r.text ? '<small>« ' + esc(r.text) + " »</small>" : "") + '</span><span class="repbtns">' +
       (r.msg ? '<button class="btn small" data-act="repdelmsg" data-id="' + esc(r.id) + '">Supprimer le message</button>' : "") +
       (String(r.conv || "").indexOf("wimg:") === 0 ? '<button class="btn small" data-act="repdelimg" data-id="' + esc(r.id) + '">Supprimer l’image</button>' : "") +
@@ -224,6 +224,16 @@ ACT.repdelimg = async el => {
   const r = S.reports.find(x => x.id === el.dataset.id); if (!r) return;
   try { await B.deleteWImage(String(r.conv).slice(5)); await B.deleteReport(r.id); toast("Image supprimée"); } catch (e) { toast(errText(e)); }
 };
+// cible d'un signalement de contenu : « voir:ev:K|show|date », « lien:… », « catcheur:Nom », « photo:Nom », « entrance:Nom »
+function repTarget(t) {
+  const i = t.indexOf(":"), kind = t.slice(0, i), rest = t.slice(i + 1);
+  const lab = { voir: "🙋 vidéo demandée", lien: "⚑ lien", catcheur: "fiche", photo: "photo", entrance: "entrance" }[kind] || kind;
+  let href = "";
+  if (/^(catcheur|photo|entrance)$/.test(kind)) href = "#/catcheur/" + encodeURIComponent(rest);
+  else if (rest.indexOf("ev:") === 0) { const p = rest.slice(3).split("|"); href = "#/ev/" + p.map(encodeURIComponent).join("/"); }
+  const txt = rest.replace(/^ev:/, "").replace(/\|/g, " · ");
+  return lab + " : " + (href ? '<a href="' + esc(href) + '">' + esc(txt) + "</a>" : esc(txt));
+}
 ACT.repdone = async el => { try { await B.deleteReport(el.dataset.id); toast("Signalement classé"); } catch (e) { toast(errText(e)); } };
 ACT.repdelmsg = async el => {
   const r = S.reports.find(x => x.id === el.dataset.id); if (!r) return;

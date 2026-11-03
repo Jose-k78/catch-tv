@@ -10,9 +10,10 @@ export function notifText(n) {
   if (n.type === "slammy") return "t’a remis le Slammy « " + n.name + " » 🏆";
   if (n.type === "areact") return "a réagi " + (n.text || "") + " à " + yours(n);
   if (n.type === "areply") return "a répondu à " + yours(n);
+  if (n.cid === "video") return "a ajouté la vidéo de « " + n.name + " » 🎬";
   return n.type === "like" ? "a aimé ton commentaire sur " + n.name : "a répondu à ton commentaire sur " + n.name;
 }
-const href = n => n.type === "slammy" ? "#/trophees" : n.a ? "#/activite/" + encodeURIComponent(n.a) : "#/catcheur/" + encodeURIComponent(n.name || "");
+const href = n => n.cid === "video" && /^#\//.test(n.a || "") ? n.a : n.type === "slammy" ? "#/trophees" : n.a ? "#/activite/" + encodeURIComponent(n.a) : "#/catcheur/" + encodeURIComponent(n.name || "");
 const icon = n => n.type === "like" ? "❤️ " : n.type === "areact" || n.type === "slammy" ? "" : "💬 ";
 
 export function notifsView() {

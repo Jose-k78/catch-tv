@@ -80,7 +80,7 @@ export function chatListView() {
     (archOpen ? '<div class="convs archived">' + arch.map(item).join("") + "</div>" : "");
   if (!S.convs.length) h += '<p class="note" style="margin-top:12px">Pour écrire en privé à quelqu’un, appuie sur le crayon en haut ou sur « Envoyer un message » depuis son profil.</p>';
   h += '<div class="chatshort"><a class="shortbtn" href="#/pronostics">🎯 Pronostics</a><a class="shortbtn" href="#/sondages">📊 Sondages</a></div>';
-  h += '<p class="note small" style="margin-top:14px">Astuce : reste appuyé sur une discussion (clic droit sur ordinateur) pour l’épingler, la mettre en sourdine, l’archiver ou la supprimer.</p>';
+  h += '<p class="note small" style="margin-top:14px">Astuce : reste appuyé sur une discussion ou sur le profil en haut d’une discussion (clic droit sur ordinateur) pour l’épingler, la mettre en sourdine, l’archiver ou la supprimer.</p>';
   return h;
 }
 ACT.archshow = () => { archOpen = !archOpen; changed("route"); };
@@ -88,16 +88,16 @@ ACT.archshow = () => { archOpen = !archOpen; changed("route"); };
 // Appui long (ou clic droit) sur une discussion de la liste
 let lpT = null, lpFired = false, lpXY = null;
 document.addEventListener("pointerdown", e => {
-  const it = e.target.closest && e.target.closest(".conv-item[data-conv]"); lpFired = false; if (!it || e.button > 0) return;
+  const it = e.target.closest && e.target.closest(".conv-item[data-conv], [data-lp]"); lpFired = false; if (!it || e.button > 0) return;
   lpXY = [e.clientX, e.clientY]; clearTimeout(lpT);
-  lpT = setTimeout(() => { lpFired = true; it.classList.add("pressed"); setTimeout(() => it.classList.remove("pressed"), 250); try { if (navigator.vibrate) navigator.vibrate(12); } catch (x) {} convMenu(it.dataset.conv); }, 480);
+  lpT = setTimeout(() => { lpFired = true; it.classList.add("pressed"); setTimeout(() => it.classList.remove("pressed"), 250); try { if (navigator.vibrate) navigator.vibrate(12); } catch (x) {} convMenu(it.dataset.conv || it.dataset.lp); }, 480);
 });
 ["pointerup", "pointercancel"].forEach(t => document.addEventListener(t, () => clearTimeout(lpT), true));
 document.addEventListener("pointermove", e => { if (lpXY && Math.hypot(e.clientX - lpXY[0], e.clientY - lpXY[1]) > 10) clearTimeout(lpT); }, { passive: true });
-document.addEventListener("click", e => { if (lpFired && e.target.closest && e.target.closest(".conv-item")) { e.preventDefault(); e.stopPropagation(); lpFired = false; } }, true);
+document.addEventListener("click", e => { if (lpFired && e.target.closest && e.target.closest(".conv-item, [data-lp]")) { e.preventDefault(); e.stopPropagation(); lpFired = false; } }, true);
 document.addEventListener("contextmenu", e => {
-  const it = e.target.closest && e.target.closest(".conv-item[data-conv]"); if (!it) return;
-  e.preventDefault(); clearTimeout(lpT); if (!lpFired) { lpFired = true; convMenu(it.dataset.conv); }
+  const it = e.target.closest && e.target.closest(".conv-item[data-conv], [data-lp]"); if (!it) return;
+  e.preventDefault(); clearTimeout(lpT); if (!lpFired) { lpFired = true; convMenu(it.dataset.conv || it.dataset.lp); }
 });
 
 function convMenu(id) {
@@ -240,7 +240,7 @@ export function convView(convId) {
   else { const o = otherOf(convId); who = avatar(prof(o), 36) + '<span style="text-align:left;min-width:0"><b>' + esc(nickOf(convId, o)) + "</b><small>" + (mu ? "🔕 En sourdine · " : "") + "Voir le profil</small></span>"; }
   const blocked = !room && isBlocked(otherOf(convId));
   return '<div class="convhead"><a class="back" href="#/chat" aria-label="Retour">' + ICON.back + "</a>" +
-    (room ? '<div class="who">' + who + "</div>" : '<button class="who" data-act="profile" data-uid="' + esc(otherOf(convId)) + '">' + who + "</button>") +
+    (room ? '<div class="who" data-lp="' + esc(convId) + '">' + who + "</div>" : '<button class="who" data-act="profile" data-lp="' + esc(convId) + '" data-uid="' + esc(otherOf(convId)) + '">' + who + "</button>") +
     '<a class="iconbtn infobtn" href="#/chat/' + encodeURIComponent(convId) + '/infos" aria-label="Paramètres de la discussion">' + INFO + "</a></div>" +
     '<div class="msgs" id="msgs"></div>' +
     (blocked ? '<div class="composer blockedbar">Tu as bloqué ce membre. <button class="linkbtn" data-act="block" data-uid="' + esc(otherOf(convId)) + '">Débloquer</button></div>' :

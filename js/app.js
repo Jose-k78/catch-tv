@@ -3,6 +3,8 @@ import "./intro.js"; // en premier : l'intro démarre pendant que le reste se ch
 import { firebaseConfig, ADMIN_UID } from "./config.js";
 import { S, setBackend, B, ACT, FORM, onChange, changed, prof, avatar, need, nameOf } from "./state.js";
 import { loadContent } from "./content.js";
+import "./links.js";
+import { tournoisView, serieView, tournoiView } from "./views/tournois.js";
 import { ICON, toast } from "./util.js";
 import { homeView, promoView, showView, tabsView, evPageView, autreView } from "./views/catalog.js";
 import { matchesView } from "./views/matches.js";
@@ -50,7 +52,7 @@ const REL = {
   home: ["content", "images", "history", "auth", "tick", "profile", "spoil", "activity", "polls", "pollVotes", "picks", "hof", "push", "ann"], promo: ["content", "images", "history", "auth", "tick", "spoil", "polls"],
   profile: ["profile", "profiles", "history", "otherHistory", "auth", "friends", "feuds", "blocks", "memberFriends", "tick", "slammys", "myact", "pollVotes", "ideas"], chat: ["room", "convs", "reads", "profiles", "auth", "blocks"],
   convinfo: ["convs", "reads", "profiles", "auth", "blocks", "room", "msgs"], newchat: ["users", "auth"], settings: ["auth", "history", "profile", "route", "reports", "blocks", "profiles", "images", "media", "ideas", "push", "ann", "content"], editprofile: ["profile", "auth", "profiles"], auth: ["auth"],
-  matches: ["route", "history", "auth", "content"], wrestler: ["profile", "spoil", "history", "auth", "content"], search: [], titles: ["history", "spoil", "content"], title: ["history", "spoil", "content"], belt: ["content"], group: ["content", "auth"], tccg: ["auth", "profile"], player: ["content"], autre: ["content"],
+  matches: ["route", "history", "auth", "content"], wrestler: ["profile", "spoil", "history", "auth", "content"], search: [], titles: ["history", "spoil", "content"], title: ["history", "spoil", "content"], belt: ["content"], group: ["content", "auth"], tccg: ["auth", "profile"], player: ["content"], autre: ["content"], tournois: ["content"], serie: ["content"], tournoi: ["content", "auth"],
   notifs: ["notifs", "profiles", "reads", "blocks", "ann"], activity: ["activity", "profiles", "blocks", "areplies"], storyline: ["content", "history", "auth"], roster: ["profile", "content"],
   members: ["users", "friends", "feuds", "blocks", "profiles", "auth", "tick"], favs: ["profile", "profiles", "friends", "auth", "content"], hl: ["history", "spoil", "content"],
   event: ["event", "history", "auth"], cal: ["content", "history", "auth", "images", "spoil", "tick", "picks"],
@@ -79,6 +81,8 @@ function parse() {
     case "groupe": return parts[1] ? { name: "group", id: parts[1].slice(0, 80) } : { name: "search", q: "" };
     case "tccg": return { name: "tccg", tab: parts[1] || "" };
     case "autre": return { name: "autre" };
+    case "tournois": return parts[1] ? { name: "serie", id: parts[1] } : { name: "tournois" };
+    case "tournoi": return { name: "tournoi", id: parts[1] || "" };
     case "player": return { name: "player", a: parts[1] || "", b: parts[2] || "" };
     case "membres": return { name: "members", tab: parts[1] || "" };
     case "favoris": return { name: "favs" };
@@ -190,6 +194,9 @@ function render() {
     case "group": h = groupView(route.id); break;
     case "tccg": h = tccgView(route.tab); break;
     case "autre": h = autreView(); break;
+    case "tournois": h = tournoisView(); break;
+    case "serie": h = serieView(route.id); break;
+    case "tournoi": h = tournoiView(route.id); break;
     case "player": h = playerView(route.a, route.b); break;
     case "members": h = membersView(route.tab); break;
     case "favs": h = favsView(); break;
@@ -412,7 +419,7 @@ function mergeFeed(f) {
 
 // ---------- rechargement automatique des infos (retour sur l'app, et toutes les 30 min) ----------
 let contentSig = "", lastRefresh = Date.now(), refreshing = false;
-const sigOf = c => [JSON.stringify(c.updated || {}), (c.feed && c.feed.at) || "", ((c.news && c.news.items) || []).length, JSON.stringify(c.highlights || {}).length, JSON.stringify(c.titles || []).length,
+const sigOf = c => [JSON.stringify(c.updated || {}), JSON.stringify(c.links || {}).length, JSON.stringify(c.tournaments || {}).length, (c.feed && c.feed.at) || "", ((c.news && c.news.items) || []).length, JSON.stringify(c.highlights || {}).length, JSON.stringify(c.titles || []).length,
   JSON.stringify(c.P || {}).length, (c.polls || []).length, (c.storylines || []).length, JSON.stringify(c.recaps || {}).length, (c.matches || []).length, JSON.stringify(c.media || {}).length, Object.keys(c.photos || {}).length, JSON.stringify(c.groups || {}).length, (c.patch || []).length, JSON.stringify(c.art || {}).length].join("|");
 const typing = () => document.activeElement && /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName);
 async function refreshContent() {
@@ -428,7 +435,7 @@ async function refreshContent() {
     S.P = c.P; S.news = c.news; S.recaps = c.recaps || {}; S.matches = c.matches || []; S.titles = c.titles || []; S.titlesUpdated = c.titlesUpdated || "";
     S.highlights = c.highlights || {}; S.wrestlers = c.wrestlers || {}; S.storylines = c.storylines || []; S.rosters = c.rosters || {}; S.rostersSrc = c.rostersSrc || {};
     const mediaNew = c.media && JSON.stringify(c.media) !== JSON.stringify(S.media);
-    S.sources = c.sources || []; S.updated = c.updated || {}; S.polls = c.polls || []; if (mediaNew) S.media = c.media; S.photos = c.photos || S.photos; S.art = c.art || S.art; S.groups = c.groups || S.groups; S.patch = c.patch || S.patch;
+    S.sources = c.sources || []; S.updated = c.updated || {}; S.polls = c.polls || []; if (mediaNew) S.media = c.media; S.photos = c.photos || S.photos; S.art = c.art || S.art; S.groups = c.groups || S.groups; S.patch = c.patch || S.patch; S.links = c.links || S.links; S.tournaments = c.tournaments || S.tournaments;
     mergeFeed(c.feed);
     changed("content"); if (mediaNew) changed("media");
     const more = ((S.news && S.news.items) || []).length - oldNews;
@@ -443,7 +450,7 @@ async function boot() {
   document.getElementById("favbtn").innerHTML = ICON.starF;
   const c = await loadContent(); S.P = c.P; S.news = c.news; S.recaps = c.recaps || {}; S.matches = c.matches || []; S.titles = c.titles || []; S.titlesUpdated = c.titlesUpdated || "";
   S.highlights = c.highlights || {}; S.wrestlers = c.wrestlers || {}; S.storylines = c.storylines || []; S.rosters = c.rosters || {}; S.rostersSrc = c.rostersSrc || {};
-  S.sources = c.sources || []; S.updated = c.updated || {}; S.polls = c.polls || []; S.media = c.media || { bg: {}, music: null }; S.photos = c.photos || {}; S.art = c.art || {}; S.groups = c.groups || {}; S.patch = c.patch || [];
+  S.sources = c.sources || []; S.updated = c.updated || {}; S.polls = c.polls || []; S.media = c.media || { bg: {}, music: null }; S.photos = c.photos || {}; S.art = c.art || {}; S.groups = c.groups || {}; S.patch = c.patch || []; S.links = c.links || {}; S.tournaments = c.tournaments || {};
   mergeFeed(c.feed); contentSig = sigOf(c);
   tick(); setInterval(tick, 60000);
   loadPushCfg();

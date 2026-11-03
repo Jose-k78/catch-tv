@@ -210,6 +210,11 @@ export function mediaView() {
     (mu ? '<audio controls preload="none" src="' + esc(mu.u) + '"></audio>' : "") + "</span>" +
     '<span class="repbtns"><button class="btn small" data-act="mediapick" data-kind="music">' + (mu ? "Changer" : "Choisir un MP3") + "</button>" + (mu ? '<button class="btn small ghost" data-act="mediadel" data-kind="music">Retirer</button>' : "") + "</span></div>" +
     (mu ? '<div class="item"><span class="lbl"><b>Volume par défaut</b><small id="volv">' + Math.round((mu.vol == null ? 0.4 : mu.vol) * 100) + ' %</small><input type="range" id="mvol" min="5" max="100" step="5" value="' + Math.round((mu.vol == null ? 0.4 : mu.vol) * 100) + '" aria-label="Volume"></span><span class="repbtns"><button class="btn small" data-act="mediavol">Enregistrer</button></span></div>' : "") + "</div>";
+  // playlists YouTube (lecteur musical de l'app)
+  const pls = Array.isArray(M.pls) ? M.pls : [];
+  h += '<h2>Playlists YouTube (lecteur musical)</h2><p class="note small">Colle le lien d’une playlist YouTube : les membres l’écoutent avec le bouton 🎵 en haut (lecteur visible, qui continue pendant la navigation). Elle remplace la musique MP3.</p>' +
+    '<div class="list">' + pls.map((p, i) => '<div class="item"><span class="lbl"><b>🎵 ' + esc(p.n || "Playlist") + "</b><small>" + esc(p.id) + '</small></span><span class="repbtns"><button class="btn small ghost" data-act="pldel" data-i="' + i + '">Retirer</button></span></div>').join("") +
+    '<div class="item"><span class="lbl"><input id="plurl" placeholder="https://www.youtube.com/playlist?list=…" style="width:100%"><input id="plname" placeholder="Nom (ex. : Entrées WWE)" maxlength="40" style="width:100%;margin-top:6px"></span><span class="repbtns"><button class="btn small" data-act="pladd">Ajouter</button></span></div></div>';
   const rows = [["", ""]];
   Object.keys(S.P).forEach(k => { rows.push([k, ""]); Object.keys(S.P[k].s || {}).forEach(n => rows.push([k, n])); });
   h += '<h2>Fonds animés des onglets</h2><p class="note small">Une petite vidéo qui tourne en boucle derrière les onglets, sans le son. Idéal : MP4 de 3 à 8 secondes, 720 pixels de large, 2 Mo maximum conseillé (4 Mo au plus). Un show sans vidéo reprend celle de sa promotion.</p>' +
@@ -236,6 +241,20 @@ function probe(file, kind) {
     el.src = u;
   });
 }
+ACT.pladd = async () => {
+  if (!ghToken()) { ghKeyModal(); return; }
+  const u = (document.getElementById("plurl").value || "").trim(), n = (document.getElementById("plname").value || "").trim().slice(0, 40);
+  const m = u.match(/[?&]list=([\w-]{10,64})/) || u.match(/^([\w-]{10,64})$/);
+  if (!m) { toast("Colle le lien d’une playlist YouTube (avec « list= »)"); return; }
+  const M = Object.assign({}, S.media || { bg: {}, music: null }), pls = (Array.isArray(M.pls) ? M.pls : []).filter(p => p.id !== m[1]);
+  pls.push({ id: m[1], n: n || "Playlist" }); M.pls = pls;
+  try { await saveMedia(M, "Playlist YouTube ajoutée : " + (n || m[1])); toast("Playlist ajoutée ✓"); } catch (e) { toast("Pas enregistré : " + e.message, { ms: 5000 }); }
+};
+ACT.pldel = async el => {
+  if (!ghToken()) { ghKeyModal(); return; }
+  const M = Object.assign({}, S.media || { bg: {}, music: null }), pls = (Array.isArray(M.pls) ? M.pls : []).slice(); pls.splice(+el.dataset.i, 1); M.pls = pls;
+  try { await saveMedia(M, "Playlist YouTube retirée"); toast("Playlist retirée"); } catch (e) { toast("Pas enregistré : " + e.message, { ms: 5000 }); }
+};
 async function saveMedia(next, msg) {
   await ghPutJson("data/media.json", Object.assign({ updated: parisDay() }, next), msg);
   S.media = next; changed("media");

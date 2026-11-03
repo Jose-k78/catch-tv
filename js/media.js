@@ -1,5 +1,6 @@
 // Fonds animés derrière les onglets (petites vidéos MP4 en boucle, sans son) et musique de fond,
 // choisis par l'admin dans Modération (data/media.json + fichiers dans media/).
+import { playlists, ytmToggle, ytmOn, ytmBoot } from "./ytmusic.js";
 import { S, ACT } from "./state.js";
 import { esc, lsGet, lsSet, toast } from "./util.js";
 
@@ -46,11 +47,13 @@ function ensure() {
   audio.volume = Math.min(1, Math.max(0, m.vol == null ? 0.4 : +m.vol));
   return audio;
 }
-function play() { if (!musicOn() || videoPlaying() || document.hidden) return; const a = ensure(); if (!a) return; a.dataset.started = "1"; const p = a.play(); if (p && p.catch) p.catch(() => {}); }
+function play() { if (playlists().length) return; if (!musicOn() || videoPlaying() || document.hidden) return; const a = ensure(); if (!a) return; a.dataset.started = "1"; const p = a.play(); if (p && p.catch) p.catch(() => {}); }
 function pause() { if (audio) audio.pause(); }
 // Les navigateurs n'autorisent le son qu'après un premier appui : on attend celui qui suit l'intro
 export function armMusic() {
   updateMusicBtn();
+  if (!ytBooted && playlists().length) { ytBooted = true; ytmBoot(); setTimeout(updateMusicBtn, 500); return; }
+  if (playlists().length) return;
   if (armed || !music()) return;
   armed = true;
   const go = () => {
@@ -63,11 +66,15 @@ setInterval(() => { if (!audio) return; if (videoPlaying() && !audio.paused) aud
 document.addEventListener("visibilitychange", () => { if (document.hidden) pause(); else if (audio && audio.dataset.started) play(); });
 export function updateMusicBtn() {
   const b = document.getElementById("musicbtn"); if (!b) return;
+  // playlists YouTube du modo : le bouton ouvre le lecteur musical
+  if (playlists().length) { b.hidden = false; b.textContent = "🎵"; b.setAttribute("aria-label", ytmOn() ? "Fermer le lecteur musical" : "Ouvrir le lecteur musical"); b.classList.toggle("on", ytmOn()); return; }
   b.hidden = !music();
   b.textContent = musicOn() ? "🔊" : "🔇";
   b.setAttribute("aria-label", musicOn() ? "Couper la musique" : "Mettre la musique");
 }
+let ytBooted = false;
 ACT.music = () => {
+  if (playlists().length) { if (audio) { audio.pause(); lsSet("ctv.music", null); } ytmToggle(); updateMusicBtn(); return; }
   const on = !musicOn();
   lsSet("ctv.music", on ? "on" : null);
   if (on) play(); else pause();

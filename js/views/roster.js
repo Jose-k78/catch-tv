@@ -1,4 +1,5 @@
 // Roster de chaque promotion, par show (Raw, SmackDown…) ou par division / clan ; chaque nom ouvre sa fiche
+import { faceImg } from "../photos.js";
 import { S } from "../state.js";
 import { esc, ICON, okHttp, shAttr } from "../util.js";
 import { plain, colorOf } from "./catalog.js";
@@ -35,7 +36,7 @@ export function rosterView(k, g) {
   h += '<div class="search"><input id="rq" type="search" placeholder="Chercher dans le roster" autocomplete="off" value="' + esc(lastQ) + '"></div>';
   h += order.map(grp => '<h2>' + esc(grp) + ' <small class="cnt">' + (r[grp] || []).length + '</small></h2><div class="chips wrap rgrid">' + (r[grp] || []).map(nm => {
     const c = ch[norm(nm)], f = S.user && isFav(nm), al = alignOf(nm);
-    return '<a class="chip rn' + (c ? " gold" : "") + (al && al.k ? " al-" + al.k : "") + (al && al.inj ? " inj" : "") + '" data-n="' + esc(norm(nm)) + '" href="#/catcheur/' + encodeURIComponent(nm) + '"' + shAttr({ ty: "w", t: nm, s: "Roster " + k + " · " + grp, h: "#/catcheur/" + encodeURIComponent(nm) }) + (q && norm(nm).indexOf(q) < 0 ? " hidden" : "") + ">" + (f ? "⭐ " : "") + (c ? "🏆 " : "") + esc(nm) + (al && al.inj ? " 🤕" : "") + "</a>";
+    return '<a class="chip rn' + (c ? " gold" : "") + (al && al.k ? " al-" + al.k : "") + (al && al.inj ? " inj" : "") + '" data-n="' + esc(norm(nm)) + '" href="#/catcheur/' + encodeURIComponent(nm) + '"' + shAttr({ ty: "w", t: nm, s: "Roster " + k + " · " + grp, h: "#/catcheur/" + encodeURIComponent(nm) }) + (q && norm(nm).indexOf(q) < 0 ? " hidden" : "") + ">" + faceImg(nm, 22) + (f ? "⭐ " : "") + (c ? "🏆 " : "") + esc(nm) + (al && al.inj ? " 🤕" : "") + "</a>";
   }).join("") + "</div>").join("");
   const src = S.rostersSrc && S.rostersSrc[k];
   const anyAl = Object.keys(r).some(grp => (r[grp] || []).some(nm => alignOf(nm)));

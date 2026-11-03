@@ -68,12 +68,15 @@ export function shareMenu(c) {
     box.innerHTML = preview(c) + '<div class="sheet">' +
       '<button class="item" data-a="room">🦍 Partager dans la Gorilla Position</button><button class="item" data-a="dm">✉️ Partager en message privé…</button>' +
       names.map(n => '<a class="item" href="#/catcheur/' + encodeURIComponent(n) + '" data-a="go">🤼 Voir la fiche de ' + esc(n) + "</a>").join("") +
+      (c.ty === "ev" && /^#\/ev\//.test(c.h || "") ? (() => { const p = c.h.slice(5).split("/").map(decodeURIComponent);
+        return '<a class="item" href="#/player/e/' + encodeURIComponent(p.slice(0, 3).join("|")) + '" data-a="go">▶ Voir dans le TCC Player</a><button class="item" data-a="src" data-k="' + esc(p[0]) + '" data-show="' + esc(p[1] === "PLE" ? "" : p[1]) + '" data-d="' + esc(p[2] || "") + '">📺 Choisir la source (officiel, autre visionnage…)</button>'; })() : "") +
       (c.h ? '<a class="item" href="' + esc(c.h) + '" data-a="go">Ouvrir</a>' : c.u ? '<a class="item" href="' + esc(c.u) + '" target="_blank" rel="noopener" data-a="go">Ouvrir l’article ↗</a>' : "") +
       '</div><button class="btn wide ghost" style="margin-top:12px" data-no>Fermer</button>';
     box.addEventListener("click", e => {
       if (e.target.closest("[data-no]")) return close();
       const a = e.target.closest("[data-a]"); if (!a) return;
       if (a.dataset.a === "go") { close(); return; }
+      if (a.dataset.a === "src") { close(); if (ACT.watch) ACT.watch({ dataset: { k: a.dataset.k, show: a.dataset.show, d: a.dataset.d, t: "" } }); return; }
       e.preventDefault(); close();
       if (!S.user) { toast("Connecte-toi pour partager"); location.hash = "#/connexion"; return; }
       if (a.dataset.a === "room") compose(c, "general");

@@ -8,6 +8,7 @@ import { commentsBox } from "./comments.js";
 import { linkNames } from "../wrestlers.js";
 import { showLogo } from "../assets.js";
 import { PREVIEW } from "../content.js";
+import { linksHTML } from "../links.js";
 
 const okId = id => /^[\w-]{11}$/.test(String(id || ""));
 const keyParts = k => { const p = String(k).split("|"); return { k: p[0], show: p[1], d: p[2] }; };
@@ -30,6 +31,15 @@ const row = (title, list) => list.length ? "<h2>" + title + '</h2><div class="pr
 export function playerView(a, b) {
   const vids = allVideos();
   if (a === "v") return watchView(b, vids);
+  // vidéos d'un show précis : #/player/e/K|show|date (bouton « TCC Player » des shows, appui long)
+  if (a === "e") {
+    const key = decodeURIComponent(b || ""), p = key.split("|"), L = vids.filter(v => v.k === p[0] && (v.show || "PLE") === (p[1] || "PLE") && v.d === p[2]);
+    let h = '<a class="back" href="#/player">' + ICON.back + " TCC Player</a><h1>" + esc((p[1] === "PLE" ? "" : p[1] + " · ") + p[0]) + "</h1><small class=\"note\" style=\"margin:0 16px\">" + (p[2] ? fmt(p[2]) : "") + "</small>";
+    h += L.length ? '<div class="prow pcol">' + L.map(thumb).join("") + "</div>" : '<p class="note">Pas encore de vidéo officielle de ce show dans l’app.</p>';
+    h += '<div style="margin:12px 16px">' + linksHTML("ev:" + key, { title: (p[1] === "PLE" ? p[0] : p[1]) + (p[2] ? " du " + fmt(p[2]) : ""), href: location.hash, ask: true }) + "</div>";
+    h += row("Autres vidéos " + esc(p[0]), vids.filter(v => v.k === p[0] && L.indexOf(v) < 0));
+    return h;
+  }
   if (a === "k") {
     const k = decodeURIComponent(b || ""), L = vids.filter(v => v.k === k);
     const years = {}; L.forEach(v => { const y = (v.d || "").slice(0, 4) || "Matchs"; (years[y] = years[y] || []).push(v); });
@@ -57,3 +67,11 @@ function watchView(id, vids) {
   h += commentsBox("video " + id);
   return h;
 }
+
+// recherche dans les archives (recherche globale)
+export function searchVideos(q, n) {
+  const words = String(q || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").split(/\s+/).filter(w => w.length > 1);
+  if (!words.length) return [];
+  return allVideos().filter(v => { const t = (v.t + " " + v.k + " " + (v.show || "")).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); return words.every(w => t.indexOf(w) >= 0); }).slice(0, n || 8);
+}
+export const playerThumb = v => thumb(v);

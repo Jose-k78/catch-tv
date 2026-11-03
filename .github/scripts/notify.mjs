@@ -37,6 +37,8 @@ export function collect(now, data) {
   const seenU = {};
   (data.feed.items || []).concat(data.news.items || []).forEach(a => {
     if (!a || !a.u || !a.t || seenU[a.u] || String(a.d) < yday) return; seenU[a.u] = 1;
+    // seulement les infos des compagnies présentes dans l'app (demande de Jose, 4 nov.)
+    if (!(Array.isArray(a.tags) && a.tags.some(t => cal[t]))) return;
     out.push({ key: "a:" + a.u, cat: "info", kind: "art", tags: Array.isArray(a.tags) ? a.tags : [], t: a.t, s: a.s || "", u: a.u });
   });
   // 🙈 défenses et changements de titre des 2 derniers jours (texte neutre : pas de spoiler)
@@ -72,7 +74,7 @@ export function messagesFor(user, fresh) {
   const P = Array.isArray(user.promos) ? user.promos : [], okK = k => !P.length || !k || P.indexOf(k) >= 0;
   const msgs = [];
   if (wants(user, "info")) {
-    const arts = fresh.filter(x => x.kind === "art" && (!P.length || !x.tags.length || x.tags.some(t => P.indexOf(t) >= 0)));
+    const arts = fresh.filter(x => x.kind === "art" && (!P.length || x.tags.some(t => P.indexOf(t) >= 0)));
     if (arts.length === 1) msgs.push({ cat: "info", title: "📰 " + (arts[0].s || "Nouvelle info"), body: arts[0].t, url: arts[0].u, tag: "art", short: arts[0].t });
     else if (arts.length) msgs.push({ cat: "info", title: "📰 " + arts.length + " nouvelles infos", body: arts.slice(0, 3).map(a => a.t).join(" · "), url: "#/", tag: "art", short: arts.length + " nouvelles infos" });
     const defs = {}; fresh.filter(x => x.kind === "def" && okK(x.k)).forEach(x => { const g = x.label + "|" + x.d; (defs[g] = defs[g] || []).push(x); });

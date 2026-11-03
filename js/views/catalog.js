@@ -18,6 +18,8 @@ import { pickable, pickTile } from "./picks.js";
 import { pollTile } from "./polls.js";
 import { annBar } from "./annonces.js";
 import { installBar } from "../push.js";
+import { linksOf, linksHTML } from "../links.js";
+import { tournamentTile } from "./tournois.js";
 
 // ---------- données ----------
 export function seenId(e) { return docId(e.k + "|" + (e.show || "PLE") + "|" + (e.d || "") + "|" + e.t); }
@@ -52,6 +54,7 @@ export function epis(k, n, nb, na) {
   return out;
 }
 // Page d'un événement dans l'app (PLE, épisode spécial ou épisode d'un show) : #/ev/WWE/PLE/2026-11-07
+export const evKey = e => "ev:" + e.k + "|" + (e.show || "PLE") + "|" + (e.d || "");
 export function evHref(e) {
   if (!e || !e.k) return "#/";
   return "#/ev/" + encodeURIComponent(e.k) + "/" + encodeURIComponent(e.show || "PLE") + "/" + (okDay(e.d) ? e.d : "-/" + encodeURIComponent(e.t || ""));
@@ -94,7 +97,7 @@ function liveCard(e) {
   return '<button class="live' + (lk.poster ? " poster" : "") + '" style="' + esc(lk.style) + '" data-act="watch"' + itemData(e) + ">" +
     '<span class="livebadge"><i></i>EN DIRECT</span><b' + fit(e.t, 320, 44, lk.poster) + ">" + esc(e.t) + "</b>" +
     "<small>" + esc(e.k) + (e.show ? " · " + esc(e.show) : "") + " · depuis " + hourAt(startOf(e), PARIS) + " · jusqu’à " + hourAt(endOf(e), PARIS) + " environ (heure de Paris)</small>" +
-    '<span class="livego">' + ICON.play + " Regarder" + (frName(e) ? " sur " + esc(frName(e)) : "") + "</span></button>";
+    '<span class="livego">' + ICON.play + " Regarder" + (frName(e) ? " sur " + esc(frName(e)) : "") + "</span>" + (linksOf(evKey(e)).length ? '<span class="livego alt">▶ Autre visionnage</span>' : "") + "</button>";
 }
 export function liveSection(filter) {
   const list = liveNow().filter(filter || (() => true));
@@ -108,9 +111,11 @@ export function netflixUrl(e) {
   return "https://www.netflix.com/search?q=" + encodeURIComponent(e.k + " " + (e.show || e.t));
 }
 // Où regarder : lien direct de l'épisode (préparé par la mise à jour), plateformes officielles en France, puis aux États-Unis
+// une chaîne YouTube (youtube.com/@WWE) -> recherche du show sur cette chaîne (ex. « Main Event » sur la chaîne WWE)
+const ytChanSearch = (u, e) => /^https:\/\/(www\.)?youtube\.com\/(@[\w.-]+|channel\/[\w-]+)\/?$/.test(u) ? u.replace(/\/$/, "") + "/search?query=" + encodeURIComponent(e.show || e.t) : u;
 export function watchLinks(e) {
   const out = [], seen = {};
-  const add = (n, u, extra) => { if (!okHttp(u) || seen[u]) return; seen[u] = 1; out.push(Object.assign({ n: n, u: u }, extra || {})); };
+  const add = (n, u, extra) => { u = ytChanSearch(u, e); if (!okHttp(u) || seen[u]) return; seen[u] = 1; out.push(Object.assign({ n: n, u: u }, extra || {})); };
   const h = e.d ? hlOf(e.k, e.show || "PLE", e.d) : null;
   (h && Array.isArray(h.w) ? h.w : []).forEach(x => { if (x) add(x.n || "Vidéo", x.u, { direct: true }); });
   (Array.isArray(e.wl) ? e.wl : []).forEach(x => { if (x) add(x.n || "Vidéo", x.u, { direct: true }); });
@@ -125,8 +130,8 @@ function openLink(u) { if (!openOut(u)) window.open(u, "_blank", "noopener"); }
 ACT.watch = el => {
   const e = findItem(el.dataset); if (!e) return;
   const links = watchLinks(e), fr = links.filter(x => x.fr), us = links.filter(x => x.us), direct = links.filter(x => x.direct), other = links.filter(x => !x.fr && !x.us && !x.direct);
-  // « Voir le show » : un seul choix possible -> on ouvre directement l'appli ou la page
-  if (el.dataset.direct === "1") {
+  // « Voir le show » : un seul choix possible -> on ouvre directement l'appli ou la page (sauf s'il y a un lien du modo en plus)
+  if (el.dataset.direct === "1" && !linksOf(evKey(e)).length) {
     const one = direct[0] || (fr.length === 1 ? fr[0] : null) || (links.length === 1 ? links[0] : null);
     if (one) { if (one.nf && e.kind === "ep") toast("Netflix : choisis l’épisode du " + fmt(e.d) + " dans la liste", { ms: 4500 }); openLink(one.u); return; }
   }
@@ -138,6 +143,7 @@ ACT.watch = el => {
       (fr.some(x => x.nf) && e.kind === "ep" ? '<p class="note small" style="margin:6px 16px 0">Netflix ouvre la page de ' + esc(e.show) + " : choisis l’épisode du " + esc(fmt(e.d)) + " dans la liste.</p>" : "") +
       (us.length ? '<p class="sub" style="margin:14px 16px 6px">Aux États-Unis</p>' + us.map(x => btn(x, true)).join("") : "") +
       other.map(x => '<a class="btn wide" href="' + esc(x.u) + '" target="_blank" rel="noopener">' + esc(x.n) + " ↗</a>").join("") +
+      (linksOf(evKey(e)).length || S.isAdmin ? '<p class="sub" style="margin:14px 16px 6px">Autre visionnage</p>' + linksHTML(evKey(e), { title: e.t + (e.d ? " du " + fmt(e.d) : ""), href: evHref(e) }) : "") +
       '<button class="btn wide ghost" style="margin-top:12px" data-close>Fermer</button>';
     box.addEventListener("click", ev => { if (ev.target.closest("[data-close]")) close(); });
   });
@@ -428,7 +434,7 @@ export function evPageView(k, show, d, t) {
     } else h += '<p class="note">Les résultats seront ajoutés lors de la prochaine mise à jour (vers 8 h 30).</p>';
     if (hl) h += '<div class="btns" style="justify-content:flex-start;margin:12px 16px 0"><a class="btn" href="' + hlHref(e.k, e.show || "PLE", e.d) + '">' + ICON.play + " Highlights et vidéos</a></div>";
   }
-  h += "<h2>Où regarder</h2>" + watchBtns(e);
+  h += "<h2>Où regarder</h2>" + watchBtns(e) + '<a class="btn wide ghost evwatch" href="#/player/e/' + encodeURIComponent(e.k + "|" + (e.show || "PLE") + "|" + (e.d || "")) + '">▶ TCC Player (vidéos et archives)</a>' + linksHTML(evKey(e), { title: e.t + (e.d ? " du " + fmt(e.d) : ""), href: evHref(e), ask: out });
   if (okHttp(e.l)) h += '<p class="note small" style="margin-top:12px"><a class="linkbtn" style="padding:0" href="' + esc(e.l) + '" target="_blank" rel="noopener">Site officiel ↗</a></p>';
   return h;
 }
@@ -478,6 +484,7 @@ export function homeView() {
   if (big) h += homeHead("Prochain grand événement") + hero(big, esc(big.k));
   const more = up.filter(e => e !== big);
   if (more.length) h += homeHead("Les grands événements à venir") + '<div class="row">' + more.map(e => pleCard(e, true)).join("") + "</div>";
+  h += tournamentTile("");
   // 5. jouer avec la communauté
   const tiles = [storylineTile(), discoverTile(), pollTile(), pickTile()].filter(Boolean);
   if (tiles.length) h += homeHead("Avec la communauté", "Storyline, pronostics, sondages") + '<div class="tiles2">' + tiles.join("") + "</div>";
@@ -486,6 +493,7 @@ export function homeView() {
   h += '<div class="actsec">' + activitySection() + "</div>";
   // 7. explorer
   h += homeHead("Explorer") + '<div class="row">' + Object.keys(P).map(promoCard).join("") + "</div>";
+  h += '<a class="titletile" href="#/tournois"><span class="tt-belt">🏆</span><span class="tt-txt"><b>Tournois</b><small>G1 Climax, 5★STAR Grand Prix, tournois en cours</small></span><span class="chev">›</span></a>';
   h += '<a class="matchtile ptile" href="#/player"><span class="mt-k">TCC Player</span><b>Archives et vidéos</b><small>Toutes les vidéos officielles par promotion et par année</small><span class="mt-go">Ouvrir ›</span></a>';
   if (S.matches.length) h += matchTile();
   // 8. déjà sorti
@@ -502,7 +510,7 @@ export function promoView(k) {
   h += liveSection(e => e.k === k);
   if (first) h += hero(first, "PROCHAINEMENT · " + esc(k));
   if (pr.s) h += "<h2>Shows hebdo</h2>" + showRow(Object.keys(pr.s).map(n => ({ k: k, n: n })), false);
-  h += titlesTile(k, "") + rosterTile(k, "");
+  h += tournamentTile(k) + titlesTile(k, "") + rosterTile(k, "");
   h += "<h2>PLE à venir</h2>" + (ple[0].length ? epList(ple[0]) : '<p class="note">Aucun PLE annoncé pour l’instant.</p>');
   if (ep[0].length) h += "<h2>Cette semaine</h2>" + epList(ep[0]);
   const past = split(ple[1].concat(ep[1]))[1];

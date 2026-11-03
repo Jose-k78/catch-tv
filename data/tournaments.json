@@ -1,0 +1,43 @@
+{
+ "updated": "2026-11-04",
+ "note": "Tournois (rubrique Tournoi de l'app). items : un tournoi = { id, n, k, serie, y, st (à venir | en cours | terminé), from, to, type (bracket | blocs), about, rounds: [{ n, m: [{ a, b, w, res, v (id YouTube officiel) }] }], blocs: [{ n, rows: [{ w, pts }] }], winner, art: { txt: [...], faits: [...], pop }, src: [{ n, u }] }. series : présentation, anciens gagnants (past : [{ y, w }]), anecdotes. Rempli par la mise à jour du soir ; liens vidéo du modo dans data/links.json (« tn:id »).",
+ "items": [],
+ "series": {
+  "g1": {
+   "n": "G1 Climax", "k": "NJPW", "lg": "G1 Climax",
+   "about": [
+    "Le G1 Climax est le grand tournoi d'été de la New Japan Pro-Wrestling, organisé chaque année depuis 1991 (et dont l'ancêtre remonte à 1974).",
+    "Une vingtaine de catcheurs, répartis en blocs, s'affrontent tous contre tous pendant près d'un mois : 2 points par victoire, 1 par match nul (limite de temps), 0 par défaite. Les meilleurs de chaque bloc passent en phase finale.",
+    "Le vainqueur gagne bien plus qu'un trophée : traditionnellement, un contrat pour un match de championnat IWGP poids lourd au Tokyo Dome, lors de Wrestle Kingdom le 4 janvier, qu'il doit défendre jusque-là.",
+    "C'est le tournoi le plus dur du catch : des matchs presque tous les soirs, des affiches inédites et souvent les meilleurs combats de l'année."
+   ],
+   "anec": [
+    "Les matchs nuls à la limite de temps (30 minutes) comptent : ils ont plusieurs fois décidé qui sortait d'un bloc.",
+    "Gagner le G1 en tant qu'étranger reste rare : Kenny Omega (2016) a été le premier non-Japonais à le remporter.",
+    "Le contrat du vainqueur peut être mis en jeu avant Wrestle Kingdom : il est arrivé qu'un autre catcheur le lui prenne."
+   ],
+   "past": [
+    { "y": 2026, "w": "Ryohei Oiwa" }, { "y": 2025, "w": "Konosuke Takeshita" }, { "y": 2024, "w": "Zack Sabre Jr." }, { "y": 2023, "w": "Tetsuya Naito" },
+    { "y": 2022, "w": "Kazuchika Okada" }, { "y": 2021, "w": "Kazuchika Okada" }, { "y": 2020, "w": "Kota Ibushi" }, { "y": 2019, "w": "Kota Ibushi" },
+    { "y": 2018, "w": "Hiroshi Tanahashi" }, { "y": 2017, "w": "Tetsuya Naito" }, { "y": 2016, "w": "Kenny Omega" }, { "y": 2015, "w": "Hiroshi Tanahashi" }
+   ],
+   "src": [{ "n": "Wrestling Inc (G1 Climax 36)", "u": "https://www.wrestlinginc.com/2237803/ryohei-oiwa-wins-njpw-g1-climax-36-will-challenge-iwgp-champion-october/" }]
+  },
+  "5star": {
+   "n": "5★STAR Grand Prix", "k": "Stardom", "lg": "5STAR Grand Prix",
+   "about": [
+    "Le 5★STAR Grand Prix est le grand tournoi d'été de Stardom, organisé chaque année depuis 2012 : l'équivalent féminin du G1 Climax.",
+    "Les catcheuses sont réparties en blocs et s'affrontent toutes entre elles (2 points la victoire, 1 le nul), puis les meilleures de chaque bloc se retrouvent en phase finale.",
+    "La gagnante obtient en général un match pour le titre Red Belt (World of Stardom), la plus haute ceinture de la promotion."
+   ],
+   "anec": ["En 2026, 30 catcheuses ont participé au tournoi, l'un des plus grands plateaux de son histoire."],
+   "past": [{ "y": 2026, "w": "Rina" }, { "y": 2025, "w": "Momo Watanabe" }],
+   "src": [{ "n": "POST Wrestling", "u": "https://www.postwrestling.com/?p=139921" }]
+  },
+  "marigold": {
+   "n": "Tournois Marigold", "k": "Marigold",
+   "about": ["Marigold organise ses propres tournois (Dream Star Grand Prix l'été, tournois par équipes…). Ils apparaissent ici dès qu'ils commencent."],
+   "past": []
+  }
+ }
+}

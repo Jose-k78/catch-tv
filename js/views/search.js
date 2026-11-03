@@ -1,7 +1,9 @@
 // Recherche : shows, PLE, promotions, catcheurs ; fiche catcheur (résumé, promotion, dernière apparition,
 // 3 derniers matchs, 5 matchs de référence, favori ⭐, commentaires) ; homonymes : choix du bon catcheur
-import { S } from "../state.js";
-import { esc, ICON, fmt, okHttp, shAttr } from "../util.js";
+import { S, B, ACT } from "../state.js";
+import { esc, ICON, fmt, okHttp, shAttr, modal, toast } from "../util.js";
+import { linksOf, linksHTML } from "../links.js";
+import { searchVideos, playerThumb } from "./player.js";
 import { allPle, evHref, artCard, evCard } from "./catalog.js";
 import { PREVIEW } from "../content.js";
 import { norm, canonical, wInfo, wShows, wTitles, upcomingFor, lastMatches, wNews, lastShow, knownNames, promoIn, alignOf, ALIGN, linkNames } from "../wrestlers.js";
@@ -69,7 +71,8 @@ function resultsHTML(q) {
     '</small></span><span class="chev">›</span></a>').join("") +
     (offer ? '<a class="item" href="#/catcheur/' + encodeURIComponent(q.trim()) + '">' + faceImg(q.trim(), 40) + '<span class="lbl"><b>' + esc(q.trim()) +
     "</b><small>Voir sa fiche : résumé, derniers matchs, matchs de référence</small></span><span class=\"chev\">›</span></a>" : "") + "</div>" : "";
-  return ev ? showsH + archH + wH + gH + tH + aH : wH + gH + tH + showsH + aH + archH;
+  const pv = searchVideos(q, 8), pH = pv.length ? '<h2>Dans le TCC Player <small class="cnt">vidéos</small></h2><div class="prow">' + pv.map(playerThumb).join("") + "</div>" : "";
+  return ev ? showsH + pH + archH + wH + gH + tH + aH : wH + gH + tH + showsH + pH + aH + archH;
 }
 document.addEventListener("input", e => {
   if (e.target.id !== "q") return;
@@ -112,6 +115,35 @@ function alignFact(name) {
   return '<div class="walign' + (a.k ? " al-" + a.k : "") + '"><small>Rôle actuel</small><b>' + (A ? A[0] + " " + A[1] + " <span class=\"alx\">(" + A[2] + ")</span>" : "") + (a.inj ? (A ? " · " : "") + "🤕 Blessé" : "") + "</b>" +
     (a.since ? "<small class=\"alsince\">depuis le " + esc(fmt(a.since)) + "</small>" : "") + "</div>";
 }
+// Entrance : vidéo de l'entrée + musique d'entrée. Lien du modo (data/links.json « ent:Nom » / « entm:Nom ») lu dans l'app,
+// sinon recherche YouTube / Dailymotion « Nom entrance » et « Nom entrance music ».
+function entranceHTML(name) {
+  const yt = q => "https://www.youtube.com/results?search_query=" + encodeURIComponent(q), dm = q => "https://www.dailymotion.com/search/" + encodeURIComponent(q) + "/videos";
+  const part = (key, label, q) => {
+    const has = linksOf(key).length;
+    return '<div class="entp"><small>' + label + "</small>" + linksHTML(key, { label: label, title: name + " · " + label }) +
+      (has ? "" : '<div class="chips"><a class="chip" href="' + esc(yt(q)) + '" target="_blank" rel="noopener">▶ YouTube</a><a class="chip" href="' + esc(dm(q)) + '" target="_blank" rel="noopener">▶ Dailymotion</a></div>') + "</div>";
+  };
+  return "<h2>🎤 Entrance</h2>" + part("ent:" + name, "Son entrée", name + " entrance") + part("entm:" + name, "Sa musique d’entrée", name + " entrance music") +
+    (S.user ? '<button class="linkbtn" data-act="wrep" data-n="' + esc(name) + '" data-e="1">⚑ Signaler une erreur dans l’entrance</button>' : "");
+}
+ACT.wrep = el => {
+  if (!S.user) return;
+  const name = el.dataset.n, ent = el.dataset.e === "1";
+  const R = ent ? ["Mauvaise vidéo d’entrée", "Mauvaise musique", "Vidéo plus disponible"] : ["Photo ne correspond pas", "Profil ne correspond pas", "Mise à jour à faire", "Catcheur n’existe plus / n’a jamais existé"];
+  modal((box, close) => {
+    box.innerHTML = "<h3>Signaler</h3><p class=\"sub\">" + esc(name) + '</p><div class="list">' + R.map(r => '<button class="item" data-r="' + esc(r) + '"><span class="lbl"><b>' + esc(r) + "</b></span></button>").join("") +
+      '</div><label class="fld">Précision (facultatif)<input id="wrept" maxlength="200"></label><button class="btn wide ghost" style="margin-top:10px" data-close>Annuler</button>';
+    box.addEventListener("click", async ev => {
+      if (ev.target.closest("[data-close]")) return close();
+      const b = ev.target.closest("[data-r]"); if (!b) return;
+      const txt = (box.querySelector("#wrept").value || "").trim();
+      close();
+      try { await B.report(S.user.uid, { target: ((ent ? "entrance:" : /^Photo/.test(b.dataset.r) ? "photo:" : "catcheur:") + name).slice(0, 60), reason: b.dataset.r.slice(0, 40), text: txt.slice(0, 500) }); toast("Merci, le modérateur est prévenu"); }
+      catch (e) { toast("Impossible pour l’instant"); }
+    });
+  });
+};
 export function wrestlerView(raw, wt) {
   const name = canonical(raw), n = norm(name), w = wInfo(name);
   const up = upcomingFor(name), shows = wShows(name), held = wTitles(name);
@@ -122,11 +154,15 @@ export function wrestlerView(raw, wt) {
   let h = '<a class="back" href="#/recherche/' + encodeURIComponent(raw) + '">' + ICON.back + " Recherche</a>";
   // fiche résumé
   const wcard = { ty: "w", t: name, s: [k, w && w.era].filter(Boolean).join(" · ") || "Fiche catcheur", h: "#/catcheur/" + encodeURIComponent(name) };
+  // barre blanche « Nouvelle info » : un article de moins de 2 jours sur lui ou elle
+  const fresh = arts.find(a => a.d && (Date.now() - Date.parse(a.d)) < 2 * 864e5);
+  if (fresh) h += '<a class="newinfo" href="' + esc(fresh.u) + '" target="_blank" rel="noopener"><b>Nouvelle info</b><span>' + esc(fresh.t) + "</span></a>";
   // photo du dossier de l'admin (prioritaire) ; sinon l'image ajoutée par un membre
   const pic = photoOf(name), grp = wGroups(name);
   h += '<section class="wcard"><div class="wtop' + (pic ? " haspic" : "") + '">' + (pic ? '<div class="wpicbox"><button class="wpicbtn" data-act="zoom" data-src="' + esc(pic) + '" data-alt="' + esc(name) + '" aria-label="Agrandir la photo"><img class="wpic" src="' + esc(pic) + '" alt="' + esc(name) + '" onerror="this.closest(\'.wpicbox\').remove()"></button>' +
-    (grp.corner ? '<span class="wgcorner">' + grp.corner + "</span>" : "") + "</div>" : "") + '<div class="wtt"><span class="eyebrow">FICHE CATCHEUR</span><h1>' + esc(name) + "</h1>" +
-    (w && w.era ? '<small class="wera">' + esc(w.era) + "</small>" : "") + (!pic && grp.corner ? '<span class="wgcorner inline">' + grp.corner + "</span>" : "") + "</div>" + '<span class="wacts">' + starBtn(name) + '<button class="iconbtn sharebtn" data-act="share"' + shAttr(wcard) + ' aria-label="Partager">↗</button></span></div>' +
+    (grp.corner ? '<span class="wgcorner">' + grp.corner + "</span>" : "") + (w && w.dc ? '<span class="wdead" aria-label="Décédé">✝</span>' : "") +
+    (S.user ? '<button class="wrep" data-act="wrep" data-n="' + esc(name) + '" aria-label="Signaler" title="Signaler">⚑</button>' : "") + "</div>" : "") + '<div class="wtt"><span class="eyebrow">FICHE CATCHEUR</span><h1>' + (w && w.dc ? "✝ " : "") + esc(name) + "</h1>" +
+    (w && w.era ? '<small class="wera">' + esc(w.era) + "</small>" : "") + (w && w.dc ? '<small class="wera wdc">Décédé' + (w.f ? "e" : "") + (/^\d{4}-\d{2}-\d{2}$/.test(w.dc) ? " le " + fmt(w.dc) + " " + w.dc.slice(0, 4) : /^\d{4}$/.test(String(w.dc)) ? " en " + w.dc : "") + "</small>" : "") + (!pic && grp.corner ? '<span class="wgcorner inline">' + grp.corner + "</span>" : "") + "</div>" + '<span class="wacts">' + starBtn(name) + '<button class="iconbtn sharebtn" data-act="share"' + shAttr(wcard) + ' aria-label="Partager">↗</button></span></div>' +
     '<div id="wchoose"></div>' + wImageBox(name, { small: !!pic }) +
     (w && w.txt ? '<p class="wtxt">' + esc(w.txt) + "</p>" : "") +
     '<div id="wiki" class="wiki">' + (PREVIEW ? (w && w.txt ? "" : '<p class="note">Le résumé Wikipédia s’affichera une fois l’app en ligne (l’aperçu bloque les connexions vers d’autres sites).</p>') : '<p class="note">Recherche de son résumé…</p>') + "</div>" +
@@ -157,6 +193,7 @@ export function wrestlerView(raw, wt) {
   }).join("") + "</div>";
   else h += '<p class="note">Ses matchs de référence seront ajoutés lors d’une prochaine mise à jour' + (S.user ? " (ajoute-le à tes favoris pour qu’il soit suivi en priorité)" : "") + ".</p>";
   h += '<p class="note small" style="margin-top:8px"><a class="linkbtn" style="padding:0" href="' + esc(ytSearch(kk, name + " highlights")) + '" target="_blank" rel="noopener">Ses vidéos sur la chaîne YouTube officielle ↗</a></p>';
+  h += entranceHTML(name);
   h += "<h2>Prochains matchs annoncés</h2>" + (up.length ? '<div class="list">' + up.map(e => '<a class="item" href="' + esc(evHref(e)) + '"' + shAttr(evCard(e)) +
     '><span class="lbl"><b>' + esc(e.t) + "</b><small>" + esc(e.k) + " · " + fmt(e.d) + (e.line ? " · " + esc(e.line) : "") + '</small></span><span class="chev">›</span></a>').join("") + "</div>"
     : '<p class="note">Rien d’annoncé dans l’app pour l’instant.</p>');
