@@ -84,6 +84,22 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   commentaires `video-<id>`). Jamais d'archive.org ni de VK. Onglet « Autre » (`#/autre`, après Marigold) : WWF/WCW/ECW.
 - « Vu en highlights » : entrée d'historique avec rating 0 et comment `"[HL]"` (pas de changement des règles Firestore) ;
   trophées highlights dans trophies.js (hl, hlx, hlp, hls). Badges « CETTE NUIT » (22 h–6 h Paris) / « AUJOURD’HUI ».
+- Babies du mois = tournoi à 8 (`js/views/babies.js`) : document Firestore `polls/bk-AAAA-MM` (type « bracket », 8 noms choisis
+  par le modo), votes dans `pollvotes` (poll `bk-AAAA-MM-mN`), 3 votes pour gagner un duel, un duel de plus par jour ; fin du mois
+  sans finale → « Pas de babies désignée ». Sondages : « Match nul » ajouté aux dream matchs, « Qui a voté quoi ». Pronostics :
+  bouton « Match nul » (valeur `Match nul`), points sur le profil (`pickPoints`).
+- Historique : `s_<id>` = note d'une storyline, `f_<id>` = storyline préférée (mêmes champs que les autres notes, pas de
+  changement des règles) ; bouton ✏️ pour modifier / supprimer ses notes sur son profil (`editNote` de modals.js).
+- Liens du modérateur (`js/links.js`, `data/links.json`) : « Autre visionnage » des shows (`ev:K|show|date`), entrances
+  (`ent:Nom`, `entm:Nom`), tournois (`tn:id`), recherche VS (`m:a vs b`) ; YouTube et Dailymotion lus dans l'app. Demandes
+  « Je veux voir le show » et signalements de lien / photo / fiche / entrance → collection `reports` (cible `voir:…`, `lien:…`,
+  `photo:Nom`, `catcheur:Nom`, `entrance:Nom`) ; à l'ajout du lien, notification aux membres qui l'avaient demandé.
+- Rubrique Tournoi (`js/views/tournois.js`, `#/tournois`, `#/tournois/g1`, `#/tournoi/<id>`) d'après `data/tournaments.json`.
+- Lecteur musical (`js/ytmusic.js`) : playlists YouTube du modo dans `data/media.json` (`pls`), bouton 🎵 en haut ; la
+  vidéo du lecteur reste toujours visible (règle YouTube).
+- Mode TCCCG collant (profil, paramètres, trophées restent en noir et doré) ; réglage « À l'ouverture » (`ctv.start`, modo)
+  et intro au logo TCCCG. NJPW Strong = promotion rangée sous NJPW (`PARENT`) ; un titre peut apparaître dans une autre
+  promotion avec `also: ["NJPW"]` (IWGP Women's).
 - Boîte à idées : icône 💡 dans l'en-tête de Messages. Les favoris des amis ne s'affichent plus sur la page Favoris.
 - `js/share.js` : appui long / clic droit sur un élément `[data-sh]` (carte JSON via `shAttr()` de util.js) →
   partage dans la Gorilla Position ou en privé ; champ `card` des messages.
@@ -94,6 +110,19 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   `.github/workflows/push-worker.yml`. `cloudflare/push-core.mjs` est partagé avec le robot.
 - `firestore.rules` : règles (version 8). À chaque changement, donner le texte complet à Jose pour qu'il le colle
   dans Firebase › Firestore › Règles › Publier.
+
+## Consignes pour les tâches planifiées (à suivre à chaque passage, en plus de leur propre consigne)
+
+- 7 h 44 : ne plus créer de sondage de type « babies » (la Babies du mois est un tournoi à 8 géré dans l'app).
+- 19 h 23 :
+  - vérifier les **jours et heures de diffusion** de chaque show hebdo (`data/calendar.json` : `wd`, heures) et les corriger ;
+  - tenir `data/tournaments.json` à jour (format décrit dans son champ `note`) : tout tournoi en cours ou annoncé des
+    promotions de l'app (G1 Climax, World Tag League, 5★STAR Grand Prix, tournois CMLL, Dusty Rhodes Tag Team Classic…),
+    avancement du tableau ou des blocs, vainqueur, puis l'article de bilan (`art`) à la fin ; compléter `series.*.past` ;
+  - fiches (`data/wrestlers.json`) : `dc` = date de décès (AAAA-MM-JJ) pour un catcheur décédé ; `tt` = palmarès complet
+    (titres et tournois gagnés, Royal Rumble… seulement des promotions de l'app) ;
+  - groupes : membres de The 946 (WWE, depuis 2026), MFT, The Bloodline 2026.
+  - ne jamais toucher à `data/links.json` (liens du modo), aux images ni à `data/logos.json` / `data/photos.json`.
 
 ## Données et mises à jour automatiques
 
