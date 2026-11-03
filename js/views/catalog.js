@@ -187,7 +187,7 @@ function editBtn(e, label) {
   return S.isAdmin ? '<button class="cbtn edit" data-act="img" data-kind="' + esc(e.kind) + '" data-k="' + esc(e.k) + '" data-show="' + esc(e.show || "") + '" data-br="' + esc(e.br || "") +
     '" data-t="' + esc(e.t || "") + '" data-d="' + esc(e.d || "") + '" data-label="' + esc(label) + '" aria-label="Changer l’image">' + ICON.img + "</button>" : "";
 }
-function seenMark(h) { return h ? '<span class="seenmark">' + ICON.check + " Déjà vu" + (h.rating ? " " + stars(h.rating) : "") + "</span>" : ""; }
+function seenMark(h) { return h ? (h.comment === "[HL]" ? '<span class="seenmark">🎬 Vu en highlights</span>' : '<span class="seenmark">' + ICON.check + " Déjà vu" + (h.rating ? " " + stars(h.rating) : "") + "</span>") : ""; }
 function aired(e) { return e.d && diff(e.d) <= 0; }
 const place = e => e.w && e.w !== "—" ? esc(e.w) : "";
 // Affiche maison : taille du titre adaptée au mot le plus long, pour qu'il tienne dans la largeur
@@ -273,13 +273,19 @@ ACT.pastf = el => {
   const r = document.querySelector(".pastrow"); if (r) r.scrollLeft = 0;
 };
 function showItem(k, n) { return { kind: "show", k: k, show: n, t: n, c: colorOf(k, n) }; }
+// « CETTE NUIT » si le show commence la nuit à Paris (22 h – 6 h), sinon « AUJOURD’HUI »
+function dayWord(e) {
+  const st = startOf(e); if (!st) return "AUJOURD’HUI";
+  const h = +new Intl.DateTimeFormat("fr-FR", { hour: "2-digit", hourCycle: "h23", timeZone: "Europe/Paris" }).format(new Date(st));
+  return h >= 22 || h < 6 ? "CETTE NUIT" : "AUJOURD’HUI";
+}
 // big = show du jour ou le plus récent (vignette large)
 function showCard(k, n, withK, big) {
   const s = S.P[k].s[n], next = nextWeekday(s.wd), lk = look(showItem(k, n));
   let tag = (withK ? esc(k) + " · " : "") + cd(next), extra = "";
   if (big) {
     const isToday = diff(next) === 0, d = isToday ? next : ymd(new Date(dt(next).getTime() - 7 * 864e5));
-    tag = (withK ? esc(k) + " · " : "") + (isToday ? "CE SOIR" : "DERNIER ÉPISODE");
+    tag = (withK ? esc(k) + " · " : "") + (isToday ? dayWord({ k: k, show: n, d: next }) : "DERNIER ÉPISODE");
     const r = recapOf({ k: k, show: n, d: d });
     big = S.history[seenId({ k: k, show: n, d: d, t: (s.e || []).filter(x => x.d === d).map(x => x.t)[0] || n })] ? "seen" : true;
     const ep = epis(k, n, 1, 1).find(x => x.d === d) || { d: d };
@@ -497,7 +503,7 @@ export function showView(k, n) {
   const sp = split(all);
   const feat = today || sp[1][0];
   const up = sp[0].filter(e => e !== feat), past = sp[1].filter(e => e !== feat);
-  const label = esc(n.toUpperCase()) + " · " + (today ? (feat.show ? "CE SOIR" : "AUJOURD’HUI") : "DERNIER ÉPISODE");
+  const label = esc(n.toUpperCase()) + " · " + (today ? dayWord(feat) : "DERNIER ÉPISODE");
   let h = liveSection(e => e.k === k && (e.show === n || e.br === n));
   h += feat ? feature(feat, label, today ? null : up.filter(e => e.d)[0]) : "";
   const nx = sp[0].filter(e => e.d && e.kind === "ep")[0], st = nx ? startOf(nx) : 0, fr = (s.fr || pr.fr || []).map(f => f.n).join(", ");
@@ -529,8 +535,10 @@ const AFTER = { AAA: "NXT", ROH: "Collision" };
 export const hostOf = k => (PARENT[k] && S.P[PARENT[k]] ? PARENT[k] : k);
 export function tabsView(route) {
   const cur = route.name === "promo" ? hostOf(route.k) : "Accueil";
-  const top = Object.keys(S.P).filter(k => hostOf(k) === k);
-  let h = '<nav class="tabs">' + ["Accueil"].concat(top).map(t => tab(t, t === "Accueil" ? "#/" : "#/p/" + encodeURIComponent(t), t === cur, t === "Accueil" ? "" : logoOf(t, ""))).join("") + "</nav>";
+  const ORDER = ["WWE", "AEW", "TNA", "NJPW", "CMLL", "Stardom", "Marigold"];
+  const top = Object.keys(S.P).filter(k => hostOf(k) === k).sort((a, b) => (ORDER.indexOf(a) + 1 || 99) - (ORDER.indexOf(b) + 1 || 99));
+  let h = '<nav class="tabs">' + ["Accueil"].concat(top).map(t => tab(t, t === "Accueil" ? "#/" : "#/p/" + encodeURIComponent(t), t === cur, t === "Accueil" ? "" : logoOf(t, ""))).join("") +
+    '<a class="tab' + (route.name === "autre" ? " on" : "") + '" href="#/autre">Autre</a></nav>';
   if (route.name === "promo" && S.P[cur]) {
     const kids = Object.keys(PARENT).filter(c => PARENT[c] === cur && S.P[c]), shows = Object.keys(S.P[cur].s || {});
     // ordre : Tout, les shows, et chaque promotion rangée juste après le show indiqué (sinon à la fin)
@@ -548,4 +556,12 @@ export function tabsView(route) {
     }).join("") + "</nav>";
   }
   return h;
+}
+
+// Onglet « Autre » : autres promotions bientôt + légendes WCW / ECW / WWF (archives)
+export function autreView() {
+  return '<section class="autre"><h1>Autres promotions</h1><p class="note">Bientôt disponible : d’autres promotions arrivent dans l’app.</p>' +
+    "<h2>Les légendes : WWF · WCW · ECW</h2>" + '<div class="list">' + [["WWF", "La WWE avant 2002 : Attitude Era, Hulkamania…"], ["WCW", "World Championship Wrestling (1988–2001) : nWo, Monday Nitro…"], ["ECW", "Extreme Championship Wrestling (1992–2001) : le catch hardcore de Philadelphie"]]
+    .map(x => '<a class="item" href="#/player/k/' + x[0] + '"><span class="lbl"><b>' + x[0] + "</b><small>" + x[1] + '</small></span><span class="chev">›</span></a>').join("") + "</div>" +
+    '<p class="note small" style="margin-top:10px">Leurs grands shows et matchs sont dans le TCC Player, rubrique Archives.</p></section>';
 }

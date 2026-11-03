@@ -4,7 +4,7 @@ import { firebaseConfig, ADMIN_UID } from "./config.js";
 import { S, setBackend, B, ACT, FORM, onChange, changed, prof, avatar, need, nameOf } from "./state.js";
 import { loadContent } from "./content.js";
 import { ICON, toast } from "./util.js";
-import { homeView, promoView, showView, tabsView, evPageView } from "./views/catalog.js";
+import { homeView, promoView, showView, tabsView, evPageView, autreView } from "./views/catalog.js";
 import { matchesView } from "./views/matches.js";
 import { titlesView, titleView, beltView } from "./views/titles.js";
 import { groupView } from "./views/groups.js";
@@ -12,6 +12,7 @@ import { gslug } from "./views/wimage.js";
 import { groupLogo } from "./assets.js";
 import { pnNew } from "./views/patchnotes.js";
 import { tccgView, tccgTop, TICON, TNAV } from "./views/tccg.js";
+import { playerView } from "./views/player.js";
 import { searchView, wrestlerView, fillWiki, afterSearch } from "./views/search.js";
 import { eventView, fillEvent } from "./views/event.js";
 import { syncFollowed } from "./views/admin.js";
@@ -49,7 +50,7 @@ const REL = {
   home: ["content", "images", "history", "auth", "tick", "profile", "spoil", "activity", "polls", "pollVotes", "picks", "hof", "push", "ann"], promo: ["content", "images", "history", "auth", "tick", "spoil", "polls"],
   profile: ["profile", "profiles", "history", "otherHistory", "auth", "friends", "feuds", "blocks", "memberFriends", "tick", "slammys", "myact", "pollVotes", "ideas"], chat: ["room", "convs", "reads", "profiles", "auth", "blocks"],
   convinfo: ["convs", "reads", "profiles", "auth", "blocks", "room", "msgs"], newchat: ["users", "auth"], settings: ["auth", "route", "reports", "blocks", "profiles", "images", "media", "ideas", "push", "ann", "content"], editprofile: ["profile", "auth", "profiles"], auth: ["auth"],
-  matches: ["route", "history", "auth", "content"], wrestler: ["profile", "spoil", "history", "auth", "content"], search: [], titles: ["history", "spoil", "content"], title: ["history", "spoil", "content"], belt: ["content"], group: ["content", "auth"], tccg: ["auth", "profile"],
+  matches: ["route", "history", "auth", "content"], wrestler: ["profile", "spoil", "history", "auth", "content"], search: [], titles: ["history", "spoil", "content"], title: ["history", "spoil", "content"], belt: ["content"], group: ["content", "auth"], tccg: ["auth", "profile"], player: ["content"], autre: ["content"],
   notifs: ["notifs", "profiles", "reads", "blocks", "ann"], activity: ["activity", "profiles", "blocks", "areplies"], storyline: ["content"], roster: ["profile", "content"],
   members: ["users", "friends", "feuds", "blocks", "profiles", "auth", "tick"], favs: ["profile", "profiles", "friends", "auth", "content"], hl: ["history", "spoil", "content"],
   event: ["event", "history", "auth"], cal: ["content", "history", "auth", "images", "spoil", "tick", "picks"],
@@ -77,6 +78,8 @@ function parse() {
     case "ceinture": return { name: "belt", key: (parts.slice(1).join("/") || "").slice(0, 80) };
     case "groupe": return parts[1] ? { name: "group", id: parts[1].slice(0, 80) } : { name: "search", q: "" };
     case "tccg": return { name: "tccg", tab: parts[1] || "" };
+    case "autre": return { name: "autre" };
+    case "player": return { name: "player", a: parts[1] || "", b: parts[2] || "" };
     case "membres": return { name: "members", tab: parts[1] || "" };
     case "favoris": return { name: "favs" };
     case "notifs": return { name: "notifs" };
@@ -136,6 +139,11 @@ function onRoute() {
     routeSubs.push(B.watchWComments(w, list => { S.wcomments[w] = list; list.forEach(c => need(c.uid)); renderWComments(); }));
     routeSubs.push(B.watchWImage(w, d => { S.wimg = S.wimg || {}; S.wimg[w] = d; renderWImage(); }));
   }
+  // commentaires d'une vidéo du TCC Player
+  if (route.name === "player" && route.a === "v") {
+    const w = wslug("video " + route.b);
+    routeSubs.push(B.watchWComments(w, list => { S.wcomments[w] = list; list.forEach(c => need(c.uid)); renderWComments(); }));
+  }
   // logo d'un groupe ajouté par un membre (seulement s'il n'a pas de logo dans le dossier de l'admin)
   if (route.name === "group" && !groupLogo(route.id) && S.user) {
     const w = gslug(route.id);
@@ -149,7 +157,7 @@ function onRoute() {
 function render() {
   const app = document.getElementById("app"), tabs = document.getElementById("tabs");
   document.body.classList.toggle("inconv", route.name === "conv");
-  tabs.innerHTML = (route.name === "home" || route.name === "promo") ? tabsView(route) : "";
+  tabs.innerHTML = (route.name === "home" || route.name === "promo" || route.name === "autre") ? tabsView(route) : "";
   mountBg(route);
   mountTicker(route);
   document.body.classList.toggle("wide", route.name === "home");
@@ -176,6 +184,8 @@ function render() {
     case "belt": h = beltView(route.key); break;
     case "group": h = groupView(route.id); break;
     case "tccg": h = tccgView(route.tab); break;
+    case "autre": h = autreView(); break;
+    case "player": h = playerView(route.a, route.b); break;
     case "members": h = membersView(route.tab); break;
     case "favs": h = favsView(); break;
     case "hl": h = hlView(route.k, route.show, route.d); break;
@@ -197,6 +207,7 @@ function render() {
   if (route.name === "convinfo" && !waiting) afterConvInfo(route.id);
   if (route.name === "wrestler") { fillWiki(route.q, route.wt); renderWComments(); renderWImage(); }
   if (route.name === "group") renderWImage();
+  if (route.name === "player" && route.a === "v") renderWComments();
   if (route.name === "event") fillEvent(route.ref);
   if (route.name === "search") afterSearch();
   if (route.name === "notifs") markNotifsSeen();

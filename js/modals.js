@@ -11,7 +11,7 @@ function itemFrom(el) { return { k: el.dataset.k, show: el.dataset.show || "", d
 ACT.seen = el => {
   if (!S.user) { toast("Connecte-toi pour garder ton historique"); location.hash = "#/connexion"; return; }
   const it = itemFrom(el), id = seenId(it), had = S.history[id];
-  let rating = had ? had.rating || 0 : 0, comment = had ? had.comment || "" : "";
+  let rating = had ? had.rating || 0 : 0, comment = had && had.comment !== "[HL]" ? had.comment || "" : "";
   modal((box, close) => {
     const label = (it.show ? it.show + " · " : "") + fmt(it.d);
     const draw = () => {
@@ -23,13 +23,19 @@ ACT.seen = el => {
         '<label class="fld">Ton commentaire (facultatif)<textarea id="seencom" maxlength="280" rows="3" placeholder="Ce que tu as pensé du show, ton match préféré…">' + esc(comment) + "</textarea></label>" +
         '<button class="btn wide" data-ok>' + (had ? "Enregistrer" : "Valider") + "</button>" +
         (had ? '<button class="btn wide ghost" style="margin-top:10px" data-del>Retirer de l’historique</button>'
-             : '<button class="btn wide ghost" style="margin-top:10px" data-skip>Marquer vu sans note</button>');
+             : '<button class="btn wide ghost" style="margin-top:10px" data-skip>Marquer vu sans note</button>' +
+               '<button class="btn wide ghost" style="margin-top:10px" data-hl>🎬 Vu en highlights (sans note)</button>');
     };
     draw();
     box.addEventListener("click", async e => {
       const r = e.target.closest("[data-r]");
       if (r) { rating = +r.dataset.r === rating ? 0 : +r.dataset.r; box.querySelectorAll(".rate button").forEach(b => b.classList.toggle("on", +b.dataset.r <= rating)); return; }
       try {
+        if (e.target.closest("[data-hl]")) {
+          // vu seulement en highlights : pas de note (marque « [HL] » dans le commentaire, cachée à l'affichage)
+          await B.setSeen(S.user.uid, id, { title: it.t, k: it.k, show: it.show, d: it.d, rating: 0, comment: "[HL]" });
+          close(); toast("🎬 Ajouté : vu en highlights"); return;
+        }
         if (e.target.closest("[data-ok]") || e.target.closest("[data-skip]")) {
           if (e.target.closest("[data-skip]")) rating = 0;
           comment = (box.querySelector("#seencom") || { value: comment }).value.trim().slice(0, 280);

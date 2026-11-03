@@ -61,7 +61,7 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
 - `js/views/groups.js` : fiche d'un tag team / d'une faction `#/groupe/id` (logo, membres actuels / anciens, années,
   matchs de référence) d'après `data/groups.json` ; logo de ses groupes actuels dans un coin de la photo de la fiche catcheur.
   Un membre peut ajouter un logo seulement si le groupe n'en a pas (Firestore `wimages/groupe-…`, l'admin l'enlève).
-- `js/views/palmares.js` : palmarès d'un catcheur (titres des 9 promotions, fois, jours — toujours derrière un spoiler) et
+- `js/views/palmares.js` : palmarès d'un catcheur (titres des 9 promotions, fois, jours — sans spoiler depuis le 4 nov., à la demande de Jose) et
   durée des règnes / records d'un titre, calculés d'après `hist` de `data/titles.json` (historique complet complété chaque
   matin) ou le champ `tt` d'une fiche.
 - `js/views/patchnotes.js` : patch notes (`data/patchnotes.json`, `mod: true` = réservé au modérateur) ; Paramètres › Patch
@@ -79,6 +79,12 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   avant (`f`) parmi les versions (`v`) des photos des catcheurs (3 au plus : `slug-v2/-v3.webp`), ceintures, logos de shows,
   d'événements et de groupes ; ajouter une image (WebP fait dans le navigateur, envoyé avec la clé GitHub de l'admin) ;
   supprimer une version. Le robot `photos.mjs` connaît les versions (une photo déposée à la main passe en avant).
+- TCC Player (`js/views/player.js`, `#/player`, bouton ▶ en haut à côté des favoris) : vidéos officielles de l'app
+  (feed.yt, highlights, matches.json) par promotion et par année, page vidéo (lecteur YouTube nocookie, j'aime local,
+  commentaires `video-<id>`). Jamais d'archive.org ni de VK. Onglet « Autre » (`#/autre`, après Marigold) : WWF/WCW/ECW.
+- « Vu en highlights » : entrée d'historique avec rating 0 et comment `"[HL]"` (pas de changement des règles Firestore) ;
+  trophées highlights dans trophies.js (hl, hlx, hlp, hls). Badges « CETTE NUIT » (22 h–6 h Paris) / « AUJOURD’HUI ».
+- Boîte à idées : icône 💡 dans l'en-tête de Messages. Les favoris des amis ne s'affichent plus sur la page Favoris.
 - `js/share.js` : appui long / clic droit sur un élément `[data-sh]` (carte JSON via `shAttr()` de util.js) →
   partage dans la Gorilla Position ou en privé ; champ `card` des messages.
 - `js/push.js` + `sw.js` (service worker sans cache) : notifications Firebase Cloud Messaging (petite icône Android :

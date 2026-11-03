@@ -53,7 +53,8 @@ export function favsView() {
   h += mine.length ? '<div class="favs2">' + mine.map(n => favCard(n)).join("") + "</div>"
     : '<p class="note">Ouvre la page d’un catcheur ou d’une catcheuse (barre de recherche) et appuie sur l’étoile pour le suivre ici.</p>' +
       '<div class="btns" style="margin-top:12px"><a class="btn" href="#/recherche">Rechercher un catcheur</a></div>';
-  const fr = friendsOf(S.user.uid).map(uid => ({ uid: uid, p: prof(uid) })).filter(x => x.p && favsOf(x.p).length);
+  // les favoris des amis ne s'affichent plus ici (demande de Jose, 4 nov.)
+  const fr = [];
   if (fr.length) {
     h += "<h2>Les favoris de mes amis</h2><div class=\"list\">" + fr.map(x => '<div class="item"><a class="lbl favfriend" href="#/profil/' + encodeURIComponent(x.uid) + '">' + avatar(x.p, 32) +
       "<b>" + esc(x.p.pseudo || "Membre") + '</b></a><span class="chips">' + favsOf(x.p).slice(0, 8).map(n => '<a class="chip" href="' + wlink(n) + '">' + esc(n) + "</a>").join("") + "</span></div>").join("") + "</div>";

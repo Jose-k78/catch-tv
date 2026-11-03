@@ -2479,6 +2479,36 @@
     "Hiragi Kurumi",
     "Akane Fujita"
    ]
+  },
+  "946": {
+   "n": "The 946",
+   "lg": "",
+   "k": "WWE",
+   "y": "depuis 2026",
+   "on": 1,
+   "m": [],
+   "a": [
+    "946"
+   ],
+   "note": "à compléter par la mise à jour du soir (The SmackDown Hotel)"
+  },
+  "mft": {
+   "n": "MFT (My Family Tree)",
+   "lg": "",
+   "k": "WWE",
+   "y": "depuis 2025",
+   "on": 1,
+   "m": [
+    "Solo Sikoa",
+    "Tama Tonga",
+    "Tonga Loa",
+    "Talla Tonga",
+    "JC Mateo"
+   ],
+   "a": [
+    "MFT",
+    "My Family Tree"
+   ]
   }
  }
 }

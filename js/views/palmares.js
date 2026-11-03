@@ -67,6 +67,6 @@ export function palmaresHTML(name) {
   const rows = p.map(x => '<a class="item palm" href="' + (x.id ? "#/titre/" + encodeURIComponent(x.id) : "#/recherche/" + encodeURIComponent(x.t)) + '">' +
     (x.id && beltOf(x.id) ? '<img class="glogo0" src="' + esc(beltOf(x.id)) + '" alt="" loading="lazy">' : '<span class="wnone">🏆</span>') +
     '<span class="lbl"><b>' + esc(x.t) + "</b><small>" + esc(x.k) + " · " + x.x + " fois · " + daysTxt(x.j) + (x.cur ? " · champion actuel" : "") + '</small></span><span class="chev">›</span></a>').join("");
-  return h + '<div class="spoil"><button class="btn ghost spoilbtn" data-act="reveal">👀 Voir son palmarès (' + p.length + " titre" + (p.length > 1 ? "s" : "") + ", spoiler)</button>" +
-    '<div class="spoilbody"><div class="list">' + rows + "</div>" + (full ? "" : '<p class="note small">D’après les règnes connus par l’app ; la mise à jour du soir complète l’historique de chaque titre.</p>') + "</div></div>";
+  // sans bouton spoiler (demande de Jose, 4 nov.)
+  return h + '<div class="list">' + rows + "</div>" + (full ? "" : '<p class="note small">D’après les règnes connus par l’app ; la mise à jour du matin complète l’historique de chaque titre.</p>');
 }

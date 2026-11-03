@@ -65,6 +65,22 @@ const upcoming = () => { const now = Date.now(), td = new Date().toISOString().s
 const pleItem = e => { const n = -days(e.d); return { id: "ple:" + e.k + ":" + e.d, k: e.k, show: "", href: evHref(e), html: "⏳ " + esc(e.t) + " (" + esc(e.k) + ") " + (n <= 0 ? "aujourd’hui" : n === 1 ? "demain" : "dans " + n + " jours") }; };
 const pickItem = e => ({ id: "pick:" + e.k + ":" + e.d, k: e.k, show: "", href: "#/pronostic/" + encodeURIComponent(e.k) + "/" + e.d, html: "🎯 Pronostics de " + esc(e.t) + " ouverts jusqu’au " + esc(startOf(e) ? fmtAt(lockAt(e), PARIS) : fmt(e.d)) });
 const pollItem = p => ({ id: "poll:" + p.id, k: p.k || "", show: "", href: "#/sondages", html: "📊 " + esc(p.q) });
+// matchs de titre annoncés (événements des 10 prochains jours) : « X va défendre son titre contre Y »
+function titleMatchItems(up) {
+  const out = [];
+  up.filter(e => -days(e.d) <= 10).forEach(e => (Array.isArray(e.card) ? e.card : []).forEach((line, i) => {
+    const m = String(line).match(/^([^:]{2,90}?)\s*:\s*(.+)$/); if (!m || !/titre|title|champion|campeonato|championship/i.test(m[1])) return;
+    const sides = m[2].replace(/\s*\([^)]*\)\s*$/, "").split(/\s+contre\s+/i); if (sides.length < 2) return;
+    const champ = (S.titles || []).find(t => t.k === e.k && sides.some(s => [t.c].concat(t.who || []).some(c => c && norm(s).indexOf(norm(String(c).replace(/\s*\(.*\)$/, ""))) >= 0)));
+    let html;
+    if (champ) {
+      const ci = sides.findIndex(s => [champ.c].concat(champ.who || []).some(c => norm(s).indexOf(norm(String(c).replace(/\s*\(.*\)$/, ""))) >= 0));
+      html = "🏆 " + esc(e.t) + " : " + esc(sides[ci]) + " " + (champ.who && champ.who.length > 1 ? "vont" : "va") + " défendre " + (champ.who && champ.who.length > 1 ? "leur" : "son") + " titre contre " + esc(sides.filter((s, j) => j !== ci).join(" et "));
+    } else html = "🏆 " + esc(e.t) + " · " + esc(m[1]) + " : " + esc(sides.join(" contre "));
+    out.push({ id: "tm:" + e.k + ":" + e.d + ":" + i, k: e.k, show: "", href: evHref(e), html: html });
+  }));
+  return out;
+}
 const storyItem = s => ({ id: "story:" + (s.id || s.t), k: s.k || "", show: "", href: "#/storyline/" + encodeURIComponent(s.id || ""), html: "📖 Storyline du jour : " + esc(s.t) });
 
 // ---------- les infos d'un onglet ----------
@@ -80,6 +96,7 @@ export function items(scope) {
     const out = T.slice();
     const bl = babiesLast(); if (bl) out.push({ id: "babies:" + bl.label, k: "", href: "#/sondages", html: "👑 Babies " + esc(bl.label) + " : <b>" + esc(bl.n) + "</b>" });
     if (up[0]) out.push(pleItem(up[0]));
+    titleMatchItems(up).forEach(x => out.push(x));
     const pk = up.find(e => pickable(e)); if (pk) out.push(pickItem(pk));
     const po = allPolls().filter(isOpen)[0]; if (po) out.push(pollItem(po));
     const st = (S.storylines || [])[0]; if (st) out.push(storyItem(st));
@@ -91,6 +108,7 @@ export function items(scope) {
   const out = T.filter(x => ks.indexOf(x.k) >= 0 && (!show || x.show === n || x.show === ""));
   ks.forEach(kk => {
     const e = up.find(x => x.k === kk); if (e) out.push(pleItem(e));
+    titleMatchItems(up.filter(x => x.k === kk)).forEach(x => out.push(x));
     const pk = up.find(x => x.k === kk && pickable(x)); if (pk) out.push(pickItem(pk));
     if (!show) {
       const po = allPolls().filter(p => isOpen(p) && p.k === kk)[0]; if (po) out.push(pollItem(po));

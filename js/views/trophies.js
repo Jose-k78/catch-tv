@@ -47,6 +47,10 @@ const G = {
 // v : valeur du membre ; t : [seuil, nom, dessin, couleurs]
 export const FAM = [
   { id: "spec", n: "Spectateur", what: "shows marqués « vu »", t: [[10, "Dernier rang", "ticket", "b"], [50, "Deuxième rang", "ticket", "s"], [100, "Premier rang", "ticket", "o"], [500, "Le Green T-shirt Guy", "tshirt"]] },
+  { id: "hl", n: "Highlights", what: "shows vus en highlights", t: [[1, "Previously on Raw", "vhs", "b"], [5, "Fast Count", "vhs", "b"], [10, "Spot Monkey", "vhs", "s"], [25, "Slow-Mo Replay", "vhs", "s"], [50, "Botchamania", "vhs", "o"], [100, "Coliseum Video", "vhs", "o"]] },
+  { id: "hlx", n: "Tape Trader", what: "promotions vues en highlights", t: [[5, "Tape Trader", "globe", "o"]] },
+  { id: "hlp", n: "Video Package", what: "grands événements (PLE) vus en highlights", t: [[1, "Video Package", "vhs", "o"]] },
+  { id: "hls", n: "The Streak", what: "jours d’affilée avec un show vu en highlights", t: [[7, "The Streak", "vhs", "o"]] },
   { id: "crit", n: "Critique", what: "notes avec un commentaire", t: [[10, "Le Twittos", "bubble", "b"], [50, "L’Influenceur", "phone", "s"], [100, "Le Journaliste", "mic", "o"], [500, "Dave Meltzer", "plaque"]] },
   { id: "globe", n: "Globe-trotter", what: "promotions avec au moins un show noté", t: [[3, "Le Touriste", "globe", "b"], [5, "Le Free Agent", "globe", "s"], [0, "Forbidden Door", "globe", "o"]] },
   { id: "hist", n: "Historien", what: "shows d’avant 2010 notés", t: [[5, "Ruthless Aggression", "vhs", "b"], [25, "Attitude Era", "vhs", "s"], [50, "Golden Era", "vhs", "o"]] },
@@ -69,6 +73,12 @@ const tierId = (fid, i) => fid + "-" + i;
 const nameOfTier = id => { const p = id.split("-"), f = FAM.find(x => x.id === p[0]), t = f && f.t[+p[1]]; return t ? { f: f, i: +p[1], n: t[1] } : null; };
 
 // ---------- calcul (pour moi) ----------
+const hlOf = hist => hist.filter(h => h.comment === "[HL]");
+function hlStreak(l) {
+  const days = new Set(l.map(h => { const t = h.seenAt && (h.seenAt.toMillis ? h.seenAt.toMillis() : h.seenAt); return t ? new Date(t).toISOString().slice(0, 10) : ""; }).filter(Boolean));
+  let best = 0; days.forEach(d => { if (days.has(new Date(Date.parse(d) - 864e5).toISOString().slice(0, 10))) return; let n = 0, x = Date.parse(d); while (days.has(new Date(x).toISOString().slice(0, 10))) { n++; x += 864e5; } best = Math.max(best, n); });
+  return best;
+}
 export function myValues() {
   const me = S.user ? S.user.uid : "", hist = Object.values(S.history || {});
   const shows = hist.filter(h => !isMatchNote(h));
@@ -77,7 +87,8 @@ export function myValues() {
   const pop = (S.myAct || []).reduce((n, a) => n + Object.keys(a.rx || {}).filter(u => u !== me).length + Math.max(0, a.rn || 0), 0);
   const created = S.profile && S.profile.createdAt;
   return {
-    spec: shows.length, crit: hist.filter(h => h.comment && String(h.comment).trim()).length, globe: promos.size, hist: old.size,
+    spec: shows.filter(h => h.comment !== "[HL]").length, crit: hist.filter(h => h.comment && h.comment !== "[HL]" && String(h.comment).trim()).length,
+    hl: hlOf(hist).length, hlx: new Set(hlOf(hist).map(h => h.k)).size, hlp: hlOf(hist).filter(h => !h.show || h.show === "PLE").length, hls: hlStreak(hlOf(hist)), globe: promos.size, hist: old.size,
     pred: me ? perfectCards(me) : 0, vote: (S.pollVotes || []).filter(v => v.uid === me).length,
     riv: Math.max(0, ...(S.feuds || []).map(f => Math.max(f.best || 0, f.count || 0))), pop: pop,
     idea: (S.ideas || []).filter(i => i.uid === me && i.st === "fait").length,

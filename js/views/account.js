@@ -314,8 +314,8 @@ export function profileView(uid) {
   h += all.length ? '<div class="list histlist">' + all.map((x, i) => {
     const fight = isMatchNote(x);
     return '<div class="item' + (fight ? " fightnote" : "") + '"' + (i >= HIST_MAX && !histOpen ? " hidden" : "") + '><span class="lbl"><b>' + noteTitle(x, (fight ? "🤼 " : "") + esc(x.title)) + "</b><small>" + esc(x.k) +
-      (fight ? (x.show ? " · " + esc(x.show) : "") : x.show ? " · " + esc(x.show) : " · PLE") + (x.d ? " · " + fmt(x.d) : "") + "</small>" + (x.comment ? '<q class="mycom">' + esc(x.comment) + "</q>" : "") +
-      (fight ? matchNoteLinks(x) : "") + (S.user && (x.rating || x.comment) ? '<a class="arep small" href="#/activite/' + encodeURIComponent(uid + "_r_" + x.id) + '">💬 Réactions et réponses</a>' : "") + '</span><span class="rt">' + (x.rating ? stars(x.rating) : fight ? "Pas noté" : "Pas noté") + "<br>" + (fight ? "noté le " : "vu le ") + fmtMs(x.seenAt) + "</span></div>";
+      (fight ? (x.show ? " · " + esc(x.show) : "") : x.show ? " · " + esc(x.show) : " · PLE") + (x.d ? " · " + fmt(x.d) : "") + "</small>" + (x.comment === "[HL]" ? '<small class="hltag">🎬 Vu en highlights</small>' : x.comment ? '<q class="mycom">' + esc(x.comment) + "</q>" : "") +
+      (fight ? matchNoteLinks(x) : "") + (S.user && (x.rating || (x.comment && x.comment !== "[HL]")) ? '<a class="arep small" href="#/activite/' + encodeURIComponent(uid + "_r_" + x.id) + '">💬 Réactions et réponses</a>' : "") + '</span><span class="rt">' + (x.rating ? stars(x.rating) : fight ? "Pas noté" : "Pas noté") + "<br>" + (fight ? "noté le " : "vu le ") + fmtMs(x.seenAt) + "</span></div>";
   }).join("") + "</div>" + (all.length > HIST_MAX ? '<div class="btns" style="margin:10px 16px 0"><button class="btn ghost" data-act="histmore">' + (histOpen ? "Voir moins" : "Voir plus (" + (all.length - HIST_MAX) + ")") + "</button></div>" : "")
     : '<p class="note">' + (me ? "Appuie sur l’œil à côté d’un épisode ou d’un PLE pour le marquer comme vu et le noter. Tu peux aussi noter chaque combat depuis les highlights et les matchs à découvrir." : "Rien pour l’instant.") + "</p>";
   return h;

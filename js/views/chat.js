@@ -58,7 +58,7 @@ const cnt = n => n > 99 ? "99+" : String(n);
 let archOpen = false;
 export function chatListView() {
   const me = S.user.uid;
-  let h = '<div class="chathead"><h1>Messages</h1><a class="iconbtn" href="#/chat/nouveau" aria-label="Nouveau message">' + ICON.pen + "</a></div>";
+  let h = '<div class="chathead"><h1>Messages</h1><a class="iconbtn ideabtn" href="#/idees" aria-label="Boîte à idées" title="Boîte à idées">💡</a><a class="iconbtn" href="#/chat/nouveau" aria-label="Nouveau message">' + ICON.pen + "</a></div>";
   const rows = [];
   const vis = S.room.filter(m => !isBlocked(m.uid)), lr = vis[vis.length - 1];
   rows.push({ id: "general", av: grpAv(52), name: ROOM_NAME, sub: lr ? (lr.uid === me ? "Toi : " : nameOf(lr.uid) + " : ") + msgLabel(lr) : "Le chat de tous les membres", at: lr ? lr.at : 0, un: roomUnread() });
