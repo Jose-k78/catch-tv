@@ -1,5 +1,5 @@
 {
- "at": "2026-11-03T21:41:06.301Z",
+ "at": "2026-11-03T22:38:36.188Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -244,7 +244,30 @@
   "a:https://www.catch-newz.com/wwe/newz/60968-un-tres-long-voyage-attend-les-wwe-superstars-pour-crown-jewel-2026": "2026-11-03",
   "a:https://www.catch-newz.com/international/newz/60954-carte-de-cmll-martes-populares-du-3-novembre-2026": "2026-11-03",
   "a:https://www.catch-newz.com/international/resultats/60969-resultats-de-hoh-a-nightmare-on-elmwood": "2026-11-03",
-  "a:https://www.catch-newz.com/international/newz/60955-carte-de-cmll-martes-de-glamour-du-3-novembre-2026": "2026-11-03"
+  "a:https://www.catch-newz.com/international/newz/60955-carte-de-cmll-martes-de-glamour-du-3-novembre-2026": "2026-11-03",
+  "a:https://www.catch-newz.com/international/resultats/60972-resultats-du-jour-7-de-dg-the-gate-of-victory-2026": "2026-11-03",
+  "a:https://www.catch-newz.com/international/resultats/60970-resultats-de-ddt-ultimate-party-2026": "2026-11-03"
  },
- "pend": {}
+ "pend": {
+  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Résultats du jour 7 de DG The Gate Of Victory 2026 · Résultats de DDT Ultimate Party 2026",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
+   }
+  ],
+  "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Résultats du jour 7 de DG The Gate Of Victory 2026 · Résultats de DDT Ultimate Party 2026",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
+   }
+  ]
+ }
 }

@@ -1,15 +1,6 @@
 {
- "at": "2026-11-03T21:41:06.250Z",
+ "at": "2026-11-03T22:38:36.138Z",
  "items": [
-  {
-   "t": "CM Punk confirme son nom pour le John Cena Classic",
-   "u": "https://www.catch-newz.com/wwe/newz/60967-cm-punk-confirme-son-nom-pour-le-john-cena-classic",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE"
-   ]
-  },
   {
    "t": "Spoilers de WWE SmackDown du 6 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
@@ -23,15 +14,6 @@
   {
    "t": "The Champ ajoute des précisions au sujet du John Cena Classic qui aura lieu le 14 décembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/60942-the-champ-ajoute-des-precisions-au-sujet-du-john-cena-classic-qui-aura-lieu-le-14-decembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Un très long voyage attend les WWE Superstars pour Crown Jewel 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/60968-un-tres-long-voyage-attend-les-wwe-superstars-pour-crown-jewel-2026",
    "s": "Catch-Newz",
    "d": "2026-11-03",
    "tags": [
@@ -58,6 +40,20 @@
    ]
   },
   {
+   "t": "Résultats du jour 7 de DG The Gate Of Victory 2026",
+   "u": "https://www.catch-newz.com/international/resultats/60972-resultats-du-jour-7-de-dg-the-gate-of-victory-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-03",
+   "tags": []
+  },
+  {
+   "t": "Résultats de DDT Ultimate Party 2026",
+   "u": "https://www.catch-newz.com/international/resultats/60970-resultats-de-ddt-ultimate-party-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-03",
+   "tags": []
+  },
+  {
    "t": "Carte de CMLL Martes Populares du 3 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/60954-carte-de-cmll-martes-populares-du-3-novembre-2026",
    "s": "Catch-Newz",
@@ -65,13 +61,6 @@
    "tags": [
     "CMLL"
    ]
-  },
-  {
-   "t": "Résultats de HOH A Nightmare On Elmwood",
-   "u": "https://www.catch-newz.com/international/resultats/60969-resultats-de-hoh-a-nightmare-on-elmwood",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": []
   },
   {
    "t": "Carte de CMLL Martes De Glamour du 3 novembre 2026",
@@ -91,6 +80,31 @@
     "WWE",
     "Raw"
    ]
+  },
+  {
+   "t": "CM Punk confirme son nom pour le John Cena Classic",
+   "u": "https://www.catch-newz.com/wwe/newz/60967-cm-punk-confirme-son-nom-pour-le-john-cena-classic",
+   "s": "Catch-Newz",
+   "d": "2026-11-03",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Un très long voyage attend les WWE Superstars pour Crown Jewel 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/60968-un-tres-long-voyage-attend-les-wwe-superstars-pour-crown-jewel-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-03",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Résultats de HOH A Nightmare On Elmwood",
+   "u": "https://www.catch-newz.com/international/resultats/60969-resultats-de-hoh-a-nightmare-on-elmwood",
+   "s": "Catch-Newz",
+   "d": "2026-11-03",
+   "tags": []
   },
   {
    "t": "Raquel Rodriguez a-t-elle l'ambition de devenir championne du monde ?",
@@ -513,22 +527,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Résultats de TJPW There May Be No Answer, But Let's Wish For Happiness",
-   "u": "https://www.catch-newz.com/international/resultats/60878-resultats-de-tjpw-there-may-be-no-answer-but-lets-wish-for-happiness",
-   "s": "Catch-Newz",
-   "d": "2026-11-02",
-   "tags": []
-  },
-  {
-   "t": "Rusev : « Si Penta devient champion, j’en serai plus qu’heureux pour lui et pour le milieu en général »",
-   "u": "https://www.catch-newz.com/wwe/newz/60911-rusev-si-penta-devient-champion-jen-serai-plus-quheureux-pour-lui-et-pour-le-milieu-en-general",
-   "s": "Catch-Newz",
-   "d": "2026-11-02",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -762,17 +760,19 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/wwe/newz/60967-cm-punk-confirme-son-nom-pour-le-john-cena-classic",
    "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60942-the-champ-ajoute-des-precisions-au-sujet-du-john-cena-classic-qui-aura-lieu-le-14-decembre-2026",
-   "https://www.catch-newz.com/wwe/newz/60968-un-tres-long-voyage-attend-les-wwe-superstars-pour-crown-jewel-2026",
    "https://www.catch-newz.com/international/resultats/60966-resultats-bzw-scary-banger-31-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60958-pourquoi-il-ny-a-pas-de-show-de-wwe-nxt-le-3-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60957-la-wwe-annonce-un-second-show-a-disney-world-le-15-decembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60909-resultats-de-wwe-main-event28-octobre-2026",
+   "https://www.catch-newz.com/international/resultats/60972-resultats-du-jour-7-de-dg-the-gate-of-victory-2026",
+   "https://www.catch-newz.com/international/resultats/60970-resultats-de-ddt-ultimate-party-2026",
    "https://www.catch-newz.com/international/newz/60954-carte-de-cmll-martes-populares-du-3-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/60969-resultats-de-hoh-a-nightmare-on-elmwood",
    "https://www.catch-newz.com/international/newz/60955-carte-de-cmll-martes-de-glamour-du-3-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/60967-cm-punk-confirme-son-nom-pour-le-john-cena-classic",
+   "https://www.catch-newz.com/wwe/newz/60968-un-tres-long-voyage-attend-les-wwe-superstars-pour-crown-jewel-2026",
+   "https://www.catch-newz.com/international/resultats/60969-resultats-de-hoh-a-nightmare-on-elmwood",
    "https://www.catch-newz.com/international/resultats/60965-resultats-lwa-requiem-31-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/60930-wwe-raw-2-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60964-raquel-rodriguez-a-t-elle-lambition-de-devenir-championne-du-monde",
@@ -962,7 +962,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 12 nouveaux articles lus sur la page d'accueil (12 liens)",
+  "Catch-Newz": "pas de flux RSS : 10 nouveaux articles lus sur la page d'accueil (10 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
