@@ -134,3 +134,41 @@ ACT.img = el => {
     });
   });
 };
+
+// Modifier ou supprimer une de mes notes (profil › historique, storyline du jour) — demande de Jose, 4 nov.
+// item : { id, title, k, show, d } ; garde le même document d'historique (id).
+export function editNote(item, onDone) {
+  if (!S.user) { toast("Connecte-toi"); location.hash = "#/connexion"; return; }
+  const had = S.history[item.id];
+  let rating = had ? had.rating || 0 : 0, comment = had && had.comment !== "[HL]" ? had.comment || "" : "";
+  modal((box, close) => {
+    const draw = () => {
+      const ta = box.querySelector("#notecom"); if (ta) comment = ta.value;
+      box.innerHTML = "<h3>" + (had ? "Modifier ma note" : "Ma note") + '</h3><p class="sub">' + esc(item.title) + "</p>" +
+        '<div class="rate">' + [1, 2, 3, 4, 5].map(i => '<button type="button" class="' + (i <= rating ? "on" : "") + '" data-r="' + i + '" aria-label="' + i + ' étoile' + (i > 1 ? "s" : "") + '">' + ICON.star + "</button>").join("") + "</div>" +
+        '<label class="fld">Ton commentaire (facultatif)<textarea id="notecom" maxlength="280" rows="3">' + esc(comment) + "</textarea></label>" +
+        '<button class="btn wide" data-ok>Enregistrer</button>' + (had ? '<button class="btn wide ghost danger" style="margin-top:10px" data-del>Supprimer cette note</button>' : "") +
+        '<button class="btn wide ghost" style="margin-top:10px" data-close>Annuler</button>';
+    };
+    draw();
+    box.addEventListener("click", async e => {
+      if (e.target.closest("[data-close]")) return close();
+      const r = e.target.closest("[data-r]");
+      if (r) { rating = +r.dataset.r === rating ? 0 : +r.dataset.r; box.querySelectorAll(".rate button").forEach(b => b.classList.toggle("on", +b.dataset.r <= rating)); return; }
+      if (e.target.closest("[data-del]")) {
+        close();
+        try { await B.unsetSeen(S.user.uid, item.id); delete S.history[item.id]; toast("Note supprimée"); changed("history"); if (onDone) onDone(); } catch (err) { toast("Impossible pour l’instant"); }
+        return;
+      }
+      if (!e.target.closest("[data-ok]")) return;
+      comment = (box.querySelector("#notecom").value || "").trim().slice(0, 280);
+      if (!rating && !comment) { toast("Mets une note ou un commentaire"); return; }
+      close();
+      try {
+        await B.setSeen(S.user.uid, item.id, { title: String(item.title).slice(0, 150), k: String(item.k || "").slice(0, 30), show: String(item.show || "").slice(0, 40), d: String(item.d || "").slice(0, 10), rating: rating, comment: comment });
+        toast("Note enregistrée ✓"); if (onDone) onDone();
+      } catch (err) { toast("Impossible pour l’instant"); }
+    });
+  });
+}
+ACT.noteedit = el => { const h = S.history[el.dataset.id]; if (h) editNote({ id: el.dataset.id, title: h.title, k: h.k, show: h.show, d: h.d }); };

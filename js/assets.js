@@ -73,7 +73,7 @@ export const BELT = {
   "mex-welter": "Mexican National Welterweight Championship", "mex-light": "Mexican National Lightweight Championship", "mex-tag": "Mexican National Tag Team Championship",
   "mex-trios": "Mexican National Trios Championship", "mex-women": "Mexican National Womens Championship", "mex-women-tag": "Mexican National Womens Tag Team Championship",
   "njpw-hw": "IWGP Heavyweight", "njpw-global": "IWGP Global", "njpw-jr": "IWGP Jr", "njpw-never": "NEVER Openweight", "njpw-6man": "NEVER 6", "njpw-tag": "IWGP Tag",
-  "njpw-jrtag": "IWGP Jr Tag", "njpw-tv": "NJPW TV", "njpw-strong": "NJPW Strong Open",
+  "njpw-jrtag": "IWGP Jr Tag", "njpw-tv": "NJPW TV", "njpw-strong": "NJPW Strong Open", "njpw-strongw": "NJPW Strong Open Women", "njpw-strongtag": "NJPW Strong Open Tag",
   "aaa-mega": "AAA Mega", "aaa-reina": "AAA Reina", "aaa-latin": "AAA LA", "aaa-cruiser": "AAA CW", "aaa-tag": "AAA Tag", "aaa-mixed": "AAA World Mixed", "aaa-trios": "AAA Trio",
   "roh-world": "ROH World", "roh-tv": "ROH TV", "roh-pure": "ROH Pure", "roh-tag": "ROH Tag", "roh-six": "ROH 6", "roh-women": "ROH Womens", "roh-women-tv": "ROH Womens TV", "roh-women-pure": "ROH W Pure",
   "stardom-world": "Stardom World", "stardom-wonder": "Wonder of Stardom", "stardom-goddesses": "Stardom Goddesses", "stardom-artist": "Stardom Artists", "stardom-future": "Stardom Future",

@@ -662,6 +662,23 @@
      "u": "https://www.wrestle-universe.com/"
     }
    ]
+  },
+  "NJPW Strong": {
+   "c": [
+    "#c8102e",
+    "#3a0610"
+   ],
+   "l": "https://www.njpw1972.com/",
+   "x": [
+    "njpwglobal"
+   ],
+   "e": [],
+   "fr": [
+    {
+     "n": "NJPW World",
+     "u": "https://njpwworld.com/"
+    }
+   ]
   }
  }
 }

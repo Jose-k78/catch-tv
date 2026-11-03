@@ -16,7 +16,7 @@ export function seenDay(k, show, d) {
 }
 function seenSince(k, d) { return shows().some(h => h.k === k && okDay(h.d) && h.d >= d); }
 // les notes de combats (« m_… ») ne comptent pas comme un show vu
-const shows = () => Object.values(S.history).filter(h => !(typeof h.id === "string" && h.id.indexOf("m_") === 0));
+const shows = () => Object.values(S.history).filter(h => !(typeof h.id === "string" && /^(m|s|f)_/.test(h.id)));
 
 // Highlights / résultats d'un show cachés ?
 export function hlHidden(key, k, show, d) { return noSpoil() && !seenDay(k, show, d) && !unlocked.has("hl:" + key); }

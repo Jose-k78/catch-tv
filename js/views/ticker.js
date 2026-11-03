@@ -16,7 +16,7 @@ import { defensesOf } from "./titles.js";
 import { norm } from "../wrestlers.js";
 
 const SPEED = 70;   // pixels par seconde
-const DAYS = 5;     // durée d'affichage d'une défense ou d'un changement de titre
+const DAYS = 1;     // infos du jour seulement (1 jour max : le show de la nuit compte encore le lendemain) — demande de Jose, 4 nov.
 const days = d => Math.round((today() - dt(d)) / 864e5);
 const lbl = (k, n) => (String(n).indexOf(k) === 0 ? n : k + " " + n);
 // Show où le titre a été mis en jeu : un show hebdo de ce nom, sinon le PLE de ce jour-là

@@ -59,11 +59,12 @@ function scoreOf(p, e, res) {
   lines(e).forEach(m => {
     const mine = p.p && p.p[m.id], w = res[m.id];
     if (mine == null || w == null) return;
-    n++; if (w !== "draw" && norm(m.sides[w]) === norm(mine)) ok++;
+    n++; if (w === "draw" ? mine === DRAW : norm(m.sides[w]) === norm(mine)) ok++;
   });
   return { ok: ok, n: n };
 }
 
+export const DRAW = "Match nul";
 // ---------- page d'un PLE ----------
 export function pickView(k, d) {
   const e = evOf(k, d);
@@ -82,7 +83,10 @@ export function pickView(k, d) {
       const st = w == null ? "" : w === i ? " won" : " lost";
       return '<button class="pk' + (on ? " on" : "") + st + '"' + (lk || !S.user ? " disabled" : ' data-act="pickside" data-k="' + esc(k) + '" data-d="' + esc(d) + '" data-m="' + m.id + '" data-s="' + esc(s) + '"') + ">" +
         "<b>" + esc(s) + "</b>" + (showPct && tot ? "<small>" + Math.round(n * 100 / tot) + " %</small>" : "") + (w === i ? "<em>🏆</em>" : "") + (on && w != null ? "<em>" + (w === i ? "✅" : "❌") + "</em>" : "") + "</button>";
-    }).join("") + "</div>" + (w === "draw" ? '<small class="note small">Match nul</small>' : "") + "</div>";
+    }).join("") + "</div>" + (m.sides.length === 2 ? (() => {
+      const on = my === DRAW, n = all.filter(p => p.p && p.p[m.id] === DRAW).length;
+      return '<button class="pk pdraw' + (on ? " on" : "") + (w == null ? "" : w === "draw" ? " won" : " lost") + '"' + (lk || !S.user ? " disabled" : ' data-act="pickside" data-k="' + esc(k) + '" data-d="' + esc(d) + '" data-m="' + m.id + '" data-s="' + DRAW + '"') + "><b>🤝 Match nul</b>" + (showPct && tot ? "<small>" + Math.round(n * 100 / tot) + " %</small>" : "") + (on && w != null ? "<em>" + (w === "draw" ? "✅" : "❌") + "</em>" : "") + "</button>";
+    })() : "") + (w === "draw" ? '<small class="note small">Match nul</small>' : "") + "</div>";
   }).join("") + "</div>";
   const other = (e.card || []).filter(l => !sidesOf(l));
   if (other.length) h += '<p class="note small">Aussi au programme : ' + other.map(linkNames).join(" · ") + "</p>";
@@ -147,7 +151,7 @@ ACT.pickside = async el => {
   // affichage immédiat, avant la confirmation du serveur
   const id = pickId(S.user.uid, k, d), doc = { id: id, uid: S.user.uid, ev: String(e.t).slice(0, 120), k: k, d: d, t: lockAt(e), p: p };
   S.picks = (S.picks || []).filter(x => x.id !== id).concat([doc]);
-  el.closest(".pside").querySelectorAll(".pk").forEach(b => b.classList.toggle("on", b.dataset.s === el.dataset.s && !!p[el.dataset.m]));
+  el.closest(".pickm").querySelectorAll(".pk").forEach(b => b.classList.toggle("on", b.dataset.s === el.dataset.s && !!p[el.dataset.m]));
   try { await B.setPick(id, { uid: doc.uid, ev: doc.ev, k: k, d: d, t: doc.t, p: p }); } catch (err) { toast(errText(err)); }
 };
 
@@ -158,7 +162,17 @@ export function perfectCards(uid) {
     const ls = lines(e); if (ls.length < 2 || !locked(e)) return;
     const p = (S.picks || []).find(x => x.uid === uid && x.k === e.k && x.d === e.d); if (!p || !p.p) return;
     const res = results(e); if (Object.keys(res).length < ls.length) return;
-    if (ls.every(m => p.p[m.id] && res[m.id] !== "draw" && norm(m.sides[res[m.id]]) === norm(p.p[m.id]))) n++;
+    if (ls.every(m => p.p[m.id] && (res[m.id] === "draw" ? p.p[m.id] === DRAW : norm(m.sides[res[m.id]]) === norm(p.p[m.id])))) n++;
   });
   return n;
+}
+
+// Points de pronostics d'un membre : 1 point par bon pronostic (tous les PLE dont les résultats sont connus)
+export function pickPoints(uid) {
+  let ok = 0, n = 0;
+  allPle().filter(e => locked(e) && lines(e).length).forEach(e => {
+    const p = (S.picks || []).find(x => x.uid === uid && x.k === e.k && x.d === e.d); if (!p) return;
+    const sc = scoreOf(p, e, results(e)); ok += sc.ok; n += sc.n;
+  });
+  return { ok: ok, n: n };
 }

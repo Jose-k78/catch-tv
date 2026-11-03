@@ -14,7 +14,7 @@ export const TICON = {
   shop: sv('<path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>')
 };
 // logo TCCCG : éventail de cartes dorées + nom
-const LOGO = '<svg class="tfan" viewBox="0 0 40 34" aria-hidden="true"><defs><linearGradient id="tg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7e08a"/><stop offset=".6" stop-color="#c9971f"/><stop offset="1" stop-color="#8a6412"/></linearGradient></defs>' +
+export const LOGO = '<svg class="tfan" viewBox="0 0 40 34" aria-hidden="true"><defs><linearGradient id="tg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7e08a"/><stop offset=".6" stop-color="#c9971f"/><stop offset="1" stop-color="#8a6412"/></linearGradient></defs>' +
   '<rect x="4" y="6" width="16" height="23" rx="3" transform="rotate(-16 12 18)" fill="#16130d" stroke="url(#tg1)" stroke-width="2"/>' +
   '<rect x="13" y="4" width="16" height="23" rx="3" transform="rotate(10 21 16)" fill="#16130d" stroke="url(#tg1)" stroke-width="2"/>' +
   '<path d="M21 10.5l1.6 3.3 3.6.5-2.6 2.5.6 3.6-3.2-1.7-3.2 1.7.6-3.6-2.6-2.5 3.6-.5z" fill="url(#tg1)" transform="rotate(10 21 16)"/></svg>' +

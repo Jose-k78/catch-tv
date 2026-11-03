@@ -49,12 +49,12 @@ const FORM_VIEWS = { auth: 1, settings: 1, editprofile: 1 };
 const REL = {
   home: ["content", "images", "history", "auth", "tick", "profile", "spoil", "activity", "polls", "pollVotes", "picks", "hof", "push", "ann"], promo: ["content", "images", "history", "auth", "tick", "spoil", "polls"],
   profile: ["profile", "profiles", "history", "otherHistory", "auth", "friends", "feuds", "blocks", "memberFriends", "tick", "slammys", "myact", "pollVotes", "ideas"], chat: ["room", "convs", "reads", "profiles", "auth", "blocks"],
-  convinfo: ["convs", "reads", "profiles", "auth", "blocks", "room", "msgs"], newchat: ["users", "auth"], settings: ["auth", "route", "reports", "blocks", "profiles", "images", "media", "ideas", "push", "ann", "content"], editprofile: ["profile", "auth", "profiles"], auth: ["auth"],
+  convinfo: ["convs", "reads", "profiles", "auth", "blocks", "room", "msgs"], newchat: ["users", "auth"], settings: ["auth", "history", "profile", "route", "reports", "blocks", "profiles", "images", "media", "ideas", "push", "ann", "content"], editprofile: ["profile", "auth", "profiles"], auth: ["auth"],
   matches: ["route", "history", "auth", "content"], wrestler: ["profile", "spoil", "history", "auth", "content"], search: [], titles: ["history", "spoil", "content"], title: ["history", "spoil", "content"], belt: ["content"], group: ["content", "auth"], tccg: ["auth", "profile"], player: ["content"], autre: ["content"],
-  notifs: ["notifs", "profiles", "reads", "blocks", "ann"], activity: ["activity", "profiles", "blocks", "areplies"], storyline: ["content"], roster: ["profile", "content"],
+  notifs: ["notifs", "profiles", "reads", "blocks", "ann"], activity: ["activity", "profiles", "blocks", "areplies"], storyline: ["content", "history", "auth"], roster: ["profile", "content"],
   members: ["users", "friends", "feuds", "blocks", "profiles", "auth", "tick"], favs: ["profile", "profiles", "friends", "auth", "content"], hl: ["history", "spoil", "content"],
   event: ["event", "history", "auth"], cal: ["content", "history", "auth", "images", "spoil", "tick", "picks"],
-  polls: ["polls", "pollVotes", "auth", "blocks", "hof", "content"], picks: ["content", "picks", "profiles", "auth", "blocks", "tick"], pick: ["content", "picks", "profiles", "auth", "blocks", "tick"],
+  polls: ["polls", "pollVotes", "auth", "blocks", "hof", "content", "profiles"], picks: ["content", "picks", "profiles", "auth", "blocks", "tick"], pick: ["content", "picks", "profiles", "auth", "blocks", "tick"],
   ideas: ["ideas", "profiles", "auth", "blocks"],
   trophies: ["profile", "profiles", "history", "pollVotes", "picks", "friends", "feuds", "ideas", "myact", "slammys", "auth", "content"],
 };
@@ -98,10 +98,15 @@ function parse() {
   }
 }
 
+// mode TCCCG « collant » : on reste en noir et doré en passant par le profil, les paramètres ou les trophées
+let tgMode = false;
+const TG_KEEP = { profile: 1, settings: 1, editprofile: 1, trophies: 1 };
+const tgOn = () => !!S.isAdmin && (route.name === "tccg" || (tgMode && !!TG_KEEP[route.name] && (!route.uid || !S.user || route.uid === S.user.uid)));
 function onRoute() {
   routeSubs.forEach(u => u()); routeSubs = []; dirty = false;
   const prevName = route.name;
   route = parse();
+  if (route.name === "tccg") tgMode = true; else if (!TG_KEEP[route.name]) tgMode = false;
   if (route.name !== "search" || prevName !== "search") searchFocused = false;
   if (NEEDS_USER[route.name] && !S.user) {
     if (S.authReady) { if (route.name === "chat" || route.name === "conv") toast("Connecte-toi pour discuter"); location.replace("#/connexion"); return; }
@@ -161,7 +166,7 @@ function render() {
   mountBg(route);
   mountTicker(route);
   document.body.classList.toggle("wide", route.name === "home");
-  document.body.classList.toggle("tccg", route.name === "tccg" && !!S.isAdmin);
+  document.body.classList.toggle("tccg", tgOn());
   let h = "";
   const waiting = NEEDS_USER[route.name] && !S.user;
   if (waiting) h = '<p class="empty">Chargement…</p>';
@@ -235,7 +240,7 @@ function updateHeader() {
   const n = chatBadge(), soc = socialBadge();
   const nav = document.getElementById("bnav"), top = document.querySelector("header.top");
   // mode TCCCG (modérateur) : en-tête et barre du bas noir et doré
-  const tg = route.name === "tccg" && !!S.isAdmin;
+  const tg = tgOn();
   if (top) {
     if (tg) { if (!top.dataset.tv) top.dataset.tv = top.innerHTML; top.innerHTML = tccgTop(); }
     else if (top.dataset.tv) { top.innerHTML = top.dataset.tv; delete top.dataset.tv; }

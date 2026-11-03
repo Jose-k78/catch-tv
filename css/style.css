@@ -1232,3 +1232,62 @@ body.tccg #tabwrap{display:none}
 .autre{margin:0}
 
 .chathead .ideabtn{margin-left:auto;margin-right:6px;font-size:18px;text-decoration:none}
+
+/* accueil (refonte du 4 nov.) */
+h2.hh{display:flex;flex-direction:column;gap:2px}
+h2.hh small{font-size:12px;font-weight:500;opacity:.6;letter-spacing:0;text-transform:none}
+.ptile{background:linear-gradient(135deg,#1d1030,#3a1460)}
+/* Babies du mois en tournoi */
+.bkopen{display:grid;gap:12px;margin:8px 16px}
+.bkduel{background:var(--card,#1a1a22);border-radius:14px;padding:12px;border:1px solid rgba(255,255,255,.08)}
+.bkduel.open{border-color:#e50914}
+.bkvs{display:flex;align-items:stretch;gap:8px;margin-top:8px}
+.bkvs .wvsx{align-self:center;font-weight:800;opacity:.7}
+.bkside{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 6px;border-radius:12px;background:rgba(255,255,255,.05);border:2px solid transparent;color:inherit;font:inherit;cursor:pointer}
+.bkside[disabled]{cursor:default}
+.bkside b{font-size:14px;text-align:center}
+.bkside small{opacity:.7}
+.bkside.win{border-color:#f5c518;background:rgba(245,197,24,.12)}
+.bkside.out{opacity:.45}
+.bkside.mine{box-shadow:0 0 0 2px #46d369 inset}
+.bkwho{margin-top:8px;font-size:13px;opacity:.85}
+.bkwho summary{cursor:pointer}
+.bktree{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:8px;margin:12px 16px;align-items:center}
+.bkcol{display:flex;flex-direction:column;gap:8px;justify-content:space-around;height:100%}
+.bkcol>small{opacity:.6;text-transform:uppercase;font-size:10px;letter-spacing:.08em}
+.bkmini{background:rgba(255,255,255,.05);border-radius:8px;padding:4px 6px;font-size:11px;display:flex;flex-direction:column;gap:2px}
+.bkmini.open{outline:1px solid #e50914}
+.bkmini span{display:flex;align-items:center;gap:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bkmini span i{margin-left:auto;font-style:normal;opacity:.6}
+.bkmini .win{font-weight:700;color:#f5c518}
+.bkmini .out{opacity:.4;text-decoration:line-through}
+.bkchamp{display:flex;flex-direction:column;align-items:center;gap:4px;margin:10px 16px;padding:14px;border-radius:14px;background:linear-gradient(135deg,rgba(245,197,24,.2),rgba(229,9,20,.15))}
+.bkchamp span{font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.bkchamp b{font-size:20px}
+.bkpast{margin:8px 16px}
+.bkpast summary{cursor:pointer;margin-bottom:8px}
+.bkpast .bkduel{margin-bottom:8px}
+.pwho{margin-top:6px;font-size:13px;opacity:.85}
+.pwho summary{cursor:pointer}
+.pk.pdraw{margin-top:6px;width:100%}
+.vit.star{transform:scale(1.05);background:rgba(245,197,24,.15);border-radius:12px}
+.favlogo{height:34px;max-width:90px;object-fit:contain;display:block;margin:4px auto}
+.stats{flex-wrap:wrap}
+/* intro en mode TCCCG : noir et doré */
+html.introon #intro.tg,html.introon.tgstart #intro{background:radial-gradient(120% 80% at 50% 38%,#2a210a 0,#0b0a07 62%,#050504 100%)}
+.intro-logo.tg{filter:drop-shadow(0 10px 24px rgba(201,151,31,.45))}
+.intro-logo.tg .tfan{width:clamp(70px,20vw,130px);height:auto}
+.intro-logo.tg .tword{font-family:"Big Shoulders Display",Impact,"Arial Narrow",sans-serif;font-weight:900;font-size:clamp(54px,15vw,110px);line-height:.9;letter-spacing:.02em;transform:skewX(-7deg);background:linear-gradient(180deg,#f7e08a,#c9971f 60%,#8a6412);-webkit-background-clip:text;background-clip:text;color:transparent}
+#intro.tg .intro-ropes .rp{stroke:#c9971f}
+/* onglets des promotions et des shows : tous de la même taille (demande de Jose, 4 nov.) */
+.tabs .tab{display:inline-flex;align-items:center;justify-content:center;height:36px;min-width:88px;box-sizing:border-box;flex:0 0 auto}
+.tabs .tab.home{min-width:52px}
+.tabs .tab.logo{width:96px;padding:3px 8px}
+.tabs .tab.logo img{height:24px;max-width:78px}
+.tabs.sub .tab{height:32px;min-width:80px;font-size:13px}
+.tabs.sub .tab.logo{width:88px}
+.tabs.sub .tab.logo img{height:20px;max-width:70px}
+.storyleft{margin:8px 16px 0;font-size:13px;opacity:.8}
+.storynote{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 16px}
+.storynote>span{flex-basis:100%;font-size:14px}
+.noteed{background:none;border:0;color:inherit;opacity:.7;cursor:pointer;font-size:13px;padding:2px 4px}

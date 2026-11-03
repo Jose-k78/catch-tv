@@ -3,6 +3,7 @@
 // Sur téléphone, le son ne peut partir qu'après un appui : on le joue dès que l'écran est touché pendant l'intro.
 import { ACT } from "./state.js";
 import { lsGet, lsSet } from "./util.js";
+import { LOGO as TLOGO } from "./views/tccg.js";
 
 export const INTRO = { son: ["Avec le son", "Animation, impact et trois coups de cloche", "avec son"], muet: ["Sans le son", "Animation seulement", "sans son"], off: ["Désactivée", "L’app s’ouvre directement", "désactivée"] };
 export function introMode() { const m = lsGet("ctv.intro"); return INTRO[m] ? m : "son"; }
@@ -68,9 +69,12 @@ export function playIntro(force) {
   root.classList.add("introon");
   try { sessionStorage.setItem("ctv.introShown", "1"); } catch (e) {}
   const withSound = introMode() === "son";
+  // même animation en mode TCCCG (ouverture réglée sur TCCCG) : logo TCCCG, noir et doré
+  const tg = lsGet("ctv.start") === "tccg";
+  box.classList.toggle("tg", tg);
   const reduced = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   box.innerHTML = '<div class="intro-ring"><div class="intro-post l"></div><div class="intro-post r"></div><svg class="intro-ropes" preserveAspectRatio="none"><path class="rp r1"/><path class="rp r2"/><path class="rp r3"/></svg></div>' +
-    '<div class="intro-logo"><span class="l1">TCC</span><span class="l2">TV</span><span class="intro-shine"></span></div><div class="intro-flash"></div>' +
+    '<div class="intro-logo' + (tg ? " tg" : "") + '">' + (tg ? TLOGO : '<span class="l1">TCC</span><span class="l2">TV</span>') + '<span class="intro-shine"></span></div><div class="intro-flash"></div>' +
     '<button class="intro-skip" type="button">Passer ›</button>' + (withSound ? '<div class="intro-hint">🔔 Touche l’écran pour la cloche</div>' : "");
   const logo = box.querySelector(".intro-logo"), flash = box.querySelector(".intro-flash"), svg = box.querySelector(".intro-ropes"), hint = box.querySelector(".intro-hint");
   const ropes = [".r1", ".r2", ".r3"].map(s => box.querySelector(s));

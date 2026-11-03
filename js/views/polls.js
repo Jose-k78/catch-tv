@@ -1,11 +1,12 @@
 // Sondages : ceux préparés chaque jour par la mise à jour (data/polls.json) et ceux créés par l'admin.
 // Un vote par membre (modifiable tant que le sondage est ouvert), résultats en %, réponses libres « Autre » regroupées.
-import { S, B, ACT, FORM, changed } from "../state.js";
+import { S, B, ACT, FORM, changed, prof, need } from "../state.js";
 import { esc, ICON, fmt, toast, modal, shAttr } from "../util.js";
 import { parisDay } from "../time.js";
 import { norm, linkNames } from "../wrestlers.js";
 import { face, faceImg, photoOf } from "../photos.js";
 import { errText } from "./account.js";
+import { bracketCfg, bracketSection, bracketWinner, NOBABY } from "./babies.js";
 
 const okPoll = p => p && p.id && p.q && Array.isArray(p.opts);
 export const isOpen = p => !p.closed && (!p.end || p.end >= parisDay());
@@ -14,7 +15,9 @@ export function allPolls() {
   const m = {};
   (S.polls || []).forEach(p => { if (okPoll(p)) m[p.id] = Object.assign({ src: "maj" }, p); });
   (S.fsPolls || []).forEach(p => { if (p && p.id) m[p.id] = Object.assign({}, m[p.id] || { src: "admin" }, p); });
-  return Object.keys(m).map(k => m[k]).filter(p => okPoll(p) && !p.del)
+  // dream match à 2 : le match nul est toujours proposé
+  Object.keys(m).forEach(k => { const p = m[k]; if (p.type === "match" && Array.isArray(p.opts) && p.opts.length === 2) m[k] = Object.assign({}, p, { opts: p.opts.concat(["Match nul"]) }); });
+  return Object.keys(m).map(k => m[k]).filter(p => okPoll(p) && !p.del && p.type !== "bracket" && !(p.type === "babies" && bracketCfg(String(p.d || "").slice(0, 7))))
     .sort((a, b) => (isOpen(b) - isOpen(a)) || String(b.d || "").localeCompare(String(a.d || "")) || (b.at || 0) - (a.at || 0));
 }
 const votesOf = id => (S.pollVotes || []).filter(v => v.poll === id && S.blocks.indexOf(v.uid) < 0);
@@ -43,7 +46,7 @@ function pollCard(p) {
   const tag = p.type === "babies" ? "👑 Babies du mois" : p.type === "match" ? "🥊 Dream match" : "";
   let h = '<div class="poll' + (open ? "" : " closed") + (p.type ? " t-" + esc(p.type) : "") + '" id="poll-' + esc(p.id) + '"' + shAttr({ ty: "poll", t: p.q, s: [tag || "Sondage", p.k].filter(Boolean).join(" · "), h: "#/sondages", k: p.k || "" }) + '><small class="eyebrow">' + esc([tag, p.k, open ? (p.end ? "jusqu’au " + fmt(p.end) : "ouvert") : "terminé"].filter(Boolean).join(" · ")) + "</small><b class=\"pq\">" + linkNames(p.q) + "</b>";
   // dream match et babies : les deux visages face à face
-  if ((p.type === "match" || p.type === "babies") && p.opts.length === 2 && (photoOf(p.opts[0]) || photoOf(p.opts[1])))
+  if ((p.type === "match" || p.type === "babies") && (p.opts.length === 2 || p.opts[2] === "Match nul") && (photoOf(p.opts[0]) || photoOf(p.opts[1])))
     h += '<div class="pvs">' + (face(p.opts[0], 72) || '<span class="wnone big">?</span>') + '<span class="wvsx">VS</span>' + (face(p.opts[1], 72) || '<span class="wnone big">?</span>') + "</div>";
   if (!showRes || (open && mv && mv.edit)) {
     h += '<div class="popts">' + p.opts.map((t, i) => '<button class="popt" data-act="pvote" data-p="' + esc(p.id) + '" data-c="' + i + '">' + faceImg(t, 26) + esc(t) + "</button>").join("") + "</div>";
@@ -52,6 +55,10 @@ function pollCard(p) {
     h += '<div class="pres">' + r.opts.map((x, i) => bar(x.t, x.n, r.total, mv && mv.c === i, x.n && x.n === max)).join("") +
       r.other.slice(0, 6).map(x => bar(x.t, x.n, r.total, mv && mv.c < 0 && norm(mv.o) === norm(x.t), x.n === max)).join("") + "</div>" +
       (r.other.length > 6 ? '<small class="note small">+ ' + (r.other.length - 6) + " autre" + (r.other.length - 6 > 1 ? "s" : "") + " réponse" + (r.other.length - 6 > 1 ? "s" : "") + "</small>" : "");
+  }
+  if (showRes && r.total) {
+    const who = votesOf(p.id).map(v => { need(v.uid); const pr = prof(v.uid); return esc((pr && pr.pseudo) || "Membre") + " → " + esc(v.c >= 0 && v.c < p.opts.length ? p.opts[v.c] : String(v.o || "")); });
+    h += '<details class="pwho"><summary>Qui a voté quoi</summary><p>' + who.join("<br>") + "</p></details>";
   }
   h += '<div class="pfoot"><small>' + r.total + " vote" + (r.total > 1 ? "s" : "") + "</small>" +
     (open && mv && !mv.edit ? '<button class="linkbtn" data-act="pedit" data-p="' + esc(p.id) + '">Changer mon vote</button>' : "") +
@@ -95,7 +102,9 @@ export function babiesLast() {
 function babiesSection() {
   const m = parisDay().slice(0, 7), rk = babiesRanking(m), hof = S.hof || {};
   const arch = Object.keys(hof).filter(k => k < m && hof[k] && hof[k].n).sort().reverse().slice(0, 12);
-  if (!rk.length && !arch.length && !allPolls().some(p => p.type === "babies")) return "";
+  const archTxt = arch.length ? '<p class="note small" style="margin-top:8px">Les gagnantes : ' + arch.map(k => "<b>" + esc(hof[k].n) + "</b> (" + esc(MOIS_L[+k.slice(5, 7) - 1]) + " " + k.slice(0, 4) + ")").join(" · ") + "</p>" : "";
+  // nouveau format : tournoi à 8 (sauf si le mois a déjà commencé avec des sondages « babies » classiques)
+  if (bracketCfg(m) || !rk.length) return bracketSection(m, monthLabel) + archTxt;
   let h = "<h2>👑 Babies du mois " + esc(monthLabel(m)) + "</h2>";
   h += rk.length ? '<div class="board">' + rk.slice(0, 10).map((x, i) => '<div class="brow"><span class="brk">' + (i < 3 ? ["👑", "🥈", "🥉"][i] : i + 1) + "</span><b>" + esc(x.n) + '</b><span class="bpts">' + x.v + " vote" + (x.v > 1 ? "s" : "") + "</span></div>").join("") + "</div>"
     : '<p class="note">Le classement se remplit avec les votes des sondages « babies » du mois.</p>';
@@ -107,11 +116,12 @@ let hofBusy = false;
 export async function syncBabies() {
   if (!S.isAdmin || hofBusy || !S.hofReady) return;
   const pm = prevMonth(parisDay().slice(0, 7)); if ((S.hof || {})[pm]) return;
-  const top = babiesRanking(pm)[0]; if (!top) return;
+  const bk = bracketCfg(pm);
+  const top = bk ? { n: bracketWinner(bk) || NOBABY, v: 0 } : babiesRanking(pm)[0]; if (!top) return;
   hofBusy = true;
   try {
     await B.setHofMonth(pm, { n: top.n.slice(0, 60), v: top.v });
-    B.setActivity(S.user.uid + "_b_" + pm, { uid: S.user.uid, kind: "babies", k: "", show: "", d: pm + "-01", title: top.n.slice(0, 150), rating: 0, comment: "", w: "", name: monthLabel(pm).slice(0, 60) }).catch(() => {});
+    if (top.n !== NOBABY) B.setActivity(S.user.uid + "_b_" + pm, { uid: S.user.uid, kind: "babies", k: "", show: "", d: pm + "-01", title: top.n.slice(0, 150), rating: 0, comment: "", w: "", name: monthLabel(pm).slice(0, 60) }).catch(() => {});
   } catch (e) {} finally { hofBusy = false; }
 }
 // Tuile de l'accueil : le premier sondage ouvert auquel je n'ai pas encore répondu

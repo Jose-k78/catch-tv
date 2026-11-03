@@ -315,7 +315,7 @@ function promoCard(k) {
 }
 // Vignette « Titres » : champions actuels de la promotion ou du show
 export function titlesFor(k, n) {
-  const all = (S.titles || []).filter(t => t && t.k === k);
+  const all = (S.titles || []).filter(t => t && (t.k === k || (Array.isArray(t.also) && t.also.indexOf(k) >= 0)));
   if (!n) return all;
   const own = all.filter(t => t.show === n || (Array.isArray(t.shows) && t.shows.indexOf(n) >= 0));
   return own.length ? own : all.filter(t => !t.show);
@@ -456,25 +456,39 @@ function xSection(hs) {
 }
 
 // ---------- pages ----------
+// Accueil (refonte du 4 nov.) : 1. aujourd'hui / cette nuit  2. vient de sortir  3. programme de la semaine
+// 4. prochain grand événement + à venir  5. jouer avec la communauté  6. infos  7. explorer (promotions, TCC Player, matchs)  8. déjà sorti
+function homeHead(t, sub) { return '<h2 class="hh">' + t + (sub ? "<small>" + sub + "</small>" : "") + "</h2>"; }
 export function homeView() {
   const P = S.P, sp = split(allPle());
   const weekly = [];
-  Object.keys(P).forEach(k => { const s = P[k].s; if (s) Object.keys(s).forEach(n => weekly.push({ k: k, n: n })); });
-  // prochain événement : pas un show déjà terminé aujourd'hui
-  let first = sp[0].filter(e => e.d && !isOut(e))[0] || sp[0].filter(e => e.d)[0], h = annBar() + installBar() + liveSection();
-  if (first) h += hero(first, "PROCHAIN ÉVÉNEMENT · " + esc(first.k));
-  h += "<h2>Shows de la semaine</h2>" + showRow(weekly, true);
-  const out = outItems();
-  h += recentSection(out);
-  h += '<h2>À venir</h2><div class="row">' + sp[0].map(e => pleCard(e, true)).join("") + "</div>";
-  const st = storylineTile(), dc = discoverTile();
-  if (st || dc) h += '<div class="tiles2">' + st + dc + "</div>";
-  const pt = pollTile(), pk = pickTile();
-  if (pt || pk) h += '<div class="tiles2 play">' + pt + pk + "</div>";
+  Object.keys(P).forEach(k => { const s = P[k].s; if (s) Object.keys(s).forEach(n => weekly.push({ k: k, n: n, d: nextWeekday(s[n].wd) })); });
+  let h = annBar() + installBar() + liveSection();
+  // 1. ce qui passe aujourd'hui (shows hebdo + événements du jour pas encore terminés)
+  const todayW = weekly.filter(x => diff(x.d) === 0), todayE = sp[0].filter(e => e.d && diff(e.d) === 0 && !isOut(e));
+  if (todayW.length || todayE.length) h += homeHead("Aujourd’hui et cette nuit", "Les shows du jour, heure de Paris") + '<div class="row">' + todayE.map(e => pleCard(e, true)).join("") + todayW.map(x => showCard(x.k, x.n, true, true)).join("") + "</div>";
+  // 2. vient de sortir
+  const out = outItems(), rec = out.filter(e => e.ago <= RECENT_DAYS - 1);
+  if (rec.length) h += homeHead("Vient de sortir", "À rattraper : résumés, highlights et notes") + '<div class="row">' + rec.map(e => outCard(e, true)).join("") + "</div>";
+  // 3. programme de la semaine (les autres shows, du plus proche au plus lointain)
+  const rest = weekly.filter(x => diff(x.d) > 0).sort((a, b) => diff(a.d) - diff(b.d));
+  if (rest.length) h += homeHead("Le programme de la semaine", "Les prochains shows hebdo") + '<div class="row">' + rest.map(x => showCard(x.k, x.n, true, false)).join("") + "</div>";
+  // 4. prochain grand événement puis la suite
+  const up = sp[0].filter(e => e.d && !isOut(e) && diff(e.d) > 0), big = up.filter(e => e.kind === "ple")[0] || up[0];
+  if (big) h += homeHead("Prochain grand événement") + hero(big, esc(big.k));
+  const more = up.filter(e => e !== big);
+  if (more.length) h += homeHead("Les grands événements à venir") + '<div class="row">' + more.map(e => pleCard(e, true)).join("") + "</div>";
+  // 5. jouer avec la communauté
+  const tiles = [storylineTile(), discoverTile(), pollTile(), pickTile()].filter(Boolean);
+  if (tiles.length) h += homeHead("Avec la communauté", "Storyline, pronostics, sondages") + '<div class="tiles2">' + tiles.join("") + "</div>";
+  // 6. infos
   h += artSection("Dernières infos", articles([], 6));
   h += '<div class="actsec">' + activitySection() + "</div>";
-  h += '<h2>Promotions</h2><div class="row">' + Object.keys(P).map(promoCard).join("") + "</div>";
+  // 7. explorer
+  h += homeHead("Explorer") + '<div class="row">' + Object.keys(P).map(promoCard).join("") + "</div>";
+  h += '<a class="matchtile ptile" href="#/player"><span class="mt-k">TCC Player</span><b>Archives et vidéos</b><small>Toutes les vidéos officielles par promotion et par année</small><span class="mt-go">Ouvrir ›</span></a>';
   if (S.matches.length) h += matchTile();
+  // 8. déjà sorti
   h += pastSection(out);
   const side = favAside().replace("</aside>", S.user ? '<h2>Activité des membres</h2>' + activityList(12) + "</aside>" : "</aside>");
   return '<div class="withside"><div class="mainc">' + h + "</div>" + side + "</div>";
@@ -530,7 +544,7 @@ function tab(label, href, on, logo) {
     : '<a class="tab' + (on ? " on" : "") + '" href="' + href + '">' + esc(label) + "</a>";
 }
 // Promotions rangées dans l'onglet d'une autre : la AAA dans la WWE (après NXT), la ROH dans l'AEW (après Collision)
-export const PARENT = { AAA: "WWE", ROH: "AEW" };
+export const PARENT = { AAA: "WWE", ROH: "AEW", "NJPW Strong": "NJPW" };
 const AFTER = { AAA: "NXT", ROH: "Collision" };
 export const hostOf = k => (PARENT[k] && S.P[PARENT[k]] ? PARENT[k] : k);
 export function tabsView(route) {
@@ -542,15 +556,16 @@ export function tabsView(route) {
   if (route.name === "promo" && S.P[cur]) {
     const kids = Object.keys(PARENT).filter(c => PARENT[c] === cur && S.P[c]), shows = Object.keys(S.P[cur].s || {});
     // ordre : Tout, les shows, et chaque promotion rangée juste après le show indiqué (sinon à la fin)
-    const items = ["Tout"].concat(shows);
+    const items = [shows.length ? "Tout" : cur].concat(shows);
     kids.forEach(c => { const i = items.indexOf(AFTER[c]); items.splice(i >= 0 ? i + 1 : items.length, 0, { kid: c }); });
     if (shows.length || kids.length) h += '<nav class="tabs sub">' + items.map(t => {
       if (t.kid) return tab(t.kid, "#/p/" + encodeURIComponent(t.kid), route.k === t.kid, logoOf(t.kid, ""));
-      const on = route.k === cur && ((t === "Tout" && !route.n) || t === route.n);
-      return tab(t, "#/p/" + encodeURIComponent(cur) + (t === "Tout" ? "" : "/" + encodeURIComponent(t)), on, t === "Tout" ? "" : logoOf(cur, t));
+      const all = t === "Tout" || t === cur, on = route.k === cur && ((all && !route.n) || t === route.n);
+      return tab(t, "#/p/" + encodeURIComponent(cur) + (all ? "" : "/" + encodeURIComponent(t)), on, all ? (t === cur ? logoOf(cur, "") : "") : logoOf(cur, t));
     }).join("") + "</nav>";
     // les shows de la promotion rangée (Lucha Libre AAA…)
-    if (route.k !== cur && S.P[route.k].s) h += '<nav class="tabs sub">' + ["Tout " + route.k].concat(Object.keys(S.P[route.k].s)).map((t, i) => {
+    // (plus de 2e rangée quand la promotion rangée n'a qu'un show : ex. « Lucha Libre AAA » sous AAA, demande de Jose)
+    if (route.k !== cur && S.P[route.k].s && Object.keys(S.P[route.k].s).length > 1) h += '<nav class="tabs sub">' + ["Tout " + route.k].concat(Object.keys(S.P[route.k].s)).map((t, i) => {
       const on = (i === 0 && !route.n) || t === route.n;
       return tab(t, "#/p/" + encodeURIComponent(route.k) + (i === 0 ? "" : "/" + encodeURIComponent(t)), on, i === 0 ? "" : logoOf(route.k, t));
     }).join("") + "</nav>";

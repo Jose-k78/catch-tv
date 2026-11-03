@@ -17,6 +17,9 @@ import { notifSettingsView, pushOnHere, pushReady } from "../push.js";
 import { adminAnnView, annList } from "./annonces.js";
 import { introMode, INTRO } from "../intro.js";
 import { showcase } from "./trophies.js";
+import { pickPoints } from "./picks.js";
+import { isStoryNote, isStoryFav, storyFavsHTML, storyFavView } from "./storyline.js";
+import { showLogo } from "../assets.js";
 import { cropImage } from "../crop.js";
 
 const ERR = {
@@ -147,22 +150,37 @@ export function settingsView(sub, x) {
   if (sub === "medias" && S.isAdmin) return h + mediaView();
   if (sub === "notifs") return h + notifSettingsView();
   if (sub === "patchnotes") return h + patchView();
+  if (sub === "storylines") return h + storyFavView();
   if (sub === "patchnotes-modo" && S.isAdmin) return h + patchModView();
   if (sub === "images" && S.isAdmin) return h + imagesView(x);
   if (sub === "annonces" && S.isAdmin) return h + adminAnnView();
   if (sub === "notifs-install" && S.isAdmin) return h + pushGuideView();
+  // Modération › Apparence : toutes les options de personnalisation (demande de Jose, 4 nov.)
+  if (sub === "apparence-modo" && S.isAdmin) {
+    const r = (href, t, d) => '<a class="item" href="' + href + '"><span class="lbl"><b>' + t + "</b><small>" + esc(d) + '</small></span><span class="chev">›</span></a>';
+    const nb = Object.keys((S.media && S.media.bg) || {}).length;
+    return h + '<h1>Apparence de l’app</h1><div class="list">' +
+      r("#/parametres/images", "🖼️ Images de l’app", "Photos des catcheurs, ceintures, logos de shows, d’événements et de groupes") +
+      r("#/parametres/logos", "🏷️ Logos des onglets", "Remplacer les noms des promotions et des shows par leur logo") +
+      r("#/parametres/medias", "🎬 Fonds animés et musique", nb + " vidéo" + (nb > 1 ? "s" : "") + " · " + (S.media && S.media.music ? "musique choisie" : "pas de musique")) +
+      r("#/parametres/apparence", "🌓 Thème, intro et ouverture", "Clair / sombre, intro au démarrage, ouvrir en TCC TV ou en TCCCG") + "</div>" +
+      '<p class="note small" style="margin-top:8px">Visuel d’une carte (show, PLE, promotion) : appuie sur le petit crayon en haut de la carte.</p>';
+  }
   if (sub === "apparence") {
     const t = lsGet("ctv.theme") || "auto", im = introMode();
     return h + '<h1>Apparence</h1><h2 style="margin-top:4px">Thème</h2><div class="list">' + ["auto", "light", "dark"].map(k => '<button class="item" data-act="theme" data-v="' + k + '"><span class="lbl"><b>' + TH[k] +
       '</b></span><span class="chev">' + (t === k ? "✓" : "") + "</span></button>").join("") + "</div>" +
       '<h2>Intro au démarrage</h2><div class="list">' + Object.keys(INTRO).map(k => '<button class="item" data-act="intromode" data-v="' + k + '"><span class="lbl"><b>' + INTRO[k][0] + "</b><small>" + INTRO[k][1] +
       '</small></span><span class="chev">' + (im === k ? "✓" : "") + "</span></button>").join("") + '</div><div class="btns" style="justify-content:flex-start;margin:10px 16px 0"><button class="btn ghost" data-act="introplay">▶ Revoir l’intro</button></div>' +
-      '<p class="note small" style="margin-top:8px">Sur téléphone, le son de la cloche ne peut partir qu’après un appui sur l’écran : touche l’écran pendant l’intro pour l’entendre.</p>';
+      '<p class="note small" style="margin-top:8px">Sur téléphone, le son de la cloche ne peut partir qu’après un appui sur l’écran : touche l’écran pendant l’intro pour l’entendre.</p>' +
+      (S.isAdmin ? (() => { const st = lsGet("ctv.start") === "tccg" ? "tccg" : "tv";
+        return '<h2>À l’ouverture de l’application</h2><div class="list">' + [["tv", "TCC TV", "L’app de catch (accueil, shows, infos)"], ["tccg", "TCCCG", "Le jeu de cartes, avec l’intro noir et doré"]].map(x => '<button class="item" data-act="startmode" data-v="' + x[0] + '"><span class="lbl"><b>' + x[1] + "</b><small>" + x[2] + '</small></span><span class="chev">' + (st === x[0] ? "✓" : "") + "</span></button>").join("") + "</div>"; })() : "");
   }
   const row = (href, t, s) => '<a class="item" href="' + href + '"><span class="lbl"><b>' + t + "</b><small>" + esc(s) + '</small></span><span class="chev">›</span></a>';
   h += '<h1>Paramètres</h1><div class="list">' + row("#/profil-modifier", "Modifier mon profil", "Photo, pseudo, description, favoris") +
     row("#/parametres/email", "Adresse e-mail", u.email) + row("#/parametres/motdepasse", "Mot de passe", google ? "Connecté avec Google" : "Modifier") +
     row("#/parametres/apparence", "Apparence", TH[lsGet("ctv.theme") || "auto"] + " · intro " + INTRO[introMode()][2]) +
+    row("#/parametres/storylines", "📖 Mes storylines préférées", "Elles s’affichent sur ton profil") +
     row("#/parametres/spoiler", "Mode sans spoiler", noSpoil() ? "Activé" : "Désactivé") +
     row("#/parametres/notifs", "🔔 Notifications", pushOnHere() ? "Activées sur ce téléphone" : pushReady() ? "Pas encore activées sur ce téléphone" : "Bientôt disponibles") +
     row("#/parametres/bloques", "Membres bloqués", S.blocks.length ? S.blocks.length + " membre" + (S.blocks.length > 1 ? "s" : "") : "Aucun") +
@@ -172,10 +190,8 @@ export function settingsView(sub, x) {
   if (!ADMIN_UID || S.isAdmin) {
     if (S.isAdmin) h += '<h2>Modération</h2><div class="list">' + row("#/parametres/annonces", "📣 Faire une annonce", annList().length ? "Dernière : " + annList()[0].t : "Notification à tous les membres") +
       row("#/parametres/patchnotes-modo", "📝 Patch notes · modération", "Ce que peut faire le modérateur · écrire une note") +
-      row("#/parametres/images", "🖼️ Images de l’app", "Photos des catcheurs, ceintures, logos : choisir la version, ajouter, supprimer") +
+      row("#/parametres/apparence-modo", "🎨 Apparence de l’app", "Images, logos des onglets, fonds animés, musique : tout au même endroit") +
       row("#/parametres/signalements", "Signalements", S.reports.length ? S.reports.length + " en attente" : "Aucun") +
-      row("#/parametres/logos", "Logos des onglets", "Remplacer les noms des promotions et des shows par leur logo") +
-      row("#/parametres/medias", "Fonds animés et musique", Object.keys((S.media && S.media.bg) || {}).length + " vidéo" + (Object.keys((S.media && S.media.bg) || {}).length > 1 ? "s" : "") + " · " + (S.media && S.media.music ? "musique choisie" : "pas de musique")) +
       row("#/idees", "Idées des membres", (S.ideas || []).length ? (S.ideas || []).filter(i => !i.st).length + " sans réponse · " + S.ideas.length + " au total" : "Voir les idées proposées") +
       row("#/parametres/sources", "Sources des données", (S.sources || []).filter(x => x.on !== false).length + " sites utilisés par les mises à jour") +
       row("#/parametres/etat", "État des mises à jour", "Date de chaque donnée et derniers envois") +
@@ -251,14 +267,16 @@ ACT.logout = async () => { await B.signOut(); toast("Déconnecté"); location.ha
 ACT.copyuid = async () => { try { await navigator.clipboard.writeText(S.user.uid); toast("Identifiant copié"); } catch (e) { toast("Sélectionne et copie le texte"); } };
 
 // ---------------- profil ----------------
+ACT.startmode = el => { lsSet("ctv.start", el.dataset.v === "tccg" ? "tccg" : ""); document.documentElement.classList.toggle("tgstart", el.dataset.v === "tccg"); toast(el.dataset.v === "tccg" ? "L’app s’ouvrira en TCCCG" : "L’app s’ouvrira en TCC TV"); changed("profile"); };
 export function profileView(uid) {
   const me = S.user && uid === S.user.uid;
   const p = prof(uid);
   let h = '<a class="back" href="' + (me ? "#/" : "javascript:history.back()") + '">' + ICON.back + (me ? " Accueil" : " Retour") + "</a>";
   if (!p) return h + '<p class="empty">' + (S.profiles[uid] === null ? "Profil introuvable." : "Chargement…") + "</p>";
   const blocked = !me && isBlocked(uid);
-  const all = (me ? Object.values(S.history) : (S.otherHistory[uid] || []).slice()).sort((a, b) => (b.seenAt || 0) - (a.seenAt || 0));
-  const hist = all.filter(x => !isMatchNote(x)), fights = all.filter(isMatchNote);
+  const raw = (me ? Object.values(S.history) : (S.otherHistory[uid] || []).slice()).sort((a, b) => (b.seenAt || 0) - (a.seenAt || 0));
+  const all = raw.filter(x => !isStoryFav(x));
+  const hist = all.filter(x => !isMatchNote(x) && !isStoryNote(x)), fights = all.filter(isMatchNote);
   const rated = all.filter(x => x.rating);
   const avg = rated.length ? (rated.reduce((s, x) => s + x.rating, 0) / rated.length).toFixed(1).replace(".", ",") : "–";
   // bannière horizontale (comme sur Twitter), chargée à part
@@ -287,12 +305,15 @@ export function profileView(uid) {
     if (fi.count || fi.mine || fi.theirs) h += '<p class="note small" style="text-align:center;margin-top:8px">' + (fi.count ? "🔥 " + fi.count + " jour" + (fi.count > 1 ? "s" : "") + " de feud d’affilée" : "Feud en cours") +
       (fi.best > fi.count ? " · record : " + fi.best : "") + (fi.hourglass ? " · ⏳ pensez à la feud du jour avant minuit" : "") + "</p>";
   }
+  const fsK = p.favShow ? Object.keys(S.P).find(k => p.favShow === k || p.favShow.indexOf(k + " ") === 0) : "", fsN = fsK && p.favShow !== fsK ? p.favShow.slice(fsK.length + 1) : "";
+  const fsLogo = fsK ? showLogo(fsK, fsN) || showLogo(fsK, "") : "";
   h += '<div class="favs">' + [["Show préféré", p.favShow], ["Catcheur préféré", p.favWrestler], ["Catcheuse préférée", p.favWrestlerF]]
-    .map((f, i) => '<div class="fav"><small>' + f[0] + "</small>" + (i && f[1] && photoOf(f[1]) ? '<a href="#/catcheur/' + encodeURIComponent(f[1]) + '"><img class="favpic" src="' + esc(photoOf(f[1])) + '" alt="" loading="lazy" onerror="this.remove()"></a>' : "") + "<b>" + (f[1] ? esc(f[1]) : "–") + "</b></div>").join("") + "</div>";
+    .map((f, i) => '<div class="fav"><small>' + f[0] + "</small>" + (!i && fsLogo ? '<a href="#/p/' + encodeURIComponent(fsK) + (fsN ? "/" + encodeURIComponent(fsN) : "") + '"><img class="favlogo" src="' + esc(fsLogo) + '" alt="" loading="lazy" onerror="this.remove()"></a>' : "") + (i && f[1] && photoOf(f[1]) ? '<a href="#/catcheur/' + encodeURIComponent(f[1]) + '"><img class="favpic" src="' + esc(photoOf(f[1])) + '" alt="" loading="lazy" onerror="this.remove()"></a>' : "") + "<b>" + (f[1] ? esc(f[1]) : "–") + "</b></div>").join("") + "</div>";
   h += '<div class="stats"><div><b>' + hist.length + "</b><small>show" + (hist.length > 1 ? "s" : "") + " vu" + (hist.length > 1 ? "s" : "") + "</small></div><div><b>" + fights.length + "</b><small>combat" + (fights.length > 1 ? "s" : "") + " noté" + (fights.length > 1 ? "s" : "") +
-    "</small></div><div><b>" + avg + "</b><small>note moyenne</small></div><div><b>" + friendsOf(uid).length + "</b><small>ami" + (friendsOf(uid).length > 1 ? "s" : "") + "</small></div></div>";
+    "</small></div><div><b>" + avg + "</b><small>note moyenne</small></div><div><b>" + pickPoints(uid).ok + "</b><small>pt" + (pickPoints(uid).ok > 1 ? "s" : "") + " de pronos</small></div><div><b>" + friendsOf(uid).length + "</b><small>ami" + (friendsOf(uid).length > 1 ? "s" : "") + "</small></div></div>";
   // vitrine des trophées
   h += showcase(uid);
+  h += storyFavsHTML(raw);
   // favoris ⭐
   const fc = favChips(p);
   h += "<h2>⭐ Favoris</h2>" + (fc || '<p class="note">' + (me ? "Appuie sur l’étoile d’un catcheur pour le suivre." : "Pas encore de favori.") + "</p>");
@@ -315,7 +336,8 @@ export function profileView(uid) {
     const fight = isMatchNote(x);
     return '<div class="item' + (fight ? " fightnote" : "") + '"' + (i >= HIST_MAX && !histOpen ? " hidden" : "") + '><span class="lbl"><b>' + noteTitle(x, (fight ? "🤼 " : "") + esc(x.title)) + "</b><small>" + esc(x.k) +
       (fight ? (x.show ? " · " + esc(x.show) : "") : x.show ? " · " + esc(x.show) : " · PLE") + (x.d ? " · " + fmt(x.d) : "") + "</small>" + (x.comment === "[HL]" ? '<small class="hltag">🎬 Vu en highlights</small>' : x.comment ? '<q class="mycom">' + esc(x.comment) + "</q>" : "") +
-      (fight ? matchNoteLinks(x) : "") + (S.user && (x.rating || (x.comment && x.comment !== "[HL]")) ? '<a class="arep small" href="#/activite/' + encodeURIComponent(uid + "_r_" + x.id) + '">💬 Réactions et réponses</a>' : "") + '</span><span class="rt">' + (x.rating ? stars(x.rating) : fight ? "Pas noté" : "Pas noté") + "<br>" + (fight ? "noté le " : "vu le ") + fmtMs(x.seenAt) + "</span></div>";
+      (fight ? matchNoteLinks(x) : "") + (S.user && (x.rating || (x.comment && x.comment !== "[HL]")) ? '<a class="arep small" href="#/activite/' + encodeURIComponent(uid + "_r_" + x.id) + '">💬 Réactions et réponses</a>' : "") + '</span><span class="rt">' + (x.rating ? stars(x.rating) : fight ? "Pas noté" : "Pas noté") + "<br>" + (fight || isStoryNote(x) ? "noté le " : "vu le ") + fmtMs(x.seenAt) +
+      (me ? '<br><button class="noteed" data-act="noteedit" data-id="' + esc(x.id) + '" aria-label="Modifier ou supprimer">✏️ Modifier</button>' : "") + "</span></div>";
   }).join("") + "</div>" + (all.length > HIST_MAX ? '<div class="btns" style="margin:10px 16px 0"><button class="btn ghost" data-act="histmore">' + (histOpen ? "Voir moins" : "Voir plus (" + (all.length - HIST_MAX) + ")") + "</button></div>" : "")
     : '<p class="note">' + (me ? "Appuie sur l’œil à côté d’un épisode ou d’un PLE pour le marquer comme vu et le noter. Tu peux aussi noter chaque combat depuis les highlights et les matchs à découvrir." : "Rien pour l’instant.") + "</p>";
   return h;

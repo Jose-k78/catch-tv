@@ -1445,7 +1445,7 @@
   },
   {
    "id": "njpw-strong",
-   "k": "NJPW",
+   "k": "NJPW Strong",
    "show": "",
    "n": "Strong Openweight Championship",
    "c": "Boltin Oleg",
@@ -1456,6 +1456,39 @@
    "ev": "The New Beginning USA",
    "hist": [],
    "src": "Wikipédia",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_New_Japan_Pro-Wrestling",
+   "defs": [],
+   "def": 0
+  },
+  {
+   "id": "njpw-strongw",
+   "k": "NJPW Strong",
+   "show": "",
+   "n": "Strong Women's Championship",
+   "c": "Alex Windsor",
+   "who": [
+    "Alex Windsor"
+   ],
+   "since": "2026-03-08",
+   "ev": "Wrestle Queendom VIII",
+   "src": "Wikipédia (liste des champions NJPW)",
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_New_Japan_Pro-Wrestling",
+   "defs": [],
+   "def": 0
+  },
+  {
+   "id": "njpw-strongtag",
+   "k": "NJPW Strong",
+   "show": "",
+   "n": "Strong Openweight Tag Team Championship",
+   "c": "Los Hermanos Chávez (Ángel de Oro et Niebla Roja)",
+   "who": [
+    "Ángel de Oro",
+    "Niebla Roja"
+   ],
+   "since": "2025-11-14",
+   "ev": "CMLL Viernes Espectacular",
+   "src": "Wikipédia (liste des champions NJPW)",
    "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_New_Japan_Pro-Wrestling",
    "defs": [],
    "def": 0
@@ -1976,7 +2009,10 @@
    "src": "Wikipédia",
    "u": "https://en.wikipedia.org/wiki/IWGP_Women%27s_Championship",
    "defs": [],
-   "def": 0
+   "def": 0,
+   "also": [
+    "NJPW"
+   ]
   },
   {
    "id": "marigold-world",
