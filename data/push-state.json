@@ -1,5 +1,5 @@
 {
- "at": "2026-11-02T23:13:59.353Z",
+ "at": "2026-11-03T00:05:30.895Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -210,7 +210,9 @@
   "a:https://www.catch-newz.com/international/newz/60937-carte-du-jour-2-de-dg-the-gate-of-evolution-2026-partie-2": "2026-11-03",
   "a:https://www.catch-newz.com/international/newz/60936-carte-du-jour-2-de-dg-the-gate-of-evolution-2026-partie-1": "2026-11-03",
   "a:https://www.catch-newz.com/international/newz/60932-carte-de-beyond-wrestling-open-ri-74": "2026-11-03",
-  "a:https://www.catch-newz.com/wwe/resultats/60930-wwe-raw-2-novembre-2026": "2026-11-03"
+  "a:https://www.catch-newz.com/wwe/resultats/60930-wwe-raw-2-novembre-2026": "2026-11-03",
+  "a:https://www.catch-newz.com/wwe/newz/60938-roman-reigns-sans-moi-sami-tu-ne-serais-meme-plus-dans-cette-compagnie": "2026-11-03",
+  "a:https://www.catch-newz.com/wwe/newz/60939-wwe-raw-ethan-page-devient-le-nouveau-champion-intercontinental-et-met-fin-au-regne-incroyable-de-chad-gable": "2026-11-03"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -229,6 +231,14 @@
     "url": "#/",
     "tag": "art",
     "short": "5 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Roman Reigns : « Sans moi Sami, tu ne serais même plus dans cette compagnie » · WWE RAW : Ethan Page devient le nouveau champion Intercontinental et met fin au règne incroyable de Chad Gable",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -247,6 +257,14 @@
     "url": "#/",
     "tag": "art",
     "short": "5 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Roman Reigns : « Sans moi Sami, tu ne serais même plus dans cette compagnie » · WWE RAW : Ethan Page devient le nouveau champion Intercontinental et met fin au règne incroyable de Chad Gable",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
    }
   ]
  }

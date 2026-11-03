@@ -1,6 +1,25 @@
 {
- "at": "2026-11-02T23:13:59.295Z",
+ "at": "2026-11-03T00:05:30.850Z",
  "items": [
+  {
+   "t": "Roman Reigns : « Sans moi Sami, tu ne serais même plus dans cette compagnie »",
+   "u": "https://www.catch-newz.com/wwe/newz/60938-roman-reigns-sans-moi-sami-tu-ne-serais-meme-plus-dans-cette-compagnie",
+   "s": "Catch-Newz",
+   "d": "2026-11-03",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "WWE RAW : Ethan Page devient le nouveau champion Intercontinental et met fin au règne incroyable de Chad Gable",
+   "u": "https://www.catch-newz.com/wwe/newz/60939-wwe-raw-ethan-page-devient-le-nouveau-champion-intercontinental-et-met-fin-au-regne-incroyable-de-chad-gable",
+   "s": "Catch-Newz",
+   "d": "2026-11-03",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
   {
    "t": "Après sa défaite contre Drew McIntyre au Royal Rumble, Sami Zayn était persuadé qu'il n'allait jamais remporter le titre mondial",
    "u": "https://www.catch-newz.com/wwe/newz/60935-apres-sa-defaite-contre-drew-mcintyre-au-royal-rumble-sami-zayn-etait-persuade-quil-nallait-jamais-remporter-le-titre-mondial",
@@ -482,24 +501,6 @@
    "tags": [
     "NJPW"
    ]
-  },
-  {
-   "t": "Le Démon Finn Balor peut-il aller chercher un titre mondial en 2027 ?",
-   "u": "https://www.catch-newz.com/wwe/newz/60877-le-demon-finn-balor-peut-il-aller-chercher-un-titre-mondial-en-2027",
-   "s": "Catch-Newz",
-   "d": "2026-11-01",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Myles Borne : « Ce soir, j'ai prouvé que j'avais raison : c'est moi le meilleur »",
-   "u": "https://www.catch-newz.com/wwe/newz/60876-myles-borne-ce-soir-jai-prouve-que-javais-raison-cest-moi-le-meilleur",
-   "s": "Catch-Newz",
-   "d": "2026-11-01",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -703,13 +704,15 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/newz/60938-roman-reigns-sans-moi-sami-tu-ne-serais-meme-plus-dans-cette-compagnie",
    "https://www.catch-newz.com/wwe/resultats/60930-wwe-raw-2-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60925-lordre-des-matchs-de-wwe-raw-du-2-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/60935-apres-sa-defaite-contre-drew-mcintyre-au-royal-rumble-sami-zayn-etait-persuade-quil-nallait-jamais-remporter-le-titre-mondial",
+   "https://www.catch-newz.com/wwe/newz/60939-wwe-raw-ethan-page-devient-le-nouveau-champion-intercontinental-et-met-fin-au-regne-incroyable-de-chad-gable",
    "https://www.catch-newz.com/wwe/newz/60918-preview-wwe-raw-2-novembre-2026",
+   "https://www.catch-newz.com/international/newz/60900-carte-de-cmll-lunes-clasico-du-2-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/60935-apres-sa-defaite-contre-drew-mcintyre-au-royal-rumble-sami-zayn-etait-persuade-quil-nallait-jamais-remporter-le-titre-mondial",
    "https://www.catch-newz.com/aew/newz/60874-preview-aew-dynamite-blood-and-guts-du-4-novembre-2026",
    "https://www.catch-newz.com/international/newz/60937-carte-du-jour-2-de-dg-the-gate-of-evolution-2026-partie-2",
-   "https://www.catch-newz.com/international/newz/60900-carte-de-cmll-lunes-clasico-du-2-novembre-2026",
    "https://www.catch-newz.com/international/newz/60936-carte-du-jour-2-de-dg-the-gate-of-evolution-2026-partie-1",
    "https://www.catch-newz.com/international/newz/60932-carte-de-beyond-wrestling-open-ri-74",
    "https://www.catch-newz.com/wwe/newz/60934-izzi-dame-le-mental-de-zaria-est-fragile-je-lai-prouve-a-tout-le-monde",
@@ -869,7 +872,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
