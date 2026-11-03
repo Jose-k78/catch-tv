@@ -1,5 +1,5 @@
 {
- "at": "2026-11-03T00:57:37.298Z",
+ "at": "2026-11-03T01:56:24.278Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -214,7 +214,10 @@
   "a:https://www.catch-newz.com/wwe/newz/60938-roman-reigns-sans-moi-sami-tu-ne-serais-meme-plus-dans-cette-compagnie": "2026-11-03",
   "a:https://www.catch-newz.com/wwe/newz/60939-wwe-raw-ethan-page-devient-le-nouveau-champion-intercontinental-et-met-fin-au-regne-incroyable-de-chad-gable": "2026-11-03",
   "a:https://www.catch-newz.com/wwe/newz/60942-the-champ-ajoute-des-precisions-au-sujet-du-john-cena-classic-qui-aura-lieu-le-14-decembre-2026": "2026-11-03",
-  "a:https://www.catch-newz.com/wwe/newz/60941-wwe-raw-cinq-jours-avant-crown-jewel-liv-morgan-rive-les-epaules-de-chelsea-green": "2026-11-03"
+  "a:https://www.catch-newz.com/wwe/newz/60941-wwe-raw-cinq-jours-avant-crown-jewel-liv-morgan-rive-les-epaules-de-chelsea-green": "2026-11-03",
+  "a:https://www.catch-newz.com/wwe/newz/60944-wwe-raw-cruz-montana-rejoint-946-pour-tabasser-la-bloodline": "2026-11-03",
+  "a:https://www.catch-newz.com/wwe/newz/60940-joe-hendry-lance-un-cri-du-coeur-pendant-un-segment-publicitaire-a-wwe-raw": "2026-11-03",
+  "a:https://www.catch-newz.com/wwe/newz/60943-wwe-raw-the-vision-demolit-encore-une-fois-ses-concurrents-a-brooklyn": "2026-11-03"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -249,6 +252,14 @@
     "url": "#/",
     "tag": "art",
     "short": "2 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 3 nouvelles infos",
+    "body": "WWE RAW : Cruz Montana rejoint \"946\" pour tabasser la Bloodline · Joe Hendry lance un cri du cœur pendant un segment publicitaire à WWE RAW · WWE RAW : The Vision démolit encore une fois ses concurrents à Brooklyn",
+    "url": "#/",
+    "tag": "art",
+    "short": "3 nouvelles infos"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -283,6 +294,14 @@
     "url": "#/",
     "tag": "art",
     "short": "2 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 3 nouvelles infos",
+    "body": "WWE RAW : Cruz Montana rejoint \"946\" pour tabasser la Bloodline · Joe Hendry lance un cri du cœur pendant un segment publicitaire à WWE RAW · WWE RAW : The Vision démolit encore une fois ses concurrents à Brooklyn",
+    "url": "#/",
+    "tag": "art",
+    "short": "3 nouvelles infos"
    }
   ]
  }
