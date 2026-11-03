@@ -1,9 +1,28 @@
 {
- "at": "2026-11-03T15:46:57.885Z",
+ "at": "2026-11-03T16:51:49.023Z",
  "items": [
   {
    "t": "The Champ ajoute des précisions au sujet du John Cena Classic qui aura lieu le 14 décembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/60942-the-champ-ajoute-des-precisions-au-sujet-du-john-cena-classic-qui-aura-lieu-le-14-decembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-03",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Pourquoi il n'y a pas de show de WWE NXT le 3 novembre 2026 ?",
+   "u": "https://www.catch-newz.com/wwe/newz/60958-pourquoi-il-ny-a-pas-de-show-de-wwe-nxt-le-3-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-03",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
+   "t": "La WWE annonce un second show à Disney World le 15 décembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/60957-la-wwe-annonce-un-second-show-a-disney-world-le-15-decembre-2026",
    "s": "Catch-Newz",
    "d": "2026-11-03",
    "tags": [
@@ -500,20 +519,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-01",
    "tags": []
-  },
-  {
-   "t": "Résultats de DDT Wrestling Harvest 2026",
-   "u": "https://www.catch-newz.com/international/resultats/60906-resultats-de-ddt-wrestling-harvest-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-01",
-   "tags": []
-  },
-  {
-   "t": "Carte de Last Resort - A Tribute To Mark Wolf",
-   "u": "https://www.catch-newz.com/international/newz/60905-carte-de-last-resort-a-tribute-to-mark-wolf",
-   "s": "Catch-Newz",
-   "d": "2026-11-01",
-   "tags": []
   }
  ],
  "yt": {
@@ -746,6 +751,8 @@
    "https://www.catch-newz.com/wwe/newz/60942-the-champ-ajoute-des-precisions-au-sujet-du-john-cena-classic-qui-aura-lieu-le-14-decembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60930-wwe-raw-2-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60925-lordre-des-matchs-de-wwe-raw-du-2-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/60958-pourquoi-il-ny-a-pas-de-show-de-wwe-nxt-le-3-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/60957-la-wwe-annonce-un-second-show-a-disney-world-le-15-decembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60909-resultats-de-wwe-main-event28-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/international/resultats/60953-resultats-de-cmll-lunes-clasico-du-2-novembre-2026",
@@ -928,7 +935,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
