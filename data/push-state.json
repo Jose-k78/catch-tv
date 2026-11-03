@@ -1,5 +1,5 @@
 {
- "at": "2026-11-03T00:05:30.895Z",
+ "at": "2026-11-03T00:57:37.298Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -212,7 +212,9 @@
   "a:https://www.catch-newz.com/international/newz/60932-carte-de-beyond-wrestling-open-ri-74": "2026-11-03",
   "a:https://www.catch-newz.com/wwe/resultats/60930-wwe-raw-2-novembre-2026": "2026-11-03",
   "a:https://www.catch-newz.com/wwe/newz/60938-roman-reigns-sans-moi-sami-tu-ne-serais-meme-plus-dans-cette-compagnie": "2026-11-03",
-  "a:https://www.catch-newz.com/wwe/newz/60939-wwe-raw-ethan-page-devient-le-nouveau-champion-intercontinental-et-met-fin-au-regne-incroyable-de-chad-gable": "2026-11-03"
+  "a:https://www.catch-newz.com/wwe/newz/60939-wwe-raw-ethan-page-devient-le-nouveau-champion-intercontinental-et-met-fin-au-regne-incroyable-de-chad-gable": "2026-11-03",
+  "a:https://www.catch-newz.com/wwe/newz/60942-the-champ-ajoute-des-precisions-au-sujet-du-john-cena-classic-qui-aura-lieu-le-14-decembre-2026": "2026-11-03",
+  "a:https://www.catch-newz.com/wwe/newz/60941-wwe-raw-cinq-jours-avant-crown-jewel-liv-morgan-rive-les-epaules-de-chelsea-green": "2026-11-03"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -239,6 +241,14 @@
     "url": "#/",
     "tag": "art",
     "short": "2 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "The Champ ajoute des précisions au sujet du John Cena Classic qui aura lieu le 14 décembre 2026 · WWE RAW : Cinq jours avant Crown Jewel, Liv Morgan rive les épaules de Chelsea Green",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -262,6 +272,14 @@
     "cat": "info",
     "title": "📰 2 nouvelles infos",
     "body": "Roman Reigns : « Sans moi Sami, tu ne serais même plus dans cette compagnie » · WWE RAW : Ethan Page devient le nouveau champion Intercontinental et met fin au règne incroyable de Chad Gable",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "The Champ ajoute des précisions au sujet du John Cena Classic qui aura lieu le 14 décembre 2026 · WWE RAW : Cinq jours avant Crown Jewel, Liv Morgan rive les épaules de Chelsea Green",
     "url": "#/",
     "tag": "art",
     "short": "2 nouvelles infos"

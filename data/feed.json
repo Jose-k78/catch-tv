@@ -1,6 +1,25 @@
 {
- "at": "2026-11-03T00:05:30.850Z",
+ "at": "2026-11-03T00:57:37.243Z",
  "items": [
+  {
+   "t": "The Champ ajoute des précisions au sujet du John Cena Classic qui aura lieu le 14 décembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/60942-the-champ-ajoute-des-precisions-au-sujet-du-john-cena-classic-qui-aura-lieu-le-14-decembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-03",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "WWE RAW : Cinq jours avant Crown Jewel, Liv Morgan rive les épaules de Chelsea Green",
+   "u": "https://www.catch-newz.com/wwe/newz/60941-wwe-raw-cinq-jours-avant-crown-jewel-liv-morgan-rive-les-epaules-de-chelsea-green",
+   "s": "Catch-Newz",
+   "d": "2026-11-03",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
   {
    "t": "Roman Reigns : « Sans moi Sami, tu ne serais même plus dans cette compagnie »",
    "u": "https://www.catch-newz.com/wwe/newz/60938-roman-reigns-sans-moi-sami-tu-ne-serais-meme-plus-dans-cette-compagnie",
@@ -81,6 +100,15 @@
    ]
   },
   {
+   "t": "Carte de CMLL Lunes Clasico du 2 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/60900-carte-de-cmll-lunes-clasico-du-2-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-02",
+   "tags": [
+    "CMLL"
+   ]
+  },
+  {
    "t": "Preview : WWE RAW du 2 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/60918-preview-wwe-raw-2-novembre-2026",
    "s": "Catch-Newz",
@@ -88,15 +116,6 @@
    "tags": [
     "WWE",
     "Raw"
-   ]
-  },
-  {
-   "t": "Carte de CMLL Lunes Clasico du 2 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/60900-carte-de-cmll-lunes-clasico-du-2-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-02",
-   "tags": [
-    "CMLL"
    ]
   },
   {
@@ -482,25 +501,6 @@
    "tags": [
     "NJPW"
    ]
-  },
-  {
-   "t": "Une première apparition à NXT pour la Française Zoé Hines",
-   "u": "https://www.catch-newz.com/wwe/newz/60881-une-premiere-apparition-a-nxt-pour-la-francaise-zoe-hines",
-   "s": "Catch-Newz",
-   "d": "2026-11-01",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
-  },
-  {
-   "t": "Résultats du jour 7 de la NJPW Super Junior Tag League 2026",
-   "u": "https://www.catch-newz.com/international/resultats/60880-resultats-du-jour-7-de-la-njpw-super-junior-tag-league-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-01",
-   "tags": [
-    "NJPW"
-   ]
   }
  ],
  "yt": {
@@ -704,12 +704,14 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/wwe/newz/60938-roman-reigns-sans-moi-sami-tu-ne-serais-meme-plus-dans-cette-compagnie",
+   "https://www.catch-newz.com/wwe/newz/60942-the-champ-ajoute-des-precisions-au-sujet-du-john-cena-classic-qui-aura-lieu-le-14-decembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60930-wwe-raw-2-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60925-lordre-des-matchs-de-wwe-raw-du-2-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/60941-wwe-raw-cinq-jours-avant-crown-jewel-liv-morgan-rive-les-epaules-de-chelsea-green",
+   "https://www.catch-newz.com/international/newz/60900-carte-de-cmll-lunes-clasico-du-2-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/60938-roman-reigns-sans-moi-sami-tu-ne-serais-meme-plus-dans-cette-compagnie",
    "https://www.catch-newz.com/wwe/newz/60939-wwe-raw-ethan-page-devient-le-nouveau-champion-intercontinental-et-met-fin-au-regne-incroyable-de-chad-gable",
    "https://www.catch-newz.com/wwe/newz/60918-preview-wwe-raw-2-novembre-2026",
-   "https://www.catch-newz.com/international/newz/60900-carte-de-cmll-lunes-clasico-du-2-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60935-apres-sa-defaite-contre-drew-mcintyre-au-royal-rumble-sami-zayn-etait-persuade-quil-nallait-jamais-remporter-le-titre-mondial",
    "https://www.catch-newz.com/aew/newz/60874-preview-aew-dynamite-blood-and-guts-du-4-novembre-2026",
    "https://www.catch-newz.com/international/newz/60937-carte-du-jour-2-de-dg-the-gate-of-evolution-2026-partie-2",
@@ -872,7 +874,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
