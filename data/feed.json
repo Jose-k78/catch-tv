@@ -1,5 +1,5 @@
 {
- "at": "2026-11-03T12:19:40.609Z",
+ "at": "2026-11-03T13:40:33.749Z",
  "items": [
   {
    "t": "The Champ ajoute des précisions au sujet du John Cena Classic qui aura lieu le 14 décembre 2026",
@@ -8,6 +8,26 @@
    "d": "2026-11-03",
    "tags": [
     "WWE"
+   ]
+  },
+  {
+   "t": "Spoilers de WWE SmackDown du 6 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-03",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
+  },
+  {
+   "t": "WWE Raw du 2 novembre : Ethan Page champion Intercontinental, John Cena dévoile son tournoi",
+   "u": "https://www.voxcatch.fr/2026/11/03/resultats-wwe-raw-2-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-03",
+   "tags": [
+    "WWE",
+    "Raw"
    ]
   },
   {
@@ -35,26 +55,6 @@
    "d": "2026-11-03",
    "tags": [
     "NJPW"
-   ]
-  },
-  {
-   "t": "Spoilers de WWE SmackDown du 6 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
-  },
-  {
-   "t": "WWE Raw du 2 novembre : Ethan Page champion Intercontinental, John Cena dévoile son tournoi",
-   "u": "https://www.voxcatch.fr/2026/11/03/resultats-wwe-raw-2-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE",
-    "Raw"
    ]
   },
   {
@@ -740,11 +740,12 @@
    "https://www.catch-newz.com/wwe/newz/60942-the-champ-ajoute-des-precisions-au-sujet-du-john-cena-classic-qui-aura-lieu-le-14-decembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60930-wwe-raw-2-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60925-lordre-des-matchs-de-wwe-raw-du-2-novembre-2026",
+   "https://www.catch-newz.com/wwe/resultats/60909-resultats-de-wwe-main-event28-octobre-2026",
+   "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/60933-resultats-de-iwrg-funcion-espectacular-du-1er-novembre-2026",
    "https://www.catch-newz.com/international/resultats/60952-resultats-de-njpw-power-struggle-super-junior-tag-league-2026",
    "https://www.catch-newz.com/international/newz/60949-njpw-power-struggle-2026-kenny-omega-ecarte-la-menace-oleg-et-humilie-yota-tsuji",
    "https://www.catch-newz.com/international/newz/60948-njpw-power-struggle-2026-wil-ospreay-et-callum-newman-en-viennent-aux-mains",
-   "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/60933-resultats-de-iwrg-funcion-espectacular-du-1er-novembre-2026",
    "https://www.catch-newz.com/international/newz/60950-njpw-power-struggle-2026-mjf-lance-un-nouveau-challenge-a-ryohei-oiwa",
    "https://www.catch-newz.com/international/newz/60900-carte-de-cmll-lunes-clasico-du-2-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60947-john-cena-sera-aux-wwe-survivor-series-2026",
@@ -919,7 +920,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
