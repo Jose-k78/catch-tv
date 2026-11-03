@@ -1,5 +1,5 @@
 {
- "at": "2026-11-03T04:49:58.526Z",
+ "at": "2026-11-03T08:10:41.227Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -221,124 +221,8 @@
   "a:https://www.catch-newz.com/culture/cineserie/60928-dave-batista-prend-10-kilos-pour-son-role-de-kratos": "2026-11-03",
   "a:https://www.catch-newz.com/wwe/newz/60947-john-cena-sera-aux-wwe-survivor-series-2026": "2026-11-03",
   "a:https://www.catch-newz.com/wwe/newz/60946-ou-et-quand-aura-lieu-precisement-le-john-cena-classic-a-disney-world": "2026-11-03",
-  "a:https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026": "2026-11-03"
+  "a:https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026": "2026-11-03",
+  "ple:NJPW:2026-11-03": "2026-11-03"
  },
- "pend": {
-  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
-   {
-    "cat": "info",
-    "title": "📰 5 nouvelles infos",
-    "body": "Izzi Dame : « Le mental de Zaria est fragile. Je l’ai prouvé à tout le monde » · Dave Batista s'ajoute 10 kilos pour son rôle de Kratos · PRODUCE Wrestling suspend ses activités jusqu'en 2027",
-    "url": "#/",
-    "tag": "art",
-    "short": "5 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 5 nouvelles infos",
-    "body": "Après sa défaite contre Drew McIntyre au Royal Rumble, Sami Zayn était persuadé qu'il n'allait jamais remporter le titre mondial · Carte du jour 2 de DG The Gate Of Evolution 2026 Partie 2 · Carte du jour 2 de DG The Gate Of Evolution 2026 Partie 1",
-    "url": "#/",
-    "tag": "art",
-    "short": "5 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 2 nouvelles infos",
-    "body": "Roman Reigns : « Sans moi Sami, tu ne serais même plus dans cette compagnie » · WWE RAW : Ethan Page devient le nouveau champion Intercontinental et met fin au règne incroyable de Chad Gable",
-    "url": "#/",
-    "tag": "art",
-    "short": "2 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 2 nouvelles infos",
-    "body": "The Champ ajoute des précisions au sujet du John Cena Classic qui aura lieu le 14 décembre 2026 · WWE RAW : Cinq jours avant Crown Jewel, Liv Morgan rive les épaules de Chelsea Green",
-    "url": "#/",
-    "tag": "art",
-    "short": "2 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 3 nouvelles infos",
-    "body": "WWE RAW : Cruz Montana rejoint \"946\" pour tabasser la Bloodline · Joe Hendry lance un cri du cœur pendant un segment publicitaire à WWE RAW · WWE RAW : The Vision démolit encore une fois ses concurrents à Brooklyn",
-    "url": "#/",
-    "tag": "art",
-    "short": "3 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Catch-Newz",
-    "body": "Dave Batista prend 10 kilos pour son rôle de Kratos",
-    "url": "https://www.catch-newz.com/culture/cineserie/60928-dave-batista-prend-10-kilos-pour-son-role-de-kratos",
-    "tag": "art",
-    "short": "Dave Batista prend 10 kilos pour son rôle de Kratos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 3 nouvelles infos",
-    "body": "John Cena sera aux WWE Survivor Series 2026 · Où et quand aura lieu précisément le John Cena Classic à Disney World ? · Spoilers de WWE SmackDown du 6 novembre 2026",
-    "url": "#/",
-    "tag": "art",
-    "short": "3 nouvelles infos"
-   }
-  ],
-  "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
-   {
-    "cat": "info",
-    "title": "📰 5 nouvelles infos",
-    "body": "Izzi Dame : « Le mental de Zaria est fragile. Je l’ai prouvé à tout le monde » · Dave Batista s'ajoute 10 kilos pour son rôle de Kratos · PRODUCE Wrestling suspend ses activités jusqu'en 2027",
-    "url": "#/",
-    "tag": "art",
-    "short": "5 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 5 nouvelles infos",
-    "body": "Après sa défaite contre Drew McIntyre au Royal Rumble, Sami Zayn était persuadé qu'il n'allait jamais remporter le titre mondial · Carte du jour 2 de DG The Gate Of Evolution 2026 Partie 2 · Carte du jour 2 de DG The Gate Of Evolution 2026 Partie 1",
-    "url": "#/",
-    "tag": "art",
-    "short": "5 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 2 nouvelles infos",
-    "body": "Roman Reigns : « Sans moi Sami, tu ne serais même plus dans cette compagnie » · WWE RAW : Ethan Page devient le nouveau champion Intercontinental et met fin au règne incroyable de Chad Gable",
-    "url": "#/",
-    "tag": "art",
-    "short": "2 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 2 nouvelles infos",
-    "body": "The Champ ajoute des précisions au sujet du John Cena Classic qui aura lieu le 14 décembre 2026 · WWE RAW : Cinq jours avant Crown Jewel, Liv Morgan rive les épaules de Chelsea Green",
-    "url": "#/",
-    "tag": "art",
-    "short": "2 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 3 nouvelles infos",
-    "body": "WWE RAW : Cruz Montana rejoint \"946\" pour tabasser la Bloodline · Joe Hendry lance un cri du cœur pendant un segment publicitaire à WWE RAW · WWE RAW : The Vision démolit encore une fois ses concurrents à Brooklyn",
-    "url": "#/",
-    "tag": "art",
-    "short": "3 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Catch-Newz",
-    "body": "Dave Batista prend 10 kilos pour son rôle de Kratos",
-    "url": "https://www.catch-newz.com/culture/cineserie/60928-dave-batista-prend-10-kilos-pour-son-role-de-kratos",
-    "tag": "art",
-    "short": "Dave Batista prend 10 kilos pour son rôle de Kratos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 3 nouvelles infos",
-    "body": "John Cena sera aux WWE Survivor Series 2026 · Où et quand aura lieu précisément le John Cena Classic à Disney World ? · Spoilers de WWE SmackDown du 6 novembre 2026",
-    "url": "#/",
-    "tag": "art",
-    "short": "3 nouvelles infos"
-   }
-  ]
- }
+ "pend": {}
 }
