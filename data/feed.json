@@ -1,5 +1,5 @@
 {
- "at": "2026-11-03T08:10:41.174Z",
+ "at": "2026-11-03T09:22:16.494Z",
  "items": [
   {
    "t": "The Champ ajoute des précisions au sujet du John Cena Classic qui aura lieu le 14 décembre 2026",
@@ -18,6 +18,16 @@
    "tags": [
     "WWE",
     "SmackDown"
+   ]
+  },
+  {
+   "t": "WWE Raw du 2 novembre : Ethan Page champion Intercontinental, John Cena dévoile son tournoi",
+   "u": "https://www.voxcatch.fr/2026/11/03/resultats-wwe-raw-2-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-03",
+   "tags": [
+    "WWE",
+    "Raw"
    ]
   },
   {
@@ -494,15 +504,6 @@
    "tags": [
     "CMLL"
    ]
-  },
-  {
-   "t": "Tony D'Angelo : « Je veux intégrer le roster principal »",
-   "u": "https://www.catch-newz.com/wwe/newz/60895-tony-dangelo-je-veux-integrer-le-roster-principal",
-   "s": "Catch-Newz",
-   "d": "2026-11-01",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -911,7 +912,7 @@
  },
  "diag": {
   "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
-  "VOXcatch": "6 articles (7 j)",
+  "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
