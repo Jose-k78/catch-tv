@@ -1,5 +1,5 @@
 {
- "at": "2026-11-03T04:49:58.483Z",
+ "at": "2026-11-03T05:50:56.394Z",
  "items": [
   {
    "t": "The Champ ajoute des précisions au sujet du John Cena Classic qui aura lieu le 14 décembre 2026",
@@ -8,6 +8,16 @@
    "d": "2026-11-03",
    "tags": [
     "WWE"
+   ]
+  },
+  {
+   "t": "Spoilers de WWE SmackDown du 6 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-03",
+   "tags": [
+    "WWE",
+    "SmackDown"
    ]
   },
   {
@@ -26,16 +36,6 @@
    "d": "2026-11-03",
    "tags": [
     "WWE"
-   ]
-  },
-  {
-   "t": "Spoilers de WWE SmackDown du 6 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE",
-    "SmackDown"
    ]
   },
   {
@@ -737,10 +737,10 @@
    "https://www.catch-newz.com/wwe/newz/60942-the-champ-ajoute-des-precisions-au-sujet-du-john-cena-classic-qui-aura-lieu-le-14-decembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60930-wwe-raw-2-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60925-lordre-des-matchs-de-wwe-raw-du-2-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/60947-john-cena-sera-aux-wwe-survivor-series-2026",
-   "https://www.catch-newz.com/wwe/newz/60946-ou-et-quand-aura-lieu-precisement-le-john-cena-classic-a-disney-world",
    "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/international/newz/60900-carte-de-cmll-lunes-clasico-du-2-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/60947-john-cena-sera-aux-wwe-survivor-series-2026",
+   "https://www.catch-newz.com/wwe/newz/60946-ou-et-quand-aura-lieu-precisement-le-john-cena-classic-a-disney-world",
    "https://www.catch-newz.com/culture/cineserie/60928-dave-batista-prend-10-kilos-pour-son-role-de-kratos",
    "https://www.catch-newz.com/wwe/newz/60944-wwe-raw-cruz-montana-rejoint-946-pour-tabasser-la-bloodline",
    "https://www.catch-newz.com/wwe/newz/60940-joe-hendry-lance-un-cri-du-coeur-pendant-un-segment-publicitaire-a-wwe-raw",
@@ -911,10 +911,10 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
-  "YouTube WWE": "6 nouvelles vidéos",
+  "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
