@@ -1,5 +1,5 @@
 {
- "at": "2026-11-03T03:48:04.685Z",
+ "at": "2026-11-03T04:49:58.526Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -218,7 +218,10 @@
   "a:https://www.catch-newz.com/wwe/newz/60944-wwe-raw-cruz-montana-rejoint-946-pour-tabasser-la-bloodline": "2026-11-03",
   "a:https://www.catch-newz.com/wwe/newz/60940-joe-hendry-lance-un-cri-du-coeur-pendant-un-segment-publicitaire-a-wwe-raw": "2026-11-03",
   "a:https://www.catch-newz.com/wwe/newz/60943-wwe-raw-the-vision-demolit-encore-une-fois-ses-concurrents-a-brooklyn": "2026-11-03",
-  "a:https://www.catch-newz.com/culture/cineserie/60928-dave-batista-prend-10-kilos-pour-son-role-de-kratos": "2026-11-03"
+  "a:https://www.catch-newz.com/culture/cineserie/60928-dave-batista-prend-10-kilos-pour-son-role-de-kratos": "2026-11-03",
+  "a:https://www.catch-newz.com/wwe/newz/60947-john-cena-sera-aux-wwe-survivor-series-2026": "2026-11-03",
+  "a:https://www.catch-newz.com/wwe/newz/60946-ou-et-quand-aura-lieu-precisement-le-john-cena-classic-a-disney-world": "2026-11-03",
+  "a:https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026": "2026-11-03"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -269,6 +272,14 @@
     "url": "https://www.catch-newz.com/culture/cineserie/60928-dave-batista-prend-10-kilos-pour-son-role-de-kratos",
     "tag": "art",
     "short": "Dave Batista prend 10 kilos pour son rôle de Kratos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 3 nouvelles infos",
+    "body": "John Cena sera aux WWE Survivor Series 2026 · Où et quand aura lieu précisément le John Cena Classic à Disney World ? · Spoilers de WWE SmackDown du 6 novembre 2026",
+    "url": "#/",
+    "tag": "art",
+    "short": "3 nouvelles infos"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -319,6 +330,14 @@
     "url": "https://www.catch-newz.com/culture/cineserie/60928-dave-batista-prend-10-kilos-pour-son-role-de-kratos",
     "tag": "art",
     "short": "Dave Batista prend 10 kilos pour son rôle de Kratos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 3 nouvelles infos",
+    "body": "John Cena sera aux WWE Survivor Series 2026 · Où et quand aura lieu précisément le John Cena Classic à Disney World ? · Spoilers de WWE SmackDown du 6 novembre 2026",
+    "url": "#/",
+    "tag": "art",
+    "short": "3 nouvelles infos"
    }
   ]
  }
