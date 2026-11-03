@@ -1,11 +1,11 @@
 {
- "at": "2026-11-03T22:38:36.138Z",
+ "at": "2026-11-03T23:37:09.809Z",
  "items": [
   {
    "t": "Spoilers de WWE SmackDown du 6 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
    "s": "Catch-Newz",
-   "d": "2026-11-03",
+   "d": "2026-11-04",
    "tags": [
     "WWE",
     "SmackDown"
@@ -15,10 +15,33 @@
    "t": "The Champ ajoute des précisions au sujet du John Cena Classic qui aura lieu le 14 décembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/60942-the-champ-ajoute-des-precisions-au-sujet-du-john-cena-classic-qui-aura-lieu-le-14-decembre-2026",
    "s": "Catch-Newz",
-   "d": "2026-11-03",
+   "d": "2026-11-04",
    "tags": [
     "WWE"
    ]
+  },
+  {
+   "t": "La WWE annonce un second show à Disney World le 15 décembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/60957-la-wwe-annonce-un-second-show-a-disney-world-le-15-decembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-04",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Résultats de OTT NewEnd",
+   "u": "https://www.catch-newz.com/international/resultats/60976-resultats-de-ott-newend",
+   "s": "Catch-Newz",
+   "d": "2026-11-04",
+   "tags": []
+  },
+  {
+   "t": "Résultats de HOP October Onslaught Tour 2026",
+   "u": "https://www.catch-newz.com/international/resultats/60975-resultats-de-hop-october-onslaught-tour-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-04",
+   "tags": []
   },
   {
    "t": "Pourquoi il n'y a pas de show de WWE NXT le 3 novembre 2026 ?",
@@ -31,12 +54,13 @@
    ]
   },
   {
-   "t": "La WWE annonce un second show à Disney World le 15 décembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/60957-la-wwe-annonce-un-second-show-a-disney-world-le-15-decembre-2026",
-   "s": "Catch-Newz",
+   "t": "WWE Raw du 2 novembre : Ethan Page champion Intercontinental, John Cena dévoile son tournoi",
+   "u": "https://www.voxcatch.fr/2026/11/03/resultats-wwe-raw-2-novembre-2026/",
+   "s": "VOXcatch",
    "d": "2026-11-03",
    "tags": [
-    "WWE"
+    "WWE",
+    "Raw"
    ]
   },
   {
@@ -69,16 +93,6 @@
    "d": "2026-11-03",
    "tags": [
     "CMLL"
-   ]
-  },
-  {
-   "t": "WWE Raw du 2 novembre : Ethan Page champion Intercontinental, John Cena dévoile son tournoi",
-   "u": "https://www.voxcatch.fr/2026/11/03/resultats-wwe-raw-2-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE",
-    "Raw"
    ]
   },
   {
@@ -509,24 +523,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Cody Rhodes : « C'était la pire période de toute ma vie »",
-   "u": "https://www.catch-newz.com/wwe/newz/60915-cody-rhodes-cetait-la-pire-periode-de-toute-ma-vie",
-   "s": "Catch-Newz",
-   "d": "2026-11-02",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Grayson Waller : « Je ne vois tout simplement pas de passion chez ces gars-là »",
-   "u": "https://www.catch-newz.com/wwe/newz/60912-grayson-waller-je-ne-vois-tout-simplement-pas-de-passion-chez-ces-gars-la",
-   "s": "Catch-Newz",
-   "d": "2026-11-02",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -766,6 +762,9 @@
    "https://www.catch-newz.com/wwe/newz/60958-pourquoi-il-ny-a-pas-de-show-de-wwe-nxt-le-3-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60957-la-wwe-annonce-un-second-show-a-disney-world-le-15-decembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60909-resultats-de-wwe-main-event28-octobre-2026",
+   "https://www.catch-newz.com/international/resultats/60976-resultats-de-ott-newend",
+   "https://www.catch-newz.com/international/resultats/60975-resultats-de-hop-october-onslaught-tour-2026",
+   "https://www.catch-newz.com/international/resultats/60974-resultats-de-sendai-girls-pro-wrestling-du-1er-novembre-2026",
    "https://www.catch-newz.com/international/resultats/60972-resultats-du-jour-7-de-dg-the-gate-of-victory-2026",
    "https://www.catch-newz.com/international/resultats/60970-resultats-de-ddt-ultimate-party-2026",
    "https://www.catch-newz.com/international/newz/60954-carte-de-cmll-martes-populares-du-3-novembre-2026",
@@ -962,8 +961,8 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 10 nouveaux articles lus sur la page d'accueil (10 liens)",
-  "VOXcatch": "7 articles (7 j)",
+  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
+  "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
