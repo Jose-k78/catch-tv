@@ -1,5 +1,5 @@
 {
- "at": "2026-11-03T11:24:25.294Z",
+ "at": "2026-11-03T12:19:40.609Z",
  "items": [
   {
    "t": "The Champ ajoute des précisions au sujet du John Cena Classic qui aura lieu le 14 décembre 2026",
@@ -11,8 +11,26 @@
    ]
   },
   {
-   "t": "NJPW Power Struggle 2026 : MJF lance un nouveau challenge à Ryohei Oiwa",
-   "u": "https://www.catch-newz.com/international/newz/60950-njpw-power-struggle-2026-mjf-lance-un-nouveau-challenge-a-ryohei-oiwa",
+   "t": "Résultats de NJPW Power Struggle - Super Junior Tag League 2026",
+   "u": "https://www.catch-newz.com/international/resultats/60952-resultats-de-njpw-power-struggle-super-junior-tag-league-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-03",
+   "tags": [
+    "NJPW"
+   ]
+  },
+  {
+   "t": "NJPW Power Struggle 2026 : Kenny Omega écarte la menace Oleg et humilie Yota Tsuji",
+   "u": "https://www.catch-newz.com/international/newz/60949-njpw-power-struggle-2026-kenny-omega-ecarte-la-menace-oleg-et-humilie-yota-tsuji",
+   "s": "Catch-Newz",
+   "d": "2026-11-03",
+   "tags": [
+    "NJPW"
+   ]
+  },
+  {
+   "t": "NJPW Power Struggle 2026 : Wil Ospreay et Callum Newman en viennent aux mains",
+   "u": "https://www.catch-newz.com/international/newz/60948-njpw-power-struggle-2026-wil-ospreay-et-callum-newman-en-viennent-aux-mains",
    "s": "Catch-Newz",
    "d": "2026-11-03",
    "tags": [
@@ -37,6 +55,15 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "NJPW Power Struggle 2026 : MJF lance un nouveau challenge à Ryohei Oiwa",
+   "u": "https://www.catch-newz.com/international/newz/60950-njpw-power-struggle-2026-mjf-lance-un-nouveau-challenge-a-ryohei-oiwa",
+   "s": "Catch-Newz",
+   "d": "2026-11-03",
+   "tags": [
+    "NJPW"
    ]
   },
   {
@@ -481,29 +508,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-01",
    "tags": []
-  },
-  {
-   "t": "Quel est le titre mondial préféré de Damian Priest ?",
-   "u": "https://www.catch-newz.com/wwe/newz/60899-quel-est-le-titre-mondial-prefere-de-damian-priest",
-   "s": "Catch-Newz",
-   "d": "2026-11-01",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Résultats de New Texas Pro Wrestling 8 Year Anniversary",
-   "u": "https://www.catch-newz.com/international/resultats/60894-resultats-de-new-texas-pro-wrestling-8-year-anniversary",
-   "s": "Catch-Newz",
-   "d": "2026-11-01",
-   "tags": []
-  },
-  {
-   "t": "Carte de Indy Wrestling Domingos Familiares Noche De Muertos",
-   "u": "https://www.catch-newz.com/international/newz/60896-carte-de-indy-wrestling-domingos-familiares-noche-de-muertos",
-   "s": "Catch-Newz",
-   "d": "2026-11-01",
-   "tags": []
   }
  ],
  "yt": {
@@ -736,9 +740,12 @@
    "https://www.catch-newz.com/wwe/newz/60942-the-champ-ajoute-des-precisions-au-sujet-du-john-cena-classic-qui-aura-lieu-le-14-decembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60930-wwe-raw-2-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60925-lordre-des-matchs-de-wwe-raw-du-2-novembre-2026",
-   "https://www.catch-newz.com/international/newz/60950-njpw-power-struggle-2026-mjf-lance-un-nouveau-challenge-a-ryohei-oiwa",
+   "https://www.catch-newz.com/international/resultats/60952-resultats-de-njpw-power-struggle-super-junior-tag-league-2026",
+   "https://www.catch-newz.com/international/newz/60949-njpw-power-struggle-2026-kenny-omega-ecarte-la-menace-oleg-et-humilie-yota-tsuji",
+   "https://www.catch-newz.com/international/newz/60948-njpw-power-struggle-2026-wil-ospreay-et-callum-newman-en-viennent-aux-mains",
    "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/international/resultats/60933-resultats-de-iwrg-funcion-espectacular-du-1er-novembre-2026",
+   "https://www.catch-newz.com/international/newz/60950-njpw-power-struggle-2026-mjf-lance-un-nouveau-challenge-a-ryohei-oiwa",
    "https://www.catch-newz.com/international/newz/60900-carte-de-cmll-lunes-clasico-du-2-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60947-john-cena-sera-aux-wwe-survivor-series-2026",
    "https://www.catch-newz.com/wwe/newz/60946-ou-et-quand-aura-lieu-precisement-le-john-cena-classic-a-disney-world",
@@ -912,7 +919,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
