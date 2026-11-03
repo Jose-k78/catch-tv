@@ -1,5 +1,5 @@
 {
- "at": "2026-11-03T13:40:33.749Z",
+ "at": "2026-11-03T14:54:57.310Z",
  "items": [
   {
    "t": "The Champ ajoute des précisions au sujet du John Cena Classic qui aura lieu le 14 décembre 2026",
@@ -8,6 +8,17 @@
    "d": "2026-11-03",
    "tags": [
     "WWE"
+   ]
+  },
+  {
+   "t": "Cruz Montana va-t-il quand même combattre Dion Lennox à NXT ce mercredi malgré ses débuts à RAW ?",
+   "u": "https://www.catch-newz.com/wwe/newz/60956-cruz-montana-va-t-il-quand-meme-combattre-dion-lennox-a-nxt-ce-mercredi-malgre-ses-debuts-a-raw",
+   "s": "Catch-Newz",
+   "d": "2026-11-03",
+   "tags": [
+    "WWE",
+    "Raw",
+    "NXT"
    ]
   },
   {
@@ -208,6 +219,15 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Résultats de CMLL Lunes Clasico du 2 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/60953-resultats-de-cmll-lunes-clasico-du-2-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-02",
+   "tags": [
+    "CMLL"
    ]
   },
   {
@@ -440,13 +460,6 @@
    ]
   },
   {
-   "t": "Résultats de IWRG Funcion Espectacular du 1er novembre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/60933-resultats-de-iwrg-funcion-espectacular-du-1er-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-01",
-   "tags": []
-  },
-  {
    "t": "Résultats de NXT Halloween Havoc 2026",
    "u": "https://www.voxcatch.fr/2026/11/01/resultats-nxt-halloween-havoc-2026/",
    "s": "VOXcatch",
@@ -455,6 +468,13 @@
     "WWE",
     "NXT"
    ]
+  },
+  {
+   "t": "Résultats de IWRG Funcion Espectacular du 1er novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/60933-resultats-de-iwrg-funcion-espectacular-du-1er-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-01",
+   "tags": []
   },
   {
    "t": "Résultats de Alto Voltaje/CMLL du 1er novembre 2026",
@@ -491,20 +511,6 @@
   {
    "t": "Carte de Last Resort - A Tribute To Mark Wolf",
    "u": "https://www.catch-newz.com/international/newz/60905-carte-de-last-resort-a-tribute-to-mark-wolf",
-   "s": "Catch-Newz",
-   "d": "2026-11-01",
-   "tags": []
-  },
-  {
-   "t": "Carte de ISDub Gremlins Is A Christmas Movie",
-   "u": "https://www.catch-newz.com/international/newz/60903-carte-de-isdub-gremlins-is-a-christmas-movie",
-   "s": "Catch-Newz",
-   "d": "2026-11-01",
-   "tags": []
-  },
-  {
-   "t": "Carte de SUP Fear & Trembling",
-   "u": "https://www.catch-newz.com/international/newz/60902-carte-de-sup-fear-trembling",
    "s": "Catch-Newz",
    "d": "2026-11-01",
    "tags": []
@@ -740,8 +746,10 @@
    "https://www.catch-newz.com/wwe/newz/60942-the-champ-ajoute-des-precisions-au-sujet-du-john-cena-classic-qui-aura-lieu-le-14-decembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60930-wwe-raw-2-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60925-lordre-des-matchs-de-wwe-raw-du-2-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/60956-cruz-montana-va-t-il-quand-meme-combattre-dion-lennox-a-nxt-ce-mercredi-malgre-ses-debuts-a-raw",
    "https://www.catch-newz.com/wwe/resultats/60909-resultats-de-wwe-main-event28-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/60953-resultats-de-cmll-lunes-clasico-du-2-novembre-2026",
    "https://www.catch-newz.com/international/resultats/60933-resultats-de-iwrg-funcion-espectacular-du-1er-novembre-2026",
    "https://www.catch-newz.com/international/resultats/60952-resultats-de-njpw-power-struggle-super-junior-tag-league-2026",
    "https://www.catch-newz.com/international/newz/60949-njpw-power-struggle-2026-kenny-omega-ecarte-la-menace-oleg-et-humilie-yota-tsuji",
@@ -920,7 +928,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
