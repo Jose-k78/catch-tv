@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-30",
+ "updated": "2026-11-04",
  "note": "Champions actuels : peut révéler des résultats récents.",
  "titles": [
   {
@@ -84,15 +84,25 @@
    "k": "WWE",
    "show": "Raw",
    "n": "Intercontinental Championship",
-   "c": "Chad Gable",
+   "c": "Ethan Page",
    "who": [
-    "Chad Gable"
+    "Ethan Page"
    ],
-   "since": "2026-08-02",
-   "ev": "",
-   "hist": [],
-   "src": "The SmackDown Hotel",
-   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe",
+   "since": "2026-11-02",
+   "ev": "Raw",
+   "hist": [
+    {
+     "c": "Chad Gable",
+     "who": [
+      "Chad Gable"
+     ],
+     "d": "2026-08-02",
+     "ev": "",
+     "j": 92
+    }
+   ],
+   "src": "Fightful",
+   "u": "https://www.fightful.com/wrestling/wwe-raw-results-11-2-2026-solo-sikoa-vs-royce-keys-john-cena-roman-reigns-more/",
    "defs": [],
    "def": 0
   },
@@ -173,12 +183,17 @@
    "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe",
    "defs": [
     {
+     "d": "2026-10-30",
+     "ev": "SmackDown",
+     "vs": "Trick Williams"
+    },
+    {
      "d": "2026-10-26",
      "ev": "Raw",
      "vs": "Je’Von Evans"
     }
    ],
-   "def": 1
+   "def": 2
   },
   {
    "id": "wwe-wc",
@@ -196,12 +211,17 @@
    "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe",
    "defs": [
     {
+     "d": "2026-10-30",
+     "ev": "SmackDown",
+     "vs": "Nikki Bella"
+    },
+    {
      "d": "2026-10-23",
      "ev": "SmackDown",
      "vs": "Roxanne Perez"
     }
    ],
-   "def": 1
+   "def": 2
   },
   {
    "id": "wwe-us",
@@ -1328,8 +1348,14 @@
    "hist": [],
    "src": "PWTorch (King of Pro-Wrestling)",
    "u": "https://www.pwtorch.com/site/2026/10/12/njpw-king-of-pro-wrestling-2026-results-10-12-lansdells-report-and-analysis-of-tsuji-vs-oiwa-kidd-vs-umino-yoh-vs-eagles-and-more/",
-   "defs": [],
-   "def": 0
+   "defs": [
+    {
+     "d": "2026-11-03",
+     "ev": "Power Struggle",
+     "vs": "Taichi"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "njpw-jr",
@@ -1413,16 +1439,24 @@
    "k": "NJPW",
    "show": "",
    "n": "IWGP Junior Heavyweight Tag Team Championship",
-   "c": "El Desperado et Místico",
-   "who": [
-    "El Desperado",
-    "Místico"
+   "c": "Vacant",
+   "who": [],
+   "since": "2026-11-03",
+   "ev": "Power Struggle",
+   "hist": [
+    {
+     "c": "El Desperado et Místico",
+     "who": [
+      "El Desperado",
+      "Místico"
+     ],
+     "d": "2026-05-04",
+     "ev": "Wrestling Dontaku",
+     "j": 183
+    }
    ],
-   "since": "2026-05-04",
-   "ev": "Wrestling Dontaku",
-   "hist": [],
-   "src": "Wikipédia",
-   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_New_Japan_Pro-Wrestling",
+   "src": "Fightful",
+   "u": "https://www.fightful.com/wrestling/njpw-power-struggle-results-11-3-kenny-omega-yota-tsuji-jon-moxley-compete/",
    "defs": [],
    "def": 0
   },
