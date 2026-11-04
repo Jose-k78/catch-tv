@@ -1,6 +1,10 @@
 // Membres : liste avec recherche par pseudo, amis, demandes reçues ; compteur de feud avec chacun
 import { S, B, changed, avatar, prof } from "../state.js";
 import { esc } from "../util.js";
+import { storylineTile } from "./storyline.js";
+import { pollTile } from "./polls.js";
+import { pickTile } from "./picks.js";
+import { activitySection, activityList } from "./activity.js";
 import { friendState, friendsOf, requestsIn, feudBadge, isBlocked, feudsToReturn } from "../social.js";
 
 let loading = false;
@@ -22,8 +26,17 @@ function row(u, extra) {
 export function membersView(tab) {
   const meId = S.user.uid, reqs = requestsIn(), toReturn = feudsToReturn();
   let h = '<div class="chathead"><h1>Membres</h1></div>' +
-    '<div class="seg"><a href="#/membres" class="' + (!tab ? "on" : "") + '">Tous</a><a href="#/membres/amis" class="' + (tab === "amis" ? "on" : "") + '">Amis</a>' +
+    '<div class="seg"><a href="#/membres" class="' + (!tab ? "on" : "") + '">Communauté</a><a href="#/membres/tous" class="' + (tab === "tous" ? "on" : "") + '">Tous</a><a href="#/membres/amis" class="' + (tab === "amis" ? "on" : "") + '">Amis</a>' +
     '<a href="#/membres/demandes" class="' + (tab === "demandes" ? "on" : "") + '">Demandes' + (reqs.length ? ' <span class="dot inl">' + reqs.length + "</span>" : "") + "</a></div>";
+  // Communauté : storyline du jour, sondages, pronostics, Babies du mois, activité des membres
+  if (!tab) {
+    const tiles = [storylineTile(), pollTile(), pickTile()].filter(Boolean);
+    h += (tiles.length ? '<div class="tiles2">' + tiles.join("") + "</div>" : "") +
+      '<div class="list" style="margin-top:10px">' + [["#/sondages", "📊 Sondages", "et le tournoi Babies du mois"], ["#/pronostics", "🎯 Pronostics", "et le classement"], ["#/storyline", "📖 Storyline du jour", "et les précédentes"], ["#/tournois", "🏆 Tournois", "en cours et à venir"]]
+        .map(x => '<a class="item" href="' + x[0] + '"><span class="lbl"><b>' + x[1] + "</b><small>" + x[2] + '</small></span><span class="chev">›</span></a>').join("") + "</div>" +
+      '<div class="actsec">' + activitySection() + "</div><h2>Activité des membres</h2>" + activityList(20);
+    return h;
+  }
   if (tab === "demandes") {
     h += reqs.length ? '<div class="mems">' + reqs.map(f => {
       const o = f.members[0] === meId ? f.members[1] : f.members[0], p = prof(o) || { uid: o };

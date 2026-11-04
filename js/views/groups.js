@@ -1,8 +1,9 @@
 // Fiche d'un tag team / d'une faction (#/groupe/id) : logo (dossier de l'admin, sinon ajouté par un membre, sinon le nom écrit),
 // membres actuels, anciens membres, années, matchs de référence. Données : data/groups.json (tenu à jour chaque soir).
 // Sur la fiche d'un catcheur : le logo de ses groupes actuels dans un coin de sa photo, et la liste de ses groupes.
-import { S, ACT } from "../state.js";
-import { esc, ICON, modal } from "../util.js";
+import { S, ACT, changed } from "../state.js";
+import { ghGetJson, ghPutJson, ghToken } from "../github.js";
+import { esc, ICON, modal, toast } from "../util.js";
 import { linkNames } from "../wrestlers.js";
 import { okVid } from "./highlights.js";
 import { photoOf, face } from "../photos.js";
@@ -60,8 +61,62 @@ export function groupView(raw) {
   const old = artVersions("groups", g.lg);
   if (old.length) h += '<h2>Anciens logos</h2><div class="glogos">' + old.map(s => '<button data-act="zoom" data-src="' + esc(s) + '" data-alt="' + esc(g.n) + '"><img src="' + esc(s) + '" alt="" loading="lazy"></button>').join("") + "</div>";
   h += '<p class="note small" style="margin-top:12px">' + "Membres et matchs de référence tenus à jour chaque soir." + "</p>";
+  if (S.isAdmin) h += '<div class="btns" style="margin:10px 16px"><button class="btn small" data-act="gedit" data-id="' + esc(id) + '">✏️ Modifier ce groupe</button><button class="btn small ghost" data-act="gnew">＋ Nouveau clan / équipe</button><button class="btn small ghost danger" data-act="gdel" data-id="' + esc(id) + '">🗑 Supprimer</button></div>';
   return h;
 }
+
+// ---------- modo : ajouter, modifier, supprimer un clan / une équipe (data/groups.json, clé GitHub du modo) ----------
+const lines = v => String(v || "").split(/\n|,/).map(x => x.trim()).filter(Boolean);
+async function saveGroups(fn, msg) {
+  if (!ghToken()) { if (ACT.ghkey) ACT.ghkey(); return false; }
+  const cur = await ghGetJson("data/groups.json"), d = cur.data || { items: {} };
+  d.items = d.items || {}; fn(d.items); d.updated = new Date().toISOString().slice(0, 10);
+  await ghPutJson("data/groups.json", d, msg);
+  S.groups = d.items; changed("content");
+  return true;
+}
+function groupForm(id) {
+  const g = id ? groupById(id) || {} : { on: 1 };
+  modal((box, close) => {
+    box.innerHTML = "<h3>" + (id ? "Modifier « " + esc(g.n) + " »" : "Nouveau clan / équipe") + '</h3><form data-gf>' +
+      '<label class="fld">Nom<input name="n" required maxlength="60" value="' + esc(g.n || "") + '"></label>' +
+      '<label class="fld">Promotion<select name="k">' + Object.keys(S.P).map(k => "<option" + (k === g.k ? " selected" : "") + ">" + esc(k) + "</option>").join("") + "</select></label>" +
+      '<label class="fld">Années<input name="y" maxlength="40" placeholder="depuis 2026" value="' + esc(g.y || "") + '"></label>' +
+      '<label class="chk"><input type="checkbox" name="on"' + (g.on ? " checked" : "") + "> En activité</label>" +
+      '<label class="fld">Membres actuels (un par ligne)<textarea name="m" rows="4">' + esc((g.m || []).join("\n")) + "</textarea></label>" +
+      '<label class="fld">Anciens membres (un par ligne)<textarea name="ex" rows="3">' + esc((g.ex || []).join("\n")) + "</textarea></label>" +
+      '<label class="fld">Autres noms (un par ligne)<textarea name="a" rows="2">' + esc((g.a || []).join("\n")) + "</textarea></label>" +
+      '<label class="fld">Nom du fichier logo (facultatif)<input name="lg" maxlength="60" value="' + esc(g.lg || "") + '"></label>' +
+      '<button class="btn wide">Enregistrer</button></form><button class="btn wide ghost" style="margin-top:10px" data-close>Annuler</button>';
+    box.addEventListener("click", e => { if (e.target.closest("[data-close]")) close(); });
+    box.querySelector("[data-gf]").addEventListener("submit", async e => {
+      e.preventDefault();
+      const f = e.target, n = f.n.value.trim(); if (!n) return;
+      const rec = Object.assign({}, g, { n: n, k: f.k.value, y: f.y.value.trim(), on: f.on.checked ? 1 : 0, m: lines(f.m.value), lg: f.lg.value.trim() || g.lg || n });
+      const ex = lines(f.ex.value), a = lines(f.a.value); if (ex.length) rec.ex = ex; else delete rec.ex; if (a.length) rec.a = a; else delete rec.a;
+      const key = id || groupId(n) || n.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+      close();
+      try { if (await saveGroups(items => { items[key] = rec; }, (id ? "Groupe modifié : " : "Nouveau groupe : ") + n)) { toast("Enregistré ✓"); location.hash = groupHref(key); } }
+      catch (err) { if (err && err.message !== "nokey") toast("Pas enregistré : " + err.message, { ms: 5000 }); }
+    });
+  });
+}
+ACT.gedit = el => { if (S.isAdmin) groupForm(el.dataset.id); };
+ACT.gnew = () => { if (S.isAdmin) groupForm(""); };
+ACT.gdel = el => {
+  if (!S.isAdmin) return;
+  const id = el.dataset.id, g = groupById(id) || {};
+  modal((box, close) => {
+    box.innerHTML = "<h3>Supprimer « " + esc(g.n || id) + " » ?</h3><button class=\"btn wide danger\" data-ok>Supprimer</button><button class=\"btn wide ghost\" style=\"margin-top:10px\" data-close>Annuler</button>";
+    box.addEventListener("click", async e => {
+      if (e.target.closest("[data-close]")) return close();
+      if (!e.target.closest("[data-ok]")) return;
+      close();
+      try { if (await saveGroups(items => { delete items[id]; }, "Groupe supprimé : " + (g.n || id))) { toast("Groupe supprimé"); location.hash = "#/recherche"; } }
+      catch (err) { if (err && err.message !== "nokey") toast("Pas enregistré : " + err.message, { ms: 5000 }); }
+    });
+  });
+};
 
 // Fiche catcheur : logos des groupes actuels (dans un coin de la photo) et liste de ses groupes
 export function wGroups(name) {

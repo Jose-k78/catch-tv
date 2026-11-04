@@ -212,7 +212,7 @@ export function mediaView() {
     (mu ? '<div class="item"><span class="lbl"><b>Volume par défaut</b><small id="volv">' + Math.round((mu.vol == null ? 0.4 : mu.vol) * 100) + ' %</small><input type="range" id="mvol" min="5" max="100" step="5" value="' + Math.round((mu.vol == null ? 0.4 : mu.vol) * 100) + '" aria-label="Volume"></span><span class="repbtns"><button class="btn small" data-act="mediavol">Enregistrer</button></span></div>' : "") + "</div>";
   // playlists YouTube (lecteur musical de l'app)
   const pls = Array.isArray(M.pls) ? M.pls : [];
-  h += '<h2>Playlists YouTube (lecteur musical)</h2><p class="note small">Colle le lien d’une playlist YouTube : les membres l’écoutent avec le bouton 🎵 en haut (lecteur visible, qui continue pendant la navigation). Elle remplace la musique MP3.</p>' +
+  h += '<h2>Playlists YouTube (lecteur musical)</h2><p class="note small">Colle le lien d’une playlist YouTube : les membres l’écoutent avec le bouton 🎵 en haut (juste le son, commandes sous 🎵, continue pendant la navigation). Elle remplace la musique MP3.</p>' +
     '<div class="list">' + pls.map((p, i) => '<div class="item"><span class="lbl"><b>🎵 ' + esc(p.n || "Playlist") + "</b><small>" + esc(p.id) + '</small></span><span class="repbtns"><button class="btn small ghost" data-act="pldel" data-i="' + i + '">Retirer</button></span></div>').join("") +
     '<div class="item"><span class="lbl"><input id="plurl" placeholder="https://www.youtube.com/playlist?list=…" style="width:100%"><input id="plname" placeholder="Nom (ex. : Entrées WWE)" maxlength="40" style="width:100%;margin-top:6px"></span><span class="repbtns"><button class="btn small" data-act="pladd">Ajouter</button></span></div></div>';
   const rows = [["", ""]];

@@ -15,7 +15,27 @@ export const NOBABY = "Pas de babies désignée";
 export const WIN = 3;
 const ROUND = ["Quart de finale", "Quart de finale", "Quart de finale", "Quart de finale", "Demi-finale", "Demi-finale", "Finale"];
 export const bkId = m => "bk-" + m;
-export function bracketCfg(m) { const p = (S.fsPolls || []).find(x => x && x.id === bkId(m) && !x.del); return p && Array.isArray(p.opts) && p.opts.length === 8 ? p : null; }
+// catcheuses de la base de données (rosters féminins : AEW, ROH, AAA, TNA Knockouts, CMLL Amazonas, Stardom, Marigold)
+const FEM = /f[ée]minin|knockouts|amazonas/i;
+export function femalePool() {
+  const out = new Set();
+  Object.keys(S.rosters || {}).forEach(k => { const r = S.rosters[k] || {}; Object.keys(r).forEach(g => { if (FEM.test(g) || k === "Stardom" || k === "Marigold") (r[g] || []).forEach(n => { if (n && !/\(/.test(n)) out.add(n); }); }); });
+  return Array.from(out).sort();
+}
+// 8 noms tirés au hasard (toujours les mêmes pour un mois donné : tout le monde voit le même tableau)
+export function randomEight(seedTxt) {
+  const pool = femalePool(); let seed = 0; String(seedTxt).split("").forEach(ch => { seed = (seed * 31 + ch.charCodeAt(0)) >>> 0; });
+  const rnd = () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; };
+  const a = pool.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+  return a.slice(0, 8);
+}
+export function bracketCfg(m) {
+  const p = (S.fsPolls || []).find(x => x && x.id === bkId(m) && !x.del);
+  if (p && Array.isArray(p.opts) && p.opts.length === 8) return p;
+  // sans choix du modo : 8 catcheuses au hasard dans la base de données, tournoi lancé le 1er du mois
+  const auto = randomEight("babies-" + m);
+  return auto.length === 8 ? { id: bkId(m), opts: auto, d: m + "-01", auto: true } : null;
+}
 const dayIdx = (start, day) => Math.round((Date.parse(day + "T12:00:00Z") - Date.parse(start + "T12:00:00Z")) / 864e5);
 const votesOf = id => (S.pollVotes || []).filter(v => v.poll === id && (v.c === 0 || v.c === 1) && (S.blocks || []).indexOf(v.uid) < 0).sort((a, b) => (a.at || 0) - (b.at || 0));
 
@@ -67,6 +87,7 @@ export function bracketSection(m, monthLabel) {
   h += '<div class="bktree">' + col(b.slice(0, 4), "Quarts") + col(b.slice(4, 6), "Demies") + col(b.slice(6), "Finale") + "</div>";
   const done = b.filter(x => !x.open && x.w >= 0);
   if (done.length) h += '<details class="bkpast"><summary>Les duels terminés</summary>' + done.map(x => duel(x, my(x.id))).join("") + "</details>";
+  if (cfg.auto) h += '<p class="note small">Les 8 catcheuses sont tirées au hasard dans la base de données de l’app.</p>';
   if (S.isAdmin) h += '<button class="linkbtn" data-act="bknew" style="margin:6px 16px">Changer les catcheuses du tournoi</button>';
   return h;
 }
@@ -82,14 +103,18 @@ ACT.bknew = () => {
   const m = parisDay().slice(0, 7), cur = bracketCfg(m), names = cur ? cur.opts : [];
   modal((box, close) => {
     box.innerHTML = "<h3>Tournoi Babies du mois</h3><p class=\"sub\">Les 8 catcheuses, dans l’ordre du tableau (1 contre 2, 3 contre 4…).</p><form data-bkf>" +
+      '<button type="button" class="btn small ghost" data-rnd style="margin-bottom:8px">🎲 Tirer 8 catcheuses au hasard</button>' +
       [0, 1, 2, 3, 4, 5, 6, 7].map(i => '<label>Catcheuse ' + (i + 1) + '<input name="n' + i + '" maxlength="60" required value="' + esc(names[i] || "") + '"></label>').join("") +
       '<button class="btn wide">Lancer le tournoi</button></form><button class="btn wide ghost" data-close>Annuler</button>';
-    box.addEventListener("click", ev => { if (ev.target.closest("[data-close]")) close(); });
+    box.addEventListener("click", ev => {
+      if (ev.target.closest("[data-close]")) close();
+      if (ev.target.closest("[data-rnd]")) { const r = randomEight("x" + Date.now()); r.forEach((n, i) => { box.querySelector("[name=n" + i + "]").value = n; }); }
+    });
     box.querySelector("[data-bkf]").addEventListener("submit", async ev => {
       ev.preventDefault();
       const f = ev.target, opts = [0, 1, 2, 3, 4, 5, 6, 7].map(i => f["n" + i].value.trim().replace(/\s+/g, " ")).filter(Boolean);
       if (opts.length !== 8) { toast("Il faut 8 noms"); return; }
-      try { await B.savePoll(bkId(m), { q: "Babies du mois", k: "", d: cur && cur.d || parisDay(), opts: opts, other: false, end: "", closed: false, del: false, type: "bracket" }); close(); toast("Tournoi lancé ✓"); }
+      try { await B.savePoll(bkId(m), { q: "Babies du mois", k: "", d: cur && !cur.auto && cur.d || parisDay(), opts: opts, other: false, end: "", closed: false, del: false, type: "bracket" }); close(); toast("Tournoi lancé ✓"); }
       catch (e) { toast(errText(e)); }
     });
   });

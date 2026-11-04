@@ -28,7 +28,7 @@ const PAGES = {
   shop: ["Shop", "Les paquets et les cartes spéciales."]
 };
 export function tccgView(tab) {
-  if (!S.isAdmin) return '<section class="tccgsoon"><div class="tcards">' + TICON.cards + '</div><h1>TCCCG</h1><p>Le jeu de cartes de TCC TV arrive bientôt. Reste connecté !</p><a class="btn" href="#/">Retour à TCC TV</a></section>';
+  if (!S.realAdmin) return '<section class="tccgsoon"><div class="tcards">' + TICON.cards + '</div><h1>TCCCG</h1><p>Le jeu de cartes de TCC TV arrive bientôt. Reste connecté !</p><a class="btn" href="#/">Retour à TCC TV</a></section>';
   const p = PAGES[tab] || PAGES[""];
   return '<section class="tccgpage"><span class="tbadge">🚧 EN CHANTIER</span><div class="tcards">' + TICON[(TNAV.find(x => x[0] === tab) || TNAV[0])[2]] + "</div><h1>" + esc(p[0]) + "</h1><p>" + esc(p[1]) + "</p>" +
     '<div class="tslots">' + [1, 2, 3].map(() => '<div class="tslot"><span>?</span></div>').join("") + "</div>" +

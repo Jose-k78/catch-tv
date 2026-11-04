@@ -15,8 +15,8 @@ export function allPolls() {
   const m = {};
   (S.polls || []).forEach(p => { if (okPoll(p)) m[p.id] = Object.assign({ src: "maj" }, p); });
   (S.fsPolls || []).forEach(p => { if (p && p.id) m[p.id] = Object.assign({}, m[p.id] || { src: "admin" }, p); });
-  // dream match à 2 : le match nul est toujours proposé
-  Object.keys(m).forEach(k => { const p = m[k]; if (p.type === "match" && Array.isArray(p.opts) && p.opts.length === 2) m[k] = Object.assign({}, p, { opts: p.opts.concat(["Match nul"]) }); });
+  // dream match à 2 : « Draw » (match nul) est toujours proposé
+  Object.keys(m).forEach(k => { const p = m[k]; if (p.type === "match" && Array.isArray(p.opts) && p.opts.length === 2) m[k] = Object.assign({}, p, { opts: p.opts.concat(["Draw"]) }); });
   return Object.keys(m).map(k => m[k]).filter(p => okPoll(p) && !p.del && p.type !== "bracket" && !(p.type === "babies" && bracketCfg(String(p.d || "").slice(0, 7))))
     .sort((a, b) => (isOpen(b) - isOpen(a)) || String(b.d || "").localeCompare(String(a.d || "")) || (b.at || 0) - (a.at || 0));
 }
@@ -46,7 +46,7 @@ function pollCard(p) {
   const tag = p.type === "babies" ? "👑 Babies du mois" : p.type === "match" ? "🥊 Dream match" : "";
   let h = '<div class="poll' + (open ? "" : " closed") + (p.type ? " t-" + esc(p.type) : "") + '" id="poll-' + esc(p.id) + '"' + shAttr({ ty: "poll", t: p.q, s: [tag || "Sondage", p.k].filter(Boolean).join(" · "), h: "#/sondages", k: p.k || "" }) + '><small class="eyebrow">' + esc([tag, p.k, open ? (p.end ? "jusqu’au " + fmt(p.end) : "ouvert") : "terminé"].filter(Boolean).join(" · ")) + "</small><b class=\"pq\">" + linkNames(p.q) + "</b>";
   // dream match et babies : les deux visages face à face
-  if ((p.type === "match" || p.type === "babies") && (p.opts.length === 2 || p.opts[2] === "Match nul") && (photoOf(p.opts[0]) || photoOf(p.opts[1])))
+  if ((p.type === "match" || p.type === "babies") && (p.opts.length === 2 || p.opts[2] === "Draw") && (photoOf(p.opts[0]) || photoOf(p.opts[1])))
     h += '<div class="pvs">' + (face(p.opts[0], 72) || '<span class="wnone big">?</span>') + '<span class="wvsx">VS</span>' + (face(p.opts[1], 72) || '<span class="wnone big">?</span>') + "</div>";
   if (!showRes || (open && mv && mv.edit)) {
     h += '<div class="popts">' + p.opts.map((t, i) => '<button class="popt" data-act="pvote" data-p="' + esc(p.id) + '" data-c="' + i + '">' + faceImg(t, 26) + esc(t) + "</button>").join("") + "</div>";
@@ -114,7 +114,7 @@ function babiesSection() {
 // L'admin enregistre la gagnante du mois écoulé (une fois), avec une annonce dans l'activité
 let hofBusy = false;
 export async function syncBabies() {
-  if (!S.isAdmin || hofBusy || !S.hofReady) return;
+  if (!S.realAdmin || hofBusy || !S.hofReady) return;
   const pm = prevMonth(parisDay().slice(0, 7)); if ((S.hof || {})[pm]) return;
   const bk = bracketCfg(pm);
   const top = bk ? { n: bracketWinner(bk) || NOBABY, v: 0 } : babiesRanking(pm)[0]; if (!top) return;

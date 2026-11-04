@@ -12,14 +12,18 @@ import { PREVIEW } from "./content.js";
 export const linksOf = key => ((S.links || {})[key] || []).filter(x => x && okHttp(x.u));
 const ytId = u => { const m = String(u).match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/))([\w-]{11})/); return m ? m[1] : ""; };
 const dmId = u => { const m = String(u).match(/(?:dailymotion\.com\/(?:video|embed\/video)\/|dai\.ly\/)([a-zA-Z0-9]+)/); return m ? m[1] : ""; };
-export const playable = u => !!(ytId(u) || dmId(u));
+export const playable = u => okHttp(u);
+// adresse à mettre dans le lecteur de l'app : YouTube et Dailymotion en version « lecteur », les autres liens tels quels
+export const embedSrc = u => { const y = ytId(u), d = dmId(u); return y ? "https://www.youtube-nocookie.com/embed/" + y + "?autoplay=1&rel=0" : d ? "https://www.dailymotion.com/embed/video/" + d + "?autoplay=1" : u; };
+// lien par défaut d'une clé (⭐ choisi par le modo) : se lance directement dans le lecteur
+export const defaultLink = key => linksOf(key).find(x => x.def) || null;
 const rkey = key => String(key).slice(0, 54);
 
 // lecteur dans l'app (YouTube nocookie ou Dailymotion)
+// tous les liens s'ouvrent dans le lecteur de l'app (si le site refuse d'être intégré : « Ouvrir à part »)
 export function playLink(u, t) {
-  const y = ytId(u), d = dmId(u);
-  if (!y && !d) { window.open(u, "_blank", "noopener"); return; }
-  const src = y ? "https://www.youtube-nocookie.com/embed/" + y + "?autoplay=1&rel=0" : "https://www.dailymotion.com/embed/video/" + d + "?autoplay=1";
+  if (!okHttp(u)) return;
+  const src = embedSrc(u);
   modal((box, close) => {
     box.classList.add("vidmodal");
     box.innerHTML = "<h3>" + esc(t || "Vidéo") + "</h3>" + (PREVIEW ? '<p class="note">La vidéo se lira ici une fois l’app en ligne.</p>' :
@@ -35,8 +39,8 @@ ACT.mlplay = el => playLink(el.dataset.u, el.dataset.t);
 export function linksHTML(key, opt) {
   opt = opt || {};
   const L = linksOf(key);
-  let h = L.map((x, i) => '<div class="mlink"><button class="btn wide ghost evwatch" data-act="mlplay" data-u="' + esc(x.u) + '" data-t="' + esc(x.t || opt.title || "") + '">' + ICON.play + " " + esc(opt.label || "Autre visionnage") + (x.t ? " · " + esc(x.t) : "") + (playable(x.u) ? "" : " ↗") + "</button>" +
-    (S.isAdmin ? '<button class="iconbtn mldel" data-act="mldel" data-k="' + esc(key) + '" data-i="' + i + '" aria-label="Supprimer ce lien">✕</button>'
+  let h = L.map((x, i) => '<div class="mlink"><button class="btn wide ghost evwatch" data-act="mlplay" data-u="' + esc(x.u) + '" data-t="' + esc(x.t || opt.title || "") + '">' + ICON.play + " " + esc(opt.label || "Autre visionnage") + (x.t ? " · " + esc(x.t) : "") + (x.def ? " ⭐" : "") + "</button>" +
+    (S.isAdmin ? '<button class="iconbtn mldef' + (x.def ? " on" : "") + '" data-act="mldef" data-k="' + esc(key) + '" data-i="' + i + '" aria-label="Lien par défaut" title="Lien par défaut">⭐</button><button class="iconbtn mldel" data-act="mldel" data-k="' + esc(key) + '" data-i="' + i + '" aria-label="Supprimer ce lien">✕</button>'
       : S.user ? '<button class="iconbtn mlrep" data-act="mlrep" data-k="' + esc(key) + '" data-u="' + esc(x.u) + '" aria-label="Signaler ce lien" title="Signaler">⚑</button>' : "") + "</div>").join("");
   if (!L.length && opt.ask && S.user && !S.isAdmin) {
     const asked = (S.myAsks || {})[key];
@@ -87,16 +91,16 @@ ACT.mladd = el => {
   if (!S.isAdmin) return;
   const key = el.dataset.k, title = el.dataset.t || "", href = el.dataset.h || location.hash;
   modal((box, close) => {
-    box.innerHTML = '<h3>Ajouter un lien</h3><p class="sub">' + esc(title || key) + '</p><form data-mlf><label class="fld">Lien (YouTube, Dailymotion ou un site)<input name="u" type="url" required placeholder="https://…"></label>' +
-      '<label class="fld">Nom affiché (facultatif)<input name="t" maxlength="60" placeholder="Ex. : replay complet"></label><button class="btn wide">Enregistrer</button></form><button class="btn wide ghost" style="margin-top:10px" data-close>Annuler</button>';
+    box.innerHTML = '<h3>Ajouter un lien</h3><p class="sub">' + esc(title || key) + '</p><form data-mlf><label class="fld">Lien du lecteur vidéo (YouTube, Dailymotion, ou adresse d’un lecteur à intégrer)<input name="u" type="url" required placeholder="https://…"></label>' +
+      '<label class="fld">Nom affiché (facultatif)<input name="t" maxlength="60" placeholder="Ex. : replay complet"></label><label class="chk"><input type="checkbox" name="def"> ⭐ Lien par défaut (se lance directement)</label><button class="btn wide">Enregistrer</button></form><button class="btn wide ghost" style="margin-top:10px" data-close>Annuler</button>';
     box.addEventListener("click", ev => { if (ev.target.closest("[data-close]")) close(); });
     box.querySelector("[data-mlf]").addEventListener("submit", async ev => {
       ev.preventDefault();
-      const u = ev.target.u.value.trim(), t = ev.target.t.value.trim().slice(0, 60);
+      const u = ev.target.u.value.trim(), t = ev.target.t.value.trim().slice(0, 60), def = ev.target.def.checked;
       if (!okHttp(u)) { toast("Colle un lien qui commence par https://"); return; }
       close();
       try {
-        const okd = await saveLinks(items => { (items[key] = items[key] || []).push({ t: t, u: u, at: new Date().toISOString().slice(0, 10) }); }, "Lien du modérateur : " + (title || key));
+        const okd = await saveLinks(items => { items[key] = items[key] || []; if (def) items[key].forEach(x => delete x.def); items[key].push(Object.assign({ t: t, u: u, at: new Date().toISOString().slice(0, 10) }, def ? { def: true } : {})); }, "Lien du modérateur : " + (title || key));
         if (!okd) return;
         toast("Lien ajouté ✓");
         // prévenir les membres qui avaient demandé la vidéo, puis effacer leurs demandes
@@ -107,6 +111,12 @@ ACT.mladd = el => {
       } catch (e) { if (e && e.message !== "nokey") toast("Pas enregistré : " + e.message, { ms: 5000 }); }
     });
   });
+};
+ACT.mldef = async el => {
+  if (!S.isAdmin) return;
+  const key = el.dataset.k, i = +el.dataset.i;
+  try { if (await saveLinks(items => { (items[key] || []).forEach((x, j) => { if (j === i) x.def = !x.def; else delete x.def; }); }, "Lien par défaut choisi par le modérateur")) toast("Lien par défaut mis à jour ⭐"); }
+  catch (e) { if (e && e.message !== "nokey") toast("Pas enregistré : " + e.message, { ms: 5000 }); }
 };
 ACT.mldel = async el => {
   if (!S.isAdmin) return;

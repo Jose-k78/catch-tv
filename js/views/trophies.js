@@ -156,31 +156,37 @@ export function trophiesView(uid) {
 // Vitrine du profil : le plus haut palier de chaque famille gagnée
 export function showcase(uid) {
   const set = earnedOf(uid), sl = slammysOf(uid), items = [];
-  const p = (S.user && uid === S.user.uid ? S.profile : prof(uid)) || {}, pick = (p.tro || {}).vit || "";
+  const p = (S.user && uid === S.user.uid ? S.profile : prof(uid)) || {}, tro = p.tro || {};
+  const picks = ["v1", "v2", "v3", "v4", "v5"].map(k => tro[k]).filter(Boolean); if (!picks.length && tro.vit) picks.push(tro.vit);
   sl.forEach(x => items.push({ id: "", h: slammyIcon(44) + "<small>Slammy · " + esc(x.n) + "</small>" }));
   FAM.forEach(f => { const b = best(set, f); if (b >= 0) items.push({ id: tierId(f.id, b), h: trophyIcon(f.id, b, 44) + "<small>" + esc(f.t[b][1]) + "</small>", big: trophyIcon(f.id, b, 64) + "<small>" + esc(f.t[b][1]) + "</small>" }); });
-  // trophée choisi pour la vitrine : en premier et en grand
-  const star = items.find(x => x.id && x.id === pick);
-  if (star) { items.splice(items.indexOf(star), 1); items.unshift(star); }
+  // trophées choisis pour la vitrine (jusqu'à 5) : en premier et en grand
+  const stars = picks.map(id => items.find(x => x.id && x.id === id)).filter(Boolean);
+  stars.slice().reverse().forEach(st => { items.splice(items.indexOf(st), 1); items.unshift(st); });
   const me = S.user && uid === S.user.uid;
   return '<h2>🏆 Vitrine <a class="linkbtn" style="font-size:13px;text-decoration:none" href="#/trophees' + (me ? "" : "/" + encodeURIComponent(uid)) + '">' + (me ? "Ma progression ›" : "Tout voir ›") + "</a>" +
     (me && items.some(x => x.id) ? ' <button class="linkbtn" style="font-size:13px" data-act="vitpick">⭐ Choisir</button>' : "") + "</h2>" +
-    (items.length ? '<a class="vitrine" href="#/trophees' + (me ? "" : "/" + encodeURIComponent(uid)) + '">' + items.map(x => '<span class="vit' + (x === star ? " star" : "") + '">' + (x === star ? x.big : x.h) + "</span>").join("") + "</a>"
+    (items.length ? '<a class="vitrine" href="#/trophees' + (me ? "" : "/" + encodeURIComponent(uid)) + '">' + items.map(x => '<span class="vit' + (stars.indexOf(x) >= 0 ? " star" : "") + '">' + (stars.indexOf(x) >= 0 ? x.big : x.h) + "</span>").join("") + "</a>"
       : '<p class="note">' + (me ? "Pas encore de trophée. Marque des shows comme vus, note, vote et pronostique pour en gagner !" : "Pas encore de trophée.") + "</p>");
 }
 ACT.vitpick = () => {
   if (!S.user) return;
-  const set = earnedOf(S.user.uid), list = [];
+  const set = earnedOf(S.user.uid), list = [], tro = (S.profile && S.profile.tro) || {};
+  let chosen = ["v1", "v2", "v3", "v4", "v5"].map(k => tro[k]).filter(Boolean); if (!chosen.length && tro.vit) chosen = [tro.vit];
   FAM.forEach(f => { const b = best(set, f); if (b >= 0) list.push({ id: tierId(f.id, b), f: f, b: b }); });
   modal((box, close) => {
-    box.innerHTML = "<h3>Trophée en vitrine</h3><p class=\"sub\">Il s’affiche en premier et en grand sur ton profil.</p><div class=\"list\">" +
-      list.map(x => '<button class="item" data-id="' + x.id + '">' + trophyIcon(x.f.id, x.b, 32) + '<span class="lbl"><b>' + esc(x.f.t[x.b][1]) + "</b><small>" + esc(x.f.n) + "</small></span></button>").join("") +
-      '</div><button class="btn wide ghost" style="margin-top:10px" data-close>Annuler</button>';
+    const draw = () => { box.innerHTML = "<h3>Ma vitrine</h3><p class=\"sub\">Choisis jusqu’à 5 trophées : ils s’affichent en premier et en grand sur ton profil.</p><div class=\"list\">" +
+      list.map(x => '<button class="item' + (chosen.indexOf(x.id) >= 0 ? " on" : "") + '" data-id="' + x.id + '">' + trophyIcon(x.f.id, x.b, 32) + '<span class="lbl"><b>' + esc(x.f.t[x.b][1]) + "</b><small>" + esc(x.f.n) + '</small></span><span class="chev">' + (chosen.indexOf(x.id) >= 0 ? "✓ " + (chosen.indexOf(x.id) + 1) : "") + "</span></button>").join("") +
+      '</div><button class="btn wide" style="margin-top:10px" data-save>Enregistrer</button><button class="btn wide ghost" style="margin-top:10px" data-close>Annuler</button>'; };
+    draw();
     box.addEventListener("click", async ev => {
       if (ev.target.closest("[data-close]")) return close();
-      const b = ev.target.closest("[data-id]"); if (!b) return;
+      const b = ev.target.closest("[data-id]");
+      if (b) { const id = b.dataset.id, i = chosen.indexOf(id); if (i >= 0) chosen.splice(i, 1); else if (chosen.length < 5) chosen.push(id); else toast("5 trophées au plus"); draw(); return; }
+      if (!ev.target.closest("[data-save]")) return;
       close();
-      try { await B.addTrophies(S.user.uid, { vit: b.dataset.id }); S.profile.tro = Object.assign({}, S.profile.tro || {}, { vit: b.dataset.id }); toast("Vitrine mise à jour ✓"); changed("profile"); } catch (e) { toast("Impossible pour l’instant"); }
+      const map = { vit: "" }; ["v1", "v2", "v3", "v4", "v5"].forEach((k, i) => { map[k] = chosen[i] || ""; });
+      try { await B.addTrophies(S.user.uid, map); S.profile.tro = Object.assign({}, S.profile.tro || {}, map); toast("Vitrine mise à jour ✓"); changed("profile"); } catch (e) { toast("Impossible pour l’instant"); }
     });
   });
 };

@@ -172,3 +172,14 @@ export function editNote(item, onDone) {
   });
 }
 ACT.noteedit = el => { const h = S.history[el.dataset.id]; if (h) editNote({ id: el.dataset.id, title: h.title, k: h.k, show: h.show, d: h.d }); };
+
+// appui long sur une de mes notes (profil) : la modifier ou la supprimer
+let nlT = null, nlXY = null;
+document.addEventListener("pointerdown", e => {
+  const it = e.target.closest && e.target.closest("[data-noteid]"); if (!it || e.button > 0 || e.target.closest("a,button")) return;
+  nlXY = [e.clientX, e.clientY]; clearTimeout(nlT);
+  nlT = setTimeout(() => { try { if (navigator.vibrate) navigator.vibrate(12); } catch (x) {} ACT.noteedit({ dataset: { id: it.dataset.noteid } }); }, 480);
+});
+["pointerup", "pointercancel"].forEach(t => document.addEventListener(t, () => clearTimeout(nlT), true));
+document.addEventListener("pointermove", e => { if (nlXY && Math.hypot(e.clientX - nlXY[0], e.clientY - nlXY[1]) > 10) clearTimeout(nlT); }, { passive: true });
+document.addEventListener("contextmenu", e => { const it = e.target.closest && e.target.closest("[data-noteid]"); if (!it) return; e.preventDefault(); ACT.noteedit({ dataset: { id: it.dataset.noteid } }); });

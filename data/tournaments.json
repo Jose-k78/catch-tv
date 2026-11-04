@@ -1,10 +1,228 @@
 {
  "updated": "2026-11-04",
  "note": "Tournois (rubrique Tournoi de l'app). items : un tournoi = { id, n, k, serie, y, st (à venir | en cours | terminé), from, to, type (bracket | blocs), about, rounds: [{ n, m: [{ a, b, w, res, v (id YouTube officiel) }] }], blocs: [{ n, rows: [{ w, pts }] }], winner, art: { txt: [...], faits: [...], pop }, src: [{ n, u }] }. series : présentation, anciens gagnants (past : [{ y, w }]), anecdotes. Rempli par la mise à jour du soir ; liens vidéo du modo dans data/links.json (« tn:id »).",
- "items": [],
+ "items": [
+  {
+   "id": "njpw-wtl-2026",
+   "n": "World Tag League 2026",
+   "k": "NJPW",
+   "serie": "wtl",
+   "y": 2026,
+   "st": "à venir",
+   "from": "2026-11-23",
+   "to": "2026-12-13",
+   "type": "blocs",
+   "about": "16 soirées, du 23 novembre (Yokohama Budokan) au 13 décembre (finale au Grand Messe Kumamoto). Les équipes seront ajoutées dès leur annonce. Tous les shows sont sur NJPW World.",
+   "src": [
+    {
+     "n": "POST Wrestling",
+     "u": "https://www.postwrestling.com/?p=140681"
+    },
+    {
+     "n": "Fightful",
+     "u": "https://www.fightful.com/?p=327173"
+    }
+   ]
+  },
+  {
+   "id": "aew-cc-2026",
+   "n": "Continental Classic 2026",
+   "k": "AEW",
+   "serie": "cc",
+   "y": 2026,
+   "st": "à venir",
+   "from": "2026-11-18",
+   "type": "blocs",
+   "about": "Début le 18 novembre à Dynamite (Mission Ballroom, Denver). Participants et ligues ajoutés dès leur annonce.",
+   "src": [
+    {
+     "n": "Wrestling Inc",
+     "u": "https://www.wrestlinginc.com/2258136/aew-continental-classic-2026-tournament-kickoff-date-november-18-denver-colorado/"
+    },
+    {
+     "n": "Fightful",
+     "u": "https://www.fightful.com/?p=328480"
+    }
+   ]
+  },
+  {
+   "id": "marigold-dsgp-2026",
+   "n": "Dream Star Grand Prix 2026",
+   "k": "Marigold",
+   "serie": "marigold",
+   "y": 2026,
+   "st": "terminé",
+   "from": "2026-08-28",
+   "to": "2026-09-20",
+   "type": "blocs",
+   "about": "24 catcheuses en 4 blocs de 6, phase finale et finale le 20 septembre au Korakuen Hall. La gagnante est ajoutée par la mise à jour.",
+   "blocs": [
+    {
+     "n": "Bloc A",
+     "rows": [
+      {
+       "w": "Miku Aono"
+      },
+      {
+       "w": "Natsumi Showzuki"
+      },
+      {
+       "w": "Misa Matsui"
+      },
+      {
+       "w": "Erina Yamanaka"
+      },
+      {
+       "w": "Yuuka Yamazaki"
+      },
+      {
+       "w": "Aleah James"
+      }
+     ]
+    },
+    {
+     "n": "Bloc B",
+     "rows": [
+      {
+       "w": "Mayu Iwatani"
+      },
+      {
+       "w": "Mila Smidt"
+      },
+      {
+       "w": "Komomo Minami"
+      },
+      {
+       "w": "Nagisa Nozaki"
+      },
+      {
+       "w": "CHIAKI"
+      },
+      {
+       "w": "Nao Ishikawa"
+      }
+     ]
+    },
+    {
+     "n": "Bloc C",
+     "rows": [
+      {
+       "w": "Victoria Yuzuki"
+      },
+      {
+       "w": "Mai Sakurai"
+      },
+      {
+       "w": "Chi Chi"
+      },
+      {
+       "w": "Syoko Koshino"
+      },
+      {
+       "w": "Humming Bird"
+      },
+      {
+       "w": "Diana Strong"
+      }
+     ]
+    },
+    {
+     "n": "Bloc D",
+     "rows": [
+      {
+       "w": "Kouki Amarei"
+      },
+      {
+       "w": "Chika Goto"
+      },
+      {
+       "w": "Shinno"
+      },
+      {
+       "w": "Megaton"
+      },
+      {
+       "w": "Rea Seto"
+      },
+      {
+       "w": "Nagisa Tachibana"
+      }
+     ]
+    }
+   ],
+   "src": [
+    {
+     "n": "Resura Magazine",
+     "u": "https://resuramag.com/2026/08/22/the-2026-marigold-dream-star-grand-prix-guide/"
+    },
+    {
+     "n": "Fightful",
+     "u": "https://www.fightful.com/wrestling/marigold-unveils-field-for-2026-dream-star-grand-prix/"
+    }
+   ]
+  },
+  {
+   "id": "g1-2026",
+   "n": "G1 Climax 36",
+   "k": "NJPW",
+   "serie": "g1",
+   "y": 2026,
+   "st": "terminé",
+   "to": "2026-08-16",
+   "type": "blocs",
+   "winner": "Ryohei Oiwa",
+   "about": "Finale le 16 août : Ryohei Oiwa contre Yuya Uemura. Le vainqueur a défié le champion IWGP poids lourd en octobre.",
+   "rounds": [
+    {
+     "n": "Finale",
+     "m": [
+      {
+       "a": "Ryohei Oiwa",
+       "b": "Yuya Uemura",
+       "w": "Ryohei Oiwa"
+      }
+     ]
+    }
+   ],
+   "src": [
+    {
+     "n": "Wrestling Inc",
+     "u": "https://www.wrestlinginc.com/2237803/ryohei-oiwa-wins-njpw-g1-climax-36-will-challenge-iwgp-champion-october/"
+    },
+    {
+     "n": "Pro Wrestling Dot Net (finale)",
+     "u": "https://prowrestling.net/site/?p=195164"
+    }
+   ]
+  },
+  {
+   "id": "5star-2026",
+   "n": "5★STAR Grand Prix 2026",
+   "k": "Stardom",
+   "serie": "5star",
+   "y": 2026,
+   "st": "terminé",
+   "to": "2026-08-23",
+   "type": "blocs",
+   "winner": "Rina",
+   "about": "30 catcheuses au départ, finale le 23 août.",
+   "src": [
+    {
+     "n": "POST Wrestling",
+     "u": "https://www.postwrestling.com/?p=139921"
+    },
+    {
+     "n": "Fightful",
+     "u": "https://www.fightful.com/wrestling-news/stardom-5star-grand-prix-final-results-8-23-rina-wins-5star-gp/"
+    }
+   ]
+  }
+ ],
  "series": {
   "g1": {
-   "n": "G1 Climax", "k": "NJPW", "lg": "G1 Climax",
+   "n": "G1 Climax",
+   "k": "NJPW",
+   "lg": "G1 Climax",
    "about": [
     "Le G1 Climax est le grand tournoi d'été de la New Japan Pro-Wrestling, organisé chaque année depuis 1991 (et dont l'ancêtre remonte à 1974).",
     "Une vingtaine de catcheurs, répartis en blocs, s'affrontent tous contre tous pendant près d'un mois : 2 points par victoire, 1 par match nul (limite de temps), 0 par défaite. Les meilleurs de chaque bloc passent en phase finale.",
@@ -17,27 +235,171 @@
     "Le contrat du vainqueur peut être mis en jeu avant Wrestle Kingdom : il est arrivé qu'un autre catcheur le lui prenne."
    ],
    "past": [
-    { "y": 2026, "w": "Ryohei Oiwa" }, { "y": 2025, "w": "Konosuke Takeshita" }, { "y": 2024, "w": "Zack Sabre Jr." }, { "y": 2023, "w": "Tetsuya Naito" },
-    { "y": 2022, "w": "Kazuchika Okada" }, { "y": 2021, "w": "Kazuchika Okada" }, { "y": 2020, "w": "Kota Ibushi" }, { "y": 2019, "w": "Kota Ibushi" },
-    { "y": 2018, "w": "Hiroshi Tanahashi" }, { "y": 2017, "w": "Tetsuya Naito" }, { "y": 2016, "w": "Kenny Omega" }, { "y": 2015, "w": "Hiroshi Tanahashi" }
+    {
+     "y": 2026,
+     "w": "Ryohei Oiwa"
+    },
+    {
+     "y": 2025,
+     "w": "Konosuke Takeshita"
+    },
+    {
+     "y": 2024,
+     "w": "Zack Sabre Jr."
+    },
+    {
+     "y": 2023,
+     "w": "Tetsuya Naito"
+    },
+    {
+     "y": 2022,
+     "w": "Kazuchika Okada"
+    },
+    {
+     "y": 2021,
+     "w": "Kazuchika Okada"
+    },
+    {
+     "y": 2020,
+     "w": "Kota Ibushi"
+    },
+    {
+     "y": 2019,
+     "w": "Kota Ibushi"
+    },
+    {
+     "y": 2018,
+     "w": "Hiroshi Tanahashi"
+    },
+    {
+     "y": 2017,
+     "w": "Tetsuya Naito"
+    },
+    {
+     "y": 2016,
+     "w": "Kenny Omega"
+    },
+    {
+     "y": 2015,
+     "w": "Hiroshi Tanahashi"
+    }
    ],
-   "src": [{ "n": "Wrestling Inc (G1 Climax 36)", "u": "https://www.wrestlinginc.com/2237803/ryohei-oiwa-wins-njpw-g1-climax-36-will-challenge-iwgp-champion-october/" }]
+   "src": [
+    {
+     "n": "Wrestling Inc (G1 Climax 36)",
+     "u": "https://www.wrestlinginc.com/2237803/ryohei-oiwa-wins-njpw-g1-climax-36-will-challenge-iwgp-champion-october/"
+    }
+   ]
   },
   "5star": {
-   "n": "5★STAR Grand Prix", "k": "Stardom", "lg": "5STAR Grand Prix",
+   "n": "5★STAR Grand Prix",
+   "k": "Stardom",
+   "lg": "5STAR Grand Prix",
    "about": [
     "Le 5★STAR Grand Prix est le grand tournoi d'été de Stardom, organisé chaque année depuis 2012 : l'équivalent féminin du G1 Climax.",
     "Les catcheuses sont réparties en blocs et s'affrontent toutes entre elles (2 points la victoire, 1 le nul), puis les meilleures de chaque bloc se retrouvent en phase finale.",
     "La gagnante obtient en général un match pour le titre Red Belt (World of Stardom), la plus haute ceinture de la promotion."
    ],
-   "anec": ["En 2026, 30 catcheuses ont participé au tournoi, l'un des plus grands plateaux de son histoire."],
-   "past": [{ "y": 2026, "w": "Rina" }, { "y": 2025, "w": "Momo Watanabe" }],
-   "src": [{ "n": "POST Wrestling", "u": "https://www.postwrestling.com/?p=139921" }]
+   "anec": [
+    "En 2026, 30 catcheuses ont participé au tournoi, l'un des plus grands plateaux de son histoire."
+   ],
+   "past": [
+    {
+     "y": 2026,
+     "w": "Rina"
+    },
+    {
+     "y": 2025,
+     "w": "Momo Watanabe"
+    }
+   ],
+   "src": [
+    {
+     "n": "POST Wrestling",
+     "u": "https://www.postwrestling.com/?p=139921"
+    }
+   ]
   },
   "marigold": {
-   "n": "Tournois Marigold", "k": "Marigold",
-   "about": ["Marigold organise ses propres tournois (Dream Star Grand Prix l'été, tournois par équipes…). Ils apparaissent ici dès qu'ils commencent."],
-   "past": []
+   "n": "Dream Star Grand Prix",
+   "k": "Marigold",
+   "lg": "Dream Star Grand Prix",
+   "about": [
+    "Le Dream Star Grand Prix est le grand tournoi en simple de Marigold, créé en 2024 : l’équivalent du G1 Climax pour la promotion.",
+    "24 catcheuses réparties en 4 blocs (A à D) de 6 s’affrontent toutes entre elles : 2 points la victoire, 1 le match nul (limite de 15 minutes, sauf en finale). Les 2 premières de chaque bloc vont en phase finale.",
+    "La gagnante obtient un match pour le titre Marigold World (la ceinture principale)."
+   ],
+   "anec": [
+    "Les deux premières gagnantes (Utami Hayashishita en 2024, Miku Aono en 2025) ont ensuite remporté le titre Marigold World."
+   ],
+   "past": [
+    {
+     "y": 2025,
+     "w": "Miku Aono"
+    },
+    {
+     "y": 2024,
+     "w": "Utami Hayashishita"
+    }
+   ],
+   "src": [
+    {
+     "n": "Resura Magazine (guide 2026)",
+     "u": "https://resuramag.com/2026/08/22/the-2026-marigold-dream-star-grand-prix-guide/"
+    },
+    {
+     "n": "Fightful (Miku Aono 2025)",
+     "u": "https://www.fightful.com/wrestling/miku-aono-wins-2025-marigold-dream-star-grand-prix/"
+    }
+   ]
+  },
+  "wtl": {
+   "n": "World Tag League",
+   "k": "NJPW",
+   "lg": "World Tag League",
+   "about": [
+    "La World Tag League est le grand tournoi par équipes de la NJPW, chaque fin d’année (novembre–décembre).",
+    "Les équipes sont réparties en blocs, s’affrontent toutes entre elles (2 points la victoire), puis les meilleures se retrouvent en finale.",
+    "L’équipe gagnante obtient traditionnellement un match pour les titres IWGP par équipes au Tokyo Dome, à Wrestle Kingdom le 4 janvier."
+   ],
+   "anec": [
+    "Bishamon (Hirooki Goto et YOSHI-HASHI) détient le record de victoires : 3."
+   ],
+   "past": [],
+   "src": [
+    {
+     "n": "POST Wrestling",
+     "u": "https://www.postwrestling.com/?p=140681"
+    }
+   ]
+  },
+  "cc": {
+   "n": "Continental Classic",
+   "k": "AEW",
+   "lg": "Continental Classic",
+   "about": [
+    "Le Continental Classic est le tournoi de fin d’année de l’AEW, créé en 2023 : 12 catcheurs en deux ligues (Gold et Blue), tous contre tous, 3 points la victoire, 1 le match nul.",
+    "Le vainqueur devient champion de la Triple Couronne continentale (AEW Continental Championship), avec les titres ROH Pure et NJPW Strong à l’origine."
+   ],
+   "anec": [
+    "En 2026, le tournoi commence le 18 novembre à Denver, plus tôt que lors de toutes les éditions précédentes."
+   ],
+   "past": [
+    {
+     "y": 2024,
+     "w": "Kazuchika Okada"
+    },
+    {
+     "y": 2023,
+     "w": "Eddie Kingston"
+    }
+   ],
+   "src": [
+    {
+     "n": "Wrestling Inc",
+     "u": "https://www.wrestlinginc.com/2258136/aew-continental-classic-2026-tournament-kickoff-date-november-18-denver-colorado/"
+    }
+   ]
   }
  }
 }

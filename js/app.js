@@ -5,7 +5,7 @@ import { S, setBackend, B, ACT, FORM, onChange, changed, prof, avatar, need, nam
 import { loadContent } from "./content.js";
 import "./links.js";
 import { tournoisView, serieView, tournoiView } from "./views/tournois.js";
-import { ICON, toast } from "./util.js";
+import { ICON, toast, lsGet, lsSet } from "./util.js";
 import { homeView, promoView, showView, tabsView, evPageView, autreView } from "./views/catalog.js";
 import { matchesView } from "./views/matches.js";
 import { titlesView, titleView, beltView } from "./views/titles.js";
@@ -54,7 +54,7 @@ const REL = {
   convinfo: ["convs", "reads", "profiles", "auth", "blocks", "room", "msgs"], newchat: ["users", "auth"], settings: ["auth", "history", "profile", "route", "reports", "blocks", "profiles", "images", "media", "ideas", "push", "ann", "content"], editprofile: ["profile", "auth", "profiles"], auth: ["auth"],
   matches: ["route", "history", "auth", "content"], wrestler: ["profile", "spoil", "history", "auth", "content"], search: [], titles: ["history", "spoil", "content"], title: ["history", "spoil", "content"], belt: ["content"], group: ["content", "auth"], tccg: ["auth", "profile"], player: ["content"], autre: ["content"], tournois: ["content"], serie: ["content"], tournoi: ["content", "auth"],
   notifs: ["notifs", "profiles", "reads", "blocks", "ann"], activity: ["activity", "profiles", "blocks", "areplies"], storyline: ["content", "history", "auth"], roster: ["profile", "content"],
-  members: ["users", "friends", "feuds", "blocks", "profiles", "auth", "tick"], favs: ["profile", "profiles", "friends", "auth", "content"], hl: ["history", "spoil", "content"],
+  members: ["activity", "areplies", "polls", "pollVotes", "picks", "content", "history", "users", "friends", "feuds", "blocks", "profiles", "auth", "tick"], favs: ["profile", "profiles", "friends", "auth", "content"], hl: ["history", "spoil", "content"],
   event: ["event", "history", "auth"], cal: ["content", "history", "auth", "images", "spoil", "tick", "picks"],
   polls: ["polls", "pollVotes", "auth", "blocks", "hof", "content", "profiles"], picks: ["content", "picks", "profiles", "auth", "blocks", "tick"], pick: ["content", "picks", "profiles", "auth", "blocks", "tick"],
   ideas: ["ideas", "profiles", "auth", "blocks"],
@@ -83,7 +83,7 @@ function parse() {
     case "autre": return { name: "autre" };
     case "tournois": return parts[1] ? { name: "serie", id: parts[1] } : { name: "tournois" };
     case "tournoi": return { name: "tournoi", id: parts[1] || "" };
-    case "player": return { name: "player", a: parts[1] || "", b: parts[2] || "" };
+    case "player": return { name: "player", a: parts[1] || "", b: parts[2] || "", c: parts[3] || "" };
     case "membres": return { name: "members", tab: parts[1] || "" };
     case "favoris": return { name: "favs" };
     case "notifs": return { name: "notifs" };
@@ -105,7 +105,14 @@ function parse() {
 // mode TCCCG « collant » : on reste en noir et doré en passant par le profil, les paramètres ou les trophées
 let tgMode = false;
 const TG_KEEP = { profile: 1, settings: 1, editprofile: 1, trophies: 1 };
-const tgOn = () => !!S.isAdmin && (route.name === "tccg" || (tgMode && !!TG_KEEP[route.name] && (!route.uid || !S.user || route.uid === S.user.uid)));
+const tgOn = () => !!S.realAdmin && (route.name === "tccg" || (tgMode && !!TG_KEEP[route.name] && (!route.uid || !S.user || route.uid === S.user.uid)));
+ACT.editmode = () => {
+  if (!S.realAdmin) return;
+  S.isAdmin = !S.isAdmin; lsSet("ctv.edit", S.isAdmin ? "1" : null);
+  document.body.classList.toggle("editing", S.isAdmin);
+  toast(S.isAdmin ? "✏️ Mode modification activé : toutes les options du modo sont visibles" : "Mode modification coupé : tu vois l’app comme un membre", { ms: 3500 });
+  render(); updateHeader();
+};
 function onRoute() {
   routeSubs.forEach(u => u()); routeSubs = []; dirty = false;
   const prevName = route.name;
@@ -148,7 +155,7 @@ function onRoute() {
     routeSubs.push(B.watchWComments(w, list => { S.wcomments[w] = list; list.forEach(c => need(c.uid)); renderWComments(); }));
     routeSubs.push(B.watchWImage(w, d => { S.wimg = S.wimg || {}; S.wimg[w] = d; renderWImage(); }));
   }
-  // commentaires d'une vidéo du TCC Player
+  // commentaires d'une vidéo du TCC Play
   if (route.name === "player" && route.a === "v") {
     const w = wslug("video " + route.b);
     routeSubs.push(B.watchWComments(w, list => { S.wcomments[w] = list; list.forEach(c => need(c.uid)); renderWComments(); }));
@@ -197,7 +204,7 @@ function render() {
     case "tournois": h = tournoisView(); break;
     case "serie": h = serieView(route.id); break;
     case "tournoi": h = tournoiView(route.id); break;
-    case "player": h = playerView(route.a, route.b); break;
+    case "player": h = playerView(route.a, route.b, route.c); break;
     case "members": h = membersView(route.tab); break;
     case "favs": h = favsView(); break;
     case "hl": h = hlView(route.k, route.show, route.d); break;
@@ -261,6 +268,7 @@ function updateHeader() {
   }).join("");
   const fav = document.getElementById("favbtn");
   if (fav) fav.classList.toggle("on", route.name === "favs");
+  const eb = document.getElementById("editbtn"); if (eb) { eb.hidden = !S.realAdmin; eb.classList.toggle("on", !!S.isAdmin); }
   const nb = document.getElementById("notifbtn"), nu = notifUnread();
   const tb = document.getElementById("trobtn"); if (tb) { tb.hidden = !S.user; tb.classList.toggle("on", route.name === "trophies"); }
   if (nb) { nb.hidden = !S.user; nb.innerHTML = ICON.bell + (nu ? '<span class="badge">' + cnt(nu) + "</span>" : ""); nb.classList.toggle("on", route.name === "notifs"); }
@@ -326,10 +334,13 @@ function onUser(u) {
   S.friends = []; S.feuds = []; S.blocks = []; S.reports = []; S.users = null; S.memberFriends = {}; S.notifs = []; S.activity = []; resetSocial();
   S.fsPolls = []; S.pollVotes = []; S.picks = []; S.ideas = []; S.areplies = {}; S.athread = {}; S.banners = {}; S.myAct = []; S.slammys = []; S.hof = {}; S.hofReady = false;
   S.push = null; S.ann = []; resetPushSync();
-  S.isAdmin = !!u && (S.demo ? u.uid === B.demoAdmin() : (!!ADMIN_UID && u.uid === ADMIN_UID));
+  // le modo voit l'app comme un membre ; le bouton ✏️ (lui seul le voit) active les options de modification partout
+  S.realAdmin = !!u && (S.demo ? u.uid === B.demoAdmin() : (!!ADMIN_UID && u.uid === ADMIN_UID));
+  S.isAdmin = S.realAdmin && lsGet("ctv.edit") === "1";
+  document.body.classList.toggle("editing", S.isAdmin);
   if (u) {
     const me = u.uid;
-    if (S.isAdmin) setTimeout(() => syncFollowed(false), 4000);
+    if (S.realAdmin) setTimeout(() => syncFollowed(false), 4000);
     userSubs.push(B.watchUser(me, p => { S.profile = p; changed("profile"); }));
     userSubs.push(B.watchHistory(me, list => { const m = {}; list.forEach(x => { m[x.id] = x; }); S.history = m; changed("history"); }));
     let readsInit = false;
@@ -376,7 +387,7 @@ function onUser(u) {
       if (annInit) S.ann.filter(a => !annSeen[a.id] && a.by !== me && Date.now() - a.at < 3600e3).slice(0, 1).forEach(a => toast("📣 " + a.t + (a.x ? "\n" + a.x.slice(0, 120) : ""), { top: true, ms: 7000, onClick: () => { location.hash = a.h && a.h.indexOf("#/") === 0 ? a.h : "#/notifs"; } }));
       S.ann.forEach(a => { annSeen[a.id] = 1; }); annInit = true; changed("ann");
     }));
-    if (S.isAdmin) userSubs.push(B.watchReports(list => { S.reports = list || []; list.forEach(r => { need(r.by); need(r.target); }); changed("reports"); }));
+    if (S.realAdmin) userSubs.push(B.watchReports(list => { S.reports = list || []; list.forEach(r => { need(r.by); need(r.target); }); changed("reports"); }));
   }
   changed("auth");
   onRoute();

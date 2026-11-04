@@ -4,7 +4,8 @@ import { S, B, ACT } from "../state.js";
 import { esc, ICON, fmt, okHttp, shAttr, modal, toast } from "../util.js";
 import { linksOf, linksHTML } from "../links.js";
 import { searchVideos, playerThumb } from "./player.js";
-import { allPle, evHref, artCard, evCard } from "./catalog.js";
+import { allPle, evHref, artCard, evCard, exploreHTML } from "./catalog.js";
+import { discoverTile } from "./discover.js";
 import { PREVIEW } from "../content.js";
 import { norm, canonical, wInfo, wShows, wTitles, upcomingFor, lastMatches, wNews, lastShow, knownNames, promoIn, alignOf, ALIGN, linkNames } from "../wrestlers.js";
 import { starBtn } from "./favs.js";
@@ -50,7 +51,8 @@ function eventLike(q, loc, names) {
   return EVENT_WORDS.test(q) || loc.some(r => norm(r.t) === n || norm(r.t).indexOf(n) === 0);
 }
 function resultsHTML(q) {
-  if (!norm(q)) return '<p class="note">Tape le nom d’un show (Raw, Dynamite…), d’un PLE (Crown Jewel…), d’un événement passé (WrestleMania 13, Starrcade 1997…) ou d’un catcheur (Roman Reigns, Mayu Iwatani…), puis valide.</p>';
+  if (!norm(q)) return '<p class="note">Tape le nom d’un show (Raw, Dynamite…), d’un PLE ou PPV (Crown Jewel…), d’un show passé (WrestleMania 13, Starrcade 1997…) ou d’un catcheur (Roman Reigns, Mayu Iwatani…).</p>' +
+    (discoverTile() ? '<h2 class="hh">Catcheur à découvrir</h2>' + discoverTile() : "") + exploreHTML();
   const loc = localResults(q), names = nameResults(q), ev = eventLike(q, loc, names);
   const showsH = loc.length ? '<h2>Shows et événements</h2><div class="list">' + loc.map(r => '<a class="item" href="' + r.h + '"><span class="lbl"><b>' + esc(r.t) + "</b><small>" + esc(r.s) + '</small></span><span class="chev">›</span></a>').join("") + "</div>" : "";
   // archives : PLE et shows passés trouvés sur Wikipédia (WrestleMania 13, Starrcade 1997…)
@@ -71,7 +73,7 @@ function resultsHTML(q) {
     '</small></span><span class="chev">›</span></a>').join("") +
     (offer ? '<a class="item" href="#/catcheur/' + encodeURIComponent(q.trim()) + '">' + faceImg(q.trim(), 40) + '<span class="lbl"><b>' + esc(q.trim()) +
     "</b><small>Voir sa fiche : résumé, derniers matchs, matchs de référence</small></span><span class=\"chev\">›</span></a>" : "") + "</div>" : "";
-  const pv = searchVideos(q, 8), pH = pv.length ? '<h2>Dans le TCC Player <small class="cnt">vidéos</small></h2><div class="prow">' + pv.map(playerThumb).join("") + "</div>" : "";
+  const pv = searchVideos(q, 8), pH = pv.length ? '<h2>Dans le TCC Play <small class="cnt">vidéos</small></h2><div class="prow">' + pv.map(playerThumb).join("") + "</div>" : "";
   return ev ? showsH + pH + archH + wH + gH + tH + aH : wH + gH + tH + showsH + pH + aH + archH;
 }
 document.addEventListener("input", e => {

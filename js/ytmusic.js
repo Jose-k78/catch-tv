@@ -1,6 +1,6 @@
 // Lecteur musical : playlists YouTube choisies par le modérateur (data/media.json « pls » : [{ id, n }]).
-// Petit lecteur flottant, toujours visible quand il joue (règle YouTube : la vidéo doit rester visible), qui continue
-// pendant la navigation (il est en dehors de la page). Lecture, pause, suivant, précédent, volume, choix de la playlist.
+// Discret (demande de Jose, 4 nov.) : juste le son, sans vidéo à l'écran ; commandes dans un petit panneau sous le bouton 🎵
+// du haut. Continue pendant la navigation. Lecture, pause, suivant, précédent, volume, choix de la playlist.
 // Reprend la dernière musique écoutée (playlist, morceau, moment). Démarre tout seul à l'ouverture si le membre l'a laissé
 // allumé et si le navigateur l'autorise. Se met en pause quand une autre vidéo de l'app est lancée.
 import { S, ACT } from "./state.js";
@@ -27,16 +27,23 @@ function api() {
 const curPl = () => { const L = playlists(), id = st().pl; return L.find(p => p.id === id) || L[0] || null; };
 
 function drawBox() {
-  if (!box) { box = document.createElement("div"); box.id = "ytm"; document.body.appendChild(box); }
-  const pl = curPl(), L = playlists(), s = st();
-  box.className = "ytm" + (s.min ? " min" : "");
-  box.innerHTML = '<div class="ytmvid"><div id="ytmframe"></div></div>' +
-    '<div class="ytmbar"><b class="ytmt" id="ytmt">' + esc(pl ? pl.n || "Playlist" : "") + "</b>" +
-    '<div class="ytmctl"><button data-act="ytm" data-a="prev" aria-label="Précédent">⏮</button><button data-act="ytm" data-a="toggle" id="ytmpp" aria-label="Lecture / pause">⏯</button><button data-act="ytm" data-a="next" aria-label="Suivant">⏭</button>' +
-    '<input type="range" id="ytmvol" min="0" max="100" value="' + (s.vol == null ? 40 : s.vol) + '" aria-label="Volume">' +
-    (L.length > 1 ? '<button data-act="ytm" data-a="pick" aria-label="Choisir la playlist">☰</button>' : "") +
-    '<button data-act="ytm" data-a="min" aria-label="Réduire">' + (s.min ? "▴" : "▾") + '</button><button data-act="ytm" data-a="close" aria-label="Fermer">✕</button></div></div>';
+  // le lecteur YouTube, caché hors de l'écran (seul le son compte)
+  if (!box) { box = document.createElement("div"); box.id = "ytm"; box.className = "ytmhide"; box.innerHTML = '<div id="ytmframe"></div>'; document.body.appendChild(box); }
 }
+// panneau des commandes, sous le bouton 🎵 du haut
+function panel(show) {
+  let p = document.getElementById("ytmpanel");
+  if (!show) { if (p) p.remove(); return; }
+  const pl = curPl(), L = playlists(), s = st();
+  if (!p) { p = document.createElement("div"); p.id = "ytmpanel"; p.className = "ytmpanel"; document.body.appendChild(p); }
+  p.innerHTML = '<b class="ytmt" id="ytmt">' + esc(curTitle || (pl ? pl.n || "Playlist" : "")) + "</b>" +
+    '<div class="ytmctl"><button data-act="ytm" data-a="prev" aria-label="Précédent">⏮</button><button data-act="ytm" data-a="toggle" id="ytmpp" aria-label="Lecture / pause">' + (playing ? "⏸" : "▶") + '</button><button data-act="ytm" data-a="next" aria-label="Suivant">⏭</button>' +
+    '<input type="range" id="ytmvol" min="0" max="100" value="' + (s.vol == null ? 40 : s.vol) + '" aria-label="Volume"></div>' +
+    '<div class="ytmrow">' + (L.length > 1 ? '<select id="ytmpl" aria-label="Playlist">' + L.map(x => '<option value="' + esc(x.id) + '"' + (pl && x.id === pl.id ? " selected" : "") + ">" + esc(x.n || "Playlist") + "</option>").join("") + "</select>" : '<small>' + esc(pl ? pl.n || "" : "") + "</small>") +
+    '<button class="linkbtn" data-act="ytm" data-a="close">Arrêter</button><button class="linkbtn" data-act="ytm" data-a="hide">Fermer</button></div>';
+}
+let curTitle = "", playing = false;
+export function ytmPanel() { if (document.getElementById("ytmpanel")) panel(false); else panel(true); }
 async function start(autoplay) {
   const pl = curPl(); if (!pl || PREVIEW) { if (!pl) toast("Pas encore de playlist (le modo l’ajoute dans Modération › Apparence)"); return; }
   drawBox();
@@ -47,33 +54,40 @@ async function start(autoplay) {
     width: "200", height: "113", host: "https://www.youtube-nocookie.com",
     playerVars: { listType: "playlist", list: pl.id, index: same ? s.i || 0 : 0, start: same ? Math.floor(s.t || 0) : 0, autoplay: autoplay ? 1 : 0, playsinline: 1, rel: 0, modestbranding: 1 },
     events: {
-      onReady: e => { ready = true; e.target.setVolume(s.vol == null ? 40 : s.vol); if (autoplay) e.target.playVideo(); },
-      onStateChange: e => { const b = document.getElementById("ytmpp"); if (b) b.textContent = e.data === 1 ? "⏸" : "▶"; if (e.data === 1) { const d = e.target.getVideoData && e.target.getVideoData(); const t = document.getElementById("ytmt"); if (t && d && d.title) t.textContent = d.title; } }
+      onReady: e => { ready = true; if (document.getElementById("ytmpanel")) panel(true); e.target.setVolume(s.vol == null ? 40 : s.vol); if (autoplay) e.target.playVideo(); },
+      onStateChange: e => {
+        playing = e.data === 1; const b = document.getElementById("ytmpp"); if (b) b.textContent = playing ? "⏸" : "▶";
+        const mb = document.getElementById("musicbtn"); if (mb) mb.classList.toggle("on", playing);
+        if (playing) { const d = e.target.getVideoData && e.target.getVideoData(); if (d && d.title) { curTitle = d.title; const t = document.getElementById("ytmt"); if (t) t.textContent = d.title; } }
+      }
     }
   });
   save({ pl: pl.id, on: 1 });
   clearInterval(saveT);
   saveT = setInterval(() => { if (!player || !ready || !player.getCurrentTime) return; try { save({ i: player.getPlaylistIndex(), t: player.getCurrentTime() }); } catch (e) {} }, 5000);
 }
-function stop() { clearInterval(saveT); try { if (player) player.destroy(); } catch (e) {} player = null; ready = false; if (box) { box.remove(); box = null; } save({ on: 0 }); }
+function stop() { clearInterval(saveT); try { if (player) player.destroy(); } catch (e) {} player = null; ready = false; playing = false; if (box) { box.remove(); box = null; } panel(false); save({ on: 0 }); const mb = document.getElementById("musicbtn"); if (mb) mb.classList.remove("on"); }
 ACT.ytm = el => {
   const a = el.dataset.a;
   if (a === "close") return stop();
-  if (a === "min") { save({ min: st().min ? 0 : 1 }); if (box) box.classList.toggle("min"); el.textContent = st().min ? "▴" : "▾"; return; }
-  if (a === "pick") {
-    const L = playlists(), i = Math.max(0, L.findIndex(p => p.id === (curPl() || {}).id)), nx = L[(i + 1) % L.length];
-    save({ pl: nx.id, i: 0, t: 0 }); stop(); save({ pl: nx.id }); start(true); toast("🎵 " + (nx.n || "Playlist")); return;
-  }
+  if (a === "hide") return panel(false);
   if (!player || !ready) return;
   if (a === "toggle") { if (player.getPlayerState() === 1) player.pauseVideo(); else player.playVideo(); }
   if (a === "next") player.nextVideo();
   if (a === "prev") player.previousVideo();
 };
+document.addEventListener("change", e => {
+  if (e.target.id !== "ytmpl") return;
+  const nx = playlists().find(p => p.id === e.target.value); if (!nx) return;
+  stop(); save({ pl: nx.id, i: 0, t: 0 }); start(true); setTimeout(() => panel(true), 300); toast("🎵 " + (nx.n || "Playlist"));
+});
 document.addEventListener("input", e => { if (e.target.id === "ytmvol") { const v = +e.target.value; save({ vol: v }); if (player && ready) player.setVolume(v); } });
-// bouton 🎵 en haut : ouvre / ferme le lecteur
-export function ytmToggle() { if (box) stop(); else start(true); }
+// bouton 🎵 en haut : lance la musique (1er appui) puis ouvre / ferme le panneau des commandes
+export function ytmToggle() { if (!box) { start(true); panel(true); } else ytmPanel(); }
 export const ytmOn = () => !!box;
 // à l'ouverture : le lecteur revient s'il était allumé (lecture auto si le navigateur l'autorise)
 export function ytmBoot() { if (playlists().length && st().on && !box) start(true); }
 // une autre vidéo de l'app démarre -> pause
 setInterval(() => { if (!player || !ready) return; const other = [...document.querySelectorAll(".player iframe, .player video")].length; if (other && player.getPlayerState && player.getPlayerState() === 1) player.pauseVideo(); }, 1500);
+// toucher ailleurs ferme le panneau (la musique continue)
+document.addEventListener("click", e => { const p = document.getElementById("ytmpanel"); if (p && !p.contains(e.target) && !e.target.closest("#musicbtn")) p.remove(); }, true);

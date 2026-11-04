@@ -68,14 +68,21 @@ export function shareMenu(c) {
     box.innerHTML = preview(c) + '<div class="sheet">' +
       '<button class="item" data-a="room">🦍 Partager dans la Gorilla Position</button><button class="item" data-a="dm">✉️ Partager en message privé…</button>' +
       names.map(n => '<a class="item" href="#/catcheur/' + encodeURIComponent(n) + '" data-a="go">🤼 Voir la fiche de ' + esc(n) + "</a>").join("") +
-      (c.ty === "ev" && /^#\/ev\//.test(c.h || "") ? (() => { const p = c.h.slice(5).split("/").map(decodeURIComponent);
-        return '<a class="item" href="#/player/e/' + encodeURIComponent(p.slice(0, 3).join("|")) + '" data-a="go">▶ Voir dans le TCC Player</a><button class="item" data-a="src" data-k="' + esc(p[0]) + '" data-show="' + esc(p[1] === "PLE" ? "" : p[1]) + '" data-d="' + esc(p[2] || "") + '">📺 Choisir la source (officiel, autre visionnage…)</button>'; })() : "") +
+      (c.ty === "ev" && /^#\/ev\//.test(c.h || "") ? (() => { const p = c.h.slice(5).split("/").map(decodeURIComponent), sh = p[1] === "PLE" ? "" : p[1], key = p.slice(0, 3).join("|");
+        const da = ' data-k="' + esc(p[0]) + '" data-show="' + esc(sh) + '" data-d="' + esc(p[2] || "") + '" data-t="' + esc(c.t) + '"';
+        return '<a class="item" href="#/player/e/' + encodeURIComponent(key) + '" data-a="go">▶ Voir dans TCC Play</a><button class="item" data-a="src"' + da + '>📺 Choisir la source (officiel, autre visionnage…)</button>' +
+          '<button class="item" data-a="act" data-x="seen"' + da + '>👁 Je l’ai vu / noter</button><button class="item" data-a="act" data-x="remind"' + da + '>🔔 Me rappeler</button>' +
+          (S.isAdmin ? '<button class="item" data-a="act" data-x="mladd" data-k="ev:' + esc(key) + '" data-t="' + esc(c.t) + '" data-h="#/player/e/' + esc(encodeURIComponent(key)) + '">🔗 Ajouter un lecteur vidéo (modo)</button>' : ""); })() : "") +
+      (c.ty === "w" ? '<button class="item" data-a="act" data-x="fav" data-name="' + esc(c.t) + '">⭐ Suivre / ne plus suivre</button><a class="item" href="#/recherche/' + esc(encodeURIComponent(c.t)) + '" data-a="go">🔎 Chercher ses vidéos</a>' +
+        (S.user ? '<button class="item" data-a="act" data-x="wrep" data-n="' + esc(c.t) + '">⚑ Signaler (photo, fiche…)</button>' : "") : "") +
+      (c.ty === "vid" && c.id ? '<button class="item" data-a="act" data-x="play" data-id="' + esc(c.id) + '" data-t="' + esc(c.t) + '">▶ Regarder ici</button><a class="item" href="#/player/v/' + esc(c.id) + '" data-a="go">📺 Ouvrir dans TCC Play (commentaires)</a>' : "") +
       (c.h ? '<a class="item" href="' + esc(c.h) + '" data-a="go">Ouvrir</a>' : c.u ? '<a class="item" href="' + esc(c.u) + '" target="_blank" rel="noopener" data-a="go">Ouvrir l’article ↗</a>' : "") +
       '</div><button class="btn wide ghost" style="margin-top:12px" data-no>Fermer</button>';
     box.addEventListener("click", e => {
       if (e.target.closest("[data-no]")) return close();
       const a = e.target.closest("[data-a]"); if (!a) return;
       if (a.dataset.a === "go") { close(); return; }
+      if (a.dataset.a === "act") { close(); const f = ACT[a.dataset.x]; if (f) f(a); return; }
       if (a.dataset.a === "src") { close(); if (ACT.watch) ACT.watch({ dataset: { k: a.dataset.k, show: a.dataset.show, d: a.dataset.d, t: "" } }); return; }
       e.preventDefault(); close();
       if (!S.user) { toast("Connecte-toi pour partager"); location.hash = "#/connexion"; return; }

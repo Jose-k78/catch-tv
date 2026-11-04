@@ -23,17 +23,36 @@ export function tournamentTile(k) {
     "</b><small>" + esc(L.map(x => x.k + " · " + x.n).slice(0, 3).join(" · ")) + '</small></span><span class="chev">›</span></a>';
 }
 
+// grande vignette (style Netflix) d'un tournoi ou d'une série
+const tLogo = (k, lg) => (lg && eventLogo({ t: lg, k: k })) || showLogo(k, "") || "";
+function tcard(t) {
+  const s = SER()[t.serie] || {}, lg = tLogo(t.k, s.lg);
+  return '<a class="tncard" href="#/tournoi/' + encodeURIComponent(t.id) + '" style="' + esc(cardBg(t.k)) + '">' + (lg ? '<img src="' + esc(lg) + '" alt="" loading="lazy">' : "") + stTag(t) +
+    "<b>" + esc(t.n) + "</b><small>" + esc([t.k, t.from ? "dès le " + fmt(t.from) : t.to ? "fin le " + fmt(t.to) : ""].filter(Boolean).join(" · ")) + "</small></a>";
+}
+function scard(id) {
+  const s = SER()[id], lg = tLogo(s.k, s.lg);
+  return '<a class="tncard serie" href="#/tournois/' + encodeURIComponent(id) + '" style="' + esc(cardBg(s.k)) + '">' + (lg ? '<img src="' + esc(lg) + '" alt="" loading="lazy">' : "") +
+    "<b>" + esc(s.n) + "</b><small>" + esc(s.k) + ((s.past || [])[0] ? " · " + esc(s.past[0].w) + " (" + s.past[0].y + ")" : "") + "</small></a>";
+}
+const cardBg = k => { const c = (S.P[k] && S.P[k].c) || ["#333", "#111"]; return "background:linear-gradient(160deg," + c[0] + "," + (c[1] || "#111") + ")"; };
+let tnTab = "";
 export function tournoisView() {
-  const all = T(), live = all.filter(t => t.st === "en cours"), soon = all.filter(t => !t.st || t.st === "à venir"), done = all.filter(t => t.st === "terminé");
-  let h = '<a class="back" href="#/">' + ICON.back + " Accueil</a><h1>Tournois</h1>";
-  h += live.length ? "<h2>En cours</h2><div class=\"list\">" + live.map(card).join("") + "</div>" : '<p class="note">Pas de tournoi en cours en ce moment. Dès qu’un show entre en tournoi, il apparaît ici.</p>';
-  if (soon.length) h += "<h2>À venir</h2><div class=\"list\">" + soon.map(card).join("") + "</div>";
-  const S2 = SER();
-  h += "<h2>Les grands tournois</h2><div class=\"list\">" + Object.keys(S2).map(id => { const s = S2[id];
-    return '<a class="item" href="#/tournois/' + encodeURIComponent(id) + '"><span class="lbl"><b>' + esc(s.n) + "</b><small>" + esc(s.k) + ((s.past || [])[0] ? " · dernier vainqueur : " + esc(s.past[0].w) + " (" + s.past[0].y + ")" : "") + '</small></span><span class="chev">›</span></a>'; }).join("") + "</div>";
-  if (done.length) h += "<h2>Terminés</h2><div class=\"list\">" + done.slice(0, 20).map(card).join("") + "</div>";
+  const all = T(), live = all.filter(t => t.st === "en cours"), soon = all.filter(t => !t.st || t.st === "à venir").sort((a, b) => String(a.from || "").localeCompare(String(b.from || ""))),
+    done = all.filter(t => t.st === "terminé").sort((a, b) => String(b.to || "").localeCompare(String(a.to || ""))), S2 = SER();
+  const tabs = [["", "Tout"], ["live", "En cours"], ["soon", "À venir"], ["done", "Terminés"], ["series", "Les grands tournois"]];
+  let h = '<a class="back" href="#/">' + ICON.back + " Accueil</a><h1>Tournois</h1>" +
+    '<nav class="tabs" style="padding-top:0">' + tabs.map(x => '<button class="tab' + (tnTab === x[0] ? " on" : "") + '" data-act="tntab" data-t="' + x[0] + '">' + x[1] + "</button>").join("") + "</nav>";
+  const rowOf = (title, list, fn) => list.length ? "<h2>" + title + '</h2><div class="row tnrow">' + list.map(fn).join("") + "</div>" : "";
+  if (!tnTab || tnTab === "live") h += live.length ? rowOf("En cours", live, tcard) : (tnTab ? '<p class="note">Pas de tournoi en cours en ce moment.</p>' : "");
+  if (!tnTab || tnTab === "soon") h += rowOf("Bientôt", soon, tcard) || (tnTab ? '<p class="note">Rien d’annoncé pour l’instant.</p>' : "");
+  if (!tnTab || tnTab === "series") h += rowOf("Les grands tournois", Object.keys(S2), scard);
+  if (!tnTab || tnTab === "done") h += rowOf("Terminés", done.slice(0, 20), tcard);
+  h += '<p class="note small" style="margin-top:12px">Les tournois sont mis à jour chaque soir (participants, tableau, résultats, bilan), avec leurs sources.</p>';
   return h;
 }
+import { ACT, changed } from "../state.js";
+ACT.tntab = el => { tnTab = el.dataset.t || ""; changed("route"); };
 
 // page d'une série (G1 Climax…) : explication, anecdotes, anciens gagnants, éditions de l'app
 export function serieView(id) {
@@ -48,7 +67,7 @@ export function serieView(id) {
   if ((s.anec || []).length) h += "<h2>Anecdotes</h2><ul class=\"tnanec\">" + s.anec.map(a => "<li>" + linkNames(a) + "</li>").join("") + "</ul>";
   if ((s.past || []).length) h += "<h2>Les anciens vainqueurs</h2><div class=\"list\">" + s.past.map(p => '<a class="item" href="#/catcheur/' + encodeURIComponent(p.w) + '">' + faceImg(p.w, 36) + '<span class="lbl"><b>' + esc(p.w) + "</b><small>" + esc(p.y) + '</small></span><span class="chev">›</span></a>').join("") + "</div>" +
     '<p class="note small">La liste complète est complétée par la mise à jour.</p>';
-  h += '<p class="note small" style="margin-top:10px"><a class="linkbtn" style="padding:0" href="#/player/k/' + encodeURIComponent(s.k) + '">▶ Archives ' + esc(s.k) + " dans le TCC Player</a></p>";
+  h += '<p class="note small" style="margin-top:10px"><a class="linkbtn" style="padding:0" href="#/player/k/' + encodeURIComponent(s.k) + '">▶ Archives ' + esc(s.k) + " dans le TCC Play</a></p>";
   if ((s.src || []).length) h += '<p class="note small">Sources : ' + s.src.map(x => '<a href="' + esc(x.u) + '" target="_blank" rel="noopener">' + esc(x.n) + "</a>").join(" · ") + "</p>";
   return h;
 }
@@ -64,8 +83,8 @@ export function tournoiView(id) {
   if ((t.about || "") !== "") h += '<p class="note" style="margin:8px 16px">' + linkNames(t.about) + "</p>";
   // blocs (tous contre tous)
   (t.blocs || []).forEach(b => {
-    const rows = (b.rows || []).slice().sort((x, y) => (y.pts || 0) - (x.pts || 0));
-    h += "<h2>" + esc(b.n || "Bloc") + '</h2><div class="board">' + rows.map((r, i) => '<a class="brow" href="#/catcheur/' + encodeURIComponent(r.w) + '"><span class="brk">' + (i + 1) + "</span>" + faceImg(r.w, 28) + "<b>" + esc(r.w) + '</b><span class="bpts">' + (r.pts || 0) + " pts</span></a>").join("") + "</div>";
+    const rows = (b.rows || []).slice().sort((x, y) => (y.pts || 0) - (x.pts || 0)), hasPts = rows.some(r => r.pts != null);
+    h += "<h2>" + esc(b.n || "Bloc") + '</h2><div class="board">' + rows.map((r, i) => '<a class="brow" href="#/catcheur/' + encodeURIComponent(r.w) + '"><span class="brk">' + (hasPts ? i + 1 : "•") + "</span>" + faceImg(r.w, 28) + "<b>" + esc(r.w) + "</b>" + (hasPts && r.pts != null ? '<span class="bpts">' + r.pts + " pts</span>" : "") + "</a>").join("") + "</div>";
   });
   // tableau (élimination)
   if ((t.rounds || []).length) {

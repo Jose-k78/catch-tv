@@ -18,7 +18,7 @@ import { pickable, pickTile } from "./picks.js";
 import { pollTile } from "./polls.js";
 import { annBar } from "./annonces.js";
 import { installBar } from "../push.js";
-import { linksOf, linksHTML } from "../links.js";
+import { linksOf, linksHTML, defaultLink, playLink } from "../links.js";
 import { tournamentTile } from "./tournois.js";
 
 // ---------- données ----------
@@ -131,6 +131,8 @@ ACT.watch = el => {
   const e = findItem(el.dataset); if (!e) return;
   const links = watchLinks(e), fr = links.filter(x => x.fr), us = links.filter(x => x.us), direct = links.filter(x => x.direct), other = links.filter(x => !x.fr && !x.us && !x.direct);
   // « Voir le show » : un seul choix possible -> on ouvre directement l'appli ou la page (sauf s'il y a un lien du modo en plus)
+  const dl = defaultLink(evKey(e));
+  if (dl) { playLink(dl.u, e.t + (e.d ? " du " + fmt(e.d) : "")); return; }
   if (el.dataset.direct === "1" && !linksOf(evKey(e)).length) {
     const one = direct[0] || (fr.length === 1 ? fr[0] : null) || (links.length === 1 ? links[0] : null);
     if (one) { if (one.nf && e.kind === "ep") toast("Netflix : choisis l’épisode du " + fmt(e.d) + " dans la liste", { ms: 4500 }); openLink(one.u); return; }
@@ -279,11 +281,11 @@ ACT.pastf = el => {
   const r = document.querySelector(".pastrow"); if (r) r.scrollLeft = 0;
 };
 function showItem(k, n) { return { kind: "show", k: k, show: n, t: n, c: colorOf(k, n) }; }
-// « CETTE NUIT » si le show commence la nuit à Paris (22 h – 6 h), sinon « AUJOURD’HUI »
+// « AUJOURD’HUI » si le show commence entre 6 h et 18 h (heure de Paris), « CETTE NUIT » entre 19 h et 5 h
 function dayWord(e) {
   const st = startOf(e); if (!st) return "AUJOURD’HUI";
   const h = +new Intl.DateTimeFormat("fr-FR", { hour: "2-digit", hourCycle: "h23", timeZone: "Europe/Paris" }).format(new Date(st));
-  return h >= 22 || h < 6 ? "CETTE NUIT" : "AUJOURD’HUI";
+  return h >= 19 || h < 6 ? "CETTE NUIT" : "AUJOURD’HUI";
 }
 // big = show du jour ou le plus récent (vignette large)
 function showCard(k, n, withK, big) {
@@ -317,7 +319,7 @@ function showRow(list, withK) {
 function promoCard(k) {
   const e = { kind: "promo", k: k, t: k, c: S.P[k].c }, lk = look(e);
   return '<div class="card' + (lk.poster ? " poster" : "") + (S.isAdmin ? " hasedit" : "") + '" style="' + esc(lk.style) + '"><a class="cover" href="#/p/' + encodeURIComponent(k) + '" aria-label="' + esc(k) + '"' + shAttr({ ty: "show", t: k, s: "Promotion", h: "#/p/" + encodeURIComponent(k), k: k }) + "></a>" + editBtn(e, k) + logoImg(e, "cardlogo") +
-    "<b" + fit(k, 126, 27, lk.poster) + ">" + esc(k) + "</b><small>" + S.P[k].e.length + " événement(s)</small></div>";
+    "<b" + fit(k, 126, 27, lk.poster) + ">" + esc(k) + "</b><small>" + S.P[k].e.length + " " + bigWord(k) + "</small></div>";
 }
 // Vignette « Titres » : champions actuels de la promotion ou du show
 export function titlesFor(k, n) {
@@ -394,7 +396,7 @@ export const artCard = a => ({ ty: "art", t: String(a.t || ""), s: [a.s, okDay(a
 // ---------- page d'un événement (avant : affiche, résumé, pronostic ; après : résultats sous spoiler, highlights) ----------
 function watchBtns(e) {
   const links = watchLinks(e), grp = [["Ce show directement", links.filter(x => x.direct)], ["En France", links.filter(x => x.fr && !x.direct)], ["Aux États-Unis", links.filter(x => x.us && !x.direct)], ["", links.filter(x => !x.fr && !x.us && !x.direct)]];
-  if (!links.length) return '<p class="note">Pas encore de lien de diffusion pour cet événement.</p>';
+  if (!links.length) return '<p class="note">Pas encore de lien de diffusion pour ce show.</p>';
   return grp.filter(g => g[1].length).map(g => (g[0] ? '<p class="evsub">' + g[0] + "</p>" : "") + g[1].map(x => '<a class="btn wide ghost evwatch" href="' + esc(x.u) + '" target="_blank" rel="noopener">' + ICON.play + " Regarder sur " + esc(x.n) + esc(epNote(e, x)) + " ↗</a>").join("")).join("") +
     (links.some(x => x.nf) && e.kind === "ep" ? '<p class="note small" style="margin-top:6px">Netflix ouvre la page de ' + esc(e.show) + " : choisis l’épisode du " + esc(fmt(e.d)) + " dans la liste.</p>" : "");
 }
@@ -420,7 +422,7 @@ export function evPageView(k, show, d, t) {
   } else if (!out && e.kind === "ple") h += "<h2>L’affiche</h2><p class=\"note\">Les matchs seront ajoutés dès qu’ils sont officiellement annoncés.</p>";
   // le résumé d'avant-show (sans spoiler)
   if (r) h += "<h2>Le résumé d’avant-show</h2><div class=\"evrecap\">" + faceRow(namesIn(r.txt), 40) + "<p>" + linkNames(r.txt) + "</p></div>" + (srcLine(r) ? '<div style="margin:0 16px">' + srcLine(r) + "</div>" : "");
-  else if (!out) h += '<h2>Le résumé d’avant-show</h2><p class="note">Il arrive avec la mise à jour du matin, dans les jours qui précèdent l’événement.</p>';
+  else if (!out) h += '<h2>Le résumé d’avant-show</h2><p class="note">Il arrive avec la mise à jour du matin, dans les jours qui précèdent le show.</p>';
   // après l'événement : résultats et segments sous spoiler, highlights
   if (out && okDay(e.d)) {
     const key = e.k + "|" + (e.show || "PLE") + "|" + e.d;
@@ -434,7 +436,7 @@ export function evPageView(k, show, d, t) {
     } else h += '<p class="note">Les résultats seront ajoutés lors de la prochaine mise à jour (vers 8 h 30).</p>';
     if (hl) h += '<div class="btns" style="justify-content:flex-start;margin:12px 16px 0"><a class="btn" href="' + hlHref(e.k, e.show || "PLE", e.d) + '">' + ICON.play + " Highlights et vidéos</a></div>";
   }
-  h += "<h2>Où regarder</h2>" + watchBtns(e) + '<a class="btn wide ghost evwatch" href="#/player/e/' + encodeURIComponent(e.k + "|" + (e.show || "PLE") + "|" + (e.d || "")) + '">▶ TCC Player (vidéos et archives)</a>' + linksHTML(evKey(e), { title: e.t + (e.d ? " du " + fmt(e.d) : ""), href: evHref(e), ask: out });
+  h += "<h2>Où regarder</h2>" + watchBtns(e) + '<a class="btn wide ghost evwatch" href="#/player/e/' + encodeURIComponent(e.k + "|" + (e.show || "PLE") + "|" + (e.d || "")) + '">▶ TCC Play (vidéos et archives)</a>' + linksHTML(evKey(e), { title: e.t + (e.d ? " du " + fmt(e.d) : ""), href: evHref(e), ask: out });
   if (okHttp(e.l)) h += '<p class="note small" style="margin-top:12px"><a class="linkbtn" style="padding:0" href="' + esc(e.l) + '" target="_blank" rel="noopener">Site officiel ↗</a></p>';
   return h;
 }
@@ -463,7 +465,9 @@ function xSection(hs) {
 
 // ---------- pages ----------
 // Accueil (refonte du 4 nov.) : 1. aujourd'hui / cette nuit  2. vient de sortir  3. programme de la semaine
-// 4. prochain grand événement + à venir  5. jouer avec la communauté  6. infos  7. explorer (promotions, TCC Player, matchs)  8. déjà sorti
+// 4. prochain grand événement + à venir  5. jouer avec la communauté  6. infos  7. explorer (promotions, TCC Play, matchs)  8. déjà sorti
+// le bon terme : PLE (Premium Live Event) pour la WWE et ce qu'elle possède (AAA), PPV pour les autres promotions
+export const bigWord = k => (k === "WWE" || PARENT[k] === "WWE" ? "PLE" : "PPV");
 function homeHead(t, sub) { return '<h2 class="hh">' + t + (sub ? "<small>" + sub + "</small>" : "") + "</h2>"; }
 export function homeView() {
   const P = S.P, sp = split(allPle());
@@ -481,25 +485,24 @@ export function homeView() {
   if (rest.length) h += homeHead("Le programme de la semaine", "Les prochains shows hebdo") + '<div class="row">' + rest.map(x => showCard(x.k, x.n, true, false)).join("") + "</div>";
   // 4. prochain grand événement puis la suite
   const up = sp[0].filter(e => e.d && !isOut(e) && diff(e.d) > 0), big = up.filter(e => e.kind === "ple")[0] || up[0];
-  if (big) h += homeHead("Prochain grand événement") + hero(big, esc(big.k));
+  if (big) h += homeHead("Prochain " + bigWord(big.k)) + hero(big, esc(big.k) + " · " + bigWord(big.k));
   const more = up.filter(e => e !== big);
-  if (more.length) h += homeHead("Les grands événements à venir") + '<div class="row">' + more.map(e => pleCard(e, true)).join("") + "</div>";
+  if (more.length) h += homeHead("Les PLE et PPV à venir", "PLE pour la WWE, PPV pour les autres promotions") + '<div class="row">' + more.map(e => pleCard(e, true)).join("") + "</div>";
   h += tournamentTile("");
-  // 5. jouer avec la communauté
-  const tiles = [storylineTile(), discoverTile(), pollTile(), pickTile()].filter(Boolean);
-  if (tiles.length) h += homeHead("Avec la communauté", "Storyline, pronostics, sondages") + '<div class="tiles2">' + tiles.join("") + "</div>";
-  // 6. infos
+  // les infos (la communauté est dans l'onglet Membres, Explorer et TCC Play dans Recherche)
   h += artSection("Dernières infos", articles([], 6));
-  h += '<div class="actsec">' + activitySection() + "</div>";
-  // 7. explorer
-  h += homeHead("Explorer") + '<div class="row">' + Object.keys(P).map(promoCard).join("") + "</div>";
-  h += '<a class="titletile" href="#/tournois"><span class="tt-belt">🏆</span><span class="tt-txt"><b>Tournois</b><small>G1 Climax, 5★STAR Grand Prix, tournois en cours</small></span><span class="chev">›</span></a>';
-  h += '<a class="matchtile ptile" href="#/player"><span class="mt-k">TCC Player</span><b>Archives et vidéos</b><small>Toutes les vidéos officielles par promotion et par année</small><span class="mt-go">Ouvrir ›</span></a>';
-  if (S.matches.length) h += matchTile();
   // 8. déjà sorti
   h += pastSection(out);
-  const side = favAside().replace("</aside>", S.user ? '<h2>Activité des membres</h2>' + activityList(12) + "</aside>" : "</aside>");
-  return '<div class="withside"><div class="mainc">' + h + "</div>" + side + "</div>";
+  return '<div class="withside"><div class="mainc">' + h + "</div>" + favAside() + "</div>";
+}
+// Explorer (onglet Recherche) : promotions, TCC Play, tournois, matchs à découvrir
+export function exploreHTML() {
+  let h = '<h2 class="hh">Explorer</h2><div class="row">' + Object.keys(S.P).filter(k => !PARENT[k]).map(promoCard).join("") + "</div>";
+  h += '<a class="matchtile ptile" href="#/player"><span class="mt-k">TCC Play</span><b>Archives et vidéos</b><small>Les shows par promotion et par date, les vidéos officielles</small><span class="mt-go">Ouvrir ›</span></a>';
+  h += '<a class="titletile" href="#/tournois"><span class="tt-belt">🏆</span><span class="tt-txt"><b>Tournois</b><small>G1 Climax, 5★STAR Grand Prix, tournois en cours</small></span><span class="chev">›</span></a>';
+  if (S.matches.length) h += matchTile();
+  if (S.isAdmin) h += '<div class="btns" style="margin:10px 16px"><button class="btn small" data-act="gnew">＋ Nouveau clan / équipe (modo)</button></div>';
+  return h;
 }
 export function promoView(k) {
   const pr = S.P[k]; if (!pr) return '<p class="empty">Promotion introuvable.</p>';
@@ -511,7 +514,7 @@ export function promoView(k) {
   if (first) h += hero(first, "PROCHAINEMENT · " + esc(k));
   if (pr.s) h += "<h2>Shows hebdo</h2>" + showRow(Object.keys(pr.s).map(n => ({ k: k, n: n })), false);
   h += tournamentTile(k) + titlesTile(k, "") + rosterTile(k, "");
-  h += "<h2>PLE à venir</h2>" + (ple[0].length ? epList(ple[0]) : '<p class="note">Aucun PLE annoncé pour l’instant.</p>');
+  h += "<h2>" + bigWord(k) + " à venir</h2>" + (ple[0].length ? epList(ple[0]) : '<p class="note">Aucun ' + bigWord(k) + " annoncé pour l’instant.</p>");
   if (ep[0].length) h += "<h2>Cette semaine</h2>" + epList(ep[0]);
   const past = split(ple[1].concat(ep[1]))[1];
   if (past.length) h += "<h2>Déjà passé</h2>" + epList(past);
@@ -559,7 +562,9 @@ export function tabsView(route) {
   const cur = route.name === "promo" ? hostOf(route.k) : "Accueil";
   const ORDER = ["WWE", "AEW", "TNA", "NJPW", "CMLL", "Stardom", "Marigold"];
   const top = Object.keys(S.P).filter(k => hostOf(k) === k).sort((a, b) => (ORDER.indexOf(a) + 1 || 99) - (ORDER.indexOf(b) + 1 || 99));
-  let h = '<nav class="tabs">' + ["Accueil"].concat(top).map(t => tab(t, t === "Accueil" ? "#/" : "#/p/" + encodeURIComponent(t), t === cur, t === "Accueil" ? "" : logoOf(t, ""))).join("") +
+  const tabsL = ["Accueil"].concat(top).map(t => tab(t, t === "Accueil" ? "#/" : "#/p/" + encodeURIComponent(t), t === cur, t === "Accueil" ? "" : logoOf(t, "")));
+  tabsL.splice(1, 0, '<a class="tab tplay" href="#/player" aria-label="TCC Play">▶ <b>TCC</b> Play</a>');
+  let h = '<nav class="tabs">' + tabsL.join("") +
     '<a class="tab' + (route.name === "autre" ? " on" : "") + '" href="#/autre">Autre</a></nav>';
   if (route.name === "promo" && S.P[cur]) {
     const kids = Object.keys(PARENT).filter(c => PARENT[c] === cur && S.P[c]), shows = Object.keys(S.P[cur].s || {});
@@ -586,5 +591,5 @@ export function autreView() {
   return '<section class="autre"><h1>Autres promotions</h1><p class="note">Bientôt disponible : d’autres promotions arrivent dans l’app.</p>' +
     "<h2>Les légendes : WWF · WCW · ECW</h2>" + '<div class="list">' + [["WWF", "La WWE avant 2002 : Attitude Era, Hulkamania…"], ["WCW", "World Championship Wrestling (1988–2001) : nWo, Monday Nitro…"], ["ECW", "Extreme Championship Wrestling (1992–2001) : le catch hardcore de Philadelphie"]]
     .map(x => '<a class="item" href="#/player/k/' + x[0] + '"><span class="lbl"><b>' + x[0] + "</b><small>" + x[1] + '</small></span><span class="chev">›</span></a>').join("") + "</div>" +
-    '<p class="note small" style="margin-top:10px">Leurs grands shows et matchs sont dans le TCC Player, rubrique Archives.</p></section>';
+    '<p class="note small" style="margin-top:10px">Leurs grands shows et matchs sont dans le TCC Play, rubrique Archives.</p></section>';
 }

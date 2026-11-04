@@ -79,9 +79,11 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   avant (`f`) parmi les versions (`v`) des photos des catcheurs (3 au plus : `slug-v2/-v3.webp`), ceintures, logos de shows,
   d'événements et de groupes ; ajouter une image (WebP fait dans le navigateur, envoyé avec la clé GitHub de l'admin) ;
   supprimer une version. Le robot `photos.mjs` connaît les versions (une photo déposée à la main passe en avant).
-- TCC Player (`js/views/player.js`, `#/player`, bouton ▶ en haut à côté des favoris) : vidéos officielles de l'app
-  (feed.yt, highlights, matches.json) par promotion et par année, page vidéo (lecteur YouTube nocookie, j'aime local,
-  commentaires `video-<id>`). Jamais d'archive.org ni de VK. Onglet « Autre » (`#/autre`, après Marigold) : WWF/WCW/ECW.
+- TCC Play (`js/views/player.js`, `#/player`, onglet rouge juste après l'onglet Accueil) : style Prime Video (onglets par
+  promotion puis par show, barre de recherche), shows rangés par année / mois / date + « Choisir une date »
+  (`#/player/e/K|show|date`) : le lien ⭐ par défaut du modo se lance dans le lecteur de l'app, sinon la 1re vidéo officielle ;
+  ⚙️ réglages modo (`#/player/reglages`). Vidéos officielles (feed.yt, highlights, matches.json), j'aime local, commentaires
+  `video-<id>`. Jamais d'archive.org ni de VK ajoutés par Claude. Onglet « Autre » (`#/autre`, après Marigold) : WWF/WCW/ECW.
 - « Vu en highlights » : entrée d'historique avec rating 0 et comment `"[HL]"` (pas de changement des règles Firestore) ;
   trophées highlights dans trophies.js (hl, hlx, hlp, hls). Badges « CETTE NUIT » (22 h–6 h Paris) / « AUJOURD’HUI ».
 - Babies du mois = tournoi à 8 (`js/views/babies.js`) : document Firestore `polls/bk-AAAA-MM` (type « bracket », 8 noms choisis
@@ -95,8 +97,16 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   « Je veux voir le show » et signalements de lien / photo / fiche / entrance → collection `reports` (cible `voir:…`, `lien:…`,
   `photo:Nom`, `catcheur:Nom`, `entrance:Nom`) ; à l'ajout du lien, notification aux membres qui l'avaient demandé.
 - Rubrique Tournoi (`js/views/tournois.js`, `#/tournois`, `#/tournois/g1`, `#/tournoi/<id>`) d'après `data/tournaments.json`.
-- Lecteur musical (`js/ytmusic.js`) : playlists YouTube du modo dans `data/media.json` (`pls`), bouton 🎵 en haut ; la
-  vidéo du lecteur reste toujours visible (règle YouTube).
+- Lecteur musical (`js/ytmusic.js`) : playlists YouTube du modo dans `data/media.json` (`pls`), bouton 🎵 en haut ; juste le
+  son (lecteur caché, demande de Jose), commandes dans un petit panneau sous 🎵.
+- Mode modification du modo : `S.realAdmin` = c'est le modo ; `S.isAdmin` = modo ET bouton ✏️ activé (`ctv.edit`). Sans le
+  bouton, le modo voit l'app comme un membre. Toujours tester avec `S.isAdmin` pour afficher une option de modification.
+- Accueil : aujourd'hui / cette nuit (6 h–18 h = aujourd'hui, 19 h–5 h = cette nuit), vient de sortir, programme, prochain PLE
+  (WWE) ou PPV (autres, `bigWord`), infos. Communauté (sondages, pronostics, storyline, activité) dans l'onglet Membres ;
+  Explorer, TCC Play, tournois et « à découvrir » dans l'onglet Recherche. « Draw » au lieu de « Match nul ».
+- Babies : sans choix du modo, 8 catcheuses tirées au hasard dans les rosters féminins (même tirage pour tout le mois).
+- Clans / équipes : le modo les ajoute, modifie, supprime depuis la fiche d'un groupe (data/groups.json via GitHub).
+- Vitrine : jusqu'à 5 trophées (`tro.v1`…`v5`). Appui long sur une note de son profil pour la modifier.
 - Mode TCCCG collant (profil, paramètres, trophées restent en noir et doré) ; réglage « À l'ouverture » (`ctv.start`, modo)
   et intro au logo TCCCG. NJPW Strong = promotion rangée sous NJPW (`PARENT`) ; un titre peut apparaître dans une autre
   promotion avec `also: ["NJPW"]` (IWGP Women's).

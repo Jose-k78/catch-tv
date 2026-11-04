@@ -173,7 +173,7 @@ export function settingsView(sub, x) {
       '<h2>Intro au démarrage</h2><div class="list">' + Object.keys(INTRO).map(k => '<button class="item" data-act="intromode" data-v="' + k + '"><span class="lbl"><b>' + INTRO[k][0] + "</b><small>" + INTRO[k][1] +
       '</small></span><span class="chev">' + (im === k ? "✓" : "") + "</span></button>").join("") + '</div><div class="btns" style="justify-content:flex-start;margin:10px 16px 0"><button class="btn ghost" data-act="introplay">▶ Revoir l’intro</button></div>' +
       '<p class="note small" style="margin-top:8px">Sur téléphone, le son de la cloche ne peut partir qu’après un appui sur l’écran : touche l’écran pendant l’intro pour l’entendre.</p>' +
-      (S.isAdmin ? (() => { const st = lsGet("ctv.start") === "tccg" ? "tccg" : "tv";
+      (S.realAdmin ? (() => { const st = lsGet("ctv.start") === "tccg" ? "tccg" : "tv";
         return '<h2>À l’ouverture de l’application</h2><div class="list">' + [["tv", "TCC TV", "L’app de catch (accueil, shows, infos)"], ["tccg", "TCCCG", "Le jeu de cartes, avec l’intro noir et doré"]].map(x => '<button class="item" data-act="startmode" data-v="' + x[0] + '"><span class="lbl"><b>' + x[1] + "</b><small>" + x[2] + '</small></span><span class="chev">' + (st === x[0] ? "✓" : "") + "</span></button>").join("") + "</div>"; })() : "");
   }
   const row = (href, t, s) => '<a class="item" href="' + href + '"><span class="lbl"><b>' + t + "</b><small>" + esc(s) + '</small></span><span class="chev">›</span></a>';
@@ -344,7 +344,7 @@ export function profileView(uid) {
   h += "<h2>Historique des notes" + (all.length ? ' <small class="cnt">' + all.length + "</small>" : "") + "</h2>";
   h += all.length ? '<div class="list histlist">' + all.map((x, i) => {
     const fight = isMatchNote(x);
-    return '<div class="item' + (fight ? " fightnote" : "") + '"' + (i >= HIST_MAX && !histOpen ? " hidden" : "") + '><span class="lbl"><b>' + noteTitle(x, (fight ? "🤼 " : "") + esc(x.title)) + "</b><small>" + esc(x.k) +
+    return '<div class="item' + (fight ? " fightnote" : "") + '"' + (me ? ' data-noteid="' + esc(x.id) + '"' : "") + (i >= HIST_MAX && !histOpen ? " hidden" : "") + '><span class="lbl"><b>' + noteTitle(x, (fight ? "🤼 " : "") + esc(x.title)) + "</b><small>" + esc(x.k) +
       (fight ? (x.show ? " · " + esc(x.show) : "") : x.show ? " · " + esc(x.show) : " · PLE") + (x.d ? " · " + fmt(x.d) : "") + "</small>" + (x.comment === "[HL]" ? '<small class="hltag">🎬 Vu en highlights</small>' : x.comment ? '<q class="mycom">' + esc(x.comment) + "</q>" : "") +
       (fight ? matchNoteLinks(x) : "") + (S.user && (x.rating || (x.comment && x.comment !== "[HL]")) ? '<a class="arep small" href="#/activite/' + encodeURIComponent(uid + "_r_" + x.id) + '">💬 Réactions et réponses</a>' : "") + '</span><span class="rt">' + (x.rating ? stars(x.rating) : fight ? "Pas noté" : "Pas noté") + "<br>" + (fight || isStoryNote(x) ? "noté le " : "vu le ") + fmtMs(x.seenAt) +
       (me ? '<br><button class="noteed" data-act="noteedit" data-id="' + esc(x.id) + '" aria-label="Modifier ou supprimer">✏️ Modifier</button>' : "") + "</span></div>";

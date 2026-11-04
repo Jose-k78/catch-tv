@@ -59,12 +59,13 @@ function scoreOf(p, e, res) {
   lines(e).forEach(m => {
     const mine = p.p && p.p[m.id], w = res[m.id];
     if (mine == null || w == null) return;
-    n++; if (w === "draw" ? mine === DRAW : norm(m.sides[w]) === norm(mine)) ok++;
+    n++; if (w === "draw" ? isDraw(mine) : norm(m.sides[w]) === norm(mine)) ok++;
   });
   return { ok: ok, n: n };
 }
 
-export const DRAW = "Match nul";
+export const DRAW = "Draw";
+const isDraw = v => v === DRAW || v === "Match nul";
 // ---------- page d'un PLE ----------
 export function pickView(k, d) {
   const e = evOf(k, d);
@@ -84,9 +85,9 @@ export function pickView(k, d) {
       return '<button class="pk' + (on ? " on" : "") + st + '"' + (lk || !S.user ? " disabled" : ' data-act="pickside" data-k="' + esc(k) + '" data-d="' + esc(d) + '" data-m="' + m.id + '" data-s="' + esc(s) + '"') + ">" +
         "<b>" + esc(s) + "</b>" + (showPct && tot ? "<small>" + Math.round(n * 100 / tot) + " %</small>" : "") + (w === i ? "<em>🏆</em>" : "") + (on && w != null ? "<em>" + (w === i ? "✅" : "❌") + "</em>" : "") + "</button>";
     }).join("") + "</div>" + (m.sides.length === 2 ? (() => {
-      const on = my === DRAW, n = all.filter(p => p.p && p.p[m.id] === DRAW).length;
-      return '<button class="pk pdraw' + (on ? " on" : "") + (w == null ? "" : w === "draw" ? " won" : " lost") + '"' + (lk || !S.user ? " disabled" : ' data-act="pickside" data-k="' + esc(k) + '" data-d="' + esc(d) + '" data-m="' + m.id + '" data-s="' + DRAW + '"') + "><b>🤝 Match nul</b>" + (showPct && tot ? "<small>" + Math.round(n * 100 / tot) + " %</small>" : "") + (on && w != null ? "<em>" + (w === "draw" ? "✅" : "❌") + "</em>" : "") + "</button>";
-    })() : "") + (w === "draw" ? '<small class="note small">Match nul</small>' : "") + "</div>";
+      const on = isDraw(my), n = all.filter(p => p.p && isDraw(p.p[m.id])).length;
+      return '<button class="pk pdraw' + (on ? " on" : "") + (w == null ? "" : w === "draw" ? " won" : " lost") + '"' + (lk || !S.user ? " disabled" : ' data-act="pickside" data-k="' + esc(k) + '" data-d="' + esc(d) + '" data-m="' + m.id + '" data-s="' + DRAW + '"') + "><b>🤝 Draw</b>" + (showPct && tot ? "<small>" + Math.round(n * 100 / tot) + " %</small>" : "") + (on && w != null ? "<em>" + (w === "draw" ? "✅" : "❌") + "</em>" : "") + "</button>";
+    })() : "") + (w === "draw" ? '<small class="note small">Draw</small>' : "") + "</div>";
   }).join("") + "</div>";
   const other = (e.card || []).filter(l => !sidesOf(l));
   if (other.length) h += '<p class="note small">Aussi au programme : ' + other.map(linkNames).join(" · ") + "</p>";
@@ -162,7 +163,7 @@ export function perfectCards(uid) {
     const ls = lines(e); if (ls.length < 2 || !locked(e)) return;
     const p = (S.picks || []).find(x => x.uid === uid && x.k === e.k && x.d === e.d); if (!p || !p.p) return;
     const res = results(e); if (Object.keys(res).length < ls.length) return;
-    if (ls.every(m => p.p[m.id] && (res[m.id] === "draw" ? p.p[m.id] === DRAW : norm(m.sides[res[m.id]]) === norm(p.p[m.id])))) n++;
+    if (ls.every(m => p.p[m.id] && (res[m.id] === "draw" ? isDraw(p.p[m.id]) : norm(m.sides[res[m.id]]) === norm(p.p[m.id])))) n++;
   });
   return n;
 }

@@ -1321,17 +1321,15 @@ html.introon #intro.tg,html.introon.tgstart #intro{background:radial-gradient(12
 .vstitle i{font-style:normal;color:#e50914}
 .prow.pcol{flex-wrap:wrap}
 .conv-item,[data-lp]{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
-/* lecteur musical (playlists YouTube) */
-.ytm{position:fixed;right:10px;bottom:calc(70px + env(safe-area-inset-bottom));z-index:900;width:220px;background:#111;color:#fff;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.45);overflow:hidden}
-.ytmvid{width:200px;height:113px;margin:10px auto 0;border-radius:8px;overflow:hidden;background:#000}
-.ytmvid iframe{width:200px;height:113px;border:0;display:block}
-.ytmbar{padding:6px 8px 8px}
-.ytmt{display:block;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:4px}
-.ytmctl{display:flex;align-items:center;gap:4px}
-.ytmctl button{background:none;border:0;color:#fff;font-size:16px;cursor:pointer;padding:2px 4px}
+/* lecteur musical (playlists YouTube) : juste le son, commandes sous le bouton 🎵 du haut */
+.ytmhide{position:fixed;left:-9999px;top:0;width:200px;height:113px;overflow:hidden;opacity:0;pointer-events:none}
+.ytmpanel{position:fixed;top:calc(56px + env(safe-area-inset-top));right:10px;z-index:950;width:250px;background:var(--card,#16161c);color:var(--text,#fff);border:1px solid var(--line);border-radius:14px;padding:10px 12px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.ytmt{display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:6px}
+.ytmctl{display:flex;align-items:center;gap:6px}
+.ytmctl button{background:none;border:0;color:inherit;font-size:20px;cursor:pointer;padding:2px 4px}
 .ytmctl input{flex:1;min-width:0;accent-color:#e50914}
-/* réduit : la vidéo reste visible (règle YouTube), seuls le titre et le volume se cachent */
-.ytm.min .ytmt,.ytm.min #ytmvol{display:none}
+.ytmrow{display:flex;align-items:center;gap:8px;margin-top:6px;font-size:12px}
+.ytmrow select{flex:1;min-width:0;background:transparent;color:inherit;border:1px solid var(--line);border-radius:8px;padding:4px}
 .musicbtn.on{background:rgba(229,9,20,.15)}
 /* tournois */
 .tnhead{margin:4px 16px 8px;display:flex;flex-direction:column;gap:4px}
@@ -1346,3 +1344,27 @@ html.introon #intro.tg,html.introon.tgstart #intro{background:radial-gradient(12
 .tnanec{margin:4px 16px 0 34px}
 .tnanec li{margin-bottom:6px}
 .tntile .tt-belt{background:linear-gradient(135deg,#f5c518,#b8860b);color:#fff}
+/* mode modification du modo */
+.editbtn.on{background:#f5c518;color:#111}
+body.editing header.top{box-shadow:inset 0 -3px 0 #f5c518}
+.tabs .tab.tplay{background:var(--red);border-color:var(--red);color:#fff;font-weight:700;gap:4px;min-width:96px}
+.tnrow .tncard{flex:0 0 200px;height:130px;border-radius:12px;padding:10px;color:#fff;text-decoration:none;display:flex;flex-direction:column;justify-content:flex-end;gap:2px;position:relative;overflow:hidden}
+.tncard img{position:absolute;top:8px;right:8px;max-width:90px;max-height:46px;object-fit:contain;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))}
+.tncard .tnst{position:absolute;top:8px;left:8px}
+.tncard b{font-size:15px;line-height:1.15}
+.tncard small{opacity:.85;font-size:11px}
+[data-noteid]{-webkit-touch-callout:none;user-select:none}
+/* TCC Play : cartes des shows à une date, onglets, recherche, choix de date */
+.prow .pev,.pev{flex:0 0 132px;width:132px;height:92px;box-sizing:border-box;border-radius:10px;padding:8px;background:var(--card,#1a1a22);border:1px solid var(--line);color:inherit;text-decoration:none;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.pev img{position:absolute;top:8px;left:8px;max-width:70px;max-height:30px;object-fit:contain}
+.pev b{font-size:13px;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pev small{font-size:11px;opacity:.7}
+.pev .pok{position:absolute;top:6px;right:8px;font-style:normal;color:#e50914}
+.ptabs{padding-top:4px}
+.psearch input{width:100%;box-sizing:border-box;margin-top:10px;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.08);color:inherit;font:inherit}
+.pdate{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 16px;padding:10px 12px;border-radius:12px;border:1px solid var(--line)}
+.pdate b{flex-basis:100%;font-size:14px}
+.pdate select,.pdate input[type=date]{padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:transparent;color:inherit;font:inherit}
+.psets{margin:10px 16px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.psets a{color:inherit;text-decoration:none}
+.mldef.on{color:#f5c518}
