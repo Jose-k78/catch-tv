@@ -1,5 +1,5 @@
 {
- "at": "2026-11-04T07:04:42.519Z",
+ "at": "2026-11-04T08:19:37.021Z",
  "items": [
   {
    "t": "Spoilers de WWE SmackDown du 6 novembre 2026",
@@ -21,6 +21,26 @@
    ]
   },
   {
+   "t": "19 catcheurs de NXT ont été call-up ces 12 derniers mois",
+   "u": "https://www.catch-newz.com/wwe/newz/60978-19-catcheurs-de-nxt-ont-ete-call-up-ces-12-derniers-mois",
+   "s": "Catch-Newz",
+   "d": "2026-11-04",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
+   "t": "Royce Keys : « Ce soir à NXT, personne n'est à l'abri »",
+   "u": "https://www.catch-newz.com/wwe/newz/60977-royce-keys-ce-soir-a-nxt-personne-nest-a-labri",
+   "s": "Catch-Newz",
+   "d": "2026-11-04",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
    "t": "La WWE annonce un second show à Disney World le 15 décembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/60957-la-wwe-annonce-un-second-show-a-disney-world-le-15-decembre-2026",
    "s": "Catch-Newz",
@@ -28,6 +48,13 @@
    "tags": [
     "WWE"
    ]
+  },
+  {
+   "t": "Résultats de Indy Wrestling Domingos Familiares Noche De Muertos",
+   "u": "https://www.catch-newz.com/international/resultats/60971-resultats-de-indy-wrestling-domingos-familiares-noche-de-muertos",
+   "s": "Catch-Newz",
+   "d": "2026-11-04",
+   "tags": []
   },
   {
    "t": "Résultats de OTT NewEnd",
@@ -496,33 +523,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-02",
    "tags": []
-  },
-  {
-   "t": "Cody Rhodes : « Bianca Belair est peut-être la plus grande athlète que la WWE ait jamais connue »",
-   "u": "https://www.catch-newz.com/wwe/newz/60919-cody-rhodes-bianca-belair-est-peut-etre-la-plus-grande-athlete-que-la-wwe-ait-jamais-connue",
-   "s": "Catch-Newz",
-   "d": "2026-11-02",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Danhausen remercie chaleureusement les fans qui se sont déguisés en lui pour Halloween",
-   "u": "https://www.catch-newz.com/wwe/newz/60917-danhausen-remercie-chaleureusement-les-fans-qui-se-sont-deguises-en-lui-pour-halloween",
-   "s": "Catch-Newz",
-   "d": "2026-11-02",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Santino Marella donne son avis sur le clan BirthRight",
-   "u": "https://www.catch-newz.com/wwe/newz/60916-santino-marella-donne-son-avis-sur-le-clan-birthright",
-   "s": "Catch-Newz",
-   "d": "2026-11-02",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -758,10 +758,13 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60942-the-champ-ajoute-des-precisions-au-sujet-du-john-cena-classic-qui-aura-lieu-le-14-decembre-2026",
+   "https://www.catch-newz.com/wwe/newz/60978-19-catcheurs-de-nxt-ont-ete-call-up-ces-12-derniers-mois",
+   "https://www.catch-newz.com/wwe/newz/60977-royce-keys-ce-soir-a-nxt-personne-nest-a-labri",
    "https://www.catch-newz.com/international/resultats/60966-resultats-bzw-scary-banger-31-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60958-pourquoi-il-ny-a-pas-de-show-de-wwe-nxt-le-3-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60957-la-wwe-annonce-un-second-show-a-disney-world-le-15-decembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60909-resultats-de-wwe-main-event28-octobre-2026",
+   "https://www.catch-newz.com/international/resultats/60971-resultats-de-indy-wrestling-domingos-familiares-noche-de-muertos",
    "https://www.catch-newz.com/international/resultats/60974-resultats-de-sendai-girls-pro-wrestling-du-1er-novembre-2026",
    "https://www.catch-newz.com/international/resultats/60976-resultats-de-ott-newend",
    "https://www.catch-newz.com/international/resultats/60975-resultats-de-hop-october-onslaught-tour-2026",
@@ -961,7 +964,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 10 nouveaux articles lus sur la page d'accueil (10 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
