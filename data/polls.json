@@ -1,6 +1,45 @@
 {
-  "updated": "2026-10-30",
+  "updated": "2026-11-04",
   "items": [
+    {
+      "id": "p-20261104-cj-liv-chelsea",
+      "d": "2026-11-04",
+      "type": "",
+      "k": "WWE",
+      "q": "Crown Jewel : Liv Morgan contre Chelsea Green, qui gagne ?",
+      "opts": [
+        "Liv Morgan",
+        "Chelsea Green"
+      ],
+      "other": false,
+      "end": "2026-11-07"
+    },
+    {
+      "id": "p-20261104-cena-classic",
+      "d": "2026-11-04",
+      "type": "",
+      "k": "WWE",
+      "q": "Qui va remporter le John Cena Classic ?",
+      "opts": [
+        "CM Punk",
+        "Oba Femi"
+      ],
+      "other": true,
+      "end": "2026-12-14"
+    },
+    {
+      "id": "p-20261104-babies",
+      "d": "2026-11-04",
+      "type": "babies",
+      "k": "",
+      "q": "Qui est la meilleure babies entre Rhea Ripley et Mayu Iwatani ?",
+      "opts": [
+        "Rhea Ripley",
+        "Mayu Iwatani"
+      ],
+      "other": false,
+      "end": "2026-11-06"
+    },
     {
       "id": "p-20261030-havoc-nxt",
       "d": "2026-10-30",
