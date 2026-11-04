@@ -21,5 +21,11 @@
   "vol": 0.05,
   "at": "2026-10-29",
   "orig": "media/music-mvu06f0x.mp3"
- }
+ },
+ "pls": [
+  {
+   "id": "PLEGP5LjXgLJ8swsKsk8xgZdCQjq5kKFNS",
+   "n": "Playlist"
+  }
+ ]
 }
