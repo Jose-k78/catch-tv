@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T08:45:55.261Z",
+ "updated": "2026-11-04T08:57:59.329Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "m:statlight kid vs suzu suzuki": [
@@ -22,6 +22,11 @@
     "u": "https://archive.org/embed/njpw-power-struggle-super-junior-tag-league-2026-03-11-26?autoplay=1",
     "at": "2026-11-04",
     "def": true
+   },
+   {
+    "t": "",
+    "u": "https://www.dailymotion.com/embed/video/xbsd5yi?autoplay=1&mute=1",
+    "at": "2026-11-04"
    }
   ]
  }
