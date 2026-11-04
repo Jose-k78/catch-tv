@@ -343,6 +343,114 @@
    ],
    "s": "Wrestling Inc.",
    "u": "https://www.wrestlinginc.com/2302585/wwe-smackdown-october-30-2026-results/"
+  },
+  "WWE|Raw|2026-11-02": {
+   "res": [
+    "Ethan Page a battu Chad Gable et remporte le titre Intercontinental.",
+    "Liv Morgan, Raquel Rodriguez et Roxanne Perez ont battu Chelsea Green, IYO SKY et Tiffany Stratton.",
+    "Bronson Reed, Austin Theory et Bron Breakker ont battu Penta, Je’Von Evans et Dragon Lee.",
+    "Solo Sikoa a battu Royce Keys par disqualification."
+   ],
+   "seg": [
+    {
+     "k": "Face-à-face",
+     "t": "Roman Reigns ouvre le show, Sami Zayn l’interrompt : échange d’insultes, Reigns promet de faire reconnaître Zayn à Crown Jewel."
+    },
+    {
+     "k": "Promo",
+     "t": "Joe Hendry promet de remonter tout en haut."
+    },
+    {
+     "k": "Annonce",
+     "t": "John Cena annonce le John Cena Classic au Raw spécial du 14 décembre à Disney World, avec Cody Rhodes comme premier participant."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Randy Orton interrompt Cody Rhodes et menace de mettre fin à sa carrière comme il l’avait fait avec Dusty Rhodes."
+    },
+    {
+     "k": "Attaque",
+     "t": "Bayley dit à Adam Pearce ne pas respecter Jade Cargill, Michin et B-Fab, qui l’attaquent ensuite en coulisses."
+    },
+    {
+     "k": "Débuts",
+     "t": "Après le main event, bagarre entre The 946 et The Bloodline : un homme encapuchonné, Cruz Montana, stoppe Roman Reigns d’un lariat et rejoint The 946."
+    },
+    {
+     "k": "Attaque",
+     "t": "Sami Zayn achève la soirée en frappant Roman Reigns d’un Helluva Kick."
+    }
+   ],
+   "s": "Fightful",
+   "u": "https://www.fightful.com/wrestling/wwe-raw-results-11-2-2026-solo-sikoa-vs-royce-keys-john-cena-roman-reigns-more/"
+  },
+  "NJPW|PLE|2026-11-03": {
+   "res": [
+    "Aaron Wolf, Master Wato et KUUKAI ont battu Francesco Akira, Jakob Austin Young et Zane Jay.",
+    "Mistico, KUSHIDA et Masatora Yasuda ont battu Titan, Gedo et Daiki Nagai.",
+    "Ryohei Oiwa et Hartley Jackson ont battu Lee Johnson et Blake Christian.",
+    "Yuya Uemura, Toru Yano, Ryusuke Taguchi et Kazuma Sumi ont battu Ren Narita, Shun Skywalker, DOUKI et Yoshinobu Kanemaru.",
+    "YOH, Hyo et Shota Umino ont battu SHO, Dick Togo et Yujiro Takahashi.",
+    "Shingo Takagi et Jeff Cobb ont battu Jon Moxley et Wheeler Yuta.",
+    "Yuto-Ice et OSKAR ont battu Callum Newman et Will Ospreay par disqualification et conservent le titre IWGP par équipe.",
+    "Kenny Omega a battu Yota Tsuji et Boltin Oleg.",
+    "Taiji Ishimori et Robbie X ont battu Robbie Eagles et Kosei Fujita en finale de la Super Jr. Tag League.",
+    "Gabe Kidd a battu Taichi et conserve le titre IWGP Global."
+   ],
+   "m": [
+    {
+     "t": "Aaron Wolf, Master Wato et KUUKAI contre United Empire",
+     "r": "Aaron Wolf, Master Wato et KUUKAI l’emportent."
+    },
+    {
+     "t": "Mistico, KUSHIDA et Masatora Yasuda contre Unbound Co.",
+     "r": "Mistico, KUSHIDA et Masatora Yasuda l’emportent."
+    },
+    {
+     "t": "TMDK (Ryohei Oiwa et Hartley Jackson) contre The Swirl",
+     "r": "TMDK gagne ; MJF défie ensuite Oiwa en vidéo pour Wrestle Kingdom 21, défi accepté."
+    },
+    {
+     "t": "Uemura, Yano, Taguchi et Sumi contre HOUSE OF TORTURE",
+     "r": "Yuya Uemura, Toru Yano, Ryusuke Taguchi et Kazuma Sumi l’emportent."
+    },
+    {
+     "t": "YOH, Hyo et Shota Umino contre HOUSE OF TORTURE",
+     "r": "Victoire de YOH, Hyo et Umino ; SHO, démasqué, défie YOH pour le titre IWGP Junior à Wrestle Kingdom, avec départ de NJPW ou retour de Roppongi 3K en jeu."
+    },
+    {
+     "t": "Shingo Takagi et Jeff Cobb contre Jon Moxley et Wheeler Yuta",
+     "r": "Takagi et Cobb gagnent ; Takagi défie Moxley pour Wrestle Kingdom 21."
+    },
+    {
+     "t": "Titres IWGP par équipe : Knockout Bros. contre Callum Newman et Will Ospreay",
+     "r": "Les Knockout Bros. conservent les titres par disqualification ; Newman se retourne contre Ospreay et le défie pour Wrestle Kingdom 21."
+    },
+    {
+     "t": "Kenny Omega contre Yota Tsuji contre Boltin Oleg",
+     "r": "Kenny Omega gagne et donne rendez-vous à Tsuji au Tokyo Dome."
+    },
+    {
+     "t": "Finale de la Super Jr. Tag League : Taiji Ishimori et Robbie X contre Robbie Eagles et Kosei Fujita",
+     "r": "Ishimori et Robbie X remportent le tournoi ; les titres IWGP Junior par équipe sont déclarés vacants (blessure d’El Desperado)."
+    },
+    {
+     "t": "Titre IWGP Global : Gabe Kidd contre Taichi",
+     "r": "Gabe Kidd conserve le titre ; il attaque ensuite Hiroshi Tanahashi, et Jon Moxley se joint à lui pour semer le chaos."
+    }
+   ],
+   "seg": [
+    {
+     "k": "Annonce",
+     "t": "Mistico annonce que les titres IWGP Junior par équipe sont vacants à cause de la blessure d’El Desperado ; Ishimori propose un match à trois pour les nouveaux champions."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après le main event, Gabe Kidd frappe Tanahashi d’un piledriver ; Uemura et Takagi interviennent, mais Kidd et Moxley les mettent au sol et donnent rendez-vous au Tokyo Dome."
+    }
+   ],
+   "s": "Fightful",
+   "u": "https://www.fightful.com/wrestling/njpw-power-struggle-results-11-3-kenny-omega-yota-tsuji-jon-moxley-compete/"
   }
  }
 }
