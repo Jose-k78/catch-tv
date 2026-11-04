@@ -1,5 +1,5 @@
 {
- "at": "2026-11-04T09:27:48.160Z",
+ "at": "2026-11-04T10:38:08.544Z",
  "items": [
   {
    "t": "Spoilers de WWE SmackDown du 6 novembre 2026",
@@ -21,8 +21,8 @@
    ]
   },
   {
-   "t": "Chad Gable : « Si j'affronte Roman Reigns, je serais un vrai dur à cuire »",
-   "u": "https://www.catch-newz.com/wwe/newz/60979-chad-gable-si-jaffronte-roman-reigns-je-serais-un-vrai-dur-a-cuire",
+   "t": "La WWE annonce un second show à Disney World le 15 décembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/60957-la-wwe-annonce-un-second-show-a-disney-world-le-15-decembre-2026",
    "s": "Catch-Newz",
    "d": "2026-11-04",
    "tags": [
@@ -30,8 +30,15 @@
    ]
   },
   {
-   "t": "La WWE annonce un second show à Disney World le 15 décembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/60957-la-wwe-annonce-un-second-show-a-disney-world-le-15-decembre-2026",
+   "t": "Résultats du jour 8 de DG The Gate Of Victory 2026 Partie 1",
+   "u": "https://www.catch-newz.com/international/resultats/60973-resultats-du-jour-8-de-dg-the-gate-of-victory-2026-partie-1",
+   "s": "Catch-Newz",
+   "d": "2026-11-04",
+   "tags": []
+  },
+  {
+   "t": "Chad Gable : « Si j'affronte Roman Reigns, je serais un vrai dur à cuire »",
+   "u": "https://www.catch-newz.com/wwe/newz/60979-chad-gable-si-jaffronte-roman-reigns-je-serais-un-vrai-dur-a-cuire",
    "s": "Catch-Newz",
    "d": "2026-11-04",
    "tags": [
@@ -516,15 +523,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-02",
    "tags": []
-  },
-  {
-   "t": "Sami Zayn : « Je ne pense pas qu’il soit absurde de dire que j’aurais dû gagner »",
-   "u": "https://www.catch-newz.com/wwe/newz/60920-sami-zayn-je-ne-pense-pas-quil-soit-absurde-de-dire-que-jaurais-du-gagner",
-   "s": "Catch-Newz",
-   "d": "2026-11-02",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -760,11 +758,12 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60942-the-champ-ajoute-des-precisions-au-sujet-du-john-cena-classic-qui-aura-lieu-le-14-decembre-2026",
-   "https://www.catch-newz.com/wwe/newz/60979-chad-gable-si-jaffronte-roman-reigns-je-serais-un-vrai-dur-a-cuire",
    "https://www.catch-newz.com/international/resultats/60966-resultats-bzw-scary-banger-31-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60958-pourquoi-il-ny-a-pas-de-show-de-wwe-nxt-le-3-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60957-la-wwe-annonce-un-second-show-a-disney-world-le-15-decembre-2026",
+   "https://www.catch-newz.com/international/resultats/60973-resultats-du-jour-8-de-dg-the-gate-of-victory-2026-partie-1",
    "https://www.catch-newz.com/international/resultats/60974-resultats-de-sendai-girls-pro-wrestling-du-1er-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/60979-chad-gable-si-jaffronte-roman-reigns-je-serais-un-vrai-dur-a-cuire",
    "https://www.catch-newz.com/wwe/newz/60978-19-catcheurs-de-nxt-ont-ete-call-up-ces-12-derniers-mois",
    "https://www.catch-newz.com/wwe/newz/60977-royce-keys-ce-soir-a-nxt-personne-nest-a-labri",
    "https://www.catch-newz.com/wwe/resultats/60909-resultats-de-wwe-main-event28-octobre-2026",
