@@ -246,3 +246,7 @@ export async function addAnnonce(uid, a) { const id = uidGen(); DB.annonces[id] 
 export async function deleteAnnonce(id) { delete DB.annonces[id]; save(); }
 export function watchHof(cb) { return watch(() => cb(clone((DB.hof.babies || {}).months || {}))); }
 export async function setHofMonth(month, rec) { DB.hof.babies = DB.hof.babies || { months: {} }; DB.hof.babies.months[month] = rec; save(); }
+
+// ---- TCCCG ----
+export function watchTcg(uid, cb) { return watch(() => cb(DB.tcg && DB.tcg[uid] ? clone(DB.tcg[uid]) : null)); }
+export async function saveTcg(uid, d) { DB.tcg = DB.tcg || {}; DB.tcg[uid] = Object.assign({}, clone(d), { at: Date.now() }); save(); }

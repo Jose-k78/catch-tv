@@ -189,6 +189,7 @@ export function settingsView(sub, x) {
   if (!ADMIN_UID || S.isAdmin) {
     if (S.isAdmin) h += '<h2>Modération</h2><div class="list">' + row("#/parametres/annonces", "📣 Faire une annonce", annList().length ? "Dernière : " + annList()[0].t : "Notification à tous les membres") +
       row("#/parametres/patchnotes-modo", "📝 Patch notes · modération", "Ce que peut faire le modérateur · écrire une note") +
+      row("#/tccg/modo", "🃏 TCCCG (jeu de cartes)", "Cartes, raretés, stats, buff / nerf, taux, objets, boosters, combats, musiques, assets") +
       row("#/parametres/apparence-modo", "🎨 Apparence de l’app", "Images, logos des onglets, fonds animés, musique : tout au même endroit") +
       row("#/parametres/signalements", "Signalements", S.reports.length ? S.reports.length + " en attente" : "Aucun") +
       row("#/idees", "Idées des membres", (S.ideas || []).length ? (S.ideas || []).filter(i => !i.st).length + " sans réponse · " + S.ideas.length + " au total" : "Voir les idées proposées") +

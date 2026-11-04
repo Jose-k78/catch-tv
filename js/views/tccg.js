@@ -3,7 +3,11 @@
 // En haut : le profil (comme TCC TV) et le logo TCC TV pour revenir à l'app de base.
 import { S, avatar } from "../state.js";
 import { esc } from "../util.js";
-import { callUpView, rosterTcgView } from "./gacha.js";
+import { callUpView } from "../tcg/callup.js";
+import { rosterView } from "../tcg/roster.js";
+import { fightsView, prepView, combatView } from "../tcg/fight.js";
+import { tccgHome, shopView } from "../tcg/home.js";
+import { modoView } from "../tcg/modo.js";
 
 const sv = p => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + p + "</svg>";
 export const TICON = {
@@ -28,10 +32,17 @@ const PAGES = {
   echange: ["Échange", "Échange tes cartes en double avec les autres membres."],
   shop: ["Shop", "Les paquets et les cartes spéciales."]
 };
-export function tccgView(tab) {
+export function tccgView(tab, sub) {
   if (!S.realAdmin) return '<section class="tccgsoon"><div class="tcards">' + TICON.cards + '</div><h1>TCCCG</h1><p>Le jeu de cartes de TCC TV arrive bientôt. Reste connecté !</p><a class="btn" href="#/">Retour à TCC TV</a></section>';
-  if (tab === "callup") return '<section class="tccgwrap">' + callUpView() + "</section>";
-  if (tab === "roster") return '<section class="tccgwrap">' + rosterTcgView() + "</section>";
+  const W = x => '<section class="tccgwrap">' + x + "</section>";
+  if (tab === "") return W(tccgHome());
+  if (tab === "callup") return W(callUpView());
+  if (tab === "roster") return W(rosterView(sub));
+  if (tab === "shop") return W(shopView());
+  if (tab === "combats") return W(fightsView());
+  if (tab === "combat-prep") return W(prepView());
+  if (tab === "combat") return W(combatView());
+  if (tab === "modo") return W(modoView());
   const p = PAGES[tab] || PAGES[""];
   return '<section class="tccgpage"><span class="tbadge">🚧 EN CHANTIER</span><div class="tcards">' + TICON[(TNAV.find(x => x[0] === tab) || TNAV[0])[2]] + "</div><h1>" + esc(p[0]) + "</h1><p>" + esc(p[1]) + "</p>" +
     '<div class="tslots">' + [1, 2, 3].map(() => '<div class="tslot"><span>?</span></div>').join("") + "</div>" +

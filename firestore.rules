@@ -1,6 +1,7 @@
 rules_version = '2';
 
-// Règles de sécurité TCC TV (version 8 : cartes partagées dans le chat, notifications sur le téléphone, annonces du modérateur).
+// Règles de sécurité TCC TV (version 9 : partie TCCCG de chaque joueur).
+// (version 8 : cartes partagées dans le chat, notifications sur le téléphone, annonces du modérateur).
 // (version 7 : trophées, Slammy, bannière du profil, images des fiches catcheurs, Babies du mois)
 // (version 6 : sondages, pronostics, réactions et réponses, idées ; version 5 : réglages des discussions, notes des combats ; version 4 : suppression du compte ;
 //  version 3 : commentaires, likes, notifications, activité, images et GIFs dans le chat)
@@ -366,6 +367,17 @@ service cloud.firestore {
         && (!('promos' in request.resource.data) || (request.resource.data.promos is list && request.resource.data.promos.size() <= 20))
         && (!('quiet' in request.resource.data) || request.resource.data.quiet is bool)
         && (!('at' in request.resource.data) || request.resource.data.at is number);
+    }
+
+    // ---------- TCCCG : la partie de chaque joueur (cartes, ressources, niveau), modifiable par lui seul ----------
+    match /tcg/{uid} {
+      allow read: if signedIn();
+      allow create, update: if isMe(uid)
+        && request.resource.data.keys().hasOnly(['v','lvl','xp','res','items','medals','cards','free','tuto','cool','opened','wins','fav','mis','mday','at'])
+        && request.resource.data.cards is map && request.resource.data.cards.size() <= 3000
+        && request.resource.data.lvl is int && request.resource.data.lvl >= 1 && request.resource.data.lvl <= 50
+        && request.resource.data.at == request.time;
+      allow delete: if isMe(uid) || isAdmin();
     }
 
     // ---------- Annonces du modérateur : tout le monde les lit, seul l'admin les publie ----------

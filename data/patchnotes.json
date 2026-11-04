@@ -2,6 +2,19 @@
  "updated": "2026-10-30",
  "items": [
   {
+   "id": "2026-11-04-tcccg",
+   "d": "2026-11-04",
+   "t": "TCCCG : le jeu de cartes (modo)",
+   "mod": true,
+   "txt": [
+    "🃏 Nouvelles cartes du cahier des charges : 5 stats, archétype, finisher, faction, face/heel, TCCCG au dos.",
+    "🎁 Départ à zéro, booster N/R gratuit chaque jour, un booster par show de la semaine (cartes « version show » 2 jours après), Mega booster de 15 cartes.",
+    "⚔️ Combats memory 2 contre 2 avec 3 TAG, liés aux matchs des shows de la semaine, Dark Match, PLE plus durs.",
+    "✨ Roster : éveil, entraînement, fusion des doublons, médailles, objets. Shop, missions et tuto.",
+    "⚙️ Modo TCCCG : cartes, buff/nerf, taux, objets, boosters, combats, musiques et images."
+   ]
+  },
+  {
    "id": "2026-11-04-maj2",
    "d": "2026-11-04",
    "t": "Mise à jour du 4 novembre (2)",

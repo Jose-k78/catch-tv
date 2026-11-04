@@ -72,6 +72,7 @@ export async function deleteAccount(password) {
   for (const d of liked.docs) await F.updateDoc(d.ref, { likes: F.arrayRemove(uid) }).catch(() => {});
   await wipe(W(C("areplies"), "uid", "==", uid)).catch(() => {});
   await wipe(W(C("pollvotes"), "uid", "==", uid)).catch(() => {});
+  await F.deleteDoc(F.doc(db, "tcg", uid)).catch(() => {});
   await wipe(W(C("picks"), "uid", "==", uid)).catch(() => {});
   await wipe(W(C("ideas"), "uid", "==", uid)).catch(() => {});
   const voted = await F.getDocs(W(C("ideas"), "votes", "array-contains", uid)).catch(() => ({ docs: [] }));
@@ -373,3 +374,7 @@ export function deleteAnnonce(id) { return F.deleteDoc(F.doc(db, "annonces", id)
 // ---- Hall of Fame : gagnantes de la Babies du mois ----
 export function watchHof(cb) { return F.onSnapshot(F.doc(db, "hof", "babies"), s => cb(s.exists() ? (data(s).months || {}) : {}), () => cb({})); }
 export function setHofMonth(month, rec) { const p = {}; p["months." + month] = rec; return F.setDoc(F.doc(db, "hof", "babies"), { months: {} }, { merge: true }).then(() => F.updateDoc(F.doc(db, "hof", "babies"), p)); }
+
+// ---- TCCCG : partie de chaque joueur (cartes, ressources, niveau) ----
+export function watchTcg(uid, cb) { return F.onSnapshot(F.doc(db, "tcg", uid), s => cb(s.exists() ? data(s) : null), () => cb(null)); }
+export function saveTcg(uid, d) { return F.setDoc(F.doc(db, "tcg", uid), Object.assign({}, d, { at: F.serverTimestamp() })); }

@@ -101,11 +101,19 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
 - Shows passés : une seule rubrique « Déjà passés » (accueil, page d'une promotion, page d'un show) + page `#/passes[/K[/show]]` ;
   chaque carte ouvre la page du show (`#/ev/…`) : résumé, résultats (spoiler), highlights, liens officiels, TCC Play, lecteur intégré
   (lien ⭐ du modo, lancé en sourdine). Liens du modo : modifier ✏️, ⭐ par défaut, supprimer ; « story:<id> » pour la storyline.
-- TCCCG gacha (`js/views/gacha.js`) : Call Up = boosters (shows hebdo, PLE / PPV, promotions), 5 cartes dont 1 R ou mieux, taux
-  N 55 / R 25 / SR 12 / SSR 5,5 / UR 2 / LR 0,5 %, 100 pièces (1 gratuit par jour), animations selon la rareté ; Roster = collection,
-  vente (N 10 … LR 1000). Cartes = catcheurs avec photo ; rareté par rang de célébrité (fiche, ancienneté, titres, palmarès, groupes),
-  forçable avec le champ `tcg` d'une fiche ; ATK / DEF selon rareté, face / heel, champion, poids, blessure. Sauvegarde sur le
-  téléphone (`ctv.tcg`) pour l'instant. Réservé au modo (`S.realAdmin`).
+- TCCCG v2 (`js/tcg/`, cahier des charges de Jose du 2 nov. + ses idées) : partie de chaque joueur dans Firestore `tcg/{uid}`
+  (`store.js` : tout le monde commence à zéro, niveau 1→50, ressources $ / Momentum / Pop / Push / gimmicks, objets, médailles,
+  cartes `{c, r, lv, xp}`, booster gratuit N/R du jour, tuto, attente des combats). `data.js` : 1 catcheur avec photo = 1 carte
+  (rareté de base par célébrité, rareté max N→R / R→SSR / SR→UR / SSR→UR ou LR pour les 2 % du haut), 5 archétypes et leur cycle,
+  5 stats, finisher, faction, face/heel ; cartes « version show » (`slug@K|show|date`, 2 j après les résultats, +12 % vainqueur /
+  +5 %), cartes champion (`slug#champ`, boost permanent) ; champion en vrai = +10 % tant qu'il a le titre ; objets d'éveil (C/R/E/L/M)
+  et de combat. `callup.js` : boosters des shows des 7 derniers jours (5 gimmicks = 3 cartes, 50 = Mega 15), packs de départ (MPP),
+  boosters du modo, agents libres (modo) ; animation 3-2-1 / rampe / lueurs / déchirure / slide. `roster.js` : éveil, entraînement,
+  fusion des doublons, médailles, virer, favorites. `fight.js` : combats liés aux shows de la semaine (un match = 2 adversaires,
+  version show), Dark Match, PLE plus durs ; memory 2 contre 2 par élimination, 3 TAG chacun (IA aussi), objets, soutiens liés
+  (+10 %), récompenses du cahier, attente 1 h. `home.js` : accueil, missions, tuto, Shop. `modo.js` (`#/tccg/modo`, aussi dans
+  Paramètres › Modération) : tout le réglage dans `data/tcg.json` (cartes, persos créés, taux, objets, boosters, combats, musiques,
+  dos des cartes). Pour l'instant réservé au modo (`S.realAdmin`).
 - Rubrique Tournoi (`js/views/tournois.js`, `#/tournois`, `#/tournois/g1`, `#/tournoi/<id>`) d'après `data/tournaments.json`.
 - Lecteur musical (`js/ytmusic.js`) : playlists YouTube du modo dans `data/media.json` (`pls`), bouton 🎵 en haut ; juste le
   son (lecteur caché, demande de Jose), commandes dans un petit panneau sous 🎵.
@@ -128,7 +136,7 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   `push/{uid}` ; bandeau « Installer l'app ». `data/push.json` = { vapid (clé publique), url (service Cloudflare) }.
 - `cloudflare/` : service des notifications instantanées (messages privés, feuds, annonces), installé par
   `.github/workflows/push-worker.yml`. `cloudflare/push-core.mjs` est partagé avec le robot.
-- `firestore.rules` : règles (version 8). À chaque changement, donner le texte complet à Jose pour qu'il le colle
+- `firestore.rules` : règles (version 9 : collection `tcg`). À chaque changement, donner le texte complet à Jose pour qu'il le colle
   dans Firebase › Firestore › Règles › Publier.
 
 ## Consignes pour les tâches planifiées (à suivre à chaque passage, en plus de leur propre consigne)
