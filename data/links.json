@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T01:22:20.700Z",
+ "updated": "2026-11-04T01:23:35.461Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "ev:NJPW|PLE|2026-11-03": [
@@ -14,6 +14,14 @@
     "t": "",
     "u": "https://www.dailymotion.com/video/xbs7de6",
     "at": "2026-11-04"
+   }
+  ],
+  "m:starlight kid vs suzu suzuki": [
+   {
+    "t": "",
+    "u": "https://www.dailymotion.com/video/xbs7de6",
+    "at": "2026-11-04",
+    "def": true
    }
   ]
  }
