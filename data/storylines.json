@@ -1,7 +1,44 @@
 {
-  "updated": "2026-10-30",
+  "updated": "2026-11-04",
   "note": "Une storyline par jour (la plus récente en premier) : grandes histoires, rivalités, anecdotes de coulisses, faits marquants. txt = paragraphes écrits en français à partir des sources ; v = vidéos officielles ; q = recherches sur la chaîne officielle.",
   "items": [
+    {
+      "id": "pillman-gun-1996",
+      "d": "2026-11-04",
+      "type": "Anecdote",
+      "t": "« Pillman's got a gun » : le soir où Raw est allé trop loin",
+      "k": "WWE",
+      "years": "1996",
+      "hook": "Le 4 novembre 1996, Raw diffuse en direct Stone Cold Steve Austin qui force la porte de Brian Pillman… et Pillman qui l'attend avec une arme à la main.",
+      "txt": [
+        "En 1996, Brian Pillman est l'un des personnages les plus imprévisibles du catch. Surnommé « The Loose Cannon », il a quitté la WCW au début de l'année après avoir joué de façon troublante avec la frontière entre fiction et réalité, puis a signé à la WWF. Mais un grave accident de voiture au printemps lui abîme la cheville et l'empêche de combattre.",
+        "Ne pouvant pas monter sur le ring, Pillman se retrouve dans une rivalité avec son ancien partenaire des Hollywood Blonds, Stone Cold Steve Austin, alors en pleine ascension. L'histoire veut qu'Austin s'en prenne à lui alors qu'il est blessé : la rivalité devient « personnelle ».",
+        "Le 4 novembre 1996, Raw est en direct. Le journaliste Kevin Kelly se trouve chez Pillman, à Walton dans le Kentucky, avec sa femme Melanie. Pillman, la jambe dans le plâtre, explique qu'il connaît Austin mieux que personne. On annonce qu'Austin tourne dans le quartier. Quand il arrive, Pillman sort un pistolet.",
+        "Dehors, Austin se débarrasse des amis de Pillman chargés de protéger la maison, fait le tour et brise une fenêtre. Pillman braque son arme vers lui… et le signal « se coupe ». Quand l'émission revient pour les deux dernières minutes, Pillman, retenu par ses amis, hurle, agite l'arme et lâche un juron qui passe sans censure à l'antenne.",
+        "La séquence choque les téléspectateurs et les critiques. La chaîne USA Network, mécontente, exige des excuses de la WWF et de Pillman. Le même soir, un jeune Rocky Maivia — le futur The Rock — faisait sa première apparition à Raw, presque passée inaperçue.",
+        "Avec le recul, ce segment est souvent cité comme l'un des premiers signes de l'« Attitude Era », plus provocatrice. Il reste aussi l'un des moments les plus controversés de l'histoire de Raw. Pillman, lui, nous a quittés en octobre 1997, à seulement 35 ans."
+      ],
+      "key": "En direct à la télévision, Brian Pillman braque une arme sur Steve Austin qui vient de briser une fenêtre de sa maison, avant que l'image ne se coupe.",
+      "v": [],
+      "q": [
+        "Brian Pillman Steve Austin gun Raw 1996",
+        "Pillman's got a gun WWE"
+      ],
+      "src": [
+        {
+          "n": "Wikipedia — History of WWE Raw",
+          "u": "https://en.wikipedia.org/wiki/History_of_WWE_Raw"
+        },
+        {
+          "n": "KB Wrestling Reviews — Raw du 4 novembre 1996",
+          "u": "https://kbwrestlingreviews.com/2023/02/24/monday-night-raw-november-4-1996-pillmans-got-a-gun/"
+        },
+        {
+          "n": "TJR Wrestling — 4 novembre dans l'histoire",
+          "u": "https://tjrwrestling.net/wrestling-history/november-4/"
+        }
+      ]
+    },
     {
       "id": "hiac-2016-charlotte-sasha",
       "d": "2026-10-30",
