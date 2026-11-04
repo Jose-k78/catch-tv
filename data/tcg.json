@@ -13,6 +13,18 @@
    },
    "gimmick": "",
    "medalOf": "Ace Austin"
+  },
+  "kevin-owens": {
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Kevin Owens"
   }
  }
 }
