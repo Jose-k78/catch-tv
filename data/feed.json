@@ -1,5 +1,5 @@
 {
- "at": "2026-11-04T18:21:25.498Z",
+ "at": "2026-11-04T22:18:07.870Z",
  "items": [
   {
    "t": "Preview : AEW Dynamite Blood and Guts du 4 novembre 2026",
@@ -29,6 +29,15 @@
    "tags": [
     "WWE",
     "SmackDown"
+   ]
+  },
+  {
+   "t": "La Saison 13 de WWE Supercard est lancée",
+   "u": "https://www.catch-newz.com/culture/gaming/60990-la-saison-13-de-wwe-supercard-est-lancee",
+   "s": "Catch-Newz",
+   "d": "2026-11-04",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -532,13 +541,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Dave Batista s'ajoute 10 kilos pour son rôle de Kratos",
-   "u": "https://www.catch-newz.com/culture/cineserie/60928-dave-batista-sajoute-10-kilos-pour-son-role-de-kratos",
-   "s": "Catch-Newz",
-   "d": "2026-11-02",
-   "tags": []
   }
  ],
  "yt": {
@@ -775,6 +777,7 @@
    "https://www.catch-newz.com/aew/newz/60874-preview-aew-dynamite-blood-and-guts-du-4-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
+   "https://www.catch-newz.com/culture/gaming/60990-la-saison-13-de-wwe-supercard-est-lancee",
    "https://www.catch-newz.com/wwe/newz/60989-chad-gable-sort-du-silence-apres-sa-perte-de-titre-a-raw",
    "https://www.catch-newz.com/aew/newz/60988-taya-valkyrie-quitte-laew",
    "https://www.catch-newz.com/wwe/newz/60987-spoiler-une-catcheuse-de-smackdown-dans-les-coulisses-de-wwe-nxt-du-4-novembre",
@@ -990,7 +993,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
