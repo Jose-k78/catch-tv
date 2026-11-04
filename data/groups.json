@@ -1,7 +1,19 @@
 {
- "updated": "2026-10-30",
+ "updated": "2026-11-04",
  "note": "Membres tenus à jour par la mise à jour du soir (19 h 23).",
  "items": {
+  "946": {
+   "n": "The 946",
+   "lg": "",
+   "k": "WWE",
+   "y": "depuis 2026",
+   "on": 1,
+   "m": [],
+   "a": [
+    "946"
+   ],
+   "note": "à compléter par la mise à jour du soir (The SmackDown Hotel)"
+  },
   "3mb": {
    "n": "3MB",
    "lg": "3MB",
@@ -34,11 +46,11 @@
    "on": 1,
    "m": [
     "Otis",
-    "Akira Tozawa",
-    "Maxxine Dupri"
+    "Akira Tozawa"
    ],
    "ex": [
-    "Chad Gable"
+    "Chad Gable",
+    "Maxxine Dupri"
    ]
   },
   "american-made": {
@@ -2479,18 +2491,6 @@
     "Hiragi Kurumi",
     "Akane Fujita"
    ]
-  },
-  "946": {
-   "n": "The 946",
-   "lg": "",
-   "k": "WWE",
-   "y": "depuis 2026",
-   "on": 1,
-   "m": [],
-   "a": [
-    "946"
-   ],
-   "note": "à compléter par la mise à jour du soir (The SmackDown Hotel)"
   },
   "mft": {
    "n": "MFT (My Family Tree)",
