@@ -1,5 +1,5 @@
 {
- "at": "2026-11-04T12:56:35.242Z",
+ "at": "2026-11-04T14:10:04.679Z",
  "items": [
   {
    "t": "Spoilers de WWE SmackDown du 6 novembre 2026",
@@ -18,6 +18,16 @@
    "d": "2026-11-04",
    "tags": [
     "WWE"
+   ]
+  },
+  {
+   "t": "Gunther réagit à l'attaque du démon Finn Balor à SmackDown",
+   "u": "https://www.catch-newz.com/wwe/newz/60984-gunther-reagit-a-lattaque-du-demon-finn-balor-a-smackdown",
+   "s": "Catch-Newz",
+   "d": "2026-11-04",
+   "tags": [
+    "WWE",
+    "SmackDown"
    ]
   },
   {
@@ -106,16 +116,6 @@
    "tags": []
   },
   {
-   "t": "Pourquoi il n'y a pas de show de WWE NXT le 3 novembre 2026 ?",
-   "u": "https://www.catch-newz.com/wwe/newz/60958-pourquoi-il-ny-a-pas-de-show-de-wwe-nxt-le-3-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
-  },
-  {
    "t": "WWE Raw du 2 novembre : Ethan Page champion Intercontinental, John Cena dévoile son tournoi",
    "u": "https://www.voxcatch.fr/2026/11/03/resultats-wwe-raw-2-novembre-2026/",
    "s": "VOXcatch",
@@ -123,6 +123,16 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Pourquoi il n'y a pas de show de WWE NXT le 3 novembre 2026 ?",
+   "u": "https://www.catch-newz.com/wwe/newz/60958-pourquoi-il-ny-a-pas-de-show-de-wwe-nxt-le-3-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-03",
+   "tags": [
+    "WWE",
+    "NXT"
    ]
   },
   {
@@ -518,16 +528,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-02",
    "tags": []
-  },
-  {
-   "t": "Preview : WWE NXT du 4 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-02",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
   }
  ],
  "yt": {
@@ -763,8 +763,9 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60942-the-champ-ajoute-des-precisions-au-sujet-du-john-cena-classic-qui-aura-lieu-le-14-decembre-2026",
-   "https://www.catch-newz.com/wwe/newz/60983-pour-ethan-page-remporter-le-titre-intercontinental-etait-son-objectif-ultime",
+   "https://www.catch-newz.com/wwe/newz/60984-gunther-reagit-a-lattaque-du-demon-finn-balor-a-smackdown",
    "https://www.catch-newz.com/international/resultats/60966-resultats-bzw-scary-banger-31-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/60983-pour-ethan-page-remporter-le-titre-intercontinental-etait-son-objectif-ultime",
    "https://www.catch-newz.com/wwe/newz/60958-pourquoi-il-ny-a-pas-de-show-de-wwe-nxt-le-3-novembre-2026",
    "https://www.catch-newz.com/international/newz/60982-le-main-event-de-njpw-wrestle-kingdom-21-est-connu",
    "https://www.catch-newz.com/wwe/newz/60957-la-wwe-annonce-un-second-show-a-disney-world-le-15-decembre-2026",
@@ -973,7 +974,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
