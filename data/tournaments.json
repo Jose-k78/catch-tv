@@ -3,6 +3,118 @@
  "note": "Tournois (rubrique Tournoi de l'app). items : un tournoi = { id, n, k, serie, y, st (à venir | en cours | terminé), from, to, type (bracket | blocs), about, rounds: [{ n, m: [{ a, b, w, res, v (id YouTube officiel) }] }], blocs: [{ n, rows: [{ w, pts }] }], winner, art: { txt: [...], faits: [...], pop }, src: [{ n, u }] }. series : présentation, anciens gagnants (past : [{ y, w }]), anecdotes. Rempli par la mise à jour du soir ; liens vidéo du modo dans data/links.json (« tn:id »).",
  "items": [
   {
+   "id": "dusty-2026",
+   "n": "Dusty Rhodes Tag Team Classic 2026",
+   "k": "WWE",
+   "serie": "dusty",
+   "y": 2026,
+   "st": "en cours",
+   "from": "2026-09-22",
+   "to": "2026-11-04",
+   "type": "bracket",
+   "about": "14 équipes (The Vanity Project et les Wagner Brothers exemptées du premier tour). La finale a lieu le mercredi 4 novembre à NXT (décalé à cause de la soirée électorale américaine) ; Cody Rhodes remettra le trophée.",
+   "rounds": [
+    {
+     "n": "Premier tour",
+     "m": [
+      {
+       "a": "Noam Dar et Romeo Moreno",
+       "b": "Los Americanos",
+       "w": "Noam Dar et Romeo Moreno"
+      },
+      {
+       "a": "The Creed Brothers",
+       "b": "Harley Riggins et Jax Presley",
+       "w": "The Creed Brothers"
+      },
+      {
+       "a": "Fraxiom",
+       "b": "DarkState",
+       "w": "Fraxiom"
+      },
+      {
+       "a": "Mini Vikingo et Chaz Starboy Hall",
+       "b": "BirthRight (Channing Lorenzo et Uriah Connors)",
+       "w": "Mini Vikingo et Chaz Starboy Hall"
+      },
+      {
+       "a": "BirthRight (Lexis King et Charlie Dempsey)",
+       "b": "Tokyo Bad Boys",
+       "w": "BirthRight (Lexis King et Charlie Dempsey)"
+      },
+      {
+       "a": "Hank & Tank",
+       "b": "Shido Ash et Viktor Zanov",
+       "w": "Hank & Tank"
+      }
+     ]
+    },
+    {
+     "n": "Quarts de finale",
+     "m": [
+      {
+       "a": "The Vanity Project",
+       "b": "Mini Vikingo et Chaz Starboy Hall",
+       "w": "The Vanity Project"
+      },
+      {
+       "a": "Noam Dar et Romeo Moreno",
+       "b": "Fraxiom",
+       "w": "Noam Dar et Romeo Moreno"
+      },
+      {
+       "a": "The Wagner Brothers",
+       "b": "BirthRight (Lexis King et Charlie Dempsey)",
+       "w": "The Wagner Brothers"
+      },
+      {
+       "a": "Hank & Tank",
+       "b": "The Creed Brothers",
+       "w": "Hank & Tank"
+      }
+     ]
+    },
+    {
+     "n": "Demi-finales (27 oct.)",
+     "m": [
+      {
+       "a": "Noam Dar et Romeo Moreno",
+       "b": "The Vanity Project",
+       "w": "Noam Dar et Romeo Moreno"
+      },
+      {
+       "a": "Hank & Tank",
+       "b": "The Wagner Brothers",
+       "w": "Hank & Tank"
+      }
+     ]
+    },
+    {
+     "n": "Finale (4 nov.)",
+     "m": [
+      {
+       "a": "Hank & Tank",
+       "b": "Noam Dar et Romeo Moreno"
+      }
+     ]
+    }
+   ],
+   "src": [
+    {
+     "n": "Khel Now",
+     "u": "https://khelnow.com/wwe/updated-brackets-dusty-rhodes-tag-team-classic-after-semifinals-wwe-nxt-202610"
+    },
+    {
+     "n": "WWE.com",
+     "u": "https://www.wwe.com/article/2026-dusty-rhodes-tag-team-classic-bracket"
+    },
+    {
+     "n": "Wrestling Inc",
+     "u": "https://www.wrestlinginc.com/2292500/hank-tank-headed-wwe-nxt-dusty-rhodes-tag-classic-semifinals/"
+    }
+   ]
+  },
+  {
    "id": "njpw-wtl-2026",
    "n": "World Tag League 2026",
    "k": "NJPW",
@@ -398,6 +510,39 @@
     {
      "n": "Wrestling Inc",
      "u": "https://www.wrestlinginc.com/2258136/aew-continental-classic-2026-tournament-kickoff-date-november-18-denver-colorado/"
+    }
+   ]
+  },
+  "dusty": {
+   "n": "Dusty Rhodes Tag Team Classic",
+   "k": "WWE",
+   "lg": "Dusty Rhodes Tag Team Classic",
+   "about": [
+    "Le Dusty Rhodes Tag Team Classic (le « Dusty Cup ») est le tournoi par équipes de NXT, créé en 2015 en hommage à « The American Dream » Dusty Rhodes, légende du catch et formateur de nombreux talents de NXT.",
+    "C’est un tournoi à élimination directe : premier tour, quarts, demies et finale. Les vainqueurs reçoivent le trophée Dusty Cup et, souvent, un match pour les titres par équipes de NXT.",
+    "Depuis 2024, Cody Rhodes, le fils de Dusty, remet souvent lui-même le trophée."
+   ],
+   "anec": [
+    "En 2026, la finale passe exceptionnellement un mercredi (4 novembre) : NXT est décalé à cause de la soirée électorale américaine sur The CW."
+   ],
+   "past": [
+    {
+     "y": 2024,
+     "w": "The Wolf Dogs (Baron Corbin et Bron Breakker)"
+    },
+    {
+     "y": 2022,
+     "w": "The Creed Brothers (Brutus et Julius Creed)"
+    }
+   ],
+   "src": [
+    {
+     "n": "Khel Now (tableau 2026)",
+     "u": "https://khelnow.com/wwe/updated-brackets-dusty-rhodes-tag-team-classic-after-semifinals-wwe-nxt-202610"
+    },
+    {
+     "n": "WWE.com (tableau 2026)",
+     "u": "https://www.wwe.com/article/2026-dusty-rhodes-tag-team-classic-bracket"
     }
    ]
   }

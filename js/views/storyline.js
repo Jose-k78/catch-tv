@@ -2,6 +2,7 @@
 import { S, B, ACT, changed } from "../state.js";
 import { esc, ICON, fmt, okHttp, shAttr, docId, stars, toast } from "../util.js";
 import { editNote } from "../modals.js";
+import { linksOf, linksHTML, playerHTML, defaultLink, TPLAY } from "../links.js";
 import { linkNames } from "../wrestlers.js";
 import { okVid, ytSearch } from "./highlights.js";
 
@@ -47,6 +48,9 @@ export function storylineView(id) {
   h += vids.length ? '<div class="list">' + vids.map(v => '<button class="item vid" data-act="play" data-id="' + esc(v.id) + '" data-t="' + esc(v.t) + '"><span class="vplay">' + ICON.play +
     '</span><span class="lbl"><b>' + esc(v.t) + "</b><small>Chaîne officielle</small></span></button>").join("") + "</div>" : "";
   h += (s.q || []).map(q => '<p class="note" style="margin-top:8px"><a class="linkbtn" style="padding:0" href="' + esc(ytSearch(k, q)) + '" target="_blank" rel="noopener">▶ ' + esc(q) + " sur la chaîne officielle ↗</a></p>").join("");
+  // lecteur intégré du modo (TCC Play)
+  const dl = defaultLink("story:" + s.id) || linksOf("story:" + s.id)[0];
+  if (dl || S.isAdmin) h += "<h2>" + TPLAY + "</h2>" + (dl ? playerHTML(dl.u, s.t) : "") + '<div style="margin:0 16px">' + linksHTML("story:" + s.id, { title: s.t }) + "</div>";
   if (Array.isArray(s.src) && s.src.length) h += '<p class="note small" style="margin-top:14px">Sources : ' + s.src.filter(x => okHttp(x.u)).map(x => '<a href="' + esc(x.u) + '" target="_blank" rel="noopener">' + esc(x.n) + "</a>").join(" · ") +
     ". Texte écrit par Claude à partir de ces sources.</p>";
   const others = all.filter(x => x !== s);

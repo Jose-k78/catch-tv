@@ -1,6 +1,6 @@
 // Accueil, pages promotion et pages show
 import { S, ACT, imageFor } from "../state.js";
-import { esc, cssUrl, okHttp, okDay, fmt, diff, cd, nextWeekday, dt, ymd, ICON, stars, docId, MOIS, modal, toast, shAttr } from "../util.js";
+import { esc, cssUrl, okHttp, okDay, fmt, diff, cd, nextWeekday, today, dt, ymd, ICON, stars, docId, MOIS, modal, toast, shAttr } from "../util.js";
 import { resolveImage } from "../images.js";
 import { PARIS, startOf, endOf, isLive, whenParts, fmtAt, hourAt, cityOf, downloadIcs, parisDay } from "../time.js";
 import { hlOf, hlHref, spoilBlock } from "./highlights.js";
@@ -18,7 +18,7 @@ import { pickable, pickTile } from "./picks.js";
 import { pollTile } from "./polls.js";
 import { annBar } from "./annonces.js";
 import { installBar } from "../push.js";
-import { linksOf, linksHTML, defaultLink, playLink } from "../links.js";
+import { linksOf, linksHTML, defaultLink, playLink, playerHTML, TPLAY } from "../links.js";
 import { tournamentTile } from "./tournois.js";
 
 // ---------- données ----------
@@ -41,6 +41,14 @@ function pleOf(k) {
   });
 }
 export function allPle() { let a = []; Object.keys(S.P).forEach(k => { a = a.concat(pleOf(k)); }); return a; }
+// prochaine diffusion d'un show hebdo : jour habituel, sauf épisode déplacé (« no ») ou spécial plus tôt (« e »)
+export function nextAir(k, n) {
+  const s = S.P[k].s[n], td = ymd(today());
+  let d = nextWeekday(s.wd);
+  if (Array.isArray(s.no) && s.no.indexOf(d) >= 0) { const x = dt(d); x.setDate(x.getDate() + 7); d = ymd(x); }
+  (s.e || []).forEach(e => { if (e && e.d && e.d >= td && e.d < d) d = e.d; });
+  return d;
+}
 export function epis(k, n, nb, na) {
   const pr = S.P[k], s = pr.s[n], out = [], base = dt(nextWeekday(s.wd));
   const mk = (t, d) => ({ kind: "ep", k: k, show: n, t: t, d: d, w: frName({ fr: s.fr || pr.fr, p: s.p }), c: colorOf(k, n), l: s.l, ty: n,
@@ -48,6 +56,7 @@ export function epis(k, n, nb, na) {
   for (let i = -nb; i < na; i++) {
     const x = new Date(base); x.setDate(x.getDate() + 7 * i);
     const d = ymd(x), sp = (s.e || []).filter(e => e.d === d)[0];
+    if (!sp && Array.isArray(s.no) && s.no.indexOf(d) >= 0) continue; // épisode déplacé ou annulé ce jour-là
     out.push(mk(sp ? sp.t : n, d));
   }
   (s.e || []).forEach(e => { if (!out.some(o => o.d === e.d)) out.push(mk(e.t, e.d)); });
@@ -221,7 +230,7 @@ function pleCard(e, showK) {
   const h = seenOf(e), n = diff(e.d), lk = look(e);
   return '<div class="card' + (lk.poster ? " poster" : "") + (e.d && n < 0 ? " past" : "") + (h ? " seen" : "") + (S.isAdmin ? " hasedit" : "") + '" style="' + esc(lk.style) + '">' +
     '<a class="cover" href="' + esc(evHref(e)) + '" aria-label="' + esc(e.t) + '"' + shAttr(evCard(e)) + "></a>" +
-    '<span class="tag">' + (showK ? esc(e.k) + " · " : "") + cd(e.d) + "</span>" + editBtn(e, e.t) + logoImg(e, "evlogo") +
+    '<span class="tag' + (n === 0 ? " hot" : "") + '">' + (showK ? esc(e.k) + " · " : "") + (n === 0 ? dayWord(e) : cd(e.d)) + "</span>" + editBtn(e, e.t) + logoImg(e, "evlogo") +
     "<b" + fit(e.t, 126, 27, lk.poster) + ">" + esc(e.t) + "</b><small>" + (n >= 0 ? shortWhen(e) : fmt(e.d)) + (place(e) ? " · " + place(e) : "") + "</small>" + seenMark(h) +
     (n >= 0 && pickable(e) ? '<button class="minibtn" data-act="pick"' + dataItem(e) + ">🎯 Pronostic</button>" : "") +
     (aired(e) ? '<button class="cbtn seen' + (h ? " on" : "") + '" data-act="seen"' + dataItem(e) + ' aria-label="Je l’ai vu">' + (h ? ICON.check : ICON.eye) + "</button>" : remindBtn(e, "cbtn seen")) +
@@ -251,7 +260,7 @@ function outItems() {
 let pastF = "";
 function outCard(e, recent) {
   const h = seenOf(e), lk = look(e), sh = e.show || "PLE", hl = hlOf(e.k, sh, e.d), cat = catOf(e);
-  const href = hl ? hlHref(e.k, sh, e.d) : evHref(e);
+  const href = evHref(e); // une seule page pour un show passé : résumé, résultats, highlights, liens officiels, TCC Play, lecteur
   const tag = recent ? agoLabel(e.ago) : esc(e.k) + " · " + (cat === "ple" ? "PLE" : cat === "spec" ? "Spécial" : esc(e.show));
   return '<div class="card out' + (recent ? " fresh" : " past") + (lk.poster ? " poster" : "") + (h ? " seen" : "") + '" data-cat="' + cat + '" style="' + esc(lk.style) + '"' +
     (!recent && pastF && pastF !== cat ? " hidden" : "") + ">" +
@@ -266,13 +275,26 @@ function recentSection(list) {
   list = list.filter(e => e.ago <= RECENT_DAYS - 1);
   return list.length ? '<h2>Sortis récemment</h2><div class="row">' + list.map(e => outCard(e, true)).join("") + "</div>" : "";
 }
-function pastSection(list) {
-  list = list.filter(e => e.ago > RECENT_DAYS - 1);
-  if (!list.length) return "";
+// « Déjà passés » : un seul rayon (fini « Vient de sortir » / « Déjà sorti » / « Déjà passé ») : les plus récents d'abord
+// (étiquette HIER, IL Y A 3 JOURS…), sur l'accueil, la page d'une promotion et celle d'un show ; « Tout voir » -> #/passes
+function pastSection(list, opt) {
+  opt = opt || {};
+  if (!list.length) return opt.empty ? "<h2>Déjà passés</h2>" + opt.empty : "";
   if (pastF && !list.some(e => catOf(e) === pastF)) pastF = "";
-  const cats = [["", "Tout"], ["hebdo", "Shows hebdo"], ["ple", "PLE"], ["spec", "Épisodes spéciaux"]].filter(c => !c[0] || list.some(e => catOf(e) === c[0]));
-  return "<h2>Déjà sorti</h2>" + (cats.length > 2 ? '<nav class="tabs pastf" style="padding-top:0">' + cats.map(c => '<button class="tab' + (pastF === c[0] ? " on" : "") + '" data-act="pastf" data-c="' + c[0] + '">' + c[1] + "</button>").join("") + "</nav>" : "") +
-    '<div class="row pastrow">' + list.map(e => outCard(e, false)).join("") + "</div>";
+  const cats = [["", "Tout"], ["hebdo", "Shows hebdo"], ["ple", "PLE / PPV"], ["spec", "Épisodes spéciaux"]].filter(c => !c[0] || list.some(e => catOf(e) === c[0]));
+  const more = "#/passes" + (opt.k ? "/" + encodeURIComponent(opt.k) + (opt.n ? "/" + encodeURIComponent(opt.n) : "") : "");
+  return '<h2 class="hh hrow">Déjà passés <a class="linkbtn" href="' + more + '">Tout voir ›</a></h2>' + (cats.length > 2 && !opt.n ? '<nav class="tabs pastf" style="padding-top:0">' + cats.map(c => '<button class="tab' + (pastF === c[0] ? " on" : "") + '" data-act="pastf" data-c="' + c[0] + '">' + c[1] + "</button>").join("") + "</nav>" : "") +
+    '<div class="row pastrow">' + list.slice(0, 24).map(e => outCard(e, e.ago <= RECENT_DAYS - 1)).join("") + "</div>";
+}
+// page « Déjà passés » : tous les shows passés (filtre par promotion / show), chacun ouvre sa page complète
+export function pastView(k, n) {
+  let list = outItems().filter(e => (!k || e.k === k || PARENT[e.k] === k) && (!n || e.show === n || e.br === n));
+  let h = '<a class="back" href="' + (k ? "#/p/" + encodeURIComponent(k) + (n ? "/" + encodeURIComponent(n) : "") : "#/") + '">' + ICON.back + " " + esc(n || k || "Accueil") + "</a><h1>Déjà passés" + (k ? " · " + esc(n || k) : "") + "</h1>";
+  h += '<nav class="tabs" style="padding-top:0">' + ['<a class="tab' + (!k ? " on" : "") + '" href="#/passes">Tout</a>'].concat(Object.keys(S.P).filter(x => !PARENT[x]).map(x => '<a class="tab' + (x === k ? " on" : "") + '" href="#/passes/' + encodeURIComponent(x) + '">' + esc(x) + "</a>")).join("") + "</nav>";
+  if (!list.length) return h + '<p class="note">Rien pour l’instant.</p>';
+  const groups = {}; list.forEach(e => { const g = e.ago <= 0 ? "Aujourd’hui" : e.ago === 1 ? "Hier" : e.ago < 7 ? "Cette semaine" : e.ago < 14 ? "La semaine dernière" : "Plus ancien"; (groups[g] = groups[g] || []).push(e); });
+  ["Aujourd’hui", "Hier", "Cette semaine", "La semaine dernière", "Plus ancien"].forEach(g => { if (groups[g]) h += "<h2>" + g + '</h2><div class="row pcolwrap">' + groups[g].map(e => outCard(e, true)).join("") + "</div>"; });
+  return h;
 }
 ACT.pastf = el => {
   pastF = el.dataset.c || "";
@@ -284,16 +306,16 @@ function showItem(k, n) { return { kind: "show", k: k, show: n, t: n, c: colorOf
 // « AUJOURD’HUI » si le show commence entre 6 h et 18 h (heure de Paris), « CETTE NUIT » entre 19 h et 5 h
 function dayWord(e) {
   const st = startOf(e); if (!st) return "AUJOURD’HUI";
-  const h = +new Intl.DateTimeFormat("fr-FR", { hour: "2-digit", hourCycle: "h23", timeZone: "Europe/Paris" }).format(new Date(st));
+  const h = parseInt(new Intl.DateTimeFormat("en-GB", { hour: "2-digit", hourCycle: "h23", timeZone: "Europe/Paris" }).format(new Date(st)), 10);
   return h >= 19 || h < 6 ? "CETTE NUIT" : "AUJOURD’HUI";
 }
 // big = show du jour ou le plus récent (vignette large)
 function showCard(k, n, withK, big) {
-  const s = S.P[k].s[n], next = nextWeekday(s.wd), lk = look(showItem(k, n));
+  const s = S.P[k].s[n], next = nextAir(k, n), lk = look(showItem(k, n));
   let tag = (withK ? esc(k) + " · " : "") + cd(next), extra = "";
   if (big) {
     const isToday = diff(next) === 0, d = isToday ? next : ymd(new Date(dt(next).getTime() - 7 * 864e5));
-    tag = (withK ? esc(k) + " · " : "") + (isToday ? dayWord({ k: k, show: n, d: next }) : "DERNIER ÉPISODE");
+    tag = (withK ? esc(k) + " · " : "") + (isToday ? dayWord(epis(k, n, 0, 1).find(x => x.d === next) || { k: k, show: n, d: next }) : "DERNIER ÉPISODE");
     const r = recapOf({ k: k, show: n, d: d });
     big = S.history[seenId({ k: k, show: n, d: d, t: (s.e || []).filter(x => x.d === d).map(x => x.t)[0] || n })] ? "seen" : true;
     const ep = epis(k, n, 1, 1).find(x => x.d === d) || { d: d };
@@ -310,7 +332,7 @@ function showCard(k, n, withK, big) {
 }
 // Rangée des shows : ceux du jour (ou le plus récent) en premier et en grand
 function showRow(list, withK) {
-  list = list.map(x => Object.assign({ d: nextWeekday(S.P[x.k].s[x.n].wd) }, x)).sort((a, b) => diff(a.d) - diff(b.d));
+  list = list.map(x => Object.assign({ d: nextAir(x.k, x.n) }, x)).sort((a, b) => diff(a.d) - diff(b.d));
   let big = list.filter(x => diff(x.d) === 0);
   if (!big.length && list.length) big = [list.slice().sort((a, b) => diff(b.d) - diff(a.d))[0]]; // le plus récent = celui dont le prochain est le plus loin
   const rest = list.filter(x => big.indexOf(x) < 0);
@@ -436,7 +458,8 @@ export function evPageView(k, show, d, t) {
     } else h += '<p class="note">Les résultats seront ajoutés lors de la prochaine mise à jour (vers 8 h 30).</p>';
     if (hl) h += '<div class="btns" style="justify-content:flex-start;margin:12px 16px 0"><a class="btn" href="' + hlHref(e.k, e.show || "PLE", e.d) + '">' + ICON.play + " Highlights et vidéos</a></div>";
   }
-  h += "<h2>Où regarder</h2>" + watchBtns(e) + '<a class="btn wide ghost evwatch" href="#/player/e/' + encodeURIComponent(e.k + "|" + (e.show || "PLE") + "|" + (e.d || "")) + '">▶ TCC Play (vidéos et archives)</a>' + linksHTML(evKey(e), { title: e.t + (e.d ? " du " + fmt(e.d) : ""), href: evHref(e), ask: out });
+  const dl = defaultLink(evKey(e)) || (out ? linksOf(evKey(e)).filter(x => !/youtu/.test(x.u))[0] : null);
+  h += "<h2>Où regarder</h2>" + (dl ? '<div class="evplayer">' + playerHTML(dl.u, e.t, { muted: true }) + "</div>" : "") + watchBtns(e) + '<a class="btn wide ghost evwatch" href="#/player/e/' + encodeURIComponent(e.k + "|" + (e.show || "PLE") + "|" + (e.d || "")) + '">' + TPLAY + ' · vidéos et archives</a>' + linksHTML(evKey(e), { title: e.t + (e.d ? " du " + fmt(e.d) : ""), href: evHref(e), ask: out });
   if (okHttp(e.l)) h += '<p class="note small" style="margin-top:12px"><a class="linkbtn" style="padding:0" href="' + esc(e.l) + '" target="_blank" rel="noopener">Site officiel ↗</a></p>';
   return h;
 }
@@ -472,14 +495,14 @@ function homeHead(t, sub) { return '<h2 class="hh">' + t + (sub ? "<small>" + su
 export function homeView() {
   const P = S.P, sp = split(allPle());
   const weekly = [];
-  Object.keys(P).forEach(k => { const s = P[k].s; if (s) Object.keys(s).forEach(n => weekly.push({ k: k, n: n, d: nextWeekday(s[n].wd) })); });
+  Object.keys(P).forEach(k => { const s = P[k].s; if (s) Object.keys(s).forEach(n => weekly.push({ k: k, n: n, d: nextAir(k, n) })); });
   let h = annBar() + installBar() + liveSection();
   // 1. ce qui passe aujourd'hui (shows hebdo + événements du jour pas encore terminés)
   const todayW = weekly.filter(x => diff(x.d) === 0), todayE = sp[0].filter(e => e.d && diff(e.d) === 0 && !isOut(e));
-  if (todayW.length || todayE.length) h += homeHead("Aujourd’hui et cette nuit", "Les shows du jour, heure de Paris") + '<div class="row">' + todayE.map(e => pleCard(e, true)).join("") + todayW.map(x => showCard(x.k, x.n, true, true)).join("") + "</div>";
+  if (todayW.length || todayE.length) h += homeHead("Aujourd’hui", "Les shows du jour, heure de Paris") + '<div class="row">' + todayE.map(e => pleCard(e, true)).join("") + todayW.map(x => showCard(x.k, x.n, true, true)).join("") + "</div>";
   // 2. vient de sortir
-  const out = outItems(), rec = out.filter(e => e.ago <= RECENT_DAYS - 1);
-  if (rec.length) h += homeHead("Vient de sortir", "À rattraper : résumés, highlights et notes") + '<div class="row">' + rec.map(e => outCard(e, true)).join("") + "</div>";
+  const out = outItems();
+  h += pastSection(out);
   // 3. programme de la semaine (les autres shows, du plus proche au plus lointain)
   const rest = weekly.filter(x => diff(x.d) > 0).sort((a, b) => diff(a.d) - diff(b.d));
   if (rest.length) h += homeHead("Le programme de la semaine", "Les prochains shows hebdo") + '<div class="row">' + rest.map(x => showCard(x.k, x.n, true, false)).join("") + "</div>";
@@ -488,18 +511,17 @@ export function homeView() {
   if (big) h += homeHead("Prochain " + bigWord(big.k)) + hero(big, esc(big.k) + " · " + bigWord(big.k));
   const more = up.filter(e => e !== big);
   if (more.length) h += homeHead("Les PLE et PPV à venir", "PLE pour la WWE, PPV pour les autres promotions") + '<div class="row">' + more.map(e => pleCard(e, true)).join("") + "</div>";
-  h += tournamentTile("");
+  // storyline du jour et tournois (aussi dans Membres et Recherche)
+  h += storylineTile() + tournamentTile("");
   // les infos (la communauté est dans l'onglet Membres, Explorer et TCC Play dans Recherche)
   h += artSection("Dernières infos", articles([], 6));
-  // 8. déjà sorti
-  h += pastSection(out);
   return '<div class="withside"><div class="mainc">' + h + "</div>" + favAside() + "</div>";
 }
 // Explorer (onglet Recherche) : promotions, TCC Play, tournois, matchs à découvrir
 export function exploreHTML() {
   let h = '<h2 class="hh">Explorer</h2><div class="row">' + Object.keys(S.P).filter(k => !PARENT[k]).map(promoCard).join("") + "</div>";
-  h += '<a class="matchtile ptile" href="#/player"><span class="mt-k">TCC Play</span><b>Archives et vidéos</b><small>Les shows par promotion et par date, les vidéos officielles</small><span class="mt-go">Ouvrir ›</span></a>';
-  h += '<a class="titletile" href="#/tournois"><span class="tt-belt">🏆</span><span class="tt-txt"><b>Tournois</b><small>G1 Climax, 5★STAR Grand Prix, tournois en cours</small></span><span class="chev">›</span></a>';
+  h += '<a class="matchtile ptile" href="#/player"><span class="mt-k">' + TPLAY + '</span><b>Archives et vidéos</b><small>Les shows par promotion et par date, les vidéos officielles</small><span class="mt-go">Ouvrir ›</span></a>';
+  h += tournamentTile("");
   if (S.matches.length) h += matchTile();
   if (S.isAdmin) h += '<div class="btns" style="margin:10px 16px"><button class="btn small" data-act="gnew">＋ Nouveau clan / équipe (modo)</button></div>';
   return h;
@@ -516,8 +538,7 @@ export function promoView(k) {
   h += tournamentTile(k) + titlesTile(k, "") + rosterTile(k, "");
   h += "<h2>" + bigWord(k) + " à venir</h2>" + (ple[0].length ? epList(ple[0]) : '<p class="note">Aucun ' + bigWord(k) + " annoncé pour l’instant.</p>");
   if (ep[0].length) h += "<h2>Cette semaine</h2>" + epList(ep[0]);
-  const past = split(ple[1].concat(ep[1]))[1];
-  if (past.length) h += "<h2>Déjà passé</h2>" + epList(past);
+  h += pastSection(outItems().filter(e => e.k === k || PARENT[e.k] === k), { k: k });
   h += artSection("Actualité", articles([k], 6)) + xSection(pr.x);
   return h;
 }
@@ -537,7 +558,7 @@ export function showView(k, n) {
     (fr ? "En France : " + esc(fr) + " · " : "") + "Aux États-Unis : " + esc(s.p) + " · " + '<button class="linkbtn inline" data-act="watch"' + (nx ? itemData(nx) : "") + ">Où regarder ↗</button></p>";
   h += titlesTile(k, n) + rosterTile(k, n);
   if (up.length) h += "<h2>À venir</h2>" + epList(up);
-  if (past.length) h += "<h2>Épisodes précédents</h2>" + epList(past);
+  h += pastSection(outItems().filter(e => e.k === k && (e.show === n || e.br === n)), { k: k, n: n, empty: past.length ? epList(past) : "" });
   let al = articles([k, n], 5); if (!al.length) al = articles([k], 5);
   h += artSection("Actualité", al) + xSection(s.x || pr.x);
   return h;
@@ -563,7 +584,7 @@ export function tabsView(route) {
   const ORDER = ["WWE", "AEW", "TNA", "NJPW", "CMLL", "Stardom", "Marigold"];
   const top = Object.keys(S.P).filter(k => hostOf(k) === k).sort((a, b) => (ORDER.indexOf(a) + 1 || 99) - (ORDER.indexOf(b) + 1 || 99));
   const tabsL = ["Accueil"].concat(top).map(t => tab(t, t === "Accueil" ? "#/" : "#/p/" + encodeURIComponent(t), t === cur, t === "Accueil" ? "" : logoOf(t, "")));
-  tabsL.splice(1, 0, '<a class="tab tplay" href="#/player" aria-label="TCC Play">▶ <b>TCC</b> Play</a>');
+  tabsL.splice(1, 0, '<a class="tab tsearch" href="#/recherche" aria-label="Recherche">' + ICON.search + " Recherche</a>");
   let h = '<nav class="tabs">' + tabsL.join("") +
     '<a class="tab' + (route.name === "autre" ? " on" : "") + '" href="#/autre">Autre</a></nav>';
   if (route.name === "promo" && S.P[cur]) {

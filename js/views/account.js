@@ -150,7 +150,7 @@ export function settingsView(sub, x) {
   if (sub === "medias" && S.isAdmin) return h + mediaView();
   if (sub === "notifs") return h + notifSettingsView();
   if (sub === "patchnotes") return h + patchView();
-  if (sub === "storylines") return h + storyFavView();
+  if (sub === "storylines") return '<a class="back" href="#/profil-modifier">' + ICON.back + " Modifier mon profil</a>" + storyFavView();
   if (sub === "patchnotes-modo" && S.isAdmin) return h + patchModView();
   if (sub === "images" && S.isAdmin) return h + imagesView(x);
   if (sub === "annonces" && S.isAdmin) return h + adminAnnView();
@@ -180,7 +180,6 @@ export function settingsView(sub, x) {
   h += '<h1>Paramètres</h1><div class="list">' + row("#/profil-modifier", "Modifier mon profil", "Photo, pseudo, description, favoris") +
     row("#/parametres/email", "Adresse e-mail", u.email) + row("#/parametres/motdepasse", "Mot de passe", google ? "Connecté avec Google" : "Modifier") +
     row("#/parametres/apparence", "Apparence", TH[lsGet("ctv.theme") || "auto"] + " · intro " + INTRO[introMode()][2]) +
-    row("#/parametres/storylines", "📖 Mes storylines préférées", "Elles s’affichent sur ton profil") +
     row("#/parametres/spoiler", "Mode sans spoiler", noSpoil() ? "Activé" : "Désactivé") +
     row("#/parametres/notifs", "🔔 Notifications", pushOnHere() ? "Activées sur ce téléphone" : pushReady() ? "Pas encore activées sur ce téléphone" : "Bientôt disponibles") +
     row("#/parametres/bloques", "Membres bloqués", S.blocks.length ? S.blocks.length + " membre" + (S.blocks.length > 1 ? "s" : "") : "Aucun") +
@@ -370,6 +369,7 @@ export function editProfileView() {
     '<h2 style="margin-top:4px">Bannière</h2><div class="pbanner edit' + (bnOf() ? "" : " empty") + '" id="bnprev"' + (bnOf() ? ' style="background-image:url(\'' + esc(bnOf()) + '\')"' : "") + ">" + (bnOf() ? "" : "Pas encore de bannière") + "</div>" +
     '<div class="btns" style="margin:8px 16px 0"><button type="button" class="btn" data-act="banner">' + (bnOf() ? "Changer la bannière" : "Ajouter une bannière") + "</button>" + (bnOf() ? '<button type="button" class="btn ghost" data-act="nobanner">Supprimer</button>' : "") +
     '</div><p class="note small" style="margin-top:6px">Photo horizontale, recadrée en 3:1 (comme sur Twitter).</p><input type="file" accept="image/*" hidden id="bannerfile">' +
+    '<a class="titletile" href="#/parametres/storylines" style="margin-top:12px"><span class="tt-belt">📖</span><span class="tt-txt"><b>Mes storylines préférées</b><small>Elles s’affichent sur ton profil</small></span><span class="chev">›</span></a>' +
     '<form data-form="profile"><div class="prof">' + avatar(p, 96) + '<div class="btns"><button type="button" class="btn" data-act="photo">' + (p.photo ? "Changer la photo" : "Ajouter une photo") + "</button>" +
     (p.photo ? '<button type="button" class="btn ghost" data-act="nophoto">Supprimer</button>' : "") + '</div><input type="file" accept="image/*" hidden id="photofile"></div>' +
     field("e_pseudo", "Pseudo", 'maxlength="30" required value="' + esc(p.pseudo || "") + '"') +

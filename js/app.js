@@ -3,10 +3,10 @@ import "./intro.js"; // en premier : l'intro démarre pendant que le reste se ch
 import { firebaseConfig, ADMIN_UID } from "./config.js";
 import { S, setBackend, B, ACT, FORM, onChange, changed, prof, avatar, need, nameOf } from "./state.js";
 import { loadContent } from "./content.js";
-import "./links.js";
+import { TPLAY_ICON } from "./links.js";
 import { tournoisView, serieView, tournoiView } from "./views/tournois.js";
 import { ICON, toast, lsGet, lsSet } from "./util.js";
-import { homeView, promoView, showView, tabsView, evPageView, autreView } from "./views/catalog.js";
+import { homeView, promoView, showView, tabsView, evPageView, autreView, pastView } from "./views/catalog.js";
 import { matchesView } from "./views/matches.js";
 import { titlesView, titleView, beltView } from "./views/titles.js";
 import { groupView } from "./views/groups.js";
@@ -52,7 +52,7 @@ const REL = {
   home: ["content", "images", "history", "auth", "tick", "profile", "spoil", "activity", "polls", "pollVotes", "picks", "hof", "push", "ann"], promo: ["content", "images", "history", "auth", "tick", "spoil", "polls"],
   profile: ["profile", "profiles", "history", "otherHistory", "auth", "friends", "feuds", "blocks", "memberFriends", "tick", "slammys", "myact", "pollVotes", "ideas"], chat: ["room", "convs", "reads", "profiles", "auth", "blocks"],
   convinfo: ["convs", "reads", "profiles", "auth", "blocks", "room", "msgs"], newchat: ["users", "auth"], settings: ["auth", "history", "profile", "route", "reports", "blocks", "profiles", "images", "media", "ideas", "push", "ann", "content"], editprofile: ["profile", "auth", "profiles"], auth: ["auth"],
-  matches: ["route", "history", "auth", "content"], wrestler: ["profile", "spoil", "history", "auth", "content"], search: [], titles: ["history", "spoil", "content"], title: ["history", "spoil", "content"], belt: ["content"], group: ["content", "auth"], tccg: ["auth", "profile"], player: ["content"], autre: ["content"], tournois: ["content"], serie: ["content"], tournoi: ["content", "auth"],
+  matches: ["route", "history", "auth", "content"], wrestler: ["profile", "spoil", "history", "auth", "content"], search: [], titles: ["history", "spoil", "content"], title: ["history", "spoil", "content"], belt: ["content"], group: ["content", "auth"], tccg: ["auth", "profile", "content"], player: ["content"], autre: ["content"], passes: ["content", "history", "tick"], tournois: ["content"], serie: ["content"], tournoi: ["content", "auth"],
   notifs: ["notifs", "profiles", "reads", "blocks", "ann"], activity: ["activity", "profiles", "blocks", "areplies"], storyline: ["content", "history", "auth"], roster: ["profile", "content"],
   members: ["activity", "areplies", "polls", "pollVotes", "picks", "content", "history", "users", "friends", "feuds", "blocks", "profiles", "auth", "tick"], favs: ["profile", "profiles", "friends", "auth", "content"], hl: ["history", "spoil", "content"],
   event: ["event", "history", "auth"], cal: ["content", "history", "auth", "images", "spoil", "tick", "picks"],
@@ -81,6 +81,7 @@ function parse() {
     case "groupe": return parts[1] ? { name: "group", id: parts[1].slice(0, 80) } : { name: "search", q: "" };
     case "tccg": return { name: "tccg", tab: parts[1] || "" };
     case "autre": return { name: "autre" };
+    case "passes": return { name: "passes", k: parts[1] || "", n: parts[2] || "" };
     case "tournois": return parts[1] ? { name: "serie", id: parts[1] } : { name: "tournois" };
     case "tournoi": return { name: "tournoi", id: parts[1] || "" };
     case "player": return { name: "player", a: parts[1] || "", b: parts[2] || "", c: parts[3] || "" };
@@ -201,6 +202,7 @@ function render() {
     case "group": h = groupView(route.id); break;
     case "tccg": h = tccgView(route.tab); break;
     case "autre": h = autreView(); break;
+    case "passes": h = pastView(route.k, route.n); break;
     case "tournois": h = tournoisView(); break;
     case "serie": h = serieView(route.id); break;
     case "tournoi": h = tournoiView(route.id); break;
@@ -239,11 +241,12 @@ function render() {
 }
 
 // Barre de navigation du bas : Accueil · Recherche · Membres · Messages · Profil
-const NAV = [["home", "#/", "Accueil", "home"], ["search", "#/recherche", "Recherche", "search"], ["tccg", "#/tccg", "Bientôt", "cards"], ["members", "#/membres", "Membres", "globe"], ["chat", "#/chat", "Messages", "chat"], ["me", "#/profil", "Profil", "user"]];
+const NAV = [["home", "#/", "Accueil", "home"], ["player", "#/player", "TCC Play", "tplay"], ["tccg", "#/tccg", "Bientôt", "cards"], ["members", "#/membres", "Membres", "globe"], ["chat", "#/chat", "Messages", "chat"], ["me", "#/profil", "Profil", "user"]];
 function navOn(id) {
   const r = route.name;
   if (id === "home") return r === "home" || r === "promo" || r === "titles" || r === "title" || r === "matches" || r === "hl" || r === "polls" || r === "picks" || r === "pick" || r === "cal";
   if (id === "search") return r === "search" || r === "wrestler" || r === "event";
+  if (id === "player") return r === "player";
   if (id === "members") return r === "members" || (r === "profile" && S.user && route.uid && route.uid !== S.user.uid);
   if (id === "chat") return r === "chat" || r === "conv" || r === "newchat" || r === "convinfo";
   if (id === "me") return (r === "profile" && (!S.user || !route.uid || route.uid === S.user.uid)) || r === "settings" || r === "editprofile" || r === "auth" || r === "ideas" || r === "trophies";
@@ -263,7 +266,7 @@ function updateHeader() {
   else if (nav) nav.innerHTML = NAV.map(x => {
     const badge = x[0] === "chat" ? n : x[0] === "members" ? soc : 0, pdot = x[0] === "me" && S.user && pnNew();
     const href = x[0] === "me" && !S.user ? "#/connexion" : x[1];
-    const ico = x[0] === "me" && S.user ? avatar(S.profile || {}, 26) : x[3] === "cards" ? TICON.cards : ICON[x[3]];
+    const ico = x[0] === "me" && S.user ? avatar(S.profile || {}, 26) : x[3] === "cards" ? TICON.cards : x[3] === "tplay" ? TPLAY_ICON : ICON[x[3]];
     return '<a class="bn' + (navOn(x[0]) ? " on" : "") + '" href="' + href + '"' + (navOn(x[0]) ? ' aria-current="page"' : "") + '><span class="bni">' + ico + (badge ? '<span class="badge">' + cnt(badge) + "</span>" : pdot ? '<span class="badge pdotb" aria-label="nouveauté"></span>' : "") + "</span><small>" + x[2] + "</small></a>";
   }).join("");
   const fav = document.getElementById("favbtn");

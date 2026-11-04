@@ -3,6 +3,7 @@
 // En haut : le profil (comme TCC TV) et le logo TCC TV pour revenir à l'app de base.
 import { S, avatar } from "../state.js";
 import { esc } from "../util.js";
+import { callUpView, rosterTcgView } from "./gacha.js";
 
 const sv = p => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + p + "</svg>";
 export const TICON = {
@@ -29,6 +30,8 @@ const PAGES = {
 };
 export function tccgView(tab) {
   if (!S.realAdmin) return '<section class="tccgsoon"><div class="tcards">' + TICON.cards + '</div><h1>TCCCG</h1><p>Le jeu de cartes de TCC TV arrive bientôt. Reste connecté !</p><a class="btn" href="#/">Retour à TCC TV</a></section>';
+  if (tab === "callup") return '<section class="tccgwrap">' + callUpView() + "</section>";
+  if (tab === "roster") return '<section class="tccgwrap">' + rosterTcgView() + "</section>";
   const p = PAGES[tab] || PAGES[""];
   return '<section class="tccgpage"><span class="tbadge">🚧 EN CHANTIER</span><div class="tcards">' + TICON[(TNAV.find(x => x[0] === tab) || TNAV[0])[2]] + "</div><h1>" + esc(p[0]) + "</h1><p>" + esc(p[1]) + "</p>" +
     '<div class="tslots">' + [1, 2, 3].map(() => '<div class="tslot"><span>?</span></div>').join("") + "</div>" +

@@ -230,6 +230,17 @@
    ],
    "on": true,
    "note": ""
+  },
+  {
+   "n": "MIBIH – Wrestling PPV reviews",
+   "u": "https://mibih.wordpress.com/category/wrestling-reviews/latest-wrestling-ppv-reviews/",
+   "use": [
+    "resultats",
+    "resumes",
+    "archives"
+   ],
+   "on": true,
+   "note": "Comptes rendus détaillés des PLE / PPV (en anglais) : sert de base aux résumés des shows, réécrits en français avec nos mots (jamais copiés ni traduits mot à mot)."
   }
  ]
 }

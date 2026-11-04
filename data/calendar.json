@@ -128,7 +128,12 @@
      "wd": 2,
      "p": "The CW",
      "l": "https://www.cwtv.com/",
-     "e": [],
+     "e": [
+      {
+       "t": "NXT (mercredi, décalé à cause des élections américaines)",
+       "d": "2026-11-04"
+      }
+     ],
      "c": [
       "#f2c200",
       "#7d6200"
@@ -136,7 +141,10 @@
      "h": "20:00",
      "tz": "America/New_York",
      "dur": 120,
-     "nf": "81788953"
+     "nf": "81788953",
+     "no": [
+      "2026-11-03"
+     ]
     },
     "Evolve": {
      "j": "Chaque mercredi",

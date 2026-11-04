@@ -61,7 +61,7 @@ function play(id, title, m) {
   modal((box, close) => {
     box.innerHTML = "<h3>" + esc(title) + "</h3>" +
       (PREVIEW ? '<p class="sub">La vidéo se lira directement ici une fois l’app en ligne. En attendant, ouvre-la sur YouTube.</p>'
-        : '<div class="player"><iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0" title="' + esc(title) + '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>') +
+        : '<div class="player"><iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0" title="' + esc(title) + '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>') +
       (m ? '<div class="btns" style="margin:8px 0">' + rateBtn(m.k, m.t, m.ev || "", "") + "</div>" : "") +
       '<a class="btn wide" href="' + ytUrl(id) + '" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a><button class="btn wide ghost" style="margin-top:10px" data-close>Fermer</button>';
     box.addEventListener("click", e => { if (e.target.closest("[data-close]")) close(); });

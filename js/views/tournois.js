@@ -7,6 +7,7 @@ import { esc, ICON, fmt } from "../util.js";
 import { linkNames } from "../wrestlers.js";
 import { face, faceImg, versus } from "../photos.js";
 import { linksHTML } from "../links.js";
+import { spoilBlock } from "./highlights.js";
 import { eventLogo, showLogo } from "../assets.js";
 
 const T = () => (S.tournaments && Array.isArray(S.tournaments.items) ? S.tournaments.items : []).filter(t => t && t.id && t.n);
@@ -17,10 +18,12 @@ const card = t => '<a class="item" href="#/tournoi/' + encodeURIComponent(t.id) 
 
 // tuile de l'accueil / d'une promotion : un tournoi est en cours
 export function tournamentTile(k) {
-  const L = liveTournaments(k); if (!L.length) return "";
-  const t = L[0];
-  return '<a class="titletile tntile" href="' + (L.length > 1 && !k ? "#/tournois" : "#/tournoi/" + encodeURIComponent(t.id)) + '"><span class="tt-belt">🏆</span><span class="tt-txt"><b>' + (L.length > 1 ? L.length + " tournois en cours" : "Tournoi en cours : " + esc(t.n)) +
-    "</b><small>" + esc(L.map(x => x.k + " · " + x.n).slice(0, 3).join(" · ")) + '</small></span><span class="chev">›</span></a>';
+  const L = liveTournaments(k), soon = T().filter(t => (!t.st || t.st === "à venir") && (!k || t.k === k));
+  if (k && !L.length) return "";
+  const t = L[0] || soon[0];
+  const sub = L.length ? (L.length > 1 ? L.length + " tournois en cours" : "En cours : " + t.n) : t ? "Bientôt : " + t.n + (t.from ? " (" + fmt(t.from) + ")" : "") : "G1 Climax, 5★STAR Grand Prix, Dream Star GP…";
+  return '<a class="matchtile tntile2" href="' + (k && L.length === 1 ? "#/tournoi/" + encodeURIComponent(t.id) : "#/tournois") + '"><span class="mt-k">🏆 TOURNOIS</span><b>' + esc(sub) + "</b><small>" +
+    esc(L.length ? L.map(x => x.k + " · " + x.n).slice(0, 3).join(" · ") : "Tableaux, blocs, résultats et bilans, avec leurs sources") + '</small><span class="mt-go">Voir ›</span></a>';
 }
 
 // grande vignette (style Netflix) d'un tournoi ou d'une série
@@ -88,8 +91,10 @@ export function tournoiView(id) {
   });
   // tableau (élimination)
   if ((t.rounds || []).length) {
-    h += '<h2>Le tableau</h2><div class="tntree">' + t.rounds.map((r, ri) => '<div class="bkcol"><small>' + esc(r.n || "Tour " + (ri + 1)) + "</small>" + (r.m || []).map((m, mi) =>
+    const tree = '<div class="tntree">' + t.rounds.map((r, ri) => '<div class="bkcol"><small>' + esc(r.n || "Tour " + (ri + 1)) + "</small>" + (r.m || []).map((m, mi) =>
       '<div class="bkmini">' + [m.a, m.b].map(n => '<span class="' + (m.w && n === m.w ? "win" : m.w ? "out" : "") + '">' + (n ? faceImg(n, 18) + esc(n) : "?") + "</span>").join("") + "</div>").join("") + "</div>").join("") + "</div>";
+    // tournoi en cours : les résultats du tableau restent derrière un spoiler
+    h += "<h2>Le tableau</h2>" + (t.st === "en cours" ? spoilBlock("👀 Voir le tableau et les qualifiés (spoiler)", tree) : tree);
     // matchs : résultat, vidéo officielle ou lien du modo
     h += "<h2>Les matchs</h2>";
     t.rounds.forEach((r, ri) => (r.m || []).forEach((m, mi) => {

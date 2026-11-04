@@ -1322,7 +1322,8 @@ html.introon #intro.tg,html.introon.tgstart #intro{background:radial-gradient(12
 .prow.pcol{flex-wrap:wrap}
 .conv-item,[data-lp]{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
 /* lecteur musical (playlists YouTube) : juste le son, commandes sous le bouton 🎵 du haut */
-.ytmhide{position:fixed;left:-9999px;top:0;width:200px;height:113px;overflow:hidden;opacity:0;pointer-events:none}
+.ytmhide{position:fixed;left:0;bottom:0;width:240px;height:240px;overflow:hidden;opacity:.01;pointer-events:none;z-index:-1}
+.ytmrow .chip{font-size:12px;padding:4px 8px}
 .ytmpanel{position:fixed;top:calc(56px + env(safe-area-inset-top));right:10px;z-index:950;width:250px;background:var(--card,#16161c);color:var(--text,#fff);border:1px solid var(--line);border-radius:14px;padding:10px 12px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
 .ytmt{display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:6px}
 .ytmctl{display:flex;align-items:center;gap:6px}
@@ -1368,3 +1369,78 @@ body.editing header.top{box-shadow:inset 0 -3px 0 #f5c518}
 .psets{margin:10px 16px;padding-bottom:8px;border-bottom:1px solid var(--line)}
 .psets a{color:inherit;text-decoration:none}
 .mldef.on{color:#f5c518}
+/* logo TCC Play et onglet Recherche en haut */
+.tplaylogo{display:inline-flex;align-items:center;gap:3px;font-weight:800;letter-spacing:.01em}
+.tplaylogo i{font-style:normal;background:#e50914;color:#fff;border-radius:5px;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;font-size:10px}
+.tplaylogo b{color:#e50914}
+.tabs .tab.tsearch{gap:6px;min-width:110px}
+.tabs .tab.tsearch svg{width:16px;height:16px}
+.tntile2{background:linear-gradient(135deg,#3a2a05,#8a6412 60%,#c9971f)}
+.hrow{flex-direction:row!important;align-items:center;justify-content:space-between}
+.hrow .linkbtn{font-size:13px}
+.row.pcolwrap{flex-wrap:wrap}
+.evplayer{margin-bottom:10px}
+/* ---------- TCCCG : gacha et cartes ---------- */
+.tccgwrap{padding-bottom:20px}
+.tccghead{display:flex;align-items:center;justify-content:space-between;margin:8px 16px}
+.tccghead h1{margin:0;color:#f0cf62}
+.tcoins{background:#16130d;border:1px solid #3b321f;border-radius:99px;padding:6px 12px;color:#f4e8c8}
+.tnote{margin:4px 16px 8px;color:#a8996f;font-size:13px}
+.trates{margin:0 16px 8px;color:#a8996f;font-size:13px}
+.tbrow{gap:10px}
+.tbooster{flex:0 0 130px;height:180px;border-radius:14px;border:2px solid #d4af37;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:10px 8px;gap:3px;position:relative;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.5);font:inherit;overflow:hidden}
+.tbooster::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 18px,rgba(255,255,255,.05) 18px 20px)}
+.tbooster img{position:absolute;top:18px;max-width:100px;max-height:60px;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,0,0,.6))}
+.tbooster b{font-size:14px;text-align:center;line-height:1.1;z-index:1}
+.tbooster small{font-size:11px;opacity:.8;z-index:1}
+.tbprice{z-index:1;margin-top:4px;background:rgba(0,0,0,.45);border-radius:99px;padding:2px 8px;font-size:12px;color:#f0cf62}
+.tcr{font-weight:900;font-size:11px;padding:1px 6px;border-radius:5px;background:#555;color:#fff}
+.tcr.r-R,.r-R .tcr{background:#2f7de1}.tcr.r-SR,.r-SR .tcr{background:#9b4de0}.tcr.r-SSR,.r-SSR .tcr{background:linear-gradient(135deg,#f7e08a,#c9971f);color:#2a1f05}
+.tcr.r-UR,.r-UR .tcr{background:linear-gradient(90deg,#ff4d6d,#ffb84d,#5ee6a0,#4dc3ff,#b64dff);color:#111}.tcr.r-LR,.r-LR .tcr{background:#111;color:#f0cf62;border:1px solid #f0cf62}
+/* carte */
+.tcard{position:relative;width:200px;height:290px;border-radius:14px;padding:8px;box-sizing:border-box;display:flex;flex-direction:column;gap:6px;color:#fff;overflow:hidden;background:#2a2a2e;border:3px solid #77777d;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.tcard.r-R{border-color:#2f7de1;background:linear-gradient(160deg,#173563,#0d1730)}
+.tcard.r-SR{border-color:#9b4de0;background:linear-gradient(160deg,#3d1a63,#170b2a)}
+.tcard.r-SSR{border-color:#d4af37;background:linear-gradient(160deg,#5a4510,#1d1606)}
+.tcard.r-UR{border-color:transparent;background:linear-gradient(#1b1022,#1b1022) padding-box,linear-gradient(135deg,#ff4d6d,#ffb84d,#5ee6a0,#4dc3ff,#b64dff) border-box}
+.tcard.r-LR{border-color:#f0cf62;background:radial-gradient(circle at 50% 0,#4a3a0c,#0a0907 70%);box-shadow:0 0 22px rgba(240,207,98,.6)}
+.tcfoil{position:absolute;inset:0;pointer-events:none;opacity:0}
+.r-SSR .tcfoil,.r-UR .tcfoil,.r-LR .tcfoil{opacity:.35;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.7) 45%,transparent 60%);background-size:250% 100%;animation:tfoil 3s linear infinite}
+@keyframes tfoil{0%{background-position:150% 0}100%{background-position:-100% 0}}
+.tctop{display:flex;justify-content:space-between;align-items:center;z-index:1}
+.tclogo{max-height:18px;max-width:60px;object-fit:contain;background:rgba(255,255,255,.85);border-radius:4px;padding:1px 3px}
+.tck{font-size:10px;opacity:.8}
+.tcpic{flex:1;border-radius:9px;background:#000 center/cover no-repeat;border:1px solid rgba(255,255,255,.15)}
+.tcname{font-weight:800;font-size:14px;text-align:center;line-height:1.1;z-index:1}
+.tcstats{display:flex;justify-content:space-between;font-size:11px;background:rgba(0,0,0,.45);border-radius:6px;padding:3px 6px;z-index:1}
+.tcstats b{color:#f0cf62}
+.tccount{position:absolute;top:30px;right:6px;background:#d4af37;color:#111;font-weight:800;border-radius:99px;padding:1px 7px;font-size:12px;z-index:2}
+.tcard.sm{width:104px;height:152px;padding:5px;gap:3px;border-width:2px;border-radius:10px;cursor:pointer}
+.tcard.sm .tcname{font-size:10px}.tcard.sm .tcstats{font-size:8px;padding:2px 3px}.tcard.sm .tclogo{max-height:12px;max-width:40px}.tcard.sm .tcr{font-size:9px;padding:0 4px}
+.trgrid{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:8px 10px}
+.tfilt{display:flex;flex-wrap:wrap;gap:6px;margin:4px 16px 6px}
+.tczoom{display:flex;justify-content:center;margin:6px 0 10px}
+/* ouverture d'un booster */
+.tpackov{position:fixed;inset:0;z-index:9000;background:radial-gradient(circle at 50% 40%,#2a2312,#050403 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;color:#f4e8c8;cursor:pointer;overflow:hidden}
+.tpack{position:relative;width:180px;height:260px;border-radius:16px;border:3px solid #d4af37;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:14px;box-sizing:border-box;color:#fff;animation:tshake .5s ease-in-out infinite;box-shadow:0 0 40px rgba(212,175,55,.35);overflow:hidden}
+.tpack img{position:absolute;top:30px;max-width:130px;max-height:80px;object-fit:contain}
+.tpack b{font-size:16px;text-align:center}
+.tptear{position:absolute;left:0;right:0;top:22%;height:3px;background:#fff;opacity:0}
+.best-SSR .tpack{box-shadow:0 0 60px rgba(240,207,98,.7)}.best-UR .tpack{box-shadow:0 0 70px rgba(182,77,255,.8)}.best-LR .tpack{box-shadow:0 0 90px #fff,0 0 140px rgba(240,207,98,.9);animation-duration:.25s}
+@keyframes tshake{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg) scale(1.02)}}
+.tpack.open{animation:topen .65s ease-in forwards}.tpack.open .tptear{animation:ttear .3s forwards}
+@keyframes ttear{to{opacity:1;box-shadow:0 0 20px #fff}}
+@keyframes topen{0%{transform:scale(1)}40%{transform:scale(1.15) rotate(-3deg)}100%{transform:scale(1.6) translateY(-40px);opacity:0}}
+.tphint{font-size:13px;color:#a8996f}
+.treveal{animation:tin .55s cubic-bezier(.2,1.4,.4,1) both;z-index:1}
+.treveal .tcard{width:230px;height:334px}
+@keyframes tin{0%{transform:rotateY(90deg) scale(.6);opacity:0}100%{transform:none;opacity:1}}
+.tfx{position:absolute;inset:-50%;pointer-events:none}
+.fx-R{background:radial-gradient(circle,rgba(47,125,225,.35),transparent 60%)}
+.fx-SR{background:radial-gradient(circle,rgba(155,77,224,.45),transparent 60%);animation:tpulse 1.2s ease-in-out infinite}
+.fx-SSR{background:radial-gradient(circle,rgba(240,207,98,.55),transparent 62%),repeating-conic-gradient(from 0deg,rgba(240,207,98,.18) 0 8deg,transparent 8deg 20deg);animation:tspin 8s linear infinite}
+.fx-UR{background:conic-gradient(from 0deg,rgba(255,77,109,.35),rgba(255,184,77,.35),rgba(94,230,160,.35),rgba(77,195,255,.35),rgba(182,77,255,.35),rgba(255,77,109,.35));animation:tspin 4s linear infinite;filter:blur(20px)}
+.fx-LR{background:radial-gradient(circle,#fff 0,rgba(240,207,98,.9) 20%,transparent 60%),repeating-conic-gradient(rgba(255,255,255,.25) 0 6deg,transparent 6deg 15deg);animation:tflash .9s ease-out,tspin 6s linear infinite}
+@keyframes tpulse{50%{opacity:.5}}@keyframes tspin{to{transform:rotate(360deg)}}@keyframes tflash{0%{opacity:0;transform:scale(.2)}30%{opacity:1}}
+.trecap{text-align:center;max-height:100vh;overflow:auto;padding:20px 0}
+.trecap h2{color:#f0cf62}

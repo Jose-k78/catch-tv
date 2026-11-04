@@ -20,15 +20,16 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
 
 - Seul l'admin modifie les images et le contenu de l'app. Les images des fiches catcheurs : n'importe quel membre
   les ajoute, l'admin peut les enlever.
-- **Vidéos officielles uniquement** (chaînes YouTube officielles, plateformes officielles). Jamais de copie piratée
-  ou non officielle (VK Video, archive.org… refusés), même « cachée ».
+- **Vidéos officielles uniquement** dans ce que Claude ajoute (chaînes YouTube officielles, plateformes officielles). Claude ne
+  cherche ni n'ajoute jamais de copie piratée (VK Video, OK.ru, archive.org…). Les liens que le modo colle lui-même sont son choix :
+  le lecteur reconnaît Dailymotion, Vimeo, OK.ru, VK, archive.org, Twitch, Streamable, Rumble, Facebook, fichiers vidéo (`parseVideo`
+  de js/links.js), YouTube est lu par le lecteur YouTube (youtube.com/embed : sans pub pour un compte Premium connecté).
 - **Jamais de photos de vraies personnes récupérées sur le web** (pas d'affiches officielles, pas de photos Wikipédia
   de catcheurs ajoutées automatiquement, pas de Smackdown Hotel pour les images). Les seules photos de catcheurs sont
   celles que Jose fournit lui-même : dossier `img/catcheurs/` (sa référence, prioritaire sur l'image d'un membre).
 - Matchs de référence d'une fiche : vidéo officielle connue → « ▶ Voir » dans l'app ; sinon simple recherche YouTube
   « noms + événement + full match » (« 🔎 Chercher le match ») et c'est le membre qui choisit la vidéo. Pour NJPW, Stardom
-  et Marigold : choix entre YouTube, Dailymotion et la plateforme officielle (`refButton` de js/views/groups.js). Jamais
-  VK Video ni archive.org (copies non officielles), même si Jose le redemande.
+  et Marigold : choix entre YouTube, Dailymotion et la plateforme officielle (`refButton` de js/views/groups.js).
 - Spoilers : résultats, champions récents, défenses de titre toujours derrière un spoiler. Dans le bandeau et les
   notifications, un changement de titre s'affiche comme une défense (« 🙈 Défense de titre · Raw du 27 oct. »), avec le
   même texte que le champion ait gardé ou perdu son titre.
@@ -79,13 +80,14 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   avant (`f`) parmi les versions (`v`) des photos des catcheurs (3 au plus : `slug-v2/-v3.webp`), ceintures, logos de shows,
   d'événements et de groupes ; ajouter une image (WebP fait dans le navigateur, envoyé avec la clé GitHub de l'admin) ;
   supprimer une version. Le robot `photos.mjs` connaît les versions (une photo déposée à la main passe en avant).
-- TCC Play (`js/views/player.js`, `#/player`, onglet rouge juste après l'onglet Accueil) : style Prime Video (onglets par
+- TCC Play (`js/views/player.js`, `#/player`, dans la barre du bas à la place de Recherche ; Recherche est un onglet en haut,
+  juste après Accueil ; logo `TPLAY` / icône `TPLAY_ICON` de js/links.js) : style Prime Video (onglets par
   promotion puis par show, barre de recherche), shows rangés par année / mois / date + « Choisir une date »
   (`#/player/e/K|show|date`) : le lien ⭐ par défaut du modo se lance dans le lecteur de l'app, sinon la 1re vidéo officielle ;
   ⚙️ réglages modo (`#/player/reglages`). Vidéos officielles (feed.yt, highlights, matches.json), j'aime local, commentaires
   `video-<id>`. Jamais d'archive.org ni de VK ajoutés par Claude. Onglet « Autre » (`#/autre`, après Marigold) : WWF/WCW/ECW.
 - « Vu en highlights » : entrée d'historique avec rating 0 et comment `"[HL]"` (pas de changement des règles Firestore) ;
-  trophées highlights dans trophies.js (hl, hlx, hlp, hls). Badges « CETTE NUIT » (22 h–6 h Paris) / « AUJOURD’HUI ».
+  trophées highlights dans trophies.js (hl, hlx, hlp, hls). Badges « CETTE NUIT » (19 h–5 h Paris) / « AUJOURD’HUI » (6 h–18 h), d'après l'heure réelle du show (`dayWord`).
 - Babies du mois = tournoi à 8 (`js/views/babies.js`) : document Firestore `polls/bk-AAAA-MM` (type « bracket », 8 noms choisis
   par le modo), votes dans `pollvotes` (poll `bk-AAAA-MM-mN`), 3 votes pour gagner un duel, un duel de plus par jour ; fin du mois
   sans finale → « Pas de babies désignée ». Sondages : « Match nul » ajouté aux dream matchs, « Qui a voté quoi ». Pronostics :
@@ -96,6 +98,14 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   (`ent:Nom`, `entm:Nom`), tournois (`tn:id`), recherche VS (`m:a vs b`) ; YouTube et Dailymotion lus dans l'app. Demandes
   « Je veux voir le show » et signalements de lien / photo / fiche / entrance → collection `reports` (cible `voir:…`, `lien:…`,
   `photo:Nom`, `catcheur:Nom`, `entrance:Nom`) ; à l'ajout du lien, notification aux membres qui l'avaient demandé.
+- Shows passés : une seule rubrique « Déjà passés » (accueil, page d'une promotion, page d'un show) + page `#/passes[/K[/show]]` ;
+  chaque carte ouvre la page du show (`#/ev/…`) : résumé, résultats (spoiler), highlights, liens officiels, TCC Play, lecteur intégré
+  (lien ⭐ du modo, lancé en sourdine). Liens du modo : modifier ✏️, ⭐ par défaut, supprimer ; « story:<id> » pour la storyline.
+- TCCCG gacha (`js/views/gacha.js`) : Call Up = boosters (shows hebdo, PLE / PPV, promotions), 5 cartes dont 1 R ou mieux, taux
+  N 55 / R 25 / SR 12 / SSR 5,5 / UR 2 / LR 0,5 %, 100 pièces (1 gratuit par jour), animations selon la rareté ; Roster = collection,
+  vente (N 10 … LR 1000). Cartes = catcheurs avec photo ; rareté par rang de célébrité (fiche, ancienneté, titres, palmarès, groupes),
+  forçable avec le champ `tcg` d'une fiche ; ATK / DEF selon rareté, face / heel, champion, poids, blessure. Sauvegarde sur le
+  téléphone (`ctv.tcg`) pour l'instant. Réservé au modo (`S.realAdmin`).
 - Rubrique Tournoi (`js/views/tournois.js`, `#/tournois`, `#/tournois/g1`, `#/tournoi/<id>`) d'après `data/tournaments.json`.
 - Lecteur musical (`js/ytmusic.js`) : playlists YouTube du modo dans `data/media.json` (`pls`), bouton 🎵 en haut ; juste le
   son (lecteur caché, demande de Jose), commandes dans un petit panneau sous 🎵.
@@ -132,6 +142,9 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   - fiches (`data/wrestlers.json`) : `dc` = date de décès (AAAA-MM-JJ) pour un catcheur décédé ; `tt` = palmarès complet
     (titres et tournois gagnés, Royal Rumble… seulement des promotions de l'app) ;
   - groupes : membres de The 946 (WWE, depuis 2026), MFT, The Bloodline 2026.
+  - résumés des PLE / PPV : s'aider aussi de https://mibih.wordpress.com/category/wrestling-reviews/latest-wrestling-ppv-reviews/ (réécrire en français, ne pas copier) ;
+  - shows déplacés : `no` (dates sans épisode) et `e` (épisode spécial à une autre date) dans `data/calendar.json` ; heures toujours
+    données dans le fuseau du show (`h` + `tz`) : le changement d'heure est calculé par l'app ;
   - ne jamais toucher à `data/links.json` (liens du modo), aux images ni à `data/logos.json` / `data/photos.json`.
 
 ## Données et mises à jour automatiques

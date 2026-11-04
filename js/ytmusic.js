@@ -40,7 +40,8 @@ function panel(show) {
     '<div class="ytmctl"><button data-act="ytm" data-a="prev" aria-label="Précédent">⏮</button><button data-act="ytm" data-a="toggle" id="ytmpp" aria-label="Lecture / pause">' + (playing ? "⏸" : "▶") + '</button><button data-act="ytm" data-a="next" aria-label="Suivant">⏭</button>' +
     '<input type="range" id="ytmvol" min="0" max="100" value="' + (s.vol == null ? 40 : s.vol) + '" aria-label="Volume"></div>' +
     '<div class="ytmrow">' + (L.length > 1 ? '<select id="ytmpl" aria-label="Playlist">' + L.map(x => '<option value="' + esc(x.id) + '"' + (pl && x.id === pl.id ? " selected" : "") + ">" + esc(x.n || "Playlist") + "</option>").join("") + "</select>" : '<small>' + esc(pl ? pl.n || "" : "") + "</small>") +
-    '<button class="linkbtn" data-act="ytm" data-a="close">Arrêter</button><button class="linkbtn" data-act="ytm" data-a="hide">Fermer</button></div>';
+    '<button class="linkbtn" data-act="ytm" data-a="close">Arrêter</button><button class="linkbtn" data-act="ytm" data-a="hide">Fermer</button></div>' +
+    '<div class="ytmrow"><button class="chip' + (s.shuf ? " on" : "") + '" data-act="ytm" data-a="shuf">🔀 Aléatoire</button><button class="chip' + (s.auto ? " on" : "") + '" data-act="ytm" data-a="auto">⏯ Lecture auto à l’ouverture</button></div>';
 }
 let curTitle = "", playing = false;
 export function ytmPanel() { if (document.getElementById("ytmpanel")) panel(false); else panel(true); }
@@ -51,10 +52,20 @@ async function start(autoplay) {
   const s = st(), same = s.pl === pl.id;
   ready = false;
   player = new YT.Player("ytmframe", {
-    width: "200", height: "113", host: "https://www.youtube-nocookie.com",
-    playerVars: { listType: "playlist", list: pl.id, index: same ? s.i || 0 : 0, start: same ? Math.floor(s.t || 0) : 0, autoplay: autoplay ? 1 : 0, playsinline: 1, rel: 0, modestbranding: 1 },
+    width: "240", height: "240", host: "https://www.youtube.com",
+    playerVars: { listType: "playlist", list: pl.id, index: same ? s.i || 0 : 0, start: same ? Math.floor(s.t || 0) : 0, autoplay: autoplay ? 1 : 0, playsinline: 1, rel: 0, loop: 1, origin: location.origin },
     events: {
-      onReady: e => { ready = true; if (document.getElementById("ytmpanel")) panel(true); e.target.setVolume(s.vol == null ? 40 : s.vol); if (autoplay) e.target.playVideo(); },
+      onReady: e => {
+        ready = true; if (document.getElementById("ytmpanel")) panel(true);
+        const p = e.target; p.setVolume(s.vol == null ? 40 : s.vol);
+        try { p.setLoop(true); if (st().shuf) { p.setShuffle(true); if (!same) p.playVideoAt(0); } } catch (x) {}
+        if (autoplay) {
+          // sans appui sur l'écran, le navigateur n'autorise que la lecture en sourdine : le son revient au premier appui
+          if (!gesture) { p.mute(); const un = () => { try { p.unMute(); p.playVideo(); } catch (x) {} document.removeEventListener("pointerdown", un, true); }; document.addEventListener("pointerdown", un, true); }
+          p.playVideo();
+        }
+      },
+      onError: e => { try { e.target.nextVideo(); } catch (x) {} },
       onStateChange: e => {
         playing = e.data === 1; const b = document.getElementById("ytmpp"); if (b) b.textContent = playing ? "⏸" : "▶";
         const mb = document.getElementById("musicbtn"); if (mb) mb.classList.toggle("on", playing);
@@ -71,6 +82,8 @@ ACT.ytm = el => {
   const a = el.dataset.a;
   if (a === "close") return stop();
   if (a === "hide") return panel(false);
+  if (a === "shuf") { const on = !st().shuf; save({ shuf: on ? 1 : 0 }); if (player && ready) { try { player.setShuffle(on); if (on) player.playVideoAt(0); } catch (x) {} } el.classList.toggle("on", on); toast(on ? "🔀 Lecture aléatoire" : "Lecture dans l’ordre"); return; }
+  if (a === "auto") { const on = !st().auto; save({ auto: on ? 1 : 0 }); el.classList.toggle("on", on); toast(on ? "La musique se lancera à l’ouverture de l’app" : "Plus de lecture automatique"); return; }
   if (!player || !ready) return;
   if (a === "toggle") { if (player.getPlayerState() === 1) player.pauseVideo(); else player.playVideo(); }
   if (a === "next") player.nextVideo();
@@ -83,10 +96,11 @@ document.addEventListener("change", e => {
 });
 document.addEventListener("input", e => { if (e.target.id === "ytmvol") { const v = +e.target.value; save({ vol: v }); if (player && ready) player.setVolume(v); } });
 // bouton 🎵 en haut : lance la musique (1er appui) puis ouvre / ferme le panneau des commandes
-export function ytmToggle() { if (!box) { start(true); panel(true); } else ytmPanel(); }
+let gesture = false;
+export function ytmToggle() { gesture = true; if (!box) { start(true); panel(true); } else ytmPanel(); }
 export const ytmOn = () => !!box;
 // à l'ouverture : le lecteur revient s'il était allumé (lecture auto si le navigateur l'autorise)
-export function ytmBoot() { if (playlists().length && st().on && !box) start(true); }
+export function ytmBoot() { if (playlists().length && (st().on || st().auto) && !box) start(true); }
 // une autre vidéo de l'app démarre -> pause
 setInterval(() => { if (!player || !ready) return; const other = [...document.querySelectorAll(".player iframe, .player video")].length; if (other && player.getPlayerState && player.getPlayerState() === 1) player.pauseVideo(); }, 1500);
 // toucher ailleurs ferme le panneau (la musique continue)

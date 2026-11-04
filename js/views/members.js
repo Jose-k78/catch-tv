@@ -34,7 +34,7 @@ export function membersView(tab) {
     h += (tiles.length ? '<div class="tiles2">' + tiles.join("") + "</div>" : "") +
       '<div class="list" style="margin-top:10px">' + [["#/sondages", "📊 Sondages", "et le tournoi Babies du mois"], ["#/pronostics", "🎯 Pronostics", "et le classement"], ["#/storyline", "📖 Storyline du jour", "et les précédentes"], ["#/tournois", "🏆 Tournois", "en cours et à venir"]]
         .map(x => '<a class="item" href="' + x[0] + '"><span class="lbl"><b>' + x[1] + "</b><small>" + x[2] + '</small></span><span class="chev">›</span></a>').join("") + "</div>" +
-      '<div class="actsec">' + activitySection() + "</div><h2>Activité des membres</h2>" + activityList(20);
+      '<div class="actsec">' + activitySection() + "</div>";
     return h;
   }
   if (tab === "demandes") {

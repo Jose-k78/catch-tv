@@ -8,7 +8,7 @@ import { commentsBox } from "./comments.js";
 import { linkNames } from "../wrestlers.js";
 import { showLogo } from "../assets.js";
 import { PREVIEW } from "../content.js";
-import { linksOf, linksHTML, embedSrc, defaultLink } from "../links.js";
+import { linksOf, linksHTML, playerHTML, defaultLink, TPLAY } from "../links.js";
 import { allPle, epis, watchLinks, PARENT } from "./catalog.js";
 
 const okId = id => /^[\w-]{11}$/.test(String(id || ""));
@@ -39,7 +39,7 @@ const evTile = (k, show, d, t) => '<a class="pev" href="' + evHrefP(k, show, d) 
 const PROMOS = () => Object.keys(S.P || {}).filter(k => !PARENT[k]).concat(Object.keys(S.P || {}).filter(k => PARENT[k]));
 let pq = "";
 function topBar(cur) {
-  return '<section class="phero"><span class="eyebrow">TCC PLAY</span><h1>' + (cur && cur !== "home" ? esc(cur) : "Archives et vidéos") + "</h1>" +
+  return '<section class="phero"><span class="eyebrow">' + TPLAY + '</span><h1>' + (cur && cur !== "home" ? esc(cur) : "Archives et vidéos") + "</h1>" +
     '<div class="psearch"><input id="pq" type="search" placeholder="Chercher une vidéo, un show, un catcheur…" autocomplete="off" value="' + esc(pq) + '"></div></section>' +
     '<nav class="tabs ptabs">' + [["home", "Accueil"]].concat(PROMOS().map(k => [k, k]), [["legendes", "WWF · WCW · ECW"]]).map(x =>
       '<a class="tab' + (x[0] === cur ? " on" : "") + '" href="' + (x[0] === "home" ? "#/player" : "#/player/k/" + encodeURIComponent(x[0])) + '">' + esc(x[1]) + "</a>").join("") +
@@ -122,8 +122,8 @@ function eventView(key, vids) {
   const L = vids.filter(v => v.k === k && (v.show || "PLE") === show && v.d === d);
   const def = defaultLink(lk) || linksOf(lk)[0];
   let h = '<a class="back" href="#/player/k/' + encodeURIComponent(k) + (show ? "/" + encodeURIComponent(show) : "") + '">' + ICON.back + " " + esc(k) + "</a>";
-  if (def) h += '<div class="pstage"><div class="player"><iframe src="' + esc(embedSrc(def.u)) + '" title="' + esc(t) + '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div></div>';
-  else if (L[0] && !PREVIEW) h += '<div class="pstage"><div class="player"><iframe src="https://www.youtube-nocookie.com/embed/' + L[0].id + '?rel=0" title="' + esc(L[0].t) + '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div></div>';
+  if (def) h += '<div class="pstage">' + playerHTML(def.u, t, { muted: true }) + "</div>";
+  else if (L[0] && !PREVIEW) h += '<div class="pstage"><div class="player"><iframe src="https://www.youtube.com/embed/' + L[0].id + '?rel=0" title="' + esc(L[0].t) + '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div></div>';
   h += '<section class="pmeta"><h1>' + esc(t) + "</h1><small>" + esc(k) + (show !== "PLE" ? " · " + esc(show) : " · PLE") + (d ? " · " + fmt(d) + " " + d.slice(0, 4) : "") + "</small></section>";
   h += '<div style="margin:0 16px">' + linksHTML(lk, { title: t + (d ? " du " + fmt(d) : ""), href: location.hash, ask: true }) + "</div>";
   if (L.length) h += '<h2>Vidéos officielles</h2><div class="prow pcol">' + L.map(thumb).join("") + "</div>";
@@ -140,7 +140,7 @@ function watchView(id, vids) {
   if (!okId(id)) return '<p class="empty">Vidéo introuvable.</p>';
   let h = '<a class="back" href="javascript:history.back()">' + ICON.back + " TCC Play</a>";
   h += '<div class="pstage">' + (PREVIEW ? '<p class="note" style="margin:16px">La vidéo se lira ici une fois l’app en ligne.</p>' :
-    '<div class="player"><iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0" title="' + esc(v.t) + '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>') + "</div>";
+    '<div class="player"><iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0" title="' + esc(v.t) + '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>') + "</div>";
   h += '<section class="pmeta"><h1>' + linkNames(v.t) + "</h1><small>" + esc([v.k, v.show, v.d ? fmt(v.d) : ""].filter(Boolean).join(" · ")) + " · Source : YouTube (chaîne officielle)</small>" + likeBar(id) +
     '<a class="linkbtn" href="https://www.youtube.com/watch?v=' + id + '" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>' +
     (v.d && v.k ? ' · <a class="linkbtn" href="' + evHrefP(v.k, v.show, v.d) + '">Tout le show ›</a>' : "") + "</section>";

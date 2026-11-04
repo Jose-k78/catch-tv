@@ -2,6 +2,21 @@
  "updated": "2026-10-30",
  "items": [
   {
+   "id": "2026-11-04-maj2",
+   "d": "2026-11-04",
+   "t": "Mise à jour du 4 novembre (2)",
+   "txt": [
+    "🗂 Une seule rubrique « Déjà passés » (accueil, promotions, shows) : chaque show ouvre une page avec tout (résumé, highlights, liens officiels, TCC Play).",
+    "▶ TCC Play passe dans la barre du bas, la Recherche en haut à côté de l’Accueil, avec un nouveau logo TCC Play.",
+    "🎬 Les liens vidéo sont reconnus automatiquement (Dailymotion, Vimeo, Twitch…) et se lancent dans le lecteur de l’app.",
+    "📺 Lecteur YouTube relié à ton compte YouTube : sans pub si tu as YouTube Premium.",
+    "🌙 Étiquettes Aujourd’hui / Cette nuit d’après l’heure réelle du show à Paris (changement d’heure compris).",
+    "📖 La storyline du jour et les tournois reviennent sur l’accueil. Nouveau : le Dusty Rhodes Tag Team Classic.",
+    "🎵 Lecteur de musique réparé, avec lecture aléatoire et lecture automatique à l’ouverture.",
+    "🧑 Cruz Montana (ex-Mike Santana) a sa fiche. NXT de cette semaine décalé au mercredi 4 novembre."
+   ]
+  },
+  {
    "id": "2026-11-04-maj",
    "d": "2026-11-04",
    "t": "Mise à jour du 4 novembre",
