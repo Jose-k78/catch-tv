@@ -2500,20 +2500,21 @@
   },
   "mft": {
    "n": "MFT (My Family Tree)",
-   "lg": "",
+   "lg": "MFT (My Family Tree)",
    "k": "WWE",
    "y": "depuis 2025",
    "on": 1,
    "m": [
-    "Solo Sikoa",
     "Tama Tonga",
-    "Tonga Loa",
-    "Talla Tonga",
-    "JC Mateo"
+    "Talla Tonga"
    ],
    "a": [
     "MFT",
     "My Family Tree"
+   ],
+   "ex": [
+    "Solo Sikoa",
+    "Tonga Loa"
    ]
   }
  }
