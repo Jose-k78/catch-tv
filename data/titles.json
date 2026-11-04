@@ -1616,8 +1616,14 @@
    "hist": [],
    "src": "Wikipédia",
    "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Lucha_Libre_AAA_Worldwide",
-   "defs": [],
-   "def": 0
+   "defs": [
+    {
+     "d": "2026-10-30",
+     "ev": "SmackDown",
+     "vs": "Ricky Saints"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "aaa-tag",
