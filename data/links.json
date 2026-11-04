@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T01:19:24.684Z",
+ "updated": "2026-11-04T01:19:41.391Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "ev:NJPW|PLE|2026-11-03": [
@@ -14,7 +14,7 @@
     "t": "",
     "u": "https://m.vkvideo.ru/video-217831186_456241538",
     "at": "2026-11-04",
-    "def": true
+    "def": false
    }
   ]
  }
