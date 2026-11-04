@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03T23:54:13.517Z",
+ "updated": "2026-11-04T01:17:06.155Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "ev:NJPW|PLE|2026-11-03": [
@@ -14,6 +14,12 @@
     "t": "Stardom streaming",
     "u": "https://watchwrestling.fit/stardom-crimson-nightmare-10-29-2026/",
     "at": "2026-11-03"
+   },
+   {
+    "t": "",
+    "u": "https://m.vkvideo.ru/live-190393047_456242377?video_track_code=video_9f3caa70WpICOWTRK2Mm4w4wslZqX6SzKT7bOohNFjH_zshXAFs89HBkNJd9BWO6XmKCPS8F9_53ZJ95gUc7AMb-4gFEBW2x0veiHuel6izFBu1iX2mWhRsdmmTsKHlumLy-TQdqNOdGZu5Ip9roLMX4EmNfaZaHGw0T8ney6c4AMS45dzXCgC8IXeEY",
+    "at": "2026-11-04",
+    "def": true
    }
   ]
  }
