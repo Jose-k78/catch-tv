@@ -1,5 +1,5 @@
 {
- "at": "2026-11-04T08:19:37.021Z",
+ "at": "2026-11-04T09:27:48.160Z",
  "items": [
   {
    "t": "Spoilers de WWE SmackDown du 6 novembre 2026",
@@ -14,6 +14,24 @@
   {
    "t": "The Champ ajoute des précisions au sujet du John Cena Classic qui aura lieu le 14 décembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/60942-the-champ-ajoute-des-precisions-au-sujet-du-john-cena-classic-qui-aura-lieu-le-14-decembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-04",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Chad Gable : « Si j'affronte Roman Reigns, je serais un vrai dur à cuire »",
+   "u": "https://www.catch-newz.com/wwe/newz/60979-chad-gable-si-jaffronte-roman-reigns-je-serais-un-vrai-dur-a-cuire",
+   "s": "Catch-Newz",
+   "d": "2026-11-04",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "La WWE annonce un second show à Disney World le 15 décembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/60957-la-wwe-annonce-un-second-show-a-disney-world-le-15-decembre-2026",
    "s": "Catch-Newz",
    "d": "2026-11-04",
    "tags": [
@@ -38,15 +56,6 @@
    "tags": [
     "WWE",
     "NXT"
-   ]
-  },
-  {
-   "t": "La WWE annonce un second show à Disney World le 15 décembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/60957-la-wwe-annonce-un-second-show-a-disney-world-le-15-decembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-04",
-   "tags": [
-    "WWE"
    ]
   },
   {
@@ -516,13 +525,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Résultats de VKF Halloween Havoc 2026",
-   "u": "https://www.catch-newz.com/international/resultats/60893-resultats-de-vkf-halloween-havoc-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-02",
-   "tags": []
   }
  ],
  "yt": {
@@ -758,14 +760,15 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60942-the-champ-ajoute-des-precisions-au-sujet-du-john-cena-classic-qui-aura-lieu-le-14-decembre-2026",
-   "https://www.catch-newz.com/wwe/newz/60978-19-catcheurs-de-nxt-ont-ete-call-up-ces-12-derniers-mois",
-   "https://www.catch-newz.com/wwe/newz/60977-royce-keys-ce-soir-a-nxt-personne-nest-a-labri",
+   "https://www.catch-newz.com/wwe/newz/60979-chad-gable-si-jaffronte-roman-reigns-je-serais-un-vrai-dur-a-cuire",
    "https://www.catch-newz.com/international/resultats/60966-resultats-bzw-scary-banger-31-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60958-pourquoi-il-ny-a-pas-de-show-de-wwe-nxt-le-3-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60957-la-wwe-annonce-un-second-show-a-disney-world-le-15-decembre-2026",
+   "https://www.catch-newz.com/international/resultats/60974-resultats-de-sendai-girls-pro-wrestling-du-1er-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/60978-19-catcheurs-de-nxt-ont-ete-call-up-ces-12-derniers-mois",
+   "https://www.catch-newz.com/wwe/newz/60977-royce-keys-ce-soir-a-nxt-personne-nest-a-labri",
    "https://www.catch-newz.com/wwe/resultats/60909-resultats-de-wwe-main-event28-octobre-2026",
    "https://www.catch-newz.com/international/resultats/60971-resultats-de-indy-wrestling-domingos-familiares-noche-de-muertos",
-   "https://www.catch-newz.com/international/resultats/60974-resultats-de-sendai-girls-pro-wrestling-du-1er-novembre-2026",
    "https://www.catch-newz.com/international/resultats/60976-resultats-de-ott-newend",
    "https://www.catch-newz.com/international/resultats/60975-resultats-de-hop-october-onslaught-tour-2026",
    "https://www.catch-newz.com/international/resultats/60972-resultats-du-jour-7-de-dg-the-gate-of-victory-2026",
@@ -964,7 +967,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 10 nouveaux articles lus sur la page d'accueil (10 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
