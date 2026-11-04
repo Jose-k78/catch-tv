@@ -1,5 +1,5 @@
 {
- "at": "2026-11-04T10:38:08.544Z",
+ "at": "2026-11-04T11:53:36.984Z",
  "items": [
   {
    "t": "Spoilers de WWE SmackDown du 6 novembre 2026",
@@ -18,6 +18,16 @@
    "d": "2026-11-04",
    "tags": [
     "WWE"
+   ]
+  },
+  {
+   "t": "Le Main-Event de NJPW Wrestle Kingdom 21 est connu !",
+   "u": "https://www.catch-newz.com/international/newz/60982-le-main-event-de-njpw-wrestle-kingdom-21-est-connu",
+   "s": "Catch-Newz",
+   "d": "2026-11-04",
+   "tags": [
+    "NJPW",
+    "Main Event"
    ]
   },
   {
@@ -516,13 +526,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-02",
    "tags": []
-  },
-  {
-   "t": "Regardez WSW MegaMania Adélaïde gratuitement",
-   "u": "https://www.catch-newz.com/international/newz/60875-regardez-wsw-megamania-adelaide-gratuitement",
-   "s": "Catch-Newz",
-   "d": "2026-11-02",
-   "tags": []
   }
  ],
  "yt": {
@@ -758,6 +761,7 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60942-the-champ-ajoute-des-precisions-au-sujet-du-john-cena-classic-qui-aura-lieu-le-14-decembre-2026",
+   "https://www.catch-newz.com/international/newz/60982-le-main-event-de-njpw-wrestle-kingdom-21-est-connu",
    "https://www.catch-newz.com/international/resultats/60966-resultats-bzw-scary-banger-31-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60958-pourquoi-il-ny-a-pas-de-show-de-wwe-nxt-le-3-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60957-la-wwe-annonce-un-second-show-a-disney-world-le-15-decembre-2026",
@@ -966,7 +970,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
