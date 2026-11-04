@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-30",
+ "updated": "2026-11-04",
  "note": "Vidéos des chaînes officielles uniquement. res = résultats (spoilers, affichés seulement à la demande). m = résumé match par match (promotions japonaises).",
  "items": {
   "WWE|Raw|2026-10-26": {
@@ -291,6 +291,58 @@
    ],
    "s": "PWTorch",
    "u": "https://www.pwtorch.com/site/2026/10/29/tna-impact-tv-results-10-29-hardys-vs-syx-red-vs-alexander-elijah-vs-nemeth-skyler-vs-francis/"
+  },
+  "WWE|SmackDown|2026-10-30": {
+   "res": [
+    "Chelsea Green a battu Nikki Bella et conserve le titre féminin de la WWE.",
+    "Rey Fénix a battu Ricky Saints et conserve le titre AAA Cruiserweight.",
+    "Jade Cargill a battu Tatum Paxley.",
+    "Sami Zayn a battu Trick Williams et conserve le titre incontesté de la WWE."
+   ],
+   "seg": [
+    {
+     "k": "Annonce",
+     "t": "Danhausen anime le show spécial veille d’Halloween et présente la carte, dont Zayn contre Williams et Green contre Bella pour les titres."
+    },
+    {
+     "k": "Promo",
+     "t": "Cody Rhodes parle de Randy Orton, de Crown Jewel et de son match Last Man Standing, laissant entendre que le vainqueur deviendra aspirant n°1."
+    },
+    {
+     "k": "Backstage",
+     "t": "Tiffany Stratton prévoit d’encaisser sa mallette sur Liv Morgan dès qu’elle sera seule ; elle refuse l’échange proposé par Danhausen."
+    },
+    {
+     "k": "Attaque",
+     "t": "Liv Morgan félicite puis nargue Chelsea Green avant Crown Jewel ; Roxanne Perez attaque Stratton, Green, Morgan et Raquel Rodriguez s’en prennent à elle, et IYO SKY vient à son secours."
+    },
+    {
+     "k": "Interview",
+     "t": "Blake Monroe veut repartir de l’avant après sa rivalité avec Giulia et se moque du règne de Chelsea Green."
+    },
+    {
+     "k": "Backstage",
+     "t": "Trick Williams promet de repartir avec deux titres et de défier Roman Reigns ; l’expérience de Danhausen fait fuir Lil Yachty."
+    },
+    {
+     "k": "Backstage",
+     "t": "Damian Priest, furieux de la chance donnée à Trick Williams, est confronté par FrAxiom pour son attaque sur R-Truth : un match se prépare."
+    },
+    {
+     "k": "Attaque",
+     "t": "Gunther passe Danhausen à travers une table, puis le Demon Balor apparaît, frappe Gunther à l’échelle et l’achève d’un Coup de Grâce."
+    },
+    {
+     "k": "Annonce",
+     "t": "Rappel du match No Holds Barred entre Kevin Owens et CM Punk, vendredi prochain au Barclays Center."
+    },
+    {
+     "k": "Autre",
+     "t": "Le main event est d’abord donné vainqueur par disqualification pour Williams, puis relancé sans disqualification par Nick Aldis ; Zayn s’impose après un coup bas et un coup de ceinture."
+    }
+   ],
+   "s": "Wrestling Inc.",
+   "u": "https://www.wrestlinginc.com/2302585/wwe-smackdown-october-30-2026-results/"
   }
  }
 }
