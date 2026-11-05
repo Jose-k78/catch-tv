@@ -1,6 +1,24 @@
 {
- "at": "2026-11-05T08:35:24.204Z",
+ "at": "2026-11-05T09:32:17.663Z",
  "items": [
+  {
+   "t": "La WWE envisage d'organiser un show à Tokyo en 2027",
+   "u": "https://www.catch-newz.com/wwe/newz/61003-la-wwe-envisage-dorganiser-un-show-a-tokyo-en-2027",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Carte de NJPW Wrestle Kingdom 21",
+   "u": "https://www.catch-newz.com/international/newz/60981-carte-de-njpw-wrestle-kingdom-21",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "NJPW"
+   ]
+  },
   {
    "t": "Chad Gable complimente Vanity Project après leur match à NXT",
    "u": "https://www.catch-newz.com/wwe/newz/61010-chad-gable-complimente-vanity-project-apres-leur-match-a-nxt",
@@ -520,24 +538,6 @@
    "tags": [
     "NJPW"
    ]
-  },
-  {
-   "t": "NJPW Power Struggle 2026 : Kenny Omega écarte la menace Oleg et humilie Yota Tsuji",
-   "u": "https://www.catch-newz.com/international/newz/60949-njpw-power-struggle-2026-kenny-omega-ecarte-la-menace-oleg-et-humilie-yota-tsuji",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "NJPW"
-   ]
-  },
-  {
-   "t": "NJPW Power Struggle 2026 : Wil Ospreay et Callum Newman en viennent aux mains",
-   "u": "https://www.catch-newz.com/international/newz/60948-njpw-power-struggle-2026-wil-ospreay-et-callum-newman-en-viennent-aux-mains",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "NJPW"
-   ]
   }
  ],
  "yt": {
@@ -800,6 +800,8 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60991-wwe-nxt-4-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61003-la-wwe-envisage-dorganiser-un-show-a-tokyo-en-2027",
+   "https://www.catch-newz.com/international/newz/60981-carte-de-njpw-wrestle-kingdom-21",
    "https://www.catch-newz.com/wwe/newz/61010-chad-gable-complimente-vanity-project-apres-leur-match-a-nxt",
    "https://www.catch-newz.com/wwe/newz/61011-enzo-amore-pourrait-avoir-signe-son-retour-a-la-wwe",
    "https://www.catch-newz.com/wwe/newz/61009-wwe-nxt-grace-a-lintervention-de-kevin-owens-grayson-waller-conserve-son-titre-nxt-contre-cm-punk",
@@ -1037,7 +1039,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 2 nouveaux articles lus sur la page d'accueil (2 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
