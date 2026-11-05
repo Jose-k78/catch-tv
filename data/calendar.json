@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29",
+ "updated": "2026-11-05",
  "promotions": {
   "WWE": {
    "c": [
@@ -40,14 +40,14 @@
      "t": "Crown Jewel",
      "d": "2026-11-07",
      "w": "Riyad",
-     "v": "Riyadh skyline",
+     "v": "ANB Arena (The Venue)",
      "card": [
       "Crown Jewel Championship masculin : Roman Reigns contre Sami Zayn",
       "Crown Jewel Championship féminin : Liv Morgan contre Chelsea Green",
       "Last Man Standing : Cody Rhodes contre Randy Orton",
       "Titres mondiaux par équipe : The Vision (Bron Breakker et Austin Theory) contre Penta et Je’Von Evans"
      ],
-     "h": "22:00",
+     "h": "20:00",
      "tz": "Asia/Riyadh",
      "dur": 240,
      "nf": "81930079"
@@ -216,10 +216,12 @@
      "w": "Phoenix",
      "v": "Mortgage Matchup Center",
      "card": [
-      "Titre Continental : Jon Moxley contre Jay White",
-      "Titres trios : Hangman Page, Brody King et Bandido contre Swerve Strickland, Kofi Kingston et Austin Creed",
+      "Titre mondial de la AEW : Will Ospreay contre Kyle Fletcher",
+      "Titre mondial féminin de la AEW : Mercedes Moné contre Marina Shafir",
+      "Titres trios, Texas Death Match : Hangman Page, Brody King et Bandido contre Swerve Strickland, Kofi Kingston et Austin Creed",
       "Titres mondiaux par équipe : The Young Bucks contre Mark Davis et Jake Doyle",
-      "Titres féminins par équipe : The Brawling Birds contre Wrathlander"
+      "Titres féminins par équipe : The Brawling Birds contre Wrathlander",
+      "Anarchy in the Arena : The Death Riders contre The Conglomeration contre The Cut"
      ],
      "h": "19:00",
      "tz": "America/New_York",
