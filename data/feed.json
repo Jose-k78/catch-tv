@@ -1,6 +1,17 @@
 {
- "at": "2026-11-05T10:30:53.573Z",
+ "at": "2026-11-05T11:26:45.231Z",
  "items": [
+  {
+   "t": "Leon Slater : « Je ne serais pas champion du monde TNA aujourd’hui sans mon passage à NXT »",
+   "u": "https://www.catch-newz.com/wwe/newz/61015-leon-slater-je-ne-serais-pas-champion-du-monde-tna-aujourdhui-sans-mon-passage-a-nxt",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE",
+    "TNA",
+    "NXT"
+   ]
+  },
   {
    "t": "Preview : TNA Impact du 5 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61012-preview-tna-impact-5-novembre-2026",
@@ -9,6 +20,17 @@
    "tags": [
     "TNA",
     "Impact"
+   ]
+  },
+  {
+   "t": "Résultats de AEW Dynamite Blood and Guts 2026",
+   "u": "https://www.voxcatch.fr/2026/11/05/resultats-de-aew-dynamite-blood-and-guts-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-05",
+   "tags": [
+    "AEW",
+    "NJPW",
+    "Dynamite"
    ]
   },
   {
@@ -520,24 +542,6 @@
     "WWE",
     "Raw"
    ]
-  },
-  {
-   "t": "Oba Femi est-il un vainqueur probable du John Cena Classic ?",
-   "u": "https://www.catch-newz.com/wwe/newz/60960-oba-femi-est-il-un-vainqueur-probable-du-john-cena-classic",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Les dates au calendrier de John Cena d'ici le ''John Cena Classic''",
-   "u": "https://www.catch-newz.com/wwe/newz/60959-les-dates-au-calendrier-de-john-cena-dici-le-john-cena-classic",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -800,6 +804,7 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60991-wwe-nxt-4-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61015-leon-slater-je-ne-serais-pas-champion-du-monde-tna-aujourdhui-sans-mon-passage-a-nxt",
    "https://www.catch-newz.com/international/newz/61012-preview-tna-impact-5-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61003-la-wwe-envisage-dorganiser-un-show-a-tokyo-en-2027",
    "https://www.catch-newz.com/international/newz/60981-carte-de-njpw-wrestle-kingdom-21",
@@ -1040,8 +1045,8 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 3 nouveaux articles lus sur la page d'accueil (3 liens)",
-  "VOXcatch": "6 articles (7 j)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
