@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29",
+ "updated": "2026-11-05",
  "note": "Catcheurs suivis (champions, cartes annoncées, favoris des membres) et catcheurs à découvrir (disc = true, toutes fédérations et époques). txt = petit résumé en français, era = époque, ref = matchs de référence, last = 3 derniers matchs (r = résultat, spoiler), v = vidéo YouTube d'une chaîne officielle.",
  "items": {
   "Roman Reigns": {
@@ -1452,6 +1452,40 @@
    "era": "NXT, depuis 2026 (Mike Santana à la TNA et à l'AEW avant)",
    "txt": "Ancien membre de LAX à la TNA puis de Proud and Powerful à l'AEW (avec Ortiz), Mike Santana est devenu champion du monde de la TNA avant de rejoindre la WWE à l'été 2026. À NXT, il catche sous le nom de Cruz Montana, un hommage à son père.",
    "ref": []
+  },
+  "Oba Femi": {
+   "k": "WWE",
+   "sh": [
+    "Raw"
+   ],
+   "al": "face",
+   "alD": "2025-02-15",
+   "txt": "Colosse nigérian formé au Performance Center de la WWE, devenu l'un des champions marquants de NXT avant de rejoindre Raw en 2026.",
+   "nick": "The Ruler, The Destroyer",
+   "from": "Lagos (Nigeria)",
+   "ht": "1,93 m",
+   "wt": "141 kg",
+   "fin": "Fall From Grace (pop-up powerbomb)"
+  },
+  "Stephanie Vaquer": {
+   "k": "WWE",
+   "sh": [
+    "Raw"
+   ],
+   "a": [
+    "Dark Angel"
+   ],
+   "al": "face",
+   "alD": "2024-07-13",
+   "inj": true,
+   "txt": "Catcheuse chilienne révélée au CMLL et au Japon, arrivée à la WWE en 2024 et passée de NXT à Raw en 2025.",
+   "nick": "La Primera, The Dark Angel",
+   "from": "San Antonio (Chili)",
+   "ht": "1,63 m",
+   "wt": "50 kg",
+   "debut": "2009",
+   "fin": "SVB (package backbreaker), Corkscrew Moonsault, Angel Wings",
+   "teams": "Giulia et Stephanie Vaquer, Stephanie Vaquer et Zeuxis"
   }
  }
 }
