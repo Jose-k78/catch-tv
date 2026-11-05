@@ -285,8 +285,8 @@ export function profileView(uid) {
   if (!p) return h + '<p class="empty">' + (S.profiles[uid] === null ? "Profil introuvable." : "Chargement…") + "</p>";
   const blocked = !me && isBlocked(uid);
   const raw = (me ? Object.values(S.history) : (S.otherHistory[uid] || []).slice()).sort((a, b) => (b.seenAt || 0) - (a.seenAt || 0));
-  const all = raw.filter(x => !isStoryFav(x));
-  const hist = all.filter(x => !isMatchNote(x) && !isStoryNote(x)), fights = all.filter(isMatchNote);
+  const all = raw.filter(x => !isStoryFav(x) && !(typeof x.id === "string" && x.id.indexOf("q_") === 0));
+  const hist = all.filter(x => !isMatchNote(x) && !isStoryNote(x) && !(typeof x.id === "string" && x.id.indexOf("g_") === 0)), fights = all.filter(isMatchNote);
   const rated = all.filter(x => x.rating);
   const avg = rated.length ? (rated.reduce((s, x) => s + x.rating, 0) / rated.length).toFixed(1).replace(".", ",") : "–";
   // bannière horizontale (comme sur Twitter), chargée à part
@@ -324,6 +324,8 @@ export function profileView(uid) {
   // vitrine des trophées
   h += showcase(uid);
   h += storyFavsHTML(raw);
+  const segFav = raw.filter(x => typeof x.id === "string" && x.id.indexOf("q_") === 0);
+  if (segFav.length) h += "<h2>♥ Ses segments préférés</h2><div class=\"list\">" + segFav.slice(0, 12).map(x => '<a class="item" href="#/ev/' + [x.k, x.comment || "PLE", x.d].map(encodeURIComponent).join("/") + '"><span class="lbl"><b>' + esc(x.title) + "</b><small>" + esc(x.k + (x.d ? " · " + fmt(x.d) : "")) + "</small></span></a>").join("") + "</div>";
   // favoris ⭐
   const fc = favChips(p);
   h += "<h2>⭐ Favoris</h2>" + (fc || '<p class="note">' + (me ? "Appuie sur l’étoile d’un catcheur pour le suivre." : "Pas encore de favori.") + "</p>");

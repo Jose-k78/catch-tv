@@ -136,8 +136,28 @@ export const ICON = {
   bell: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 8 3 8H3s3-1 3-8"/><path d="M10.3 20a1.9 1.9 0 0 0 3.4 0"/></svg>',
   dots: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>',
 };
+// notes de 0 à 5,5 par demi-étoile (demande de Jose, 5 nov.) : 5 étoiles + une 6e « bonus » au-delà de 5
+export const RMAX = 5.5;
+export const fmtR = n => String(Math.round(n * 2) / 2).replace(".", ",");
+const starCell = (i, n, tag) => { const full = n >= i, half = !full && n >= i - 0.5; return "<" + tag + ' class="st' + (full ? " on" : half ? " half" : "") + (i === 6 ? " bonus" : "") + '"' + (tag === "span" ? "" : "") + ">" + (half ? '<span class="sth">' + ICON.star + "</span>" : "") + ICON.star + "</" + tag + ">"; };
 export function stars(n) {
-  let h = '<span class="stars" aria-label="'+n+' sur 5">';
-  for (let i = 1; i <= 5; i++) h += '<span class="st'+(i <= n ? " on" : "")+'">'+ICON.star+'</span>';
+  n = Math.max(0, Math.min(RMAX, +n || 0));
+  let h = '<span class="stars" aria-label="' + fmtR(n) + ' sur 5,5">';
+  for (let i = 1; i <= (n > 5 ? 6 : 5); i++) h += starCell(i, n, "span");
   return h + "</span>";
+}
+// sélecteur de note : 6 étoiles coupées en deux (moitié gauche = ,5) ; retoucher la même valeur remet à 0
+export function ratePick(r) {
+  r = +r || 0;
+  let h = '<div class="rate6" data-v="' + r + '">';
+  for (let i = 1; i <= 6; i++) h += '<span class="rst' + (r >= i ? " on" : r >= i - 0.5 ? " half" : "") + (i === 6 ? " bonus" : "") + '"><span class="sth">' + ICON.star + "</span>" + ICON.star +
+    '<button type="button" class="rh l" data-r="' + (i - 0.5) + '" aria-label="' + fmtR(i - 0.5) + ' étoile"></button><button type="button" class="rh r" data-r="' + i + '" aria-label="' + i + ' étoile' + (i > 1 ? "s" : "") + '"></button></span>';
+  return h + '<b class="rval">' + (r ? fmtR(r) + " / 5,5" : "Pas de note") + "</b></div>";
+}
+export function pickRate(box, btn) {
+  const w = btn.closest(".rate6"); let v = +btn.dataset.r; if (v === +(w.dataset.v || 0)) v = 0;
+  w.dataset.v = v;
+  w.querySelectorAll(".rst").forEach((s, j) => { const i = j + 1; s.classList.toggle("on", v >= i); s.classList.toggle("half", v < i && v >= i - 0.5); });
+  w.querySelector(".rval").textContent = v ? fmtR(v) + " / 5,5" : "Pas de note";
+  return v;
 }

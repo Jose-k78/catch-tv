@@ -43,13 +43,34 @@ function topBar(cur) {
     '<div class="psearch"><input id="pq" type="search" placeholder="Chercher une vidéo, un show, un catcheur…" autocomplete="off" value="' + esc(pq) + '"></div></section>' +
     '<nav class="tabs ptabs">' + [["home", "Accueil"]].concat(PROMOS().map(k => [k, k]), [["legendes", "WWF · WCW · ECW"]]).map(x =>
       '<a class="tab' + (x[0] === cur ? " on" : "") + '" href="' + (x[0] === "home" ? "#/player" : "#/player/k/" + encodeURIComponent(x[0])) + '">' + esc(x[1]) + "</a>").join("") +
-    (S.isAdmin ? '<a class="tab" href="#/player/reglages">⚙️</a>' : "") + "</nav>" + '<div id="pres">' + (pq ? searchBlock(pq) : "") + "</div>";
+    (S.isAdmin ? '<a class="tab" href="#/player/reglages">⚙️</a>' : "") + "</nav>" + '<div id="pres">' + (pq.trim() ? searchBlock(pq.trim()) : "") + "</div>";
 }
+// recherche : vidéos de l'app, puis sur le web (Dailymotion et archive.org, sans clé), et boutons vers YouTube, VK, OK.ru
+const WEB = {};
 function searchBlock(q) {
-  const v = searchVideos(q, 20);
-  return v.length ? '<h2>Résultats</h2><div class="prow pcol">' + v.map(thumb).join("") + "</div>" : '<p class="note">Rien trouvé pour « ' + esc(q) + " ».</p>";
+  const v = searchVideos(q, 20), enc = encodeURIComponent(q);
+  return (v.length ? '<h2>Dans l’app</h2><div class="prow">' + v.map(thumb).join("") + "</div>" : '<p class="note">Rien dans l’app pour « ' + esc(q) + " ».</p>") +
+    '<h2>Sur le web</h2><div id="pweb">' + (WEB[q] || '<p class="note small">Recherche…</p>') + "</div>" +
+    '<div class="chips" style="margin:6px 16px"><a class="chip" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=' + enc + '">▶ YouTube</a>' +
+    '<a class="chip" target="_blank" rel="noopener" href="https://vkvideo.ru/?q=' + enc + '">VK Video</a><a class="chip" target="_blank" rel="noopener" href="https://ok.ru/video/search?st.query=' + enc + '">OK.ru</a>' +
+    '<a class="chip" target="_blank" rel="noopener" href="https://www.dailymotion.com/search/' + enc + '/videos">Dailymotion</a><a class="chip" target="_blank" rel="noopener" href="https://archive.org/search?query=' + enc + '&and[]=mediatype%3A%22movies%22">archive.org</a></div>';
 }
-document.addEventListener("input", e => { if (e.target.id !== "pq") return; pq = e.target.value; const r = document.getElementById("pres"); if (r) r.innerHTML = pq.trim().length > 1 ? searchBlock(pq) : ""; });
+const webCard = (u, img, t, src) => '<button class="pvid" data-act="mlplay" data-u="' + esc(u) + '" data-t="' + esc(t) + '"><span class="pth" style="background-image:url(\'' + esc(img) + '\')">▶</span><span class="pinfo"><b>' + esc(t) + "</b><small>" + esc(src) + "</small></span></button>";
+async function webSearch(q) {
+  if (WEB[q]) return;
+  const enc = encodeURIComponent(q), out = [];
+  const dm = fetch("https://api.dailymotion.com/videos?search=" + enc + "&fields=id,title,thumbnail_240_url,owner.screenname&limit=12").then(r => r.json()).then(j => (j.list || []).forEach(x => out.push(webCard("https://www.dailymotion.com/video/" + x.id, x.thumbnail_240_url, x.title, "Dailymotion · " + (x["owner.screenname"] || ""))))).catch(() => {});
+  const ar = fetch("https://archive.org/advancedsearch.php?q=" + encodeURIComponent("(" + q + ") AND mediatype:movies") + "&fl[]=identifier&fl[]=title&rows=12&output=json").then(r => r.json()).then(j => ((j.response || {}).docs || []).forEach(x => out.push(webCard("https://archive.org/details/" + x.identifier, "https://archive.org/services/img/" + x.identifier, x.title || x.identifier, "archive.org")))).catch(() => {});
+  await Promise.all([dm, ar]);
+  WEB[q] = out.length ? '<div class="prow">' + out.join("") + "</div>" : '<p class="note small">Rien trouvé sur Dailymotion ni archive.org.</p>';
+  const el = document.getElementById("pweb"); if (el && pq === q) el.innerHTML = WEB[q];
+}
+let pqT = null;
+document.addEventListener("input", e => {
+  if (e.target.id !== "pq") return; pq = e.target.value; const r = document.getElementById("pres"), q = pq.trim();
+  if (r) r.innerHTML = q.length > 1 ? searchBlock(q) : "";
+  clearTimeout(pqT); if (q.length > 2 && !PREVIEW) pqT = setTimeout(() => { pq = q; webSearch(q); }, 650);
+});
 
 export function playerView(a, b, c) {
   const vids = allVideos();

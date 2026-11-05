@@ -2,7 +2,7 @@
 // Rangées dans l'historique des notes (identifiant « m_… »), et reliées automatiquement au match complet,
 // à la vidéo de highlights ou au résumé match par match dès qu'ils apparaissent dans l'app.
 import { S, B, ACT } from "../state.js";
-import { esc, modal, toast, fmt, ICON, stars, docId, okDay } from "../util.js";
+import { ratePick, pickRate, fmtR, esc, modal, toast, fmt, ICON, stars, docId, okDay } from "../util.js";
 import { errText } from "./account.js";
 import { hlHref, hlOf, okVid, titleAt } from "./highlights.js";
 
@@ -103,7 +103,7 @@ export function rateBtn(k, title, show, d) {
   if (!k || !title) return "";
   const h = S.user ? myMatchNote(k, title, d) : null;
   return '<button class="mratebtn' + (h ? " on" : "") + '" data-act="mrate" data-k="' + esc(k) + '" data-t="' + esc(title) + '" data-show="' + esc(show || "") + '" data-d="' + esc(okDay(d) ? d : "") + '" aria-label="' +
-    (h ? "Ta note : " + (h.rating || 0) + " sur 5" : "Noter ce combat") + '">' + (h && h.rating ? stars(h.rating) : h ? ICON.check + " Vu" : "☆ Noter") + "</button>";
+    (h ? "Ta note : " + (h.rating || 0) + " sur 5,5" : "Noter ce combat") + '">' + (h && h.rating ? stars(h.rating) : h ? ICON.check + " Vu" : "☆ Noter") + "</button>";
 }
 
 ACT.mrate = el => {
@@ -116,18 +116,18 @@ ACT.mrate = el => {
   modal((box, close) => {
     const where = had && had.id !== mid(it.k, it.t, it.d) ? (had.show ? had.show + " · " : "") + (okDay(had.d) ? fmt(had.d) : "") : [it.show, okDay(it.d) ? fmt(it.d) : ""].filter(Boolean).join(" · ");
     box.innerHTML = "<h3>" + (had ? "Ta note" : "Noter ce combat") + '</h3><p class="sub">' + esc(it.t) + "<br>" + esc(it.k) + (where ? " · " + esc(where) : "") + "</p>" +
-      '<div class="rate">' + [1, 2, 3, 4, 5].map(i => '<button type="button" class="' + (i <= rating ? "on" : "") + '" data-r="' + i + '" aria-label="' + i + ' étoile' + (i > 1 ? "s" : "") + '">' + ICON.star + "</button>").join("") + "</div>" +
+      ratePick(rating) +
       '<label class="fld">Ton avis (facultatif)<textarea id="mcom" maxlength="280" rows="3" placeholder="Le moment fort, ce que tu as pensé du match…">' + esc(comment) + "</textarea></label>" +
       '<button class="btn wide" data-ok>Enregistrer</button>' + (had ? '<button class="btn wide ghost" style="margin-top:10px" data-del>Retirer ma note</button>' : "");
     box.addEventListener("click", async e => {
       const r = e.target.closest("[data-r]");
-      if (r) { rating = +r.dataset.r === rating ? 0 : +r.dataset.r; box.querySelectorAll(".rate button").forEach(b => b.classList.toggle("on", +b.dataset.r <= rating)); return; }
+      if (r) { rating = pickRate(box, r); return; }
       try {
         if (e.target.closest("[data-ok]")) {
           comment = box.querySelector("#mcom").value.trim().slice(0, 280);
           const keep = had || {};
           await B.setSeen(S.user.uid, id, { title: String(had ? keep.title : it.t).slice(0, 150), k: it.k, show: String(had ? keep.show : it.show).slice(0, 40), d: had ? keep.d || "" : it.d, rating: rating, comment: comment });
-          close(); toast(rating ? "Combat noté " + rating + "/5" : "Avis enregistré");
+          close(); toast(rating ? "Combat noté " + fmtR(rating) + "/5,5" : "Avis enregistré");
           const aid = S.user.uid + "_r_" + id;
           if (rating || comment) B.setActivity(aid, { uid: S.user.uid, kind: "mrate", k: it.k, show: String(had ? keep.show : it.show).slice(0, 40), d: had ? keep.d || "" : it.d,
             title: String(had ? keep.title : it.t).slice(0, 150), rating: rating, comment: comment.slice(0, 500), w: "", name: "" }).catch(() => {});

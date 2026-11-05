@@ -1,6 +1,6 @@
 // Accueil, pages promotion et pages show
-import { S, ACT, imageFor } from "../state.js";
-import { esc, cssUrl, okHttp, okDay, fmt, diff, cd, nextWeekday, today, dt, ymd, ICON, stars, docId, MOIS, modal, toast, shAttr } from "../util.js";
+import { S, B, ACT, imageFor, changed } from "../state.js";
+import { fmtR, esc, cssUrl, okHttp, okDay, fmt, diff, cd, nextWeekday, today, dt, ymd, ICON, stars, docId, MOIS, modal, toast, shAttr } from "../util.js";
 import { resolveImage } from "../images.js";
 import { PARIS, startOf, endOf, isLive, whenParts, fmtAt, hourAt, cityOf, downloadIcs, parisDay } from "../time.js";
 import { hlOf, hlHref, spoilBlock } from "./highlights.js";
@@ -20,6 +20,8 @@ import { annBar } from "./annonces.js";
 import { installBar } from "../push.js";
 import { linksOf, linksHTML, defaultLink, playLink, playerHTML, TPLAY } from "../links.js";
 import { tournamentTile } from "./tournois.js";
+import { allVideos, playerThumb } from "./player.js";
+import { rateBtn } from "./mrate.js";
 
 // ---------- données ----------
 export function seenId(e) { return docId(e.k + "|" + (e.show || "PLE") + "|" + (e.d || "") + "|" + e.t); }
@@ -427,6 +429,7 @@ export function evPageView(k, show, d, t) {
   const e = findEvent(k, show, d, t);
   if (!e) return h + '<p class="empty">Événement introuvable.</p>';
   const lk = look(e, true), seen = seenOf(e), r = recapOf(e), out = isOut(e), live = isLive(e), hl = okDay(e.d) ? hlOf(e.k, e.show || "PLE", e.d) : null;
+  if (out && okDay(e.d)) return h + pastPage(e, lk, seen, r, hl);
   const eyebrow = e.kind === "ple" ? (e.br ? "PLE " + e.br : "PLE") + " · " + e.k : e.k + " · " + e.show;
   const place2 = [e.v, e.w && e.w !== "—" ? e.w : ""].filter(Boolean).join(" · ");
   h += '<section class="evpage feature' + (lk.poster ? " poster" : "") + (seen ? " seen" : "") + (S.isAdmin ? " hasedit" : "") + '" style="' + esc(lk.style) + '">' + editBtn(e, e.k + " " + (e.show || e.t)) +
@@ -461,6 +464,67 @@ export function evPageView(k, show, d, t) {
   const dl = defaultLink(evKey(e)) || (out ? linksOf(evKey(e)).filter(x => !/youtu/.test(x.u))[0] : null);
   h += "<h2>Où regarder</h2>" + (dl ? '<div class="evplayer">' + playerHTML(dl.u, e.t, { muted: true }) + "</div>" : "") + watchBtns(e) + '<a class="btn wide ghost evwatch" href="#/player/e/' + encodeURIComponent(e.k + "|" + (e.show || "PLE") + "|" + (e.d || "")) + '">' + TPLAY + ' · vidéos et archives</a>' + linksHTML(evKey(e), { title: e.t + (e.d ? " du " + fmt(e.d) : ""), href: evHref(e), ask: out });
   if (okHttp(e.l)) h += '<p class="note small" style="margin-top:12px"><a class="linkbtn" style="padding:0" href="' + esc(e.l) + '" target="_blank" rel="noopener">Site officiel ↗</a></p>';
+  return h;
+}
+
+// ---------- page d'un show passé (5 nov.) ----------
+// 1. la vidéo choisie par défaut tout en haut ; 2. la note du show juste dessous ; 3. les vidéos liées qui défilent ;
+// 4. le résumé sans spoiler, puis le résumé avec spoiler (résultats, segments, promos, interviews), chaque match et segment
+// se note et les segments se mettent en favori ; 5. où regarder (officiel, TCC Play) ; 6. tout en bas, les liens du modo.
+const segId = (key, t) => docId(key + "|" + t).slice(0, 180);
+export const isSegNote = x => !!x && typeof x.id === "string" && (x.id.indexOf("g_") === 0 || x.id.indexOf("q_") === 0);
+function segBtns(e, key, sg) {
+  const txt = typeof sg === "string" ? sg : sg.t, kind = (typeof sg === "object" && sg.k) || "Segment", id = segId(key, txt);
+  const mine = S.history["g_" + id], fav = !!S.history["q_" + id];
+  if (!S.user) return "";
+  return '<span class="segbtns"><button class="mratebtn' + (mine ? " on" : "") + '" data-act="segrate" data-id="' + esc(id) + '" data-kind="' + esc(kind) + '" data-t="' + esc(txt.slice(0, 120)) + '" data-k="' + esc(e.k) + '" data-show="' + esc(e.show || "PLE") + '" data-d="' + esc(e.d) + '">' + (mine && mine.rating ? stars(mine.rating) : mine ? ICON.check : "☆ Noter") + "</button>" +
+    '<button class="segfav' + (fav ? " on" : "") + '" data-act="segfav" data-id="' + esc(id) + '" data-kind="' + esc(kind) + '" data-t="' + esc(txt.slice(0, 120)) + '" data-k="' + esc(e.k) + '" data-show="' + esc(e.show || "PLE") + '" data-d="' + esc(e.d) + '" aria-label="Favori">' + (fav ? "♥" : "♡") + "</button></span>";
+}
+ACT.segrate = el => { const ds = el.dataset; import("../modals.js").then(m => m.editNote({ id: "g_" + ds.id, title: "🎤 " + ds.kind + " · " + ds.t, k: ds.k, show: "Segment", d: ds.d }, () => changed("history"))); };
+ACT.segfav = async el => {
+  if (!S.user) return; const ds = el.dataset, id = "q_" + ds.id;
+  try {
+    if (S.history[id]) { await B.unsetSeen(S.user.uid, id); delete S.history[id]; toast("Retiré de tes segments préférés"); }
+    else { await B.setSeen(S.user.uid, id, { title: ("🎤 " + ds.kind + " · " + ds.t).slice(0, 150), k: ds.k, show: "SegmentFav", d: ds.d, rating: 0, comment: String(ds.show || "PLE").slice(0, 40) }); toast("♥ Segment ajouté à tes favoris"); }
+    changed("history");
+  } catch (err) { toast("Impossible pour l’instant"); }
+};
+function pastPage(e, lk, seen, r, hl) {
+  const key = e.k + "|" + (e.show || "PLE") + "|" + e.d, lkey = evKey(e);
+  const vids = allVideos().filter(v => v.k === e.k && (v.show || "PLE") === (e.show || "PLE") && v.d === e.d);
+  const dl = defaultLink(lkey) || linksOf(lkey).filter(x => !/youtu/.test(x.u))[0];
+  let h = "";
+  // 1. la vidéo par défaut
+  if (dl) h += '<div class="pstage">' + playerHTML(dl.u, e.t, { muted: true }) + "</div>";
+  else if (vids[0]) h += '<div class="pstage">' + playerHTML("https://youtu.be/" + vids[0].id, vids[0].t, { muted: true }) + "</div>";
+  else h += '<section class="evpage feature mini' + (lk.poster ? " poster" : "") + '" style="' + esc(lk.style) + '">' + logoImg(e, "bigl sq") + "</section>";
+  h += '<section class="pmeta"><span class="eyebrow">' + esc(e.kind === "ple" ? bigWord(e.k) + " · " + e.k : e.k + " · " + (e.show || "")) + "</span><h1>" + esc(e.t) + "</h1><small>" + fmt(e.d) + " " + e.d.slice(0, 4) + (e.v ? " · " + esc(e.v) : "") + "</small></section>";
+  // 2. la note du show
+  const notes = (S.activity || []).filter(a => a && a.kind === "rate" && a.k === e.k && (a.show || "") === (e.show || "") && a.d === e.d && a.rating), avg = notes.length ? notes.reduce((x, a) => x + a.rating, 0) / notes.length : 0;
+  h += '<div class="shownote"><div><b>Note du show</b>' + (avg ? stars(avg) + "<small>" + fmtR(avg) + " / 5,5 · " + notes.length + " note" + (notes.length > 1 ? "s" : "") + " de membres</small>" : "<small>Pas encore de note de membre</small>") + "</div>" +
+    '<button class="btn small' + (seen ? " on" : "") + '" data-act="seen"' + dataItem(e) + ">" + (seen ? (seen.rating ? "Ta note " + stars(seen.rating) : ICON.check + " Vu") : "⭐ Noter le show") + "</button></div>";
+  // 3. vidéos liées
+  const q = e.t + " " + e.d.slice(0, 4);
+  h += "<h2>Vidéos du show</h2>" + (vids.length ? '<div class="prow">' + vids.map(playerThumb).join("") + "</div>" : '<p class="note small">Pas encore de vidéo officielle dans l’app.</p>') +
+    '<div class="chips" style="margin:6px 16px"><a class="chip" href="https://www.youtube.com/results?search_query=' + encodeURIComponent(q + " highlights") + '" target="_blank" rel="noopener">▶ Résumés YouTube</a><a class="chip" href="#/player/e/' + encodeURIComponent(key) + '">' + TPLAY + "</a></div>";
+  // 4. résumés
+  const res = hl && Array.isArray(hl.res) ? hl.res : [], seg = hl && Array.isArray(hl.seg) ? hl.seg.filter(x => x && (x.t || typeof x === "string")) : [];
+  const people = namesIn(res.concat(seg.map(x => typeof x === "string" ? x : x.t)).join(" ")).slice(0, 14);
+  h += "<h2>Le résumé sans spoiler</h2>" + (r ? '<div class="evrecap">' + faceRow(namesIn(r.txt), 40) + "<p>" + linkNames(r.txt) + "</p></div>" : "") +
+    (res.length || seg.length ? '<p class="note">' + res.length + " match" + (res.length > 1 ? "s" : "") + (seg.length ? " et " + seg.length + " segment" + (seg.length > 1 ? "s" : "") + " (promos, interviews…)" : "") + (people.length ? ", avec " + people.slice(0, 8).join(", ") + (people.length > 8 ? "…" : "") : "") + ".</p>" + faceRow(people, 36) : (r ? "" : '<p class="note">Le résumé arrive avec la mise à jour du matin.</p>'));
+  h += "<h2>Le résumé avec spoiler</h2>";
+  if (hl && hlHidden(key, e.k, e.show || "", e.d)) h += '<div class="lockbox"><span class="lockico">🙈</span><b>Mode sans spoiler</b><p>Les résultats restent cachés tant que tu n’as pas marqué ce show comme vu.</p><div class="btns"><button class="btn" data-act="seen"' + dataItem(e) + ">" + ICON.eye + ' Je l’ai vu</button><button class="btn ghost" data-act="unlockhl" data-key="' + esc(key) + '">Afficher quand même</button></div></div>';
+  else if (res.length || seg.length) {
+    const inner = (res.length ? '<h3 class="sph">Résultats</h3><ul class="res rated">' + res.map(x => "<li><span>" + linkNames(x) + "</span>" + rateBtn(e.k, x, e.show || e.t, e.d) + "</li>").join("") + "</ul>" : "") +
+      (seg.length ? '<h3 class="sph">Segments, promos, interviews</h3><ul class="segs rated">' + seg.map(x => "<li>" + (x.k ? '<span class="segk">' + esc(x.k) + "</span>" : "") + "<span>" + linkNames(typeof x === "string" ? x : x.t) + "</span>" + segBtns(e, key, x) + "</li>").join("") + "</ul>" : "") +
+      (hl.u ? '<p class="note small">Source : <a href="' + esc(hl.u) + '" target="_blank" rel="noopener">' + esc(hl.s || "lien") + "</a></p>" : "");
+    h += spoilBlock("👀 Voir les résultats et les segments (spoiler)", inner);
+  } else h += '<p class="note">Les résultats seront ajoutés lors de la prochaine mise à jour (vers 8 h 30).</p>';
+  // 5. où regarder
+  h += "<h2>Où regarder</h2>" + watchBtns(e) + (hlOf(e.k, e.show || "PLE", e.d) ? '<a class="btn wide ghost evwatch" href="' + hlHref(e.k, e.show || "PLE", e.d) + '">' + ICON.play + " Highlights</a>" : "");
+  h += '<div class="evacts" style="margin-top:10px"><button class="btn ghost" data-act="share" data-sh="' + esc(JSON.stringify(evCard(e))) + '">↗ Partager</button></div>';
+  // 6. liens du modo, toujours en bas
+  h += "<h2>" + TPLAY + " · liens</h2>" + linksHTML(lkey, { title: e.t + " du " + fmt(e.d), href: evHref(e), ask: true, empty: '<p class="note small">Pas encore de lien.</p>' });
   return h;
 }
 

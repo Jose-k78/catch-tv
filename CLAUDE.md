@@ -114,6 +114,19 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   (+10 %), récompenses du cahier, attente 1 h. `home.js` : accueil, missions, tuto, Shop. `modo.js` (`#/tccg/modo`, aussi dans
   Paramètres › Modération) : tout le réglage dans `data/tcg.json` (cartes, persos créés, taux, objets, boosters, combats, musiques,
   dos des cartes). Pour l'instant réservé au modo (`S.realAdmin`).
+- Notes : demi-étoiles de 0 à 5,5 (`RMAX`, `fmtR`, `stars`, `ratePick` / `pickRate` de util.js ; 6e étoile orange = bonus).
+- Historique : `g_<id>` = note d'un segment, `q_<id>` = segment préféré (comment = nom du show) ; préfixes m_/s_/f_/g_/q_ exclus
+  des compteurs de shows (spoil.js, trophies.js, account.js). Profil : « Ses segments préférés ».
+- Page d'un show passé (`pastPage` de catalog.js) : lecteur en haut (lien ⭐ du modo, sinon 1er lien, sinon vidéo officielle),
+  note du show (moyenne des membres) dessous, « Vidéos du show », résumé sans spoiler, résumé avec spoiler (matchs notables
+  `rateBtn`, segments ☆ notables / ♡ favoris), Où regarder, puis les liens du modo tout en bas.
+- Matchs de référence : lien du modo sous la clé `ref:<match>|<événement>` (links.json) lancé directement, 🔗 en mode modification.
+- TCC Play › recherche : bloc « Sur le web » (API publiques Dailymotion et archive.org, sans clé) + raccourcis YouTube / VK Video /
+  OK.ru / Dailymotion / archive.org. C'est une simple recherche : Claude n'ajoute toujours aucun de ces liens.
+- TCCCG combats animés : `js/tcg/sfx.js` (sons fabriqués par l'app ; fichiers du modo dans `data/tcg.json` « bgm » : win, lose,
+  fight, bell, hit, finisher, taunt, crowd ; fond des combats = asset `fightbg`), intro 3-2-1 + 3 cloches, bandeau de tour,
+  dégâts animés, popups KO / TAG, finisher animé. Vrais finishers dans `data/finishers.json` (`items: { nom: finisher }`).
+  Accueil TCCCG façon Dokkan (carte leader + bulle, bannières, gros bouton COMBATS).
 - Rubrique Tournoi (`js/views/tournois.js`, `#/tournois`, `#/tournois/g1`, `#/tournoi/<id>`) d'après `data/tournaments.json`.
 - Lecteur musical (`js/ytmusic.js`) : playlists YouTube du modo dans `data/media.json` (`pls`), bouton 🎵 en haut ; juste le
   son (lecteur caché, demande de Jose), commandes dans un petit panneau sous 🎵.
@@ -136,7 +149,7 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   `push/{uid}` ; bandeau « Installer l'app ». `data/push.json` = { vapid (clé publique), url (service Cloudflare) }.
 - `cloudflare/` : service des notifications instantanées (messages privés, feuds, annonces), installé par
   `.github/workflows/push-worker.yml`. `cloudflare/push-core.mjs` est partagé avec le robot.
-- `firestore.rules` : règles (version 9 : collection `tcg`). À chaque changement, donner le texte complet à Jose pour qu'il le colle
+- `firestore.rules` : règles (version 10 : notes = nombre de 0 à 5,5 ; collection `tcg`). À chaque changement, donner le texte complet à Jose pour qu'il le colle
   dans Firebase › Firestore › Règles › Publier.
 
 ## Consignes pour les tâches planifiées (à suivre à chaque passage, en plus de leur propre consigne)
@@ -153,6 +166,7 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   - résumés des PLE / PPV : s'aider aussi de https://mibih.wordpress.com/category/wrestling-reviews/latest-wrestling-ppv-reviews/ (réécrire en français, ne pas copier) ;
   - shows déplacés : `no` (dates sans épisode) et `e` (épisode spécial à une autre date) dans `data/calendar.json` ; heures toujours
     données dans le fuseau du show (`h` + `tz`) : le changement d'heure est calculé par l'app ;
+  - compléter `data/finishers.json` (finisher actuel de chaque catcheur des rosters, d'après Wikipédia ; ne pas écraser ceux déjà là) ;
   - ne jamais toucher à `data/links.json` (liens du modo), aux images ni à `data/logos.json` / `data/photos.json`.
 
 ## Données et mises à jour automatiques

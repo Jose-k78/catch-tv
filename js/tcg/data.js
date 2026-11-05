@@ -75,7 +75,7 @@ function guessArch(name, w, al) {
 // ---------- toutes les cartes de base (un catcheur = une carte) ----------
 let BASE = null, BKEY = "";
 export function baseCards() {
-  const c = cfg(), key = Object.keys(S.photos || {}).length + "|" + (S.titles || []).length + "|" + Object.keys(S.wrestlers || {}).length + "|" + JSON.stringify(c.cards || {}).length + "|" + (c.custom || []).length;
+  const c = cfg(), key = Object.keys(S.photos || {}).length + "|" + (S.titles || []).length + "|" + Object.keys(S.wrestlers || {}).length + "|" + Object.keys(S.finishers || {}).length + "|" + JSON.stringify(c.cards || {}).length + "|" + (c.custom || []).length;
   if (BASE && BKEY === key) return BASE;
   const champs = champsNow();
   const roster = new Map(); Object.keys(S.rosters || {}).forEach(k => Object.keys(S.rosters[k] || {}).forEach(g => (S.rosters[k][g] || []).forEach(n => { if (!roster.has(norm(n))) roster.set(norm(n), { k: k, g: g }); })));
@@ -111,7 +111,7 @@ export function baseCards() {
     // 5 stats de base (somme selon la rareté de base, répartie selon l'archétype)
     const tot = BASE_TOTAL[x.r] * (1 + x.buff / 100), m = ARCH[x.arch].st, h = hashN(x.name), sum = m.reduce((a, b) => a + b, 0);
     x.st = Array.isArray(ov.st) && ov.st.length === 5 ? ov.st.map(Number) : m.map((v, j) => Math.max(5, Math.round(tot * v / sum * (1 + ((((h >> (j * 4)) & 15) - 7.5) / 60)))));
-    const fin = (x.w && x.w.fin) || "";
+    const fin = (S.finishers || {})[x.name] || (x.w && x.w.fin) || ""; // vrai finisher (data/finishers.json, sinon la fiche)
     x.fin = { n: (ov.fin && ov.fin.n) || (fin ? String(fin).split(/[,;(]/)[0].trim() : ARCH[x.arch].fin[0]), e: (ov.fin && FX.indexOf(ov.fin.e) >= 0 ? ov.fin.e : ARCH[x.arch].fin[1]) };
     x.faction = x.gs.cur[0] || "";
     x.gimmick = ov.gimmick || "";

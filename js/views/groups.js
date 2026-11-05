@@ -1,6 +1,7 @@
 // Fiche d'un tag team / d'une faction (#/groupe/id) : logo (dossier de l'admin, sinon ajouté par un membre, sinon le nom écrit),
 // membres actuels, anciens membres, années, matchs de référence. Données : data/groups.json (tenu à jour chaque soir).
 // Sur la fiche d'un catcheur : le logo de ses groupes actuels dans un coin de sa photo, et la liste de ses groupes.
+import { linksOf } from "../links.js";
 import { S, ACT, changed } from "../state.js";
 import { ghGetJson, ghPutJson, ghToken } from "../github.js";
 import { esc, ICON, modal, toast } from "../util.js";
@@ -16,6 +17,13 @@ import { wImageBox, gslug } from "./wimage.js";
 // Jamais de sites de copies non officielles (VK Video, archive.org…).
 const OFFICIAL = { NJPW: ["NJPW World", "https://njpwworld.com/"], Stardom: ["Stardom World", "https://www.stardom-world.com/"], Marigold: ["Wrestle Universe", "https://www.wrestle-universe.com/"] };
 export function refButton(m, k) {
+  // lien du modo (TCC Play) : lu en priorité dans le lecteur de l'app ; en mode modification, bouton pour en ajouter
+  const rk = "ref:" + String(m.t || "").slice(0, 100) + "|" + String(m.ev || "").slice(0, 40), L = linksOf(rk);
+  const add = S.isAdmin ? '<button class="iconbtn" data-act="mladd" data-k="' + esc(rk) + '" data-t="' + esc(m.t) + '" title="Ajouter un lien (modo)">🔗</button>' : "";
+  if (L.length) { const x = L.find(y => y.def) || L[0]; return '<span class="refbtns"><button class="btn small" data-act="mlplay" data-u="' + esc(x.u) + '" data-t="' + esc(m.t) + '">▶ Voir</button>' + add + "</span>"; }
+  return '<span class="refbtns">' + refButton0(m, k) + add + "</span>";
+}
+function refButton0(m, k) {
   const q = String(m.t || "").replace(/^[^:]{1,80} : (?=.* (?:contre|vs) )/, "").replace(/ — .*$/, "").replace(/ contre /g, " vs ").replace(/ et /g, " & ") + (m.ev ? " " + m.ev : "") + " full match";
   if (okVid(m.v)) return '<button class="btn small" data-act="play" data-id="' + esc(m.v) + '" data-t="' + esc(m.t) + '">▶ Voir</button>';
   const ks = String(k || "").split(/\s*·\s*/), off = ks.map(x => OFFICIAL[x]).find(Boolean);

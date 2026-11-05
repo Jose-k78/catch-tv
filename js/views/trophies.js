@@ -82,8 +82,8 @@ function hlStreak(l) {
 export function myValues() {
   const me = S.user ? S.user.uid : "";
   let hist = Object.values(S.history || {});
-  hist = hist.filter(h => !(typeof h.id === "string" && (h.id.indexOf("f_") === 0)));
-  const shows = hist.filter(h => !isMatchNote(h) && !(typeof h.id === "string" && h.id.indexOf("s_") === 0));
+  hist = hist.filter(h => !(typeof h.id === "string" && /^(f|q)_/.test(h.id)));
+  const shows = hist.filter(h => !isMatchNote(h) && !(typeof h.id === "string" && /^(s|g)_/.test(h.id)));
   const promos = new Set(shows.filter(h => h.rating > 0 && S.P[h.k]).map(h => h.k));
   const old = new Set(hist.filter(h => h.rating > 0 && h.d && h.d < "2010-01-01").map(h => h.k + "|" + h.d));
   const pop = (S.myAct || []).reduce((n, a) => n + Object.keys(a.rx || {}).filter(u => u !== me).length + Math.max(0, a.rn || 0), 0);

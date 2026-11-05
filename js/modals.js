@@ -1,6 +1,6 @@
 // Pop-ups : note « déjà vu » et changement d'image (admin)
 import { S, B, ACT } from "./state.js";
-import { esc, modal, toast, fmt, ICON, okHttp, okImg, fileToDataUrl, docId } from "./util.js";
+import { ratePick, pickRate, esc, modal, toast, fmt, ICON, okHttp, okImg, fileToDataUrl, docId } from "./util.js";
 import { seenId } from "./views/catalog.js";
 import { chainOf } from "./images.js";
 import { PREVIEW } from "./content.js";
@@ -18,8 +18,7 @@ ACT.seen = el => {
       const ta = box.querySelector("#seencom"); if (ta) comment = ta.value;
       box.innerHTML = "<h3>" + (had ? "Déjà vu" : "Tu l’as vu ?") + "</h3>" +
         '<p class="sub">' + esc(it.t) + "<br>" + esc(it.k) + " · " + esc(label) + "</p>" +
-        '<p class="sub" style="margin-bottom:4px">Ta note</p><div class="rate">' +
-        [1, 2, 3, 4, 5].map(i => '<button type="button" class="' + (i <= rating ? "on" : "") + '" data-r="' + i + '" aria-label="' + i + ' étoile' + (i > 1 ? "s" : "") + '">' + ICON.star + "</button>").join("") + "</div>" +
+        '<p class="sub" style="margin-bottom:4px">Ta note</p>' + ratePick(rating) +
         '<label class="fld">Ton commentaire (facultatif)<textarea id="seencom" maxlength="280" rows="3" placeholder="Ce que tu as pensé du show, ton match préféré…">' + esc(comment) + "</textarea></label>" +
         '<button class="btn wide" data-ok>' + (had ? "Enregistrer" : "Valider") + "</button>" +
         (had ? '<button class="btn wide ghost" style="margin-top:10px" data-del>Retirer de l’historique</button>'
@@ -29,7 +28,7 @@ ACT.seen = el => {
     draw();
     box.addEventListener("click", async e => {
       const r = e.target.closest("[data-r]");
-      if (r) { rating = +r.dataset.r === rating ? 0 : +r.dataset.r; box.querySelectorAll(".rate button").forEach(b => b.classList.toggle("on", +b.dataset.r <= rating)); return; }
+      if (r) { rating = pickRate(box, r); return; }
       try {
         if (e.target.closest("[data-hl]")) {
           // vu seulement en highlights : pas de note (marque « [HL] » dans le commentaire, cachée à l'affichage)
@@ -145,7 +144,7 @@ export function editNote(item, onDone) {
     const draw = () => {
       const ta = box.querySelector("#notecom"); if (ta) comment = ta.value;
       box.innerHTML = "<h3>" + (had ? "Modifier ma note" : "Ma note") + '</h3><p class="sub">' + esc(item.title) + "</p>" +
-        '<div class="rate">' + [1, 2, 3, 4, 5].map(i => '<button type="button" class="' + (i <= rating ? "on" : "") + '" data-r="' + i + '" aria-label="' + i + ' étoile' + (i > 1 ? "s" : "") + '">' + ICON.star + "</button>").join("") + "</div>" +
+        ratePick(rating) +
         '<label class="fld">Ton commentaire (facultatif)<textarea id="notecom" maxlength="280" rows="3">' + esc(comment) + "</textarea></label>" +
         '<button class="btn wide" data-ok>Enregistrer</button>' + (had ? '<button class="btn wide ghost danger" style="margin-top:10px" data-del>Supprimer cette note</button>' : "") +
         '<button class="btn wide ghost" style="margin-top:10px" data-close>Annuler</button>';
@@ -154,7 +153,7 @@ export function editNote(item, onDone) {
     box.addEventListener("click", async e => {
       if (e.target.closest("[data-close]")) return close();
       const r = e.target.closest("[data-r]");
-      if (r) { rating = +r.dataset.r === rating ? 0 : +r.dataset.r; box.querySelectorAll(".rate button").forEach(b => b.classList.toggle("on", +b.dataset.r <= rating)); return; }
+      if (r) { rating = pickRate(box, r); return; }
       if (e.target.closest("[data-del]")) {
         close();
         try { await B.unsetSeen(S.user.uid, item.id); delete S.history[item.id]; toast("Note supprimée"); changed("history"); if (onDone) onDone(); } catch (err) { toast("Impossible pour l’instant"); }

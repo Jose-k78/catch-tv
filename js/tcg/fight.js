@@ -9,6 +9,7 @@ import { RAR, STATS, ARCH, typeMult, defOf, statsOf, hpOf, baseCards, showMatche
 import { me, commit, owned, addCard, addXp, cardXp } from "./store.js";
 import { cardHTML } from "./card.js";
 import { recentShows } from "./callup.js";
+import { SFX } from "./sfx.js";
 
 const H = 36e5;
 const TIER = {
@@ -120,19 +121,66 @@ ACT.tcgfight = () => {
     E: { team: F.foes.map(f => fighter(f.def, f.lv, null, [])), a: 0, tags: 3, fin: 0, boost: 1, stun: false },
     items: prep.items.slice(), used: [], grid: newGrid(), open: [], known: {}, turn: "", first: true, log: "Pierre, feuille ou ciseaux ?", busy: false, over: false };
   if (B.tier === "top") B.E.team.forEach(f => { f.st = f.st.map(v => Math.round(v * 1.08)); f.hp = f.max = hpOf(f.st); });
+  B.fx = []; SFX.unlock();
   location.hash = "#/tccg/combat";
+  setTimeout(intro, 120);
 };
+// ---------- animations ----------
+const $ = sel => document.querySelector(sel);
+function layer(cls, html, ms) { const d = document.createElement("div"); d.className = cls; d.innerHTML = html; document.body.appendChild(d); if (ms) setTimeout(() => d.remove(), ms); return d; }
+// bandeau rapide au milieu de l'écran : « À TOI ! » / « TOUR DE L'IA »
+function banner(txt, cls) { layer("tbanner " + (cls || ""), "<span>" + esc(txt) + "</span><span>" + esc(txt) + "</span><span>" + esc(txt) + "</span>", 1300); }
+// entrée sur le ring : nos cartes avec leurs infos, puis l'adversaire, compte à rebours et 3 coups de cloche
+function intro() {
+  if (!B) return;
+  const info = (f, side) => '<div class="tin ' + side + '"><span class="tinpic" style="background-image:url(\'' + esc(f.def.pic) + '\')"></span><div><b>' + esc(f.def.name) + "</b><small>" + esc(f.def.arch) + " · Nv " + f.lv + " · " + f.max + " PV</small><small>🔥 " + esc(f.def.fin.n) + "</small></div></div>";
+  const ov = layer("tintro", '<div class="tinrow me">' + B.P.team.map(f => info(f, "me")).join("") + '</div><div class="tinvs">VS</div><div class="tinrow foe">' + B.E.team.map(f => info(f, "foe")).join("") + '</div><div class="tincount"></div><button class="tsskip">Passer ›</button>');
+  B.busy = true; SFX.crowd(true); SFX.music(true);
+  const cnt = ov.querySelector(".tincount"); let done = false;
+  const finish = () => { if (done) return; done = true; ov.classList.add("out"); setTimeout(() => ov.remove(), 400); if (B) { B.busy = false; redraw(); } };
+  ov.querySelector(".tsskip").addEventListener("click", finish);
+  setTimeout(() => ov.classList.add("s1"), 50);
+  setTimeout(() => ov.classList.add("s2"), 1300);
+  [3, 2, 1].forEach((n, i) => setTimeout(() => { if (done) return; cnt.textContent = n; cnt.classList.remove("pop"); void cnt.offsetWidth; cnt.classList.add("pop"); }, 2600 + i * 700));
+  setTimeout(() => { if (done) return; cnt.textContent = "🔔 🔔 🔔"; SFX.bell(3); }, 4700);
+  setTimeout(() => { if (done) return; cnt.textContent = "FIGHT !"; cnt.classList.add("fight"); }, 6000);
+  setTimeout(finish, 6900);
+}
+// effets après le redessin : dégâts qui s'envolent, secousse, soins
+function runFx() {
+  const L = (B && B.fx) || []; if (!L.length) return; B.fx = [];
+  requestAnimationFrame(() => L.forEach(f => {
+    const el = $(".tside." + (f.side === "E" ? "foe" : "me") + " .tfgt.on"); if (!el) return;
+    const r = el.getBoundingClientRect();
+    layer("tdmg " + (f.cls || ""), esc(f.txt), 1100).style.cssText = "left:" + (r.left + r.width / 2) + "px;top:" + (r.top + window.scrollY) + "px";
+    if (f.shake) { el.classList.remove("shake"); void el.offsetWidth; el.classList.add("shake"); }
+  }));
+}
+// le finisher : la carte de l'attaquant s'abat sur celle de l'adversaire
+function finisherFx(side, cb) {
+  const a = act(side), t = act(side === "P" ? "E" : "P");
+  B.busy = true; SFX.finisher();
+  const ov = layer("tfinfx " + (side === "P" ? "me" : "foe"), '<div class="tfx-target">' + cardHTMLmini(t) + '</div><div class="tfx-att">' + cardHTMLmini(a) + '</div><div class="tfx-name">' + esc(a.def.fin.n) + "</div>");
+  setTimeout(() => ov.classList.add("hit"), 650);
+  setTimeout(() => { ov.remove(); B.busy = false; cb(); }, 1700);
+}
+const cardHTMLmini = f => '<div class="tfxcard" style="background-image:url(\'' + esc(f.def.pic) + '\')"><b>' + esc(f.def.name) + "</b></div>";
+// carte éliminée : pop-up + cloche
+function koFx(f) { SFX.bell(1); layer("tkopop", '<div class="tkocard" style="background-image:url(\'' + esc(f.def.pic) + '\')"></div><b>' + esc(f.def.name) + "</b><span>ÉLIMINÉ !</span>", 1800); }
+function tagFx(f) { layer("ttagpop", "<span>TAG !</span><b>" + esc(f.def.name) + "</b>", 1100); }
 const act = s => B[s].team[B[s].a];
 const alive = s => B[s].team.filter(f => f.hp > 0);
 function hpBar(f, on) { return '<div class="tfgt' + (on ? " on" : "") + (f.hp <= 0 ? " ko" : "") + '"><span class="tfmini" style="background-image:url(\'' + esc(f.def.pic) + '\')"></span><div><b>' + esc(f.def.name) + "</b>" + (f.linked ? ' <small class="tlink">lié +10 %</small>' : "") + '<i class="hp"><i style="width:' + Math.max(0, f.hp / f.max * 100) + '%"></i></i><small>' + Math.max(0, f.hp) + " / " + f.max + " PV · " + esc(f.def.arch) + "</small></div></div>"; }
 export function combatView() {
   if (!B) return fightsView();
   const P = B.P, E = B.E;
-  let h = '<div class="tbattle">' +
+  const bg = (cfg().assets || {}).fightbg;
+  let h = '<div class="tbattle"' + (bg ? ' style="background-image:linear-gradient(rgba(5,4,3,.55),rgba(5,4,3,.8)),url(\'' + esc(bg) + '\')"' : "") + ">" +
     '<div class="tside foe">' + E.team.map((f, i) => hpBar(f, i === E.a)).join("") + '<div class="tfin"><i style="width:' + Math.min(100, E.fin) + '%"></i></div><small>TAG ' + E.tags + "</small></div>" +
     '<div class="tlog">' + esc(B.log) + "</div>";
   if (!B.turn) h += '<div class="trps">' + [["p", "✊"], ["f", "✋"], ["c", "✌️"]].map(x => '<button data-act="tcgrps" data-v="' + x[0] + '">' + x[1] + "</button>").join("") + "</div>";
-  else h += '<div class="tgrid">' + B.grid.map((c, i) => '<button class="tcell' + (c.done ? " done" : B.open.indexOf(i) >= 0 || c.peek ? " open" : "") + '" data-act="tcgflip" data-i="' + i + '"' + (c.done ? " disabled" : "") + ">" + (c.done || B.open.indexOf(i) >= 0 || c.peek ? '<span>' + PICO[c.t === "x" ? "fo" : c.t] + "</span><small>" + PNAME[c.t === "x" ? "fo" : c.t] + "</small>" : '<span class="tcb">TCCCG</span>') + "</button>").join("") + "</div>";
+  else h += '<div class="tgrid' + (B.turn === "P" ? " myturn" : "") + '">' + B.grid.map((c, i) => { const t = c.t === "x" ? "fo" : c.t;
+    return '<button class="tcell' + (c.done ? " done" : B.open.indexOf(i) >= 0 || c.peek ? " open" : "") + '" data-act="tcgflip" data-i="' + i + '"' + (c.done ? " disabled" : "") + '><span class="tcf tback"><span class="tcb">TCCCG</span></span><span class="tcf tfront c-' + t + '"><span>' + PICO[t] + "</span><small>" + PNAME[t] + "</small></span></button>"; }).join("") + "</div>";
   h += '<div class="tside me"><div class="tfin"><i style="width:' + Math.min(100, P.fin) + '%"></i></div>' + P.team.map((f, i) => hpBar(f, i === P.a)).join("") + "</div>" +
     '<div class="tbtns"><button class="btn small" data-act="tcgtag"' + (P.tags && alive("P").length > 1 && B.turn === "P" && !B.busy ? "" : " disabled") + ">🔄 TAG (" + P.tags + ")</button>" +
     '<button class="btn small fin" data-act="tcgfin"' + (P.fin >= 100 && B.turn === "P" && !B.busy ? "" : " disabled") + ">🔥 " + esc(act("P").def.fin.n) + "</button>" +
@@ -140,21 +188,24 @@ export function combatView() {
     '<button class="btn small ghost" data-act="tcgquit">Abandonner</button></div></div>';
   return h;
 }
-const redraw = () => changed("tcg");
+const redraw = () => { changed("tcg"); runFx(); };
 function say(t) { B.log = t; }
 ACT.tcgrps = el => {
   const me_ = el.dataset.v, ai = ["p", "f", "c"][Math.floor(Math.random() * 3)], ic = { p: "✊", f: "✋", c: "✌️" };
   if (me_ === ai) { say("Égalité (" + ic[me_] + " / " + ic[ai] + ") : on recommence !"); return redraw(); }
   const win = (me_ === "p" && ai === "c") || (me_ === "f" && ai === "p") || (me_ === "c" && ai === "f");
   B.turn = win ? "P" : "E"; say((win ? "Tu commences" : "L’adversaire commence") + " (" + ic[me_] + " contre " + ic[ai] + ")");
-  redraw(); if (!win) setTimeout(aiTurn, 900);
+  redraw(); banner(win ? "À TOI !" : "TOUR DE L’IA", win ? "me" : "foe"); if (!win) setTimeout(aiTurn, 1300);
 };
 function dmg(side, stat, mult) {
   const o = side === "P" ? "E" : "P", a = act(side), t = act(o), v = Math.round(stat * typeMult(a.def.arch, t.def.arch) * B[side].boost * (mult || 1));
-  B[side].boost = 1; t.hp -= v; return v;
+  B[side].boost = 1; t.hp -= v;
+  const m = typeMult(a.def.arch, t.def.arch);
+  B.fx.push({ side: o, txt: "-" + v + (m > 1 ? " !" : ""), cls: m > 1 ? "crit" : m < 1 ? "weak" : "", shake: true }); SFX.hit(v > 60);
+  return v;
 }
 function koCheck() {
-  ["P", "E"].forEach(s => { const t = act(s); if (t.hp <= 0) { const nx = B[s].team.findIndex(f => f.hp > 0); if (nx >= 0) { B[s].a = nx; say(B.log + " · " + t.def.name + " est éliminé !"); } } });
+  ["P", "E"].forEach(s => { const t = act(s); if (t.hp <= 0 && !t.koShown) { t.koShown = true; koFx(t); const nx = B[s].team.findIndex(f => f.hp > 0); if (nx >= 0) { B[s].a = nx; say(B.log + " · " + t.def.name + " est éliminé !"); setTimeout(() => B && tagFx(act(s)), 1500); } } });
   if (!alive("E").length) return end(true);
   if (!alive("P").length) return end(false);
   return false;
@@ -162,9 +213,10 @@ function koCheck() {
 // une paire trouvée
 function resolve(side, t) {
   const S_ = B[side], a = act(side), idx = { fo: 0, ag: 1, ch: 2, en: 3, te: 4, x: 0 }, who = side === "P" ? "Tu" : a.def.name;
+  if (t === "ch") { banner(side === "P" ? "PROVOCATION !" : a.def.name + " PROVOQUE !", "taunt"); SFX.taunt(); }
   if (t in idx) { const st = a.st[idx[t]], v = dmg(side, st); if (!B.noFin) S_.fin = Math.min(100, S_.fin + Math.round(st / 2)); say(who + " · " + PNAME[t === "x" ? "fo" : t] + " : " + v + " dégâts" + (typeMult(a.def.arch, act(side === "P" ? "E" : "P").def.arch) > 1 ? " (super efficace !)" : "")); }
   else if (t === "fin") { S_.fin = 100; say(who + " · case Finisher : barre pleine !"); }
-  else if (t === "soin") { const h = Math.round(a.max * 0.2); a.hp = Math.min(a.max, a.hp + h); say(who + " · Soin : +" + h + " PV"); }
+  else if (t === "soin") { const h = Math.round(a.max * 0.2); a.hp = Math.min(a.max, a.hp + h); say(who + " · Soin : +" + h + " PV"); B.fx.push({ side: side, txt: "+" + h, cls: "heal" }); }
   else if (t === "boost") { S_.boost = 1.5; say(who + " · Boost : prochaine attaque ×1,5"); }
   else if (t === "sig") { const v = dmg(side, Math.max.apply(null, a.st), 0.5); say(who + " · Signature : " + v + " dégâts"); }
 }
@@ -187,9 +239,16 @@ function afterPair() { if (B.grid.every(c => c.done)) { B.grid = newGrid(); B.kn
 function flip(i, side) {
   if (!B || B.over || B.busy) return;
   const c = B.grid[i]; if (!c || c.done || B.open.indexOf(i) >= 0) return;
-  B.open.push(i); B.known[i] = c.t; redraw();
+  B.open.push(i); B.known[i] = c.t;
+  const cel = document.querySelector('.tcell[data-i="' + i + '"]'); if (cel) cel.classList.add("open"); else redraw();
   if (B.open.length < 2) return;
   const [x, y] = B.open; B.busy = true;
+  setTimeout(() => {
+    if (!B) return;
+    const same = B.grid[x].t === B.grid[y].t;
+    if (same) [x, y].forEach(j => { const el = document.querySelector('.tcell[data-i="' + j + '"]'); if (el) el.classList.add("match"); });
+    else [x, y].forEach(j => { const el = document.querySelector('.tcell[data-i="' + j + '"]'); if (el) el.classList.add("miss"); });
+  }, 600);
   setTimeout(() => {
     if (!B) return;
     const same = B.grid[x].t === B.grid[y].t;
@@ -203,21 +262,21 @@ function flip(i, side) {
     } else {
       B.first = false; B.open = []; B.busy = false; nextTurn(side);
     }
-  }, 850);
+  }, 1150);
 }
 function nextTurn(side) {
   const o = side === "P" ? "E" : "P";
   if (B[side].again) { B[side].again = false; redraw(); if (side === "E") setTimeout(aiTurn, 800); return; }
   if (B[o].stun) { B[o].stun = false; say(B.log + " · " + (o === "P" ? "tu es sonné, tu passes ton tour" : "l’adversaire passe son tour")); redraw(); if (side === "E") setTimeout(aiTurn, 900); return; }
-  B.turn = o; redraw(); if (o === "E") setTimeout(aiTurn, 900);
+  B.turn = o; redraw(); banner(o === "P" ? "À TOI !" : "TOUR DE L’IA", o === "P" ? "me" : "foe"); if (o === "E") setTimeout(aiTurn, 1300);
 }
 ACT.tcgflip = el => { if (!B || B.turn !== "P") return; flip(+el.dataset.i, "P"); };
-ACT.tcgtag = () => { if (!B || B.turn !== "P" || !B.P.tags) return; const nx = B.P.team.findIndex((f, i) => i !== B.P.a && f.hp > 0); if (nx < 0) return; B.P.a = nx; B.P.tags--; say("🔄 TAG ! " + act("P").def.name + " entre sur le ring"); redraw(); };
-ACT.tcgfin = () => { if (!B || B.turn !== "P" || B.P.fin < 100) return; finisher("P"); if (koCheck()) return redraw(); redraw(); };
+ACT.tcgtag = () => { if (!B || B.turn !== "P" || !B.P.tags) return; const nx = B.P.team.findIndex((f, i) => i !== B.P.a && f.hp > 0); if (nx < 0) return; B.P.a = nx; B.P.tags--; say("🔄 TAG ! " + act("P").def.name + " entre sur le ring"); SFX.taunt(); tagFx(act("P")); redraw(); };
+ACT.tcgfin = () => { if (!B || B.turn !== "P" || B.P.fin < 100 || B.busy) return; finisherFx("P", () => { finisher("P"); if (koCheck()) return redraw(); redraw(); }); };
 ACT.tcguse = el => {
   if (!B || B.turn !== "P") return; const it = itemById(el.dataset.id); if (!it || B.used.indexOf(it.id) >= 0) return;
   B.used.push(it.id);
-  if (it.fx === "dmg") { const t = act("E"); t.hp -= +it.v || 20; say(it.ic + " " + it.n + " : " + (+it.v || 20) + " dégâts !"); }
+  if (it.fx === "dmg") { const t = act("E"); t.hp -= +it.v || 20; say(it.ic + " " + it.n + " : " + (+it.v || 20) + " dégâts !"); B.fx.push({ side: "E", txt: it.ic + " -" + (+it.v || 20), shake: true }); SFX.hit(true); }
   else if (it.fx === "heal") { const a = act("P"); a.hp = Math.min(a.max, a.hp + (+it.v || 20)); say(it.ic + " " + it.n + " : +" + (+it.v || 20) + " PV"); }
   else if (it.fx === "fin") { B.P.fin = Math.min(100, B.P.fin + (+it.v || 50)); say(it.ic + " " + it.n + " : barre de Finisher +" + (+it.v || 50)); }
   else if (it.fx === "boost") { B.P.boost = +it.v || 1.5; say(it.ic + " " + it.n + " : prochaine attaque ×" + (+it.v || 1.5)); }
@@ -226,12 +285,14 @@ ACT.tcguse = el => {
   if (koCheck()) return redraw(); redraw();
 };
 ACT.tcgquit = () => { if (B && !B.over) end(false, true); };
+// quitter la page du combat coupe le public et la musique
+window.addEventListener("hashchange", () => { if (B && location.hash.indexOf("#/tccg/combat") !== 0) { SFX.crowd(false); SFX.music(false); } });
 // IA : se souvient de certaines cases (selon la difficulté), TAG quand son catcheur faiblit, Finisher dès que possible
 function aiTurn() {
   if (!B || B.over || B.turn !== "E" || B.busy) return;
   const E = B.E, a = act("E");
-  if (E.tags && a.hp < a.max * 0.3) { const nx = E.team.findIndex((f, i) => i !== E.a && f.hp > a.hp); if (nx >= 0) { E.a = nx; E.tags--; say("🔄 L’adversaire fait le TAG : " + act("E").def.name); redraw(); return setTimeout(aiTurn, 800); } }
-  if (E.fin >= 100) { finisher("E"); if (koCheck()) return redraw(); redraw(); return setTimeout(aiTurn, 1000); }
+  if (E.tags && a.hp < a.max * 0.3) { const nx = E.team.findIndex((f, i) => i !== E.a && f.hp > a.hp); if (nx >= 0) { E.a = nx; E.tags--; say("🔄 L’adversaire fait le TAG : " + act("E").def.name); tagFx(act("E")); redraw(); return setTimeout(aiTurn, 1200); } }
+  if (E.fin >= 100) { return finisherFx("E", () => { finisher("E"); if (koCheck()) return redraw(); redraw(); setTimeout(aiTurn, 1000); }); }
   const hidden = B.grid.map((c, i) => (!c.done ? i : -1)).filter(i => i >= 0), mem = {};
   Object.keys(B.known).forEach(i => { if (Math.random() < B.mem && !B.grid[i].done) (mem[B.known[i]] = mem[B.known[i]] || []).push(+i); });
   const pair = Object.keys(mem).find(t => mem[t].length >= 2);
@@ -267,9 +328,7 @@ function end(win, quit) {
   return true;
 }
 function victory(win, rew, quit) {
-  const bgm = cfg().bgm || {}, url = win ? bgm.win : bgm.lose;
-  if (url) { try { const a = new Audio(url); a.volume = 0.7; a.play().catch(() => {}); } catch (e) {} }
-  else fanfare(win);
+  SFX.crowd(false); SFX.music(false); SFX.end(win);
   const ov = document.createElement("div"); ov.className = "tvict " + (win ? "win" : "lose");
   ov.innerHTML = '<div class="tvbox"><h1>' + (win ? "VICTOIRE !" : quit ? "Abandon" : "DÉFAITE") + "</h1>" +
     (rew.money || rew.xp ? '<div class="tvrew">' + (rew.money ? "<span>💵 +" + rew.money + "</span>" : "") + (rew.mom ? "<span>⚡ +" + rew.mom + "</span><span>⭐ +" + rew.pop + "</span><span>📣 +" + rew.push + "</span>" : "") + (rew.gim ? "<span>🎟️ +" + rew.gim + "</span>" : "") + (rew.xp ? "<span>XP +" + rew.xp + (rew.up ? " · niveau +" + rew.up + " !" : "") + "</span>" : "") + "</div>" : "") +
@@ -277,7 +336,7 @@ function victory(win, rew, quit) {
     (rew.cards.length ? '<p class="tvdrop">✨ Carte gagnée !</p><div class="trgrid">' + rew.cards.map(id => cardHTML(defOf(id), { small: true })).join("") + "</div>" : "") +
     '<div class="btns"><a class="btn" href="#/tccg/combats" data-close>Combats</a><a class="btn ghost" href="#/tccg" data-close>Accueil</a></div></div>';
   document.body.appendChild(ov);
-  ov.addEventListener("click", e => { if (e.target.closest("[data-close]")) { ov.remove(); B = null; prep = null; } });
+  ov.addEventListener("click", e => { if (e.target.closest("[data-close]")) { ov.remove(); B = null; prep = null; SFX.crowd(false); SFX.music(false); } });
 }
 // petite fanfare de victoire (ou thème de défaite) jouée par l'app
 function fanfare(win) {

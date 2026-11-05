@@ -1,6 +1,31 @@
 {
- "updated": "2026-10-30",
+ "updated": "2026-11-05",
  "items": [
+  {
+   "id": "2026-11-05-maj",
+   "d": "2026-11-05",
+   "t": "Mise à jour du 5 novembre",
+   "txt": [
+    "⭐ Notes avec des demi-étoiles, de 0 à 5,5 (la 6e étoile orange = un show au-dessus du lot).",
+    "📺 Nouvelle page des shows passés : la vidéo en haut, la note du show juste dessous, les vidéos du show, le résumé sans spoiler puis avec spoiler.",
+    "🎤 Chaque match et chaque segment (promo, interview…) peut être noté, et les segments mis en favori (visibles sur ton profil).",
+    "🔎 TCC Play : la recherche montre aussi des vidéos trouvées sur le web, avec des raccourcis vers d’autres sites.",
+    "▶ Matchs de référence des fiches : le lien choisi par le modo se lance directement."
+   ]
+  },
+  {
+   "id": "2026-11-05-tcccg",
+   "d": "2026-11-05",
+   "t": "TCCCG : combats animés (modo)",
+   "mod": true,
+   "txt": [
+    "🏟️ Intro des combats : les cartes entrent sur le ring avec leurs infos, 3-2-1, trois coups de cloche, FIGHT !",
+    "💥 Cartes qui se retournent, paires, dégâts qui s’envolent, PROVOCATION, popup KO et TAG, bandeau « À toi » / « Tour de l’IA ».",
+    "🔥 Vrais finishers des catcheurs, avec une animation où la carte s’abat sur l’adversaire.",
+    "🔔 Sons : cloche, coups, public, victoire, défaite (le modo peut mettre ses fichiers et le fond des combats).",
+    "🏠 Nouvel accueil façon Dokkan : ta carte leader en grand qui te parle, bannières des boosters, gros bouton COMBATS."
+   ]
+  },
   {
    "id": "2026-11-04-tcccg",
    "d": "2026-11-04",

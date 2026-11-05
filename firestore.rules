@@ -1,6 +1,7 @@
 rules_version = '2';
 
-// Règles de sécurité TCC TV (version 9 : partie TCCCG de chaque joueur).
+// Règles de sécurité TCC TV (version 10 : notes de 0 à 5,5 par demi-étoile).
+// (version 9 : partie TCCCG de chaque joueur).
 // (version 8 : cartes partagées dans le chat, notifications sur le téléphone, annonces du modérateur).
 // (version 7 : trophées, Slammy, bannière du profil, images des fiches catcheurs, Babies du mois)
 // (version 6 : sondages, pronostics, réactions et réponses, idées ; version 5 : réglages des discussions, notes des combats ; version 4 : suppression du compte ;
@@ -67,7 +68,7 @@ service cloud.firestore {
           && request.resource.data.keys().hasOnly(['title','k','show','d','rating','comment','seenAt'])
           && str(request.resource.data.title, 150) && str(request.resource.data.k, 30)
           && str(request.resource.data.show, 40) && str(request.resource.data.d, 10)
-          && request.resource.data.rating is int && request.resource.data.rating >= 0 && request.resource.data.rating <= 5
+          && request.resource.data.rating is number && request.resource.data.rating >= 0 && request.resource.data.rating <= 5.5
           && (!('comment' in request.resource.data) || str(request.resource.data.comment, 300))
           && request.resource.data.seenAt == request.time;
         allow delete: if isMe(uid);
@@ -225,7 +226,7 @@ service cloud.firestore {
           && d.uid == request.auth.uid
           && d.kind in ['rate','wcom','mrate','trophy','slammy','babies']
           && str(d.k, 30) && str(d.show, 40) && str(d.d, 10)
-          && str(d.title, 150) && d.rating is int && d.rating >= 0 && d.rating <= 5
+          && str(d.title, 150) && d.rating is number && d.rating >= 0 && d.rating <= 5.5
           && str(d.comment, 500) && str(d.w, 80) && str(d.name, 60)
           && d.at == request.time;
       }
