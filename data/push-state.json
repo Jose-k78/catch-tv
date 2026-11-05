@@ -1,5 +1,5 @@
 {
- "at": "2026-11-05T03:51:47.119Z",
+ "at": "2026-11-05T04:55:11.725Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -276,7 +276,9 @@
   "a:https://www.catch-newz.com/wwe/newz/61007-wwe-nxt-cruz-montana-et-946-font-la-loi-dans-le-show-gris": "2026-11-05",
   "a:https://www.catch-newz.com/wwe/newz/61006-wwe-nxt-noam-dar-et-romeo-moreno-remportent-le-dusty-rhodes-tag-team-classic": "2026-11-05",
   "a:https://www.catch-newz.com/wwe/newz/61005-wwe-nxt-kelani-jordan-conserve-son-titre-face-a-son-adversaire-mystere-paige": "2026-11-05",
-  "a:https://www.catch-newz.com/wwe/newz/61009-wwe-nxt-grace-a-lintervention-de-kevin-owens-grayson-waller-conserve-son-titre-nxt-contre-cm-punk": "2026-11-05"
+  "a:https://www.catch-newz.com/wwe/newz/61009-wwe-nxt-grace-a-lintervention-de-kevin-owens-grayson-waller-conserve-son-titre-nxt-contre-cm-punk": "2026-11-05",
+  "a:https://www.catch-newz.com/wwe/newz/61010-chad-gable-complimente-vanity-project-apres-leur-match-a-nxt": "2026-11-05",
+  "a:https://www.catch-newz.com/wwe/newz/61011-enzo-amore-pourrait-avoir-signe-son-retour-a-la-wwe": "2026-11-05"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -319,6 +321,14 @@
     "url": "https://www.catch-newz.com/wwe/newz/61009-wwe-nxt-grace-a-lintervention-de-kevin-owens-grayson-waller-conserve-son-titre-nxt-contre-cm-punk",
     "tag": "art",
     "short": "WWE NXT : Grâce à l'intervention de Kevin Owens, Grayson Waller conserve son titre NXT contre CM Punk"
+   },
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Chad Gable complimente Vanity Project après leur match à NXT · Enzo Amore pourrait avoir signé son retour à la WWE",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -361,6 +371,14 @@
     "url": "https://www.catch-newz.com/wwe/newz/61009-wwe-nxt-grace-a-lintervention-de-kevin-owens-grayson-waller-conserve-son-titre-nxt-contre-cm-punk",
     "tag": "art",
     "short": "WWE NXT : Grâce à l'intervention de Kevin Owens, Grayson Waller conserve son titre NXT contre CM Punk"
+   },
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Chad Gable complimente Vanity Project après leur match à NXT · Enzo Amore pourrait avoir signé son retour à la WWE",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
    }
   ]
  }

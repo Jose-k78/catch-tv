@@ -1,6 +1,25 @@
 {
- "at": "2026-11-05T03:51:47.072Z",
+ "at": "2026-11-05T04:55:11.665Z",
  "items": [
+  {
+   "t": "Chad Gable complimente Vanity Project après leur match à NXT",
+   "u": "https://www.catch-newz.com/wwe/newz/61010-chad-gable-complimente-vanity-project-apres-leur-match-a-nxt",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
+   "t": "Enzo Amore pourrait avoir signé son retour à la WWE",
+   "u": "https://www.catch-newz.com/wwe/newz/61011-enzo-amore-pourrait-avoir-signe-son-retour-a-la-wwe",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "WWE NXT : Grâce à l'intervention de Kevin Owens, Grayson Waller conserve son titre NXT contre CM Punk",
    "u": "https://www.catch-newz.com/wwe/newz/61009-wwe-nxt-grace-a-lintervention-de-kevin-owens-grayson-waller-conserve-son-titre-nxt-contre-cm-punk",
@@ -519,24 +538,6 @@
    "tags": [
     "NJPW"
    ]
-  },
-  {
-   "t": "NJPW Power Struggle 2026 : MJF lance un nouveau challenge à Ryohei Oiwa",
-   "u": "https://www.catch-newz.com/international/newz/60950-njpw-power-struggle-2026-mjf-lance-un-nouveau-challenge-a-ryohei-oiwa",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "NJPW"
-   ]
-  },
-  {
-   "t": "John Cena sera aux WWE Survivor Series 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/60947-john-cena-sera-aux-wwe-survivor-series-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -759,6 +760,33 @@
     "id": "lNjL4PowZ5Y",
     "t": "BREAKING NEWS: John Cena announces the John Cena Classic: Raw highlights, Nov. 2, 2026"
    }
+  ],
+  "WWE|NXT|2026-11-04": [
+   {
+    "id": "flhDOqOMmko",
+    "t": "CM Punk contre Grayson Waller"
+   },
+   {
+    "id": "nRnVEHSsXSM",
+    "t": "Full NXT highlights, Nov. 4, 2026"
+   },
+   {
+    "id": "h_XxIdl8UUQ",
+    "t": "Kevin Owens returns to NXT to cost CM Punk: NXT highlights, Nov. 4, 2026"
+   },
+   {
+    "id": "r4l-YvOfhJ0",
+    "t": "John Cena meets Zilla Fatu in must-see moment: NXT highlights, Nov. 4, 2026"
+   },
+   {
+    "id": "sKM6HPlaRfQ",
+    "t": "John Cena shuts down Kam Hendrix in savage exchange: NXT highlights, Nov. 4, 2026"
+   },
+   {
+    "id": "_kB5_zWg698",
+    "t": "The 946 invade NXT to help Cruz Montana beat Dion Lennox: NXT highlights, Nov. 4, 2026",
+    "sp": true
+   }
   ]
  },
  "rss": {
@@ -770,9 +798,11 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/wwe/newz/61009-wwe-nxt-grace-a-lintervention-de-kevin-owens-grayson-waller-conserve-son-titre-nxt-contre-cm-punk",
    "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60991-wwe-nxt-4-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61010-chad-gable-complimente-vanity-project-apres-leur-match-a-nxt",
+   "https://www.catch-newz.com/wwe/newz/61011-enzo-amore-pourrait-avoir-signe-son-retour-a-la-wwe",
+   "https://www.catch-newz.com/wwe/newz/61009-wwe-nxt-grace-a-lintervention-de-kevin-owens-grayson-waller-conserve-son-titre-nxt-contre-cm-punk",
    "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61008-wwe-nxt-emu-aux-larmes-zilla-fatu-integre-le-john-cena-classic",
    "https://www.catch-newz.com/wwe/newz/61007-wwe-nxt-cruz-montana-et-946-font-la-loi-dans-le-show-gris",
@@ -1010,7 +1040,7 @@
   "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
-  "YouTube WWE": "0 nouvelles vidéos",
+  "YouTube WWE": "6 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
