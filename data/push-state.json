@@ -1,5 +1,5 @@
 {
- "at": "2026-11-05T04:55:11.725Z",
+ "at": "2026-11-05T07:08:29.958Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -278,108 +278,11 @@
   "a:https://www.catch-newz.com/wwe/newz/61005-wwe-nxt-kelani-jordan-conserve-son-titre-face-a-son-adversaire-mystere-paige": "2026-11-05",
   "a:https://www.catch-newz.com/wwe/newz/61009-wwe-nxt-grace-a-lintervention-de-kevin-owens-grayson-waller-conserve-son-titre-nxt-contre-cm-punk": "2026-11-05",
   "a:https://www.catch-newz.com/wwe/newz/61010-chad-gable-complimente-vanity-project-apres-leur-match-a-nxt": "2026-11-05",
-  "a:https://www.catch-newz.com/wwe/newz/61011-enzo-amore-pourrait-avoir-signe-son-retour-a-la-wwe": "2026-11-05"
+  "a:https://www.catch-newz.com/wwe/newz/61011-enzo-amore-pourrait-avoir-signe-son-retour-a-la-wwe": "2026-11-05",
+  "poll:p-20261105-enzo-retour": "2026-11-05",
+  "poll:p-20261105-reine-knockouts": "2026-11-05",
+  "poll:p-20261105-dm-lita-mone": "2026-11-05",
+  "story:gail-kim-bfg-2017": "2026-11-05"
  },
- "pend": {
-  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
-   {
-    "cat": "info",
-    "title": "📰 Catch-Newz",
-    "body": "La Saison 13 de WWE Supercard est lancée",
-    "url": "https://www.catch-newz.com/culture/gaming/60990-la-saison-13-de-wwe-supercard-est-lancee",
-    "tag": "art",
-    "short": "La Saison 13 de WWE Supercard est lancée"
-   },
-   {
-    "cat": "info",
-    "title": "📰 2 nouvelles infos",
-    "body": "La WWE dévoile son plan de secours pour WrestleMania 43 · Tous les événements WWE et UFC en Arabie saoudite auront lieu comme prévu",
-    "url": "#/",
-    "tag": "art",
-    "short": "2 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 3 nouvelles infos",
-    "body": "WWE NXT : Chad Gable, Dragon Lee et Rey Fenix donnent une leçon au Vanity Project · Résultats de AEW Dynamite Blood and Guts du 4 novembre 2026 · Résultats de WWE NXT du 4 novembre 2026",
-    "url": "#/",
-    "tag": "art",
-    "short": "3 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 4 nouvelles infos",
-    "body": "WWE NXT : Ému aux larmes, Zilla Fatu intègre le John Cena Classic · WWE NXT : Cruz Montana et \"946\" font la loi dans le show gris · WWE NXT : Noam Dar et Romeo Moreno remportent le Dusty Rhodes Tag Team Classic",
-    "url": "#/",
-    "tag": "art",
-    "short": "4 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Catch-Newz",
-    "body": "WWE NXT : Grâce à l'intervention de Kevin Owens, Grayson Waller conserve son titre NXT contre CM Punk",
-    "url": "https://www.catch-newz.com/wwe/newz/61009-wwe-nxt-grace-a-lintervention-de-kevin-owens-grayson-waller-conserve-son-titre-nxt-contre-cm-punk",
-    "tag": "art",
-    "short": "WWE NXT : Grâce à l'intervention de Kevin Owens, Grayson Waller conserve son titre NXT contre CM Punk"
-   },
-   {
-    "cat": "info",
-    "title": "📰 2 nouvelles infos",
-    "body": "Chad Gable complimente Vanity Project après leur match à NXT · Enzo Amore pourrait avoir signé son retour à la WWE",
-    "url": "#/",
-    "tag": "art",
-    "short": "2 nouvelles infos"
-   }
-  ],
-  "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
-   {
-    "cat": "info",
-    "title": "📰 Catch-Newz",
-    "body": "La Saison 13 de WWE Supercard est lancée",
-    "url": "https://www.catch-newz.com/culture/gaming/60990-la-saison-13-de-wwe-supercard-est-lancee",
-    "tag": "art",
-    "short": "La Saison 13 de WWE Supercard est lancée"
-   },
-   {
-    "cat": "info",
-    "title": "📰 2 nouvelles infos",
-    "body": "La WWE dévoile son plan de secours pour WrestleMania 43 · Tous les événements WWE et UFC en Arabie saoudite auront lieu comme prévu",
-    "url": "#/",
-    "tag": "art",
-    "short": "2 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 3 nouvelles infos",
-    "body": "WWE NXT : Chad Gable, Dragon Lee et Rey Fenix donnent une leçon au Vanity Project · Résultats de AEW Dynamite Blood and Guts du 4 novembre 2026 · Résultats de WWE NXT du 4 novembre 2026",
-    "url": "#/",
-    "tag": "art",
-    "short": "3 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 4 nouvelles infos",
-    "body": "WWE NXT : Ému aux larmes, Zilla Fatu intègre le John Cena Classic · WWE NXT : Cruz Montana et \"946\" font la loi dans le show gris · WWE NXT : Noam Dar et Romeo Moreno remportent le Dusty Rhodes Tag Team Classic",
-    "url": "#/",
-    "tag": "art",
-    "short": "4 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Catch-Newz",
-    "body": "WWE NXT : Grâce à l'intervention de Kevin Owens, Grayson Waller conserve son titre NXT contre CM Punk",
-    "url": "https://www.catch-newz.com/wwe/newz/61009-wwe-nxt-grace-a-lintervention-de-kevin-owens-grayson-waller-conserve-son-titre-nxt-contre-cm-punk",
-    "tag": "art",
-    "short": "WWE NXT : Grâce à l'intervention de Kevin Owens, Grayson Waller conserve son titre NXT contre CM Punk"
-   },
-   {
-    "cat": "info",
-    "title": "📰 2 nouvelles infos",
-    "body": "Chad Gable complimente Vanity Project après leur match à NXT · Enzo Amore pourrait avoir signé son retour à la WWE",
-    "url": "#/",
-    "tag": "art",
-    "short": "2 nouvelles infos"
-   }
-  ]
- }
+ "pend": {}
 }
