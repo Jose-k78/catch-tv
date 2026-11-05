@@ -1,6 +1,26 @@
 {
- "at": "2026-11-05T20:45:57.046Z",
+ "at": "2026-11-05T21:43:20.289Z",
  "items": [
+  {
+   "t": "Chihiro Hashimoto impressionnée par un ancien de la WWE",
+   "u": "https://www.catch-newz.com/aew/newz/61045-chihiro-hashimoto-impressionnee-par-un-ancien-de-la-wwe",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE",
+    "AEW"
+   ]
+  },
+  {
+   "t": "Preview : ROH du 5 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/newz/61044-preview-roh-du-5-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "AEW",
+    "ROH"
+   ]
+  },
   {
    "t": "Preview : AEW Collision du 7 novembre 2026",
    "u": "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
@@ -31,13 +51,18 @@
    ]
   },
   {
-   "t": "Résultats de STARDOM Path Of Thunder 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61043-resultats-de-stardom-path-of-thunder-2026",
+   "t": "Carte de New Texas Pro Wrestling Texas Contenders Series 70",
+   "u": "https://www.catch-newz.com/international/newz/61047-carte-de-new-texas-pro-wrestling-texas-contenders-series-70",
    "s": "Catch-Newz",
    "d": "2026-11-05",
-   "tags": [
-    "Stardom"
-   ]
+   "tags": []
+  },
+  {
+   "t": "Carte de Beyond Wrestling Open Series 253",
+   "u": "https://www.catch-newz.com/international/newz/61046-carte-de-beyond-wrestling-open-series-253",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": []
   },
   {
    "t": "Carte de Sendai Girls Pro Wrestling du 6 novembre 2026",
@@ -45,15 +70,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-05",
    "tags": []
-  },
-  {
-   "t": "Carte de CMLL Jueves Arena Coliseo du 5 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61028-carte-de-cmll-jueves-arena-coliseo-du-5-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "CMLL"
-   ]
   },
   {
    "t": "Résultats de AEW Dynamite Blood and Guts 2026",
@@ -74,6 +90,24 @@
    "tags": [
     "WWE",
     "NXT"
+   ]
+  },
+  {
+   "t": "Résultats de STARDOM Path Of Thunder 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61043-resultats-de-stardom-path-of-thunder-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "Stardom"
+   ]
+  },
+  {
+   "t": "Carte de CMLL Jueves Arena Coliseo du 5 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61028-carte-de-cmll-jueves-arena-coliseo-du-5-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "CMLL"
    ]
   },
   {
@@ -502,43 +536,6 @@
     "SmackDown",
     "NXT"
    ]
-  },
-  {
-   "t": "Le vidéaste Sturry pousse pour que le luchador français Elio Lefleur fasse partie du John Cena Classic",
-   "u": "https://www.catch-newz.com/wwe/newz/60986-le-videaste-sturry-pousse-pour-que-le-luchador-francais-elio-lefleur-fasse-partie-du-john-cena-classic",
-   "s": "Catch-Newz",
-   "d": "2026-11-04",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Raquel Rodriguez : « Je pense que les fans vont se souvenir de nous »",
-   "u": "https://www.catch-newz.com/wwe/newz/60985-raquel-rodriguez-je-pense-que-les-fans-vont-se-souvenir-de-nous",
-   "s": "Catch-Newz",
-   "d": "2026-11-04",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "The Champ ajoute des précisions au sujet du John Cena Classic qui aura lieu le 14 décembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/60942-the-champ-ajoute-des-precisions-au-sujet-du-john-cena-classic-qui-aura-lieu-le-14-decembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-04",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Gunther réagit à l'attaque du démon Finn Balor à SmackDown",
-   "u": "https://www.catch-newz.com/wwe/newz/60984-gunther-reagit-a-lattaque-du-demon-finn-balor-a-smackdown",
-   "s": "Catch-Newz",
-   "d": "2026-11-04",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
   }
  ],
  "yt": {
@@ -817,11 +814,15 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60991-wwe-nxt-4-novembre-2026",
+   "https://www.catch-newz.com/aew/newz/61045-chihiro-hashimoto-impressionnee-par-un-ancien-de-la-wwe",
+   "https://www.catch-newz.com/aew/newz/61044-preview-roh-du-5-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61025-la-wwe-va-organiser-un-show-le-1er-janvier-2027",
    "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61043-resultats-de-stardom-path-of-thunder-2026",
+   "https://www.catch-newz.com/international/newz/61047-carte-de-new-texas-pro-wrestling-texas-contenders-series-70",
+   "https://www.catch-newz.com/international/newz/61046-carte-de-beyond-wrestling-open-series-253",
    "https://www.catch-newz.com/international/newz/61037-carte-de-sendai-girls-pro-wrestling-du-6-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61043-resultats-de-stardom-path-of-thunder-2026",
    "https://www.catch-newz.com/international/newz/61028-carte-de-cmll-jueves-arena-coliseo-du-5-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61041-une-celebration-en-preparation-pour-les-30-ans-de-the-rock-a-la-wwe",
    "https://www.catch-newz.com/wwe/newz/61040-la-wwe-offre-une-prime-de-risque-pour-aller-a-crown-jewel-2026",
@@ -1083,10 +1084,10 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 10 nouveaux articles lus sur la page d'accueil (10 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
-  "YouTube WWE": "1 nouvelles vidéos",
+  "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
