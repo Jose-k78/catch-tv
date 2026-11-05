@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04",
+ "updated": "2026-11-05",
  "note": "Réglages TCCCG du modo (cartes, persos, taux, objets, boosters, combats, musiques, assets). Modifié depuis l’app (⚙️ Modo TCCCG).",
  "cards": {
   "ace-austin": {
@@ -25,6 +25,18 @@
    },
    "gimmick": "",
    "medalOf": "Kevin Owens"
+  },
+  "mayu-iwatani": {
+   "r": "SSR",
+   "max": "LR",
+   "arch": "Showman",
+   "al": "face",
+   "fin": {
+    "n": "Moonsault Press",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Koguma"
   }
  }
 }
