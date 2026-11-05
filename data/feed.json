@@ -1,5 +1,5 @@
 {
- "at": "2026-11-05T00:11:49.055Z",
+ "at": "2026-11-05T01:45:01.469Z",
  "items": [
   {
    "t": "Spoilers de WWE SmackDown du 6 novembre 2026",
@@ -9,6 +9,16 @@
    "tags": [
     "WWE",
     "SmackDown"
+   ]
+  },
+  {
+   "t": "WWE NXT : Chad Gable, Dragon Lee et Rey Fenix donnent une leçon au Vanity Project",
+   "u": "https://www.catch-newz.com/wwe/newz/61004-wwe-nxt-chad-gable-dragon-lee-et-rey-fenix-donnent-une-lecon-au-vanity-project",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE",
+    "NXT"
    ]
   },
   {
@@ -70,6 +80,26 @@
    "s": "Catch-Newz",
    "d": "2026-11-05",
    "tags": []
+  },
+  {
+   "t": "Résultats de AEW Dynamite Blood and Guts du 4 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-04",
+   "tags": [
+    "AEW",
+    "Dynamite"
+   ]
+  },
+  {
+   "t": "Résultats de WWE NXT du 4 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/60991-wwe-nxt-4-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-04",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
   },
   {
    "t": "Preview : AEW Dynamite Blood and Guts du 4 novembre 2026",
@@ -503,35 +533,6 @@
     "WWE",
     "Raw"
    ]
-  },
-  {
-   "t": "WWE RAW : Cinq jours avant Crown Jewel, Liv Morgan rive les épaules de Chelsea Green",
-   "u": "https://www.catch-newz.com/wwe/newz/60941-wwe-raw-cinq-jours-avant-crown-jewel-liv-morgan-rive-les-epaules-de-chelsea-green",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
-  },
-  {
-   "t": "Roman Reigns : « Sans moi Sami, tu ne serais même plus dans cette compagnie »",
-   "u": "https://www.catch-newz.com/wwe/newz/60938-roman-reigns-sans-moi-sami-tu-ne-serais-meme-plus-dans-cette-compagnie",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "WWE RAW : Ethan Page devient le nouveau champion Intercontinental et met fin au règne incroyable de Chad Gable",
-   "u": "https://www.catch-newz.com/wwe/newz/60939-wwe-raw-ethan-page-devient-le-nouveau-champion-intercontinental-et-met-fin-au-regne-incroyable-de-chad-gable",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
   }
  ],
  "yt": {
@@ -765,9 +766,12 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026",
+   "https://www.catch-newz.com/wwe/resultats/60991-wwe-nxt-4-novembre-2026",
+   "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61004-wwe-nxt-chad-gable-dragon-lee-et-rey-fenix-donnent-une-lecon-au-vanity-project",
    "https://www.catch-newz.com/aew/newz/60874-preview-aew-dynamite-blood-and-guts-du-4-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
-   "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60998-la-wwe-devoile-son-plan-de-secours-pour-wrestlemania-43",
    "https://www.catch-newz.com/wwe/newz/60997-tous-les-evenements-wwe-et-ufc-en-arabie-saoudite-auront-lieu-comme-prevu",
    "https://www.catch-newz.com/international/newz/61002-carte-du-jour-3-de-dg-the-gate-of-evolution-2026",
@@ -994,7 +998,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",

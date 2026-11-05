@@ -1,5 +1,5 @@
 {
- "at": "2026-11-05T00:11:49.104Z",
+ "at": "2026-11-05T01:45:01.519Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -268,7 +268,10 @@
   "fr:2026-11-04": "2026-11-04",
   "a:https://www.catch-newz.com/culture/gaming/60990-la-saison-13-de-wwe-supercard-est-lancee": "2026-11-04",
   "a:https://www.catch-newz.com/wwe/newz/60998-la-wwe-devoile-son-plan-de-secours-pour-wrestlemania-43": "2026-11-05",
-  "a:https://www.catch-newz.com/wwe/newz/60997-tous-les-evenements-wwe-et-ufc-en-arabie-saoudite-auront-lieu-comme-prevu": "2026-11-05"
+  "a:https://www.catch-newz.com/wwe/newz/60997-tous-les-evenements-wwe-et-ufc-en-arabie-saoudite-auront-lieu-comme-prevu": "2026-11-05",
+  "a:https://www.catch-newz.com/wwe/newz/61004-wwe-nxt-chad-gable-dragon-lee-et-rey-fenix-donnent-une-lecon-au-vanity-project": "2026-11-05",
+  "a:https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026": "2026-11-05",
+  "a:https://www.catch-newz.com/wwe/resultats/60991-wwe-nxt-4-novembre-2026": "2026-11-05"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -287,6 +290,14 @@
     "url": "#/",
     "tag": "art",
     "short": "2 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 3 nouvelles infos",
+    "body": "WWE NXT : Chad Gable, Dragon Lee et Rey Fenix donnent une leçon au Vanity Project · Résultats de AEW Dynamite Blood and Guts du 4 novembre 2026 · Résultats de WWE NXT du 4 novembre 2026",
+    "url": "#/",
+    "tag": "art",
+    "short": "3 nouvelles infos"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -305,6 +316,14 @@
     "url": "#/",
     "tag": "art",
     "short": "2 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 3 nouvelles infos",
+    "body": "WWE NXT : Chad Gable, Dragon Lee et Rey Fenix donnent une leçon au Vanity Project · Résultats de AEW Dynamite Blood and Guts du 4 novembre 2026 · Résultats de WWE NXT du 4 novembre 2026",
+    "url": "#/",
+    "tag": "art",
+    "short": "3 nouvelles infos"
    }
   ]
  }
