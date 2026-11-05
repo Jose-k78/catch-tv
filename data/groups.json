@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04",
+ "updated": "2026-11-05",
  "note": "Membres tenus à jour par la mise à jour du soir (19 h 23).",
  "items": {
   "946": {
@@ -1205,12 +1205,13 @@
     "Jon Moxley",
     "Claudio Castagnoli",
     "Wheeler Yuta",
-    "Marina Shafir",
     "PAC",
-    "Gabe Kidd"
+    "Gabe Kidd",
+    "Daniel Garcia"
    ],
    "ex": [
-    "Bryan Danielson"
+    "Bryan Danielson",
+    "Marina Shafir"
    ]
   },
   "death-triangle": {
@@ -1546,14 +1547,15 @@
    "n": "The Conglomeration",
    "lg": "The Conglomeration",
    "k": "AEW",
-   "y": "2024–2025",
-   "on": 0,
+   "y": "depuis 2024",
+   "on": 1,
    "m": [
     "Orange Cassidy",
     "Kyle O'Reilly",
     "Roderick Strong",
     "Mark Briscoe",
-    "Tomohiro Ishii"
+    "Tomohiro Ishii",
+    "Marina Shafir"
    ],
    "a": [
     "Conglomeration"
@@ -2525,6 +2527,27 @@
     "Tonga Loa",
     "Jeff Cobb"
    ]
+  },
+  "cut": {
+   "n": "The Cut",
+   "lg": "",
+   "k": "AEW",
+   "y": "depuis 2026",
+   "on": 1,
+   "m": [
+    "Jay White",
+    "David Finlay",
+    "Clark Connors",
+    "Juice Robinson",
+    "Austin Gunn",
+    "Colten Gunn",
+    "Ace Austin"
+   ],
+   "ex": [],
+   "a": [
+    "The Last Outfit"
+   ],
+   "ref": []
   }
  }
 }
