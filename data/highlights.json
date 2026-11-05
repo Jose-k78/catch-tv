@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04",
+ "updated": "2026-11-05",
  "note": "Vidéos des chaînes officielles uniquement. res = résultats (spoilers, affichés seulement à la demande). m = résumé match par match (promotions japonaises).",
  "items": {
   "WWE|Raw|2026-10-26": {
@@ -451,6 +451,111 @@
    ],
    "s": "Fightful",
    "u": "https://www.fightful.com/wrestling/njpw-power-struggle-results-11-3-kenny-omega-yota-tsuji-jon-moxley-compete/"
+  },
+  "WWE|PLE|2026-10-31": {
+   "res": [
+    "Myles Borne a battu Tavion Heights dans un match Weapons Wild.",
+    "Izzi Dame a battu Zaria.",
+    "Zilla Fatu a battu Charlie Dempsey dans un match « Very Nice Very Evil » (Falls Count Anywhere).",
+    "Kelani Jordan a battu Wren Sinclair et conserve le titre féminin de la NXT.",
+    "Shiloh Hill a battu Naraku.",
+    "Grayson Waller a battu Tony D'Angelo et conserve le titre de la NXT."
+   ],
+   "seg": [
+    {
+     "k": "Autre",
+     "t": "NXT Halloween Havoc au Performance Center d'Orlando, animé par Danhausen."
+    },
+    {
+     "k": "Annonce",
+     "t": "La roue (Spin the Wheel) désigne un match « Very Nice Very Evil » pour Zilla Fatu contre Charlie Dempsey."
+    },
+    {
+     "k": "Annonce",
+     "t": "Michael Chandler sera l'arbitre du match sans règles entre Cruz Montana et Dion Lennox le mercredi suivant."
+    },
+    {
+     "k": "Attaque",
+     "t": "EK Prosper s'en prend à Kam Hendrix pendant un segment avec Danhausen."
+    },
+    {
+     "k": "Promo",
+     "t": "Après le main event, CM Punk apparaît à l'écran et réclame un match pour le titre de la NXT dès le mercredi suivant."
+    }
+   ],
+   "s": "PWTorch",
+   "u": "https://www.pwtorch.com/site/2026/10/31/nxt-halloween-havoc-results-10-31-grayson-waller-vs-tony-dangelo-kelani-jordan-vs-wren-sinclair-two-spin-the-wheel-matches-more/"
+  },
+  "WWE|NXT|2026-11-04": {
+   "res": [
+    "Chad Gable, Rey Fenix et Dragon Lee ont battu The Vanity Project.",
+    "Kelani Jordan a battu Paige et conserve le titre féminin de la NXT.",
+    "Romeo Moreno et Noam Dar ont battu Hank et Tank en finale du Dusty Rhodes Tag Team Classic.",
+    "Cruz Montana a battu Dion Lennox dans un match sans règles.",
+    "Grayson Waller a battu CM Punk et conserve le titre de la NXT."
+   ],
+   "seg": [
+    {
+     "k": "Backstage",
+     "t": "CM Punk promet à Shiloh Hill la première chance au titre une fois champion de la NXT."
+    },
+    {
+     "k": "Retour",
+     "t": "Paige fait son retour comme challenger mystère de Kelani Jordan pour le titre féminin."
+    },
+    {
+     "k": "Célébration",
+     "t": "Cody Rhodes, aux commentaires de la finale, remet la Dusty Cup ; les vainqueurs obtiennent un match pour les titres par équipe de la NXT la semaine suivante."
+    },
+    {
+     "k": "Attaque",
+     "t": "Pendant le match sans règles, Royce Keys et The 946 s'en prennent à Osiris Griffin et Cutler James venus interférer."
+    },
+    {
+     "k": "Annonce",
+     "t": "John Cena invite Zilla Fatu au John Cena Classic du 14 décembre, en hommage à son père Umaga, et refuse la demande de Kam Hendrix."
+    },
+    {
+     "k": "Attaque",
+     "t": "Kevin Owens tente de rejoindre le ring pendant le main event, retenu par la sécurité : sa présence distrait CM Punk."
+    }
+   ],
+   "s": "Sports Illustrated",
+   "u": "https://www.si.com/fannation/wrestling/wwe/wwe-nxt-results-john-cena-hands-out-new-invite-waller-shocks-punk-nov4"
+  },
+  "AEW|Dynamite|2026-11-04": {
+   "res": [
+    "Queen Aminata, Willow Nightingale, The Brawling Birds et WrathLander ont battu Divine Dominion, Persephone et Triangle of Madness dans un match Blood & Guts.",
+    "La Don Callis Family a battu Will Ospreay, Adam Copeland, Darby Allin, Steven Borden et The Young Bucks dans un match Blood & Guts."
+   ],
+   "seg": [
+    {
+     "k": "Autre",
+     "t": "Dynamite spécial Blood & Guts au VyStar Veterans Memorial Arena de Jacksonville."
+    },
+    {
+     "k": "Interview",
+     "t": "Don Callis et son clan, puis l'équipe d'Ospreay avec Mick Foley, présentent le Blood & Guts ; Ospreay met en garde Kyle Fletcher."
+    },
+    {
+     "k": "Promo",
+     "t": "Andrade parle de son match pour le titre National contre Tommaso Ciampa à Collision et de sa future chance au titre mondial."
+    },
+    {
+     "k": "Backstage",
+     "t": "Une dispute entre Swerve Strickland, Austin Creed, Bandido et Kofi tourne à la bagarre ; Bandido réclame un Texas Death match."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Mercedes Moné appelle Marina Shafir : l'échange tourne à la bagarre, séparée par la sécurité."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après la victoire, Kyle Fletcher promet d'en finir à Full Gear ; Wardlow envoie Darby Allin à travers une pile de tables."
+    }
+   ],
+   "s": "Slam Wrestling",
+   "u": "https://slamwrestling.net/news/aew-dynamite-blood-and-guts-results-november-4th-2026/"
   }
  }
 }
