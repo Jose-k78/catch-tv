@@ -1,21 +1,11 @@
 {
- "at": "2026-11-05T22:44:53.273Z",
+ "at": "2026-11-05T23:41:57.141Z",
  "items": [
-  {
-   "t": "Preview : ROH du 5 novembre 2026",
-   "u": "https://www.catch-newz.com/aew/newz/61044-preview-roh-du-5-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "AEW",
-    "ROH"
-   ]
-  },
   {
    "t": "Preview : AEW Collision du 7 novembre 2026",
    "u": "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
    "s": "Catch-Newz",
-   "d": "2026-11-05",
+   "d": "2026-11-06",
    "tags": [
     "AEW",
     "Collision"
@@ -25,7 +15,7 @@
    "t": "La WWE va organiser un show le 1er janvier 2027",
    "u": "https://www.catch-newz.com/wwe/newz/61025-la-wwe-va-organiser-un-show-le-1er-janvier-2027",
    "s": "Catch-Newz",
-   "d": "2026-11-05",
+   "d": "2026-11-06",
    "tags": [
     "WWE"
    ]
@@ -34,25 +24,42 @@
    "t": "Preview : WWE SmackDown du 6 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
    "s": "Catch-Newz",
-   "d": "2026-11-05",
+   "d": "2026-11-06",
    "tags": [
     "WWE",
     "SmackDown"
    ]
   },
   {
-   "t": "Carte de Dradition Tastumi Fujinami 55th Celebration Dragon Expo 2026",
-   "u": "https://www.catch-newz.com/international/newz/61051-carte-de-dradition-tastumi-fujinami-55th-celebration-dragon-expo-2026",
+   "t": "Carte de NHB The Chains Volume 103",
+   "u": "https://www.catch-newz.com/international/newz/61049-carte-de-nhb-the-chains-volume-103",
    "s": "Catch-Newz",
-   "d": "2026-11-05",
+   "d": "2026-11-06",
    "tags": []
   },
   {
-   "t": "Carte de Sendai Girls Pro Wrestling du 6 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61037-carte-de-sendai-girls-pro-wrestling-du-6-novembre-2026",
+   "t": "Résultats de ChocoPro #548",
+   "u": "https://www.catch-newz.com/international/resultats/61053-resultats-de-chocopro-548",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": []
+  },
+  {
+   "t": "Résultats de ChocoPro #547",
+   "u": "https://www.catch-newz.com/international/resultats/61052-resultats-de-chocopro-547",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": []
+  },
+  {
+   "t": "Preview : ROH du 5 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/newz/61044-preview-roh-du-5-novembre-2026",
    "s": "Catch-Newz",
    "d": "2026-11-05",
-   "tags": []
+   "tags": [
+    "AEW",
+    "ROH"
+   ]
   },
   {
    "t": "Résultats de AEW Dynamite Blood and Guts 2026",
@@ -74,6 +81,20 @@
     "WWE",
     "NXT"
    ]
+  },
+  {
+   "t": "Carte de Dradition Tastumi Fujinami 55th Celebration Dragon Expo 2026",
+   "u": "https://www.catch-newz.com/international/newz/61051-carte-de-dradition-tastumi-fujinami-55th-celebration-dragon-expo-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": []
+  },
+  {
+   "t": "Carte de Sendai Girls Pro Wrestling du 6 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61037-carte-de-sendai-girls-pro-wrestling-du-6-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": []
   },
   {
    "t": "Chihiro Hashimoto impressionnée par un ancien de la WWE",
@@ -504,34 +525,6 @@
     "WWE",
     "NXT"
    ]
-  },
-  {
-   "t": "La Saison 13 de WWE Supercard est lancée",
-   "u": "https://www.catch-newz.com/culture/gaming/60990-la-saison-13-de-wwe-supercard-est-lancee",
-   "s": "Catch-Newz",
-   "d": "2026-11-04",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Chad Gable sort du silence après sa perte de titre à RAW",
-   "u": "https://www.catch-newz.com/wwe/newz/60989-chad-gable-sort-du-silence-apres-sa-perte-de-titre-a-raw",
-   "s": "Catch-Newz",
-   "d": "2026-11-04",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
-  },
-  {
-   "t": "Taya Valkyrie quitte l'AEW",
-   "u": "https://www.catch-newz.com/aew/newz/60988-taya-valkyrie-quitte-laew",
-   "s": "Catch-Newz",
-   "d": "2026-11-04",
-   "tags": [
-    "AEW"
-   ]
   }
  ],
  "yt": {
@@ -797,6 +790,17 @@
     "id": "H7uikg3Clzc",
     "t": "Chazz “Starboy” Hall takes on Shido Ash: Evolve highlights, Nov. 4, 2026"
    }
+  ],
+  "WWE|Main Event|2026-11-02": [
+   {
+    "id": "s77SgL7Zv0o",
+    "t": "The MFTs threaten Kyoki over the Tongan Staff: Main Event highlights, Nov. 2, 2026"
+   },
+   {
+    "id": "C4eBQiT2zRo",
+    "t": "Ethan Page basks in his Intercontinental Title win: Main Event highlights, Nov. 2, 2026",
+    "sp": true
+   }
   ]
  },
  "rss": {
@@ -814,6 +818,9 @@
    "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61025-la-wwe-va-organiser-un-show-le-1er-janvier-2027",
    "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61049-carte-de-nhb-the-chains-volume-103",
+   "https://www.catch-newz.com/international/resultats/61053-resultats-de-chocopro-548",
+   "https://www.catch-newz.com/international/resultats/61052-resultats-de-chocopro-547",
    "https://www.catch-newz.com/international/newz/61051-carte-de-dradition-tastumi-fujinami-55th-celebration-dragon-expo-2026",
    "https://www.catch-newz.com/international/newz/61037-carte-de-sendai-girls-pro-wrestling-du-6-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61045-chihiro-hashimoto-impressionnee-par-un-ancien-de-la-wwe",
@@ -1081,10 +1088,10 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
-  "VOXcatch": "7 articles (7 j)",
+  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
+  "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
-  "YouTube WWE": "0 nouvelles vidéos",
+  "YouTube WWE": "2 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
