@@ -1,9 +1,27 @@
 {
- "at": "2026-11-05T18:50:09.015Z",
+ "at": "2026-11-05T19:50:13.417Z",
  "items": [
   {
-   "t": "The Miz : « Ce que Carmelo Hayes accomplit aujourd’hui avec 946 est incroyable »",
-   "u": "https://www.catch-newz.com/wwe/newz/61032-the-miz-ce-que-carmelo-hayes-accomplit-aujourdhui-avec-946-est-incroyable",
+   "t": "Une célébration en préparation pour les 30 ans de The Rock à la WWE",
+   "u": "https://www.catch-newz.com/wwe/newz/61041-une-celebration-en-preparation-pour-les-30-ans-de-the-rock-a-la-wwe",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "La WWE offre une ''prime de risque'' pour aller à Crown Jewel 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61040-la-wwe-offre-une-prime-de-risque-pour-aller-a-crown-jewel-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Danhausen bientôt en ''Santahausen'' pour le temps des fêtes",
+   "u": "https://www.catch-newz.com/wwe/newz/61042-danhausen-bientot-en-santahausen-pour-le-temps-des-fetes",
    "s": "Catch-Newz",
    "d": "2026-11-05",
    "tags": [
@@ -40,8 +58,8 @@
    ]
   },
   {
-   "t": "Découvrez les participants à la AJPW Real World Tag League 2026",
-   "u": "https://www.catch-newz.com/international/newz/61033-decouvrez-les-participants-a-la-ajpw-real-world-tag-league-2026",
+   "t": "Carte de Sendai Girls Pro Wrestling du 6 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61037-carte-de-sendai-girls-pro-wrestling-du-6-novembre-2026",
    "s": "Catch-Newz",
    "d": "2026-11-05",
    "tags": []
@@ -82,6 +100,22 @@
     "WWE",
     "NXT"
    ]
+  },
+  {
+   "t": "The Miz : « Ce que Carmelo Hayes accomplit aujourd’hui avec 946 est incroyable »",
+   "u": "https://www.catch-newz.com/wwe/newz/61032-the-miz-ce-que-carmelo-hayes-accomplit-aujourdhui-avec-946-est-incroyable",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Découvrez les participants à la AJPW Real World Tag League 2026",
+   "u": "https://www.catch-newz.com/international/newz/61033-decouvrez-les-participants-a-la-ajpw-real-world-tag-league-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": []
   },
   {
    "t": "Nattie Neidhart fait le point de son absence de WWE RAW",
@@ -505,41 +539,6 @@
     "NJPW",
     "Main Event"
    ]
-  },
-  {
-   "t": "La WWE annonce un second show à Disney World le 15 décembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/60957-la-wwe-annonce-un-second-show-a-disney-world-le-15-decembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-04",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Résultats du jour 8 de DG The Gate Of Victory 2026 Partie 1",
-   "u": "https://www.catch-newz.com/international/resultats/60973-resultats-du-jour-8-de-dg-the-gate-of-victory-2026-partie-1",
-   "s": "Catch-Newz",
-   "d": "2026-11-04",
-   "tags": []
-  },
-  {
-   "t": "Chad Gable : « Si j'affronte Roman Reigns, je serais un vrai dur à cuire »",
-   "u": "https://www.catch-newz.com/wwe/newz/60979-chad-gable-si-jaffronte-roman-reigns-je-serais-un-vrai-dur-a-cuire",
-   "s": "Catch-Newz",
-   "d": "2026-11-04",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "19 catcheurs de NXT ont été call-up ces 12 derniers mois",
-   "u": "https://www.catch-newz.com/wwe/newz/60978-19-catcheurs-de-nxt-ont-ete-call-up-ces-12-derniers-mois",
-   "s": "Catch-Newz",
-   "d": "2026-11-04",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
   }
  ],
  "yt": {
@@ -789,6 +788,16 @@
     "t": "The 946 invade NXT to help Cruz Montana beat Dion Lennox: NXT highlights, Nov. 4, 2026",
     "sp": true
    }
+  ],
+  "WWE|Main Event|2026-11-04": [
+   {
+    "id": "P4id4pyziII",
+    "t": "Giulia throws down with Nia Jax in hard-hitting match: Main Event highlights, Nov. 4, 2026"
+   },
+   {
+    "id": "-27dohFxQ1I",
+    "t": "Rey Fenix defends the Cruiserweight Title against Akira Tozawa: Main Event highlights, Nov. 4, 2026"
+   }
   ]
  },
  "rss": {
@@ -800,15 +809,19 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/newz/61041-une-celebration-en-preparation-pour-les-30-ans-de-the-rock-a-la-wwe",
+   "https://www.catch-newz.com/wwe/newz/61040-la-wwe-offre-une-prime-de-risque-pour-aller-a-crown-jewel-2026",
    "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60991-wwe-nxt-4-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61032-the-miz-ce-que-carmelo-hayes-accomplit-aujourdhui-avec-946-est-incroyable",
+   "https://www.catch-newz.com/wwe/newz/61042-danhausen-bientot-en-santahausen-pour-le-temps-des-fetes",
    "https://www.catch-newz.com/wwe/newz/61025-la-wwe-va-organiser-un-show-le-1er-janvier-2027",
    "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/international/newz/61012-preview-tna-impact-5-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61033-decouvrez-les-participants-a-la-ajpw-real-world-tag-league-2026",
+   "https://www.catch-newz.com/international/newz/61037-carte-de-sendai-girls-pro-wrestling-du-6-novembre-2026",
    "https://www.catch-newz.com/international/newz/61028-carte-de-cmll-jueves-arena-coliseo-du-5-novembre-2026",
    "https://www.catch-newz.com/international/newz/61027-carte-de-iwrg-galli-thursday-night-wrestling-du-5-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61032-the-miz-ce-que-carmelo-hayes-accomplit-aujourdhui-avec-946-est-incroyable",
+   "https://www.catch-newz.com/international/newz/61033-decouvrez-les-participants-a-la-ajpw-real-world-tag-league-2026",
    "https://www.catch-newz.com/wwe/newz/61031-nattie-neidhart-fait-le-point-de-son-absence-de-wwe-raw",
    "https://www.catch-newz.com/wwe/newz/61030-enzo-amore-etait-dans-les-coulisses-de-nxt-le-4-novembre",
    "https://www.catch-newz.com/international/resultats/61029-resultats-du-jour-3-du-zero1-tenka-ichi-junior-tournament-2026",
@@ -1062,10 +1075,10 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
+  "Catch-Newz": "pas de flux RSS : 11 nouveaux articles lus sur la page d'accueil (11 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
-  "YouTube WWE": "0 nouvelles vidéos",
+  "YouTube WWE": "2 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
