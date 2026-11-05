@@ -1,6 +1,46 @@
 {
-  "updated": "2026-11-04",
+  "updated": "2026-11-05",
   "items": [
+    {
+      "id": "p-20261105-enzo-retour",
+      "d": "2026-11-05",
+      "type": "",
+      "k": "WWE",
+      "q": "Enzo Amore de retour à la WWE : bonne idée ?",
+      "opts": [
+        "Oui",
+        "Non"
+      ],
+      "other": false,
+      "end": ""
+    },
+    {
+      "id": "p-20261105-reine-knockouts",
+      "d": "2026-11-05",
+      "type": "",
+      "k": "TNA",
+      "q": "Quelle catcheuse a le plus marqué la division des Knockouts ?",
+      "opts": [
+        "Gail Kim",
+        "Awesome Kong",
+        "Mickie James"
+      ],
+      "other": true,
+      "end": ""
+    },
+    {
+      "id": "p-20261105-dm-lita-mone",
+      "d": "2026-11-05",
+      "type": "match",
+      "k": "",
+      "q": "Dream match : Lita contre Mercedes Moné, qui gagne ?",
+      "opts": [
+        "Lita",
+        "Mercedes Moné"
+      ],
+      "other": false,
+      "end": "2026-11-08"
+    },
     {
       "id": "p-20261104-cj-liv-chelsea",
       "d": "2026-11-04",
