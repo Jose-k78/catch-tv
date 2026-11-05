@@ -1,5 +1,5 @@
 {
- "at": "2026-11-04T22:18:07.920Z",
+ "at": "2026-11-05T00:11:49.104Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -266,7 +266,9 @@
   "a:https://www.catch-newz.com/wwe/newz/60989-chad-gable-sort-du-silence-apres-sa-perte-de-titre-a-raw": "2026-11-04",
   "a:https://www.catch-newz.com/aew/newz/60988-taya-valkyrie-quitte-laew": "2026-11-04",
   "fr:2026-11-04": "2026-11-04",
-  "a:https://www.catch-newz.com/culture/gaming/60990-la-saison-13-de-wwe-supercard-est-lancee": "2026-11-04"
+  "a:https://www.catch-newz.com/culture/gaming/60990-la-saison-13-de-wwe-supercard-est-lancee": "2026-11-04",
+  "a:https://www.catch-newz.com/wwe/newz/60998-la-wwe-devoile-son-plan-de-secours-pour-wrestlemania-43": "2026-11-05",
+  "a:https://www.catch-newz.com/wwe/newz/60997-tous-les-evenements-wwe-et-ufc-en-arabie-saoudite-auront-lieu-comme-prevu": "2026-11-05"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -277,6 +279,14 @@
     "url": "https://www.catch-newz.com/culture/gaming/60990-la-saison-13-de-wwe-supercard-est-lancee",
     "tag": "art",
     "short": "La Saison 13 de WWE Supercard est lancée"
+   },
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "La WWE dévoile son plan de secours pour WrestleMania 43 · Tous les événements WWE et UFC en Arabie saoudite auront lieu comme prévu",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -287,6 +297,14 @@
     "url": "https://www.catch-newz.com/culture/gaming/60990-la-saison-13-de-wwe-supercard-est-lancee",
     "tag": "art",
     "short": "La Saison 13 de WWE Supercard est lancée"
+   },
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "La WWE dévoile son plan de secours pour WrestleMania 43 · Tous les événements WWE et UFC en Arabie saoudite auront lieu comme prévu",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
    }
   ]
  }
