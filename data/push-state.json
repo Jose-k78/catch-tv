@@ -1,5 +1,5 @@
 {
- "at": "2026-11-05T02:52:24.970Z",
+ "at": "2026-11-05T03:51:47.119Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -275,7 +275,8 @@
   "a:https://www.catch-newz.com/wwe/newz/61008-wwe-nxt-emu-aux-larmes-zilla-fatu-integre-le-john-cena-classic": "2026-11-05",
   "a:https://www.catch-newz.com/wwe/newz/61007-wwe-nxt-cruz-montana-et-946-font-la-loi-dans-le-show-gris": "2026-11-05",
   "a:https://www.catch-newz.com/wwe/newz/61006-wwe-nxt-noam-dar-et-romeo-moreno-remportent-le-dusty-rhodes-tag-team-classic": "2026-11-05",
-  "a:https://www.catch-newz.com/wwe/newz/61005-wwe-nxt-kelani-jordan-conserve-son-titre-face-a-son-adversaire-mystere-paige": "2026-11-05"
+  "a:https://www.catch-newz.com/wwe/newz/61005-wwe-nxt-kelani-jordan-conserve-son-titre-face-a-son-adversaire-mystere-paige": "2026-11-05",
+  "a:https://www.catch-newz.com/wwe/newz/61009-wwe-nxt-grace-a-lintervention-de-kevin-owens-grayson-waller-conserve-son-titre-nxt-contre-cm-punk": "2026-11-05"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -310,6 +311,14 @@
     "url": "#/",
     "tag": "art",
     "short": "4 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Catch-Newz",
+    "body": "WWE NXT : Grâce à l'intervention de Kevin Owens, Grayson Waller conserve son titre NXT contre CM Punk",
+    "url": "https://www.catch-newz.com/wwe/newz/61009-wwe-nxt-grace-a-lintervention-de-kevin-owens-grayson-waller-conserve-son-titre-nxt-contre-cm-punk",
+    "tag": "art",
+    "short": "WWE NXT : Grâce à l'intervention de Kevin Owens, Grayson Waller conserve son titre NXT contre CM Punk"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -344,6 +353,14 @@
     "url": "#/",
     "tag": "art",
     "short": "4 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Catch-Newz",
+    "body": "WWE NXT : Grâce à l'intervention de Kevin Owens, Grayson Waller conserve son titre NXT contre CM Punk",
+    "url": "https://www.catch-newz.com/wwe/newz/61009-wwe-nxt-grace-a-lintervention-de-kevin-owens-grayson-waller-conserve-son-titre-nxt-contre-cm-punk",
+    "tag": "art",
+    "short": "WWE NXT : Grâce à l'intervention de Kevin Owens, Grayson Waller conserve son titre NXT contre CM Punk"
    }
   ]
  }

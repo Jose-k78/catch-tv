@@ -1,9 +1,9 @@
 {
- "at": "2026-11-05T02:52:24.922Z",
+ "at": "2026-11-05T03:51:47.072Z",
  "items": [
   {
-   "t": "WWE NXT : Ému aux larmes, Zilla Fatu intègre le John Cena Classic",
-   "u": "https://www.catch-newz.com/wwe/newz/61008-wwe-nxt-emu-aux-larmes-zilla-fatu-integre-le-john-cena-classic",
+   "t": "WWE NXT : Grâce à l'intervention de Kevin Owens, Grayson Waller conserve son titre NXT contre CM Punk",
+   "u": "https://www.catch-newz.com/wwe/newz/61009-wwe-nxt-grace-a-lintervention-de-kevin-owens-grayson-waller-conserve-son-titre-nxt-contre-cm-punk",
    "s": "Catch-Newz",
    "d": "2026-11-05",
    "tags": [
@@ -19,6 +19,16 @@
    "tags": [
     "WWE",
     "SmackDown"
+   ]
+  },
+  {
+   "t": "WWE NXT : Ému aux larmes, Zilla Fatu intègre le John Cena Classic",
+   "u": "https://www.catch-newz.com/wwe/newz/61008-wwe-nxt-emu-aux-larmes-zilla-fatu-integre-le-john-cena-classic",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE",
+    "NXT"
    ]
   },
   {
@@ -527,15 +537,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Où et quand aura lieu précisément le John Cena Classic à Disney World ?",
-   "u": "https://www.catch-newz.com/wwe/newz/60946-ou-et-quand-aura-lieu-precisement-le-john-cena-classic-a-disney-world",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -769,10 +770,11 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/wwe/newz/61008-wwe-nxt-emu-aux-larmes-zilla-fatu-integre-le-john-cena-classic",
+   "https://www.catch-newz.com/wwe/newz/61009-wwe-nxt-grace-a-lintervention-de-kevin-owens-grayson-waller-conserve-son-titre-nxt-contre-cm-punk",
    "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60991-wwe-nxt-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61008-wwe-nxt-emu-aux-larmes-zilla-fatu-integre-le-john-cena-classic",
    "https://www.catch-newz.com/wwe/newz/61007-wwe-nxt-cruz-montana-et-946-font-la-loi-dans-le-show-gris",
    "https://www.catch-newz.com/wwe/newz/61006-wwe-nxt-noam-dar-et-romeo-moreno-remportent-le-dusty-rhodes-tag-team-classic",
    "https://www.catch-newz.com/wwe/newz/61005-wwe-nxt-kelani-jordan-conserve-son-titre-face-a-son-adversaire-mystere-paige",
@@ -1005,7 +1007,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
