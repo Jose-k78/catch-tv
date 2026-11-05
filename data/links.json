@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T10:13:42.736Z",
+ "updated": "2026-11-05T21:21:01.363Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "m:statlight kid vs suzu suzuki": [
@@ -37,6 +37,15 @@
     "u": "https://www.dailymotion.com/embed/video/xbt6uca?autoplay=1&mute=1",
     "p": "Dailymotion",
     "at": "2026-11-05"
+   }
+  ],
+  "ev:AEW|Dynamite|2026-11-04": [
+   {
+    "t": "",
+    "u": "https://vk.com/video_ext.php?oid=-231961829&id=456240007&autoplay=1",
+    "p": "VK",
+    "at": "2026-11-05",
+    "def": true
    }
   ]
  }
