@@ -1,17 +1,6 @@
 {
- "at": "2026-11-05T11:26:45.231Z",
+ "at": "2026-11-05T12:26:05.772Z",
  "items": [
-  {
-   "t": "Leon Slater : « Je ne serais pas champion du monde TNA aujourd’hui sans mon passage à NXT »",
-   "u": "https://www.catch-newz.com/wwe/newz/61015-leon-slater-je-ne-serais-pas-champion-du-monde-tna-aujourdhui-sans-mon-passage-a-nxt",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE",
-    "TNA",
-    "NXT"
-   ]
-  },
   {
    "t": "Preview : TNA Impact du 5 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61012-preview-tna-impact-5-novembre-2026",
@@ -21,6 +10,20 @@
     "TNA",
     "Impact"
    ]
+  },
+  {
+   "t": "Résultats de AIW Shot Callers 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61018-resultats-de-aiw-shot-callers-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": []
+  },
+  {
+   "t": "Résultats de AAW The Bourbon Street Massacre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61017-resultats-de-aaw-the-bourbon-street-massacre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": []
   },
   {
    "t": "Résultats de AEW Dynamite Blood and Guts 2026",
@@ -40,6 +43,17 @@
    "d": "2026-11-05",
    "tags": [
     "WWE",
+    "NXT"
+   ]
+  },
+  {
+   "t": "Leon Slater : « Je ne serais pas champion du monde TNA aujourd’hui sans mon passage à NXT »",
+   "u": "https://www.catch-newz.com/wwe/newz/61015-leon-slater-je-ne-serais-pas-champion-du-monde-tna-aujourdhui-sans-mon-passage-a-nxt",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE",
+    "TNA",
     "NXT"
    ]
   },
@@ -523,25 +537,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Spoiler sur le retour de Jacob Fatu à la WWE",
-   "u": "https://www.catch-newz.com/wwe/newz/60962-spoiler-sur-le-retour-de-jacob-fatu-a-la-wwe",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "The Miz et Kit Wilson visent les titres par équipe de RAW ?",
-   "u": "https://www.catch-newz.com/wwe/newz/60961-the-miz-et-kit-wilson-visent-les-titres-par-equipe-de-raw",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
   }
  ],
  "yt": {
@@ -804,8 +799,10 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60991-wwe-nxt-4-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61015-leon-slater-je-ne-serais-pas-champion-du-monde-tna-aujourdhui-sans-mon-passage-a-nxt",
    "https://www.catch-newz.com/international/newz/61012-preview-tna-impact-5-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61018-resultats-de-aiw-shot-callers-2026",
+   "https://www.catch-newz.com/international/resultats/61017-resultats-de-aaw-the-bourbon-street-massacre-2026",
+   "https://www.catch-newz.com/wwe/newz/61015-leon-slater-je-ne-serais-pas-champion-du-monde-tna-aujourdhui-sans-mon-passage-a-nxt",
    "https://www.catch-newz.com/wwe/newz/61003-la-wwe-envisage-dorganiser-un-show-a-tokyo-en-2027",
    "https://www.catch-newz.com/international/newz/60981-carte-de-njpw-wrestle-kingdom-21",
    "https://www.catch-newz.com/wwe/newz/61010-chad-gable-complimente-vanity-project-apres-leur-match-a-nxt",
@@ -1045,7 +1042,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
