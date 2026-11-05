@@ -1,18 +1,16 @@
 {
- "at": "2026-11-05T15:55:29.395Z",
+ "at": "2026-11-05T17:05:03.856Z",
  "items": [
+  {
+   "t": "Chris Jericho aura un rôle dans le film ''I Am The Teeth''",
+   "u": "https://www.catch-newz.com/culture/cineserie/61026-chris-jericho-aura-un-role-dans-le-film-i-am-the-teeth",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": []
+  },
   {
    "t": "La WWE va organiser un show le 1er janvier 2027",
    "u": "https://www.catch-newz.com/wwe/newz/61025-la-wwe-va-organiser-un-show-le-1er-janvier-2027",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "La WWE annonce 11 nouveaux shows pour début 2027",
-   "u": "https://www.catch-newz.com/wwe/newz/61024-la-wwe-annonce-11-nouveaux-shows-pour-debut-2027",
    "s": "Catch-Newz",
    "d": "2026-11-05",
    "tags": [
@@ -40,13 +38,18 @@
    ]
   },
   {
-   "t": "Les équipes participantes à la NJPW World Tag League 2026 dévoilées",
-   "u": "https://www.catch-newz.com/international/newz/61016-les-equipes-participantes-a-la-njpw-world-tag-league-2026-devoilees",
+   "t": "Carte de IWRG/GALLI Thursday Night Wrestling du 5 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61027-carte-de-iwrg-galli-thursday-night-wrestling-du-5-novembre-2026",
    "s": "Catch-Newz",
    "d": "2026-11-05",
-   "tags": [
-    "NJPW"
-   ]
+   "tags": []
+  },
+  {
+   "t": "Résultats du jour 2 du ZERO1 Tenka-Ichi Junior Tournament 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61019-resultats-du-jour-2-du-zero1-tenka-ichi-junior-tournament-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": []
   },
   {
    "t": "Résultats de AEW Dynamite Blood and Guts 2026",
@@ -67,6 +70,24 @@
    "tags": [
     "WWE",
     "NXT"
+   ]
+  },
+  {
+   "t": "La WWE annonce 11 nouveaux shows pour début 2027",
+   "u": "https://www.catch-newz.com/wwe/newz/61024-la-wwe-annonce-11-nouveaux-shows-pour-debut-2027",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Les équipes participantes à la NJPW World Tag League 2026 dévoilées",
+   "u": "https://www.catch-newz.com/international/newz/61016-les-equipes-participantes-a-la-njpw-world-tag-league-2026-devoilees",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "NJPW"
    ]
   },
   {
@@ -517,32 +538,6 @@
    "tags": [
     "CMLL"
    ]
-  },
-  {
-   "t": "Résultats de CMLL Martes Populares du 3 novembre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/60993-resultats-de-cmll-martes-populares-du-3-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "CMLL"
-   ]
-  },
-  {
-   "t": "Pourquoi il n'y a pas de show de WWE NXT le 3 novembre 2026 ?",
-   "u": "https://www.catch-newz.com/wwe/newz/60958-pourquoi-il-ny-a-pas-de-show-de-wwe-nxt-le-3-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
-  },
-  {
-   "t": "Résultats du jour 7 de DG The Gate Of Victory 2026",
-   "u": "https://www.catch-newz.com/international/resultats/60972-resultats-du-jour-7-de-dg-the-gate-of-victory-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": []
   }
  ],
  "yt": {
@@ -805,10 +800,13 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60991-wwe-nxt-4-novembre-2026",
+   "https://www.catch-newz.com/culture/cineserie/61026-chris-jericho-aura-un-role-dans-le-film-i-am-the-teeth",
    "https://www.catch-newz.com/wwe/newz/61025-la-wwe-va-organiser-un-show-le-1er-janvier-2027",
-   "https://www.catch-newz.com/wwe/newz/61024-la-wwe-annonce-11-nouveaux-shows-pour-debut-2027",
    "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/international/newz/61012-preview-tna-impact-5-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61027-carte-de-iwrg-galli-thursday-night-wrestling-du-5-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61019-resultats-du-jour-2-du-zero1-tenka-ichi-junior-tournament-2026",
+   "https://www.catch-newz.com/wwe/newz/61024-la-wwe-annonce-11-nouveaux-shows-pour-debut-2027",
    "https://www.catch-newz.com/international/newz/61016-les-equipes-participantes-a-la-njpw-world-tag-league-2026-devoilees",
    "https://www.catch-newz.com/wwe/newz/61022-wwe-crown-jewel-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
    "https://www.catch-newz.com/wwe/newz/61020-paige-appelee-a-la-derniere-minute-pour-wwe-nxt",
@@ -1056,7 +1054,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
