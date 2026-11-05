@@ -1,5 +1,5 @@
 {
- "at": "2026-11-05T01:45:01.519Z",
+ "at": "2026-11-05T02:52:24.970Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -271,7 +271,11 @@
   "a:https://www.catch-newz.com/wwe/newz/60997-tous-les-evenements-wwe-et-ufc-en-arabie-saoudite-auront-lieu-comme-prevu": "2026-11-05",
   "a:https://www.catch-newz.com/wwe/newz/61004-wwe-nxt-chad-gable-dragon-lee-et-rey-fenix-donnent-une-lecon-au-vanity-project": "2026-11-05",
   "a:https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026": "2026-11-05",
-  "a:https://www.catch-newz.com/wwe/resultats/60991-wwe-nxt-4-novembre-2026": "2026-11-05"
+  "a:https://www.catch-newz.com/wwe/resultats/60991-wwe-nxt-4-novembre-2026": "2026-11-05",
+  "a:https://www.catch-newz.com/wwe/newz/61008-wwe-nxt-emu-aux-larmes-zilla-fatu-integre-le-john-cena-classic": "2026-11-05",
+  "a:https://www.catch-newz.com/wwe/newz/61007-wwe-nxt-cruz-montana-et-946-font-la-loi-dans-le-show-gris": "2026-11-05",
+  "a:https://www.catch-newz.com/wwe/newz/61006-wwe-nxt-noam-dar-et-romeo-moreno-remportent-le-dusty-rhodes-tag-team-classic": "2026-11-05",
+  "a:https://www.catch-newz.com/wwe/newz/61005-wwe-nxt-kelani-jordan-conserve-son-titre-face-a-son-adversaire-mystere-paige": "2026-11-05"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -298,6 +302,14 @@
     "url": "#/",
     "tag": "art",
     "short": "3 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 4 nouvelles infos",
+    "body": "WWE NXT : Ému aux larmes, Zilla Fatu intègre le John Cena Classic · WWE NXT : Cruz Montana et \"946\" font la loi dans le show gris · WWE NXT : Noam Dar et Romeo Moreno remportent le Dusty Rhodes Tag Team Classic",
+    "url": "#/",
+    "tag": "art",
+    "short": "4 nouvelles infos"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -324,6 +336,14 @@
     "url": "#/",
     "tag": "art",
     "short": "3 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 4 nouvelles infos",
+    "body": "WWE NXT : Ému aux larmes, Zilla Fatu intègre le John Cena Classic · WWE NXT : Cruz Montana et \"946\" font la loi dans le show gris · WWE NXT : Noam Dar et Romeo Moreno remportent le Dusty Rhodes Tag Team Classic",
+    "url": "#/",
+    "tag": "art",
+    "short": "4 nouvelles infos"
    }
   ]
  }

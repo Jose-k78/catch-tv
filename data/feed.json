@@ -1,6 +1,16 @@
 {
- "at": "2026-11-05T01:45:01.469Z",
+ "at": "2026-11-05T02:52:24.922Z",
  "items": [
+  {
+   "t": "WWE NXT : Ému aux larmes, Zilla Fatu intègre le John Cena Classic",
+   "u": "https://www.catch-newz.com/wwe/newz/61008-wwe-nxt-emu-aux-larmes-zilla-fatu-integre-le-john-cena-classic",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
   {
    "t": "Spoilers de WWE SmackDown du 6 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
@@ -9,6 +19,36 @@
    "tags": [
     "WWE",
     "SmackDown"
+   ]
+  },
+  {
+   "t": "WWE NXT : Cruz Montana et \"946\" font la loi dans le show gris",
+   "u": "https://www.catch-newz.com/wwe/newz/61007-wwe-nxt-cruz-montana-et-946-font-la-loi-dans-le-show-gris",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
+   "t": "WWE NXT : Noam Dar et Romeo Moreno remportent le Dusty Rhodes Tag Team Classic",
+   "u": "https://www.catch-newz.com/wwe/newz/61006-wwe-nxt-noam-dar-et-romeo-moreno-remportent-le-dusty-rhodes-tag-team-classic",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
+   "t": "WWE NXT : Kelani Jordan conserve son titre face à son adversaire mystère Paige",
+   "u": "https://www.catch-newz.com/wwe/newz/61005-wwe-nxt-kelani-jordan-conserve-son-titre-face-a-son-adversaire-mystere-paige",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE",
+    "NXT"
    ]
   },
   {
@@ -496,43 +536,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Dave Batista prend 10 kilos pour son rôle de Kratos",
-   "u": "https://www.catch-newz.com/culture/cineserie/60928-dave-batista-prend-10-kilos-pour-son-role-de-kratos",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": []
-  },
-  {
-   "t": "WWE RAW : Cruz Montana rejoint \"946\" pour tabasser la Bloodline",
-   "u": "https://www.catch-newz.com/wwe/newz/60944-wwe-raw-cruz-montana-rejoint-946-pour-tabasser-la-bloodline",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
-  },
-  {
-   "t": "Joe Hendry lance un cri du cœur pendant un segment publicitaire à WWE RAW",
-   "u": "https://www.catch-newz.com/wwe/newz/60940-joe-hendry-lance-un-cri-du-coeur-pendant-un-segment-publicitaire-a-wwe-raw",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
-  },
-  {
-   "t": "WWE RAW : The Vision démolit encore une fois ses concurrents à Brooklyn",
-   "u": "https://www.catch-newz.com/wwe/newz/60943-wwe-raw-the-vision-demolit-encore-une-fois-ses-concurrents-a-brooklyn",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
   }
  ],
  "yt": {
@@ -766,11 +769,15 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/newz/61008-wwe-nxt-emu-aux-larmes-zilla-fatu-integre-le-john-cena-classic",
    "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60991-wwe-nxt-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61004-wwe-nxt-chad-gable-dragon-lee-et-rey-fenix-donnent-une-lecon-au-vanity-project",
+   "https://www.catch-newz.com/wwe/newz/61007-wwe-nxt-cruz-montana-et-946-font-la-loi-dans-le-show-gris",
+   "https://www.catch-newz.com/wwe/newz/61006-wwe-nxt-noam-dar-et-romeo-moreno-remportent-le-dusty-rhodes-tag-team-classic",
+   "https://www.catch-newz.com/wwe/newz/61005-wwe-nxt-kelani-jordan-conserve-son-titre-face-a-son-adversaire-mystere-paige",
    "https://www.catch-newz.com/aew/newz/60874-preview-aew-dynamite-blood-and-guts-du-4-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61004-wwe-nxt-chad-gable-dragon-lee-et-rey-fenix-donnent-une-lecon-au-vanity-project",
    "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60998-la-wwe-devoile-son-plan-de-secours-pour-wrestlemania-43",
    "https://www.catch-newz.com/wwe/newz/60997-tous-les-evenements-wwe-et-ufc-en-arabie-saoudite-auront-lieu-comme-prevu",
@@ -998,7 +1005,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
