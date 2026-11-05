@@ -1,6 +1,34 @@
 {
- "at": "2026-11-05T13:47:14.197Z",
+ "at": "2026-11-05T14:54:09.673Z",
  "items": [
+  {
+   "t": "WWE Crown Jewel 2026 : Heure et chaine pour regarder le show en direct",
+   "u": "https://www.catch-newz.com/wwe/newz/61022-wwe-crown-jewel-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Paige appelée à la dernière minute pour WWE NXT",
+   "u": "https://www.catch-newz.com/wwe/newz/61020-paige-appelee-a-la-derniere-minute-pour-wwe-nxt",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
+   "t": "Grayson Waller : « C'est chez moi, c'est mon show, et ça ne changera pas de sitôt »",
+   "u": "https://www.catch-newz.com/wwe/newz/61021-grayson-waller-cest-chez-moi-cest-mon-show-et-ca-ne-changera-pas-de-sitot",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Preview : TNA Impact du 5 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61012-preview-tna-impact-5-novembre-2026",
@@ -9,6 +37,15 @@
    "tags": [
     "TNA",
     "Impact"
+   ]
+  },
+  {
+   "t": "La NJPW Super Junior Tag League 2026 rend son verdict",
+   "u": "https://www.catch-newz.com/international/newz/60951-la-njpw-super-junior-tag-league-2026-rend-son-verdict",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "NJPW"
    ]
   },
   {
@@ -503,40 +540,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Un très long voyage attend les WWE Superstars pour Crown Jewel 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/60968-un-tres-long-voyage-attend-les-wwe-superstars-pour-crown-jewel-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Résultats de HOH A Nightmare On Elmwood",
-   "u": "https://www.catch-newz.com/international/resultats/60969-resultats-de-hoh-a-nightmare-on-elmwood",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": []
-  },
-  {
-   "t": "Raquel Rodriguez a-t-elle l'ambition de devenir championne du monde ?",
-   "u": "https://www.catch-newz.com/wwe/newz/60964-raquel-rodriguez-a-t-elle-lambition-de-devenir-championne-du-monde",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Jake The Snake Roberts clarifie sa situation contractuelle avec la WWE",
-   "u": "https://www.catch-newz.com/wwe/newz/60963-jake-the-snake-roberts-clarifie-sa-situation-contractuelle-avec-la-wwe",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -799,7 +802,11 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60991-wwe-nxt-4-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61022-wwe-crown-jewel-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
+   "https://www.catch-newz.com/wwe/newz/61020-paige-appelee-a-la-derniere-minute-pour-wwe-nxt",
+   "https://www.catch-newz.com/wwe/newz/61021-grayson-waller-cest-chez-moi-cest-mon-show-et-ca-ne-changera-pas-de-sitot",
    "https://www.catch-newz.com/international/newz/61012-preview-tna-impact-5-novembre-2026",
+   "https://www.catch-newz.com/international/newz/60951-la-njpw-super-junior-tag-league-2026-rend-son-verdict",
    "https://www.catch-newz.com/international/resultats/61018-resultats-de-aiw-shot-callers-2026",
    "https://www.catch-newz.com/international/resultats/61017-resultats-de-aaw-the-bourbon-street-massacre-2026",
    "https://www.catch-newz.com/wwe/newz/61015-leon-slater-je-ne-serais-pas-champion-du-monde-tna-aujourdhui-sans-mon-passage-a-nxt",
@@ -1042,7 +1049,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 3 nouveaux articles lus sur la page d'accueil (3 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
