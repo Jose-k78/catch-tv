@@ -1,6 +1,81 @@
 {
- "at": "2026-11-05T19:50:13.417Z",
+ "at": "2026-11-05T20:45:57.046Z",
  "items": [
+  {
+   "t": "Preview : AEW Collision du 7 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "AEW",
+    "Collision"
+   ]
+  },
+  {
+   "t": "La WWE va organiser un show le 1er janvier 2027",
+   "u": "https://www.catch-newz.com/wwe/newz/61025-la-wwe-va-organiser-un-show-le-1er-janvier-2027",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Preview : WWE SmackDown du 6 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
+  },
+  {
+   "t": "Résultats de STARDOM Path Of Thunder 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61043-resultats-de-stardom-path-of-thunder-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "Stardom"
+   ]
+  },
+  {
+   "t": "Carte de Sendai Girls Pro Wrestling du 6 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61037-carte-de-sendai-girls-pro-wrestling-du-6-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": []
+  },
+  {
+   "t": "Carte de CMLL Jueves Arena Coliseo du 5 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61028-carte-de-cmll-jueves-arena-coliseo-du-5-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "CMLL"
+   ]
+  },
+  {
+   "t": "Résultats de AEW Dynamite Blood and Guts 2026",
+   "u": "https://www.voxcatch.fr/2026/11/05/resultats-de-aew-dynamite-blood-and-guts-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-05",
+   "tags": [
+    "AEW",
+    "NJPW",
+    "Dynamite"
+   ]
+  },
+  {
+   "t": "WWE NXT du 4 novembre : CM Punk vs. Grayson Waller, John Cena présent, finale du Dusty Classic",
+   "u": "https://www.voxcatch.fr/2026/11/05/resultats-wwe-nxt-4-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
   {
    "t": "Une célébration en préparation pour les 30 ans de The Rock à la WWE",
    "u": "https://www.catch-newz.com/wwe/newz/61041-une-celebration-en-preparation-pour-les-30-ans-de-the-rock-a-la-wwe",
@@ -29,25 +104,6 @@
    ]
   },
   {
-   "t": "La WWE va organiser un show le 1er janvier 2027",
-   "u": "https://www.catch-newz.com/wwe/newz/61025-la-wwe-va-organiser-un-show-le-1er-janvier-2027",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Preview : WWE SmackDown du 6 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
-  },
-  {
    "t": "Preview : TNA Impact du 5 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61012-preview-tna-impact-5-novembre-2026",
    "s": "Catch-Newz",
@@ -58,48 +114,11 @@
    ]
   },
   {
-   "t": "Carte de Sendai Girls Pro Wrestling du 6 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61037-carte-de-sendai-girls-pro-wrestling-du-6-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": []
-  },
-  {
-   "t": "Carte de CMLL Jueves Arena Coliseo du 5 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61028-carte-de-cmll-jueves-arena-coliseo-du-5-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "CMLL"
-   ]
-  },
-  {
    "t": "Carte de IWRG/GALLI Thursday Night Wrestling du 5 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61027-carte-de-iwrg-galli-thursday-night-wrestling-du-5-novembre-2026",
    "s": "Catch-Newz",
    "d": "2026-11-05",
    "tags": []
-  },
-  {
-   "t": "Résultats de AEW Dynamite Blood and Guts 2026",
-   "u": "https://www.voxcatch.fr/2026/11/05/resultats-de-aew-dynamite-blood-and-guts-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-05",
-   "tags": [
-    "AEW",
-    "NJPW",
-    "Dynamite"
-   ]
-  },
-  {
-   "t": "WWE NXT du 4 novembre : CM Punk vs. Grayson Waller, John Cena présent, finale du Dusty Classic",
-   "u": "https://www.voxcatch.fr/2026/11/05/resultats-wwe-nxt-4-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
   },
   {
    "t": "The Miz : « Ce que Carmelo Hayes accomplit aujourd’hui avec 946 est incroyable »",
@@ -520,25 +539,6 @@
     "WWE",
     "SmackDown"
    ]
-  },
-  {
-   "t": "Pour Ethan Page, remporter le titre Intercontinental était son « objectif ultime »",
-   "u": "https://www.catch-newz.com/wwe/newz/60983-pour-ethan-page-remporter-le-titre-intercontinental-etait-son-objectif-ultime",
-   "s": "Catch-Newz",
-   "d": "2026-11-04",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Le Main-Event de NJPW Wrestle Kingdom 21 est connu !",
-   "u": "https://www.catch-newz.com/international/newz/60982-le-main-event-de-njpw-wrestle-kingdom-21-est-connu",
-   "s": "Catch-Newz",
-   "d": "2026-11-04",
-   "tags": [
-    "NJPW",
-    "Main Event"
-   ]
   }
  ],
  "yt": {
@@ -798,6 +798,12 @@
     "id": "-27dohFxQ1I",
     "t": "Rey Fenix defends the Cruiserweight Title against Akira Tozawa: Main Event highlights, Nov. 4, 2026"
    }
+  ],
+  "WWE|Evolve|2026-11-04": [
+   {
+    "id": "H7uikg3Clzc",
+    "t": "Chazz “Starboy” Hall takes on Shido Ash: Evolve highlights, Nov. 4, 2026"
+   }
   ]
  },
  "rss": {
@@ -809,16 +815,18 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/wwe/newz/61041-une-celebration-en-preparation-pour-les-30-ans-de-the-rock-a-la-wwe",
-   "https://www.catch-newz.com/wwe/newz/61040-la-wwe-offre-une-prime-de-risque-pour-aller-a-crown-jewel-2026",
    "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60991-wwe-nxt-4-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61042-danhausen-bientot-en-santahausen-pour-le-temps-des-fetes",
+   "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61025-la-wwe-va-organiser-un-show-le-1er-janvier-2027",
    "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61012-preview-tna-impact-5-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61043-resultats-de-stardom-path-of-thunder-2026",
    "https://www.catch-newz.com/international/newz/61037-carte-de-sendai-girls-pro-wrestling-du-6-novembre-2026",
    "https://www.catch-newz.com/international/newz/61028-carte-de-cmll-jueves-arena-coliseo-du-5-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61041-une-celebration-en-preparation-pour-les-30-ans-de-the-rock-a-la-wwe",
+   "https://www.catch-newz.com/wwe/newz/61040-la-wwe-offre-une-prime-de-risque-pour-aller-a-crown-jewel-2026",
+   "https://www.catch-newz.com/wwe/newz/61042-danhausen-bientot-en-santahausen-pour-le-temps-des-fetes",
+   "https://www.catch-newz.com/international/newz/61012-preview-tna-impact-5-novembre-2026",
    "https://www.catch-newz.com/international/newz/61027-carte-de-iwrg-galli-thursday-night-wrestling-du-5-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61032-the-miz-ce-que-carmelo-hayes-accomplit-aujourdhui-avec-946-est-incroyable",
    "https://www.catch-newz.com/international/newz/61033-decouvrez-les-participants-a-la-ajpw-real-world-tag-league-2026",
@@ -1075,10 +1083,10 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 11 nouveaux articles lus sur la page d'accueil (11 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
-  "YouTube WWE": "2 nouvelles vidéos",
+  "YouTube WWE": "1 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
