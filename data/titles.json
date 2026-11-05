@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04",
+ "updated": "2026-11-05",
  "note": "Champions actuels : peut révéler des résultats récents.",
  "titles": [
   {
@@ -332,8 +332,19 @@
    ],
    "src": "The SmackDown Hotel",
    "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe",
-   "defs": [],
-   "def": 0
+   "defs": [
+    {
+     "d": "2026-11-04",
+     "ev": "NXT",
+     "vs": "CM Punk"
+    },
+    {
+     "d": "2026-10-31",
+     "ev": "Halloween Havoc",
+     "vs": "Tony D'Angelo"
+    }
+   ],
+   "def": 2
   },
   {
    "id": "nxt-w",
@@ -349,8 +360,19 @@
    "hist": [],
    "src": "The SmackDown Hotel",
    "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe",
-   "defs": [],
-   "def": 0
+   "defs": [
+    {
+     "d": "2026-11-04",
+     "ev": "NXT",
+     "vs": "Paige"
+    },
+    {
+     "d": "2026-10-31",
+     "ev": "Halloween Havoc",
+     "vs": "Wren Sinclair"
+    }
+   ],
+   "def": 2
   },
   {
    "id": "nxt-na",
