@@ -1,6 +1,26 @@
 {
- "at": "2026-11-05T09:32:17.663Z",
+ "at": "2026-11-05T10:30:53.573Z",
  "items": [
+  {
+   "t": "Preview : TNA Impact du 5 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61012-preview-tna-impact-5-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "TNA",
+    "Impact"
+   ]
+  },
+  {
+   "t": "WWE NXT du 4 novembre : CM Punk vs. Grayson Waller, John Cena présent, finale du Dusty Classic",
+   "u": "https://www.voxcatch.fr/2026/11/05/resultats-wwe-nxt-4-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
   {
    "t": "La WWE envisage d'organiser un show à Tokyo en 2027",
    "u": "https://www.catch-newz.com/wwe/newz/61003-la-wwe-envisage-dorganiser-un-show-a-tokyo-en-2027",
@@ -518,26 +538,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Cruz Montana va-t-il quand même combattre Dion Lennox à NXT ce mercredi malgré ses débuts à RAW ?",
-   "u": "https://www.catch-newz.com/wwe/newz/60956-cruz-montana-va-t-il-quand-meme-combattre-dion-lennox-a-nxt-ce-mercredi-malgre-ses-debuts-a-raw",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "WWE",
-    "Raw",
-    "NXT"
-   ]
-  },
-  {
-   "t": "Résultats de NJPW Power Struggle - Super Junior Tag League 2026",
-   "u": "https://www.catch-newz.com/international/resultats/60952-resultats-de-njpw-power-struggle-super-junior-tag-league-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-03",
-   "tags": [
-    "NJPW"
-   ]
   }
  ],
  "yt": {
@@ -800,6 +800,7 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60991-wwe-nxt-4-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61012-preview-tna-impact-5-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61003-la-wwe-envisage-dorganiser-un-show-a-tokyo-en-2027",
    "https://www.catch-newz.com/international/newz/60981-carte-de-njpw-wrestle-kingdom-21",
    "https://www.catch-newz.com/wwe/newz/61010-chad-gable-complimente-vanity-project-apres-leur-match-a-nxt",
@@ -1039,8 +1040,8 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
-  "VOXcatch": "5 articles (7 j)",
+  "Catch-Newz": "pas de flux RSS : 3 nouveaux articles lus sur la page d'accueil (3 liens)",
+  "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
