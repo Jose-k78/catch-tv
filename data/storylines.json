@@ -1,7 +1,43 @@
 {
-  "updated": "2026-11-04",
+  "updated": "2026-11-05",
   "note": "Une storyline par jour (la plus récente en premier) : grandes histoires, rivalités, anecdotes de coulisses, faits marquants. txt = paragraphes écrits en français à partir des sources ; v = vidéos officielles ; q = recherches sur la chaîne officielle.",
   "items": [
+    {
+      "id": "gail-kim-bfg-2017",
+      "d": "2026-11-05",
+      "type": "Grande histoire",
+      "t": "Gail Kim, la reine des Knockouts qui a quitté le ring en championne",
+      "k": "TNA",
+      "years": "2007-2017",
+      "hook": "Il y a 9 ans jour pour jour, la toute première championne des Knockouts remportait sa septième ceinture… pour la rendre quelques heures plus tard et partir la tête haute.",
+      "txt": [
+        "Le 14 octobre 2007, à Bound for Glory, TNA couronne pour la première fois une championne de sa division féminine, les Knockouts. Au terme d'un gauntlet à dix catcheuses où figurent notamment Awesome Kong, ODB ou Velvet Sky, c'est Gail Kim qui l'emporte et devient la première détentrice du titre, appelé à l'époque TNA Women's World Championship.",
+        "Passée par la WWE, où elle avait déjà été championne féminine en 2003, la Canadienne y retourne de 2008 à 2011. Son départ fait parler : lors d'une bataille royale, elle sort volontairement du ring, un geste de protestation contre la place qu'on lui donnait. De retour chez TNA, elle repart aussitôt à la conquête du titre et le récupère dès novembre 2011 à Turning Point.",
+        "Les années suivantes, Gail Kim devient le pilier de la division : nouveaux sacres à Bound for Glory 2013, en juin 2014, en juillet 2015 puis encore à Bound for Glory 2016. Rivale, mentor et référence, elle est intronisée au Hall of Fame de la fédération. En juillet 2017, elle annonce que l'année sera sa dernière sur le ring.",
+        "Le 5 novembre 2017, à Bound for Glory à Ottawa, elle affronte la championne Sienna et Allie dans un match à trois. Gail Kim fait le tombé sur Sienna et décroche son septième titre des Knockouts, un record qui n'a toujours pas été égalé, tout comme son total de 711 jours de règne cumulés.",
+        "Ce dernier règne est le plus court de l'histoire de la ceinture : environ 18 heures. Lors des enregistrements suivants, diffusés dans Impact quelques jours plus tard, elle rend le titre et annonce sa retraite, en remerciant celles qui ont compté dans sa carrière, comme Trish Stratus, Lita, Molly Holly, Awesome Kong et Taryn Terrell. Comme Trish Stratus avant elle, elle quitte le catch en championne."
+      ],
+      "key": "Le 5 novembre 2017, Gail Kim bat Sienna et Allie à Bound for Glory et devient sept fois championne des Knockouts, juste avant de prendre sa retraite.",
+      "v": [],
+      "q": [
+        "Gail Kim Sienna Allie Bound for Glory 2017",
+        "Gail Kim first Knockouts Champion Bound for Glory 2007 gauntlet"
+      ],
+      "src": [
+        {
+          "n": "Wikipedia — List of TNA Knockouts World Champions",
+          "u": "https://en.wikipedia.org/wiki/List_of_TNA_Knockouts_World_Champions"
+        },
+        {
+          "n": "Fightful",
+          "u": "https://www.fightful.com/wrestling/gail-kim-becomes-knockouts-champion-impact-retirement-match"
+        },
+        {
+          "n": "Wrestling-Online",
+          "u": "https://wrestling-online.com/tna/gail-kim-relinquishes-knockouts-title-retires-as-champion"
+        }
+      ]
+    },
     {
       "id": "pillman-gun-1996",
       "d": "2026-11-04",
