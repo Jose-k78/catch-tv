@@ -1,16 +1,6 @@
 {
- "at": "2026-11-05T21:43:20.289Z",
+ "at": "2026-11-05T22:44:53.273Z",
  "items": [
-  {
-   "t": "Chihiro Hashimoto impressionnée par un ancien de la WWE",
-   "u": "https://www.catch-newz.com/aew/newz/61045-chihiro-hashimoto-impressionnee-par-un-ancien-de-la-wwe",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE",
-    "AEW"
-   ]
-  },
   {
    "t": "Preview : ROH du 5 novembre 2026",
    "u": "https://www.catch-newz.com/aew/newz/61044-preview-roh-du-5-novembre-2026",
@@ -51,15 +41,8 @@
    ]
   },
   {
-   "t": "Carte de New Texas Pro Wrestling Texas Contenders Series 70",
-   "u": "https://www.catch-newz.com/international/newz/61047-carte-de-new-texas-pro-wrestling-texas-contenders-series-70",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": []
-  },
-  {
-   "t": "Carte de Beyond Wrestling Open Series 253",
-   "u": "https://www.catch-newz.com/international/newz/61046-carte-de-beyond-wrestling-open-series-253",
+   "t": "Carte de Dradition Tastumi Fujinami 55th Celebration Dragon Expo 2026",
+   "u": "https://www.catch-newz.com/international/newz/61051-carte-de-dradition-tastumi-fujinami-55th-celebration-dragon-expo-2026",
    "s": "Catch-Newz",
    "d": "2026-11-05",
    "tags": []
@@ -91,6 +74,30 @@
     "WWE",
     "NXT"
    ]
+  },
+  {
+   "t": "Chihiro Hashimoto impressionnée par un ancien de la WWE",
+   "u": "https://www.catch-newz.com/aew/newz/61045-chihiro-hashimoto-impressionnee-par-un-ancien-de-la-wwe",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE",
+    "AEW"
+   ]
+  },
+  {
+   "t": "Carte de New Texas Pro Wrestling Texas Contenders Series 70",
+   "u": "https://www.catch-newz.com/international/newz/61047-carte-de-new-texas-pro-wrestling-texas-contenders-series-70",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": []
+  },
+  {
+   "t": "Carte de Beyond Wrestling Open Series 253",
+   "u": "https://www.catch-newz.com/international/newz/61046-carte-de-beyond-wrestling-open-series-253",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": []
   },
   {
    "t": "Résultats de STARDOM Path Of Thunder 2026",
@@ -525,17 +532,6 @@
    "tags": [
     "AEW"
    ]
-  },
-  {
-   "t": "Spoiler : Une catcheuse de SmackDown dans les coulisses de WWE NXT du 4 novembre",
-   "u": "https://www.catch-newz.com/wwe/newz/60987-spoiler-une-catcheuse-de-smackdown-dans-les-coulisses-de-wwe-nxt-du-4-novembre",
-   "s": "Catch-Newz",
-   "d": "2026-11-04",
-   "tags": [
-    "WWE",
-    "SmackDown",
-    "NXT"
-   ]
   }
  ],
  "yt": {
@@ -814,14 +810,15 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/60991-wwe-nxt-4-novembre-2026",
-   "https://www.catch-newz.com/aew/newz/61045-chihiro-hashimoto-impressionnee-par-un-ancien-de-la-wwe",
    "https://www.catch-newz.com/aew/newz/61044-preview-roh-du-5-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61025-la-wwe-va-organiser-un-show-le-1er-janvier-2027",
    "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61051-carte-de-dradition-tastumi-fujinami-55th-celebration-dragon-expo-2026",
+   "https://www.catch-newz.com/international/newz/61037-carte-de-sendai-girls-pro-wrestling-du-6-novembre-2026",
+   "https://www.catch-newz.com/aew/newz/61045-chihiro-hashimoto-impressionnee-par-un-ancien-de-la-wwe",
    "https://www.catch-newz.com/international/newz/61047-carte-de-new-texas-pro-wrestling-texas-contenders-series-70",
    "https://www.catch-newz.com/international/newz/61046-carte-de-beyond-wrestling-open-series-253",
-   "https://www.catch-newz.com/international/newz/61037-carte-de-sendai-girls-pro-wrestling-du-6-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61043-resultats-de-stardom-path-of-thunder-2026",
    "https://www.catch-newz.com/international/newz/61028-carte-de-cmll-jueves-arena-coliseo-du-5-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61041-une-celebration-en-preparation-pour-les-30-ans-de-the-rock-a-la-wwe",
@@ -1084,7 +1081,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 10 nouveaux articles lus sur la page d'accueil (10 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
