@@ -1,5 +1,5 @@
 {
- "at": "2026-11-06T21:37:57.815Z",
+ "at": "2026-11-06T22:37:17.766Z",
  "items": [
   {
    "t": "Preview : WWE SmackDown du 6 novembre 2026",
@@ -10,6 +10,27 @@
     "WWE",
     "SmackDown"
    ]
+  },
+  {
+   "t": "Carte de MCW Endgame 2026",
+   "u": "https://www.catch-newz.com/international/newz/61080-carte-de-mcw-endgame-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": []
+  },
+  {
+   "t": "Carte de IWA Boiling Point 2026",
+   "u": "https://www.catch-newz.com/international/newz/61079-carte-de-iwa-boiling-point-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": []
+  },
+  {
+   "t": "Résultats de Sendai Girls Pro Wrestling du 6 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61078-resultats-de-sendai-girls-pro-wrestling-du-6-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": []
   },
   {
    "t": "Résultats de ChocoPro #549 Back To New",
@@ -495,31 +516,6 @@
    "tags": [
     "NJPW"
    ]
-  },
-  {
-   "t": "Résultats de AIW Shot Callers 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61018-resultats-de-aiw-shot-callers-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": []
-  },
-  {
-   "t": "Résultats de AAW The Bourbon Street Massacre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61017-resultats-de-aaw-the-bourbon-street-massacre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": []
-  },
-  {
-   "t": "Leon Slater : « Je ne serais pas champion du monde TNA aujourd’hui sans mon passage à NXT »",
-   "u": "https://www.catch-newz.com/wwe/newz/61015-leon-slater-je-ne-serais-pas-champion-du-monde-tna-aujourdhui-sans-mon-passage-a-nxt",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE",
-    "TNA",
-    "NXT"
-   ]
   }
  ],
  "yt": {
@@ -811,6 +807,9 @@
    "https://www.catch-newz.com/aew/resultats/61073-resultats-de-roh-du-5-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61060-audiences-wwe-aew-et-tna-19-au-25-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/61059-resultats-de-wwe-road-to-survivor-series-du-5-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61080-carte-de-mcw-endgame-2026",
+   "https://www.catch-newz.com/international/newz/61079-carte-de-iwa-boiling-point-2026",
+   "https://www.catch-newz.com/international/resultats/61078-resultats-de-sendai-girls-pro-wrestling-du-6-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61072-resultats-de-cmll-jueves-arena-coliseo-du-5-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61071-resultats-de-chocopro-549-back-to-new",
    "https://www.catch-newz.com/international/newz/61039-carte-de-cmll-viernes-espectacular-du-6-novembre-2026",
@@ -1107,7 +1106,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
