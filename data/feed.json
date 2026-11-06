@@ -1,9 +1,9 @@
 {
- "at": "2026-11-06T10:30:48.520Z",
+ "at": "2026-11-06T11:24:53.377Z",
  "items": [
   {
-   "t": "Cody Rhodes a perdu la bataille face à 50 Cent",
-   "u": "https://www.catch-newz.com/wwe/newz/61034-cody-rhodes-a-perdu-la-bataille-face-a-50-cent",
+   "t": "Zoey Serrano se sent plus libre en dehors de la WWE ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61058-zoey-serrano-se-sent-plus-libre-en-dehors-de-la-wwe",
    "s": "Catch-Newz",
    "d": "2026-11-06",
    "tags": [
@@ -18,6 +18,24 @@
    "tags": [
     "AEW",
     "Collision"
+   ]
+  },
+  {
+   "t": "La branche américaine de NJPW ferme ses portes",
+   "u": "https://www.catch-newz.com/international/newz/61057-la-branche-americaine-de-njpw-ferme-ses-portes",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": [
+    "NJPW"
+   ]
+  },
+  {
+   "t": "Cody Rhodes a perdu la bataille face à 50 Cent",
+   "u": "https://www.catch-newz.com/wwe/newz/61034-cody-rhodes-a-perdu-la-bataille-face-a-50-cent",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -93,6 +111,15 @@
    "s": "Catch-Newz",
    "d": "2026-11-06",
    "tags": []
+  },
+  {
+   "t": "Résultats de WWE Road To Survivor Series du 5 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/61059-resultats-de-wwe-road-to-survivor-series-du-5-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE"
+   ]
   },
   {
    "t": "Résultats de TNA Impact du 5 novembre 2026",
@@ -503,27 +530,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-05",
    "tags": []
-  },
-  {
-   "t": "Résultats du jour 1 du ZERO1 Tenka-Ichi Junior Tournament 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61000-resultats-du-jour-1-du-zero1-tenka-ichi-junior-tournament-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": []
-  },
-  {
-   "t": "Résultats de BJW No Ring Ueno 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61001-resultats-de-bjw-no-ring-ueno-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": []
-  },
-  {
-   "t": "Résultats de OTT Halloween Slam 2026",
-   "u": "https://www.catch-newz.com/international/resultats/60996-resultats-de-ott-halloween-slam-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": []
   }
  ],
  "yt": {
@@ -812,10 +818,14 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61034-cody-rhodes-a-perdu-la-bataille-face-a-50-cent",
+   "https://www.catch-newz.com/wwe/newz/61060-audiences-wwe-aew-et-tna-19-au-25-octobre-2026",
+   "https://www.catch-newz.com/wwe/resultats/61059-resultats-de-wwe-road-to-survivor-series-du-5-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61058-zoey-serrano-se-sent-plus-libre-en-dehors-de-la-wwe",
    "https://www.catch-newz.com/international/resultats/61054-tna-impact-5-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61044-preview-roh-du-5-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61057-la-branche-americaine-de-njpw-ferme-ses-portes",
+   "https://www.catch-newz.com/wwe/newz/61034-cody-rhodes-a-perdu-la-bataille-face-a-50-cent",
    "https://www.catch-newz.com/wwe/newz/61025-la-wwe-va-organiser-un-show-le-1er-janvier-2027",
    "https://www.catch-newz.com/international/resultats/61036-resultats-de-stardom-crimson-nightmare-2026",
    "https://www.catch-newz.com/wwe/newz/61056-mvp-si-quelquun-devait-le-faire-cetait-bien-brock-lesnar",
@@ -1093,7 +1103,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
