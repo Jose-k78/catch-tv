@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "note": "Champions actuels : peut révéler des résultats récents.",
  "titles": [
   {
@@ -881,8 +881,14 @@
    ],
    "src": "Wikipédia",
    "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_TNA_Wrestling",
-   "defs": [],
-   "def": 0
+   "defs": [
+    {
+     "d": "2026-11-05",
+     "ev": "Impact",
+     "vs": "Leon Slater et Amazing Red"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "tna-kotv",
@@ -1443,18 +1449,35 @@
    "k": "NJPW",
    "show": "",
    "n": "IWGP Tag Team Championship",
-   "c": "United Empire (Great-O-Khan et Henare)",
+   "c": "Knock Out Brothers (Yuto-Ice et OSKAR)",
    "who": [
-    "Great-O-Khan",
-    "Henare"
+    "Yuto-Ice",
+    "OSKAR"
    ],
-   "since": "2026-06-14",
-   "ev": "Dominion",
-   "hist": [],
-   "src": "Wikipédia",
-   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_New_Japan_Pro-Wrestling",
-   "defs": [],
-   "def": 0
+   "since": "2026-10-06",
+   "ev": "Road to King of Pro-Wrestling",
+   "hist": [
+    {
+     "c": "United Empire (Great-O-Khan et Henare)",
+     "who": [
+      "Great-O-Khan",
+      "Henare"
+     ],
+     "d": "2026-06-14",
+     "ev": "Dominion",
+     "j": 114
+    }
+   ],
+   "src": "Fightful",
+   "u": "https://www.fightful.com/?p=332390",
+   "defs": [
+    {
+     "d": "2026-11-03",
+     "ev": "Power Struggle",
+     "vs": "Callum Newman et Will Ospreay"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "njpw-jrtag",
