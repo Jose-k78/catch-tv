@@ -1,15 +1,6 @@
 {
- "at": "2026-11-06T11:24:53.377Z",
+ "at": "2026-11-06T12:22:26.321Z",
  "items": [
-  {
-   "t": "Zoey Serrano se sent plus libre en dehors de la WWE ?",
-   "u": "https://www.catch-newz.com/wwe/newz/61058-zoey-serrano-se-sent-plus-libre-en-dehors-de-la-wwe",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": [
-    "WWE"
-   ]
-  },
   {
    "t": "Preview : AEW Collision du 7 novembre 2026",
    "u": "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
@@ -18,6 +9,29 @@
    "tags": [
     "AEW",
     "Collision"
+   ]
+  },
+  {
+   "t": "Carte de CCW Rose Blood Deathmatch 3",
+   "u": "https://www.catch-newz.com/international/newz/61050-carte-de-ccw-rose-blood-deathmatch-3",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": []
+  },
+  {
+   "t": "Carte de GCW Dead On Arrival 2026",
+   "u": "https://www.catch-newz.com/international/newz/61048-carte-de-gcw-dead-on-arrival-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": []
+  },
+  {
+   "t": "Zoey Serrano se sent plus libre en dehors de la WWE ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61058-zoey-serrano-se-sent-plus-libre-en-dehors-de-la-wwe",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -514,22 +528,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Tous les événements WWE et UFC en Arabie saoudite auront lieu comme prévu",
-   "u": "https://www.catch-newz.com/wwe/newz/60997-tous-les-evenements-wwe-et-ufc-en-arabie-saoudite-auront-lieu-comme-prevu",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Carte du jour 3 de DG The Gate Of Evolution 2026",
-   "u": "https://www.catch-newz.com/international/newz/61002-carte-du-jour-3-de-dg-the-gate-of-evolution-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": []
   }
  ],
  "yt": {
@@ -820,10 +818,12 @@
    "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61060-audiences-wwe-aew-et-tna-19-au-25-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/61059-resultats-de-wwe-road-to-survivor-series-du-5-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61058-zoey-serrano-se-sent-plus-libre-en-dehors-de-la-wwe",
    "https://www.catch-newz.com/international/resultats/61054-tna-impact-5-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61044-preview-roh-du-5-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61050-carte-de-ccw-rose-blood-deathmatch-3",
+   "https://www.catch-newz.com/international/newz/61048-carte-de-gcw-dead-on-arrival-2026",
+   "https://www.catch-newz.com/wwe/newz/61058-zoey-serrano-se-sent-plus-libre-en-dehors-de-la-wwe",
    "https://www.catch-newz.com/international/newz/61057-la-branche-americaine-de-njpw-ferme-ses-portes",
    "https://www.catch-newz.com/wwe/newz/61034-cody-rhodes-a-perdu-la-bataille-face-a-50-cent",
    "https://www.catch-newz.com/wwe/newz/61025-la-wwe-va-organiser-un-show-le-1er-janvier-2027",
