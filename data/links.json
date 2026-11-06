@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T21:21:01.363Z",
+ "updated": "2026-11-06T20:50:59.445Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "m:statlight kid vs suzu suzuki": [
@@ -46,6 +46,14 @@
     "p": "VK",
     "at": "2026-11-05",
     "def": true
+   }
+  ],
+  "ev:TNA|Impact|2026-11-05": [
+   {
+    "t": "",
+    "u": "https://vk.com/video_ext.php?oid=-230463180&id=456241510&autoplay=1",
+    "p": "VK",
+    "at": "2026-11-06"
    }
   ]
  }
