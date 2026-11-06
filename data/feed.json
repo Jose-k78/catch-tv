@@ -1,5 +1,5 @@
 {
- "at": "2026-11-06T14:52:16.856Z",
+ "at": "2026-11-06T15:45:42.806Z",
  "items": [
   {
    "t": "Preview : AEW Collision du 7 novembre 2026",
@@ -9,6 +9,16 @@
    "tags": [
     "AEW",
     "Collision"
+   ]
+  },
+  {
+   "t": "Carte de CMLL Viernes Espectacular du 6 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61039-carte-de-cmll-viernes-espectacular-du-6-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": [
+    "CMLL",
+    "Viernes Espectacular"
    ]
   },
   {
@@ -515,16 +525,6 @@
     "WWE",
     "NXT"
    ]
-  },
-  {
-   "t": "WWE NXT : Cruz Montana et \"946\" font la loi dans le show gris",
-   "u": "https://www.catch-newz.com/wwe/newz/61007-wwe-nxt-cruz-montana-et-946-font-la-loi-dans-le-show-gris",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
   }
  ],
  "yt": {
@@ -818,6 +818,7 @@
    "https://www.catch-newz.com/international/resultats/61054-tna-impact-5-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61044-preview-roh-du-5-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61039-carte-de-cmll-viernes-espectacular-du-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61064-wwe-une-nouvelle-stipulation-dans-le-roster-principal",
    "https://www.catch-newz.com/wwe/newz/61063-carte-wwe-survivor-series-wargames-2026",
    "https://www.catch-newz.com/wwe/newz/61062-rey-mysterio-annonce-un-match-pour-wwe-survivor-series-2026",
@@ -1104,7 +1105,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
