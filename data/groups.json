@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "note": "Membres tenus à jour par la mise à jour du soir (19 h 23).",
  "items": {
   "946": {
@@ -2548,6 +2548,78 @@
     "The Last Outfit"
    ],
    "ref": []
+  },
+  "diy": {
+   "n": "#DIY",
+   "lg": "",
+   "k": "WWE",
+   "y": "2023–2026",
+   "on": 0,
+   "m": [
+    "Johnny Gargano",
+    "Tommaso Ciampa"
+   ],
+   "ex": [
+    "Candice LeRae"
+   ],
+   "a": [
+    "DIY"
+   ],
+   "ref": [
+    {
+     "t": "#DIY contre The Revival — 2 out of 3 Falls, titres par équipe de NXT",
+     "ev": "NXT TakeOver: Toronto, 2016"
+    }
+   ]
+  },
+  "brawling-birds": {
+   "n": "The Brawling Birds",
+   "lg": "",
+   "k": "AEW",
+   "y": "",
+   "on": 1,
+   "m": [
+    "Jamie Hayter",
+    "Alex Windsor"
+   ],
+   "ex": []
+  },
+  "wrathlander": {
+   "n": "Wrathlander",
+   "lg": "",
+   "k": "AEW",
+   "y": "",
+   "on": 1,
+   "m": [
+    "Kris Statlander",
+    "Harley Cameron"
+   ],
+   "ex": []
+  },
+  "good-bad-el-guapo": {
+   "n": "The Good, The Bad & El Guapo",
+   "lg": "",
+   "k": "AEW",
+   "y": "",
+   "on": 1,
+   "m": [
+    "Hangman Adam Page",
+    "Brody King",
+    "Bandido"
+   ],
+   "ex": []
+  },
+  "rusev-ethan-page": {
+   "n": "Rusev et Ethan Page",
+   "lg": "",
+   "k": "WWE",
+   "y": "depuis 2026",
+   "on": 1,
+   "m": [
+    "Rusev",
+    "Ethan Page"
+   ],
+   "ex": []
   }
  }
 }
