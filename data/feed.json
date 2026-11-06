@@ -1,9 +1,9 @@
 {
- "at": "2026-11-06T09:27:00.187Z",
+ "at": "2026-11-06T10:30:48.520Z",
  "items": [
   {
-   "t": "MVP : « Si quelqu'un devait le faire, c'était bien Brock Lesnar »",
-   "u": "https://www.catch-newz.com/wwe/newz/61056-mvp-si-quelquun-devait-le-faire-cetait-bien-brock-lesnar",
+   "t": "Cody Rhodes a perdu la bataille face à 50 Cent",
+   "u": "https://www.catch-newz.com/wwe/newz/61034-cody-rhodes-a-perdu-la-bataille-face-a-50-cent",
    "s": "Catch-Newz",
    "d": "2026-11-06",
    "tags": [
@@ -23,6 +23,24 @@
   {
    "t": "La WWE va organiser un show le 1er janvier 2027",
    "u": "https://www.catch-newz.com/wwe/newz/61025-la-wwe-va-organiser-un-show-le-1er-janvier-2027",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Résultats de STARDOM Crimson Nightmare 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61036-resultats-de-stardom-crimson-nightmare-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": [
+    "Stardom"
+   ]
+  },
+  {
+   "t": "MVP : « Si quelqu'un devait le faire, c'était bien Brock Lesnar »",
+   "u": "https://www.catch-newz.com/wwe/newz/61056-mvp-si-quelquun-devait-le-faire-cetait-bien-brock-lesnar",
    "s": "Catch-Newz",
    "d": "2026-11-06",
    "tags": [
@@ -506,20 +524,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-05",
    "tags": []
-  },
-  {
-   "t": "Résultats du jour 4 du HOP Spooktober Tour 2026",
-   "u": "https://www.catch-newz.com/international/resultats/60999-resultats-du-jour-4-du-hop-spooktober-tour-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": []
-  },
-  {
-   "t": "Résultats du jour 8 de DG The Gate Of Victory 2026 Partie 2",
-   "u": "https://www.catch-newz.com/international/resultats/60995-resultats-du-jour-8-de-dg-the-gate-of-victory-2026-partie-2",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": []
   }
  ],
  "yt": {
@@ -808,11 +812,13 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61056-mvp-si-quelquun-devait-le-faire-cetait-bien-brock-lesnar",
+   "https://www.catch-newz.com/wwe/newz/61034-cody-rhodes-a-perdu-la-bataille-face-a-50-cent",
    "https://www.catch-newz.com/international/resultats/61054-tna-impact-5-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61044-preview-roh-du-5-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61025-la-wwe-va-organiser-un-show-le-1er-janvier-2027",
+   "https://www.catch-newz.com/international/resultats/61036-resultats-de-stardom-crimson-nightmare-2026",
+   "https://www.catch-newz.com/wwe/newz/61056-mvp-si-quelquun-devait-le-faire-cetait-bien-brock-lesnar",
    "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61035-resultats-de-zero1-bullying-prevention-awareness-pro-wrestling",
    "https://www.catch-newz.com/wwe/newz/61055-stephanie-vaquer-de-retour-en-live-event-le-5-novembre",
@@ -1087,7 +1093,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
