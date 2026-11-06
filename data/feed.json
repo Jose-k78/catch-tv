@@ -1,5 +1,5 @@
 {
- "at": "2026-11-06T19:49:23.398Z",
+ "at": "2026-11-06T21:37:57.815Z",
  "items": [
   {
    "t": "Preview : WWE SmackDown du 6 novembre 2026",
@@ -10,6 +10,13 @@
     "WWE",
     "SmackDown"
    ]
+  },
+  {
+   "t": "Résultats de ChocoPro #549 Back To New",
+   "u": "https://www.catch-newz.com/international/resultats/61071-resultats-de-chocopro-549-back-to-new",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": []
   },
   {
    "t": "Carte de CMLL Viernes Espectacular du 6 novembre 2026",
@@ -209,12 +216,31 @@
    "tags": []
   },
   {
+   "t": "Résultats de ROH du 5 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/resultats/61073-resultats-de-roh-du-5-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "AEW",
+    "ROH"
+   ]
+  },
+  {
    "t": "Résultats de WWE Road To Survivor Series du 5 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/resultats/61059-resultats-de-wwe-road-to-survivor-series-du-5-novembre-2026",
    "s": "Catch-Newz",
    "d": "2026-11-05",
    "tags": [
     "WWE"
+   ]
+  },
+  {
+   "t": "Résultats de CMLL Jueves Arena Coliseo du 5 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61072-resultats-de-cmll-jueves-arena-coliseo-du-5-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "CMLL"
    ]
   },
   {
@@ -492,34 +518,6 @@
    "tags": [
     "WWE",
     "TNA",
-    "NXT"
-   ]
-  },
-  {
-   "t": "La WWE envisage d'organiser un show à Tokyo en 2027",
-   "u": "https://www.catch-newz.com/wwe/newz/61003-la-wwe-envisage-dorganiser-un-show-a-tokyo-en-2027",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Carte de NJPW Wrestle Kingdom 21",
-   "u": "https://www.catch-newz.com/international/newz/60981-carte-de-njpw-wrestle-kingdom-21",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "NJPW"
-   ]
-  },
-  {
-   "t": "Chad Gable complimente Vanity Project après leur match à NXT",
-   "u": "https://www.catch-newz.com/wwe/newz/61010-chad-gable-complimente-vanity-project-apres-leur-match-a-nxt",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE",
     "NXT"
    ]
   }
@@ -810,8 +808,11 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
+   "https://www.catch-newz.com/aew/resultats/61073-resultats-de-roh-du-5-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61060-audiences-wwe-aew-et-tna-19-au-25-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/61059-resultats-de-wwe-road-to-survivor-series-du-5-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61072-resultats-de-cmll-jueves-arena-coliseo-du-5-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61071-resultats-de-chocopro-549-back-to-new",
    "https://www.catch-newz.com/international/newz/61039-carte-de-cmll-viernes-espectacular-du-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61069-les-creed-brothers-quittent-la-wwe",
    "https://www.catch-newz.com/wwe/newz/61070-ambassade-americaine-felicite-la-wwe-pour-crown-jewel-2026",
@@ -1106,7 +1107,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
