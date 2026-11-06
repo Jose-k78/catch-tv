@@ -1,6 +1,42 @@
 {
- "at": "2026-11-06T12:22:26.321Z",
+ "at": "2026-11-06T13:42:57.073Z",
  "items": [
+  {
+   "t": "WWE : Une nouvelle stipulation dans le roster principal ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61064-wwe-une-nouvelle-stipulation-dans-le-roster-principal",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Carte de WWE Survivor Series WarGames 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61063-carte-wwe-survivor-series-wargames-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Rey Mysterio annonce un match pour WWE Survivor Series 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61062-rey-mysterio-annonce-un-match-pour-wwe-survivor-series-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Roman Reigns dépasse les 200 jours de règne en tant que champion World Heavyweight",
+   "u": "https://www.catch-newz.com/wwe/newz/61061-roman-reigns-depasse-les-200-jours-de-regne-en-tant-que-champion-world-heavyweight",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Preview : AEW Collision du 7 novembre 2026",
    "u": "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
@@ -489,45 +525,6 @@
     "WWE",
     "NXT"
    ]
-  },
-  {
-   "t": "WWE NXT : Noam Dar et Romeo Moreno remportent le Dusty Rhodes Tag Team Classic",
-   "u": "https://www.catch-newz.com/wwe/newz/61006-wwe-nxt-noam-dar-et-romeo-moreno-remportent-le-dusty-rhodes-tag-team-classic",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
-  },
-  {
-   "t": "WWE NXT : Kelani Jordan conserve son titre face à son adversaire mystère Paige",
-   "u": "https://www.catch-newz.com/wwe/newz/61005-wwe-nxt-kelani-jordan-conserve-son-titre-face-a-son-adversaire-mystere-paige",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
-  },
-  {
-   "t": "WWE NXT : Chad Gable, Dragon Lee et Rey Fenix donnent une leçon au Vanity Project",
-   "u": "https://www.catch-newz.com/wwe/newz/61004-wwe-nxt-chad-gable-dragon-lee-et-rey-fenix-donnent-une-lecon-au-vanity-project",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
-  },
-  {
-   "t": "La WWE dévoile son plan de secours pour WrestleMania 43",
-   "u": "https://www.catch-newz.com/wwe/newz/60998-la-wwe-devoile-son-plan-de-secours-pour-wrestlemania-43",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -816,6 +813,10 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61064-wwe-une-nouvelle-stipulation-dans-le-roster-principal",
+   "https://www.catch-newz.com/wwe/newz/61063-carte-wwe-survivor-series-wargames-2026",
+   "https://www.catch-newz.com/wwe/newz/61062-rey-mysterio-annonce-un-match-pour-wwe-survivor-series-2026",
+   "https://www.catch-newz.com/wwe/newz/61061-roman-reigns-depasse-les-200-jours-de-regne-en-tant-que-champion-world-heavyweight",
    "https://www.catch-newz.com/wwe/newz/61060-audiences-wwe-aew-et-tna-19-au-25-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/61059-resultats-de-wwe-road-to-survivor-series-du-5-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61054-tna-impact-5-novembre-2026",
@@ -1103,7 +1104,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 10 nouveaux articles lus sur la page d'accueil (10 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
