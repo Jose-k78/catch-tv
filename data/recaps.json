@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "items": {
   "WWE|Raw|2026-10-26": {
    "txt": "Depuis le Save Mart Center de Fresno. Becky Lynch et Stephanie Vaquer se disputent la place d’aspirante n°1 au titre mondial féminin. Bayley et Lyra Valkyria règlent leurs comptes dans un match sans disqualification, IYO SKY affronte la championne intercontinentale Raquel Rodriguez sans titre en jeu (avec une chance au titre en vue), et Chad Gable et Dragon Lee font équipe contre Big Cass et Ethan Page.",
@@ -115,6 +115,16 @@
    "txt": "Gros enjeu pour The System : Eddie Edwards affronte Bear Bronson pour le contrôle du clan, le perdant devant se plier à la loi du vainqueur. Harley Hudson doit être initiée chez The Righteous, les Nemeth Brothers croisent Leon Slater et Amazing Red, Fire 'N Flava retrouvent Shotzi et Allie, et Frankie Kazarian et Avery Styles font leurs débuts en équipe.",
    "s": "Khel Now",
    "u": "https://khelnow.com/pro-wrestling/tna-impact-preview-november-5-202611"
+  },
+  "AEW|PLE|2026-11-14": {
+   "txt": "Full Gear se tient au Mortgage Matchup Center de Phoenix (Arizona). Will Ospreay met en jeu le titre mondial de l'AEW face à Kyle Fletcher, accompagné de Don Callis, et Mercedes Moné défend le titre mondial féminin contre Marina Shafir. Les Young Bucks, les Brawling Birds et les champions trios (dans un Texas Death Match) défendent aussi leurs ceintures, et un Anarchy in the Arena oppose les Death Riders, The Conglomeration et The Cut.",
+   "s": "The SmackDown Hotel",
+   "u": "https://www.thesmackdownhotel.com/events-results/ppv-special/aew-full-gear-2026"
+  },
+  "TNA|PLE|2026-11-15": {
+   "txt": "Destination X a lieu à l'Edmonton Expo Centre, au Canada. Leon Slater défend le titre mondial de la TNA contre Trey Miguel et Indi Hartwell met en jeu le titre Knockouts face à Shayna Baszler. Deux matchs Ultimate X désigneront les prochains aspirants aux titres X Division et Knockouts, la finale de la X Cup est prévue, et Matt Hardy et Moose veulent se venger de Syx.",
+   "s": "The SmackDown Hotel · PWTorch",
+   "u": "https://www.thesmackdownhotel.com/events-results/ppv-special/tna-destination-x-2026"
   }
  }
 }
