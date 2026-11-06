@@ -83,9 +83,24 @@ export function playerView(a, b, c) {
   // derniers shows (dates) toutes promotions
   const recent = recentShows(14);
   if (recent.length) h += '<h2>Les derniers shows</h2><div class="prow">' + recent.map(x => evTile(x.k, x.show, x.d, x.t)).join("") + "</div>";
+  h += modoRow();
   h += row("Les plus récentes", vids.filter(v => v.d)) + row("👍 Tes vidéos aimées", liked) + row("Matchs complets", vids.filter(v => v.full));
   PROMOS().forEach(k => { h += row('<a href="#/player/k/' + encodeURIComponent(k) + '">' + esc(k) + " ›</a>", vids.filter(v => v.k === k && v.d)); });
   return h;
+}
+// liens du modo tirés au hasard (un nouveau tirage à chaque ouverture de l'app)
+const SEED = Math.random();
+function modoRow() {
+  const L = [];
+  Object.keys(S.links || {}).forEach(key => linksOf(key).forEach(x => L.push({ key: key, x: x })));
+  if (!L.length) return "";
+  const r = (i => () => { i = (i * 9301 + 49297) % 233280; return i / 233280; })(Math.floor(SEED * 233280));
+  for (let i = L.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [L[i], L[j]] = [L[j], L[i]]; }
+  const label = (key, x) => { if (key.indexOf("ev:") === 0) { const p = keyParts(key.slice(3)); return { t: x.t || (p.show === "PLE" ? ((allPle().find(e => e.k === p.k && e.d === p.d) || {}).t || p.k) : p.show), s: p.k + (p.d ? " · " + fmt(p.d) : "") }; }
+    const m = key.match(/^(m|ref|ent|entm|tn|story):(.*)$/); return { t: x.t || (m ? m[2].split("|")[0] : key), s: ({ m: "Match", ref: "Match de référence", ent: "Entrance", entm: "Entrance", tn: "Tournoi", story: "Storyline" })[m && m[1]] || "Lien" }; };
+  return "<h2>🎲 Au hasard dans " + TPLAY + '</h2><div class="prow">' + L.slice(0, 12).map(o => { const lb = label(o.key, o.x), plat = o.x.p || (o.x.u.match(/\/\/(?:www\.)?([^/.]+)/) || [])[1] || "";
+    const inner = '<span class="pth modo">▶<small>' + esc(plat) + '</small></span><span class="pinfo"><b>' + esc(lb.t) + "</b><small>" + esc(lb.s) + "</small></span>";
+    return o.key.indexOf("ev:") === 0 ? '<a class="pvid" href="#/player/e/' + encodeURIComponent(o.key.slice(3)) + '">' + inner + "</a>" : '<button class="pvid" data-act="mlplay" data-u="' + esc(o.x.u) + '" data-t="' + esc(lb.t) + '">' + inner + "</button>"; }).join("") + "</div>";
 }
 // shows passés (épisodes et PLE) d'une promotion, du plus récent au plus ancien
 function pastOf(k, show) {

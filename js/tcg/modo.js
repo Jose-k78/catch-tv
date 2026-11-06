@@ -11,7 +11,7 @@ import { cardHTML } from "./card.js";
 import { norm } from "../wrestlers.js";
 
 let tab = "", q = "";
-async function saveCfg(fn, msg) {
+export async function saveCfg(fn, msg) {
   if (!ghToken()) { if (ACT.ghkey) ACT.ghkey(); return false; }
   const cur = await ghGetJson("data/tcg.json"), d = cur.data || {};
   fn(d); d.updated = new Date().toISOString().slice(0, 10);
@@ -23,10 +23,15 @@ const run = (fn, msg) => saveCfg(fn, msg).then(ok => { if (ok) toast("Enregistr�
 // envoie une image ou un son dans le dépôt (img/tcg/ ou media/tcg/) et renvoie son chemin
 async function upload(file, dir) {
   if (!ghToken()) { if (ACT.ghkey) ACT.ghkey(); throw new Error("nokey"); }
-  const url = await fileToDataUrl(file), ext = (file.name.match(/\.(\w+)$/) || [, "bin"])[1].toLowerCase(), path = dir + Date.now().toString(36) + "." + ext;
+  // une image est allégée (JPEG) ; un son (mp3…) ou une vidéo est envoyé tel quel
+  const isImg = /^image\//.test(file.type) && !/gif|svg/.test(file.type);
+  if (!isImg && file.size > 25e6) throw new Error("fichier trop lourd (25 Mo au plus)");
+  const url = isImg ? await fileToDataUrl(file, 1600, 1600, false, 900000) : await rawDataUrl(file);
+  const ext = isImg ? "jpg" : (file.name.match(/\.(\w+)$/) || [, "bin"])[1].toLowerCase(), path = dir + Date.now().toString(36) + "." + ext;
   await ghPutBinary(path, url.split(",")[1], "TCCCG (modo) : fichier " + file.name);
   return path;
 }
+const rawDataUrl = file => new Promise((ok, ko) => { const r = new FileReader(); r.onload = () => ok(String(r.result)); r.onerror = () => ko(new Error("lecture du fichier")); r.readAsDataURL(file); });
 function pickFile(accept, dir, cb) { const i = document.createElement("input"); i.type = "file"; i.accept = accept; i.onchange = async () => { const f = i.files[0]; if (!f) return; toast("Envoi…"); try { cb(await upload(f, dir)); } catch (e) { if (e && e.message !== "nokey") toast("Envoi impossible : " + e.message, { ms: 5000 }); } }; i.click(); }
 
 export function modoView() {
@@ -35,8 +40,9 @@ export function modoView() {
   let h = '<section class="tccghead"><h1>⚙️ Modo TCCCG</h1></section><nav class="tsub">' + tabs.map(x => '<button class="' + (tab === x[0] ? "on" : "") + '" data-act="tcgmt" data-t="' + x[0] + '">' + x[1] + "</button>").join("") + "</nav>";
   const C = cfg();
   if (tab === "") {
-    const L = baseCards().filter(c => !q || norm(c.name).indexOf(norm(q)) >= 0).slice(0, 60);
+    const L = mList();
     h += '<div class="search" style="margin:0 16px"><input id="tmq" type="search" placeholder="Chercher une carte" value="' + esc(q) + '"></div><p class="tnote">' + baseCards().length + " cartes · touche une carte pour la modifier</p>" +
+      '<div class="tfilt"><button class="chip' + (noImg ? "" : " on") + '" data-act="tcgmnoimg" data-v="">Toutes</button><button class="chip' + (noImg ? " on" : "") + '" data-act="tcgmnoimg" data-v="1">🖼️ Sans image (' + baseCards().filter(c => !c.pic).length + ")</button></div>" +
       '<div class="trgrid">' + L.map(c => cardHTML(c, { small: true, act: "tcgmedit", iid: "" })).join("") + "</div>";
   }
   if (tab === "persos") {
@@ -46,14 +52,14 @@ export function modoView() {
   }
   if (tab === "taux") {
     const R = rates();
-    h += '<p class="tnote">Taux d’apparition dans les boosters (en %). La dernière carte d’un booster normal est toujours R ou mieux.</p><form class="tmform" data-form="tcgrates">' + RAR.map(r => '<label>' + r + ' <input name="' + r + '" type="number" step="0.1" min="0" value="' + R[r] + '"></label>').join("") + '<button class="btn">Enregistrer</button><button type="button" class="btn ghost" data-act="tcgmratesreset">Valeurs de départ</button></form>';
+    h += '<p class="tnote">Taux d’apparition dans les boosters (en %). La dernière carte d’un booster normal est toujours R ou mieux.</p><form class="tmform" data-form="tcgrates">' + RAR.map(r => '<label>' + r + ' <input name="' + r + '" type="number" step="0.1" min="0" value="' + R[r] + '"></label>').join("") + '<label>Cartes vedettes (× plus de chances) <input name="featx" type="number" step="0.5" min="1" value="' + (C.featx || 3) + '"></label><button class="btn">Enregistrer</button><button type="button" class="btn ghost" data-act="tcgmratesreset">Valeurs de départ</button></form>';
   }
   if (tab === "objets") {
     h += '<button class="btn small" style="margin:0 16px" data-act="tcgmitem" data-id="">＋ Créer un objet</button><div class="list" style="margin-top:8px">' + items().map(x => '<button class="item" data-act="tcgmitem" data-id="' + x.id + '"><span class="lbl"><b>' + esc((x.ic || "🎁") + " " + x.n) + "</b><small>" + (x.t === "combat" ? "Combat · " + esc(x.fx || "") + " " + (x.v || "") : "Éveil · rang " + esc(x.g || "")) + " · " + esc(x.d || "") + (x.drop != null ? " · drop " + x.drop + " %" : "") + '</small></span><span class="chev">›</span></button>').join("") + "</div>";
   }
   if (tab === "boosters") {
     const L = C.boosters || [];
-    h += '<p class="tnote">Les boosters des shows, des promotions et le booster gratuit sont automatiques. Ici, tes boosters spéciaux.</p><button class="btn small" style="margin:0 16px" data-act="tcgmboost" data-id="">＋ Créer un booster</button><div class="list" style="margin-top:8px">' +
+    h += '<p class="tnote">Les boosters des shows, des promotions et le booster gratuit sont automatiques. Pour voir et changer les cartes de n’importe quel booster (ajouter, retirer, vedette, modifier, dupliquer) : Call Up › « 👁️ Cartes » avec le bouton ✏️ activé. Ici, tes boosters spéciaux.</p><button class="btn small" style="margin:0 16px" data-act="tcgmboost" data-id="">＋ Créer un booster</button><div class="list" style="margin-top:8px">' +
       L.filter(b => !b.del).map(b => '<button class="item" data-act="tcgmboost" data-id="' + esc(b.id) + '"><span class="lbl"><b>' + esc(b.t) + "</b><small>" + (b.n || 3) + " cartes · " + (b.gim || 5) + " gimmicks · " + (b.cards && b.cards.length ? b.cards.length + " cartes choisies" : "auto" + (b.k ? " (" + esc(b.k) + ")" : "")) + (b.on === false ? " · caché" : "") + '</small></span><span class="chev">›</span></button>').join("") + "</div>";
   }
   if (tab === "combats") {
@@ -71,8 +77,11 @@ export function modoView() {
   }
   return h;
 }
+let noImg = false;
+const mList = () => baseCards().filter(c => (!q || norm(c.name).indexOf(norm(q)) >= 0) && (!noImg || !c.pic)).slice(0, noImg ? 200 : 60);
+ACT.tcgmnoimg = el => { noImg = !!el.dataset.v; changed("tcg"); };
 ACT.tcgmt = el => { tab = el.dataset.t || ""; changed("tcg"); };
-document.addEventListener("input", e => { if (e.target.id === "tmq") { q = e.target.value; const g = document.querySelector(".trgrid"); if (g) g.innerHTML = baseCards().filter(c => !q || norm(c.name).indexOf(norm(q)) >= 0).slice(0, 60).map(c => cardHTML(c, { small: true, act: "tcgmedit" })).join(""); } });
+document.addEventListener("input", e => { if (e.target.id === "tmq") { q = e.target.value; const g = document.querySelector(".trgrid"); if (g) g.innerHTML = mList().map(c => cardHTML(c, { small: true, act: "tcgmedit" })).join(""); } });
 
 // ---------- modifier une carte ----------
 ACT.tcgmedit = el => {
@@ -120,7 +129,7 @@ ACT.tcgmperso = () => {
       run(d => { d.custom = d.custom || []; d.custom.push({ id: "oc-" + norm(n).replace(/[^a-z0-9]+/g, "-") + "-" + Date.now().toString(36).slice(-4), name: n, gimmick: f.g.value.trim(), k: f.k.value, arch: f.arch.value, r: "N", max: "R" }); }, "nouveau personnage " + n); });
   });
 };
-FORM.tcgrates = f => run(d => { d.rates = {}; RAR.forEach(r => { d.rates[r] = Math.max(0, +f[r].value || 0); }); }, "taux d’apparition");
+FORM.tcgrates = f => run(d => { d.rates = {}; RAR.forEach(r => { d.rates[r] = Math.max(0, +f[r].value || 0); }); d.featx = Math.max(1, +f.featx.value || 3); }, "taux d’apparition");
 FORM.tcgfightcfg = f => run(d => { d.fight = Object.assign({}, d.fight || {}, { ai: +f.ai.value || 1, cool: Math.max(1, +f.cool.value || 60) }); }, "réglages des combats");
 ACT.tcgmratesreset = () => run(d => { delete d.rates; }, "taux de départ");
 ACT.tcgmple = el => run(d => { d.fight = d.fight || {}; const m = el.dataset.m, o = m === "allow" ? "deny" : "allow"; d.fight[m] = d.fight[m] || []; d.fight[o] = (d.fight[o] || []).filter(k => k !== el.dataset.k); const i = d.fight[m].indexOf(el.dataset.k); if (i >= 0) d.fight[m].splice(i, 1); else d.fight[m].push(el.dataset.k); }, "PLE en combat");

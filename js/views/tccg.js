@@ -1,4 +1,4 @@
-// TCCCG : la future partie « cartes à collectionner » (TCG) de TCC TV. Prototype en chantier, réservé au modérateur pour l'instant.
+// TCCCG : la partie « cartes à collectionner » (TCG) de TCC TV, ouverte à tous les membres connectés (réglages : modo).
 // Interface noir et doré (classe body.tccg), logo TCCCG, barre du bas : Accueil, Call Up, Roster, Échange, Shop.
 // En haut : le profil (comme TCC TV) et le logo TCC TV pour revenir à l'app de base.
 import { S, avatar } from "../state.js";
@@ -8,6 +8,7 @@ import { rosterView } from "../tcg/roster.js";
 import { fightsView, prepView, combatView } from "../tcg/fight.js";
 import { tccgHome, shopView } from "../tcg/home.js";
 import { modoView } from "../tcg/modo.js";
+import { echangeView } from "../tcg/trade.js";
 
 const sv = p => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + p + "</svg>";
 export const TICON = {
@@ -32,8 +33,8 @@ const PAGES = {
   echange: ["Échange", "Échange tes cartes en double avec les autres membres."],
   shop: ["Shop", "Les paquets et les cartes spéciales."]
 };
-export function tccgView(tab, sub) {
-  if (!S.realAdmin) return '<section class="tccgsoon"><div class="tcards">' + TICON.cards + '</div><h1>TCCCG</h1><p>Le jeu de cartes de TCC TV arrive bientôt. Reste connecté !</p><a class="btn" href="#/">Retour à TCC TV</a></section>';
+export function tccgView(tab, sub, id) {
+  if (!S.user) return '<section class="tccgsoon"><div class="tcards">' + TICON.cards + '</div><h1>TCCCG</h1><p>Le jeu de cartes de TCC TV : connecte-toi pour jouer, collectionner et échanger avec les autres membres.</p><a class="btn" href="#/connexion">Se connecter</a> <a class="btn ghost" href="#/">Retour à TCC TV</a></section>';
   const W = x => '<section class="tccgwrap">' + x + "</section>";
   if (tab === "") return W(tccgHome());
   if (tab === "callup") return W(callUpView());
@@ -43,6 +44,7 @@ export function tccgView(tab, sub) {
   if (tab === "combat-prep") return W(prepView());
   if (tab === "combat") return W(combatView());
   if (tab === "modo") return W(modoView());
+  if (tab === "echange") return W(echangeView(sub, decodeURIComponent(id || "")));
   const p = PAGES[tab] || PAGES[""];
   return '<section class="tccgpage"><span class="tbadge">🚧 EN CHANTIER</span><div class="tcards">' + TICON[(TNAV.find(x => x[0] === tab) || TNAV[0])[2]] + "</div><h1>" + esc(p[0]) + "</h1><p>" + esc(p[1]) + "</p>" +
     '<div class="tslots">' + [1, 2, 3].map(() => '<div class="tslot"><span>?</span></div>').join("") + "</div>" +

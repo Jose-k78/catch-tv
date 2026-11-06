@@ -250,3 +250,7 @@ export async function setHofMonth(month, rec) { DB.hof.babies = DB.hof.babies ||
 // ---- TCCCG ----
 export function watchTcg(uid, cb) { return watch(() => cb(DB.tcg && DB.tcg[uid] ? clone(DB.tcg[uid]) : null)); }
 export async function saveTcg(uid, d) { DB.tcg = DB.tcg || {}; DB.tcg[uid] = Object.assign({}, clone(d), { at: Date.now() }); save(); }
+export async function listTcg() { return Object.keys(DB.tcg || {}).map(uid => Object.assign(clone(DB.tcg[uid]), { uid: uid })); }
+export function watchTcgx(cb) { return watch(() => cb(Object.keys(DB.tcgx || {}).map(id => Object.assign(clone(DB.tcgx[id]), { id: id })).sort((a, b) => b.at - a.at))); }
+export async function addTcgx(d) { DB.tcgx = DB.tcgx || {}; const id = uidGen(); DB.tcgx[id] = Object.assign(clone(d), { at: Date.now() }); save(); return id; }
+export async function txTcgx(id, fn) { const cur = DB.tcgx && DB.tcgx[id]; if (!cur) throw new Error("introuvable"); const patch = fn(Object.assign(clone(cur), { id: id })); if (!patch) throw new Error("plus possible"); Object.assign(cur, clone(patch)); save(); return Object.assign(clone(cur), { id: id }); }

@@ -1,6 +1,7 @@
 rules_version = '2';
 
-// Règles de sécurité TCC TV (version 10 : notes de 0 à 5,5 par demi-étoile).
+// Règles de sécurité TCC TV (version 11 : TCCCG ouvert à tous — échanges, enchères et défis entre membres).
+// (version 10 : notes de 0 à 5,5 par demi-étoile).
 // (version 9 : partie TCCCG de chaque joueur).
 // (version 8 : cartes partagées dans le chat, notifications sur le téléphone, annonces du modérateur).
 // (version 7 : trophées, Slammy, bannière du profil, images des fiches catcheurs, Babies du mois)
@@ -374,11 +375,33 @@ service cloud.firestore {
     match /tcg/{uid} {
       allow read: if signedIn();
       allow create, update: if isMe(uid)
-        && request.resource.data.keys().hasOnly(['v','lvl','xp','res','items','medals','cards','free','tuto','cool','opened','wins','fav','mis','mday','at'])
+        && request.resource.data.keys().hasOnly(['v','lvl','xp','res','items','medals','cards','free','tuto','cool','opened','wins','fav','mis','mday','name','esc','at'])
         && request.resource.data.cards is map && request.resource.data.cards.size() <= 3000
         && request.resource.data.lvl is int && request.resource.data.lvl >= 1 && request.resource.data.lvl <= 50
         && request.resource.data.at == request.time;
       allow delete: if isMe(uid) || isAdmin();
+    }
+
+    // ---------- TCCCG entre membres : échanges (trade), enchères (auc), défis (duel) ----------
+    // Création par l'auteur (from). Modifications : l'auteur, le destinataire d'un échange (to), ou, pour une enchère, n'importe
+    // quel membre connecté mais seulement les offres (bids) et « carte récupérée » (wc). Suppression : l'auteur ou l'admin.
+    match /tcgx/{id} {
+      allow read: if signedIn();
+      allow create: if signedIn() && request.resource.data.from == request.auth.uid
+        && request.resource.data.ty in ['trade','auc','duel']
+        && request.resource.data.keys().hasOnly(['ty','from','to','fromName','toName','give','want','st','card','start','bids','end','win','winName','price','sc','wc','diff','n','at'])
+        && (!('fromName' in request.resource.data) || str(request.resource.data.fromName, 40))
+        && (!('toName' in request.resource.data) || str(request.resource.data.toName, 40))
+        && (!('bids' in request.resource.data) || (request.resource.data.bids is list && request.resource.data.bids.size() == 0))
+        && request.resource.data.at == request.time;
+      allow update: if signedIn()
+        && request.resource.data.from == resource.data.from && request.resource.data.ty == resource.data.ty
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['st','bids','win','winName','price','sc','wc'])
+        && (!('bids' in request.resource.data) || (request.resource.data.bids is list && request.resource.data.bids.size() <= 60))
+        && (request.auth.uid == resource.data.from
+          || (resource.data.ty == 'trade' && request.auth.uid == resource.data.to && resource.data.st == 'open' && request.resource.data.st in ['ok','no'])
+          || (resource.data.ty == 'auc' && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['bids','wc'])));
+      allow delete: if signedIn() && (request.auth.uid == resource.data.from || isAdmin());
     }
 
     // ---------- Annonces du modérateur : tout le monde les lit, seul l'admin les publie ----------

@@ -5,7 +5,7 @@ import { S, B, changed } from "../state.js";
 import { toast } from "../util.js";
 import { RAR, LVMAX, defOf } from "./data.js";
 
-export const ZERO = () => ({ v: 1, lvl: 1, xp: 0, res: { money: 0, mom: 0, pop: 0, push: 0, gim: 0 }, items: {}, medals: {}, cards: {}, free: "", tuto: false, cool: {}, opened: 0, wins: 0, fav: [] });
+export const ZERO = () => ({ v: 1, lvl: 1, xp: 0, res: { money: 0, mom: 0, pop: 0, push: 0, gim: 0 }, items: {}, medals: {}, cards: {}, free: "", tuto: false, cool: {}, opened: 0, wins: 0, fav: [], esc: {} });
 export function me() {
   const d = S.tcg ? JSON.parse(JSON.stringify(S.tcg)) : ZERO(), z = ZERO();
   Object.keys(z).forEach(k => { if (d[k] == null) d[k] = z[k]; });
@@ -17,6 +17,7 @@ let saveT = null, pending = null;
 // modifie la partie et l'enregistre (affichage immédiat, envoi groupé)
 export function commit(fn) {
   const d = me(); fn(d);
+  d.name = String((S.profile && S.profile.pseudo) || d.name || "Joueur").slice(0, 30);
   S.tcg = d; changed("tcg");
   pending = d; clearTimeout(saveT);
   saveT = setTimeout(() => { const x = pending; pending = null; if (S.user && x) B.saveTcg(S.user.uid, x).catch(e => toast("Partie non enregistrée : " + (e && e.message || "erreur"), { ms: 4000 })); }, 600);
@@ -35,3 +36,7 @@ export function addCard(d, id) {
 }
 export const owned = d => Object.keys(d.cards).map(iid => Object.assign({ iid: iid }, d.cards[iid])).filter(x => defOf(x.c));
 export const rIdx = r => RAR.indexOf(r);
+// copie d'un exemplaire reçu (échange, enchère) dans la partie
+export function addInst(d, x) { if (!x || !defOf(x.c)) return null; const iid = Date.now().toString(36) + (seq++).toString(36) + Math.floor(Math.random() * 1e4).toString(36); d.cards[iid] = { c: x.c, r: RAR.indexOf(x.r) >= 0 ? x.r : defOf(x.c).r, lv: +x.lv || 1, xp: +x.xp || 0 }; return iid; }
+export const RES = ["money", "mom", "pop", "push", "gim"];
+export const RICO = { money: "💵", mom: "⚡", pop: "⭐", push: "📣", gim: "🎟️" };

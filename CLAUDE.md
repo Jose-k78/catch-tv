@@ -71,8 +71,9 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   sous la photo du dossier), rubrique Palmarès. Profil d'un membre : ses catcheurs suivis avec leur photo.
 - Feuds : « Lancer une feud » puis « Continuer la feud » ; action du jour tirée au hasard dans `cloudflare/feud-acts.mjs`
   (partagé par l'app et le service des notifications : même action des deux côtés, différente pour chacun).
-- TCCCG (`js/views/tccg.js`, `#/tccg/…`) : prototype de la partie cartes (TCG), réservé au modérateur, interface noir et
-  doré (`body.tccg`), onglets Accueil / Call Up / Roster / Échange / Shop « en chantier » ; icône « Bientôt » dans la barre du bas.
+- TCCCG (`js/views/tccg.js`, `#/tccg/…`) : la partie cartes (TCG), **ouverte à tous les membres connectés depuis le 6 nov.**
+  (les réglages restent au modo : `S.isAdmin`), interface noir et doré (`body.tccg`), onglets Accueil / Call Up / Roster / Échange / Shop ;
+  icône « TCCCG » dans la barre du bas (pastille rouge = propositions d'échange reçues).
 - Plus de photos automatiques Wikimedia ni de page « Crédits photos » (retirées le 30 oct.) : seules les images choisies par
   le modérateur. Fonds animés et musique : copies légères (`media/bg/*-leger.mp4`, `media/music-leger.mp3`, originaux
   gardés), musique en pause par défaut.
@@ -80,8 +81,8 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   avant (`f`) parmi les versions (`v`) des photos des catcheurs (3 au plus : `slug-v2/-v3.webp`), ceintures, logos de shows,
   d'événements et de groupes ; ajouter une image (WebP fait dans le navigateur, envoyé avec la clé GitHub de l'admin) ;
   supprimer une version. Le robot `photos.mjs` connaît les versions (une photo déposée à la main passe en avant).
-- TCC Play (`js/views/player.js`, `#/player`, dans la barre du bas à la place de Recherche ; Recherche est un onglet en haut,
-  juste après Accueil ; logo `TPLAY` / icône `TPLAY_ICON` de js/links.js) : style Prime Video (onglets par
+- TCC Play (`js/views/player.js`, `#/player`, dans la barre du bas ; la Recherche est une rubrique de l'accueil + bouton 🔍 en haut
+  (`#srchbtn` dans index.html et dev.html), plus d'onglet Recherche ; « 🎲 Au hasard dans TCC Play » = liens du modo tirés au hasard ; logo `TPLAY` / icône `TPLAY_ICON` de js/links.js) : style Prime Video (onglets par
   promotion puis par show, barre de recherche), shows rangés par année / mois / date + « Choisir une date »
   (`#/player/e/K|show|date`) : le lien ⭐ par défaut du modo se lance dans le lecteur de l'app, sinon la 1re vidéo officielle ;
   ⚙️ réglages modo (`#/player/reglages`). Vidéos officielles (feed.yt, highlights, matches.json), j'aime local, commentaires
@@ -113,7 +114,24 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   version show), Dark Match, PLE plus durs ; memory 2 contre 2 par élimination, 3 TAG chacun (IA aussi), objets, soutiens liés
   (+10 %), récompenses du cahier, attente 1 h. `home.js` : accueil, missions, tuto, Shop. `modo.js` (`#/tccg/modo`, aussi dans
   Paramètres › Modération) : tout le réglage dans `data/tcg.json` (cartes, persos créés, taux, objets, boosters, combats, musiques,
-  dos des cartes). Pour l'instant réservé au modo (`S.realAdmin`).
+  dos des cartes).
+- TCCCG (lot du 6 nov.) :
+  - cartes aussi pour les catcheurs **sans photo** (rosters + fiches) : carte vide « Image à venir », identifiant = même nom de fichier
+    que le robot des photos (`slugOf` de data.js) pour garder la carte quand Jose ajoute la photo ; le modo met l'image (Modo › Cartes ›
+    « 🖼️ Sans image ») ; rareté d'après le score, comparée aux cartes avec photo ;
+  - la carte prend le **format de son image** (`--ar`, mesuré au chargement de l'image, card.js) ; toucher l'image d'une grande carte = zoom ;
+  - Call Up : « ✨ Vitrine » (cartes au max : rareté max, niveau max) ; bouton « 👁️ Cartes » sur chaque booster (vitrine, ⭐ cartes vedettes,
+    toutes les cartes possibles) ; **vedettes** = catcheurs du show (booster d'un show, dont le reste = la promotion) ou champions (pack
+    de promotion), ×3 par défaut (`featx`) ; en mode ✏️ le modo ajoute / retire / met en vedette / modifie / duplique : `data/tcg.json`
+    « bx » = { idBooster: { add, del, feat, nofeat } } ; animation d'invocation : écran géant, rampe, ring dessinés (SVG) ;
+  - envoi de fichiers du modo réparé (`upload` de modo.js) : images allégées en JPEG, sons / vidéos envoyés tels quels (25 Mo max) ;
+  - combats : on choisit qui on affronte parmi tous les catcheurs du match (1 contre 1, 2 contre 2…, autant de cartes que d'adversaires),
+    difficulté **Low** (normal) / **Mid** (×1,3) / **Top** (stats ×2), gains selon difficulté et nombre ; combat en cours gardé sur le
+    téléphone (`ctv.tcgfight.<uid>`, 3 jours) : « Reprendre » sur l'accueil et dans Combats ; cases jamais vues brillantes, vues assombries ;
+    **défis entre membres** (équipe d'un autre joueur menée par l'IA, ressources pour le gagnant, un peu pour le perdant) ;
+  - **Échange** (`js/tcg/trade.js`) : rosters des membres, propositions (cartes et/ou ressources, ce qu'on donne est mis de côté),
+    **enchères** de 24 h en argent (offre mise de côté dans `esc`, rendue si dépassée ; le vendeur valide quand il veut, sinon la plus
+    haute gagne) ; tout dans la collection Firestore `tcgx` (ty trade / auc / duel), règlement automatique (`settle`) à chaque mise à jour.
 - Notes : demi-étoiles de 0 à 5,5 (`RMAX`, `fmtR`, `stars`, `ratePick` / `pickRate` de util.js ; 6e étoile orange = bonus).
 - Historique : `g_<id>` = note d'un segment, `q_<id>` = segment préféré (comment = nom du show) ; préfixes m_/s_/f_/g_/q_ exclus
   des compteurs de shows (spoil.js, trophies.js, account.js). Profil : « Ses segments préférés ».
@@ -134,7 +152,7 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   bouton, le modo voit l'app comme un membre. Toujours tester avec `S.isAdmin` pour afficher une option de modification.
 - Accueil : aujourd'hui / cette nuit (6 h–18 h = aujourd'hui, 19 h–5 h = cette nuit), vient de sortir, programme, prochain PLE
   (WWE) ou PPV (autres, `bigWord`), infos. Communauté (sondages, pronostics, storyline, activité) dans l'onglet Membres ;
-  Explorer, TCC Play, tournois et « à découvrir » dans l'onglet Recherche. « Draw » au lieu de « Match nul ».
+  Matchs à découvrir aussi sur l'accueil ; rubrique Recherche en bas de l'accueil (barre, catcheur à découvrir, Explorer). « Draw » au lieu de « Match nul ».
 - Babies : sans choix du modo, 8 catcheuses tirées au hasard dans les rosters féminins (même tirage pour tout le mois).
 - Clans / équipes : le modo les ajoute, modifie, supprime depuis la fiche d'un groupe (data/groups.json via GitHub).
 - Vitrine : jusqu'à 5 trophées (`tro.v1`…`v5`). Appui long sur une note de son profil pour la modifier.
@@ -149,7 +167,8 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   `push/{uid}` ; bandeau « Installer l'app ». `data/push.json` = { vapid (clé publique), url (service Cloudflare) }.
 - `cloudflare/` : service des notifications instantanées (messages privés, feuds, annonces), installé par
   `.github/workflows/push-worker.yml`. `cloudflare/push-core.mjs` est partagé avec le robot.
-- `firestore.rules` : règles (version 10 : notes = nombre de 0 à 5,5 ; collection `tcg`). À chaque changement, donner le texte complet à Jose pour qu'il le colle
+- `firestore.rules` : règles (version 11 : collection `tcgx` pour échanges / enchères / défis, champs `name` et `esc` de `tcg` ;
+  version 10 : notes = nombre de 0 à 5,5). À chaque changement, donner le texte complet à Jose pour qu'il le colle
   dans Firebase › Firestore › Règles › Publier.
 
 ## Consignes pour les tâches planifiées (à suivre à chaque passage, en plus de leur propre consigne)

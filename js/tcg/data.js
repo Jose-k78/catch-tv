@@ -74,8 +74,10 @@ function guessArch(name, w, al) {
 }
 // ---------- toutes les cartes de base (un catcheur = une carte) ----------
 let BASE = null, BKEY = "";
+// même nom de fichier que le robot des photos : quand Jose ajoute la photo, la carte garde son identifiant
+export const slugOf = s => String(s).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/&/g, "-and-").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "carte";
 export function baseCards() {
-  const c = cfg(), key = Object.keys(S.photos || {}).length + "|" + (S.titles || []).length + "|" + Object.keys(S.wrestlers || {}).length + "|" + Object.keys(S.finishers || {}).length + "|" + JSON.stringify(c.cards || {}).length + "|" + (c.custom || []).length;
+  const c = cfg(), key = Object.keys(S.photos || {}).length + "|" + (S.titles || []).length + "|" + Object.keys(S.wrestlers || {}).length + "|" + Object.keys(S.finishers || {}).length + "|" + JSON.stringify(c.cards || {}).length + "|" + (c.custom || []).length + "|" + Object.keys(S.rosters || {}).length;
   if (BASE && BKEY === key) return BASE;
   const champs = champsNow();
   const roster = new Map(); Object.keys(S.rosters || {}).forEach(k => Object.keys(S.rosters[k] || {}).forEach(g => (S.rosters[k][g] || []).forEach(n => { if (!roster.has(norm(n))) roster.set(norm(n), { k: k, g: g }); })));
@@ -90,13 +92,32 @@ export function baseCards() {
     score += Math.min(3, pal.reduce((a, x) => a + (x.x || 1), 0) * 0.6) + Math.min(2, gs.cur.length + gs.past.length * 0.5) + (ro ? 1 : 0) + (w && w.dc ? 2 : 0) + (hashN(name) % 100) / 1000;
     list.push({ id: slug, name: name, pic: photoOf(name), k: (w && w.k) || (ro && ro.k) || "", score: score, al: (al && al.k) || "", inj: !!(al && al.inj), w: w, gs: gs, years: y ? y + "–" : "" });
   });
+  // catcheurs sans photo (rosters et fiches) : carte vide, le modo mettra l'image
+  const seen = new Set(), ids = new Set(list.map(x => x.id));
+  list.forEach(x => { seen.add(norm(x.name)); ((S.photos[x.id] || {}).n || []).forEach(a => seen.add(norm(a))); if (x.w && Array.isArray(x.w.a)) x.w.a.forEach(a => seen.add(norm(a))); });
+  const extra = []; roster.forEach((v, n) => extra.push(n)); Object.keys(S.wrestlers || {}).forEach(nm => extra.push(norm(nm)));
+  const realName = new Map(); Object.keys(S.rosters || {}).forEach(k => Object.keys(S.rosters[k] || {}).forEach(g => (S.rosters[k][g] || []).forEach(nm => { if (!realName.has(norm(nm))) realName.set(norm(nm), nm); }))); Object.keys(S.wrestlers || {}).forEach(nm => realName.set(norm(nm), nm));
+  extra.forEach(n => {
+    if (seen.has(n)) return; seen.add(n);
+    const name = realName.get(n); if (!name) return;
+    const w = wInfo(name); if (w && Array.isArray(w.a) && w.a.some(a => seen.has(norm(a)))) return;
+    let id = slugOf(name); while (ids.has(id)) id += "-2"; ids.add(id);
+    const ro = roster.get(n), al = alignOf(name), gs = groupsOf(name), pal = palmaresOf(name);
+    let score = 0; if (w) score += 3; if (champs.has(n)) score += 2.5;
+    const y = parseInt((String((w && (w.era || w.debut)) || "").match(/(19|20)\d{2}/) || [])[0], 10); if (y) score += Math.min(4, (2026 - y) / 4);
+    score += Math.min(3, pal.reduce((a, x) => a + (x.x || 1), 0) * 0.6) + Math.min(2, gs.cur.length + gs.past.length * 0.5) + (ro ? 1 : 0) + (hashN(name) % 100) / 1000;
+    list.push({ id: id, name: name, pic: "", nopic: true, k: (w && w.k) || (ro && ro.k) || "", score: score, al: (al && al.k) || "", inj: !!(al && al.inj), w: w, gs: gs, years: y ? y + "–" : "" });
+  });
   (c.custom || []).forEach(x => { if (x && x.id && x.name) list.push({ id: x.id, name: x.name, pic: x.img || "", k: x.k || "", score: -1, al: x.al || "", custom: true, w: null, gs: { cur: [], past: [] }, years: x.years || "" }); });
   // rareté de base selon le rang de célébrité : 2 % SSR à potentiel LR, 8 % SSR, 20 % SR, 35 % R, le reste N
+  // (le rang se calcule sur les cartes avec photo ; une carte sans photo prend la rareté de son score)
   list.sort((a, b) => b.score - a.score);
-  const N = list.filter(x => !x.custom).length, cut = [0.02, 0.10, 0.30, 0.65].map(p => Math.round(N * p));
+  const PH = list.filter(x => !x.custom && !x.nopic), N = PH.length, cut = [0.02, 0.10, 0.30, 0.65].map(p => Math.round(N * p));
+  const th = cut.map(k => (PH[Math.max(0, k - 1)] || { score: 0 }).score);
   let i = 0;
   list.forEach(x => {
     if (x.custom) { x.r = "N"; return; }
+    if (x.nopic) { x.r = x.score >= th[1] ? "SSR" : x.score >= th[2] ? "SR" : x.score >= th[3] ? "R" : "N"; x.lrPot = x.score >= th[0]; return; }
     x.r = i < cut[1] ? "SSR" : i < cut[2] ? "SR" : i < cut[3] ? "R" : "N"; x.lrPot = i < cut[0]; i++;
   });
   list.forEach(x => {
@@ -105,7 +126,7 @@ export function baseCards() {
     x.max = RAR.indexOf(ov.max) >= 0 ? ov.max : x.lrPot ? "LR" : MAXR[x.r];
     if (RAR.indexOf(x.max) < RAR.indexOf(x.r)) x.max = x.r;
     x.arch = ARCH[ov.arch] ? ov.arch : guessArch(x.name, x.w, x.al);
-    if (ov.img) x.pic = ov.img;
+    if (ov.img) { x.pic = ov.img; x.nopic = false; }
     if (ov.al) x.al = ov.al;
     x.buff = +ov.buff || 0; // en % (buff / nerf du modo)
     // 5 stats de base (somme selon la rareté de base, répartie selon l'archétype)

@@ -4,7 +4,8 @@ import { esc, toast, modal } from "../util.js";
 import { parisDay } from "../time.js";
 import { items, itemById, defOf, showKeyLabel } from "./data.js";
 import { recentShows } from "./callup.js";
-import { fightShows } from "./fight.js";
+import { fightShows, resumeHome } from "./fight.js";
+import { pendingCount, duelsForMe } from "./trade.js";
 import { me, commit, owned, XP_LV } from "./store.js";
 import { cardHTML } from "./card.js";
 import { resBar } from "./roster.js";
@@ -25,20 +26,24 @@ export function tccgHome() {
   if (!d.tuto) setTimeout(tuto, 300);
   const lead = (d.fav[0] && d.cards[d.fav[0]] && Object.assign({ iid: d.fav[0] }, d.cards[d.fav[0]])) || L.sort((a, b) => ["N", "R", "SR", "SSR", "UR", "LR"].indexOf(b.r) - ["N", "R", "SR", "SSR", "UR", "LR"].indexOf(a.r) || b.lv - a.lv)[0];
   const ld = lead && defOf(lead.c), shows = recentShows(7), nf = fightShows().reduce((n, x) => n + x.matches.length, 0);
-  const lines = [free ? "Ton booster gratuit t’attend dans Call Up !" : "", shows[0] ? "Le booster « " + showKeyLabel(shows[0]) + " » est sorti !" : "", nf ? nf + " combats t’attendent cette semaine." : "", ld ? "On va leur montrer qui est " + (ld.name.split(" ")[0]) + " !" : "Ouvre ton premier booster pour recruter ton catcheur."].filter(Boolean);
-  const say = lines[Math.floor(Date.now() / 6e4) % lines.length];
-  let h = headerHTML(d);
+  const np = pendingCount(), duels = duelsForMe();
+  const lines = [np ? np + " proposition" + (np > 1 ? "s" : "") + " d’échange t’attend" + (np > 1 ? "ent" : "") + " !" : "", free ? "Ton booster gratuit t’attend dans Call Up !" : "", shows[0] ? "Le booster « " + showKeyLabel(shows[0]) + " » est sorti !" : "", nf ? nf + " combats t’attendent cette semaine." : "", ld ? "On va leur montrer qui est " + (ld.name.split(" ")[0]) + " !" : "Ouvre ton premier booster pour recruter ton catcheur."].filter(Boolean);
+  const say = np ? lines[0] : lines[Math.floor(Date.now() / 6e4) % lines.length];
+  let h = headerHTML(d) + resumeHome();
   h += '<section class="thero"' + (ld ? ' style="--hp:url(\'' + esc(ld.pic) + '\')"' : "") + ">" + (ld ? '<div class="thcard">' + cardHTML(lead, { small: true, act: "tcgcard", iid: lead.iid }) + "</div>" : '<div class="thempty">🃏</div>') +
     '<div class="tbubble">' + esc(say) + "</div>" + (ld ? '<span class="thname">' + esc(ld.name) + "</span>" : "") + "</section>";
   // bannières
   const ban = [];
   if (free) ban.push('<a class="tban gift" href="#/tccg/callup"><b>🎁 Booster gratuit</b><small>N et R · chaque jour</small></a>');
   shows.slice(0, 3).forEach(k => ban.push('<a class="tban" href="#/tccg/callup"><b>🎴 ' + esc(showKeyLabel(k)) + "</b><small>Nouveau booster · " + esc(k.split("|")[0]) + "</small></a>"));
-  ban.push('<a class="tban dark" href="#/tccg/combats"><b>🌑 Dark Match</b><small>Gagne de l’argent pour t’entraîner</small></a>');
+  if (np) ban.unshift('<a class="tban gift" href="#/tccg/echange/props"><b>🤝 ' + np + " échange" + (np > 1 ? "s" : "") + "</b><small>Des membres te proposent un échange</small></a>");
+  ban.push('<a class="tban" href="#/tccg/echange/encheres" style="background:linear-gradient(120deg,#2a0f3a,#8a3fd0)"><b>🔨 Enchères</b><small>Achète et vends des cartes</small></a>');
+  ban.push('<a class="tban dark" href="#/tccg/combats"><b>🌑 Dark Match · 👥 Défis</b><small>Gagne de l’argent, défie les autres membres</small></a>');
   h += '<div class="tbans">' + ban.join("") + "</div>";
   h += '<div class="tcenter"><a class="tround" href="#/tccg/callup">🎴<small>Call Up</small></a><button class="tround" data-act="tcgmis">📋<small>Missions</small></button>' +
     '<a class="tbig" href="#/tccg/combats">⚔️<b>COMBATS</b></a>' +
     '<a class="tround" href="#/tccg/roster">🃏<small>Roster</small></a>' + (S.isAdmin ? '<a class="tround" href="#/tccg/modo">⚙️<small>Modo</small></a>' : '<button class="tround" data-act="tcgtuto">ℹ️<small>Info</small></button>') + "</div>";
+  if (duels.length) h += "<h2>Défis reçus</h2>" + '<div class="list">' + duels.map(x => '<div class="item"><span class="lbl"><b>⚔️ ' + esc(x.fromName || "Un membre") + (x.win ? " a battu ton équipe" : " a perdu contre ton équipe") + "</b><small>" + x.n + " contre " + x.n + " · " + esc(({ low: "Low", mid: "Mid", top: "Top" })[x.diff] || "") + "</small></span></div>").join("") + "</div>";
   const favs = d.fav.slice(1).map(iid => d.cards[iid] && Object.assign({ iid: iid }, d.cards[iid])).filter(Boolean);
   if (favs.length) h += "<h2>Mes cartes favorites</h2>" + '<div class="tfavs">' + favs.map(x => cardHTML(x, { small: true, act: "tcgcard", iid: x.iid })).join("") + "</div>";
   h += '<p class="tnote" style="text-align:center">' + d.wins + " victoire" + (d.wins > 1 ? "s" : "") + " · " + d.opened + " booster" + (d.opened > 1 ? "s" : "") + " ouvert" + (d.opened > 1 ? "s" : "") + " · " + L.length + " cartes" + ' · <button class="linkbtn" data-act="tcgtuto">Revoir le tuto</button></p>';

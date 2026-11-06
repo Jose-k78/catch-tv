@@ -2,8 +2,8 @@
 // 2 contre 2 par élimination, 3 TAG pour chacun (l'IA aussi). Système de mémoire (cahier) : pierre-feuille-ciseaux pour le
 // premier tour, 2 cases retournées par tour, paire = action ; PV = somme des 5 stats × 2 ; dégâts = stat × type ;
 // points de Finisher = stat ÷ 2 ; cases spéciales Finisher, Soin, Boost, Signature (×0,5). Même combat refaisable 1 h plus tard.
-import { S, ACT, changed } from "../state.js";
-import { esc, toast } from "../util.js";
+import { S, B as DB, ACT, changed, prof } from "../state.js";
+import { esc, toast, lsGet, modal } from "../util.js";
 import { parisDay } from "../time.js";
 import { RAR, STATS, ARCH, typeMult, defOf, statsOf, hpOf, baseCards, showMatches, showKeyLabel, cfg, items, itemById, linked, versionCard, cardById } from "./data.js";
 import { me, commit, owned, addCard, addXp, cardXp } from "./store.js";
@@ -15,8 +15,11 @@ const H = 36e5;
 const TIER = {
   low: { n: "Dark Match", money: [1200, 1800], mpp: [15, 25], gim: [2, 4], drop: 0.08, mem: 0.3, cxp: 60, pxp: 30, card: 0 },
   mid: { n: "Show de la semaine", money: [2000, 3000], mpp: [30, 45], gim: [4, 7], drop: 0.18, mem: 0.5, cxp: 100, pxp: 50, card: 0.03 },
-  top: { n: "PLE / PPV", money: [3500, 5000], mpp: [55, 80], gim: [7, 12], drop: 0.30, mem: 0.78, cxp: 160, pxp: 80, card: 0.08 }
+  top: { n: "PLE / PPV", money: [3500, 5000], mpp: [55, 80], gim: [7, 12], drop: 0.30, mem: 0.78, cxp: 160, pxp: 80, card: 0.08 },
+  duel: { n: "Défi entre membres", money: [1500, 1500], mpp: [15, 15], gim: [2, 2], drop: 0, mem: 0.5, cxp: 60, pxp: 40, card: 0 }
 };
+// 3 niveaux de difficulté pour tous les combats : Low = normal, Mid = adversaire un peu plus fort, Top = stats doublées
+export const DIFF = { low: { n: "Low", d: "Normal", st: 1, mem: 0, rew: 1 }, mid: { n: "Mid", d: "Adversaire un peu plus fort", st: 1.3, mem: 0.12, rew: 1.6 }, top: { n: "Top", d: "Stats de l’adversaire doublées", st: 2, mem: 0.25, rew: 2.6 } };
 const rnd = (a, b) => Math.round(a + Math.random() * (b - a));
 const cooldown = () => (cfg().fight && +cfg().fight.cool) || 60; // minutes
 
@@ -36,7 +39,8 @@ const leftTxt = ms => { const m = Math.ceil(ms / 6e4); return m >= 60 ? Math.flo
 
 export function fightsView() {
   const d = me(), F = fightShows(), dk = "dark";
-  let h = '<section class="tccghead"><h1>Combats</h1></section><p class="tnote">2 contre 2 par élimination, 3 TAG chacun. Choisis un match d’un show de la semaine : tu affrontes les cartes de ses catcheurs. Chaque combat se refait 1 h plus tard.</p>';
+  let h = '<section class="tccghead"><h1>Combats</h1></section>' + resumeBox() + '<p class="tnote">Choisis un match d’un show de la semaine, puis qui tu affrontes (1 contre 1, 2 contre 2, 3 contre 3…) et la difficulté : Low, Mid ou Top. 3 TAG chacun. Chaque combat se refait 1 h plus tard.</p>';
+  h += '<div class="tfcard duel"><b>👥 Défier un membre</b><small>Contre l’équipe d’un autre joueur, menée par l’IA · des ressources pour le gagnant, un peu pour le perdant</small><button class="btn small" data-act="tcgduels">Choisir</button></div>';
   h += '<div class="tfcard dark"><b>🌑 Dark Match</b><small>Contre des catcheurs au hasard · beaucoup d’argent, peu de MPP</small>' + (coolLeft(d, dk) ? '<span class="tcool">⏳ ' + leftTxt(coolLeft(d, dk)) + "</span>" : '<button class="btn small" data-act="tcgprep" data-k="' + dk + '">Combattre</button>') + "</div>";
   if (!F.length) h += '<p class="tnote">Pas de show de la semaine avec des résultats pour l’instant.</p>';
   F.forEach(s => {
@@ -47,52 +51,92 @@ export function fightsView() {
   });
   return h;
 }
-// adversaires d'un combat
+// adversaires possibles d'un combat (on choisit ensuite qui on affronte) : { tier, label, pool: [{ def, lv, src, inst }], key }
 function foesOf(k) {
-  if (k === "dark") { const N = baseCards().filter(c => c.r === "N" || c.custom); const a = N[Math.floor(Math.random() * N.length)], b = N[Math.floor(Math.random() * N.length)]; return { tier: "low", label: "Dark Match", foes: [a, b].map(c => ({ def: c, lv: 1 + Math.floor(Math.random() * 6) })) }; }
+  if (k === "dark") { const N0 = baseCards().filter(c => c.r === "N" || c.custom), N1 = N0.filter(c => c.pic), N = N1.length >= 6 ? N1 : N0, L = []; for (let i = 0; i < 6 && N.length; i++) { const c = N[Math.floor(Math.random() * N.length)]; if (L.indexOf(c) < 0) L.push(c); } return { tier: "low", label: "Dark Match", pool: L.map(c => ({ def: c, lv: 1 + Math.floor(Math.random() * 6) })) }; }
+  if (k.indexOf("duel:") === 0) {
+    const uid = k.slice(5), o = (S.tcgAll || []).find(x => x.uid === uid); if (!o) return null;
+    const L = Object.keys(o.cards || {}).map(iid => Object.assign({ iid: iid }, o.cards[iid])).filter(x => defOf(x.c)).sort((a, b) => hpOf(statsOf(b)) - hpOf(statsOf(a))).slice(0, 8);
+    return { tier: "duel", label: "Défi contre " + (o.name || "un membre"), pool: L.map(x => ({ def: defOf(x.c), lv: x.lv || 1, inst: x })), uid: uid, oname: o.name || "" };
+  }
   const key = k.split("#")[0], i = +k.split("#")[1], s = fightShows().find(x => x.key === key); if (!s) return null;
   const m = s.matches[i]; if (!m) return null;
-  let L = m.cards.slice(0, 4);
-  // toujours 2 adversaires : un de chaque camp (1 contre 1 : les deux catcheurs), rangés par nom (pas de spoiler)
-  const two = (m.sides && m.sides[0][0] && m.sides[1][0] ? [m.sides[0][0], m.sides[1][0]] : L.slice(0, 2)).sort((x, y) => x.name.localeCompare(y.name));
-  const foes = two.map(c => ({ def: versionCard(c, key), lv: s.ple ? 12 + Math.floor(Math.random() * 10) : 3 + Math.floor(Math.random() * 8), src: c }));
-  if (foes.length === 1) { const o = baseCards().filter(c => c.k === key.split("|")[0]); foes.push({ def: o[Math.floor(Math.random() * o.length)], lv: 10 }); }
-  return { tier: s.ple ? "top" : "mid", label: showKeyLabel(key) + " · " + m.cards.map(c => c.name).slice(0, 4).join(" vs "), foes: foes, key: key, all: L };
+  // tous les catcheurs du match, rangés par nom (pas de spoiler)
+  const L = m.sides[0].concat(m.sides[1]).filter((c, j, a) => a.indexOf(c) === j).sort((x, y) => x.name.localeCompare(y.name));
+  const pool = L.map(c => ({ def: versionCard(c, key), lv: s.ple ? 12 + Math.floor(Math.random() * 10) : 3 + Math.floor(Math.random() * 8), src: c }));
+  if (pool.length === 1) { const o = baseCards().filter(c => c.k === key.split("|")[0]); pool.push({ def: o[Math.floor(Math.random() * o.length)], lv: 10 }); }
+  return { tier: s.ple ? "top" : "mid", label: showKeyLabel(key) + " · " + L.map(c => c.name).slice(0, 6).join(" · "), pool: pool, key: key };
 }
 
-// ---------- préparation : 2 cartes, soutiens, objets ----------
+// ---------- préparation : adversaires, difficulté, autant de cartes que d'adversaires, soutiens, objets ----------
 let prep = null;
 ACT.tcgprep = el => {
   const d = me(), L = owned(d);
-  if (L.length < 2) { toast("Il te faut au moins 2 cartes : ouvre ton booster gratuit du jour"); location.hash = "#/tccg/callup"; return; }
-  prep = { k: el.dataset.k, team: [], sup: [], items: [] };
+  if (L.length < 1) { toast("Il te faut au moins 1 carte : ouvre ton booster gratuit du jour"); location.hash = "#/tccg/callup"; return; }
+  const F = foesOf(el.dataset.k); if (!F) { toast("Combat introuvable"); return; }
+  prep = { k: el.dataset.k, F: F, foes: F.pool.length >= 2 ? [0, 1] : [0], team: [], sup: [], items: [], diff: "low" };
   location.hash = "#/tccg/combat-prep";
 };
 export function prepView() {
   if (!prep) return fightsView();
-  const d = me(), L = owned(d).sort((a, b) => hpOf(statsOf(b)) - hpOf(statsOf(a))), F = foesOf(prep.k);
-  if (!F) return '<p class="tnote">Combat introuvable.</p>';
+  const d = me(), L = owned(d).sort((a, b) => hpOf(statsOf(b)) - hpOf(statsOf(a))), F = prep.F, n = prep.foes.length;
   const combatItems = items().filter(x => x.t === "combat" && (d.items[x.id] || 0) > 0);
+  if (prep.team.length > n) prep.team = prep.team.slice(0, n);
   let h = '<a class="back" href="#/tccg/combats">‹ Combats</a><h1 style="margin:4px 16px">' + esc(F.label) + "</h1>" +
-    '<p class="tnote">Adversaires : ' + F.foes.map(f => esc(f.def.name) + " (Nv " + f.lv + ", " + esc(f.def.arch) + ")").join(" et ") + " · " + TIER[F.tier].n + "</p>" +
-    '<div class="tprepteam">' + [0, 1].map(i => { const iid = prep.team[i], x = iid && d.cards[iid]; return '<div class="tslot2">' + (x ? cardHTML(Object.assign({ iid: iid }, x), { small: true, act: "tcgpick", iid: iid }) : '<span>Catcheur ' + (i + 1) + "</span>") + "</div>"; }).join("") +
+    '<h2>1. Qui veux-tu affronter ? <small class="tsmall">' + n + " contre " + n + "</small></h2>" +
+    '<div class="tfoes">' + F.pool.map((f, i) => '<button class="tfoe' + (prep.foes.indexOf(i) >= 0 ? " on" : "") + '" data-act="tcgfoe" data-i="' + i + '"><span class="tfface" style="background-image:url(\'' + esc(f.def.pic || "") + '\')"></span><b>' + esc(f.def.name) + "</b><small>Nv " + f.lv + " · " + esc(f.def.arch) + "</small></button>").join("") + "</div>" +
+    '<h2>2. Difficulté</h2><div class="tdiff">' + Object.keys(DIFF).map(k => '<button class="tdf ' + k + (prep.diff === k ? " on" : "") + '" data-act="tcgdiff" data-v="' + k + '"><b>' + DIFF[k].n + "</b><small>" + esc(DIFF[k].d) + (DIFF[k].rew > 1 ? " · gains ×" + String(DIFF[k].rew).replace(".", ",") : "") + "</small></button>").join("") + "</div>" +
+    "<h2>3. Ton équipe <small class=\"tsmall\">" + prep.team.length + " / " + n + "</small></h2>" +
+    '<div class="tprepteam">' + Array.from({ length: n }, (_, i) => { const iid = prep.team[i], x = iid && d.cards[iid]; return '<div class="tslot2">' + (x ? cardHTML(Object.assign({ iid: iid }, x), { small: true, act: "tcgpick", iid: iid }) : '<span>Catcheur ' + (i + 1) + "</span>") + "</div>"; }).join("") +
     '<div class="tslot2 sup">' + [0, 1].map(i => { const iid = prep.sup[i], x = iid && d.cards[iid]; return x ? cardHTML(Object.assign({ iid: iid }, x), { small: true, act: "tcgpick", iid: iid }) : '<span>Soutien</span>'; }).join("") + "</div></div>" +
-    '<p class="tnote">Touche une carte ci-dessous : d’abord tes 2 catcheurs, puis jusqu’à 2 soutiens (bonus +10 % si même équipe ou faction).</p>';
+    '<p class="tnote">Touche une carte ci-dessous : d’abord tes ' + n + " catcheur" + (n > 1 ? "s" : "") + ", puis jusqu’à 2 soutiens (bonus +10 % si même équipe ou faction).</p>";
+  if (L.length < n) h += '<p class="tnote">Il te faut ' + n + " cartes pour un " + n + " contre " + n + " : choisis moins d’adversaires.</p>";
   if (combatItems.length) h += '<div class="tfilt">' + combatItems.map(x => '<button class="chip' + (prep.items.indexOf(x.id) >= 0 ? " on" : "") + '" data-act="tcgitem" data-id="' + x.id + '">' + esc(x.ic + " " + x.n) + " ×" + d.items[x.id] + "</button>").join("") + "</div>";
-  h += '<button class="btn wide" style="margin:8px 16px;width:calc(100% - 32px)" data-act="tcgfight"' + (prep.team.length === 2 ? "" : " disabled") + ">⚔️ Lancer le combat</button>";
+  h += '<button class="btn wide" style="margin:8px 16px;width:calc(100% - 32px)" data-act="tcgfight"' + (prep.team.length === n && n ? "" : " disabled") + ">⚔️ Lancer le combat</button>";
   h += '<div class="trgrid">' + L.filter(x => prep.team.indexOf(x.iid) < 0 && prep.sup.indexOf(x.iid) < 0).map(x => cardHTML(x, { small: true, act: "tcgpick", iid: x.iid })).join("") + "</div>";
   return h;
 }
+ACT.tcgfoe = el => { if (!prep) return; const i = +el.dataset.i, j = prep.foes.indexOf(i); if (j >= 0) { if (prep.foes.length > 1) prep.foes.splice(j, 1); } else prep.foes.push(i); prep.foes.sort((a, b) => a - b); changed("tcg"); };
+ACT.tcgdiff = el => { if (prep && DIFF[el.dataset.v]) { prep.diff = el.dataset.v; changed("tcg"); } };
 ACT.tcgpick = el => {
-  if (!prep) return; const iid = el.dataset.iid;
+  if (!prep) return; const iid = el.dataset.iid, n = prep.foes.length;
   if (prep.team.indexOf(iid) >= 0) prep.team = prep.team.filter(x => x !== iid);
   else if (prep.sup.indexOf(iid) >= 0) prep.sup = prep.sup.filter(x => x !== iid);
-  else if (prep.team.length < 2) prep.team.push(iid);
+  else if (prep.team.length < n) prep.team.push(iid);
   else if (prep.sup.length < 2) prep.sup.push(iid);
   else toast("Équipe complète : touche une carte choisie pour la retirer");
   changed("tcg");
 };
 ACT.tcgitem = el => { if (!prep) return; const id = el.dataset.id, i = prep.items.indexOf(id); if (i >= 0) prep.items.splice(i, 1); else if (prep.items.length < 2) prep.items.push(id); else toast("2 objets au plus"); changed("tcg"); };
+// ---------- défier un membre ----------
+ACT.tcgduels = () => {
+  modal((box, close) => {
+    const draw = () => {
+      const L = (S.tcgAll || []).filter(o => o.uid !== (S.user && S.user.uid) && Object.keys(o.cards || {}).length >= 1), d = me();
+      box.innerHTML = "<h3>👥 Défier un membre</h3>" + (S.tcgAll ? (L.length ? '<div class="list">' + L.map(o => { const k = "duel:" + o.uid, cl = coolLeft(d, k), p = prof(o.uid);
+        return '<div class="item"><span class="lbl"><b>' + esc(o.name || (p && p.pseudo) || "Joueur") + "</b><small>Niveau " + (o.lvl || 1) + " · " + Object.keys(o.cards || {}).length + " cartes · " + (o.wins || 0) + " victoires</small></span>" + (cl ? '<span class="tcool">⏳ ' + leftTxt(cl) + "</span>" : '<button class="btn small" data-k="' + esc(k) + '">Défier</button>') + "</div>"; }).join("") + "</div>" : '<p class="tnote">Personne d’autre n’a encore de cartes.</p>') : '<p class="tnote">Chargement…</p>') +
+        '<button class="btn wide ghost" style="margin-top:10px" data-close>Fermer</button>';
+    };
+    draw(); loadAll().then(draw);
+    box.addEventListener("click", e => { if (e.target.closest("[data-close]")) return close(); const b = e.target.closest("[data-k]"); if (b) { close(); ACT.tcgprep({ dataset: { k: b.dataset.k } }); } });
+  });
+};
+export const loadAll = () => DB.listTcg ? DB.listTcg().then(L => { S.tcgAll = L || []; changed("tcg"); return S.tcgAll; }).catch(() => { S.tcgAll = S.tcgAll || []; return S.tcgAll; }) : Promise.resolve([]);
+// ---------- combat en cours : gardé sur le téléphone, on peut quitter et reprendre ----------
+const SKEY = () => "ctv.tcgfight." + ((S.user && S.user.uid) || "x");
+function persist() { if (!B || B.over) return; try { localStorage.setItem(SKEY(), JSON.stringify(Object.assign({}, B, { fx: [], open: [], busy: false, saved: Date.now() }), (k, v) => (k === "def" && v && typeof v === "object" ? v.id : v))); } catch (e) {} }
+function dropSave() { try { localStorage.removeItem(SKEY()); } catch (e) {} }
+function savedFight() { try { const o = JSON.parse(lsGet(SKEY()) || "null"); if (!o || Date.now() - (o.saved || 0) > 3 * 864e5) return null; return o; } catch (e) { return null; } }
+function restore() {
+  const o = savedFight(); if (!o) return false;
+  let ok = true; ["P", "E"].forEach(s => (o[s].team || []).forEach(f => { f.def = defOf(f.def); if (!f.def) ok = false; }));
+  if (!ok) { dropSave(); return false; }
+  o.fx = []; o.open = []; o.busy = false; B = o; return true;
+}
+function resumeBox() { const o = savedFight(); return o ? '<div class="tfcard resume"><b>⏸️ Combat en cours</b><small>' + esc((o.F && o.F.label) || "") + '</small><span class="repbtns"><button class="btn small" data-act="tcgresume">Reprendre</button><button class="btn small ghost" data-act="tcgdrop">Abandonner</button></span></div>' : ""; }
+export const resumeHome = resumeBox;
+ACT.tcgresume = () => { if (!B && !restore()) { toast("Plus de combat en cours"); changed("tcg"); return; } location.hash = "#/tccg/combat"; SFX.unlock(); SFX.crowd(true); SFX.music(true); setTimeout(() => { if (B && B.turn === "E" && !B.over) aiTurn(); }, 1200); };
+ACT.tcgdrop = () => { if (!B) restore(); if (B && !B.over) end(false, true); else { dropSave(); changed("tcg"); } };
 
 // ---------- le combat ----------
 const PAIRS = ["fo", "ag", "ch", "en", "te", "fin", "soin", "boost", "sig", "x"];
@@ -112,15 +156,16 @@ function newGrid() {
   return g;
 }
 ACT.tcgfight = () => {
-  if (!prep || prep.team.length < 2) return;
-  const d = me(), F = foesOf(prep.k); if (!F) return;
+  if (!prep || !prep.foes.length || prep.team.length !== prep.foes.length) return;
+  const d = me(), F = prep.F, DF = DIFF[prep.diff] || DIFF.low, foes = prep.foes.map(i => F.pool[i]).filter(Boolean);
   const sups = prep.sup.map(iid => d.cards[iid] && defOf(d.cards[iid].c)).filter(Boolean);
   const mult = (cfg().fight && +cfg().fight.ai) || 1;
-  B = { k: prep.k, F: F, tier: F.tier, mem: Math.min(0.95, TIER[F.tier].mem * mult),
+  B = { k: prep.k, F: { label: F.label, key: F.key || "", uid: F.uid || "", oname: F.oname || "", src: foes.map(f => f.src ? f.src.id : "") }, tier: F.tier, diff: prep.diff, n: foes.length, mem: Math.min(0.97, TIER[F.tier].mem * mult + DF.mem),
     P: { team: prep.team.map(iid => fighter(defOf(d.cards[iid].c), d.cards[iid].lv, Object.assign({ iid: iid }, d.cards[iid]), sups)), a: 0, tags: 3, fin: 0, boost: 1, stun: false },
-    E: { team: F.foes.map(f => fighter(f.def, f.lv, null, [])), a: 0, tags: 3, fin: 0, boost: 1, stun: false },
+    E: { team: foes.map(f => fighter(f.def, f.lv, f.inst || null, [])), a: 0, tags: 3, fin: 0, boost: 1, stun: false },
     items: prep.items.slice(), used: [], grid: newGrid(), open: [], known: {}, turn: "", first: true, log: "Pierre, feuille ou ciseaux ?", busy: false, over: false };
-  if (B.tier === "top") B.E.team.forEach(f => { f.st = f.st.map(v => Math.round(v * 1.08)); f.hp = f.max = hpOf(f.st); });
+  const boostE = (B.tier === "top" ? 1.08 : 1) * DF.st;
+  if (boostE !== 1) B.E.team.forEach(f => { f.st = f.st.map(v => Math.round(v * boostE)); f.hp = f.max = hpOf(f.st); });
   B.fx = []; SFX.unlock();
   location.hash = "#/tccg/combat";
   setTimeout(intro, 120);
@@ -172,15 +217,15 @@ const act = s => B[s].team[B[s].a];
 const alive = s => B[s].team.filter(f => f.hp > 0);
 function hpBar(f, on) { return '<div class="tfgt' + (on ? " on" : "") + (f.hp <= 0 ? " ko" : "") + '"><span class="tfmini" style="background-image:url(\'' + esc(f.def.pic) + '\')"></span><div><b>' + esc(f.def.name) + "</b>" + (f.linked ? ' <small class="tlink">lié +10 %</small>' : "") + '<i class="hp"><i style="width:' + Math.max(0, f.hp / f.max * 100) + '%"></i></i><small>' + Math.max(0, f.hp) + " / " + f.max + " PV · " + esc(f.def.arch) + "</small></div></div>"; }
 export function combatView() {
-  if (!B) return fightsView();
+  if (!B && !restore()) return fightsView();
   const P = B.P, E = B.E;
   const bg = (cfg().assets || {}).fightbg;
   let h = '<div class="tbattle"' + (bg ? ' style="background-image:linear-gradient(rgba(5,4,3,.55),rgba(5,4,3,.8)),url(\'' + esc(bg) + '\')"' : "") + ">" +
     '<div class="tside foe">' + E.team.map((f, i) => hpBar(f, i === E.a)).join("") + '<div class="tfin"><i style="width:' + Math.min(100, E.fin) + '%"></i></div><small>TAG ' + E.tags + "</small></div>" +
-    '<div class="tlog">' + esc(B.log) + "</div>";
+    '<div class="tlog">' + esc(B.log) + (B.diff && B.diff !== "low" ? ' <span class="tdtag ' + B.diff + '">' + DIFF[B.diff].n + "</span>" : "") + "</div>";
   if (!B.turn) h += '<div class="trps">' + [["p", "✊"], ["f", "✋"], ["c", "✌️"]].map(x => '<button data-act="tcgrps" data-v="' + x[0] + '">' + x[1] + "</button>").join("") + "</div>";
   else h += '<div class="tgrid' + (B.turn === "P" ? " myturn" : "") + '">' + B.grid.map((c, i) => { const t = c.t === "x" ? "fo" : c.t;
-    return '<button class="tcell' + (c.done ? " done" : B.open.indexOf(i) >= 0 || c.peek ? " open" : "") + '" data-act="tcgflip" data-i="' + i + '"' + (c.done ? " disabled" : "") + '><span class="tcf tback"><span class="tcb">TCCCG</span></span><span class="tcf tfront c-' + t + '"><span>' + PICO[t] + "</span><small>" + PNAME[t] + "</small></span></button>"; }).join("") + "</div>";
+    return '<button class="tcell' + (c.done ? " done" : B.open.indexOf(i) >= 0 || c.peek ? " open" : c.seen ? " seen" : " fresh") + '" data-act="tcgflip" data-i="' + i + '"' + (c.done ? " disabled" : "") + '><span class="tcf tback"><span class="tcb">TCCCG</span></span><span class="tcf tfront c-' + t + '"><span>' + PICO[t] + "</span><small>" + PNAME[t] + "</small></span></button>"; }).join("") + "</div>";
   h += '<div class="tside me"><div class="tfin"><i style="width:' + Math.min(100, P.fin) + '%"></i></div>' + P.team.map((f, i) => hpBar(f, i === P.a)).join("") + "</div>" +
     '<div class="tbtns"><button class="btn small" data-act="tcgtag"' + (P.tags && alive("P").length > 1 && B.turn === "P" && !B.busy ? "" : " disabled") + ">🔄 TAG (" + P.tags + ")</button>" +
     '<button class="btn small fin" data-act="tcgfin"' + (P.fin >= 100 && B.turn === "P" && !B.busy ? "" : " disabled") + ">🔥 " + esc(act("P").def.fin.n) + "</button>" +
@@ -188,7 +233,7 @@ export function combatView() {
     '<button class="btn small ghost" data-act="tcgquit">Abandonner</button></div></div>';
   return h;
 }
-const redraw = () => { changed("tcg"); runFx(); };
+const redraw = () => { changed("tcg"); runFx(); persist(); };
 function say(t) { B.log = t; }
 ACT.tcgrps = el => {
   const me_ = el.dataset.v, ai = ["p", "f", "c"][Math.floor(Math.random() * 3)], ic = { p: "✊", f: "✋", c: "✌️" };
@@ -234,13 +279,13 @@ function finisher(side) {
   say((side === "P" ? "🔥 " : "🔥 " + a.def.name + " : ") + a.def.fin.n + " ! " + v + " dégâts" + extra);
 }
 function peek(ms) { B.grid.forEach(c => { if (!c.done) c.peek = true; }); redraw(); setTimeout(() => { if (!B) return; B.grid.forEach(c => { c.peek = false; }); redraw(); }, ms); }
-function reshuffle() { const idx = B.grid.map((c, i) => c.done ? -1 : i).filter(i => i >= 0), vals = idx.map(i => B.grid[i]); for (let i = vals.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [vals[i], vals[j]] = [vals[j], vals[i]]; } idx.forEach((gi, j) => { B.grid[gi] = vals[j]; }); B.known = {}; }
+function reshuffle() { const idx = B.grid.map((c, i) => c.done ? -1 : i).filter(i => i >= 0), vals = idx.map(i => B.grid[i]); for (let i = vals.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [vals[i], vals[j]] = [vals[j], vals[i]]; } idx.forEach((gi, j) => { B.grid[gi] = vals[j]; vals[j].seen = false; }); B.known = {}; }
 function afterPair() { if (B.grid.every(c => c.done)) { B.grid = newGrid(); B.known = {}; say(B.log + " · nouvelles cases !"); } }
 function flip(i, side) {
   if (!B || B.over || B.busy) return;
   const c = B.grid[i]; if (!c || c.done || B.open.indexOf(i) >= 0) return;
-  B.open.push(i); B.known[i] = c.t;
-  const cel = document.querySelector('.tcell[data-i="' + i + '"]'); if (cel) cel.classList.add("open"); else redraw();
+  B.open.push(i); B.known[i] = c.t; c.seen = true;
+  const cel = document.querySelector('.tcell[data-i="' + i + '"]'); if (cel) { cel.classList.remove("fresh", "seen"); cel.classList.add("open"); } else redraw();
   if (B.open.length < 2) return;
   const [x, y] = B.open; B.busy = true;
   setTimeout(() => {
@@ -310,10 +355,13 @@ function aiTurn() {
 function end(win, quit) {
   if (B.over) return true; B.over = true;
   const T = TIER[B.tier], rew = { money: 0, mom: 0, pop: 0, push: 0, gim: 0, items: [], cards: [], xp: 0, up: 0 };
-  if (win) { rew.money = rnd(T.money[0], T.money[1]); const m = rnd(T.mpp[0], T.mpp[1]); rew.mom = rew.pop = rew.push = m; rew.gim = rnd(T.gim[0], T.gim[1]); rew.xp = T.pxp;
+  const gm = (DIFF[B.diff] || DIFF.low).rew * (0.5 + 0.25 * (B.n || 2)); // gains : difficulté et nombre d'adversaires
+  if (win) { rew.money = Math.round(rnd(T.money[0], T.money[1]) * gm); const m = Math.round(rnd(T.mpp[0], T.mpp[1]) * gm); rew.mom = rew.pop = rew.push = m; rew.gim = Math.round(rnd(T.gim[0], T.gim[1]) * gm); rew.xp = Math.round(T.pxp * gm);
     if (Math.random() < T.drop) { const I = items(), w = { C: 50, R: 28, E: 14, L: 6, M: 2 }; const pool = []; I.forEach(x => { const n = x.t === "combat" ? 10 : w[x.g] || 5; for (let i = 0; i < n; i++) pool.push(x.id); }); rew.items.push(pool[Math.floor(Math.random() * pool.length)]); }
-    if (B.F.key && T.card) B.F.all.slice(0, 2).forEach(c => { if (Math.random() < T.card) rew.cards.push(c.id + "@" + B.F.key); });
-  } else if (!quit) { rew.money = Math.round(T.money[0] * 0.2); rew.xp = Math.round(T.pxp / 3); }
+    if (B.F.key && T.card) (B.F.src || []).filter(Boolean).forEach(id => { if (Math.random() < T.card * (DIFF[B.diff] || DIFF.low).rew) rew.cards.push(id + "@" + B.F.key); });
+  } else if (!quit) { rew.money = Math.round(T.money[0] * (B.tier === "duel" ? 0.27 : 0.2)); if (B.tier === "duel") rew.mom = rew.pop = rew.push = 5; rew.xp = Math.round(T.pxp / 3); }
+  dropSave();
+  if (B.tier === "duel" && B.F.uid && !quit && DB.addTcgx && S.user) DB.addTcgx({ ty: "duel", from: S.user.uid, to: B.F.uid, fromName: String((S.profile && S.profile.pseudo) || "Joueur").slice(0, 30), toName: String(B.F.oname || "").slice(0, 30), win: !!win, diff: B.diff || "low", n: B.n || 2 }).catch(() => {});
   const k = B.k, team = B.P.team;
   commit(d => {
     ["money", "mom", "pop", "push", "gim"].forEach(r => { d.res[r] += rew[r]; });
@@ -338,7 +386,7 @@ function victory(win, rew, quit) {
   document.body.appendChild(ov);
   ov.addEventListener("click", e => { if (e.target.closest("[data-close]")) { ov.remove(); B = null; prep = null; SFX.crowd(false); SFX.music(false); } });
 }
-// petite fanfare de victoire (ou thème de défaite) jouée par l'app
+// (ancienne) petite fanfare de victoire (ou thème de défaite) jouée par l'app
 function fanfare(win) {
   try {
     const C = new (window.AudioContext || window.webkitAudioContext)(), N = win ? [523, 659, 784, 1047, 784, 1047] : [392, 349, 311, 262], dur = win ? 0.16 : 0.32;

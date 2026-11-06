@@ -378,3 +378,12 @@ export function setHofMonth(month, rec) { const p = {}; p["months." + month] = r
 // ---- TCCCG : partie de chaque joueur (cartes, ressources, niveau) ----
 export function watchTcg(uid, cb) { return F.onSnapshot(F.doc(db, "tcg", uid), s => cb(s.exists() ? data(s) : null), () => cb(null)); }
 export function saveTcg(uid, d) { return F.setDoc(F.doc(db, "tcg", uid), Object.assign({}, d, { at: F.serverTimestamp() })); }
+// ---- TCCCG entre membres : parties des autres (rosters), échanges, enchères, défis (collection tcgx) ----
+export async function listTcg() { const r = await F.getDocs(F.query(F.collection(db, "tcg"), F.limit(300))); return r.docs.map(s => { const d = data(s); d.uid = s.id; d.at = ms(d.at); return d; }); }
+export function watchTcgx(cb) { return F.onSnapshot(F.query(F.collection(db, "tcgx"), F.orderBy("at", "desc"), F.limit(300)), r => cb(r.docs.map(s => { const d = data(s); d.id = s.id; d.at = ms(d.at) || Date.now(); return d; })), () => cb([])); }
+export async function addTcgx(d) { const r = await F.addDoc(F.collection(db, "tcgx"), Object.assign({}, d, { at: F.serverTimestamp() })); return r.id; }
+// change un document seulement s'il est encore dans l'état attendu (fn renvoie les champs à changer, ou null = refusé)
+export function txTcgx(id, fn) {
+  const ref = F.doc(db, "tcgx", id);
+  return F.runTransaction(db, async tx => { const s = await tx.get(ref); if (!s.exists()) throw new Error("introuvable"); const cur = s.data(); cur.id = id; cur.at = ms(cur.at); const patch = fn(cur); if (!patch) throw new Error("plus possible"); tx.update(ref, patch); return Object.assign(cur, patch); });
+}

@@ -1563,6 +1563,103 @@
    "trainer": "Yuna Manase",
    "teams": "Cosmic Angels, Donna Del Mondo, REStart",
    "txt": "Catcheuse aérienne de Stardom, ancienne championne Wonder of Stardom et High Speed ; elle a annoncé sa retraite pour le 3 janvier 2027."
+  },
+  "Keith Lee": {
+   "k": "AEW",
+   "era": "Depuis 2005",
+   "nick": "Limitless, Bearcat",
+   "from": "Wichita Falls (Texas)",
+   "ht": "1,88 m",
+   "wt": "154 kg",
+   "debut": "2005",
+   "fin": "Spirit Bomb, Ground Zero",
+   "teams": "Swerve in Our Glory (avec Swerve Strickland)",
+   "txt": "Colosse étonnamment agile, révélé sur la scène indépendante puis à NXT, où il est le premier à détenir en même temps le titre NXT et le titre Nord-Américain (2020). Passé à la AEW en 2022, champion du monde par équipe avec Swerve Strickland. Il n’a plus combattu depuis le 23 décembre 2023 (victoire contre Brian Cage à Collision) : opéré deux fois début 2024, sans retour annoncé ; en octobre 2026, la AEW n’a pas de projet pour lui et il n’a pas annoncé sa retraite.",
+   "ref": [
+    {
+     "t": "Keith Lee contre Dominik Dijakovic — titre Nord-Américain de la NXT",
+     "ev": "NXT TakeOver: WarGames, 2019"
+    },
+    {
+     "t": "Keith Lee contre Adam Cole — titre de la NXT",
+     "ev": "NXT The Great American Bash, 2020"
+    }
+   ],
+   "tt": [
+    {
+     "t": "NXT Championship",
+     "k": "WWE",
+     "x": 1
+    },
+    {
+     "t": "NXT North American Championship",
+     "k": "WWE",
+     "x": 1
+    },
+    {
+     "t": "AEW World Tag Team Championship",
+     "k": "AEW",
+     "x": 1
+    }
+   ],
+   "disc": true
+  },
+  "Bray Wyatt": {
+   "k": "WWE",
+   "a": [
+    "The Fiend",
+    "Windham Rotunda",
+    "Husky Harris"
+   ],
+   "dc": "2023-08-24",
+   "era": "WWE, 2009–2023",
+   "nick": "The Eater of Worlds, The Fiend",
+   "from": "Brooksville (Floride)",
+   "fin": "Sister Abigail, Mandible Claw",
+   "teams": "The Wyatt Family, The Wyatt 6",
+   "trainer": "Mike Rotunda (son père), Florida Championship Wrestling",
+   "txt": "Windham Rotunda, fils de Mike Rotunda et petit-fils de Blackjack Mulligan, l’un des personnages les plus créatifs de la WWE : le gourou de la Wyatt Family, l’animateur inquiétant du Firefly Fun House puis « The Fiend ». Champion de la WWE en 2017 et deux fois champion universel. Revenu en 2022, il est mort d’une crise cardiaque le 24 août 2023, à 36 ans.",
+   "ref": [
+    {
+     "t": "Bray Wyatt contre John Cena",
+     "ev": "WrestleMania XXX, 2014"
+    },
+    {
+     "t": "« The Fiend » contre Seth Rollins — Falls Count Anywhere, titre universel",
+     "ev": "Crown Jewel, 2019"
+    },
+    {
+     "t": "Bray Wyatt contre John Cena — Firefly Fun House",
+     "ev": "WrestleMania 36, 2020"
+    },
+    {
+     "t": "Bray Wyatt contre LA Knight — Pitch Black match",
+     "ev": "Royal Rumble, 2023"
+    }
+   ],
+   "tt": [
+    {
+     "t": "WWE Championship",
+     "k": "WWE",
+     "x": 1
+    },
+    {
+     "t": "WWE Universal Championship",
+     "k": "WWE",
+     "x": 2
+    },
+    {
+     "t": "Raw Tag Team Championship",
+     "k": "WWE",
+     "x": 1
+    },
+    {
+     "t": "SmackDown Tag Team Championship",
+     "k": "WWE",
+     "x": 1
+    }
+   ],
+   "disc": true
   }
  }
 }

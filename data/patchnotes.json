@@ -1,6 +1,30 @@
 {
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "items": [
+  {
+   "id": "2026-11-06-tcccg",
+   "d": "2026-11-06",
+   "t": "TCCCG ouvert à tous !",
+   "txt": [
+    "🃏 Le jeu de cartes est ouvert à tous les membres : touche « TCCCG » dans la barre du bas.",
+    "🤝 Échange : regarde les rosters des autres et propose des échanges de cartes et/ou de ressources.",
+    "🔨 Enchères : mets une carte en vente 24 h ; la plus haute offre gagne (ou le vendeur valide avant).",
+    "⚔️ Combats : choisis qui tu affrontes (1 contre 1, 2 contre 2, 3 contre 3…) et la difficulté Low, Mid ou Top. Tu peux quitter un combat et le reprendre plus tard.",
+    "👥 Défie les autres membres : ton équipe contre la leur, menée par l’IA.",
+    "🎴 Call Up : vois les cartes possibles et les cartes vedettes de chaque booster, une vitrine des cartes au max, et une nouvelle entrée sur le ring."
+   ]
+  },
+  {
+   "id": "2026-11-06-maj",
+   "d": "2026-11-06",
+   "t": "Mise à jour du 6 novembre",
+   "txt": [
+    "🔍 La recherche est maintenant dans l’accueil, et un bouton 🔍 en haut de l’écran.",
+    "🎬 Les matchs à découvrir sont aussi sur l’accueil.",
+    "🎲 TCC Play : des liens au hasard sur l’accueil.",
+    "📋 Fiches de Keith Lee et Bray Wyatt mises à jour."
+   ]
+  },
   {
    "id": "2026-11-05-maj",
    "d": "2026-11-05",

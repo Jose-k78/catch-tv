@@ -15,6 +15,16 @@ export const typeWheel = (size, cur) => {
 };
 const alSym = al => al === "heel" ? '<span class="tal heel" title="Heel">😈</span>' : al === "face" ? '<span class="tal face" title="Face">😇</span>' : al === "tweener" ? '<span class="tal" title="Tweener">⚖️</span>' : "";
 
+// format de l'image : la carte s'adapte (portrait 9:16 → carte haute ; paysage → carte large). Mémorisé par image.
+const AR = new Map();
+const arOf = src => AR.get(src) || 0;
+const arStyle = a => a && Math.abs(a - 1) > 0.1 ? Math.max(0.5625, Math.min(1.78, a)) : 0;
+if (typeof document !== "undefined") document.addEventListener("load", e => {
+  const im = e.target; if (!im || !im.classList || !im.classList.contains("tc3img") || !im.naturalWidth) return;
+  const src = im.getAttribute("src"), a = im.naturalWidth / im.naturalHeight; if (AR.get(src) === a) return; AR.set(src, a);
+  const c = im.closest(".tc3"), v = arStyle(a); if (!c) return;
+  c.classList.toggle("ar", !!v); if (v) c.style.setProperty("--ar", v.toFixed(3)); else c.style.removeProperty("--ar");
+}, true);
 // inst : exemplaire du joueur { c, r, lv, xp } ou une définition de carte (def) ; opt : { small, act, iid, count, back }
 export function cardHTML(inst, opt) {
   opt = opt || {};
@@ -22,10 +32,12 @@ export function cardHTML(inst, opt) {
   const r = inst.r || def.r, lv = inst.lv || 1, st = inst.c ? statsOf(inst, def) : def.st, A = ARCH[def.arch] || ARCH.Showman;
   const lg = promoLogo(def.k), fl = def.faction && groupLogo(def.faction), live = isChampLive(def);
   if (opt.back) return '<div class="tc3 back' + (opt.small ? " sm" : "") + '"><div class="tc3back"><b>TCCCG</b><small>The Catch Card Collection Game</small></div></div>';
-  return '<div class="tc3 r-' + r + (opt.small ? " sm" : "") + (def.champ || live ? " champ" : "") + '" style="--ac:' + A.c + '"' + (opt.act ? ' data-act="' + opt.act + '" data-iid="' + esc(opt.iid || "") + '" data-c="' + esc(def.id) + '"' : "") + ">" +
+  const ar = def.pic ? arStyle(arOf(def.pic)) : 0;
+  return '<div class="tc3 r-' + r + (opt.small ? " sm" : "") + (def.champ || live ? " champ" : "") + (ar ? " ar" : "") + '" style="--ac:' + A.c + (ar ? ";--ar:" + ar.toFixed(3) : "") + '"' + (opt.act ? ' data-act="' + opt.act + '" data-iid="' + esc(opt.iid || "") + '" data-c="' + esc(def.id) + '"' : "") + ">" +
     '<div class="tc3foil"></div>' +
     '<div class="tc3top">' + (lg ? '<img class="tc3promo" src="' + esc(lg) + '" alt="">' : '<span class="tc3promo t">' + esc(def.k || "") + "</span>") + '<span class="tc3brand">TCCCG</span><span class="tc3r" title="' + esc(RNAME[r] || r) + '">' + r + "</span></div>" +
-    '<div class="tc3pic" style="background-image:url(\'' + esc(def.pic || "") + '\')">' +
+    '<div class="tc3pic' + (def.pic ? "" : " nopic") + '"' + (def.pic && !opt.small && !opt.nozoom ? ' data-act="zoom" data-src="' + esc(def.pic) + '" data-alt="' + esc(def.name) + '"' : "") + ">" +
+      (def.pic ? '<img class="tc3img" src="' + esc(def.pic) + '" alt="" loading="lazy" decoding="async">' : '<span class="tc3empty">🖼️<small>Image à venir</small></span>') +
       '<span class="tc3arch">' + esc(def.arch) + "</span>" + (fl ? '<img class="tc3fac" src="' + esc(fl) + '" alt="">' : "") + alSym(def.al) +
       (def.champ || live ? '<span class="tc3belt" title="' + (def.champ ? "Carte champion (boost permanent)" : "Champion en titre : +10 %") + '">🏆</span>' : "") +
       (opt.count > 1 ? '<span class="tc3count">×' + opt.count + "</span>" : "") + '<span class="tc3lv">Nv ' + lv + "</span></div>" +

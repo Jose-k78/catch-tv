@@ -575,16 +575,21 @@ export function homeView() {
   if (big) h += homeHead("Prochain " + bigWord(big.k)) + hero(big, esc(big.k) + " · " + bigWord(big.k));
   const more = up.filter(e => e !== big);
   if (more.length) h += homeHead("Les PLE et PPV à venir", "PLE pour la WWE, PPV pour les autres promotions") + '<div class="row">' + more.map(e => pleCard(e, true)).join("") + "</div>";
-  // storyline du jour et tournois (aussi dans Membres et Recherche)
+  // storyline du jour, tournois, matchs à découvrir (aussi dans Membres et Recherche)
   h += storylineTile() + tournamentTile("");
+  if (S.matches.length) h += matchTile();
+  // la recherche, dans l'accueil (et le bouton 🔍 en haut)
+  h += homeHead("Recherche", "Shows, PLE, catcheurs, archives") + '<a class="homesearch" href="#/recherche">' + ICON.search + "<span>Show, PLE, catcheur, catcheuse…</span></a>" +
+    (discoverTile() ? '<h2 class="hh">Catcheur à découvrir</h2>' + discoverTile() : "") + exploreHTML(true);
   // les infos (la communauté est dans l'onglet Membres, Explorer et TCC Play dans Recherche)
   h += artSection("Dernières infos", articles([], 6));
   return '<div class="withside"><div class="mainc">' + h + "</div>" + favAside() + "</div>";
 }
 // Explorer (onglet Recherche) : promotions, TCC Play, tournois, matchs à découvrir
-export function exploreHTML() {
+export function exploreHTML(home) {
   let h = '<h2 class="hh">Explorer</h2><div class="row">' + Object.keys(S.P).filter(k => !PARENT[k]).map(promoCard).join("") + "</div>";
   h += '<a class="matchtile ptile" href="#/player"><span class="mt-k">' + TPLAY + '</span><b>Archives et vidéos</b><small>Les shows par promotion et par date, les vidéos officielles</small><span class="mt-go">Ouvrir ›</span></a>';
+  if (home) return h; // sur l'accueil, tournois et matchs à découvrir sont déjà plus haut
   h += tournamentTile("");
   if (S.matches.length) h += matchTile();
   if (S.isAdmin) h += '<div class="btns" style="margin:10px 16px"><button class="btn small" data-act="gnew">＋ Nouveau clan / équipe (modo)</button></div>';
@@ -648,7 +653,6 @@ export function tabsView(route) {
   const ORDER = ["WWE", "AEW", "TNA", "NJPW", "CMLL", "Stardom", "Marigold"];
   const top = Object.keys(S.P).filter(k => hostOf(k) === k).sort((a, b) => (ORDER.indexOf(a) + 1 || 99) - (ORDER.indexOf(b) + 1 || 99));
   const tabsL = ["Accueil"].concat(top).map(t => tab(t, t === "Accueil" ? "#/" : "#/p/" + encodeURIComponent(t), t === cur, t === "Accueil" ? "" : logoOf(t, "")));
-  tabsL.splice(1, 0, '<a class="tab tsearch" href="#/recherche" aria-label="Recherche">' + ICON.search + " Recherche</a>");
   let h = '<nav class="tabs">' + tabsL.join("") +
     '<a class="tab' + (route.name === "autre" ? " on" : "") + '" href="#/autre">Autre</a></nav>';
   if (route.name === "promo" && S.P[cur]) {

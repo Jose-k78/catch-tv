@@ -14,6 +14,7 @@ import { gslug } from "./views/wimage.js";
 import { groupLogo } from "./assets.js";
 import { pnNew } from "./views/patchnotes.js";
 import { tccgView, tccgTop, TICON, TNAV } from "./views/tccg.js";
+import { settle as tcgSettle, pendingCount as tcgPending } from "./tcg/trade.js";
 import { playerView } from "./views/player.js";
 import { searchView, wrestlerView, fillWiki, afterSearch } from "./views/search.js";
 import { eventView, fillEvent } from "./views/event.js";
@@ -79,7 +80,7 @@ function parse() {
     case "titre": return { name: "title", id: parts[1] || "" };
     case "ceinture": return { name: "belt", key: (parts.slice(1).join("/") || "").slice(0, 80) };
     case "groupe": return parts[1] ? { name: "group", id: parts[1].slice(0, 80) } : { name: "search", q: "" };
-    case "tccg": return { name: "tccg", tab: parts[1] || "", sub: parts[2] || "" };
+    case "tccg": return { name: "tccg", tab: parts[1] || "", sub: parts[2] || "", id: parts[3] || "" };
     case "autre": return { name: "autre" };
     case "passes": return { name: "passes", k: parts[1] || "", n: parts[2] || "" };
     case "tournois": return parts[1] ? { name: "serie", id: parts[1] } : { name: "tournois" };
@@ -106,7 +107,7 @@ function parse() {
 // mode TCCCG « collant » : on reste en noir et doré en passant par le profil, les paramètres ou les trophées
 let tgMode = false;
 const TG_KEEP = { profile: 1, settings: 1, editprofile: 1, trophies: 1 };
-const tgOn = () => !!S.realAdmin && (route.name === "tccg" || (tgMode && !!TG_KEEP[route.name] && (!route.uid || !S.user || route.uid === S.user.uid)));
+const tgOn = () => !!S.user && (route.name === "tccg" || (tgMode && !!TG_KEEP[route.name] && (!route.uid || !S.user || route.uid === S.user.uid)));
 ACT.editmode = () => {
   if (!S.realAdmin) return;
   S.isAdmin = !S.isAdmin; lsSet("ctv.edit", S.isAdmin ? "1" : null);
@@ -200,7 +201,7 @@ function render() {
     case "title": h = titleView(route.id); break;
     case "belt": h = beltView(route.key); break;
     case "group": h = groupView(route.id); break;
-    case "tccg": h = tccgView(route.tab, route.sub); break;
+    case "tccg": h = tccgView(route.tab, route.sub, route.id); break;
     case "autre": h = autreView(); break;
     case "passes": h = pastView(route.k, route.n); break;
     case "tournois": h = tournoisView(); break;
@@ -241,7 +242,7 @@ function render() {
 }
 
 // Barre de navigation du bas : Accueil · Recherche · Membres · Messages · Profil
-const NAV = [["home", "#/", "Accueil", "home"], ["player", "#/player", "TCC Play", "tplay"], ["tccg", "#/tccg", "Bientôt", "cards"], ["members", "#/membres", "Membres", "globe"], ["chat", "#/chat", "Messages", "chat"], ["me", "#/profil", "Profil", "user"]];
+const NAV = [["home", "#/", "Accueil", "home"], ["player", "#/player", "TCC Play", "tplay"], ["tccg", "#/tccg", "TCCCG", "cards"], ["members", "#/membres", "Membres", "globe"], ["chat", "#/chat", "Messages", "chat"], ["me", "#/profil", "Profil", "user"]];
 function navOn(id) {
   const r = route.name;
   if (id === "home") return r === "home" || r === "promo" || r === "titles" || r === "title" || r === "matches" || r === "hl" || r === "polls" || r === "picks" || r === "pick" || r === "cal";
@@ -262,7 +263,7 @@ function updateHeader() {
     if (tg) { if (!top.dataset.tv) top.dataset.tv = top.innerHTML; top.innerHTML = tccgTop(); }
     else if (top.dataset.tv) { top.innerHTML = top.dataset.tv; delete top.dataset.tv; }
   }
-  if (nav && tg) { nav.innerHTML = TNAV.map(x => '<a class="bn' + (route.tab === x[0] ? " on" : "") + '" href="#/tccg' + (x[0] ? "/" + x[0] : "") + '"><span class="bni">' + TICON[x[2]] + "</span><small>" + x[1] + "</small></a>").join(""); }
+  if (nav && tg) { const np = tcgPending(); nav.innerHTML = TNAV.map(x => '<a class="bn' + (route.tab === x[0] ? " on" : "") + '" href="#/tccg' + (x[0] ? "/" + x[0] : "") + '"><span class="bni">' + TICON[x[2]] + (x[0] === "echange" && np ? '<i class="bdot">' + np + "</i>" : "") + "</span><small>" + x[1] + "</small></a>").join(""); }
   else if (nav) nav.innerHTML = NAV.map(x => {
     const badge = x[0] === "chat" ? n : x[0] === "members" ? soc : 0, pdot = x[0] === "me" && S.user && pnNew();
     const href = x[0] === "me" && !S.user ? "#/connexion" : x[1];
@@ -391,7 +392,9 @@ function onUser(u) {
       S.ann.forEach(a => { annSeen[a.id] = 1; }); annInit = true; changed("ann");
     }));
     S.tcg = null;
-    if (S.realAdmin) userSubs.push(B.watchTcg(me, d => { S.tcg = d; changed("tcg"); }));
+    let tcgFirst = true;
+    userSubs.push(B.watchTcg(me, d => { S.tcg = d; changed("tcg"); if (tcgFirst && d) { tcgFirst = false; setTimeout(tcgSettle, 500); } }));
+    userSubs.push(B.watchTcgx(list => { S.tcgx = list || []; changed("tcg"); setTimeout(tcgSettle, 300); }));
     if (S.realAdmin) userSubs.push(B.watchReports(list => { S.reports = list || []; list.forEach(r => { need(r.by); need(r.target); }); changed("reports"); }));
   }
   changed("auth");
