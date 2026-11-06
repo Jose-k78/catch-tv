@@ -1,6 +1,47 @@
 {
-  "updated": "2026-11-05",
+  "updated": "2026-11-06",
   "items": [
+    {
+      "id": "p-20261106-rock-30ans",
+      "d": "2026-11-06",
+      "type": "",
+      "k": "WWE",
+      "q": "30 ans de The Rock à la WWE : comment fêter ça ?",
+      "opts": [
+        "Un dernier match",
+        "Un grand discours",
+        "Un segment avec un ancien rival"
+      ],
+      "other": true,
+      "end": ""
+    },
+    {
+      "id": "p-20261106-lucha-match",
+      "d": "2026-11-06",
+      "type": "",
+      "k": "",
+      "q": "Le plus grand match de lucha libre de l’histoire ?",
+      "opts": [
+        "Santo et Octagón contre Guerrero et Barr (1994)",
+        "Atlantis contre Último Guerrero (2014)",
+        "Rey Misterio Jr. contre Psicosis"
+      ],
+      "other": true,
+      "end": ""
+    },
+    {
+      "id": "p-20261106-babies",
+      "d": "2026-11-06",
+      "type": "babies",
+      "k": "",
+      "q": "Qui est la meilleure babies entre Stephanie Vaquer et Starlight Kid ?",
+      "opts": [
+        "Stephanie Vaquer",
+        "Starlight Kid"
+      ],
+      "other": false,
+      "end": "2026-11-08"
+    },
     {
       "id": "p-20261105-enzo-retour",
       "d": "2026-11-05",
