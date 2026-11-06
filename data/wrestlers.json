@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "note": "Catcheurs suivis (champions, cartes annoncées, favoris des membres) et catcheurs à découvrir (disc = true, toutes fédérations et époques). txt = petit résumé en français, era = époque, ref = matchs de référence, last = 3 derniers matchs (r = résultat, spoiler), v = vidéo YouTube d'une chaîne officielle.",
  "items": {
   "Roman Reigns": {
@@ -1486,6 +1486,83 @@
    "debut": "2009",
    "fin": "SVB (package backbreaker), Corkscrew Moonsault, Angel Wings",
    "teams": "Giulia et Stephanie Vaquer, Stephanie Vaquer et Zeuxis"
+  },
+  "Johnny Gargano": {
+   "k": "WWE",
+   "sh": [
+    "SmackDown"
+   ],
+   "era": "depuis 2005",
+   "al": "face",
+   "alD": "2026-09-04",
+   "nick": "Johnny Wrestling, The Heart and Soul of NXT",
+   "from": "Cleveland (Ohio)",
+   "ht": "1,78 m",
+   "wt": "90 kg",
+   "debut": "2005",
+   "fin": "Gargano Escape, One Final Beat",
+   "teams": "#DIY (avec Tommaso Ciampa), The Way",
+   "ref": [
+    {
+     "t": "Johnny Gargano contre Andrade « Cien » Almas — titre de NXT",
+     "ev": "NXT TakeOver: Philadelphia, 2018"
+    },
+    {
+     "t": "Johnny Gargano contre Tommaso Ciampa — Unsanctioned Match",
+     "ev": "NXT TakeOver: New Orleans, 2018"
+    },
+    {
+     "t": "Johnny Gargano contre Adam Cole — 2 out of 3 Falls, titre de NXT",
+     "ev": "NXT TakeOver: XXV, 2019"
+    }
+   ]
+  },
+  "Ethan Page": {
+   "k": "WWE",
+   "sh": [
+    "Raw"
+   ],
+   "era": "depuis 2006",
+   "al": "heel",
+   "alD": "2024-05-28",
+   "nick": "All Ego",
+   "from": "Hamilton (Ontario, Canada)",
+   "ht": "1,88 m",
+   "wt": "98 kg",
+   "debut": "2006",
+   "fin": "Twisted Grin, Ego's Edge, Head Shot",
+   "teams": "Rusev et Ethan Page (avec Rusev), The Monster Mash (avec Josh Alexander)"
+  },
+  "Tatum Paxley": {
+   "k": "WWE",
+   "sh": [
+    "SmackDown"
+   ],
+   "era": "depuis 2022",
+   "al": "face",
+   "alD": "2025-10-25",
+   "from": "Dallas (Texas)",
+   "ht": "1,65 m",
+   "wt": "55 kg",
+   "debut": "2022",
+   "fin": "Psycho Trap",
+   "teams": "Allies of Convenience (avec Charlotte Flair et Alexa Bliss), The Culling, Chemical X, The Diamond Mine"
+  },
+  "Natsupoi": {
+   "k": "Stardom",
+   "era": "depuis 2015",
+   "a": [
+    "Natsumi Maki",
+    "Poiman",
+    "Akupoi"
+   ],
+   "from": "Yokohama (Japon)",
+   "ht": "1,52 m",
+   "wt": "47 kg",
+   "debut": "2015 (Actwres Girl'Z), 2016 à Stardom",
+   "trainer": "Yuna Manase",
+   "teams": "Cosmic Angels, Donna Del Mondo, REStart",
+   "txt": "Catcheuse aérienne de Stardom, ancienne championne Wonder of Stardom et High Speed ; elle a annoncé sa retraite pour le 3 janvier 2027."
   }
  }
 }
