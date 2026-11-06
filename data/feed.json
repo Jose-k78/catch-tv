@@ -1,6 +1,15 @@
 {
- "at": "2026-11-06T02:53:05.649Z",
+ "at": "2026-11-06T05:54:57.881Z",
  "items": [
+  {
+   "t": "Stephanie Vaquer de retour en Live Event le 5 novembre",
+   "u": "https://www.catch-newz.com/wwe/newz/61055-stephanie-vaquer-de-retour-en-live-event-le-5-novembre",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Preview : AEW Collision du 7 novembre 2026",
    "u": "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
@@ -50,6 +59,16 @@
    "s": "Catch-Newz",
    "d": "2026-11-06",
    "tags": []
+  },
+  {
+   "t": "Résultats de TNA Impact du 5 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61054-tna-impact-5-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "TNA",
+    "Impact"
+   ]
   },
   {
    "t": "Preview : ROH du 5 novembre 2026",
@@ -505,26 +524,6 @@
     "WWE",
     "NXT"
    ]
-  },
-  {
-   "t": "Preview : AEW Dynamite Blood and Guts du 4 novembre 2026",
-   "u": "https://www.catch-newz.com/aew/newz/60874-preview-aew-dynamite-blood-and-guts-du-4-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-04",
-   "tags": [
-    "AEW",
-    "Dynamite"
-   ]
-  },
-  {
-   "t": "Preview : WWE NXT du 4 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-04",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
   }
  ],
  "yt": {
@@ -812,12 +811,14 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/newz/61055-stephanie-vaquer-de-retour-en-live-event-le-5-novembre",
    "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026",
-   "https://www.catch-newz.com/wwe/resultats/60991-wwe-nxt-4-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61054-tna-impact-5-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61044-preview-roh-du-5-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61025-la-wwe-va-organiser-un-show-le-1er-janvier-2027",
    "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
+   "https://www.catch-newz.com/wwe/resultats/60991-wwe-nxt-4-novembre-2026",
    "https://www.catch-newz.com/international/newz/61049-carte-de-nhb-the-chains-volume-103",
    "https://www.catch-newz.com/international/resultats/61053-resultats-de-chocopro-548",
    "https://www.catch-newz.com/international/resultats/61052-resultats-de-chocopro-547",
@@ -1088,7 +1089,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
