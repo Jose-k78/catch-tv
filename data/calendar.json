@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "promotions": {
   "WWE": {
    "c": [
@@ -395,7 +395,9 @@
      "w": "Edmonton",
      "v": "Edmonton Expo Centre",
      "card": [
-      "Titre mondial de la TNA : Leon Slater contre Trey Miguel"
+      "Titre mondial de la TNA : Leon Slater contre Trey Miguel",
+      "Titre mondial des Knockouts : Indi Hartwell contre Shayna Baszler",
+      "Moose et Matt Hardy contre Joseph Sawyer et Samuel Shaw"
      ],
      "h": "17:00",
      "tz": "America/Edmonton",
@@ -572,7 +574,21 @@
      "t": "Lucha Kingdom",
      "d": "2026-11-16",
      "w": "Mexico",
-     "v": "Arena México"
+     "v": "Arena México",
+     "card": [
+      "Místico et Último Guerrero contre Yota Tsuji et Hirooki Goto",
+      "Titre mondial toutes catégories du CMLL : Hechicero contre Zack Sabre Jr.",
+      "Bárbaro Cavernario contre Konosuke Takeshita",
+      "Soberano Jr. contre Shota Umino",
+      "Titres par équipe de NJPW Strong : Ángel de Oro et Niebla Roja contre Templario et Francesco Akira contre Titán et Taiji Ishimori",
+      "Xelhua et Guerrero Maya Jr. contre DOUKI et SHO",
+      "Zandokan Jr., Difunto, Barboza et Furia Roja contre Kushida, Black Tiger, Yutani et Shoma Kato",
+      "Titre féminin IWGP : Syuri contre Kira",
+      "Brillante Jr., Rey Pegasus et Capitán Suicida contre Okumura, YOH et Master Wato"
+     ],
+     "h": "17:00",
+     "tz": "America/Mexico_City",
+     "dur": 180
     },
     {
      "t": "World Tag League — finale",
