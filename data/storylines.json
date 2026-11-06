@@ -1,7 +1,43 @@
 {
-  "updated": "2026-11-05",
+  "updated": "2026-11-06",
   "note": "Une storyline par jour (la plus récente en premier) : grandes histoires, rivalités, anecdotes de coulisses, faits marquants. txt = paragraphes écrits en français à partir des sources ; v = vidéos officielles ; q = recherches sur la chaîne officielle.",
   "items": [
+    {
+      "id": "when-worlds-collide-1994",
+      "d": "2026-11-06",
+      "type": "Fait marquant",
+      "t": "When Worlds Collide : la nuit où la lucha libre a conquis l’Amérique",
+      "k": "AAA",
+      "years": "1993-1994",
+      "hook": "Le 6 novembre 1994, à Los Angeles, la AAA offre à l’Amérique un masque contre cheveux resté parmi les plus grands matchs de l’histoire.",
+      "txt": [
+        "Au début des années 1990, la AAA, fondée par Antonio Peña, bouscule la lucha libre mexicaine. Sa faction rudo la plus détestée s’appelle Los Gringos Locos : Art Barr y a convaincu Eddie Guerrero qu’il vivait dans l’ombre d’El Hijo del Santo, comme son père Gory Guerrero avait vécu dans celle du légendaire El Santo. Eddie trahit Santo, s’associe à Barr et forme La Pareja del Terror, en rouge, blanc et bleu, pour provoquer le public mexicain.",
+        "La rivalité tourne autour des titres par équipe de la AAA : El Hijo del Santo et Octagón les gagnent contre Barr et Guerrero le 5 novembre 1993, puis les perdent le 23 juillet 1994, dans un match présenté comme truqué par l’arbitre. Furieux, les deux héros masqués lancent un défi ultime : leurs masques contre les cheveux des Gringos Locos.",
+        "Le match est placé au cœur de When Worlds Collide, le 6 novembre 1994 au Los Angeles Memorial Sports Arena, devant environ 13 000 spectateurs. Grâce à Eric Bischoff et aux équipes techniques de la WCW, c’est la première fois qu’une fédération étrangère passe en direct à la télévision payante aux États-Unis. Au programme aussi : Rey Misterio Jr., Psicosis, la Pegasus Kid (Chris Benoit) ou encore une cage entre Perro Aguayo et Konnan.",
+        "En deux chutes sur trois, pendant plus de 22 minutes, Octagón et El Hijo del Santo battent La Pareja del Terror. Fidèles à leur personnage jusqu’au bout, Barr et Guerrero se coupent les cheveux l’un l’autre sur le ring. Le Wrestling Observer accorde cinq étoiles au match, une note rare à l’époque.",
+        "Le show change le regard de l’Amérique sur la lucha libre : la WCW et l’ECW recrutent bientôt plusieurs de ses vedettes, dont Eddie Guerrero et Rey Misterio Jr. Mais la fête est brève : Art Barr meurt le 23 novembre 1994, dix-sept jours plus tard, alors qu’il était encore champion par équipe avec Eddie. La AAA retire alors ce titre en son honneur."
+      ],
+      "key": "Octagón et El Hijo del Santo battent Art Barr et Eddie Guerrero dans un masque contre cheveux noté cinq étoiles, devant l’Amérique entière.",
+      "v": [],
+      "q": [
+        "When Worlds Collide 1994 Octagon Santo vs Eddie Guerrero Art Barr",
+        "AAA When Worlds Collide 1994 full show"
+      ],
+      "src": [
+        {
+          "n": "Wikipédia (en) — AAA When Worlds Collide",
+          "u": "https://en.wikipedia.org/wiki/AAA_When_Worlds_Collide"
+        },
+        {
+          "n": "PWTorch — Nov. 6 in history",
+          "u": "https://www.pwtorch.com/artman2/publish/Torch_Today_2/article_74386.shtml"
+        },
+        {
+          "n": "TJR Wrestling — critique du match",
+          "u": "https://tjrwrestling.net/5-star-match-reviews-eddy-guerrero-and-art-barr-vs-octagon-and-el-hijo-del-santo-when-worlds-collide-1994-by-alex-podgorski"
+        }
+      ]
+    },
     {
       "id": "gail-kim-bfg-2017",
       "d": "2026-11-05",
