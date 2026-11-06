@@ -1,6 +1,15 @@
 {
- "at": "2026-11-06T17:45:20.138Z",
+ "at": "2026-11-06T18:47:04.136Z",
  "items": [
+  {
+   "t": "Les Creed Brothers quittent la WWE",
+   "u": "https://www.catch-newz.com/wwe/newz/61069-les-creed-brothers-quittent-la-wwe",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Preview : WWE SmackDown du 6 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
@@ -12,8 +21,8 @@
    ]
   },
   {
-   "t": "Crown Jewel 2026 aura bien lieu ce samedi en Arabie Saoudite, que faut-il en penser ?",
-   "u": "https://www.catch-newz.com/wwe/newz/61067-crown-jewel-2026-aura-bien-lieu-ce-samedi-en-arabie-saoudite-que-faut-il-en-penser",
+   "t": "L'ambassade américaine félicite la WWE pour Crown Jewel 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61070-ambassade-americaine-felicite-la-wwe-pour-crown-jewel-2026",
    "s": "Catch-Newz",
    "d": "2026-11-06",
    "tags": [
@@ -28,6 +37,15 @@
    "tags": [
     "CMLL",
     "Viernes Espectacular"
+   ]
+  },
+  {
+   "t": "Crown Jewel 2026 aura bien lieu ce samedi en Arabie Saoudite, que faut-il en penser ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61067-crown-jewel-2026-aura-bien-lieu-ce-samedi-en-arabie-saoudite-que-faut-il-en-penser",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -200,16 +218,6 @@
    ]
   },
   {
-   "t": "Résultats de TNA Impact du 5 novembre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61054-tna-impact-5-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "TNA",
-    "Impact"
-   ]
-  },
-  {
    "t": "Résultats de AEW Dynamite Blood and Guts 2026",
    "u": "https://www.voxcatch.fr/2026/11/05/resultats-de-aew-dynamite-blood-and-guts-2026/",
    "s": "VOXcatch",
@@ -228,6 +236,16 @@
    "tags": [
     "WWE",
     "NXT"
+   ]
+  },
+  {
+   "t": "Résultats de TNA Impact du 5 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61054-tna-impact-5-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "TNA",
+    "Impact"
    ]
   },
   {
@@ -498,25 +516,6 @@
   {
    "t": "Chad Gable complimente Vanity Project après leur match à NXT",
    "u": "https://www.catch-newz.com/wwe/newz/61010-chad-gable-complimente-vanity-project-apres-leur-match-a-nxt",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
-  },
-  {
-   "t": "Enzo Amore pourrait avoir signé son retour à la WWE",
-   "u": "https://www.catch-newz.com/wwe/newz/61011-enzo-amore-pourrait-avoir-signe-son-retour-a-la-wwe",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "WWE NXT : Grâce à l'intervention de Kevin Owens, Grayson Waller conserve son titre NXT contre CM Punk",
-   "u": "https://www.catch-newz.com/wwe/newz/61009-wwe-nxt-grace-a-lintervention-de-kevin-owens-grayson-waller-conserve-son-titre-nxt-contre-cm-punk",
    "s": "Catch-Newz",
    "d": "2026-11-05",
    "tags": [
@@ -810,12 +809,14 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/newz/61069-les-creed-brothers-quittent-la-wwe",
    "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61067-crown-jewel-2026-aura-bien-lieu-ce-samedi-en-arabie-saoudite-que-faut-il-en-penser",
+   "https://www.catch-newz.com/wwe/newz/61070-ambassade-americaine-felicite-la-wwe-pour-crown-jewel-2026",
    "https://www.catch-newz.com/wwe/newz/61060-audiences-wwe-aew-et-tna-19-au-25-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/61059-resultats-de-wwe-road-to-survivor-series-du-5-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61054-tna-impact-5-novembre-2026",
    "https://www.catch-newz.com/international/newz/61039-carte-de-cmll-viernes-espectacular-du-6-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61067-crown-jewel-2026-aura-bien-lieu-ce-samedi-en-arabie-saoudite-que-faut-il-en-penser",
+   "https://www.catch-newz.com/international/resultats/61054-tna-impact-5-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61066-natalya-carmella-devrait-revenir-et-faire-quelque-chose-damusant-a-la-wwe",
    "https://www.catch-newz.com/aew/newz/61044-preview-roh-du-5-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026",
