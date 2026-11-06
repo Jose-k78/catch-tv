@@ -1,15 +1,6 @@
 {
- "at": "2026-11-06T05:54:57.881Z",
+ "at": "2026-11-06T07:06:36.996Z",
  "items": [
-  {
-   "t": "Stephanie Vaquer de retour en Live Event le 5 novembre",
-   "u": "https://www.catch-newz.com/wwe/newz/61055-stephanie-vaquer-de-retour-en-live-event-le-5-novembre",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": [
-    "WWE"
-   ]
-  },
   {
    "t": "Preview : AEW Collision du 7 novembre 2026",
    "u": "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
@@ -37,6 +28,22 @@
    "tags": [
     "WWE",
     "SmackDown"
+   ]
+  },
+  {
+   "t": "Résultats de ZERO1 Bullying Prevention Awareness Pro Wrestling",
+   "u": "https://www.catch-newz.com/international/resultats/61035-resultats-de-zero1-bullying-prevention-awareness-pro-wrestling",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": []
+  },
+  {
+   "t": "Stephanie Vaquer de retour en Live Event le 5 novembre",
+   "u": "https://www.catch-newz.com/wwe/newz/61055-stephanie-vaquer-de-retour-en-live-event-le-5-novembre",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -514,16 +521,6 @@
     "AEW",
     "Dynamite"
    ]
-  },
-  {
-   "t": "Résultats de WWE NXT du 4 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/60991-wwe-nxt-4-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-04",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
   }
  ],
  "yt": {
@@ -811,13 +808,14 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/wwe/newz/61055-stephanie-vaquer-de-retour-en-live-event-le-5-novembre",
    "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61054-tna-impact-5-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61044-preview-roh-du-5-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61025-la-wwe-va-organiser-un-show-le-1er-janvier-2027",
    "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61035-resultats-de-zero1-bullying-prevention-awareness-pro-wrestling",
+   "https://www.catch-newz.com/wwe/newz/61055-stephanie-vaquer-de-retour-en-live-event-le-5-novembre",
    "https://www.catch-newz.com/wwe/resultats/60991-wwe-nxt-4-novembre-2026",
    "https://www.catch-newz.com/international/newz/61049-carte-de-nhb-the-chains-volume-103",
    "https://www.catch-newz.com/international/resultats/61053-resultats-de-chocopro-548",
