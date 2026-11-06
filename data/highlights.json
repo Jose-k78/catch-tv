@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "note": "Vidéos des chaînes officielles uniquement. res = résultats (spoilers, affichés seulement à la demande). m = résumé match par match (promotions japonaises).",
  "items": {
   "WWE|Raw|2026-10-26": {
@@ -556,6 +556,70 @@
    ],
    "s": "Slam Wrestling",
    "u": "https://slamwrestling.net/news/aew-dynamite-blood-and-guts-results-november-4th-2026/"
+  },
+  "TNA|Impact|2026-11-05": {
+   "res": [
+    "Frankie Kazarian et Avery Styles ont battu Hunter James et Alexander Lev (Spiral Tap de Styles).",
+    "Eddie Edwards a battu Bear Bronson et garde le contrôle de The System.",
+    "Shotzi et Allie ont battu Fire N Flava (Tasha Steelz et Kiera Hogan).",
+    "Nic et Ryan Nemeth ont battu Leon Slater et Amazing Red et conservent le titre TNA World Tag Team (Danger Zone de Nic Nemeth sur Red)."
+   ],
+   "seg": [
+    {
+     "k": "Promo",
+     "t": "Moose défie Syx, qui l'avait attaqué ; Joseph Sawyer et Samul Shaw s'en prennent à lui, puis Matt Hardy arrive avec un tuyau et Syx s'enfuit."
+    },
+    {
+     "k": "Backstage",
+     "t": "Trey Miguel serre la main de Leon Slater et Amazing Red, puis se dispute avec Slater et annonce qu'il commentera le main event."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Indi Hartwell et Daria Rae se font face en coulisses ; Brian Johnson retient Daria."
+    },
+    {
+     "k": "Attaque",
+     "t": "Mustafa Ali, aux commentaires, monte sur le ring après le premier match et se fait sortir d'un coup de poing par Frankie Kazarian."
+    },
+    {
+     "k": "Backstage",
+     "t": "Alisha Edwards reproche à Cedric Alexander et Brian Myers d'avoir laissé The System se faire attaquer."
+    },
+    {
+     "k": "Célébration",
+     "t": "Après le match, Alexander et Myers rejoignent Eddie Edwards et Bear Bronson : les quatre lèvent les bras ensemble."
+    },
+    {
+     "k": "Blessure",
+     "t": "Rapport médical : Jeff Hardy (traumatisme à la tête après l'attaque de la semaine passée), Avery Styles et BDE."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après leur défaite, Fire N Flava attaquent Shotzi et Allie."
+    },
+    {
+     "k": "Backstage",
+     "t": "Elayna Black dit à Heather que M se sert d'elle ; Heather la défie pour un match la semaine prochaine."
+    },
+    {
+     "k": "Trahison",
+     "t": "Pendant l'initiation de Harley Hudson chez The Righteous, Xia Brookside l'attaque d'un DDT puis repart avec le groupe."
+    },
+    {
+     "k": "Annonce",
+     "t": "Matt Hardy et Moose jurent de se venger de Syx : ils l'affronteront à Destination X."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après le main event, Elijah descend avec sa guitare et les Nemeth s'enfuient."
+    },
+    {
+     "k": "Autre",
+     "t": "Harley Hudson regrette d'avoir rejoint The Righteous ; elle trouve une maison de poupée et Taryn Terrell l'accueille dans « la Doll House »."
+    }
+   ],
+   "s": "PWTorch",
+   "u": "https://www.pwtorch.com/site/2026/11/05/tna-impact-tv-results-11-5-nemeths-vs-slater-red-blackheart-allie-vs-steelz-hogan-edwards-vs-bronson/"
   }
  }
 }
