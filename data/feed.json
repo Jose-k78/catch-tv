@@ -1,6 +1,16 @@
 {
- "at": "2026-11-06T13:42:57.073Z",
+ "at": "2026-11-06T14:52:16.856Z",
  "items": [
+  {
+   "t": "Preview : AEW Collision du 7 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": [
+    "AEW",
+    "Collision"
+   ]
+  },
   {
    "t": "WWE : Une nouvelle stipulation dans le roster principal ?",
    "u": "https://www.catch-newz.com/wwe/newz/61064-wwe-une-nouvelle-stipulation-dans-le-roster-principal",
@@ -35,16 +45,6 @@
    "d": "2026-11-06",
    "tags": [
     "WWE"
-   ]
-  },
-  {
-   "t": "Preview : AEW Collision du 7 novembre 2026",
-   "u": "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": [
-    "AEW",
-    "Collision"
    ]
   },
   {
@@ -813,15 +813,15 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61064-wwe-une-nouvelle-stipulation-dans-le-roster-principal",
-   "https://www.catch-newz.com/wwe/newz/61063-carte-wwe-survivor-series-wargames-2026",
-   "https://www.catch-newz.com/wwe/newz/61062-rey-mysterio-annonce-un-match-pour-wwe-survivor-series-2026",
-   "https://www.catch-newz.com/wwe/newz/61061-roman-reigns-depasse-les-200-jours-de-regne-en-tant-que-champion-world-heavyweight",
    "https://www.catch-newz.com/wwe/newz/61060-audiences-wwe-aew-et-tna-19-au-25-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/61059-resultats-de-wwe-road-to-survivor-series-du-5-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61054-tna-impact-5-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61044-preview-roh-du-5-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61064-wwe-une-nouvelle-stipulation-dans-le-roster-principal",
+   "https://www.catch-newz.com/wwe/newz/61063-carte-wwe-survivor-series-wargames-2026",
+   "https://www.catch-newz.com/wwe/newz/61062-rey-mysterio-annonce-un-match-pour-wwe-survivor-series-2026",
+   "https://www.catch-newz.com/wwe/newz/61061-roman-reigns-depasse-les-200-jours-de-regne-en-tant-que-champion-world-heavyweight",
    "https://www.catch-newz.com/international/newz/61050-carte-de-ccw-rose-blood-deathmatch-3",
    "https://www.catch-newz.com/international/newz/61048-carte-de-gcw-dead-on-arrival-2026",
    "https://www.catch-newz.com/wwe/newz/61058-zoey-serrano-se-sent-plus-libre-en-dehors-de-la-wwe",
@@ -1104,7 +1104,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 10 nouveaux articles lus sur la page d'accueil (10 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "10 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
