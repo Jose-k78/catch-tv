@@ -1,6 +1,22 @@
 {
- "at": "2026-11-06T23:15:39.842Z",
+ "at": "2026-11-07T00:06:42.989Z",
  "items": [
+  {
+   "t": "WWE Crown Jewel : Les commentateurs ne seront pas en Arabie saoudite",
+   "u": "https://www.catch-newz.com/wwe/newz/61082-wwe-crown-jewel-les-commentateurs-ne-seront-pas-en-arabie-saoudite",
+   "s": "Catch-Newz",
+   "d": "2026-11-07",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Carte de MCW Pro Wrestling 2026 Chesapeake Beach",
+   "u": "https://www.catch-newz.com/international/newz/61085-carte-de-mcw-pro-wrestling-2026-chesapeake-beach",
+   "s": "Catch-Newz",
+   "d": "2026-11-07",
+   "tags": []
+  },
   {
    "t": "Carte de RCW No One Will Survive 2026",
    "u": "https://www.catch-newz.com/international/newz/61081-carte-de-rcw-no-one-will-survive-2026",
@@ -263,15 +279,6 @@
    ]
   },
   {
-   "t": "Résultats de CMLL Jueves Arena Coliseo du 5 novembre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61072-resultats-de-cmll-jueves-arena-coliseo-du-5-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "CMLL"
-   ]
-  },
-  {
    "t": "Résultats de AEW Dynamite Blood and Guts 2026",
    "u": "https://www.voxcatch.fr/2026/11/05/resultats-de-aew-dynamite-blood-and-guts-2026/",
    "s": "VOXcatch",
@@ -290,6 +297,15 @@
    "tags": [
     "WWE",
     "NXT"
+   ]
+  },
+  {
+   "t": "Résultats de CMLL Jueves Arena Coliseo du 5 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61072-resultats-de-cmll-jueves-arena-coliseo-du-5-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "CMLL"
    ]
   },
   {
@@ -490,25 +506,6 @@
   {
    "t": "WWE Crown Jewel 2026 : Heure et chaine pour regarder le show en direct",
    "u": "https://www.catch-newz.com/wwe/newz/61022-wwe-crown-jewel-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Paige appelée à la dernière minute pour WWE NXT",
-   "u": "https://www.catch-newz.com/wwe/newz/61020-paige-appelee-a-la-derniere-minute-pour-wwe-nxt",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
-  },
-  {
-   "t": "Grayson Waller : « C'est chez moi, c'est mon show, et ça ne changera pas de sitôt »",
-   "u": "https://www.catch-newz.com/wwe/newz/61021-grayson-waller-cest-chez-moi-cest-mon-show-et-ca-ne-changera-pas-de-sitot",
    "s": "Catch-Newz",
    "d": "2026-11-05",
    "tags": [
@@ -802,11 +799,13 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61082-wwe-crown-jewel-les-commentateurs-ne-seront-pas-en-arabie-saoudite",
    "https://www.catch-newz.com/aew/resultats/61073-resultats-de-roh-du-5-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61060-audiences-wwe-aew-et-tna-19-au-25-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/61059-resultats-de-wwe-road-to-survivor-series-du-5-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61081-carte-de-rcw-no-one-will-survive-2026",
+   "https://www.catch-newz.com/international/newz/61085-carte-de-mcw-pro-wrestling-2026-chesapeake-beach",
    "https://www.catch-newz.com/international/resultats/61078-resultats-de-sendai-girls-pro-wrestling-du-6-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61081-carte-de-rcw-no-one-will-survive-2026",
    "https://www.catch-newz.com/international/resultats/61072-resultats-de-cmll-jueves-arena-coliseo-du-5-novembre-2026",
    "https://www.catch-newz.com/international/newz/61080-carte-de-mcw-endgame-2026",
    "https://www.catch-newz.com/international/newz/61079-carte-de-iwa-boiling-point-2026",
@@ -1098,9 +1097,7 @@
    "https://www.catch-newz.com/newz/11984-100-derniers-commentaires-sur-catch-newz",
    "https://www.catch-newz.com/international/newz/60781-carte-du-jour-7-de-la-njpw-super-junior-tag-league-2026",
    "https://www.catch-newz.com/international/resultats/60785-resultats-de-rcw-bound-by-blood",
-   "https://www.catch-newz.com/international/resultats/60783-resultats-de-ovw-hell-night-2026",
-   "https://www.catch-newz.com/culture/gaming/60768-le-sixieme-et-dernier-ringside-pass-de-wwe-2k26-est-lance",
-   "https://www.catch-newz.com/culture/gossip/60748-rusev-et-cj-perry-attendent-leur-premier-enfant"
+   "https://www.catch-newz.com/international/resultats/60783-resultats-de-ovw-hell-night-2026"
   ]
  },
  "diag": {
