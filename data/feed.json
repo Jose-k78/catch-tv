@@ -1,14 +1,21 @@
 {
- "at": "2026-11-07T15:13:26.575Z",
+ "at": "2026-11-07T16:10:30.743Z",
  "items": [
   {
-   "t": "Countdown To WWE Crown Jewel 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61089-countdown-to-wwe-crown-jewel-2026",
+   "t": "Carte de CMLL Sabado De Coliseo du 7 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61074-carte-de-cmll-sabado-de-coliseo-du-7-novembre-2026",
    "s": "Catch-Newz",
    "d": "2026-11-07",
    "tags": [
-    "WWE"
+    "CMLL"
    ]
+  },
+  {
+   "t": "Royce Keys : « C’est sans aucun doute une grande réussite pour moi »",
+   "u": "https://www.catch-newz.com/culture/gaming/60799-royce-keys-cest-sans-aucun-doute-une-grande-reussite-pour-moi",
+   "s": "Catch-Newz",
+   "d": "2026-11-07",
+   "tags": []
   },
   {
    "t": "WWE SmackDown du 6 novembre : CM Punk vs. Kevin Owens, go-home de Crown Jewel",
@@ -18,6 +25,15 @@
    "tags": [
     "WWE",
     "SmackDown"
+   ]
+  },
+  {
+   "t": "Countdown To WWE Crown Jewel 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61089-countdown-to-wwe-crown-jewel-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-07",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -496,24 +512,6 @@
    "tags": [
     "Stardom"
    ]
-  },
-  {
-   "t": "Carte de CMLL Jueves Arena Coliseo du 5 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61028-carte-de-cmll-jueves-arena-coliseo-du-5-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "CMLL"
-   ]
-  },
-  {
-   "t": "Une célébration en préparation pour les 30 ans de The Rock à la WWE",
-   "u": "https://www.catch-newz.com/wwe/newz/61041-une-celebration-en-preparation-pour-les-30-ans-de-the-rock-a-la-wwe",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -843,8 +841,10 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61089-countdown-to-wwe-crown-jewel-2026",
    "https://www.catch-newz.com/aew/resultats/61073-resultats-de-roh-du-5-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61074-carte-de-cmll-sabado-de-coliseo-du-7-novembre-2026",
+   "https://www.catch-newz.com/culture/gaming/60799-royce-keys-cest-sans-aucun-doute-une-grande-reussite-pour-moi",
+   "https://www.catch-newz.com/wwe/newz/61089-countdown-to-wwe-crown-jewel-2026",
    "https://www.catch-newz.com/wwe/newz/61091-johnny-gargano-a-rey-fenix-toi-et-ton-stupide-frere-vous-navez-aucun-honneur",
    "https://www.catch-newz.com/wwe/newz/61090-matt-cardona-est-presque-pret-a-remonter-sur-les-rings-de-la-wwe",
    "https://www.catch-newz.com/international/newz/61076-carte-de-gcw-the-crossroads-2026",
@@ -1138,13 +1138,11 @@
    "https://www.catch-newz.com/wwe/newz/60774-wwe-crown-jewel-2026-change-de-lieu",
    "https://www.catch-newz.com/wwe/newz/60760-wwe-nxt-invite-john-cena-face-a-aew-dynamite",
    "https://www.catch-newz.com/wwe/newz/60761-elio-lefleur-de-retour-de-blessure-avant-wwe-nxt-du-27-octobre",
-   "https://www.catch-newz.com/international/newz/60790-starboyz-vont-defier-les-champions-par-equipe-lwa-a-requiem",
-   "https://www.catch-newz.com/wwe/newz/60800-blake-monroe-exprime-sa-frustration-concernant-sa-mise-a-lecart-des-programmes-de-smackdown",
-   "https://www.catch-newz.com/wwe/newz/60801-grayson-waller-veut-confronter-cm-punk-au-micro-un-jour"
+   "https://www.catch-newz.com/international/newz/60790-starboyz-vont-defier-les-champions-par-equipe-lwa-a-requiem"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "9 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
