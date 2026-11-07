@@ -321,7 +321,8 @@ export function profileView(uid) {
     .map((f, i) => '<div class="fav"><small>' + f[0] + "</small>" + (!i && fsLogo ? '<a href="#/p/' + encodeURIComponent(fsK) + (fsN ? "/" + encodeURIComponent(fsN) : "") + '"><img class="favlogo" src="' + esc(fsLogo) + '" alt="" loading="lazy" onerror="this.remove()"></a>' : "") + (i && f[1] && photoOf(f[1]) ? '<a href="#/catcheur/' + encodeURIComponent(f[1]) + '"><img class="favpic" src="' + esc(photoOf(f[1])) + '" alt="" loading="lazy" onerror="this.remove()"></a>' : "") + "<b>" + (f[1] ? esc(f[1]) : "–") + "</b></div>").join("") + "</div>";
   h += '<div class="stats"><div><b>' + hist.length + "</b><small>show" + (hist.length > 1 ? "s" : "") + " vu" + (hist.length > 1 ? "s" : "") + "</small></div><div><b>" + fights.length + "</b><small>combat" + (fights.length > 1 ? "s" : "") + " noté" + (fights.length > 1 ? "s" : "") +
     "</small></div><div><b>" + avg + "</b><small>note moyenne</small></div><div><b>" + pickPoints(uid).ok + "</b><small>pt" + (pickPoints(uid).ok > 1 ? "s" : "") + " de pronos</small></div><div><b>" + friendsOf(uid).length + "</b><small>ami" + (friendsOf(uid).length > 1 ? "s" : "") + "</small></div></div>";
-  // vitrine des trophées
+  // vitrine des trophées (le bouton 🏆 est ici, plus dans l'en-tête)
+  if (S.user && uid === S.user.uid) h += '<a class="btn ghost wide trolink" href="#/trophees">🏆 Mes trophées</a>';
   h += showcase(uid);
   h += storyFavsHTML(raw);
   const segFav = raw.filter(x => typeof x.id === "string" && x.id.indexOf("q_") === 0);

@@ -155,7 +155,8 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   Matchs à découvrir aussi sur l'accueil ; rubrique Recherche en bas de l'accueil (barre, catcheur à découvrir, Explorer). « Draw » au lieu de « Match nul ».
 - Babies : sans choix du modo, 8 catcheuses tirées au hasard dans les rosters féminins (même tirage pour tout le mois).
 - Clans / équipes : le modo les ajoute, modifie, supprime depuis la fiche d'un groupe (data/groups.json via GitHub).
-- Vitrine : jusqu'à 5 trophées (`tro.v1`…`v5`). Appui long sur une note de son profil pour la modifier.
+- Vitrine : jusqu'à 5 trophées (`tro.v1`…`v5`). Bouton « 🏆 Mes trophées » sur son profil (retiré de l'en-tête le 7 nov. : l'en-tête
+  dépassait de l'écran et le téléphone dézoomait tout le site — toujours vérifier la largeur à 320 px avant d'ajouter un bouton en haut). Appui long sur une note de son profil pour la modifier.
 - Mode TCCCG collant (profil, paramètres, trophées restent en noir et doré) ; réglage « À l'ouverture » (`ctv.start`, modo)
   et intro au logo TCCCG. NJPW Strong = promotion rangée sous NJPW (`PARENT`) ; un titre peut apparaître dans une autre
   promotion avec `also: ["NJPW"]` (IWGP Women's).

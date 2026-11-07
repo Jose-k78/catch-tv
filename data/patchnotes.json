@@ -1,6 +1,15 @@
 {
- "updated": "2026-11-06",
+ "updated": "2026-11-07",
  "items": [
+  {
+   "id": "2026-11-07-entete",
+   "d": "2026-11-07",
+   "t": "Correctif de l’en-tête",
+   "txt": [
+    "🏆 Le bouton des trophées a quitté le haut de l’écran : il est maintenant sur ton profil (« 🏆 Mes trophées »).",
+    "📱 Le site ne dépasse plus de l’écran : plus besoin de dézoomer pour voir les onglets."
+   ]
+  },
   {
    "id": "2026-11-06-tcccg",
    "d": "2026-11-06",
