@@ -1,15 +1,6 @@
 {
- "at": "2026-11-07T21:11:43.405Z",
+ "at": "2026-11-07T22:08:22.898Z",
  "items": [
-  {
-   "t": "Cody Rhodes sera capitaine de son équipe aux Survivor Series 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61104-cody-rhodes-sera-capitaine-de-son-equipe-aux-survivor-series-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": [
-    "WWE"
-   ]
-  },
   {
    "t": "Preview : AEW Collision du 7 novembre 2026",
    "u": "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
@@ -29,20 +20,6 @@
     "WWE",
     "AAA"
    ]
-  },
-  {
-   "t": "Résultats de NHB The Chains Volume 103",
-   "u": "https://www.catch-newz.com/international/resultats/61098-resultats-de-nhb-the-chains-volume-103",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": []
-  },
-  {
-   "t": "Résultats de MCW Pro Wrestling Monster Mash 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61105-resultats-de-mcw-pro-wrestling-monster-mash-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": []
   },
   {
    "t": "Carte de CMLL Sabado De Coliseo du 7 novembre 2026",
@@ -71,6 +48,29 @@
     "WWE",
     "SmackDown"
    ]
+  },
+  {
+   "t": "Cody Rhodes sera capitaine de son équipe aux Survivor Series 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61104-cody-rhodes-sera-capitaine-de-son-equipe-aux-survivor-series-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-07",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Résultats de NHB The Chains Volume 103",
+   "u": "https://www.catch-newz.com/international/resultats/61098-resultats-de-nhb-the-chains-volume-103",
+   "s": "Catch-Newz",
+   "d": "2026-11-07",
+   "tags": []
+  },
+  {
+   "t": "Résultats de MCW Pro Wrestling Monster Mash 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61105-resultats-de-mcw-pro-wrestling-monster-mash-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-07",
+   "tags": []
   },
   {
    "t": "WWE Crown Jewel : Roman Reigns prouve encore une fois sa supériorité",
@@ -853,6 +853,10 @@
    {
     "id": "4n7gHGwD3dI",
     "t": "Roman Reigns embraces Sami Zayn after epic clash: WWE Crown Jewel 2026 highlights"
+   },
+   {
+    "id": "Mkbj89YOvTU",
+    "t": "Full Crown Jewel 2026 highlights"
    }
   ]
  },
@@ -866,13 +870,13 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61104-cody-rhodes-sera-capitaine-de-son-equipe-aux-survivor-series-2026",
    "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61093-preview-aaa-heroes-inmortales-7-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61098-resultats-de-nhb-the-chains-volume-103",
-   "https://www.catch-newz.com/international/resultats/61105-resultats-de-mcw-pro-wrestling-monster-mash-2026",
    "https://www.catch-newz.com/international/resultats/61096-resultats-de-cmll-viernes-espectacular-du-6-novembre-2026",
    "https://www.catch-newz.com/international/newz/61074-carte-de-cmll-sabado-de-coliseo-du-7-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61104-cody-rhodes-sera-capitaine-de-son-equipe-aux-survivor-series-2026",
+   "https://www.catch-newz.com/international/resultats/61098-resultats-de-nhb-the-chains-volume-103",
+   "https://www.catch-newz.com/international/resultats/61105-resultats-de-mcw-pro-wrestling-monster-mash-2026",
    "https://www.catch-newz.com/wwe/newz/61102-wwe-crown-jewel-roman-reigns-prouve-encore-une-fois-sa-superiorite",
    "https://www.catch-newz.com/international/resultats/61103-resultats-de-aull-triple-amenaza",
    "https://www.catch-newz.com/wwe/newz/61101-wwe-crown-jewel-une-courte-celebration-pour-chelsea-green",
@@ -1168,10 +1172,10 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "9 articles (7 j)",
-  "YouTube WWE": "2 nouvelles vidéos",
+  "YouTube WWE": "1 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
