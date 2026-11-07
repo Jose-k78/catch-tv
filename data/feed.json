@@ -1,6 +1,34 @@
 {
- "at": "2026-11-07T22:08:22.898Z",
+ "at": "2026-11-07T23:07:02.128Z",
  "items": [
+  {
+   "t": "Carte de CCW Bash At The Brew 70",
+   "u": "https://www.catch-newz.com/international/newz/61107-carte-de-ccw-bash-at-the-brew-70",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": []
+  },
+  {
+   "t": "Résultats de New Texas Pro Wrestling Texas Contenders Series 70",
+   "u": "https://www.catch-newz.com/international/resultats/61110-resultats-de-new-texas-pro-wrestling-texas-contenders-series-70",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": []
+  },
+  {
+   "t": "Résultats de CCW Breakout 64: The Creepy Carnival",
+   "u": "https://www.catch-newz.com/international/resultats/61108-resultats-de-ccw-breakout-64-the-creepy-carnival",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": []
+  },
+  {
+   "t": "Résultats de MCW Pro Wrestling 2026 Chesapeake Beach",
+   "u": "https://www.catch-newz.com/international/resultats/61106-resultats-de-mcw-pro-wrestling-2026-chesapeake-beach",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": []
+  },
   {
    "t": "Preview : AEW Collision du 7 novembre 2026",
    "u": "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
@@ -22,15 +50,6 @@
    ]
   },
   {
-   "t": "Carte de CMLL Sabado De Coliseo du 7 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61074-carte-de-cmll-sabado-de-coliseo-du-7-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": [
-    "CMLL"
-   ]
-  },
-  {
    "t": "Résultats de WWE Crown Jewel 2026",
    "u": "https://www.voxcatch.fr/2026/11/07/resultats-de-wwe-crown-jewel-2026/",
    "s": "VOXcatch",
@@ -47,6 +66,15 @@
    "tags": [
     "WWE",
     "SmackDown"
+   ]
+  },
+  {
+   "t": "Carte de CMLL Sabado De Coliseo du 7 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61074-carte-de-cmll-sabado-de-coliseo-du-7-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-07",
+   "tags": [
+    "CMLL"
    ]
   },
   {
@@ -479,36 +507,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-06",
    "tags": []
-  },
-  {
-   "t": "Stephanie Vaquer de retour en Live Event le 5 novembre",
-   "u": "https://www.catch-newz.com/wwe/newz/61055-stephanie-vaquer-de-retour-en-live-event-le-5-novembre",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Carte de NHB The Chains Volume 103",
-   "u": "https://www.catch-newz.com/international/newz/61049-carte-de-nhb-the-chains-volume-103",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": []
-  },
-  {
-   "t": "Résultats de ChocoPro #548",
-   "u": "https://www.catch-newz.com/international/resultats/61053-resultats-de-chocopro-548",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": []
-  },
-  {
-   "t": "Résultats de ChocoPro #547",
-   "u": "https://www.catch-newz.com/international/resultats/61052-resultats-de-chocopro-547",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": []
   }
  ],
  "yt": {
@@ -872,6 +870,11 @@
    "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61093-preview-aaa-heroes-inmortales-7-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61107-carte-de-ccw-bash-at-the-brew-70",
+   "https://www.catch-newz.com/international/resultats/61110-resultats-de-new-texas-pro-wrestling-texas-contenders-series-70",
+   "https://www.catch-newz.com/international/resultats/61109-resultats-de-stardom-nighter-korakuen-hall-du-27-octobre-2026",
+   "https://www.catch-newz.com/international/resultats/61108-resultats-de-ccw-breakout-64-the-creepy-carnival",
+   "https://www.catch-newz.com/international/resultats/61106-resultats-de-mcw-pro-wrestling-2026-chesapeake-beach",
    "https://www.catch-newz.com/international/resultats/61096-resultats-de-cmll-viernes-espectacular-du-6-novembre-2026",
    "https://www.catch-newz.com/international/newz/61074-carte-de-cmll-sabado-de-coliseo-du-7-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61104-cody-rhodes-sera-capitaine-de-son-equipe-aux-survivor-series-2026",
@@ -1163,19 +1166,14 @@
    "https://www.catch-newz.com/international/newz/60794-preview-tna-impact-29-octobre-2026",
    "https://www.catch-newz.com/international/resultats/60814-resultats-du-jour-2-du-hop-spooktober-tour-2026",
    "https://www.catch-newz.com/international/resultats/60817-resultats-de-ott-pure-deadly",
-   "https://www.catch-newz.com/international/resultats/60818-resultats-du-jour-3-de-dg-the-gate-of-victory-2026",
-   "https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018",
-   "https://www.catch-newz.com/international/resultats/60816-resultats-du-jour-1-de-rcw-rise-of-legends",
-   "https://www.catch-newz.com/international/resultats/60813-resultats-de-noah-wrestle-odyssey-ii",
-   "https://www.catch-newz.com/international/resultats/60811-resultats-de-marigold-grand-destiny-2026",
-   "https://www.catch-newz.com/international/resultats/60812-resultats-du-jour-1-du-hop-spooktober-tour-2026"
+   "https://www.catch-newz.com/international/resultats/60818-resultats-du-jour-3-de-dg-the-gate-of-victory-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
-  "VOXcatch": "7 articles (7 j)",
-  "Catch Arena": "9 articles (7 j)",
-  "YouTube WWE": "1 nouvelles vidéos",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "VOXcatch": "6 articles (7 j)",
+  "Catch Arena": "0 articles (7 j)",
+  "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
