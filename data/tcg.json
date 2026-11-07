@@ -39,7 +39,17 @@
    "medalOf": "Koguma"
   },
   "calavera-jr-ii": {
-   "img": "img/tcg/mw64iel7.jpg"
+   "img": "img/tcg/mw64iel7.jpg",
+   "r": "N",
+   "max": "R",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Powerbomb",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Calavera Jr. II"
   }
  },
  "bgm": {
