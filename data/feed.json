@@ -1,6 +1,16 @@
 {
- "at": "2026-11-07T13:27:33.941Z",
+ "at": "2026-11-07T14:16:04.740Z",
  "items": [
+  {
+   "t": "WWE SmackDown du 6 novembre : CM Punk vs. Kevin Owens, go-home de Crown Jewel",
+   "u": "https://www.voxcatch.fr/2026/11/07/resultats-wwe-smackdown-6-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-07",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
+  },
   {
    "t": "Johnny Gargano à Rey Fenix : « Toi et ton stupide frère, vous n'avez aucun honneur »",
    "u": "https://www.catch-newz.com/wwe/newz/61091-johnny-gargano-a-rey-fenix-toi-et-ton-stupide-frere-vous-navez-aucun-honneur",
@@ -499,15 +509,6 @@
   {
    "t": "La WWE offre une ''prime de risque'' pour aller à Crown Jewel 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61040-la-wwe-offre-une-prime-de-risque-pour-aller-a-crown-jewel-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Danhausen bientôt en ''Santahausen'' pour le temps des fêtes",
-   "u": "https://www.catch-newz.com/wwe/newz/61042-danhausen-bientot-en-santahausen-pour-le-temps-des-fetes",
    "s": "Catch-Newz",
    "d": "2026-11-05",
    "tags": [
@@ -1144,9 +1145,9 @@
  },
  "diag": {
   "Catch-Newz": "pas de flux RSS : 3 nouveaux articles lus sur la page d'accueil (3 liens)",
-  "VOXcatch": "5 articles (7 j)",
+  "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "9 articles (7 j)",
-  "YouTube WWE": "2 nouvelles vidéos",
+  "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
