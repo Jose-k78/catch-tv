@@ -1,6 +1,20 @@
 {
- "at": "2026-11-07T05:44:08.479Z",
+ "at": "2026-11-07T06:50:37.226Z",
  "items": [
+  {
+   "t": "Et les 100 derniers commentaires...",
+   "u": "https://www.catch-newz.com/newz/11984-100-derniers-commentaires-sur-catch-newz",
+   "s": "Catch-Newz",
+   "d": "2026-11-07",
+   "tags": []
+  },
+  {
+   "t": "Carte de GNPW Never Say Die 2026",
+   "u": "https://www.catch-newz.com/international/newz/61077-carte-de-gnpw-never-say-die-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-07",
+   "tags": []
+  },
   {
    "t": "Carte de WWE Crown Jewel 2026",
    "u": "https://www.catch-newz.com/wwe/newz/60394-carte-wwe-crown-jewel-2026",
@@ -503,23 +517,6 @@
     "WWE",
     "Raw"
    ]
-  },
-  {
-   "t": "Enzo Amore était dans les coulisses de NXT le 4 novembre",
-   "u": "https://www.catch-newz.com/wwe/newz/61030-enzo-amore-etait-dans-les-coulisses-de-nxt-le-4-novembre",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
-  },
-  {
-   "t": "Résultats du jour 3 du ZERO1 Tenka-Ichi Junior Tournament 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61029-resultats-du-jour-3-du-zero1-tenka-ichi-junior-tournament-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": []
   }
  ],
  "yt": {
@@ -807,11 +804,13 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/wwe/newz/60394-carte-wwe-crown-jewel-2026",
    "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
-   "https://www.catch-newz.com/aew/newz/61088-aew-a-battu-nxt-et-son-programme-xxl-le-4-novembre",
    "https://www.catch-newz.com/aew/resultats/61073-resultats-de-roh-du-5-novembre-2026",
+   "https://www.catch-newz.com/newz/11984-100-derniers-commentaires-sur-catch-newz",
+   "https://www.catch-newz.com/international/newz/61077-carte-de-gnpw-never-say-die-2026",
+   "https://www.catch-newz.com/wwe/newz/60394-carte-wwe-crown-jewel-2026",
+   "https://www.catch-newz.com/aew/newz/61088-aew-a-battu-nxt-et-son-programme-xxl-le-4-novembre",
    "https://www.catch-newz.com/international/resultats/61078-resultats-de-sendai-girls-pro-wrestling-du-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61060-audiences-wwe-aew-et-tna-19-au-25-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/61087-wwe-smackdown-kevin-owens-rive-les-epaules-de-son-ennemi-jure-cm-punk",
@@ -1104,13 +1103,11 @@
    "https://www.catch-newz.com/wwe/newz/60797-jackson-drake-reagit-a-sa-victoire-contre-ek-prosper-a-nxt",
    "https://www.catch-newz.com/wwe/newz/60796-qui-serait-ladversaire-ideal-de-tony-dangelo-dans-le-roster-principal",
    "https://www.catch-newz.com/wwe/newz/60795-pourquoi-la-promo-de-solo-sikoa-a-raw-fait-polemique",
-   "https://www.catch-newz.com/aew/newz/60792-le-main-event-de-aew-full-gear-2026-sannonce",
-   "https://www.catch-newz.com/wwe/newz/60788-le-changement-de-lieu-de-wwe-crown-jewel-2026-a-surpris-tout-le-monde",
-   "https://www.catch-newz.com/culture/gaming/60787-wwe-2k26-maj-1-20-pour-la-saison-six-et-street-fighter"
+   "https://www.catch-newz.com/aew/newz/60792-le-main-event-de-aew-full-gear-2026-sannonce"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "9 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
