@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06",
+ "updated": "2026-11-07",
  "note": "Champions actuels : peut révéler des résultats récents.",
  "titles": [
   {
@@ -60,12 +60,206 @@
     {
      "c": "Stephanie Vaquer",
      "d": "2026-09-12",
-     "ev": "Live event à Santiago (Chili)"
+     "ev": "Live event à Santiago (Chili)",
+     "j": 28
     },
     {
      "c": "Liv Morgan",
      "d": "2026-04-18",
-     "ev": "WrestleMania 42"
+     "ev": "WrestleMania 42",
+     "j": 147
+    },
+    {
+     "c": "Stephanie Vaquer",
+     "d": "2025-09-20",
+     "ev": "Wrestlepalooza",
+     "j": 210
+    },
+    {
+     "c": "Naomi",
+     "d": "2025-07-13",
+     "ev": "Evolution",
+     "j": 36
+    },
+    {
+     "c": "IYO SKY",
+     "d": "2025-03-03",
+     "ev": "Raw",
+     "j": 132
+    },
+    {
+     "c": "Rhea Ripley",
+     "d": "2025-01-06",
+     "ev": "Raw",
+     "j": 56
+    },
+    {
+     "c": "Liv Morgan",
+     "d": "2024-05-25",
+     "ev": "King and Queen of the Ring",
+     "j": 226
+    },
+    {
+     "c": "Becky Lynch",
+     "d": "2024-04-22",
+     "ev": "Raw",
+     "j": 33
+    },
+    {
+     "c": "Rhea Ripley",
+     "d": "2023-04-01",
+     "ev": "WrestleMania 39",
+     "j": 380
+    },
+    {
+     "c": "Charlotte Flair",
+     "d": "2022-12-30",
+     "ev": "SmackDown",
+     "j": 92
+    },
+    {
+     "c": "Ronda Rousey",
+     "d": "2022-10-08",
+     "ev": "Extreme Rules",
+     "j": 83
+    },
+    {
+     "c": "Liv Morgan",
+     "d": "2022-07-02",
+     "ev": "Money in the Bank",
+     "j": 98
+    },
+    {
+     "c": "Ronda Rousey",
+     "d": "2022-05-08",
+     "ev": "WrestleMania Backlash",
+     "j": 55
+    },
+    {
+     "c": "Charlotte Flair",
+     "d": "2021-10-22",
+     "ev": "SmackDown",
+     "j": 198
+    },
+    {
+     "c": "Becky Lynch",
+     "d": "2021-08-21",
+     "ev": "SummerSlam",
+     "j": 62
+    },
+    {
+     "c": "Bianca Belair",
+     "d": "2021-04-10",
+     "ev": "WrestleMania 37",
+     "j": 133
+    },
+    {
+     "c": "Sasha Banks",
+     "d": "2020-10-25",
+     "ev": "Hell in a Cell",
+     "j": 167
+    },
+    {
+     "c": "Bayley",
+     "d": "2019-10-11",
+     "ev": "SmackDown",
+     "j": 380
+    },
+    {
+     "c": "Charlotte Flair",
+     "d": "2019-10-06",
+     "ev": "Hell in a Cell",
+     "j": 5
+    },
+    {
+     "c": "Bayley",
+     "d": "2019-05-19",
+     "ev": "Money in the Bank",
+     "j": 140
+    },
+    {
+     "c": "Charlotte Flair",
+     "d": "2019-05-19",
+     "ev": "Money in the Bank",
+     "j": 0
+    },
+    {
+     "c": "Becky Lynch",
+     "d": "2019-04-08",
+     "ev": "WrestleMania 35",
+     "j": 41
+    },
+    {
+     "c": "Charlotte Flair",
+     "d": "2019-03-26",
+     "ev": "SmackDown",
+     "j": 13
+    },
+    {
+     "c": "Asuka",
+     "d": "2018-12-16",
+     "ev": "TLC: Tables, Ladders & Chairs",
+     "j": 100
+    },
+    {
+     "c": "Becky Lynch",
+     "d": "2018-09-16",
+     "ev": "Hell in a Cell",
+     "j": 91
+    },
+    {
+     "c": "Charlotte Flair",
+     "d": "2018-08-19",
+     "ev": "SummerSlam",
+     "j": 28
+    },
+    {
+     "c": "Carmella",
+     "d": "2018-04-10",
+     "ev": "SmackDown",
+     "j": 131
+    },
+    {
+     "c": "Charlotte Flair",
+     "d": "2017-11-14",
+     "ev": "SmackDown",
+     "j": 147
+    },
+    {
+     "c": "Natalya",
+     "d": "2017-08-20",
+     "ev": "SummerSlam",
+     "j": 86
+    },
+    {
+     "c": "Naomi",
+     "d": "2017-04-02",
+     "ev": "WrestleMania 33",
+     "j": 140
+    },
+    {
+     "c": "Alexa Bliss",
+     "d": "2017-02-21",
+     "ev": "SmackDown",
+     "j": 40
+    },
+    {
+     "c": "Naomi",
+     "d": "2017-02-12",
+     "ev": "Elimination Chamber",
+     "j": 9
+    },
+    {
+     "c": "Alexa Bliss",
+     "d": "2016-12-04",
+     "ev": "TLC: Tables, Ladders & Chairs",
+     "j": 70
+    },
+    {
+     "c": "Becky Lynch",
+     "d": "2016-09-11",
+     "ev": "Backlash",
+     "j": 84
     }
    ],
    "src": "The SmackDown Hotel",
@@ -294,8 +488,14 @@
     "Raw",
     "SmackDown"
    ],
-   "defs": [],
-   "def": 0
+   "defs": [
+    {
+     "d": "2026-11-06",
+     "ev": "SmackDown",
+     "vs": "Fatal Influence (disqualification)"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "nxt",
