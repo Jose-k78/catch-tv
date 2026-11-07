@@ -1,6 +1,15 @@
 {
- "at": "2026-11-07T14:16:04.740Z",
+ "at": "2026-11-07T15:13:26.575Z",
  "items": [
+  {
+   "t": "Countdown To WWE Crown Jewel 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61089-countdown-to-wwe-crown-jewel-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-07",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "WWE SmackDown du 6 novembre : CM Punk vs. Kevin Owens, go-home de Crown Jewel",
    "u": "https://www.voxcatch.fr/2026/11/07/resultats-wwe-smackdown-6-novembre-2026/",
@@ -505,15 +514,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "La WWE offre une ''prime de risque'' pour aller à Crown Jewel 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61040-la-wwe-offre-une-prime-de-risque-pour-aller-a-crown-jewel-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -843,6 +843,7 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61089-countdown-to-wwe-crown-jewel-2026",
    "https://www.catch-newz.com/aew/resultats/61073-resultats-de-roh-du-5-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61091-johnny-gargano-a-rey-fenix-toi-et-ton-stupide-frere-vous-navez-aucun-honneur",
    "https://www.catch-newz.com/wwe/newz/61090-matt-cardona-est-presque-pret-a-remonter-sur-les-rings-de-la-wwe",
@@ -1139,12 +1140,11 @@
    "https://www.catch-newz.com/wwe/newz/60761-elio-lefleur-de-retour-de-blessure-avant-wwe-nxt-du-27-octobre",
    "https://www.catch-newz.com/international/newz/60790-starboyz-vont-defier-les-champions-par-equipe-lwa-a-requiem",
    "https://www.catch-newz.com/wwe/newz/60800-blake-monroe-exprime-sa-frustration-concernant-sa-mise-a-lecart-des-programmes-de-smackdown",
-   "https://www.catch-newz.com/wwe/newz/60801-grayson-waller-veut-confronter-cm-punk-au-micro-un-jour",
-   "https://www.catch-newz.com/culture/gaming/60799-royce-keys-cest-sans-aucun-doute-une-grande-reussite-pour-moi"
+   "https://www.catch-newz.com/wwe/newz/60801-grayson-waller-veut-confronter-cm-punk-au-micro-un-jour"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 3 nouveaux articles lus sur la page d'accueil (3 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "9 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
