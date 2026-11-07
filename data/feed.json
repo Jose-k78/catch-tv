@@ -1,6 +1,16 @@
 {
- "at": "2026-11-07T02:45:22.046Z",
+ "at": "2026-11-07T03:45:57.362Z",
  "items": [
+  {
+   "t": "WWE SmackDown : Kevin Owens rive les épaules de son ennemi juré CM Punk",
+   "u": "https://www.catch-newz.com/wwe/newz/61087-wwe-smackdown-kevin-owens-rive-les-epaules-de-son-ennemi-jure-cm-punk",
+   "s": "Catch-Newz",
+   "d": "2026-11-07",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
+  },
   {
    "t": "WWE SmackDown : Charlotte Flair de retour après quelques semaines d'absence",
    "u": "https://www.catch-newz.com/wwe/newz/61086-wwe-smackdown-charlotte-flair-de-retour-apres-quelques-semaines-dabsence",
@@ -290,15 +300,6 @@
    ]
   },
   {
-   "t": "Résultats de WWE Road To Survivor Series du 5 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61059-resultats-de-wwe-road-to-survivor-series-du-5-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
    "t": "Résultats de AEW Dynamite Blood and Guts 2026",
    "u": "https://www.voxcatch.fr/2026/11/05/resultats-de-aew-dynamite-blood-and-guts-2026/",
    "s": "VOXcatch",
@@ -317,6 +318,15 @@
    "tags": [
     "WWE",
     "NXT"
+   ]
+  },
+  {
+   "t": "Résultats de WWE Road To Survivor Series du 5 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/61059-resultats-de-wwe-road-to-survivor-series-du-5-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-05",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -504,15 +514,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-05",
    "tags": []
-  },
-  {
-   "t": "La WWE annonce 11 nouveaux shows pour début 2027",
-   "u": "https://www.catch-newz.com/wwe/newz/61024-la-wwe-annonce-11-nouveaux-shows-pour-debut-2027",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -802,11 +803,12 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61086-wwe-smackdown-charlotte-flair-de-retour-apres-quelques-semaines-dabsence",
+   "https://www.catch-newz.com/wwe/newz/61087-wwe-smackdown-kevin-owens-rive-les-epaules-de-son-ennemi-jure-cm-punk",
    "https://www.catch-newz.com/aew/resultats/61073-resultats-de-roh-du-5-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61060-audiences-wwe-aew-et-tna-19-au-25-octobre-2026",
-   "https://www.catch-newz.com/wwe/resultats/61059-resultats-de-wwe-road-to-survivor-series-du-5-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61078-resultats-de-sendai-girls-pro-wrestling-du-6-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61086-wwe-smackdown-charlotte-flair-de-retour-apres-quelques-semaines-dabsence",
+   "https://www.catch-newz.com/wwe/resultats/61059-resultats-de-wwe-road-to-survivor-series-du-5-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61082-wwe-crown-jewel-les-commentateurs-ne-seront-pas-en-arabie-saoudite",
    "https://www.catch-newz.com/international/newz/61085-carte-de-mcw-pro-wrestling-2026-chesapeake-beach",
    "https://www.catch-newz.com/international/newz/61081-carte-de-rcw-no-one-will-survive-2026",
@@ -1098,12 +1100,11 @@
    "https://www.catch-newz.com/wwe/newz/60788-le-changement-de-lieu-de-wwe-crown-jewel-2026-a-surpris-tout-le-monde",
    "https://www.catch-newz.com/culture/gaming/60787-wwe-2k26-maj-1-20-pour-la-saison-six-et-street-fighter",
    "https://www.catch-newz.com/international/resultats/60758-resultats-de-produce-by-orange-crush-volume-6-hell-comes-to-dogtown",
-   "https://www.catch-newz.com/newz/11984-100-derniers-commentaires-sur-catch-newz",
-   "https://www.catch-newz.com/international/newz/60781-carte-du-jour-7-de-la-njpw-super-junior-tag-league-2026"
+   "https://www.catch-newz.com/newz/11984-100-derniers-commentaires-sur-catch-newz"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "9 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
