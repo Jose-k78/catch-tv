@@ -1,6 +1,47 @@
 {
-  "updated": "2026-11-06",
+  "updated": "2026-11-07",
   "items": [
+    {
+      "id": "p-20261107-wargames",
+      "d": "2026-11-07",
+      "type": "",
+      "k": "WWE",
+      "q": "Survivor Series WarGames : si The Bloodline affronte The 946, qui gagne ?",
+      "opts": [
+        "The Bloodline",
+        "The 946"
+      ],
+      "other": false,
+      "end": "2026-11-28"
+    },
+    {
+      "id": "p-20261107-creed",
+      "d": "2026-11-07",
+      "type": "",
+      "k": "",
+      "q": "Les Creed Brothers quittent la WWE : où aimerais-tu les voir ?",
+      "opts": [
+        "AEW",
+        "TNA",
+        "NJPW"
+      ],
+      "other": true,
+      "end": ""
+    },
+    {
+      "id": "p-20261107-best-ss",
+      "d": "2026-11-07",
+      "type": "",
+      "k": "WWE",
+      "q": "Le Survivor Series le plus marquant de l’histoire ?",
+      "opts": [
+        "1990 (débuts de l’Undertaker)",
+        "1997 (Montréal)",
+        "2002 (1re Elimination Chamber)"
+      ],
+      "other": true,
+      "end": ""
+    },
     {
       "id": "p-20261106-rock-30ans",
       "d": "2026-11-06",
