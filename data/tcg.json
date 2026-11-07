@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05",
+ "updated": "2026-11-07",
  "note": "Réglages TCCCG du modo (cartes, persos, taux, objets, boosters, combats, musiques, assets). Modifié depuis l’app (⚙️ Modo TCCCG).",
  "cards": {
   "ace-austin": {
@@ -38,5 +38,8 @@
    "gimmick": "",
    "medalOf": "Koguma"
   }
+ },
+ "bgm": {
+  "bell": "media/tcg/mw64c3jq.mp3"
  }
 }
