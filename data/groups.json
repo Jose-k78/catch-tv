@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06",
+ "updated": "2026-11-07",
  "note": "Membres tenus à jour par la mise à jour du soir (19 h 23).",
  "items": {
   "946": {
@@ -2620,6 +2620,22 @@
     "Ethan Page"
    ],
    "ex": []
+  },
+  "new-level": {
+   "n": "The New Level",
+   "lg": "",
+   "k": "AEW",
+   "y": "depuis 2026",
+   "on": 1,
+   "m": [
+    "Austin Creed",
+    "Kofi Kingston"
+   ],
+   "ex": [],
+   "a": [
+    "New Level"
+   ],
+   "ref": []
   }
  }
 }
