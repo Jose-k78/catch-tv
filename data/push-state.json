@@ -1,5 +1,5 @@
 {
- "at": "2026-11-07T06:50:37.281Z",
+ "at": "2026-11-07T07:56:04.084Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -357,108 +357,12 @@
   "a:https://www.catch-newz.com/wwe/newz/61087-wwe-smackdown-kevin-owens-rive-les-epaules-de-son-ennemi-jure-cm-punk": "2026-11-07",
   "a:https://www.catch-newz.com/wwe/newz/60394-carte-wwe-crown-jewel-2026": "2026-11-07",
   "a:https://www.catch-newz.com/aew/newz/61088-aew-a-battu-nxt-et-son-programme-xxl-le-4-novembre": "2026-11-07",
-  "story:wrestling-classic-1985": "2026-11-07"
+  "story:wrestling-classic-1985": "2026-11-07",
+  "t:wwe-wtag:2026-11-06:d1mwtwjk": "2026-11-07",
+  "poll:p-20261107-wargames": "2026-11-07",
+  "poll:p-20261107-creed": "2026-11-07",
+  "poll:p-20261107-best-ss": "2026-11-07",
+  "fd:WWE:2026-11-07": "2026-11-07"
  },
- "pend": {
-  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
-   {
-    "cat": "info",
-    "title": "📰 Catch-Newz",
-    "body": "WWE Crown Jewel : Les commentateurs ne seront pas en Arabie saoudite",
-    "url": "https://www.catch-newz.com/wwe/newz/61082-wwe-crown-jewel-les-commentateurs-ne-seront-pas-en-arabie-saoudite",
-    "tag": "art",
-    "short": "WWE Crown Jewel : Les commentateurs ne seront pas en Arabie saoudite"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Catch-Newz",
-    "body": "Résultats de WWE SmackDown du 6 novembre 2026",
-    "url": "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
-    "tag": "art",
-    "short": "Résultats de WWE SmackDown du 6 novembre 2026"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Catch-Newz",
-    "body": "WWE SmackDown : Charlotte Flair de retour après quelques semaines d'absence",
-    "url": "https://www.catch-newz.com/wwe/newz/61086-wwe-smackdown-charlotte-flair-de-retour-apres-quelques-semaines-dabsence",
-    "tag": "art",
-    "short": "WWE SmackDown : Charlotte Flair de retour après quelques semaines d'absence"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Catch-Newz",
-    "body": "WWE SmackDown : Kevin Owens rive les épaules de son ennemi juré CM Punk",
-    "url": "https://www.catch-newz.com/wwe/newz/61087-wwe-smackdown-kevin-owens-rive-les-epaules-de-son-ennemi-jure-cm-punk",
-    "tag": "art",
-    "short": "WWE SmackDown : Kevin Owens rive les épaules de son ennemi juré CM Punk"
-   },
-   {
-    "cat": "info",
-    "title": "📰 2 nouvelles infos",
-    "body": "Carte de WWE Crown Jewel 2026 · L'AEW a battu NXT et son programme XXL le 4 novembre",
-    "url": "#/",
-    "tag": "art",
-    "short": "2 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📖 Storyline du jour",
-    "body": "The Wrestling Classic : le premier vrai pay-per-view de la WWF",
-    "url": "#/storyline/wrestling-classic-1985",
-    "tag": "story",
-    "short": "📖 Storyline du jour"
-   }
-  ],
-  "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
-   {
-    "cat": "info",
-    "title": "📰 Catch-Newz",
-    "body": "WWE Crown Jewel : Les commentateurs ne seront pas en Arabie saoudite",
-    "url": "https://www.catch-newz.com/wwe/newz/61082-wwe-crown-jewel-les-commentateurs-ne-seront-pas-en-arabie-saoudite",
-    "tag": "art",
-    "short": "WWE Crown Jewel : Les commentateurs ne seront pas en Arabie saoudite"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Catch-Newz",
-    "body": "Résultats de WWE SmackDown du 6 novembre 2026",
-    "url": "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
-    "tag": "art",
-    "short": "Résultats de WWE SmackDown du 6 novembre 2026"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Catch-Newz",
-    "body": "WWE SmackDown : Charlotte Flair de retour après quelques semaines d'absence",
-    "url": "https://www.catch-newz.com/wwe/newz/61086-wwe-smackdown-charlotte-flair-de-retour-apres-quelques-semaines-dabsence",
-    "tag": "art",
-    "short": "WWE SmackDown : Charlotte Flair de retour après quelques semaines d'absence"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Catch-Newz",
-    "body": "WWE SmackDown : Kevin Owens rive les épaules de son ennemi juré CM Punk",
-    "url": "https://www.catch-newz.com/wwe/newz/61087-wwe-smackdown-kevin-owens-rive-les-epaules-de-son-ennemi-jure-cm-punk",
-    "tag": "art",
-    "short": "WWE SmackDown : Kevin Owens rive les épaules de son ennemi juré CM Punk"
-   },
-   {
-    "cat": "info",
-    "title": "📰 2 nouvelles infos",
-    "body": "Carte de WWE Crown Jewel 2026 · L'AEW a battu NXT et son programme XXL le 4 novembre",
-    "url": "#/",
-    "tag": "art",
-    "short": "2 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📖 Storyline du jour",
-    "body": "The Wrestling Classic : le premier vrai pay-per-view de la WWF",
-    "url": "#/storyline/wrestling-classic-1985",
-    "tag": "story",
-    "short": "📖 Storyline du jour"
-   }
-  ]
- }
+ "pend": {}
 }
