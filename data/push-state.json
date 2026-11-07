@@ -1,5 +1,5 @@
 {
- "at": "2026-11-07T00:06:43.030Z",
+ "at": "2026-11-07T01:54:12.852Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -351,7 +351,8 @@
   "fr:2026-11-06": "2026-11-06",
   "a:https://www.catch-newz.com/aew/resultats/61073-resultats-de-roh-du-5-novembre-2026": "2026-11-06",
   "a:https://www.catch-newz.com/international/resultats/61072-resultats-de-cmll-jueves-arena-coliseo-du-5-novembre-2026": "2026-11-06",
-  "a:https://www.catch-newz.com/wwe/newz/61082-wwe-crown-jewel-les-commentateurs-ne-seront-pas-en-arabie-saoudite": "2026-11-07"
+  "a:https://www.catch-newz.com/wwe/newz/61082-wwe-crown-jewel-les-commentateurs-ne-seront-pas-en-arabie-saoudite": "2026-11-07",
+  "a:https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026": "2026-11-07"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -362,6 +363,14 @@
     "url": "https://www.catch-newz.com/wwe/newz/61082-wwe-crown-jewel-les-commentateurs-ne-seront-pas-en-arabie-saoudite",
     "tag": "art",
     "short": "WWE Crown Jewel : Les commentateurs ne seront pas en Arabie saoudite"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Catch-Newz",
+    "body": "Résultats de WWE SmackDown du 6 novembre 2026",
+    "url": "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
+    "tag": "art",
+    "short": "Résultats de WWE SmackDown du 6 novembre 2026"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -372,6 +381,14 @@
     "url": "https://www.catch-newz.com/wwe/newz/61082-wwe-crown-jewel-les-commentateurs-ne-seront-pas-en-arabie-saoudite",
     "tag": "art",
     "short": "WWE Crown Jewel : Les commentateurs ne seront pas en Arabie saoudite"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Catch-Newz",
+    "body": "Résultats de WWE SmackDown du 6 novembre 2026",
+    "url": "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
+    "tag": "art",
+    "short": "Résultats de WWE SmackDown du 6 novembre 2026"
    }
   ]
  }

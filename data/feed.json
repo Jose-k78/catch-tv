@@ -1,5 +1,5 @@
 {
- "at": "2026-11-07T00:57:41.972Z",
+ "at": "2026-11-07T01:54:12.804Z",
  "items": [
   {
    "t": "WWE Crown Jewel : Les commentateurs ne seront pas en Arabie saoudite",
@@ -23,6 +23,16 @@
    "s": "Catch-Newz",
    "d": "2026-11-07",
    "tags": []
+  },
+  {
+   "t": "Résultats de WWE SmackDown du 6 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-06",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
   },
   {
    "t": "Preview : WWE SmackDown du 6 novembre 2026",
@@ -502,15 +512,6 @@
    "tags": [
     "NJPW"
    ]
-  },
-  {
-   "t": "WWE Crown Jewel 2026 : Heure et chaine pour regarder le show en direct",
-   "u": "https://www.catch-newz.com/wwe/newz/61022-wwe-crown-jewel-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -798,6 +799,7 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61073-resultats-de-roh-du-5-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61060-audiences-wwe-aew-et-tna-19-au-25-octobre-2026",
@@ -1096,12 +1098,11 @@
    "https://www.catch-newz.com/international/resultats/60758-resultats-de-produce-by-orange-crush-volume-6-hell-comes-to-dogtown",
    "https://www.catch-newz.com/newz/11984-100-derniers-commentaires-sur-catch-newz",
    "https://www.catch-newz.com/international/newz/60781-carte-du-jour-7-de-la-njpw-super-junior-tag-league-2026",
-   "https://www.catch-newz.com/international/resultats/60785-resultats-de-rcw-bound-by-blood",
-   "https://www.catch-newz.com/international/resultats/60783-resultats-de-ovw-hell-night-2026"
+   "https://www.catch-newz.com/international/resultats/60785-resultats-de-rcw-bound-by-blood"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "9 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
