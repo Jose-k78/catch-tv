@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06",
+ "updated": "2026-11-07",
  "note": "Catcheurs suivis (champions, cartes annoncées, favoris des membres) et catcheurs à découvrir (disc = true, toutes fédérations et époques). txt = petit résumé en français, era = époque, ref = matchs de référence, last = 3 derniers matchs (r = résultat, spoiler), v = vidéo YouTube d'une chaîne officielle.",
  "items": {
   "Roman Reigns": {
@@ -1660,6 +1660,102 @@
     }
    ],
    "disc": true
+  },
+  "Maki Itoh": {
+   "k": "Stardom",
+   "a": "Maki Ito",
+   "era": "Depuis 2013",
+   "from": "Ogōri (Fukuoka, Japon)",
+   "ht": "1,60 m",
+   "debut": "15 décembre 2013",
+   "fin": "Itoh Special (Texas Cloverleaf), coup de tête « kokeshi »",
+   "teams": "Itoh Respect Army (avec Mizuki), NEO Itoh Respect Army (avec Chris Brookes), équipe avec Miyu Yamashita",
+   "txt": "Ancienne idole devenue catcheuse à la Tokyo Joshi Pro, connue pour son franc-parler et son personnage hors norme. Elle a signé à la Stardom le 10 janvier 2026, où elle détient le titre Kawaii of Kawaii, tout en apparaissant aussi à la AEW.",
+   "ref": [
+    {
+     "t": "Maki Itoh contre Yuna Manase — International Princess Championship",
+     "ev": "TJPW My Life; Let's Enjoy!!, 2019"
+    },
+    {
+     "t": "Britt Baker et Maki Itoh contre Thunder Rosa et Riho",
+     "ev": "AEW Revolution, 2021"
+    },
+    {
+     "t": "Maki Itoh et Miyu Yamashita contre Daisy Monkey — Princess Tag Team Championship",
+     "ev": "TJPW Wrestle Princess V, 2024"
+    },
+    {
+     "t": "Maki Itoh contre Aya Sakura — Kawaii of Kawaii Championship",
+     "ev": "Stardom, 2026"
+    }
+   ]
+  },
+  "Persephone": {
+   "k": "AEW · CMLL",
+   "era": "Depuis 2016",
+   "nick": "La Belleza Hecha Rudeza, Diosa de la Muerte",
+   "from": "El Paso (Texas)",
+   "ht": "1,63 m",
+   "wt": "66 kg",
+   "fin": "Lasso from El Paso, Flatliner, Springboard Frog Splash",
+   "al": "heel",
+   "alD": "2026-07-01",
+   "txt": "Luchadora d’El Paso révélée au CMLL, où elle est championne du monde féminine, et arrivée à la AEW en janvier 2026. Rudo redoutable, elle mène carrière des deux côtés de la frontière.",
+   "tt": [
+    {
+     "t": "CMLL World Women's Championship",
+     "k": "CMLL",
+     "x": 1,
+     "id": "cmll-women"
+    },
+    {
+     "t": "CMLL Universal Amazons Championship",
+     "k": "CMLL",
+     "x": 1
+    },
+    {
+     "t": "AEW TBS Championship",
+     "k": "AEW",
+     "x": 1,
+     "id": "aew-tbs"
+    }
+   ]
+  },
+  "Toshiaki Kawada": {
+   "k": "All Japan",
+   "era": "1982–2010",
+   "disc": true,
+   "nick": "Dangerous K",
+   "from": "Ohira (Japon)",
+   "ht": "1,83 m",
+   "wt": "105 kg",
+   "debut": "4 octobre 1982",
+   "fin": "Powerbomb, coup de pied au visage",
+   "teams": "Footloose (avec Hiromichi Fuyuki), Super Generation Army, Holy Demon Army (avec Akira Taue)",
+   "trainer": "Giant Baba, Genichiro Tenryu, Akio Sato",
+   "txt": "Pilier du « Four Pillars of Heaven » de l’All Japan des années 1990, réputé pour ses frappes très dures. Cinq fois champion Triple Crown, il a livré contre Mitsuharu Misawa et Kenta Kobashi certains des matchs les plus célèbres de l’histoire du catch japonais.",
+   "ref": [
+    {
+     "t": "Toshiaki Kawada contre Mitsuharu Misawa — Triple Crown",
+     "ev": "All Japan, 1994"
+    },
+    {
+     "t": "Toshiaki Kawada contre Stan Hansen",
+     "ev": "All Japan, 1992"
+    },
+    {
+     "t": "Toshiaki Kawada contre Kenta Kobashi — limite d’une heure",
+     "ev": "All Japan, 1995"
+    },
+    {
+     "t": "Toshiaki Kawada et Akira Taue contre Mitsuharu Misawa et Kenta Kobashi",
+     "ev": "All Japan, 1995"
+    },
+    {
+     "t": "Toshiaki Kawada contre Kensuke Sasaki",
+     "ev": "NJPW, 2000"
+    }
+   ]
   }
  }
 }
