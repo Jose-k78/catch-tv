@@ -1,6 +1,20 @@
 {
- "at": "2026-11-07T23:07:02.128Z",
+ "at": "2026-11-07T23:37:37.408Z",
  "items": [
+  {
+   "t": "Carte du jour 1 de TEW Next Order Of Business 2026",
+   "u": "https://www.catch-newz.com/international/newz/61112-carte-du-jour-1-de-tew-next-order-of-business-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": []
+  },
+  {
+   "t": "Carte de MLW Saturday Night SuperFight 2026",
+   "u": "https://www.catch-newz.com/international/newz/61111-carte-de-mlw-saturday-night-superfight-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": []
+  },
   {
    "t": "Carte de CCW Bash At The Brew 70",
    "u": "https://www.catch-newz.com/international/newz/61107-carte-de-ccw-bash-at-the-brew-70",
@@ -491,22 +505,6 @@
    "tags": [
     "Stardom"
    ]
-  },
-  {
-   "t": "MVP : « Si quelqu'un devait le faire, c'était bien Brock Lesnar »",
-   "u": "https://www.catch-newz.com/wwe/newz/61056-mvp-si-quelquun-devait-le-faire-cetait-bien-brock-lesnar",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Résultats de ZERO1 Bullying Prevention Awareness Pro Wrestling",
-   "u": "https://www.catch-newz.com/international/resultats/61035-resultats-de-zero1-bullying-prevention-awareness-pro-wrestling",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": []
   }
  ],
  "yt": {
@@ -870,9 +868,11 @@
    "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61093-preview-aaa-heroes-inmortales-7-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61112-carte-du-jour-1-de-tew-next-order-of-business-2026",
+   "https://www.catch-newz.com/international/newz/61111-carte-de-mlw-saturday-night-superfight-2026",
+   "https://www.catch-newz.com/international/resultats/61109-resultats-de-stardom-nighter-korakuen-hall-du-27-octobre-2026",
    "https://www.catch-newz.com/international/newz/61107-carte-de-ccw-bash-at-the-brew-70",
    "https://www.catch-newz.com/international/resultats/61110-resultats-de-new-texas-pro-wrestling-texas-contenders-series-70",
-   "https://www.catch-newz.com/international/resultats/61109-resultats-de-stardom-nighter-korakuen-hall-du-27-octobre-2026",
    "https://www.catch-newz.com/international/resultats/61108-resultats-de-ccw-breakout-64-the-creepy-carnival",
    "https://www.catch-newz.com/international/resultats/61106-resultats-de-mcw-pro-wrestling-2026-chesapeake-beach",
    "https://www.catch-newz.com/international/resultats/61096-resultats-de-cmll-viernes-espectacular-du-6-novembre-2026",
@@ -1164,13 +1164,11 @@
    "https://www.catch-newz.com/wwe/newz/60821-sami-zayn-japprecie-vraiment-ce-que-je-fais-en-ce-moment",
    "https://www.catch-newz.com/wwe/newz/60802-rko-styles-clash-leedz-lewis-attaque-les-influenceurs",
    "https://www.catch-newz.com/international/newz/60794-preview-tna-impact-29-octobre-2026",
-   "https://www.catch-newz.com/international/resultats/60814-resultats-du-jour-2-du-hop-spooktober-tour-2026",
-   "https://www.catch-newz.com/international/resultats/60817-resultats-de-ott-pure-deadly",
-   "https://www.catch-newz.com/international/resultats/60818-resultats-du-jour-3-de-dg-the-gate-of-victory-2026"
+   "https://www.catch-newz.com/international/resultats/60814-resultats-du-jour-2-du-hop-spooktober-tour-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
