@@ -1,9 +1,9 @@
 {
- "at": "2026-11-07T20:33:14.513Z",
+ "at": "2026-11-07T21:11:43.405Z",
  "items": [
   {
-   "t": "WWE Crown Jewel : Roman Reigns prouve encore une fois sa supériorité",
-   "u": "https://www.catch-newz.com/wwe/newz/61102-wwe-crown-jewel-roman-reigns-prouve-encore-une-fois-sa-superiorite",
+   "t": "Cody Rhodes sera capitaine de son équipe aux Survivor Series 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61104-cody-rhodes-sera-capitaine-de-son-equipe-aux-survivor-series-2026",
    "s": "Catch-Newz",
    "d": "2026-11-07",
    "tags": [
@@ -31,8 +31,15 @@
    ]
   },
   {
-   "t": "Résultats de AULL Triple Amenaza",
-   "u": "https://www.catch-newz.com/international/resultats/61103-resultats-de-aull-triple-amenaza",
+   "t": "Résultats de NHB The Chains Volume 103",
+   "u": "https://www.catch-newz.com/international/resultats/61098-resultats-de-nhb-the-chains-volume-103",
+   "s": "Catch-Newz",
+   "d": "2026-11-07",
+   "tags": []
+  },
+  {
+   "t": "Résultats de MCW Pro Wrestling Monster Mash 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61105-resultats-de-mcw-pro-wrestling-monster-mash-2026",
    "s": "Catch-Newz",
    "d": "2026-11-07",
    "tags": []
@@ -47,6 +54,15 @@
    ]
   },
   {
+   "t": "Résultats de WWE Crown Jewel 2026",
+   "u": "https://www.voxcatch.fr/2026/11/07/resultats-de-wwe-crown-jewel-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-07",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
    "t": "WWE SmackDown du 6 novembre : CM Punk vs. Kevin Owens, go-home de Crown Jewel",
    "u": "https://www.voxcatch.fr/2026/11/07/resultats-wwe-smackdown-6-novembre-2026/",
    "s": "VOXcatch",
@@ -55,6 +71,22 @@
     "WWE",
     "SmackDown"
    ]
+  },
+  {
+   "t": "WWE Crown Jewel : Roman Reigns prouve encore une fois sa supériorité",
+   "u": "https://www.catch-newz.com/wwe/newz/61102-wwe-crown-jewel-roman-reigns-prouve-encore-une-fois-sa-superiorite",
+   "s": "Catch-Newz",
+   "d": "2026-11-07",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Résultats de AULL Triple Amenaza",
+   "u": "https://www.catch-newz.com/international/resultats/61103-resultats-de-aull-triple-amenaza",
+   "s": "Catch-Newz",
+   "d": "2026-11-07",
+   "tags": []
   },
   {
    "t": "WWE Crown Jewel : Une courte célébration pour Chelsea Green",
@@ -477,46 +509,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-06",
    "tags": []
-  },
-  {
-   "t": "Résultats de AEW Dynamite Blood and Guts 2026",
-   "u": "https://www.voxcatch.fr/2026/11/05/resultats-de-aew-dynamite-blood-and-guts-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-05",
-   "tags": [
-    "AEW",
-    "NJPW",
-    "Dynamite"
-   ]
-  },
-  {
-   "t": "WWE NXT du 4 novembre : CM Punk vs. Grayson Waller, John Cena présent, finale du Dusty Classic",
-   "u": "https://www.voxcatch.fr/2026/11/05/resultats-wwe-nxt-4-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
-  },
-  {
-   "t": "Résultats de ROH du 5 novembre 2026",
-   "u": "https://www.catch-newz.com/aew/resultats/61073-resultats-de-roh-du-5-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "AEW",
-    "ROH"
-   ]
-  },
-  {
-   "t": "Résultats de WWE Road To Survivor Series du 5 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61059-resultats-de-wwe-road-to-survivor-series-du-5-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -853,6 +845,14 @@
    {
     "id": "sAT0U5M-lwg",
     "t": "Chelsea Green contre Liv Morgan"
+   },
+   {
+    "id": "DdHUzvlSXnc",
+    "t": "Roman Reigns contre Sami Zayn"
+   },
+   {
+    "id": "4n7gHGwD3dI",
+    "t": "Roman Reigns embraces Sami Zayn after epic clash: WWE Crown Jewel 2026 highlights"
    }
   ]
  },
@@ -865,13 +865,16 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/wwe/newz/61102-wwe-crown-jewel-roman-reigns-prouve-encore-une-fois-sa-superiorite",
    "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61104-cody-rhodes-sera-capitaine-de-son-equipe-aux-survivor-series-2026",
    "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61093-preview-aaa-heroes-inmortales-7-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61103-resultats-de-aull-triple-amenaza",
+   "https://www.catch-newz.com/international/resultats/61098-resultats-de-nhb-the-chains-volume-103",
+   "https://www.catch-newz.com/international/resultats/61105-resultats-de-mcw-pro-wrestling-monster-mash-2026",
    "https://www.catch-newz.com/international/resultats/61096-resultats-de-cmll-viernes-espectacular-du-6-novembre-2026",
    "https://www.catch-newz.com/international/newz/61074-carte-de-cmll-sabado-de-coliseo-du-7-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61102-wwe-crown-jewel-roman-reigns-prouve-encore-une-fois-sa-superiorite",
+   "https://www.catch-newz.com/international/resultats/61103-resultats-de-aull-triple-amenaza",
    "https://www.catch-newz.com/wwe/newz/61101-wwe-crown-jewel-une-courte-celebration-pour-chelsea-green",
    "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61099-wwe-crown-jewel-jevon-evans-et-penta-champions-par-equipe",
@@ -1161,17 +1164,14 @@
    "https://www.catch-newz.com/international/resultats/60816-resultats-du-jour-1-de-rcw-rise-of-legends",
    "https://www.catch-newz.com/international/resultats/60813-resultats-de-noah-wrestle-odyssey-ii",
    "https://www.catch-newz.com/international/resultats/60811-resultats-de-marigold-grand-destiny-2026",
-   "https://www.catch-newz.com/international/resultats/60812-resultats-du-jour-1-du-hop-spooktober-tour-2026",
-   "https://www.catch-newz.com/international/resultats/60810-resultats-de-ccw-vs-2econd-wrestling",
-   "https://www.catch-newz.com/international/resultats/60809-resultats-de-ccw-havoc-haze-30",
-   "https://www.catch-newz.com/wwe/newz/60807-qui-pourrait-remplacer-bruce-prichard-a-la-wwe"
+   "https://www.catch-newz.com/international/resultats/60812-resultats-du-jour-1-du-hop-spooktober-tour-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
-  "VOXcatch": "6 articles (7 j)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "9 articles (7 j)",
-  "YouTube WWE": "1 nouvelles vidéos",
+  "YouTube WWE": "2 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
