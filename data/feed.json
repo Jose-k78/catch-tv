@@ -1,6 +1,29 @@
 {
- "at": "2026-11-07T08:47:02.002Z",
+ "at": "2026-11-07T10:38:53.038Z",
  "items": [
+  {
+   "t": "Matt Cardona est « presque prêt » à remonter sur les rings de la WWE",
+   "u": "https://www.catch-newz.com/wwe/newz/61090-matt-cardona-est-presque-pret-a-remonter-sur-les-rings-de-la-wwe",
+   "s": "Catch-Newz",
+   "d": "2026-11-07",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Carte de GCW The Crossroads 2026",
+   "u": "https://www.catch-newz.com/international/newz/61076-carte-de-gcw-the-crossroads-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-07",
+   "tags": []
+  },
+  {
+   "t": "Carte de MCW Pro Wrestling Autumn Armageddon 2026",
+   "u": "https://www.catch-newz.com/international/newz/61084-carte-de-mcw-pro-wrestling-autumn-armageddon-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-07",
+   "tags": []
+  },
   {
    "t": "Carte de VCW Queen Of The Commonwealth 2026",
    "u": "https://www.catch-newz.com/international/newz/61083-carte-de-vcw-queen-of-the-commonwealth-2026",
@@ -491,29 +514,6 @@
     "TNA",
     "Impact"
    ]
-  },
-  {
-   "t": "Carte de IWRG/GALLI Thursday Night Wrestling du 5 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61027-carte-de-iwrg-galli-thursday-night-wrestling-du-5-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": []
-  },
-  {
-   "t": "The Miz : « Ce que Carmelo Hayes accomplit aujourd’hui avec 946 est incroyable »",
-   "u": "https://www.catch-newz.com/wwe/newz/61032-the-miz-ce-que-carmelo-hayes-accomplit-aujourdhui-avec-946-est-incroyable",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Découvrez les participants à la AJPW Real World Tag League 2026",
-   "u": "https://www.catch-newz.com/international/newz/61033-decouvrez-les-participants-a-la-ajpw-real-world-tag-league-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": []
   }
  ],
  "yt": {
@@ -829,7 +829,10 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61090-matt-cardona-est-presque-pret-a-remonter-sur-les-rings-de-la-wwe",
    "https://www.catch-newz.com/aew/resultats/61073-resultats-de-roh-du-5-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61076-carte-de-gcw-the-crossroads-2026",
+   "https://www.catch-newz.com/international/newz/61084-carte-de-mcw-pro-wrestling-autumn-armageddon-2026",
    "https://www.catch-newz.com/international/newz/61083-carte-de-vcw-queen-of-the-commonwealth-2026",
    "https://www.catch-newz.com/newz/11984-100-derniers-commentaires-sur-catch-newz",
    "https://www.catch-newz.com/international/newz/61077-carte-de-gnpw-never-say-die-2026",
@@ -1123,17 +1126,14 @@
    "https://www.catch-newz.com/wwe/newz/60800-blake-monroe-exprime-sa-frustration-concernant-sa-mise-a-lecart-des-programmes-de-smackdown",
    "https://www.catch-newz.com/wwe/newz/60801-grayson-waller-veut-confronter-cm-punk-au-micro-un-jour",
    "https://www.catch-newz.com/culture/gaming/60799-royce-keys-cest-sans-aucun-doute-une-grande-reussite-pour-moi",
-   "https://www.catch-newz.com/wwe/newz/60798-bronson-reed-a-battu-joe-hendry-a-wwe-main-event-en-seulement-32-secondes",
-   "https://www.catch-newz.com/wwe/newz/60797-jackson-drake-reagit-a-sa-victoire-contre-ek-prosper-a-nxt",
-   "https://www.catch-newz.com/wwe/newz/60796-qui-serait-ladversaire-ideal-de-tony-dangelo-dans-le-roster-principal",
-   "https://www.catch-newz.com/wwe/newz/60795-pourquoi-la-promo-de-solo-sikoa-a-raw-fait-polemique"
+   "https://www.catch-newz.com/wwe/newz/60798-bronson-reed-a-battu-joe-hendry-a-wwe-main-event-en-seulement-32-secondes"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 3 nouveaux articles lus sur la page d'accueil (3 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "9 articles (7 j)",
-  "YouTube WWE": "6 nouvelles vidéos",
+  "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
