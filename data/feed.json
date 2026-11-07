@@ -1,6 +1,15 @@
 {
- "at": "2026-11-07T10:38:53.038Z",
+ "at": "2026-11-07T11:33:25.268Z",
  "items": [
+  {
+   "t": "Johnny Gargano à Rey Fenix : « Toi et ton stupide frère, vous n'avez aucun honneur »",
+   "u": "https://www.catch-newz.com/wwe/newz/61091-johnny-gargano-a-rey-fenix-toi-et-ton-stupide-frere-vous-navez-aucun-honneur",
+   "s": "Catch-Newz",
+   "d": "2026-11-07",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Matt Cardona est « presque prêt » à remonter sur les rings de la WWE",
    "u": "https://www.catch-newz.com/wwe/newz/61090-matt-cardona-est-presque-pret-a-remonter-sur-les-rings-de-la-wwe",
@@ -504,16 +513,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Preview : TNA Impact du 5 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61012-preview-tna-impact-5-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-05",
-   "tags": [
-    "TNA",
-    "Impact"
-   ]
   }
  ],
  "yt": {
@@ -816,6 +815,12 @@
     "id": "FNR3r7NaLr8",
     "t": "Charlotte Flair returns to bring the fight to Jade Cargill: SmackDown highlights, Nov. 6, 2026"
    }
+  ],
+  "WWE|PLE|2026-11-07": [
+   {
+    "id": "EmZ_ZQ5SmHo",
+    "t": "Roman Reigns contre Sami Zayn"
+   }
   ]
  },
  "rss": {
@@ -829,8 +834,9 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61090-matt-cardona-est-presque-pret-a-remonter-sur-les-rings-de-la-wwe",
+   "https://www.catch-newz.com/wwe/newz/61091-johnny-gargano-a-rey-fenix-toi-et-ton-stupide-frere-vous-navez-aucun-honneur",
    "https://www.catch-newz.com/aew/resultats/61073-resultats-de-roh-du-5-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61090-matt-cardona-est-presque-pret-a-remonter-sur-les-rings-de-la-wwe",
    "https://www.catch-newz.com/international/newz/61076-carte-de-gcw-the-crossroads-2026",
    "https://www.catch-newz.com/international/newz/61084-carte-de-mcw-pro-wrestling-autumn-armageddon-2026",
    "https://www.catch-newz.com/international/newz/61083-carte-de-vcw-queen-of-the-commonwealth-2026",
@@ -1125,15 +1131,14 @@
    "https://www.catch-newz.com/international/newz/60790-starboyz-vont-defier-les-champions-par-equipe-lwa-a-requiem",
    "https://www.catch-newz.com/wwe/newz/60800-blake-monroe-exprime-sa-frustration-concernant-sa-mise-a-lecart-des-programmes-de-smackdown",
    "https://www.catch-newz.com/wwe/newz/60801-grayson-waller-veut-confronter-cm-punk-au-micro-un-jour",
-   "https://www.catch-newz.com/culture/gaming/60799-royce-keys-cest-sans-aucun-doute-une-grande-reussite-pour-moi",
-   "https://www.catch-newz.com/wwe/newz/60798-bronson-reed-a-battu-joe-hendry-a-wwe-main-event-en-seulement-32-secondes"
+   "https://www.catch-newz.com/culture/gaming/60799-royce-keys-cest-sans-aucun-doute-une-grande-reussite-pour-moi"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "9 articles (7 j)",
-  "YouTube WWE": "0 nouvelles vidéos",
+  "YouTube WWE": "1 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
