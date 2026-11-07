@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06",
+ "updated": "2026-11-07",
  "note": "Vidéos des chaînes officielles uniquement. res = résultats (spoilers, affichés seulement à la demande). m = résumé match par match (promotions japonaises).",
  "items": {
   "WWE|Raw|2026-10-26": {
@@ -620,6 +620,38 @@
    ],
    "s": "PWTorch",
    "u": "https://www.pwtorch.com/site/2026/11/05/tna-impact-tv-results-11-5-nemeths-vs-slater-red-blackheart-allie-vs-steelz-hogan-edwards-vs-bronson/"
+  },
+  "WWE|SmackDown|2026-11-06": {
+   "res": [
+    "Shinsuke Nakamura a battu Tama Tonga.",
+    "Fatal Influence a battu The Baddies (Michin et B-Fab) par disqualification après l’intervention d’Alexa Bliss et Tatum Paxley ; The Baddies conserve le titre féminin par équipe.",
+    "Damian Priest a battu Nathan Frazer par arrêt de l’arbitre.",
+    "Kevin Owens a battu CM Punk dans un match No Holds Barred."
+   ],
+   "seg": [
+    {
+     "k": "Face-à-face",
+     "t": "GUNTHER ouvre le show, Finn Bálor l’interrompt sans son personnage du Demon : bagarre, Bálor reste debout à la fin."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Après le match par équipe, Charlotte Flair et Bayley arrivent : la confrontation laisse entrevoir un match WarGames féminin."
+    },
+    {
+     "k": "Promo",
+     "t": "Chelsea Green prend le micro, Liv Morgan l’interrompt."
+    },
+    {
+     "k": "Attaque",
+     "t": "Jimmy Uso interrompt la promo de Sami Zayn, The 946 l’attaque sous les yeux de Zayn."
+    },
+    {
+     "k": "Autre",
+     "t": "Le No Holds Barred déborde dans toute la salle : poubelle sur la tête, chariot, et les deux hommes passent à travers la table des commentateurs."
+    }
+   ],
+   "s": "Sacnilk (spoilers des enregistrements du 2 nov. à Brooklyn)",
+   "u": "https://www.sacnilk.com/news/wwe-smackdown-spoilers-november-6-2026-taped-results-winners"
   }
  }
 }
