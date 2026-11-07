@@ -1,7 +1,43 @@
 {
-  "updated": "2026-11-06",
+  "updated": "2026-11-07",
   "note": "Une storyline par jour (la plus récente en premier) : grandes histoires, rivalités, anecdotes de coulisses, faits marquants. txt = paragraphes écrits en français à partir des sources ; v = vidéos officielles ; q = recherches sur la chaîne officielle.",
   "items": [
+    {
+      "id": "wrestling-classic-1985",
+      "d": "2026-11-07",
+      "type": "Fait marquant",
+      "t": "The Wrestling Classic : le premier vrai pay-per-view de la WWF",
+      "k": "WWE",
+      "years": "1985",
+      "hook": "Le 7 novembre 1985, la WWF tente un pari fou : un gala vendu uniquement à la séance, à la télévision… et lance sans le savoir le modèle des grands événements d’aujourd’hui.",
+      "txt": [
+        "En 1985, la WWF de Vince McMahon sort tout juste de la première WrestleMania. Mais ce show de mars a surtout été vu dans des salles en circuit fermé : la diffusion à la séance chez soi, le « pay-per-view », n’en est qu’à ses débuts. Pour tester ce nouveau marché, la WWF prépare un gala conçu dès le départ pour être vendu uniquement en pay-per-view.",
+        "Le 7 novembre 1985, au Rosemont Horizon, dans la banlieue de Chicago, The Wrestling Classic est proposé aux téléspectateurs. Le cœur de la soirée est un tournoi à élimination directe de 16 catcheurs, avec des noms comme Ricky Steamboat, Terry Funk, The Dynamite Kid, Davey Boy Smith, Tito Santana, Paul Orndorff, The Iron Sheik et un nouveau venu très remarqué : « Macho Man » Randy Savage. Au micro, le duo Gorilla Monsoon et Jesse « The Body » Ventura.",
+        "Le format impose des matchs courts, parfois expédiés en quelques secondes : The Dynamite Kid bat Nikolai Volkoff en sept secondes, et Terry Funk est éliminé par décompte à l’extérieur face à Moondog Spot. Les moments forts viennent de Randy Savage, qui élimine Ricky Steamboat en trichant avec un objet caché, puis The Dynamite Kid sur un petit paquet en demi-finale. De son côté, Junkyard Dog profite d’une exemption : son adversaire devait sortir du duel Orndorff-Santana, terminé par un double décompte à l’extérieur.",
+        "En finale, Junkyard Dog, chouchou du public, s’impose face à Savage par décompte à l’extérieur et remporte le tournoi, sous les cris de la salle. Ventura, lui, peste contre le parcours trop facile du vainqueur. Dans l’autre grand match de la soirée, Hulk Hogan défend son titre WWF contre « Rowdy » Roddy Piper : Bob Orton frappe le champion avec son plâtre, Hogan gagne par disqualification et garde la ceinture, sauvé ensuite par Paul Orndorff armé d’une chaise.",
+        "Sur le ring, la soirée n’est pas un chef-d’œuvre, mais l’essentiel est ailleurs : le gala attire plusieurs dizaines de milliers d’achats et prouve que le public est prêt à payer pour regarder le catch chez lui. Le succès pousse la WWF, puis toute l’industrie, à multiplier les pay-per-view dans les années suivantes. Survivor Series, le Royal Rumble ou SummerSlam suivront, et le modèle des grands événements payants — devenus aujourd’hui les « PLE » — est né en partie ce soir-là."
+      ],
+      "key": "Le 7 novembre 1985, The Wrestling Classic devient le premier gala de la WWF conçu pour être vendu uniquement en pay-per-view, remporté par Junkyard Dog face à Randy Savage.",
+      "v": [],
+      "q": [
+        "WWF The Wrestling Classic 1985",
+        "Randy Savage vs Ricky Steamboat Wrestling Classic 1985"
+      ],
+      "src": [
+        {
+          "n": "TJR Wrestling – The Wrestling Classic 1985",
+          "u": "https://tjrwrestling.net/tjr-retro-wwe-the-wrestling-classic-1985-review"
+        },
+        {
+          "n": "History of Wrestling",
+          "u": "https://historyofwrestling.com/the-wwf-presents-pro-wrestlings-1st-pay-per-view"
+        },
+        {
+          "n": "F4W – Daily Pro Wrestling History (11/07)",
+          "u": "https://www.f4wonline.com/news/other-wrestling/daily-pro-wrestling-history-wwfs-the-wrestling-classic"
+        }
+      ]
+    },
     {
       "id": "when-worlds-collide-1994",
       "d": "2026-11-06",
