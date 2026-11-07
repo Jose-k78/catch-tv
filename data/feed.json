@@ -1,5 +1,5 @@
 {
- "at": "2026-11-07T07:56:04.027Z",
+ "at": "2026-11-07T08:47:02.002Z",
  "items": [
   {
    "t": "Carte de VCW Queen Of The Commonwealth 2026",
@@ -790,6 +790,32 @@
     "t": "Ethan Page basks in his Intercontinental Title win: Main Event highlights, Nov. 2, 2026",
     "sp": true
    }
+  ],
+  "WWE|SmackDown|2026-11-06": [
+   {
+    "id": "75EZFe2FVOk",
+    "t": "Full SmackDown highlights: Nov. 6, 2026"
+   },
+   {
+    "id": "eLUolSanuBM",
+    "t": "CM Punk contre Kevin Owens"
+   },
+   {
+    "id": "_5hvoJtOh2g",
+    "t": "Get your tickets to the John Cena Classic in Orlando on Nov. 13: SmackDown highlights, Nov. 6, 2026"
+   },
+   {
+    "id": "u9BXQixLK5Q",
+    "t": "Damian Priest brutalizes Fraxiom in shocking fashion: SmackDown highlights, Nov. 6, 2026"
+   },
+   {
+    "id": "oJTnP9csJRQ",
+    "t": "Liv Morgan to Chelsea Green: “You’re a charity case”: SmackDown highlights, Nov. 6, 2026"
+   },
+   {
+    "id": "FNR3r7NaLr8",
+    "t": "Charlotte Flair returns to bring the fight to Jade Cargill: SmackDown highlights, Nov. 6, 2026"
+   }
   ]
  },
  "rss": {
@@ -1104,10 +1130,10 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 3 nouveaux articles lus sur la page d'accueil (3 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "9 articles (7 j)",
-  "YouTube WWE": "0 nouvelles vidéos",
+  "YouTube WWE": "6 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",

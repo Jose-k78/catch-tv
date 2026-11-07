@@ -1,5 +1,5 @@
 {
- "at": "2026-11-07T07:56:04.084Z",
+ "at": "2026-11-07T08:47:02.050Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -362,7 +362,8 @@
   "poll:p-20261107-wargames": "2026-11-07",
   "poll:p-20261107-creed": "2026-11-07",
   "poll:p-20261107-best-ss": "2026-11-07",
-  "fd:WWE:2026-11-07": "2026-11-07"
+  "fd:WWE:2026-11-07": "2026-11-07",
+  "ple:WWE:2026-11-07": "2026-11-07"
  },
  "pend": {}
 }
