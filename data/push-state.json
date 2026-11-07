@@ -1,5 +1,5 @@
 {
- "at": "2026-11-07T03:45:57.418Z",
+ "at": "2026-11-07T05:44:08.528Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -354,7 +354,9 @@
   "a:https://www.catch-newz.com/wwe/newz/61082-wwe-crown-jewel-les-commentateurs-ne-seront-pas-en-arabie-saoudite": "2026-11-07",
   "a:https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026": "2026-11-07",
   "a:https://www.catch-newz.com/wwe/newz/61086-wwe-smackdown-charlotte-flair-de-retour-apres-quelques-semaines-dabsence": "2026-11-07",
-  "a:https://www.catch-newz.com/wwe/newz/61087-wwe-smackdown-kevin-owens-rive-les-epaules-de-son-ennemi-jure-cm-punk": "2026-11-07"
+  "a:https://www.catch-newz.com/wwe/newz/61087-wwe-smackdown-kevin-owens-rive-les-epaules-de-son-ennemi-jure-cm-punk": "2026-11-07",
+  "a:https://www.catch-newz.com/wwe/newz/60394-carte-wwe-crown-jewel-2026": "2026-11-07",
+  "a:https://www.catch-newz.com/aew/newz/61088-aew-a-battu-nxt-et-son-programme-xxl-le-4-novembre": "2026-11-07"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -389,6 +391,14 @@
     "url": "https://www.catch-newz.com/wwe/newz/61087-wwe-smackdown-kevin-owens-rive-les-epaules-de-son-ennemi-jure-cm-punk",
     "tag": "art",
     "short": "WWE SmackDown : Kevin Owens rive les épaules de son ennemi juré CM Punk"
+   },
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Carte de WWE Crown Jewel 2026 · L'AEW a battu NXT et son programme XXL le 4 novembre",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -423,6 +433,14 @@
     "url": "https://www.catch-newz.com/wwe/newz/61087-wwe-smackdown-kevin-owens-rive-les-epaules-de-son-ennemi-jure-cm-punk",
     "tag": "art",
     "short": "WWE SmackDown : Kevin Owens rive les épaules de son ennemi juré CM Punk"
+   },
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Carte de WWE Crown Jewel 2026 · L'AEW a battu NXT et son programme XXL le 4 novembre",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
    }
   ]
  }
