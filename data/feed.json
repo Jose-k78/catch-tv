@@ -1,6 +1,24 @@
 {
- "at": "2026-11-08T15:11:44.473Z",
+ "at": "2026-11-08T17:10:08.689Z",
  "items": [
+  {
+   "t": "Une attaque de missiles sur Riyad après WWE Crown Jewel 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61130-une-attaque-de-missiles-sur-riyad-apres-wwe-crown-jewel-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Carte de CMLL Domingo Familiar du 8 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61075-carte-de-cmll-domingo-familiar-du-8-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": [
+    "CMLL"
+   ]
+  },
   {
    "t": "Carte de IWRG Funcion Espectacular du 8 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61115-carte-de-iwrg-funcion-espectacular-du-8-novembre-2026",
@@ -487,24 +505,6 @@
     "CMLL",
     "Viernes Espectacular"
    ]
-  },
-  {
-   "t": "Les Creed Brothers quittent la WWE",
-   "u": "https://www.catch-newz.com/wwe/newz/61069-les-creed-brothers-quittent-la-wwe",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "L'ambassade américaine félicite la WWE pour Crown Jewel 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61070-ambassade-americaine-felicite-la-wwe-pour-crown-jewel-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -881,7 +881,9 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61130-une-attaque-de-missiles-sur-riyad-apres-wwe-crown-jewel-2026",
    "https://www.catch-newz.com/wwe/resultats/61122-resultats-et-streaming-aaa-heroes-inmortales-7-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61075-carte-de-cmll-domingo-familiar-du-8-novembre-2026",
    "https://www.catch-newz.com/international/newz/61115-carte-de-iwrg-funcion-espectacular-du-8-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61116-resultats-de-iwrg-galli-thursday-night-wrestling-du-5-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61128-elton-prince-de-retour-sur-x-comment-va-t-il",
@@ -1176,13 +1178,11 @@
    "https://www.catch-newz.com/international/resultats/60835-resultats-de-cmll-jueves-de-glamour-du-29-octobre-2026",
    "https://www.catch-newz.com/international/resultats/60834-resultats-de-cmll-aull-fuego-vs-fuego",
    "https://www.catch-newz.com/international/resultats/60833-resultats-du-jour-4-de-dg-the-gate-of-victory-2026",
-   "https://www.catch-newz.com/wwe/newz/60831-vivez-une-intervention-de-logan-paul-cache-sous-le-ring-a-money-in-the-bank",
-   "https://www.catch-newz.com/wwe/newz/60819-wwe-smackdown-du-30-octobre-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
-   "https://www.catch-newz.com/wwe/newz/60828-zuffa-boxing-annonce-son-premier-show-en-arabie-saoudite"
+   "https://www.catch-newz.com/wwe/newz/60831-vivez-une-intervention-de-logan-paul-cache-sous-le-ring-a-money-in-the-bank"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
