@@ -786,6 +786,35 @@
    ],
    "s": "Dos Dos Solo Dos",
    "u": "https://dosdossolodos.com/2026/11/07/resultados-cmll-viernes-espectacular-06-noviembre-2026/"
+  },
+  "WWE|PLE|2026-11-07": {
+   "res": [
+    "Cody Rhodes a battu Randy Orton dans un Last Man Standing match.",
+    "Penta et Je’Von Evans ont battu Bron Breakker et Austin Theory et remportent le titre mondial par équipe.",
+    "Chelsea Green a battu Liv Morgan dans un match champion contre championne et remporte le titre Crown Jewel féminin.",
+    "Tiffany Stratton a battu Chelsea Green en encaissant sa mallette Money in the Bank et remporte le titre féminin de la WWE.",
+    "Roman Reigns a battu Sami Zayn dans un match champion contre champion et remporte le titre Crown Jewel masculin."
+   ],
+   "seg": [
+    {
+     "k": "Attaque",
+     "t": "Pendant le match par équipe, Maxxine Dupri aide Theory et Bronson Reed attaque Evans et Penta, avant qu’Oba Femi ne surgisse et projette Reed de la scène à travers une table."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après la victoire de Chelsea Green, Liv Morgan l’attaque."
+    },
+    {
+     "k": "Trahison",
+     "t": "Tiffany Stratton frappe Chelsea Green avec la mallette Money in the Bank et encaisse aussitôt son contrat."
+    },
+    {
+     "k": "Célébration",
+     "t": "Après leur match, Roman Reigns et Sami Zayn se prennent dans les bras."
+    }
+   ],
+   "s": "WWE.com",
+   "u": "https://www.wwe.com/complete-crown-jewel-2026-results"
   }
  }
 }

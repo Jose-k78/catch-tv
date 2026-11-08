@@ -322,16 +322,27 @@
    "k": "WWE",
    "show": "Raw",
    "n": "World Tag Team Championship",
-   "c": "The Vision (Bron Breakker et Austin Theory)",
+   "c": "Penta et Je’Von Evans",
    "who": [
-    "Bron Breakker",
-    "Austin Theory"
+    "Penta",
+    "Je’Von Evans"
    ],
-   "since": "2026-07-06",
-   "ev": "",
-   "hist": [],
-   "src": "The SmackDown Hotel",
-   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe",
+   "since": "2026-11-07",
+   "ev": "Crown Jewel",
+   "hist": [
+    {
+     "c": "The Vision (Bron Breakker et Austin Theory)",
+     "who": [
+      "Bron Breakker",
+      "Austin Theory"
+     ],
+     "d": "2026-07-06",
+     "ev": "",
+     "j": 124
+    }
+   ],
+   "src": "WWE.com",
+   "u": "https://www.wwe.com/complete-crown-jewel-2026-results",
    "defs": [],
    "def": 0
   },
@@ -394,28 +405,24 @@
    "k": "WWE",
    "show": "SmackDown",
    "n": "WWE Women’s Championship",
-   "c": "Chelsea Green",
+   "c": "Tiffany Stratton",
    "who": [
-    "Chelsea Green"
+    "Tiffany Stratton"
    ],
-   "since": "2026-08-02",
-   "ev": "",
-   "hist": [],
-   "src": "The SmackDown Hotel",
-   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe",
-   "defs": [
+   "since": "2026-11-07",
+   "ev": "Crown Jewel",
+   "hist": [
     {
-     "d": "2026-10-30",
-     "ev": "SmackDown",
-     "vs": "Nikki Bella"
-    },
-    {
-     "d": "2026-10-23",
-     "ev": "SmackDown",
-     "vs": "Roxanne Perez"
+     "c": "Chelsea Green",
+     "d": "2026-08-02",
+     "ev": "",
+     "j": 97
     }
    ],
-   "def": 2
+   "src": "WWE.com",
+   "u": "https://www.wwe.com/complete-crown-jewel-2026-results",
+   "defs": [],
+   "def": 0
   },
   {
    "id": "wwe-us",
