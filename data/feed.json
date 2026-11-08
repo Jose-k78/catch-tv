@@ -1,6 +1,16 @@
 {
- "at": "2026-11-08T19:40:33.205Z",
+ "at": "2026-11-08T21:09:50.109Z",
  "items": [
+  {
+   "t": "Preview : WWE NXT du 10 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
   {
    "t": "Carte de CMLL Domingo Familiar du 8 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61075-carte-de-cmll-domingo-familiar-du-8-novembre-2026",
@@ -500,16 +510,6 @@
     "CMLL",
     "Viernes Espectacular"
    ]
-  },
-  {
-   "t": "Preview : WWE SmackDown du 6 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
   }
  ],
  "yt": {
@@ -885,6 +885,7 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61122-resultats-et-streaming-aaa-heroes-inmortales-7-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61136-resultats-de-cmll-sabado-de-coliseo-du-7-novembre-2026",
    "https://www.catch-newz.com/international/newz/61075-carte-de-cmll-domingo-familiar-du-8-novembre-2026",
@@ -1182,12 +1183,11 @@
    "https://www.catch-newz.com/international/newz/60844-carte-de-lol-mischief-night-mayhem-5",
    "https://www.catch-newz.com/international/newz/60845-carte-de-new-texas-pro-wrestling-8-year-anniversary",
    "https://www.catch-newz.com/international/newz/60843-carte-de-iwrg-castillo-del-terror-2026",
-   "https://www.catch-newz.com/international/resultats/60838-resultats-du-jour-5-de-la-njpw-super-junior-tag-league-2026",
-   "https://www.catch-newz.com/international/resultats/60820-tna-impact-29-octobre-2026"
+   "https://www.catch-newz.com/international/resultats/60838-resultats-du-jour-5-de-la-njpw-super-junior-tag-league-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
