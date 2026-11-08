@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06",
+ "updated": "2026-11-08",
  "items": {
   "aaron-wolf": {
    "f": "aaron-wolf.webp",
@@ -6218,13 +6218,13 @@
    ]
   },
   "tommaso-ciampa": {
-   "f": "tommaso-ciampa.webp",
+   "f": "tommaso-ciampa-v3.webp",
    "n": [
     "Tommaso Ciampa"
    ],
    "v": [
-    "tommaso-ciampa-v2.webp",
-    "tommaso-ciampa-v3.webp"
+    "tommaso-ciampa.webp",
+    "tommaso-ciampa-v2.webp"
    ]
   },
   "tommy-billington": {
