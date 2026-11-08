@@ -1,6 +1,31 @@
 {
- "at": "2026-11-08T13:26:29.713Z",
+ "at": "2026-11-08T14:14:47.815Z",
  "items": [
+  {
+   "t": "Elton Prince de retour sur X, comment va-t-il ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61128-elton-prince-de-retour-sur-x-comment-va-t-il",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Chelsea Green : « J’ai perdu mon titre, mais j’ai aussi perdu une amie »",
+   "u": "https://www.catch-newz.com/wwe/newz/61127-chelsea-green-jai-perdu-mon-titre-mais-jai-aussi-perdu-une-amie",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Carte de IWRG Funcion Espectacular du 8 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61115-carte-de-iwrg-funcion-espectacular-du-8-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": []
+  },
   {
    "t": "Combien de billets vendus pour FinalSlam ?",
    "u": "https://www.catch-newz.com/wwe/newz/61126-combien-de-billets-vendus-pour-finalslam",
@@ -132,16 +157,6 @@
    ]
   },
   {
-   "t": "Preview : AEW Collision du 7 novembre 2026",
-   "u": "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": [
-    "AEW",
-    "Collision"
-   ]
-  },
-  {
    "t": "Résultats de WWE Crown Jewel 2026",
    "u": "https://www.voxcatch.fr/2026/11/07/resultats-de-wwe-crown-jewel-2026/",
    "s": "VOXcatch",
@@ -158,6 +173,16 @@
    "tags": [
     "WWE",
     "SmackDown"
+   ]
+  },
+  {
+   "t": "Preview : AEW Collision du 7 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-07",
+   "tags": [
+    "AEW",
+    "Collision"
    ]
   },
   {
@@ -475,33 +500,6 @@
   {
    "t": "L'ambassade américaine félicite la WWE pour Crown Jewel 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61070-ambassade-americaine-felicite-la-wwe-pour-crown-jewel-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Crown Jewel 2026 aura bien lieu ce samedi en Arabie Saoudite, que faut-il en penser ?",
-   "u": "https://www.catch-newz.com/wwe/newz/61067-crown-jewel-2026-aura-bien-lieu-ce-samedi-en-arabie-saoudite-que-faut-il-en-penser",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Natalya : « Carmella devrait revenir et faire quelque chose d’amusant à la WWE »",
-   "u": "https://www.catch-newz.com/wwe/newz/61066-natalya-carmella-devrait-revenir-et-faire-quelque-chose-damusant-a-la-wwe",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "WWE : Une nouvelle stipulation dans le roster principal ?",
-   "u": "https://www.catch-newz.com/wwe/newz/61064-wwe-une-nouvelle-stipulation-dans-le-roster-principal",
    "s": "Catch-Newz",
    "d": "2026-11-06",
    "tags": [
@@ -883,9 +881,12 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61128-elton-prince-de-retour-sur-x-comment-va-t-il",
+   "https://www.catch-newz.com/wwe/newz/61127-chelsea-green-jai-perdu-mon-titre-mais-jai-aussi-perdu-une-amie",
    "https://www.catch-newz.com/wwe/resultats/61122-resultats-et-streaming-aaa-heroes-inmortales-7-novembre-2026",
-   "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61115-carte-de-iwrg-funcion-espectacular-du-8-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61116-resultats-de-iwrg-galli-thursday-night-wrestling-du-5-novembre-2026",
+   "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61126-combien-de-billets-vendus-pour-finalslam",
    "https://www.catch-newz.com/wwe/newz/61093-preview-aaa-heroes-inmortales-7-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61100-resultats-de-dominion-wrestling-hail-to-the-king-2026",
@@ -1177,14 +1178,11 @@
    "https://www.catch-newz.com/international/resultats/60833-resultats-du-jour-4-de-dg-the-gate-of-victory-2026",
    "https://www.catch-newz.com/wwe/newz/60831-vivez-une-intervention-de-logan-paul-cache-sous-le-ring-a-money-in-the-bank",
    "https://www.catch-newz.com/wwe/newz/60819-wwe-smackdown-du-30-octobre-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
-   "https://www.catch-newz.com/wwe/newz/60828-zuffa-boxing-annonce-son-premier-show-en-arabie-saoudite",
-   "https://www.catch-newz.com/international/newz/60829-ricky-sosa-annonce-son-retour-pour-tna-destination-x",
-   "https://www.catch-newz.com/wwe/newz/60830-sami-zayn-parle-de-son-alchimie-avec-kevin-owens",
-   "https://www.catch-newz.com/wwe/newz/60826-larabie-saoudite-annonce-le-nouveau-lieu-de-wwe-crown-jewel-2026"
+   "https://www.catch-newz.com/wwe/newz/60828-zuffa-boxing-annonce-son-premier-show-en-arabie-saoudite"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
