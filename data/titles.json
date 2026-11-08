@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07",
+ "updated": "2026-11-08",
  "note": "Champions actuels : peut révéler des résultats récents.",
  "titles": [
   {
@@ -834,15 +834,22 @@
    "k": "AEW",
    "show": "",
    "n": "AEW National Championship",
-   "c": "Andrade El Ídolo",
+   "c": "Tommaso Ciampa",
    "who": [
-    "Andrade El Ídolo"
+    "Tommaso Ciampa"
    ],
-   "since": "2026-07-26",
-   "ev": "",
-   "hist": [],
-   "src": "Wikipédia",
-   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_All_Elite_Wrestling",
+   "since": "2026-11-07",
+   "ev": "Collision",
+   "hist": [
+    {
+     "c": "Andrade El Ídolo",
+     "d": "2026-07-26",
+     "ev": "",
+     "j": 104
+    }
+   ],
+   "src": "POST Wrestling",
+   "u": "https://www.postwrestling.com/2026/11/07/tommaso-ciampa-wins-national-championship-from-andrade-el-idolo-on-aew-collision/",
    "defs": [],
    "def": 0
   },
@@ -1980,7 +1987,15 @@
    "ev": "Death Before Dishonor",
    "hist": [],
    "src": "Wikipédia",
-   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Ring_of_Honor"
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Ring_of_Honor",
+   "defs": [
+    {
+     "d": "2026-11-05",
+     "ev": "ROH TV",
+     "vs": "AR Fox"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "roh-tag",
@@ -2058,7 +2073,15 @@
    "ev": "Final Battle",
    "hist": [],
    "src": "Wikipédia",
-   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Ring_of_Honor"
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Ring_of_Honor",
+   "defs": [
+    {
+     "d": "2026-11-05",
+     "ev": "ROH TV",
+     "vs": "Jody Threat"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "stardom-world",
