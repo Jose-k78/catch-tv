@@ -1,5 +1,5 @@
 {
- "at": "2026-11-08T00:54:51.381Z",
+ "at": "2026-11-08T03:49:22.791Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -382,7 +382,9 @@
   "fr:2026-11-07": "2026-11-07",
   "a:https://www.catch-newz.com/wwe/newz/61104-cody-rhodes-sera-capitaine-de-son-equipe-aux-survivor-series-2026": "2026-11-07",
   "a:https://www.voxcatch.fr/2026/11/07/resultats-de-wwe-crown-jewel-2026/": "2026-11-07",
-  "a:https://www.catch-newz.com/aew/newz/61114-carte-de-eve-157-elite-encounters-2": "2026-11-08"
+  "a:https://www.catch-newz.com/aew/newz/61114-carte-de-eve-157-elite-encounters-2": "2026-11-08",
+  "a:https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026": "2026-11-08",
+  "a:https://www.catch-newz.com/wwe/resultats/61122-resultats-et-streaming-aaa-heroes-inmortales-7-novembre-2026": "2026-11-08"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -393,6 +395,14 @@
     "url": "https://www.catch-newz.com/aew/newz/61114-carte-de-eve-157-elite-encounters-2",
     "tag": "art",
     "short": "Carte de EVE 157: Elite Encounters 2"
+   },
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Résultats de AEW Collision du 7 novembre 2026 · Résultats et streaming de AAA Heroes Inmortales du 7 novembre 2026",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -403,6 +413,14 @@
     "url": "https://www.catch-newz.com/aew/newz/61114-carte-de-eve-157-elite-encounters-2",
     "tag": "art",
     "short": "Carte de EVE 157: Elite Encounters 2"
+   },
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Résultats de AEW Collision du 7 novembre 2026 · Résultats et streaming de AAA Heroes Inmortales du 7 novembre 2026",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
    }
   ]
  }
