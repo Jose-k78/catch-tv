@@ -69,5 +69,32 @@
  },
  "bgm": {
   "bell": "media/tcg/mw64c3jq.mp3"
- }
+ },
+ "custom": [
+  {
+   "id": "oc-liv-morgan-lrg45",
+   "name": "Liv Morgan",
+   "img": "img/catcheurs/liv-morgan.webp",
+   "k": "WWE",
+   "years": "2014–",
+   "fac": "judgment-day",
+   "arch": "Showman",
+   "al": "",
+   "r": "SSR",
+   "max": "LR",
+   "st": [
+    28,
+    36,
+    48,
+    39,
+    30
+   ],
+   "fin": {
+    "n": "Oblivion",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Finn Bálor"
+  }
+ ]
 }
