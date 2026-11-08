@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07",
+ "updated": "2026-11-08",
  "note": "Vidéos des chaînes officielles uniquement. res = résultats (spoilers, affichés seulement à la demande). m = résumé match par match (promotions japonaises).",
  "items": {
   "WWE|Raw|2026-10-26": {
@@ -652,6 +652,140 @@
    ],
    "s": "Sacnilk (spoilers des enregistrements du 2 nov. à Brooklyn)",
    "u": "https://www.sacnilk.com/news/wwe-smackdown-spoilers-november-6-2026-taped-results-winners"
+  },
+  "AEW|Collision|2026-11-07": {
+   "res": [
+    "Chris Jericho a battu Blake Christian.",
+    "FTR (Dax Harwood et Cash Wheeler) ont battu The Motor City Machine Guns (Chris Sabin et Alex Shelley) dans un match de leur série au meilleur des cinq.",
+    "Nick Wayne a battu Marcus Mathers.",
+    "The Death Riders (Jon Moxley, Gabe Kidd et Daniel Garcia) ont battu Shane Taylor Promotions (Shane Taylor, Shawn Dean et Carlie Bravo).",
+    "Persephone a battu Mina Shirakawa.",
+    "Tommaso Ciampa a battu Andrade El Idolo et remporte le titre National de la AEW."
+   ],
+   "seg": [
+    {
+     "k": "Promo",
+     "t": "Nick Wayne affirme qu’il va prendre le contrôle de la croisière de Jericho après l’avoir battu deux fois."
+    },
+    {
+     "k": "Promo",
+     "t": "The New Level (Kofi Kingston et Creed) avec Lexy annoncent que le problème de Bandido est désormais le leur et visent les titres trios la semaine prochaine."
+    },
+    {
+     "k": "Promo",
+     "t": "Après sa victoire, Nick Wayne se proclame capitaine du bateau et nargue le public."
+    },
+    {
+     "k": "Promo",
+     "t": "Jon Moxley prévient que Jay White et The Cut devront mériter leur victoire face aux Death Riders."
+    },
+    {
+     "k": "Promo",
+     "t": "Mercedes Moné demande où est Marina, l’accuse d’avoir quitté le navire et promet de l’humilier à Full Gear."
+    },
+    {
+     "k": "Attaque",
+     "t": "The Cut (Jay White, Mercedes Moné et leurs alliés) attaquent les Death Riders : Moné piétine Moxley et White place un Blade Runner."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après son match, Persephone s’acharne sur Mina Shirakawa, mais Queen Aminata accourt pour l’en empêcher."
+    },
+    {
+     "k": "Backstage",
+     "t": "Juice Robinson est transporté à l’hôpital ; Jay White accuse les Death Riders et promet de se venger."
+    },
+    {
+     "k": "Promo",
+     "t": "Davis et Doyle promettent de ramener les titres par équipe à la Don Callis Family."
+    },
+    {
+     "k": "Célébration",
+     "t": "Tommaso Ciampa fête son nouveau titre avec sa fille dans le public, tandis que Speedball vient voir Andrade."
+    }
+   ],
+   "s": "PWTorch",
+   "u": "https://www.pwtorch.com/site/2026/11/07/aew-collision-results-11-7-andrade-vs-ciampa-for-the-national-title-persephone-vs-mina-shirakawa-ftr-vs-mcmg-death-riders-jericho-and-nick-wayne-in-action/"
+  },
+  "ROH|ROH TV|2026-11-05": {
+   "res": [
+    "Lee Moriarty et AR Fox font match nul à la limite de temps de 10 minutes ; Lee Moriarty conserve le titre Pure de ROH.",
+    "Robyn Renegade a battu Rachael Ellering.",
+    "Adam Priest et El Phantasmo ont battu Dante Casanova et Kiran Grey.",
+    "Shane Taylor Promotions ont battu TJ Crawford, Ori Gold, Hadar Horvitz et Sean Maluta.",
+    "Mark Davis a battu Marcus Mathers.",
+    "Darius Martin a battu QT Marshall.",
+    "Deonna Purrazzo a battu Jody Threat et conserve le titre Women’s Pure de ROH.",
+    "Eddie Kingston et Ortiz ont battu RPG Vice (Rocky Romero et Trent Beretta)."
+   ],
+   "seg": [
+    {
+     "k": "Annonce",
+     "t": "AR Fox, grâce au match nul du Proving Ground, obtient un match pour le titre Pure."
+    },
+    {
+     "k": "Attaque",
+     "t": "Action Andretti frappe Adam Priest avec la ceinture de champion TV de ROH, El Phantasmo le fait fuir."
+    },
+    {
+     "k": "Débuts",
+     "t": "Marcus Mathers fait ses débuts à ROH et raconte qu’il allait voir les shows de ROH à Philadelphie enfant."
+    },
+    {
+     "k": "Annonce",
+     "t": "En coulisses, Athena reproche à Diamanté et Billie Starkz de l’avoir lâchée, annonce que Hyan rejoint son groupe et aura un match pour le titre mondial féminin à Final Battle."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après le match de Darius Martin, Bryan Keith, The Grizzled Young Veterans, RPG Vice et The Kingdom attaquent, avant d’être repoussés par Big Boom AJ, Scorpio Sky, Matt Sydal et Bustah & The Brain."
+    }
+   ],
+   "s": "Solowrestling",
+   "u": "https://solowrestling.com/us/new/150878-results-roh-ring-of-honor-november-5-2026"
+  },
+  "CMLL|Viernes Espectacular|2026-11-06": {
+   "res": [
+    "Alexius et Péndulo ont battu Makara et Poseidón.",
+    "Cerebro Negro Jr., Feroz et Infarto ont battu El Hijo del Pantera, Infinito et Pantera Jr. (2 tombés à 1).",
+    "Yutani a battu Rey Pegasus.",
+    "La Fuerza Poblana (Guerrero Maya Jr. et Xelhua) ont battu Galeón Fantasma (Difunto et Zandokan Jr.) (2 tombés à 1).",
+    "Las Fieras del Ring (Black Tiger et Rugido) ont battu Los Depredadores (Vegas Depredador et Volador Jr.) (2 tombés à 0).",
+    "Bandido, Neón et Titán ont battu Averno, Bárbaro Cavernario et Soberano Jr. (2 tombés à 1)."
+   ],
+   "seg": [
+    {
+     "k": "Attaque",
+     "t": "Soberano Jr. arrache le masque de Bandido pendant le match puis s’acharne sur lui ; après le combat, il détruit les masques lancés par le public : la rivalité appelle un match à plus gros enjeu."
+    }
+   ],
+   "m": [
+    {
+     "t": "Alexius et Péndulo contre Makara et Poseidón",
+     "r": "Victoire d’Alexius et Péndulo en ouverture."
+    },
+    {
+     "t": "Cerebro Negro Jr., Feroz et Infarto contre El Hijo del Pantera, Infinito et Pantera Jr.",
+     "r": "Cerebro Negro Jr., Feroz et Infarto l’emportent 2 tombés à 1."
+    },
+    {
+     "t": "Yutani contre Rey Pegasus",
+     "r": "Yutani gagne ce match éclair."
+    },
+    {
+     "t": "La Fuerza Poblana contre Galeón Fantasma",
+     "r": "Guerrero Maya Jr. et Xelhua gagnent 2 tombés à 1."
+    },
+    {
+     "t": "Las Fieras del Ring contre Los Depredadores",
+     "r": "Black Tiger et Rugido gagnent 2 tombés à 0."
+    },
+    {
+     "t": "Bandido, Neón et Titán contre Averno, Bárbaro Cavernario et Soberano Jr.",
+     "r": "L’équipe de Bandido gagne 2 tombés à 1, mais Bandido finit sans masque après l’attaque de Soberano Jr."
+    }
+   ],
+   "s": "Dos Dos Solo Dos",
+   "u": "https://dosdossolodos.com/2026/11/07/resultados-cmll-viernes-espectacular-06-noviembre-2026/"
   }
  }
 }
