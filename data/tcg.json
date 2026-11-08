@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07",
+ "updated": "2026-11-08",
  "note": "Réglages TCCCG du modo (cartes, persos, taux, objets, boosters, combats, musiques, assets). Modifié depuis l’app (⚙️ Modo TCCCG).",
  "cards": {
   "ace-austin": {
@@ -53,6 +53,18 @@
   },
   "gabe-kidd": {
    "img": "img/tcg/mw64nmhr.jpg"
+  },
+  "liv-morgan": {
+   "r": "SSR",
+   "max": "LR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Oblivion",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": ""
   }
  },
  "bgm": {
