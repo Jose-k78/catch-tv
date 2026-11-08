@@ -1,14 +1,30 @@
 {
- "at": "2026-11-08T17:10:08.689Z",
+ "at": "2026-11-08T18:04:06.337Z",
  "items": [
   {
-   "t": "Une attaque de missiles sur Riyad après WWE Crown Jewel 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61130-une-attaque-de-missiles-sur-riyad-apres-wwe-crown-jewel-2026",
+   "t": "Les catcheurs auront besoin de jetons pour le John Cena Classic",
+   "u": "https://www.catch-newz.com/wwe/newz/61131-les-catcheurs-auront-besoin-de-jetons-pour-le-john-cena-classic",
    "s": "Catch-Newz",
    "d": "2026-11-08",
    "tags": [
     "WWE"
    ]
+  },
+  {
+   "t": "Zilla Fatu dévoile un cadeau de John Cena pour la compétition Classic",
+   "u": "https://www.catch-newz.com/wwe/newz/61132-zilla-fatu-devoile-un-cadeau-de-john-cena-pour-la-competition-classic",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Les françaises JGU et Cory Zero contraintes de rendre leurs titres par équipe d'EVE",
+   "u": "https://www.catch-newz.com/international/newz/61133-les-francaises-jgu-et-cory-zero-contraintes-de-rendre-leurs-titres-par-equipe-deve",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": []
   },
   {
    "t": "Carte de CMLL Domingo Familiar du 8 novembre 2026",
@@ -25,6 +41,15 @@
    "s": "Catch-Newz",
    "d": "2026-11-08",
    "tags": []
+  },
+  {
+   "t": "Une attaque de missiles sur Riyad après WWE Crown Jewel 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61130-une-attaque-de-missiles-sur-riyad-apres-wwe-crown-jewel-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": [
+    "WWE"
+   ]
   },
   {
    "t": "Elton Prince de retour sur X, comment va-t-il ?",
@@ -481,30 +506,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-06",
    "tags": []
-  },
-  {
-   "t": "Carte de IWA Boiling Point 2026",
-   "u": "https://www.catch-newz.com/international/newz/61079-carte-de-iwa-boiling-point-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": []
-  },
-  {
-   "t": "Résultats de ChocoPro #549 Back To New",
-   "u": "https://www.catch-newz.com/international/resultats/61071-resultats-de-chocopro-549-back-to-new",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": []
-  },
-  {
-   "t": "Carte de CMLL Viernes Espectacular du 6 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61039-carte-de-cmll-viernes-espectacular-du-6-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": [
-    "CMLL",
-    "Viernes Espectacular"
-   ]
   }
  ],
  "yt": {
@@ -881,10 +882,13 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61130-une-attaque-de-missiles-sur-riyad-apres-wwe-crown-jewel-2026",
+   "https://www.catch-newz.com/wwe/newz/61131-les-catcheurs-auront-besoin-de-jetons-pour-le-john-cena-classic",
+   "https://www.catch-newz.com/wwe/newz/61132-zilla-fatu-devoile-un-cadeau-de-john-cena-pour-la-competition-classic",
+   "https://www.catch-newz.com/international/newz/61133-les-francaises-jgu-et-cory-zero-contraintes-de-rendre-leurs-titres-par-equipe-deve",
    "https://www.catch-newz.com/wwe/resultats/61122-resultats-et-streaming-aaa-heroes-inmortales-7-novembre-2026",
    "https://www.catch-newz.com/international/newz/61075-carte-de-cmll-domingo-familiar-du-8-novembre-2026",
    "https://www.catch-newz.com/international/newz/61115-carte-de-iwrg-funcion-espectacular-du-8-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61130-une-attaque-de-missiles-sur-riyad-apres-wwe-crown-jewel-2026",
    "https://www.catch-newz.com/international/resultats/61116-resultats-de-iwrg-galli-thursday-night-wrestling-du-5-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61128-elton-prince-de-retour-sur-x-comment-va-t-il",
    "https://www.catch-newz.com/wwe/newz/61127-chelsea-green-jai-perdu-mon-titre-mais-jai-aussi-perdu-une-amie",
@@ -1175,14 +1179,11 @@
    "https://www.catch-newz.com/international/resultats/60838-resultats-du-jour-5-de-la-njpw-super-junior-tag-league-2026",
    "https://www.catch-newz.com/international/resultats/60820-tna-impact-29-octobre-2026",
    "https://www.catch-newz.com/international/resultats/60836-resultats-du-jour-5-de-dg-the-gate-of-victory-2026",
-   "https://www.catch-newz.com/international/resultats/60835-resultats-de-cmll-jueves-de-glamour-du-29-octobre-2026",
-   "https://www.catch-newz.com/international/resultats/60834-resultats-de-cmll-aull-fuego-vs-fuego",
-   "https://www.catch-newz.com/international/resultats/60833-resultats-du-jour-4-de-dg-the-gate-of-victory-2026",
-   "https://www.catch-newz.com/wwe/newz/60831-vivez-une-intervention-de-logan-paul-cache-sous-le-ring-a-money-in-the-bank"
+   "https://www.catch-newz.com/international/resultats/60835-resultats-de-cmll-jueves-de-glamour-du-29-octobre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
