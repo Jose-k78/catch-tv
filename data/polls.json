@@ -1,6 +1,60 @@
 {
-  "updated": "2026-11-07",
+  "updated": "2026-11-08",
   "items": [
+    {
+      "id": "p-20261108-cody-wargames",
+      "d": "2026-11-08",
+      "type": "",
+      "k": "WWE",
+      "q": "Survivor Series : l’équipe du capitaine Cody Rhodes va-t-elle gagner les WarGames ?",
+      "opts": [
+        "Oui",
+        "Non"
+      ],
+      "other": false,
+      "end": "2026-11-28"
+    },
+    {
+      "id": "p-20261108-ciampa-national",
+      "d": "2026-11-08",
+      "type": "",
+      "k": "AEW",
+      "q": "Tommaso Ciampa champion National de l’AEW : combien de temps va durer son règne ?",
+      "opts": [
+        "Moins d’un mois",
+        "Quelques mois",
+        "Plus de six mois"
+      ],
+      "other": false,
+      "end": ""
+    },
+    {
+      "id": "p-20261108-charlotte-retour",
+      "d": "2026-11-08",
+      "type": "",
+      "k": "WWE",
+      "q": "Charlotte Flair est de retour : contre qui doit-elle repartir en rivalité ?",
+      "opts": [
+        "Tiffany Stratton",
+        "Jade Cargill",
+        "Rhea Ripley"
+      ],
+      "other": true,
+      "end": ""
+    },
+    {
+      "id": "p-20261108-babies",
+      "d": "2026-11-08",
+      "type": "babies",
+      "k": "",
+      "q": "Qui est la meilleure babies entre Toni Storm et Utami Hayashishita ?",
+      "opts": [
+        "Toni Storm",
+        "Utami Hayashishita"
+      ],
+      "other": false,
+      "end": "2026-11-10"
+    },
     {
       "id": "p-20261107-wargames",
       "d": "2026-11-07",
