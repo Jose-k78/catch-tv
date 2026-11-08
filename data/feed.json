@@ -1,5 +1,5 @@
 {
- "at": "2026-11-08T07:57:06.862Z",
+ "at": "2026-11-08T08:47:46.146Z",
  "items": [
   {
    "t": "Résultats de Dradition Tastumi Fujinami 55th Celebration Dragon Expo 2026",
@@ -856,6 +856,20 @@
     "id": "Mkbj89YOvTU",
     "t": "Full Crown Jewel 2026 highlights"
    }
+  ],
+  "AEW|Collision|2026-11-07": [
+   {
+    "id": "I3CtpUZaCfE",
+    "t": "Tommaso Ciampa contre Andrade El Ídolo"
+   },
+   {
+    "id": "uEwnjjkwNb4",
+    "t": "FTR contre MCMG"
+   },
+   {
+    "id": "04Nx7AMe2iQ",
+    "t": "FTR contre MCMG"
+   }
   ]
  },
  "rss": {
@@ -872,8 +886,8 @@
    "https://www.catch-newz.com/wwe/resultats/61122-resultats-et-streaming-aaa-heroes-inmortales-7-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61093-preview-aaa-heroes-inmortales-7-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61097-resultats-de-dradition-tastumi-fujinami-55th-celebration-dragon-expo-2026",
    "https://www.catch-newz.com/international/resultats/61116-resultats-de-iwrg-galli-thursday-night-wrestling-du-5-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61097-resultats-de-dradition-tastumi-fujinami-55th-celebration-dragon-expo-2026",
    "https://www.catch-newz.com/aew/newz/61125-tommaso-ciampa-remporte-le-championnat-national-a-aew-collision-du-bateau",
    "https://www.catch-newz.com/wwe/newz/61124-rey-mysterio-suspendu-de-la-aaa-et-accuse-dinfidelite",
    "https://www.catch-newz.com/aew/newz/61114-carte-de-eve-157-elite-encounters-2",
@@ -1170,11 +1184,11 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
-  "YouTube AEW": "0 nouvelles vidéos",
+  "YouTube AEW": "3 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
   "YouTube TNA": "0 nouvelles vidéos",
