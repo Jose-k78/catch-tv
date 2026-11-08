@@ -73,28 +73,31 @@
  "custom": [
   {
    "id": "oc-tiffany-stratton-me769",
-   "name": "Tiffany Stratton",
+   "name": "Tiffany Stratton Crown Jewel",
    "img": "img/tcg/mw7meox4.jpg",
    "k": "WWE",
-   "years": "",
+   "years": "2026",
    "fac": "",
    "arch": "Opportunist",
-   "al": "",
-   "r": "SR",
+   "al": "heel",
+   "r": "SSR",
    "max": "UR",
    "st": [
-    29,
-    49,
+    30,
+    50,
+    25,
     27,
-    28,
-    37
+    39
    ],
    "fin": {
     "n": "Prettiest Moonsault Ever",
-    "e": "Vol de tour"
+    "e": "Révélation"
    },
    "gimmick": "",
-   "medalOf": "Tiffany Stratton"
+   "medalOf": "Tiffany Stratton",
+   "boosters": [
+    "Crown Jewel"
+   ]
   }
  ]
 }
