@@ -1,6 +1,29 @@
 {
- "at": "2026-11-07T23:37:37.408Z",
+ "at": "2026-11-08T00:54:51.324Z",
  "items": [
+  {
+   "t": "Carte de EVE 157: Elite Encounters 2",
+   "u": "https://www.catch-newz.com/aew/newz/61114-carte-de-eve-157-elite-encounters-2",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": [
+    "AEW"
+   ]
+  },
+  {
+   "t": "Carte de TJPW ALL RISE 2026",
+   "u": "https://www.catch-newz.com/international/newz/61120-carte-de-tjpw-all-rise-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": []
+  },
+  {
+   "t": "Carte du jour 5 de DG The Gate Of Evolution 2026",
+   "u": "https://www.catch-newz.com/international/newz/61117-carte-du-jour-5-de-dg-the-gate-of-evolution-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": []
+  },
   {
    "t": "Carte du jour 1 de TEW Next Order Of Business 2026",
    "u": "https://www.catch-newz.com/international/newz/61112-carte-du-jour-1-de-tew-next-order-of-business-2026",
@@ -478,33 +501,6 @@
    "tags": [
     "NJPW"
    ]
-  },
-  {
-   "t": "Cody Rhodes a perdu la bataille face à 50 Cent",
-   "u": "https://www.catch-newz.com/wwe/newz/61034-cody-rhodes-a-perdu-la-bataille-face-a-50-cent",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "La WWE va organiser un show le 1er janvier 2027",
-   "u": "https://www.catch-newz.com/wwe/newz/61025-la-wwe-va-organiser-un-show-le-1er-janvier-2027",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Résultats de STARDOM Crimson Nightmare 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61036-resultats-de-stardom-crimson-nightmare-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": [
-    "Stardom"
-   ]
   }
  ],
  "yt": {
@@ -866,8 +862,11 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
+   "https://www.catch-newz.com/aew/newz/61114-carte-de-eve-157-elite-encounters-2",
    "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61093-preview-aaa-heroes-inmortales-7-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61120-carte-de-tjpw-all-rise-2026",
+   "https://www.catch-newz.com/international/newz/61117-carte-du-jour-5-de-dg-the-gate-of-evolution-2026",
    "https://www.catch-newz.com/international/newz/61112-carte-du-jour-1-de-tew-next-order-of-business-2026",
    "https://www.catch-newz.com/international/newz/61111-carte-de-mlw-saturday-night-superfight-2026",
    "https://www.catch-newz.com/international/resultats/61109-resultats-de-stardom-nighter-korakuen-hall-du-27-octobre-2026",
@@ -1161,10 +1160,7 @@
    "https://www.catch-newz.com/aew/resultats/60789-aew-dynamite-28-octobre-2026",
    "https://www.catch-newz.com/aew/resultats/60803-spoilers-aew-collision-31-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60822-wwe-nxt-halloween-havoc-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
-   "https://www.catch-newz.com/wwe/newz/60821-sami-zayn-japprecie-vraiment-ce-que-je-fais-en-ce-moment",
-   "https://www.catch-newz.com/wwe/newz/60802-rko-styles-clash-leedz-lewis-attaque-les-influenceurs",
-   "https://www.catch-newz.com/international/newz/60794-preview-tna-impact-29-octobre-2026",
-   "https://www.catch-newz.com/international/resultats/60814-resultats-du-jour-2-du-hop-spooktober-tour-2026"
+   "https://www.catch-newz.com/wwe/newz/60821-sami-zayn-japprecie-vraiment-ce-que-je-fais-en-ce-moment"
   ]
  },
  "diag": {

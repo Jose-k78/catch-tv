@@ -1,5 +1,5 @@
 {
- "at": "2026-11-07T21:11:43.460Z",
+ "at": "2026-11-08T00:54:51.381Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -381,7 +381,29 @@
   "a:https://www.catch-newz.com/wwe/newz/61102-wwe-crown-jewel-roman-reigns-prouve-encore-une-fois-sa-superiorite": "2026-11-07",
   "fr:2026-11-07": "2026-11-07",
   "a:https://www.catch-newz.com/wwe/newz/61104-cody-rhodes-sera-capitaine-de-son-equipe-aux-survivor-series-2026": "2026-11-07",
-  "a:https://www.voxcatch.fr/2026/11/07/resultats-de-wwe-crown-jewel-2026/": "2026-11-07"
+  "a:https://www.voxcatch.fr/2026/11/07/resultats-de-wwe-crown-jewel-2026/": "2026-11-07",
+  "a:https://www.catch-newz.com/aew/newz/61114-carte-de-eve-157-elite-encounters-2": "2026-11-08"
  },
- "pend": {}
+ "pend": {
+  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
+   {
+    "cat": "info",
+    "title": "📰 Catch-Newz",
+    "body": "Carte de EVE 157: Elite Encounters 2",
+    "url": "https://www.catch-newz.com/aew/newz/61114-carte-de-eve-157-elite-encounters-2",
+    "tag": "art",
+    "short": "Carte de EVE 157: Elite Encounters 2"
+   }
+  ],
+  "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
+   {
+    "cat": "info",
+    "title": "📰 Catch-Newz",
+    "body": "Carte de EVE 157: Elite Encounters 2",
+    "url": "https://www.catch-newz.com/aew/newz/61114-carte-de-eve-157-elite-encounters-2",
+    "tag": "art",
+    "short": "Carte de EVE 157: Elite Encounters 2"
+   }
+  ]
+ }
 }
