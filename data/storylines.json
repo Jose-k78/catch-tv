@@ -1,7 +1,40 @@
 {
-  "updated": "2026-11-07",
+  "updated": "2026-11-08",
   "note": "Une storyline par jour (la plus récente en premier) : grandes histoires, rivalités, anecdotes de coulisses, faits marquants. txt = paragraphes écrits en français à partir des sources ; v = vidéos officielles ; q = recherches sur la chaîne officielle.",
   "items": [
+    {
+      "id": "mayu-io",
+      "d": "2026-11-08",
+      "type": "Rivalité",
+      "t": "Mayu Iwatani contre Io Shirai : les sœurs ennemies de la Stardom",
+      "k": "Stardom",
+      "years": "2012–2025",
+      "hook": "Elles ont tout gagné ensemble sous le nom de Thunder Rock, puis se sont déchirées pour la ceinture rouge… avant de se retrouver dix ans plus tard sur un autre ring.",
+      "txt": [
+        "Mayu Iwatani fait partie des toutes premières catcheuses de la Stardom : elle débute dès le premier show de la compagnie, le 23 janvier 2011. Fin 2012, après la retraite de sa partenaire Arisa Hoshiki, elle s'associe à Io Shirai. Le duo prend le nom de Thunder Rock et devient l'une des équipes phares du joshi moderne.",
+        "Le 6 mai 2015, Thunder Rock remporte les ceintures par équipe Goddesses of Stardom, alors vacantes, en battant Chelsea et Kairi Hojo. La même année, le duo gagne la Goddesses of Stardom Tag League et enchaîne onze défenses avant de perdre les titres face à Kagetsu et Kyoko Kimura le 16 juin 2016.",
+        "Mais les deux amies sont aussi rivales. Leur affrontement du 5★STAR GP, le 23 août 2015, est élu meilleur match du tournoi. Le 15 mai 2016, Io Shirai bat Mayu pour le World of Stardom Championship, la fameuse ceinture rouge. Le 11 novembre 2016, Io se retourne contre sa partenaire : Thunder Rock et le clan Threedom sont dissous.",
+        "Le 22 décembre 2016, Io conserve son titre contre Mayu au show de fin d'année, dans un match élu match de l'année 2016 de la Stardom. Il faut attendre le 21 juin 2017 et une cinquième tentative pour que Mayu batte enfin Io et décroche la ceinture rouge.",
+        "Les chemins se séparent ensuite : Io Shirai part pour la WWE, où elle devient IYO SKY, championne de NXT puis star de l'équipe principale. Mayu reste la pierre angulaire de la Stardom, remporte de nouveau la ceinture rouge en 2019 et règne longtemps sur le titre féminin IWGP, avant de quitter la compagnie en avril 2025 pour rejoindre Marigold.",
+        "Le 26 octobre 2025, les deux femmes se retrouvent en tête d'affiche de Grand Destiny, le grand show de Marigold au Ryogoku Kokugikan. IYO SKY l'emporte dans un match récompensé comme l'un des meilleurs de l'année, refermant un chapitre ouvert plus de dix ans plus tôt."
+      ],
+      "key": "Le 21 juin 2017, à sa cinquième tentative, Mayu Iwatani bat enfin son ancienne partenaire Io Shirai pour la ceinture rouge de la Stardom.",
+      "v": [],
+      "q": [
+        "Io Shirai vs Mayu Iwatani Stardom full match",
+        "IYO SKY vs Mayu Iwatani Marigold Grand Destiny"
+      ],
+      "src": [
+        {
+          "n": "Wikipédia (EN) – Mayu Iwatani",
+          "u": "https://en.wikipedia.org/wiki/Mayu_Iwatani"
+        },
+        {
+          "n": "RESURA – Mayu Iwatani vs IYO SKY: The Seven-Year Itch",
+          "u": "https://resuramag.com/2025/10/16/mayu-iwatani-vs-iyo-sky-the-seven-year-itch/"
+        }
+      ]
+    },
     {
       "id": "wrestling-classic-1985",
       "d": "2026-11-07",
