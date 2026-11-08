@@ -70,5 +70,31 @@
  "bgm": {
   "bell": "media/tcg/mw64c3jq.mp3"
  },
- "custom": []
+ "custom": [
+  {
+   "id": "oc-tiffany-stratton-me769",
+   "name": "Tiffany Stratton",
+   "img": "img/catcheurs/tiffany-stratton.webp",
+   "k": "WWE",
+   "years": "",
+   "fac": "",
+   "arch": "Opportunist",
+   "al": "",
+   "r": "SR",
+   "max": "UR",
+   "st": [
+    29,
+    49,
+    27,
+    28,
+    37
+   ],
+   "fin": {
+    "n": "Prettiest Moonsault Ever",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Tiffany Stratton"
+  }
+ ]
 }
