@@ -1,5 +1,5 @@
 {
- "at": "2026-11-08T21:09:50.158Z",
+ "at": "2026-11-08T22:08:31.186Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -406,7 +406,29 @@
   "a:https://www.catch-newz.com/wwe/newz/61134-randy-orton-promet-de-revenir-apres-wwe-crown-jewel-2026": "2026-11-08",
   "a:https://www.catch-newz.com/international/resultats/61136-resultats-de-cmll-sabado-de-coliseo-du-7-novembre-2026": "2026-11-08",
   "fr:2026-11-08": "2026-11-08",
-  "a:https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026": "2026-11-08"
+  "a:https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026": "2026-11-08",
+  "a:https://www.catch-newz.com/wwe/newz/61129-combien-de-temps-va-durer-finalslam": "2026-11-08"
  },
- "pend": {}
+ "pend": {
+  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
+   {
+    "cat": "info",
+    "title": "📰 Catch-Newz",
+    "body": "Combien de temps va durer FinalSlam ?",
+    "url": "https://www.catch-newz.com/wwe/newz/61129-combien-de-temps-va-durer-finalslam",
+    "tag": "art",
+    "short": "Combien de temps va durer FinalSlam ?"
+   }
+  ],
+  "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
+   {
+    "cat": "info",
+    "title": "📰 Catch-Newz",
+    "body": "Combien de temps va durer FinalSlam ?",
+    "url": "https://www.catch-newz.com/wwe/newz/61129-combien-de-temps-va-durer-finalslam",
+    "tag": "art",
+    "short": "Combien de temps va durer FinalSlam ?"
+   }
+  ]
+ }
 }

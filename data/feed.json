@@ -1,6 +1,15 @@
 {
- "at": "2026-11-08T21:09:50.109Z",
+ "at": "2026-11-08T22:08:31.132Z",
  "items": [
+  {
+   "t": "Combien de temps va durer FinalSlam ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61129-combien-de-temps-va-durer-finalslam",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Preview : WWE NXT du 10 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
@@ -10,6 +19,34 @@
     "WWE",
     "NXT"
    ]
+  },
+  {
+   "t": "Résultats de Arena Del Valle Choque de Leyendas",
+   "u": "https://www.catch-newz.com/international/resultats/61142-resultats-de-arena-del-valle-choque-de-leyendas",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": []
+  },
+  {
+   "t": "Résultats de MCW Pro Wrestling Autumn Armageddon 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61140-resultats-de-mcw-pro-wrestling-autumn-armageddon-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": []
+  },
+  {
+   "t": "Résultats du jour 1 de TEW Next Order Of Business 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61138-resultats-du-jour-1-de-tew-next-order-of-business-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": []
+  },
+  {
+   "t": "Résultats de MLW Saturday Night SuperFight 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61137-resultats-de-mlw-saturday-night-superfight-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": []
   },
   {
    "t": "Carte de CMLL Domingo Familiar du 8 novembre 2026",
@@ -467,49 +504,6 @@
     "WWE",
     "SmackDown"
    ]
-  },
-  {
-   "t": "WWE Crown Jewel : Les commentateurs ne seront pas en Arabie saoudite",
-   "u": "https://www.catch-newz.com/wwe/newz/61082-wwe-crown-jewel-les-commentateurs-ne-seront-pas-en-arabie-saoudite",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Carte de MCW Pro Wrestling 2026 Chesapeake Beach",
-   "u": "https://www.catch-newz.com/international/newz/61085-carte-de-mcw-pro-wrestling-2026-chesapeake-beach",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": []
-  },
-  {
-   "t": "Carte de RCW No One Will Survive 2026",
-   "u": "https://www.catch-newz.com/international/newz/61081-carte-de-rcw-no-one-will-survive-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": []
-  },
-  {
-   "t": "Résultats de WWE SmackDown du 6 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
-  },
-  {
-   "t": "Résultats de CMLL Viernes Espectacular du 6 novembre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61096-resultats-de-cmll-viernes-espectacular-du-6-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": [
-    "CMLL",
-    "Viernes Espectacular"
-   ]
   }
  ],
  "yt": {
@@ -885,8 +879,13 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61129-combien-de-temps-va-durer-finalslam",
    "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61122-resultats-et-streaming-aaa-heroes-inmortales-7-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61142-resultats-de-arena-del-valle-choque-de-leyendas",
+   "https://www.catch-newz.com/international/resultats/61140-resultats-de-mcw-pro-wrestling-autumn-armageddon-2026",
+   "https://www.catch-newz.com/international/resultats/61138-resultats-du-jour-1-de-tew-next-order-of-business-2026",
+   "https://www.catch-newz.com/international/resultats/61137-resultats-de-mlw-saturday-night-superfight-2026",
    "https://www.catch-newz.com/international/resultats/61136-resultats-de-cmll-sabado-de-coliseo-du-7-novembre-2026",
    "https://www.catch-newz.com/international/newz/61075-carte-de-cmll-domingo-familiar-du-8-novembre-2026",
    "https://www.catch-newz.com/international/newz/61115-carte-de-iwrg-funcion-espectacular-du-8-novembre-2026",
@@ -1178,16 +1177,11 @@
    "https://www.catch-newz.com/wwe/newz/60850-michael-chandler-de-lufc-participera-a-un-match-a-wwe-nxt-le-4-novembre",
    "https://www.catch-newz.com/wwe/newz/60847-tatum-paxley-sinvite-au-nxt-halloween-havoc-2026-ce-samedi-31-octobre",
    "https://www.catch-newz.com/wwe/newz/60849-wwe-smackdown-the-demon-finn-balor-est-de-retour-pour-halloween",
-   "https://www.catch-newz.com/wwe/resultats/60823-resultats-de-wwe-road-to-survivor-series-du-29-octobre-2026",
-   "https://www.catch-newz.com/culture/gossip/60846-cm-punk-a-fete-ses-48-ans-a-la-salle-de-sport",
-   "https://www.catch-newz.com/international/newz/60844-carte-de-lol-mischief-night-mayhem-5",
-   "https://www.catch-newz.com/international/newz/60845-carte-de-new-texas-pro-wrestling-8-year-anniversary",
-   "https://www.catch-newz.com/international/newz/60843-carte-de-iwrg-castillo-del-terror-2026",
-   "https://www.catch-newz.com/international/resultats/60838-resultats-du-jour-5-de-la-njpw-super-junior-tag-league-2026"
+   "https://www.catch-newz.com/wwe/resultats/60823-resultats-de-wwe-road-to-survivor-series-du-29-octobre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
