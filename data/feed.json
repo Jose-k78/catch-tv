@@ -1,15 +1,6 @@
 {
- "at": "2026-11-08T18:40:28.693Z",
+ "at": "2026-11-08T19:40:33.205Z",
  "items": [
-  {
-   "t": "Randy Orton promet de revenir après WWE Crown Jewel 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61134-randy-orton-promet-de-revenir-apres-wwe-crown-jewel-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-08",
-   "tags": [
-    "WWE"
-   ]
-  },
   {
    "t": "Carte de CMLL Domingo Familiar du 8 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61075-carte-de-cmll-domingo-familiar-du-8-novembre-2026",
@@ -25,6 +16,15 @@
    "s": "Catch-Newz",
    "d": "2026-11-08",
    "tags": []
+  },
+  {
+   "t": "Randy Orton promet de revenir après WWE Crown Jewel 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61134-randy-orton-promet-de-revenir-apres-wwe-crown-jewel-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": [
+    "WWE"
+   ]
   },
   {
    "t": "Les catcheurs auront besoin de jetons pour le John Cena Classic",
@@ -206,6 +206,15 @@
    "tags": [
     "WWE",
     "AAA"
+   ]
+  },
+  {
+   "t": "Résultats de CMLL Sabado De Coliseo du 7 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61136-resultats-de-cmll-sabado-de-coliseo-du-7-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-07",
+   "tags": [
+    "CMLL"
    ]
   },
   {
@@ -501,13 +510,6 @@
     "WWE",
     "SmackDown"
    ]
-  },
-  {
-   "t": "Résultats de Sendai Girls Pro Wrestling du 6 novembre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61078-resultats-de-sendai-girls-pro-wrestling-du-6-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": []
   }
  ],
  "yt": {
@@ -882,11 +884,12 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/wwe/newz/61134-randy-orton-promet-de-revenir-apres-wwe-crown-jewel-2026",
    "https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61122-resultats-et-streaming-aaa-heroes-inmortales-7-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61136-resultats-de-cmll-sabado-de-coliseo-du-7-novembre-2026",
    "https://www.catch-newz.com/international/newz/61075-carte-de-cmll-domingo-familiar-du-8-novembre-2026",
    "https://www.catch-newz.com/international/newz/61115-carte-de-iwrg-funcion-espectacular-du-8-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61134-randy-orton-promet-de-revenir-apres-wwe-crown-jewel-2026",
    "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61131-les-catcheurs-auront-besoin-de-jetons-pour-le-john-cena-classic",
    "https://www.catch-newz.com/wwe/newz/61132-zilla-fatu-devoile-un-cadeau-de-john-cena-pour-la-competition-classic",
@@ -1180,8 +1183,7 @@
    "https://www.catch-newz.com/international/newz/60845-carte-de-new-texas-pro-wrestling-8-year-anniversary",
    "https://www.catch-newz.com/international/newz/60843-carte-de-iwrg-castillo-del-terror-2026",
    "https://www.catch-newz.com/international/resultats/60838-resultats-du-jour-5-de-la-njpw-super-junior-tag-league-2026",
-   "https://www.catch-newz.com/international/resultats/60820-tna-impact-29-octobre-2026",
-   "https://www.catch-newz.com/international/resultats/60836-resultats-du-jour-5-de-dg-the-gate-of-victory-2026"
+   "https://www.catch-newz.com/international/resultats/60820-tna-impact-29-octobre-2026"
   ]
  },
  "diag": {
