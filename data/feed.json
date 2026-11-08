@@ -1,5 +1,5 @@
 {
- "at": "2026-11-08T12:10:24.300Z",
+ "at": "2026-11-08T13:26:29.713Z",
  "items": [
   {
    "t": "Combien de billets vendus pour FinalSlam ?",
@@ -883,10 +883,10 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61126-combien-de-billets-vendus-pour-finalslam",
    "https://www.catch-newz.com/wwe/resultats/61122-resultats-et-streaming-aaa-heroes-inmortales-7-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61116-resultats-de-iwrg-galli-thursday-night-wrestling-du-5-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61126-combien-de-billets-vendus-pour-finalslam",
    "https://www.catch-newz.com/wwe/newz/61093-preview-aaa-heroes-inmortales-7-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61100-resultats-de-dominion-wrestling-hail-to-the-king-2026",
    "https://www.catch-newz.com/international/resultats/61097-resultats-de-dradition-tastumi-fujinami-55th-celebration-dragon-expo-2026",
@@ -1184,7 +1184,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
