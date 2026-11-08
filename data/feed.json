@@ -1,6 +1,15 @@
 {
- "at": "2026-11-08T11:33:56.113Z",
+ "at": "2026-11-08T12:10:24.300Z",
  "items": [
+  {
+   "t": "Combien de billets vendus pour FinalSlam ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61126-combien-de-billets-vendus-pour-finalslam",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Résultats de Dominion Wrestling Hail To The King 2026",
    "u": "https://www.catch-newz.com/international/resultats/61100-resultats-de-dominion-wrestling-hail-to-the-king-2026",
@@ -133,16 +142,6 @@
    ]
   },
   {
-   "t": "Preview : AAA Heroes Inmortales du 7 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61093-preview-aaa-heroes-inmortales-7-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": [
-    "WWE",
-    "AAA"
-   ]
-  },
-  {
    "t": "Résultats de WWE Crown Jewel 2026",
    "u": "https://www.voxcatch.fr/2026/11/07/resultats-de-wwe-crown-jewel-2026/",
    "s": "VOXcatch",
@@ -159,6 +158,16 @@
    "tags": [
     "WWE",
     "SmackDown"
+   ]
+  },
+  {
+   "t": "Preview : AAA Heroes Inmortales du 7 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61093-preview-aaa-heroes-inmortales-7-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-07",
+   "tags": [
+    "WWE",
+    "AAA"
    ]
   },
   {
@@ -493,15 +502,6 @@
   {
    "t": "WWE : Une nouvelle stipulation dans le roster principal ?",
    "u": "https://www.catch-newz.com/wwe/newz/61064-wwe-une-nouvelle-stipulation-dans-le-roster-principal",
-   "s": "Catch-Newz",
-   "d": "2026-11-06",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Carte de WWE Survivor Series WarGames 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61063-carte-wwe-survivor-series-wargames-2026",
    "s": "Catch-Newz",
    "d": "2026-11-06",
    "tags": [
@@ -883,10 +883,11 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61126-combien-de-billets-vendus-pour-finalslam",
    "https://www.catch-newz.com/wwe/resultats/61122-resultats-et-streaming-aaa-heroes-inmortales-7-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61093-preview-aaa-heroes-inmortales-7-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61116-resultats-de-iwrg-galli-thursday-night-wrestling-du-5-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61093-preview-aaa-heroes-inmortales-7-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61100-resultats-de-dominion-wrestling-hail-to-the-king-2026",
    "https://www.catch-newz.com/international/resultats/61097-resultats-de-dradition-tastumi-fujinami-55th-celebration-dragon-expo-2026",
    "https://www.catch-newz.com/aew/newz/61125-tommaso-ciampa-remporte-le-championnat-national-a-aew-collision-du-bateau",
@@ -1179,8 +1180,7 @@
    "https://www.catch-newz.com/wwe/newz/60828-zuffa-boxing-annonce-son-premier-show-en-arabie-saoudite",
    "https://www.catch-newz.com/international/newz/60829-ricky-sosa-annonce-son-retour-pour-tna-destination-x",
    "https://www.catch-newz.com/wwe/newz/60830-sami-zayn-parle-de-son-alchimie-avec-kevin-owens",
-   "https://www.catch-newz.com/wwe/newz/60826-larabie-saoudite-annonce-le-nouveau-lieu-de-wwe-crown-jewel-2026",
-   "https://www.catch-newz.com/wwe/newz/60827-lannee-2026-de-charlotte-flair-est-elle-une-reussite"
+   "https://www.catch-newz.com/wwe/newz/60826-larabie-saoudite-annonce-le-nouveau-lieu-de-wwe-crown-jewel-2026"
   ]
  },
  "diag": {
