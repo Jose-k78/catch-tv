@@ -1,5 +1,5 @@
 {
- "at": "2026-11-08T06:52:13.130Z",
+ "at": "2026-11-08T07:57:06.907Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -391,92 +391,10 @@
   "poll:p-20261108-ciampa-national": "2026-11-08",
   "poll:p-20261108-charlotte-retour": "2026-11-08",
   "poll:p-20261108-babies": "2026-11-08",
-  "story:mayu-io": "2026-11-08"
+  "story:mayu-io": "2026-11-08",
+  "t:wwe-wtt:2026-11-07:c": "2026-11-08",
+  "t:wwe-wc:2026-11-07:c": "2026-11-08",
+  "t:aew-nat:2026-11-07:c": "2026-11-08"
  },
- "pend": {
-  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
-   {
-    "cat": "info",
-    "title": "📰 Catch-Newz",
-    "body": "Carte de EVE 157: Elite Encounters 2",
-    "url": "https://www.catch-newz.com/aew/newz/61114-carte-de-eve-157-elite-encounters-2",
-    "tag": "art",
-    "short": "Carte de EVE 157: Elite Encounters 2"
-   },
-   {
-    "cat": "info",
-    "title": "📰 2 nouvelles infos",
-    "body": "Résultats de AEW Collision du 7 novembre 2026 · Résultats et streaming de AAA Heroes Inmortales du 7 novembre 2026",
-    "url": "#/",
-    "tag": "art",
-    "short": "2 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 2 nouvelles infos",
-    "body": "Tommaso Ciampa remporte le championnat National à AEW Collision du bateau · Rey Mysterio suspendu de la AAA et accusé d'infidélité",
-    "url": "#/",
-    "tag": "art",
-    "short": "2 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📖 Storyline du jour",
-    "body": "Mayu Iwatani contre Io Shirai : les sœurs ennemies de la Stardom",
-    "url": "#/storyline/mayu-io",
-    "tag": "story",
-    "short": "📖 Storyline du jour"
-   },
-   {
-    "cat": "info",
-    "title": "📊 4 nouveaux sondages",
-    "body": "Survivor Series : l’équipe du capitaine Cody Rhodes va-t-elle gagner les WarGames ? · Tommaso Ciampa champion National de l’AEW : combien de temps va durer son règne ? · Charlotte Flair est de retour : contre qui doit-elle repartir en rivalité ? · Qui est la meilleure babies entre Toni Storm et Utami Hayashishita ?",
-    "url": "#/sondages",
-    "tag": "poll",
-    "short": "4 nouveaux sondages"
-   }
-  ],
-  "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
-   {
-    "cat": "info",
-    "title": "📰 Catch-Newz",
-    "body": "Carte de EVE 157: Elite Encounters 2",
-    "url": "https://www.catch-newz.com/aew/newz/61114-carte-de-eve-157-elite-encounters-2",
-    "tag": "art",
-    "short": "Carte de EVE 157: Elite Encounters 2"
-   },
-   {
-    "cat": "info",
-    "title": "📰 2 nouvelles infos",
-    "body": "Résultats de AEW Collision du 7 novembre 2026 · Résultats et streaming de AAA Heroes Inmortales du 7 novembre 2026",
-    "url": "#/",
-    "tag": "art",
-    "short": "2 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 2 nouvelles infos",
-    "body": "Tommaso Ciampa remporte le championnat National à AEW Collision du bateau · Rey Mysterio suspendu de la AAA et accusé d'infidélité",
-    "url": "#/",
-    "tag": "art",
-    "short": "2 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📖 Storyline du jour",
-    "body": "Mayu Iwatani contre Io Shirai : les sœurs ennemies de la Stardom",
-    "url": "#/storyline/mayu-io",
-    "tag": "story",
-    "short": "📖 Storyline du jour"
-   },
-   {
-    "cat": "info",
-    "title": "📊 4 nouveaux sondages",
-    "body": "Survivor Series : l’équipe du capitaine Cody Rhodes va-t-elle gagner les WarGames ? · Tommaso Ciampa champion National de l’AEW : combien de temps va durer son règne ? · Charlotte Flair est de retour : contre qui doit-elle repartir en rivalité ? · Qui est la meilleure babies entre Toni Storm et Utami Hayashishita ?",
-    "url": "#/sondages",
-    "tag": "poll",
-    "short": "4 nouveaux sondages"
-   }
-  ]
- }
+ "pend": {}
 }
