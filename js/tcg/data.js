@@ -74,6 +74,8 @@ function guessArch(name, w, al) {
 }
 // ---------- toutes les cartes de base (un catcheur = une carte) ----------
 let BASE = null, BKEY = "";
+// nom « réel » d'une carte (pour la retrouver dans les résultats, rosters, champions) même si le modo l'a renommée
+export const realKey = c => norm(c.rn || c.name);
 // même nom de fichier que le robot des photos : quand Jose ajoute la photo, la carte garde son identifiant
 export const slugOf = s => String(s).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/&/g, "-and-").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "carte";
 export function baseCards() {
@@ -122,6 +124,9 @@ export function baseCards() {
   });
   list.forEach(x => {
     const ov = (c.cards || {})[x.id] || (x.custom ? (c.custom || []).find(y => y.id === x.id) : null) || {};
+    x.rn = x.name; if (ov.name && !x.custom) x.name = String(ov.name);
+    if (typeof ov.years === "string" && !x.custom) x.years = ov.years;
+    if (ov.k && !x.custom) x.k = ov.k;
     if (RAR.indexOf(ov.r) >= 0) x.r = ov.r;
     x.max = RAR.indexOf(ov.max) >= 0 ? ov.max : x.lrPot ? "LR" : MAXR[x.r];
     if (RAR.indexOf(x.max) < RAR.indexOf(x.r)) x.max = x.r;
@@ -130,11 +135,11 @@ export function baseCards() {
     if (ov.al) x.al = ov.al;
     x.buff = +ov.buff || 0; // en % (buff / nerf du modo)
     // 5 stats de base (somme selon la rareté de base, répartie selon l'archétype)
-    const tot = BASE_TOTAL[x.r] * (1 + x.buff / 100), m = ARCH[x.arch].st, h = hashN(x.name), sum = m.reduce((a, b) => a + b, 0);
+    const tot = BASE_TOTAL[x.r] * (1 + x.buff / 100), m = ARCH[x.arch].st, h = hashN(x.rn), sum = m.reduce((a, b) => a + b, 0);
     x.st = Array.isArray(ov.st) && ov.st.length === 5 ? ov.st.map(Number) : m.map((v, j) => Math.max(5, Math.round(tot * v / sum * (1 + ((((h >> (j * 4)) & 15) - 7.5) / 60)))));
     const fin = (S.finishers || {})[x.name] || (x.w && x.w.fin) || ""; // vrai finisher (data/finishers.json, sinon la fiche)
     x.fin = { n: (ov.fin && ov.fin.n) || (fin ? String(fin).split(/[,;(]/)[0].trim() : ARCH[x.arch].fin[0]), e: (ov.fin && FX.indexOf(ov.fin.e) >= 0 ? ov.fin.e : ARCH[x.arch].fin[1]) };
-    x.faction = x.gs.cur[0] || "";
+    x.faction = typeof ov.fac === "string" ? ov.fac : (x.gs.cur[0] || "");
     x.gimmick = ov.gimmick || "";
     x.medalOf = ov.medalOf || partnerOf(x) || x.name; // médailles demandées pour l'éveil vers LR
     x.boosters = Array.isArray(ov.boosters) ? ov.boosters : null;
@@ -143,9 +148,9 @@ export function baseCards() {
   BASE = list.filter(x => !x.hide); BKEY = key;
   return BASE;
 }
-function partnerOf(x) { const g = x.gs.cur[0] || x.gs.past[0]; if (!g) return ""; const G = groupById(g); return G && (G.m || []).find(n => norm(n) !== norm(x.name)) || ""; }
+function partnerOf(x) { const g = x.gs.cur[0] || x.gs.past[0]; if (!g) return ""; const G = groupById(g); return G && (G.m || []).find(n => norm(n) !== realKey(x)) || ""; }
 export const cardById = id => baseCards().find(c => c.id === id) || null;
-export const cardByName = name => { const n = norm(name); return baseCards().find(c => norm(c.name) === n) || null; };
+export const cardByName = name => { const n = norm(name); return baseCards().find(c => realKey(c) === n) || baseCards().find(c => norm(c.name) === n) || null; };
 export function champsNow() { const s = new Set(); (S.titles || []).forEach(t => { [t.c].concat(t.who || []).forEach(c => { if (c) s.add(norm(String(c).replace(/\s*\(.*\)$/, ""))); }); }); return s; }
 export function titleOf(name) { const n = norm(name); return (S.titles || []).find(t => [t.c].concat(t.who || []).some(c => c && norm(String(c).replace(/\s*\(.*\)$/, "")) === n)) || null; }
 
@@ -156,18 +161,18 @@ export function showResults(key) { const h = (S.highlights || {})[key]; return h
 // catcheurs d'un show (d'après les résultats, sinon l'affiche) + vainqueurs
 export function showPeople(key) {
   const out = new Map(), P = baseCards();
-  const find = nm => P.find(c => norm(c.name) === nm || (c.w && Array.isArray(c.w.a) && c.w.a.some(a => norm(a) === nm)));
+  const find = nm => P.find(c => realKey(c) === nm || (c.w && Array.isArray(c.w.a) && c.w.a.some(a => norm(a) === nm)));
   showResults(key).forEach(line => {
     const r = resultWinner(line);
     const add = (side, win) => sideNames(side).forEach(nm => { const c = find(nm); if (c && !out.has(c.id)) out.set(c.id, { c: c, win: win }); });
     if (r && !r.draw) { add(r.w, true); add(r.l, false); }
-    else P.forEach(c => { if (norm(line).indexOf(norm(c.name)) >= 0 && !out.has(c.id)) out.set(c.id, { c: c, win: false }); });
+    else P.forEach(c => { if (norm(line).indexOf(realKey(c)) >= 0 && !out.has(c.id)) out.set(c.id, { c: c, win: false }); });
   });
   return Array.from(out.values());
 }
 // matchs d'un show pour les combats : [{ line, a: [cartes camp 1], b: [cartes camp 2] }]
 export function showMatches(key) {
-  const P = baseCards(), find = nm => P.find(c => norm(c.name) === nm || (c.w && Array.isArray(c.w.a) && c.w.a.some(a => norm(a) === nm)));
+  const P = baseCards(), find = nm => P.find(c => realKey(c) === nm || (c.w && Array.isArray(c.w.a) && c.w.a.some(a => norm(a) === nm)));
   const out = [];
   showResults(key).forEach(line => {
     const r = resultWinner(line); let A = [], Bc = [];
@@ -190,17 +195,17 @@ export function defOf(id) {
   if (!id) return null;
   const at = id.indexOf("@"), hs = id.indexOf("#champ");
   if (at > 0) { const b = cardById(id.slice(0, at)); return b ? versionCard(b, id.slice(at + 1)) : null; }
-  if (hs > 0) { const b = cardById(id.slice(0, hs)); const t = b && titleOf(b.name); return b ? championCard(b, t && t.n) : null; }
+  if (hs > 0) { const b = cardById(id.slice(0, hs)); const t = b && titleOf(b.rn || b.name); return b ? championCard(b, t && t.n) : null; }
   return cardById(id);
 }
 // stats d'un exemplaire : base + 1,2 par niveau (réparti) + boost champion en vrai (+10 %, perdu sans le titre)
 export function statsOf(inst, def) {
   def = def || defOf(inst.c); if (!def) return [0, 0, 0, 0, 0];
-  const lvBonus = (inst.lv - 1) * 1.2 / 5, rUp = RAR.indexOf(inst.r) - RAR.indexOf(def.r), live = !def.champ && champsNow().has(norm(def.name));
+  const lvBonus = (inst.lv - 1) * 1.2 / 5, rUp = RAR.indexOf(inst.r) - RAR.indexOf(def.r), live = !def.champ && champsNow().has(realKey(def));
   return def.st.map(v => Math.round((v + lvBonus) * (1 + rUp * 0.08) * (live ? 1.1 : 1)));
 }
 export const hpOf = st => st.reduce((a, b) => a + b, 0) * 2;
-export const isChampLive = def => !!def && champsNow().has(norm(def.name));
+export const isChampLive = def => !!def && champsNow().has(realKey(def));
 export const promoLogo = k => (k && showLogo(k, "")) || "";
 // lien entre deux cartes (même groupe / équipe) : bonus de soutien
 export function linked(a, b) { if (!a || !b) return false; const A = (a.gs || {}).cur || [], Bg = (b.gs || {}).cur || []; return A.some(g => Bg.indexOf(g) >= 0) || ((a.gs || {}).past || []).some(g => (b.gs.past || []).concat(Bg).indexOf(g) >= 0); }

@@ -124,6 +124,9 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
     toutes les cartes possibles) ; **vedettes** = catcheurs du show (booster d'un show, dont le reste = la promotion) ou champions (pack
     de promotion), ×3 par défaut (`featx`) ; en mode ✏️ le modo ajoute / retire / met en vedette / modifie / duplique : `data/tcg.json`
     « bx » = { idBooster: { add, del, feat, nofeat } } ; animation d'invocation : écran géant, rampe, ring dessinés (SVG) ;
+  - éditeur de cartes du modo (`ACT.tcgmedit`, 8 nov.) : nom (`name`), années (`years`), promotion (`k`), faction (`fac`), raretés, archétype,
+    stats, finisher, gimmick, médailles, boosters, image, buff, masquer ; « ⧉ Dupliquer » (copie complète dans `custom`), « ↺ carte d'origine » ;
+    une carte renommée garde son nom réel `rn` pour les shows / titres / rosters (`realKey` de data.js) ;
   - envoi de fichiers du modo réparé (`upload` de modo.js) : images allégées en JPEG, sons / vidéos envoyés tels quels (25 Mo max) ;
   - combats : on choisit qui on affronte parmi tous les catcheurs du match (1 contre 1, 2 contre 2…, autant de cartes que d'adversaires),
     difficulté **Low** (normal) / **Mid** (×1,3) / **Top** (stats ×2), gains selon difficulté et nombre ; combat en cours gardé sur le

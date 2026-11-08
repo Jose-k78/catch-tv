@@ -88,9 +88,15 @@ ACT.tcgmedit = el => {
   const c = cardById(el.dataset.c); if (!c) return;
   const ov = Object.assign({}, (cfg().cards || {})[c.id] || {}), custom = (cfg().custom || []).find(x => x.id === c.id);
   modal((box, close) => {
+    const G = S.groups || {};
     box.innerHTML = '<div class="tczoom">' + cardHTML(c) + "</div><form class=\"tmform\" data-mf>" +
+      '<label>Nom sur la carte<input name="nm" maxlength="40" value="' + esc(c.name) + '"></label>' +
+      (c.rn && c.rn !== c.name ? '<p class="tnote">Nom d’origine : ' + esc(c.rn) + " (la carte reste liée à ce catcheur pour les shows et les titres)</p>" : "") +
+      '<label>Années / date (affichée après le nom)<input name="yr" maxlength="24" placeholder="ex. 2016– ou 1998-2003" value="' + esc(c.years || "") + '"></label>' +
+      '<label>Promotion<select name="k"><option value="">–</option>' + Object.keys(S.P).concat(["WWF", "WCW", "ECW"]).filter((k, i, a) => a.indexOf(k) === i).map(k => "<option" + (k === c.k ? " selected" : "") + ">" + esc(k) + "</option>").join("") + (c.k && !S.P[c.k] && ["WWF", "WCW", "ECW"].indexOf(c.k) < 0 ? "<option selected>" + esc(c.k) + "</option>" : "") + "</select></label>" +
+      '<label>Faction / équipe (logo sur la carte)<input name="fac" list="tmfac" value="' + esc(c.faction || "") + '" placeholder="vide = aucune"><datalist id="tmfac">' + Object.keys(G).slice(0, 400).map(id => '<option value="' + esc(id) + '">' + esc((G[id] && G[id].n) || id) + "</option>").join("") + "</datalist></label>" +
       '<label>Rareté de base<select name="r">' + RAR.map(r => "<option" + (r === c.r ? " selected" : "") + ">" + r + "</option>").join("") + "</select></label>" +
-      '<label>Rareté max<select name="max">' + RAR.map(r => "<option" + (r === c.max ? " selected" : "") + ">" + r + "</option>").join("") + "</select></label>" +
+      '<label>Éveil max (rareté maximale)<select name="max">' + RAR.map(r => "<option" + (r === c.max ? " selected" : "") + ">" + r + "</option>").join("") + "</select></label>" +
       '<label>Archétype<select name="arch">' + ARCHS.map(a => "<option" + (a === c.arch ? " selected" : "") + ">" + a + "</option>").join("") + "</select></label>" +
       '<label>Alignement<select name="al">' + [["", "–"], ["face", "Face"], ["heel", "Heel"], ["tweener", "Tweener"]].map(a => '<option value="' + a[0] + '"' + (a[0] === c.al ? " selected" : "") + ">" + a[1] + "</option>").join("") + "</select></label>" +
       STATS.map((s, i) => '<label>' + s + ' <input name="s' + i + '" type="number" min="1" value="' + c.st[i] + '"></label>').join("") +
@@ -101,7 +107,9 @@ ACT.tcgmedit = el => {
       '<label class="chk"><input type="checkbox" name="hide"' + (ov.hide ? " checked" : "") + "> Masquer la carte</label>" +
       '<div class="btns"><button type="button" class="btn small ghost" data-buff="-5">📉 Nerf −5 %</button><button type="button" class="btn small ghost" data-buff="5">📈 Buff +5 %</button><span class="tnote">Actuel : ' + (ov.buff || 0) + ' %</span></div>' +
       '<div class="btns"><button type="button" class="btn small ghost" data-img>🖼️ Changer l’image</button>' + (ov.img ? '<button type="button" class="btn small ghost" data-noimg>Image d’origine</button>' : "") + "</div>" +
-      '<button class="btn wide">Enregistrer</button>' + (custom ? '<button type="button" class="btn wide ghost danger" data-del>Supprimer ce personnage</button>' : "") + '</form><button class="btn wide ghost" style="margin-top:8px" data-close>Fermer</button>';
+      '<button class="btn wide">Enregistrer</button><button type="button" class="btn wide ghost" data-dup>⧉ Dupliquer cette carte</button>' +
+      (!custom && Object.keys(ov).length ? '<button type="button" class="btn wide ghost" data-reset>↺ Revenir à la carte d’origine</button>' : "") +
+      (custom ? '<button type="button" class="btn wide ghost danger" data-del>Supprimer cette carte</button>' : "") + '</form><button class="btn wide ghost" style="margin-top:8px" data-close>Fermer</button>';
     const target = d => { if (custom) { d.custom = d.custom || []; let x = d.custom.find(y => y.id === c.id); if (!x) { x = { id: c.id }; d.custom.push(x); } return x; } d.cards = d.cards || {}; d.cards[c.id] = d.cards[c.id] || {}; return d.cards[c.id]; };
     box.addEventListener("click", e => {
       if (e.target.closest("[data-close]")) return close();
@@ -109,13 +117,26 @@ ACT.tcgmedit = el => {
       if (bf) { close(); return run(d => { const t = target(d); t.buff = (+t.buff || 0) + +bf.dataset.buff; delete t.st; }, (+bf.dataset.buff > 0 ? "buff " : "nerf ") + c.name); }
       if (e.target.closest("[data-img]")) return pickFile("image/*", "img/tcg/", path => run(d => { target(d).img = path; }, "image de " + c.name).then(close));
       if (e.target.closest("[data-noimg]")) { close(); return run(d => { delete target(d).img; }, "image d’origine de " + c.name); }
-      if (e.target.closest("[data-del]")) { close(); return run(d => { d.custom = (d.custom || []).filter(x => x.id !== c.id); }, "personnage supprimé : " + c.name); }
+      if (e.target.closest("[data-del]")) { close(); return run(d => { d.custom = (d.custom || []).filter(x => x.id !== c.id); }, "carte supprimée : " + c.name); }
+      if (e.target.closest("[data-reset]")) { close(); return run(d => { if (d.cards) delete d.cards[c.id]; }, "carte d’origine : " + c.name); }
+      if (e.target.closest("[data-dup]")) {
+        // copie complète (devient une carte « créée » : on peut tout changer, la supprimer)
+        const nid = "oc-" + c.id.replace(/[@#|].*$/, "").slice(0, 30) + "-" + Date.now().toString(36).slice(-5);
+        close();
+        return run(d => { d.custom = d.custom || []; d.custom.push({ id: nid, name: c.name, img: c.pic || "", k: c.k || "", years: c.years || "", fac: c.faction || "", arch: c.arch, al: c.al || "", r: c.r, max: c.max, st: c.st.slice(), fin: Object.assign({}, c.fin), gimmick: c.gimmick || "", medalOf: c.medalOf || "" }); }, "carte dupliquée : " + c.name)
+          .then(ok => { if (ok !== false) setTimeout(() => ACT.tcgmedit({ dataset: { c: nid } }), 300); });
+      }
     });
     box.querySelector("[data-mf]").addEventListener("submit", ev => {
       ev.preventDefault(); const f = ev.target, st = [0, 1, 2, 3, 4].map(i => +f["s" + i].value || 1);
       const changedSt = st.some((v, i) => v !== c.st[i]);
       close();
-      run(d => { const t = target(d); t.r = f.r.value; t.max = f.max.value; t.arch = f.arch.value; t.al = f.al.value; if (changedSt) t.st = st; t.fin = { n: f.fn.value.trim(), e: f.fe.value }; t.gimmick = f.gim.value.trim(); t.medalOf = f.md.value.trim(); const bo = f.bo.value.split(",").map(x => x.trim()).filter(Boolean); if (bo.length) t.boosters = bo; else delete t.boosters; if (f.hide.checked) t.hide = true; else delete t.hide; }, "carte " + c.name);
+      const nm = f.nm.value.trim(), yr = f.yr.value.trim(), fac = f.fac.value.trim();
+      run(d => { const t = target(d);
+        if (custom) { if (nm) t.name = nm; t.years = yr; t.k = f.k.value; }
+        else { if (nm && nm !== (c.rn || c.name)) t.name = nm; else delete t.name; if (yr !== (c.years || "") || "years" in t) t.years = yr; if (f.k.value) t.k = f.k.value; else delete t.k; }
+        if (fac !== (c.faction || "") || "fac" in t) t.fac = fac;
+        t.r = f.r.value; t.max = f.max.value; t.arch = f.arch.value; t.al = f.al.value; if (changedSt) t.st = st; t.fin = { n: f.fn.value.trim(), e: f.fe.value }; t.gimmick = f.gim.value.trim(); t.medalOf = f.md.value.trim(); const bo = f.bo.value.split(",").map(x => x.trim()).filter(Boolean); if (bo.length) t.boosters = bo; else delete t.boosters; if (f.hide.checked) t.hide = true; else delete t.hide; }, "carte " + c.name);
     });
   });
 };

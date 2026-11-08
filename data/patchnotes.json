@@ -1,6 +1,18 @@
 {
- "updated": "2026-11-07",
+ "updated": "2026-11-08",
  "items": [
+  {
+   "id": "2026-11-08-tcgmodo",
+   "d": "2026-11-08",
+   "t": "TCCCG : éditeur de cartes complet (modo)",
+   "mod": true,
+   "txt": [
+    "✏️ Touche une carte dans ⚙️ Modo TCCCG › Cartes : nom, années / date, promotion, faction, rareté de base, éveil max, archétype, alignement, stats, finisher, gimmick, médailles, boosters, image, buff / nerf, masquer.",
+    "⧉ « Dupliquer cette carte » : une copie complète que tu peux modifier ou supprimer.",
+    "↺ « Revenir à la carte d’origine » efface tes changements.",
+    "Une carte renommée reste liée au vrai catcheur (shows, titres, boosters)."
+   ]
+  },
   {
    "id": "2026-11-07-entete",
    "d": "2026-11-07",

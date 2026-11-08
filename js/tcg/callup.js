@@ -5,7 +5,7 @@
 import { S, ACT, changed } from "../state.js";
 import { esc, toast, fmt, modal } from "../util.js";
 import { parisDay } from "../time.js";
-import { RAR, LVMAX, rates, baseCards, showPeople, showKeyLabel, cfg, defOf, titleOf, champsNow, promoLogo, cardById } from "./data.js";
+import { realKey, RAR, LVMAX, rates, baseCards, showPeople, showKeyLabel, cfg, defOf, titleOf, champsNow, promoLogo, cardById } from "./data.js";
 import { me, commit, addCard } from "./store.js";
 import { cardHTML } from "./card.js";
 import { showLogo, eventLogo } from "../assets.js";
@@ -38,16 +38,16 @@ export function boosters() {
 }
 // catcheurs d'un booster (automatique), puis les changements du modo (cfg.bx[id] : add, del, feat, nofeat)
 const bxOf = b => ((cfg().bx || {})[b.id]) || {};
-const inPromo = k => { const ro = S.rosters && S.rosters[k], s = new Set(); if (ro) Object.keys(ro).forEach(g => (ro[g] || []).forEach(n => s.add(norm(n)))); return c => c.k === k || s.has(norm(c.name)); };
+const inPromo = k => { const ro = S.rosters && S.rosters[k], s = new Set(); if (ro) Object.keys(ro).forEach(g => (ro[g] || []).forEach(n => s.add(norm(n)))); return c => c.k === k || s.has(realKey(c)); };
 function autoPool(b) {
   const P = baseCards();
   if (b.id === "free") return P;
   // booster d'un show : les catcheurs de sa promotion, ceux du show en vedette
   if (b.key) { const pp = showPeople(b.key).map(x => x.c), ids = new Set(pp.map(c => c.id)), f = inPromo(b.key.split("|")[0]); return pp.concat(P.filter(c => !ids.has(c.id) && f(c))); }
   if (b.k && b.id.indexOf("p:") === 0) { const L = P.filter(inPromo(b.k)); return L.length >= 10 ? L : P; }
-  if (b.id === "fa") { const r = inRoster(); return P.filter(c => !r.has(norm(c.name)) && (!c.boosters || !c.boosters.length)); }
+  if (b.id === "fa") { const r = inRoster(); return P.filter(c => !r.has(realKey(c)) && (!c.boosters || !c.boosters.length)); }
   if (b.id.indexOf("c:") === 0) {
-    if (Array.isArray(b.cards) && b.cards.length) { const want = b.cards.map(norm); return P.filter(c => want.indexOf(norm(c.name)) >= 0 || want.indexOf(norm(c.id)) >= 0); }
+    if (Array.isArray(b.cards) && b.cards.length) { const want = b.cards.map(norm); return P.filter(c => want.indexOf(realKey(c)) >= 0 || want.indexOf(norm(c.name)) >= 0 || want.indexOf(norm(c.id)) >= 0); }
     return P.filter(c => (!b.k || c.k === b.k) && (!c.boosters || !c.boosters.length || c.boosters.indexOf(b.id.slice(2)) >= 0));
   }
   return P;
@@ -62,7 +62,7 @@ export function poolOf(b) {
 export function featOf(b) {
   const x = bxOf(b), no = new Set(x.nofeat || []), out = new Set();
   if (b.key) showPeople(b.key).forEach(p => out.add(p.c.id));
-  else if (b.k && b.id.indexOf("p:") === 0) { const ch = champsNow(); poolOf(b).forEach(c => { if (ch.has(norm(c.name))) out.add(c.id); }); }
+  else if (b.k && b.id.indexOf("p:") === 0) { const ch = champsNow(); poolOf(b).forEach(c => { if (ch.has(realKey(c))) out.add(c.id); }); }
   (x.feat || []).forEach(id => out.add(id));
   no.forEach(id => out.delete(id));
   return out;
@@ -84,7 +84,7 @@ export function pull(b, n) {
     const c = pickW(cand, F);
     let id = c.id;
     if (b.key && b.ver && F.has(c.id) && Math.random() < 0.4) id = c.id + "@" + b.key; // carte « version show »
-    else if (champ.has(norm(c.name)) && Math.random() < 0.04) id = c.id + "#champ"; // carte champion (boost permanent)
+    else if (champ.has(realKey(c)) && Math.random() < 0.04) id = c.id + "#champ"; // carte champion (boost permanent)
     out.push(id);
   }
   return out;
