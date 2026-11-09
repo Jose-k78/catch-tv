@@ -1,24 +1,6 @@
 {
- "at": "2026-11-09T13:02:26.376Z",
+ "at": "2026-11-09T14:17:12.373Z",
  "items": [
-  {
-   "t": "La jeune catcheuse de la TNA Jada Stone a eu un accident de voiture ce vendredi",
-   "u": "https://www.catch-newz.com/international/newz/61156-la-jeune-catcheuse-de-la-tna-jada-stone-a-eu-un-accident-de-voiture-ce-vendredi",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": [
-    "TNA"
-   ]
-  },
-  {
-   "t": "Paige : « J’apprécie vraiment chaque seconde que je passe à la télé et sur ce ring »",
-   "u": "https://www.catch-newz.com/wwe/newz/61155-paige-japprecie-vraiment-chaque-seconde-que-je-passe-a-la-tele-et-sur-ce-ring",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": [
-    "WWE"
-   ]
-  },
   {
    "t": "Preview : AEW Dynamite du 11 novembre 2026",
    "u": "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
@@ -40,12 +22,37 @@
    ]
   },
   {
+   "t": "Résultats de DG Prime Zone Plus 22",
+   "u": "https://www.catch-newz.com/international/resultats/61147-resultats-de-dg-prime-zone-plus-22",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": []
+  },
+  {
    "t": "Carte de CMLL Lunes Clasico du 9 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61113-carte-de-cmll-lunes-clasico-du-9-novembre-2026",
    "s": "Catch-Newz",
    "d": "2026-11-09",
    "tags": [
     "CMLL"
+   ]
+  },
+  {
+   "t": "La jeune catcheuse de la TNA Jada Stone a eu un accident de voiture ce vendredi",
+   "u": "https://www.catch-newz.com/international/newz/61156-la-jeune-catcheuse-de-la-tna-jada-stone-a-eu-un-accident-de-voiture-ce-vendredi",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": [
+    "TNA"
+   ]
+  },
+  {
+   "t": "Paige : « J’apprécie vraiment chaque seconde que je passe à la télé et sur ce ring »",
+   "u": "https://www.catch-newz.com/wwe/newz/61155-paige-japprecie-vraiment-chaque-seconde-que-je-passe-a-la-tele-et-sur-ce-ring",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -490,15 +497,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "WWE Crown Jewel : Cody Rhodes le dernier homme debout",
-   "u": "https://www.catch-newz.com/wwe/newz/61095-wwe-crown-jewel-cody-rhodes-le-dernier-homme-debout",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -874,12 +872,13 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61156-la-jeune-catcheuse-de-la-tna-jada-stone-a-eu-un-accident-de-voiture-ce-vendredi",
-   "https://www.catch-newz.com/wwe/newz/61155-paige-japprecie-vraiment-chaque-seconde-que-je-passe-a-la-tele-et-sur-ce-ring",
    "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61150-resultats-de-wwe-road-to-survivor-series-du-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61147-resultats-de-dg-prime-zone-plus-22",
    "https://www.catch-newz.com/international/newz/61113-carte-de-cmll-lunes-clasico-du-9-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61156-la-jeune-catcheuse-de-la-tna-jada-stone-a-eu-un-accident-de-voiture-ce-vendredi",
+   "https://www.catch-newz.com/wwe/newz/61155-paige-japprecie-vraiment-chaque-seconde-que-je-passe-a-la-tele-et-sur-ce-ring",
    "https://www.catch-newz.com/international/resultats/61139-resultats-de-tjpw-all-rise-2026",
    "https://www.catch-newz.com/wwe/newz/61154-randy-orton-na-gagne-que-3-matchs-en-ple-depuis-son-retour-en-2023",
    "https://www.catch-newz.com/wwe/newz/61153-allons-nous-enfin-voir-jessika-carr-sur-un-ring-de-la-wwe-prochainement",
@@ -1171,12 +1170,11 @@
    "https://www.catch-newz.com/wwe/newz/60869-nxt-halloween-havoc-myles-borne-terrasse-son-rival-tavion-heights-au-terme-dun-weapons-wild-match-palpitant",
    "https://www.catch-newz.com/international/newz/60868-carte-de-tjpw-there-may-be-no-answers-but-lets-wish-for-happiness",
    "https://www.catch-newz.com/international/newz/60867-carte-du-jour-1-de-dg-the-gate-of-evolution-2026",
-   "https://www.catch-newz.com/international/resultats/60866-resultats-de-iwrg-castillo-del-terror-2026",
-   "https://www.catch-newz.com/international/resultats/60865-resultats-du-jour-6-de-dg-the-gate-of-victory-2026"
+   "https://www.catch-newz.com/international/resultats/60866-resultats-de-iwrg-castillo-del-terror-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
