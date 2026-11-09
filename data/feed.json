@@ -1,5 +1,5 @@
 {
- "at": "2026-11-09T16:34:50.747Z",
+ "at": "2026-11-09T17:31:20.514Z",
  "items": [
   {
    "t": "Preview : WWE RAW du 9 novembre 2026",
@@ -9,15 +9,6 @@
    "tags": [
     "WWE",
     "Raw"
-   ]
-  },
-  {
-   "t": "R-Truth annonce le triste décès de son papa",
-   "u": "https://www.catch-newz.com/wwe/newz/61157-r-truth-annonce-le-triste-deces-de-son-papa",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": [
-    "WWE"
    ]
   },
   {
@@ -47,6 +38,15 @@
    "d": "2026-11-09",
    "tags": [
     "CMLL"
+   ]
+  },
+  {
+   "t": "R-Truth annonce le triste décès de son papa",
+   "u": "https://www.catch-newz.com/wwe/newz/61157-r-truth-annonce-le-triste-deces-de-son-papa",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -874,11 +874,11 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/61158-preview-wwe-raw-9-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61157-r-truth-annonce-le-triste-deces-de-son-papa",
    "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61150-resultats-de-wwe-road-to-survivor-series-du-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/international/newz/61113-carte-de-cmll-lunes-clasico-du-9-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61157-r-truth-annonce-le-triste-deces-de-son-papa",
    "https://www.catch-newz.com/international/resultats/61147-resultats-de-dg-prime-zone-plus-22",
    "https://www.catch-newz.com/international/newz/61156-la-jeune-catcheuse-de-la-tna-jada-stone-a-eu-un-accident-de-voiture-ce-vendredi",
    "https://www.catch-newz.com/wwe/newz/61155-paige-japprecie-vraiment-chaque-seconde-que-je-passe-a-la-tele-et-sur-ce-ring",
@@ -1175,7 +1175,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
