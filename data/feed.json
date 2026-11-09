@@ -1,5 +1,5 @@
 {
- "at": "2026-11-09T04:59:33.344Z",
+ "at": "2026-11-09T07:20:26.536Z",
  "items": [
   {
    "t": "Preview : WWE NXT du 10 novembre 2026",
@@ -10,6 +10,13 @@
     "WWE",
     "NXT"
    ]
+  },
+  {
+   "t": "Résultats de ChocoPro #551",
+   "u": "https://www.catch-newz.com/international/resultats/61144-resultats-de-chocopro-551",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": []
   },
   {
    "t": "Résultats de TJPW Garafes - A Cultural Shock Sensation In Shibuya",
@@ -485,13 +492,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-07",
    "tags": []
-  },
-  {
-   "t": "Et les 100 derniers commentaires...",
-   "u": "https://www.catch-newz.com/newz/11984-100-derniers-commentaires-sur-catch-newz",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": []
   }
  ],
  "yt": {
@@ -869,6 +869,7 @@
    "https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61150-resultats-de-wwe-road-to-survivor-series-du-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61144-resultats-de-chocopro-551",
    "https://www.catch-newz.com/international/resultats/61141-resultats-de-cmll-garza-producciones-du-5-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61145-resultats-de-tjpw-garafes-a-cultural-shock-sensation-in-shibuya",
    "https://www.catch-newz.com/wwe/resultats/61122-resultats-et-streaming-aaa-heroes-inmortales-7-novembre-2026",
@@ -1164,8 +1165,7 @@
    "https://www.catch-newz.com/wwe/newz/60858-big-cass-confirme-que-son-retour-a-la-wwe-a-ete-difficile-sans-enzo-amore",
    "https://www.catch-newz.com/wwe/newz/60857-le-fils-de-mark-henry-bientot-pret-a-se-lancer-a-temps-plein-a-la-wwe",
    "https://www.catch-newz.com/aew/resultats/60839-resultats-de-roh-du-29-octobre-2026",
-   "https://www.catch-newz.com/international/newz/60856-des-nouvelles-de-jeff-hardy-apres-lattaque-a-la-hache-a-tna-impact",
-   "https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026"
+   "https://www.catch-newz.com/international/newz/60856-des-nouvelles-de-jeff-hardy-apres-lattaque-a-la-hache-a-tna-impact"
   ]
  },
  "diag": {
