@@ -1,5 +1,5 @@
 {
- "at": "2026-11-08T23:07:35.785Z",
+ "at": "2026-11-09T00:06:12.813Z",
  "items": [
   {
    "t": "Preview : WWE NXT du 10 novembre 2026",
@@ -10,6 +10,13 @@
     "WWE",
     "NXT"
    ]
+  },
+  {
+   "t": "Résultats de TJPW Garafes - A Cultural Shock Sensation In Shibuya",
+   "u": "https://www.catch-newz.com/international/resultats/61145-resultats-de-tjpw-garafes-a-cultural-shock-sensation-in-shibuya",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": []
   },
   {
    "t": "Résultats de GCW Dead On Arrival 2026",
@@ -274,16 +281,6 @@
    ]
   },
   {
-   "t": "Résultats et streaming de AAA Heroes Inmortales du 7 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61122-resultats-et-streaming-aaa-heroes-inmortales-7-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": [
-    "WWE",
-    "AAA"
-   ]
-  },
-  {
    "t": "Résultats de WWE Crown Jewel 2026",
    "u": "https://www.voxcatch.fr/2026/11/07/resultats-de-wwe-crown-jewel-2026/",
    "s": "VOXcatch",
@@ -300,6 +297,16 @@
    "tags": [
     "WWE",
     "SmackDown"
+   ]
+  },
+  {
+   "t": "Résultats et streaming de AAA Heroes Inmortales du 7 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/61122-resultats-et-streaming-aaa-heroes-inmortales-7-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-07",
+   "tags": [
+    "WWE",
+    "AAA"
    ]
   },
   {
@@ -482,13 +489,6 @@
   {
    "t": "Et les 100 derniers commentaires...",
    "u": "https://www.catch-newz.com/newz/11984-100-derniers-commentaires-sur-catch-newz",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": []
-  },
-  {
-   "t": "Carte de GNPW Never Say Die 2026",
-   "u": "https://www.catch-newz.com/international/newz/61077-carte-de-gnpw-never-say-die-2026",
    "s": "Catch-Newz",
    "d": "2026-11-07",
    "tags": []
@@ -867,12 +867,14 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026",
+   "https://www.catch-newz.com/wwe/resultats/61150-resultats-de-wwe-road-to-survivor-series-du-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61145-resultats-de-tjpw-garafes-a-cultural-shock-sensation-in-shibuya",
+   "https://www.catch-newz.com/international/resultats/61141-resultats-de-cmll-garza-producciones-du-5-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61122-resultats-et-streaming-aaa-heroes-inmortales-7-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61148-resultats-de-gcw-dead-on-arrival-2026",
    "https://www.catch-newz.com/international/newz/61146-carte-du-jour-1-du-noah-junior-grand-prix-2026",
    "https://www.catch-newz.com/international/resultats/61143-resultats-de-chocopro-550",
-   "https://www.catch-newz.com/international/resultats/61141-resultats-de-cmll-garza-producciones-du-5-novembre-2026",
    "https://www.catch-newz.com/culture/gossip/60846-cm-punk-a-fete-ses-48-ans-a-la-salle-de-sport",
    "https://www.catch-newz.com/wwe/newz/61129-combien-de-temps-va-durer-finalslam",
    "https://www.catch-newz.com/international/resultats/61142-resultats-de-arena-del-valle-choque-de-leyendas",
@@ -1163,13 +1165,11 @@
    "https://www.catch-newz.com/wwe/newz/60857-le-fils-de-mark-henry-bientot-pret-a-se-lancer-a-temps-plein-a-la-wwe",
    "https://www.catch-newz.com/aew/resultats/60839-resultats-de-roh-du-29-octobre-2026",
    "https://www.catch-newz.com/international/newz/60856-des-nouvelles-de-jeff-hardy-apres-lattaque-a-la-hache-a-tna-impact",
-   "https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
-   "https://www.catch-newz.com/wwe/newz/60271-carte-wwe-nxt-halloween-havoc-2026",
-   "https://www.catch-newz.com/wwe/newz/60848-jbl-gunther-est-un-catcheur-de-classe-mondiale"
+   "https://www.catch-newz.com/international/newz/60842-carte-de-sendai-girls-pro-wrestling-du-31-octobre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
