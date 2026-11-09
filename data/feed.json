@@ -1,5 +1,5 @@
 {
- "at": "2026-11-09T17:31:20.514Z",
+ "at": "2026-11-09T19:28:55.688Z",
  "items": [
   {
    "t": "Preview : WWE RAW du 9 novembre 2026",
@@ -9,6 +9,31 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "En direct : Conférence de presse de Final Slam du 9 novembre",
+   "u": "https://www.catch-newz.com/international/newz/61161-en-direct-conference-de-presse-de-final-slam-du-9-novembre",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": []
+  },
+  {
+   "t": "Comment sera couronné le gagnant du WWE John Cena Classic ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61160-comment-sera-couronne-le-gagnant-du-wwe-john-cena-classic",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "John Cena en congé après le John Cena Classic",
+   "u": "https://www.catch-newz.com/wwe/newz/61159-john-cena-en-conge-apres-le-john-cena-classic",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -30,6 +55,20 @@
     "WWE",
     "NXT"
    ]
+  },
+  {
+   "t": "Donovan Dijak quitte la MLW",
+   "u": "https://www.catch-newz.com/international/newz/61162-donovan-dijak-quitte-la-mlw",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": []
+  },
+  {
+   "t": "Résultats du jour 9 de DG The Gate Of Victory 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61149-resultats-du-jour-9-de-dg-the-gate-of-victory-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": []
   },
   {
    "t": "Carte de CMLL Lunes Clasico du 9 novembre 2026",
@@ -459,45 +498,6 @@
    "tags": [
     "CMLL"
    ]
-  },
-  {
-   "t": "Cody Rhodes sera capitaine de son équipe aux Survivor Series 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61104-cody-rhodes-sera-capitaine-de-son-equipe-aux-survivor-series-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Résultats de NHB The Chains Volume 103",
-   "u": "https://www.catch-newz.com/international/resultats/61098-resultats-de-nhb-the-chains-volume-103",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": []
-  },
-  {
-   "t": "Résultats de MCW Pro Wrestling Monster Mash 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61105-resultats-de-mcw-pro-wrestling-monster-mash-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": []
-  },
-  {
-   "t": "WWE Crown Jewel : Roman Reigns prouve encore une fois sa supériorité",
-   "u": "https://www.catch-newz.com/wwe/newz/61102-wwe-crown-jewel-roman-reigns-prouve-encore-une-fois-sa-superiorite",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Résultats de AULL Triple Amenaza",
-   "u": "https://www.catch-newz.com/international/resultats/61103-resultats-de-aull-triple-amenaza",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": []
   }
  ],
  "yt": {
@@ -874,9 +874,14 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/61158-preview-wwe-raw-9-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61161-en-direct-conference-de-presse-de-final-slam-du-9-novembre",
+   "https://www.catch-newz.com/wwe/newz/61160-comment-sera-couronne-le-gagnant-du-wwe-john-cena-classic",
+   "https://www.catch-newz.com/wwe/newz/61159-john-cena-en-conge-apres-le-john-cena-classic",
    "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61150-resultats-de-wwe-road-to-survivor-series-du-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61162-donovan-dijak-quitte-la-mlw",
+   "https://www.catch-newz.com/international/resultats/61149-resultats-du-jour-9-de-dg-the-gate-of-victory-2026",
    "https://www.catch-newz.com/international/newz/61113-carte-de-cmll-lunes-clasico-du-9-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61157-r-truth-annonce-le-triste-deces-de-son-papa",
    "https://www.catch-newz.com/international/resultats/61147-resultats-de-dg-prime-zone-plus-22",
@@ -1166,16 +1171,11 @@
    "https://www.catch-newz.com/wwe/newz/60873-wwe-tlc-fait-son-retour-a-nxt-en-2026",
    "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
    "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026",
-   "https://www.catch-newz.com/wwe/resultats/60853-wwe-nxt-halloween-havoc-2026",
-   "https://www.catch-newz.com/wwe/newz/60872-officiel-grayson-waller-defendra-son-titre-nxt-contre-cm-punk-ce-mercredi",
-   "https://www.catch-newz.com/wwe/newz/60871-nxt-halloween-havoc-grace-a-son-experience-kelani-jordan-conserve-son-titre-nxt-contre-wren-sinclair",
-   "https://www.catch-newz.com/wwe/newz/60870-nxt-halloween-havoc-zilla-fatu-se-debarrasse-a-lui-tout-seul-de-charlie-dempsey-et-de-birthright",
-   "https://www.catch-newz.com/wwe/newz/60869-nxt-halloween-havoc-myles-borne-terrasse-son-rival-tavion-heights-au-terme-dun-weapons-wild-match-palpitant",
-   "https://www.catch-newz.com/international/newz/60868-carte-de-tjpw-there-may-be-no-answers-but-lets-wish-for-happiness"
+   "https://www.catch-newz.com/wwe/resultats/60853-wwe-nxt-halloween-havoc-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 10 nouveaux articles lus sur la page d'accueil (10 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
