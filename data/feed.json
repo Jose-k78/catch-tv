@@ -1,5 +1,5 @@
 {
- "at": "2026-11-09T20:23:27.289Z",
+ "at": "2026-11-09T21:23:17.404Z",
  "items": [
   {
    "t": "Preview : WWE RAW du 9 novembre 2026",
@@ -10,6 +10,13 @@
     "WWE",
     "Raw"
    ]
+  },
+  {
+   "t": "Amine promet un show d'exception malgré les critiques sur son organisation de Final Slam",
+   "u": "https://www.catch-newz.com/international/newz/61164-amine-promet-un-show-dexception-malgre-les-critiques-sur-son-organisation-de-final-slam",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": []
   },
   {
    "t": "Preview : AEW Dynamite du 11 novembre 2026",
@@ -489,15 +496,6 @@
     "WWE",
     "AAA"
    ]
-  },
-  {
-   "t": "Carte de CMLL Sabado De Coliseo du 7 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61074-carte-de-cmll-sabado-de-coliseo-du-7-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": [
-    "CMLL"
-   ]
   }
  ],
  "yt": {
@@ -874,6 +872,7 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/61158-preview-wwe-raw-9-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61164-amine-promet-un-show-dexception-malgre-les-critiques-sur-son-organisation-de-final-slam",
    "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61150-resultats-de-wwe-road-to-survivor-series-du-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
@@ -1170,12 +1169,11 @@
    "https://www.catch-newz.com/aew/newz/60606-carte-aew-full-gear-2026",
    "https://www.catch-newz.com/wwe/newz/60873-wwe-tlc-fait-son-retour-a-nxt-en-2026",
    "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
-   "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026",
-   "https://www.catch-newz.com/wwe/resultats/60853-wwe-nxt-halloween-havoc-2026"
+   "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
