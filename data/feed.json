@@ -1,6 +1,37 @@
 {
- "at": "2026-11-09T22:16:29.640Z",
+ "at": "2026-11-09T23:14:30.889Z",
  "items": [
+  {
+   "t": "Philippe Chéreau à la défense de Final Slam",
+   "u": "https://www.catch-newz.com/international/newz/61163-philippe-chereau-a-la-defense-de-final-slam",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": []
+  },
+  {
+   "t": "Preview : AEW Dynamite du 11 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "AEW",
+    "Dynamite"
+   ]
+  },
+  {
+   "t": "Combien de temps va durer FinalSlam ?",
+   "u": "https://www.catch-newz.com/international/newz/61129-combien-de-temps-va-durer-finalslam",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": []
+  },
+  {
+   "t": "Carte de Beyond Wrestling Open RI 75",
+   "u": "https://www.catch-newz.com/international/newz/61172-carte-de-beyond-wrestling-open-ri-75",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": []
+  },
   {
    "t": "Preview : WWE RAW du 9 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61158-preview-wwe-raw-9-novembre-2026",
@@ -9,16 +40,6 @@
    "tags": [
     "WWE",
     "Raw"
-   ]
-  },
-  {
-   "t": "Preview : AEW Dynamite du 11 novembre 2026",
-   "u": "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": [
-    "AEW",
-    "Dynamite"
    ]
   },
   {
@@ -203,6 +224,22 @@
    "u": "https://www.catch-newz.com/culture/gossip/60846-cm-punk-a-fete-ses-48-ans-a-la-salle-de-sport",
    "s": "Catch-Newz",
    "d": "2026-11-09",
+   "tags": []
+  },
+  {
+   "t": "Résultats de CMLL Domingo Familiar du 8 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/60885-resultats-de-cmll-domingo-familiar-du-8-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": [
+    "CMLL"
+   ]
+  },
+  {
+   "t": "Résultats de IWRG Funcion Espectacular du 8 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61170-resultats-de-iwrg-funcion-espectacular-du-8-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
    "tags": []
   },
   {
@@ -446,55 +483,6 @@
    "d": "2026-11-07",
    "tags": [
     "WWE"
-   ]
-  },
-  {
-   "t": "WWE SmackDown du 6 novembre : CM Punk vs. Kevin Owens, go-home de Crown Jewel",
-   "u": "https://www.voxcatch.fr/2026/11/07/resultats-wwe-smackdown-6-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-07",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
-  },
-  {
-   "t": "Résultats et streaming de AAA Heroes Inmortales du 7 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61122-resultats-et-streaming-aaa-heroes-inmortales-7-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": [
-    "WWE",
-    "AAA"
-   ]
-  },
-  {
-   "t": "Résultats de CMLL Sabado De Coliseo du 7 novembre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61136-resultats-de-cmll-sabado-de-coliseo-du-7-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": [
-    "CMLL"
-   ]
-  },
-  {
-   "t": "Preview : AEW Collision du 7 novembre 2026",
-   "u": "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": [
-    "AEW",
-    "Collision"
-   ]
-  },
-  {
-   "t": "Preview : AAA Heroes Inmortales du 7 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61093-preview-aaa-heroes-inmortales-7-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": [
-    "WWE",
-    "AAA"
    ]
   }
  ],
@@ -872,8 +860,14 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/61158-preview-wwe-raw-9-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61163-philippe-chereau-a-la-defense-de-final-slam",
    "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61150-resultats-de-wwe-road-to-survivor-series-du-6-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61129-combien-de-temps-va-durer-finalslam",
+   "https://www.catch-newz.com/international/resultats/60885-resultats-de-cmll-domingo-familiar-du-8-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61172-carte-de-beyond-wrestling-open-ri-75",
+   "https://www.catch-newz.com/international/resultats/61170-resultats-de-iwrg-funcion-espectacular-du-8-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61167-resultats-de-invasion-indy-domingo-popular-du-1er-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/international/newz/61164-amine-promet-un-show-dexception-malgre-les-critiques-sur-son-organisation-de-final-slam",
    "https://www.catch-newz.com/international/newz/61161-en-direct-conference-de-presse-de-final-slam-du-9-novembre",
@@ -1163,17 +1157,11 @@
    "https://www.catch-newz.com/international/newz/60879-les-finalistes-de-la-njpw-super-junior-tag-league-2026-sont-connus",
    "https://www.catch-newz.com/wwe/newz/60881-une-premiere-apparition-a-nxt-pour-la-francaise-zoe-hines",
    "https://www.catch-newz.com/international/resultats/60880-resultats-du-jour-7-de-la-njpw-super-junior-tag-league-2026",
-   "https://www.catch-newz.com/wwe/newz/60877-le-demon-finn-balor-peut-il-aller-chercher-un-titre-mondial-en-2027",
-   "https://www.catch-newz.com/wwe/newz/60876-myles-borne-ce-soir-jai-prouve-que-javais-raison-cest-moi-le-meilleur",
-   "https://www.catch-newz.com/wwe/newz/60854-preview-aaa-heroes-inmortales-31-octobre-2026",
-   "https://www.catch-newz.com/aew/newz/60606-carte-aew-full-gear-2026",
-   "https://www.catch-newz.com/wwe/newz/60873-wwe-tlc-fait-son-retour-a-nxt-en-2026",
-   "https://www.catch-newz.com/wwe/newz/60767-preview-wwe-smackdown-30-octobre-2026",
-   "https://www.catch-newz.com/aew/newz/60793-preview-aew-collision-31-octobre-2026"
+   "https://www.catch-newz.com/wwe/newz/60877-le-demon-finn-balor-peut-il-aller-chercher-un-titre-mondial-en-2027"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 10 nouveaux articles lus sur la page d'accueil (10 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
