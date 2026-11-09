@@ -1,6 +1,24 @@
 {
- "at": "2026-11-09T07:20:26.536Z",
+ "at": "2026-11-09T08:46:38.359Z",
  "items": [
+  {
+   "t": "Nikki Bella : « Quand je partirai, elles vont toutes me manquer »",
+   "u": "https://www.catch-newz.com/wwe/newz/61152-nikki-bella-quand-je-partirai-elles-vont-toutes-me-manquer",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Cruz Montana sort enfin du silence après avoir rejoint 946 la semaine dernière",
+   "u": "https://www.catch-newz.com/wwe/newz/61151-cruz-montana-sort-enfin-du-silence-apres-avoir-rejoint-946-la-semaine-derniere",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Preview : WWE NXT du 10 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
@@ -478,20 +496,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-07",
    "tags": []
-  },
-  {
-   "t": "Carte de MCW Pro Wrestling Autumn Armageddon 2026",
-   "u": "https://www.catch-newz.com/international/newz/61084-carte-de-mcw-pro-wrestling-autumn-armageddon-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": []
-  },
-  {
-   "t": "Carte de VCW Queen Of The Commonwealth 2026",
-   "u": "https://www.catch-newz.com/international/newz/61083-carte-de-vcw-queen-of-the-commonwealth-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": []
   }
  ],
  "yt": {
@@ -867,6 +871,8 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61152-nikki-bella-quand-je-partirai-elles-vont-toutes-me-manquer",
+   "https://www.catch-newz.com/wwe/newz/61151-cruz-montana-sort-enfin-du-silence-apres-avoir-rejoint-946-la-semaine-derniere",
    "https://www.catch-newz.com/wwe/resultats/61150-resultats-de-wwe-road-to-survivor-series-du-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61144-resultats-de-chocopro-551",
@@ -1163,13 +1169,11 @@
    "https://www.catch-newz.com/international/resultats/60863-resultats-du-jour-6-de-la-njpw-super-junior-tag-league-2026",
    "https://www.catch-newz.com/wwe/newz/60859-piper-niven-de-retour-a-lentrainement-au-performance-center",
    "https://www.catch-newz.com/wwe/newz/60858-big-cass-confirme-que-son-retour-a-la-wwe-a-ete-difficile-sans-enzo-amore",
-   "https://www.catch-newz.com/wwe/newz/60857-le-fils-de-mark-henry-bientot-pret-a-se-lancer-a-temps-plein-a-la-wwe",
-   "https://www.catch-newz.com/aew/resultats/60839-resultats-de-roh-du-29-octobre-2026",
-   "https://www.catch-newz.com/international/newz/60856-des-nouvelles-de-jeff-hardy-apres-lattaque-a-la-hache-a-tna-impact"
+   "https://www.catch-newz.com/wwe/newz/60857-le-fils-de-mark-henry-bientot-pret-a-se-lancer-a-temps-plein-a-la-wwe"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
