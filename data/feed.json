@@ -1,6 +1,25 @@
 {
- "at": "2026-11-09T15:26:44.253Z",
+ "at": "2026-11-09T16:34:50.747Z",
  "items": [
+  {
+   "t": "Preview : WWE RAW du 9 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61158-preview-wwe-raw-9-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
+  {
+   "t": "R-Truth annonce le triste décès de son papa",
+   "u": "https://www.catch-newz.com/wwe/newz/61157-r-truth-annonce-le-triste-deces-de-son-papa",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Preview : AEW Dynamite du 11 novembre 2026",
    "u": "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
@@ -479,24 +498,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-07",
    "tags": []
-  },
-  {
-   "t": "WWE Crown Jewel : Une courte célébration pour Chelsea Green",
-   "u": "https://www.catch-newz.com/wwe/newz/61101-wwe-crown-jewel-une-courte-celebration-pour-chelsea-green",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "WWE Crown Jewel : Je'Von Evans et Penta champions par équipe",
-   "u": "https://www.catch-newz.com/wwe/newz/61099-wwe-crown-jewel-jevon-evans-et-penta-champions-par-equipe",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -871,7 +872,9 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/newz/61158-preview-wwe-raw-9-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61157-r-truth-annonce-le-triste-deces-de-son-papa",
    "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61150-resultats-de-wwe-road-to-survivor-series-du-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
@@ -1168,13 +1171,11 @@
    "https://www.catch-newz.com/wwe/newz/60871-nxt-halloween-havoc-grace-a-son-experience-kelani-jordan-conserve-son-titre-nxt-contre-wren-sinclair",
    "https://www.catch-newz.com/wwe/newz/60870-nxt-halloween-havoc-zilla-fatu-se-debarrasse-a-lui-tout-seul-de-charlie-dempsey-et-de-birthright",
    "https://www.catch-newz.com/wwe/newz/60869-nxt-halloween-havoc-myles-borne-terrasse-son-rival-tavion-heights-au-terme-dun-weapons-wild-match-palpitant",
-   "https://www.catch-newz.com/international/newz/60868-carte-de-tjpw-there-may-be-no-answers-but-lets-wish-for-happiness",
-   "https://www.catch-newz.com/international/newz/60867-carte-du-jour-1-de-dg-the-gate-of-evolution-2026",
-   "https://www.catch-newz.com/international/resultats/60866-resultats-de-iwrg-castillo-del-terror-2026"
+   "https://www.catch-newz.com/international/newz/60868-carte-de-tjpw-there-may-be-no-answers-but-lets-wish-for-happiness"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
