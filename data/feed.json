@@ -1,15 +1,6 @@
 {
- "at": "2026-11-09T09:56:28.201Z",
+ "at": "2026-11-09T10:53:40.642Z",
  "items": [
-  {
-   "t": "Randy Orton n'a gagné que 3 matchs en PLE depuis son retour en 2023",
-   "u": "https://www.catch-newz.com/wwe/newz/61154-randy-orton-na-gagne-que-3-matchs-en-ple-depuis-son-retour-en-2023",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": [
-    "WWE"
-   ]
-  },
   {
    "t": "Preview : AEW Dynamite du 11 novembre 2026",
    "u": "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
@@ -21,15 +12,6 @@
    ]
   },
   {
-   "t": "Allons-nous enfin voir Jessika Carr sur un ring de la WWE prochainement ?",
-   "u": "https://www.catch-newz.com/wwe/newz/61153-allons-nous-enfin-voir-jessika-carr-sur-un-ring-de-la-wwe-prochainement",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
    "t": "Preview : WWE NXT du 10 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
    "s": "Catch-Newz",
@@ -37,6 +19,31 @@
    "tags": [
     "WWE",
     "NXT"
+   ]
+  },
+  {
+   "t": "Résultats de TJPW ALL RISE 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61139-resultats-de-tjpw-all-rise-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": []
+  },
+  {
+   "t": "Randy Orton n'a gagné que 3 matchs en PLE depuis son retour en 2023",
+   "u": "https://www.catch-newz.com/wwe/newz/61154-randy-orton-na-gagne-que-3-matchs-en-ple-depuis-son-retour-en-2023",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Allons-nous enfin voir Jessika Carr sur un ring de la WWE prochainement ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61153-allons-nous-enfin-voir-jessika-carr-sur-un-ring-de-la-wwe-prochainement",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -490,15 +497,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-07",
    "tags": []
-  },
-  {
-   "t": "Countdown To WWE Crown Jewel 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61089-countdown-to-wwe-crown-jewel-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -874,11 +872,12 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61154-randy-orton-na-gagne-que-3-matchs-en-ple-depuis-son-retour-en-2023",
    "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61153-allons-nous-enfin-voir-jessika-carr-sur-un-ring-de-la-wwe-prochainement",
    "https://www.catch-newz.com/wwe/resultats/61150-resultats-de-wwe-road-to-survivor-series-du-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61139-resultats-de-tjpw-all-rise-2026",
+   "https://www.catch-newz.com/wwe/newz/61154-randy-orton-na-gagne-que-3-matchs-en-ple-depuis-son-retour-en-2023",
+   "https://www.catch-newz.com/wwe/newz/61153-allons-nous-enfin-voir-jessika-carr-sur-un-ring-de-la-wwe-prochainement",
    "https://www.catch-newz.com/wwe/newz/61152-nikki-bella-quand-je-partirai-elles-vont-toutes-me-manquer",
    "https://www.catch-newz.com/wwe/newz/61151-cruz-montana-sort-enfin-du-silence-apres-avoir-rejoint-946-la-semaine-derniere",
    "https://www.catch-newz.com/international/resultats/61144-resultats-de-chocopro-551",
@@ -1171,12 +1170,11 @@
    "https://www.catch-newz.com/international/resultats/60865-resultats-du-jour-6-de-dg-the-gate-of-victory-2026",
    "https://www.catch-newz.com/international/newz/60864-carte-de-hoh-a-nightmare-on-elmwood",
    "https://www.catch-newz.com/international/resultats/60862-resultats-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
-   "https://www.catch-newz.com/international/newz/60861-carte-de-cmll-sabado-de-coliseo-du-31-octobre-2026-dia-de-muertos",
-   "https://www.catch-newz.com/international/resultats/60863-resultats-du-jour-6-de-la-njpw-super-junior-tag-league-2026"
+   "https://www.catch-newz.com/international/newz/60861-carte-de-cmll-sabado-de-coliseo-du-31-octobre-2026-dia-de-muertos"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
