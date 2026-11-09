@@ -1,6 +1,44 @@
 {
- "at": "2026-11-09T08:46:38.359Z",
+ "at": "2026-11-09T09:56:28.201Z",
  "items": [
+  {
+   "t": "Randy Orton n'a gagné que 3 matchs en PLE depuis son retour en 2023",
+   "u": "https://www.catch-newz.com/wwe/newz/61154-randy-orton-na-gagne-que-3-matchs-en-ple-depuis-son-retour-en-2023",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Preview : AEW Dynamite du 11 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": [
+    "AEW",
+    "Dynamite"
+   ]
+  },
+  {
+   "t": "Allons-nous enfin voir Jessika Carr sur un ring de la WWE prochainement ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61153-allons-nous-enfin-voir-jessika-carr-sur-un-ring-de-la-wwe-prochainement",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Preview : WWE NXT du 10 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
   {
    "t": "Nikki Bella : « Quand je partirai, elles vont toutes me manquer »",
    "u": "https://www.catch-newz.com/wwe/newz/61152-nikki-bella-quand-je-partirai-elles-vont-toutes-me-manquer",
@@ -17,16 +55,6 @@
    "d": "2026-11-09",
    "tags": [
     "WWE"
-   ]
-  },
-  {
-   "t": "Preview : WWE NXT du 10 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": [
-    "WWE",
-    "NXT"
    ]
   },
   {
@@ -471,31 +499,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Johnny Gargano à Rey Fenix : « Toi et ton stupide frère, vous n'avez aucun honneur »",
-   "u": "https://www.catch-newz.com/wwe/newz/61091-johnny-gargano-a-rey-fenix-toi-et-ton-stupide-frere-vous-navez-aucun-honneur",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Matt Cardona est « presque prêt » à remonter sur les rings de la WWE",
-   "u": "https://www.catch-newz.com/wwe/newz/61090-matt-cardona-est-presque-pret-a-remonter-sur-les-rings-de-la-wwe",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Carte de GCW The Crossroads 2026",
-   "u": "https://www.catch-newz.com/international/newz/61076-carte-de-gcw-the-crossroads-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-07",
-   "tags": []
   }
  ],
  "yt": {
@@ -871,10 +874,13 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61152-nikki-bella-quand-je-partirai-elles-vont-toutes-me-manquer",
-   "https://www.catch-newz.com/wwe/newz/61151-cruz-montana-sort-enfin-du-silence-apres-avoir-rejoint-946-la-semaine-derniere",
+   "https://www.catch-newz.com/wwe/newz/61154-randy-orton-na-gagne-que-3-matchs-en-ple-depuis-son-retour-en-2023",
+   "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61153-allons-nous-enfin-voir-jessika-carr-sur-un-ring-de-la-wwe-prochainement",
    "https://www.catch-newz.com/wwe/resultats/61150-resultats-de-wwe-road-to-survivor-series-du-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61152-nikki-bella-quand-je-partirai-elles-vont-toutes-me-manquer",
+   "https://www.catch-newz.com/wwe/newz/61151-cruz-montana-sort-enfin-du-silence-apres-avoir-rejoint-946-la-semaine-derniere",
    "https://www.catch-newz.com/international/resultats/61144-resultats-de-chocopro-551",
    "https://www.catch-newz.com/international/resultats/61141-resultats-de-cmll-garza-producciones-du-5-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61145-resultats-de-tjpw-garafes-a-cultural-shock-sensation-in-shibuya",
@@ -1166,14 +1172,11 @@
    "https://www.catch-newz.com/international/newz/60864-carte-de-hoh-a-nightmare-on-elmwood",
    "https://www.catch-newz.com/international/resultats/60862-resultats-de-sendai-girls-pro-wrestling-du-31-octobre-2026",
    "https://www.catch-newz.com/international/newz/60861-carte-de-cmll-sabado-de-coliseo-du-31-octobre-2026-dia-de-muertos",
-   "https://www.catch-newz.com/international/resultats/60863-resultats-du-jour-6-de-la-njpw-super-junior-tag-league-2026",
-   "https://www.catch-newz.com/wwe/newz/60859-piper-niven-de-retour-a-lentrainement-au-performance-center",
-   "https://www.catch-newz.com/wwe/newz/60858-big-cass-confirme-que-son-retour-a-la-wwe-a-ete-difficile-sans-enzo-amore",
-   "https://www.catch-newz.com/wwe/newz/60857-le-fils-de-mark-henry-bientot-pret-a-se-lancer-a-temps-plein-a-la-wwe"
+   "https://www.catch-newz.com/international/resultats/60863-resultats-du-jour-6-de-la-njpw-super-junior-tag-league-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
