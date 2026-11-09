@@ -1,5 +1,5 @@
 {
- "at": "2026-11-09T19:28:55.688Z",
+ "at": "2026-11-09T20:23:27.289Z",
  "items": [
   {
    "t": "Preview : WWE RAW du 9 novembre 2026",
@@ -9,6 +9,26 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Preview : AEW Dynamite du 11 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": [
+    "AEW",
+    "Dynamite"
+   ]
+  },
+  {
+   "t": "Preview : WWE NXT du 10 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": [
+    "WWE",
+    "NXT"
    ]
   },
   {
@@ -34,26 +54,6 @@
    "d": "2026-11-09",
    "tags": [
     "WWE"
-   ]
-  },
-  {
-   "t": "Preview : AEW Dynamite du 11 novembre 2026",
-   "u": "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": [
-    "AEW",
-    "Dynamite"
-   ]
-  },
-  {
-   "t": "Preview : WWE NXT du 10 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": [
-    "WWE",
-    "NXT"
    ]
   },
   {
@@ -874,12 +874,12 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/61158-preview-wwe-raw-9-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61161-en-direct-conference-de-presse-de-final-slam-du-9-novembre",
-   "https://www.catch-newz.com/wwe/newz/61160-comment-sera-couronne-le-gagnant-du-wwe-john-cena-classic",
-   "https://www.catch-newz.com/wwe/newz/61159-john-cena-en-conge-apres-le-john-cena-classic",
    "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61150-resultats-de-wwe-road-to-survivor-series-du-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61161-en-direct-conference-de-presse-de-final-slam-du-9-novembre",
+   "https://www.catch-newz.com/wwe/newz/61160-comment-sera-couronne-le-gagnant-du-wwe-john-cena-classic",
+   "https://www.catch-newz.com/wwe/newz/61159-john-cena-en-conge-apres-le-john-cena-classic",
    "https://www.catch-newz.com/international/newz/61162-donovan-dijak-quitte-la-mlw",
    "https://www.catch-newz.com/international/resultats/61149-resultats-du-jour-9-de-dg-the-gate-of-victory-2026",
    "https://www.catch-newz.com/international/newz/61113-carte-de-cmll-lunes-clasico-du-9-novembre-2026",
@@ -1175,7 +1175,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 10 nouveaux articles lus sur la page d'accueil (10 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
