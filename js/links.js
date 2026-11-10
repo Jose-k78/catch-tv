@@ -150,7 +150,7 @@ ACT.mlrep = el => {
 };
 
 // ---------- modo : ajouter / supprimer (data/links.json via GitHub) ----------
-async function saveLinks(fn, msg) {
+export async function saveLinks(fn, msg) {
   if (!ghToken()) { if (ACT.ghkey) ACT.ghkey(); return false; }
   const cur = await ghGetJson("data/links.json"), d = cur.data || { items: {} };
   d.items = d.items || {}; fn(d.items); d.updated = new Date().toISOString();

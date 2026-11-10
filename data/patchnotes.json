@@ -2,6 +2,28 @@
  "updated": "2026-11-11",
  "items": [
   {
+   "id": "2026-11-11-maj2",
+   "d": "2026-11-11",
+   "t": "Grande mise à jour (2e partie)",
+   "txt": [
+    "📼 Anciens shows : la fiche a maintenant « J’ai vu ce show », la note du show et les notes des autres membres.",
+    "🔎 TCC Play : en tapant un ancien show, sa fiche est proposée.",
+    "🎬 Matchs à découvrir : des vignettes, la sélection de la semaine puis tous les matchs, et « ✓ Vu » sur ceux que tu as notés.",
+    "🔥 Feuds : les actions ne se répètent plus tant que toute la liste n’est pas passée.",
+    "▶ TCC Play : « La sélection du modo » et un bouton vers la vraie chaîne YouTube des shows."
+   ]
+  },
+  {
+   "id": "2026-11-11-modo2",
+   "d": "2026-11-11",
+   "t": "Modo : redirections, chaînes YouTube, sélection TCC Play",
+   "mod": true,
+   "txt": [
+    "↪ En mode ✏️, reste appuyé sur un lien de l’app (cartes, tuiles, barre du bas…) pour l’envoyer vers une autre page ou un autre site.",
+    "⚙️ TCC Play › Réglages : colle des liens pour « La sélection du modo », définis la chaîne YouTube de chaque show, retrouve toutes tes redirections."
+   ]
+  },
+  {
    "id": "2026-11-11-maj",
    "d": "2026-11-11",
    "t": "Grande mise à jour (1re partie)",

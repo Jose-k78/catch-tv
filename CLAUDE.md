@@ -146,9 +146,13 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   - petite ceinture (`beltBadge` de photos.js) sur la photo du champion si le titre est tenu depuis plus de 7 jours (pas de spoiler) ;
   - recherche : fiches en premier, `knownNames` inclut les photos et les membres des groupes ; fiche : Entrance et « Son actu » retirées ;
   - page d'un show passé : notes de tous les membres (`B.showRates(k, d)`) ; notifications d'actu sans titre d'article.
-  - RESTE À FAIRE (demande du 11 nov.) : design Netflix / TCC Play façon YouTube, redirections du modo (appui long en mode ✏️), chaîne YouTube
-    par show + zone de liens modo, fiche d'un ancien show (résumé, résultats, « J'ai vu ce show »), recherche de combats / archives, feuds sans
-    répétitions, matchs à découvrir, calendriers NJPW / Stardom / Marigold, robots GitHub pour calendriers / tournois / fiches, animations.
+  - 2e partie : fiche d'un ancien show (`eventView`) avec « J'ai vu ce show », note, notes des membres, liens du modo (`ev:K|titre|date`) ;
+    TCC Play : fiches des shows dans la recherche (`#parch`), « La sélection du modo » (`play:mix`), chaîne YouTube par show (`chan:K|show`,
+    `ACT.pchan`), le tout dans ⚙️ Réglages ; redirections du modo (`js/redir.js`, `redir:<lien>` dans links.json, appui long en mode ✏️ ou
+    menu de partage) ; matchs à découvrir en vignettes ; `feudAct` sans répétition.
+  - RESTE À FAIRE (demande du 11 nov.) : design Netflix / TCC Play façon YouTube (refonte visuelle), calendriers NJPW / Stardom / Marigold,
+    robots GitHub pour calendriers / tournois / fiches (ne plus dépendre de Claude), animations TCCCG, vidéos de la chaîne YouTube d'un show
+    récupérées par le robot, fusion complète des anciens noms des catcheurs.
 - Notes : demi-étoiles de 0 à 5,5 (`RMAX`, `fmtR`, `stars`, `ratePick` / `pickRate` de util.js ; 6e étoile orange = bonus).
 - Historique : `g_<id>` = note d'un segment, `q_<id>` = segment préféré (comment = nom du show) ; préfixes m_/s_/f_/g_/q_ exclus
   des compteurs de shows (spoil.js, trophies.js, account.js). Profil : « Ses segments préférés ».

@@ -97,9 +97,14 @@ const FULL = [
 ];
 function hash(s) { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
 // pair = id de la feud (uids triés), uid = celui qui lance, day = AAAA-MM-JJ (heure de Paris)
+// Sans répétition : chaque feud parcourt toute la liste (dans un ordre propre à la feud et au lanceur) avant de retomber sur
+// la même action ; un jour sur quatre, une action « complète ».
+const gcd = (a, b) => (b ? gcd(b, a % b) : a);
+const stepFor = (h, n) => { let st = 1 + (h % (n - 1)); while (gcd(st, n) !== 1) st++; return st; };
 export function feudAct(pair, uid, day) {
-  const h = hash(pair + "|" + uid + "|" + day);
-  if (h % 4 === 0) { const f = FULL[(h >>> 2) % FULL.length]; return { a: f[0], b: f[1] }; }
-  const x = HIT[(h >>> 3) % HIT.length], p = PLACE[(h >>> 9) % PLACE.length];
+  const h = hash(pair + "|" + uid), t = Date.parse(day + "T00:00:00Z"), n = Number.isFinite(t) ? Math.floor(t / 864e5) : hash(day);
+  const at = (L, salt) => L[(((h >>> salt) % L.length) + n * stepFor(h >>> (salt + 3), L.length)) % L.length];
+  if ((n + h) % 4 === 0) { const f = at(FULL, 2); return { a: f[0], b: f[1] }; }
+  const x = at(HIT, 3), p = at(PLACE, 9);
   return { a: "Tu " + x[0] + " " + p + ".", b: x[1] + " " + p.replace(/\bson\b/, "ton") + "." };
 }

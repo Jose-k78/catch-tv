@@ -37,9 +37,10 @@ const ytUrl = id => "https://www.youtube.com/watch?v=" + id;
 function colorOf(k) { const c = (S.P[k] && S.P[k].c) || ["#444", "#111"]; return c.length >= 3 ? "linear-gradient(120deg," + c[0] + " 0 34%,#6b6b6b 34% 66%," + c[2] + " 66%)" : "linear-gradient(160deg," + c[0] + "," + c[1] + ")"; }
 
 function matchRow(m) {
-  return '<article class="mrowc"' + shAttr({ ty: "vid", t: m.t, s: [m.k, m.ev].filter(Boolean).join(" · "), id: m.id }) + '><div class="mbadge" style="background:' + colorOf(m.k) + '">' + esc(m.k) + '</div><div class="epbody"><b class="eptitle">' + linkNames(m.t) + "</b>" +
-    '<small class="epmeta">' + (m.ev ? esc(m.ev) + " · " : "") + "Match complet · chaîne officielle</small></div>" +
-    '<div class="mrbtns"><button class="btn small" data-act="play" data-id="' + esc(m.id) + '" data-t="' + esc(m.t) + '">▶ Voir</button>' + rateBtn(m.k, m.t, m.ev || "", "") + "</div></article>";
+  const seen = S.user && Object.keys(S.history || {}).some(id => id.indexOf("m_") === 0 && (S.history[id].title || "") === m.t);
+  return '<article class="mcard"' + shAttr({ ty: "vid", t: m.t, s: [m.k, m.ev].filter(Boolean).join(" · "), id: m.id }) + '><button class="mthumb" data-act="play" data-id="' + esc(m.id) + '" data-t="' + esc(m.t) + '" aria-label="Voir le match"><img src="https://i.ytimg.com/vi/' + esc(m.id) + '/mqdefault.jpg" alt="" loading="lazy"><span class="mplay">▶</span><span class="mk" style="background:' + colorOf(m.k) + '">' + esc(m.k) + "</span>" + (seen ? '<span class="mseen">✓ Vu</span>' : "") + "</button>" +
+    '<div class="mbody"><b>' + linkNames(m.t) + '</b><small>' + (m.ev ? esc(m.ev) + " · " : "") + "Match complet · chaîne officielle</small></div>" +
+    '<div class="mrbtns">' + rateBtn(m.k, m.t, m.ev || "", "") + "</div></article>";
 }
 export function matchesView() {
   const all = pool(), week = shuffle(all, weekNo(new Date()) + filter.length * 7919).slice(0, 10);
@@ -49,7 +50,9 @@ export function matchesView() {
     '<div class="btns" style="justify-content:flex-start;margin:4px 16px 0"><button class="btn" data-act="mrandom">🎲 Un match au hasard</button></div>' +
     '<h2>Chercher un match</h2><div class="vsform"><input id="vs1" placeholder="Nom 1" autocomplete="off" value="' + esc(vs[0]) + '"><span class="vsx">VS</span><input id="vs2" placeholder="Nom 2" autocomplete="off" value="' + esc(vs[1]) + '"><button class="btn small" data-act="vsgo">🔎</button></div><div id="vsres">' + vsResults() + "</div>" +
     "<h2>La sélection de la semaine</h2>";
-  h += week.length ? '<div class="eps">' + week.map(matchRow).join("") + "</div>" : '<p class="note">Pas encore de match pour cette promotion.</p>';
+  h += week.length ? '<div class="mgrid">' + week.map(matchRow).join("") + "</div>" : '<p class="note">Pas encore de match pour cette promotion.</p>';
+  const rest = all.filter(m => week.indexOf(m) < 0);
+  if (rest.length) h += "<h2>Tous les matchs <small class=\"cnt\">" + all.length + '</small></h2><div class="mgrid">' + rest.map(matchRow).join("") + "</div>";
   h += '<p class="note small" style="margin-top:12px">☆ Note les matchs que tu as vus : ils rejoignent ton historique des notes. Nouvelle sélection chaque lundi. Uniquement des vidéos publiées par les chaînes YouTube officielles des promotions.</p>';
   return h;
 }

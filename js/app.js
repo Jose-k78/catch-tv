@@ -14,6 +14,7 @@ import { gslug } from "./views/wimage.js";
 import { groupLogo } from "./assets.js";
 import { pnNew } from "./views/patchnotes.js";
 import { tccgView, tccgTop, TICON, TNAV } from "./views/tccg.js";
+import "./redir.js";
 import { settle as tcgSettle, pendingCount as tcgPending } from "./tcg/trade.js";
 import { playerView } from "./views/player.js";
 import { searchView, wrestlerView, fillWiki, afterSearch } from "./views/search.js";
@@ -56,7 +57,7 @@ const REL = {
   matches: ["route", "history", "auth", "content"], wrestler: ["profile", "spoil", "history", "auth", "content"], search: [], titles: ["history", "spoil", "content"], title: ["history", "spoil", "content"], belt: ["content"], group: ["content", "auth"], tccg: ["auth", "profile", "content", "tcg", "history"], player: ["content"], autre: ["content"], passes: ["content", "history", "tick"], tournois: ["content"], serie: ["content"], tournoi: ["content", "auth"],
   notifs: ["notifs", "profiles", "reads", "blocks", "ann"], activity: ["activity", "profiles", "blocks", "areplies"], storyline: ["content", "history", "auth"], roster: ["profile", "content"],
   members: ["activity", "areplies", "polls", "pollVotes", "picks", "content", "history", "users", "friends", "feuds", "blocks", "profiles", "auth", "tick"], favs: ["profile", "profiles", "friends", "auth", "content"], hl: ["history", "spoil", "content"],
-  event: ["event", "history", "auth"], cal: ["content", "history", "auth", "images", "spoil", "tick", "picks"],
+  event: ["event", "history", "auth", "activity", "links", "profiles", "content"], cal: ["content", "history", "auth", "images", "spoil", "tick", "picks"],
   polls: ["polls", "pollVotes", "auth", "blocks", "hof", "content", "profiles"], picks: ["content", "picks", "profiles", "auth", "blocks", "tick"], pick: ["content", "picks", "profiles", "auth", "blocks", "tick"],
   ideas: ["ideas", "profiles", "auth", "blocks"],
   trophies: ["profile", "profiles", "history", "pollVotes", "picks", "friends", "feuds", "ideas", "myact", "slammys", "auth", "content"],

@@ -1,7 +1,10 @@
 // Archives générées à la demande : un PLE ou un show passé (WrestleMania 13, Starrcade 1997, Wrestle Kingdom 9…)
 // lu sur Wikipédia au moment de la recherche — rien n'est stocké dans l'app, sauf les notes des membres.
 // Page française pour le résumé quand elle existe ; tableau des combats lu de préférence sur la page anglaise (plus standardisée).
-import { S, changed } from "../state.js";
+import { S, B, changed, prof } from "../state.js";
+import { stars, fmtR } from "../util.js";
+import { linksHTML, TPLAY } from "../links.js";
+import { seenId } from "./catalog.js";
 import { esc, ICON, fmt, okHttp, okDay } from "../util.js";
 import { PREVIEW } from "../content.js";
 import { templateParams, cleanWiki } from "../tech.js";
@@ -194,6 +197,15 @@ export function eventView(ref) {
   if (e.err) return h + head({ k: "Archives", title: label }) + '<p class="note" style="margin-top:14px">' + (e.err === "notfound" ? "Pas de page Wikipédia trouvée pour « " + esc(label) + " ». Essaie le nom exact de l’événement avec son numéro ou son année (ex. : WrestleMania 13, Starrcade 1997)."
     : "Impossible de joindre Wikipédia pour le moment. Réessaie dans un instant.") + "</p>";
   h += head(e);
+  // « J'ai vu ce show » + note, et les notes des autres membres
+  const it = { k: e.k, show: e.title.slice(0, 60), d: okDay(e.d) ? e.d : "", t: e.title }, seen = S.user && S.history[seenId(it)];
+  const rk = e.k + "|" + it.d + "|" + it.show; RT[rk] = RT[rk] || {};
+  if (it.d && !RT[rk].list && !RT[rk].busy && B.showRates) { RT[rk].busy = 1; B.showRates(e.k, it.d).then(L => { RT[rk] = { list: L || [] }; changed("event"); }).catch(() => { RT[rk] = { list: [] }; }); }
+  const byU = {}; (RT[rk].list || []).concat(S.activity || []).forEach(a => { if (a && a.kind === "rate" && a.k === e.k && a.d === it.d && (a.show || "") === it.show && a.rating) byU[a.uid] = a; });
+  const notes = Object.keys(byU).map(u => byU[u]), avg = notes.length ? notes.reduce((x, a) => x + a.rating, 0) / notes.length : 0;
+  h += '<div class="shownote"><div><b>Note du show</b>' + (avg ? stars(avg) + "<small>" + fmtR(avg) + " / 5,5 · " + notes.length + " note" + (notes.length > 1 ? "s" : "") + " de membres</small>" : "<small>Pas encore de note de membre</small>") + "</div>" +
+    '<button class="btn small' + (seen ? " on" : "") + '" data-act="seen" data-k="' + esc(it.k) + '" data-show="' + esc(it.show) + '" data-d="' + esc(it.d) + '" data-t="' + esc(it.t) + '">' + (seen ? (seen.rating ? "Ta note " + stars(seen.rating) : "✓ Vu") : "👁 J’ai vu ce show") + "</button></div>";
+  if (notes.length) h += '<div class="rnotes">' + notes.sort((a, b) => b.rating - a.rating).map(a => { const p = prof(a.uid) || {}; return '<a class="rnote" href="#/profil/' + encodeURIComponent(a.uid) + '"><b>' + esc(p.pseudo || "Membre") + "</b>" + stars(a.rating) + "<small>" + fmtR(a.rating) + "</small>" + (a.comment ? "<i>" + esc(String(a.comment).slice(0, 140)) + "</i>" : "") + "</a>"; }).join("") + "</div>";
   if (e.sum) h += "<h2>Résumé</h2>" + '<div class="wikicard evsum">' + e.sum.split("\n").map(p => "<p>" + esc(p) + "</p>").join("") +
     (okHttp(e.url) ? '<a href="' + esc(e.url) + '" target="_blank" rel="noopener">Lire la suite sur Wikipédia ↗</a>' : "") +
     '<small class="src">' + (e.sumLang === "en" ? "Résumé en anglais (pas de page en français). " : "") + "Source : Wikipédia (licence CC BY-SA)</small></div>";
@@ -206,5 +218,8 @@ export function eventView(ref) {
   } else h += '<p class="note" style="margin-top:14px">La page Wikipédia de cet événement ne contient pas de tableau des combats lisible par l’app.' + (okHttp(e.urlEn || e.url) ? ' <a href="' + esc(e.urlEn || e.url) + '" target="_blank" rel="noopener">Voir la page ↗</a>' : "") + "</p>";
   if (e.res.length) h += "<h2>Résultats</h2>" + spoilBlock("Voir les résultats (spoiler)", '<ul class="res">' + e.res.map(r => "<li>" + linkNames(r) + "</li>").join("") + "</ul>") +
     (e.resLang === "en" ? '<p class="note small" style="margin-top:8px">Résultats tirés de la page Wikipédia en anglais.</p>' : "");
+  // liens du modo pour ce show (lus dans le lecteur de l'app)
+  h += "<h2>" + TPLAY + " · liens</h2>" + linksHTML("ev:" + e.k + "|" + e.title.slice(0, 60) + "|" + (okDay(e.d) ? e.d : ""), { ask: true, empty: "Pas encore de lien pour ce show." });
   return h;
 }
+const RT = {};

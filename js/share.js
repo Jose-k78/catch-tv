@@ -68,6 +68,7 @@ export function shareMenu(c) {
     box.innerHTML = preview(c) + '<div class="sheet">' +
       '<button class="item" data-a="room">🦍 Partager dans la Gorilla Position</button><button class="item" data-a="dm">✉️ Partager en message privé…</button>' +
       names.map(n => '<a class="item" href="#/catcheur/' + encodeURIComponent(n) + '" data-a="go">🤼 Voir la fiche de ' + esc(n) + "</a>").join("") +
+      (S.isAdmin && /^#\//.test(c.h || "") ? '<button class="item" data-a="act" data-x="redir" data-h="' + esc(c.h) + '">↪ Rediriger ce lien (modo)</button>' : "") +
       (c.ty === "ev" && /^#\/ev\//.test(c.h || "") ? (() => { const p = c.h.slice(5).split("/").map(decodeURIComponent), sh = p[1] === "PLE" ? "" : p[1], key = p.slice(0, 3).join("|");
         const da = ' data-k="' + esc(p[0]) + '" data-show="' + esc(sh) + '" data-d="' + esc(p[2] || "") + '" data-t="' + esc(c.t) + '"';
         return '<a class="item" href="#/player/e/' + encodeURIComponent(key) + '" data-a="go">▶ Voir dans TCC Play</a><button class="item" data-a="src"' + da + '>📺 Choisir la source (officiel, autre visionnage…)</button>' +
