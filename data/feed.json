@@ -1,6 +1,22 @@
 {
- "at": "2026-11-10T22:38:18.914Z",
+ "at": "2026-11-10T23:31:47.218Z",
  "items": [
+  {
+   "t": "Si le John Cena Classic est nul, il ne reviendra pas en 2027",
+   "u": "https://www.catch-newz.com/wwe/newz/61205-si-le-john-cena-classic-est-nul-il-ne-reviendra-pas-en-2027",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Résultats de Last Resort - A Tribute To Mark Wolf",
+   "u": "https://www.catch-newz.com/international/resultats/61203-resultats-de-last-resort-a-tribute-to-mark-wolf",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": []
+  },
   {
    "t": "Preview : WWE NXT du 10 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
@@ -9,6 +25,16 @@
    "tags": [
     "WWE",
     "NXT"
+   ]
+  },
+  {
+   "t": "WWE Raw du 9 novembre : Survivor Series se prépare",
+   "u": "https://www.voxcatch.fr/2026/11/10/resultats-wwe-raw-9-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE",
+    "Raw"
    ]
   },
   {
@@ -24,16 +50,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-10",
    "tags": []
-  },
-  {
-   "t": "WWE Raw du 9 novembre : Survivor Series se prépare",
-   "u": "https://www.voxcatch.fr/2026/11/10/resultats-wwe-raw-9-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-10",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
   },
   {
    "t": "Carte de CMLL Martes Populares du 10 novembre 2026",
@@ -488,20 +504,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-09",
    "tags": []
-  },
-  {
-   "t": "Résultats de ChocoPro #550",
-   "u": "https://www.catch-newz.com/international/resultats/61143-resultats-de-chocopro-550",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": []
-  },
-  {
-   "t": "CM Punk a fêté ses 48 ans à la salle de sport",
-   "u": "https://www.catch-newz.com/culture/gossip/60846-cm-punk-a-fete-ses-48-ans-a-la-salle-de-sport",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": []
   }
  ],
  "yt": {
@@ -907,13 +909,15 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61205-si-le-john-cena-classic-est-nul-il-ne-reviendra-pas-en-2027",
    "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61193-wwe-evolve-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61192-wwe-main-event-4-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61202-resultats-du-jour-4-du-zero1-tenka-ichi-junior-tournament-2026",
-   "https://www.catch-newz.com/international/resultats/61201-resultats-de-chocopro-553",
+   "https://www.catch-newz.com/international/resultats/61203-resultats-de-last-resort-a-tribute-to-mark-wolf",
    "https://www.catch-newz.com/international/resultats/61176-resultats-de-cmll-lunes-clasico-du-9-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61119-resultats-de-invasion-indy-domingo-popular-du-8-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61202-resultats-du-jour-4-du-zero1-tenka-ichi-junior-tournament-2026",
+   "https://www.catch-newz.com/international/resultats/61201-resultats-de-chocopro-553",
    "https://www.catch-newz.com/international/newz/61178-carte-de-cmll-martes-populares-du-10-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61200-bronson-reed-blesse-et-coince-en-arabie-saoudite-apres-wwe-crown-jewel",
    "https://www.catch-newz.com/culture/gossip/61199-le-chien-de-jon-moxley-et-renee-paquette-est-decede",
@@ -1203,14 +1207,12 @@
    "https://www.catch-newz.com/international/resultats/60893-resultats-de-vkf-halloween-havoc-2026",
    "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60919-cody-rhodes-bianca-belair-est-peut-etre-la-plus-grande-athlete-que-la-wwe-ait-jamais-connue",
-   "https://www.catch-newz.com/wwe/newz/60917-danhausen-remercie-chaleureusement-les-fans-qui-se-sont-deguises-en-lui-pour-halloween",
-   "https://www.catch-newz.com/wwe/newz/60916-santino-marella-donne-son-avis-sur-le-clan-birthright",
-   "https://www.catch-newz.com/wwe/newz/60915-cody-rhodes-cetait-la-pire-periode-de-toute-ma-vie"
+   "https://www.catch-newz.com/wwe/newz/60917-danhausen-remercie-chaleureusement-les-fans-qui-se-sont-deguises-en-lui-pour-halloween"
   ]
  },
  "diag": {
   "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
-  "VOXcatch": "6 articles (7 j)",
+  "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
