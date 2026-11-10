@@ -1,6 +1,25 @@
 {
- "at": "2026-11-10T16:47:55.640Z",
+ "at": "2026-11-10T17:44:30.375Z",
  "items": [
+  {
+   "t": "Rey Fenix lance un tournoi pour son championnat AAA Cruiserweight",
+   "u": "https://www.catch-newz.com/wwe/newz/61195-rey-fenix-lance-un-tournoi-pour-son-championnat-aaa-cruiserweight",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE",
+    "AAA"
+   ]
+  },
+  {
+   "t": "La TNA annonce le représentant du Canada pour la World X-Cup 2026",
+   "u": "https://www.catch-newz.com/international/newz/61196-la-tna-annonce-le-representant-du-canada-pour-la-world-x-cup-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "TNA"
+   ]
+  },
   {
    "t": "Preview : WWE NXT du 10 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
@@ -12,14 +31,11 @@
    ]
   },
   {
-   "t": "Trick Williams bat Gunther en Dark Match à RAW, les fans crient au scandale",
-   "u": "https://www.catch-newz.com/wwe/newz/61194-trick-williams-bat-gunther-en-dark-match-a-raw-les-fans-crient-au-scandale",
+   "t": "Résultats de EVE 157: Elite Encounters 2",
+   "u": "https://www.catch-newz.com/international/resultats/61169-resultats-de-eve-157-elite-encounters-2",
    "s": "Catch-Newz",
    "d": "2026-11-10",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
+   "tags": []
   },
   {
    "t": "Carte de CMLL Martes Populares du 10 novembre 2026",
@@ -43,6 +59,16 @@
    "t": "WWE Raw du 9 novembre : Survivor Series se prépare",
    "u": "https://www.voxcatch.fr/2026/11/10/resultats-wwe-raw-9-novembre-2026/",
    "s": "VOXcatch",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
+  {
+   "t": "Trick Williams bat Gunther en Dark Match à RAW, les fans crient au scandale",
+   "u": "https://www.catch-newz.com/wwe/newz/61194-trick-williams-bat-gunther-en-dark-match-a-raw-les-fans-crient-au-scandale",
+   "s": "Catch-Newz",
    "d": "2026-11-10",
    "tags": [
     "WWE",
@@ -471,31 +497,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-08",
    "tags": []
-  },
-  {
-   "t": "Carte de CMLL Domingo Familiar du 8 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61075-carte-de-cmll-domingo-familiar-du-8-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-08",
-   "tags": [
-    "CMLL"
-   ]
-  },
-  {
-   "t": "Carte de IWRG Funcion Espectacular du 8 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61115-carte-de-iwrg-funcion-espectacular-du-8-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-08",
-   "tags": []
-  },
-  {
-   "t": "Randy Orton promet de revenir après WWE Crown Jewel 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61134-randy-orton-promet-de-revenir-apres-wwe-crown-jewel-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-08",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -901,12 +902,15 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61195-rey-fenix-lance-un-tournoi-pour-son-championnat-aaa-cruiserweight",
+   "https://www.catch-newz.com/international/newz/61196-la-tna-annonce-le-representant-du-canada-pour-la-world-x-cup-2026",
    "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61193-wwe-evolve-4-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61194-trick-williams-bat-gunther-en-dark-match-a-raw-les-fans-crient-au-scandale",
    "https://www.catch-newz.com/wwe/resultats/61192-wwe-main-event-4-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61169-resultats-de-eve-157-elite-encounters-2",
    "https://www.catch-newz.com/international/newz/61178-carte-de-cmll-martes-populares-du-10-novembre-2026",
    "https://www.catch-newz.com/international/newz/61177-carte-de-cmll-martes-de-glamour-du-10-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61194-trick-williams-bat-gunther-en-dark-match-a-raw-les-fans-crient-au-scandale",
    "https://www.catch-newz.com/international/newz/61119-carte-de-invasion-indy-domingo-popular-du-8-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61191-jey-uso-veut-participer-au-john-cena-classic",
    "https://www.catch-newz.com/wwe/newz/61158-preview-wwe-raw-9-novembre-2026",
@@ -1196,14 +1200,11 @@
    "https://www.catch-newz.com/international/resultats/60908-resultats-de-akos-ddt-in-front-of-the-station-pro-wrestling",
    "https://www.catch-newz.com/international/newz/60898-carte-de-iwrg-funcion-espectacular-du-1er-novembre-2026",
    "https://www.catch-newz.com/international/resultats/60907-resultats-de-ddt-yokohama-pro-wrestling-rhapsody-2026",
-   "https://www.catch-newz.com/international/resultats/60890-resultats-de-lol-mischief-night-mayhem-5",
-   "https://www.catch-newz.com/aew/newz/60884-sheamus-je-profite-juste-de-mon-conge",
-   "https://www.catch-newz.com/international/resultats/60906-resultats-de-ddt-wrestling-harvest-2026",
-   "https://www.catch-newz.com/international/newz/60905-carte-de-last-resort-a-tribute-to-mark-wolf"
+   "https://www.catch-newz.com/international/resultats/60890-resultats-de-lol-mischief-night-mayhem-5"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
