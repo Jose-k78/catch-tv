@@ -1,14 +1,29 @@
 {
- "at": "2026-11-10T18:44:47.609Z",
+ "at": "2026-11-10T19:49:56.699Z",
  "items": [
   {
-   "t": "Le WrestleCon prêt à s'unir avec l'AEW face à WrestleMania 43",
-   "u": "https://www.catch-newz.com/international/newz/61197-le-wrestlecon-pret-a-sunir-avec-laew-face-a-wrestlemania-43",
+   "t": "Bronson Reed blessé et coincé en Arabie saoudite après WWE Crown Jewel",
+   "u": "https://www.catch-newz.com/wwe/newz/61200-bronson-reed-blesse-et-coince-en-arabie-saoudite-apres-wwe-crown-jewel",
    "s": "Catch-Newz",
    "d": "2026-11-10",
    "tags": [
-    "WWE",
-    "AEW"
+    "WWE"
+   ]
+  },
+  {
+   "t": "Le chien de Jon Moxley et Renee Paquette est décédé",
+   "u": "https://www.catch-newz.com/culture/gossip/61199-le-chien-de-jon-moxley-et-renee-paquette-est-decede",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": []
+  },
+  {
+   "t": "Le rappeur Westside Gunn fait la paix avec la WWE",
+   "u": "https://www.catch-newz.com/wwe/newz/61198-le-rappeur-westside-gunn-fait-la-paix-avec-la-wwe",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -20,13 +35,6 @@
     "WWE",
     "NXT"
    ]
-  },
-  {
-   "t": "Résultats du jour 11 de DG The Gate Of Victory 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61181-resultats-du-jour-11-de-dg-the-gate-of-victory-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": []
   },
   {
    "t": "Carte de CMLL Martes Populares du 10 novembre 2026",
@@ -46,6 +54,23 @@
     "WWE",
     "Raw"
    ]
+  },
+  {
+   "t": "Le WrestleCon prêt à s'unir avec l'AEW face à WrestleMania 43",
+   "u": "https://www.catch-newz.com/international/newz/61197-le-wrestlecon-pret-a-sunir-avec-laew-face-a-wrestlemania-43",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE",
+    "AEW"
+   ]
+  },
+  {
+   "t": "Résultats du jour 11 de DG The Gate Of Victory 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61181-resultats-du-jour-11-de-dg-the-gate-of-victory-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": []
   },
   {
    "t": "Rey Fenix lance un tournoi pour son championnat AAA Cruiserweight",
@@ -477,29 +502,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-08",
    "tags": []
-  },
-  {
-   "t": "Combien de temps va durer FinalSlam ?",
-   "u": "https://www.catch-newz.com/wwe/newz/61129-combien-de-temps-va-durer-finalslam",
-   "s": "Catch-Newz",
-   "d": "2026-11-08",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Résultats de Arena Del Valle Choque de Leyendas",
-   "u": "https://www.catch-newz.com/international/resultats/61142-resultats-de-arena-del-valle-choque-de-leyendas",
-   "s": "Catch-Newz",
-   "d": "2026-11-08",
-   "tags": []
-  },
-  {
-   "t": "Résultats de MCW Pro Wrestling Autumn Armageddon 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61140-resultats-de-mcw-pro-wrestling-autumn-armageddon-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-08",
-   "tags": []
   }
  ],
  "yt": {
@@ -904,13 +906,16 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/newz/61200-bronson-reed-blesse-et-coince-en-arabie-saoudite-apres-wwe-crown-jewel",
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61197-le-wrestlecon-pret-a-sunir-avec-laew-face-a-wrestlemania-43",
+   "https://www.catch-newz.com/culture/gossip/61199-le-chien-de-jon-moxley-et-renee-paquette-est-decede",
+   "https://www.catch-newz.com/wwe/newz/61198-le-rappeur-westside-gunn-fait-la-paix-avec-la-wwe",
    "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61193-wwe-evolve-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61192-wwe-main-event-4-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61181-resultats-du-jour-11-de-dg-the-gate-of-victory-2026",
    "https://www.catch-newz.com/international/newz/61178-carte-de-cmll-martes-populares-du-10-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61197-le-wrestlecon-pret-a-sunir-avec-laew-face-a-wrestlemania-43",
+   "https://www.catch-newz.com/international/resultats/61181-resultats-du-jour-11-de-dg-the-gate-of-victory-2026",
    "https://www.catch-newz.com/wwe/newz/61195-rey-fenix-lance-un-tournoi-pour-son-championnat-aaa-cruiserweight",
    "https://www.catch-newz.com/international/newz/61196-la-tna-annonce-le-representant-du-canada-pour-la-world-x-cup-2026",
    "https://www.catch-newz.com/international/resultats/61169-resultats-de-eve-157-elite-encounters-2",
@@ -1200,14 +1205,11 @@
    "https://www.catch-newz.com/wwe/newz/60912-grayson-waller-je-ne-vois-tout-simplement-pas-de-passion-chez-ces-gars-la",
    "https://www.catch-newz.com/international/resultats/60878-resultats-de-tjpw-there-may-be-no-answer-but-lets-wish-for-happiness",
    "https://www.catch-newz.com/wwe/newz/60911-rusev-si-penta-devient-champion-jen-serai-plus-quheureux-pour-lui-et-pour-le-milieu-en-general",
-   "https://www.catch-newz.com/wwe/newz/60910-nikki-bella-veut-faire-equipe-avec-blake-monroe-a-la-wwe",
-   "https://www.catch-newz.com/international/newz/60897-carte-de-ddt-ultimate-party-2026",
-   "https://www.catch-newz.com/international/resultats/60908-resultats-de-akos-ddt-in-front-of-the-station-pro-wrestling",
-   "https://www.catch-newz.com/international/newz/60898-carte-de-iwrg-funcion-espectacular-du-1er-novembre-2026"
+   "https://www.catch-newz.com/wwe/newz/60910-nikki-bella-veut-faire-equipe-avec-blake-monroe-a-la-wwe"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
