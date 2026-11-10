@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T09:39:34.566Z",
+ "updated": "2026-11-10T09:40:31.607Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "m:statlight kid vs suzu suzuki": [
@@ -145,6 +145,13 @@
     "u": "https://www.dailymotion.com/embed/video/x9l72yu?autoplay=1&mute=1",
     "p": "Dailymotion",
     "at": "2026-11-10"
+   },
+   {
+    "t": "",
+    "u": "https://archive.org/details/okada-vs-omega-series/2017-04+-+Dominion+-+Okada+(c)+vs+Omega.mkv",
+    "p": "archive.org",
+    "at": "2026-11-10",
+    "def": true
    }
   ],
   "m:kazuchika okada vs kenny omega": [
