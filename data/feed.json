@@ -1,6 +1,52 @@
 {
- "at": "2026-11-10T17:44:30.375Z",
+ "at": "2026-11-10T18:44:47.609Z",
  "items": [
+  {
+   "t": "Le WrestleCon prêt à s'unir avec l'AEW face à WrestleMania 43",
+   "u": "https://www.catch-newz.com/international/newz/61197-le-wrestlecon-pret-a-sunir-avec-laew-face-a-wrestlemania-43",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE",
+    "AEW"
+   ]
+  },
+  {
+   "t": "Preview : WWE NXT du 10 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
+   "t": "Résultats du jour 11 de DG The Gate Of Victory 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61181-resultats-du-jour-11-de-dg-the-gate-of-victory-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": []
+  },
+  {
+   "t": "Carte de CMLL Martes Populares du 10 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61178-carte-de-cmll-martes-populares-du-10-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "CMLL"
+   ]
+  },
+  {
+   "t": "WWE Raw du 9 novembre : Survivor Series se prépare",
+   "u": "https://www.voxcatch.fr/2026/11/10/resultats-wwe-raw-9-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
   {
    "t": "Rey Fenix lance un tournoi pour son championnat AAA Cruiserweight",
    "u": "https://www.catch-newz.com/wwe/newz/61195-rey-fenix-lance-un-tournoi-pour-son-championnat-aaa-cruiserweight",
@@ -21,30 +67,11 @@
    ]
   },
   {
-   "t": "Preview : WWE NXT du 10 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
-  },
-  {
    "t": "Résultats de EVE 157: Elite Encounters 2",
    "u": "https://www.catch-newz.com/international/resultats/61169-resultats-de-eve-157-elite-encounters-2",
    "s": "Catch-Newz",
    "d": "2026-11-10",
    "tags": []
-  },
-  {
-   "t": "Carte de CMLL Martes Populares du 10 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61178-carte-de-cmll-martes-populares-du-10-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": [
-    "CMLL"
-   ]
   },
   {
    "t": "Carte de CMLL Martes De Glamour du 10 novembre 2026",
@@ -53,16 +80,6 @@
    "d": "2026-11-10",
    "tags": [
     "CMLL"
-   ]
-  },
-  {
-   "t": "WWE Raw du 9 novembre : Survivor Series se prépare",
-   "u": "https://www.voxcatch.fr/2026/11/10/resultats-wwe-raw-9-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-10",
-   "tags": [
-    "WWE",
-    "Raw"
    ]
   },
   {
@@ -483,20 +500,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-08",
    "tags": []
-  },
-  {
-   "t": "Résultats du jour 1 de TEW Next Order Of Business 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61138-resultats-du-jour-1-de-tew-next-order-of-business-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-08",
-   "tags": []
-  },
-  {
-   "t": "Résultats de MLW Saturday Night SuperFight 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61137-resultats-de-mlw-saturday-night-superfight-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-08",
-   "tags": []
   }
  ],
  "yt": {
@@ -902,13 +905,15 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61195-rey-fenix-lance-un-tournoi-pour-son-championnat-aaa-cruiserweight",
-   "https://www.catch-newz.com/international/newz/61196-la-tna-annonce-le-representant-du-canada-pour-la-world-x-cup-2026",
+   "https://www.catch-newz.com/international/newz/61197-le-wrestlecon-pret-a-sunir-avec-laew-face-a-wrestlemania-43",
    "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61193-wwe-evolve-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61192-wwe-main-event-4-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61169-resultats-de-eve-157-elite-encounters-2",
+   "https://www.catch-newz.com/international/resultats/61181-resultats-du-jour-11-de-dg-the-gate-of-victory-2026",
    "https://www.catch-newz.com/international/newz/61178-carte-de-cmll-martes-populares-du-10-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61195-rey-fenix-lance-un-tournoi-pour-son-championnat-aaa-cruiserweight",
+   "https://www.catch-newz.com/international/newz/61196-la-tna-annonce-le-representant-du-canada-pour-la-world-x-cup-2026",
+   "https://www.catch-newz.com/international/resultats/61169-resultats-de-eve-157-elite-encounters-2",
    "https://www.catch-newz.com/international/newz/61177-carte-de-cmll-martes-de-glamour-du-10-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61194-trick-williams-bat-gunther-en-dark-match-a-raw-les-fans-crient-au-scandale",
    "https://www.catch-newz.com/international/newz/61119-carte-de-invasion-indy-domingo-popular-du-8-novembre-2026",
@@ -1198,13 +1203,11 @@
    "https://www.catch-newz.com/wwe/newz/60910-nikki-bella-veut-faire-equipe-avec-blake-monroe-a-la-wwe",
    "https://www.catch-newz.com/international/newz/60897-carte-de-ddt-ultimate-party-2026",
    "https://www.catch-newz.com/international/resultats/60908-resultats-de-akos-ddt-in-front-of-the-station-pro-wrestling",
-   "https://www.catch-newz.com/international/newz/60898-carte-de-iwrg-funcion-espectacular-du-1er-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/60907-resultats-de-ddt-yokohama-pro-wrestling-rhapsody-2026",
-   "https://www.catch-newz.com/international/resultats/60890-resultats-de-lol-mischief-night-mayhem-5"
+   "https://www.catch-newz.com/international/newz/60898-carte-de-iwrg-funcion-espectacular-du-1er-novembre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
