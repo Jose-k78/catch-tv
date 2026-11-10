@@ -67,7 +67,9 @@
    "medalOf": "Finn Bálor"
   }
  },
- "bgm": {},
+ "bgm": {
+  "bell": "media/tcg/mwao94kh.mp3"
+ },
  "custom": [
   {
    "id": "oc-tiffany-stratton-me769",
