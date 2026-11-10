@@ -1,6 +1,16 @@
 {
- "at": "2026-11-10T01:00:06.945Z",
+ "at": "2026-11-10T01:58:40.012Z",
  "items": [
+  {
+   "t": "WWE RAW : The Vision poursuivi par Oba Femi, Penta et Je'Von Evans",
+   "u": "https://www.catch-newz.com/wwe/newz/61183-wwe-raw-the-vision-poursuivi-par-oba-femi-penta-et-jevon-evans",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
   {
    "t": "Preview : AEW Dynamite du 11 novembre 2026",
    "u": "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
@@ -45,6 +55,16 @@
    "s": "Catch-Newz",
    "d": "2026-11-10",
    "tags": []
+  },
+  {
+   "t": "Résultats de WWE RAW du 9 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-09",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
   },
   {
    "t": "Preview : WWE RAW du 9 novembre 2026",
@@ -465,20 +485,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-08",
    "tags": []
-  },
-  {
-   "t": "Résultats de CCW Breakout 64: The Creepy Carnival",
-   "u": "https://www.catch-newz.com/international/resultats/61108-resultats-de-ccw-breakout-64-the-creepy-carnival",
-   "s": "Catch-Newz",
-   "d": "2026-11-08",
-   "tags": []
-  },
-  {
-   "t": "Résultats de MCW Pro Wrestling 2026 Chesapeake Beach",
-   "u": "https://www.catch-newz.com/international/resultats/61106-resultats-de-mcw-pro-wrestling-2026-chesapeake-beach",
-   "s": "Catch-Newz",
-   "d": "2026-11-08",
-   "tags": []
   }
  ],
  "yt": {
@@ -853,11 +859,13 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61183-wwe-raw-the-vision-poursuivi-par-oba-femi-penta-et-jevon-evans",
    "https://www.catch-newz.com/wwe/newz/61158-preview-wwe-raw-9-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
-   "https://www.catch-newz.com/wwe/resultats/61150-resultats-de-wwe-road-to-survivor-series-du-6-novembre-2026",
    "https://www.catch-newz.com/international/resultats/60885-resultats-de-cmll-domingo-familiar-du-8-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61170-resultats-de-iwrg-funcion-espectacular-du-8-novembre-2026",
+   "https://www.catch-newz.com/wwe/resultats/61150-resultats-de-wwe-road-to-survivor-series-du-6-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61179-resultats-de-chocopro-552",
    "https://www.catch-newz.com/international/resultats/61175-resultats-de-gnpw-gennext-bobby-jones-memorial-rumble-2026",
    "https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026",
@@ -1150,13 +1158,11 @@
    "https://www.catch-newz.com/aew/newz/60884-sheamus-je-fais-juste-profiter-de-mon-conge",
    "https://www.catch-newz.com/wwe/newz/60882-ethan-page-aura-finalement-son-match-pour-le-titre-intercontinental-a-wwe-raw",
    "https://www.catch-newz.com/aew/resultats/60860-resultats-de-cmll-viernes-espectacular-du-30-octobre-2026-dia-de-muertos-rey-del-inframundo",
-   "https://www.catch-newz.com/international/newz/60408-carte-de-njpw-power-struggle-super-junior-tag-league-2026",
-   "https://www.catch-newz.com/international/newz/60879-les-finalistes-de-la-njpw-super-junior-tag-league-2026-sont-connus",
-   "https://www.catch-newz.com/wwe/newz/60881-une-premiere-apparition-a-nxt-pour-la-francaise-zoe-hines"
+   "https://www.catch-newz.com/international/newz/60408-carte-de-njpw-power-struggle-super-junior-tag-league-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",

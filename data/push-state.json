@@ -1,5 +1,5 @@
 {
- "at": "2026-11-09T20:23:27.339Z",
+ "at": "2026-11-10T01:58:40.095Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -420,7 +420,30 @@
   "a:https://www.catch-newz.com/wwe/newz/61157-r-truth-annonce-le-triste-deces-de-son-papa": "2026-11-09",
   "a:https://www.catch-newz.com/wwe/newz/61160-comment-sera-couronne-le-gagnant-du-wwe-john-cena-classic": "2026-11-09",
   "a:https://www.catch-newz.com/wwe/newz/61159-john-cena-en-conge-apres-le-john-cena-classic": "2026-11-09",
-  "fr:2026-11-09": "2026-11-09"
+  "fr:2026-11-09": "2026-11-09",
+  "a:https://www.catch-newz.com/wwe/newz/61183-wwe-raw-the-vision-poursuivi-par-oba-femi-penta-et-jevon-evans": "2026-11-10",
+  "a:https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026": "2026-11-10"
  },
- "pend": {}
+ "pend": {
+  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "WWE RAW : The Vision poursuivi par Oba Femi, Penta et Je'Von Evans · Résultats de WWE RAW du 9 novembre 2026",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
+   }
+  ],
+  "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "WWE RAW : The Vision poursuivi par Oba Femi, Penta et Je'Von Evans · Résultats de WWE RAW du 9 novembre 2026",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
+   }
+  ]
+ }
 }
