@@ -115,6 +115,7 @@
   }
  },
  "assets": {
-  "back": "img/tcg/mwaoar8x.jpg"
+  "back": "img/tcg/mwaoar8x.jpg",
+  "booster": "img/tcg/mwb10ljw.jpg"
  }
 }
