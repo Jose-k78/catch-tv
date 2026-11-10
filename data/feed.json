@@ -1,6 +1,24 @@
 {
- "at": "2026-11-10T14:53:16.226Z",
+ "at": "2026-11-10T15:44:39.723Z",
  "items": [
+  {
+   "t": "Jey Uso veut participer au John Cena Classic",
+   "u": "https://www.catch-newz.com/wwe/newz/61191-jey-uso-veut-participer-au-john-cena-classic",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Carte de CMLL Martes Populares du 10 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61178-carte-de-cmll-martes-populares-du-10-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "CMLL"
+   ]
+  },
   {
    "t": "Carte de CMLL Martes De Glamour du 10 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61177-carte-de-cmll-martes-de-glamour-du-10-novembre-2026",
@@ -477,22 +495,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Zilla Fatu dévoile un cadeau de John Cena pour la compétition Classic",
-   "u": "https://www.catch-newz.com/wwe/newz/61132-zilla-fatu-devoile-un-cadeau-de-john-cena-pour-la-competition-classic",
-   "s": "Catch-Newz",
-   "d": "2026-11-08",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Les françaises JGU et Cory Zero contraintes de rendre leurs titres par équipe d'EVE",
-   "u": "https://www.catch-newz.com/international/newz/61133-les-francaises-jgu-et-cory-zero-contraintes-de-rendre-leurs-titres-par-equipe-deve",
-   "s": "Catch-Newz",
-   "d": "2026-11-08",
-   "tags": []
   }
  ],
  "yt": {
@@ -898,7 +900,9 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61191-jey-uso-veut-participer-au-john-cena-classic",
    "https://www.catch-newz.com/wwe/newz/61158-preview-wwe-raw-9-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61178-carte-de-cmll-martes-populares-du-10-novembre-2026",
    "https://www.catch-newz.com/international/newz/61177-carte-de-cmll-martes-de-glamour-du-10-novembre-2026",
    "https://www.catch-newz.com/international/newz/61119-carte-de-invasion-indy-domingo-popular-du-8-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61182-resultats-de-eve-156-eve-for-vendetta",
@@ -1194,13 +1198,11 @@
    "https://www.catch-newz.com/international/newz/60905-carte-de-last-resort-a-tribute-to-mark-wolf",
    "https://www.catch-newz.com/international/newz/60903-carte-de-isdub-gremlins-is-a-christmas-movie",
    "https://www.catch-newz.com/international/newz/60902-carte-de-sup-fear-trembling",
-   "https://www.catch-newz.com/wwe/newz/60899-quel-est-le-titre-mondial-prefere-de-damian-priest",
-   "https://www.catch-newz.com/international/resultats/60894-resultats-de-new-texas-pro-wrestling-8-year-anniversary",
-   "https://www.catch-newz.com/international/newz/60896-carte-de-indy-wrestling-domingos-familiares-noche-de-muertos"
+   "https://www.catch-newz.com/wwe/newz/60899-quel-est-le-titre-mondial-prefere-de-damian-priest"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
