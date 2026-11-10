@@ -1,6 +1,17 @@
 {
- "at": "2026-11-10T10:26:50.052Z",
+ "at": "2026-11-10T11:20:15.476Z",
  "items": [
+  {
+   "t": "Andrade El Idolo accuse Ethan Page d’avoir copié son entrée d'All In à WWE RAW",
+   "u": "https://www.catch-newz.com/wwe/newz/61190-andrade-el-idolo-accuse-ethan-page-davoir-copie-son-entree-dall-in-a-wwe-raw",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE",
+    "AEW",
+    "Raw"
+   ]
+  },
   {
    "t": "WWE Raw du 9 novembre : Survivor Series se prépare",
    "u": "https://www.voxcatch.fr/2026/11/10/resultats-wwe-raw-9-novembre-2026/",
@@ -486,15 +497,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Combien de billets vendus pour FinalSlam ?",
-   "u": "https://www.catch-newz.com/wwe/newz/61126-combien-de-billets-vendus-pour-finalslam",
-   "s": "Catch-Newz",
-   "d": "2026-11-08",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -900,6 +902,7 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61190-andrade-el-idolo-accuse-ethan-page-davoir-copie-son-entree-dall-in-a-wwe-raw",
    "https://www.catch-newz.com/wwe/newz/61158-preview-wwe-raw-9-novembre-2026",
    "https://www.catch-newz.com/international/newz/61119-carte-de-invasion-indy-domingo-popular-du-8-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61174-resultats-de-gnpw-never-say-die-2026",
@@ -1197,12 +1200,11 @@
    "https://www.catch-newz.com/international/newz/60896-carte-de-indy-wrestling-domingos-familiares-noche-de-muertos",
    "https://www.catch-newz.com/international/newz/60889-carte-de-cmll-domingo-familiar-du-1er-novembre-2026-tzompantli-de-mascaras",
    "https://www.catch-newz.com/wwe/newz/60895-tony-dangelo-je-veux-integrer-le-roster-principal",
-   "https://www.catch-newz.com/aew/resultats/60852-aew-collision-31-octobre-2026",
-   "https://www.catch-newz.com/wwe/resultats/60855-resultats-et-streaming-aaa-heroes-inmortales-31-octobre-2026"
+   "https://www.catch-newz.com/aew/resultats/60852-aew-collision-31-octobre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 3 nouveaux articles lus sur la page d'accueil (3 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
