@@ -1,6 +1,23 @@
 {
- "at": "2026-11-10T08:11:22.240Z",
+ "at": "2026-11-10T09:22:28.961Z",
  "items": [
+  {
+   "t": "Résultats de GNPW Never Say Die 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61174-resultats-de-gnpw-never-say-die-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": []
+  },
+  {
+   "t": "WWE Raw du 9 novembre : Survivor Series se prépare",
+   "u": "https://www.voxcatch.fr/2026/11/10/resultats-wwe-raw-9-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
   {
    "t": "Paramount+ et HBO Max vont bien fusionner",
    "u": "https://www.catch-newz.com/aew/newz/61189-paramount-et-hbo-max-vont-bien-fusionner",
@@ -334,6 +351,13 @@
    "tags": []
   },
   {
+   "t": "Carte de Invasion Indy Domingo Popular du 8 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61119-carte-de-invasion-indy-domingo-popular-du-8-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-08",
+   "tags": []
+  },
+  {
    "t": "Résultats de CMLL Domingo Familiar du 8 novembre 2026",
    "u": "https://www.catch-newz.com/international/resultats/60885-resultats-de-cmll-domingo-familiar-du-8-novembre-2026",
    "s": "Catch-Newz",
@@ -470,32 +494,6 @@
    "d": "2026-11-08",
    "tags": [
     "WWE"
-   ]
-  },
-  {
-   "t": "Résultats de Dominion Wrestling Hail To The King 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61100-resultats-de-dominion-wrestling-hail-to-the-king-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-08",
-   "tags": [
-    "NJPW"
-   ]
-  },
-  {
-   "t": "Résultats de Dradition Tastumi Fujinami 55th Celebration Dragon Expo 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61097-resultats-de-dradition-tastumi-fujinami-55th-celebration-dragon-expo-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-08",
-   "tags": []
-  },
-  {
-   "t": "Tommaso Ciampa remporte le championnat National à AEW Collision du bateau",
-   "u": "https://www.catch-newz.com/aew/newz/61125-tommaso-ciampa-remporte-le-championnat-national-a-aew-collision-du-bateau",
-   "s": "Catch-Newz",
-   "d": "2026-11-08",
-   "tags": [
-    "AEW",
-    "Collision"
    ]
   }
  ],
@@ -902,8 +900,10 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
-   "https://www.catch-newz.com/aew/newz/61189-paramount-et-hbo-max-vont-bien-fusionner",
    "https://www.catch-newz.com/wwe/newz/61158-preview-wwe-raw-9-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61119-carte-de-invasion-indy-domingo-popular-du-8-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61174-resultats-de-gnpw-never-say-die-2026",
+   "https://www.catch-newz.com/aew/newz/61189-paramount-et-hbo-max-vont-bien-fusionner",
    "https://www.catch-newz.com/international/resultats/60885-resultats-de-cmll-domingo-familiar-du-8-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61173-resultats-de-heathen-combat-famous-last-words",
    "https://www.catch-newz.com/international/resultats/61166-resultats-de-rcw-no-one-will-survive-2026",
@@ -1198,14 +1198,12 @@
    "https://www.catch-newz.com/international/newz/60889-carte-de-cmll-domingo-familiar-du-1er-novembre-2026-tzompantli-de-mascaras",
    "https://www.catch-newz.com/wwe/newz/60895-tony-dangelo-je-veux-integrer-le-roster-principal",
    "https://www.catch-newz.com/aew/resultats/60852-aew-collision-31-octobre-2026",
-   "https://www.catch-newz.com/wwe/resultats/60855-resultats-et-streaming-aaa-heroes-inmortales-31-octobre-2026",
-   "https://www.catch-newz.com/international/resultats/60888-resultats-de-cmll-sabado-de-coliseo-du-31-octobre-2026-dia-de-muertos",
-   "https://www.catch-newz.com/international/resultats/60883-resultats-de-lucha-libre-cabaret-du-31-octobre-2026"
+   "https://www.catch-newz.com/wwe/resultats/60855-resultats-et-streaming-aaa-heroes-inmortales-31-octobre-2026"
   ]
  },
  "diag": {
   "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
-  "VOXcatch": "5 articles (7 j)",
+  "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
