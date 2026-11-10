@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T00:30:04.697Z",
+ "updated": "2026-11-10T00:32:52.123Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "m:statlight kid vs suzu suzuki": [
@@ -110,6 +110,12 @@
    {
     "t": "Wrestle Kingdom 11",
     "u": "https://archive.org/embed/njpw-wrestle-kingdom-11-1080p-eng-2017\" width=\"560\" height=\"384\" frameborder=\"0\" webkitallowfullscreen=\"true\" mozallowfullscreen=",
+    "p": "archive.org",
+    "at": "2026-11-10"
+   },
+   {
+    "t": "Wrestle Kingdom 11",
+    "u": "https://archive.org/embed/njpw-wrestle-kingdom-11-1080p-eng-2017?autoplay=1",
     "p": "archive.org",
     "at": "2026-11-10",
     "def": true
