@@ -1,31 +1,6 @@
 {
- "at": "2026-11-10T19:49:56.699Z",
+ "at": "2026-11-10T20:41:39.016Z",
  "items": [
-  {
-   "t": "Bronson Reed blessé et coincé en Arabie saoudite après WWE Crown Jewel",
-   "u": "https://www.catch-newz.com/wwe/newz/61200-bronson-reed-blesse-et-coince-en-arabie-saoudite-apres-wwe-crown-jewel",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Le chien de Jon Moxley et Renee Paquette est décédé",
-   "u": "https://www.catch-newz.com/culture/gossip/61199-le-chien-de-jon-moxley-et-renee-paquette-est-decede",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": []
-  },
-  {
-   "t": "Le rappeur Westside Gunn fait la paix avec la WWE",
-   "u": "https://www.catch-newz.com/wwe/newz/61198-le-rappeur-westside-gunn-fait-la-paix-avec-la-wwe",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": [
-    "WWE"
-   ]
-  },
   {
    "t": "Preview : WWE NXT du 10 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
@@ -53,6 +28,31 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Bronson Reed blessé et coincé en Arabie saoudite après WWE Crown Jewel",
+   "u": "https://www.catch-newz.com/wwe/newz/61200-bronson-reed-blesse-et-coince-en-arabie-saoudite-apres-wwe-crown-jewel",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Le chien de Jon Moxley et Renee Paquette est décédé",
+   "u": "https://www.catch-newz.com/culture/gossip/61199-le-chien-de-jon-moxley-et-renee-paquette-est-decede",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": []
+  },
+  {
+   "t": "Le rappeur Westside Gunn fait la paix avec la WWE",
+   "u": "https://www.catch-newz.com/wwe/newz/61198-le-rappeur-westside-gunn-fait-la-paix-avec-la-wwe",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -906,14 +906,14 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/wwe/newz/61200-bronson-reed-blesse-et-coince-en-arabie-saoudite-apres-wwe-crown-jewel",
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
-   "https://www.catch-newz.com/culture/gossip/61199-le-chien-de-jon-moxley-et-renee-paquette-est-decede",
-   "https://www.catch-newz.com/wwe/newz/61198-le-rappeur-westside-gunn-fait-la-paix-avec-la-wwe",
    "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61193-wwe-evolve-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61192-wwe-main-event-4-novembre-2026",
    "https://www.catch-newz.com/international/newz/61178-carte-de-cmll-martes-populares-du-10-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61200-bronson-reed-blesse-et-coince-en-arabie-saoudite-apres-wwe-crown-jewel",
+   "https://www.catch-newz.com/culture/gossip/61199-le-chien-de-jon-moxley-et-renee-paquette-est-decede",
+   "https://www.catch-newz.com/wwe/newz/61198-le-rappeur-westside-gunn-fait-la-paix-avec-la-wwe",
    "https://www.catch-newz.com/international/newz/61197-le-wrestlecon-pret-a-sunir-avec-laew-face-a-wrestlemania-43",
    "https://www.catch-newz.com/international/resultats/61181-resultats-du-jour-11-de-dg-the-gate-of-victory-2026",
    "https://www.catch-newz.com/wwe/newz/61195-rey-fenix-lance-un-tournoi-pour-son-championnat-aaa-cruiserweight",
@@ -1209,7 +1209,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
