@@ -1,6 +1,16 @@
 {
- "at": "2026-11-10T11:20:15.476Z",
+ "at": "2026-11-10T12:20:54.679Z",
  "items": [
+  {
+   "t": "WWE Raw du 9 novembre : Survivor Series se prépare",
+   "u": "https://www.voxcatch.fr/2026/11/10/resultats-wwe-raw-9-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
   {
    "t": "Andrade El Idolo accuse Ethan Page d’avoir copié son entrée d'All In à WWE RAW",
    "u": "https://www.catch-newz.com/wwe/newz/61190-andrade-el-idolo-accuse-ethan-page-davoir-copie-son-entree-dall-in-a-wwe-raw",
@@ -9,16 +19,6 @@
    "tags": [
     "WWE",
     "AEW",
-    "Raw"
-   ]
-  },
-  {
-   "t": "WWE Raw du 9 novembre : Survivor Series se prépare",
-   "u": "https://www.voxcatch.fr/2026/11/10/resultats-wwe-raw-9-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-10",
-   "tags": [
-    "WWE",
     "Raw"
    ]
   },
@@ -902,9 +902,9 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61190-andrade-el-idolo-accuse-ethan-page-davoir-copie-son-entree-dall-in-a-wwe-raw",
    "https://www.catch-newz.com/wwe/newz/61158-preview-wwe-raw-9-novembre-2026",
    "https://www.catch-newz.com/international/newz/61119-carte-de-invasion-indy-domingo-popular-du-8-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61190-andrade-el-idolo-accuse-ethan-page-davoir-copie-son-entree-dall-in-a-wwe-raw",
    "https://www.catch-newz.com/international/resultats/61174-resultats-de-gnpw-never-say-die-2026",
    "https://www.catch-newz.com/aew/newz/61189-paramount-et-hbo-max-vont-bien-fusionner",
    "https://www.catch-newz.com/international/resultats/60885-resultats-de-cmll-domingo-familiar-du-8-novembre-2026",
@@ -1204,7 +1204,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 3 nouveaux articles lus sur la page d'accueil (3 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
