@@ -1,13 +1,24 @@
 {
- "at": "2026-11-10T15:44:39.723Z",
+ "at": "2026-11-10T16:47:55.640Z",
  "items": [
   {
-   "t": "Jey Uso veut participer au John Cena Classic",
-   "u": "https://www.catch-newz.com/wwe/newz/61191-jey-uso-veut-participer-au-john-cena-classic",
+   "t": "Preview : WWE NXT du 10 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
    "s": "Catch-Newz",
    "d": "2026-11-10",
    "tags": [
-    "WWE"
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
+   "t": "Trick Williams bat Gunther en Dark Match à RAW, les fans crient au scandale",
+   "u": "https://www.catch-newz.com/wwe/newz/61194-trick-williams-bat-gunther-en-dark-match-a-raw-les-fans-crient-au-scandale",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE",
+    "Raw"
    ]
   },
   {
@@ -36,6 +47,15 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Jey Uso veut participer au John Cena Classic",
+   "u": "https://www.catch-newz.com/wwe/newz/61191-jey-uso-veut-participer-au-john-cena-classic",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -216,16 +236,6 @@
    "tags": [
     "WWE",
     "Raw"
-   ]
-  },
-  {
-   "t": "Preview : WWE NXT du 10 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": [
-    "WWE",
-    "NXT"
    ]
   },
   {
@@ -481,15 +491,6 @@
   {
    "t": "Randy Orton promet de revenir après WWE Crown Jewel 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61134-randy-orton-promet-de-revenir-apres-wwe-crown-jewel-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-08",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Les catcheurs auront besoin de jetons pour le John Cena Classic",
-   "u": "https://www.catch-newz.com/wwe/newz/61131-les-catcheurs-auront-besoin-de-jetons-pour-le-john-cena-classic",
    "s": "Catch-Newz",
    "d": "2026-11-08",
    "tags": [
@@ -900,11 +901,15 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61191-jey-uso-veut-participer-au-john-cena-classic",
-   "https://www.catch-newz.com/wwe/newz/61158-preview-wwe-raw-9-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
+   "https://www.catch-newz.com/wwe/resultats/61193-wwe-evolve-4-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61194-trick-williams-bat-gunther-en-dark-match-a-raw-les-fans-crient-au-scandale",
+   "https://www.catch-newz.com/wwe/resultats/61192-wwe-main-event-4-novembre-2026",
    "https://www.catch-newz.com/international/newz/61178-carte-de-cmll-martes-populares-du-10-novembre-2026",
    "https://www.catch-newz.com/international/newz/61177-carte-de-cmll-martes-de-glamour-du-10-novembre-2026",
    "https://www.catch-newz.com/international/newz/61119-carte-de-invasion-indy-domingo-popular-du-8-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61191-jey-uso-veut-participer-au-john-cena-classic",
+   "https://www.catch-newz.com/wwe/newz/61158-preview-wwe-raw-9-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61182-resultats-de-eve-156-eve-for-vendetta",
    "https://www.catch-newz.com/international/resultats/61180-resultats-du-jour-10-de-dg-the-gate-of-victory-2026",
    "https://www.catch-newz.com/wwe/newz/61190-andrade-el-idolo-accuse-ethan-page-davoir-copie-son-entree-dall-in-a-wwe-raw",
@@ -929,7 +934,6 @@
    "https://www.catch-newz.com/international/newz/61129-combien-de-temps-va-durer-finalslam",
    "https://www.catch-newz.com/international/newz/61172-carte-de-beyond-wrestling-open-ri-75",
    "https://www.catch-newz.com/international/resultats/61167-resultats-de-invasion-indy-domingo-popular-du-1er-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/international/newz/61164-amine-promet-un-show-dexception-malgre-les-critiques-sur-son-organisation-de-final-slam",
    "https://www.catch-newz.com/international/newz/61161-en-direct-conference-de-presse-de-final-slam-du-9-novembre",
    "https://www.catch-newz.com/wwe/newz/61160-comment-sera-couronne-le-gagnant-du-wwe-john-cena-classic",
@@ -1195,14 +1199,11 @@
    "https://www.catch-newz.com/international/resultats/60890-resultats-de-lol-mischief-night-mayhem-5",
    "https://www.catch-newz.com/aew/newz/60884-sheamus-je-profite-juste-de-mon-conge",
    "https://www.catch-newz.com/international/resultats/60906-resultats-de-ddt-wrestling-harvest-2026",
-   "https://www.catch-newz.com/international/newz/60905-carte-de-last-resort-a-tribute-to-mark-wolf",
-   "https://www.catch-newz.com/international/newz/60903-carte-de-isdub-gremlins-is-a-christmas-movie",
-   "https://www.catch-newz.com/international/newz/60902-carte-de-sup-fear-trembling",
-   "https://www.catch-newz.com/wwe/newz/60899-quel-est-le-titre-mondial-prefere-de-damian-priest"
+   "https://www.catch-newz.com/international/newz/60905-carte-de-last-resort-a-tribute-to-mark-wolf"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
