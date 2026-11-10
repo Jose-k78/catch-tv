@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T01:40:58.924Z",
+ "updated": "2026-11-10T01:51:13.892Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "m:statlight kid vs suzu suzuki": [
@@ -145,15 +145,6 @@
     "u": "https://www.dailymotion.com/embed/video/x9l72yu?autoplay=1&mute=1",
     "p": "Dailymotion",
     "at": "2026-11-10"
-   }
-  ],
-  "m:kazuchika okada vs kenny omega": [
-   {
-    "t": "Kazuchika Okada vs Kenny Omega (NJPW Dominion 6.11 In Osaka-",
-    "u": "https://player.bilibili.com/player.html?bvid=BV1AZrwB2E7v&autoplay=1",
-    "p": "Lecteur intégré",
-    "at": "2026-11-10",
-    "def": true
    }
   ]
  }
