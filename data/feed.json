@@ -1,6 +1,13 @@
 {
- "at": "2026-11-10T04:49:30.955Z",
+ "at": "2026-11-10T05:50:11.553Z",
  "items": [
+  {
+   "t": "Résultats de RCW No One Will Survive 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61166-resultats-de-rcw-no-one-will-survive-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": []
+  },
   {
    "t": "WWE RAW : La Bloodline contre 946 pour les Survivor Series WarGames, c'est officiel !",
    "u": "https://www.catch-newz.com/wwe/newz/61185-wwe-raw-la-bloodline-contre-946-pour-les-survivor-series-wargames-cest-officiel",
@@ -493,13 +500,6 @@
    "tags": [
     "AEW"
    ]
-  },
-  {
-   "t": "Carte de TJPW ALL RISE 2026",
-   "u": "https://www.catch-newz.com/international/newz/61120-carte-de-tjpw-all-rise-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-08",
-   "tags": []
   }
  ],
  "yt": {
@@ -863,6 +863,36 @@
     "id": "04Nx7AMe2iQ",
     "t": "FTR contre MCMG"
    }
+  ],
+  "WWE|Raw|2026-11-09": [
+   {
+    "id": "8hP6V0Sl_gs",
+    "t": "The Bloodline challenge The 946 to WarGames: Raw highlights, Nov. 9, 2026"
+   },
+   {
+    "id": "Z_YgnZSx_zo",
+    "t": "Je’Von Evans joins Team USA: Raw highlights, Nov. 9, 2026"
+   },
+   {
+    "id": "SUlj7G6OgJM",
+    "t": "Becky Lynch challenges Liv Morgan for Women’s World Title: Raw highlights, Nov. 9, 2026"
+   },
+   {
+    "id": "T1P_v8MZO04",
+    "t": "Fatal Influence, Jade Cargill and company combine forces: Raw highlights, Nov. 9, 2026"
+   },
+   {
+    "id": "X1FYnEHTFJQ",
+    "t": "Bayley takes down Michin: Raw highlights, Nov. 9, 2026"
+   },
+   {
+    "id": "Vi4yfh06Bcs",
+    "t": "Penta joins Rey Mysterio on Team Mexico: Raw highlights, Nov. 9, 2026"
+   },
+   {
+    "id": "Bay3Ww0ZMBE",
+    "t": "CM Punk joins Cody Rhodes on Team USA: Raw highlights, Nov. 9, 2026"
+   }
   ]
  },
  "rss": {
@@ -876,6 +906,7 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61158-preview-wwe-raw-9-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61166-resultats-de-rcw-no-one-will-survive-2026",
    "https://www.catch-newz.com/international/resultats/60885-resultats-de-cmll-domingo-familiar-du-8-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61170-resultats-de-iwrg-funcion-espectacular-du-8-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61185-wwe-raw-la-bloodline-contre-946-pour-les-survivor-series-wargames-cest-officiel",
@@ -1172,15 +1203,14 @@
    "https://www.catch-newz.com/international/resultats/60888-resultats-de-cmll-sabado-de-coliseo-du-31-octobre-2026-dia-de-muertos",
    "https://www.catch-newz.com/international/resultats/60883-resultats-de-lucha-libre-cabaret-du-31-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/60892-le-match-entre-chelsea-green-et-nikki-bella-obtient-une-note-catastrophique-sur-cagematch",
-   "https://www.catch-newz.com/aew/newz/60886-un-premier-match-de-championnat-sannonce-pour-aew-collision-du-bateau",
-   "https://www.catch-newz.com/international/newz/60891-carte-de-mayhem-on-mills-halloween-horror-fights-7-dig-up-their-bones"
+   "https://www.catch-newz.com/aew/newz/60886-un-premier-match-de-championnat-sannonce-pour-aew-collision-du-bateau"
   ]
  },
  "diag": {
   "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
-  "YouTube WWE": "0 nouvelles vidéos",
+  "YouTube WWE": "7 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
