@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T01:29:44.745Z",
+ "updated": "2026-11-10T01:36:00.116Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "m:statlight kid vs suzu suzuki": [
@@ -137,6 +137,14 @@
     "p": "archive.org",
     "at": "2026-11-10",
     "def": true
+   }
+  ],
+  "ref:Kazuchika Okada contre Kenny Omega — 2 tombés sur 3|Dominion, 2018": [
+   {
+    "t": "",
+    "u": "https://www.dailymotion.com/embed/video/x9l72yu?autoplay=1&mute=1",
+    "p": "Dailymotion",
+    "at": "2026-11-10"
    }
   ]
  }
