@@ -1,9 +1,19 @@
 {
- "at": "2026-11-10T01:58:40.012Z",
+ "at": "2026-11-10T02:45:59.626Z",
  "items": [
   {
-   "t": "WWE RAW : The Vision poursuivi par Oba Femi, Penta et Je'Von Evans",
-   "u": "https://www.catch-newz.com/wwe/newz/61183-wwe-raw-the-vision-poursuivi-par-oba-femi-penta-et-jevon-evans",
+   "t": "WWE RAW : CM Punk intègre la team USA aux côtés de Cody Rhodes",
+   "u": "https://www.catch-newz.com/wwe/newz/61186-wwe-raw-cm-punk-integre-la-team-usa-aux-cotes-de-cody-rhodes",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
+  {
+   "t": "WWE RAW : Rey Fenix devient le nouveau challenger n°1 au titre Intercontinental d'Ethan Page",
+   "u": "https://www.catch-newz.com/wwe/newz/61184-wwe-raw-rey-fenix-devient-le-nouveau-challenger-n-1-au-titre-intercontinental-dethan-page",
    "s": "Catch-Newz",
    "d": "2026-11-10",
    "tags": [
@@ -19,6 +29,16 @@
    "tags": [
     "AEW",
     "Dynamite"
+   ]
+  },
+  {
+   "t": "WWE RAW : The Vision poursuivi par Oba Femi, Penta et Je'Von Evans",
+   "u": "https://www.catch-newz.com/wwe/newz/61183-wwe-raw-the-vision-poursuivi-par-oba-femi-penta-et-jevon-evans",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE",
+    "Raw"
    ]
   },
   {
@@ -471,20 +491,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-08",
    "tags": []
-  },
-  {
-   "t": "Carte de CCW Bash At The Brew 70",
-   "u": "https://www.catch-newz.com/international/newz/61107-carte-de-ccw-bash-at-the-brew-70",
-   "s": "Catch-Newz",
-   "d": "2026-11-08",
-   "tags": []
-  },
-  {
-   "t": "Résultats de New Texas Pro Wrestling Texas Contenders Series 70",
-   "u": "https://www.catch-newz.com/international/resultats/61110-resultats-de-new-texas-pro-wrestling-texas-contenders-series-70",
-   "s": "Catch-Newz",
-   "d": "2026-11-08",
-   "tags": []
   }
  ],
  "yt": {
@@ -860,11 +866,13 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61183-wwe-raw-the-vision-poursuivi-par-oba-femi-penta-et-jevon-evans",
+   "https://www.catch-newz.com/wwe/newz/61186-wwe-raw-cm-punk-integre-la-team-usa-aux-cotes-de-cody-rhodes",
+   "https://www.catch-newz.com/wwe/newz/61184-wwe-raw-rey-fenix-devient-le-nouveau-challenger-n-1-au-titre-intercontinental-dethan-page",
    "https://www.catch-newz.com/wwe/newz/61158-preview-wwe-raw-9-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/international/resultats/60885-resultats-de-cmll-domingo-familiar-du-8-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61170-resultats-de-iwrg-funcion-espectacular-du-8-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61183-wwe-raw-the-vision-poursuivi-par-oba-femi-penta-et-jevon-evans",
    "https://www.catch-newz.com/wwe/resultats/61150-resultats-de-wwe-road-to-survivor-series-du-6-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61179-resultats-de-chocopro-552",
    "https://www.catch-newz.com/international/resultats/61175-resultats-de-gnpw-gennext-bobby-jones-memorial-rumble-2026",
@@ -1156,13 +1164,11 @@
    "https://www.catch-newz.com/international/newz/60891-carte-de-mayhem-on-mills-halloween-horror-fights-7-dig-up-their-bones",
    "https://www.catch-newz.com/international/newz/60887-les-stars-de-the-final-slam-devoilent-leurs-catcheurs-preferes",
    "https://www.catch-newz.com/aew/newz/60884-sheamus-je-fais-juste-profiter-de-mon-conge",
-   "https://www.catch-newz.com/wwe/newz/60882-ethan-page-aura-finalement-son-match-pour-le-titre-intercontinental-a-wwe-raw",
-   "https://www.catch-newz.com/aew/resultats/60860-resultats-de-cmll-viernes-espectacular-du-30-octobre-2026-dia-de-muertos-rey-del-inframundo",
-   "https://www.catch-newz.com/international/newz/60408-carte-de-njpw-power-struggle-super-junior-tag-league-2026"
+   "https://www.catch-newz.com/wwe/newz/60882-ethan-page-aura-finalement-son-match-pour-le-titre-intercontinental-a-wwe-raw"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",

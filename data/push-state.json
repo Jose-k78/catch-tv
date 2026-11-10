@@ -1,5 +1,5 @@
 {
- "at": "2026-11-10T01:58:40.095Z",
+ "at": "2026-11-10T02:45:59.685Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -422,7 +422,9 @@
   "a:https://www.catch-newz.com/wwe/newz/61159-john-cena-en-conge-apres-le-john-cena-classic": "2026-11-09",
   "fr:2026-11-09": "2026-11-09",
   "a:https://www.catch-newz.com/wwe/newz/61183-wwe-raw-the-vision-poursuivi-par-oba-femi-penta-et-jevon-evans": "2026-11-10",
-  "a:https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026": "2026-11-10"
+  "a:https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026": "2026-11-10",
+  "a:https://www.catch-newz.com/wwe/newz/61186-wwe-raw-cm-punk-integre-la-team-usa-aux-cotes-de-cody-rhodes": "2026-11-10",
+  "a:https://www.catch-newz.com/wwe/newz/61184-wwe-raw-rey-fenix-devient-le-nouveau-challenger-n-1-au-titre-intercontinental-dethan-page": "2026-11-10"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -433,6 +435,14 @@
     "url": "#/",
     "tag": "art",
     "short": "2 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "WWE RAW : CM Punk intègre la team USA aux côtés de Cody Rhodes · WWE RAW : Rey Fenix devient le nouveau challenger n°1 au titre Intercontinental d'Ethan Page",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -440,6 +450,14 @@
     "cat": "info",
     "title": "📰 2 nouvelles infos",
     "body": "WWE RAW : The Vision poursuivi par Oba Femi, Penta et Je'Von Evans · Résultats de WWE RAW du 9 novembre 2026",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "WWE RAW : CM Punk intègre la team USA aux côtés de Cody Rhodes · WWE RAW : Rey Fenix devient le nouveau challenger n°1 au titre Intercontinental d'Ethan Page",
     "url": "#/",
     "tag": "art",
     "short": "2 nouvelles infos"
