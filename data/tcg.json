@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08",
+ "updated": "2026-11-10",
  "note": "Réglages TCCCG du modo (cartes, persos, taux, objets, boosters, combats, musiques, assets). Modifié depuis l’app (⚙️ Modo TCCCG).",
  "cards": {
   "ace-austin": {
@@ -67,9 +67,7 @@
    "medalOf": "Finn Bálor"
   }
  },
- "bgm": {
-  "bell": "media/tcg/mw64c3jq.mp3"
- },
+ "bgm": {},
  "custom": [
   {
    "id": "oc-tiffany-stratton-me769",
