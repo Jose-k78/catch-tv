@@ -1,5 +1,5 @@
 // Accueil, pages promotion et pages show
-import { S, B, ACT, imageFor, changed } from "../state.js";
+import { S, B, ACT, imageFor, changed, prof } from "../state.js";
 import { fmtR, esc, cssUrl, okHttp, okDay, fmt, diff, cd, nextWeekday, today, dt, ymd, ICON, stars, docId, MOIS, modal, toast, shAttr } from "../util.js";
 import { resolveImage } from "../images.js";
 import { PARIS, startOf, endOf, isLive, whenParts, fmtAt, hourAt, cityOf, downloadIcs, parisDay } from "../time.js";
@@ -489,6 +489,7 @@ ACT.segfav = async el => {
     changed("history");
   } catch (err) { toast("Impossible pour l’instant"); }
 };
+const RATES = {};
 function pastPage(e, lk, seen, r, hl) {
   const key = e.k + "|" + (e.show || "PLE") + "|" + e.d, lkey = evKey(e);
   const vids = allVideos().filter(v => v.k === e.k && (v.show || "PLE") === (e.show || "PLE") && v.d === e.d);
@@ -500,9 +501,14 @@ function pastPage(e, lk, seen, r, hl) {
   else h += '<section class="evpage feature mini' + (lk.poster ? " poster" : "") + '" style="' + esc(lk.style) + '">' + logoImg(e, "bigl sq") + "</section>";
   h += '<section class="pmeta"><span class="eyebrow">' + esc(e.kind === "ple" ? bigWord(e.k) + " · " + e.k : e.k + " · " + (e.show || "")) + "</span><h1>" + esc(e.t) + "</h1><small>" + fmt(e.d) + " " + e.d.slice(0, 4) + (e.v ? " · " + esc(e.v) : "") + "</small></section>";
   // 2. la note du show
-  const notes = (S.activity || []).filter(a => a && a.kind === "rate" && a.k === e.k && (a.show || "") === (e.show || "") && a.d === e.d && a.rating), avg = notes.length ? notes.reduce((x, a) => x + a.rating, 0) / notes.length : 0;
+  // notes de tous les membres pour ce show (chargées une fois), en plus de l'activité récente
+  const rk = e.k + "|" + e.d; RATES[rk] = RATES[rk] || { list: null };
+  if (!RATES[rk].list && !RATES[rk].busy && B.showRates) { RATES[rk].busy = 1; B.showRates(e.k, e.d).then(L => { RATES[rk] = { list: L || [], at: Date.now() }; changed("activity"); }).catch(() => { RATES[rk] = { list: [] }; }); }
+  const byU = {}; (RATES[rk].list || []).concat(S.activity || []).forEach(a => { if (a && a.kind === "rate" && a.k === e.k && (a.show || "") === (e.show || "") && a.d === e.d && a.rating) byU[a.uid] = a; });
+  const notes = Object.keys(byU).map(u => byU[u]), avg = notes.length ? notes.reduce((x, a) => x + a.rating, 0) / notes.length : 0;
   h += '<div class="shownote"><div><b>Note du show</b>' + (avg ? stars(avg) + "<small>" + fmtR(avg) + " / 5,5 · " + notes.length + " note" + (notes.length > 1 ? "s" : "") + " de membres</small>" : "<small>Pas encore de note de membre</small>") + "</div>" +
     '<button class="btn small' + (seen ? " on" : "") + '" data-act="seen"' + dataItem(e) + ">" + (seen ? (seen.rating ? "Ta note " + stars(seen.rating) : ICON.check + " Vu") : "⭐ Noter le show") + "</button></div>";
+  if (notes.length) h += '<div class="rnotes">' + notes.sort((a, b) => b.rating - a.rating).map(a => { const p = prof(a.uid) || {}; return '<a class="rnote" href="#/profil/' + encodeURIComponent(a.uid) + '"><b>' + esc(p.pseudo || "Membre") + "</b>" + stars(a.rating) + "<small>" + fmtR(a.rating) + "</small>" + (a.comment && !/^\[HL\]/.test(a.comment) ? "<i>" + esc(String(a.comment).slice(0, 140)) + "</i>" : "") + "</a>"; }).join("") + "</div>";
   // 3. vidéos liées
   const q = e.t + " " + e.d.slice(0, 4);
   h += "<h2>Vidéos du show</h2>" + (vids.length ? '<div class="prow">' + vids.map(playerThumb).join("") + "</div>" : '<p class="note small">Pas encore de vidéo officielle dans l’app.</p>') +

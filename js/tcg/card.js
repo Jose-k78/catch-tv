@@ -25,6 +25,8 @@ if (typeof document !== "undefined") document.addEventListener("load", e => {
   const c = im.closest(".tc3"), v = arStyle(a); if (!c) return;
   c.classList.toggle("ar", !!v); if (v) c.style.setProperty("--ar", v.toFixed(3)); else c.style.removeProperty("--ar");
 }, true);
+// image d'une carte selon sa rareté : en UR puis en LR elle passe sur son image alternative (façon Dokkan)
+export const picOf = (def, r) => (r === "LR" && def.picLR) || ((r === "UR" || r === "LR") && def.picUR) || def.pic || "";
 // inst : exemplaire du joueur { c, r, lv, xp } ou une définition de carte (def) ; opt : { small, act, iid, count, back }
 export function cardHTML(inst, opt) {
   opt = opt || {};
@@ -32,12 +34,13 @@ export function cardHTML(inst, opt) {
   const r = inst.r || def.r, lv = inst.lv || 1, st = inst.c ? statsOf(inst, def) : def.st, A = ARCH[def.arch] || ARCH.Showman;
   const lg = promoLogo(def.k), fl = def.faction && groupLogo(def.faction), live = isChampLive(def);
   if (opt.back) return '<div class="tc3 back' + (opt.small ? " sm" : "") + '"><div class="tc3back"><b>TCCCG</b><small>The Catch Card Collection Game</small></div></div>';
-  const ar = def.pic ? arStyle(arOf(def.pic)) : 0;
+  const pic = picOf(def, r);
+  const ar = pic ? arStyle(arOf(pic)) : 0;
   return '<div class="tc3 r-' + r + (opt.small ? " sm" : "") + (def.champ || live ? " champ" : "") + (ar ? " ar" : "") + '" style="--ac:' + A.c + (ar ? ";--ar:" + ar.toFixed(3) : "") + '"' + (opt.act ? ' data-act="' + opt.act + '" data-iid="' + esc(opt.iid || "") + '" data-c="' + esc(def.id) + '"' : "") + ">" +
     '<div class="tc3foil"></div>' +
     '<div class="tc3top">' + (lg ? '<img class="tc3promo" src="' + esc(lg) + '" alt="">' : '<span class="tc3promo t">' + esc(def.k || "") + "</span>") + '<span class="tc3brand">TCCCG</span><span class="tc3r" title="' + esc(RNAME[r] || r) + '">' + r + "</span></div>" +
-    '<div class="tc3pic' + (def.pic ? "" : " nopic") + '"' + (def.pic && !opt.small && !opt.nozoom ? ' data-act="zoom" data-src="' + esc(def.pic) + '" data-alt="' + esc(def.name) + '"' : "") + ">" +
-      (def.pic ? '<img class="tc3img" src="' + esc(def.pic) + '" alt="" loading="lazy" decoding="async">' : '<span class="tc3empty">🖼️<small>Image à venir</small></span>') +
+    '<div class="tc3pic' + (pic ? "" : " nopic") + '"' + (pic && !opt.small && !opt.nozoom ? ' data-act="zoom" data-src="' + esc(pic) + '" data-alt="' + esc(def.name) + '"' : "") + ">" +
+      (pic ? '<img class="tc3img" src="' + esc(pic) + '" alt="" loading="lazy" decoding="async">' : '<span class="tc3empty">🖼️<small>Image à venir</small></span>') +
       '<span class="tc3arch">' + esc(def.arch) + "</span>" + (fl ? '<img class="tc3fac" src="' + esc(fl) + '" alt="">' : "") + alSym(def.al) +
       (def.champ || live ? '<span class="tc3belt" title="' + (def.champ ? "Carte champion (boost permanent)" : "Champion en titre : +10 %") + '">🏆</span>' : "") +
       (opt.count > 1 ? '<span class="tc3count">×' + opt.count + "</span>" : "") + '<span class="tc3lv">Nv ' + lv + "</span></div>" +

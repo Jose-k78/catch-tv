@@ -135,6 +135,20 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   - **Échange** (`js/tcg/trade.js`) : rosters des membres, propositions (cartes et/ou ressources, ce qu'on donne est mis de côté),
     **enchères** de 24 h en argent (offre mise de côté dans `esc`, rendue si dépassée ; le vendeur valide quand il veut, sinon la plus
     haute gagne) ; tout dans la collection Firestore `tcgx` (ty trade / auc / duel), règlement automatique (`settle`) à chaque mise à jour.
+- Lot du 11 nov. (1re partie de la grande refonte) :
+  - images du dossier PC de Jose (pack Pro Wrestling Simulator, promotions de l'app seulement) : photos (ancienne gardée en version), titres
+    remplacés (`BELT` de assets.js pointe vers les nouveaux noms ; 15 titres sans image dans le pack gardent l'ancienne), événements, équipes ;
+    **banque d'images** `data/bank.json` (`S.bank` : slug → variantes dans `img/tcg/alt/`, `-alt`, `-champ`) ;
+  - TCCCG : image alternative en UR / LR (`picOf` de card.js ; auto = 1re variante / version champion ; modo : vignettes Base / UR / LR de
+    l'éditeur de carte → `bankPick`, champs `img`, `imgUR`, `imgLR`, "-" = aucune) ; 3 boosters gratuits par tranche de 5 h (`d.free` =
+    "tranche:nombre:jour", `freeLeft`), 5 cartes par booster, SSR à 10 % ; cadeau unique (`items.gift1`) : 250 gimmicks + `items.mitb`
+    (mallette → carte SSR au choix, booster « mitb » = Booster Agent Libre) ;
+  - petite ceinture (`beltBadge` de photos.js) sur la photo du champion si le titre est tenu depuis plus de 7 jours (pas de spoiler) ;
+  - recherche : fiches en premier, `knownNames` inclut les photos et les membres des groupes ; fiche : Entrance et « Son actu » retirées ;
+  - page d'un show passé : notes de tous les membres (`B.showRates(k, d)`) ; notifications d'actu sans titre d'article.
+  - RESTE À FAIRE (demande du 11 nov.) : design Netflix / TCC Play façon YouTube, redirections du modo (appui long en mode ✏️), chaîne YouTube
+    par show + zone de liens modo, fiche d'un ancien show (résumé, résultats, « J'ai vu ce show »), recherche de combats / archives, feuds sans
+    répétitions, matchs à découvrir, calendriers NJPW / Stardom / Marigold, robots GitHub pour calendriers / tournois / fiches, animations.
 - Notes : demi-étoiles de 0 à 5,5 (`RMAX`, `fmtR`, `stars`, `ratePick` / `pickRate` de util.js ; 6e étoile orange = bonus).
 - Historique : `g_<id>` = note d'un segment, `q_<id>` = segment préféré (comment = nom du show) ; préfixes m_/s_/f_/g_/q_ exclus
   des compteurs de shows (spoil.js, trophies.js, account.js). Profil : « Ses segments préférés ».

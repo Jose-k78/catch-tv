@@ -15,7 +15,7 @@ import { commentsBox } from "./comments.js";
 import { TECH, techHTML, fillTech } from "../tech.js";
 import { searchEvents, EVENT_WORDS } from "./event.js";
 import { wImageBox } from "./wimage.js";
-import { photoOf, faceImg } from "../photos.js";
+import { photoOf, faceImg, beltBadge } from "../photos.js";
 import { wGroups, refButton } from "./groups.js";
 import { palmaresHTML } from "./palmares.js";
 import { searchGroups, groupById, groupLogo, groupHref, archivedBelts, beltOf } from "../assets.js";
@@ -74,7 +74,9 @@ function resultsHTML(q) {
     (offer ? '<a class="item" href="#/catcheur/' + encodeURIComponent(q.trim()) + '">' + faceImg(q.trim(), 40) + '<span class="lbl"><b>' + esc(q.trim()) +
     "</b><small>Voir sa fiche : résumé, derniers matchs, matchs de référence</small></span><span class=\"chev\">›</span></a>" : "") + "</div>" : "";
   const pv = searchVideos(q, 8), pH = pv.length ? '<h2>Dans le TCC Play <small class="cnt">vidéos</small></h2><div class="prow">' + pv.map(playerThumb).join("") + "</div>" : "";
-  return ev ? showsH + pH + archH + wH + gH + tH + aH : wH + gH + tH + showsH + pH + aH + archH;
+  // les fiches des catcheurs trouvés passent toujours en premier, sauf si la recherche est le nom exact d'un show
+  const exactShow = loc.some(r => norm(r.t) === nq);
+  return ev && (exactShow || !names.length) ? showsH + pH + archH + wH + gH + tH + aH : wH + gH + tH + showsH + pH + aH + archH;
 }
 document.addEventListener("input", e => {
   if (e.target.id !== "q") return;
@@ -162,7 +164,7 @@ export function wrestlerView(raw, wt) {
   // photo du dossier de l'admin (prioritaire) ; sinon l'image ajoutée par un membre
   const pic = photoOf(name), grp = wGroups(name);
   h += '<section class="wcard"><div class="wtop' + (pic ? " haspic" : "") + '">' + (pic ? '<div class="wpicbox"><button class="wpicbtn" data-act="zoom" data-src="' + esc(pic) + '" data-alt="' + esc(name) + '" aria-label="Agrandir la photo"><img class="wpic" src="' + esc(pic) + '" alt="' + esc(name) + '" onerror="this.closest(\'.wpicbox\').remove()"></button>' +
-    (grp.corner ? '<span class="wgcorner">' + grp.corner + "</span>" : "") + (w && w.dc ? '<span class="wdead" aria-label="Décédé">✝</span>' : "") +
+    beltBadge(name) + (grp.corner ? '<span class="wgcorner">' + grp.corner + "</span>" : "") + (w && w.dc ? '<span class="wdead" aria-label="Décédé">✝</span>' : "") +
     (S.user ? '<button class="wrep" data-act="wrep" data-n="' + esc(name) + '" aria-label="Signaler" title="Signaler">⚑</button>' : "") + "</div>" : "") + '<div class="wtt"><span class="eyebrow">FICHE CATCHEUR</span><h1>' + (w && w.dc ? "✝ " : "") + esc(name) + "</h1>" +
     (w && w.era ? '<small class="wera">' + esc(w.era) + "</small>" : "") + (w && w.dc ? '<small class="wera wdc">Décédé' + (w.f ? "e" : "") + (/^\d{4}-\d{2}-\d{2}$/.test(w.dc) ? " le " + fmt(w.dc) + " " + w.dc.slice(0, 4) : /^\d{4}$/.test(String(w.dc)) ? " en " + w.dc : "") + "</small>" : "") + (!pic && grp.corner ? '<span class="wgcorner inline">' + grp.corner + "</span>" : "") + "</div>" + '<span class="wacts">' + starBtn(name) + '<button class="iconbtn sharebtn" data-act="share"' + shAttr(wcard) + ' aria-label="Partager">↗</button></span></div>' +
     '<div id="wchoose"></div>' + wImageBox(name, { small: !!pic }) +
@@ -195,11 +197,10 @@ export function wrestlerView(raw, wt) {
   }).join("") + "</div>";
   else h += '<p class="note">Ses matchs de référence seront ajoutés lors d’une prochaine mise à jour' + (S.user ? " (ajoute-le à tes favoris pour qu’il soit suivi en priorité)" : "") + ".</p>";
   h += '<p class="note small" style="margin-top:8px"><a class="linkbtn" style="padding:0" href="' + esc(ytSearch(kk, name + " highlights")) + '" target="_blank" rel="noopener">Ses vidéos sur la chaîne YouTube officielle ↗</a></p>';
-  h += entranceHTML(name);
   h += "<h2>Prochains matchs annoncés</h2>" + (up.length ? '<div class="list">' + up.map(e => '<a class="item" href="' + esc(evHref(e)) + '"' + shAttr(evCard(e)) +
     '><span class="lbl"><b>' + esc(e.t) + "</b><small>" + esc(e.k) + " · " + fmt(e.d) + (e.line ? " · " + esc(e.line) : "") + '</small></span><span class="chev">›</span></a>').join("") + "</div>"
     : '<p class="note">Rien d’annoncé dans l’app pour l’instant.</p>');
-  h += "<h2>Son actu</h2>" + (arts.length ? '<div class="list">' + arts.map(a => '<a class="item" href="' + esc(a.u) + '" target="_blank" rel="noopener"' + shAttr(artCard(a)) + '><span class="lbl"><b>' + esc(a.t) +
+  if (0) h += "<h2>Son actu</h2>" + (arts.length ? '<div class="list">' + arts.map(a => '<a class="item" href="' + esc(a.u) + '" target="_blank" rel="noopener"' + shAttr(artCard(a)) + '><span class="lbl"><b>' + esc(a.t) +
     "</b><small>" + esc(a.s || "") + (a.tr ? " · titre traduit" : "") + '</small></span><span class="rt">' + (a.d ? fmt(a.d) : "") + "</span></a>").join("") + "</div>" : '<p class="note">Pas d’article en français dans l’app qui parle de lui ou d’elle.</p>') +
     '<p class="note" style="margin-top:8px"><a class="linkbtn" style="padding:0" href="https://news.google.com/search?q=' + encodeURIComponent('"' + name + '"') + '&hl=fr&gl=FR&ceid=FR:fr" target="_blank" rel="noopener">Plus d’actu sur Google Actualités ↗</a></p>';
   if (vids.length) h += '<h2>Ses matchs à découvrir</h2><div class="list">' + vids.map(m => '<button class="item" data-act="play" data-id="' + esc(m.id) + '" data-t="' + esc(m.t) + '"' + shAttr({ ty: "vid", t: m.t, s: [m.k, m.ev].filter(Boolean).join(" · "), id: m.id }) + '><span class="lbl"><b>' + esc(m.t) +

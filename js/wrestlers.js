@@ -180,10 +180,13 @@ export function namesIn(text) {
 // Noms connus de l'app (fiches suivies, catcheurs à découvrir, champions) pour les suggestions de recherche
 export function knownNames() {
   const out = [], seen = {};
-  const add = (n, s, a) => { const k = norm(n); if (!n || seen[k]) return; seen[k] = 1; out.push({ n: n, s: s, a: a || [] }); };
+  const add = (n, s, a) => { const k = norm(n); if (!n || seen[k]) return; seen[k] = 1; out.push({ n: n, s: s, a: Array.isArray(a) ? a : a ? [String(a)] : [] }); };
   const W = S.wrestlers || {};
   Object.keys(W).forEach(k => { const w = W[k] || {}; add(k, [w.k, w.era].filter(Boolean).join(" · ") || "Fiche catcheur", w.a); });
   (S.titles || []).forEach(t => (t.who || []).forEach(x => add(x, t.k + " · " + t.n)));
   Object.keys(S.rosters || {}).forEach(k => { const r = S.rosters[k] || {}; Object.keys(r).forEach(g => (r[g] || []).forEach(x => add(x, k + " · " + g))); });
+  // tous les catcheurs qui ont une photo (et leurs autres noms), puis les membres des équipes
+  Object.keys(S.photos || {}).forEach(s => { const e = S.photos[s] || {}, n = (e.n || [])[0]; if (n) add(n, "Fiche catcheur", (e.n || []).slice(1)); });
+  Object.keys(S.groups || {}).forEach(id => { const g = S.groups[id] || {}; (g.m || []).concat(g.ex || []).forEach(x => { if (typeof x === "string") add(x, g.n || "Fiche catcheur"); }); });
   return out;
 }

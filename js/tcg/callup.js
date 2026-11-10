@@ -6,7 +6,7 @@ import { S, ACT, changed } from "../state.js";
 import { esc, toast, fmt, modal } from "../util.js";
 import { parisDay } from "../time.js";
 import { realKey, RAR, LVMAX, rates, baseCards, showPeople, showKeyLabel, cfg, defOf, titleOf, champsNow, promoLogo, cardById } from "./data.js";
-import { me, commit, addCard } from "./store.js";
+import { freeLeft, freeNextMs, useFree, me, commit, addCard } from "./store.js";
 import { cardHTML } from "./card.js";
 import { showLogo, eventLogo } from "../assets.js";
 import { saveCfg } from "./modo.js";
@@ -26,14 +26,15 @@ const inRoster = () => { const s = new Set(); Object.keys(S.rosters || {}).forEa
 
 export function boosters() {
   const out = [], C = cfg(), td = parisDay();
-  out.push({ id: "free", t: "Booster du jour", sub: "N et R · gratuit chaque jour", n: 3, price: { free: 1 }, only: ["N", "R"], cat: "Cadeau" });
+  out.push({ id: "free", t: "Booster gratuit", sub: "N, R et SR · 3 toutes les 5 heures", n: 5, price: { free: 1 }, only: ["N", "R", "SR"], cat: "Cadeau" });
+  out.push({ id: "mitb", t: "Booster Agent Libre", sub: "💼 Mallette Money In The Bank : la carte SSR de ton choix", n: 1, price: { mitb: 1 }, c: ["#0d4a2a", "#c9971f"], cat: "Cadeau" });
   recentShows(7).forEach(key => {
     const p = key.split("|"), ver = Date.parse(td) - Date.parse(keyDate(key)) >= 2 * DAY;
     out.push({ id: "s:" + key, key: key, t: showKeyLabel(key), sub: p[0] + " · " + fmt(p[2]) + (ver ? " · cartes du show !" : " · cartes du show dans " + Math.ceil((2 * DAY - (Date.parse(td) - Date.parse(keyDate(key)))) / DAY) + " j"), n: 3, price: { gim: 5 }, logo: showLogoOf(key), c: colorsOf(p[0]), cat: p[1] === "PLE" ? "PLE et PPV" : "Shows de la semaine", ver: ver });
   });
   ["WWE", "AEW", "NJPW"].concat(Object.keys(S.P || {}).filter(k => ["WWE", "AEW", "NJPW"].indexOf(k) < 0)).filter(k => S.P[k]).forEach(k => out.push({ id: "p:" + k, k: k, t: k + " Pack", sub: "Booster de départ · 3 cartes", n: 3, price: { mom: 60, pop: 60, push: 60 }, logo: showLogo(k, ""), c: colorsOf(k), cat: "Boosters de départ" }));
   (C.boosters || []).filter(b => b && b.id && !b.del && (b.on !== false || S.isAdmin)).forEach(b => out.push(Object.assign({ cat: "Boosters spéciaux", price: { gim: +b.gim || 5 }, n: +b.n || 3 }, b, { id: "c:" + b.id, t: b.t || b.n || "Booster" })));
-  if (S.isAdmin) out.push({ id: "fa", t: "Agents libres", sub: "Visible par le modo · catcheurs hors des rosters", n: 3, price: { gim: 0 }, cat: "Modo" });
+  if (S.isAdmin) out.push({ id: "fa", t: "Hors rosters (modo)", sub: "Visible par le modo · catcheurs hors des rosters", n: 3, price: { gim: 0 }, cat: "Modo" });
   return out;
 }
 // catcheurs d'un booster (automatique), puis les changements du modo (cfg.bx[id] : add, del, feat, nofeat)
@@ -42,6 +43,7 @@ const inPromo = k => { const ro = S.rosters && S.rosters[k], s = new Set(); if (
 function autoPool(b) {
   const P = baseCards();
   if (b.id === "free") return P;
+  if (b.id === "mitb") return P.filter(c => c.r === "SSR" && !c.custom);
   // booster d'un show : les catcheurs de sa promotion, ceux du show en vedette
   if (b.key) { const pp = showPeople(b.key).map(x => x.c), ids = new Set(pp.map(c => c.id)), f = inPromo(b.key.split("|")[0]); return pp.concat(P.filter(c => !ids.has(c.id) && f(c))); }
   if (b.k && b.id.indexOf("p:") === 0) { const L = P.filter(inPromo(b.k)); return L.length >= 10 ? L : P; }
@@ -89,16 +91,17 @@ export function pull(b, n) {
   }
   return out;
 }
-const priceTxt = p => p.free ? "🎁 Gratuit" : p.gim != null && !p.mom ? (p.gim ? "🎟️ " + p.gim + " gimmicks" : "Gratuit (modo)") : "⚡" + p.mom + " ⭐" + p.pop + " 📣" + p.push;
+const priceTxt = p => p.mitb ? "💼 1 mallette" : p.free ? "🎁 Gratuit" : p.gim != null && !p.mom ? (p.gim ? "🎟️ " + p.gim + " gimmicks" : "Gratuit (modo)") : "⚡" + p.mom + " ⭐" + p.pop + " 📣" + p.push;
 function canPay(d, p, mega) {
-  if (p.free) return d.free !== parisDay();
+  if (p.free) return freeLeft(d) > 0;
+  if (p.mitb) return (d.items.mitb || 0) > 0;
   if (mega) return d.res.gim >= 50;
   return ["gim", "mom", "pop", "push"].every(k => !p[k] || d.res[k] >= p[k]);
 }
 export function callUpView() {
   const d = me(), B = boosters(), cats = {};
   B.forEach(b => { (cats[b.cat] = cats[b.cat] || []).push(b); });
-  let h = '<section class="tccghead"><h1>Call Up</h1></section><p class="tnote">5 gimmicks = booster de 3 cartes · 50 gimmicks = Mega booster de 15 cartes. Les cartes « version show » arrivent 2 jours après les résultats.</p>' +
+  let h = '<section class="tccghead"><h1>Call Up</h1></section><p class="tnote">5 gimmicks = booster de 5 cartes · 50 gimmicks = Mega booster de 15 cartes. Les cartes « version show » arrivent 2 jours après les résultats.</p>' +
     '<details class="trates"><summary>Taux d’apparition</summary><p>' + RAR.map(r => '<span class="tcr r-' + r + '">' + r + "</span> " + rates()[r] + " %").join(" · ") + "</p></details>";
   h += vitrine();
   ["Cadeau", "PLE et PPV", "Shows de la semaine", "Boosters de départ", "Boosters spéciaux", "Modo"].forEach(cat => {
@@ -106,7 +109,7 @@ export function callUpView() {
     h += "<h2>" + cat + '</h2><div class="row tbrow">' + cats[cat].map(b => {
       const c = b.c || ["#3b321f", "#0a0907"], ok = canPay(d, b.price);
       return '<div class="tbwrap"><button class="tbooster' + (ok ? "" : " off") + '" data-act="tcgopen" data-id="' + esc(b.id) + '" style="background:' + (b.img ? "url('" + esc(b.img) + "') center/cover," : "") + "linear-gradient(160deg," + c[0] + "," + (c[1] || "#0a0907") + ')">' +
-        (b.logo ? '<img src="' + esc(b.logo) + '" alt="">' : b.id === "free" ? '<span class="tbgift">🎁</span>' : "") + "<b>" + esc(b.t) + "</b><small>" + esc(b.sub || "") + '</small><span class="tbprice">' + (b.id === "free" && !ok ? "Demain" : priceTxt(b.price)) + "</span></button>" +
+        (b.logo ? '<img src="' + esc(b.logo) + '" alt="">' : b.id === "free" ? '<span class="tbgift">🎁</span>' : "") + "<b>" + esc(b.t) + "</b><small>" + esc(b.sub || "") + '</small><span class="tbprice">' + (b.id === "free" ? (ok ? "🎁 Gratuit · reste " + freeLeft(d) : "Dans " + Math.ceil(freeNextMs() / 36e5 * 10) / 10 + " h") : b.id === "mitb" ? "💼 × " + (d.items.mitb || 0) : priceTxt(b.price)) + "</span></button>" +
         '<button class="tbinfo" data-act="tcgbinfo" data-id="' + esc(b.id) + '">👁️ Cartes' + (featOf(b).size ? " · ⭐ vedettes" : "") + "</button>" +
         (b.price.gim && b.key ? '<button class="tbmega" data-act="tcgopen" data-id="' + esc(b.id) + '" data-mega="1">Mega ×15 · 🎟️ 50</button>' : "") + "</div>";
     }).join("") + "</div>";
@@ -116,16 +119,36 @@ export function callUpView() {
 ACT.tcgopen = el => {
   const b = boosters().find(x => x.id === el.dataset.id); if (!b) return;
   const mega = el.dataset.mega === "1", d0 = me();
-  if (!canPay(d0, b.price, mega)) { toast(b.price.free ? "Ton booster gratuit revient demain" : "Pas assez de ressources : gagne-en dans les combats"); return; }
-  const ids = pull(b, mega ? 15 : b.n || 3);
+  if (b.id === "mitb") return mitbPick();
+  if (!canPay(d0, b.price, mega)) { toast(b.price.free ? "Tes 3 boosters gratuits reviennent dans " + Math.ceil(freeNextMs() / 6e4) + " min" : "Pas assez de ressources : gagne-en dans les combats"); return; }
+  const ids = pull(b, mega ? 15 : b.n || 5);
   commit(d => {
-    if (b.price.free) d.free = parisDay();
+    if (b.price.free) useFree(d, parisDay());
     else if (mega) d.res.gim -= 50;
     else ["gim", "mom", "pop", "push"].forEach(k => { if (b.price[k]) d.res[k] -= b.price[k]; });
     ids.forEach(id => addCard(d, id)); d.opened++;
   });
   summon(b, ids);
 };
+// Booster Agent Libre : la mallette Money In The Bank donne la carte SSR de son choix (une fois par mallette)
+function mitbPick() {
+  if (!(me().items.mitb > 0)) { toast("Il te faut une mallette Money In The Bank 💼"); return; }
+  let q = "", pick = "";
+  modal((box, close) => {
+    box.classList.add("tbibox");
+    const list = () => baseCards().filter(c => c.r === "SSR" && !c.custom && (!q || norm(c.name).indexOf(norm(q)) >= 0)).slice(0, 60).map(c => '<div class="tpk' + (pick === c.id ? " on" : "") + '" data-p="' + esc(c.id) + '">' + cardHTML(c, { small: true }) + "</div>").join("") || '<p class="tnote">Aucune carte SSR à ce nom.</p>';
+    box.innerHTML = '<h3>💼 Booster Agent Libre</h3><p class="sub">Ta mallette Money In The Bank : choisis la carte SSR que tu veux. Ce choix est définitif.</p><div class="search"><input id="mq" type="search" placeholder="Chercher un catcheur"></div><div class="trgrid tpick" id="mgrid">' + list() + '</div><button class="btn wide" data-go disabled>Encaisser la mallette</button><button class="btn wide ghost" style="margin-top:6px" data-close>Plus tard</button>';
+    box.addEventListener("input", e => { if (e.target.id === "mq") { q = e.target.value; box.querySelector("#mgrid").innerHTML = list(); } });
+    box.addEventListener("click", e => {
+      if (e.target.closest("[data-close]")) return close();
+      const p = e.target.closest("[data-p]"); if (p) { pick = p.dataset.p; box.querySelectorAll(".tpk").forEach(x => x.classList.toggle("on", x.dataset.p === pick)); box.querySelector("[data-go]").disabled = false; return; }
+      if (e.target.closest("[data-go]") && pick) { const id = pick, b = boosters().find(x => x.id === "mitb"); close();
+        if (!(me().items.mitb > 0)) return;
+        commit(d => { if (!(d.items.mitb > 0)) return; d.items.mitb--; addCard(d, id); d.opened++; });
+        summon(b, [id]); }
+    });
+  });
+}
 // vitrine : des exemples de cartes au maximum (rareté max, niveau max) pour donner envie
 function vitrine() {
   const P = baseCards().filter(c => c.pic && (c.max === "LR" || c.max === "UR")).sort((a, b) => RAR.indexOf(b.max) - RAR.indexOf(a.max) || b.score - a.score), day = Math.floor(Date.now() / 864e5);

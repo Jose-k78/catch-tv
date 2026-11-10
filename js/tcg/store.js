@@ -36,6 +36,13 @@ export function addCard(d, id) {
 }
 export const owned = d => Object.keys(d.cards).map(iid => Object.assign({ iid: iid }, d.cards[iid])).filter(x => defOf(x.c));
 export const rIdx = r => RAR.indexOf(r);
+// boosters gratuits : 3 par tranche de 5 heures. d.free = "tranche:nombre ouverts:dernier jour"
+export const FREE_N = 3, FREE_MS = 5 * 36e5;
+export const freeWin = () => Math.floor(Date.now() / FREE_MS);
+export function freeLeft(d) { const p = String(d.free || "").split(":"); return +p[0] === freeWin() ? Math.max(0, FREE_N - (+p[1] || 0)) : FREE_N; }
+export const freeNextMs = () => (freeWin() + 1) * FREE_MS - Date.now();
+export function useFree(d, day) { const left = freeLeft(d); d.free = freeWin() + ":" + (FREE_N - left + 1) + ":" + day; }
+export const freeToday = (d, day) => String(d.free || "").split(":")[2] === day;
 // copie d'un exemplaire reçu (échange, enchère) dans la partie
 export function addInst(d, x) { if (!x || !defOf(x.c)) return null; const iid = Date.now().toString(36) + (seq++).toString(36) + Math.floor(Math.random() * 1e4).toString(36); d.cards[iid] = { c: x.c, r: RAR.indexOf(x.r) >= 0 ? x.r : defOf(x.c).r, lv: +x.lv || 1, xp: +x.xp || 0 }; return iid; }
 export const RES = ["money", "mom", "pop", "push", "gim"];

@@ -6,7 +6,7 @@ import { items, itemById, defOf, showKeyLabel } from "./data.js";
 import { recentShows } from "./callup.js";
 import { fightShows, resumeHome } from "./fight.js";
 import { pendingCount, duelsForMe } from "./trade.js";
-import { me, commit, owned, XP_LV } from "./store.js";
+import { me, commit, owned, XP_LV, freeLeft, freeToday } from "./store.js";
 import { cardHTML } from "./card.js";
 import { resBar } from "./roster.js";
 
@@ -16,25 +16,26 @@ export function headerHTML(d) {
 }
 // missions du jour (simples) : récompenses en ressources
 const MISSIONS = [
-  { id: "free", t: "Ouvrir le booster gratuit du jour", ok: d => d.free === parisDay(), r: { gim: 2 } },
+  { id: "free", t: "Ouvrir le booster gratuit du jour", ok: d => freeToday(d, parisDay()), r: { gim: 2 } },
   { id: "win", t: "Gagner un combat", ok: d => (d.mday || {})[parisDay()] >= 1, r: { money: 800 } },
   { id: "cards10", t: "Avoir 10 cartes", ok: d => Object.keys(d.cards).length >= 10, r: { mom: 40, pop: 40, push: 40 } }
 ];
 // accueil façon Dokkan Battle : la carte « leader » en grand qui parle, bannières, gros bouton Combats
 export function tccgHome() {
-  const d = me(), L = owned(d), free = d.free !== parisDay();
+  const d = me(), L = owned(d), free = freeLeft(d) > 0;
+  if (S.tcg !== undefined && !d.items.gift1) setTimeout(gift, 600);
   if (!d.tuto) setTimeout(tuto, 300);
   const lead = (d.fav[0] && d.cards[d.fav[0]] && Object.assign({ iid: d.fav[0] }, d.cards[d.fav[0]])) || L.sort((a, b) => ["N", "R", "SR", "SSR", "UR", "LR"].indexOf(b.r) - ["N", "R", "SR", "SSR", "UR", "LR"].indexOf(a.r) || b.lv - a.lv)[0];
   const ld = lead && defOf(lead.c), shows = recentShows(7), nf = fightShows().reduce((n, x) => n + x.matches.length, 0);
   const np = pendingCount(), duels = duelsForMe();
-  const lines = [np ? np + " proposition" + (np > 1 ? "s" : "") + " d’échange t’attend" + (np > 1 ? "ent" : "") + " !" : "", free ? "Ton booster gratuit t’attend dans Call Up !" : "", shows[0] ? "Le booster « " + showKeyLabel(shows[0]) + " » est sorti !" : "", nf ? nf + " combats t’attendent cette semaine." : "", ld ? "On va leur montrer qui est " + (ld.name.split(" ")[0]) + " !" : "Ouvre ton premier booster pour recruter ton catcheur."].filter(Boolean);
+  const lines = [np ? np + " proposition" + (np > 1 ? "s" : "") + " d’échange t’attend" + (np > 1 ? "ent" : "") + " !" : "", free ? "Tu as " + freeLeft(d) + " booster" + (freeLeft(d) > 1 ? "s" : "") + " gratuit" + (freeLeft(d) > 1 ? "s" : "") + " dans Call Up !" : "", d.items.mitb ? "Ta mallette Money In The Bank t’attend : choisis ta carte SSR dans Call Up !" : "", shows[0] ? "Le booster « " + showKeyLabel(shows[0]) + " » est sorti !" : "", nf ? nf + " combats t’attendent cette semaine." : "", ld ? "On va leur montrer qui est " + (ld.name.split(" ")[0]) + " !" : "Ouvre ton premier booster pour recruter ton catcheur."].filter(Boolean);
   const say = np ? lines[0] : lines[Math.floor(Date.now() / 6e4) % lines.length];
   let h = headerHTML(d) + resumeHome();
   h += '<section class="thero"' + (ld ? ' style="--hp:url(\'' + esc(ld.pic) + '\')"' : "") + ">" + (ld ? '<div class="thcard">' + cardHTML(lead, { small: true, act: "tcgcard", iid: lead.iid }) + "</div>" : '<div class="thempty">🃏</div>') +
     '<div class="tbubble">' + esc(say) + "</div>" + (ld ? '<span class="thname">' + esc(ld.name) + "</span>" : "") + "</section>";
   // bannières
   const ban = [];
-  if (free) ban.push('<a class="tban gift" href="#/tccg/callup"><b>🎁 Booster gratuit</b><small>N et R · chaque jour</small></a>');
+  if (free) ban.push('<a class="tban gift" href="#/tccg/callup"><b>🎁 ' + freeLeft(d) + ' booster' + (freeLeft(d) > 1 ? "s" : "") + ' gratuit' + (freeLeft(d) > 1 ? "s" : "") + '</b><small>3 toutes les 5 heures</small></a>');
   shows.slice(0, 3).forEach(k => ban.push('<a class="tban" href="#/tccg/callup"><b>🎴 ' + esc(showKeyLabel(k)) + "</b><small>Nouveau booster · " + esc(k.split("|")[0]) + "</small></a>"));
   if (np) ban.unshift('<a class="tban gift" href="#/tccg/echange/props"><b>🤝 ' + np + " échange" + (np > 1 ? "s" : "") + "</b><small>Des membres te proposent un échange</small></a>");
   ban.push('<a class="tban" href="#/tccg/echange/encheres" style="background:linear-gradient(120deg,#2a0f3a,#8a3fd0)"><b>🔨 Enchères</b><small>Achète et vends des cartes</small></a>');
@@ -63,11 +64,17 @@ ACT.tcgmis = () => {
     });
   });
 };
+// cadeau à tous les membres (une seule fois) : 250 gimmicks + 1 mallette Money In The Bank
+function gift() {
+  const d = me(); if (d.items.gift1 || !S.user) return;
+  commit(x => { if (x.items.gift1) return; x.items.gift1 = 1; x.items.mitb = (x.items.mitb || 0) + 1; x.res.gim += 250; });
+  modal((box, close) => { box.innerHTML = '<div style="text-align:center"><div style="font-size:64px">🎁</div><h3>Cadeau pour tous les membres !</h3><p><b>🎟️ 250 gimmicks</b><br><b>💼 1 mallette Money In The Bank</b></p><p class="sub">La mallette te donne la carte SSR de ton choix, une seule fois : Call Up › Booster Agent Libre.</p><a class="btn wide" href="#/tccg/callup" data-close>Aller dans Call Up</a><button class="btn wide ghost" style="margin-top:6px" data-close>Plus tard</button></div>'; box.addEventListener("click", e => { if (e.target.closest("[data-close]")) close(); }); });
+}
 ACT.tcggift = () => { location.hash = "#/tccg/callup"; };
 ACT.tcgtuto = () => tuto(true);
 const STEPS = [
-  ["Bienvenue dans TCCCG !", "Le jeu de cartes de TCC TV. Tu commences à zéro : pas de carte, pas de ressource. Chaque jour, un booster gratuit (N et R) t’attend dans Call Up."],
-  ["Call Up", "Chaque show de la semaine a son booster (5 gimmicks pour 3 cartes, 50 pour un Mega de 15). 2 jours après les résultats, les cartes « version show » apparaissent, plus fortes si le catcheur a gagné."],
+  ["Bienvenue dans TCCCG !", "Le jeu de cartes de TCC TV. Tu commences à zéro : pas de carte, pas de ressource. Toutes les 5 heures, 3 boosters gratuits t’attendent dans Call Up."],
+  ["Call Up", "Chaque show de la semaine a son booster (5 gimmicks pour 5 cartes, 50 pour un Mega de 15). 2 jours après les résultats, les cartes « version show » apparaissent, plus fortes si le catcheur a gagné."],
   ["Les cartes", "5 stats (Force, Agilité, Charisme, Endurance, Technique), un archétype et un Finisher. Dominator bat Aggressor, qui bat Technician, qui bat Opportunist, qui bat Showman, qui bat Dominator : dégâts ×2 ou ×0,5."],
   ["Combats", "Choisis un match d’un show de la semaine et affronte ses catcheurs en 2 contre 2. C’est un memory : retourne 2 cases, une paire déclenche l’action. 3 TAG pour changer de catcheur, des objets et des cartes de soutien (bonus si même équipe)."],
   ["Progresser", "Les combats donnent de l’argent, du Momentum, de la Pop, du Push, des gimmicks, des objets et parfois les cartes du show. Dans Roster : entraîne, fusionne les doublons ou fais-en des médailles, puis éveille tes cartes jusqu’à leur rareté max."]

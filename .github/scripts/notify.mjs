@@ -75,8 +75,8 @@ export function messagesFor(user, fresh) {
   const msgs = [];
   if (wants(user, "info")) {
     const arts = fresh.filter(x => x.kind === "art" && (!P.length || x.tags.some(t => P.indexOf(t) >= 0)));
-    if (arts.length === 1) msgs.push({ cat: "info", title: "📰 " + (arts[0].s || "Nouvelle info"), body: arts[0].t, url: arts[0].u, tag: "art", short: arts[0].t });
-    else if (arts.length) msgs.push({ cat: "info", title: "📰 " + arts.length + " nouvelles infos", body: arts.slice(0, 3).map(a => a.t).join(" · "), url: "#/", tag: "art", short: arts.length + " nouvelles infos" });
+    if (arts.length === 1) msgs.push({ cat: "info", title: "📰 Nouvelle info" + (arts[0].s ? " · " + arts[0].s : ""), body: "Ouvre TCC TV pour la lire (sans spoiler ici).", url: "#/", tag: "art", short: "1 nouvelle info" });
+    else if (arts.length) msgs.push({ cat: "info", title: "📰 " + arts.length + " nouvelles infos", body: "Ouvre TCC TV pour les lire (sans spoiler ici).", url: "#/", tag: "art", short: arts.length + " nouvelles infos" });
     const defs = {}; fresh.filter(x => x.kind === "def" && okK(x.k)).forEach(x => { const g = x.label + "|" + x.d; (defs[g] = defs[g] || []).push(x); });
     Object.keys(defs).forEach(g => { const l = defs[g], x = l[0]; msgs.push({ cat: "info", title: "🙈 " + (l.length > 1 ? l.length + " défenses de titre" : "Défense de titre") + " à " + x.label, body: "Show du " + fmtD(x.d) + " — ouvre pour voir (spoiler)", url: x.url, tag: "def-" + g, short: "🙈 Défense de titre à " + x.label }); });
     fresh.filter(x => (x.kind === "ple" || x.kind === "pick" || x.kind === "story") && okK(x.k)).forEach(x => msgs.push({ cat: "info", title: x.title, body: x.body, url: x.url, tag: x.kind, short: x.title }));

@@ -454,7 +454,7 @@ async function refreshContent() {
     S.P = c.P; S.news = c.news; S.recaps = c.recaps || {}; S.matches = c.matches || []; S.titles = c.titles || []; S.titlesUpdated = c.titlesUpdated || "";
     S.highlights = c.highlights || {}; S.wrestlers = c.wrestlers || {}; S.storylines = c.storylines || []; S.rosters = c.rosters || {}; S.rostersSrc = c.rostersSrc || {};
     const mediaNew = c.media && JSON.stringify(c.media) !== JSON.stringify(S.media);
-    S.sources = c.sources || []; S.updated = c.updated || {}; S.polls = c.polls || []; if (mediaNew) S.media = c.media; S.photos = c.photos || S.photos; S.art = c.art || S.art; S.groups = c.groups || S.groups; S.patch = c.patch || S.patch; S.links = c.links || S.links; S.tournaments = c.tournaments || S.tournaments; S.tcgCfg = c.tcgCfg || S.tcgCfg; S.finishers = c.finishers || S.finishers;
+    S.sources = c.sources || []; S.updated = c.updated || {}; S.polls = c.polls || []; if (mediaNew) S.media = c.media; S.photos = c.photos || S.photos; S.bank = c.bank || S.bank || {}; S.art = c.art || S.art; S.groups = c.groups || S.groups; S.patch = c.patch || S.patch; S.links = c.links || S.links; S.tournaments = c.tournaments || S.tournaments; S.tcgCfg = c.tcgCfg || S.tcgCfg; S.finishers = c.finishers || S.finishers;
     mergeFeed(c.feed);
     changed("content"); if (mediaNew) changed("media");
     const more = ((S.news && S.news.items) || []).length - oldNews;
@@ -469,7 +469,7 @@ async function boot() {
   document.getElementById("favbtn").innerHTML = ICON.starF;
   const c = await loadContent(); S.P = c.P; S.news = c.news; S.recaps = c.recaps || {}; S.matches = c.matches || []; S.titles = c.titles || []; S.titlesUpdated = c.titlesUpdated || "";
   S.highlights = c.highlights || {}; S.wrestlers = c.wrestlers || {}; S.storylines = c.storylines || []; S.rosters = c.rosters || {}; S.rostersSrc = c.rostersSrc || {};
-  S.sources = c.sources || []; S.updated = c.updated || {}; S.polls = c.polls || []; S.media = c.media || { bg: {}, music: null }; S.photos = c.photos || {}; S.art = c.art || {}; S.groups = c.groups || {}; S.patch = c.patch || []; S.links = c.links || {}; S.tournaments = c.tournaments || {}; S.tcgCfg = c.tcgCfg || {}; S.finishers = c.finishers || {};
+  S.sources = c.sources || []; S.updated = c.updated || {}; S.polls = c.polls || []; S.media = c.media || { bg: {}, music: null }; S.photos = c.photos || {}; S.bank = c.bank || {}; S.art = c.art || {}; S.groups = c.groups || {}; S.patch = c.patch || []; S.links = c.links || {}; S.tournaments = c.tournaments || {}; S.tcgCfg = c.tcgCfg || {}; S.finishers = c.finishers || {};
   mergeFeed(c.feed); contentSig = sigOf(c);
   tick(); setInterval(tick, 60000);
   loadPushCfg();

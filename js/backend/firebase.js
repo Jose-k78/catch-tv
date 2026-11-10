@@ -387,3 +387,5 @@ export function txTcgx(id, fn) {
   const ref = F.doc(db, "tcgx", id);
   return F.runTransaction(db, async tx => { const s = await tx.get(ref); if (!s.exists()) throw new Error("introuvable"); const cur = s.data(); cur.id = id; cur.at = ms(cur.at); const patch = fn(cur); if (!patch) throw new Error("plus possible"); tx.update(ref, patch); return Object.assign(cur, patch); });
 }
+// toutes les notes des membres pour un show (page d'un show déjà sorti)
+export async function showRates(k, d) { const r = await F.getDocs(F.query(F.collection(db, "activity"), F.where("k", "==", k), F.where("d", "==", d), F.limit(200))); return r.docs.map(s => { const x = data(s); x.id = s.id; x.at = ms(x.at); return x; }).filter(x => x.kind === "rate"); }

@@ -1,6 +1,21 @@
 {
- "updated": "2026-11-08",
+ "updated": "2026-11-11",
  "items": [
+  {
+   "id": "2026-11-11-maj",
+   "d": "2026-11-11",
+   "t": "Grande mise à jour (1re partie)",
+   "txt": [
+    "🎁 TCCCG : cadeau pour tous — 250 gimmicks et 1 mallette Money In The Bank (la carte SSR de ton choix, dans Call Up › Booster Agent Libre).",
+    "🎴 3 boosters gratuits toutes les 5 heures, 5 cartes dans chaque booster, plus de chances d’avoir une SSR.",
+    "✨ Les cartes changent d’image en passant UR puis LR.",
+    "📸 Nouvelles photos de catcheurs, nouvelles ceintures, logos d’équipes et d’événements. Petite ceinture sur la photo des champions.",
+    "🔎 Recherche : les fiches des catcheurs reviennent en premier.",
+    "⭐ Page d’un show déjà sorti : les notes de tous les membres.",
+    "🔕 Les notifications d’actu n’affichent plus les titres des articles (zéro spoiler).",
+    "🧹 Fiches : les rubriques Entrance et Son actu sont retirées."
+   ]
+  },
   {
    "id": "2026-11-08-tcgmodo",
    "d": "2026-11-08",

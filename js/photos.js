@@ -4,6 +4,15 @@
 import { S } from "./state.js";
 import { esc } from "./util.js";
 import { wInfo } from "./wrestlers.js";
+import { beltOf } from "./assets.js";
+// petite ceinture sur la photo du champion actuel (pas de spoiler : seulement si le titre est tenu depuis plus de 7 jours)
+let bkey = "", bmap = null;
+export function beltBadge(name) {
+  const T = S.titles || [], k0 = T.length + "|" + (T[0] && T[0].since);
+  if (!bmap || bkey !== k0) { bmap = new Map(); bkey = k0; const lim = Date.now() - 7 * 864e5;
+    T.forEach(t => { const img = beltOf(t.id); if (!img || !t.since || +new Date(t.since) > lim) return; [t.c].concat(t.who || []).forEach(c => { if (!c) return; String(c).replace(/\s*\(.*\)$/, "").split(/\s*(?:&| et |,)\s*/).forEach(n => { const kk = key(n); if (kk && !bmap.has(kk)) bmap.set(kk, { img: img, n: t.n, id: t.id }); }); }); }); }
+  const b = bmap.get(key(name)); return b ? '<img class="wbelt" src="' + esc(b.img) + '" alt="" title="' + esc(b.n) + '" loading="lazy" onerror="this.remove()">' : "";
+}
 
 const key = s => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/&/g, " and ").replace(/[^a-z0-9]+/g, "");
 let map = null, mapOf = null;
@@ -35,7 +44,7 @@ const href = n => "#/catcheur/" + encodeURIComponent(n);
 // petite photo ronde qui mène à la fiche (rien si pas de photo)
 export function face(name, size, cls) {
   const p = photoOf(name); if (!p) return "";
-  return '<a class="wface' + (cls ? " " + cls : "") + '" href="' + href(name) + '" title="' + esc(name) + '" style="width:' + size + "px;height:" + size + 'px"><img src="' + esc(p) + '" alt="' + esc(name) + '" loading="lazy" onerror="this.parentNode.remove()"></a>';
+  return '<a class="wface' + (cls ? " " + cls : "") + '" href="' + href(name) + '" title="' + esc(name) + '" style="width:' + size + "px;height:" + size + 'px"><img src="' + esc(p) + '" alt="' + esc(name) + '" loading="lazy" onerror="this.parentNode.remove()">' + (size >= 40 ? beltBadge(name) : "") + "</a>";
 }
 // les catcheurs d'un camp : « The Vision (Bron Breakker et Austin Theory) » -> les membres ; « A et B » -> A, B
 export function peopleOf(side) {

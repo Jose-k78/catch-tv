@@ -28,7 +28,7 @@ const BASE_TOTAL = { N: 100, R: 130, SR: 160, SSR: 190, UR: 225, LR: 265 };
 // progression max (cahier) : N→R, R→SSR, SR→UR, SSR→UR (ou LR selon la popularité)
 const MAXR = { N: "R", R: "SSR", SR: "UR", SSR: "UR", UR: "LR", LR: "LR" };
 // taux de drop par défaut (%)
-export const RATE0 = { N: 50, R: 30, SR: 13, SSR: 5.5, UR: 1.2, LR: 0.3 };
+export const RATE0 = { N: 44, R: 30, SR: 14.5, SSR: 10, UR: 1.2, LR: 0.3 }; // SSR relevé le 11 nov. (demande de Jose)
 // coûts d'éveil (cahier) : Momentum / Pop / Push + objets d'éveil (C commun, R rare, E épique, L légendaire, M mythique)
 export const AWAKE = {
   N: { mpp: 80, items: { C: 3 } }, R: { mpp: 180, items: { C: 5, R: 2 } }, SR: { mpp: 320, items: { R: 4, E: 2 } },
@@ -79,7 +79,7 @@ export const realKey = c => norm(c.rn || c.name);
 // même nom de fichier que le robot des photos : quand Jose ajoute la photo, la carte garde son identifiant
 export const slugOf = s => String(s).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/&/g, "-and-").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "carte";
 export function baseCards() {
-  const c = cfg(), key = Object.keys(S.photos || {}).length + "|" + (S.titles || []).length + "|" + Object.keys(S.wrestlers || {}).length + "|" + Object.keys(S.finishers || {}).length + "|" + JSON.stringify(c.cards || {}).length + "|" + (c.custom || []).length + "|" + Object.keys(S.rosters || {}).length;
+  const c = cfg(), key = Object.keys(S.photos || {}).length + "|" + (S.titles || []).length + "|" + Object.keys(S.wrestlers || {}).length + "|" + Object.keys(S.finishers || {}).length + "|" + JSON.stringify(c.cards || {}).length + "|" + (c.custom || []).length + "|" + Object.keys(S.rosters || {}).length + "|" + Object.keys(S.bank || {}).length;
   if (BASE && BKEY === key) return BASE;
   const champs = champsNow();
   const roster = new Map(); Object.keys(S.rosters || {}).forEach(k => Object.keys(S.rosters[k] || {}).forEach(g => (S.rosters[k][g] || []).forEach(n => { if (!roster.has(norm(n))) roster.set(norm(n), { k: k, g: g }); })));
@@ -132,6 +132,11 @@ export function baseCards() {
     if (RAR.indexOf(x.max) < RAR.indexOf(x.r)) x.max = x.r;
     x.arch = ARCH[ov.arch] ? ov.arch : guessArch(x.name, x.w, x.al);
     if (ov.img) { x.pic = ov.img; x.nopic = false; }
+    // images alternatives (banque d'images) : UR = 1re variante, LR = version « champion » sinon 2e variante ; le modo peut choisir
+    const alts = ((S.bank || {})[x.id] || []).map(f => "img/tcg/alt/" + f), ch = alts.find(f => /-champ\d*\.webp$/.test(f)), al2 = alts.filter(f => f !== ch);
+    x.alts = alts;
+    x.picUR = ov.imgUR === "-" ? "" : ov.imgUR || al2[0] || "";
+    x.picLR = ov.imgLR === "-" ? "" : ov.imgLR || ch || al2[1] || "";
     if (ov.al) x.al = ov.al;
     x.buff = +ov.buff || 0; // en % (buff / nerf du modo)
     // 5 stats de base (somme selon la rareté de base, répartie selon l'archétype)
