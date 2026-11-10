@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T09:36:20.728Z",
+ "updated": "2026-11-10T09:36:31.276Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "m:statlight kid vs suzu suzuki": [
@@ -160,6 +160,15 @@
     "p": "VK",
     "at": "2026-11-10",
     "def": false
+   }
+  ],
+  "story:okada-omega": [
+   {
+    "t": "",
+    "u": "https://archive.org/details/okada-vs-omega-series",
+    "p": "archive.org",
+    "at": "2026-11-10",
+    "def": true
    }
   ]
  }
