@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T00:34:42.817Z",
+ "updated": "2026-11-10T01:29:44.745Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "m:statlight kid vs suzu suzuki": [
@@ -126,6 +126,15 @@
     "t": "",
     "u": "https://www.youtube.com/live/RlDb8bv1Yyo?is=Cy3ObGH6OWGaeuwT",
     "p": "YouTube",
+    "at": "2026-11-10",
+    "def": true
+   }
+  ],
+  "ref:Kazuchika Okada contre Kenny Omega|Wrestle Kingdom 11, 2017": [
+   {
+    "t": "",
+    "u": "https://archive.org/embed/x-2-twitter.com-p-esc-dyt-jj-t-1-mtrz-4-720p?autoplay=1",
+    "p": "archive.org",
     "at": "2026-11-10",
     "def": true
    }
