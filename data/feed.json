@@ -1,6 +1,25 @@
 {
- "at": "2026-11-11T15:47:15.217Z",
+ "at": "2026-11-11T16:51:32.789Z",
  "items": [
+  {
+   "t": "Preview : AEW Dynamite du 11 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": [
+    "AEW",
+    "Dynamite"
+   ]
+  },
+  {
+   "t": "Tay Melo quitte officiellement l'AEW",
+   "u": "https://www.catch-newz.com/aew/newz/61225-tay-melo-quitte-officiellement-laew",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": [
+    "AEW"
+   ]
+  },
   {
    "t": "Preview : WWE SmackDown du 13 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
@@ -10,6 +29,13 @@
     "WWE",
     "SmackDown"
    ]
+  },
+  {
+   "t": "Résultats de GCW The Crossroads 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61211-resultats-de-gcw-the-crossroads-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": []
   },
   {
    "t": "Résultats du jour 12 de DG The Gate Of Victory 2026",
@@ -360,16 +386,6 @@
    ]
   },
   {
-   "t": "Preview : AEW Dynamite du 11 novembre 2026",
-   "u": "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": [
-    "AEW",
-    "Dynamite"
-   ]
-  },
-  {
    "t": "WWE RAW : The Vision poursuivi par Oba Femi, Penta et Je'Von Evans",
    "u": "https://www.catch-newz.com/wwe/newz/61183-wwe-raw-the-vision-poursuivi-par-oba-femi-penta-et-jevon-evans",
    "s": "Catch-Newz",
@@ -488,24 +504,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-09",
    "tags": []
-  },
-  {
-   "t": "Carte de CMLL Lunes Clasico du 9 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61113-carte-de-cmll-lunes-clasico-du-9-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": [
-    "CMLL"
-   ]
-  },
-  {
-   "t": "R-Truth annonce le triste décès de son papa",
-   "u": "https://www.catch-newz.com/wwe/newz/61157-r-truth-annonce-le-triste-deces-de-son-papa",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -944,10 +942,13 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
+   "https://www.catch-newz.com/aew/newz/61225-tay-melo-quitte-officiellement-laew",
    "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61222-audiences-wwe-aew-et-tna-26-octobre-au-1er-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61211-resultats-de-gcw-the-crossroads-2026",
    "https://www.catch-newz.com/international/resultats/61208-resultats-du-jour-12-de-dg-the-gate-of-victory-2026",
    "https://www.catch-newz.com/wwe/newz/61224-une-longue-absence-pour-randy-orton-apres-crown-jewel",
    "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
@@ -995,7 +996,6 @@
    "https://www.catch-newz.com/wwe/newz/61187-wwe-raw-jacy-jayne-et-jade-cargill-sallient-officiellement-a-quelques-semaines-des-survivor-series-wargames",
    "https://www.catch-newz.com/wwe/newz/61186-wwe-raw-cm-punk-integre-la-team-usa-aux-cotes-de-cody-rhodes",
    "https://www.catch-newz.com/wwe/newz/61184-wwe-raw-rey-fenix-devient-le-nouveau-challenger-n-1-au-titre-intercontinental-dethan-page",
-   "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61183-wwe-raw-the-vision-poursuivi-par-oba-femi-penta-et-jevon-evans",
    "https://www.catch-newz.com/wwe/resultats/61150-resultats-de-wwe-road-to-survivor-series-du-6-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61179-resultats-de-chocopro-552",
@@ -1241,16 +1241,14 @@
    "https://www.catch-newz.com/culture/cineserie/60928-dave-batista-sajoute-10-kilos-pour-son-role-de-kratos",
    "https://www.catch-newz.com/international/newz/60923-produce-wrestling-suspend-ses-activites-jusquen-2027",
    "https://www.catch-newz.com/international/resultats/60931-resultats-de-alto-voltaje-cmll-du-1er-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/60927-smackdown-ne-sera-pas-en-direct-pour-noel-2026",
-   "https://www.catch-newz.com/wwe/newz/60924-date-et-lieu-du-wwe-royal-rumble-2027",
-   "https://www.catch-newz.com/international/resultats/60904-resultats-de-indy-wrestling-du-15-octobre-2026"
+   "https://www.catch-newz.com/wwe/newz/60927-smackdown-ne-sera-pas-en-direct-pour-noel-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
-  "YouTube WWE": "1 nouvelles vidéos",
+  "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
