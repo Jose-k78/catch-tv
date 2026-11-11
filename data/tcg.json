@@ -155,7 +155,18 @@
    "medalOf": "Fallon Henley"
   },
   "royce-keys": {
-   "buff": 5
+   "buff": 5,
+   "k": "WWE",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Spinebuster",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": ""
   }
  },
  "bgm": {
