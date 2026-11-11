@@ -98,7 +98,18 @@
    "medalOf": "Bianca Belair"
   },
   "bray-wyatt": {
-   "img": "img/tcg/alt/windham-rotunda-alt.webp"
+   "img": "img/tcg/alt/windham-rotunda-alt.webp",
+   "k": "WWE",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Sister Abigail",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Luke Harper"
   }
  },
  "bgm": {
