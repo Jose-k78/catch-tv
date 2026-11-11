@@ -1,5 +1,5 @@
 {
- "at": "2026-11-11T14:50:40.704Z",
+ "at": "2026-11-11T15:47:15.217Z",
  "items": [
   {
    "t": "Preview : WWE SmackDown du 13 novembre 2026",
@@ -898,6 +898,10 @@
    {
     "id": "Bay3Ww0ZMBE",
     "t": "CM Punk joins Cody Rhodes on Team USA: Raw highlights, Nov. 9, 2026"
+   },
+   {
+    "id": "uRvHU2BiSf4",
+    "t": "EXCLUSIVE: Lyra Valkyria lets loose on Sol Ruca: Raw highlights, Nov. 9, 2026"
    }
   ],
   "WWE|NXT|2026-11-10": [
@@ -1243,10 +1247,10 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
-  "YouTube WWE": "0 nouvelles vidéos",
+  "YouTube WWE": "1 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
