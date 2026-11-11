@@ -124,7 +124,8 @@
    },
    "gimmick": "",
    "medalOf": "Royce Keys",
-   "imgLR": "-"
+   "imgLR": "-",
+   "imgUR": "-"
   },
   "rey-fenix": {
    "imgRey Fenix": "img/catcheurs/rey-fenix.webp",
