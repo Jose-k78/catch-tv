@@ -79,7 +79,11 @@ document.addEventListener("input", e => {
 export function playerView(a, b, c) {
   const vids = allVideos();
   if (a === "v") return watchView(b, vids);
-  if (a === "e") return eventView(decodeURIComponent(b || ""), vids);
+  if (a === "e") { // un show d'une promotion de l'app n'a qu'une seule page : celle du show (lecteur en haut, vidéos, résumé, liens)
+    const p = keyParts(decodeURIComponent(b || ""));
+    if (S.P[p.k] && /^\d{4}-\d\d-\d\d$/.test(p.d || "")) { location.replace("#/ev/" + encodeURIComponent(p.k) + "/" + encodeURIComponent(p.show || "PLE") + "/" + p.d); return ""; }
+    return eventView(decodeURIComponent(b || ""), vids);
+  }
   if (a === "reglages") return settingsView();
   if (a === "k") return promoView(decodeURIComponent(b || ""), c ? decodeURIComponent(c) : "", vids);
   const L = likes(), liked = vids.filter(v => L[v.id] === 1);

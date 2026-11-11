@@ -180,7 +180,7 @@ export function namesIn(text) {
 // Noms connus de l'app (fiches suivies, catcheurs à découvrir, champions) pour les suggestions de recherche
 export function knownNames() {
   const out = [], seen = {};
-  const add = (n, s, a) => { const k = norm(n); if (!n || seen[k]) return; seen[k] = 1; out.push({ n: n, s: s, a: Array.isArray(a) ? a : a ? [String(a)] : [] }); };
+  const add = (n, s, a) => { const k = norm(n), al = Array.isArray(a) ? a : a ? [String(a)] : []; if (!n) return; if (seen[k]) { al.forEach(x => { if (seen[k].a.indexOf(x) < 0) seen[k].a.push(x); }); return; } out.push(seen[k] = { n: n, s: s, a: al.slice() }); };
   const W = S.wrestlers || {};
   Object.keys(W).forEach(k => { const w = W[k] || {}; add(k, [w.k, w.era].filter(Boolean).join(" · ") || "Fiche catcheur", w.a); });
   (S.titles || []).forEach(t => (t.who || []).forEach(x => add(x, t.k + " · " + t.n)));

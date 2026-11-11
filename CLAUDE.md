@@ -157,8 +157,11 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
     calendrier : `tour: 1` sur un événement = simple date de tournée (affichée, mais jamais « prochain PPV » ni compte à rebours du bandeau) ;
     la tâche de 19 h 23 doit ajouter les dates de tournée NJPW / Stardom / Marigold avec `tour: 1` (sources : njpw1972.com, wwr-stardom.com,
     voicesofwrestling.com « upcoming schedules ») ; animations TCCCG (bloc « animations retravaillées » de style.css).
-  - Jose a renoncé aux robots GitHub (on garde les tâches de Claude). RESTE : calendriers NJPW / Stardom / Marigold, animations TCCCG,
-    chasse aux pages en double, fusion complète des anciens noms des catcheurs.
+  - doublons : `photos.json` a un champ `merged` { ancien slug: nouveau } (catcheurs fusionnés ; `S.photosMerged`, `cardById` suit le lien
+    pour que les joueurs gardent leurs cartes) et des alias (anciens noms, vrais noms) dans `n` ; `knownNames` cumule les alias ;
+    `#/player/e/K|show|date` redirige vers `#/ev/…` (une seule page par show) ; la page Recherche vide n'a plus Explorer (il est sur l'accueil).
+  - Jose a renoncé aux robots GitHub (on garde les tâches de Claude). Reste seulement : compléter les dates Stardom / Marigold de fin 2026
+    (site wwr-stardom.com illisible depuis Claude le 11 nov. — réessayer dans la tâche de 19 h 23, avec `tour: 1`).
 - Notes : demi-étoiles de 0 à 5,5 (`RMAX`, `fmtR`, `stars`, `ratePick` / `pickRate` de util.js ; 6e étoile orange = bonus).
 - Historique : `g_<id>` = note d'un segment, `q_<id>` = segment préféré (comment = nom du show) ; préfixes m_/s_/f_/g_/q_ exclus
   des compteurs de shows (spoil.js, trophies.js, account.js). Profil : « Ses segments préférés ».

@@ -154,7 +154,8 @@ export function baseCards() {
   return BASE;
 }
 function partnerOf(x) { const g = x.gs.cur[0] || x.gs.past[0]; if (!g) return ""; const G = groupById(g); return G && (G.m || []).find(n => norm(n) !== realKey(x)) || ""; }
-export const cardById = id => baseCards().find(c => c.id === id) || null;
+// (un catcheur fusionné avec un autre garde ses cartes : l'ancien identifiant mène à la nouvelle carte)
+export const cardById = id => baseCards().find(c => c.id === id) || ((S.photosMerged || {})[id] ? baseCards().find(c => c.id === S.photosMerged[id]) : null) || null;
 export const cardByName = name => { const n = norm(name); return baseCards().find(c => realKey(c) === n) || baseCards().find(c => norm(c.name) === n) || null; };
 export function champsNow() { const s = new Set(); (S.titles || []).forEach(t => { [t.c].concat(t.who || []).forEach(c => { if (c) s.add(norm(String(c).replace(/\s*\(.*\)$/, ""))); }); }); return s; }
 export function titleOf(name) { const n = norm(name); return (S.titles || []).find(t => [t.c].concat(t.who || []).some(c => c && norm(String(c).replace(/\s*\(.*\)$/, "")) === n)) || null; }

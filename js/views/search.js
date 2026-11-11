@@ -52,7 +52,8 @@ function eventLike(q, loc, names) {
 }
 function resultsHTML(q) {
   if (!norm(q)) return '<p class="note">Tape le nom d’un show (Raw, Dynamite…), d’un PLE ou PPV (Crown Jewel…), d’un show passé (WrestleMania 13, Starrcade 1997…) ou d’un catcheur (Roman Reigns, Mayu Iwatani…).</p>' +
-    (discoverTile() ? '<h2 class="hh">Catcheur à découvrir</h2>' + discoverTile() : "") + exploreHTML();
+    // (Explorer, catcheur à découvrir, tournois… sont sur l'accueil : pas de doublon ici, juste des raccourcis)
+    '<div class="chips" style="margin:12px 16px"><a class="chip" href="#/player">▶ TCC Play</a><a class="chip" href="#/matchs">Matchs à découvrir</a><a class="chip" href="#/tournois">Tournois</a><a class="chip" href="#/passes">Shows déjà passés</a><a class="chip" href="#/membres">Membres</a></div>';
   const loc = localResults(q), names = nameResults(q), ev = eventLike(q, loc, names);
   const showsH = loc.length ? '<h2>Shows et événements</h2><div class="list">' + loc.map(r => '<a class="item" href="' + r.h + '"><span class="lbl"><b>' + esc(r.t) + "</b><small>" + esc(r.s) + '</small></span><span class="chev">›</span></a>').join("") + "</div>" : "";
   // archives : PLE et shows passés trouvés sur Wikipédia (WrestleMania 13, Starrcade 1997…)

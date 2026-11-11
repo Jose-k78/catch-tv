@@ -49,7 +49,8 @@
   "adam-copeland": {
    "f": "adam-copeland.webp",
    "n": [
-    "Adam Copeland"
+    "Adam Copeland",
+    "Edge"
    ],
    "v": [
     "adam-copeland-v2.webp",
@@ -267,7 +268,9 @@
   "andrade-el-idolo": {
    "f": "andrade-el-idolo.webp",
    "n": [
-    "Andrade El Ídolo"
+    "Andrade El Ídolo",
+    "Andrade",
+    "Andrade Cien Almas"
    ],
    "v": [
     "andrade-el-idolo-v2.webp",
@@ -433,7 +436,8 @@
   "athena": {
    "f": "athena-v2.webp",
    "n": [
-    "Athena"
+    "Athena",
+    "Ember Moon"
    ],
    "v": [
     "athena.webp"
@@ -476,7 +480,8 @@
   "austin-creed": {
    "f": "austin-creed-v3.webp",
    "n": [
-    "Austin Creed"
+    "Austin Creed",
+    "Xavier Woods"
    ],
    "v": [
     "austin-creed.webp",
@@ -767,11 +772,13 @@
   "blake-monroe": {
    "f": "blake-monroe.webp",
    "n": [
-    "Blake Monroe"
+    "Blake Monroe",
+    "Mariah May"
    ],
    "v": [
     "blake-monroe-v2.webp",
-    "blake-monroe-v3.webp"
+    "blake-monroe-v3.webp",
+    "mariah-may.webp"
    ]
   },
   "blue-demon-jr": {
@@ -826,7 +833,8 @@
   "bobby-roode": {
    "f": "bobby-roode-v4.webp",
    "n": [
-    "Bobby Roode"
+    "Bobby Roode",
+    "Robert Roode"
    ],
    "v": [
     "bobby-roode.webp",
@@ -912,7 +920,8 @@
   "brian-myers": {
    "f": "brian-myers-v4.webp",
    "n": [
-    "Brian Myers"
+    "Brian Myers",
+    "Curt Hawkins"
    ],
    "v": [
     "brian-myers.webp",
@@ -975,7 +984,8 @@
    "f": "bronson-reed.webp",
    "n": [
     "Bronson Reed",
-    "Jonah Rock"
+    "Jonah Rock",
+    "Jonah"
    ],
    "v": [
     "bronson-reed-v2.webp",
@@ -1011,7 +1021,8 @@
   "bryan-danielson": {
    "f": "bryan-danielson-v4.webp",
    "n": [
-    "Bryan Danielson"
+    "Bryan Danielson",
+    "Daniel Bryan"
    ],
    "v": [
     "bryan-danielson.webp",
@@ -1030,7 +1041,9 @@
   "buddy-matthews": {
    "f": "buddy-matthews.webp",
    "n": [
-    "Buddy Matthews"
+    "Buddy Matthews",
+    "Buddy Murphy",
+    "Murphy"
    ],
    "v": [
     "buddy-matthews-v2.webp",
@@ -1059,7 +1072,8 @@
   "bully-ray": {
    "f": "bully-ray-v4.webp",
    "n": [
-    "Bully Ray"
+    "Bully Ray",
+    "Bubba Ray Dudley"
    ],
    "v": [
     "bully-ray.webp",
@@ -1129,7 +1143,8 @@
   "cassie-lee": {
    "f": "cassie-lee-v3.webp",
    "n": [
-    "Cassie Lee"
+    "Cassie Lee",
+    "Peyton Royce"
    ],
    "v": [
     "cassie-lee.webp",
@@ -1216,7 +1231,8 @@
   "chelsea-green": {
    "f": "chelsea-green-v4.webp",
    "n": [
-    "Chelsea Green"
+    "Chelsea Green",
+    "Laurel Van Ness"
    ],
    "v": [
     "chelsea-green.webp",
@@ -1310,7 +1326,8 @@
   "christian-cage": {
    "f": "christian-cage-v4.webp",
    "n": [
-    "Christian Cage"
+    "Christian Cage",
+    "Christian"
    ],
    "v": [
     "christian-cage.webp",
@@ -1346,7 +1363,9 @@
   "claudio-castagnoli": {
    "f": "claudio-castagnoli-v4.webp",
    "n": [
-    "Claudio Castagnoli"
+    "Claudio Castagnoli",
+    "Cesaro",
+    "Antonio Cesaro"
    ],
    "v": [
     "claudio-castagnoli.webp",
@@ -1418,7 +1437,8 @@
   "curt-hennig": {
    "f": "curt-hennig.webp",
    "n": [
-    "Curt Hennig"
+    "Curt Hennig",
+    "Mr. Perfect"
    ]
   },
   "cutler-james": {
@@ -1593,7 +1613,8 @@
   "dezmond-xavier": {
    "f": "dezmond-xavier-v4.webp",
    "n": [
-    "Dezmond Xavier"
+    "Dezmond Xavier",
+    "Wes Lee"
    ],
    "v": [
     "dezmond-xavier.webp",
@@ -1751,7 +1772,8 @@
   "drew-mcintyre": {
    "f": "drew-mcintyre.webp",
    "n": [
-    "Drew McIntyre"
+    "Drew McIntyre",
+    "Drew Galloway"
    ],
    "v": [
     "drew-mcintyre-v2.webp",
@@ -1772,11 +1794,14 @@
   "dustin-rhodes": {
    "f": "dustin-rhodes-v4.webp",
    "n": [
-    "Dustin Rhodes"
+    "Dustin Rhodes",
+    "Goldust"
    ],
    "v": [
     "dustin-rhodes.webp",
-    "dustin-rhodes-v2.webp"
+    "dustin-rhodes-v2.webp",
+    "goldust-v4.webp",
+    "goldust.webp"
    ]
   },
   "dusty-rhodes": {
@@ -1918,7 +1943,8 @@
   "elayna-black": {
    "f": "elayna-black-v4.webp",
    "n": [
-    "Elayna Black"
+    "Elayna Black",
+    "Cora Jade"
    ],
    "v": [
     "elayna-black.webp",
@@ -1928,7 +1954,8 @@
   "elijah": {
    "f": "elijah.webp",
    "n": [
-    "Elijah"
+    "Elijah",
+    "Elias"
    ]
   },
   "elijah-holyfield": {
@@ -1997,7 +2024,9 @@
   "erick-redbeard": {
    "f": "erick-redbeard-v3.webp",
    "n": [
-    "Erick Redbeard"
+    "Erick Redbeard",
+    "Erick Rowan",
+    "Rowan"
    ],
    "v": [
     "erick-redbeard.webp",
@@ -2080,7 +2109,9 @@
    "f": "finn-balor-v4.webp",
    "n": [
     "Finn Bálor",
-    "Fergal Devitt"
+    "Fergal Devitt",
+    "Prince Devitt",
+    "Finn Balor"
    ],
    "v": [
     "finn-balor.webp",
@@ -2129,7 +2160,8 @@
   "fred-rosser": {
    "f": "fred-rosser-v4.webp",
    "n": [
-    "Fred Rosser"
+    "Fred Rosser",
+    "Darren Young"
    ],
    "v": [
     "fred-rosser.webp",
@@ -2213,16 +2245,6 @@
     "go-shiozaki-v2.webp"
    ]
   },
-  "goldust": {
-   "f": "goldust-v4.webp",
-   "n": [
-    "Goldust"
-   ],
-   "v": [
-    "goldust.webp",
-    "goldust-v2.webp"
-   ]
-  },
   "gran-guerrero": {
    "f": "gran-guerrero-v2.webp",
    "n": [
@@ -2282,7 +2304,9 @@
   "gunther": {
    "f": "gunther.webp",
    "n": [
-    "Gunther"
+    "Gunther",
+    "WALTER",
+    "Walter"
    ]
   },
   "haku": {
@@ -2314,11 +2338,13 @@
   "hangman-adam-page": {
    "f": "hangman-adam-page.webp",
    "n": [
-    "Hangman Adam Page"
+    "Hangman Adam Page",
+    "Adam Page"
    ],
    "v": [
     "hangman-adam-page-v2.webp",
-    "hangman-adam-page-v3.webp"
+    "hangman-adam-page-v3.webp",
+    "adam-page.webp"
    ]
   },
   "hank-walker": {
@@ -2935,7 +2961,8 @@
   "jessie-mckay": {
    "f": "jessie-mckay-v4.webp",
    "n": [
-    "Jessie McKay"
+    "Jessie McKay",
+    "Billie Kay"
    ],
    "v": [
     "jessie-mckay.webp",
@@ -3049,7 +3076,8 @@
   "jon-moxley": {
    "f": "jon-moxley-v4.webp",
    "n": [
-    "Jon Moxley"
+    "Jon Moxley",
+    "Dean Ambrose"
    ],
    "v": [
     "jon-moxley.webp",
@@ -3119,7 +3147,8 @@
   "juice-robinson": {
    "f": "juice-robinson-v4.webp",
    "n": [
-    "Juice Robinson"
+    "Juice Robinson",
+    "CJ Parker"
    ],
    "v": [
     "juice-robinson.webp",
@@ -3154,16 +3183,6 @@
    "v": [
     "jun-akiyama.webp",
     "jun-akiyama-v2.webp"
-   ]
-  },
-  "jungle-jack-perry": {
-   "f": "jungle-jack-perry.webp",
-   "n": [
-    "Jungle Jack Perry"
-   ],
-   "v": [
-    "jungle-jack-perry-v2.webp",
-    "jungle-jack-perry-v3.webp"
    ]
   },
   "jushin-thunder-liger": {
@@ -3248,7 +3267,8 @@
    "f": "keiji-mutoh.webp",
    "n": [
     "Keiji Mutoh",
-    "Great Muta"
+    "Great Muta",
+    "The Great Muta"
    ],
    "v": [
     "keiji-mutoh-v2.webp",
@@ -3333,7 +3353,8 @@
   "kevin-nash": {
    "f": "kevin-nash-v4.webp",
    "n": [
-    "Kevin Nash"
+    "Kevin Nash",
+    "Diesel"
    ],
    "v": [
     "kevin-nash.webp",
@@ -3692,7 +3713,8 @@
   "lance-archer": {
    "f": "lance-archer-v3.webp",
    "n": [
-    "Lance Archer"
+    "Lance Archer",
+    "Lance Hoyt"
    ],
    "v": [
     "lance-archer.webp",
@@ -3795,11 +3817,13 @@
   "lexis-king": {
    "f": "lexis-king.webp",
    "n": [
-    "Lexis King"
+    "Lexis King",
+    "Brian Pillman Jr."
    ],
    "v": [
     "lexis-king-v2.webp",
-    "lexis-king-v3.webp"
+    "lexis-king-v3.webp",
+    "brian-pillman-jr.webp"
    ]
   },
   "lince-dorado": {
@@ -3885,7 +3909,8 @@
   "luchasaurus": {
    "f": "luchasaurus-v4.webp",
    "n": [
-    "Luchasaurus"
+    "Luchasaurus",
+    "Killswitch"
    ],
    "v": [
     "luchasaurus.webp",
@@ -4089,7 +4114,8 @@
   "mascara-dorada": {
    "f": "mascara-dorada.webp",
    "n": [
-    "Máscara Dorada"
+    "Máscara Dorada",
+    "Gran Metalik"
    ]
   },
   "mason-madden": {
@@ -4122,7 +4148,8 @@
   "matt-cardona": {
    "f": "matt-cardona-v4.webp",
    "n": [
-    "Matt Cardona"
+    "Matt Cardona",
+    "Zack Ryder"
    ],
    "v": [
     "matt-cardona.webp",
@@ -4263,7 +4290,8 @@
   "mercedes-mone": {
    "f": "mercedes-mone.webp",
    "n": [
-    "Mercedes Moné"
+    "Mercedes Moné",
+    "Sasha Banks"
    ],
    "v": [
     "mercedes-mone-v2.webp",
@@ -4283,7 +4311,8 @@
   "michin": {
    "f": "michin.webp",
    "n": [
-    "Michin"
+    "Michin",
+    "Mia Yim"
    ],
    "v": [
     "michin-v2.webp",
@@ -4293,7 +4322,10 @@
   "mick-foley": {
    "f": "mick-foley-v4.webp",
    "n": [
-    "Mick Foley"
+    "Mick Foley",
+    "Mankind",
+    "Cactus Jack",
+    "Dude Love"
    ],
    "v": [
     "mick-foley.webp",
@@ -4339,7 +4371,8 @@
   "mike-bennett": {
    "f": "mike-bennett-v4.webp",
    "n": [
-    "Mike Bennett"
+    "Mike Bennett",
+    "Mike Kanellis"
    ],
    "v": [
     "mike-bennett.webp",
@@ -4349,7 +4382,9 @@
   "mike-rotunda": {
    "f": "mike-rotunda-v3.webp",
    "n": [
-    "Mike Rotunda"
+    "Mike Rotunda",
+    "Irwin R. Schyster",
+    "IRS"
    ],
    "v": [
     "mike-rotunda.webp",
@@ -4423,7 +4458,9 @@
   "mistico": {
    "f": "mistico.webp",
    "n": [
-    "Místico"
+    "Místico",
+    "Sin Cara",
+    "Carístico"
    ],
    "v": [
     "mistico-v2.webp"
@@ -4534,7 +4571,8 @@
   "mustafa-ali": {
    "f": "mustafa-ali-v4.webp",
    "n": [
-    "Mustafa Ali"
+    "Mustafa Ali",
+    "Ali"
    ],
    "v": [
     "mustafa-ali.webp",
@@ -4673,7 +4711,9 @@
   "nattie": {
    "f": "nattie.webp",
    "n": [
-    "Nattie"
+    "Nattie",
+    "Natalya",
+    "Natalya Neidhart"
    ],
    "v": [
     "nattie-v2.webp",
@@ -4709,7 +4749,8 @@
   "nic-nemeth": {
    "f": "nic-nemeth-v4.webp",
    "n": [
-    "Nic Nemeth"
+    "Nic Nemeth",
+    "Dolph Ziggler"
    ],
    "v": [
     "nic-nemeth.webp",
@@ -4965,7 +5006,9 @@
   "paul-wight": {
    "f": "paul-wight.webp",
    "n": [
-    "Paul Wight"
+    "Paul Wight",
+    "Big Show",
+    "The Big Show"
    ],
    "v": [
     "paul-wight-v2.webp"
@@ -4985,7 +5028,9 @@
    "f": "penta.webp",
    "n": [
     "Penta",
-    "Penta El Zero Miedo"
+    "Penta El Zero Miedo",
+    "Pentagón Jr.",
+    "Pentagon Jr"
    ],
    "v": [
     "penta-v2.webp",
@@ -5021,7 +5066,9 @@
   "piper-niven": {
    "f": "piper-niven.webp",
    "n": [
-    "Piper Niven"
+    "Piper Niven",
+    "Viper",
+    "Doudrop"
    ],
    "v": [
     "piper-niven-v2.webp",
@@ -5215,7 +5262,9 @@
   "rey-fenix": {
    "f": "rey-fenix.webp",
    "n": [
-    "Rey Fenix"
+    "Rey Fenix",
+    "Fénix",
+    "Rey Fénix"
    ],
    "v": [
     "rey-fenix-v2.webp",
@@ -5309,7 +5358,8 @@
   "ricky-saints": {
    "f": "ricky-saints.webp",
    "n": [
-    "Ricky Saints"
+    "Ricky Saints",
+    "Ricky Starks"
    ],
    "v": [
     "ricky-saints-v2.webp",
@@ -5347,7 +5397,8 @@
   "ricochet": {
    "f": "ricochet-v4.webp",
    "n": [
-    "Ricochet"
+    "Ricochet",
+    "Prince Puma"
    ],
    "v": [
     "ricochet.webp",
@@ -5387,13 +5438,15 @@
   "road-warrior-animal": {
    "f": "road-warrior-animal.webp",
    "n": [
-    "Road Warrior Animal"
+    "Road Warrior Animal",
+    "Animal"
    ]
   },
   "road-warrior-hawk": {
    "f": "road-warrior-hawk.webp",
    "n": [
-    "Road Warrior Hawk"
+    "Road Warrior Hawk",
+    "Hawk"
    ]
   },
   "rob-conway": {
@@ -5495,7 +5548,8 @@
   "ron-simmons": {
    "f": "ron-simmons-v3.webp",
    "n": [
-    "Ron Simmons"
+    "Ron Simmons",
+    "Faarooq"
    ],
    "v": [
     "ron-simmons.webp",
@@ -5555,7 +5609,8 @@
    "f": "royce-keys-v4.webp",
    "n": [
     "Royce Keys",
-    "Will Hobbs"
+    "Will Hobbs",
+    "Powerhouse Hobbs"
    ],
    "v": [
     "royce-keys.webp",
@@ -5571,7 +5626,8 @@
   "ruby-soho": {
    "f": "ruby-soho.webp",
    "n": [
-    "Ruby Soho"
+    "Ruby Soho",
+    "Ruby Riott"
    ],
    "v": [
     "ruby-soho-v2.webp",
@@ -5590,7 +5646,8 @@
   "rusev": {
    "f": "rusev.webp",
    "n": [
-    "Rusev"
+    "Rusev",
+    "Miro"
    ],
    "v": [
     "rusev-v2.webp",
@@ -5659,7 +5716,8 @@
   "sami-zayn": {
    "f": "sami-zayn.webp",
    "n": [
-    "Sami Zayn"
+    "Sami Zayn",
+    "El Generico"
    ],
    "v": [
     "sami-zayn-v2.webp",
@@ -5688,7 +5746,8 @@
   "samuel-shaw": {
    "f": "samuel-shaw-v4.webp",
    "n": [
-    "Samuel Shaw"
+    "Samuel Shaw",
+    "Dexter Lumis"
    ],
    "v": [
     "samuel-shaw.webp",
@@ -5698,7 +5757,8 @@
   "sanada": {
    "f": "sanada-v4.webp",
    "n": [
-    "Sanada"
+    "Sanada",
+    "Seiya Sanada"
    ],
    "v": [
     "sanada.webp",
@@ -5708,7 +5768,8 @@
   "sandman": {
    "f": "sandman.webp",
    "n": [
-    "Sandman"
+    "Sandman",
+    "The Sandman"
    ]
   },
   "sanely": {
@@ -5799,7 +5860,8 @@
   "scott-hall": {
    "f": "scott-hall-v4.webp",
    "n": [
-    "Scott Hall"
+    "Scott Hall",
+    "Razor Ramon"
    ],
    "v": [
     "scott-hall.webp",
@@ -5828,7 +5890,10 @@
   "sean-waltman": {
    "f": "sean-waltman-v4.webp",
    "n": [
-    "Sean Waltman"
+    "Sean Waltman",
+    "X-Pac",
+    "1-2-3 Kid",
+    "Syxx"
    ],
    "v": [
     "sean-waltman.webp",
@@ -5927,7 +5992,8 @@
   "shawn-spears": {
    "f": "shawn-spears-v4.webp",
    "n": [
-    "Shawn Spears"
+    "Shawn Spears",
+    "Tye Dillinger"
    ],
    "v": [
     "shawn-spears.webp",
@@ -6044,7 +6110,8 @@
   "shotzi-blackheart": {
    "f": "shotzi-blackheart-v4.webp",
    "n": [
-    "Shotzi Blackheart"
+    "Shotzi Blackheart",
+    "Shotzi"
    ],
    "v": [
     "shotzi-blackheart.webp",
@@ -6060,7 +6127,9 @@
   "sid-vicious": {
    "f": "sid-vicious-v2.webp",
    "n": [
-    "Sid Vicious"
+    "Sid Vicious",
+    "Sycho Sid",
+    "Sid Justice"
    ],
    "v": [
     "sid-vicious.webp"
@@ -6164,7 +6233,8 @@
   "steph-de-lander": {
    "f": "steph-de-lander-v4.webp",
    "n": [
-    "Steph De Lander"
+    "Steph De Lander",
+    "Persia Pirotta"
    ],
    "v": [
     "steph-de-lander.webp",
@@ -6214,7 +6284,8 @@
    "f": "stone-cold-steve-austin.webp",
    "n": [
     "Stone Cold Steve Austin",
-    "Steve Austin"
+    "Steve Austin",
+    "Stunning Steve Austin"
    ],
    "v": [
     "stone-cold-steve-austin-v2.webp",
@@ -6234,7 +6305,8 @@
   "sunny": {
    "f": "sunny.webp",
    "n": [
-    "Sunny"
+    "Sunny",
+    "Tammy Sytch"
    ],
    "v": [
     "sunny-v2.webp"
@@ -6253,7 +6325,9 @@
   "swerve-strickland": {
    "f": "swerve-strickland-v4.webp",
    "n": [
-    "Swerve Strickland"
+    "Swerve Strickland",
+    "Isaiah Scott",
+    "Isaiah \"Swerve\" Scott"
    ],
    "v": [
     "swerve-strickland.webp",
@@ -6395,7 +6469,8 @@
   "taya-valkyrie": {
    "f": "taya-valkyrie-v4.webp",
    "n": [
-    "Taya Valkyrie"
+    "Taya Valkyrie",
+    "Franky Monet"
    ],
    "v": [
     "taya-valkyrie.webp",
@@ -6509,7 +6584,9 @@
   "the-rock": {
    "f": "the-rock.webp",
    "n": [
-    "The Rock"
+    "The Rock",
+    "Dwayne Johnson",
+    "Rocky Maivia"
    ],
    "v": [
     "the-rock-v2.webp",
@@ -6520,7 +6597,8 @@
    "f": "the-undertaker.webp",
    "n": [
     "The Undertaker",
-    "Undertaker"
+    "Undertaker",
+    "Mark Calaway"
    ],
    "v": [
     "the-undertaker-v2.webp",
@@ -6625,7 +6703,8 @@
   "tommaso-ciampa": {
    "f": "tommaso-ciampa-v4.webp",
    "n": [
-    "Tommaso Ciampa"
+    "Tommaso Ciampa",
+    "Ciampa"
    ],
    "v": [
     "tommaso-ciampa-v3.webp",
@@ -6683,7 +6762,8 @@
   "toni-storm": {
    "f": "toni-storm-v4.webp",
    "n": [
-    "Toni Storm"
+    "Toni Storm",
+    "Timeless Toni Storm"
    ],
    "v": [
     "toni-storm.webp",
@@ -6739,7 +6819,8 @@
   "trent-beretta": {
    "f": "trent-beretta.webp",
    "n": [
-    "Trent Beretta"
+    "Trent Beretta",
+    "Trent?"
    ],
    "v": [
     "trent-beretta-v2.webp"
@@ -7182,7 +7263,8 @@
   "zachary-wentz": {
    "f": "zachary-wentz-v4.webp",
    "n": [
-    "Zachary Wentz"
+    "Zachary Wentz",
+    "Nash Carter"
    ],
    "v": [
     "zachary-wentz.webp",
@@ -7293,7 +7375,8 @@
   "killer-kross": {
    "f": "killer-kross.webp",
    "n": [
-    "Killer Kross"
+    "Killer Kross",
+    "Karrion Kross"
    ]
   },
   "pco": {
@@ -7323,7 +7406,8 @@
   "uncle-howdy": {
    "f": "uncle-howdy.webp",
    "n": [
-    "Uncle Howdy"
+    "Uncle Howdy",
+    "Bo Dallas"
    ]
   },
   "mr-aguila": {
@@ -7509,13 +7593,8 @@
   "pete-dunne": {
    "f": "pete-dunne.webp",
    "n": [
-    "Pete Dunne"
-   ]
-  },
-  "brian-pillman-jr": {
-   "f": "brian-pillman-jr.webp",
-   "n": [
-    "Brian Pillman Jr."
+    "Pete Dunne",
+    "Butch"
    ]
   },
   "bushi": {
@@ -7569,7 +7648,8 @@
   "rhino": {
    "f": "rhino.webp",
    "n": [
-    "Rhino"
+    "Rhino",
+    "Rhyno"
    ]
   },
   "katsuyori-shibata": {
@@ -7614,12 +7694,6 @@
     "Rohit Raju"
    ]
   },
-  "mariah-may": {
-   "f": "mariah-may.webp",
-   "n": [
-    "Mariah May"
-   ]
-  },
   "tyler-bate": {
    "f": "tyler-bate.webp",
    "n": [
@@ -7635,13 +7709,16 @@
   "sareee": {
    "f": "sareee.webp",
    "n": [
-    "Sareee"
+    "Sareee",
+    "Sarray"
    ]
   },
   "malakai-black": {
    "f": "malakai-black.webp",
    "n": [
-    "Malakai Black"
+    "Malakai Black",
+    "Aleister Black",
+    "Tommy End"
    ]
   },
   "rodney": {
@@ -7653,7 +7730,13 @@
   "jack-perry": {
    "f": "jack-perry.webp",
    "n": [
-    "Jack Perry"
+    "Jack Perry",
+    "Jungle Jack Perry"
+   ],
+   "v": [
+    "jungle-jack-perry.webp",
+    "jungle-jack-perry-v2.webp",
+    "jungle-jack-perry-v3.webp"
    ]
   },
   "charlie-haas": {
@@ -7677,7 +7760,9 @@
   "pac": {
    "f": "pac.webp",
    "n": [
-    "PAC"
+    "PAC",
+    "Neville",
+    "Adrian Neville"
    ]
   },
   "halloween": {
@@ -7722,12 +7807,6 @@
     "Difunto"
    ]
   },
-  "adam-page": {
-   "f": "adam-page.webp",
-   "n": [
-    "Adam Page"
-   ]
-  },
   "kon": {
    "f": "kon.webp",
    "n": [
@@ -7737,7 +7816,8 @@
   "el-hijo-del-fantasma": {
    "f": "el-hijo-del-fantasma.webp",
    "n": [
-    "El Hijo del Fantasma"
+    "El Hijo del Fantasma",
+    "Santos Escobar"
    ]
   },
   "vacant": {
@@ -7755,7 +7835,11 @@
   "luke-gallows": {
    "f": "luke-gallows.webp",
    "n": [
-    "Luke Gallows"
+    "Luke Gallows",
+    "Doc"
+   ],
+   "v": [
+    "doc.webp"
    ]
   },
   "scotty-2-hotty": {
@@ -7779,7 +7863,8 @@
   "scarlett": {
    "f": "scarlett.webp",
    "n": [
-    "Scarlett"
+    "Scarlett",
+    "Scarlett Bordeaux"
    ]
   },
   "brock-anderson": {
@@ -7860,12 +7945,6 @@
     "Joey Mercury"
    ]
   },
-  "doc": {
-   "f": "doc.webp",
-   "n": [
-    "Doc"
-   ]
-  },
   "david-otunga": {
    "f": "david-otunga.webp",
    "n": [
@@ -7875,13 +7954,16 @@
   "jake-hager": {
    "f": "jake-hager.webp",
    "n": [
-    "Jake Hager"
+    "Jake Hager",
+    "Jack Swagger"
    ]
   },
   "mr-anderson": {
    "f": "mr-anderson.webp",
    "n": [
-    "Mr. Anderson"
+    "Mr. Anderson",
+    "Mr. Kennedy",
+    "Ken Anderson"
    ]
   },
   "jerry-sags": {
@@ -7893,7 +7975,8 @@
   "bob-holly": {
    "f": "bob-holly.webp",
    "n": [
-    "Bob Holly"
+    "Bob Holly",
+    "Hardcore Holly"
    ]
   },
   "doug-williams": {
@@ -7950,5 +8033,13 @@
     "Carlito"
    ]
   }
+ },
+ "merged": {
+  "adam-page": "hangman-adam-page",
+  "jungle-jack-perry": "jack-perry",
+  "goldust": "dustin-rhodes",
+  "mariah-may": "blake-monroe",
+  "doc": "luke-gallows",
+  "brian-pillman-jr": "lexis-king"
  }
 }

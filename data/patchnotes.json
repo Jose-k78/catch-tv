@@ -2,6 +2,17 @@
  "updated": "2026-11-11",
  "items": [
   {
+   "id": "2026-11-11-fin",
+   "d": "2026-11-11",
+   "t": "Fin de la grande mise à jour",
+   "txt": [
+    "🤼 Les catcheurs en double sont fusionnés (Hangman Adam Page, Jack Perry, Dustin Rhodes / Goldust, Blake Monroe / Mariah May, Luke Gallows, Lexis King).",
+    "🔎 La recherche trouve un catcheur par son ancien nom ou son vrai nom : Dean Ambrose, Sasha Banks, Razor Ramon, Edge, Sting…",
+    "📄 Un show n’a plus qu’une seule page, que tu arrives par l’accueil ou par TCC Play.",
+    "🧹 La page Recherche ne répète plus ce qui est déjà sur l’accueil."
+   ]
+  },
+  {
    "id": "2026-11-11-suite",
    "d": "2026-11-11",
    "t": "Suite de la mise à jour",
