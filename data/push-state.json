@@ -1,5 +1,5 @@
 {
- "at": "2026-11-10T23:31:47.266Z",
+ "at": "2026-11-11T04:54:48.791Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -442,7 +442,9 @@
   "a:https://www.catch-newz.com/wwe/newz/61198-le-rappeur-westside-gunn-fait-la-paix-avec-la-wwe": "2026-11-10",
   "fr:2026-11-10": "2026-11-10",
   "a:https://www.catch-newz.com/international/resultats/61176-resultats-de-cmll-lunes-clasico-du-9-novembre-2026": "2026-11-10",
-  "a:https://www.catch-newz.com/wwe/newz/61205-si-le-john-cena-classic-est-nul-il-ne-reviendra-pas-en-2027": "2026-11-11"
+  "a:https://www.catch-newz.com/wwe/newz/61205-si-le-john-cena-classic-est-nul-il-ne-reviendra-pas-en-2027": "2026-11-11",
+  "a:https://www.catch-newz.com/wwe/newz/61218-john-cena-recrute-une-premiere-catcheuse-pour-le-cena-classic-a-wwe-nxt": "2026-11-11",
+  "a:https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026": "2026-11-11"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -461,6 +463,14 @@
     "url": "#/",
     "tag": "art",
     "short": "1 nouvelle info"
+   },
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -479,6 +489,14 @@
     "url": "#/",
     "tag": "art",
     "short": "1 nouvelle info"
+   },
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
    }
   ]
  }

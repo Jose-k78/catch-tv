@@ -1,6 +1,23 @@
 {
- "at": "2026-11-11T01:57:39.065Z",
+ "at": "2026-11-11T04:54:48.748Z",
  "items": [
+  {
+   "t": "Romeo Malverde (Santos Escobar) remporte le Oceanic Championship",
+   "u": "https://www.catch-newz.com/international/newz/61219-romeo-malverde-santos-escobar-remporte-le-oceanic-championship",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": []
+  },
+  {
+   "t": "John Cena recrute une première catcheuse pour le Cena Classic à WWE NXT",
+   "u": "https://www.catch-newz.com/wwe/newz/61218-john-cena-recrute-une-premiere-catcheuse-pour-le-cena-classic-a-wwe-nxt",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
   {
    "t": "Résultats de 814 Wrestling Dealer's Choice",
    "u": "https://www.catch-newz.com/international/resultats/61206-resultats-de-814-wrestling-dealers-choice",
@@ -23,6 +40,16 @@
    "s": "Catch-Newz",
    "d": "2026-11-11",
    "tags": []
+  },
+  {
+   "t": "Résultats de WWE NXT du 10 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
   },
   {
    "t": "Preview : WWE NXT du 10 novembre 2026",
@@ -483,27 +510,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Résultats de ChocoPro #551",
-   "u": "https://www.catch-newz.com/international/resultats/61144-resultats-de-chocopro-551",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": []
-  },
-  {
-   "t": "Résultats de TJPW Garafes - A Cultural Shock Sensation In Shibuya",
-   "u": "https://www.catch-newz.com/international/resultats/61145-resultats-de-tjpw-garafes-a-cultural-shock-sensation-in-shibuya",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": []
-  },
-  {
-   "t": "Résultats de GCW Dead On Arrival 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61148-resultats-de-gcw-dead-on-arrival-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": []
   }
  ],
  "yt": {
@@ -914,7 +920,10 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61219-romeo-malverde-santos-escobar-remporte-le-oceanic-championship",
+   "https://www.catch-newz.com/wwe/newz/61218-john-cena-recrute-une-premiere-catcheuse-pour-le-cena-classic-a-wwe-nxt",
    "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61193-wwe-evolve-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61192-wwe-main-event-4-novembre-2026",
@@ -1210,17 +1219,14 @@
    "https://www.catch-newz.com/international/resultats/60913-resultats-de-alto-voltaje-cmll-du-4-octobre-2026",
    "https://www.catch-newz.com/international/newz/60875-regardez-wsw-megamania-adelaide-gratuitement",
    "https://www.catch-newz.com/wwe/newz/60920-sami-zayn-je-ne-pense-pas-quil-soit-absurde-de-dire-que-jaurais-du-gagner",
-   "https://www.catch-newz.com/wwe/resultats/60824-resultats-et-streaming-de-wwe-evolve-du-28-octobre-2026",
-   "https://www.catch-newz.com/international/resultats/60893-resultats-de-vkf-halloween-havoc-2026",
-   "https://www.catch-newz.com/wwe/resultats/60832-wwe-smackdown-30-octobre-2026",
-   "https://www.catch-newz.com/wwe/newz/60919-cody-rhodes-bianca-belair-est-peut-etre-la-plus-grande-athlete-que-la-wwe-ait-jamais-connue"
+   "https://www.catch-newz.com/wwe/resultats/60824-resultats-et-streaming-de-wwe-evolve-du-28-octobre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
-  "YouTube WWE": "1 nouvelles vidéos",
+  "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
