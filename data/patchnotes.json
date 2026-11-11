@@ -2,6 +2,17 @@
  "updated": "2026-11-11",
  "items": [
   {
+   "id": "2026-11-11-suite",
+   "d": "2026-11-11",
+   "t": "Suite de la mise à jour",
+   "txt": [
+    "🎴 TCCCG : tous les boosters donnent 5 cartes, sans exception.",
+    "✨ TCCCG : nouvelles animations — la carte se retourne avec un flash, l’écran tremble pour une SSR ou mieux, reflets sur les UR et LR, boutons plus vivants.",
+    "🎬 Accueil : le prochain grand événement s’affiche en grande affiche tout en haut.",
+    "📅 Calendriers : toute la tournée World Tag League de la NJPW, Road to Tokyo Dome, New Year Dash, et des dates en plus pour Stardom et Marigold."
+   ]
+  },
+  {
    "id": "2026-11-11-design",
    "d": "2026-11-11",
    "t": "Nouveau design",

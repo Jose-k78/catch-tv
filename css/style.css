@@ -1829,3 +1829,34 @@ body:not(.tccg) .tab.logo,body:not(.tccg) .sub .tab.logo{height:auto;padding:8px
 body:not(.tccg) .tab.logo.on,body:not(.tccg) .sub .tab.logo.on{background:none;box-shadow:none;border:0;border-bottom:2px solid var(--red)}
 body:not(.tccg) .tab.logo img{height:22px;background:#fff;border-radius:3px;padding:1px 3px}
 body:not(.tccg) .newinfo{background:var(--card);color:var(--text);border:1px solid var(--line)}
+/* grande affiche en tête d'accueil */
+body:not(.tccg) .hero.bb{margin:0 0 6px;border-radius:0;min-height:min(56vh,440px);padding:22px 16px 20px;justify-content:flex-end}
+body:not(.tccg) .hero.bb::after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,var(--bg));pointer-events:none}
+body:not(.tccg) .hero.bb>*{position:relative;z-index:1}
+body:not(.tccg) .hero.bb>b{font-size:34px}
+body:not(.tccg) .hero.bb .cd{background:var(--red);color:#fff;font-weight:700;border-radius:var(--r);padding:7px 12px;margin-top:10px}
+:root[data-theme="light"] body:not(.tccg) .hero.bb::after{background:linear-gradient(transparent,rgba(0,0,0,.6))}
+/* ===== TCCCG : animations retravaillées (11 nov.) ===== */
+/* révélation : la carte arrive de dos, se retourne, flash blanc puis halo de rareté ; l'écran tremble à partir de SSR */
+.tsreveal{perspective:1100px}
+.tscard{animation:tflipin .7s cubic-bezier(.2,.9,.25,1.15) both;transform-style:preserve-3d}
+@keyframes tflipin{0%{transform:translateY(60px) rotateY(180deg) scale(.5);opacity:0;filter:brightness(3)}45%{opacity:1;transform:translateY(-10px) rotateY(90deg) scale(1.05);filter:brightness(3)}70%{transform:rotateY(-8deg) scale(1.08);filter:brightness(1.6)}100%{transform:none;filter:none}}
+.tsreveal::before{content:"";position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;animation:tflash .5s ease-out .25s both}
+@keyframes tflash{0%{opacity:0}30%{opacity:.75}100%{opacity:0}}
+.tsfx.fx-SSR~.tscard,.tsfx.fx-UR~.tscard,.tsfx.fx-LR~.tscard{animation:tflipin .7s cubic-bezier(.2,.9,.25,1.15) both,tquake .45s linear .55s 1}
+@keyframes tquake{0%,100%{translate:0 0}20%{translate:-6px 3px}40%{translate:6px -4px}60%{translate:-4px -3px}80%{translate:4px 3px}}
+.tsfx.fx-UR~.tscard .tc3,.tsfx.fx-LR~.tscard .tc3{box-shadow:0 0 40px 6px rgba(255,210,90,.55)}
+.tsfx.fx-LR~.tscard .tc3{animation:tlrpulse 1.6s ease-in-out .8s infinite}
+@keyframes tlrpulse{0%,100%{box-shadow:0 0 40px 6px rgba(255,210,90,.55)}50%{box-shadow:0 0 70px 14px rgba(255,120,220,.7)}}
+/* partout : appui « élastique » sur les cartes et boutons, apparition douce des pages et des grilles */
+body.tccg .tc3,body.tccg .tbooster,body.tccg .tround,body.tccg .tbig,body.tccg .tban,body.tccg .btn,body.tccg .tfoe,body.tccg .tdf{transition:transform .12s cubic-bezier(.3,1.6,.5,1),filter .12s}
+body.tccg .tc3:active,body.tccg .tbooster:active,body.tccg .tround:active,body.tccg .tban:active,body.tccg .btn:active,body.tccg .tfoe:active,body.tccg .tdf:active{transform:scale(.94);filter:brightness(1.15)}
+body.tccg .tbig:active{transform:scale(.9)}
+/* cartes rares : reflet qui passe en continu */
+body.tccg .tc3.r-UR::after,body.tccg .tc3.r-LR::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.28) 50%,transparent 60%) 0 0/260% 100%;animation:tfoil 3.2s linear infinite;mix-blend-mode:screen}
+/* gros bouton COMBATS qui respire, boosters disponibles qui scintillent */
+body.tccg .tbig{animation:tbreath 2.2s ease-in-out infinite}
+@keyframes tbreath{0%,100%{box-shadow:0 0 0 0 rgba(240,207,98,.5)}50%{box-shadow:0 0 0 12px rgba(240,207,98,0)}}
+body.tccg .tbooster:not(.off){animation:tbglow 2.6s ease-in-out infinite}
+@keyframes tbglow{0%,100%{box-shadow:0 2px 8px rgba(0,0,0,.5)}50%{box-shadow:0 2px 8px rgba(0,0,0,.5),0 0 16px rgba(240,207,98,.45)}}
+@media (prefers-reduced-motion:reduce){body.tccg *{animation-duration:.01s!important;animation-iteration-count:1!important}}

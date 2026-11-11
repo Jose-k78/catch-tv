@@ -1,6 +1,6 @@
 // TCCCG — Call Up : un booster par show passé (les 7 derniers jours, PLE compris), boosters de départ par promotion (payés en
 // Momentum / Pop / Push), booster gratuit du jour (N et R seulement), boosters du modo, booster « agents libres » (modo).
-// 5 gimmicks = booster 3 cartes ; 50 gimmicks = Mega booster 15 cartes. Cartes « version show » 2 jours après les résultats.
+// 5 gimmicks = booster 5 cartes ; 50 gimmicks = Mega booster 15 cartes. Cartes « version show » 2 jours après les résultats.
 // Animation (cahier) : 3… 2… 1…, le booster descend la rampe d'entrée, lueurs dans le public selon le tirage, déchirure, slide.
 import { S, ACT, changed } from "../state.js";
 import { esc, toast, fmt, modal } from "../util.js";
@@ -32,7 +32,7 @@ export function boosters() {
     const p = key.split("|"), ver = Date.parse(td) - Date.parse(keyDate(key)) >= 2 * DAY;
     out.push({ id: "s:" + key, key: key, t: showKeyLabel(key), sub: p[0] + " · " + fmt(p[2]) + (ver ? " · cartes du show !" : " · cartes du show dans " + Math.ceil((2 * DAY - (Date.parse(td) - Date.parse(keyDate(key)))) / DAY) + " j"), n: 3, price: { gim: 5 }, logo: showLogoOf(key), c: colorsOf(p[0]), cat: p[1] === "PLE" ? "PLE et PPV" : "Shows de la semaine", ver: ver });
   });
-  ["WWE", "AEW", "NJPW"].concat(Object.keys(S.P || {}).filter(k => ["WWE", "AEW", "NJPW"].indexOf(k) < 0)).filter(k => S.P[k]).forEach(k => out.push({ id: "p:" + k, k: k, t: k + " Pack", sub: "Booster de départ · 3 cartes", n: 3, price: { mom: 60, pop: 60, push: 60 }, logo: showLogo(k, ""), c: colorsOf(k), cat: "Boosters de départ" }));
+  ["WWE", "AEW", "NJPW"].concat(Object.keys(S.P || {}).filter(k => ["WWE", "AEW", "NJPW"].indexOf(k) < 0)).filter(k => S.P[k]).forEach(k => out.push({ id: "p:" + k, k: k, t: k + " Pack", sub: "Booster de départ · 5 cartes", n: 3, price: { mom: 60, pop: 60, push: 60 }, logo: showLogo(k, ""), c: colorsOf(k), cat: "Boosters de départ" }));
   (C.boosters || []).filter(b => b && b.id && !b.del && (b.on !== false || S.isAdmin)).forEach(b => out.push(Object.assign({ cat: "Boosters spéciaux", price: { gim: +b.gim || 5 }, n: +b.n || 3 }, b, { id: "c:" + b.id, t: b.t || b.n || "Booster" })));
   if (S.isAdmin) out.push({ id: "fa", t: "Hors rosters (modo)", sub: "Visible par le modo · catcheurs hors des rosters", n: 3, price: { gim: 0 }, cat: "Modo" });
   return out;
@@ -121,7 +121,7 @@ ACT.tcgopen = el => {
   const mega = el.dataset.mega === "1", d0 = me();
   if (b.id === "mitb") return mitbPick();
   if (!canPay(d0, b.price, mega)) { toast(b.price.free ? "Tes 3 boosters gratuits reviennent dans " + Math.ceil(freeNextMs() / 6e4) + " min" : "Pas assez de ressources : gagne-en dans les combats"); return; }
-  const ids = pull(b, mega ? 15 : b.n || 5);
+  const ids = pull(b, mega ? 15 : 5); // tous les boosters donnent 5 cartes, sans exception (demande de Jose)
   commit(d => {
     if (b.price.free) useFree(d, parisDay());
     else if (mega) d.res.gim -= 50;

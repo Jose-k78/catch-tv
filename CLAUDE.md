@@ -153,6 +153,10 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   - design v3 (11 nov.) : bloc « DESIGN V3 » à la fin de css/style.css (variables `--r` / `--r2`, sombre par défaut, onglets soulignés,
     cartes et boutons carrés, TCC Play façon YouTube) ; il surcharge les composants de TCC TV (`body:not(.tccg)`), le TCCCG garde son noir et or.
     Toute nouvelle règle de design va dans ce bloc. Icônes de l'en-tête en SVG au trait (index.html, dev.html, media.js).
+  - tous les boosters = 5 cartes (`pull(b, mega ? 15 : 5)`, le champ `n` n'est plus utilisé) ; grande affiche `.hero.bb` en tête d'accueil ;
+    calendrier : `tour: 1` sur un événement = simple date de tournée (affichée, mais jamais « prochain PPV » ni compte à rebours du bandeau) ;
+    la tâche de 19 h 23 doit ajouter les dates de tournée NJPW / Stardom / Marigold avec `tour: 1` (sources : njpw1972.com, wwr-stardom.com,
+    voicesofwrestling.com « upcoming schedules ») ; animations TCCCG (bloc « animations retravaillées » de style.css).
   - Jose a renoncé aux robots GitHub (on garde les tâches de Claude). RESTE : calendriers NJPW / Stardom / Marigold, animations TCCCG,
     chasse aux pages en double, fusion complète des anciens noms des catcheurs.
 - Notes : demi-étoiles de 0 à 5,5 (`RMAX`, `fmtR`, `stars`, `ratePick` / `pickRate` de util.js ; 6e étoile orange = bonus).

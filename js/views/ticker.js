@@ -61,7 +61,7 @@ export function titleItems() {
   const seen = {};
   return out.filter(x => (seen[x.id] ? false : (seen[x.id] = 1))).sort((a, b) => b.d.localeCompare(a.d));
 }
-const upcoming = () => { const now = Date.now(), td = new Date().toISOString().slice(0, 10); return allPle().filter(e => okDay(e.d) && (startOf(e) ? startOf(e) > now : e.d >= td)).sort((a, b) => a.d.localeCompare(b.d)); };
+const upcoming = () => { const now = Date.now(), td = new Date().toISOString().slice(0, 10); return allPle().filter(e => !e.tour && okDay(e.d) && (startOf(e) ? startOf(e) > now : e.d >= td)).sort((a, b) => a.d.localeCompare(b.d)); };
 const pleItem = e => { const n = -days(e.d); return { id: "ple:" + e.k + ":" + e.d, k: e.k, show: "", href: evHref(e), html: "⏳ " + esc(e.t) + " (" + esc(e.k) + ") " + (n <= 0 ? "aujourd’hui" : n === 1 ? "demain" : "dans " + n + " jours") }; };
 const pickItem = e => ({ id: "pick:" + e.k + ":" + e.d, k: e.k, show: "", href: "#/pronostic/" + encodeURIComponent(e.k) + "/" + e.d, html: "🎯 Pronostics de " + esc(e.t) + " ouverts jusqu’au " + esc(startOf(e) ? fmtAt(lockAt(e), PARIS) : fmt(e.d)) });
 const pollItem = p => ({ id: "poll:" + p.id, k: p.k || "", show: "", href: "#/sondages", html: "📊 " + esc(p.q) });

@@ -28,7 +28,7 @@ export const annUnread = () => annList().filter(a => a.at > ((S.reads && S.reads
 
 // ---------- Modération › Faire une annonce ----------
 function linkOptions() {
-  const up = allPle().filter(e => e.d && e.d >= new Date().toISOString().slice(0, 10)).sort((a, b) => a.d.localeCompare(b.d))[0];
+  const up = allPle().filter(e => !e.tour && e.d && e.d >= new Date().toISOString().slice(0, 10)).sort((a, b) => a.d.localeCompare(b.d))[0];
   return [["", "Aucun lien"], ["#/", "Accueil"], ["#/sondages", "Sondages"], ["#/pronostics", "Pronostics"], ["#/storyline", "Storyline du jour"], ["#/matchs", "Matchs à découvrir"], ["#/idees", "Partagez vos idées"]]
     .concat(up ? [[evHref(up), "Prochain PLE : " + up.t]] : []).concat([["autre", "Autre lien…"]]);
 }

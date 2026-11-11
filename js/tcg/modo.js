@@ -211,7 +211,7 @@ ACT.tcgmboost = el => {
   const id = el.dataset.id, b = id ? (cfg().boosters || []).find(x => x.id === id) || {} : { n: 3, gim: 5, on: true };
   modal((box, close) => {
     box.innerHTML = "<h3>" + (id ? "Modifier le booster" : "Nouveau booster") + '</h3><form class="tmform" data-bf><label>Nom<input name="t" required maxlength="40" value="' + esc(b.t || "") + '"></label>' +
-      '<label>Nombre de cartes<input name="n" type="number" min="1" max="15" value="' + (b.n || 3) + '"></label><label>Prix (gimmicks)<input name="gim" type="number" min="0" value="' + (b.gim != null ? b.gim : 5) + '"></label>' +
+      '<input type="hidden" name="n" value="5"><p class="tnote">Tous les boosters donnent 5 cartes.</p>' + '<label>Prix (gimmicks)<input name="gim" type="number" min="0" value="' + (b.gim != null ? b.gim : 5) + '"></label>' +
       '<label>Promotion (cartes automatiques)<select name="k"><option value="">Toutes</option>' + Object.keys(S.P).map(k => "<option" + (k === b.k ? " selected" : "") + ">" + esc(k) + "</option>").join("") + "</select></label>" +
       '<label>Cartes choisies à la main (noms séparés par des virgules ; vide = automatique)<textarea name="cards" rows="3">' + esc((b.cards || []).join(", ")) + "</textarea></label>" +
       '<label>Description<input name="sub" maxlength="80" value="' + esc(b.sub || "") + '"></label><label class="chk"><input type="checkbox" name="on"' + (b.on === false ? "" : " checked") + "> Visible par les joueurs</label>" +

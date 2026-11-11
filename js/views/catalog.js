@@ -567,6 +567,9 @@ export function homeView() {
   const weekly = [];
   Object.keys(P).forEach(k => { const s = P[k].s; if (s) Object.keys(s).forEach(n => weekly.push({ k: k, n: n, d: nextAir(k, n) })); });
   let h = annBar() + installBar() + liveSection();
+  // grande affiche en tête d'accueil (façon Netflix) : le prochain grand événement (pas les simples dates de tournée)
+  const up0 = sp[0].filter(e => e.d && !isOut(e) && diff(e.d) >= 0 && !e.tour), big0 = up0.filter(e => e.kind === "ple")[0] || up0[0];
+  if (big0) h += hero(big0, "Prochain " + bigWord(big0.k) + " · " + esc(big0.k)).replace('class="hero', 'class="hero bb');
   // 1. ce qui passe aujourd'hui (shows hebdo + événements du jour pas encore terminés)
   const todayW = weekly.filter(x => diff(x.d) === 0), todayE = sp[0].filter(e => e.d && diff(e.d) === 0 && !isOut(e));
   if (todayW.length || todayE.length) h += homeHead("Aujourd’hui", "Les shows du jour, heure de Paris") + '<div class="row">' + todayE.map(e => pleCard(e, true)).join("") + todayW.map(x => showCard(x.k, x.n, true, true)).join("") + "</div>";
@@ -578,7 +581,7 @@ export function homeView() {
   if (rest.length) h += homeHead("Le programme de la semaine", "Les prochains shows hebdo") + '<div class="row">' + rest.map(x => showCard(x.k, x.n, true, false)).join("") + "</div>";
   // 4. prochain grand événement puis la suite
   const up = sp[0].filter(e => e.d && !isOut(e) && diff(e.d) > 0), big = up.filter(e => e.kind === "ple")[0] || up[0];
-  if (big) h += homeHead("Prochain " + bigWord(big.k)) + hero(big, esc(big.k) + " · " + bigWord(big.k));
+  // (l'affiche du prochain grand événement est maintenant tout en haut de l'accueil)
   const more = up.filter(e => e !== big);
   if (more.length) h += homeHead("Les PLE et PPV à venir", "PLE pour la WWE, PPV pour les autres promotions") + '<div class="row">' + more.map(e => pleCard(e, true)).join("") + "</div>";
   // storyline du jour, tournois, matchs à découvrir (aussi dans Membres et Recherche)

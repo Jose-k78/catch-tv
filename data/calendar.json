@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07",
+ "updated": "2026-11-11",
  "promotions": {
   "WWE": {
    "c": [
@@ -591,16 +591,141 @@
      "dur": 180
     },
     {
+     "t": "World Tag League — ouverture",
+     "d": "2026-11-23",
+     "w": "Yokohama",
+     "v": "Yokohama Budokan",
+     "tour": 1
+    },
+    {
+     "t": "World Tag League",
+     "d": "2026-11-24",
+     "w": "Fukushima",
+     "v": "Big Palette Fukushima",
+     "tour": 1
+    },
+    {
+     "t": "World Tag League",
+     "d": "2026-11-25",
+     "w": "Yamagata",
+     "v": "INPEX Sakata Arena",
+     "tour": 1
+    },
+    {
+     "t": "World Tag League",
+     "d": "2026-11-27",
+     "w": "Aomori",
+     "v": "Towada City General Gymnasium",
+     "tour": 1
+    },
+    {
+     "t": "World Tag League",
+     "d": "2026-11-28",
+     "w": "Iwate",
+     "v": "Iwate Prefectural Gymnasium",
+     "tour": 1
+    },
+    {
+     "t": "World Tag League",
+     "d": "2026-11-29",
+     "w": "Aomori",
+     "v": "Aomori Prefectural Budokan",
+     "tour": 1
+    },
+    {
+     "t": "World Tag League",
+     "d": "2026-12-01",
+     "w": "Yamanashi",
+     "v": "Aimesse Yamanashi",
+     "tour": 1
+    },
+    {
+     "t": "World Tag League",
+     "d": "2026-12-02",
+     "w": "Shizuoka",
+     "v": "Twin Messe Shizuoka",
+     "tour": 1
+    },
+    {
+     "t": "World Tag League",
+     "d": "2026-12-04",
+     "w": "Kochi",
+     "v": "Kochi Prefectural Citizens’ Gymnasium",
+     "tour": 1
+    },
+    {
+     "t": "World Tag League",
+     "d": "2026-12-05",
+     "w": "Ehime",
+     "v": "Kihoku General Park Gymnasium",
+     "tour": 1
+    },
+    {
+     "t": "World Tag League",
+     "d": "2026-12-06",
+     "w": "Iwakuni",
+     "v": "Iwakuni City General Gymnasium",
+     "tour": 1
+    },
+    {
+     "t": "World Tag League",
+     "d": "2026-12-08",
+     "w": "Nagasaki",
+     "v": "Dejima Messe Nagasaki",
+     "tour": 1
+    },
+    {
+     "t": "World Tag League",
+     "d": "2026-12-09",
+     "w": "Fukuoka",
+     "v": "Fukuoka City Gymnasium",
+     "tour": 1
+    },
+    {
+     "t": "World Tag League",
+     "d": "2026-12-10",
+     "w": "Miyazaki",
+     "v": "Hayamizu Park Gymnasium",
+     "tour": 1
+    },
+    {
+     "t": "World Tag League",
+     "d": "2026-12-11",
+     "w": "Kagoshima",
+     "v": "F Arena Ichikikushikino",
+     "tour": 1
+    },
+    {
      "t": "World Tag League — finale",
      "d": "2026-12-13",
      "w": "Kumamoto",
      "v": "Grand Messe Kumamoto"
     },
     {
+     "t": "Road to Tokyo Dome",
+     "d": "2026-12-20",
+     "w": "Tokyo",
+     "v": "Korakuen Hall",
+     "tour": 1
+    },
+    {
+     "t": "Road to Tokyo Dome",
+     "d": "2026-12-21",
+     "w": "Tokyo",
+     "v": "Korakuen Hall",
+     "tour": 1
+    },
+    {
      "t": "Wrestle Kingdom 21",
      "d": "2027-01-04",
      "w": "Tokyo Dome",
      "v": "Tokyo Dome"
+    },
+    {
+     "t": "New Year Dash!!",
+     "d": "2027-01-05",
+     "w": "Tokyo",
+     "v": "Ebara Wave Arena Ota"
     }
    ],
    "fr": [
@@ -640,6 +765,20 @@
      "dur": 210
     },
     {
+     "t": "Goddesses of Stardom Tag League — Akita",
+     "d": "2026-11-21",
+     "w": "Akita",
+     "v": "Akita",
+     "tour": 1
+    },
+    {
+     "t": "Year-End X’mas Night",
+     "d": "2026-12-24",
+     "w": "Tokyo",
+     "v": "Korakuen Hall",
+     "tour": 1
+    },
+    {
      "t": "Dream Queendom",
      "d": "2026-12-29",
      "w": "Tokyo",
@@ -650,6 +789,27 @@
      "d": "2027-01-03",
      "w": "Yokohama",
      "v": "Yokohama Budokan"
+    },
+    {
+     "t": "New Year Stars — Kyoto",
+     "d": "2027-01-09",
+     "w": "Kyoto",
+     "v": "KBS Hall",
+     "tour": 1
+    },
+    {
+     "t": "New Year Stars — Sakae, jour 1",
+     "d": "2027-01-10",
+     "w": "Nagoya",
+     "v": "Chunichi Hall",
+     "tour": 1
+    },
+    {
+     "t": "New Year Stars — Sakae, jour 2",
+     "d": "2027-01-11",
+     "w": "Nagoya",
+     "v": "Chunichi Hall",
+     "tour": 1
     }
    ],
    "fr": [
@@ -671,15 +831,29 @@
    ],
    "e": [
     {
+     "t": "True Victory",
+     "d": "",
+     "w": "décembre (habituel)"
+    },
+    {
      "t": "Grand Destiny",
      "d": "2026-10-24",
      "w": "Tokyo",
      "v": "Ryōgoku Kokugikan"
     },
     {
-     "t": "True Victory",
-     "d": "",
-     "w": "décembre (habituel)"
+     "t": "True Victory — Shibuya",
+     "d": "2026-12-19",
+     "w": "Tokyo",
+     "v": "Shibuya Sports Center",
+     "tour": 1
+    },
+    {
+     "t": "True Victory — Korakuen",
+     "d": "2026-12-28",
+     "w": "Tokyo",
+     "v": "Korakuen Hall",
+     "tour": 1
     }
    ],
    "fr": [
