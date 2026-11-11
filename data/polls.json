@@ -1,6 +1,46 @@
 {
-  "updated": "2026-11-08",
+  "updated": "2026-11-11",
   "items": [
+    {
+      "id": "p-20261111-ic-page",
+      "d": "2026-11-11",
+      "type": "",
+      "k": "WWE",
+      "q": "Rey Fenix est challenger n°1 : qui sera le prochain champion Intercontinental ?",
+      "opts": [
+        "Ethan Page (il garde son titre)",
+        "Rey Fenix"
+      ],
+      "other": true,
+      "end": ""
+    },
+    {
+      "id": "p-20261111-trick-gunther",
+      "d": "2026-11-11",
+      "type": "",
+      "k": "WWE",
+      "q": "Trick Williams a battu Gunther en dark match à Raw : il mérite un vrai match télévisé contre lui ?",
+      "opts": [
+        "Oui",
+        "Non"
+      ],
+      "other": false,
+      "end": ""
+    },
+    {
+      "id": "p-20261111-surprise",
+      "d": "2026-11-11",
+      "type": "",
+      "k": "",
+      "q": "La plus grosse surprise de l’histoire du catch ?",
+      "opts": [
+        "Le 1-2-3 Kid bat Razor Ramon (1993)",
+        "Leon Ruff bat Johnny Gargano (2020)",
+        "Kofi Kingston champion à WrestleMania 35"
+      ],
+      "other": true,
+      "end": ""
+    },
     {
       "id": "p-20261108-cody-wargames",
       "d": "2026-11-08",
