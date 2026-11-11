@@ -141,7 +141,18 @@
    "medalOf": "PAC"
   },
   "jacy-jayne": {
-   "img": "img/tcg/mwbyf34e.jpg"
+   "img": "img/tcg/mwbyf34e.jpg",
+   "k": "WWE",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Fallon Henley"
   }
  },
  "bgm": {
