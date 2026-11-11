@@ -1,6 +1,20 @@
 {
- "at": "2026-11-11T04:54:48.748Z",
+ "at": "2026-11-11T05:54:54.939Z",
  "items": [
+  {
+   "t": "Kairi Sane remonte sur le ring à la Chris Jericho Cruise",
+   "u": "https://www.catch-newz.com/international/newz/61220-kairi-sane-remonte-sur-le-ring-a-la-chris-jericho-cruise",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": []
+  },
+  {
+   "t": "Résultats de God Of The Ring Anniversary III",
+   "u": "https://www.catch-newz.com/international/resultats/61204-resultats-de-god-of-the-ring-anniversary-iii",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": []
+  },
   {
    "t": "Romeo Malverde (Santos Escobar) remporte le Oceanic Championship",
    "u": "https://www.catch-newz.com/international/newz/61219-romeo-malverde-santos-escobar-remporte-le-oceanic-championship",
@@ -492,24 +506,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Nikki Bella : « Quand je partirai, elles vont toutes me manquer »",
-   "u": "https://www.catch-newz.com/wwe/newz/61152-nikki-bella-quand-je-partirai-elles-vont-toutes-me-manquer",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Cruz Montana sort enfin du silence après avoir rejoint 946 la semaine dernière",
-   "u": "https://www.catch-newz.com/wwe/newz/61151-cruz-montana-sort-enfin-du-silence-apres-avoir-rejoint-946-la-semaine-derniere",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -922,11 +918,13 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61219-romeo-malverde-santos-escobar-remporte-le-oceanic-championship",
-   "https://www.catch-newz.com/wwe/newz/61218-john-cena-recrute-une-premiere-catcheuse-pour-le-cena-classic-a-wwe-nxt",
+   "https://www.catch-newz.com/international/newz/61220-kairi-sane-remonte-sur-le-ring-a-la-chris-jericho-cruise",
    "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61193-wwe-evolve-4-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61192-wwe-main-event-4-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61204-resultats-de-god-of-the-ring-anniversary-iii",
+   "https://www.catch-newz.com/international/newz/61219-romeo-malverde-santos-escobar-remporte-le-oceanic-championship",
+   "https://www.catch-newz.com/wwe/newz/61218-john-cena-recrute-une-premiere-catcheuse-pour-le-cena-classic-a-wwe-nxt",
    "https://www.catch-newz.com/international/resultats/61176-resultats-de-cmll-lunes-clasico-du-9-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61206-resultats-de-814-wrestling-dealers-choice",
    "https://www.catch-newz.com/wwe/newz/61205-si-le-john-cena-classic-est-nul-il-ne-reviendra-pas-en-2027",
@@ -1217,9 +1215,7 @@
    "https://www.catch-newz.com/international/resultats/60921-resultats-de-tjpw-lets-keep-going-nanao-noto-noto-genki-womens-pro-wrestling",
    "https://www.catch-newz.com/international/resultats/60901-resultats-de-cmll-domingo-familiar-du-1er-novembre-2026-tzompantli-de-mascaras",
    "https://www.catch-newz.com/international/resultats/60913-resultats-de-alto-voltaje-cmll-du-4-octobre-2026",
-   "https://www.catch-newz.com/international/newz/60875-regardez-wsw-megamania-adelaide-gratuitement",
-   "https://www.catch-newz.com/wwe/newz/60920-sami-zayn-je-ne-pense-pas-quil-soit-absurde-de-dire-que-jaurais-du-gagner",
-   "https://www.catch-newz.com/wwe/resultats/60824-resultats-et-streaming-de-wwe-evolve-du-28-octobre-2026"
+   "https://www.catch-newz.com/international/newz/60875-regardez-wsw-megamania-adelaide-gratuitement"
   ]
  },
  "diag": {
