@@ -126,7 +126,8 @@
    "medalOf": "Royce Keys"
   },
   "rey-fenix": {
-   "imgRey Fenix": "img/catcheurs/rey-fenix.webp"
+   "imgRey Fenix": "img/catcheurs/rey-fenix.webp",
+   "img": "img/tcg/alt/rey-fenix-alt.webp"
   }
  },
  "bgm": {
