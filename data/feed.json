@@ -1,6 +1,25 @@
 {
- "at": "2026-11-11T11:25:38.840Z",
+ "at": "2026-11-11T12:26:38.389Z",
  "items": [
+  {
+   "t": "Une longue absence pour Randy Orton après Crown Jewel ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61224-une-longue-absence-pour-randy-orton-apres-crown-jewel",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Preview : WWE SmackDown du 13 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
+  },
   {
    "t": "Résultats de VCW Queen Of The Commonwealth 2026",
    "u": "https://www.catch-newz.com/international/resultats/61209-resultats-de-vcw-queen-of-the-commonwealth-2026",
@@ -90,16 +109,6 @@
    ]
   },
   {
-   "t": "Preview : WWE NXT du 10 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
-  },
-  {
    "t": "WWE Raw du 9 novembre : Survivor Series se prépare",
    "u": "https://www.voxcatch.fr/2026/11/10/resultats-wwe-raw-9-novembre-2026/",
    "s": "VOXcatch",
@@ -107,6 +116,16 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Preview : WWE NXT du 10 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE",
+    "NXT"
    ]
   },
   {
@@ -487,24 +506,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-09",
    "tags": []
-  },
-  {
-   "t": "La jeune catcheuse de la TNA Jada Stone a eu un accident de voiture ce vendredi",
-   "u": "https://www.catch-newz.com/international/newz/61156-la-jeune-catcheuse-de-la-tna-jada-stone-a-eu-un-accident-de-voiture-ce-vendredi",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": [
-    "TNA"
-   ]
-  },
-  {
-   "t": "Paige : « J’apprécie vraiment chaque seconde que je passe à la télé et sur ce ring »",
-   "u": "https://www.catch-newz.com/wwe/newz/61155-paige-japprecie-vraiment-chaque-seconde-que-je-passe-a-la-tele-et-sur-ce-ring",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -941,6 +942,9 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61224-une-longue-absence-pour-randy-orton-apres-crown-jewel",
+   "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61222-audiences-wwe-aew-et-tna-26-octobre-au-1er-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61193-wwe-evolve-4-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61209-resultats-de-vcw-queen-of-the-commonwealth-2026",
@@ -1235,10 +1239,7 @@
    "https://www.catch-newz.com/wwe/newz/60927-smackdown-ne-sera-pas-en-direct-pour-noel-2026",
    "https://www.catch-newz.com/wwe/newz/60924-date-et-lieu-du-wwe-royal-rumble-2027",
    "https://www.catch-newz.com/international/resultats/60904-resultats-de-indy-wrestling-du-15-octobre-2026",
-   "https://www.catch-newz.com/international/newz/60929-carte-de-lucha-fresca-numero-dos-los-hombres-importantes",
-   "https://www.catch-newz.com/international/newz/60926-carte-de-produce-wrestling-x-assembly-100-fresh",
-   "https://www.catch-newz.com/international/resultats/60922-resultats-de-tjpw-fall-tour-2026-ray-of-hope-in-kasukabe",
-   "https://www.catch-newz.com/international/resultats/60921-resultats-de-tjpw-lets-keep-going-nanao-noto-noto-genki-womens-pro-wrestling"
+   "https://www.catch-newz.com/international/newz/60929-carte-de-lucha-fresca-numero-dos-los-hombres-importantes"
   ]
  },
  "diag": {
