@@ -2,6 +2,16 @@
  "updated": "2026-11-11",
  "items": [
   {
+   "id": "2026-11-11-design",
+   "d": "2026-11-11",
+   "t": "Nouveau design",
+   "txt": [
+    "🎬 TCC TV change de look : plus carré, plus sobre, façon Netflix. Fond sombre par défaut (le thème clair reste dans Paramètres › Apparence).",
+    "Onglets soulignés, cartes nettes, boutons carrés, icônes au trait en haut de l’écran.",
+    "▶ TCC Play façon YouTube : grandes vignettes 16/9, titre et infos dessous, barre de recherche arrondie."
+   ]
+  },
+  {
    "id": "2026-11-11-maj2",
    "d": "2026-11-11",
    "t": "Grande mise à jour (2e partie)",

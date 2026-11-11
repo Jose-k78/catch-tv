@@ -68,7 +68,7 @@ ACT.tcgmis = () => {
 function gift() {
   const d = me(); if (d.items.gift1 || !S.user) return;
   commit(x => { if (x.items.gift1) return; x.items.gift1 = 1; x.items.mitb = (x.items.mitb || 0) + 1; x.res.gim += 250; });
-  modal((box, close) => { box.innerHTML = '<div style="text-align:center"><div style="font-size:64px">🎁</div><h3>Cadeau pour tous les membres !</h3><p><b>🎟️ 250 gimmicks</b><br><b>💼 1 mallette Money In The Bank</b></p><p class="sub">La mallette te donne la carte SSR de ton choix, une seule fois : Call Up › Booster Agent Libre.</p><a class="btn wide" href="#/tccg/callup" data-close>Aller dans Call Up</a><button class="btn wide ghost" style="margin-top:6px" data-close>Plus tard</button></div>'; box.addEventListener("click", e => { if (e.target.closest("[data-close]")) close(); }); });
+  modal((box, close) => { box.innerHTML = '<div style="text-align:center"><div style="font-size:64px">🎁</div><h3>Cadeau pour tous les membres !</h3><p><b>🎟️ 250 gimmicks</b><br><b>💼 1 mallette Money In The Bank</b></p><p class="sub">La mallette te donne la carte SSR de ton choix, une seule fois : Call Up › Booster Agent Libre.</p><a class="btn wide" href="#/tccg/callup" data-close>Aller dans Call Up</a><button class="btn wide ghost" style="margin-top:6px" data-close>Plus tard</button></div>'; box.addEventListener("click", e => { if (e.target.closest("[data-close]")) close(); }); window.addEventListener("hashchange", close, { once: true }); });
 }
 ACT.tcggift = () => { location.hash = "#/tccg/callup"; };
 ACT.tcgtuto = () => tuto(true);

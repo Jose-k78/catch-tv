@@ -1737,3 +1737,95 @@ header.top{max-width:100vw;box-sizing:border-box}
 .mk{position:absolute;left:6px;top:6px;font-size:10px;font-weight:800;color:#fff;border-radius:6px;padding:2px 6px}.mseen{position:absolute;right:6px;top:6px;font-size:10px;font-weight:800;background:#1b7f3b;color:#fff;border-radius:6px;padding:2px 6px}
 .mbody b{display:block;font-size:13px;line-height:1.25}.mbody small{color:var(--mute);font-size:11px}
 .pchan{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 16px}
+
+/* ===== DESIGN V3 (11 nov.) : plus carré, plus pro — façon Netflix / Prime ; TCC Play façon YouTube =====
+   Bloc ajouté à la fin : il reprend les composants existants sans changer le code des pages. Le TCCCG garde son noir et or. */
+:root{--bg:#0e0e10;--card:#18181b;--text:#f5f5f5;--mute:#a1a1aa;--red:#e50914;--red2:#b20710;--line:#2a2a2e;--bubble:#232327;--star:#f5b301;--r:4px;--r2:6px;color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e0e10;--card:#18181b;--text:#f5f5f5;--mute:#a1a1aa;--line:#2a2a2e;--bubble:#232327}}
+:root[data-theme="dark"]{--bg:#0e0e10;--card:#18181b;--text:#f5f5f5;--mute:#a1a1aa;--line:#2a2a2e;--bubble:#232327}
+:root[data-theme="light"]{--bg:#f5f5f6;--card:#fff;--text:#111114;--mute:#62626c;--line:#dedee3;--bubble:#ececf0;color-scheme:light}
+body{font-family:Inter,"Helvetica Neue",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:14px;letter-spacing:.005em;-webkit-font-smoothing:antialiased}
+body:not(.tccg) .annbar,body:not(.tccg) .belt,body:not(.tccg) .beltheader,body:not(.tccg) .bigl.sq,body:not(.tccg) .bkchamp,body:not(.tccg) .bkduel,body:not(.tccg) .bkside,body:not(.tccg) .board,body:not(.tccg) .btn,body:not(.tccg) .bub,body:not(.tccg) .card,body:not(.tccg) .card.big>.cardlogo,body:not(.tccg) .card>.cardlogo,body:not(.tccg) .choice,body:not(.tccg) .choose,body:not(.tccg) .comform textarea,body:not(.tccg) .composer textarea,body:not(.tccg) .conv-item,body:not(.tccg) .demo,body:not(.tccg) .disc,body:not(.tccg) .ep,body:not(.tccg) .epdate,body:not(.tccg) .evcard,body:not(.tccg) .evrecap,body:not(.tccg) .fav,body:not(.tccg) .favcard,body:not(.tccg) .feature,body:not(.tccg) .feudact .act,body:not(.tccg) .feudrecv,body:not(.tccg) .fld input,body:not(.tccg) .fld select,body:not(.tccg) .fld textarea,body:not(.tccg) .gcard .glogo,body:not(.tccg) .glogo0,body:not(.tccg) .glogos button,body:not(.tccg) .gstep,body:not(.tccg) .hero,body:not(.tccg) .hist li,body:not(.tccg) .hlbtn.side,body:not(.tccg) .hlhead,body:not(.tccg) .homesearch,body:not(.tccg) .idea,body:not(.tccg) .ideaform textarea,body:not(.tccg) .imgadd,body:not(.tccg) .imgbar input,body:not(.tccg) .imgconfirm,body:not(.tccg) .imgpick,body:not(.tccg) .imgprev,body:not(.tccg) .imgrow,body:not(.tccg) .ivote,body:not(.tccg) .list,body:not(.tccg) .live,body:not(.tccg) .livego,body:not(.tccg) .lockbox,body:not(.tccg) .maskbtn,body:not(.tccg) .matchtile,body:not(.tccg) .mbadge,body:not(.tccg) .mbig,body:not(.tccg) .mbmi,body:not(.tccg) .mcard,body:not(.tccg) .mem,body:not(.tccg) .mimg,body:not(.tccg) .modalbox,body:not(.tccg) .mrowc,body:not(.tccg) .mthumb,body:not(.tccg) .newinfo,body:not(.tccg) .news,body:not(.tccg) .pbanner,body:not(.tccg) .pbar,body:not(.tccg) .pdate,body:not(.tccg) .pev,body:not(.tccg) .pfill,body:not(.tccg) .pform input:not([type=checkbox]),body:not(.tccg) .pform select,body:not(.tccg) .phero,body:not(.tccg) .pickm,body:not(.tccg) .pk,body:not(.tccg) .player,body:not(.tccg) .playtile,body:not(.tccg) .pnform textarea,body:not(.tccg) .pnote,body:not(.tccg) .poll,body:not(.tccg) .popt,body:not(.tccg) .pother input,body:not(.tccg) .psearch input,body:not(.tccg) .pth,body:not(.tccg) .res,body:not(.tccg) .rnote,body:not(.tccg) .rxpick button,body:not(.tccg) .seg,body:not(.tccg) .segs li,body:not(.tccg) .sheet,body:not(.tccg) .shortbtn,body:not(.tccg) .shownote,body:not(.tccg) .shprev,body:not(.tccg) .storyhead,body:not(.tccg) .storytile,body:not(.tccg) .sw,body:not(.tccg) .titletile,body:not(.tccg) .toast.top,body:not(.tccg) .trofam,body:not(.tccg) .trotier,body:not(.tccg) .vid .vplay,body:not(.tccg) .vidmodal .player iframe,body:not(.tccg) .vit.star,body:not(.tccg) .vitrine,body:not(.tccg) .vsform input,body:not(.tccg) .wcard,body:not(.tccg) .wfacts>div,body:not(.tccg) .wgcorner .gchip,body:not(.tccg) .wikicard,body:not(.tccg) .wimg img,body:not(.tccg) .wimg.small .wimgpic img,body:not(.tccg) .wimgadd,body:not(.tccg) .wpic,body:not(.tccg) .wpicbox .wpic,body:not(.tccg) .wpicbtn,body:not(.tccg) .wtechgrid>div,body:not(.tccg) .ytmpanel,body:not(.tccg) /* ---------- bandeaux de l'accueil : installer l'app,body:not(.tccg) /* TCC Play : cartes des shows à une date,body:not(.tccg) /* logos un peu plus grands,body:not(.tccg) annonce ---------- */
+.instbar,body:not(.tccg) bords arrondis (30 oct.) */
+.card>.cardlogo,body:not(.tccg) choix de date */
+.prow .pev,body:not(.tccg) img.glogo0[src*="/groupes/"],body:not(.tccg) notifications,body:not(.tccg) onglets,body:not(.tccg) recherche{border-radius:var(--r2)}
+body:not(.tccg) .beltheader .eyebrow,body:not(.tccg) .card.out .hlmini,body:not(.tccg) .chip,body:not(.tccg) .feature .cd,body:not(.tccg) .feature .eyebrow,body:not(.tccg) .feudpill,body:not(.tccg) .hero .cd,body:not(.tccg) .hlhead .eyebrow,body:not(.tccg) .hllink,body:not(.tccg) .imgtabs .imgtab,body:not(.tccg) .minibtn,body:not(.tccg) .mratebtn,body:not(.tccg) .remind,body:not(.tccg) .replyform input,body:not(.tccg) .search input,body:not(.tccg) .searchbar input,body:not(.tccg) .seenmark,body:not(.tccg) .storyhead .eyebrow,body:not(.tccg) .tab,body:not(.tccg) .tag,body:not(.tccg) .toast{border-radius:var(--r)}
+
+/* en-tête : sobre, fin, icônes au trait */
+body:not(.tccg) .top{padding:10px 16px 8px;background:linear-gradient(var(--bg),var(--bg));border-bottom:1px solid transparent}
+body:not(.tccg) .logo .l1{font-size:28px;transform:none;letter-spacing:.02em}
+body:not(.tccg) .logo .l2{font-size:16px;transform:none;border-radius:3px;padding:3px 7px;letter-spacing:.1em}
+.iconbtn svg{width:22px;height:22px}.iconbtn.srchbtn svg,.iconbtn.editbtn svg,.iconbtn.ytmbtn svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+body:not(.tccg) .iconbtn{border-radius:var(--r);color:var(--text);opacity:.92}
+body:not(.tccg) .iconbtn.editbtn.on{background:var(--red);color:#fff;opacity:1}
+/* onglets : texte + soulignement (plus de pastilles) */
+body:not(.tccg) .tabs{gap:2px;padding:0 10px;border-bottom:1px solid var(--line);margin-bottom:10px}
+body:not(.tccg) .tab{border:0;border-radius:0;background:none;padding:11px 10px 10px;font-size:14px;font-weight:600;color:var(--mute);border-bottom:2px solid transparent;margin-bottom:-1px;display:inline-flex;align-items:center;gap:6px}
+body:not(.tccg) .tab.on{background:none;color:var(--text);border-bottom-color:var(--red)}
+body:not(.tccg) .sub .tab{font-size:13px;padding:9px 10px 8px}
+body:not(.tccg) .sub .tab.on{background:none;color:var(--text);border-bottom-color:var(--text)}
+body:not(.tccg) #tabwrap.hasbg .tabs{border-bottom-color:rgba(255,255,255,.18)}
+body:not(.tccg) #tabwrap.hasbg .tab:not(.on):not(.logo){background:none;border-color:transparent;color:rgba(255,255,255,.82);backdrop-filter:none;-webkit-backdrop-filter:none;text-shadow:0 1px 4px rgba(0,0,0,.8)}
+body:not(.tccg) #tabwrap.hasbg .tab.on{color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.8)}
+body:not(.tccg) .tab.logo,body:not(.tccg) .tab.logo.on{background:none}
+body:not(.tccg) .tab img{max-height:20px}
+/* titres */
+body:not(.tccg) h1{font-size:24px;font-weight:800;letter-spacing:-.01em;margin:10px 16px 12px}
+body:not(.tccg) h2{font-size:16px;font-weight:700;letter-spacing:.01em;margin:26px 16px 10px}
+body:not(.tccg) h2.hh small,body:not(.tccg) h2 small{font-weight:500;color:var(--mute)}
+/* cartes : affiches nettes, dégradé bas, étiquettes carrées */
+body:not(.tccg) .row{gap:8px}
+body:not(.tccg) .card{border-radius:var(--r2);box-shadow:none}
+body:not(.tccg) .card::after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.72));pointer-events:none;z-index:0}
+body:not(.tccg) .card>b,body:not(.tccg) .card>small,body:not(.tccg) .card>.seenmark{position:relative;z-index:1}body:not(.tccg) .card>.tag,body:not(.tccg) .card>.cardlogo{z-index:1}body:not(.tccg) .card>.cover{z-index:2}
+body:not(.tccg) .card>b{font-size:15px;font-weight:800;letter-spacing:.01em}
+body:not(.tccg) .tag{border-radius:2px;font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:3px 7px;top:8px;left:8px}
+body:not(.tccg) .hero{border-radius:var(--r2);margin:8px 16px 0}
+body:not(.tccg) .hero>b{font-size:28px;font-weight:900;letter-spacing:-.01em;text-transform:uppercase}
+/* boutons */
+body:not(.tccg) .btn{border-radius:var(--r);font-weight:700;letter-spacing:.01em;padding:11px 18px}
+body:not(.tccg) .btn.small{padding:8px 12px}
+body:not(.tccg) .btn.ghost{border:1px solid #4a4a52;background:rgba(255,255,255,.04)}
+:root[data-theme="light"] body:not(.tccg) .btn.ghost{border-color:var(--line);background:#fff}
+body:not(.tccg) .chip{border-radius:var(--r);font-weight:600;background:var(--card);border-color:var(--line)}
+body:not(.tccg) .chip.on{background:var(--text);color:var(--bg);border-color:var(--text)}
+/* listes, tuiles, formulaires */
+body:not(.tccg) .list{border-radius:var(--r2);border-color:var(--line)}
+body:not(.tccg) .item{padding:13px 14px;font-size:14px}
+body:not(.tccg) .search input,body:not(.tccg) .searchbar input,body:not(.tccg) .psearch input{border-radius:var(--r);background:var(--card);border-color:var(--line)}
+body:not(.tccg) .search input:focus,body:not(.tccg) .psearch input:focus,body:not(.tccg) .fld input:focus{outline:0;border-color:var(--text)}
+body:not(.tccg) .matchtile,body:not(.tccg) .storytile,body:not(.tccg) .titletile,body:not(.tccg) .homesearch,body:not(.tccg) .shownote{border-radius:var(--r2);box-shadow:none}
+body:not(.tccg) .modalbox{border-radius:10px 10px 0 0}
+@media (min-width:600px){body:not(.tccg) .modalbox{border-radius:8px}}
+body:not(.tccg) .toast{border-radius:var(--r)}
+/* barre du bas */
+body:not(.tccg) .bnav{background:rgba(14,14,16,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);padding-top:6px}
+:root[data-theme="light"] body:not(.tccg) .bnav{background:rgba(255,255,255,.96)}
+body:not(.tccg) .bn{font-size:10px;font-weight:600;letter-spacing:.02em;gap:3px}
+body:not(.tccg) .bn.on{color:var(--text)}
+body:not(.tccg) .bn.on .bni{color:var(--red)}
+/* bandeau d'infos */
+body:not(.tccg) .ticker{border-radius:0;border-left:0;border-right:0}
+/* ---------- TCC Play façon YouTube ---------- */
+body:not(.tccg) .phero{background:none;padding:6px 16px 0;margin:0;border-radius:0;box-shadow:none}
+body:not(.tccg) .phero h1{font-size:0;margin:0;height:0;overflow:hidden}
+body:not(.tccg) .phero>small,body:not(.tccg) .phero .ptitle{font-size:18px}
+body:not(.tccg) .psearch input{border-radius:20px;background:var(--card);height:40px;padding:0 16px}
+body:not(.tccg) .prow{gap:12px}
+body:not(.tccg) .pvid{flex:0 0 78vw;max-width:340px}
+body:not(.tccg) .pth{width:100%;height:auto;aspect-ratio:16/9;border-radius:10px;font-size:0;position:relative}
+body:not(.tccg) .pth::after{content:"";position:absolute;right:8px;bottom:8px;width:30px;height:20px;border-radius:5px;background:rgba(0,0,0,.75) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E") center/14px no-repeat}
+body:not(.tccg) .pth.modo{font-size:0}body:not(.tccg) .pth.modo small{font-size:11px;position:absolute;left:8px;bottom:8px;background:rgba(0,0,0,.6);padding:2px 6px;border-radius:4px}
+body:not(.tccg) .pinfo{display:block;padding:8px 2px 0}body:not(.tccg) .pinfo b{font-size:14px;font-weight:600;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+body:not(.tccg) .pinfo small{color:var(--mute);font-size:12px;display:block;margin-top:2px}
+body:not(.tccg) .prow.pcol{display:flex;flex-direction:column;overflow:visible;gap:18px}body:not(.tccg) .prow.pcol .pvid{flex:none;max-width:none;width:100%}
+body:not(.tccg) .prow .pev{border-radius:10px}
+body:not(.tccg) .mthumb{border-radius:10px}
+.iconbtn.musicbtn svg{width:21px;height:21px}body:not(.tccg) .iconbtn.musicbtn.on{color:var(--red)}
+body:not(.tccg) .player{background:#000;border-radius:0}
+body:not(.tccg) .pmeta h1{margin-left:0;margin-right:0}
+body:not(.tccg) .pmeta h1{font-size:19px;font-weight:700;margin:0}
+body:not(.tccg) .tab.logo,body:not(.tccg) .sub .tab.logo{height:auto;padding:8px 10px;background:none}
+body:not(.tccg) .tab.logo.on,body:not(.tccg) .sub .tab.logo.on{background:none;box-shadow:none;border:0;border-bottom:2px solid var(--red)}
+body:not(.tccg) .tab.logo img{height:22px;background:#fff;border-radius:3px;padding:1px 3px}
+body:not(.tccg) .newinfo{background:var(--card);color:var(--text);border:1px solid var(--line)}

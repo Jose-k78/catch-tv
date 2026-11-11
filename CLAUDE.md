@@ -150,9 +150,11 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
     TCC Play : fiches des shows dans la recherche (`#parch`), « La sélection du modo » (`play:mix`), chaîne YouTube par show (`chan:K|show`,
     `ACT.pchan`), le tout dans ⚙️ Réglages ; redirections du modo (`js/redir.js`, `redir:<lien>` dans links.json, appui long en mode ✏️ ou
     menu de partage) ; matchs à découvrir en vignettes ; `feudAct` sans répétition.
-  - RESTE À FAIRE (demande du 11 nov.) : design Netflix / TCC Play façon YouTube (refonte visuelle), calendriers NJPW / Stardom / Marigold,
-    robots GitHub pour calendriers / tournois / fiches (ne plus dépendre de Claude), animations TCCCG, vidéos de la chaîne YouTube d'un show
-    récupérées par le robot, fusion complète des anciens noms des catcheurs.
+  - design v3 (11 nov.) : bloc « DESIGN V3 » à la fin de css/style.css (variables `--r` / `--r2`, sombre par défaut, onglets soulignés,
+    cartes et boutons carrés, TCC Play façon YouTube) ; il surcharge les composants de TCC TV (`body:not(.tccg)`), le TCCCG garde son noir et or.
+    Toute nouvelle règle de design va dans ce bloc. Icônes de l'en-tête en SVG au trait (index.html, dev.html, media.js).
+  - Jose a renoncé aux robots GitHub (on garde les tâches de Claude). RESTE : calendriers NJPW / Stardom / Marigold, animations TCCCG,
+    chasse aux pages en double, fusion complète des anciens noms des catcheurs.
 - Notes : demi-étoiles de 0 à 5,5 (`RMAX`, `fmtR`, `stars`, `ratePick` / `pickRate` de util.js ; 6e étoile orange = bonus).
 - Historique : `g_<id>` = note d'un segment, `q_<id>` = segment préféré (comment = nom du show) ; préfixes m_/s_/f_/g_/q_ exclus
   des compteurs de shows (spoil.js, trophies.js, account.js). Profil : « Ses segments préférés ».

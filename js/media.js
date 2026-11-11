@@ -67,7 +67,7 @@ document.addEventListener("visibilitychange", () => { if (document.hidden) pause
 export function updateMusicBtn() {
   const b = document.getElementById("musicbtn"); if (!b) return;
   // playlists YouTube du modo : le bouton ouvre le lecteur musical
-  if (playlists().length) { b.hidden = false; b.textContent = "🎵"; b.setAttribute("aria-label", ytmOn() ? "Fermer le lecteur musical" : "Ouvrir le lecteur musical"); b.classList.toggle("on", ytmOn()); return; }
+  if (playlists().length) { b.hidden = false; b.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>'; b.setAttribute("aria-label", ytmOn() ? "Fermer le lecteur musical" : "Ouvrir le lecteur musical"); b.classList.toggle("on", ytmOn()); return; }
   b.hidden = !music();
   b.textContent = musicOn() ? "🔊" : "🔇";
   b.setAttribute("aria-label", musicOn() ? "Couper la musique" : "Mettre la musique");
