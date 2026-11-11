@@ -1,6 +1,13 @@
 {
- "at": "2026-11-11T10:29:26.655Z",
+ "at": "2026-11-11T11:25:38.840Z",
  "items": [
+  {
+   "t": "Résultats de VCW Queen Of The Commonwealth 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61209-resultats-de-vcw-queen-of-the-commonwealth-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": []
+  },
   {
    "t": "Mason Rook fait son retour et attaque le champion NXT Grayson Waller",
    "u": "https://www.catch-newz.com/wwe/newz/61221-mason-rook-fait-son-retour-et-attaque-le-champion-nxt-grayson-waller",
@@ -498,13 +505,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Résultats de TJPW ALL RISE 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61139-resultats-de-tjpw-all-rise-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": []
   }
  ],
  "yt": {
@@ -941,9 +941,10 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61221-mason-rook-fait-son-retour-et-attaque-le-champion-nxt-grayson-waller",
    "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61193-wwe-evolve-4-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61209-resultats-de-vcw-queen-of-the-commonwealth-2026",
+   "https://www.catch-newz.com/wwe/newz/61221-mason-rook-fait-son-retour-et-attaque-le-champion-nxt-grayson-waller",
    "https://www.catch-newz.com/international/resultats/61207-resultats-du-jour-1-du-noah-junior-grand-prix-2-legacy-rise-2026",
    "https://www.catch-newz.com/wwe/resultats/61192-wwe-main-event-4-novembre-2026",
    "https://www.catch-newz.com/international/newz/61220-kairi-sane-remonte-sur-le-ring-a-la-chris-jericho-cruise",
@@ -1237,12 +1238,11 @@
    "https://www.catch-newz.com/international/newz/60929-carte-de-lucha-fresca-numero-dos-los-hombres-importantes",
    "https://www.catch-newz.com/international/newz/60926-carte-de-produce-wrestling-x-assembly-100-fresh",
    "https://www.catch-newz.com/international/resultats/60922-resultats-de-tjpw-fall-tour-2026-ray-of-hope-in-kasukabe",
-   "https://www.catch-newz.com/international/resultats/60921-resultats-de-tjpw-lets-keep-going-nanao-noto-noto-genki-womens-pro-wrestling",
-   "https://www.catch-newz.com/international/resultats/60901-resultats-de-cmll-domingo-familiar-du-1er-novembre-2026-tzompantli-de-mascaras"
+   "https://www.catch-newz.com/international/resultats/60921-resultats-de-tjpw-lets-keep-going-nanao-noto-noto-genki-womens-pro-wrestling"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
