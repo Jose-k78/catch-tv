@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08",
+ "updated": "2026-11-11",
  "note": "Vidéos des chaînes officielles uniquement. res = résultats (spoilers, affichés seulement à la demande). m = résumé match par match (promotions japonaises).",
  "items": {
   "WWE|Raw|2026-10-26": {
@@ -109,16 +109,6 @@
    "s": "Wrestling Inc.",
    "u": "https://www.wrestlinginc.com/2293763/tna-thursday-night-impact-october-22-2026-results/"
   },
-  "WWE|PLE|2026-10-10": {
-   "v": [],
-   "res": [
-    "Liv Morgan remporte le titre mondial féminin",
-    "Penta remporte la mallette Money in the Bank masculine",
-    "Tiffany Stratton remporte la mallette Money in the Bank féminine"
-   ],
-   "s": "Sacnilk",
-   "u": "https://www.sacnilk.com/news/5-wwe-money-in-the-bank-2026-takeaways-penta-wins-big-tiffany-stratton-makes-history-and-liv-morgan-reclaims-gold"
-  },
   "AEW|PLE|2026-10-17": {
    "v": [],
    "res": [
@@ -128,16 +118,6 @@
    ],
    "s": "Wrestling Inc.",
    "u": "https://www.wrestlinginc.com/2289656/aew-wrestledream-2026-motor-city-machine-guns-ftr-1-0-series-lead/"
-  },
-  "TNA|PLE|2026-10-11": {
-   "v": [],
-   "res": [
-    "Leon Slater remporte le titre mondial de la TNA",
-    "Amazing Red remporte le titre X-Division",
-    "Jason Hotch remporte le titre International",
-    "Indi Hartwell remporte le titre mondial des Knockouts",
-    "Shayna Baszler et Zoey Serrano remportent les titres par équipe des Knockouts"
-   ]
   },
   "AAA|PLE|2026-10-24": {
    "v": [],
@@ -815,6 +795,54 @@
    ],
    "s": "WWE.com",
    "u": "https://www.wwe.com/complete-crown-jewel-2026-results"
+  },
+  "WWE|Raw|2026-11-09": {
+   "res": [
+    "Oba Femi a battu Bron Breakker par disqualification après l’intervention d’Austin Theory et Logan Paul.",
+    "Rey Fenix a battu Chad Gable et Big Cass dans un match à trois et devient aspirant n°1 au titre Intercontinental.",
+    "Bayley a battu Michin.",
+    "IYO SKY et Becky Lynch ont battu Roxanne Perez et Raquel Rodriguez."
+   ],
+   "seg": [
+    {
+     "k": "Célébration",
+     "t": "Penta et Je’Von Evans, nouveaux champions du monde par équipe, fêtent leur titre ; Bron Breakker les attaque et appelle Oba Femi."
+    },
+    {
+     "k": "Promo",
+     "t": "Chad Gable, Big Cass et Rey Fenix réclament chacun une chance au titre Intercontinental ; Adam Pearce organise un match à trois."
+    },
+    {
+     "k": "Attaque",
+     "t": "The 946 attaquent Fenix, Cass et Gable ; Royce Keys exige que Roman Reigns le reconnaisse avant la fin de la soirée."
+    },
+    {
+     "k": "Annonce",
+     "t": "Cody Rhodes revient sur sa victoire en Last Man Standing contre Randy Orton et annonce un 5 contre 5 Team USA contre Team Mexico aux Survivor Series, avec Rey Mysterio capitaine de Team Mexico."
+    },
+    {
+     "k": "Autre",
+     "t": "Dominik Mysterio et JD McDonagh proposent leurs services à Team USA, Rhodes refuse ; CM Punk rejoint l’équipe et attaque Dominik et McDonagh avec Rhodes."
+    },
+    {
+     "k": "Backstage",
+     "t": "Rey Mysterio recrute Penta dans Team Mexico, alors que Je’Von Evans est invité dans Team USA : les deux partenaires seront adversaires."
+    },
+    {
+     "k": "Attaque",
+     "t": "Jade Cargill, B-Fab, Michin et Fatal Influence s’allient et attaquent Charlotte Flair, Tatum Paxley et Alexa Bliss."
+    },
+    {
+     "k": "Annonce",
+     "t": "Becky Lynch défie Liv Morgan : Lynch contre Morgan pour le titre mondial féminin aux Survivor Series, et Raquel Rodriguez contre IYO SKY pour le titre Intercontinental féminin la semaine prochaine."
+    },
+    {
+     "k": "Retour",
+     "t": "Face-à-face entre Roman Reigns et Royce Keys ; The Bloodline (les Usos, Solo Sikoa et Jacob Fatu, de retour) brûlent la caravane de The 946 et les attaquent, Fatu fait traverser la table des commentateurs à Carmelo Hayes. Reigns lance un défi pour un WarGames aux Survivor Series."
+    }
+   ],
+   "s": "Wrestling Inc.",
+   "u": "https://www.wrestlinginc.com/2310917/wwe-raw-november-9-2026-results/"
   }
  }
 }
