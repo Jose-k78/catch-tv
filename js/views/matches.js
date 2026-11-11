@@ -6,6 +6,7 @@ import { PREVIEW } from "../content.js";
 import { rateBtn } from "./mrate.js";
 import { linksHTML } from "../links.js";
 import { searchVideos, playerThumb } from "./player.js";
+import { wantBtn } from "../want.js";
 
 // Recherche spéciale « Nom 1 VS Nom 2 » : vidéos de l'app, liens du modo, recherche YouTube / Dailymotion "Nom1" vs "Nom2"
 let vs = ["", ""];
@@ -40,7 +41,7 @@ function matchRow(m) {
   const seen = S.user && Object.keys(S.history || {}).some(id => id.indexOf("m_") === 0 && (S.history[id].title || "") === m.t);
   return '<article class="mcard"' + shAttr({ ty: "vid", t: m.t, s: [m.k, m.ev].filter(Boolean).join(" · "), id: m.id }) + '><button class="mthumb" data-act="play" data-id="' + esc(m.id) + '" data-t="' + esc(m.t) + '" aria-label="Voir le match"><img src="https://i.ytimg.com/vi/' + esc(m.id) + '/mqdefault.jpg" alt="" loading="lazy"><span class="mplay">▶</span><span class="mk" style="background:' + colorOf(m.k) + '">' + esc(m.k) + "</span>" + (seen ? '<span class="mseen">✓ Vu</span>' : "") + "</button>" +
     '<div class="mbody"><b>' + linkNames(m.t) + '</b><small>' + (m.ev ? esc(m.ev) + " · " : "") + "Match complet · chaîne officielle</small></div>" +
-    '<div class="mrbtns">' + rateBtn(m.k, m.t, m.ev || "", "") + "</div></article>";
+    '<div class="mrbtns">' + rateBtn(m.k, m.t, m.ev || "", "") + (seen ? "" : wantBtn({ m: 1, k: m.k, show: m.ev || "", d: "", t: m.t }, "wantbtn mini")) + "</div></article>";
 }
 export function matchesView() {
   const all = pool(), week = shuffle(all, weekNo(new Date()) + filter.length * 7919).slice(0, 10);

@@ -23,7 +23,7 @@ const nameOf = (uid, fb) => { const o = (S.tcgAll || []).find(x => x.uid === uid
 const resTxt = r => RES.filter(k => r && +r[k] > 0).map(k => RICO[k] + " " + r[k]).join(" · ");
 const cardsOf = o => Object.keys((o && o.cards) || {}).map(iid => Object.assign({ iid: iid }, o.cards[iid])).filter(x => defOf(x.c));
 const sortCards = L => L.sort((a, b) => RAR.indexOf(b.r) - RAR.indexOf(a.r) || b.lv - a.lv);
-const strip = x => ({ c: x.c, r: x.r, lv: x.lv || 1, xp: x.xp || 0 });
+const strip = x => Object.assign({ c: x.c, r: x.r, lv: x.lv || 1, xp: x.xp || 0 }, x.pw ? { pw: String(x.pw).slice(0, 12) } : {});
 const top = a => (a.bids || []).reduce((m, b) => (!m || b.v > m.v ? b : m), null);
 const left = ms => { const m = Math.max(0, Math.ceil(ms / 6e4)); return m >= 60 ? Math.floor(m / 60) + " h " + String(m % 60).padStart(2, "0") : m + " min"; };
 // état d'une enchère : en cours, ou terminée avec (ou sans) gagnant
@@ -40,7 +40,7 @@ export const pendingCount = () => X().filter(t => t.ty === "trade" && t.to === m
 const busy = new Set(), inflight = new Set();
 const once = (key, fn) => { if (busy.has(key)) return; busy.add(key); Promise.resolve().then(fn).catch(() => {}).then(() => setTimeout(() => busy.delete(key), 4000)); };
 export function settle() {
-  if (!S.user || !S.tcg || !DB.txTcgx) return;
+  if (!S.user || !S.tcg || !S.tcgReady || !DB.txTcgx) return;
   const u = myId(), d = me();
   X().forEach(t => {
     if (t.ty === "trade" && t.from === u) {

@@ -376,7 +376,16 @@ export function watchHof(cb) { return F.onSnapshot(F.doc(db, "hof", "babies"), s
 export function setHofMonth(month, rec) { const p = {}; p["months." + month] = rec; return F.setDoc(F.doc(db, "hof", "babies"), { months: {} }, { merge: true }).then(() => F.updateDoc(F.doc(db, "hof", "babies"), p)); }
 
 // ---- TCCCG : partie de chaque joueur (cartes, ressources, niveau) ----
-export function watchTcg(uid, cb) { return F.onSnapshot(F.doc(db, "tcg", uid), s => cb(s.exists() ? data(s) : null), () => cb(null)); }
+// partie TCCCG : on ignore un « pas de partie » qui vient seulement du cache (hors ligne) ; une erreur ne vide plus la partie
+// (avant, la partie vide affichée pouvait être enregistrée par-dessus la vraie : 11 nov.)
+export function watchTcg(uid, cb) { return F.onSnapshot(F.doc(db, "tcg", uid), s => { if (!s.exists() && s.metadata.fromCache) return; cb(s.exists() ? data(s) : null, true); }, e => cb(undefined, false, e)); }
+// copies de sécurité faites par le robot (tcgbak/{uid}_max = la plus avancée, _j0…_j6 = une par jour de la semaine)
+export async function tcgBackups(uid) {
+  const ids = [uid + "_max"].concat([0, 1, 2, 3, 4, 5, 6].map(i => uid + "_j" + i));
+  const R = await Promise.all(ids.map(id => F.getDoc(F.doc(db, "tcgbak", id)).then(s => s.exists() ? Object.assign(data(s), { _id: id }) : null).catch(() => null)));
+  return R.filter(Boolean).map(d => { d.at = ms(d.at); return d; });
+}
+export async function tcgBackupsAll() { const r = await F.getDocs(F.collection(db, "tcgbak")); return r.docs.map(s => { const d = data(s); d._id = s.id; d.at = ms(d.at); return d; }); }
 export function saveTcg(uid, d) { return F.setDoc(F.doc(db, "tcg", uid), Object.assign({}, d, { at: F.serverTimestamp() })); }
 // ---- TCCCG entre membres : parties des autres (rosters), échanges, enchères, défis (collection tcgx) ----
 export async function listTcg() { const r = await F.getDocs(F.query(F.collection(db, "tcg"), F.limit(300))); return r.docs.map(s => { const d = data(s); d.uid = s.id; d.at = ms(d.at); return d; }); }

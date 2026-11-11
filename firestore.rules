@@ -1,6 +1,7 @@
 rules_version = '2';
 
-// Règles de sécurité TCC TV (version 11 : TCCCG ouvert à tous — échanges, enchères et défis entre membres).
+// Règles de sécurité TCC TV (version 12 : sauvegardes TCCCG — une partie ne peut plus « reculer », copies du robot lisibles).
+// (version 11 : TCCCG ouvert à tous — échanges, enchères et défis entre membres).
 // (version 10 : notes de 0 à 5,5 par demi-étoile).
 // (version 9 : partie TCCCG de chaque joueur).
 // (version 8 : cartes partagées dans le chat, notifications sur le téléphone, annonces du modérateur).
@@ -372,14 +373,28 @@ service cloud.firestore {
     }
 
     // ---------- TCCCG : la partie de chaque joueur (cartes, ressources, niveau), modifiable par lui seul ----------
-    match /tcg/{uid} {
-      allow read: if signedIn();
-      allow create, update: if isMe(uid)
-        && request.resource.data.keys().hasOnly(['v','lvl','xp','res','items','medals','cards','free','tuto','cool','opened','wins','fav','mis','mday','name','esc','at'])
+    // v12 : une partie ne peut pas « reculer » (niveau ou boosters ouverts plus bas qu'avant) : une partie vide ne peut plus
+    // remplacer la vraie. Le modo peut tout réécrire (restaurer la partie d'un membre depuis une sauvegarde).
+    function tcgOk() {
+      return request.resource.data.keys().hasOnly(['v','lvl','xp','res','items','medals','cards','free','tuto','cool','opened','wins','fav','mis','mday','name','esc','at'])
         && request.resource.data.cards is map && request.resource.data.cards.size() <= 3000
         && request.resource.data.lvl is int && request.resource.data.lvl >= 1 && request.resource.data.lvl <= 50
         && request.resource.data.at == request.time;
+    }
+    match /tcg/{uid} {
+      allow read: if signedIn();
+      allow create: if (isMe(uid) || isAdmin()) && tcgOk();
+      allow update: if tcgOk() && (isAdmin() || (isMe(uid)
+        && request.resource.data.lvl >= resource.data.get('lvl', 1)
+        && request.resource.data.get('opened', 0) >= resource.data.get('opened', 0)));
       allow delete: if isMe(uid) || isAdmin();
+    }
+
+    // ---------- TCCCG : sauvegardes faites par le robot (tcgbak/{uid}_max et {uid}_j0…_j6) ----------
+    // Chacun lit les siennes, le modo lit tout ; seul le robot écrit (clé de service, qui ne passe pas par ces règles).
+    match /tcgbak/{id} {
+      allow read: if isAdmin() || (signedIn() && id.matches(request.auth.uid + '_(max|j[0-6])'));
+      allow write: if false;
     }
 
     // ---------- TCCCG entre membres : échanges (trade), enchères (auc), défis (duel) ----------

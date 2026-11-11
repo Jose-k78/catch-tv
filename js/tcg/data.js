@@ -196,9 +196,51 @@ export function versionCard(base, key) {
 }
 // carte champion (drop) : boost permanent
 export function championCard(base, tname) { return Object.assign({}, base, { id: base.id + "#champ", base: base.id, champ: true, gimmick: "Champion" + (tname ? " · " + tname : ""), st: base.st.map(v => Math.round(v * 1.1)) }); }
-// définition d'une carte par id (base, version show, champion)
+// ---------- évolution par ceinture (11 nov., demande de Jose) ----------
+// Donner une ceinture à un catcheur qui a tenu ce titre transforme sa carte : id = <base>~<idTitre> (niveau et rareté gardés).
+// Bonus selon le prestige (mondial +15 %, secondaire +10 %, équipe +8 %), répartition des stats propre à chaque type de titre.
+// Le modo règle tout dans data/tcg.json : evo["<base>|<titre>"] = { off, name, years, gimmick, img, bonus, st, pw }, evoAdd[base] = [titres].
+const WORLD = new Set(["wwe-whc", "wwe-wwe", "wwe-wwc", "wwe-wc", "nxt", "nxt-w", "aew-world", "aew-women", "tna-world", "tna-ko", "cmll-heavy", "cmll-women", "njpw-hw", "aaa-mega", "aaa-reina", "roh-world", "roh-women", "stardom-world", "stardom-wonder", "stardom-iwgpw", "marigold-world", "evolve", "evolve-w"]);
+export const EVO_BONUS = { world: 15, sec: 10, tag: 8 }, EVO_NAME = { world: "titre mondial", sec: "titre secondaire", tag: "titre par équipe" };
+const TILT = { world: [0.02, -0.03, 0.05, 0, -0.04], sec: [-0.03, 0.05, -0.02, -0.02, 0.02], tag: [0.01, -0.02, -0.03, 0.05, -0.01] };
+export const titleById = id => (S.titles || []).find(t => t.id === id) || null;
+export function prestige(t) { if (!t) return "sec"; const n = String(t.n || ""); if (/tag|trios|6-man|six-man|twin ?star|goddesses|artist/i.test(n)) return "tag"; return WORLD.has(t.id) ? "world" : "sec"; }
+export const beltShort = t => String(t.n || "").replace(/\s*\(.*\)\s*/g, " ").replace(/\s*Championships?\s*/i, " ").replace(new RegExp("^" + String(t.k || "").replace(/[^\w ]/g, "") + "\\s+"), "").replace(/\s+/g, " ").trim() || t.n;
+let HKEY = "", HELD = null;
+function heldMap() {
+  const T = S.titles || [], k = T.length + "|" + (T[0] && T[0].since) + "|" + T.reduce((a, t) => a + (t.hist || []).length, 0);
+  if (HELD && HKEY === k) return HELD; HKEY = k; HELD = new Map();
+  const add = (c, t, d) => { if (!c) return; String(c).replace(/\s*\(.*\)$/, "").split(/\s*(?:&| et |,)\s*/).forEach(n => { const kk = norm(n); if (!kk) return; let m = HELD.get(kk); if (!m) HELD.set(kk, m = {}); const y = parseInt(String(d || "").slice(0, 4), 10) || 0; if (!(t.id in m) || (y && (!m[t.id] || y < m[t.id]))) m[t.id] = y || m[t.id] || 0; }); };
+  T.forEach(t => { (t.hist || []).forEach(h => add(h.c, t, h.d)); [t.c].concat(t.who || []).forEach(c => add(c, t, t.since)); });
+  return HELD;
+}
+export const baseId = id => String(id || "").split(/[@#~]/)[0];
+// évolutions possibles d'une carte : titres vraiment tenus + ceux ajoutés par le modo, moins ceux qu'il a retirés
+export function evolutionsOf(defOrId) {
+  const b = cardById(baseId(typeof defOrId === "string" ? defOrId : defOrId && defOrId.id)); if (!b) return [];
+  const held = heldMap().get(realKey(b)) || {}, c = cfg(), ov = c.evo || {}, add = (c.evoAdd || {})[b.id] || [];
+  return Object.keys(held).concat(add).filter((x, i, a) => a.indexOf(x) === i && titleById(x) && !(ov[b.id + "|" + x] || {}).off)
+    .map(id => ({ t: titleById(id), year: held[id] || 0, key: b.id + "|" + id, id: b.id + "~" + id }));
+}
+export function evoDef(b, tid) {
+  const t = titleById(tid); if (!t) return null;
+  const ov = (cfg().evo || {})[b.id + "|" + tid] || {}, P = prestige(t), bonus = ov.bonus != null && ov.bonus !== "" ? +ov.bonus : EVO_BONUS[P], tl = TILT[P], h = hashN(b.id + tid);
+  const st = Array.isArray(ov.st) && ov.st.length === 5 && ov.st.every(v => +v > 0) ? ov.st.map(Number) : b.st.map((v, i) => Math.round(v * (1 + bonus / 100 + tl[i] + (((h >>> (i * 3)) % 5) - 2) / 100)));
+  const held = (heldMap().get(realKey(b)) || {})[tid], fem = /women|knockouts|reina|wonder|stardom|marigold|goddess/i.test(t.n + " " + t.id);
+  return Object.assign({}, b, { id: b.id + "~" + tid, base: b.id, evo: tid, belt: tid, name: ov.name || b.name, years: typeof ov.years === "string" && ov.years ? ov.years : held ? String(held) : b.years,
+    gimmick: ov.gimmick || ((fem ? "Championne " : "Champion ") + beltShort(t) + " · " + t.k), st: st, pic: ov.img || b.pic, picUR: ov.img ? "" : b.picUR, picLR: ov.img ? "" : b.picLR, evoPw: ov.pw || "", evoBonus: bonus, evoCls: P });
+}
+// pouvoirs (tirés au hasard à l'évolution ; le modo peut fixer celui d'une évolution)
+export const POWERS = {
+  crit: ["Coup critique", "+15 % de dégâts sur chaque attaque"], garde: ["Garde haute", "−15 % de dégâts reçus"], foule: ["Chouchou du public", "barre de Finisher +30 % plus vite"],
+  regen: ["Second souffle", "+6 % de PV à chaque paire trouvée"], tag: ["Partenaire fidèle", "+1 TAG pour l’équipe"], entree: ["Entrée fracassante", "1re attaque ×1,5"],
+  geant: ["Tueur de géants", "+25 % de dégâts contre plus costaud que lui"], aura: ["Aura de champion", "+8 % à toutes les stats"]
+};
+export const randomPower = () => { const k = Object.keys(POWERS); return k[Math.floor(Math.random() * k.length)]; };
+// définition d'une carte par id (base, version show, champion, évolution)
 export function defOf(id) {
   if (!id) return null;
+  const ti = id.indexOf("~"); if (ti > 0) { const b = cardById(id.slice(0, ti)); return b ? evoDef(b, id.slice(ti + 1)) : null; }
   const at = id.indexOf("@"), hs = id.indexOf("#champ");
   if (at > 0) { const b = cardById(id.slice(0, at)); return b ? versionCard(b, id.slice(at + 1)) : null; }
   if (hs > 0) { const b = cardById(id.slice(0, hs)); const t = b && titleOf(b.rn || b.name); return b ? championCard(b, t && t.n) : null; }

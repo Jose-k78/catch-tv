@@ -1,6 +1,6 @@
 {
  "updated": "2026-11-04",
- "note": "Tournois (rubrique Tournoi de l'app). items : un tournoi = { id, n, k, serie, y, st (à venir | en cours | terminé), from, to, type (bracket | blocs), about, rounds: [{ n, m: [{ a, b, w, res, v (id YouTube officiel) }] }], blocs: [{ n, rows: [{ w, pts }] }], winner, art: { txt: [...], faits: [...], pop }, src: [{ n, u }] }. series : présentation, anciens gagnants (past : [{ y, w }]), anecdotes. Rempli par la mise à jour du soir ; liens vidéo du modo dans data/links.json (« tn:id »).",
+ "note": "Tournois (rubrique Tournoi de l'app). items : un tournoi = { id, n, k, serie, y, st (à venir | en cours | terminé), from, to, type (bracket | blocs), about, rounds: [{ n, m: [{ a, b, w, res, v (id YouTube officiel) }] }], blocs: [{ n, rows: [{ w, pts }] }], winner, art: { txt: [...], faits: [...], pop }, src: [{ n, u }] }. series : présentation, anciens gagnants (past : [{ y, w }]), anecdotes. Rempli par la mise à jour du soir ; liens vidéo du modo dans data/links.json (« tn:id »). Champs du modo : lock (true = verrouillé : la mise à jour du soir ne modifie ni ne supprime ce tournoi), feat (à la une), img (image), modo (date de sa dernière modif).",
  "items": [
   {
    "id": "dusty-2026",

@@ -16,6 +16,7 @@ import { pnNew } from "./views/patchnotes.js";
 import { tccgView, tccgTop, TICON, TNAV } from "./views/tccg.js";
 import "./redir.js";
 import { settle as tcgSettle, pendingCount as tcgPending } from "./tcg/trade.js";
+import { keepLocal as tcgKeep, flushWait as tcgFlush } from "./tcg/store.js";
 import { playerView } from "./views/player.js";
 import { searchView, wrestlerView, fillWiki, afterSearch } from "./views/search.js";
 import { eventView, fillEvent } from "./views/event.js";
@@ -46,6 +47,7 @@ import { mountTicker } from "./views/ticker.js";
 import { renderWImage } from "./views/wimage.js";
 import { loadPushCfg, syncPush, resetPushSync } from "./push.js";
 import "./share.js";
+import { wantView, syncWants } from "./want.js";
 
 let route = { name: "home" }, routeSubs = [], userSubs = [], dirty = false, searchFocused = false;
 const NEEDS_USER = { settings: 1, editprofile: 1, chat: 1, newchat: 1, conv: 1, convinfo: 1, profile: 1, members: 1, favs: 1, notifs: 1, activity: 1, ideas: 1, trophies: 1 };
@@ -57,7 +59,7 @@ const REL = {
   matches: ["route", "history", "auth", "content"], wrestler: ["profile", "spoil", "history", "auth", "content"], search: [], titles: ["history", "spoil", "content"], title: ["history", "spoil", "content"], belt: ["content"], group: ["content", "auth"], tccg: ["auth", "profile", "content", "tcg", "history"], player: ["content"], autre: ["content"], passes: ["content", "history", "tick"], tournois: ["content"], serie: ["content"], tournoi: ["content", "auth"],
   notifs: ["notifs", "profiles", "reads", "blocks", "ann"], activity: ["activity", "profiles", "blocks", "areplies"], storyline: ["content", "history", "auth"], roster: ["profile", "content"],
   members: ["activity", "areplies", "polls", "pollVotes", "picks", "content", "history", "users", "friends", "feuds", "blocks", "profiles", "auth", "tick"], favs: ["profile", "profiles", "friends", "auth", "content"], hl: ["history", "spoil", "content"],
-  event: ["event", "history", "auth", "activity", "links", "profiles", "content"], cal: ["content", "history", "auth", "images", "spoil", "tick", "picks"],
+  event: ["event", "history", "auth", "activity", "links", "profiles", "content"], want: ["history", "auth", "content", "tick"], cal: ["content", "history", "auth", "images", "spoil", "tick", "picks"],
   polls: ["polls", "pollVotes", "auth", "blocks", "hof", "content", "profiles"], picks: ["content", "picks", "profiles", "auth", "blocks", "tick"], pick: ["content", "picks", "profiles", "auth", "blocks", "tick"],
   ideas: ["ideas", "profiles", "auth", "blocks"],
   trophies: ["profile", "profiles", "history", "pollVotes", "picks", "friends", "feuds", "ideas", "myact", "slammys", "auth", "content"],
@@ -96,6 +98,7 @@ function parse() {
     case "pronostic": return S.P[parts[1]] && parts[2] ? { name: "pick", k: parts[1], d: parts[2] } : { name: "picks" };
     case "idees": return { name: "ideas" };
     case "trophees": return { name: "trophies", uid: parts[1] || "" };
+    case "aregarder": return { name: "want" };
     case "storyline": return { name: "storyline", id: parts[1] || "" };
     case "roster": return S.P[parts[1]] ? { name: "roster", k: parts[1], g: parts[2] || "" } : { name: "home" };
     case "hl": return S.P[parts[1]] ? { name: "hl", k: parts[1], show: parts[2] || "PLE", d: parts[3] || "" } : { name: "home" };
@@ -219,6 +222,7 @@ function render() {
     case "pick": h = pickView(route.k, route.d); break;
     case "ideas": h = ideasView(); break;
     case "trophies": h = trophiesView(route.uid); break;
+    case "want": h = wantView(); break;
     case "storyline": h = storylineView(route.id); break;
     case "roster": h = rosterView(route.k, route.g); break;
     case "event": h = eventView(route.ref); break;
@@ -347,7 +351,7 @@ function onUser(u) {
     const me = u.uid;
     if (S.realAdmin) setTimeout(() => syncFollowed(false), 4000);
     userSubs.push(B.watchUser(me, p => { S.profile = p; changed("profile"); }));
-    userSubs.push(B.watchHistory(me, list => { const m = {}; list.forEach(x => { m[x.id] = x; }); S.history = m; changed("history"); }));
+    userSubs.push(B.watchHistory(me, list => { const m = {}; list.forEach(x => { m[x.id] = x; }); S.history = m; changed("history"); syncWants(); }));
     let readsInit = false;
     userSubs.push(B.watchReads(me, r => { S.reads = r || {}; if (!readsInit && !S.reads.general) B.markRoomRead(me).catch(() => {}); readsInit = true; changed("reads"); }));
     let roomInit = false, roomMax = 0;
@@ -392,9 +396,15 @@ function onUser(u) {
       if (annInit) S.ann.filter(a => !annSeen[a.id] && a.by !== me && Date.now() - a.at < 3600e3).slice(0, 1).forEach(a => toast("📣 " + a.t + (a.x ? "\n" + a.x.slice(0, 120) : ""), { top: true, ms: 7000, onClick: () => { location.hash = a.h && a.h.indexOf("#/") === 0 ? a.h : "#/notifs"; } }));
       S.ann.forEach(a => { annSeen[a.id] = 1; }); annInit = true; changed("ann");
     }));
-    S.tcg = null;
-    let tcgFirst = true;
-    userSubs.push(B.watchTcg(me, d => { S.tcg = d; changed("tcg"); if (tcgFirst && d) { tcgFirst = false; setTimeout(tcgSettle, 500); } }));
+    S.tcg = null; S.tcgReady = false; S.tcgSrv = null;
+    let tcgFirst = true, tcgUn = null, tcgOff = false;
+    // partie TCCCG : prête seulement quand Firebase l'a envoyée ; en cas d'erreur on garde ce qui est affiché et on réessaie
+    const tcgSub = () => { tcgUn = B.watchTcg(me, (d, ok) => {
+      if (ok === false) { S.tcgReady = false; changed("tcg"); if (!tcgOff) setTimeout(() => { if (!tcgOff) { try { tcgUn && tcgUn(); } catch (e) {} tcgSub(); } }, 5000); return; }
+      S.tcg = d; S.tcgSrv = d ? JSON.parse(JSON.stringify(d)) : null; const was = S.tcgReady; S.tcgReady = true; tcgKeep(me, d); changed("tcg");
+      if (!was) tcgFlush();
+      if (tcgFirst && d) { tcgFirst = false; setTimeout(tcgSettle, 500); } }); };
+    tcgSub(); userSubs.push(() => { tcgOff = true; try { tcgUn && tcgUn(); } catch (e) {} });
     userSubs.push(B.watchTcgx(list => { S.tcgx = list || []; changed("tcg"); setTimeout(tcgSettle, 300); }));
     if (S.realAdmin) userSubs.push(B.watchReports(list => { S.reports = list || []; list.forEach(r => { need(r.by); need(r.target); }); changed("reports"); }));
   }

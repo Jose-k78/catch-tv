@@ -21,6 +21,7 @@ import { pickPoints } from "./picks.js";
 import { isStoryNote, isStoryFav, storyFavsHTML, storyFavView } from "./storyline.js";
 import { showLogo } from "../assets.js";
 import { cropImage } from "../crop.js";
+import { wantLink } from "../want.js";
 
 const ERR = {
   "auth/invalid-email": "Adresse e-mail invalide",
@@ -284,7 +285,7 @@ export function profileView(uid) {
   let h = '<a class="back" href="' + (me ? "#/" : "javascript:history.back()") + '">' + ICON.back + (me ? " Accueil" : " Retour") + "</a>";
   if (!p) return h + '<p class="empty">' + (S.profiles[uid] === null ? "Profil introuvable." : "Chargement…") + "</p>";
   const blocked = !me && isBlocked(uid);
-  const raw = (me ? Object.values(S.history) : (S.otherHistory[uid] || []).slice()).sort((a, b) => (b.seenAt || 0) - (a.seenAt || 0));
+  const raw = (me ? Object.values(S.history) : (S.otherHistory[uid] || []).slice()).filter(x => !(typeof x.id === "string" && x.id.indexOf("w_") === 0)).sort((a, b) => (b.seenAt || 0) - (a.seenAt || 0));
   const all = raw.filter(x => !isStoryFav(x) && !(typeof x.id === "string" && x.id.indexOf("q_") === 0));
   const hist = all.filter(x => !isMatchNote(x) && !isStoryNote(x) && !(typeof x.id === "string" && x.id.indexOf("g_") === 0)), fights = all.filter(isMatchNote);
   const rated = all.filter(x => x.rating);
@@ -322,7 +323,7 @@ export function profileView(uid) {
   h += '<div class="stats"><div><b>' + hist.length + "</b><small>show" + (hist.length > 1 ? "s" : "") + " vu" + (hist.length > 1 ? "s" : "") + "</small></div><div><b>" + fights.length + "</b><small>combat" + (fights.length > 1 ? "s" : "") + " noté" + (fights.length > 1 ? "s" : "") +
     "</small></div><div><b>" + avg + "</b><small>note moyenne</small></div><div><b>" + pickPoints(uid).ok + "</b><small>pt" + (pickPoints(uid).ok > 1 ? "s" : "") + " de pronos</small></div><div><b>" + friendsOf(uid).length + "</b><small>ami" + (friendsOf(uid).length > 1 ? "s" : "") + "</small></div></div>";
   // vitrine des trophées (le bouton 🏆 est ici, plus dans l'en-tête)
-  if (S.user && uid === S.user.uid) h += '<a class="btn ghost wide trolink" href="#/trophees">🏆 Mes trophées</a>';
+  if (S.user && uid === S.user.uid) h += '<a class="btn ghost wide trolink" href="#/trophees">🏆 Mes trophées</a>' + wantLink("wantlink prof");
   h += showcase(uid);
   h += storyFavsHTML(raw);
   const segFav = raw.filter(x => typeof x.id === "string" && x.id.indexOf("q_") === 0);

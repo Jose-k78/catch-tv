@@ -22,6 +22,7 @@ import { linksOf, linksHTML, defaultLink, playLink, playerHTML, TPLAY } from "..
 import { tournamentTile } from "./tournois.js";
 import { allVideos, playerThumb } from "./player.js";
 import { rateBtn } from "./mrate.js";
+import { wantBtn, wantLink } from "../want.js";
 
 // ---------- données ----------
 export function seenId(e) { return docId(e.k + "|" + (e.show || "PLE") + "|" + (e.d || "") + "|" + e.t); }
@@ -389,7 +390,7 @@ function epCard(e) {
     '<div class="epbody"><a class="eptitle" href="' + esc(evHref(e)) + '"' + shAttr(evCard(e)) + ">" + esc(e.t) + "</a>" +
     '<small class="epmeta">' + (meta || "À confirmer") + "</small>" + (past ? "" : timeLine(e)) + cardList(e) +
     (r ? faceRow(namesIn(r.txt), 28) + '<p class="recap">' + linkNames(r.txt) + "</p>" + srcLine(r) : "") + seenInfo(h) +
-    '<div class="eplinks">' + (aired(e) ? '<button class="hllink watchlink" data-act="watch" data-direct="1"' + itemData(e) + ">" + ICON.play + " Voir le show</button>" + hlBtn(e.k, e.show || "PLE", e.d, "hllink") : "") + (e.kind === "ple" ? remindBtn(e) : "") + "</div></div>" +
+    '<div class="eplinks">' + (aired(e) ? '<button class="hllink watchlink" data-act="watch" data-direct="1"' + itemData(e) + ">" + ICON.play + " Voir le show</button>" + hlBtn(e.k, e.show || "PLE", e.d, "hllink") : "") + (e.kind === "ple" ? remindBtn(e) : "") + (h ? "" : wantBtn({ k: e.k, show: e.show, d: e.d, t: e.t }, "hllink wantbtn")) + "</div></div>" +
     (aired(e) ? '<button class="seenbtn' + (h ? " on" : "") + '" data-act="seen"' + dataItem(e) + ' aria-label="Je l’ai vu">' + (h ? ICON.check : ICON.eye) + "</button>" : "") +
     "</article>";
 }
@@ -439,11 +440,11 @@ export function evPageView(k, show, d, t) {
     '<span class="cd">' + (live ? "🔴 En direct maintenant" : cd(e.d)) + "</span>" + creditLine(lk.credit) + "</section>";
   // actions
   h += '<div class="evacts">' + (pickable(e) ? '<button class="btn" data-act="pick"' + itemData(e) + ">🎯 Pronostic</button>" : "") +
-    (aired(e) ? '<button class="btn ghost' + (seen ? " on" : "") + '" data-act="seen"' + dataItem(e) + ">" + (seen ? ICON.check + " Vu" + (seen.rating ? " " + stars(seen.rating) : "") : ICON.eye + " Je l’ai vu") + "</button>" : remindBtn(e, "btn ghost")) +
+    (aired(e) ? '<button class="btn ghost' + (seen ? " on" : "") + '" data-act="seen"' + dataItem(e) + ">" + (seen ? ICON.check + " Vu" + (seen.rating ? " " + stars(seen.rating) : "") : ICON.eye + " Je l’ai vu") + "</button>" : remindBtn(e, "btn ghost")) + (seen ? "" : wantBtn({ k: e.k, show: e.show, d: e.d, t: e.t }, "btn ghost wantbtn")) +
     '<button class="btn ghost" data-act="share" data-sh="' + esc(JSON.stringify(evCard(e))) + '">↗ Partager</button></div>';
   // l'affiche (matchs annoncés)
   if (!out && Array.isArray(e.card) && e.card.length) {
-    h += "<h2>L’affiche</h2><ul class=\"evcard\">" + e.card.map(m => "<li>" + versus(m, 40) + '<span class="evl">' + linkNames(m) + "</span></li>").join("") + "</ul>";
+    h += "<h2>L’affiche</h2><ul class=\"evcard\">" + e.card.map(m => "<li>" + versus(m, 40) + '<span class="evl">' + linkNames(m) + "</span>" + wantBtn({ m: 1, k: e.k, show: e.show || e.t, d: e.d, t: m }, "wantbtn mini") + "</li>").join("") + "</ul>";
   } else if (!out && e.kind === "ple") h += "<h2>L’affiche</h2><p class=\"note\">Les matchs seront ajoutés dès qu’ils sont officiellement annoncés.</p>";
   // le résumé d'avant-show (sans spoiler)
   if (r) h += "<h2>Le résumé d’avant-show</h2><div class=\"evrecap\">" + faceRow(namesIn(r.txt), 40) + "<p>" + linkNames(r.txt) + "</p></div>" + (srcLine(r) ? '<div style="margin:0 16px">' + srcLine(r) + "</div>" : "");
@@ -507,7 +508,7 @@ function pastPage(e, lk, seen, r, hl) {
   const byU = {}; (RATES[rk].list || []).concat(S.activity || []).forEach(a => { if (a && a.kind === "rate" && a.k === e.k && (a.show || "") === (e.show || "") && a.d === e.d && a.rating) byU[a.uid] = a; });
   const notes = Object.keys(byU).map(u => byU[u]), avg = notes.length ? notes.reduce((x, a) => x + a.rating, 0) / notes.length : 0;
   h += '<div class="shownote"><div><b>Note du show</b>' + (avg ? stars(avg) + "<small>" + fmtR(avg) + " / 5,5 · " + notes.length + " note" + (notes.length > 1 ? "s" : "") + " de membres</small>" : "<small>Pas encore de note de membre</small>") + "</div>" +
-    '<button class="btn small' + (seen ? " on" : "") + '" data-act="seen"' + dataItem(e) + ">" + (seen ? (seen.rating ? "Ta note " + stars(seen.rating) : ICON.check + " Vu") : "⭐ Noter le show") + "</button></div>";
+    '<button class="btn small' + (seen ? " on" : "") + '" data-act="seen"' + dataItem(e) + ">" + (seen ? (seen.rating ? "Ta note " + stars(seen.rating) : ICON.check + " Vu") : "⭐ Noter le show") + "</button>" + (seen ? "" : wantBtn({ k: e.k, show: e.show, d: e.d, t: e.t }, "wantbtn mini")) + "</div>";
   if (notes.length) h += '<div class="rnotes">' + notes.sort((a, b) => b.rating - a.rating).map(a => { const p = prof(a.uid) || {}; return '<a class="rnote" href="#/profil/' + encodeURIComponent(a.uid) + '"><b>' + esc(p.pseudo || "Membre") + "</b>" + stars(a.rating) + "<small>" + fmtR(a.rating) + "</small>" + (a.comment && !/^\[HL\]/.test(a.comment) ? "<i>" + esc(String(a.comment).slice(0, 140)) + "</i>" : "") + "</a>"; }).join("") + "</div>";
   // 3. vidéos liées
   const q = e.t + " " + e.d.slice(0, 4);
@@ -566,7 +567,7 @@ export function homeView() {
   const P = S.P, sp = split(allPle());
   const weekly = [];
   Object.keys(P).forEach(k => { const s = P[k].s; if (s) Object.keys(s).forEach(n => weekly.push({ k: k, n: n, d: nextAir(k, n) })); });
-  let h = annBar() + installBar() + liveSection();
+  let h = annBar() + installBar() + liveSection() + wantLink("wantlink home");
   // grande affiche en tête d'accueil (façon Netflix) : le prochain grand événement (pas les simples dates de tournée)
   const up0 = sp[0].filter(e => e.d && !isOut(e) && diff(e.d) >= 0 && !e.tour), big0 = up0.filter(e => e.kind === "ple")[0] || up0[0];
   if (big0) h += hero(big0, "Prochain " + bigWord(big0.k) + " · " + esc(big0.k)).replace('class="hero', 'class="hero bb');
@@ -635,7 +636,7 @@ export function showView(k, n) {
     (st ? ", soit <b>" + fmtAt(st, PARIS) + "</b> à Paris pour le prochain" : "") + "<br>" +
     (fr ? "En France : " + esc(fr) + " · " : "") + "Aux États-Unis : " + esc(s.p) + " · " + '<button class="linkbtn inline" data-act="watch"' + (nx ? itemData(nx) : "") + ">Où regarder ↗</button></p>";
   h += titlesTile(k, n) + rosterTile(k, n);
-  if (up.length) h += "<h2>À venir</h2>" + epList(up);
+  if (up.length) h += "<h2>À venir</h2>" + '<div class="row">' + up.map(e => pleCard(e, false)).join("") + "</div>";
   h += pastSection(outItems().filter(e => e.k === k && (e.show === n || e.br === n)), { k: k, n: n, empty: past.length ? epList(past) : "" });
   let al = articles([k, n], 5); if (!al.length) al = articles([k], 5);
   h += artSection("Actualité", al) + xSection(s.x || pr.x);

@@ -9,6 +9,7 @@ import { face, faceImg, versus } from "../photos.js";
 import { linksHTML } from "../links.js";
 import { spoilBlock } from "./highlights.js";
 import { eventLogo, showLogo } from "../assets.js";
+import { tnModoBar, tnWinBtns } from "./tnedit.js";
 
 const T = () => (S.tournaments && Array.isArray(S.tournaments.items) ? S.tournaments.items : []).filter(t => t && t.id && t.n);
 const SER = () => (S.tournaments && S.tournaments.series) || {};
@@ -20,7 +21,7 @@ const card = t => '<a class="item" href="#/tournoi/' + encodeURIComponent(t.id) 
 export function tournamentTile(k) {
   const L = liveTournaments(k), soon = T().filter(t => (!t.st || t.st === "à venir") && (!k || t.k === k));
   if (k && !L.length) return "";
-  const t = L[0] || soon[0];
+  const F = T().filter(x => x.feat && (!k || x.k === k)), t = F[0] || L[0] || soon[0];
   const sub = L.length ? (L.length > 1 ? L.length + " tournois en cours" : "En cours : " + t.n) : t ? "Bientôt : " + t.n + (t.from ? " (" + fmt(t.from) + ")" : "") : "G1 Climax, 5★STAR Grand Prix, Dream Star GP…";
   return '<a class="matchtile tntile2" href="' + (k && L.length === 1 ? "#/tournoi/" + encodeURIComponent(t.id) : "#/tournois") + '"><span class="mt-k">🏆 TOURNOIS</span><b>' + esc(sub) + "</b><small>" +
     esc(L.length ? L.map(x => x.k + " · " + x.n).slice(0, 3).join(" · ") : "Tableaux, blocs, résultats et bilans, avec leurs sources") + '</small><span class="mt-go">Voir ›</span></a>';
@@ -30,7 +31,7 @@ export function tournamentTile(k) {
 const tLogo = (k, lg) => (lg && eventLogo({ t: lg, k: k })) || showLogo(k, "") || "";
 function tcard(t) {
   const s = SER()[t.serie] || {}, lg = tLogo(t.k, s.lg);
-  return '<a class="tncard" href="#/tournoi/' + encodeURIComponent(t.id) + '" style="' + esc(cardBg(t.k)) + '">' + (lg ? '<img src="' + esc(lg) + '" alt="" loading="lazy">' : "") + stTag(t) +
+  return '<a class="tncard' + (t.img ? " hasimg" : "") + '" href="#/tournoi/' + encodeURIComponent(t.id) + '" style="' + esc(cardBg(t.k)) + (t.img ? ";background-image:linear-gradient(transparent 35%,rgba(0,0,0,.85)),url('" + esc(t.img) + "');background-size:cover;background-position:center" : "") + '">' + (lg && !t.img ? '<img src="' + esc(lg) + '" alt="" loading="lazy">' : "") + stTag(t) + (S.isAdmin && t.lock ? '<span class="tnlockb">🔒</span>' : "") +
     "<b>" + esc(t.n) + "</b><small>" + esc([t.k, t.from ? "dès le " + fmt(t.from) : t.to ? "fin le " + fmt(t.to) : ""].filter(Boolean).join(" · ")) + "</small></a>";
 }
 function scard(id) {
@@ -46,7 +47,10 @@ export function tournoisView() {
   const tabs = [["", "Tout"], ["live", "En cours"], ["soon", "À venir"], ["done", "Terminés"], ["series", "Les grands tournois"]];
   let h = '<a class="back" href="#/">' + ICON.back + " Accueil</a><h1>Tournois</h1>" +
     '<nav class="tabs" style="padding-top:0">' + tabs.map(x => '<button class="tab' + (tnTab === x[0] ? " on" : "") + '" data-act="tntab" data-t="' + x[0] + '">' + x[1] + "</button>").join("") + "</nav>";
+  if (S.isAdmin) h += '<div class="btns" style="justify-content:flex-start;margin:0 16px 6px"><button class="btn small" data-act="tnnew">＋ Nouveau tournoi</button></div>';
   const rowOf = (title, list, fn) => list.length ? "<h2>" + title + '</h2><div class="row tnrow">' + list.map(fn).join("") + "</div>" : "";
+  const feat = all.filter(t => t.feat);
+  if (!tnTab && feat.length) h += rowOf("⭐ À la une", feat, tcard);
   if (!tnTab || tnTab === "live") h += live.length ? rowOf("En cours", live, tcard) : (tnTab ? '<p class="note">Pas de tournoi en cours en ce moment.</p>' : "");
   if (!tnTab || tnTab === "soon") h += rowOf("Bientôt", soon, tcard) || (tnTab ? '<p class="note">Rien d’annoncé pour l’instant.</p>' : "");
   if (!tnTab || tnTab === "series") h += rowOf("Les grands tournois", Object.keys(S2), scard);
@@ -81,7 +85,7 @@ export function tournoiView(id) {
   let h = '<a class="back" href="#/tournois">' + ICON.back + " Tournois</a>";
   if (!t) return h + '<p class="empty">Tournoi introuvable.</p>';
   h += '<section class="tnhead"><span class="eyebrow">' + esc([t.k, t.y].filter(Boolean).join(" · ")) + "</span><h1>" + esc(t.n) + "</h1>" + stTag(t) +
-    (t.from ? "<small>Du " + fmt(t.from) + (t.to ? " au " + fmt(t.to) : "") + "</small>" : "") + "</section>";
+    (t.from ? "<small>Du " + fmt(t.from) + (t.to ? " au " + fmt(t.to) : "") + "</small>" : "") + "</section>" + (t.img ? '<img class="tnimg" src="' + esc(t.img) + '" alt="" loading="lazy">' : "") + tnModoBar(t);
   if (t.winner) h += '<div class="bkchamp">' + (face(t.winner, 80) || "") + "<span>🏆 Vainqueur</span><b>" + linkNames(t.winner) + "</b></div>";
   if ((t.about || "") !== "") h += '<p class="note" style="margin:8px 16px">' + linkNames(t.about) + "</p>";
   // blocs (tous contre tous)
@@ -102,7 +106,7 @@ export function tournoiView(id) {
       h += '<div class="tnmatch"><small>' + esc(r.n || "Tour " + (ri + 1)) + "</small>" + versus(m.a + " contre " + m.b, 36) + "<b>" + linkNames(m.a + " contre " + m.b) + "</b>" +
         (m.res ? '<span class="spoil inline"><button class="linkbtn spoilbtn" data-act="reveal">👀 Résultat (spoiler)</button><span class="spoilbody">' + linkNames(m.res) + "</span></span>" : "") +
         (m.v && /^[\w-]{11}$/.test(m.v) ? '<button class="btn small ghost" data-act="play" data-id="' + esc(m.v) + '" data-t="' + esc(m.a + " contre " + m.b) + '">▶ Voir</button>' : "") +
-        linksHTML("tn:" + t.id + "|" + ri + "-" + mi, { label: "Vidéo", title: m.a + " contre " + m.b }) + "</div>";
+        linksHTML("tn:" + t.id + "|" + ri + "-" + mi, { label: "Vidéo", title: m.a + " contre " + m.b }) + tnWinBtns(t, ri, mi, m) + "</div>";
     }));
   }
   if (!(t.blocs || []).length && !(t.rounds || []).length) h += '<p class="note">Le tableau arrive avec la mise à jour du soir.</p>';

@@ -2,13 +2,14 @@
 import { S, ACT, changed } from "../state.js";
 import { esc, toast, modal } from "../util.js";
 import { parisDay } from "../time.js";
-import { items, itemById, defOf, showKeyLabel } from "./data.js";
+import { items, itemById, defOf, showKeyLabel, prestige, EVO_NAME } from "./data.js";
 import { recentShows } from "./callup.js";
 import { fightShows, resumeHome } from "./fight.js";
 import { pendingCount, duelsForMe } from "./trade.js";
 import { me, commit, owned, XP_LV, freeLeft, freeToday } from "./store.js";
 import { cardHTML } from "./card.js";
 import { resBar } from "./roster.js";
+import { dailyBelts, beltPrice, beltImgHTML, BELT } from "./evo.js";
 
 export function headerHTML(d) {
   const p = S.profile || {};
@@ -48,6 +49,7 @@ export function tccgHome() {
   const favs = d.fav.slice(1).map(iid => d.cards[iid] && Object.assign({ iid: iid }, d.cards[iid])).filter(Boolean);
   if (favs.length) h += "<h2>Mes cartes favorites</h2>" + '<div class="tfavs">' + favs.map(x => cardHTML(x, { small: true, act: "tcgcard", iid: x.iid })).join("") + "</div>";
   h += '<p class="tnote" style="text-align:center">' + d.wins + " victoire" + (d.wins > 1 ? "s" : "") + " · " + d.opened + " booster" + (d.opened > 1 ? "s" : "") + " ouvert" + (d.opened > 1 ? "s" : "") + " · " + L.length + " cartes" + ' · <button class="linkbtn" data-act="tcgtuto">Revoir le tuto</button></p>';
+  h += '<p class="tnote" style="text-align:center"><a class="linkbtn" href="#/tccg/sauvegardes">🛟 Sauvegardes de ta partie</a></p>';
   return h;
 }
 ACT.tcgmis = () => {
@@ -96,8 +98,20 @@ export function shopView() {
   return '<section class="tccghead"><h1>Shop</h1></section>' + resBar(d) + '<p class="tnote">Objets d’éveil et de combat contre de l’argent gagné en combat. Gimmicks : 1 000 💵 les 5.</p>' +
     '<div class="list tshop">' + I.map(x => { const p = +x.price || (x.t === "combat" ? 500 : PRICE[x.g] || 500);
       return '<div class="item"><span class="lbl"><b>' + esc(x.ic + " " + x.n) + "</b><small>" + esc(x.d || "") + " · tu en as " + (d.items[x.id] || 0) + '</small></span><button class="btn small" data-act="tcgbuy" data-id="' + x.id + '" data-p="' + p + '"' + (d.res.money >= p ? "" : " disabled") + ">💵 " + p + "</button></div>"; }).join("") +
-    '<div class="item"><span class="lbl"><b>🎟️ 5 gimmicks</b><small>De quoi ouvrir un booster de show</small></span><button class="btn small" data-act="tcgbuy" data-id="gim" data-p="1000"' + (d.res.money >= 1000 ? "" : " disabled") + ">💵 1000</button></div></div>";
+    '<div class="item"><span class="lbl"><b>🎟️ 5 gimmicks</b><small>De quoi ouvrir un booster de show</small></span><button class="btn small" data-act="tcgbuy" data-id="gim" data-p="1000"' + (d.res.money >= 1000 ? "" : " disabled") + ">💵 1000</button></div></div>" + beltShop(d);
 }
+// ceintures du jour : 4 ceintures différentes chaque jour (heure de Paris), pour faire évoluer un catcheur qui les a tenues
+function beltShop(d) {
+  const L = dailyBelts(); if (!L.length) return "";
+  return '<h2>🏆 Ceintures du jour</h2><p class="tnote">Elles changent toutes les 24 h. Donne une ceinture à un catcheur qui l’a vraiment tenue (fiche de la carte → Évolution).</p><div class="list tshop tbshop">' + L.map(t => { const p = beltPrice(t);
+    return '<div class="item">' + beltImgHTML(t.id) + '<span class="lbl"><b>' + esc(t.n) + "</b><small>" + esc(t.k) + " · " + EVO_NAME[prestige(t)] + " · tu en as " + (d.items[BELT + t.id] || 0) + '</small></span><button class="btn small" data-act="tcgbuybelt" data-id="' + esc(t.id) + '"' + (d.res.money >= p ? "" : " disabled") + ">💵 " + p + "</button></div>"; }).join("") + "</div>";
+}
+ACT.tcgbuybelt = el => {
+  const t = dailyBelts().find(x => x.id === el.dataset.id); if (!t) return toast("Cette ceinture n’est plus en boutique");
+  const p = beltPrice(t); let ok = false;
+  commit(d => { if (d.res.money < p) return; d.res.money -= p; d.items[BELT + t.id] = (d.items[BELT + t.id] || 0) + 1; ok = true; });
+  toast(ok ? "🏆 " + t.n + " achetée ✓" : "Pas assez d’argent");
+};
 ACT.tcgbuy = el => {
   const p = +el.dataset.p, id = el.dataset.id;
   commit(d => { if (d.res.money < p) return; d.res.money -= p; if (id === "gim") d.res.gim += 5; else d.items[id] = (d.items[id] || 0) + 1; });

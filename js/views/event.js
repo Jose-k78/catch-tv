@@ -11,6 +11,7 @@ import { templateParams, cleanWiki } from "../tech.js";
 import { promoIn, norm, linkNames } from "../wrestlers.js";
 import { rateBtn, fromResult, mkey } from "./mrate.js";
 import { ytSearch, spoilBlock } from "./highlights.js";
+import { wantBtn } from "../want.js";
 
 const API = l => "https://" + l + ".wikipedia.org/w/api.php?format=json&origin=*&";
 const getJ = async u => { const r = await fetch(u); if (!r.ok) throw new Error("http " + r.status); return r.json(); };
@@ -204,7 +205,7 @@ export function eventView(ref) {
   const byU = {}; (RT[rk].list || []).concat(S.activity || []).forEach(a => { if (a && a.kind === "rate" && a.k === e.k && a.d === it.d && (a.show || "") === it.show && a.rating) byU[a.uid] = a; });
   const notes = Object.keys(byU).map(u => byU[u]), avg = notes.length ? notes.reduce((x, a) => x + a.rating, 0) / notes.length : 0;
   h += '<div class="shownote"><div><b>Note du show</b>' + (avg ? stars(avg) + "<small>" + fmtR(avg) + " / 5,5 · " + notes.length + " note" + (notes.length > 1 ? "s" : "") + " de membres</small>" : "<small>Pas encore de note de membre</small>") + "</div>" +
-    '<button class="btn small' + (seen ? " on" : "") + '" data-act="seen" data-k="' + esc(it.k) + '" data-show="' + esc(it.show) + '" data-d="' + esc(it.d) + '" data-t="' + esc(it.t) + '">' + (seen ? (seen.rating ? "Ta note " + stars(seen.rating) : "✓ Vu") : "👁 J’ai vu ce show") + "</button></div>";
+    '<button class="btn small' + (seen ? " on" : "") + '" data-act="seen" data-k="' + esc(it.k) + '" data-show="' + esc(it.show) + '" data-d="' + esc(it.d) + '" data-t="' + esc(it.t) + '">' + (seen ? (seen.rating ? "Ta note " + stars(seen.rating) : "✓ Vu") : "👁 J’ai vu ce show") + "</button>" + (seen ? "" : wantBtn(it, "wantbtn mini")) + "</div>";
   if (notes.length) h += '<div class="rnotes">' + notes.sort((a, b) => b.rating - a.rating).map(a => { const p = prof(a.uid) || {}; return '<a class="rnote" href="#/profil/' + encodeURIComponent(a.uid) + '"><b>' + esc(p.pseudo || "Membre") + "</b>" + stars(a.rating) + "<small>" + fmtR(a.rating) + "</small>" + (a.comment ? "<i>" + esc(String(a.comment).slice(0, 140)) + "</i>" : "") + "</a>"; }).join("") + "</div>";
   if (e.sum) h += "<h2>Résumé</h2>" + '<div class="wikicard evsum">' + e.sum.split("\n").map(p => "<p>" + esc(p) + "</p>").join("") +
     (okHttp(e.url) ? '<a href="' + esc(e.url) + '" target="_blank" rel="noopener">Lire la suite sur Wikipédia ↗</a>' : "") +

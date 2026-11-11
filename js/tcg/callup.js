@@ -116,11 +116,22 @@ export function callUpView() {
   });
   return h;
 }
+// Call Up : on confirme avant d'invoquer (coût, nombre de cartes)
 ACT.tcgopen = el => {
   const b = boosters().find(x => x.id === el.dataset.id); if (!b) return;
   const mega = el.dataset.mega === "1", d0 = me();
   if (b.id === "mitb") return mitbPick();
   if (!canPay(d0, b.price, mega)) { toast(b.price.free ? "Tes 3 boosters gratuits reviennent dans " + Math.ceil(freeNextMs() / 6e4) + " min" : "Pas assez de ressources : gagne-en dans les combats"); return; }
+  const c = b.c || ["#3b321f", "#0a0907"];
+  modal((box, close) => {
+    box.innerHTML = '<h3>Invoquer ' + (mega ? "un Mega booster" : "ce booster") + ' ?</h3><div class="tcfm"><div class="tbooster" style="background:linear-gradient(160deg,' + esc(c[0]) + "," + esc(c[1] || "#0a0907") + ')">' + (b.logo ? '<img src="' + esc(b.logo) + '" alt="">' : "") + "<b>" + esc(b.t) + "</b></div>" +
+      "<ul><li>" + (mega ? 15 : 5) + " cartes</li><li>Coût : " + esc(mega ? "🎟️ 50 gimmicks" : b.price.free ? "🎁 Gratuit (il t’en reste " + freeLeft(d0) + ")" : priceTxt(b.price)) + "</li>" + (featOf(b).size ? "<li>⭐ Cartes vedettes plus fréquentes</li>" : "") + "</ul></div>" +
+      '<button class="btn wide" data-y>✨ Invoquer</button><button class="btn wide ghost" style="margin-top:6px" data-close>Annuler</button>';
+    box.addEventListener("click", e => { if (e.target.closest("[data-close]")) return close(); if (e.target.closest("[data-y]")) { close(); openNow(b, mega); } });
+  });
+};
+function openNow(b, mega) {
+  if (!canPay(me(), b.price, mega)) { toast("Pas assez de ressources"); return; }
   const ids = pull(b, mega ? 15 : 5); // tous les boosters donnent 5 cartes, sans exception (demande de Jose)
   commit(d => {
     if (b.price.free) useFree(d, parisDay());
@@ -129,7 +140,7 @@ ACT.tcgopen = el => {
     ids.forEach(id => addCard(d, id)); d.opened++;
   });
   summon(b, ids);
-};
+}
 // Booster Agent Libre : la mallette Money In The Bank donne la carte SSR de son choix (une fois par mallette)
 function mitbPick() {
   if (!(me().items.mitb > 0)) { toast("Il te faut une mallette Money In The Bank 💼"); return; }
@@ -230,7 +241,7 @@ function summon(b, ids) {
   const cnt = ov.querySelector(".tscount"); let n = 3, stage = 0, idx = 0, x0 = null;
   const tick = setInterval(() => { n--; if (n > 0) { cnt.textContent = n; cnt.classList.remove("pop"); void cnt.offsetWidth; cnt.classList.add("pop"); } else { clearInterval(tick); cnt.remove(); ov.classList.add("walk"); setTimeout(() => { if (stage === 0) ov.classList.add("lights"); }, 900); setTimeout(() => { if (stage === 0) { ov.classList.add("center"); stage = 1; } }, 3000); } }, 650);
   const reveal = () => {
-    stage = 2;
+    stage = 2; ov._rv = Date.now();
     ov.innerHTML = '<div class="tsreveal"><div class="tsfx fx-' + defs[idx].r + '"></div><div class="tscard">' + cardHTML(defs[idx], { nozoom: true }) + '</div><p class="tphint">' + (idx + 1) + " / " + defs.length + ' · glisse ou touche ‹ ›</p><div class="tsnav"><button data-nav="-1">‹</button><button data-nav="1">›</button></div></div><button class="tsskip">Tout voir ›</button>';
     if (navigator.vibrate && RAR.indexOf(defs[idx].r) >= 3) try { navigator.vibrate([30, 40, 60]); } catch (e) {}
   };
@@ -245,8 +256,8 @@ function summon(b, ids) {
     if (e.target.closest(".tsskip")) { clearInterval(tick); return stage === 2 ? recap() : (idx = 0, reveal()); }
     if (stage === 0 && n <= 0) { ov.classList.add("lights", "center"); stage = 1; return; } // un appui pendant la marche : le booster arrive tout de suite
     if (stage === 1 && ov.querySelector(".tspack")) { ov.querySelector(".tspack").classList.add("open"); stage = 1.5; setTimeout(reveal, 700); return; }
-    if (stage === 2) { const nv = e.target.closest("[data-nav]"); go(nv ? +nv.dataset.nav : 1); }
+    if (stage === 2) { if (Date.now() - (ov._rv || 0) < 900) return; const nv = e.target.closest("[data-nav]"); go(nv ? +nv.dataset.nav : 1); } // on laisse le temps de voir la carte
   });
   ov.addEventListener("touchstart", e => { x0 = e.touches[0].clientX; }, { passive: true });
-  ov.addEventListener("touchend", e => { if (stage !== 2 || x0 == null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) { ov._sw = Date.now(); go(dx < 0 ? 1 : -1); } x0 = null; });
+  ov.addEventListener("touchend", e => { if (stage !== 2 || x0 == null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40 && Date.now() - (ov._rv || 0) > 700) { ov._sw = Date.now(); go(dx < 0 ? 1 : -1); } x0 = null; });
 }

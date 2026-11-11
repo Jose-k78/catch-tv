@@ -2,8 +2,8 @@
 // rareté (haut droite), grande image, nom + (années) + version / gimmick, badge archétype, logo de faction, symbole face / heel,
 // 5 stats, zone Finisher, petit cercle des types ; couleur dominante = celle de l'archétype. Dos de carte : TCCCG.
 import { esc } from "../util.js";
-import { ARCH, ARCHS, STATS, statsOf, defOf, promoLogo, hpOf, isChampLive, RNAME } from "./data.js";
-import { groupLogo } from "../assets.js";
+import { ARCH, ARCHS, STATS, statsOf, defOf, promoLogo, hpOf, isChampLive, RNAME, titleOf, titleById, POWERS } from "./data.js";
+import { groupLogo, beltOf } from "../assets.js";
 
 // cercle des types : les 5 couleurs dans l'ordre du cycle, flèches de qui bat qui
 export const typeWheel = (size, cur) => {
@@ -27,6 +27,13 @@ if (typeof document !== "undefined") document.addEventListener("load", e => {
 }, true);
 // image d'une carte selon sa rareté : en UR puis en LR elle passe sur son image alternative (façon Dokkan)
 export const picOf = (def, r) => (r === "LR" && def.picLR) || ((r === "UR" || r === "LR") && def.picUR) || def.pic || "";
+// vraie ceinture en petit sur la carte (évolution, carte champion ou champion en titre), sinon 🏆
+function beltMark(def, live) {
+  if (!def.evo && !def.champ && !live) return "";
+  const t = def.evo ? titleById(def.evo) : titleOf(def.rn || def.name), img = t && beltOf(t.id);
+  const tip = def.evo ? "Évolution : " + (t ? t.n : "") : def.champ ? "Carte champion (boost permanent)" : "Champion en titre : +10 %";
+  return img ? '<img class="tc3belt img" src="' + esc(img) + '" alt="" title="' + esc(tip) + '">' : '<span class="tc3belt" title="' + esc(tip) + '">🏆</span>';
+}
 // inst : exemplaire du joueur { c, r, lv, xp } ou une définition de carte (def) ; opt : { small, act, iid, count, back }
 export function cardHTML(inst, opt) {
   opt = opt || {};
@@ -36,15 +43,15 @@ export function cardHTML(inst, opt) {
   if (opt.back) return '<div class="tc3 back' + (opt.small ? " sm" : "") + '"><div class="tc3back"><b>TCCCG</b><small>The Catch Card Collection Game</small></div></div>';
   const pic = picOf(def, r);
   const ar = pic ? arStyle(arOf(pic)) : 0;
-  return '<div class="tc3 r-' + r + (opt.small ? " sm" : "") + (def.champ || live ? " champ" : "") + (ar ? " ar" : "") + '" style="--ac:' + A.c + (ar ? ";--ar:" + ar.toFixed(3) : "") + '"' + (opt.act ? ' data-act="' + opt.act + '" data-iid="' + esc(opt.iid || "") + '" data-c="' + esc(def.id) + '"' : "") + ">" +
+  return '<div class="tc3 r-' + r + (opt.small ? " sm" : "") + (def.champ || live ? " champ" : "") + (def.evo ? " evo" : "") + (ar ? " ar" : "") + (opt.cls ? " " + esc(opt.cls) : "") + '" style="--ac:' + A.c + (ar ? ";--ar:" + ar.toFixed(3) : "") + '"' + (opt.act ? ' data-act="' + opt.act + '" data-iid="' + esc(opt.iid || "") + '" data-c="' + esc(def.id) + '"' : "") + ">" +
     '<div class="tc3foil"></div>' +
     '<div class="tc3top">' + (lg ? '<img class="tc3promo" src="' + esc(lg) + '" alt="">' : '<span class="tc3promo t">' + esc(def.k || "") + "</span>") + '<span class="tc3brand">TCCCG</span><span class="tc3r" title="' + esc(RNAME[r] || r) + '">' + r + "</span></div>" +
     '<div class="tc3pic' + (pic ? "" : " nopic") + '"' + (pic && !opt.small && !opt.nozoom ? ' data-act="zoom" data-src="' + esc(pic) + '" data-alt="' + esc(def.name) + '"' : "") + ">" +
       (pic ? '<img class="tc3img" src="' + esc(pic) + '" alt="" loading="lazy" decoding="async">' : '<span class="tc3empty">🖼️<small>Image à venir</small></span>') +
       '<span class="tc3arch">' + esc(def.arch) + "</span>" + (fl ? '<img class="tc3fac" src="' + esc(fl) + '" alt="">' : "") + alSym(def.al) +
-      (def.champ || live ? '<span class="tc3belt" title="' + (def.champ ? "Carte champion (boost permanent)" : "Champion en titre : +10 %") + '">🏆</span>' : "") +
-      (opt.count > 1 ? '<span class="tc3count">×' + opt.count + "</span>" : "") + '<span class="tc3lv">Nv ' + lv + "</span></div>" +
-    '<div class="tc3name"><b>' + esc(def.name) + "</b>" + (def.years ? " <small>(" + esc(def.years) + ")</small>" : "") + (def.gimmick ? '<i>' + esc(def.gimmick) + "</i>" : "") + "</div>" +
+      beltMark(def, live) +
+      (opt.count > 1 ? '<span class="tc3count">×' + opt.count + "</span>" : "") + (opt.badge || "") + '<span class="tc3lv">Nv ' + lv + "</span></div>" +
+    '<div class="tc3name"><b>' + esc(def.name) + "</b>" + (def.years ? " <small>(" + esc(def.years) + ")</small>" : "") + (def.gimmick ? '<i>' + esc(def.gimmick) + "</i>" : "") + (inst.pw && POWERS[inst.pw] && !opt.small ? '<em class="tc3pw">✦ ' + esc(POWERS[inst.pw][0]) + "</em>" : "") + "</div>" +
     '<div class="tc3stats">' + STATS.map((s, i) => '<span><small>' + s.slice(0, 3).toUpperCase() + "</small><b>" + st[i] + "</b></span>").join("") + "</div>" +
     '<div class="tc3fin"><span>🔥 ' + esc(def.fin.n) + "</span><small>" + esc(def.fin.e) + " · PV " + hpOf(st) + "</small>" + typeWheel(opt.small ? 18 : 26, def.arch) + "</div></div>";
 }

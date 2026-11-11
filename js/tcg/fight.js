@@ -5,11 +5,12 @@
 import { S, B as DB, ACT, changed, prof } from "../state.js";
 import { esc, toast, lsGet, modal } from "../util.js";
 import { parisDay } from "../time.js";
-import { RAR, STATS, ARCH, typeMult, defOf, statsOf, hpOf, baseCards, showMatches, showKeyLabel, cfg, items, itemById, linked, versionCard, cardById } from "./data.js";
+import { RAR, STATS, ARCH, ARCHS, typeMult, defOf, statsOf, hpOf, baseCards, showMatches, showKeyLabel, cfg, items, itemById, linked, versionCard, cardById } from "./data.js";
 import { me, commit, owned, addCard, addXp, cardXp } from "./store.js";
-import { cardHTML } from "./card.js";
+import { cardHTML, typeWheel } from "./card.js";
 import { recentShows } from "./callup.js";
 import { SFX } from "./sfx.js";
+import { BELT_DROP, dropBelt, isBelt, beltTitle, beltImgHTML } from "./evo.js";
 
 const H = 36e5;
 const TIER = {
@@ -34,6 +35,30 @@ export function fightShows() {
   });
   return out;
 }
+// tableau des types (toujours visible avant et pendant le combat) : chaque type bat le suivant
+const typeChain = () => ARCHS.map(a => '<b style="color:' + ARCH[a].c + '">' + a + "</b>").join(" ▶ ") + ' ▶ <b style="color:' + ARCH[ARCHS[0]].c + '">' + ARCHS[0] + "</b>";
+const typeChart = () => '<div class="ttchart">' + typeWheel(70) + "<div><b>Tableau des types</b><p>" + typeChain() + "</p><small>Chaque type bat le suivant : dégâts ×2 contre lui, ×0,5 contre celui qui le bat.</small></div></div>";
+// avantage de type d'une de mes cartes contre les adversaires choisis : ▲ (bat) / ▼ (battu)
+function advBadge(arch, foes) {
+  const up = foes.filter(f => typeMult(arch, f) === 2).length, dn = foes.filter(f => typeMult(arch, f) === 0.5).length;
+  if (!up && !dn) return "";
+  return '<span class="tadv' + (up && dn ? " mix" : up ? " up" : " dn") + '" title="' + (up ? "Avantage de type contre " + up + " adversaire" + (up > 1 ? "s" : "") : "") + (up && dn ? " · " : "") + (dn ? "Désavantage contre " + dn : "") + '">' + (up ? "▲" + (foes.length > 1 ? up : "") : "") + (dn ? "▼" + (foes.length > 1 ? dn : "") : "") + "</span>";
+}
+const nf = v => String(v).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+const pct = v => String(Math.round(v * 1000) / 10).replace(".", ",") + " %";
+// ce qu'on peut gagner sur un combat (selon la difficulté et le nombre d'adversaires)
+function gainsBox(F, diff, foes) {
+  const T = TIER[F.tier], D = DIFF[diff] || DIFF.low, n = foes.length || 1, gm = D.rew * (0.5 + 0.25 * n), rg = a => nf(Math.round(a[0] * gm)) + (a[1] !== a[0] ? "–" + nf(Math.round(a[1] * gm)) : "");
+  const L = ["💵 " + rg(T.money) + " d’argent", "⚡⭐📣 " + rg(T.mpp) + " de chaque", "🎟️ " + rg(T.gim) + " gimmicks", "✨ " + Math.round(T.pxp * gm) + " XP joueur, " + T.cxp + " XP par carte"];
+  if (T.drop) L.push("🎁 Un objet : " + pct(T.drop));
+  const bd = Math.min(0.6, (BELT_DROP[F.tier] || 0) * D.rew); if (bd) L.push("🏆 Une ceinture" + (F.key ? " (" + esc(F.key.split("|")[0]) + ")" : "") + " : " + pct(bd));
+  const cards = F.key && T.card ? foes.filter(f => f.src) : [];
+  cards.forEach(f => L.push("🃏 Carte « " + esc(f.src.name) + " » version du show : " + pct(T.card * D.rew)));
+  if (!cards.length) L.push('<span class="tno">🃏 Pas de carte de catcheur à gagner sur ce combat' + (F.tier === "low" ? " (les cartes tombent sur les matchs des shows)" : "") + "</span>");
+  return '<div class="tgains"><b>🎁 À gagner si tu gagnes</b><ul>' + L.map(x => "<li>" + x + "</li>").join("") + "</ul><small>Si tu perds : 💵 " + nf(Math.round(T.money[0] * (F.tier === "duel" ? 0.27 : 0.2))) + (F.tier === "duel" ? " et 5 ⚡⭐📣" : "") + " · gains ×" + String(Math.round(gm * 100) / 100).replace(".", ",") + " (difficulté " + D.n + ", " + n + " contre " + n + ")</small></div>";
+}
+// petite ligne des gains sur la liste des combats (niveau Low, 2 adversaires)
+const gainLine = (tier, card) => { const T = TIER[tier]; return '<small class="tgline">💵 ' + nf(T.money[0]) + "–" + nf(T.money[1]) + (T.drop ? " · 🎁 " + pct(T.drop) : "") + (BELT_DROP[tier] ? " · 🏆 " + pct(BELT_DROP[tier]) : "") + (card && T.card ? " · 🃏 " + pct(T.card) : "") + " · plus en Mid / Top</small>"; };
 const coolLeft = (d, k) => Math.max(0, (d.cool[k] || 0) + cooldown() * 6e4 - Date.now());
 const leftTxt = ms => { const m = Math.ceil(ms / 6e4); return m >= 60 ? Math.floor(m / 60) + " h " + (m % 60) : m + " min"; };
 
@@ -41,12 +66,12 @@ export function fightsView() {
   const d = me(), F = fightShows(), dk = "dark";
   let h = '<section class="tccghead"><h1>Combats</h1></section>' + resumeBox() + '<p class="tnote">Choisis un match d’un show de la semaine, puis qui tu affrontes (1 contre 1, 2 contre 2, 3 contre 3…) et la difficulté : Low, Mid ou Top. 3 TAG chacun. Chaque combat se refait 1 h plus tard.</p>';
   h += '<div class="tfcard duel"><b>👥 Défier un membre</b><small>Contre l’équipe d’un autre joueur, menée par l’IA · des ressources pour le gagnant, un peu pour le perdant</small><button class="btn small" data-act="tcgduels">Choisir</button></div>';
-  h += '<div class="tfcard dark"><b>🌑 Dark Match</b><small>Contre des catcheurs au hasard · beaucoup d’argent, peu de MPP</small>' + (coolLeft(d, dk) ? '<span class="tcool">⏳ ' + leftTxt(coolLeft(d, dk)) + "</span>" : '<button class="btn small" data-act="tcgprep" data-k="' + dk + '">Combattre</button>') + "</div>";
+  h += '<div class="tfcard dark"><b>🌑 Dark Match</b><small>Contre des catcheurs au hasard · beaucoup d’argent, peu de MPP</small>' + gainLine("low") + (coolLeft(d, dk) ? '<span class="tcool">⏳ ' + leftTxt(coolLeft(d, dk)) + "</span>" : '<button class="btn small" data-act="tcgprep" data-k="' + dk + '">Combattre</button>') + "</div>";
   if (!F.length) h += '<p class="tnote">Pas de show de la semaine avec des résultats pour l’instant.</p>';
   F.forEach(s => {
     h += '<h2>' + (s.ple ? "👑 " : "") + esc(showKeyLabel(s.key)) + ' <small class="tsmall">' + esc(s.key.split("|")[0]) + (s.ple ? " · PLE / PPV : IA plus forte, meilleurs gains" : "") + "</small></h2>";
     h += s.matches.map((m, i) => { const k = s.key + "#" + i, cl = coolLeft(d, k);
-      return '<div class="tfcard' + (s.ple ? " ple" : "") + '"><div class="tfvs">' + m.cards.slice(0, 2).map(c => '<span class="tfface" style="background-image:url(\'' + esc(c.pic) + '\')"></span>').join('<i>VS</i>') + "</div><b>" + esc(m.cards.map(c => c.name).slice(0, 4).join(" · ")) + "</b>" +
+      return '<div class="tfcard' + (s.ple ? " ple" : "") + '"><div class="tfvs">' + m.cards.slice(0, 2).map(c => '<span class="tfface" style="background-image:url(\'' + esc(c.pic) + '\')"></span>').join('<i>VS</i>') + "</div><b>" + esc(m.cards.map(c => c.name).slice(0, 4).join(" · ")) + "</b>" + gainLine(s.ple ? "top" : "mid", true) +
         (cl ? '<span class="tcool">⏳ ' + leftTxt(cl) + "</span>" : '<button class="btn small" data-act="tcgprep" data-k="' + esc(k) + '">Combattre</button>') + "</div>"; }).join("");
   });
   return h;
@@ -82,18 +107,19 @@ export function prepView() {
   const d = me(), L = owned(d).sort((a, b) => hpOf(statsOf(b)) - hpOf(statsOf(a))), F = prep.F, n = prep.foes.length;
   const combatItems = items().filter(x => x.t === "combat" && (d.items[x.id] || 0) > 0);
   if (prep.team.length > n) prep.team = prep.team.slice(0, n);
+  const fa = prep.foes.map(i => F.pool[i] && F.pool[i].def.arch).filter(Boolean), bdg = x => advBadge((defOf(x.c) || {}).arch, fa);
   let h = '<a class="back" href="#/tccg/combats">‹ Combats</a><h1 style="margin:4px 16px">' + esc(F.label) + "</h1>" +
     '<h2>1. Qui veux-tu affronter ? <small class="tsmall">' + n + " contre " + n + "</small></h2>" +
-    '<div class="tfoes">' + F.pool.map((f, i) => '<button class="tfoe' + (prep.foes.indexOf(i) >= 0 ? " on" : "") + '" data-act="tcgfoe" data-i="' + i + '"><span class="tfface" style="background-image:url(\'' + esc(f.def.pic || "") + '\')"></span><b>' + esc(f.def.name) + "</b><small>Nv " + f.lv + " · " + esc(f.def.arch) + "</small></button>").join("") + "</div>" +
-    '<h2>2. Difficulté</h2><div class="tdiff">' + Object.keys(DIFF).map(k => '<button class="tdf ' + k + (prep.diff === k ? " on" : "") + '" data-act="tcgdiff" data-v="' + k + '"><b>' + DIFF[k].n + "</b><small>" + esc(DIFF[k].d) + (DIFF[k].rew > 1 ? " · gains ×" + String(DIFF[k].rew).replace(".", ",") : "") + "</small></button>").join("") + "</div>" +
+    '<div class="tfoes">' + F.pool.map((f, i) => '<button class="tfoe' + (prep.foes.indexOf(i) >= 0 ? " on" : "") + '" data-act="tcgfoe" data-i="' + i + '"><span class="tfface" style="background-image:url(\'' + esc(f.def.pic || "") + '\')"></span><b>' + esc(f.def.name) + "</b><small>Nv " + f.lv + ' · <i style="color:' + (ARCH[f.def.arch] || {}).c + '">' + esc(f.def.arch) + "</i></small></button>").join("") + "</div>" + typeChart() +
+    '<h2>2. Difficulté</h2><div class="tdiff">' + Object.keys(DIFF).map(k => '<button class="tdf ' + k + (prep.diff === k ? " on" : "") + '" data-act="tcgdiff" data-v="' + k + '"><b>' + DIFF[k].n + "</b><small>" + esc(DIFF[k].d) + (DIFF[k].rew > 1 ? " · gains ×" + String(DIFF[k].rew).replace(".", ",") : "") + "</small></button>").join("") + "</div>" + gainsBox(F, prep.diff, prep.foes.map(i => F.pool[i]).filter(Boolean)) +
     "<h2>3. Ton équipe <small class=\"tsmall\">" + prep.team.length + " / " + n + "</small></h2>" +
-    '<div class="tprepteam">' + Array.from({ length: n }, (_, i) => { const iid = prep.team[i], x = iid && d.cards[iid]; return '<div class="tslot2">' + (x ? cardHTML(Object.assign({ iid: iid }, x), { small: true, act: "tcgpick", iid: iid }) : '<span>Catcheur ' + (i + 1) + "</span>") + "</div>"; }).join("") +
+    '<div class="tprepteam">' + Array.from({ length: n }, (_, i) => { const iid = prep.team[i], x = iid && d.cards[iid]; return '<div class="tslot2">' + (x ? cardHTML(Object.assign({ iid: iid }, x), { small: true, act: "tcgpick", iid: iid, badge: bdg(x) }) : '<span>Catcheur ' + (i + 1) + "</span>") + "</div>"; }).join("") +
     '<div class="tslot2 sup">' + [0, 1].map(i => { const iid = prep.sup[i], x = iid && d.cards[iid]; return x ? cardHTML(Object.assign({ iid: iid }, x), { small: true, act: "tcgpick", iid: iid }) : '<span>Soutien</span>'; }).join("") + "</div></div>" +
-    '<p class="tnote">Touche une carte ci-dessous : d’abord tes ' + n + " catcheur" + (n > 1 ? "s" : "") + ", puis jusqu’à 2 soutiens (bonus +10 % si même équipe ou faction).</p>";
+    '<p class="tnote">▲ = ta carte bat le type d’un adversaire choisi, ▼ = elle est battue. Touche une carte ci-dessous : d’abord tes ' + n + " catcheur" + (n > 1 ? "s" : "") + ", puis jusqu’à 2 soutiens (bonus +10 % si même équipe ou faction).</p>";
   if (L.length < n) h += '<p class="tnote">Il te faut ' + n + " cartes pour un " + n + " contre " + n + " : choisis moins d’adversaires.</p>";
   if (combatItems.length) h += '<div class="tfilt">' + combatItems.map(x => '<button class="chip' + (prep.items.indexOf(x.id) >= 0 ? " on" : "") + '" data-act="tcgitem" data-id="' + x.id + '">' + esc(x.ic + " " + x.n) + " ×" + d.items[x.id] + "</button>").join("") + "</div>";
   h += '<button class="btn wide" style="margin:8px 16px;width:calc(100% - 32px)" data-act="tcgfight"' + (prep.team.length === n && n ? "" : " disabled") + ">⚔️ Lancer le combat</button>";
-  h += '<div class="trgrid">' + L.filter(x => prep.team.indexOf(x.iid) < 0 && prep.sup.indexOf(x.iid) < 0).map(x => cardHTML(x, { small: true, act: "tcgpick", iid: x.iid })).join("") + "</div>";
+  h += '<div class="trgrid">' + L.filter(x => prep.team.indexOf(x.iid) < 0 && prep.sup.indexOf(x.iid) < 0).map(x => cardHTML(x, { small: true, act: "tcgpick", iid: x.iid, badge: bdg(x) })).join("") + "</div>";
   return h;
 }
 ACT.tcgfoe = el => { if (!prep) return; const i = +el.dataset.i, j = prep.foes.indexOf(i); if (j >= 0) { if (prep.foes.length > 1) prep.foes.splice(j, 1); } else prep.foes.push(i); prep.foes.sort((a, b) => a - b); changed("tcg"); };
@@ -146,8 +172,8 @@ let B = null;
 function fighter(def, lv, inst, supports) {
   const st0 = inst ? statsOf(inst, def) : def.st.map(v => Math.round(v + (lv - 1) * 1.2 / 5));
   const bonus = supports && supports.some(s => linked(def, s)) ? 1.1 : 1;
-  const st = st0.map(v => Math.round(v * bonus)), hp = hpOf(st);
-  return { def: def, st: st, hp: hp, max: hp, lv: lv, linked: bonus > 1, iid: inst && inst.iid };
+  const pw = (inst && inst.pw) || "", st = st0.map(v => Math.round(v * bonus * (pw === "aura" ? 1.08 : 1))), hp = hpOf(st);
+  return { def: def, st: st, hp: hp, max: hp, lv: lv, linked: bonus > 1, iid: inst && inst.iid, pw: pw };
 }
 function newGrid() {
   const types = PAIRS.slice(0, 9).concat([["fo", "ag", "ch", "en", "te"][Math.floor(Math.random() * 5)]]), g = [];
@@ -164,6 +190,7 @@ ACT.tcgfight = () => {
     P: { team: prep.team.map(iid => fighter(defOf(d.cards[iid].c), d.cards[iid].lv, Object.assign({ iid: iid }, d.cards[iid]), sups)), a: 0, tags: 3, fin: 0, boost: 1, stun: false },
     E: { team: foes.map(f => fighter(f.def, f.lv, f.inst || null, [])), a: 0, tags: 3, fin: 0, boost: 1, stun: false },
     items: prep.items.slice(), used: [], grid: newGrid(), open: [], known: {}, turn: "", first: true, log: "Pierre, feuille ou ciseaux ?", busy: false, over: false };
+  ["P", "E"].forEach(s => { if (B[s].team.some(f => f.pw === "tag")) B[s].tags++; });
   const boostE = (B.tier === "top" ? 1.08 : 1) * DF.st;
   if (boostE !== 1) B.E.team.forEach(f => { f.st = f.st.map(v => Math.round(v * boostE)); f.hp = f.max = hpOf(f.st); });
   B.fx = []; SFX.unlock();
@@ -222,7 +249,7 @@ export function combatView() {
   const bg = (cfg().assets || {}).fightbg;
   let h = '<div class="tbattle"' + (bg ? ' style="background-image:linear-gradient(rgba(5,4,3,.55),rgba(5,4,3,.8)),url(\'' + esc(bg) + '\')"' : "") + ">" +
     '<div class="tside foe">' + E.team.map((f, i) => hpBar(f, i === E.a)).join("") + '<div class="tfin"><i style="width:' + Math.min(100, E.fin) + '%"></i></div><small>TAG ' + E.tags + "</small></div>" +
-    '<div class="tlog">' + esc(B.log) + (B.diff && B.diff !== "low" ? ' <span class="tdtag ' + B.diff + '">' + DIFF[B.diff].n + "</span>" : "") + "</div>";
+    typeStrip() + '<div class="tlog">' + esc(B.log) + (B.diff && B.diff !== "low" ? ' <span class="tdtag ' + B.diff + '">' + DIFF[B.diff].n + "</span>" : "") + "</div>";
   if (!B.turn) h += '<div class="trps">' + [["p", "✊"], ["f", "✋"], ["c", "✌️"]].map(x => '<button data-act="tcgrps" data-v="' + x[0] + '">' + x[1] + "</button>").join("") + "</div>";
   else h += '<div class="tgrid' + (B.turn === "P" ? " myturn" : "") + '">' + B.grid.map((c, i) => { const t = c.t === "x" ? "fo" : c.t;
     return '<button class="tcell' + (c.done ? " done" : B.open.indexOf(i) >= 0 || c.peek ? " open" : c.seen ? " seen" : " fresh") + '" data-act="tcgflip" data-i="' + i + '"' + (c.done ? " disabled" : "") + '><span class="tcf tback"><span class="tcb">TCCCG</span></span><span class="tcf tfront c-' + t + '"><span>' + PICO[t] + "</span><small>" + PNAME[t] + "</small></span></button>"; }).join("") + "</div>";
@@ -232,6 +259,12 @@ export function combatView() {
     B.items.map(id => { const it = itemById(id); return it ? '<button class="btn small ghost" data-act="tcguse" data-id="' + id + '"' + (B.used.indexOf(id) >= 0 || B.turn !== "P" || B.busy ? " disabled" : "") + ">" + esc(it.ic) + "</button>" : ""; }).join("") +
     '<button class="btn small ghost" data-act="tcgquit">Abandonner</button></div></div>';
   return h;
+}
+// pendant le combat : mon catcheur actif contre le sien (avantage de type) + le cycle des types
+function typeStrip() {
+  const a = act("P"), b = act("E"); if (!a || !b) return "";
+  const m = typeMult(a.def.arch, b.def.arch), r = typeMult(b.def.arch, a.def.arch);
+  return '<div class="ttstrip">' + typeWheel(22) + '<span><b style="color:' + ARCH[a.def.arch].c + '">' + esc(a.def.arch) + "</b> " + (m === 2 ? '<em class="up">▲ ×2</em>' : m === 0.5 ? '<em class="dn">▼ ×0,5</em>' : "=") + ' <b style="color:' + ARCH[b.def.arch].c + '">' + esc(b.def.arch) + "</b>" + (r === 2 ? ' <small class="dn">(il te fait ×2)</small>' : r === 0.5 ? ' <small class="up">(il te fait ×0,5)</small>' : "") + '</span><details><summary>Types</summary><p>' + typeChain() + "</p></details></div>";
 }
 const redraw = () => { changed("tcg"); runFx(); persist(); };
 function say(t) { B.log = t; }
@@ -243,7 +276,10 @@ ACT.tcgrps = el => {
   redraw(); banner(win ? "À TOI !" : "TOUR DE L’IA", win ? "me" : "foe"); if (!win) setTimeout(aiTurn, 1300);
 };
 function dmg(side, stat, mult) {
-  const o = side === "P" ? "E" : "P", a = act(side), t = act(o), v = Math.round(stat * typeMult(a.def.arch, t.def.arch) * B[side].boost * (mult || 1));
+  const o = side === "P" ? "E" : "P", a = act(side), t = act(o);
+  // pouvoirs d'évolution : critique, entrée fracassante, tueur de géants (attaquant) ; garde haute (défenseur)
+  let pm = a.pw === "crit" ? 1.15 : 1; if (a.pw === "entree" && !a.hit1) pm *= 1.5; if (a.pw === "geant" && t.max > a.max) pm *= 1.25; if (t.pw === "garde") pm *= 0.85; a.hit1 = true;
+  const v = Math.round(stat * typeMult(a.def.arch, t.def.arch) * B[side].boost * (mult || 1) * pm);
   B[side].boost = 1; t.hp -= v;
   const m = typeMult(a.def.arch, t.def.arch);
   B.fx.push({ side: o, txt: "-" + v + (m > 1 ? " !" : ""), cls: m > 1 ? "crit" : m < 1 ? "weak" : "", shake: true }); SFX.hit(v > 60);
@@ -259,7 +295,8 @@ function koCheck() {
 function resolve(side, t) {
   const S_ = B[side], a = act(side), idx = { fo: 0, ag: 1, ch: 2, en: 3, te: 4, x: 0 }, who = side === "P" ? "Tu" : a.def.name;
   if (t === "ch") { banner(side === "P" ? "PROVOCATION !" : a.def.name + " PROVOQUE !", "taunt"); SFX.taunt(); }
-  if (t in idx) { const st = a.st[idx[t]], v = dmg(side, st); if (!B.noFin) S_.fin = Math.min(100, S_.fin + Math.round(st / 2)); say(who + " · " + PNAME[t === "x" ? "fo" : t] + " : " + v + " dégâts" + (typeMult(a.def.arch, act(side === "P" ? "E" : "P").def.arch) > 1 ? " (super efficace !)" : "")); }
+  if (a.pw === "regen" && a.hp > 0) { const h = Math.max(1, Math.round(a.max * 0.06)); a.hp = Math.min(a.max, a.hp + h); B.fx.push({ side: side, txt: "+" + h, cls: "heal" }); }
+  if (t in idx) { const st = a.st[idx[t]], v = dmg(side, st); if (!B.noFin) S_.fin = Math.min(100, S_.fin + Math.round(st / 2 * (a.pw === "foule" ? 1.3 : 1))); say(who + " · " + PNAME[t === "x" ? "fo" : t] + " : " + v + " dégâts" + (typeMult(a.def.arch, act(side === "P" ? "E" : "P").def.arch) > 1 ? " (super efficace !)" : "")); }
   else if (t === "fin") { S_.fin = 100; say(who + " · case Finisher : barre pleine !"); }
   else if (t === "soin") { const h = Math.round(a.max * 0.2); a.hp = Math.min(a.max, a.hp + h); say(who + " · Soin : +" + h + " PV"); B.fx.push({ side: side, txt: "+" + h, cls: "heal" }); }
   else if (t === "boost") { S_.boost = 1.5; say(who + " · Boost : prochaine attaque ×1,5"); }
@@ -358,6 +395,8 @@ function end(win, quit) {
   const gm = (DIFF[B.diff] || DIFF.low).rew * (0.5 + 0.25 * (B.n || 2)); // gains : difficulté et nombre d'adversaires
   if (win) { rew.money = Math.round(rnd(T.money[0], T.money[1]) * gm); const m = Math.round(rnd(T.mpp[0], T.mpp[1]) * gm); rew.mom = rew.pop = rew.push = m; rew.gim = Math.round(rnd(T.gim[0], T.gim[1]) * gm); rew.xp = Math.round(T.pxp * gm);
     if (Math.random() < T.drop) { const I = items(), w = { C: 50, R: 28, E: 14, L: 6, M: 2 }; const pool = []; I.forEach(x => { const n = x.t === "combat" ? 10 : w[x.g] || 5; for (let i = 0; i < n; i++) pool.push(x.id); }); rew.items.push(pool[Math.floor(Math.random() * pool.length)]); }
+    // ceinture (objet d'évolution) : plus de chances en Mid / Top et en difficulté élevée
+    if (Math.random() < Math.min(0.6, (BELT_DROP[B.tier] || 0) * (DIFF[B.diff] || DIFF.low).rew)) { const bt = dropBelt(B.F.key ? B.F.key.split("|")[0] : ""); if (bt) rew.items.push(bt); }
     if (B.F.key && T.card) (B.F.src || []).filter(Boolean).forEach(id => { if (Math.random() < T.card * (DIFF[B.diff] || DIFF.low).rew) rew.cards.push(id + "@" + B.F.key); });
   } else if (!quit) { rew.money = Math.round(T.money[0] * (B.tier === "duel" ? 0.27 : 0.2)); if (B.tier === "duel") rew.mom = rew.pop = rew.push = 5; rew.xp = Math.round(T.pxp / 3); }
   dropSave();
@@ -380,7 +419,7 @@ function victory(win, rew, quit) {
   const ov = document.createElement("div"); ov.className = "tvict " + (win ? "win" : "lose");
   ov.innerHTML = '<div class="tvbox"><h1>' + (win ? "VICTOIRE !" : quit ? "Abandon" : "DÉFAITE") + "</h1>" +
     (rew.money || rew.xp ? '<div class="tvrew">' + (rew.money ? "<span>💵 +" + rew.money + "</span>" : "") + (rew.mom ? "<span>⚡ +" + rew.mom + "</span><span>⭐ +" + rew.pop + "</span><span>📣 +" + rew.push + "</span>" : "") + (rew.gim ? "<span>🎟️ +" + rew.gim + "</span>" : "") + (rew.xp ? "<span>XP +" + rew.xp + (rew.up ? " · niveau +" + rew.up + " !" : "") + "</span>" : "") + "</div>" : "") +
-    rew.items.map(id => { const it = itemById(id); return it ? '<p class="tvdrop">🎁 ' + esc(it.ic + " " + it.n) + "</p>" : ""; }).join("") +
+    rew.items.map(id => { if (isBelt(id)) { const t = beltTitle(id); return t ? '<p class="tvdrop belt">' + beltImgHTML(t.id, "tvbelt") + " Ceinture gagnée : <b>" + esc(t.n) + "</b></p>" : ""; } const it = itemById(id); return it ? '<p class="tvdrop">🎁 ' + esc(it.ic + " " + it.n) + "</p>" : ""; }).join("") +
     (rew.cards.length ? '<p class="tvdrop">✨ Carte gagnée !</p><div class="trgrid">' + rew.cards.map(id => cardHTML(defOf(id), { small: true })).join("") + "</div>" : "") +
     '<div class="btns"><a class="btn" href="#/tccg/combats" data-close>Combats</a><a class="btn ghost" href="#/tccg" data-close>Accueil</a></div></div>';
   document.body.appendChild(ov);

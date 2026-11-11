@@ -108,12 +108,13 @@ ACT.tcgmedit = el => {
       '<div class="btns"><button type="button" class="btn small ghost" data-buff="-5">📉 Nerf −5 %</button><button type="button" class="btn small ghost" data-buff="5">📈 Buff +5 %</button><span class="tnote">Actuel : ' + (ov.buff || 0) + ' %</span></div>' +
       '<div class="btns"><button type="button" class="btn small ghost" data-img>🖼️ Changer l’image</button>' + (ov.img ? '<button type="button" class="btn small ghost" data-noimg>Image d’origine</button>' : "") + "</div>" +
       '<div class="taltrow">' + [["", "Base", c.pic], ["UR", "UR", c.picUR], ["LR", "LR", c.picLR]].map(a => '<button type="button" class="taltb" data-alt="' + a[0] + '">' + (a[2] ? '<img src="' + esc(a[2]) + '" alt="">' : "<span>–</span>") + "<small>" + a[1] + "</small></button>").join("") + '</div><p class="tnote">Touche une vignette pour choisir l’image de base, UR ou LR dans la banque d’images (ou envoyer un fichier). En UR puis en LR, la carte change d’image toute seule.</p>' +
-      '<button class="btn wide">Enregistrer</button><button type="button" class="btn wide ghost" data-dup>⧉ Dupliquer cette carte</button>' +
+      '<button class="btn wide">Enregistrer</button><button type="button" class="btn wide ghost" data-evo>🏆 Évolutions par ceinture</button><button type="button" class="btn wide ghost" data-dup>⧉ Dupliquer cette carte</button>' +
       (!custom && Object.keys(ov).length ? '<button type="button" class="btn wide ghost" data-reset>↺ Revenir à la carte d’origine</button>' : "") +
       (custom ? '<button type="button" class="btn wide ghost danger" data-del>Supprimer cette carte</button>' : "") + '</form><button class="btn wide ghost" style="margin-top:8px" data-close>Fermer</button>';
     const target = d => { if (custom) { d.custom = d.custom || []; let x = d.custom.find(y => y.id === c.id); if (!x) { x = { id: c.id }; d.custom.push(x); } return x; } d.cards = d.cards || {}; d.cards[c.id] = d.cards[c.id] || {}; return d.cards[c.id]; };
     box.addEventListener("click", e => {
       if (e.target.closest("[data-close]")) return close();
+      if (e.target.closest("[data-evo]")) { close(); return ACT.tcgmevo && ACT.tcgmevo({ dataset: { c: c.id } }); }
       const bf = e.target.closest("[data-buff]");
       if (bf) { close(); return run(d => { const t = target(d); t.buff = (+t.buff || 0) + +bf.dataset.buff; delete t.st; }, (+bf.dataset.buff > 0 ? "buff " : "nerf ") + c.name); }
       if (e.target.closest("[data-img]")) return pickFile("image/*", "img/tcg/", path => run(d => { target(d).img = path; }, "image de " + c.name).then(close));
@@ -145,7 +146,7 @@ ACT.tcgmedit = el => {
   });
 };
 // banque d'images : variantes du catcheur d'abord, puis recherche dans toute la banque (photos + variantes), ou fichier
-function bankPick(c, title, done, canNone) {
+export function bankPick(c, title, done, canNone) {
   let q = "";
   const all = () => { const L = []; Object.keys(S.photos || {}).forEach(s => { const e = S.photos[s]; [e.f].concat(e.v || []).forEach(f => L.push({ n: (e.n || [s])[0], u: "img/catcheurs/" + f })); ((S.bank || {})[s] || []).forEach(f => L.push({ n: (e.n || [s])[0], u: "img/tcg/alt/" + f })); }); return L; };
   modal((box, close) => {

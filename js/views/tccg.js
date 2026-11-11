@@ -9,6 +9,7 @@ import { fightsView, prepView, combatView } from "../tcg/fight.js";
 import { tccgHome, shopView } from "../tcg/home.js";
 import { modoView } from "../tcg/modo.js";
 import { echangeView } from "../tcg/trade.js";
+import { backupView } from "../tcg/backup.js";
 
 const sv = p => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + p + "</svg>";
 export const TICON = {
@@ -36,6 +37,9 @@ const PAGES = {
 export function tccgView(tab, sub, id) {
   if (!S.user) return '<section class="tccgsoon"><div class="tcards">' + TICON.cards + '</div><h1>TCCCG</h1><p>Le jeu de cartes de TCC TV : connecte-toi pour jouer, collectionner et échanger avec les autres membres.</p><a class="btn" href="#/connexion">Se connecter</a> <a class="btn ghost" href="#/">Retour à TCC TV</a></section>';
   const W = x => '<section class="tccgwrap">' + x + "</section>";
+  if (tab === "sauvegardes") return W(backupView());
+  // tant que la vraie partie n'est pas arrivée, on n'affiche pas une partie vide (elle pouvait être enregistrée par-dessus)
+  if (!S.tcgReady) return W('<div class="tload"><div class="tspin"></div><p>Chargement de ta partie…</p><small>Si ça dure, vérifie ta connexion. Ta partie n’est jamais remplacée par une partie vide.</small><a class="linkbtn" href="#/tccg/sauvegardes">🛟 Sauvegardes</a></div>');
   if (tab === "") return W(tccgHome());
   if (tab === "callup") return W(callUpView());
   if (tab === "roster") return W(rosterView(sub));

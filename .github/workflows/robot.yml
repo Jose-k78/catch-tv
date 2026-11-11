@@ -2,6 +2,7 @@
 # dans data/feed.json, puis envoie les notifications (infos, favoris, rappel des feuds) aux membres qui les ont activées.
 # Gratuit (dépôt public), sans intelligence artificielle. Les notifications demandent le secret FIREBASE_SA (sinon elles sont sautées).
 # Il tient aussi à jour la liste des photos des catcheurs (data/photos.json) dès qu'une photo est ajoutée dans img/catcheurs/.
+# Et il copie les parties TCCCG dans Firestore (tcgbak : la plus avancée + une par jour), voir .github/scripts/tcg-backup.mjs.
 name: Robot TCC TV (actu et vidéos)
 on:
   schedule:
@@ -36,6 +37,12 @@ jobs:
         if: github.event_name != 'push'
         continue-on-error: true
         run: node .github/scripts/notify.mjs
+        env:
+          FIREBASE_SA: ${{ secrets.FIREBASE_SA }}
+      - name: Sauvegarde des parties TCCCG
+        if: github.event_name != 'push'
+        continue-on-error: true
+        run: node .github/scripts/tcg-backup.mjs
         env:
           FIREBASE_SA: ${{ secrets.FIREBASE_SA }}
       - name: Envoi sur le dépôt

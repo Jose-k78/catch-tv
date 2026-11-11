@@ -164,6 +164,30 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
     (sources données par Jose : https://wwr-stardom.com/schedule/?ym=AAAAMM et https://dsf-marigold.com/events/ (+ /page/2/) ; Marigold fait
     le 11 nov. ; Stardom fait le 11 nov. d'après les captures de Jose : novembre = Stardom World « 配信スケジュール » (https://www.stardom-world.com/),
     décembre = aperçu Google à revérifier ; la page wwr-stardom ne renvoie qu'octobre à Claude — chaque mois, compléter avec `tour: 1`).
+- Lot du 11 nov. (après-midi) :
+  - **Évolution par ceinture** (`js/tcg/evo.js` + data.js) : objet `belt:<idTitre>` ; donner une ceinture que le catcheur a vraiment tenue
+    (historique des titres `S.titles`) change l'id de SA carte en `<base>~<idTitre>` (une seule carte, niveau et rareté gardés, la ceinture
+    est perdue ; redonner une ceinture = revenir à cette forme). Bonus selon le prestige (`prestige` : mondial +15 %, secondaire +10 %,
+    équipe +8 %, répartition `TILT`), pouvoir tiré au hasard rangé dans la carte (`inst.pw`, `POWERS`, appliqués dans fight.js).
+    Modo (`data/tcg.json`) : `evo["<base>|<titre>"] = { off, name, years, gimmick, img, bonus, st, pw }`, `evoAdd[base] = [titres]`,
+    `beltPrice[idTitre]`. Ceintures : gagnées en combat (`BELT_DROP` × difficulté), 4 « ceintures du jour » au Shop (`dailyBelts`),
+    onglet Objets (`beltsSection`). Vraie ceinture en petit sur les cartes (`beltMark`).
+  - Combats : tableau des types + ▲▼ (avantage) à la préparation, gains détaillés (`gainsBox`, `gainLine`), bande des types en combat ;
+    Call Up : confirmation avant d'invoquer (`openNow`), révélation plus longue (appui ignoré 0,9 s) ; Roster : appui long =
+    sélection multiple pour virer ; médaille possible sans doublon (confirmation).
+  - « Je veux voir » (`js/want.js`) : entrées d'historique `w_<id du show ou mid du combat>` (commentaire `[WANT]` / `[WANTM]`, note 0),
+    exclues des compteurs ; retirées toutes seules quand le show / combat est vu (`syncWants`) ; page `#/aregarder`, lien discret
+    accueil + profil seulement si la liste n'est pas vide. Page d'un show : « À venir » en rangée qui défile.
+  - Tournois : outils du modo (`js/views/tnedit.js`) — créer, modifier (tableau et blocs en texte), supprimer, gagnant de chaque match,
+    clôturer / rouvrir, à la une (`feat`), image (`img`, dossier img/tournois/), verrou `lock` (la tâche du soir n'y touche plus).
+  - **Sauvegardes TCCCG** (11 nov. au soir, Jose a perdu sa partie) : la cause = une partie vide affichée avant l'arrivée de la vraie
+    (ou après une erreur de connexion) puis enregistrée par-dessus. Maintenant : `S.tcgReady` (vraie partie reçue de Firebase ; un
+    « pas de partie » venant seulement du cache est ignoré), écran « Chargement de ta partie » tant qu'elle n'est pas là, `commit`
+    met les changements en attente (`flushWait`), et refuse d'enregistrer une partie « en recul » (`behind` : niveau ou boosters
+    ouverts plus bas que `S.tcgSrv`). Copies : robot (`.github/scripts/tcg-backup.mjs`, étape de robot.yml toutes les 30 min) →
+    Firestore `tcgbak/{uid}_max` (la plus avancée, jamais remplacée par une partie qui recule) et `{uid}_j0…_j6` (une par jour) ;
+    téléphone (`ctv.tcgbak.<uid>` : last, best, days). Page `#/tccg/sauvegardes` (`js/tcg/backup.js`) : restaurer ; le modo restaure
+    pour un membre. Règles v12 : une partie ne peut plus reculer (sauf modo), `tcgbak` lisible par son joueur et le modo.
 - Notes : demi-étoiles de 0 à 5,5 (`RMAX`, `fmtR`, `stars`, `ratePick` / `pickRate` de util.js ; 6e étoile orange = bonus).
 - Historique : `g_<id>` = note d'un segment, `q_<id>` = segment préféré (comment = nom du show) ; préfixes m_/s_/f_/g_/q_ exclus
   des compteurs de shows (spoil.js, trophies.js, account.js). Profil : « Ses segments préférés ».
@@ -200,7 +224,7 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   `push/{uid}` ; bandeau « Installer l'app ». `data/push.json` = { vapid (clé publique), url (service Cloudflare) }.
 - `cloudflare/` : service des notifications instantanées (messages privés, feuds, annonces), installé par
   `.github/workflows/push-worker.yml`. `cloudflare/push-core.mjs` est partagé avec le robot.
-- `firestore.rules` : règles (version 11 : collection `tcgx` pour échanges / enchères / défis, champs `name` et `esc` de `tcg` ;
+- `firestore.rules` : règles (version 12 : partie TCCCG qui ne recule pas, collection `tcgbak` ; version 11 : collection `tcgx` pour échanges / enchères / défis, champs `name` et `esc` de `tcg` ;
   version 10 : notes = nombre de 0 à 5,5). À chaque changement, donner le texte complet à Jose pour qu'il le colle
   dans Firebase › Firestore › Règles › Publier.
 
@@ -212,6 +236,9 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   - tenir `data/tournaments.json` à jour (format décrit dans son champ `note`) : tout tournoi en cours ou annoncé des
     promotions de l'app (G1 Climax, World Tag League, 5★STAR Grand Prix, tournois CMLL, Dusty Rhodes Tag Team Classic…),
     avancement du tableau ou des blocs, vainqueur, puis l'article de bilan (`art`) à la fin ; compléter `series.*.past` ;
+    **un tournoi avec `"lock": true` a été verrouillé par le modo : ne jamais le modifier ni le supprimer** (on peut seulement
+    compléter `series.*.past`) ; ne pas retirer les champs posés par le modo (`feat` = à la une, `img` = image, `modo` = date
+    de sa dernière modif). Si un tournoi n'est pas verrouillé mais a `modo`, garder ses choix (gagnants, noms) et seulement compléter ;
   - fiches (`data/wrestlers.json`) : `dc` = date de décès (AAAA-MM-JJ) pour un catcheur décédé ; `tt` = palmarès complet
     (titres et tournois gagnés, Royal Rumble… seulement des promotions de l'app) ;
   - groupes : membres de The 946 (WWE, depuis 2026), MFT, The Bloodline 2026.

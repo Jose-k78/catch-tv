@@ -81,7 +81,7 @@ function hlStreak(l) {
 }
 export function myValues() {
   const me = S.user ? S.user.uid : "";
-  let hist = Object.values(S.history || {});
+  let hist = Object.values(S.history || {}).filter(h => !(typeof h.id === "string" && h.id.indexOf("w_") === 0)); // « Je veux voir » : pas vu
   hist = hist.filter(h => !(typeof h.id === "string" && /^(f|q)_/.test(h.id)));
   const shows = hist.filter(h => !isMatchNote(h) && !(typeof h.id === "string" && /^(s|g)_/.test(h.id)));
   const promos = new Set(shows.filter(h => h.rating > 0 && S.P[h.k]).map(h => h.k));

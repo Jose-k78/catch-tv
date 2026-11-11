@@ -2,6 +2,31 @@
  "updated": "2026-11-11",
  "items": [
   {
+   "id": "2026-11-11-save",
+   "d": "2026-11-11",
+   "t": "Ta partie TCCCG est protégée",
+   "txt": [
+    "🛟 Ta partie TCCCG ne peut plus être remplacée par une partie vide : tant qu’elle n’est pas chargée, le jeu attend.",
+    "☁️ Copies automatiques : la plus avancée et une par jour (7 jours), plus des copies sur ton téléphone.",
+    "↩️ TCCCG › 🛟 Sauvegardes : choisis une copie et touche « Restaurer »."
+   ]
+  },
+  {
+   "id": "2026-11-11-evo",
+   "d": "2026-11-11",
+   "t": "Ceintures, évolutions et « Je veux voir »",
+   "txt": [
+    "🏆 TCCCG : donne une ceinture à un catcheur qui l’a vraiment tenue et sa carte évolue (plus de stats, un pouvoir au hasard). Fiche de la carte → Évolution.",
+    "🎁 Les ceintures se gagnent en combat (plus souvent en Mid et Top) ou s’achètent au Shop : 4 nouvelles chaque jour.",
+    "⚔️ Avant un combat : le tableau des types, des flèches ▲▼ sur tes cartes et tout ce que tu peux gagner.",
+    "✨ Call Up demande confirmation avant d’invoquer, et chaque carte reste un peu plus longtemps à l’écran.",
+    "🗂️ Roster : appui long sur une carte pour en choisir plusieurs et les virer d’un coup. Une médaille sans doublon est possible.",
+    "👀 « Je veux voir » sur les shows et les combats : ta liste apparaît sur l’accueil et ton profil, et se vide toute seule quand tu as vu.",
+    "📅 Page d’un show : les prochains épisodes défilent en rangée.",
+    "🏟️ Tournois : le modo peut tout gérer (créer, gagnants, clôturer, à la une, images, verrou)."
+   ]
+  },
+  {
    "id": "2026-11-11-fin",
    "d": "2026-11-11",
    "t": "Fin de la grande mise à jour",
