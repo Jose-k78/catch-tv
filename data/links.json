@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T01:02:35.121Z",
+ "updated": "2026-11-11T01:08:15.292Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "m:statlight kid vs suzu suzuki": [
@@ -203,6 +203,12 @@
     "p": "archive.org",
     "at": "2026-11-11",
     "def": true
+   },
+   {
+    "t": "",
+    "u": "https://archive.org/details/njpw-wrestle-kingdom-11-1080p-eng-2017",
+    "p": "archive.org",
+    "at": "2026-11-11"
    }
   ]
  }
