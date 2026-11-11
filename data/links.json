@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T01:08:15.292Z",
+ "updated": "2026-11-11T09:52:47.169Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "m:statlight kid vs suzu suzuki": [
@@ -209,6 +209,15 @@
     "u": "https://archive.org/details/njpw-wrestle-kingdom-11-1080p-eng-2017",
     "p": "archive.org",
     "at": "2026-11-11"
+   }
+  ],
+  "ref:Keith Lee contre Dominik Dijakovic — titre Nord-Américain de la NXT|NXT TakeOver: WarGames, 2019": [
+   {
+    "t": "",
+    "u": "https://youtu.be/ZhGtjQWrl1w?is=4g04l0Qor6VSgBIK",
+    "p": "YouTube",
+    "at": "2026-11-11",
+    "def": true
    }
   ]
  }
