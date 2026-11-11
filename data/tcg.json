@@ -112,7 +112,18 @@
    "medalOf": "Luke Harper"
   },
   "cruz-montana": {
-   "img": "img/tcg/alt/santana-base.webp"
+   "img": "img/tcg/alt/santana-base.webp",
+   "k": "WWE",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Royce Keys"
   }
  },
  "bgm": {
