@@ -187,13 +187,20 @@
   {
    "id": "oc-sami-zayn-honorary-uce-mn13",
    "name": "Sami Zayn Honorary Uce",
-   "gimmick": "",
+   "gimmick": "Honorary Uce",
    "k": "WWE",
    "arch": "Showman",
    "r": "N",
    "max": "R",
    "img": "img/tcg/mwc0mv9i.jpg",
-   "imgLR": "img/tcg/mwc0n6yd.jpg"
+   "imgLR": "img/tcg/mwc0n6yd.jpg",
+   "years": "",
+   "al": "",
+   "fin": {
+    "n": "Helluva Kick",
+    "e": "Soin"
+   },
+   "medalOf": "Jey uso"
   }
  ],
  "bx": {
