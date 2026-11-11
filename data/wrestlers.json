@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07",
+ "updated": "2026-11-11",
  "note": "Catcheurs suivis (champions, cartes annoncées, favoris des membres) et catcheurs à découvrir (disc = true, toutes fédérations et époques). txt = petit résumé en français, era = époque, ref = matchs de référence, last = 3 derniers matchs (r = résultat, spoiler), v = vidéo YouTube d'une chaîne officielle.",
  "items": {
   "Roman Reigns": {
@@ -1443,7 +1443,7 @@
   "Cruz Montana": {
    "k": "WWE",
    "sh": [
-    "NXT"
+    "Raw"
    ],
    "a": [
     "Mike Santana",
@@ -1451,8 +1451,9 @@
     "Mike Draztik"
    ],
    "era": "NXT, depuis 2026 (Mike Santana à la TNA et à l'AEW avant)",
-   "txt": "Ancien membre de LAX à la TNA puis de Proud and Powerful à l'AEW (avec Ortiz), Mike Santana est devenu champion du monde de la TNA avant de rejoindre la WWE à l'été 2026. À NXT, il catche sous le nom de Cruz Montana, un hommage à son père. Il a aussi catché sous le nom de Mike Draztik à ses débuts sur la scène indépendante.",
-   "ref": []
+   "txt": "Ancien membre de LAX à la TNA puis de Proud and Powerful à l'AEW (avec Ortiz), Mike Santana est devenu champion du monde de la TNA avant de rejoindre la WWE à l'été 2026. Sous le nom de Cruz Montana, un hommage à son père, il est passé par NXT avant de débarquer à Raw en novembre 2026 comme nouveau membre de The 946. Il a aussi catché sous le nom de Mike Draztik à ses débuts sur la scène indépendante.",
+   "ref": [],
+   "teams": "The 946, LAX, Proud and Powerful"
   },
   "Oba Femi": {
    "k": "WWE",
@@ -1757,6 +1758,45 @@
      "ev": "NJPW, 2000"
     }
    ]
+  },
+  "Marina Shafir": {
+   "k": "AEW · ROH",
+   "a": [
+    "The Problem"
+   ],
+   "era": "Depuis 2018 (NXT), AEW depuis 2021",
+   "al": "tweener",
+   "alD": "2026-09-30",
+   "txt": "Ancienne combattante de MMA et membre des Four Horsewomen avec Ronda Rousey, la Moldave Marina Shafir est passée par NXT avant de rejoindre la AEW, où elle fait partie des Death Riders de Jon Moxley.",
+   "nick": "The Problem, The Supernova from Moldova",
+   "from": "Soroca, Moldavie",
+   "ht": "1,70 m",
+   "wt": "66 kg",
+   "fin": "Achilles Lock, Toehold",
+   "teams": "The Death Riders, The Four Horsewomen, The Beast of Burdens (avec Nyla Rose), The MegaProblems",
+   "ref": []
+  },
+  "Royce Keys": {
+   "k": "WWE",
+   "sh": [
+    "Raw"
+   ],
+   "a": [
+    "Powerhouse Hobbs",
+    "Will Hobbs"
+   ],
+   "era": "Depuis 2009 (AEW en Powerhouse Hobbs), WWE depuis 2026",
+   "al": "heel",
+   "alD": "2026-08-24",
+   "txt": "Connu à la AEW sous le nom de Powerhouse Hobbs, Royce Keys a fait ses débuts à la WWE au Royal Rumble 2026. Depuis août 2026, il mène à Raw le groupe The 946 contre The Bloodline.",
+   "nick": "The Embodiment of Willpower",
+   "from": "Palo Alto, Californie",
+   "ht": "1,85 m",
+   "wt": "122 kg",
+   "debut": "2009",
+   "fin": "Town Business, Spine on the Pine, Powerslam",
+   "teams": "The 946",
+   "ref": []
   }
  }
 }
