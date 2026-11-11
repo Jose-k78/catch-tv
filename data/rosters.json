@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07",
+ "updated": "2026-11-11",
  "note": "Rosters par promotion et par show (ou par division / clan). Sources : The SmackDown Hotel, Wikipédia, sites officiels.",
  "src": {
   "WWE": "https://thesmackdownhotel.com/roster/wwe/",
@@ -29,6 +29,7 @@
     "Carmelo Hayes",
     "Chad Gable",
     "Cruz Del Toro",
+    "Cruz Montana",
     "Dominik Mysterio",
     "Dragon Lee",
     "El Grande Americano",
@@ -131,7 +132,6 @@
     "Channing \"Stacks\" Lorenzo",
     "Chantel Monroe",
     "Charlie Dempsey",
-    "Cruz Montana",
     "Cutler James",
     "Dion Lennox",
     "Dorian Van Dux",
