@@ -180,6 +180,19 @@
    },
    "gimmick": "",
    "medalOf": "Royce Keys"
+  },
+  "jaida-parker": {
+   "k": "WWE",
+   "r": "SR",
+   "max": "UR",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Powerbomb",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Royce Keys"
   }
  },
  "bgm": {
