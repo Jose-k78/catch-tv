@@ -202,5 +202,33 @@
  "assets": {
   "back": "img/tcg/mwaoar8x.jpg",
   "booster": "img/tcg/mwb10ljw.jpg"
- }
+ },
+ "boosters": [
+  {
+   "id": "b-mwc0gcda",
+   "t": "The Bloodline Pack",
+   "n": 5,
+   "gim": 5,
+   "k": "WWE",
+   "cards": [
+    "Roman reigns",
+    "Jey uso",
+    "jimmy uso",
+    "solo sikoa",
+    "jacob fatu",
+    "the rock",
+    "umaga",
+    "rikishi",
+    "naomi",
+    "zilla fatu",
+    "tama tonga",
+    "tonga loa",
+    "sami zayn",
+    "paul heyman"
+   ],
+   "sub": "",
+   "on": true,
+   "img": "img/tcg/mwc0g4xm.jpg"
+  }
+ ]
 }
