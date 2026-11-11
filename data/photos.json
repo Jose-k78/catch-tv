@@ -1,6 +1,18 @@
 {
  "updated": "2026-11-11",
  "items": {
+  "goldust-v2": {
+   "f": "goldust-v2.webp",
+   "n": [
+    "Goldust V2"
+   ]
+  },
+  "jacy-jayne-mwbydnpc": {
+   "f": "jacy-jayne-mwbydnpc.webp",
+   "n": [
+    "Jacy Jayne Mwbydnpc"
+   ]
+  },
   "aaron-wolf": {
    "f": "aaron-wolf.webp",
    "n": [
@@ -8039,13 +8051,5 @@
     "Jacy Jayne"
    ]
   }
- },
- "merged": {
-  "adam-page": "hangman-adam-page",
-  "jungle-jack-perry": "jack-perry",
-  "goldust": "dustin-rhodes",
-  "mariah-may": "blake-monroe",
-  "doc": "luke-gallows",
-  "brian-pillman-jr": "lexis-king"
  }
 }
