@@ -1,5 +1,5 @@
 {
- "at": "2026-11-11T19:55:16.347Z",
+ "at": "2026-11-11T21:30:04.621Z",
  "items": [
   {
    "t": "Preview : AEW Dynamite du 11 novembre 2026",
@@ -9,6 +9,23 @@
    "tags": [
     "AEW",
     "Dynamite"
+   ]
+  },
+  {
+   "t": "Anyme : « Tout vous gêne, tout vous insupporte, tout vous dérange »",
+   "u": "https://www.catch-newz.com/international/newz/61231-anyme-tout-vous-gene-tout-vous-insupporte-tout-vous-derange",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": []
+  },
+  {
+   "t": "Carmelo Hayes toujours vivant après WWE RAW ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61230-carmelo-hayes-toujours-vivant-apres-wwe-raw",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": [
+    "WWE",
+    "Raw"
    ]
   },
   {
@@ -30,6 +47,13 @@
     "WWE",
     "SmackDown"
    ]
+  },
+  {
+   "t": "Résultats de ChocoPro #554 New Dawn",
+   "u": "https://www.catch-newz.com/international/resultats/61212-resultats-de-chocopro-554-new-dawn",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": []
   },
   {
    "t": "Résultats du jour 13 de DG The Gate Of Victory 2026",
@@ -483,30 +507,6 @@
    "tags": [
     "CMLL"
    ]
-  },
-  {
-   "t": "Preview : WWE RAW du 9 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61158-preview-wwe-raw-9-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
-  },
-  {
-   "t": "Amine promet un show d'exception malgré les critiques sur son organisation de Final Slam",
-   "u": "https://www.catch-newz.com/international/newz/61164-amine-promet-un-show-dexception-malgre-les-critiques-sur-son-organisation-de-final-slam",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": []
-  },
-  {
-   "t": "En direct : Conférence de presse de Final Slam du 9 novembre",
-   "u": "https://www.catch-newz.com/international/newz/61161-en-direct-conference-de-presse-de-final-slam-du-9-novembre",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": []
   }
  ],
  "yt": {
@@ -948,9 +948,12 @@
    "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61231-anyme-tout-vous-gene-tout-vous-insupporte-tout-vous-derange",
+   "https://www.catch-newz.com/wwe/newz/61230-carmelo-hayes-toujours-vivant-apres-wwe-raw",
    "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61222-audiences-wwe-aew-et-tna-26-octobre-au-1er-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61212-resultats-de-chocopro-554-new-dawn",
    "https://www.catch-newz.com/international/resultats/61210-resultats-du-jour-13-de-dg-the-gate-of-victory-2026",
    "https://www.catch-newz.com/wwe/newz/61226-le-pont-en-memoire-de-stu-hart-ouvre-a-calgary",
    "https://www.catch-newz.com/wwe/newz/61227-jacob-fatu-va-participer-a-un-show-indy-le-14-novembre",
@@ -1241,14 +1244,11 @@
    "https://www.catch-newz.com/wwe/newz/60939-wwe-raw-ethan-page-devient-le-nouveau-champion-intercontinental-et-met-fin-au-regne-incroyable-de-chad-gable",
    "https://www.catch-newz.com/wwe/newz/60918-preview-wwe-raw-2-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60935-apres-sa-defaite-contre-drew-mcintyre-au-royal-rumble-sami-zayn-etait-persuade-quil-nallait-jamais-remporter-le-titre-mondial",
-   "https://www.catch-newz.com/international/newz/60937-carte-du-jour-2-de-dg-the-gate-of-evolution-2026-partie-2",
-   "https://www.catch-newz.com/international/newz/60936-carte-du-jour-2-de-dg-the-gate-of-evolution-2026-partie-1",
-   "https://www.catch-newz.com/international/newz/60932-carte-de-beyond-wrestling-open-ri-74",
-   "https://www.catch-newz.com/wwe/newz/60934-izzi-dame-le-mental-de-zaria-est-fragile-je-lai-prouve-a-tout-le-monde"
+   "https://www.catch-newz.com/international/newz/60937-carte-du-jour-2-de-dg-the-gate-of-evolution-2026-partie-2"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",

@@ -1,5 +1,5 @@
 {
- "at": "2026-11-11T18:51:54.933Z",
+ "at": "2026-11-11T21:30:04.669Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -460,7 +460,9 @@
   "c:WWE:2026-11-28:1fxhr26": "2026-11-11",
   "c:WWE:2026-11-28:eqkvkn": "2026-11-11",
   "c:WWE:2026-11-28:aepw39": "2026-11-11",
-  "c:AEW:2026-11-14:rn1m9": "2026-11-11"
+  "c:AEW:2026-11-14:rn1m9": "2026-11-11",
+  "a:https://www.catch-newz.com/wwe/newz/61230-carmelo-hayes-toujours-vivant-apres-wwe-raw": "2026-11-11",
+  "fr:2026-11-11": "2026-11-11"
  },
  "pend": {}
 }
