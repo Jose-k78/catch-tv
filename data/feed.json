@@ -1,5 +1,5 @@
 {
- "at": "2026-11-11T16:51:32.789Z",
+ "at": "2026-11-11T17:52:51.010Z",
  "items": [
   {
    "t": "Preview : AEW Dynamite du 11 novembre 2026",
@@ -12,12 +12,31 @@
    ]
   },
   {
-   "t": "Tay Melo quitte officiellement l'AEW",
-   "u": "https://www.catch-newz.com/aew/newz/61225-tay-melo-quitte-officiellement-laew",
+   "t": "Preview : TNA Impact du 12 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
    "s": "Catch-Newz",
    "d": "2026-11-11",
    "tags": [
-    "AEW"
+    "TNA",
+    "Impact"
+   ]
+  },
+  {
+   "t": "Le pont en mémoire de Stu Hart ouvre à Calgary",
+   "u": "https://www.catch-newz.com/wwe/newz/61226-le-pont-en-memoire-de-stu-hart-ouvre-a-calgary",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Jacob Fatu va participer à un show Indy le 14 novembre",
+   "u": "https://www.catch-newz.com/wwe/newz/61227-jacob-fatu-va-participer-a-un-show-indy-le-14-novembre",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -28,6 +47,15 @@
    "tags": [
     "WWE",
     "SmackDown"
+   ]
+  },
+  {
+   "t": "Tay Melo quitte officiellement l'AEW",
+   "u": "https://www.catch-newz.com/aew/newz/61225-tay-melo-quitte-officiellement-laew",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": [
+    "AEW"
    ]
   },
   {
@@ -481,29 +509,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "John Cena en congé après le John Cena Classic",
-   "u": "https://www.catch-newz.com/wwe/newz/61159-john-cena-en-conge-apres-le-john-cena-classic",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Donovan Dijak quitte la MLW",
-   "u": "https://www.catch-newz.com/international/newz/61162-donovan-dijak-quitte-la-mlw",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": []
-  },
-  {
-   "t": "Résultats du jour 9 de DG The Gate Of Victory 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61149-resultats-du-jour-9-de-dg-the-gate-of-victory-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": []
   }
  ],
  "yt": {
@@ -945,9 +950,12 @@
    "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
-   "https://www.catch-newz.com/aew/newz/61225-tay-melo-quitte-officiellement-laew",
+   "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61226-le-pont-en-memoire-de-stu-hart-ouvre-a-calgary",
+   "https://www.catch-newz.com/wwe/newz/61227-jacob-fatu-va-participer-a-un-show-indy-le-14-novembre",
    "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61222-audiences-wwe-aew-et-tna-26-octobre-au-1er-novembre-2026",
+   "https://www.catch-newz.com/aew/newz/61225-tay-melo-quitte-officiellement-laew",
    "https://www.catch-newz.com/international/resultats/61211-resultats-de-gcw-the-crossroads-2026",
    "https://www.catch-newz.com/international/resultats/61208-resultats-du-jour-12-de-dg-the-gate-of-victory-2026",
    "https://www.catch-newz.com/wwe/newz/61224-une-longue-absence-pour-randy-orton-apres-crown-jewel",
@@ -1238,14 +1246,11 @@
    "https://www.catch-newz.com/international/newz/60936-carte-du-jour-2-de-dg-the-gate-of-evolution-2026-partie-1",
    "https://www.catch-newz.com/international/newz/60932-carte-de-beyond-wrestling-open-ri-74",
    "https://www.catch-newz.com/wwe/newz/60934-izzi-dame-le-mental-de-zaria-est-fragile-je-lai-prouve-a-tout-le-monde",
-   "https://www.catch-newz.com/culture/cineserie/60928-dave-batista-sajoute-10-kilos-pour-son-role-de-kratos",
-   "https://www.catch-newz.com/international/newz/60923-produce-wrestling-suspend-ses-activites-jusquen-2027",
-   "https://www.catch-newz.com/international/resultats/60931-resultats-de-alto-voltaje-cmll-du-1er-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/60927-smackdown-ne-sera-pas-en-direct-pour-noel-2026"
+   "https://www.catch-newz.com/culture/cineserie/60928-dave-batista-sajoute-10-kilos-pour-son-role-de-kratos"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
