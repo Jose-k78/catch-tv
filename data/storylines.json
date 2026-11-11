@@ -1,7 +1,44 @@
 {
-  "updated": "2026-11-08",
+  "updated": "2026-11-11",
   "note": "Une storyline par jour (la plus récente en premier) : grandes histoires, rivalités, anecdotes de coulisses, faits marquants. txt = paragraphes écrits en français à partir des sources ; v = vidéos officielles ; q = recherches sur la chaîne officielle.",
   "items": [
+    {
+      "id": "leon-ruff-2020",
+      "d": "2026-11-11",
+      "type": "Anecdote",
+      "t": "Leon Ruff, l’inconnu à 0 victoire devenu champion à NXT",
+      "k": "WWE",
+      "years": "2020",
+      "hook": "Il n’avait jamais gagné un seul match à la télé… et un soir, une roue de la chance l’a envoyé décrocher un titre.",
+      "txt": [
+        "Dartanyon Ruffin, né à Detroit en 1996, prend le nom de Leon Ruff en hommage à son grand-père. Formé par A. R. Fox, il fait ses débuts en 2017 et se fait remarquer à Evolve, où il remporte même les titres par équipe avec son entraîneur en 2019.",
+        "À la WWE, il joue d’abord les « locaux » : ces lutteurs engagés pour perdre face aux vedettes, comme lors d’une défaite contre Aleister Black à Raw en mars 2020. Même après avoir signé un contrat à l’été 2020, il continue d’enchaîner les défaites à NXT : il arrive en novembre avec un bilan de 0 victoire et 11 défaites.",
+        "Le 11 novembre 2020, Johnny Gargano, champion Nord-Américain de NXT et grand méchant du show, fait tourner sa « roue des challengers » pour choisir son adversaire du soir. La roue tombe sur Leon Ruff, dont le nom avait été écrit par-dessus celui d’Austin Theory. Personne n’imagine une surprise.",
+        "Mais Damian Priest, ancien champion et ennemi juré de Gargano, s’installe au bord du ring et le distrait un instant. Ruff en profite pour le tomber : l’éternel perdant devient champion Nord-Américain, un des plus gros renversements de l’histoire de NXT. « Un des plus beaux moments de ma vie », écrit-il juste après.",
+        "La semaine suivante, il conserve son titre par disqualification quand Priest le frappe volontairement. Son règne s’arrête à NXT TakeOver: WarGames, le 6 décembre, dans un match à trois contre Gargano et Priest : Gargano récupère la ceinture après 25 jours.",
+        "Ruff fait ensuite équipe avec Kushida au Dusty Rhodes Tag Team Classic 2021, puis est libéré par la WWE en août 2021. Il continue sa carrière sur le circuit indépendant (GCW) et passe brièvement par l’AEW en 2022. Mais pour les fans de NXT, il reste le symbole du petit qui gagne quand personne n’y croit."
+      ],
+      "key": "Le 11 novembre 2020, Leon Ruff, 0 victoire en 11 matchs, tombe Johnny Gargano et devient champion Nord-Américain de NXT.",
+      "v": [],
+      "q": [
+        "Leon Ruff vs Johnny Gargano NXT North American Championship 2020",
+        "Leon Ruff wins North American title NXT"
+      ],
+      "src": [
+        {
+          "n": "Wikipedia (anglais) – Leon Ruff",
+          "u": "https://en.wikipedia.org/wiki/Leon_Ruff"
+        },
+        {
+          "n": "Wrestling Inc – Leon Ruff remporte le titre",
+          "u": "https://www.wrestlinginc.com/news/2020/11/leon-ruff-wins-the-wwe-nxt-north-american-title-from-johnny-676829"
+        },
+        {
+          "n": "Wrestling Inc – réaction de Leon Ruff",
+          "u": "https://www.wrestlinginc.com/news/2020/11/leon-ruff-on-his-wwe-nxt-north-american-title-win-676851"
+        }
+      ]
+    },
     {
       "id": "mayu-io",
       "d": "2026-11-08",
