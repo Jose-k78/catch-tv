@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T09:43:35.827Z",
+ "updated": "2026-11-11T01:02:35.121Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "m:statlight kid vs suzu suzuki": [
@@ -193,6 +193,15 @@
     "u": "https://archive.org/details/okada-vs-omega-series",
     "p": "archive.org",
     "at": "2026-11-10",
+    "def": true
+   }
+  ],
+  "ev:NJPW|Wrestle Kingdom 11 in Tokyo Dome|2017-01-04": [
+   {
+    "t": "",
+    "u": "https://archive.org/embed/njpw-wrestle-kingdom-11-1080p-eng-2017\" width=\"560\" height=\"384\" frameborder=\"0\" webkitallowfullscreen=\"true\" mozallowfullscreen=\"true",
+    "p": "archive.org",
+    "at": "2026-11-11",
     "def": true
    }
   ]
