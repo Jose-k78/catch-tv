@@ -161,7 +161,8 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
     pour que les joueurs gardent leurs cartes) et des alias (anciens noms, vrais noms) dans `n` ; `knownNames` cumule les alias ;
     `#/player/e/K|show|date` redirige vers `#/ev/…` (une seule page par show) ; la page Recherche vide n'a plus Explorer (il est sur l'accueil).
   - Jose a renoncé aux robots GitHub (on garde les tâches de Claude). Reste seulement : compléter les dates Stardom / Marigold de fin 2026
-    (site wwr-stardom.com illisible depuis Claude le 11 nov. — réessayer dans la tâche de 19 h 23, avec `tour: 1`).
+    (sources données par Jose : https://wwr-stardom.com/schedule/?ym=AAAAMM et https://dsf-marigold.com/events/ (+ /page/2/) ; Marigold fait
+    le 11 nov. ; la page Stardom ne renvoyait qu'octobre à Claude ce jour-là — réessayer dans la tâche de 19 h 23, avec `tour: 1`).
 - Notes : demi-étoiles de 0 à 5,5 (`RMAX`, `fmtR`, `stars`, `ratePick` / `pickRate` de util.js ; 6e étoile orange = bonus).
 - Historique : `g_<id>` = note d'un segment, `q_<id>` = segment préféré (comment = nom du show) ; préfixes m_/s_/f_/g_/q_ exclus
   des compteurs de shows (spoil.js, trophies.js, account.js). Profil : « Ses segments préférés ».

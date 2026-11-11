@@ -842,6 +842,69 @@
      "v": "Ryōgoku Kokugikan"
     },
     {
+     "t": "Battle Heart — Mask Fiesta",
+     "d": "2026-11-14",
+     "w": "Osaka",
+     "v": "176BOX",
+     "tour": 1
+    },
+    {
+     "t": "Battle Heart",
+     "d": "2026-11-15",
+     "w": "Shizuoka",
+     "v": "Fujisan Messe",
+     "tour": 1
+    },
+    {
+     "t": "Battle Heart",
+     "d": "2026-11-16",
+     "w": "Tokyo",
+     "v": "Kinshicho Marui (salle du 8e étage)",
+     "tour": 1
+    },
+    {
+     "t": "True Victory — Yamaguchi",
+     "d": "2026-11-21",
+     "w": "Yamaguchi",
+     "v": "Yuda Onsen Konkon Park",
+     "tour": 1
+    },
+    {
+     "t": "True Victory — Fukuoka",
+     "d": "2026-11-23",
+     "w": "Fukuoka",
+     "v": "ACROS Fukuoka",
+     "tour": 1
+    },
+    {
+     "t": "True Victory — Korakuen",
+     "d": "2026-11-30",
+     "w": "Tokyo",
+     "v": "Korakuen Hall",
+     "tour": 1
+    },
+    {
+     "t": "True Victory — Tochigi",
+     "d": "2026-12-05",
+     "w": "Tochigi",
+     "v": "Ashikaga",
+     "tour": 1
+    },
+    {
+     "t": "True Victory — Osaka",
+     "d": "2026-12-12",
+     "w": "Osaka",
+     "v": "176BOX",
+     "tour": 1
+    },
+    {
+     "t": "Marigold à Tahara",
+     "d": "2026-12-13",
+     "w": "Aichi",
+     "v": "Gymnase de Tahara",
+     "tour": 1
+    },
+    {
      "t": "True Victory — Shibuya",
      "d": "2026-12-19",
      "w": "Tokyo",
@@ -854,6 +917,12 @@
      "w": "Tokyo",
      "v": "Korakuen Hall",
      "tour": 1
+    },
+    {
+     "t": "First Dream 2027",
+     "d": "2027-01-03",
+     "w": "Tokyo",
+     "v": "Ebara Wave Arena Ota"
     }
    ],
    "fr": [
