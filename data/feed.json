@@ -1,5 +1,5 @@
 {
- "at": "2026-11-11T17:52:51.010Z",
+ "at": "2026-11-11T18:51:54.875Z",
  "items": [
   {
    "t": "Preview : AEW Dynamite du 11 novembre 2026",
@@ -22,6 +22,16 @@
    ]
   },
   {
+   "t": "Preview : WWE SmackDown du 13 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
+  },
+  {
    "t": "Le pont en mémoire de Stu Hart ouvre à Calgary",
    "u": "https://www.catch-newz.com/wwe/newz/61226-le-pont-en-memoire-de-stu-hart-ouvre-a-calgary",
    "s": "Catch-Newz",
@@ -37,16 +47,6 @@
    "d": "2026-11-11",
    "tags": [
     "WWE"
-   ]
-  },
-  {
-   "t": "Preview : WWE SmackDown du 13 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-11",
-   "tags": [
-    "WWE",
-    "SmackDown"
    ]
   },
   {
@@ -951,10 +951,10 @@
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
    "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61226-le-pont-en-memoire-de-stu-hart-ouvre-a-calgary",
-   "https://www.catch-newz.com/wwe/newz/61227-jacob-fatu-va-participer-a-un-show-indy-le-14-novembre",
    "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61222-audiences-wwe-aew-et-tna-26-octobre-au-1er-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61226-le-pont-en-memoire-de-stu-hart-ouvre-a-calgary",
+   "https://www.catch-newz.com/wwe/newz/61227-jacob-fatu-va-participer-a-un-show-indy-le-14-novembre",
    "https://www.catch-newz.com/aew/newz/61225-tay-melo-quitte-officiellement-laew",
    "https://www.catch-newz.com/international/resultats/61211-resultats-de-gcw-the-crossroads-2026",
    "https://www.catch-newz.com/international/resultats/61208-resultats-du-jour-12-de-dg-the-gate-of-victory-2026",
@@ -1250,7 +1250,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
