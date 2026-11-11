@@ -127,7 +127,18 @@
   },
   "rey-fenix": {
    "imgRey Fenix": "img/catcheurs/rey-fenix.webp",
-   "img": "img/tcg/alt/rey-fenix-alt.webp"
+   "img": "img/tcg/alt/rey-fenix-alt.webp",
+   "k": "WWE",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Fenix Driver",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "PAC"
   }
  },
  "bgm": {
