@@ -1,5 +1,5 @@
 {
- "at": "2026-11-11T21:30:04.669Z",
+ "at": "2026-11-11T22:28:16.207Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -462,7 +462,30 @@
   "c:WWE:2026-11-28:aepw39": "2026-11-11",
   "c:AEW:2026-11-14:rn1m9": "2026-11-11",
   "a:https://www.catch-newz.com/wwe/newz/61230-carmelo-hayes-toujours-vivant-apres-wwe-raw": "2026-11-11",
-  "fr:2026-11-11": "2026-11-11"
+  "fr:2026-11-11": "2026-11-11",
+  "a:https://www.catch-newz.com/international/resultats/61233-resultats-de-cmll-martes-populares-du-10-novembre-2026": "2026-11-11",
+  "a:https://www.catch-newz.com/international/resultats/61232-resultats-de-cmll-martes-de-glamour-du-10-novembre-2026": "2026-11-11"
  },
- "pend": {}
+ "pend": {
+  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
+   }
+  ],
+  "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
+   }
+  ]
+ }
 }

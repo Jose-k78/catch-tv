@@ -1,5 +1,5 @@
 {
- "at": "2026-11-11T21:30:04.621Z",
+ "at": "2026-11-11T22:28:16.165Z",
  "items": [
   {
    "t": "Preview : AEW Dynamite du 11 novembre 2026",
@@ -9,23 +9,6 @@
    "tags": [
     "AEW",
     "Dynamite"
-   ]
-  },
-  {
-   "t": "Anyme : « Tout vous gêne, tout vous insupporte, tout vous dérange »",
-   "u": "https://www.catch-newz.com/international/newz/61231-anyme-tout-vous-gene-tout-vous-insupporte-tout-vous-derange",
-   "s": "Catch-Newz",
-   "d": "2026-11-11",
-   "tags": []
-  },
-  {
-   "t": "Carmelo Hayes toujours vivant après WWE RAW ?",
-   "u": "https://www.catch-newz.com/wwe/newz/61230-carmelo-hayes-toujours-vivant-apres-wwe-raw",
-   "s": "Catch-Newz",
-   "d": "2026-11-11",
-   "tags": [
-    "WWE",
-    "Raw"
    ]
   },
   {
@@ -46,6 +29,23 @@
    "tags": [
     "WWE",
     "SmackDown"
+   ]
+  },
+  {
+   "t": "Anyme : « Tout vous gêne, tout vous insupporte, tout vous dérange »",
+   "u": "https://www.catch-newz.com/international/newz/61231-anyme-tout-vous-gene-tout-vous-insupporte-tout-vous-derange",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": []
+  },
+  {
+   "t": "Carmelo Hayes toujours vivant après WWE RAW ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61230-carmelo-hayes-toujours-vivant-apres-wwe-raw",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": [
+    "WWE",
+    "Raw"
    ]
   },
   {
@@ -198,6 +198,24 @@
    "tags": [
     "WWE",
     "NXT"
+   ]
+  },
+  {
+   "t": "Résultats de CMLL Martes Populares du 10 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61233-resultats-de-cmll-martes-populares-du-10-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "CMLL"
+   ]
+  },
+  {
+   "t": "Résultats de CMLL Martes De Glamour du 10 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61232-resultats-de-cmll-martes-de-glamour-du-10-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "CMLL"
    ]
   },
   {
@@ -488,25 +506,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-10",
    "tags": []
-  },
-  {
-   "t": "Résultats de WWE RAW du 9 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
-  },
-  {
-   "t": "Résultats de CMLL Lunes Clasico du 9 novembre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61176-resultats-de-cmll-lunes-clasico-du-9-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-09",
-   "tags": [
-    "CMLL"
-   ]
   }
  ],
  "yt": {
@@ -948,11 +947,13 @@
    "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61231-anyme-tout-vous-gene-tout-vous-insupporte-tout-vous-derange",
-   "https://www.catch-newz.com/wwe/newz/61230-carmelo-hayes-toujours-vivant-apres-wwe-raw",
    "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61222-audiences-wwe-aew-et-tna-26-octobre-au-1er-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61233-resultats-de-cmll-martes-populares-du-10-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61232-resultats-de-cmll-martes-de-glamour-du-10-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61231-anyme-tout-vous-gene-tout-vous-insupporte-tout-vous-derange",
+   "https://www.catch-newz.com/wwe/newz/61230-carmelo-hayes-toujours-vivant-apres-wwe-raw",
    "https://www.catch-newz.com/international/resultats/61212-resultats-de-chocopro-554-new-dawn",
    "https://www.catch-newz.com/international/resultats/61210-resultats-du-jour-13-de-dg-the-gate-of-victory-2026",
    "https://www.catch-newz.com/wwe/newz/61226-le-pont-en-memoire-de-stu-hart-ouvre-a-calgary",
@@ -1242,13 +1243,11 @@
    "https://www.catch-newz.com/wwe/newz/60941-wwe-raw-cinq-jours-avant-crown-jewel-liv-morgan-rive-les-epaules-de-chelsea-green",
    "https://www.catch-newz.com/wwe/newz/60938-roman-reigns-sans-moi-sami-tu-ne-serais-meme-plus-dans-cette-compagnie",
    "https://www.catch-newz.com/wwe/newz/60939-wwe-raw-ethan-page-devient-le-nouveau-champion-intercontinental-et-met-fin-au-regne-incroyable-de-chad-gable",
-   "https://www.catch-newz.com/wwe/newz/60918-preview-wwe-raw-2-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/60935-apres-sa-defaite-contre-drew-mcintyre-au-royal-rumble-sami-zayn-etait-persuade-quil-nallait-jamais-remporter-le-titre-mondial",
-   "https://www.catch-newz.com/international/newz/60937-carte-du-jour-2-de-dg-the-gate-of-evolution-2026-partie-2"
+   "https://www.catch-newz.com/wwe/newz/60918-preview-wwe-raw-2-novembre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
