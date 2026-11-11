@@ -1,21 +1,11 @@
 {
- "at": "2026-11-11T22:28:16.165Z",
+ "at": "2026-11-11T23:22:54.584Z",
  "items": [
-  {
-   "t": "Preview : AEW Dynamite du 11 novembre 2026",
-   "u": "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-11",
-   "tags": [
-    "AEW",
-    "Dynamite"
-   ]
-  },
   {
    "t": "Preview : TNA Impact du 12 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
    "s": "Catch-Newz",
-   "d": "2026-11-11",
+   "d": "2026-11-12",
    "tags": [
     "TNA",
     "Impact"
@@ -25,10 +15,29 @@
    "t": "Preview : WWE SmackDown du 13 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
    "s": "Catch-Newz",
-   "d": "2026-11-11",
+   "d": "2026-11-12",
    "tags": [
     "WWE",
     "SmackDown"
+   ]
+  },
+  {
+   "t": "Carte de CMLL Jueves Arena Coliseo du 12 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61234-carte-de-cmll-jueves-arena-coliseo-du-12-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "CMLL"
+   ]
+  },
+  {
+   "t": "Preview : AEW Dynamite du 11 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": [
+    "AEW",
+    "Dynamite"
    ]
   },
   {
@@ -499,13 +508,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-10",
    "tags": []
-  },
-  {
-   "t": "Carte de Beyond Wrestling Open RI 75",
-   "u": "https://www.catch-newz.com/international/newz/61172-carte-de-beyond-wrestling-open-ri-75",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": []
   }
  ],
  "yt": {
@@ -950,6 +952,7 @@
    "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61222-audiences-wwe-aew-et-tna-26-octobre-au-1er-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61234-carte-de-cmll-jueves-arena-coliseo-du-12-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61233-resultats-de-cmll-martes-populares-du-10-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61232-resultats-de-cmll-martes-de-glamour-du-10-novembre-2026",
    "https://www.catch-newz.com/international/newz/61231-anyme-tout-vous-gene-tout-vous-insupporte-tout-vous-derange",
@@ -1242,12 +1245,11 @@
    "https://www.catch-newz.com/wwe/newz/60943-wwe-raw-the-vision-demolit-encore-une-fois-ses-concurrents-a-brooklyn",
    "https://www.catch-newz.com/wwe/newz/60941-wwe-raw-cinq-jours-avant-crown-jewel-liv-morgan-rive-les-epaules-de-chelsea-green",
    "https://www.catch-newz.com/wwe/newz/60938-roman-reigns-sans-moi-sami-tu-ne-serais-meme-plus-dans-cette-compagnie",
-   "https://www.catch-newz.com/wwe/newz/60939-wwe-raw-ethan-page-devient-le-nouveau-champion-intercontinental-et-met-fin-au-regne-incroyable-de-chad-gable",
-   "https://www.catch-newz.com/wwe/newz/60918-preview-wwe-raw-2-novembre-2026"
+   "https://www.catch-newz.com/wwe/newz/60939-wwe-raw-ethan-page-devient-le-nouveau-champion-intercontinental-et-met-fin-au-regne-incroyable-de-chad-gable"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
