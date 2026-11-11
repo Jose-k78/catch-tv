@@ -57,7 +57,12 @@
      "d": "2026-11-28",
      "w": "Houston",
      "v": "Minute Maid Park",
-     "nf": "81930099"
+     "nf": "81930099",
+     "card": [
+      "WarGames : The Bloodline contre The 946",
+      "Titre mondial féminin : Liv Morgan contre Becky Lynch",
+      "Élimination à 5 contre 5 : Team USA contre Team Mexico"
+     ]
     },
     {
      "t": "Wrestlepalooza",
@@ -218,10 +223,11 @@
      "card": [
       "Titre mondial de la AEW : Will Ospreay contre Kyle Fletcher",
       "Titre mondial féminin de la AEW : Mercedes Moné contre Marina Shafir",
+      "Titre international de la AEW : Kazuchika Okada contre Adam Copeland",
       "Titres trios, Texas Death Match : Hangman Page, Brody King et Bandido contre Swerve Strickland, Kofi Kingston et Austin Creed",
       "Titres mondiaux par équipe : The Young Bucks contre Mark Davis et Jake Doyle",
       "Titres féminins par équipe : The Brawling Birds contre Wrathlander",
-      "Anarchy in the Arena : The Death Riders et The Conglomeration contre The Cut"
+      "Anarchy in the Arena : The Death Riders contre The Conglomeration contre The Cut"
      ],
      "h": "19:00",
      "tz": "America/New_York",
