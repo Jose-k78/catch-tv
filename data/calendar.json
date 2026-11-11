@@ -765,10 +765,150 @@
      "dur": 210
     },
     {
+     "t": "Goddesses of Stardom Tag League — ouverture",
+     "d": "2026-11-01",
+     "w": "Tokyo",
+     "v": "Korakuen Hall",
+     "h": "11:30",
+     "tz": "Asia/Tokyo",
+     "dur": 180,
+     "tour": 1
+    },
+    {
+     "t": "Goddesses of Stardom Tag League — Numazu",
+     "d": "2026-11-03",
+     "w": "Shizuoka",
+     "v": "Kira Messe Numazu",
+     "h": "13:00",
+     "tz": "Asia/Tokyo",
+     "dur": 180,
+     "tour": 1
+    },
+    {
+     "t": "Goddesses of Stardom Tag League — Takasaki",
+     "d": "2026-11-08",
+     "w": "Gunma",
+     "v": "G Messe Gunma",
+     "h": "13:00",
+     "tz": "Asia/Tokyo",
+     "dur": 180,
+     "tour": 1
+    },
+    {
+     "t": "Goddesses of Stardom Tag League — Korakuen vol. 1",
+     "d": "2026-11-11",
+     "w": "Tokyo",
+     "v": "Korakuen Hall",
+     "h": "18:30",
+     "tz": "Asia/Tokyo",
+     "dur": 180,
+     "tour": 1
+    },
+    {
+     "t": "Goddesses of Stardom Tag League — Matsuyama",
+     "d": "2026-11-14",
+     "w": "Ehime",
+     "v": "Item Ehime",
+     "h": "17:00",
+     "tz": "Asia/Tokyo",
+     "dur": 180,
+     "tour": 1
+    },
+    {
+     "t": "Goddesses of Stardom Tag League — Kochi",
+     "d": "2026-11-15",
+     "w": "Kochi",
+     "v": "Gymnase Chres Series",
+     "h": "16:00",
+     "tz": "Asia/Tokyo",
+     "dur": 180,
+     "tour": 1
+    },
+    {
+     "t": "Goddesses of Stardom Tag League — Korakuen vol. 2",
+     "d": "2026-11-18",
+     "w": "Tokyo",
+     "v": "Korakuen Hall",
+     "h": "18:30",
+     "tz": "Asia/Tokyo",
+     "dur": 180,
+     "tour": 1
+    },
+    {
      "t": "Goddesses of Stardom Tag League — Akita",
      "d": "2026-11-21",
      "w": "Akita",
-     "v": "Akita",
+     "v": "Akita Terrsa",
+     "tour": 1,
+     "h": "13:00",
+     "tz": "Asia/Tokyo",
+     "dur": 180
+    },
+    {
+     "t": "Goddesses of Stardom Tag League — Fukushima",
+     "d": "2026-11-22",
+     "w": "Fukushima",
+     "v": "Fukushima Toyota Crown Arena",
+     "h": "13:00",
+     "tz": "Asia/Tokyo",
+     "dur": 180,
+     "tour": 1
+    },
+    {
+     "t": "Goddesses of Stardom Tag League — Koriyama",
+     "d": "2026-11-23",
+     "w": "Fukushima",
+     "v": "Big Palette Fukushima",
+     "h": "13:00",
+     "tz": "Asia/Tokyo",
+     "dur": 180,
+     "tour": 1
+    },
+    {
+     "t": "Goddesses of Stardom Tag League — Okazaki",
+     "d": "2026-11-28",
+     "w": "Aichi",
+     "v": "Gymnase d’Okazaki",
+     "h": "13:00",
+     "tz": "Asia/Tokyo",
+     "dur": 180,
+     "tour": 1
+    },
+    {
+     "t": "Goddesses of Stardom Tag League — finale",
+     "d": "2026-11-29",
+     "w": "Hamamatsu",
+     "v": "Hamamatsu Sogo Sangyo Tenjikan",
+     "h": "13:00",
+     "tz": "Asia/Tokyo",
+     "dur": 180
+    },
+    {
+     "t": "Stardom in Kobe",
+     "d": "2026-12-06",
+     "w": "Kobe",
+     "v": "Kobe Sanbo Hall",
+     "tour": 1
+    },
+    {
+     "t": "Stardom Nighter in Korakuen",
+     "d": "2026-12-10",
+     "w": "Tokyo",
+     "v": "Korakuen Hall",
+     "tour": 1
+    },
+    {
+     "t": "Stardom in Fuji",
+     "d": "2026-12-13",
+     "w": "Shizuoka",
+     "v": "Fujisan Messe",
+     "tour": 1
+    },
+    {
+     "t": "Stardom in Utsunomiya",
+     "d": "2026-12-19",
+     "w": "Tochigi",
+     "v": "Light Cube Utsunomiya",
      "tour": 1
     },
     {
