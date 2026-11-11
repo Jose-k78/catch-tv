@@ -71,7 +71,17 @@
   "giulia": {
    "imgUR": "img/tcg/mwbgn7yd.jpg",
    "img": "img/catcheurs/giulia-v4.webp",
-   "imgLR": "img/tcg/mwbgnv0s.jpg"
+   "k": "WWE",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Northern Lights Bomb",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Syuri"
   }
  },
  "bgm": {
