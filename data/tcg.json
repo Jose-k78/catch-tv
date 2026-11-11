@@ -193,6 +193,19 @@
    },
    "gimmick": "",
    "medalOf": "Royce Keys"
+  },
+  "roman-reigns": {
+   "k": "WWE",
+   "r": "SSR",
+   "max": "LR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Solo Sikoa"
   }
  },
  "bgm": {
