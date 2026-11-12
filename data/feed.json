@@ -1,9 +1,9 @@
 {
- "at": "2026-11-12T13:47:32.931Z",
+ "at": "2026-11-12T14:51:36.906Z",
  "items": [
   {
-   "t": "Il y a 8 ans, cette blessure a changé la carrière de Becky Lynch",
-   "u": "https://www.catch-newz.com/wwe/newz/61249-il-y-a-8-ans-cette-blessure-a-change-la-carriere-de-becky-lynch",
+   "t": "Stephanie Vaquer finit première du PWI 250 de 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61251-stephanie-vaquer-finit-premiere-du-pwi-250-de-2026",
    "s": "Catch-Newz",
    "d": "2026-11-12",
    "tags": [
@@ -11,23 +11,11 @@
    ]
   },
   {
-   "t": "AEW Full Gear 2026 : Heure et chaine pour regarder le show en direct",
-   "u": "https://www.catch-newz.com/aew/newz/61248-aew-full-gear-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
+   "t": "FinalSlam 2026 : Heure et chaines pour regarder le show en direct",
+   "u": "https://www.catch-newz.com/international/newz/61250-finalslam-2026-heure-et-chaines-pour-regarder-le-show-en-direct",
    "s": "Catch-Newz",
    "d": "2026-11-12",
-   "tags": [
-    "AEW"
-   ]
-  },
-  {
-   "t": "Preview : TNA Impact du 12 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "TNA",
-    "Impact"
-   ]
+   "tags": []
   },
   {
    "t": "Carte de CMLL Viernes Espectacular du 13 novembre 2026",
@@ -57,6 +45,34 @@
     "AEW",
     "Dynamite",
     "Collision"
+   ]
+  },
+  {
+   "t": "Il y a 8 ans, cette blessure a changé la carrière de Becky Lynch",
+   "u": "https://www.catch-newz.com/wwe/newz/61249-il-y-a-8-ans-cette-blessure-a-change-la-carriere-de-becky-lynch",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "AEW Full Gear 2026 : Heure et chaine pour regarder le show en direct",
+   "u": "https://www.catch-newz.com/aew/newz/61248-aew-full-gear-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "AEW"
+   ]
+  },
+  {
+   "t": "Preview : TNA Impact du 12 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "TNA",
+    "Impact"
    ]
   },
   {
@@ -348,15 +364,6 @@
    ]
   },
   {
-   "t": "Résultats de CMLL Martes Populares du 10 novembre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61233-resultats-de-cmll-martes-populares-du-10-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": [
-    "CMLL"
-   ]
-  },
-  {
    "t": "WWE Raw du 9 novembre : Survivor Series se prépare",
    "u": "https://www.voxcatch.fr/2026/11/10/resultats-wwe-raw-9-novembre-2026/",
    "s": "VOXcatch",
@@ -364,6 +371,15 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Résultats de CMLL Martes Populares du 10 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61233-resultats-de-cmll-martes-populares-du-10-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "CMLL"
    ]
   },
   {
@@ -503,20 +519,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Résultats de EVE 156: EVE For Vendetta",
-   "u": "https://www.catch-newz.com/international/resultats/61182-resultats-de-eve-156-eve-for-vendetta",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": []
-  },
-  {
-   "t": "Résultats du jour 10 de DG The Gate Of Victory 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61180-resultats-du-jour-10-de-dg-the-gate-of-victory-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": []
   }
  ],
  "yt": {
@@ -993,12 +995,14 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61249-il-y-a-8-ans-cette-blessure-a-change-la-carriere-de-becky-lynch",
-   "https://www.catch-newz.com/aew/newz/61248-aew-full-gear-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
+   "https://www.catch-newz.com/wwe/newz/61251-stephanie-vaquer-finit-premiere-du-pwi-250-de-2026",
+   "https://www.catch-newz.com/international/newz/61250-finalslam-2026-heure-et-chaines-pour-regarder-le-show-en-direct",
    "https://www.catch-newz.com/wwe/resultats/61239-wwe-main-event-11-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
    "https://www.catch-newz.com/international/newz/61235-carte-de-cmll-viernes-espectacular-du-13-novembre-2026",
    "https://www.catch-newz.com/international/newz/61234-carte-de-cmll-jueves-arena-coliseo-du-12-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61249-il-y-a-8-ans-cette-blessure-a-change-la-carriere-de-becky-lynch",
+   "https://www.catch-newz.com/aew/newz/61248-aew-full-gear-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
+   "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61233-resultats-de-cmll-martes-populares-du-10-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61232-resultats-de-cmll-martes-de-glamour-du-10-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61247-rikishi-je-suis-fier-de-vous-tous",
@@ -1288,13 +1292,11 @@
    "https://www.catch-newz.com/wwe/newz/60961-the-miz-et-kit-wilson-visent-les-titres-par-equipe-de-raw",
    "https://www.catch-newz.com/wwe/newz/60925-lordre-des-matchs-de-wwe-raw-du-2-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60960-oba-femi-est-il-un-vainqueur-probable-du-john-cena-classic",
-   "https://www.catch-newz.com/wwe/newz/60959-les-dates-au-calendrier-de-john-cena-dici-le-john-cena-classic",
-   "https://www.catch-newz.com/wwe/newz/60956-cruz-montana-va-t-il-quand-meme-combattre-dion-lennox-a-nxt-ce-mercredi-malgre-ses-debuts-a-raw",
-   "https://www.catch-newz.com/international/resultats/60933-resultats-de-iwrg-funcion-espectacular-du-1er-novembre-2026"
+   "https://www.catch-newz.com/wwe/newz/60959-les-dates-au-calendrier-de-john-cena-dici-le-john-cena-classic"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
