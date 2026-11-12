@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11",
+ "updated": "2026-11-12",
  "note": "Catcheurs suivis (champions, cartes annoncées, favoris des membres) et catcheurs à découvrir (disc = true, toutes fédérations et époques). txt = petit résumé en français, era = époque, ref = matchs de référence, last = 3 derniers matchs (r = résultat, spoiler), v = vidéo YouTube d'une chaîne officielle.",
  "items": {
   "Roman Reigns": {
@@ -1797,6 +1797,33 @@
    "fin": "Town Business, Spine on the Pine, Powerslam",
    "teams": "The 946",
    "ref": []
+  },
+  "Jay White": {
+   "k": "AEW",
+   "a": [
+    "Jamie White"
+   ],
+   "al": "heel",
+   "alD": "2026-10-21",
+   "nick": "Switchblade, King Switch",
+   "from": "Auckland, Nouvelle-Zélande",
+   "ht": "1,86 m",
+   "wt": "100 kg",
+   "debut": "2013",
+   "fin": "Blade Runner, Kiwi Krusher",
+   "teams": "The Cut, Bang Bang Gang, Bullet Club"
+  },
+  "Trey Miguel": {
+   "k": "TNA",
+   "al": "face",
+   "alD": "2024-07-09",
+   "nick": "The Fresh Prince of Mid-Air, Spider-Trey",
+   "from": "Dayton, Ohio",
+   "ht": "1,75 m",
+   "wt": "78 kg",
+   "debut": "2009",
+   "fin": "Meteora, Yoshi Tonic",
+   "teams": "The Rascalz, Lil Rascalz, FireArms, Alienated Youth"
   }
  }
 }
