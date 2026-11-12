@@ -347,6 +347,9 @@
   "tama-tonga": {
    "imgUR": "img/catcheurs/tama-tonga-v2.webp",
    "img": "img/catcheurs/tama-tonga-v2.webp"
+  },
+  "talla-tonga": {
+   "img": "img/catcheurs/talla-tonga.webp"
   }
  },
  "bgm": {
