@@ -349,7 +349,18 @@
    "img": "img/catcheurs/tama-tonga-v2.webp"
   },
   "talla-tonga": {
-   "img": "img/catcheurs/talla-tonga.webp"
+   "img": "img/catcheurs/talla-tonga.webp",
+   "k": "WWE",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Solo Sikoa"
   }
  },
  "bgm": {
