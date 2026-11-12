@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11",
+ "updated": "2026-11-12",
  "note": "Vidéos des chaînes officielles uniquement. res = résultats (spoilers, affichés seulement à la demande). m = résumé match par match (promotions japonaises).",
  "items": {
   "WWE|Raw|2026-10-26": {
@@ -126,55 +126,6 @@
     "Los Perros del Mal conservent les titres Trios",
     "La Catalina conserve le titre Reina de Reinas"
    ]
-  },
-  "NJPW|PLE|2026-10-12": {
-   "v": [],
-   "m": [
-    {
-     "t": "Unbound Co. (Shingo Takagi et Daiki Nagai) contre Goto Revolutionary Army (Hirooki Goto et Tatsuya Matsumoto)",
-     "r": "Takagi et Nagai l’emportent par tombé."
-    },
-    {
-     "t": "Yuya Uemura, Taichi et El Desperado contre House of Torture (SANADA, Yujiro Takahashi et Yoshinobu Kanemaru)",
-     "r": "Uemura, Taichi et Desperado l’emportent par tombé."
-    },
-    {
-     "t": "Hechicero et Boltin Oleg contre TMDK (Zack Sabre Jr. et Hartley Jackson)",
-     "r": "Hechicero et Oleg l’emportent par tombé."
-    },
-    {
-     "t": "Konosuke Takeshita et Toru Yano contre House of Torture (Ren Narita et Shun Skywalker)",
-     "r": "Takeshita et Yano l’emportent par tombé."
-    },
-    {
-     "t": "Titres NEVER 6-Man : United Empire (Will Ospreay, Great-O-Khan et HENARE) contre Unbound Co. (Jeff Cobb, OSKAR et Yuto-Ice)",
-     "r": "Unbound Co. l’emporte par tombé et remporte les titres."
-    },
-    {
-     "t": "Titre NEVER Openweight : Aaron Wolf contre Kosei Fujita",
-     "r": "Aaron Wolf conserve son titre par tombé."
-    },
-    {
-     "t": "Titre IWGP Global : Gabe Kidd contre Shota Umino",
-     "r": "Gabe Kidd conserve son titre par tombé."
-    },
-    {
-     "t": "Titre IWGP Junior Heavyweight : YOH contre Robbie Eagles",
-     "r": "YOH conserve son titre par tombé."
-    },
-    {
-     "t": "Titre IWGP Heavyweight : Yota Tsuji contre Ryohei Oiwa",
-     "r": "Yota Tsuji conserve son titre par tombé. Après le match, Kenny Omega apparaît, met KO Boltin Oleg puis Tsuji (V-Trigger et One Winged Angel) et réclame un match pour le titre."
-    }
-   ],
-   "res": [
-    "Yota Tsuji conserve le titre IWGP Heavyweight face à Ryohei Oiwa",
-    "Unbound Co. remporte les titres NEVER 6-Man face à United Empire",
-    "Gabe Kidd, YOH et Aaron Wolf conservent leurs titres",
-    "Kenny Omega attaque Yota Tsuji après le match"
-   ],
-   "s": "The SmackDown Hotel · Fightful",
-   "u": "https://www.thesmackdownhotel.com/events-results/ppv-special/njpw-king-of-pro-wrestling-2026"
   },
   "Marigold|PLE|2026-10-24": {
    "v": [],
@@ -843,6 +794,120 @@
    ],
    "s": "Wrestling Inc.",
    "u": "https://www.wrestlinginc.com/2310917/wwe-raw-november-9-2026-results/"
+  },
+  "WWE|NXT|2026-11-10": {
+   "res": [
+    "EK Prosper a battu Kam Hendrix.",
+    "Izzi Dame a battu Wren Sinclair.",
+    "Lizzy Rain a battu Chantel Monroe.",
+    "The Vanity Project (Brad Baylor et Ricky Smokes) ont battu Hank et Tank et conserve le titre NXT Tag Team."
+   ],
+   "seg": [
+    {
+     "k": "Promo",
+     "t": "Le champion NXT Grayson Waller se moque de CM Punk en entrant sur sa musique."
+    },
+    {
+     "k": "Retour",
+     "t": "Mason Rook fait son retour et attaque Grayson Waller, rejoint par Shiloh Hill."
+    },
+    {
+     "k": "Autre",
+     "t": "Après sa défaite, Kam Hendrix pète les plombs et jette des chaises dans le ring."
+    },
+    {
+     "k": "Attaque",
+     "t": "Zaria, championne North American féminine de NXT, attaque Izzi Dame après sa victoire."
+    },
+    {
+     "k": "Promo",
+     "t": "Kendal Grey défie la championne NXT Kelani Jordan pour un match de championnat."
+    },
+    {
+     "k": "Attaque",
+     "t": "Hank et Tank attaquent Ricky Smokes et Brad Baylor avant le match de championnat ; Noam Dar et Romeo Moreno interviennent ensuite, sans succès."
+    },
+    {
+     "k": "Attaque",
+     "t": "Los Perros del Mal, DarkState et BirthRight interrompent le discours de Zilla Fatu : énorme bagarre générale."
+    }
+   ],
+   "s": "WWE.com",
+   "u": "https://www.wwe.com/shows/wwenxt/2026-11-10"
+  },
+  "AEW|Dynamite|2026-11-11": {
+   "res": [
+    "Brodido (Bandido et Brody King) et The New Level (Austin Creed et Kofi) ont fait double décompte à l’extérieur ; Brodido conserve le titre AEW World Trios.",
+    "David Finlay a battu Orange Cassidy.",
+    "Persephone a battu Gypsy Mac.",
+    "Motor City Machine Guns (Alex Shelley et Chris Sabin) ont battu FTR dans le 5e match de leur série et deviennent aspirants n°1 au titre AEW World Tag Team.",
+    "Tommaso Ciampa a battu « Speedball » Mike Bailey et conserve le titre AEW National.",
+    "Jon Moxley et Marina Shafir ont battu Mercedes Moné et Jay White."
+   ],
+   "seg": [
+    {
+     "k": "Backstage",
+     "t": "Images inédites d’Adam Copeland quittant son équipe après Blood and Guts ; il reproche à Ospreay et aux autres d’avoir abandonné."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Face-à-face entre le champion du monde AEW Will Ospreay et Kyle Fletcher : Fletcher gifle Ospreay, qui a le dernier mot."
+    },
+    {
+     "k": "Annonce",
+     "t": "Kazuchika Okada défendra le titre AEW International contre Adam Copeland à Full Gear."
+    },
+    {
+     "k": "Attaque",
+     "t": "Clark Connors attaque Orange Cassidy par surprise après son match."
+    },
+    {
+     "k": "Promo",
+     "t": "Andrade El Ídolo, après avoir perdu le titre National, promet de devenir le premier champion du monde AEW latino."
+    },
+    {
+     "k": "Promo",
+     "t": "Hangman Adam Page et Brodido parlent de leur Texas Death match à Full Gear."
+    },
+    {
+     "k": "Annonce",
+     "t": "Ilja Dragunov défie Tommaso Ciampa pour le titre National à Full Gear ; Ciampa lui fait un doigt d’honneur."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après le match mixte, Mercedes Moné attaque Marina Shafir et The Cut s’en prend aux Death Riders ; Orange Cassidy intervient et Moxley lui serre la main, puis Moné frappe Shafir avec sa ceinture."
+    }
+   ],
+   "s": "AEW",
+   "u": "https://www.allelitewrestling.com/post/aew-dynamite-collision-results-november-11-2026"
+  },
+  "AEW|Collision|2026-11-11": {
+   "res": [
+    "Les Young Bucks et « Jungle » Jack Perry ont battu Kevin Knight, Brian Cage et El Clon.",
+    "Wardlow a battu Nick Comoroto.",
+    "El SkyTeam (Místico et Máscara Dorada) ont battu The Swirl (Lee Johnson et Blake Christian) et conserve le titre ROH World Tag Team.",
+    "Queen Aminata a battu Hyan et Skye Blue et conserve le titre TBS."
+   ],
+   "seg": [
+    {
+     "k": "Promo",
+     "t": "Divine Dominion réagit à sa défaite à Blood and Guts."
+    },
+    {
+     "k": "Promo",
+     "t": "Jack Perry et les Young Bucks parlent de leurs matchs à Full Gear."
+    },
+    {
+     "k": "Autre",
+     "t": "Nick Wayne interrompt le match du titre ROH par équipe en affirmant avoir battu Chris Jericho."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après le match à trois, Persephone attaque Queen Aminata grâce à une distraction de Britt Baker ; Maya World vient en aide : Aminata défendra le titre TBS contre Persephone et Maya World à Tailgate Brawl."
+    }
+   ],
+   "s": "AEW",
+   "u": "https://www.allelitewrestling.com/post/aew-dynamite-collision-results-november-11-2026"
   }
  }
 }
