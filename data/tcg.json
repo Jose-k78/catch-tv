@@ -264,7 +264,18 @@
    "medalOf": "Elio LeFleur"
   },
   "lizzy-rain": {
-   "img": "img/tcg/mwe0fdbc.jpg"
+   "img": "img/tcg/mwe0fdbc.jpg",
+   "k": "WWE",
+   "r": "N",
+   "max": "R",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Lizzy Rain"
   }
  },
  "bgm": {
