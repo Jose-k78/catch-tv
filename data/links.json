@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T21:27:09.771Z",
+ "updated": "2026-11-12T23:17:31.085Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "m:statlight kid vs suzu suzuki": [
@@ -258,6 +258,15 @@
     "t": "",
     "u": "https://vksport.vkvideo.ru/video-54361599_456301457",
     "p": "VK",
+    "at": "2026-11-12",
+    "def": true
+   }
+  ],
+  "ref:Yota Tsuji contre Ryohei Oiwa — titre IWGP Heavyweight|King of Pro-Wrestling 2026": [
+   {
+    "t": "",
+    "u": "https://geo.dailymotion.com/player/xabc123.html?video=xbmak86&autoplay=1&mute=1",
+    "p": "Dailymotion",
     "at": "2026-11-12",
     "def": true
    }
