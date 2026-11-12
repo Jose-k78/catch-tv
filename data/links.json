@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T23:17:43.749Z",
+ "updated": "2026-11-12T23:45:44.256Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "m:statlight kid vs suzu suzuki": [
@@ -273,6 +273,15 @@
     "t": "",
     "u": "https://geo.dailymotion.com/player/xabc123.html?video=xbmak86&autoplay=1&mute=1",
     "p": "Dailymotion",
+    "at": "2026-11-12",
+    "def": true
+   }
+  ],
+  "tn:g1-2026|0-0": [
+   {
+    "t": "",
+    "u": "https://vk.com/video_ext.php?oid=-226973018&id=456241756&autoplay=1",
+    "p": "VK",
     "at": "2026-11-12",
     "def": true
    }
