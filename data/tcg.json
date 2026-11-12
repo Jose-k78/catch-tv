@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11",
+ "updated": "2026-11-12",
  "note": "Réglages TCCCG du modo (cartes, persos, taux, objets, boosters, combats, musiques, assets). Modifié depuis l’app (⚙️ Modo TCCCG).",
  "cards": {
   "ace-austin": {
@@ -308,7 +308,7 @@
   }
  },
  "assets": {
-  "back": "img/tcg/mwaoar8x.jpg",
+  "back": "img/tcg/mwdl0lb3.jpg",
   "booster": "img/tcg/mwb10ljw.jpg"
  },
  "boosters": [
