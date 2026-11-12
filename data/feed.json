@@ -1,15 +1,6 @@
 {
- "at": "2026-11-12T10:30:44.825Z",
+ "at": "2026-11-12T11:27:31.382Z",
  "items": [
-  {
-   "t": "Rikishi : « Je suis fier de vous tous »",
-   "u": "https://www.catch-newz.com/wwe/newz/61247-rikishi-je-suis-fier-de-vous-tous",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "WWE"
-   ]
-  },
   {
    "t": "Preview : TNA Impact du 12 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
@@ -38,6 +29,15 @@
     "AEW",
     "Dynamite",
     "Collision"
+   ]
+  },
+  {
+   "t": "Rikishi : « Je suis fier de vous tous »",
+   "u": "https://www.catch-newz.com/wwe/newz/61247-rikishi-je-suis-fier-de-vous-tous",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -992,12 +992,12 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61247-rikishi-je-suis-fier-de-vous-tous",
    "https://www.catch-newz.com/wwe/resultats/61239-wwe-main-event-11-novembre-2026",
    "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
    "https://www.catch-newz.com/international/newz/61234-carte-de-cmll-jueves-arena-coliseo-du-12-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61233-resultats-de-cmll-martes-populares-du-10-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61232-resultats-de-cmll-martes-de-glamour-du-10-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61247-rikishi-je-suis-fier-de-vous-tous",
    "https://www.catch-newz.com/international/newz/61240-fred-rosser-reagit-a-la-fin-de-njpw-academy",
    "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61246-cody-rhodes-attend-la-validation-de-lequipe-creative-de-la-wwe-pour-faire-son-heel-turn",
@@ -1293,7 +1293,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
