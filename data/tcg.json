@@ -331,7 +331,18 @@
    "img": "img/catcheurs/tetsuya-naito-v2.webp"
   },
   "johnny-gargano": {
-   "img": "img/catcheurs/johnny-gargano-v2.webp"
+   "img": "img/catcheurs/johnny-gargano-v2.webp",
+   "k": "WWE",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Technician",
+   "al": "face",
+   "fin": {
+    "n": "One Final Beat",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Tommaso Ciampa"
   }
  },
  "bgm": {
