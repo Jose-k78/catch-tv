@@ -1,6 +1,15 @@
 {
- "at": "2026-11-12T02:48:09.468Z",
+ "at": "2026-11-12T03:51:52.124Z",
  "items": [
+  {
+   "t": "Tommaso Ciampa vs Ilja Dragunov est officiel pour AEW Full Gear",
+   "u": "https://www.catch-newz.com/aew/newz/61242-tommaso-ciampa-vs-ilja-dragunov-est-officiel-pour-aew-full-gear",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "AEW"
+   ]
+  },
   {
    "t": "Preview : TNA Impact du 12 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
@@ -507,13 +516,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-10",
    "tags": []
-  },
-  {
-   "t": "Résultats de GNPW GenNext Bobby Jones Memorial Rumble 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61175-resultats-de-gnpw-gennext-bobby-jones-memorial-rumble-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": []
   }
  ],
  "yt": {
@@ -955,6 +957,7 @@
    "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
+   "https://www.catch-newz.com/aew/newz/61242-tommaso-ciampa-vs-ilja-dragunov-est-officiel-pour-aew-full-gear",
    "https://www.catch-newz.com/wwe/resultats/61239-wwe-main-event-11-novembre-2026",
    "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
@@ -1250,12 +1253,11 @@
    "https://www.catch-newz.com/culture/cineserie/60928-dave-batista-prend-10-kilos-pour-son-role-de-kratos",
    "https://www.catch-newz.com/wwe/newz/60944-wwe-raw-cruz-montana-rejoint-946-pour-tabasser-la-bloodline",
    "https://www.catch-newz.com/wwe/newz/60940-joe-hendry-lance-un-cri-du-coeur-pendant-un-segment-publicitaire-a-wwe-raw",
-   "https://www.catch-newz.com/wwe/newz/60943-wwe-raw-the-vision-demolit-encore-une-fois-ses-concurrents-a-brooklyn",
-   "https://www.catch-newz.com/wwe/newz/60941-wwe-raw-cinq-jours-avant-crown-jewel-liv-morgan-rive-les-epaules-de-chelsea-green"
+   "https://www.catch-newz.com/wwe/newz/60943-wwe-raw-the-vision-demolit-encore-une-fois-ses-concurrents-a-brooklyn"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 11 nouveaux articles lus sur la page d'accueil (11 liens)",
+  "Catch-Newz": "pas de flux RSS : 12 nouveaux articles lus sur la page d'accueil (12 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
