@@ -53,7 +53,18 @@
   },
   "gabe-kidd": {
    "img": "img/catcheurs/gabe-kidd.webp",
-   "imgUR": "img/catcheurs/gabe-kidd.webp"
+   "imgUR": "img/catcheurs/gabe-kidd.webp",
+   "k": "NJPW, AEW",
+   "r": "SSR",
+   "max": "LR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Piledriver",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Jon Moxley"
   },
   "liv-morgan": {
    "r": "SSR",
