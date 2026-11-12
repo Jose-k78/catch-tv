@@ -1,6 +1,17 @@
 {
- "at": "2026-11-12T11:27:31.382Z",
+ "at": "2026-11-12T12:29:30.038Z",
  "items": [
+  {
+   "t": "AEW Dynamite & Collision du 11 novembre : Dernière ligne droite vers AEW Full Gear",
+   "u": "https://www.voxcatch.fr/2026/11/12/resultats-aew-dynamite-collision-11-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-12",
+   "tags": [
+    "AEW",
+    "Dynamite",
+    "Collision"
+   ]
+  },
   {
    "t": "Preview : TNA Impact du 12 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
@@ -18,17 +29,6 @@
    "d": "2026-11-12",
    "tags": [
     "CMLL"
-   ]
-  },
-  {
-   "t": "AEW Dynamite & Collision du 11 novembre : Dernière ligne droite vers AEW Full Gear",
-   "u": "https://www.voxcatch.fr/2026/11/12/resultats-aew-dynamite-collision-11-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-12",
-   "tags": [
-    "AEW",
-    "Dynamite",
-    "Collision"
    ]
   },
   {
@@ -310,6 +310,16 @@
    "tags": []
   },
   {
+   "t": "WWE Raw du 9 novembre : Survivor Series se prépare",
+   "u": "https://www.voxcatch.fr/2026/11/10/resultats-wwe-raw-9-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
+  {
    "t": "Résultats de WWE NXT du 10 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
    "s": "Catch-Newz",
@@ -335,16 +345,6 @@
    "d": "2026-11-10",
    "tags": [
     "CMLL"
-   ]
-  },
-  {
-   "t": "WWE Raw du 9 novembre : Survivor Series se prépare",
-   "u": "https://www.voxcatch.fr/2026/11/10/resultats-wwe-raw-9-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-10",
-   "tags": [
-    "WWE",
-    "Raw"
    ]
   },
   {
@@ -1293,7 +1293,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 0 nouveaux articles lus sur la page d'accueil (0 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
