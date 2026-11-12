@@ -1,15 +1,22 @@
 {
- "at": "2026-11-12T12:29:30.038Z",
+ "at": "2026-11-12T13:47:32.931Z",
  "items": [
   {
-   "t": "AEW Dynamite & Collision du 11 novembre : Dernière ligne droite vers AEW Full Gear",
-   "u": "https://www.voxcatch.fr/2026/11/12/resultats-aew-dynamite-collision-11-novembre-2026/",
-   "s": "VOXcatch",
+   "t": "Il y a 8 ans, cette blessure a changé la carrière de Becky Lynch",
+   "u": "https://www.catch-newz.com/wwe/newz/61249-il-y-a-8-ans-cette-blessure-a-change-la-carriere-de-becky-lynch",
+   "s": "Catch-Newz",
    "d": "2026-11-12",
    "tags": [
-    "AEW",
-    "Dynamite",
-    "Collision"
+    "WWE"
+   ]
+  },
+  {
+   "t": "AEW Full Gear 2026 : Heure et chaine pour regarder le show en direct",
+   "u": "https://www.catch-newz.com/aew/newz/61248-aew-full-gear-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "AEW"
    ]
   },
   {
@@ -23,12 +30,33 @@
    ]
   },
   {
+   "t": "Carte de CMLL Viernes Espectacular du 13 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61235-carte-de-cmll-viernes-espectacular-du-13-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "CMLL",
+    "Viernes Espectacular"
+   ]
+  },
+  {
    "t": "Carte de CMLL Jueves Arena Coliseo du 12 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61234-carte-de-cmll-jueves-arena-coliseo-du-12-novembre-2026",
    "s": "Catch-Newz",
    "d": "2026-11-12",
    "tags": [
     "CMLL"
+   ]
+  },
+  {
+   "t": "AEW Dynamite & Collision du 11 novembre : Dernière ligne droite vers AEW Full Gear",
+   "u": "https://www.voxcatch.fr/2026/11/12/resultats-aew-dynamite-collision-11-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-12",
+   "tags": [
+    "AEW",
+    "Dynamite",
+    "Collision"
    ]
   },
   {
@@ -310,16 +338,6 @@
    "tags": []
   },
   {
-   "t": "WWE Raw du 9 novembre : Survivor Series se prépare",
-   "u": "https://www.voxcatch.fr/2026/11/10/resultats-wwe-raw-9-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-10",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
-  },
-  {
    "t": "Résultats de WWE NXT du 10 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
    "s": "Catch-Newz",
@@ -336,6 +354,16 @@
    "d": "2026-11-10",
    "tags": [
     "CMLL"
+   ]
+  },
+  {
+   "t": "WWE Raw du 9 novembre : Survivor Series se prépare",
+   "u": "https://www.voxcatch.fr/2026/11/10/resultats-wwe-raw-9-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE",
+    "Raw"
    ]
   },
   {
@@ -489,33 +517,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-10",
    "tags": []
-  },
-  {
-   "t": "Andrade El Idolo accuse Ethan Page d’avoir copié son entrée d'All In à WWE RAW",
-   "u": "https://www.catch-newz.com/wwe/newz/61190-andrade-el-idolo-accuse-ethan-page-davoir-copie-son-entree-dall-in-a-wwe-raw",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": [
-    "WWE",
-    "AEW",
-    "Raw"
-   ]
-  },
-  {
-   "t": "Résultats de GNPW Never Say Die 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61174-resultats-de-gnpw-never-say-die-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": []
-  },
-  {
-   "t": "Paramount+ et HBO Max vont bien fusionner",
-   "u": "https://www.catch-newz.com/aew/newz/61189-paramount-et-hbo-max-vont-bien-fusionner",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": [
-    "AEW"
-   ]
   }
  ],
  "yt": {
@@ -992,8 +993,11 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61249-il-y-a-8-ans-cette-blessure-a-change-la-carriere-de-becky-lynch",
+   "https://www.catch-newz.com/aew/newz/61248-aew-full-gear-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
    "https://www.catch-newz.com/wwe/resultats/61239-wwe-main-event-11-novembre-2026",
    "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61235-carte-de-cmll-viernes-espectacular-du-13-novembre-2026",
    "https://www.catch-newz.com/international/newz/61234-carte-de-cmll-jueves-arena-coliseo-du-12-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61233-resultats-de-cmll-martes-populares-du-10-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61232-resultats-de-cmll-martes-de-glamour-du-10-novembre-2026",
@@ -1286,14 +1290,11 @@
    "https://www.catch-newz.com/wwe/newz/60960-oba-femi-est-il-un-vainqueur-probable-du-john-cena-classic",
    "https://www.catch-newz.com/wwe/newz/60959-les-dates-au-calendrier-de-john-cena-dici-le-john-cena-classic",
    "https://www.catch-newz.com/wwe/newz/60956-cruz-montana-va-t-il-quand-meme-combattre-dion-lennox-a-nxt-ce-mercredi-malgre-ses-debuts-a-raw",
-   "https://www.catch-newz.com/international/resultats/60933-resultats-de-iwrg-funcion-espectacular-du-1er-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/60952-resultats-de-njpw-power-struggle-super-junior-tag-league-2026",
-   "https://www.catch-newz.com/international/newz/60949-njpw-power-struggle-2026-kenny-omega-ecarte-la-menace-oleg-et-humilie-yota-tsuji",
-   "https://www.catch-newz.com/international/newz/60948-njpw-power-struggle-2026-wil-ospreay-et-callum-newman-en-viennent-aux-mains"
+   "https://www.catch-newz.com/international/resultats/60933-resultats-de-iwrg-funcion-espectacular-du-1er-novembre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 0 nouveaux articles lus sur la page d'accueil (0 liens)",
+  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
