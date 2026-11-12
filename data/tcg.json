@@ -390,7 +390,18 @@
    "medalOf": "Uncle Howdy"
   },
   "pagano": {
-   "img": "img/catcheurs/pagano-v2.webp"
+   "img": "img/catcheurs/pagano-v2.webp",
+   "k": "AAA",
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Pagano"
   }
  },
  "bgm": {
