@@ -1,5 +1,5 @@
 {
- "at": "2026-11-12T04:56:12.895Z",
+ "at": "2026-11-12T07:07:59.829Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -469,108 +469,15 @@
   "a:https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026": "2026-11-12",
   "a:https://www.catch-newz.com/wwe/resultats/61239-wwe-main-event-11-novembre-2026": "2026-11-12",
   "a:https://www.catch-newz.com/aew/newz/61242-tommaso-ciampa-vs-ilja-dragunov-est-officiel-pour-aew-full-gear": "2026-11-12",
-  "a:https://www.catch-newz.com/international/newz/61243-une-derniere-chance-pour-acheter-sur-le-tokon-shop-global-de-la-njpw": "2026-11-12"
+  "a:https://www.catch-newz.com/international/newz/61243-une-derniere-chance-pour-acheter-sur-le-tokon-shop-global-de-la-njpw": "2026-11-12",
+  "a:https://www.catch-newz.com/wwe/newz/61245-zilla-fatu-lorsque-john-cena-a-parle-dumaga-jai-eu-le-coeur-serre": "2026-11-12",
+  "a:https://www.catch-newz.com/wwe/newz/61244-becky-lynch-liv-morgan-ne-peut-rien-faire-toute-seule": "2026-11-12",
+  "poll:p-20261112-fg-ospreay": "2026-11-12",
+  "poll:p-20261112-fg-mone": "2026-11-12",
+  "poll:p-20261112-japon-rivalite": "2026-11-12",
+  "poll:p-20261112-dream": "2026-11-12",
+  "poll:p-20261112-babies": "2026-11-12",
+  "story:misawa-kobashi": "2026-11-12"
  },
- "pend": {
-  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
-   {
-    "cat": "info",
-    "title": "📰 2 nouvelles infos",
-    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "2 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Nouvelle info · Catch-Newz",
-    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "1 nouvelle info"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Nouvelle info · Catch-Newz",
-    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "1 nouvelle info"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Nouvelle info · Catch-Newz",
-    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "1 nouvelle info"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Nouvelle info · Catch-Newz",
-    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "1 nouvelle info"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Nouvelle info · Catch-Newz",
-    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "1 nouvelle info"
-   }
-  ],
-  "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
-   {
-    "cat": "info",
-    "title": "📰 2 nouvelles infos",
-    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "2 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Nouvelle info · Catch-Newz",
-    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "1 nouvelle info"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Nouvelle info · Catch-Newz",
-    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "1 nouvelle info"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Nouvelle info · Catch-Newz",
-    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "1 nouvelle info"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Nouvelle info · Catch-Newz",
-    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "1 nouvelle info"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Nouvelle info · Catch-Newz",
-    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "1 nouvelle info"
-   }
-  ]
- }
+ "pend": {}
 }

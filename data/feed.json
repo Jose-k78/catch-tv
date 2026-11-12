@@ -1,6 +1,24 @@
 {
- "at": "2026-11-12T05:57:47.576Z",
+ "at": "2026-11-12T07:07:59.777Z",
  "items": [
+  {
+   "t": "Zilla Fatu : « Lorsque John Cena a parlé d'Umaga, j'ai eu le cœur serré »",
+   "u": "https://www.catch-newz.com/wwe/newz/61245-zilla-fatu-lorsque-john-cena-a-parle-dumaga-jai-eu-le-coeur-serre",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Becky Lynch : « Liv Morgan ne peut rien faire toute seule »",
+   "u": "https://www.catch-newz.com/wwe/newz/61244-becky-lynch-liv-morgan-ne-peut-rien-faire-toute-seule",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Preview : TNA Impact du 12 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
@@ -497,26 +515,6 @@
     "WWE",
     "Raw"
    ]
-  },
-  {
-   "t": "WWE RAW : CM Punk intègre la team USA aux côtés de Cody Rhodes",
-   "u": "https://www.catch-newz.com/wwe/newz/61186-wwe-raw-cm-punk-integre-la-team-usa-aux-cotes-de-cody-rhodes",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
-  },
-  {
-   "t": "WWE RAW : Rey Fenix devient le nouveau challenger n°1 au titre Intercontinental d'Ethan Page",
-   "u": "https://www.catch-newz.com/wwe/newz/61184-wwe-raw-rey-fenix-devient-le-nouveau-challenger-n-1-au-titre-intercontinental-dethan-page",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
   }
  ],
  "yt": {
@@ -957,14 +955,16 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61245-zilla-fatu-lorsque-john-cena-a-parle-dumaga-jai-eu-le-coeur-serre",
+   "https://www.catch-newz.com/wwe/newz/61244-becky-lynch-liv-morgan-ne-peut-rien-faire-toute-seule",
    "https://www.catch-newz.com/wwe/resultats/61239-wwe-main-event-11-novembre-2026",
    "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61222-audiences-wwe-aew-et-tna-26-octobre-au-1er-novembre-2026",
    "https://www.catch-newz.com/international/newz/61234-carte-de-cmll-jueves-arena-coliseo-du-12-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61233-resultats-de-cmll-martes-populares-du-10-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61232-resultats-de-cmll-martes-de-glamour-du-10-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61222-audiences-wwe-aew-et-tna-26-octobre-au-1er-novembre-2026",
    "https://www.catch-newz.com/aew/newz/60606-carte-aew-full-gear-2026",
    "https://www.catch-newz.com/international/newz/61243-une-derniere-chance-pour-acheter-sur-le-tokon-shop-global-de-la-njpw",
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
@@ -1252,13 +1252,11 @@
    "https://www.catch-newz.com/international/newz/60950-njpw-power-struggle-2026-mjf-lance-un-nouveau-challenge-a-ryohei-oiwa",
    "https://www.catch-newz.com/international/newz/60900-carte-de-cmll-lunes-clasico-du-2-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60947-john-cena-sera-aux-wwe-survivor-series-2026",
-   "https://www.catch-newz.com/wwe/newz/60946-ou-et-quand-aura-lieu-precisement-le-john-cena-classic-a-disney-world",
-   "https://www.catch-newz.com/culture/cineserie/60928-dave-batista-prend-10-kilos-pour-son-role-de-kratos",
-   "https://www.catch-newz.com/wwe/newz/60944-wwe-raw-cruz-montana-rejoint-946-pour-tabasser-la-bloodline"
+   "https://www.catch-newz.com/wwe/newz/60946-ou-et-quand-aura-lieu-precisement-le-john-cena-classic-a-disney-world"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 10 nouveaux articles lus sur la page d'accueil (10 liens)",
+  "Catch-Newz": "pas de flux RSS : 11 nouveaux articles lus sur la page d'accueil (11 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
