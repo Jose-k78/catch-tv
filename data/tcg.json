@@ -410,7 +410,8 @@
   },
   "jade-cargill": {
    "img": "img/catcheurs/jade-cargill-v2.webp",
-   "imgUR": "img/catcheurs/jade-cargill.webp"
+   "imgUR": "img/catcheurs/jade-cargill.webp",
+   "imgLR": "-"
   }
  },
  "bgm": {
