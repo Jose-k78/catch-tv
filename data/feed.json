@@ -1,15 +1,6 @@
 {
- "at": "2026-11-12T21:44:05.081Z",
+ "at": "2026-11-12T22:43:01.511Z",
  "items": [
-  {
-   "t": "Lizzy Rain : « Il y a deux ans jour pour jour, je me suis cassé le tibia »",
-   "u": "https://www.catch-newz.com/wwe/newz/61258-lizzy-rain-il-y-a-deux-ans-jour-pour-jour-je-me-suis-casse-le-tibia",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "WWE"
-   ]
-  },
   {
    "t": "La WWE prépare un RAW spécial le 4 janvier 2027",
    "u": "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-le-4-janvier-2027",
@@ -29,6 +20,15 @@
     "AEW",
     "Dynamite",
     "Collision"
+   ]
+  },
+  {
+   "t": "Lizzy Rain : « Il y a deux ans jour pour jour, je me suis cassé le tibia »",
+   "u": "https://www.catch-newz.com/wwe/newz/61258-lizzy-rain-il-y-a-deux-ans-jour-pour-jour-je-me-suis-casse-le-tibia",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -991,6 +991,10 @@
    {
     "id": "18f2DPDc9D8",
     "t": "EXCLUSIVE: Raquel Rodriguez aims to destroy IYO SKY: Main Event highlights, Nov. 11, 2026"
+   },
+   {
+    "id": "pKafkmpf-Ro",
+    "t": "EXCLUSIVE: Axiom to Damian Priest: “You are a coward”: Main Event highlights, Nov. 11, 2026"
    }
   ]
  },
@@ -1005,9 +1009,9 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61258-lizzy-rain-il-y-a-deux-ans-jour-pour-jour-je-me-suis-casse-le-tibia",
    "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-le-4-janvier-2027",
    "https://www.catch-newz.com/aew/newz/61254-une-organisation-difficile-a-aew-dynamite-le-11-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61258-lizzy-rain-il-y-a-deux-ans-jour-pour-jour-je-me-suis-casse-le-tibia",
    "https://www.catch-newz.com/wwe/newz/61257-john-cena-implique-personnellement-pour-le-john-cena-classic",
    "https://www.catch-newz.com/international/newz/61237-carte-de-gcw-bedlam-in-boise-2026",
    "https://www.catch-newz.com/wwe/newz/61255-pourquoi-wwe-smackdown-du-27-novembre-ne-sera-pas-en-direct",
@@ -1306,7 +1310,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "1 nouvelles vidéos",
