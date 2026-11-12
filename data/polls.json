@@ -1,6 +1,72 @@
 {
-  "updated": "2026-11-11",
+  "updated": "2026-11-12",
   "items": [
+    {
+      "id": "p-20261112-fg-ospreay",
+      "d": "2026-11-12",
+      "type": "",
+      "k": "AEW",
+      "q": "Full Gear : qui repart avec le titre mondial de l’AEW ?",
+      "opts": [
+        "Will Ospreay (il garde son titre)",
+        "Kyle Fletcher"
+      ],
+      "other": false,
+      "end": "2026-11-14"
+    },
+    {
+      "id": "p-20261112-fg-mone",
+      "d": "2026-11-12",
+      "type": "",
+      "k": "AEW",
+      "q": "Full Gear : Mercedes Moné garde-t-elle son titre face à Marina Shafir ?",
+      "opts": [
+        "Oui",
+        "Non"
+      ],
+      "other": false,
+      "end": "2026-11-14"
+    },
+    {
+      "id": "p-20261112-japon-rivalite",
+      "d": "2026-11-12",
+      "type": "",
+      "k": "",
+      "q": "La plus grande rivalité du catch japonais ?",
+      "opts": [
+        "Misawa contre Kobashi",
+        "Okada contre Omega",
+        "Mayu Iwatani contre Io Shirai"
+      ],
+      "other": true,
+      "end": ""
+    },
+    {
+      "id": "p-20261112-dream",
+      "d": "2026-11-12",
+      "type": "match",
+      "k": "",
+      "q": "Dream match : Trish Stratus contre Mayu Iwatani, qui gagne ?",
+      "opts": [
+        "Trish Stratus",
+        "Mayu Iwatani"
+      ],
+      "other": false,
+      "end": "2026-11-15"
+    },
+    {
+      "id": "p-20261112-babies",
+      "d": "2026-11-12",
+      "type": "babies",
+      "k": "",
+      "q": "Qui est la meilleure babies entre Jade Cargill et Momo Watanabe ?",
+      "opts": [
+        "Jade Cargill",
+        "Momo Watanabe"
+      ],
+      "other": false,
+      "end": "2026-11-14"
+    },
     {
       "id": "p-20261111-ic-page",
       "d": "2026-11-11",
