@@ -1,5 +1,5 @@
 {
- "at": "2026-11-11T23:22:54.584Z",
+ "at": "2026-11-12T01:49:24.809Z",
  "items": [
   {
    "t": "Preview : TNA Impact du 12 novembre 2026",
@@ -28,6 +28,16 @@
    "d": "2026-11-12",
    "tags": [
     "CMLL"
+   ]
+  },
+  {
+   "t": "Résultats de AEW Dynamite du 11 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": [
+    "AEW",
+    "Dynamite"
    ]
   },
   {
@@ -501,13 +511,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-10",
    "tags": []
-  },
-  {
-   "t": "Combien de temps va durer FinalSlam ?",
-   "u": "https://www.catch-newz.com/international/newz/61129-combien-de-temps-va-durer-finalslam",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": []
   }
  ],
  "yt": {
@@ -946,10 +949,11 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
+   "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
    "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
+   "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61222-audiences-wwe-aew-et-tna-26-octobre-au-1er-novembre-2026",
    "https://www.catch-newz.com/international/newz/61234-carte-de-cmll-jueves-arena-coliseo-du-12-novembre-2026",
@@ -1244,12 +1248,11 @@
    "https://www.catch-newz.com/wwe/newz/60940-joe-hendry-lance-un-cri-du-coeur-pendant-un-segment-publicitaire-a-wwe-raw",
    "https://www.catch-newz.com/wwe/newz/60943-wwe-raw-the-vision-demolit-encore-une-fois-ses-concurrents-a-brooklyn",
    "https://www.catch-newz.com/wwe/newz/60941-wwe-raw-cinq-jours-avant-crown-jewel-liv-morgan-rive-les-epaules-de-chelsea-green",
-   "https://www.catch-newz.com/wwe/newz/60938-roman-reigns-sans-moi-sami-tu-ne-serais-meme-plus-dans-cette-compagnie",
-   "https://www.catch-newz.com/wwe/newz/60939-wwe-raw-ethan-page-devient-le-nouveau-champion-intercontinental-et-met-fin-au-regne-incroyable-de-chad-gable"
+   "https://www.catch-newz.com/wwe/newz/60938-roman-reigns-sans-moi-sami-tu-ne-serais-meme-plus-dans-cette-compagnie"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
+  "Catch-Newz": "pas de flux RSS : 10 nouveaux articles lus sur la page d'accueil (10 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
