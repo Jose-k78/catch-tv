@@ -1,12 +1,25 @@
 {
- "at": "2026-11-12T17:50:17.106Z",
+ "at": "2026-11-12T18:51:14.586Z",
  "items": [
   {
-   "t": "Quel avenir pour Killer Kross après sa perte du championnat MLW ?",
-   "u": "https://www.catch-newz.com/international/newz/61253-quel-avenir-pour-killer-kross-apres-sa-perte-du-championnat-mlw",
+   "t": "La WWE prépare un RAW spécial le 4 janvier 2027",
+   "u": "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-le-4-janvier-2027",
    "s": "Catch-Newz",
    "d": "2026-11-12",
-   "tags": []
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
+  {
+   "t": "Pourquoi WWE SmackDown du 27 novembre ne sera pas en direct ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61255-pourquoi-wwe-smackdown-du-27-novembre-ne-sera-pas-en-direct",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
   },
   {
    "t": "Carte de CMLL Viernes Espectacular du 13 novembre 2026",
@@ -28,6 +41,13 @@
     "Dynamite",
     "Collision"
    ]
+  },
+  {
+   "t": "Quel avenir pour Killer Kross après sa perte du championnat MLW ?",
+   "u": "https://www.catch-newz.com/international/newz/61253-quel-avenir-pour-killer-kross-apres-sa-perte-du-championnat-mlw",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": []
   },
   {
    "t": "Carte de GCW Massacre In Missoula 2026",
@@ -496,25 +516,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-10",
    "tags": []
-  },
-  {
-   "t": "Rey Fenix lance un tournoi pour son championnat AAA Cruiserweight",
-   "u": "https://www.catch-newz.com/wwe/newz/61195-rey-fenix-lance-un-tournoi-pour-son-championnat-aaa-cruiserweight",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": [
-    "WWE",
-    "AAA"
-   ]
-  },
-  {
-   "t": "La TNA annonce le représentant du Canada pour la World X-Cup 2026",
-   "u": "https://www.catch-newz.com/international/newz/61196-la-tna-annonce-le-representant-du-canada-pour-la-world-x-cup-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": [
-    "TNA"
-   ]
   }
  ],
  "yt": {
@@ -991,10 +992,12 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-le-4-janvier-2027",
+   "https://www.catch-newz.com/wwe/newz/61255-pourquoi-wwe-smackdown-du-27-novembre-ne-sera-pas-en-direct",
    "https://www.catch-newz.com/aew/newz/61254-une-organisation-difficile-a-aew-dynamite-le-11-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61235-carte-de-cmll-viernes-espectacular-du-13-novembre-2026",
    "https://www.catch-newz.com/international/newz/61253-quel-avenir-pour-killer-kross-apres-sa-perte-du-championnat-mlw",
    "https://www.catch-newz.com/wwe/resultats/61239-wwe-main-event-11-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61235-carte-de-cmll-viernes-espectacular-du-13-novembre-2026",
    "https://www.catch-newz.com/international/newz/61236-carte-de-gcw-massacre-in-missoula-2026",
    "https://www.catch-newz.com/international/newz/61252-trois-francaises-dans-le-pwi-250-de-2026",
    "https://www.catch-newz.com/wwe/newz/61251-stephanie-vaquer-finit-premiere-du-pwi-250-de-2026",
@@ -1286,9 +1289,7 @@
    "https://www.catch-newz.com/international/resultats/60965-resultats-lwa-requiem-31-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/60930-wwe-raw-2-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60964-raquel-rodriguez-a-t-elle-lambition-de-devenir-championne-du-monde",
-   "https://www.catch-newz.com/international/resultats/60953-resultats-de-cmll-lunes-clasico-du-2-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/60963-jake-the-snake-roberts-clarifie-sa-situation-contractuelle-avec-la-wwe",
-   "https://www.catch-newz.com/wwe/newz/60962-spoiler-sur-le-retour-de-jacob-fatu-a-la-wwe"
+   "https://www.catch-newz.com/international/resultats/60953-resultats-de-cmll-lunes-clasico-du-2-novembre-2026"
   ]
  },
  "diag": {
