@@ -603,8 +603,6 @@
   }
  },
  "vogue": {
-  "boosters": [
-   "s:AAA|PLE|2026-10-24"
-  ]
+  "boosters": []
  }
 }
