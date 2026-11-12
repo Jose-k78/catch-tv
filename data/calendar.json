@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11",
+ "updated": "2026-11-12",
  "promotions": {
   "WWE": {
    "c": [
@@ -59,10 +59,13 @@
      "v": "Minute Maid Park",
      "nf": "81930099",
      "card": [
-      "WarGames : The Bloodline contre The 946",
+      "WarGames : The Bloodline (Roman Reigns, Jey Uso, Jimmy Uso, Jacob Fatu et Solo Sikoa) contre The 946 (Royce Keys, Carmelo Hayes, Cruz Montana, Bronco Nima et Lucien Price)",
       "Titre mondial féminin : Liv Morgan contre Becky Lynch",
       "Élimination à 5 contre 5 : Team USA contre Team Mexico"
-     ]
+     ],
+     "h": "18:00",
+     "tz": "America/New_York",
+     "dur": 240
     },
     {
      "t": "Wrestlepalooza",
@@ -224,6 +227,7 @@
       "Titre mondial de la AEW : Will Ospreay contre Kyle Fletcher",
       "Titre mondial féminin de la AEW : Mercedes Moné contre Marina Shafir",
       "Titre international de la AEW : Kazuchika Okada contre Adam Copeland",
+      "Titre Continental de la AEW : Jon Moxley contre Jay White",
       "Titres trios, Texas Death Match : Hangman Page, Brody King et Bandido contre Swerve Strickland, Kofi Kingston et Austin Creed",
       "Titres mondiaux par équipe : The Young Bucks contre Mark Davis et Jake Doyle",
       "Titres féminins par équipe : The Brawling Birds contre Wrathlander",
@@ -347,7 +351,10 @@
      "t": "Final Battle",
      "d": "2026-12-04",
      "w": "San Antonio (Texas)",
-     "v": "Boeing Center"
+     "v": "Boeing Center",
+     "card": [
+      "Titre mondial féminin de la ROH : Athena contre Hyan"
+     ]
     }
    ],
    "s": {
