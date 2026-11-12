@@ -1,0 +1,33 @@
+# Copie Phaser (moteur de jeu du TCCCG, licence MIT) dans js/vendor/ : le site le sert lui-même, sans CDN.
+# Se lance quand ce fichier change (ou à la main). Version fixée : 3.80.1.
+name: Phaser pour le TCCCG
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/vendor.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  vendor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Télécharger Phaser 3.80.1
+        run: |
+          npm pack phaser@3.80.1 --silent
+          tar -xzf phaser-3.80.1.tgz package/dist/phaser.min.js package/LICENSE.md
+          cp package/dist/phaser.min.js js/vendor/phaser.min.js
+          cp package/LICENSE.md js/vendor/PHASER-LICENSE.md
+          rm -rf package phaser-3.80.1.tgz
+          ls -la js/vendor
+      - name: Envoi sur le dépôt
+        run: |
+          if [ -z "$(git status --porcelain -- js/vendor)" ]; then echo "Rien de neuf"; exit 0; fi
+          git config user.name "TCC TV robot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add js/vendor
+          git commit -m "Phaser 3.80.1 pour le TCCCG (js/vendor)"
+          for i in 1 2 3; do git pull --rebase origin main && git push origin main && exit 0; sleep 7; done
+          exit 1
