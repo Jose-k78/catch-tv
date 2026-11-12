@@ -52,7 +52,8 @@
    "medalOf": "Calavera Jr. II"
   },
   "gabe-kidd": {
-   "img": "img/catcheurs/gabe-kidd.webp"
+   "img": "img/catcheurs/gabe-kidd.webp",
+   "imgUR": "img/catcheurs/gabe-kidd.webp"
   },
   "liv-morgan": {
    "r": "SSR",
