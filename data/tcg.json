@@ -293,6 +293,18 @@
   },
   "ryohei-oiwa": {
    "img": "img/tcg/mwe4kbxt.jpg"
+  },
+  "tetsuya-naito": {
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Destino",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Hiromu Takahashi"
   }
  },
  "bgm": {
