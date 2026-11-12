@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11",
+ "updated": "2026-11-12",
  "note": "Champions actuels : peut révéler des résultats récents.",
  "titles": [
   {
@@ -636,8 +636,14 @@
    "hist": [],
    "src": "The SmackDown Hotel",
    "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe",
-   "defs": [],
-   "def": 0
+   "defs": [
+    {
+     "d": "2026-11-10",
+     "ev": "NXT",
+     "vs": "Hank et Tank"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "evolve",
@@ -816,8 +822,14 @@
    ],
    "src": "WrestleView",
    "u": "https://www.wrestleview.com/top-story/396143-aew-fright-night-dynamite-results-two-title-matches-10-28-26/",
-   "defs": [],
-   "def": 0
+   "defs": [
+    {
+     "d": "2026-11-11",
+     "ev": "Collision",
+     "vs": "Hyan et Skye Blue"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "aew-cont",
@@ -857,8 +869,14 @@
    ],
    "src": "POST Wrestling",
    "u": "https://www.postwrestling.com/2026/11/07/tommaso-ciampa-wins-national-championship-from-andrade-el-idolo-on-aew-collision/",
-   "defs": [],
-   "def": 0
+   "defs": [
+    {
+     "d": "2026-11-11",
+     "ev": "Dynamite",
+     "vs": "« Speedball » Mike Bailey"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "aew-tag",
@@ -899,8 +917,14 @@
    ],
    "src": "Wikipédia",
    "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_All_Elite_Wrestling",
-   "defs": [],
-   "def": 0
+   "defs": [
+    {
+     "d": "2026-11-11",
+     "ev": "Dynamite",
+     "vs": "The New Level (Austin Creed et Kofi) (double décompte à l’extérieur)"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "aew-wtag",
@@ -2018,7 +2042,15 @@
    "ev": "CMLL Super Viernes",
    "hist": [],
    "src": "Wikipédia",
-   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Ring_of_Honor"
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Ring_of_Honor",
+   "defs": [
+    {
+     "d": "2026-11-11",
+     "ev": "Collision",
+     "vs": "The Swirl (Lee Johnson et Blake Christian)"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "roh-six",
