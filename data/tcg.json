@@ -345,7 +345,8 @@
    "medalOf": "Tommaso Ciampa"
   },
   "tama-tonga": {
-   "imgUR": "img/catcheurs/tama-tonga-v3.webp"
+   "imgUR": "img/catcheurs/tama-tonga-v3.webp",
+   "img": "img/catcheurs/tama-tonga-v2.webp"
   }
  },
  "bgm": {
