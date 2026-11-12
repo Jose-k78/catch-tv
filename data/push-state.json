@@ -1,5 +1,5 @@
 {
- "at": "2026-11-12T07:07:59.829Z",
+ "at": "2026-11-12T08:36:07.834Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -477,7 +477,13 @@
   "poll:p-20261112-japon-rivalite": "2026-11-12",
   "poll:p-20261112-dream": "2026-11-12",
   "poll:p-20261112-babies": "2026-11-12",
-  "story:misawa-kobashi": "2026-11-12"
+  "story:misawa-kobashi": "2026-11-12",
+  "a:https://www.catch-newz.com/wwe/newz/61246-cody-rhodes-attend-la-validation-de-lequipe-creative-de-la-wwe-pour-faire-son-heel-turn": "2026-11-12",
+  "t:nxt-tt:2026-11-10:db5z9v2": "2026-11-12",
+  "t:aew-tbs:2026-11-11:d1jcz9ci": "2026-11-12",
+  "t:aew-nat:2026-11-11:dzmb1rn": "2026-11-12",
+  "t:aew-trios:2026-11-11:dvcxjds": "2026-11-12",
+  "t:roh-tag:2026-11-11:d8cglh6": "2026-11-12"
  },
  "pend": {}
 }
