@@ -292,7 +292,18 @@
    "medalOf": "Oba Femi"
   },
   "ryohei-oiwa": {
-   "img": "img/tcg/mwe4kbxt.jpg"
+   "img": "img/tcg/mwe4kbxt.jpg",
+   "k": "NJPW",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Oiwa Driver",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Zack Sabre Jr."
   },
   "tetsuya-naito": {
    "r": "SR",
