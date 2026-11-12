@@ -3,9 +3,11 @@
 import { cfg } from "./data.js";
 
 let C = null, crowdNode = null, music = null;
-const ctx = () => { if (!C) { const A = window.AudioContext || window.webkitAudioContext; if (A) C = new A(); } if (C && C.state === "suspended") C.resume(); return C; };
+// réglage « Sons du jeu » (Paramètres du TCCCG)
+export const muted = () => { try { return localStorage.getItem("ctv.tgsnd") === "off"; } catch (e) { return false; } };
+const ctx = () => { if (muted()) return null; if (!C) { const A = window.AudioContext || window.webkitAudioContext; if (A) C = new A(); } if (C && C.state === "suspended") C.resume(); return C; };
 const custom = k => (cfg().bgm || {})[k] || "";
-function file(url, vol, loop) { try { const a = new Audio(url); a.volume = vol == null ? 0.8 : vol; a.loop = !!loop; a.play().catch(() => {}); return a; } catch (e) { return null; } }
+function file(url, vol, loop) { if (muted()) return null; try { const a = new Audio(url); a.volume = vol == null ? 0.8 : vol; a.loop = !!loop; a.play().catch(() => {}); return a; } catch (e) { return null; } }
 function noise(c, dur) { const b = c.createBuffer(1, Math.max(1, c.sampleRate * dur), c.sampleRate), d = b.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1; const s = c.createBufferSource(); s.buffer = b; return s; }
 function env(c, g, t, a, peak, dec) { g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(peak, t + a); g.gain.exponentialRampToValueAtTime(0.0001, t + a + dec); }
 // cloche du ring : plusieurs harmoniques métalliques qui s'éteignent

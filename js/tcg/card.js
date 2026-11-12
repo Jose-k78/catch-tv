@@ -15,6 +15,8 @@ export const typeWheel = (size, cur) => {
 };
 const alSym = al => al === "heel" ? '<span class="tal heel" title="Heel">😈</span>' : al === "face" ? '<span class="tal face" title="Face">😇</span>' : al === "tweener" ? '<span class="tal" title="Tweener">⚖️</span>' : "";
 
+// icône d'un objet : image du modo s'il en a mis une, sinon l'émoji
+export const itemIc = (it, cls) => !it ? "" : it.img ? '<img class="' + (cls || "tico") + '" src="' + esc(it.img) + '" alt="">' : '<span class="' + (cls || "tico") + ' e">' + esc(it.ic || "🎁") + "</span>";
 // format de l'image : la carte s'adapte (portrait 9:16 → carte haute ; paysage → carte large). Mémorisé par image.
 const AR = new Map();
 const arOf = src => AR.get(src) || 0;

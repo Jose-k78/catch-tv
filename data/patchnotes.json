@@ -1,6 +1,24 @@
 {
- "updated": "2026-11-11",
+ "updated": "2026-11-12",
  "items": [
+  {
+   "id": "2026-11-12-v3",
+   "d": "2026-11-12",
+   "t": "TCCCG v3 : le nouveau jeu",
+   "txt": [
+    "🧭 Nouvelle barre en bas : Shop · Event · Match · Accueil · Call Up · Roster · Échange. En haut : tes ressources, ⚙️ Paramètres et le logo TCC TV pour revenir à l’app.",
+    "🏠 Accueil : tes favoris, les boosters et events du moment, 4 missions par jour, les cadeaux et le guide du jeu.",
+    "✨ Call Up animé : le booster tombe sur le ring, tu le déchires en glissant le doigt, puis tu glisses pour voir chaque carte. SSR = saut de la 3e corde, LR = arc-en-ciel et feux d’artifice. Multi = 15 cartes avec une SSR garantie.",
+    "🎁 3 boosters gratuits toutes les 5 h, boosters PLE (1 mois), boosters des shows de la semaine, boosters spéciaux et « En vogue ».",
+    "🗂️ Roster en classeur (9 cartes par page) : Éveil, Entraînement, Évolution, Doublons, Médailles, Objets, Virer. Les favoris ne peuvent pas être virés ni échangés.",
+    "🏋️ Entraînement : 6 mini-jeux (Force, Agilité, Charisme, Endurance, Technique, Niveau). Tu ne paies que si tu réussis.",
+    "🌳 Évolution en arbre : ceintures et gimmicks, avec les conditions affichées. La carte repasse niveau 1 mais garde son entraînement.",
+    "⚔️ Nouveau combat 1 contre 1, 2 contre 2 ou 3 contre 3 : la vie = la somme des stats de ton leader, pierre-feuille-ciseaux au début, tu choisis une carte, une cible et une stat, puis tu appuies au bon moment. Finisher avec effets, et PIN avec kickout !",
+    "🛒 Shop : équipements (stats pour toujours, 1 par carte), objets d’éveil, objets de combat (chance selon la qualité), ceintures contre des médailles, gimmicks.",
+    "📱 Le bouton retour du téléphone ferme maintenant les fenêtres une par une.",
+    "💾 Rien n’a été retiré de ta partie : cartes, ressources, gimmicks, objets et médailles sont gardés."
+   ]
+  },
   {
    "id": "2026-11-11-save",
    "d": "2026-11-11",

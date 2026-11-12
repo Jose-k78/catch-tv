@@ -23,7 +23,7 @@ const nameOf = (uid, fb) => { const o = (S.tcgAll || []).find(x => x.uid === uid
 const resTxt = r => RES.filter(k => r && +r[k] > 0).map(k => RICO[k] + " " + r[k]).join(" · ");
 const cardsOf = o => Object.keys((o && o.cards) || {}).map(iid => Object.assign({ iid: iid }, o.cards[iid])).filter(x => defOf(x.c));
 const sortCards = L => L.sort((a, b) => RAR.indexOf(b.r) - RAR.indexOf(a.r) || b.lv - a.lv);
-const strip = x => Object.assign({ c: x.c, r: x.r, lv: x.lv || 1, xp: x.xp || 0 }, x.pw ? { pw: String(x.pw).slice(0, 12) } : {});
+const strip = x => Object.assign({ c: x.c, r: x.r, lv: x.lv || 1, xp: x.xp || 0 }, x.pw ? { pw: String(x.pw).slice(0, 12) } : {}, Array.isArray(x.tr) ? { tr: x.tr.slice(0, 5) } : {}, x.trn ? { trn: x.trn } : {}, x.eq ? { eq: String(x.eq).slice(0, 30) } : {});
 const top = a => (a.bids || []).reduce((m, b) => (!m || b.v > m.v ? b : m), null);
 const left = ms => { const m = Math.max(0, Math.ceil(ms / 6e4)); return m >= 60 ? Math.floor(m / 60) + " h " + String(m % 60).padStart(2, "0") : m + " min"; };
 // état d'une enchère : en cours, ou terminée avec (ou sans) gagnant
@@ -97,7 +97,7 @@ function propView(uid) {
   const o = (S.tcgAll || []).find(x => x.uid === uid);
   if (!o) return '<p class="tnote">Chargement…</p>';
   if (!P || P.to !== uid) P = { to: uid, give: [], want: [], gr: {}, wr: {} };
-  const d = me(), mine = sortCards(owned(d)), theirs = sortCards(cardsOf(o));
+  const d = me(), mine = sortCards(owned(d).filter(x => d.fav.indexOf(x.iid) < 0)), theirs = sortCards(cardsOf(o)); // une favorite ne s'échange pas
   const resRow = (side, r, max) => '<div class="tresin">' + RES.map(k => '<label>' + RICO[k] + '<input type="number" min="0" inputmode="numeric" data-tr="' + side + '" data-k="' + k + '" value="' + (r[k] || "") + '" placeholder="0"' + (max ? ' max="' + max.res[k] + '"' : "") + "></label>").join("") + "</div>";
   return '<a class="back" href="#/tccg/echange/m/' + esc(uid) + '">‹ Roster de ' + esc(nameOf(uid, o.name)) + "</a>" +
     '<h2>Tu veux <small class="tsmall">' + P.want.length + " carte" + (P.want.length > 1 ? "s" : "") + "</small></h2>" + resRow("w", P.wr) +
@@ -163,7 +163,7 @@ function aucView() {
     "<h2>En cours</h2>" + (live.length ? live.map(box).join("") : '<p class="tnote">Aucune enchère en cours.</p>') + (done.length ? "<h2>Terminées</h2>" + done.map(box).join("") : "");
 }
 ACT.tcganew = () => {
-  const L = sortCards(owned(me())); if (!L.length) return toast("Tu n’as pas encore de carte");
+  const d0 = me(), L = sortCards(owned(d0).filter(x => d0.fav.indexOf(x.iid) < 0)); if (!L.length) return toast("Pas de carte à mettre aux enchères (les favorites ne se vendent pas)");
   let pick = "";
   modal((box, close) => {
     const draw = () => { box.innerHTML = "<h3>🔨 Nouvelle enchère</h3><p class=\"sub\">Choisis la carte, puis le prix de départ (24 h).</p>" + '<div class="trgrid tpick">' + L.map(x => '<div class="tpk' + (pick === x.iid ? " on" : "") + '" data-p="' + esc(x.iid) + '">' + cardHTML(x, { small: true }) + "</div>").join("") + "</div>" +

@@ -3,6 +3,7 @@
 //   cards: { iid: { c: id carte, r: rareté actuelle, lv, xp } }, free: jour du booster gratuit, tuto, cool: { combat: ms }, opened, wins, fav }
 import { S, B, changed } from "../state.js";
 import { toast } from "../util.js";
+import { parisDay } from "../time.js";
 import { RAR, LVMAX, defOf } from "./data.js";
 
 export const ZERO = () => ({ v: 1, lvl: 1, xp: 0, res: { money: 0, mom: 0, pop: 0, push: 0, gim: 0 }, items: {}, medals: {}, cards: {}, free: "", tuto: false, cool: {}, opened: 0, wins: 0, fav: [], esc: {} });
@@ -33,6 +34,13 @@ export function commit(fn) {
     B.saveTcg(S.user.uid, x).catch(e => toast("Partie non enregistrée : " + (e && e.message || "erreur"), { ms: 4000 })); }, 600);
   return d;
 }
+// compteurs du jour pour les missions (gardés dans d.mis.cnt : { d: jour, open, win, train… })
+export function bump(d, k, n) {
+  const day = parisDay();
+  d.mis = d.mis && typeof d.mis === "object" ? d.mis : {};
+  if (!d.mis.cnt || d.mis.cnt.d !== day) d.mis.cnt = { d: day };
+  d.mis.cnt[k] = (d.mis.cnt[k] || 0) + (n || 1);
+}
 export const XP_LV = lv => 100 + lv * 60; // XP pour passer au niveau suivant (joueur)
 export function addXp(d, n) { d.xp += n; let up = 0; while (d.lvl < 50 && d.xp >= XP_LV(d.lvl)) { d.xp -= XP_LV(d.lvl); d.lvl++; up++; } return up; }
 export const CXP = lv => 40 + lv * 12; // XP d'une carte pour monter d'un niveau
@@ -54,7 +62,7 @@ export const freeNextMs = () => (freeWin() + 1) * FREE_MS - Date.now();
 export function useFree(d, day) { const left = freeLeft(d); d.free = freeWin() + ":" + (FREE_N - left + 1) + ":" + day; }
 export const freeToday = (d, day) => String(d.free || "").split(":")[2] === day;
 // copie d'un exemplaire reçu (échange, enchère) dans la partie
-export function addInst(d, x) { if (!x || !defOf(x.c)) return null; const iid = Date.now().toString(36) + (seq++).toString(36) + Math.floor(Math.random() * 1e4).toString(36); d.cards[iid] = { c: x.c, r: RAR.indexOf(x.r) >= 0 ? x.r : defOf(x.c).r, lv: +x.lv || 1, xp: +x.xp || 0 }; if (x.pw) d.cards[iid].pw = String(x.pw).slice(0, 12); return iid; }
+export function addInst(d, x) { if (!x || !defOf(x.c)) return null; const iid = Date.now().toString(36) + (seq++).toString(36) + Math.floor(Math.random() * 1e4).toString(36); d.cards[iid] = { c: x.c, r: RAR.indexOf(x.r) >= 0 ? x.r : defOf(x.c).r, lv: +x.lv || 1, xp: +x.xp || 0 }; if (x.pw) d.cards[iid].pw = String(x.pw).slice(0, 12); if (Array.isArray(x.tr)) d.cards[iid].tr = x.tr.slice(0, 5).map(v => Math.max(0, Math.min(25, +v || 0))); if (x.trn) d.cards[iid].trn = Math.min(5, +x.trn || 0); if (x.eq && typeof x.eq === "string") d.cards[iid].eq = x.eq.slice(0, 30); return iid; }
 export const RES = ["money", "mom", "pop", "push", "gim"];
 export const RICO = { money: "💵", mom: "⚡", pop: "⭐", push: "📣", gim: "🎟️" };
 

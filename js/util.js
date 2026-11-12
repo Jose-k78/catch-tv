@@ -67,12 +67,36 @@ export function toast(text, opts) {
 }
 
 // Fenêtre modale simple. build(box, close) remplit la boîte.
+// Bouton retour du téléphone (12 nov., demande de Jose) : il ferme d'abord la fenêtre ouverte (fenêtre, plein écran, invocation,
+// combat…) au lieu de quitter la page. Chaque fenêtre ouverte ajoute une étape dans l'historique ; fermée autrement, son étape
+// devient « morte » et elle est sautée au prochain retour.
+const LAYERS = [];
+let layerN = 0, skipPop = 0;
+export function backLayer(close) {
+  const L = { id: ++layerN, close: close, done: false };
+  LAYERS.push(L);
+  try { history.pushState({ ctvL: L.id }, ""); } catch (e) {}
+  // fermée par l'interface : on retire son étape de l'historique (si on est encore dessus)
+  return () => {
+    if (L.done) return; L.done = true; const i = LAYERS.indexOf(L); if (i >= 0) LAYERS.splice(i, 1);
+    setTimeout(() => { try { if (history.state && history.state.ctvL === L.id) { skipPop++; history.back(); } } catch (e) {} }, 0);
+  };
+}
+if (typeof window !== "undefined") window.addEventListener("popstate", e => {
+  if (skipPop > 0) { skipPop--; return; }
+  const at = (e.state && e.state.ctvL) || 0;
+  for (let i = LAYERS.length - 1; i >= 0; i--) { const L = LAYERS[i]; if (L.id > at) { LAYERS.splice(i, 1); if (!L.done) { L.done = true; try { L.close(); } catch (er) {} } } }
+  if (at && !LAYERS.some(L => L.id === at)) { try { history.back(); } catch (er) {} } // étape d'une fenêtre déjà fermée : on la saute
+});
+export const openLayers = () => LAYERS.length;
 export function modal(build) {
   const wrap = document.createElement("div");
   wrap.className = "modal";
   wrap.innerHTML = '<div class="modalbox" role="dialog" aria-modal="true"></div>';
   const box = wrap.firstChild;
-  const close = () => { wrap.remove(); document.body.classList.remove("noscroll"); };
+  let rel = null;
+  const close = () => { if (rel) rel(); wrap.remove(); if (!document.querySelector(".modal")) document.body.classList.remove("noscroll"); };
+  rel = backLayer(() => { rel = null; wrap.remove(); if (!document.querySelector(".modal")) document.body.classList.remove("noscroll"); });
   wrap.addEventListener("click", e => { if (e.target === wrap) close(); });
   document.body.appendChild(wrap);
   document.body.classList.add("noscroll");

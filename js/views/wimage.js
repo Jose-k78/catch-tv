@@ -3,7 +3,7 @@
 // N'importe quel membre peut en ajouter une (depuis son téléphone ou par une adresse https) ; l'admin (et celui qui l'a ajoutée)
 // peut l'enlever, les autres peuvent la signaler.
 import { S, B, ACT, nameOf, need } from "../state.js";
-import { esc, okHttp, toast, modal, fileToDataUrl } from "../util.js";
+import { esc, okHttp, toast, modal, fileToDataUrl, backLayer } from "../util.js";
 import { wslug } from "./comments.js";
 import { errText } from "./account.js";
 
@@ -73,7 +73,10 @@ ACT.zoom = el => {
   const ov = document.createElement("div");
   ov.className = "zoomov"; ov.setAttribute("role", "dialog"); ov.setAttribute("aria-label", "Photo agrandie");
   ov.innerHTML = '<img src="' + esc(src) + '" alt="' + esc(el.dataset.alt || "") + '"><button class="zoomx" aria-label="Fermer">✕</button>' + (el.dataset.alt ? "<small>" + esc(el.dataset.alt) + "</small>" : "");
-  const close = () => { ov.classList.remove("on"); setTimeout(() => ov.remove(), 180); document.removeEventListener("keydown", esc_); };
+  let rel = null;
+  const shut = () => { ov.classList.remove("on"); setTimeout(() => ov.remove(), 180); document.removeEventListener("keydown", esc_); };
+  const close = () => { if (rel) rel(); shut(); };
+  rel = backLayer(() => { rel = null; shut(); }); // bouton retour du téléphone
   const esc_ = e => { if (e.key === "Escape") close(); };
   ov.addEventListener("click", close);
   document.addEventListener("keydown", esc_);

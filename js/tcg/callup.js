@@ -5,8 +5,9 @@
 import { S, ACT, changed } from "../state.js";
 import { esc, toast, fmt, modal } from "../util.js";
 import { parisDay } from "../time.js";
-import { realKey, RAR, LVMAX, rates, baseCards, showPeople, showKeyLabel, cfg, defOf, titleOf, champsNow, promoLogo, cardById } from "./data.js";
-import { freeLeft, freeNextMs, useFree, me, commit, addCard } from "./store.js";
+import { realKey, RAR, LVMAX, rates, rates2, baseCards, showPeople, showKeyLabel, cfg, defOf, titleOf, champsNow, promoLogo, cardById } from "./data.js";
+import { freeLeft, freeNextMs, useFree, me, commit, addCard, bump } from "./store.js";
+import { summon } from "./summon.js";
 import { cardHTML } from "./card.js";
 import { showLogo, eventLogo } from "../assets.js";
 import { saveCfg } from "./modo.js";
@@ -24,19 +25,26 @@ const showLogoOf = key => { const p = key.split("|"); if (p[1] === "PLE") { cons
 const colorsOf = k => (S.P[k] && S.P[k].c) || ["#3b321f", "#0a0907"];
 const inRoster = () => { const s = new Set(); Object.keys(S.rosters || {}).forEach(k => Object.keys(S.rosters[k] || {}).forEach(g => (S.rosters[k][g] || []).forEach(n => s.add(norm(n))))); return s; };
 
+// Boosters (cahier du 12 nov.) : PLE / PPV (1 mois), shows de la semaine (7 jours, cartes moins fortes), 3 gratuits toutes
+// les 5 h (tout le monde, show ou agent libre), boosters spéciaux du modo, packs de départ (MPP, taux plus faibles).
+// Simple = 5 gimmicks pour 5 cartes ; Multi = 50 gimmicks pour 15 cartes, taux plus hauts et 1 SSR garantie.
 export function boosters() {
-  const out = [], C = cfg(), td = parisDay();
-  out.push({ id: "free", t: "Booster gratuit", sub: "N, R et SR · 3 toutes les 5 heures", n: 5, price: { free: 1 }, only: ["N", "R", "SR"], cat: "Cadeau" });
+  const out = [], C = cfg(), td = parisDay(), promo = (C.vogue || {}).promo || {};
+  out.push({ id: "free", t: "Booster gratuit", sub: "3 toutes les 5 heures · tous les catcheurs", n: 5, price: { free: 1 }, c: ["#7a1f3d", "#c9971f"], cat: "Cadeau", rc: "free" });
   out.push({ id: "mitb", t: "Booster Agent Libre", sub: "💼 Mallette Money In The Bank : la carte SSR de ton choix", n: 1, price: { mitb: 1 }, c: ["#0d4a2a", "#c9971f"], cat: "Cadeau" });
-  recentShows(7).forEach(key => {
-    const p = key.split("|"), ver = Date.parse(td) - Date.parse(keyDate(key)) >= 2 * DAY;
-    out.push({ id: "s:" + key, key: key, t: showKeyLabel(key), sub: p[0] + " · " + fmt(p[2]) + (ver ? " · cartes du show !" : " · cartes du show dans " + Math.ceil((2 * DAY - (Date.parse(td) - Date.parse(keyDate(key)))) / DAY) + " j"), n: 3, price: { gim: 5 }, logo: showLogoOf(key), c: colorsOf(p[0]), cat: p[1] === "PLE" ? "PLE et PPV" : "Shows de la semaine", ver: ver });
+  recentShows(31).forEach(key => {
+    const p = key.split("|"), ple = p[1] === "PLE", age = Date.parse(td) - Date.parse(keyDate(key)), ver = age >= 2 * DAY;
+    if (!ple && age > 7 * DAY) return;
+    out.push({ id: "s:" + key, key: key, t: showKeyLabel(key), sub: p[0] + " · " + fmt(p[2]) + (ver ? " · cartes du show !" : " · cartes du show dans " + Math.ceil((2 * DAY - age) / DAY) + " j") + (ple ? " · encore " + Math.max(1, Math.ceil((31 * DAY - age) / DAY)) + " j" : ""), n: 5, price: { gim: 5 }, multi: true, logo: showLogoOf(key), c: colorsOf(p[0]), cat: ple ? "PLE et PPV" : "Shows de la semaine", ver: ver, rc: ple ? "ple" : "week" });
   });
-  ["WWE", "AEW", "NJPW"].concat(Object.keys(S.P || {}).filter(k => ["WWE", "AEW", "NJPW"].indexOf(k) < 0)).filter(k => S.P[k]).forEach(k => out.push({ id: "p:" + k, k: k, t: k + " Pack", sub: "Booster de départ · 5 cartes", n: 3, price: { mom: 60, pop: 60, push: 60 }, logo: showLogo(k, ""), c: colorsOf(k), cat: "Boosters de départ" }));
-  (C.boosters || []).filter(b => b && b.id && !b.del && (b.on !== false || S.isAdmin)).forEach(b => out.push(Object.assign({ cat: "Boosters spéciaux", price: { gim: +b.gim || 5 }, n: +b.n || 3 }, b, { id: "c:" + b.id, t: b.t || b.n || "Booster" })));
-  if (S.isAdmin) out.push({ id: "fa", t: "Hors rosters (modo)", sub: "Visible par le modo · catcheurs hors des rosters", n: 3, price: { gim: 0 }, cat: "Modo" });
+  (C.boosters || []).filter(b => b && b.id && !b.del && (b.on !== false || S.isAdmin)).forEach(b => out.push(Object.assign({ cat: "Boosters spéciaux", price: { gim: +b.gim || 5 }, n: 5, multi: true, rc: "special" }, b, { id: "c:" + b.id, t: b.t || b.n || "Booster" })));
+  ["WWE", "AEW", "NJPW"].concat(Object.keys(S.P || {}).filter(k => ["WWE", "AEW", "NJPW"].indexOf(k) < 0)).filter(k => S.P[k]).forEach(k => out.push({ id: "p:" + k, k: k, t: k + " Pack", sub: "Pack de départ · 5 cartes", n: 5, price: { mom: 60, pop: 60, push: 60 }, logo: showLogo(k, ""), c: colorsOf(k), cat: "Boosters de départ", rc: "start" }));
+  if (S.isAdmin) out.push({ id: "fa", t: "Hors rosters (modo)", sub: "Visible par le modo · catcheurs hors des rosters", n: 5, price: { gim: 0 }, cat: "Modo", rc: "special" });
+  // promo du modo : prix en gimmicks réduit
+  out.forEach(b => { const pc = +promo[b.id] || 0; if (pc > 0 && b.price.gim) { b.promo = pc; b.price = Object.assign({}, b.price, { gim: Math.max(1, Math.round(b.price.gim * (100 - pc) / 100)), mprice: Math.max(1, Math.round(50 * (100 - pc) / 100)) }); } });
   return out;
 }
+const megaPrice = b => (b.price && b.price.mprice) || 50;
 // catcheurs d'un booster (automatique), puis les changements du modo (cfg.bx[id] : add, del, feat, nofeat)
 const bxOf = b => ((cfg().bx || {})[b.id]) || {};
 const inPromo = k => { const ro = S.rosters && S.rosters[k], s = new Set(); if (ro) Object.keys(ro).forEach(g => (ro[g] || []).forEach(n => s.add(norm(n)))); return c => c.k === k || s.has(realKey(c)); };
@@ -66,22 +74,29 @@ export function featOf(b) {
   if (b.key) showPeople(b.key).forEach(p => out.add(p.c.id));
   else if (b.k && b.id.indexOf("p:") === 0) { const ch = champsNow(); poolOf(b).forEach(c => { if (ch.has(realKey(c))) out.add(c.id); }); }
   (x.feat || []).forEach(id => out.add(id));
+  ((cfg().vogue || {}).cards || []).forEach(id => out.add(id)); // cartes « en vogue » du modo : plus fréquentes partout
   no.forEach(id => out.delete(id));
   return out;
 }
 const featX = () => +((cfg().featx)) || 3;
-function drawR(only, minR) {
-  const R = rates(), keys = (only || RAR).filter(r => !minR || RAR.indexOf(r) >= RAR.indexOf(minR)), tot = keys.reduce((a, r) => a + (+R[r] || 0), 0);
-  let x = Math.random() * tot; for (const r of keys) { x -= +R[r] || 0; if (x < 0) return r; } return keys[0];
+// tirage de la rareté de base selon les taux du booster ; LRP = SSR qui peut devenir LR ; le Multi monte les taux
+function drawCat(b, multi, minSSR) {
+  const R = rates2(b.rc || "week"), w = {};
+  Object.keys(R).forEach(k => { w[k] = +R[k] || 0; if (multi && (k === "SR" || k === "SSR" || k === "LRP")) w[k] *= 1.4; });
+  const keys = Object.keys(w).filter(k => !minSSR || k === "SSR" || k === "LRP"), tot = keys.reduce((a, k) => a + w[k], 0) || 1;
+  let x = Math.random() * tot; for (const k of keys) { x -= w[k]; if (x < 0) return k; } return keys[keys.length - 1];
 }
 const pickW = (L, F) => { const fx = featX(), w = L.map(c => (F.has(c.id) ? fx : 1)), t = w.reduce((a, b) => a + b, 0); let x = Math.random() * t; for (let i = 0; i < L.length; i++) { x -= w[i]; if (x < 0) return L[i]; } return L[L.length - 1]; };
-export function pull(b, n) {
-  const L = poolOf(b), F = featOf(b);
-  const out = [], champ = champsNow();
+const isLRP = c => c.r === "SSR" && (c.lrPot || c.max === "LR");
+export function pull(b, n, multi) {
+  const L = poolOf(b), F = featOf(b), out = [], champ = champsNow();
   for (let i = 0; i < n; i++) {
-    const want = drawR(b.only, i === n - 1 && !b.only ? "R" : "");
-    let cand = L.filter(c => c.r === want), j = RAR.indexOf(want);
-    while (!cand.length && j > 0) { j--; cand = L.filter(c => c.r === RAR[j]); }
+    const cat = drawCat(b, multi, multi && i === n - 1); // Multi : la dernière carte est une SSR garantie
+    const fit = c => cat === "LRP" ? isLRP(c) : cat === "SSR" ? c.r === "SSR" && !isLRP(c) : c.r === cat;
+    let cand = L.filter(fit);
+    if (!cand.length && cat === "LRP") cand = L.filter(c => c.r === "SSR");
+    if (!cand.length && cat === "SSR") cand = L.filter(c => c.r === "SSR");
+    let j = RAR.indexOf(cat === "LRP" ? "SSR" : cat); while (!cand.length && j > 0) { j--; cand = L.filter(c => c.r === RAR[j]); }
     if (!cand.length) cand = L.length ? L : baseCards();
     const c = pickW(cand, F);
     let id = c.id;
@@ -95,28 +110,49 @@ const priceTxt = p => p.mitb ? "💼 1 mallette" : p.free ? "🎁 Gratuit" : p.g
 function canPay(d, p, mega) {
   if (p.free) return freeLeft(d) > 0;
   if (p.mitb) return (d.items.mitb || 0) > 0;
-  if (mega) return d.res.gim >= 50;
+  if (mega) return d.res.gim >= (p.mprice || 50);
   return ["gim", "mom", "pop", "push"].every(k => !p[k] || d.res[k] >= p[k]);
 }
+const RC_NAME = { week: "Show de la semaine", ple: "PLE / PPV", free: "Gratuit", start: "Pack de départ", special: "Spécial" };
+const ratesTxt = rc => { const R = rates2(rc); return ["N", "R", "SR", "SSR", "LRP"].filter(k => +R[k]).map(k => (k === "LRP" ? "SSR → LR" : k) + " " + String(R[k]).replace(".", ",") + " %").join(" · "); };
+function tile(d, b) {
+  const c = b.c || ["#3b321f", "#0a0907"], ok = canPay(d, b.price), vog = ((cfg().vogue || {}).boosters || []).indexOf(b.id) >= 0;
+  return '<div class="tbwrap"><button class="tbooster' + (ok ? "" : " off") + '" data-act="tcgopen" data-id="' + esc(b.id) + '" style="background:' + (b.img ? "url('" + esc(b.img) + "') center/cover," : "") + "linear-gradient(160deg," + c[0] + "," + (c[1] || "#0a0907") + ')">' +
+    (b.promo ? '<span class="tbpromo">-' + b.promo + " %</span>" : vog ? '<span class="tbpromo hot">🔥</span>' : "") +
+    (b.logo ? '<img src="' + esc(b.logo) + '" alt="">' : b.id === "free" ? '<span class="tbgift">🎁</span>' : "") + "<b>" + esc(b.t) + "</b><small>" + esc(b.sub || "") + '</small><span class="tbprice">' +
+    (b.id === "free" ? (ok ? "🎁 Gratuit · reste " + freeLeft(d) : "Dans " + Math.ceil(freeNextMs() / 36e5 * 10) / 10 + " h") : b.id === "mitb" ? "💼 × " + (d.items.mitb || 0) : "Simple · " + priceTxt(b.price)) + "</span></button>" +
+    '<button class="tbinfo" data-act="tcgbinfo" data-id="' + esc(b.id) + '">👁️ Vitrine et cartes</button>' +
+    (b.multi ? '<button class="tbmega" data-act="tcgopen" data-id="' + esc(b.id) + '" data-mega="1">Multi ×15 · 🎟️ ' + megaPrice(b) + "</button>" : "") +
+    (S.isAdmin && b.id !== "mitb" ? '<span class="tbmodo"><button data-act="tcgvogb" data-id="' + esc(b.id) + '">' + (vog ? "🔥 En vogue" : "☆ Vogue") + '</button><button data-act="tcgpromo" data-id="' + esc(b.id) + '">％ Promo</button></span>' : "") + "</div>";
+}
 export function callUpView() {
-  const d = me(), B = boosters(), cats = {};
+  const d = me(), B = boosters(), cats = {}, V = cfg().vogue || {};
   B.forEach(b => { (cats[b.cat] = cats[b.cat] || []).push(b); });
-  let h = '<section class="tccghead"><h1>Call Up</h1></section><p class="tnote">5 gimmicks = booster de 5 cartes · 50 gimmicks = Mega booster de 15 cartes. Les cartes « version show » arrivent 2 jours après les résultats.</p>' +
-    '<details class="trates"><summary>Taux d’apparition</summary><p>' + RAR.map(r => '<span class="tcr r-' + r + '">' + r + "</span> " + rates()[r] + " %").join(" · ") + "</p></details>";
+  let h = '<section class="tccghead"><h1>Call Up</h1></section><p class="tnote">Simple : 5 cartes · Multi : 15 cartes, taux plus hauts et 1 SSR garantie. Les cartes « version show » arrivent 2 jours après les résultats.</p>' +
+    '<details class="trates"><summary>Taux d’apparition</summary><p>' + Object.keys(RC_NAME).map(k => "<b>" + RC_NAME[k] + "</b> : " + ratesTxt(k)).join("<br>") + "<br>Multi : SR, SSR et SSR → LR ×1,4 et la 15e carte est une SSR (ou mieux).</p></details>";
+  // en vogue : boosters et cartes choisis par le modo
+  const VB = B.filter(b => (V.boosters || []).indexOf(b.id) >= 0 || b.promo), VC = (V.cards || []).map(id => cardById(id)).filter(Boolean);
+  if (VB.length) h += '<h2>🔥 En vogue <small class="tsmall">et promos</small></h2><div class="row tbrow">' + VB.map(b => tile(d, b)).join("") + "</div>";
+  if (VC.length) h += '<h2>⭐ Cartes en vogue <small class="tsmall">plus fréquentes dans les boosters</small></h2><div class="tfavs">' + VC.map(c => cardHTML({ c: c.id, r: c.max, lv: LVMAX[c.max] }, { small: true })).join("") + "</div>";
   h += vitrine();
-  ["Cadeau", "PLE et PPV", "Shows de la semaine", "Boosters de départ", "Boosters spéciaux", "Modo"].forEach(cat => {
+  ["Cadeau", "PLE et PPV", "Shows de la semaine", "Boosters spéciaux", "Boosters de départ", "Modo"].forEach(cat => {
     if (!cats[cat]) return;
-    h += "<h2>" + cat + '</h2><div class="row tbrow">' + cats[cat].map(b => {
-      const c = b.c || ["#3b321f", "#0a0907"], ok = canPay(d, b.price);
-      return '<div class="tbwrap"><button class="tbooster' + (ok ? "" : " off") + '" data-act="tcgopen" data-id="' + esc(b.id) + '" style="background:' + (b.img ? "url('" + esc(b.img) + "') center/cover," : "") + "linear-gradient(160deg," + c[0] + "," + (c[1] || "#0a0907") + ')">' +
-        (b.logo ? '<img src="' + esc(b.logo) + '" alt="">' : b.id === "free" ? '<span class="tbgift">🎁</span>' : "") + "<b>" + esc(b.t) + "</b><small>" + esc(b.sub || "") + '</small><span class="tbprice">' + (b.id === "free" ? (ok ? "🎁 Gratuit · reste " + freeLeft(d) : "Dans " + Math.ceil(freeNextMs() / 36e5 * 10) / 10 + " h") : b.id === "mitb" ? "💼 × " + (d.items.mitb || 0) : priceTxt(b.price)) + "</span></button>" +
-        '<button class="tbinfo" data-act="tcgbinfo" data-id="' + esc(b.id) + '">👁️ Cartes' + (featOf(b).size ? " · ⭐ vedettes" : "") + "</button>" +
-        (b.price.gim && b.key ? '<button class="tbmega" data-act="tcgopen" data-id="' + esc(b.id) + '" data-mega="1">Mega ×15 · 🎟️ 50</button>' : "") + "</div>";
-    }).join("") + "</div>";
+    h += "<h2>" + cat + (cat === "PLE et PPV" ? ' <small class="tsmall">1 mois · cartes plus rares</small>' : cat === "Shows de la semaine" ? ' <small class="tsmall">7 jours</small>' : "") + '</h2><div class="row tbrow">' + cats[cat].map(b => tile(d, b)).join("") + "</div>";
   });
   return h;
 }
-// Call Up : on confirme avant d'invoquer (coût, nombre de cartes)
+// modo : booster en vogue, promo
+ACT.tcgvogb = el => { if (!S.isAdmin) return; const id = el.dataset.id; saveCfg(c => { c.vogue = c.vogue || {}; const L = c.vogue.boosters = c.vogue.boosters || [], i = L.indexOf(id); if (i >= 0) L.splice(i, 1); else L.push(id); }, "booster en vogue : " + id).then(ok => ok && toast("Enregistré ✓")); };
+ACT.tcgpromo = el => {
+  if (!S.isAdmin) return; const id = el.dataset.id, cur = +(((cfg().vogue || {}).promo || {})[id]) || 0;
+  modal((box, close) => {
+    box.innerHTML = '<h3>％ Promo</h3><p class="sub">Réduction sur le prix en gimmicks (Simple et Multi). 0 = pas de promo.</p><form data-pf><label class="fld">Réduction (%)<input name="v" type="number" min="0" max="90" value="' + cur + '"></label><button class="btn wide">Enregistrer</button></form><button class="btn wide ghost" style="margin-top:6px" data-close>Annuler</button>';
+    box.addEventListener("click", e => { if (e.target.closest("[data-close]")) close(); });
+    box.querySelector("[data-pf]").addEventListener("submit", e => { e.preventDefault(); const v = Math.max(0, Math.min(90, Math.round(+e.target.v.value || 0))); close();
+      saveCfg(c => { c.vogue = c.vogue || {}; c.vogue.promo = c.vogue.promo || {}; if (v) c.vogue.promo[id] = v; else delete c.vogue.promo[id]; }, "promo " + id + " : " + v + " %").then(ok => ok && toast("Enregistré ✓")); });
+  });
+};
+// Call Up : on confirme toujours avant d'invoquer (coût, nombre de cartes)
 ACT.tcgopen = el => {
   const b = boosters().find(x => x.id === el.dataset.id); if (!b) return;
   const mega = el.dataset.mega === "1", d0 = me();
@@ -124,23 +160,27 @@ ACT.tcgopen = el => {
   if (!canPay(d0, b.price, mega)) { toast(b.price.free ? "Tes 3 boosters gratuits reviennent dans " + Math.ceil(freeNextMs() / 6e4) + " min" : "Pas assez de ressources : gagne-en dans les combats"); return; }
   const c = b.c || ["#3b321f", "#0a0907"];
   modal((box, close) => {
-    box.innerHTML = '<h3>Invoquer ' + (mega ? "un Mega booster" : "ce booster") + ' ?</h3><div class="tcfm"><div class="tbooster" style="background:linear-gradient(160deg,' + esc(c[0]) + "," + esc(c[1] || "#0a0907") + ')">' + (b.logo ? '<img src="' + esc(b.logo) + '" alt="">' : "") + "<b>" + esc(b.t) + "</b></div>" +
-      "<ul><li>" + (mega ? 15 : 5) + " cartes</li><li>Coût : " + esc(mega ? "🎟️ 50 gimmicks" : b.price.free ? "🎁 Gratuit (il t’en reste " + freeLeft(d0) + ")" : priceTxt(b.price)) + "</li>" + (featOf(b).size ? "<li>⭐ Cartes vedettes plus fréquentes</li>" : "") + "</ul></div>" +
+    box.innerHTML = '<h3>Invoquer ' + (mega ? "en Multi" : "ce booster") + ' ?</h3><div class="tcfm"><div class="tbooster" style="background:linear-gradient(160deg,' + esc(c[0]) + "," + esc(c[1] || "#0a0907") + ')">' + (b.logo ? '<img src="' + esc(b.logo) + '" alt="">' : "") + "<b>" + esc(b.t) + "</b></div>" +
+      "<ul><li>" + (mega ? "15 cartes, dont 1 SSR garantie" : "5 cartes") + "</li><li>Coût : " + esc(mega ? "🎟️ " + megaPrice(b) + " gimmicks" : b.price.free ? "🎁 Gratuit (il t’en reste " + freeLeft(d0) + ")" : priceTxt(b.price)) + "</li>" + (featOf(b).size ? "<li>⭐ Cartes vedettes plus fréquentes</li>" : "") + "</ul></div>" +
       '<button class="btn wide" data-y>✨ Invoquer</button><button class="btn wide ghost" style="margin-top:6px" data-close>Annuler</button>';
     box.addEventListener("click", e => { if (e.target.closest("[data-close]")) return close(); if (e.target.closest("[data-y]")) { close(); openNow(b, mega); } });
   });
 };
-function openNow(b, mega) {
+export function openNow(b, mega) {
+  if (typeof b === "string") b = boosters().find(x => x.id === b);
+  if (!b) return;
   if (!canPay(me(), b.price, mega)) { toast("Pas assez de ressources"); return; }
-  const ids = pull(b, mega ? 15 : 5); // tous les boosters donnent 5 cartes, sans exception (demande de Jose)
+  const ids = pull(b, mega ? 15 : 5, mega), iids = [];
   commit(d => {
-    if (b.price.free) useFree(d, parisDay());
-    else if (mega) d.res.gim -= 50;
+    if (b.price.free) { useFree(d, parisDay()); bump(d, "free"); }
+    else if (mega) d.res.gim -= megaPrice(b);
     else ["gim", "mom", "pop", "push"].forEach(k => { if (b.price[k]) d.res[k] -= b.price[k]; });
-    ids.forEach(id => addCard(d, id)); d.opened++;
+    ids.forEach(id => iids.push(addCard(d, id))); d.opened++; bump(d, "open");
   });
-  summon(b, ids);
+  summon(b, ids, { mega: mega, again: canAgain(b), iids: S.tcgReady ? iids : [] });
 }
+// pour l'écran de fin : peut-on réinvoquer ce booster ?
+const canAgain = b => ({ id: b.id, simple: !b.price.mitb, multi: !!b.multi, ok: () => canPay(me(), b.price, false), okm: () => canPay(me(), b.price, true), price: priceTxt(b.price), mprice: megaPrice(b) });
 // Booster Agent Libre : la mallette Money In The Bank donne la carte SSR de son choix (une fois par mallette)
 function mitbPick() {
   if (!(me().items.mitb > 0)) { toast("Il te faut une mallette Money In The Bank 💼"); return; }
@@ -174,10 +214,10 @@ ACT.tcgbinfo = el => {
   modal((box, close) => {
     box.classList.add("tbibox");
     const draw = () => {
-      const L = poolOf(b), F = featOf(b), R = rates(), ed = S.isAdmin, keys = (b.only || RAR);
-      const tile = c => '<div class="tbtile">' + cardHTML(c, { small: true }) + (ed ? '<div class="tbed"><button data-f="' + esc(c.id) + '" title="Vedette">' + (F.has(c.id) ? "⭐" : "☆") + '</button><button data-e="' + esc(c.id) + '" title="Modifier">✏️</button><button data-dup="' + esc(c.id) + '" title="Dupliquer">⧉</button><button data-x="' + esc(c.id) + '" title="Retirer du booster">✕</button></div>' : "") + "</div>";
+      const L = poolOf(b), F = featOf(b), ed = S.isAdmin, keys = RAR.slice(0, 4), VC = new Set((cfg().vogue || {}).cards || []);
+      const tile = c => '<div class="tbtile">' + cardHTML(c, { small: true }) + (ed ? '<div class="tbed"><button data-f="' + esc(c.id) + '" title="Vedette">' + (F.has(c.id) ? "⭐" : "☆") + '</button><button data-vg="' + esc(c.id) + '" title="En vogue partout">' + (VC.has(c.id) ? "🔥" : "♨") + '</button><button data-e="' + esc(c.id) + '" title="Modifier">✏️</button><button data-dup="' + esc(c.id) + '" title="Dupliquer">⧉</button><button data-x="' + esc(c.id) + '" title="Retirer du booster">✕</button></div>' : "") + "</div>";
       const best = L.slice().sort((a, b2) => RAR.indexOf(b2.max) - RAR.indexOf(a.max) || b2.score - a.score).slice(0, 3);
-      let h = "<h3>" + esc(b.t) + '</h3><p class="sub">' + L.length + " cartes possibles · " + keys.map(r => r + " " + R[r] + " %").join(" · ") + (F.size ? " · vedettes ×" + featX() : "") + "</p>";
+      let h = "<h3>" + esc(b.t) + '</h3><p class="sub">' + L.length + " cartes possibles · " + ratesTxt(b.rc || "week") + (F.size ? " · vedettes ×" + featX() : "") + "</p>";
       if (best.length) h += '<h4>Vitrine</h4><div class="tfavs">' + best.map(c => cardHTML({ c: c.id, r: c.max, lv: LVMAX[c.max] }, { small: true })).join("") + "</div>";
       const FL = L.filter(c => F.has(c.id));
       if (FL.length) h += '<h4>⭐ Cartes vedettes <small>(plus de chances de tomber)</small></h4><div class="trgrid">' + FL.map(tile).join("") + "</div>";
@@ -198,6 +238,7 @@ ACT.tcgbinfo = el => {
       const t = e.target.closest("button,[data-close]"); if (!t) return;
       if (t.hasAttribute("data-close")) return close();
       const ds = t.dataset;
+      if (ds.vg) return saveCfg(c => { c.vogue = c.vogue || {}; const L2 = c.vogue.cards = c.vogue.cards || [], i = L2.indexOf(ds.vg); if (i >= 0) L2.splice(i, 1); else L2.push(ds.vg); }, "carte en vogue : " + ds.vg).then(ok => { if (ok) { toast("Enregistré ✓"); draw(); } });
       if (ds.f) { const on = !featOf(b).has(ds.f); return mod(x => { x.feat = tog(x.feat, ds.f, on); x.nofeat = tog(x.nofeat, ds.f, !on); }, (on ? "vedette : " : "plus vedette : ") + ds.f); }
       if (ds.x) return mod(x => { x.del = tog(x.del, ds.x, true); x.add = tog(x.add, ds.x, false); }, "carte retirée du booster " + b.t);
       if (ds.un) return mod(x => { x.del = tog(x.del, ds.un, false); }, "carte remise dans le booster " + b.t);
@@ -208,56 +249,3 @@ ACT.tcgbinfo = el => {
     });
   });
 };
-// ---------- animation d'invocation ----------
-// la scène : écran géant, entrée, rampe éclairée, ring de catch (dessinés par l'app)
-const scene = (b, c) => '<svg class="tsscene" viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs>' +
-  '<linearGradient id="tsg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7e08a"/><stop offset="1" stop-color="#8a6412"/></linearGradient>' +
-  '<linearGradient id="tsscr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="' + esc(c[0]) + '"/><stop offset="1" stop-color="' + esc(c[1] || "#0a0907") + '"/></linearGradient>' +
-  '<linearGradient id="tsrp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f1a10"/><stop offset="1" stop-color="#0c0a07"/></linearGradient>' +
-  '<linearGradient id="tsmat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2418"/><stop offset="1" stop-color="#171209"/></linearGradient>' +
-  '<pattern id="tscw" width="14" height="12" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="2.2" fill="#fff" opacity=".07"/><circle cx="11" cy="9" r="2" fill="#fff" opacity=".05"/></pattern></defs>' +
-  '<rect width="400" height="800" fill="#060504"/><rect class="tscw" width="400" height="330" fill="url(#tscw)"/><rect class="tscw" y="420" width="400" height="160" fill="url(#tscw)"/>' +
-  '<rect x="30" y="16" width="340" height="7" fill="url(#tsg)" opacity=".6"/>' + [70, 130, 200, 270, 330].map(x => '<circle class="tslamp" cx="' + x + '" cy="27" r="5" fill="#fff8d8"/>').join("") +
-  '<rect class="tsscreen" x="85" y="44" width="230" height="140" rx="6" fill="url(#tsscr)" stroke="url(#tsg)" stroke-width="3"/>' +
-  '<text x="200" y="108" text-anchor="middle" font-size="22" font-weight="900" fill="#fff" letter-spacing="2">' + esc(String(b.t).slice(0, 18).toUpperCase()) + '</text><text x="200" y="140" text-anchor="middle" font-size="15" font-weight="900" fill="#f0cf62" letter-spacing="5">TCCCG</text>' +
-  '<rect x="18" y="70" width="56" height="104" rx="4" fill="url(#tsscr)" opacity=".7" stroke="#8a6412"/><rect x="326" y="70" width="56" height="104" rx="4" fill="url(#tsscr)" opacity=".7" stroke="#8a6412"/>' +
-  '<polygon points="100,218 300,218 312,240 88,240" fill="#16130d" stroke="url(#tsg)" stroke-width="2"/>' +
-  '<polygon points="165,240 235,240 335,520 65,520" fill="url(#tsrp)"/>' +
-  '<line class="tsled" x1="165" y1="240" x2="65" y2="520" stroke="url(#tsg)" stroke-width="4"/><line class="tsled" x1="235" y1="240" x2="335" y2="520" stroke="url(#tsg)" stroke-width="4"/>' +
-  '<polygon points="12,560 388,560 400,800 0,800" fill="#0b0907"/><polygon points="34,570 366,570 392,780 8,780" fill="url(#tsmat)" stroke="#3b321f"/>' +
-  '<text x="200" y="700" text-anchor="middle" font-size="44" font-weight="900" fill="#f0cf62" opacity=".16" letter-spacing="6">TCCCG</text>' +
-  [[34, 528, 46], [366, 528, 46], [10, 700, 110], [390, 700, 110]].map(p => '<rect x="' + (p[0] - 4) + '" y="' + p[1] + '" width="8" height="' + p[2] + '" rx="2" fill="url(#tsg)"/>').join("") +
-  [536, 548, 560].map((y, i) => '<line x1="34" y1="' + y + '" x2="366" y2="' + y + '" stroke="#e23b3b" stroke-width="2.5"/><line x1="34" y1="' + y + '" x2="10" y2="' + (708 + i * 26) + '" stroke="#e23b3b" stroke-width="3"/><line x1="366" y1="' + y + '" x2="390" y2="' + (708 + i * 26) + '" stroke="#e23b3b" stroke-width="3"/>').join("") +
-  "</svg>";
-
-function summon(b, ids) {
-  const defs = ids.map(defOf), best = defs.reduce((m, x) => Math.max(m, RAR.indexOf(x.r)), 0), nSR = defs.filter(x => x.r === "SR").length, lrPot = defs.some(x => x.lrPot || x.max === "LR" && RAR.indexOf(x.r) >= 3);
-  const glow = best >= 3 ? (lrPot ? "gold stars" : "gold") : nSR >= 2 ? "violet" : "white";
-  const c = b.c || ["#3b321f", "#0a0907"];
-  const ov = document.createElement("div"); ov.className = "tsum glow-" + glow.replace(" ", "-");
-  ov.innerHTML = '<div class="tsstage">' + scene(b, c) + '<div class="tsbeam l"></div><div class="tsbeam r"></div><div class="tspyro l"></div><div class="tspyro r"></div><div class="tscount">3</div>' +
-    '<div class="tspack" style="background:linear-gradient(160deg,' + c[0] + "," + (c[1] || "#0a0907") + ')">' + (b.logo ? '<img src="' + esc(b.logo) + '" alt="">' : "") + "<b>" + esc(b.t) + '</b><span class="tstear"></span></div></div><button class="tsskip">Passer ›</button>';
-  document.body.appendChild(ov);
-  const cnt = ov.querySelector(".tscount"); let n = 3, stage = 0, idx = 0, x0 = null;
-  const tick = setInterval(() => { n--; if (n > 0) { cnt.textContent = n; cnt.classList.remove("pop"); void cnt.offsetWidth; cnt.classList.add("pop"); } else { clearInterval(tick); cnt.remove(); ov.classList.add("walk"); setTimeout(() => { if (stage === 0) ov.classList.add("lights"); }, 900); setTimeout(() => { if (stage === 0) { ov.classList.add("center"); stage = 1; } }, 3000); } }, 650);
-  const reveal = () => {
-    stage = 2; ov._rv = Date.now();
-    ov.innerHTML = '<div class="tsreveal"><div class="tsfx fx-' + defs[idx].r + '"></div><div class="tscard">' + cardHTML(defs[idx], { nozoom: true }) + '</div><p class="tphint">' + (idx + 1) + " / " + defs.length + ' · glisse ou touche ‹ ›</p><div class="tsnav"><button data-nav="-1">‹</button><button data-nav="1">›</button></div></div><button class="tsskip">Tout voir ›</button>';
-    if (navigator.vibrate && RAR.indexOf(defs[idx].r) >= 3) try { navigator.vibrate([30, 40, 60]); } catch (e) {}
-  };
-  const recap = () => {
-    stage = 3;
-    ov.innerHTML = '<div class="trecap"><h2>' + esc(b.t) + '</h2><div class="trgrid">' + defs.map(x => cardHTML(x, { small: true })).join("") + '</div><div class="btns"><a class="btn" href="#/tccg/roster" data-close>Voir mon roster</a><button class="btn ghost" data-close>Continuer</button></div></div>';
-  };
-  const go = dir => { idx += dir; if (idx < 0) idx = 0; if (idx >= defs.length) return recap(); reveal(); };
-  ov.addEventListener("click", e => {
-    if (ov._sw && Date.now() - ov._sw < 450) return;
-    if (stage === 3) { if (e.target.closest("[data-close]")) { ov.remove(); changed("tcg"); } return; }
-    if (e.target.closest(".tsskip")) { clearInterval(tick); return stage === 2 ? recap() : (idx = 0, reveal()); }
-    if (stage === 0 && n <= 0) { ov.classList.add("lights", "center"); stage = 1; return; } // un appui pendant la marche : le booster arrive tout de suite
-    if (stage === 1 && ov.querySelector(".tspack")) { ov.querySelector(".tspack").classList.add("open"); stage = 1.5; setTimeout(reveal, 700); return; }
-    if (stage === 2) { if (Date.now() - (ov._rv || 0) < 900) return; const nv = e.target.closest("[data-nav]"); go(nv ? +nv.dataset.nav : 1); } // on laisse le temps de voir la carte
-  });
-  ov.addEventListener("touchstart", e => { x0 = e.touches[0].clientX; }, { passive: true });
-  ov.addEventListener("touchend", e => { if (stage !== 2 || x0 == null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40 && Date.now() - (ov._rv || 0) > 700) { ov._sw = Date.now(); go(dx < 0 ? 1 : -1); } x0 = null; });
-}

@@ -6,7 +6,7 @@
 import { S, ACT, FORM, changed } from "../state.js";
 import { esc, toast, modal, fileToDataUrl } from "../util.js";
 import { ghGetJson, ghPutJson, ghToken, ghPutBinary } from "../github.js";
-import { RAR, ARCHS, STATS, FX, ITEMS0, RATE0, cfg, baseCards, cardById, items, rates, showKeyLabel } from "./data.js";
+import { RAR, ARCHS, STATS, FX, ITEMS0, RATE0, cfg, baseCards, cardById, items, rates, rates2, showKeyLabel } from "./data.js";
 import { cardHTML } from "./card.js";
 import { norm } from "../wrestlers.js";
 
@@ -32,7 +32,7 @@ async function upload(file, dir) {
   return path;
 }
 const rawDataUrl = file => new Promise((ok, ko) => { const r = new FileReader(); r.onload = () => ok(String(r.result)); r.onerror = () => ko(new Error("lecture du fichier")); r.readAsDataURL(file); });
-function pickFile(accept, dir, cb) { const i = document.createElement("input"); i.type = "file"; i.accept = accept; i.onchange = async () => { const f = i.files[0]; if (!f) return; toast("Envoi…"); try { cb(await upload(f, dir)); } catch (e) { if (e && e.message !== "nokey") toast("Envoi impossible : " + e.message, { ms: 5000 }); } }; i.click(); }
+export function pickFile(accept, dir, cb) { const i = document.createElement("input"); i.type = "file"; i.accept = accept; i.onchange = async () => { const f = i.files[0]; if (!f) return; toast("Envoi…"); try { cb(await upload(f, dir)); } catch (e) { if (e && e.message !== "nokey") toast("Envoi impossible : " + e.message, { ms: 5000 }); } }; i.click(); }
 
 export function modoView() {
   if (!S.isAdmin) return '<p class="tnote">Réservé au modérateur (active le bouton ✏️).</p>';
@@ -51,11 +51,13 @@ export function modoView() {
       '<div class="trgrid">' + P.map(c => cardById(c.id) ? cardHTML(cardById(c.id), { small: true, act: "tcgmedit" }) : "").join("") + "</div>";
   }
   if (tab === "taux") {
-    const R = rates();
-    h += '<p class="tnote">Taux d’apparition dans les boosters (en %). La dernière carte d’un booster normal est toujours R ou mieux.</p><form class="tmform" data-form="tcgrates">' + RAR.map(r => '<label>' + r + ' <input name="' + r + '" type="number" step="0.1" min="0" value="' + R[r] + '"></label>').join("") + '<label>Cartes vedettes (× plus de chances) <input name="featx" type="number" step="0.5" min="1" value="' + (C.featx || 3) + '"></label><button class="btn">Enregistrer</button><button type="button" class="btn ghost" data-act="tcgmratesreset">Valeurs de départ</button></form>';
+    const CN = { week: "Show de la semaine", ple: "PLE / PPV", free: "Booster gratuit", start: "Pack de départ", special: "Spécial (modo)" }, K = ["N", "R", "SR", "SSR", "LRP"];
+    h += '<p class="tnote">Taux d’apparition (en %) par sorte de booster. LRP = SSR qui peut devenir LR. Le Multi multiplie SR, SSR et LRP par 1,4 et garantit une SSR.</p><form class="tmform" data-form="tcgrates">' +
+      Object.keys(CN).map(c => { const R = rates2(c); return "<h4>" + CN[c] + '</h4><div class="tmstats">' + K.map(k => '<label>' + (k === "LRP" ? "SSR→LR" : k) + '<input name="' + c + "_" + k + '" type="number" step="0.1" min="0" value="' + (+R[k] || 0) + '"></label>').join("") + "</div>"; }).join("") +
+      '<label>Cartes vedettes et en vogue (× plus de chances) <input name="featx" type="number" min="1" max="20" value="' + (+cfg().featx || 3) + '"></label><button class="btn wide">Enregistrer</button></form><button class="btn wide ghost" style="margin:8px 16px;width:calc(100% - 32px)" data-act="tcgmratesreset">Revenir aux taux de départ</button>';
   }
   if (tab === "objets") {
-    h += '<button class="btn small" style="margin:0 16px" data-act="tcgmitem" data-id="">＋ Créer un objet</button><div class="list" style="margin-top:8px">' + items().map(x => '<button class="item" data-act="tcgmitem" data-id="' + x.id + '"><span class="lbl"><b>' + esc((x.ic || "🎁") + " " + x.n) + "</b><small>" + (x.t === "combat" ? "Combat · " + esc(x.fx || "") + " " + (x.v || "") : "Éveil · rang " + esc(x.g || "")) + " · " + esc(x.d || "") + (x.drop != null ? " · drop " + x.drop + " %" : "") + '</small></span><span class="chev">›</span></button>').join("") + "</div>";
+    h += '<button class="btn small" style="margin:0 16px" data-act="tcgmitem" data-id="">＋ Créer un objet</button><div class="list" style="margin-top:8px">' + items().map(x => '<button class="item" data-act="tcgmitem" data-id="' + x.id + '"><span class="lbl"><b>' + esc((x.ic || "🎁") + " " + x.n) + "</b><small>" + (x.t === "combat" ? "Combat · " + esc(x.fx || "") + " " + (x.v || "") + (x.q ? " · " + esc(x.q) : "") : x.t === "equip" ? "Équipement · " + esc((x.st || []).join("/")) : "Éveil · rang " + esc(x.g || "")) + " · " + esc(x.d || "") + (x.drop != null ? " · drop " + x.drop + " %" : "") + '</small></span><span class="chev">›</span></button>').join("") + "</div>";
   }
   if (tab === "boosters") {
     const L = C.boosters || [];
@@ -176,9 +178,9 @@ ACT.tcgmperso = () => {
       run(d => { d.custom = d.custom || []; d.custom.push({ id: "oc-" + norm(n).replace(/[^a-z0-9]+/g, "-") + "-" + Date.now().toString(36).slice(-4), name: n, gimmick: f.g.value.trim(), k: f.k.value, arch: f.arch.value, r: "N", max: "R" }); }, "nouveau personnage " + n); });
   });
 };
-FORM.tcgrates = f => run(d => { d.rates = {}; RAR.forEach(r => { d.rates[r] = Math.max(0, +f[r].value || 0); }); d.featx = Math.max(1, +f.featx.value || 3); }, "taux d’apparition");
+FORM.tcgrates = f => run(d => { d.rates2 = {}; ["week", "ple", "free", "start", "special"].forEach(c => { d.rates2[c] = {}; ["N", "R", "SR", "SSR", "LRP"].forEach(k => { d.rates2[c][k] = Math.max(0, +f[c + "_" + k].value || 0); }); }); d.featx = Math.max(1, +f.featx.value || 3); }, "taux d’apparition");
 FORM.tcgfightcfg = f => run(d => { d.fight = Object.assign({}, d.fight || {}, { ai: +f.ai.value || 1, cool: Math.max(1, +f.cool.value || 60) }); }, "réglages des combats");
-ACT.tcgmratesreset = () => run(d => { delete d.rates; }, "taux de départ");
+ACT.tcgmratesreset = () => run(d => { delete d.rates; delete d.rates2; }, "taux de départ");
 ACT.tcgmple = el => run(d => { d.fight = d.fight || {}; const m = el.dataset.m, o = m === "allow" ? "deny" : "allow"; d.fight[m] = d.fight[m] || []; d.fight[o] = (d.fight[o] || []).filter(k => k !== el.dataset.k); const i = d.fight[m].indexOf(el.dataset.k); if (i >= 0) d.fight[m].splice(i, 1); else d.fight[m].push(el.dataset.k); }, "PLE en combat");
 ACT.tcgmsnd = el => { const k = el.dataset.k; if (el.dataset.del) return run(d => { d.bgm = d.bgm || {}; delete d.bgm[k]; }, "musique retirée"); pickFile("audio/*", "media/tcg/", path => run(d => { d.bgm = d.bgm || {}; d.bgm[k] = path; }, "musique " + k)); };
 ACT.tcgmasset = el => pickFile("image/*", "img/tcg/", path => run(d => { d.assets = d.assets || {}; d.assets[el.dataset.k] = path; }, "image " + el.dataset.k));
@@ -187,9 +189,11 @@ ACT.tcgmitem = el => {
   const id = el.dataset.id, x = id ? items().find(i => i.id === id) || {} : { t: "combat", fx: "dmg", v: 20, ic: "🎁" }, isBase = ITEMS0.some(i => i.id === id);
   modal((box, close) => {
     box.innerHTML = "<h3>" + (id ? "Modifier l’objet" : "Nouvel objet") + '</h3><form class="tmform" data-if><label>Nom<input name="n" required maxlength="40" value="' + esc(x.n || "") + '"></label><label>Icône (emoji)<input name="ic" maxlength="4" value="' + esc(x.ic || "🎁") + '"></label>' +
-      '<label>Type<select name="t"><option value="combat"' + (x.t === "combat" ? " selected" : "") + '>Combat (utilisable en match)</option><option value="eveil"' + (x.t === "eveil" ? " selected" : "") + ">Éveil</option></select></label>" +
+      '<label>Type<select name="t"><option value="combat"' + (x.t === "combat" ? " selected" : "") + '>Combat (utilisable en match)</option><option value="eveil"' + (x.t === "eveil" ? " selected" : "") + '>Éveil</option><option value="equip"' + (x.t === "equip" ? " selected" : "") + ">Équipement (stats pour toujours)</option></select></label>" +
+      '<label>Qualité (combat)<select name="q">' + [["", "—"], ["commun", "Commun (50 %)"], ["rare", "Rare (65 %)"], ["legendaire", "Légendaire (80 %)"]].map(o => '<option value="' + o[0] + '"' + (o[0] === (x.q || "") ? " selected" : "") + ">" + o[1] + "</option>").join("") + "</select></label>" +
+      '<label>Stats (équipement) : Force · Agilité · Charisme · Endurance · Technique<span class="tmst">' + [0, 1, 2, 3, 4].map(i => '<input name="st' + i + '" type="number" min="0" max="99" style="width:56px" value="' + esc((x.st || [])[i] || 0) + '">').join("") + "</span></label>" +
       '<label>Rang (éveil)<select name="g">' + ["", "C", "R", "E", "L", "M"].map(g => "<option" + (g === (x.g || "") ? " selected" : "") + ">" + g + "</option>").join("") + "</select></label>" +
-      '<label>Effet (combat)<select name="fx">' + [["dmg", "Dégâts"], ["heal", "Soin"], ["fin", "Barre de Finisher"], ["boost", "Boost (×)"], ["reveal", "Révèle les cases"]].map(o => '<option value="' + o[0] + '"' + (o[0] === x.fx ? " selected" : "") + ">" + o[1] + "</option>").join("") + "</select></label>" +
+      '<label>Effet (combat)<select name="fx">' + [["dmg", "Dégâts"], ["heal", "Soin"], ["fin", "Barre de Finisher"], ["boost", "Boost (×)"], ["stun", "Étourdit (tours)"], ["div", "Divise les attaques adverses (×)"]].map(o => '<option value="' + o[0] + '"' + (o[0] === x.fx ? " selected" : "") + ">" + o[1] + "</option>").join("") + "</select></label>" +
       '<label>Valeur<input name="v" type="number" step="0.1" value="' + esc(x.v != null ? x.v : 20) + '"></label><label>Prix au Shop (💵)<input name="price" type="number" min="0" value="' + esc(x.price || "") + '"></label>' +
       '<label>Chance de drop en combat (%)<input name="drop" type="number" step="0.1" min="0" value="' + esc(x.drop != null ? x.drop : "") + '"></label><label>Description<input name="d" maxlength="120" value="' + esc(x.d || "") + '"></label>' +
       '<label class="chk"><input type="checkbox" name="shop"' + (x.shop === false ? "" : " checked") + "> Vendu au Shop</label>" +
@@ -201,6 +205,8 @@ ACT.tcgmitem = el => {
     box.querySelector("[data-if]").addEventListener("submit", e => {
       e.preventDefault(); const f = e.target;
       const rec = { n: f.n.value.trim(), ic: f.ic.value.trim() || "🎁", t: f.t.value, g: f.g.value, fx: f.fx.value, v: +f.v.value, d: f.d.value.trim(), shop: f.shop.checked };
+      if (f.q.value) rec.q = f.q.value; if (rec.t === "equip") rec.st = [0, 1, 2, 3, 4].map(i => Math.max(0, +f["st" + i].value || 0));
+      if (x.img) rec.img = x.img;
       if (f.price.value) rec.price = +f.price.value; if (f.drop.value !== "") rec.drop = +f.drop.value;
       close();
       run(d => { if (isBase) { d.items = d.items || {}; d.items[id] = rec; } else { d.itemsNew = d.itemsNew || []; const nid = id || "o-" + Date.now().toString(36); const i = d.itemsNew.findIndex(o => o.id === nid); const full = Object.assign({ id: nid }, rec); if (i >= 0) d.itemsNew[i] = full; else d.itemsNew.push(full); } }, "objet " + rec.n);

@@ -4,7 +4,7 @@
 // Reprend la dernière musique écoutée (playlist, morceau, moment). Démarre tout seul à l'ouverture si le membre l'a laissé
 // allumé et si le navigateur l'autorise. Se met en pause quand une autre vidéo de l'app est lancée.
 import { S, ACT } from "./state.js";
-import { esc, lsGet, lsSet, toast } from "./util.js";
+import { esc, lsGet, lsSet, toast, backLayer } from "./util.js";
 import { PREVIEW } from "./content.js";
 
 export const playlists = () => ((S.media && Array.isArray(S.media.pls)) ? S.media.pls : []).filter(p => p && /^[\w-]{10,64}$/.test(p.id || ""));
@@ -33,9 +33,9 @@ function drawBox() {
 // panneau des commandes, sous le bouton 🎵 du haut
 function panel(show) {
   let p = document.getElementById("ytmpanel");
-  if (!show) { if (p) p.remove(); return; }
+  if (!show) { if (p) { p.remove(); if (p._rel) p._rel(); } return; }
   const pl = curPl(), L = playlists(), s = st();
-  if (!p) { p = document.createElement("div"); p.id = "ytmpanel"; p.className = "ytmpanel"; document.body.appendChild(p); }
+  if (!p) { p = document.createElement("div"); p.id = "ytmpanel"; p.className = "ytmpanel"; document.body.appendChild(p); p._rel = backLayer(() => { p._rel = null; p.remove(); }); }
   p.innerHTML = '<b class="ytmt" id="ytmt">' + esc(curTitle || (pl ? pl.n || "Playlist" : "")) + "</b>" +
     '<div class="ytmctl"><button data-act="ytm" data-a="prev" aria-label="Précédent">⏮</button><button data-act="ytm" data-a="toggle" id="ytmpp" aria-label="Lecture / pause">' + (playing ? "⏸" : "▶") + '</button><button data-act="ytm" data-a="next" aria-label="Suivant">⏭</button>' +
     '<input type="range" id="ytmvol" min="0" max="100" value="' + (s.vol == null ? 40 : s.vol) + '" aria-label="Volume"></div>' +
@@ -104,4 +104,4 @@ export function ytmBoot() { if (playlists().length && (st().on || st().auto) && 
 // une autre vidéo de l'app démarre -> pause
 setInterval(() => { if (!player || !ready) return; const other = [...document.querySelectorAll(".player iframe, .player video")].length; if (other && player.getPlayerState && player.getPlayerState() === 1) player.pauseVideo(); }, 1500);
 // toucher ailleurs ferme le panneau (la musique continue)
-document.addEventListener("click", e => { const p = document.getElementById("ytmpanel"); if (p && !p.contains(e.target) && !e.target.closest("#musicbtn")) p.remove(); }, true);
+document.addEventListener("click", e => { const p = document.getElementById("ytmpanel"); if (p && !p.contains(e.target) && !e.target.closest("#musicbtn")) { p.remove(); if (p._rel) p._rel(); } }, true);

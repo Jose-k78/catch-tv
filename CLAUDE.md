@@ -188,6 +188,31 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
     Firestore `tcgbak/{uid}_max` (la plus avancée, jamais remplacée par une partie qui recule) et `{uid}_j0…_j6` (une par jour) ;
     téléphone (`ctv.tcgbak.<uid>` : last, best, days). Page `#/tccg/sauvegardes` (`js/tcg/backup.js`) : restaurer ; le modo restaure
     pour un membre. Règles v12 : une partie ne peut plus reculer (sauf modo), `tcgbak` lisible par son joueur et le modo.
+- **TCCCG v3** (12 nov., cahier de Jose `tcccg v3` + ses réponses ; remplace le memory / les cases de la v2) :
+  - **Rien ne doit jamais être retiré d'une partie** (cartes, ressources, gimmicks, objets, médailles) : les nouvelles données vont dans
+    les maps existantes (les règles `hasOnly` de `tcg/{uid}` n'ont pas changé) : carte `inst.tr` [5 stats entraînées], `inst.trn`,
+    `inst.eq` (équipement, 1 seul, pour toujours, déséquipable), `inst.pw` ; `d.items` (équipements, `belt:<titre>`, `gc:<cadeau>`) ;
+    `d.mis = { [jour]: [réclamées], cnt: { d, open, free, win, event, quick, train, fuse, awake, evo } }` (`bump` de store.js).
+  - Phaser 3.80.1 servi par le site : `js/vendor/phaser.min.js` (workflow `.github/workflows/vendor.yml`), chargé à la demande par
+    `js/tcg/phaser.js` (`loadPhaser`, couche d'effets `fx()` : burst, confetti, fireworks, wave, pop, flash, rays). Réglage « Animations
+    simples » (`ctv.tgfx` = "simple") et sons (`ctv.tgsnd`, `muted()` de sfx.js).
+  - Bouton retour du téléphone : `backLayer(close)` de util.js (pushState / popstate) pour chaque fenêtre (modal, zoom, invocation,
+    entraînement, victoire, panneau musique) : un appui = une fenêtre fermée.
+  - Barre du bas `TNAV` (tccg.js) : Shop · Event · Match · Accueil · Call Up · Roster · Échange ; en haut `tccgTop()` (ressources,
+    ⚙️ `#/tccg/parametres`, logo TCC TV ; appui long sur Accueil = retour à TCC TV) ; `body.tgfull` cache les barres en combat / invocation.
+  - `home.js` : accueil, 4 missions par jour (`MPOOL` + `cfg.missions`), cadeaux (`gift1` seulement aux nouveaux joueurs + `cfg.gifts`),
+    guide `#/tccg/guide`, Shop (équipement / éveil / combat / ceintures contre médailles `BELT_MED` / gimmicks), image d'objet du modo (🖼️).
+  - `callup.js` + `summon.js` : boosters gratuits / mitb / PLE (31 j) / semaine (7 j) / spéciaux / départ, taux par catégorie `RATES2`
+    (modo : `cfg.rates2[cat]`, onglet Taux), Multi ×1,4 sur SR/SSR/LRP avec SSR garantie, « En vogue » (`cfg.vogue {cards, boosters, promo}`) ;
+    invocation Phaser (ring, déchirure au doigt, retournement, SSR saut de la 3e corde, LRP arc-en-ciel), résultats (favori, médaille, virer).
+  - `roster.js` : classeur 9 par page, filtres / tri, appui long = sélection, onglets Éveil (niveau max requis), Entraînement (`train.js`,
+    6 mini-jeux Phaser, payé seulement si réussi), Évolution (`evo.js` : arbre ceintures + gimmicks `gimmicksOf`, conditions `cond`,
+    carte niveau 1, entraînement gardé ; modo `evoEdit`, `cfg.evoG`), Doublons, Médailles, Objets, Virer.
+  - `fight.js` : Event (vrais shows) / Match (liste du jour, membres, Match rapide) ; 1v1 à 3v3, vie = somme des stats du leader, soutien
+    +10 % au même type, 2 objets (chance selon qualité `QCH`), pierre-feuille-ciseaux, attaque = écart de stat (15 + 3 × écart, sinon retour
+    de bâton), timing, finisher (niveau `finLv` : N100…LR200, modo `cfg.cards[base].fl` ; effets stun / vol / soin / div / boost, 1 à 3 tours
+    selon la rareté), PIN et kickouts. Combats courts : la vie peut être augmentée si Jose le demande.
+  - Modo : objets (`ACT.tcgmitem` : type équipement + stats, qualité, prix, effets stun / div), taux par catégorie, évolutions.
 - Notes : demi-étoiles de 0 à 5,5 (`RMAX`, `fmtR`, `stars`, `ratePick` / `pickRate` de util.js ; 6e étoile orange = bonus).
 - Historique : `g_<id>` = note d'un segment, `q_<id>` = segment préféré (comment = nom du show) ; préfixes m_/s_/f_/g_/q_ exclus
   des compteurs de shows (spoil.js, trophies.js, account.js). Profil : « Ses segments préférés ».

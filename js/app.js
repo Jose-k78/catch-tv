@@ -13,7 +13,7 @@ import { groupView } from "./views/groups.js";
 import { gslug } from "./views/wimage.js";
 import { groupLogo } from "./assets.js";
 import { pnNew } from "./views/patchnotes.js";
-import { tccgView, tccgTop, TICON, TNAV } from "./views/tccg.js";
+import { tccgView, tccgTop, TICON, TNAV, navTab } from "./views/tccg.js";
 import "./redir.js";
 import { settle as tcgSettle, pendingCount as tcgPending } from "./tcg/trade.js";
 import { keepLocal as tcgKeep, flushWait as tcgFlush } from "./tcg/store.js";
@@ -184,6 +184,7 @@ function render() {
   mountTicker(route);
   document.body.classList.toggle("wide", route.name === "home");
   document.body.classList.toggle("tccg", tgOn());
+  document.body.classList.toggle("tgfull", (route.name === "tccg" && route.tab === "combat") || !!document.querySelector(".tsum2, .ttrain")); // combat : barres cachées
   let h = "";
   const waiting = NEEDS_USER[route.name] && !S.user;
   if (waiting) h = '<p class="empty">Chargement…</p>';
@@ -268,7 +269,7 @@ function updateHeader() {
     if (tg) { if (!top.dataset.tv) top.dataset.tv = top.innerHTML; top.innerHTML = tccgTop(); }
     else if (top.dataset.tv) { top.innerHTML = top.dataset.tv; delete top.dataset.tv; }
   }
-  if (nav && tg) { const np = tcgPending(); nav.innerHTML = TNAV.map(x => '<a class="bn' + (route.tab === x[0] ? " on" : "") + '" href="#/tccg' + (x[0] ? "/" + x[0] : "") + '"><span class="bni">' + TICON[x[2]] + (x[0] === "echange" && np ? '<i class="bdot">' + np + "</i>" : "") + "</span><small>" + x[1] + "</small></a>").join(""); }
+  if (nav && tg) { const np = tcgPending(); nav.innerHTML = TNAV.map(x => '<a class="bn' + (navTab(route.tab) === x[0] ? " on" : "") + '" href="#/tccg' + (x[0] ? "/" + x[0] : "") + '"><span class="bni">' + TICON[x[2]] + (x[0] === "echange" && np ? '<i class="bdot">' + np + "</i>" : "") + "</span><small>" + x[1] + "</small></a>").join(""); }
   else if (nav) nav.innerHTML = NAV.map(x => {
     const badge = x[0] === "chat" ? n : x[0] === "members" ? soc : 0, pdot = x[0] === "me" && S.user && pnNew();
     const href = x[0] === "me" && !S.user ? "#/connexion" : x[1];

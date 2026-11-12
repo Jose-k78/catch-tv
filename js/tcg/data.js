@@ -41,15 +41,38 @@ export const ITEMS0 = [
   { id: "e-bottes", n: "Bottes de ring", t: "eveil", g: "E", ic: "🥾", d: "Objet d’éveil épique." },
   { id: "l-urne", n: "Urne", t: "eveil", g: "L", ic: "⚱️", d: "Objet d’éveil légendaire (achetable ou à gagner en combat)." },
   { id: "m-ceinture", n: "Ceinture en or", t: "eveil", g: "M", ic: "🏆", d: "Objet d’éveil mythique." },
-  { id: "f-chaise", n: "Chaise en acier", t: "combat", ic: "🪑", fx: "dmg", v: 25, d: "Inflige 25 dégâts à l’adversaire actif." },
-  { id: "f-table", n: "Table", t: "combat", ic: "🪵", fx: "dmg", v: 40, d: "Inflige 40 dégâts (une fois)." },
-  { id: "f-echelle", n: "Échelle", t: "combat", ic: "🪜", fx: "fin", v: 50, d: "Remplit la moitié de la barre de Finisher." },
-  { id: "f-kendo", n: "Kendo stick", t: "combat", ic: "🎋", fx: "dmg", v: 30, d: "Inflige 30 dégâts." },
-  { id: "f-eau", n: "Bouteille d’eau", t: "combat", ic: "💧", fx: "heal", v: 35, d: "Rend 35 PV au catcheur actif." },
-  { id: "f-serviette", n: "Serviette", t: "combat", ic: "🧻", fx: "heal", v: 20, d: "Rend 20 PV." },
-  { id: "f-poing", n: "Poing américain", t: "combat", ic: "🥊", fx: "boost", v: 1.5, d: "Prochaine attaque ×1,5." },
-  { id: "f-masque", n: "Masque de lucha", t: "combat", ic: "🎭", fx: "reveal", v: 4, d: "Révèle 4 cases pendant 1 seconde." }
+  { id: "f-chaise", n: "Chaise en acier", t: "combat", q: "commun", ic: "🪑", fx: "dmg", v: 25, price: 1500, d: "Inflige 25 dégâts à l’équipe adverse." },
+  { id: "f-table", n: "Table", t: "combat", q: "rare", ic: "🪵", fx: "dmg", v: 40, price: 3000, d: "Inflige 40 dégâts à l’équipe adverse." },
+  { id: "f-echelle", n: "Échelle", t: "combat", q: "rare", ic: "🪜", fx: "fin", v: 50, price: 3000, d: "Remplit la moitié de ta barre de Finisher." },
+  { id: "f-kendo", n: "Kendo stick", t: "combat", q: "commun", ic: "🎋", fx: "dmg", v: 30, price: 1800, d: "Inflige 30 dégâts à l’équipe adverse." },
+  { id: "f-eau", n: "Bouteille d’eau", t: "combat", q: "commun", ic: "💧", fx: "heal", v: 35, price: 1500, d: "Rend 35 PV à ton équipe." },
+  { id: "f-serviette", n: "Serviette", t: "combat", q: "commun", ic: "🧻", fx: "heal", v: 20, price: 900, d: "Rend 20 PV à ton équipe." },
+  { id: "f-poing", n: "Poing américain", t: "combat", q: "rare", ic: "🥊", fx: "boost", v: 1.5, price: 3500, d: "Ta prochaine attaque ×1,5." },
+  { id: "f-masque", n: "Masque de lucha", t: "combat", q: "legendaire", ic: "🎭", fx: "stun", v: 1, price: 6000, d: "Étourdit une carte adverse pendant 1 tour." },
+  { id: "f-spray", n: "Spray de l’arbitre", t: "combat", q: "legendaire", ic: "🧴", fx: "div", v: 0.5, price: 6000, d: "Les attaques adverses ×0,5 au prochain tour." },
+  // équipement : une pièce par carte, pour toujours (on peut la retirer), bonus de stats [Force, Agilité, Charisme, Endurance, Technique]
+  { id: "q-gants", n: "Gants de MMA", t: "equip", ic: "🥊", st: [6, 0, 0, 0, 0], price: 4000, d: "+6 Force." },
+  { id: "q-chaussons", n: "Chaussons légers", t: "equip", ic: "👟", st: [0, 6, 0, 0, 0], price: 4000, d: "+6 Agilité." },
+  { id: "q-micro", n: "Micro doré", t: "equip", ic: "🎤", st: [0, 0, 6, 0, 0], price: 4000, d: "+6 Charisme." },
+  { id: "q-coudieres", n: "Coudières renforcées", t: "equip", ic: "🛡️", st: [0, 0, 0, 6, 0], price: 4000, d: "+6 Endurance." },
+  { id: "q-carnet", n: "Carnet de prises", t: "equip", ic: "📓", st: [0, 0, 0, 0, 6], price: 4000, d: "+6 Technique." },
+  { id: "q-peignoir", n: "Peignoir d’entrée", t: "equip", ic: "🥋", st: [3, 3, 3, 3, 3], price: 7500, d: "+3 à toutes les stats." },
+  { id: "q-lunettes", n: "Lunettes de star", t: "equip", ic: "🕶️", st: [0, 2, 8, 0, 0], price: 6000, d: "+8 Charisme, +2 Agilité." },
+  { id: "q-bottes", n: "Bottes cloutées", t: "equip", ic: "🥾", st: [5, 0, 0, 5, 0], price: 6500, d: "+5 Force, +5 Endurance." }
 ];
+// chance qu'un objet de combat marche (selon sa qualité) ; sinon il rate, ou se retourne contre toi
+export const QCH = { commun: 0.5, rare: 0.65, legendaire: 0.8 }, QNAME = { commun: "Commun", rare: "Rare", legendaire: "Légendaire" };
+// niveau de finisher (= ses dégâts) selon la rareté de la carte ; le modo peut le changer carte par carte (cfg.cards[id].fl)
+export const FLV = { N: 100, R: 120, SR: 130, SSR: 150, UR: 170, LR: 200 };
+// taux du Call Up (validés par Jose le 12 nov.) : rareté de base des cartes ; LRP = SSR qui peut devenir LR
+export const RATES2 = {
+  week: { N: 55, R: 30, SR: 11, SSR: 3.5, LRP: 0.5 },
+  ple: { N: 42, R: 32, SR: 17, SSR: 7.5, LRP: 1.5 },
+  free: { N: 65, R: 27, SR: 7, SSR: 1, LRP: 0 },
+  start: { N: 62, R: 28, SR: 8, SSR: 2, LRP: 0 },
+  special: { N: 45, R: 31, SR: 16, SSR: 7, LRP: 1 }
+};
+export const rates2 = cat => Object.assign({}, RATES2[cat] || RATES2.week, ((cfg().rates2 || {})[cat]) || {});
 export const MEDAL = name => "md:" + name;
 
 const hashN = s => { let h = 2166136261; String(s).split("").forEach(c => { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); }); return h >>> 0; };
@@ -57,6 +80,7 @@ export const cfg = () => (S.tcgCfg && typeof S.tcgCfg === "object" ? S.tcgCfg : 
 export const rates = () => Object.assign({}, RATE0, cfg().rates || {});
 export const items = () => { const c = cfg(), ov = c.items || {}; const L = ITEMS0.map(x => Object.assign({}, x, ov[x.id] || {})); (c.itemsNew || []).forEach(x => { if (x && x.id && !L.find(y => y.id === x.id)) L.push(x); }); return L.filter(x => !x.del); };
 export const itemById = id => items().find(x => x.id === id);
+export const finLv = (inst, def) => { def = def || defOf(inst.c); const o = def && (cfg().cards || {})[def.base || def.id]; return (o && +o.fl) || FLV[inst.r || (def && def.r)] || 100; };
 
 // archétype d'après la fiche (texte, gabarit, alignement), sinon au hasard stable
 function guessArch(name, w, al) {
@@ -216,13 +240,32 @@ function heldMap() {
 }
 export const baseId = id => String(id || "").split(/[@#~]/)[0];
 // évolutions possibles d'une carte : titres vraiment tenus + ceux ajoutés par le modo, moins ceux qu'il a retirés
+// arbre d'évolution d'une carte (12 nov.) : ceintures tenues en vrai + anciennes gimmicks (catcheurs fusionnés par Jose dans
+// photos.json, leurs autres noms) + évolutions du modo (cfg.evoG[base] = [{ k, name, gimmick, years, img, st, pw, cond }]).
+// Conditions (1 à 3) : cond = { belt, item: { id, q }, med: { n, q }, lv, wins } ; le modo les règle (cfg.evo[clé].cond).
+const GIM0 = { lv: 30, med: { q: 2 } };
+function gimmicksOf(b) {
+  const c = cfg(), L = [], M = S.photosMerged || {};
+  if (Object.keys(M).some(k => M[k] === b.id)) { const ph = (S.photos || {})[b.id]; ((ph && ph.n) || []).filter(n => norm(n) !== norm(b.name) && norm(n) !== norm(b.rn || "")).forEach(n => L.push({ k: "g-" + slugOf(n), name: n, auto: true })); }
+  ((c.evoG || {})[b.id] || []).forEach(g => { if (!g || !g.k) return; const i = L.findIndex(x => x.k === g.k); if (i >= 0) L[i] = Object.assign({}, L[i], g); else L.push(g); });
+  return L;
+}
 export function evolutionsOf(defOrId) {
   const b = cardById(baseId(typeof defOrId === "string" ? defOrId : defOrId && defOrId.id)); if (!b) return [];
   const held = heldMap().get(realKey(b)) || {}, c = cfg(), ov = c.evo || {}, add = (c.evoAdd || {})[b.id] || [];
-  return Object.keys(held).concat(add).filter((x, i, a) => a.indexOf(x) === i && titleById(x) && !(ov[b.id + "|" + x] || {}).off)
-    .map(id => ({ t: titleById(id), year: held[id] || 0, key: b.id + "|" + id, id: b.id + "~" + id }));
+  const belts = Object.keys(held).concat(add).filter((x, i, a) => a.indexOf(x) === i && titleById(x) && !(ov[b.id + "|" + x] || {}).off)
+    .map(id => { const o = ov[b.id + "|" + id] || {}; return { kind: "belt", t: titleById(id), year: held[id] || 0, key: b.id + "|" + id, k: id, id: b.id + "~" + id, name: o.name || titleById(id).n, cond: Object.assign({}, o.cond || {}, { belt: id }) }; });
+  const gims = gimmicksOf(b).filter(g => !(ov[b.id + "|" + g.k] || {}).off).map(g => { const o = ov[b.id + "|" + g.k] || {}; return { kind: "gim", t: null, year: 0, key: b.id + "|" + g.k, k: g.k, id: b.id + "~" + g.k, name: o.name || g.name, img: o.img || g.img || "", cond: Object.assign({}, o.cond || g.cond || GIM0) }; });
+  return belts.concat(gims);
 }
 export function evoDef(b, tid) {
+  if (String(tid).indexOf("g-") === 0) {
+    const g = gimmicksOf(b).find(x => x.k === tid); if (!g) return null;
+    const ov = (cfg().evo || {})[b.id + "|" + tid] || {}, bonus = ov.bonus != null && ov.bonus !== "" ? +ov.bonus : 8, tl = TILT.sec, h = hashN(b.id + tid);
+    const st = Array.isArray(ov.st) && ov.st.length === 5 && ov.st.every(v => +v > 0) ? ov.st.map(Number) : Array.isArray(g.st) && g.st.length === 5 ? g.st.map(Number) : b.st.map((v, i) => Math.round(v * (1 + bonus / 100 + tl[(i + h) % 5] + (((h >>> (i * 3)) % 5) - 2) / 100)));
+    const img = ov.img || g.img || "";
+    return Object.assign({}, b, { id: b.id + "~" + tid, base: b.id, evo: tid, gim: tid, name: ov.name || g.name || b.name, years: typeof ov.years === "string" && ov.years ? ov.years : g.years || b.years, gimmick: ov.gimmick || g.gimmick || "Gimmick : " + (g.name || b.name), st: st, pic: img || b.pic, picUR: img ? "" : b.picUR, picLR: img ? "" : b.picLR, evoPw: ov.pw || g.pw || "", evoBonus: bonus, evoCls: "gim" });
+  }
   const t = titleById(tid); if (!t) return null;
   const ov = (cfg().evo || {})[b.id + "|" + tid] || {}, P = prestige(t), bonus = ov.bonus != null && ov.bonus !== "" ? +ov.bonus : EVO_BONUS[P], tl = TILT[P], h = hashN(b.id + tid);
   const st = Array.isArray(ov.st) && ov.st.length === 5 && ov.st.every(v => +v > 0) ? ov.st.map(Number) : b.st.map((v, i) => Math.round(v * (1 + bonus / 100 + tl[i] + (((h >>> (i * 3)) % 5) - 2) / 100)));
@@ -233,7 +276,7 @@ export function evoDef(b, tid) {
 // pouvoirs (tirés au hasard à l'évolution ; le modo peut fixer celui d'une évolution)
 export const POWERS = {
   crit: ["Coup critique", "+15 % de dégâts sur chaque attaque"], garde: ["Garde haute", "−15 % de dégâts reçus"], foule: ["Chouchou du public", "barre de Finisher +30 % plus vite"],
-  regen: ["Second souffle", "+6 % de PV à chaque paire trouvée"], tag: ["Partenaire fidèle", "+1 TAG pour l’équipe"], entree: ["Entrée fracassante", "1re attaque ×1,5"],
+  regen: ["Second souffle", "+4 % de vie à chaque attaque réussie"], tag: ["Partenaire fidèle", "+5 % de stats aux autres cartes de l’équipe"], entree: ["Entrée fracassante", "1re attaque ×1,5"],
   geant: ["Tueur de géants", "+25 % de dégâts contre plus costaud que lui"], aura: ["Aura de champion", "+8 % à toutes les stats"]
 };
 export const randomPower = () => { const k = Object.keys(POWERS); return k[Math.floor(Math.random() * k.length)]; };
@@ -250,7 +293,8 @@ export function defOf(id) {
 export function statsOf(inst, def) {
   def = def || defOf(inst.c); if (!def) return [0, 0, 0, 0, 0];
   const lvBonus = (inst.lv - 1) * 1.2 / 5, rUp = RAR.indexOf(inst.r) - RAR.indexOf(def.r), live = !def.champ && champsNow().has(realKey(def));
-  return def.st.map(v => Math.round((v + lvBonus) * (1 + rUp * 0.08) * (live ? 1.1 : 1)));
+  const tr = Array.isArray(inst.tr) ? inst.tr : [], eq = inst.eq ? itemById(inst.eq) : null, eqs = eq && Array.isArray(eq.st) ? eq.st : [];
+  return def.st.map((v, i) => Math.round((v + lvBonus) * (1 + rUp * 0.08) * (live ? 1.1 : 1)) + (+tr[i] || 0) + (+eqs[i] || 0));
 }
 export const hpOf = st => st.reduce((a, b) => a + b, 0) * 2;
 export const isChampLive = def => !!def && champsNow().has(realKey(def));
