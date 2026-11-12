@@ -250,7 +250,18 @@
    "medalOf": "Leon Slater"
   },
   "elio-lefleur": {
-   "img": "img/tcg/mwe0c1wg.jpg"
+   "img": "img/tcg/mwe0c1wg.jpg",
+   "k": "WWE",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Elio LeFleur"
   }
  },
  "bgm": {
