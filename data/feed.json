@@ -1,15 +1,6 @@
 {
- "at": "2026-11-12T19:51:34.220Z",
+ "at": "2026-11-12T20:47:06.959Z",
  "items": [
-  {
-   "t": "John Cena impliqué personnellement pour le John Cena Classic",
-   "u": "https://www.catch-newz.com/wwe/newz/61257-john-cena-implique-personnellement-pour-le-john-cena-classic",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "WWE"
-   ]
-  },
   {
    "t": "La WWE prépare un RAW spécial le 4 janvier 2027",
    "u": "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-le-4-janvier-2027",
@@ -21,13 +12,6 @@
    ]
   },
   {
-   "t": "Carte de GCW Bedlam In Boise 2026",
-   "u": "https://www.catch-newz.com/international/newz/61237-carte-de-gcw-bedlam-in-boise-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": []
-  },
-  {
    "t": "AEW Dynamite & Collision du 11 novembre : Dernière ligne droite vers AEW Full Gear",
    "u": "https://www.voxcatch.fr/2026/11/12/resultats-aew-dynamite-collision-11-novembre-2026/",
    "s": "VOXcatch",
@@ -37,6 +21,22 @@
     "Dynamite",
     "Collision"
    ]
+  },
+  {
+   "t": "John Cena impliqué personnellement pour le John Cena Classic",
+   "u": "https://www.catch-newz.com/wwe/newz/61257-john-cena-implique-personnellement-pour-le-john-cena-classic",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Carte de GCW Bedlam In Boise 2026",
+   "u": "https://www.catch-newz.com/international/newz/61237-carte-de-gcw-bedlam-in-boise-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": []
   },
   {
    "t": "Pourquoi WWE SmackDown du 27 novembre ne sera pas en direct ?",
@@ -1001,9 +1001,9 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61257-john-cena-implique-personnellement-pour-le-john-cena-classic",
    "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-le-4-janvier-2027",
    "https://www.catch-newz.com/aew/newz/61254-une-organisation-difficile-a-aew-dynamite-le-11-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61257-john-cena-implique-personnellement-pour-le-john-cena-classic",
    "https://www.catch-newz.com/international/newz/61237-carte-de-gcw-bedlam-in-boise-2026",
    "https://www.catch-newz.com/wwe/newz/61255-pourquoi-wwe-smackdown-du-27-novembre-ne-sera-pas-en-direct",
    "https://www.catch-newz.com/international/newz/61235-carte-de-cmll-viernes-espectacular-du-13-novembre-2026",
@@ -1302,10 +1302,10 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
-  "YouTube WWE": "2 nouvelles vidéos",
+  "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
