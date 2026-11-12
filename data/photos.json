@@ -1,6 +1,12 @@
 {
  "updated": "2026-11-12",
  "items": {
+  "giulia-mwe1suby": {
+   "f": "giulia-mwe1suby.webp",
+   "n": [
+    "Giulia Mwe1suby"
+   ]
+  },
   "goldust-v2": {
    "f": "goldust-v2.webp",
    "n": [
@@ -8061,10 +8067,5 @@
     "Mike Draztik"
    ]
   }
- },
- "merged": {
-  "santana": "cruz-montana",
-  "mike-santana": "cruz-montana",
-  "mike-draztik": "cruz-montana"
  }
 }
