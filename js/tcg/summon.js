@@ -14,7 +14,7 @@ import { SFX } from "./sfx.js";
 
 const simpleFx = () => { try { return localStorage.getItem("ctv.tgfx") === "simple"; } catch (e) { return false; } };
 const tierOf = def => def.r === "SSR" && (def.lrPot || def.max === "LR") ? "lrp" : def.r === "SSR" || RAR.indexOf(def.r) > 3 ? "ssr" : "low";
-const hex = c => { const m = String(c || "").match(/^#?([0-9a-f]{6})$/i); return m ? parseInt(m[1], 16) : 0x3b321f; };
+const hex = c => { const m = String(c || "").match(/^#?([0-9a-f]{6})$/i); return m ? parseInt(m[1], 16) : 0x2a3a72; };
 
 // ---------- la scène Phaser : public, projecteurs, ring, booster ----------
 function makeScene(Ph, b, glow) {
@@ -22,46 +22,64 @@ function makeScene(Ph, b, glow) {
     constructor() { super("summon"); }
     preload() { if (b.logo) this.load.image("blogo", b.logo); }
     create() {
-      const W = this.scale.width, H = this.scale.height, g = this.add.graphics();
+      const W = this.scale.width, H = this.scale.height; let g = this.add.graphics();
       this.W = W; this.H = H;
-      g.fillGradientStyle(0x14100a, 0x14100a, 0x040302, 0x040302, 1); g.fillRect(0, 0, W, H);
+      // version B « Dans l'arène » : l'écran géant en haut, la rampe d'entrée, les colonnes de feu
+      g.fillGradientStyle(0x0b1636, 0x0b1636, 0x070d22, 0x070d22, 1); g.fillRect(0, 0, W, H);
       // public : des têtes et des flashs d'appareils photo
       this.crowd = this.add.graphics();
-      for (let i = 0; i < 240; i++) { this.crowd.fillStyle(0x2c2518, 0.35 + Math.random() * 0.5); this.crowd.fillCircle(Math.random() * W, H * 0.08 + Math.random() * H * 0.42, 3 + Math.random() * 6); }
-      this.time.addEvent({ delay: 140, loop: true, callback: () => { const f = this.add.circle(Math.random() * W, H * 0.1 + Math.random() * H * 0.4, 2 + Math.random() * 2, 0xfff6d8, 0.9); this.tweens.add({ targets: f, alpha: 0, scale: 2, duration: 300, onComplete: () => f.destroy() }); } });
+      for (let i = 0; i < 240; i++) { this.crowd.fillStyle(0x1c2c5e, 0.35 + Math.random() * 0.5); this.crowd.fillCircle(Math.random() * W, H * 0.02 + Math.random() * H * 0.34, 3 + Math.random() * 6); }
+      this.time.addEvent({ delay: 140, loop: true, callback: () => { const f = this.add.circle(Math.random() * W, H * 0.03 + Math.random() * H * 0.33, 2 + Math.random() * 2, 0xffffff, 0.9); this.tweens.add({ targets: f, alpha: 0, scale: 2, duration: 300, onComplete: () => f.destroy() }); } });
       // projecteurs qui balaient
-      [0.2, 0.8].forEach((x, i) => { const c = this.add.triangle(W * x, -10, 0, 0, -W * 0.22, H * 0.8, W * 0.22, H * 0.8, 0xfff1c4, 0.07).setOrigin(0.5, 0).setBlendMode("ADD"); c.angle = i ? 12 : -12; this.tweens.add({ targets: c, angle: i ? -14 : 14, duration: 2600 + i * 500, yoyo: true, repeat: -1, ease: "Sine.easeInOut" }); });
-      // le ring (vu de face, en perspective)
-      const ry = H * 0.62, rh = H * 0.3, top = W * 0.16, bot = W * 0.02;
-      const poly = (pts, col) => { g.fillStyle(col); g.beginPath(); g.moveTo(pts[0], pts[1]); for (let i = 2; i < pts.length; i += 2) g.lineTo(pts[i], pts[i + 1]); g.closePath(); g.fillPath(); };
-      poly([top, ry, W - top, ry, W - bot, ry + rh, bot, ry + rh], 0x10203a);
-      poly([top + 10, ry + 6, W - top - 10, ry + 6, W - bot - 14, ry + rh - 18, bot + 14, ry + rh - 18], 0x26395e);
-      this.add.text(W / 2, ry + rh * 0.55, "TCCCG", { fontFamily: "system-ui, sans-serif", fontSize: Math.round(W * 0.12) + "px", fontStyle: "900", color: "#f0cf62" }).setOrigin(0.5).setAlpha(0.14).setScale(1, 0.55);
-      const posts = [[top, ry - H * 0.11, ry], [W - top, ry - H * 0.11, ry]], front = [[bot + 6, ry + rh * 0.18, ry + rh], [W - bot - 6, ry + rh * 0.18, ry + rh]];
-      posts.concat(front).forEach(p => { g.fillStyle(0xc9971f); g.fillRect(p[0] - 4, p[1], 8, p[2] - p[1]); });
-      for (let i = 0; i < 3; i++) { const y = ry - H * 0.1 + i * H * 0.035, yf = ry + rh * 0.2 + i * H * 0.035, c = i === 1 ? 0xffffff : 0xe23b3b;
-        g.lineStyle(3, c, 0.9); g.lineBetween(top, y, W - top, y); g.lineBetween(top, y, bot + 6, yf); g.lineBetween(W - top, y, W - bot - 6, yf);
-        this.add.graphics().setDepth(5).lineStyle(3, c, 0.75).lineBetween(bot + 6, yf, W - bot - 6, yf); }
-      this.corner = { x: W - top, y: ry - H * 0.1 }; // le coin : 3e corde (la plus haute)
-      this.center = { x: W / 2, y: ry - H * 0.02 };
+      [0.2, 0.8].forEach((x, i) => { const c = this.add.triangle(W * x, -10, 0, 0, -W * 0.22, H * 0.8, W * 0.22, H * 0.8, 0xcfe0ff, 0.07).setOrigin(0.5, 0).setBlendMode("ADD"); c.angle = i ? 12 : -12; this.tweens.add({ targets: c, angle: i ? -14 : 14, duration: 2600 + i * 500, yoyo: true, repeat: -1, ease: "Sine.easeInOut" }); });
+      // l'écran géant et la rampe passent devant le public
+      g = this.add.graphics().setDepth(1);
+      const poly = (pts, col, al) => { g.fillStyle(col, al == null ? 1 : al); g.beginPath(); g.moveTo(pts[0], pts[1]); for (let i = 2; i < pts.length; i += 2) g.lineTo(pts[i], pts[i + 1]); g.closePath(); g.fillPath(); };
+      // l'écran géant (titantron)
+      const tw = W * 0.86, tx = (W - tw) / 2, ty = Math.max(46, H * 0.06), th = Math.min(H * 0.15, 128);
+      g.fillStyle(0x16204a); g.fillRoundedRect(tx - 6, ty - 6, tw + 12, th + 12, 14);
+      g.fillStyle(0x3b4a7a); g.fillRoundedRect(tx - 3, ty - 3, tw + 6, th + 6, 12);
+      g.fillGradientStyle(0x0b1636, 0x0b1636, 0x2a63cc, 0x2a63cc, 1); g.fillRect(tx, ty, tw, th);
+      for (let y = ty; y < ty + th; y += 3) { g.fillStyle(0x000000, 0.2); g.fillRect(tx, y, tw, 1); }
+      this.tronS = this.add.text(W / 2, ty + th * 0.26, "Invocation", { fontFamily: "'Barlow Condensed', sans-serif", fontSize: Math.round(th * 0.17) + "px", fontStyle: "italic bold", color: "#cfe0ff" }).setOrigin(0.5).setDepth(2);
+      this.tronT = this.add.text(W / 2, ty + th * 0.6, String(b.t || "Booster").slice(0, 26).toUpperCase(), { fontFamily: "Anton, Impact, sans-serif", fontSize: Math.round(th * 0.32) + "px", color: "#ffd23f", align: "center" }).setOrigin(0.5).setDepth(2).setShadow(0, 0, "#ffd23f", 14, true, true);
+      if (this.tronT.width > tw - 20) this.tronT.setScale((tw - 20) / this.tronT.width);
+      this.tron = { x: W / 2, y: ty + th / 2 };
+      // la rampe d'entrée, en perspective
+      const ry = ty + th + 10, rt = W * 0.24, rb = W * 1.3;
+      poly([W / 2 - rt / 2, ry, W / 2 + rt / 2, ry, W / 2 + rb / 2, H, W / 2 - rb / 2, H], 0x163f92);
+      poly([W / 2 - rt / 2 + 4, ry, W / 2 + rt / 2 - 4, ry, W / 2 + rb / 2 - 30, H, W / 2 - rb / 2 + 30, H], 0x2156bf, 0.8);
+      for (let k = 1; k < 10; k++) { const t = k / 10, y = ry + (H - ry) * t * t, hw = (rt + (rb - rt) * t * t) / 2; g.lineStyle(2, 0xffffff, 0.06); g.lineBetween(W / 2 - hw, y, W / 2 + hw, y); }
+      // les colonnes de feu (elles s'allument pour une SSR)
+      this.pyro = [W * 0.07, W * 0.93].map(x => { const c = this.add.graphics().setDepth(2); c.fillGradientStyle(0xffd23f, 0xffd23f, 0xe63946, 0xe63946, 0, 0, 1, 1); c.fillRect(-13, -H * 0.36, 26, H * 0.36); c.setPosition(x, H); c.scaleY = 0.25; c.alpha = 0.7; return c; });
+      this.corner = { x: this.tron.x, y: this.tron.y }; // SSR : entrée spéciale depuis l'écran géant
+      this.center = { x: W / 2, y: H * 0.56 };
       // le booster
-      const bw = Math.min(W * 0.46, 210), bh = bw * 1.42, c0 = hex((b.c || [])[0]), c1 = hex((b.c || [])[1] || "#0a0907");
-      const pk = this.add.container(W / 2, -bh).setDepth(3), body = this.add.graphics();
+      const bw = Math.min(W * 0.46, 210), bh = bw * 1.42, c0 = hex((b.c || [])[0]), c1 = hex((b.c || [])[1] || "#0b1636");
+      const pk = this.add.container(W / 2, this.tron.y).setDepth(3).setScale(0.15), body = this.add.graphics();
       body.fillStyle(c1); body.fillRoundedRect(-bw / 2, -bh / 2, bw, bh, 14); body.fillStyle(c0, 0.85); body.fillRoundedRect(-bw / 2 + 6, -bh / 2 + 6, bw - 12, bh - 12, 10);
-      body.lineStyle(3, 0xf0cf62, 1); body.strokeRoundedRect(-bw / 2, -bh / 2, bw, bh, 14);
+      body.lineStyle(3, 0xffd23f, 1); body.strokeRoundedRect(-bw / 2, -bh / 2, bw, bh, 14);
       pk.add(body);
       if (b.logo && this.textures.exists("blogo")) { const im = this.add.image(0, -bh * 0.08, "blogo"); const k = Math.min((bw * 0.7) / im.width, (bh * 0.4) / im.height); im.setScale(k); pk.add(im); }
-      pk.add(this.add.text(0, bh * 0.3, String(b.t || "Booster").slice(0, 22).toUpperCase(), { fontFamily: "system-ui, sans-serif", fontSize: "15px", fontStyle: "900", color: "#ffffff", align: "center", wordWrap: { width: bw - 20 }, stroke: "#000", strokeThickness: 4 }).setOrigin(0.5));
+      pk.add(this.add.text(0, bh * 0.3, String(b.t || "Booster").slice(0, 22).toUpperCase(), { fontFamily: "Anton, Impact, sans-serif", fontSize: "16px", color: "#ffffff", align: "center", wordWrap: { width: bw - 20 }, stroke: "#000", strokeThickness: 4 }).setOrigin(0.5));
       // la bande du haut (qu'on déchire) : un morceau à part
       const strip = this.add.container(0, -bh / 2 + bh * 0.09), sg = this.add.graphics();
-      sg.fillStyle(0xf0cf62); sg.fillRoundedRect(-bw / 2, -bh * 0.09, bw, bh * 0.18, { tl: 14, tr: 14, bl: 0, br: 0 }); sg.fillStyle(0x8a6412); for (let x = -bw / 2 + 6; x < bw / 2; x += 12) sg.fillTriangle(x, bh * 0.09, x + 6, bh * 0.09 - 7, x + 12, bh * 0.09);
-      strip.add(sg); strip.add(this.add.text(0, 0, "TCCCG", { fontFamily: "system-ui, sans-serif", fontSize: "14px", fontStyle: "900", color: "#1a1405" }).setOrigin(0.5)); pk.add(strip);
+      sg.fillStyle(0xffd23f); sg.fillRoundedRect(-bw / 2, -bh * 0.09, bw, bh * 0.18, { tl: 14, tr: 14, bl: 0, br: 0 }); sg.fillStyle(0x8a6a00); for (let x = -bw / 2 + 6; x < bw / 2; x += 12) sg.fillTriangle(x, bh * 0.09, x + 6, bh * 0.09 - 7, x + 12, bh * 0.09);
+      strip.add(sg); strip.add(this.add.text(0, 0, "TCCCG", { fontFamily: "Anton, Impact, sans-serif", fontSize: "15px", color: "#1a1405" }).setOrigin(0.5)); pk.add(strip);
       this.pack = pk; this.strip = strip; this.bw = bw; this.bh = bh;
       this.tearG = this.add.graphics().setDepth(6);
       // le booster tombe sur le ring
-      this.tweens.add({ targets: pk, y: this.center.y - bh * 0.12, duration: 1000, ease: "Bounce.easeOut", onComplete: () => { this.cameras.main.shake(220, 0.01); SFX.bell(1); this.events.emit("landed"); this.tweens.add({ targets: pk, scale: 1.04, duration: 700, yoyo: true, repeat: -1, ease: "Sine.easeInOut" }); } });
-      this.tweens.add({ targets: pk, angle: { from: -14, to: 0 }, duration: 1000, ease: "Quad.easeOut" });
+      this.tweens.add({ targets: pk, y: this.center.y - bh * 0.12, scale: 1, duration: 1000, ease: "Back.easeOut", onComplete: () => { this.cameras.main.shake(220, 0.01); SFX.bell(1); this.events.emit("landed"); this.tweens.add({ targets: pk, scale: 1.04, duration: 700, yoyo: true, repeat: -1, ease: "Sine.easeInOut" }); } });
+      this.tweens.add({ targets: pk, angle: { from: -540, to: 0 }, duration: 1000, ease: "Quad.easeOut" });
       this.glow = glow;
+    }
+    // texte de l'écran géant
+    say(t, sub) { if (this.tronT) { this.tronT.setText(String(t || "").toUpperCase()).setScale(1); const mw = this.W * 0.86 - 20; if (this.tronT.width > mw) this.tronT.setScale(mw / this.tronT.width); } if (this.tronS && sub != null) this.tronS.setText(sub); }
+    // colonnes de feu
+    fire(ms) {
+      (this.pyro || []).forEach((c, i) => { this.tweens.killTweensOf(c); c.alpha = 1; this.tweens.add({ targets: c, scaleY: 1, duration: 260, ease: "Back.easeOut" }); this.tweens.add({ targets: c, alpha: 0.75, duration: 90, yoyo: true, repeat: Math.round((ms || 1600) / 180) });
+        if (this.textures.exists("tdot2")) { const pe = this.add.particles(0, 0, "tdot2", { speed: { min: 80, max: 260 }, angle: { min: 250, max: 290 }, lifespan: 700, scale: { start: 0.7, end: 0 }, tint: [0xffd23f, 0xe63946, 0xffffff], blendMode: "ADD", emitting: false }).setDepth(3); pe.explode(36, c.x, this.H - this.H * 0.36); }
+        this.time.delayedCall(ms || 1600, () => this.tweens.add({ targets: c, scaleY: 0.25, alpha: 0.7, duration: 400 })); });
     }
     // zone du haut du booster (pour savoir si le doigt la traverse)
     stripBox() { const p = this.pack; return { x: p.x - this.bw / 2, y: p.y - this.bh / 2, w: this.bw, h: this.bh * 0.26 }; }
@@ -69,7 +87,7 @@ function makeScene(Ph, b, glow) {
     // déchirure : la bande s'envole, la lumière sort du booster (couleur selon la meilleure carte)
     tear() {
       this.tearG.clear(); this.tweens.killTweensOf(this.pack); this.pack.setScale(1);
-      const col = { white: 0xffffff, violet: 0xb25ce0, gold: 0xf0cf62, rainbow: 0xffffff }[this.glow] || 0xffffff;
+      const col = { white: 0xffffff, violet: 0xb25ce0, gold: 0xffd23f, rainbow: 0xffffff }[this.glow] || 0xffffff;
       this.tweens.add({ targets: this.strip, y: this.strip.y - 160, x: 80, angle: 70, alpha: 0, duration: 700, ease: "Quad.easeOut" });
       const top = { x: this.pack.x, y: this.pack.y - this.bh * 0.42 };
       for (let i = 0; i < 12; i++) { const r = this.add.rectangle(top.x, top.y, 8, 260, this.glow === "rainbow" ? [0xff5a5a, 0xf2c230, 0x3fdc7a, 0x5cc8f0, 0x9b5de5][i % 5] : col, 0.35).setOrigin(0.5, 1).setBlendMode("ADD").setAngle(-60 + i * 11).setDepth(4); this.tweens.add({ targets: r, scaleY: { from: 0.1, to: 1.6 }, alpha: 0, duration: 900, delay: i * 25, onComplete: () => r.destroy() }); }
@@ -81,16 +99,17 @@ function makeScene(Ph, b, glow) {
       return new Promise(res => {
         const w = Math.min(this.W * 0.3, 140), h = w * 1.45, back = this.add.container(this.pack.x, this.pack.y).setDepth(7), bg = this.add.graphics();
         if (rainbow) { const cols = [0xff5a5a, 0xf2c230, 0x3fdc7a, 0x5cc8f0, 0x9b5de5]; cols.forEach((c, i) => { bg.fillStyle(c); bg.fillRect(-w / 2, -h / 2 + i * h / 5, w, h / 5 + 1); }); }
-        else { bg.fillStyle(0x16130d); bg.fillRoundedRect(-w / 2, -h / 2, w, h, 10); }
-        bg.lineStyle(4, 0xf0cf62, 1); bg.strokeRoundedRect(-w / 2, -h / 2, w, h, 10);
-        back.add(bg); back.add(this.add.text(0, 0, "TCCCG", { fontFamily: "system-ui, sans-serif", fontSize: "20px", fontStyle: "900", color: rainbow ? "#ffffff" : "#f0cf62", stroke: "#000", strokeThickness: 4 }).setOrigin(0.5));
+        else { bg.fillStyle(0x0f1d48); bg.fillRoundedRect(-w / 2, -h / 2, w, h, 10); }
+        bg.lineStyle(4, 0xffd23f, 1); bg.strokeRoundedRect(-w / 2, -h / 2, w, h, 10);
+        back.add(bg); back.add(this.add.text(0, 0, "TCCCG", { fontFamily: "Anton, Impact, sans-serif", fontSize: "22px", color: rainbow ? "#ffffff" : "#ffd23f", stroke: "#000", strokeThickness: 4 }).setOrigin(0.5));
         back.setScale(0.2);
-        // le public se lève
+        // le public se lève, les colonnes de feu s'allument, l'écran géant annonce l'entrée
         this.tweens.add({ targets: this.crowd, y: -6, duration: 260, yoyo: true, repeat: 4 });
+        this.fire(2200); this.say(rainbow ? "Entrée légendaire !" : "Entrée spéciale !", "Le public se lève");
         SFX.crowd(true); setTimeout(() => SFX.crowd(false), 2600);
         this.tweens.add({ targets: back, x: this.corner.x - 10, y: this.corner.y - h * 0.5, scale: 0.6, angle: 360, duration: 650, ease: "Sine.easeOut", onComplete: () => {
           this.cameras.main.flash(200, 255, 230, 160); this.cameras.main.shake(200, 0.012);
-          const ex = this.add.particles(0, 0, "tdot2", { speed: { min: 120, max: 360 }, lifespan: 600, scale: { start: 0.9, end: 0 }, tint: rainbow ? [0xff5a5a, 0xf2c230, 0x3fdc7a, 0x5cc8f0, 0x9b5de5] : [0xf0cf62, 0xffffff], blendMode: "ADD", emitting: false }).setDepth(8);
+          const ex = this.add.particles(0, 0, "tdot2", { speed: { min: 120, max: 360 }, lifespan: 600, scale: { start: 0.9, end: 0 }, tint: rainbow ? [0xff5a5a, 0xf2c230, 0x3fdc7a, 0x5cc8f0, 0x9b5de5] : [0xffd23f, 0xffffff], blendMode: "ADD", emitting: false }).setDepth(8);
           ex.explode(46, this.corner.x - 10, this.corner.y - h * 0.5);
           this.time.delayedCall(350, () => this.tweens.add({ targets: back, x: this.W / 2, y: this.H * 0.42, scale: 1, angle: 720, duration: 650, ease: "Back.easeOut", onComplete: () => { this.cameras.main.shake(160, 0.008); res(back); } }));
         } });
@@ -115,20 +134,21 @@ export async function summon(b, ids, opt) {
   if (!simpleFx()) {
     try {
       const Ph = await loadPhaser(), Sc = makeScene(Ph, b, best);
-      game = new Ph.Game({ type: Ph.AUTO, parent: ov.querySelector(".tsstage2"), backgroundColor: "#050403", scale: { mode: Ph.Scale.RESIZE, width: innerWidth, height: innerHeight }, scene: [Sc], banner: false, audio: { noAudio: true } });
+      game = new Ph.Game({ type: Ph.AUTO, parent: ov.querySelector(".tsstage2"), backgroundColor: "#070d22", scale: { mode: Ph.Scale.RESIZE, width: innerWidth, height: innerHeight }, scene: [Sc], banner: false, audio: { noAudio: true } });
       await new Promise(r => { const chk = () => { const s = game.scene.getScene("summon"); if (s && s.pack) { scene = s; if (!s.textures.exists("tdot2")) { const gg = s.make.graphics({ add: false }); gg.fillStyle(0xffffff); gg.fillCircle(5, 5, 5); gg.generateTexture("tdot2", 10, 10); gg.destroy(); } r(); } else setTimeout(chk, 50); }; chk(); setTimeout(r, 4000); });
       await new Promise(r => { if (!scene) return r(); scene.events.once("landed", r); setTimeout(r, 1600); });
     } catch (e) { scene = null; }
   }
   if (closed) return;
   stage = "tear"; hint.innerHTML = scene ? "👆 Glisse ton doigt sur le <b>haut du booster</b> pour le déchirer" : "👆 Touche pour ouvrir le booster";
-  if (!scene) { ov.querySelector(".tsstage2").innerHTML = '<div class="tspack2" style="background:linear-gradient(160deg,' + esc((b.c || [])[0] || "#3b321f") + "," + esc((b.c || [])[1] || "#0a0907") + ')"><b>' + esc(b.t) + "</b></div>"; }
+  if (!scene) { ov.querySelector(".tsstage2").innerHTML = '<div class="tspack2" style="background:linear-gradient(160deg,' + esc((b.c || [])[0] || "#2a3a72") + "," + esc((b.c || [])[1] || "#0b1636") + ')"><b>' + esc(b.t) + "</b></div>"; }
   const opened = () => { stage = "reveal"; hint.textContent = ""; SFX.finisher(); setTimeout(() => show(0), scene ? 700 : 200); };
   // dévoiler la carte i
   const show = async i => {
     idx = i; if (i >= defs.length) return results();
     const def = defs[i], t = tiers[i];
     countEl.textContent = (i + 1) + " / " + defs.length;
+    if (scene && scene.say) scene.say("Qui arrive ?", "Carte " + (i + 1) + " sur " + defs.length);
     frontEl.innerHTML = cardHTML(def, { nozoom: true });
     backEl.className = "tsback" + (t === "lrp" ? " rainbow" : t === "ssr" ? " gold" : "");
     backEl.innerHTML = '<div class="tc3 back"><div class="tc3back"><b>TCCCG</b><small>The Catch Card Collection Game</small></div></div>';
@@ -145,8 +165,9 @@ export async function summon(b, ids, opt) {
   };
   const reveal = () => {
     stage = "face"; inner.classList.add("flip"); busyT = Date.now() + 900;
+    if (scene && scene.say) { const dd = defs[idx]; scene.say(dd.r + " : " + dd.name, "Carte " + (idx + 1) + " sur " + defs.length); if (tiers[idx] !== "low") scene.fire(1400); }
     const t = tiers[idx], c = flipEl.getBoundingClientRect(), x = c.left + c.width / 2, y = c.top + c.height / 2;
-    setTimeout(() => { if (t === "lrp") { flash(0xffffff, 600); burst(x, y, 70, 0xff8ad8); wave(x, y, 0xf0cf62, 260); fireworks(4); } else if (t === "ssr") { flash(0xfff2c4, 420); burst(x, y, 50); wave(x, y, 0xf0cf62, 200); } else if (defs[idx].r === "SR") burst(x, y, 20, 0xb25ce0); if (t !== "low") { SFX.hit(true); try { navigator.vibrate && navigator.vibrate([30, 40, 60]); } catch (e) {} } }, 380);
+    setTimeout(() => { if (t === "lrp") { flash(0xffffff, 600); burst(x, y, 70, 0xff8ad8); wave(x, y, 0xffd23f, 260); fireworks(4); } else if (t === "ssr") { flash(0xfff2c4, 420); burst(x, y, 50); wave(x, y, 0xffd23f, 200); } else if (defs[idx].r === "SR") burst(x, y, 20, 0xb25ce0); if (t !== "low") { SFX.hit(true); try { navigator.vibrate && navigator.vibrate([30, 40, 60]); } catch (e) {} } }, 380);
     hint.innerHTML = idx < defs.length - 1 ? "👈 Glisse à gauche pour la suivante" : "👈 Glisse pour voir toutes tes cartes";
   };
   const next = () => { if (Date.now() < busyT) return; flipEl.classList.add("out"); setTimeout(() => { flipEl.classList.remove("out"); show(idx + 1); }, 260); };

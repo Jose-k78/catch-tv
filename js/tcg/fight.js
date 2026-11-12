@@ -53,7 +53,7 @@ let evShow = "";
 ACT.tcgevshow = el => { evShow = el.dataset.k || ""; changed("tcg"); };
 export function eventView() {
   const d = me(), F = fightShows();
-  let h = '<section class="tccghead"><h1>Event</h1></section>' + resumeBox() + '<p class="tnote">Chaque show de la vraie vie est un event : choisis un vrai match, la difficulté, puis ton équipe. Un show reste 7 jours puis disparaît. Chaque match se refait 1 h plus tard.</p>';
+  let h = '<section class="tccghead"><h1>Event</h1><small>Les vrais matchs de la semaine</small></section>' + resumeBox() + '<p class="tnote">Chaque show de la vraie vie est un event : choisis un vrai match, la difficulté, puis ton équipe. Un show reste 7 jours puis disparaît. Chaque match se refait 1 h plus tard.</p>';
   if (!F.length) return h + '<p class="tnote">Pas de show de la semaine avec des résultats pour l’instant.</p>';
   if (!F.find(s => s.key === evShow)) evShow = F[0].key;
   h += '<div class="tevchips">' + F.map(s => { const p = s.key.split("|"); return '<button class="tevchip' + (s.key === evShow ? " on" : "") + (s.ple ? " ple" : "") + '" data-act="tcgevshow" data-k="' + esc(s.key) + '"><b>' + esc(s.ple ? showKeyLabel(s.key) : p[1]) + "</b><small>" + esc(p[0]) + " · " + esc(p[2].slice(8) + "/" + p[2].slice(5, 7)) + "</small></button>"; }).join("") + "</div>";
@@ -74,7 +74,7 @@ function randomList() {
 }
 export function matchView(sub) {
   const d = me(), tab = sub === "membres" ? "membres" : "";
-  let h = '<section class="tccghead"><h1>Match</h1></section>' + resumeBox() +
+  let h = '<section class="tccghead"><h1>Match</h1><small>Monte sur le ring quand tu veux</small></section>' + resumeBox() +
     '<button class="tquick" data-act="tcgprep" data-k="quick"><b>⚡ MATCH RAPIDE</b><small>Un adversaire au hasard, une IA moins forte · petits gains : argent, objets, équipement, parfois une carte</small></button>' +
     '<nav class="tsub"><a class="' + (tab ? "" : "on") + '" href="#/tccg/match">🎲 Catcheurs au hasard</a><a class="' + (tab ? "on" : "") + '" href="#/tccg/match/membres">👥 Contre les membres</a></nav>';
   if (tab === "membres") {
@@ -236,7 +236,7 @@ export function combatView() {
   if (!B && !restore()) return eventView();
   const P = B.P, E = B.E, bg = (cfg().assets || {}).fightbg, my = B.turn === "P" && !B.busy && !B.over && !B.pin;
   let h = '<div class="tbat"' + (bg ? ' style="background-image:linear-gradient(rgba(5,4,3,.6),rgba(5,4,3,.85)),url(\'' + esc(bg) + '\')"' : "") + ">" +
-    '<div class="tbtop"><button class="tbquit" data-act="tcgquit" aria-label="Abandonner">✕</button><span class="tblabel">' + esc(B.F.label) + (B.diff && B.diff !== "low" && !B.F.quick ? ' · <b class="tdtag ' + B.diff + '">' + DIFF[B.diff].n + "</b>" : "") + '</span><button class="tbauto' + (AUTO ? " on" : "") + '" data-act="tcgauto">' + (AUTO ? "⏸ AUTO" : "▶ AUTO") + '</button><button class="tbwheel" data-act="tcgtypes" aria-label="Tableau des types">' + typeWheel(30) + "</button></div>" +
+    '<div class="tbtop"><button class="tbquit" data-act="tcgquit" aria-label="Abandonner">✕</button><span class="tblabel">' + esc(B.F.label) + (B.diff && B.diff !== "low" && !B.F.quick ? ' · <b class="tdtag ' + B.diff + '">' + DIFF[B.diff].n + "</b>" : "") + '</span><button class="tbauto' + (AUTO ? " on" : "") + '" data-act="tcgauto">' + (AUTO ? "⏸ AUTO" : "▶ AUTO") + '</button><button class="tbwheel" data-act="tcgtypes" aria-label="Roue des types"><span>TYPES</span></button></div>' +
     '<div class="tbsideE">' + hpBar("E") + cardsRow("E") + "</div>" +
     '<div class="tbmid"><div class="tbturn ' + (B.turn === "P" ? "me" : B.turn === "E" ? "foe" : "") + '">' + (B.pin ? "🤼 TOMBÉ !" : !B.turn ? "✊ ✋ ✌️" : B.turn === "P" ? "▶ À TOI DE JOUER" : "⏳ TOUR DE L’ADVERSAIRE") + '</div><p class="tblog">' + esc(B.log) + "</p></div>" +
     '<div class="tbsideP">' + cardsRow("P") + hpBar("P") + "</div>";
@@ -291,7 +291,7 @@ function statsOfFoe(i) {
   });
 }
 ACT.tcgtypes = () => modal((box, close) => {
-  box.innerHTML = '<h3>Tableau des types</h3><div style="text-align:center">' + typeWheel(150) + "</div><p>" + typeChain() + '</p><div class="list">' + ARCHS.map(a => '<div class="item"><span class="lbl"><b style="color:' + ARCH[a].c + '">' + a + "</b><small>bat " + ARCH[a].beats + " (×2) · battu par " + ARCHS.find(x => ARCH[x].beats === a) + " (×0,5)</small></span></div>").join("") + '</div><button class="btn wide ghost" data-close>Fermer</button>';
+  box.innerHTML = '<h3>La roue des types</h3><div class="twb">' + ARCHS.map((a, k) => { const t = (-90 + k * 72) * Math.PI / 180; return '<span class="twbn" style="left:' + Math.round(50 + 37 * Math.cos(t)) + '%;top:' + Math.round(50 + 37 * Math.sin(t)) + '%"><i style="background:' + ARCH[a].c + '"></i><b>' + a + "</b></span>"; }).join("") + '</div><p class="twbc">' + typeChain() + '</p><p class="twbn2">Avec l’avantage : dégâts ×2. Avec le désavantage : ×0,5.</p><div class="list">' + ARCHS.map(a => '<div class="item"><span class="lbl"><b style="color:' + ARCH[a].c + '">' + a + "</b><small>bat " + ARCH[a].beats + " (×2) · battu par " + ARCHS.find(x => ARCH[x].beats === a) + " (×0,5)</small></span></div>").join("") + '</div><button class="btn wide ghost" data-close>Fermer</button>';
   box.addEventListener("click", e => { if (e.target.closest("[data-close]")) close(); });
 });
 // choisir la stat, voir les dégâts prévus, confirmer

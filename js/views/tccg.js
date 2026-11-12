@@ -67,11 +67,13 @@ export function tccgView(tab, sub, id) {
 }
 // haut de l'écran en mode TCCCG : logo TCCCG, retour à TCC TV, ⚙️, profil ; dessous : niveau, XP et ressources
 const nf = n => { n = +n || 0; return n >= 1e6 ? (Math.round(n / 1e5) / 10 + "M").replace(".", ",") : n >= 1e4 ? (Math.round(n / 100) / 10 + "k").replace(".", ",") : String(n); };
+// compteurs lumineux du haut (version B « Dans l'arène ») : icônes au trait
+const RES_IC = [["cg", "Argent", "M3 7h18v10H3zM12 9.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 1 0 0-5z", "money"], ["cy", "Momentum", "M13 2L4 14h7l-1 8 9-12h-7l1-8z", "mom"], ["cp", "Pop", "M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6l-5.4 2.9 1.2-6-4.5-4.2 6.1-.7z", "pop"], ["cb", "Push", "M12 20V5M6 11l6-6 6 6", "push"], ["cr", "Gimmicks", "M4 6h16v4a2 2 0 0 0 0 4v4H4v-4a2 2 0 0 0 0-4z", "gim"]];
 export function tccgTop() {
   let res = "";
   if (S.user && S.tcgReady) { const d = me(), xp = d.lvl < 50 ? Math.round(d.xp / XP_LV(d.lvl) * 100) : 100;
     res = '<div class="ttopres"><span class="tlv" title="Niveau ' + d.lvl + " · " + d.xp + " XP\"><b>Nv " + d.lvl + '</b><i class="txpbar"><i style="width:' + xp + '%"></i></i></span>' +
-      '<span title="Argent">💵 ' + nf(d.res.money) + '</span><span title="Momentum">⚡ ' + nf(d.res.mom) + '</span><span title="Pop">⭐ ' + nf(d.res.pop) + '</span><span title="Push">📣 ' + nf(d.res.push) + '</span><span title="Gimmicks">🎟️ ' + nf(d.res.gim) + "</span></div>"; }
+      RES_IC.map(r => '<span class="trs ' + r[0] + '" title="' + r[1] + '"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="' + r[2] + '"/></svg>' + nf(d.res[r[3]]) + "</span>").join("") + "</div>"; }
   return '<a class="logo tlogo" href="#/tccg" aria-label="TCCCG, accueil">' + LOGO + "</a>" +
     '<div class="hbtns"><a class="tvback" href="#/" aria-label="Revenir à TCC TV"><span class="l1">TCC</span><span class="l2">TV</span></a>' +
     '<a class="tgear" href="#/tccg/parametres" aria-label="Paramètres du TCCCG">' + TICON.gear + "</a>" +
@@ -82,7 +84,7 @@ const lsG = k => { try { return localStorage.getItem(k); } catch (e) { return nu
 const lsS = (k, v) => { try { if (v == null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) {} };
 function settingsView() {
   const fxOff = lsG("ctv.tgfx") === "simple";
-  return '<section class="tccghead"><h1>Paramètres</h1></section><div class="list tset">' +
+  return '<section class="tccghead"><h1>Paramètres</h1><small>La régie</small></section><div class="list tset">' +
     '<div class="item"><span class="lbl"><b>🔊 Sons du jeu</b><small>Cloche, coups, public, invocation</small></span><button class="btn small' + (muted() ? " ghost" : "") + '" data-act="tgset" data-k="snd">' + (muted() ? "Coupés" : "Activés") + "</button></div>" +
     '<div class="item"><span class="lbl"><b>🎬 Animations</b><small>Complètes (Phaser) ou simples (téléphone lent)</small></span><button class="btn small' + (fxOff ? " ghost" : "") + '" data-act="tgset" data-k="fx">' + (fxOff ? "Simples" : "Complètes") + "</button></div>" +
     '<a class="item" href="#/tccg/guide"><span class="lbl"><b>📖 Guide du jeu</b><small>Toutes les règles</small></span><span>›</span></a>' +

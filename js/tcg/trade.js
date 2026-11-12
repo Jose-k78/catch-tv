@@ -69,7 +69,7 @@ function giveBack(t) { commit(x => { (t.give.cards || []).forEach(cd => addInst(
 // ---------- vues ----------
 export function echangeView(sub, id) {
   const d = me(), n = pendingCount(), nb = X().filter(t => t.ty === "auc" && !aucState(t).done).length;
-  let h = '<section class="tccghead"><h1>Échange</h1></section>' + resBar(d) +
+  let h = '<section class="tccghead"><h1>Échange</h1><small>Les coulisses</small></section>' + resBar(d) +
     '<nav class="tsub">' + [["", "Membres"], ["props", "Propositions" + (n ? " (" + n + ")" : "")], ["encheres", "Enchères" + (nb ? " (" + nb + ")" : "")]].map(x => '<a class="' + ((sub || "") === x[0] || (x[0] === "" && (sub === "m" || sub === "p")) ? "on" : "") + '" href="#/tccg/echange' + (x[0] ? "/" + x[0] : "") + '">' + x[1] + "</a>").join("") + "</nav>";
   if (!S.tcgAll && !loading) { loading = true; loadAll().then(() => { loading = false; }); }
   if (sub === "m") return h + memberView(id);

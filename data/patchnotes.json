@@ -2,6 +2,19 @@
  "updated": "2026-11-12",
  "items": [
   {
+   "id": "2026-11-12-designB",
+   "d": "2026-11-12",
+   "t": "TCCCG : nouvelle interface « Dans l’arène »",
+   "txt": [
+    "🏟️ Tout le jeu passe dans l’aréna : bleu nuit, jaune et les cordes du ring, avec de nouvelles polices façon catch à la télé.",
+    "📺 En haut de chaque page, l’écran géant affiche où tu es (Le stand, Le vestiaire, La rampe d’entrée, Les coulisses, La régie…).",
+    "🎗️ Le menu du bas est le bord du ring : l’onglet choisi monte et un projecteur l’éclaire.",
+    "⚔️ Combat sur le ring façon télé : tapis, cordes, barres de vie comme à la télé. Le bouton rond « TYPES » en haut à droite ouvre la roue des types en grand.",
+    "✨ Invocation sur la rampe d’entrée : le booster sort de l’écran géant, les SSR arrivent avec les colonnes de feu.",
+    "🛒 Le Shop a ses étagères, le Roster ses casiers, les médailles leur vitrine."
+   ]
+  },
+  {
    "id": "2026-11-12-auto",
    "d": "2026-11-12",
    "t": "TCCCG : combat automatique et médailles en Event",

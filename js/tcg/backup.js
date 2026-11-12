@@ -33,7 +33,7 @@ export function backupView() {
   if (!S.user) return "";
   if (mine === null) load();
   const cur = me(), L = copies();
-  let h = '<section class="tccghead"><h1>🛟 Sauvegardes</h1></section>' +
+  let h = '<section class="tccghead"><h1>Sauvegardes</h1><small>Les archives de ta partie</small></section>' +
     '<p class="tnote">Ta partie est copiée toute seule : par le robot dans Firebase (la plus avancée + une par jour de la semaine) et sur ce téléphone. Si ta partie disparaît, choisis une copie et touche « Restaurer ».</p>' +
     '<div class="tbkcur"><b>Ta partie maintenant</b><small>' + (S.tcgReady ? esc(sum(cur)) : "en cours de chargement…") + "</small></div>";
   if (mine === null) h += '<p class="tnote">Recherche des copies…</p>';

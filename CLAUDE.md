@@ -216,6 +216,15 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
     de fight.js) : meilleure attaque, timing « BIEN », finisher dès qu'il est plein, PIN ; objets jamais utilisés en auto ; dégagement
     auto 75 % × 0,7^n. Écran de fin : « 🔁 Rejouer » (`replay`, `lastPrep` ; Match rapide = nouveaux adversaires, sinon après l'attente).
     Event : médailles des catcheurs affrontés par victoire (`EVMED` Low 1 / Mid 2 / Top 3 au total, partagées entre les adversaires).
+  - **Design B « Dans l'arène »** (12 nov., choisi par Jose parmi 2 maquettes ; combat = maquette « ring façon télé ») : le noir et or
+    du TCCCG est remplacé par bleu nuit + jaune télé + cordes rouge-blanc-bleu (couleurs remplacées dans les blocs TCCCG de style.css,
+    variables de `body.tccg`), polices Anton (titres, chiffres) + Barlow Condensed (texte) chargées par index.html / dev.html.
+    Bloc « TCCCG DESIGN B » à la fin de style.css : `.tccghead` = écran géant (titre + `<small>` sous-titre dans chaque vue),
+    barre du bas = tablier du ring (`.bni` = coussin, projecteur sur l'onglet actif), boutons = coussins de coin, onglets lumineux,
+    Shop en étagères, Roster en casiers (`.tpocket`), Médailles en vitrine (`.tmedc` = initiales), Paramètres = régie ; combat :
+    tapis en perspective + cordes (pseudo-éléments de `.tbat`), barres de vie façon télé, bouton rond « TYPES » (`.tbwheel`, roue en
+    grand `.twb`) ; invocation Phaser : écran géant (`scene.say`), rampe d'entrée, colonnes de feu (`scene.fire`), le booster sort de
+    l'écran géant, la SSR fait son entrée depuis l'écran géant. Toute nouvelle règle du TCCCG va dans ce bloc.
   - Modo : objets (`ACT.tcgmitem` : type équipement + stats, qualité, prix, effets stun / div), taux par catégorie, évolutions.
   - Outil du modo « Rendre des cartes et ressources » (`js/tcg/give.js`, `ACT.tcggive`, `applyGive`) : Modo TCCCG › 🎁 Rendre et
     🛟 Sauvegardes (bouton par membre). Cartes (nom, forme base / évolution, rareté de la base au max, niveau), ressources, objets

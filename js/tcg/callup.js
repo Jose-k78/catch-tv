@@ -128,7 +128,7 @@ function tile(d, b) {
 export function callUpView() {
   const d = me(), B = boosters(), cats = {}, V = cfg().vogue || {};
   B.forEach(b => { (cats[b.cat] = cats[b.cat] || []).push(b); });
-  let h = '<section class="tccghead"><h1>Call Up</h1></section><p class="tnote">Simple : 5 cartes · Multi : 15 cartes, taux plus hauts et 1 SSR garantie. Les cartes « version show » arrivent 2 jours après les résultats.</p>' +
+  let h = '<section class="tccghead"><h1>Call Up</h1><small>La rampe d’entrée</small></section><p class="tnote">Simple : 5 cartes · Multi : 15 cartes, taux plus hauts et 1 SSR garantie. Les cartes « version show » arrivent 2 jours après les résultats.</p>' +
     '<details class="trates"><summary>Taux d’apparition</summary><p>' + Object.keys(RC_NAME).map(k => "<b>" + RC_NAME[k] + "</b> : " + ratesTxt(k)).join("<br>") + "<br>Multi : SR, SSR et SSR → LR ×1,4 et la 15e carte est une SSR (ou mieux).</p></details>";
   // en vogue : boosters et cartes choisis par le modo
   const VB = B.filter(b => (V.boosters || []).indexOf(b.id) >= 0 || b.promo), VC = (V.cards || []).map(id => cardById(id)).filter(Boolean);

@@ -78,7 +78,8 @@ export function tccgHome() {
   const np = pendingCount(), duels = duelsForMe();
   const lines = [np ? np + " proposition" + (np > 1 ? "s" : "") + " d’échange t’attend" + (np > 1 ? "ent" : "") + " !" : "", free ? "Tu as " + freeLeft(d) + " booster" + (freeLeft(d) > 1 ? "s" : "") + " gratuit" + (freeLeft(d) > 1 ? "s" : "") + " dans Call Up !" : "", shows[0] ? "Le booster « " + showKeyLabel(shows[0]) + " » est sorti !" : "", nf ? nf + " combats t’attendent dans Event cette semaine." : "", ld ? "On va leur montrer qui est " + ld.name.split(" ")[0] + " !" : "Ouvre ton premier booster pour recruter ton catcheur."].filter(Boolean);
   const say = np ? lines[0] : lines[Math.floor(Date.now() / 6e4) % lines.length];
-  let h = resumeHome();
+  // l'écran géant de l'entrée (version B « Dans l'arène »)
+  let h = '<section class="tccghead home"><small>Ce soir sur le grand écran</small><h1>' + esc(shows[0] ? "Booster " + showKeyLabel(shows[0]) : free ? "Boosters gratuits" : "TCCCG") + "</h1></section>" + resumeHome();
   h += '<section class="thero"' + (ld ? ' style="--hp:url(\'' + esc(ld.pic) + '\')"' : "") + ">" + (ld ? '<div class="thcard">' + cardHTML(lead, { small: true, act: "tcgcard", iid: lead.iid }) + "</div>" : '<div class="thempty">🃏</div>') +
     '<div class="tbubble">' + esc(say) + "</div>" + (ld ? '<span class="thname">' + esc(ld.name) + "</span>" : "") + "</section>";
   h += giftsHTML(d);
@@ -176,7 +177,7 @@ export function guideView() {
     ["🔗 Doublons et 🏅 médailles", "Les doublons d’une carte fusionnent dans la plus forte, qui gagne de l’XP. Une carte peut aussi devenir une médaille du catcheur : il en faut pour certains éveils, évolutions et pour acheter des ceintures."],
     ["⚔️ Combats", "Choisis 1, 2 ou 3 cartes, ton leader (la somme de ses stats = la barre de vie de toute ton équipe), 1 soutien (+10 % aux cartes de son type) et jusqu’à 2 objets. Pierre-feuille-ciseaux pour savoir qui commence, puis chacun son tour : une carte attaque par tour. Touche ta carte puis la carte visée (ou fais-la glisser dessus), choisis la stat."],
     ["💥 Dégâts", "Dégâts = 15 + 3 × l’écart entre ta stat et la sienne (Force contre Force, Agilité contre Agilité…). Si sa stat est plus forte, c’est toi qui prends les dégâts. Avantage de type : ×2 ; désavantage : ×0,5. Une barre de timing (PARFAIT ×1,3, RATÉ ×0,8) et un petit hasard (±10 %) font le reste. Le message avant l’attaque te donne le calcul."],
-    ["🎡 Types", "Dominator bat Aggressor, qui bat Technician, qui bat Opportunist, qui bat Showman, qui bat Dominator. Touche le cercle des types pendant le combat pour le revoir."],
+    ["🎡 Types", "Dominator bat Aggressor, qui bat Technician, qui bat Opportunist, qui bat Showman, qui bat Dominator. Pendant un combat, touche le bouton rond « TYPES » en haut à droite pour revoir la roue."],
     ["🔥 Finisher", "Chaque coup remplit la barre de Finisher. Pleine : choisis la carte qui le lance ; il frappe toute l’équipe adverse. Dégâts = niveau de finisher (N 100, R 120, SR 130, SSR 150, UR 170, LR 200) + un effet au hasard : étourdir une carte, rejouer, soin, attaque adverse réduite ou boost ×1,5. Durée : 1 tour (N, R, SR), 2 tours (SSR), 3 tours (UR, LR)."],
     ["🤼 Le tombé", "Barre de vie adverse à 0 : touche « PIN » puis arrête la barre au bon moment. Si l’adversaire se dégage, sa barre remonte un peu (de plus en plus dur à chaque fois). Pareil pour toi : arrête la barre avant le 3 !"],
     ["🤖 Combat automatique", "Touche « ▶ AUTO » en haut du combat : l’app joue pour toi (la meilleure attaque, le finisher dès qu’il est plein, le tombé). Les objets ne sont pas utilisés en auto. Touche « ⏸ AUTO » pour reprendre la main. À la fin, « 🔁 Rejouer » relance le même combat (Match rapide : tout de suite, avec de nouveaux adversaires ; les autres : après l’attente)."],
@@ -184,7 +185,7 @@ export function guideView() {
     ["🧰 Objets", "Équipement (Shop) : une pièce par carte, bonus de stats pour toujours, on peut la retirer. Objets de combat : 2 par combat, un seul usage. Ils marchent selon leur qualité (commun 50 %, rare 65 %, légendaire 80 %) ; sinon ils ratent ou se retournent contre toi !"],
     ["🛒 Shop et 🤝 Échange", "Shop : équipement, objets d’éveil et de combat contre des dollars, ceintures du jour contre des médailles. Échange : propose des cartes ou des ressources aux membres, ou mets tes cartes aux enchères (24 h)."]
   ];
-  return '<section class="tccghead"><h1>📖 Guide du jeu</h1></section><div class="tguidebox">' + S2.map(x => "<details><summary>" + x[0] + "</summary><p>" + x[1] + "</p></details>").join("") + '</div><p class="tnote" style="text-align:center"><button class="linkbtn" data-act="tcgtuto">Revoir le tuto</button></p>';
+  return '<section class="tccghead"><h1>Guide du jeu</h1><small>Tout comprendre, épisode par épisode</small></section><div class="tguidebox">' + S2.map(x => "<details><summary>" + x[0] + "</summary><p>" + x[1] + "</p></details>").join("") + '</div><p class="tnote" style="text-align:center"><button class="linkbtn" data-act="tcgtuto">Revoir le tuto</button></p>';
 }
 // ---------- Shop ----------
 const PRICE = { C: 300, R: 900, E: 2500, L: 6000, M: 15000 };
@@ -196,7 +197,7 @@ let shopTab = "equip";
 ACT.tcgshoptab = el => { shopTab = el.dataset.v; changed("tcg"); };
 export function shopView() {
   const d = me(), T = { equip: "🧤 Équipement", eveil: "✨ Éveil", combat: "⚔️ Combat", belts: "🏆 Ceintures", gim: "🎟️ Gimmicks" };
-  let h = '<section class="tccghead"><h1>Shop</h1></section><div class="ttabs">' + Object.keys(T).map(k => '<button class="ttab' + (shopTab === k ? " on" : "") + '" data-act="tcgshoptab" data-v="' + k + '">' + T[k] + "</button>").join("") + "</div>";
+  let h = '<section class="tccghead"><h1>Shop</h1><small>Le stand du merch</small></section><div class="ttabs">' + Object.keys(T).map(k => '<button class="ttab' + (shopTab === k ? " on" : "") + '" data-act="tcgshoptab" data-v="' + k + '">' + T[k] + "</button>").join("") + "</div>";
   const row = x => { const p = priceOf(x), own = d.items[x.id] || 0;
     return '<div class="item">' + itemIc(x, "tico big") + '<span class="lbl"><b>' + esc(x.n) + "</b><small>" + esc(x.d || "") + (x.t === "combat" && x.q ? " · " + QNAME[x.q] + " : marche " + Math.round(QCH[x.q] * 100) + " % du temps" : "") + " · tu en as " + own + "</small></span>" +
       '<span class="tbuy"><button class="btn small" data-act="tcgbuy" data-id="' + x.id + '"' + (d.res.money >= p ? "" : " disabled") + ">💵 " + p + "</button>" + (S.isAdmin ? '<button class="linkbtn" data-act="tcgitemimg" data-id="' + x.id + '">🖼️</button>' : "") + "</span></div>"; };

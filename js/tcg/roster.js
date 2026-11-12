@@ -35,7 +35,7 @@ export function rosterView(tab, id) {
   const nsub = tab || ""; if (nsub !== sub) { sel = nsub === "virer" ? new Set() : null; page = 0; } sub = nsub;
   const d = me(), L = owned(d);
   if (sel) [...sel].forEach(i => { if (!d.cards[i]) sel.delete(i); });
-  let h = '<section class="tccghead"><h1>Roster</h1></section><nav class="tsub tsubx">' + TABS.map(x => '<a class="' + (sub === x[0] ? "on" : "") + '" href="#/tccg/roster' + (x[0] ? "/" + x[0] : "") + '">' + x[1] + "</a>").join("") + "</nav>";
+  let h = '<section class="tccghead"><h1>Roster</h1><small>Le vestiaire</small></section><nav class="tsub tsubx">' + TABS.map(x => '<a class="' + (sub === x[0] ? "on" : "") + '" href="#/tccg/roster' + (x[0] ? "/" + x[0] : "") + '">' + x[1] + "</a>").join("") + "</nav>";
   if (sub === "objets") return h + objetsView(d);
   if (sub === "medailles") return h + medalsView(d);
   if (sub === "entrainement" && ACT.tcgtrainview) return h + ACT.tcgtrainview(id);
@@ -181,7 +181,7 @@ function medalsView(d) {
   const M = Object.keys(d.medals || {}).filter(k => d.medals[k] > 0).sort();
   let h = '<p class="tnote">Une carte peut devenir une médaille de son catcheur. Les médailles servent aux éveils des hautes raretés, à certaines évolutions et à acheter les ceintures du Shop. Touche une médaille pour voir à quoi elle sert.</p>' +
     '<button class="btn wide gold" style="margin:4px 16px;width:calc(100% - 32px)" data-act="tcgmedpick">🏅 Transformer une carte en médaille</button>';
-  h += M.length ? '<div class="tmeds">' + M.map(n => '<button class="tmed" data-act="tcgmedinfo" data-n="' + esc(n) + '"><span>🏅</span><b>' + esc(n) + "</b><small>×" + d.medals[n] + "</small></button>").join("") + "</div>" : '<p class="tnote">Pas encore de médaille.</p>';
+  h += M.length ? '<div class="tmeds">' + M.map(n => '<button class="tmed" data-act="tcgmedinfo" data-n="' + esc(n) + '"><span class="tmedc">' + esc(String(n).split(/\s+/).map(w => w[0] || "").join("").slice(0, 3).toUpperCase()) + '</span><b>' + esc(n) + "</b><small>×" + d.medals[n] + "</small></button>").join("") + "</div>" : '<p class="tnote">Pas encore de médaille.</p>';
   return h;
 }
 ACT.tcgmedinfo = el => {

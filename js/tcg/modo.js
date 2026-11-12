@@ -38,7 +38,7 @@ export function pickFile(accept, dir, cb) { const i = document.createElement("in
 export function modoView() {
   if (!S.isAdmin) return '<p class="tnote">Réservé au modérateur (active le bouton ✏️).</p>';
   const tabs = [["", "Cartes"], ["persos", "Persos créés"], ["taux", "Taux"], ["objets", "Objets"], ["boosters", "Boosters"], ["combats", "Combats"], ["sons", "Musiques et assets"], ["rendre", "🎁 Rendre"]];
-  let h = '<section class="tccghead"><h1>⚙️ Modo TCCCG</h1></section><nav class="tsub">' + tabs.map(x => '<button class="' + (tab === x[0] ? "on" : "") + '" data-act="tcgmt" data-t="' + x[0] + '">' + x[1] + "</button>").join("") + "</nav>";
+  let h = '<section class="tccghead"><h1>Modo TCCCG</h1><small>La table du patron</small></section><nav class="tsub">' + tabs.map(x => '<button class="' + (tab === x[0] ? "on" : "") + '" data-act="tcgmt" data-t="' + x[0] + '">' + x[1] + "</button>").join("") + "</nav>";
   const C = cfg();
   if (tab === "") {
     const L = mList();
