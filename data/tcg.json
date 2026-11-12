@@ -409,7 +409,8 @@
    "medalOf": "Pagano"
   },
   "jade-cargill": {
-   "img": "img/catcheurs/jade-cargill-v2.webp"
+   "img": "img/catcheurs/jade-cargill-v2.webp",
+   "imgUR": "img/catcheurs/jade-cargill.webp"
   }
  },
  "bgm": {
