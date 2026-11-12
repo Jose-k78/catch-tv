@@ -1,9 +1,9 @@
 {
- "at": "2026-11-12T16:57:46.226Z",
+ "at": "2026-11-12T17:50:17.106Z",
  "items": [
   {
-   "t": "Carte de GCW Massacre In Missoula 2026",
-   "u": "https://www.catch-newz.com/international/newz/61236-carte-de-gcw-massacre-in-missoula-2026",
+   "t": "Quel avenir pour Killer Kross après sa perte du championnat MLW ?",
+   "u": "https://www.catch-newz.com/international/newz/61253-quel-avenir-pour-killer-kross-apres-sa-perte-du-championnat-mlw",
    "s": "Catch-Newz",
    "d": "2026-11-12",
    "tags": []
@@ -28,6 +28,13 @@
     "Dynamite",
     "Collision"
    ]
+  },
+  {
+   "t": "Carte de GCW Massacre In Missoula 2026",
+   "u": "https://www.catch-newz.com/international/newz/61236-carte-de-gcw-massacre-in-missoula-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": []
   },
   {
    "t": "Trois Françaises dans le PWI 250 de 2026",
@@ -181,6 +188,16 @@
   {
    "t": "Résultats de AEW Dynamite du 11 novembre 2026",
    "u": "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": [
+    "AEW",
+    "Dynamite"
+   ]
+  },
+  {
+   "t": "Une organisation difficile à AEW Dynamite le 11 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/newz/61254-une-organisation-difficile-a-aew-dynamite-le-11-novembre-2026",
    "s": "Catch-Newz",
    "d": "2026-11-11",
    "tags": [
@@ -497,22 +514,6 @@
    "d": "2026-11-10",
    "tags": [
     "TNA"
-   ]
-  },
-  {
-   "t": "Résultats de EVE 157: Elite Encounters 2",
-   "u": "https://www.catch-newz.com/international/resultats/61169-resultats-de-eve-157-elite-encounters-2",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": []
-  },
-  {
-   "t": "Carte de CMLL Martes De Glamour du 10 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61177-carte-de-cmll-martes-de-glamour-du-10-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": [
-    "CMLL"
    ]
   }
  ],
@@ -990,9 +991,11 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
+   "https://www.catch-newz.com/aew/newz/61254-une-organisation-difficile-a-aew-dynamite-le-11-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61253-quel-avenir-pour-killer-kross-apres-sa-perte-du-championnat-mlw",
    "https://www.catch-newz.com/wwe/resultats/61239-wwe-main-event-11-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61236-carte-de-gcw-massacre-in-missoula-2026",
    "https://www.catch-newz.com/international/newz/61235-carte-de-cmll-viernes-espectacular-du-13-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61236-carte-de-gcw-massacre-in-missoula-2026",
    "https://www.catch-newz.com/international/newz/61252-trois-francaises-dans-le-pwi-250-de-2026",
    "https://www.catch-newz.com/wwe/newz/61251-stephanie-vaquer-finit-premiere-du-pwi-250-de-2026",
    "https://www.catch-newz.com/international/newz/61250-finalslam-2026-heure-et-chaines-pour-regarder-le-show-en-direct",
@@ -1285,13 +1288,11 @@
    "https://www.catch-newz.com/wwe/newz/60964-raquel-rodriguez-a-t-elle-lambition-de-devenir-championne-du-monde",
    "https://www.catch-newz.com/international/resultats/60953-resultats-de-cmll-lunes-clasico-du-2-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60963-jake-the-snake-roberts-clarifie-sa-situation-contractuelle-avec-la-wwe",
-   "https://www.catch-newz.com/wwe/newz/60962-spoiler-sur-le-retour-de-jacob-fatu-a-la-wwe",
-   "https://www.catch-newz.com/wwe/newz/60961-the-miz-et-kit-wilson-visent-les-titres-par-equipe-de-raw",
-   "https://www.catch-newz.com/wwe/newz/60925-lordre-des-matchs-de-wwe-raw-du-2-novembre-2026"
+   "https://www.catch-newz.com/wwe/newz/60962-spoiler-sur-le-retour-de-jacob-fatu-a-la-wwe"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
