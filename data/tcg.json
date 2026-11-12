@@ -601,5 +601,10 @@
   "mercedes-mone|wwe-wtt": {
    "off": true
   }
+ },
+ "vogue": {
+  "boosters": [
+   "s:AAA|PLE|2026-10-24"
+  ]
  }
 }
