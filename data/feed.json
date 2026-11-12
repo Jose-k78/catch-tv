@@ -1,9 +1,9 @@
 {
- "at": "2026-11-12T15:57:12.747Z",
+ "at": "2026-11-12T16:57:46.226Z",
  "items": [
   {
-   "t": "Trois Françaises dans le PWI 250 de 2026",
-   "u": "https://www.catch-newz.com/international/newz/61252-trois-francaises-dans-le-pwi-250-de-2026",
+   "t": "Carte de GCW Massacre In Missoula 2026",
+   "u": "https://www.catch-newz.com/international/newz/61236-carte-de-gcw-massacre-in-missoula-2026",
    "s": "Catch-Newz",
    "d": "2026-11-12",
    "tags": []
@@ -28,6 +28,13 @@
     "Dynamite",
     "Collision"
    ]
+  },
+  {
+   "t": "Trois Françaises dans le PWI 250 de 2026",
+   "u": "https://www.catch-newz.com/international/newz/61252-trois-francaises-dans-le-pwi-250-de-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": []
   },
   {
    "t": "Stephanie Vaquer finit première du PWI 250 de 2026",
@@ -507,16 +514,6 @@
    "tags": [
     "CMLL"
    ]
-  },
-  {
-   "t": "Trick Williams bat Gunther en Dark Match à RAW, les fans crient au scandale",
-   "u": "https://www.catch-newz.com/wwe/newz/61194-trick-williams-bat-gunther-en-dark-match-a-raw-les-fans-crient-au-scandale",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
   }
  ],
  "yt": {
@@ -994,8 +991,9 @@
    "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61239-wwe-main-event-11-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61252-trois-francaises-dans-le-pwi-250-de-2026",
+   "https://www.catch-newz.com/international/newz/61236-carte-de-gcw-massacre-in-missoula-2026",
    "https://www.catch-newz.com/international/newz/61235-carte-de-cmll-viernes-espectacular-du-13-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61252-trois-francaises-dans-le-pwi-250-de-2026",
    "https://www.catch-newz.com/wwe/newz/61251-stephanie-vaquer-finit-premiere-du-pwi-250-de-2026",
    "https://www.catch-newz.com/international/newz/61250-finalslam-2026-heure-et-chaines-pour-regarder-le-show-en-direct",
    "https://www.catch-newz.com/international/newz/61234-carte-de-cmll-jueves-arena-coliseo-du-12-novembre-2026",
@@ -1289,8 +1287,7 @@
    "https://www.catch-newz.com/wwe/newz/60963-jake-the-snake-roberts-clarifie-sa-situation-contractuelle-avec-la-wwe",
    "https://www.catch-newz.com/wwe/newz/60962-spoiler-sur-le-retour-de-jacob-fatu-a-la-wwe",
    "https://www.catch-newz.com/wwe/newz/60961-the-miz-et-kit-wilson-visent-les-titres-par-equipe-de-raw",
-   "https://www.catch-newz.com/wwe/newz/60925-lordre-des-matchs-de-wwe-raw-du-2-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/60960-oba-femi-est-il-un-vainqueur-probable-du-john-cena-classic"
+   "https://www.catch-newz.com/wwe/newz/60925-lordre-des-matchs-de-wwe-raw-du-2-novembre-2026"
   ]
  },
  "diag": {
