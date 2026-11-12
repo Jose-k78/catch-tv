@@ -213,6 +213,10 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
     de bâton), timing, finisher (niveau `finLv` : N100…LR200, modo `cfg.cards[base].fl` ; effets stun / vol / soin / div / boost, 1 à 3 tours
     selon la rareté), PIN et kickouts. Combats courts : la vie peut être augmentée si Jose le demande.
   - Modo : objets (`ACT.tcgmitem` : type équipement + stats, qualité, prix, effets stun / div), taux par catégorie, évolutions.
+  - Outil du modo « Rendre des cartes et ressources » (`js/tcg/give.js`, `ACT.tcggive`, `applyGive`) : Modo TCCCG › 🎁 Rendre et
+    🛟 Sauvegardes (bouton par membre). Cartes (nom, forme base / évolution, rareté de la base au max, niveau), ressources, objets
+    (dont ceintures `belt:` et `mitb`), médailles, niveau minimum ; **ajoute seulement**. Pour un membre : relit sa partie (`B.listTcg`)
+    puis `B.saveTcg` (règles v12) ; pas de notification (il faudrait un nouveau type dans les règles `notifs`).
 - Notes : demi-étoiles de 0 à 5,5 (`RMAX`, `fmtR`, `stars`, `ratePick` / `pickRate` de util.js ; 6e étoile orange = bonus).
 - Historique : `g_<id>` = note d'un segment, `q_<id>` = segment préféré (comment = nom du show) ; préfixes m_/s_/f_/g_/q_ exclus
   des compteurs de shows (spoil.js, trophies.js, account.js). Profil : « Ses segments préférés ».

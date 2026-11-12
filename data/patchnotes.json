@@ -2,6 +2,16 @@
  "updated": "2026-11-12",
  "items": [
   {
+   "id": "2026-11-12-give",
+   "d": "2026-11-12",
+   "mod": true,
+   "t": "Modo : rendre des cartes et ressources",
+   "txt": [
+    "🎁 Modo TCCCG › 🎁 Rendre (et 🛟 Sauvegardes) : donne à toi ou à un membre des cartes (forme, rareté, niveau), de l’argent, du Momentum / Pop / Push, des gimmicks, des objets, des ceintures, des médailles ou un niveau minimum.",
+    "🛡️ On ajoute seulement : rien n’est retiré de la partie du joueur. Un récapitulatif s’affiche avant de confirmer."
+   ]
+  },
+  {
    "id": "2026-11-12-v3",
    "d": "2026-11-12",
    "t": "TCCCG v3 : le nouveau jeu",

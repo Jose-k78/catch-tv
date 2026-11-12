@@ -5,6 +5,7 @@
 import { S, B, ACT, changed } from "../state.js";
 import { esc, toast, modal } from "../util.js";
 import { me, cleanSave, localCopies, scoreOf, atLeast } from "./store.js";
+import { giveButton } from "./give.js";
 
 const JOURS = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
 const when = ms => ms ? new Date(ms).toLocaleString("fr-FR", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }) : "date inconnue";
@@ -41,7 +42,7 @@ export function backupView() {
     return '<div class="item"><span class="lbl"><b>' + esc(c.t) + "</b><small>" + esc(when(c.at)) + "</small><small>" + esc(sum(c.d)) + "</small>" + (low ? '<small class="tbklow">Moins avancée que ta partie actuelle</small>' : "") + "</span>" +
       '<button class="btn small' + (low ? " ghost" : "") + '" data-act="tcgrestore" data-k="' + esc(c.k) + '"' + (lock ? " disabled" : "") + ">Restaurer</button></div>";
   }).join("") + "</div>" : (mine === null ? "" : '<p class="tnote">Aucune copie pour l’instant. Le robot fait la première dans l’heure qui suit, puis tous les jours.</p>');
-  if (S.realAdmin) h += "<h2>Modo : parties des membres</h2>" + (all ? allView() : '<button class="btn wide ghost" data-act="tcgbkall">Voir les copies de tous les membres</button>');
+  if (S.realAdmin) h += "<h2>Modo : parties des membres</h2>" + '<div style="margin:0 16px 8px">' + giveButton() + "</div>" + (all ? allView() : '<button class="btn wide ghost" data-act="tcgbkall">Voir les copies de tous les membres</button>');
   return h;
 }
 function restore(uid, d, label, done) {
@@ -74,7 +75,7 @@ function allView() {
   return '<div class="list tbklist">' + U.map(uid => {
     const L = by[uid], best = L.find(c => c._id.slice(-4) === "_max") || L[0], now = (members || []).find(m => m.uid === uid), behind = now && !atLeast(scoreOf(now), scoreOf(best));
     return '<div class="item"><span class="lbl"><b>' + esc(best.name || now && now.name || "Membre") + "</b><small>Copie la plus avancée : " + esc(sum(best)) + "</small><small>Maintenant : " + (now ? esc(sum(now)) : "pas de partie") + "</small>" + (behind ? '<small class="tbklow">⚠️ Sa partie a reculé</small>' : "") + "</span>" +
-      '<button class="btn small' + (behind ? "" : " ghost") + '" data-act="tcgbkrest" data-uid="' + esc(uid) + '">Restaurer</button></div>';
+      '<span class="tbkbtns"><button class="btn small' + (behind ? "" : " ghost") + '" data-act="tcgbkrest" data-uid="' + esc(uid) + '">Restaurer</button>' + giveButton(uid, best.name || now && now.name || "Membre") + "</span></div>";
   }).join("") + "</div>";
 }
 ACT.tcgbkrest = el => {

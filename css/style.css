@@ -2070,3 +2070,17 @@ body.tccg .bnav .bn{min-width:0;font-size:10px}body.tccg .bnav .bn small{font-si
 @media (max-width:340px){.ttopres .txpbar{display:none}}
 /* v3 : pas de « glisser l'image » du navigateur dans le jeu (sinon les gestes s'arrêtent) */
 body.tccg img,.tsum2 img,.tbat img,.ttrain img{-webkit-user-drag:none;user-drag:none}
+/* 12 nov. : outil du modo « Rendre des cartes et ressources » */
+.tgvfound{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}.tgvfound .chip{font-size:12px}
+.tgvcards{display:flex;flex-direction:column;gap:6px;margin:6px 0}
+.tgvrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:8px;border:1px solid rgba(240,207,98,.25);border-radius:10px;margin:4px 0}
+.tgvrow b{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.tgvrow select{flex:1 1 100%;min-width:0}
+.tgvrow input{width:70px}.tgvsm{display:flex;align-items:center;gap:6px;flex:1 1 100%}.tgvsm select{flex:1}
+.tgvres{display:grid;grid-template-columns:1fr 1fr;gap:6px}.tgvres label{margin:0}
+.tgvadd{display:flex;gap:6px;margin:4px 0}.tgvadd input{flex:1;min-width:0}
+.tgvrecap{display:flex;flex-direction:column;gap:2px;margin:6px 0;padding:8px;border-radius:10px;background:rgba(240,207,98,.08)}
+.tbkbtns{display:flex;flex-direction:column;gap:4px}
+.tgv{padding:0 6px}.tgv h4{margin:14px 0 4px}.tgv label{display:flex;flex-direction:column;font-size:12px;color:#a8996f;gap:3px;margin:6px 0}
+.tgv input,.tgv select{background:#16130d;border:1px solid #3b321f;color:#f4e8c8;border-radius:8px;padding:6px;font:inherit;max-width:100%;box-sizing:border-box}
+.tgv .search input{width:100%}
+.tgv label input,.tgv label select{width:100%;min-width:0}.tgvres{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.tgv .tgvrow input,.tgv .tgvsm input{width:70px;flex:0 0 70px}

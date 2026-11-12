@@ -8,6 +8,7 @@ import { esc, toast, modal, fileToDataUrl } from "../util.js";
 import { ghGetJson, ghPutJson, ghToken, ghPutBinary } from "../github.js";
 import { RAR, ARCHS, STATS, FX, ITEMS0, RATE0, cfg, baseCards, cardById, items, rates, rates2, showKeyLabel } from "./data.js";
 import { cardHTML } from "./card.js";
+import { giveButton } from "./give.js";
 import { norm } from "../wrestlers.js";
 
 let tab = "", q = "";
@@ -36,7 +37,7 @@ export function pickFile(accept, dir, cb) { const i = document.createElement("in
 
 export function modoView() {
   if (!S.isAdmin) return '<p class="tnote">Réservé au modérateur (active le bouton ✏️).</p>';
-  const tabs = [["", "Cartes"], ["persos", "Persos créés"], ["taux", "Taux"], ["objets", "Objets"], ["boosters", "Boosters"], ["combats", "Combats"], ["sons", "Musiques et assets"]];
+  const tabs = [["", "Cartes"], ["persos", "Persos créés"], ["taux", "Taux"], ["objets", "Objets"], ["boosters", "Boosters"], ["combats", "Combats"], ["sons", "Musiques et assets"], ["rendre", "🎁 Rendre"]];
   let h = '<section class="tccghead"><h1>⚙️ Modo TCCCG</h1></section><nav class="tsub">' + tabs.map(x => '<button class="' + (tab === x[0] ? "on" : "") + '" data-act="tcgmt" data-t="' + x[0] + '">' + x[1] + "</button>").join("") + "</nav>";
   const C = cfg();
   if (tab === "") {
@@ -44,6 +45,10 @@ export function modoView() {
     h += '<div class="search" style="margin:0 16px"><input id="tmq" type="search" placeholder="Chercher une carte" value="' + esc(q) + '"></div><p class="tnote">' + baseCards().length + " cartes · touche une carte pour la modifier</p>" +
       '<div class="tfilt"><button class="chip' + (noImg ? "" : " on") + '" data-act="tcgmnoimg" data-v="">Toutes</button><button class="chip' + (noImg ? " on" : "") + '" data-act="tcgmnoimg" data-v="1">🖼️ Sans image (' + baseCards().filter(c => !c.pic).length + ")</button></div>" +
       '<div class="trgrid">' + L.map(c => cardHTML(c, { small: true, act: "tcgmedit", iid: "" })).join("") + "</div>";
+  }
+  if (tab === "rendre") {
+    h += '<p class="tnote">Rendre des cartes (nom, forme, rareté, niveau), des ressources, des objets, des médailles ou un niveau à toi ou à un membre. On ajoute seulement : rien n’est retiré de sa partie.</p><div style="margin:0 16px">' + giveButton() + "</div>" +
+      '<p class="tnote">Les copies de chaque partie sont aussi dans <a href="#/tccg/sauvegardes">🛟 Sauvegardes</a>.</p>';
   }
   if (tab === "persos") {
     const P = C.custom || [];
