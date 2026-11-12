@@ -18,7 +18,7 @@ jobs:
         run: |
           npm pack phaser@3.80.1 --silent
           tar -xzf phaser-3.80.1.tgz package/dist/phaser.min.js package/LICENSE.md
-          cp package/dist/phaser.min.js js/vendor/phaser.min.js
+          mkdir -p js/vendor && cp package/dist/phaser.min.js js/vendor/phaser.min.js
           cp package/LICENSE.md js/vendor/PHASER-LICENSE.md
           rm -rf package phaser-3.80.1.tgz
           ls -la js/vendor
