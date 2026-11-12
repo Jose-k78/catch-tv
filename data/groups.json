@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11",
+ "updated": "2026-11-12",
  "note": "Membres tenus à jour par la mise à jour du soir (19 h 23).",
  "items": {
   "946": {
@@ -1112,7 +1112,7 @@
    "n": "The Bang Bang Gang",
    "lg": "Bang Bang Gang",
    "k": "AEW",
-   "y": "2024",
+   "y": "2023–2026",
    "on": 0,
    "m": [
     "Jay White",
@@ -2005,13 +2005,16 @@
    "n": "The Rascalz",
    "lg": "Rascalz",
    "k": "TNA",
-   "y": "2019–2021",
-   "on": 0,
+   "y": "2019–2021, depuis 2026",
+   "on": 1,
    "m": [
-    "Dezmond Xavier",
-    "Zachary Wentz",
+    "Myron Reed",
     "Trey Miguel",
-    "Myron Reed"
+    "Wes Lee",
+    "Zachary Wentz"
+   ],
+   "ex": [
+    "Dezmond Xavier"
    ]
   },
   "band": {
