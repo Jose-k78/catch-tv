@@ -411,7 +411,18 @@
   "jade-cargill": {
    "img": "img/catcheurs/jade-cargill-v2.webp",
    "imgUR": "img/catcheurs/jade-cargill.webp",
-   "imgLR": "-"
+   "imgLR": "-",
+   "k": "WWE",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Jaded",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Jade Cargill"
   }
  },
  "bgm": {
