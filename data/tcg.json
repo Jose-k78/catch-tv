@@ -377,7 +377,17 @@
    "medalOf": "Daga"
   },
   "joe-gacy": {
-   "img": "img/tcg/alt/joe-gacy-alt.webp"
+   "img": "img/tcg/alt/joe-gacy-alt.webp",
+   "r": "N",
+   "max": "SR",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Powerbomb",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Uncle Howdy"
   }
  },
  "bgm": {
