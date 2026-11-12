@@ -1,7 +1,39 @@
 {
-  "updated": "2026-11-11",
+  "updated": "2026-11-12",
   "note": "Une storyline par jour (la plus récente en premier) : grandes histoires, rivalités, anecdotes de coulisses, faits marquants. txt = paragraphes écrits en français à partir des sources ; v = vidéos officielles ; q = recherches sur la chaîne officielle.",
   "items": [
+    {
+      "id": "misawa-kobashi",
+      "d": "2026-11-12",
+      "type": "Rivalité",
+      "t": "Mitsuharu Misawa contre Kenta Kobashi : les deux géants de l’All Japan",
+      "k": "AJPW",
+      "years": "1993-2005",
+      "hook": "Partenaires, rivaux, puis fondateurs d’une nouvelle fédération : leurs combats sont parmi les plus grands de l’histoire du catch japonais.",
+      "txt": [
+        "Au début des années 1990, l’All Japan Pro Wrestling vit son âge d’or grâce à quatre catcheurs surnommés les « Quatre piliers » : Mitsuharu Misawa, Toshiaki Kawada, Akira Taue et Kenta Kobashi. Misawa est le chef de file, l’as de la fédération ; Kobashi est le plus jeune, celui que le public adore pour son courage.",
+        "Les deux hommes commencent côte à côte : le 3 décembre 1993, ils remportent ensemble le tournoi par équipe de fin d’année et les titres mondiaux par équipe. Mais l’élève veut dépasser le maître, et leurs duels pour la Triple Couronne, le grand titre de l’All Japan, deviennent des rendez-vous immanquables.",
+        "Le 25 octobre 1995 au Nippon Budokan, Misawa bat Kobashi avec son Tiger Driver. Kobashi devient enfin champion en juillet 1996, mais le 20 janvier 1997 à Osaka, c’est encore Misawa qui lui reprend la ceinture. Le 31 octobre 1998, une semaine après les débuts du Burning Hammer de Kobashi, Misawa gagne de nouveau : un combat élu match de l’année. Le 11 juin 1999, il l’emporte encore, avec son Emerald Flowsion.",
+        "En juin 2000, Misawa quitte l’All Japan pour fonder la Pro Wrestling Noah, et Kobashi le suit. Le 1er mars 2003, au Nippon Budokan, Kobashi bat enfin Misawa dans un grand match pour la ceinture GHC des poids lourds. Il la garde 735 jours avec 13 défenses réussies, un règne resté légendaire.",
+        "Misawa meurt le 13 juin 2009 après un match à Hiroshima, une perte immense pour le catch japonais. Kobashi, lui, prend sa retraite le 11 mai 2013 lors de « Final Burning » au Budokan. Leur rivalité reste la référence du style « King’s Road » : des matchs très durs, longs et dramatiques."
+      ],
+      "key": "Le 1er mars 2003, Kobashi bat enfin Misawa pour la ceinture GHC et commence un règne de 735 jours.",
+      "v": [],
+      "q": [
+        "Misawa vs Kobashi 2003 GHC full match",
+        "Misawa vs Kobashi All Japan 1998 Triple Crown"
+      ],
+      "src": [
+        {
+          "n": "Wikipédia (en) — Kenta Kobashi",
+          "u": "https://en.wikipedia.org/wiki/Kenta_Kobashi"
+        },
+        {
+          "n": "Pro Wrestling Post",
+          "u": "https://prowrestlingpost.com/?p=38370"
+        }
+      ]
+    },
     {
       "id": "leon-ruff-2020",
       "d": "2026-11-11",
