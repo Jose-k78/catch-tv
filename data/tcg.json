@@ -603,6 +603,8 @@
   }
  },
  "vogue": {
-  "boosters": []
+  "boosters": [
+   "c:b-mwc0gcda"
+  ]
  }
 }
