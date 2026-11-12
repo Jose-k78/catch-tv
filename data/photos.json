@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11",
+ "updated": "2026-11-12",
  "items": {
   "goldust-v2": {
    "f": "goldust-v2.webp",
@@ -2238,11 +2238,12 @@
    ]
   },
   "giulia": {
-   "f": "giulia-v4.webp",
+   "f": "giulia-mwe1suby.webp",
    "n": [
     "Giulia"
    ],
    "v": [
+    "giulia-v4.webp",
     "giulia-v2.webp",
     "giulia.webp"
    ]
