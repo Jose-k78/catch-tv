@@ -278,7 +278,18 @@
    "medalOf": "Lizzy Rain"
   },
   "oba-femi": {
-   "imgUR": "img/tcg/mwe0j7cf.jpg"
+   "imgUR": "img/tcg/mwe0j7cf.jpg",
+   "k": "WWE",
+   "r": "SR",
+   "max": "UR",
+   "arch": "Dominator",
+   "al": "face",
+   "fin": {
+    "n": "Fall From Grace",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Oba Femi"
   }
  },
  "bgm": {
