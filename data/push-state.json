@@ -1,5 +1,5 @@
 {
- "at": "2026-11-12T01:49:24.858Z",
+ "at": "2026-11-12T02:48:09.510Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -466,7 +466,8 @@
   "a:https://www.catch-newz.com/international/resultats/61233-resultats-de-cmll-martes-populares-du-10-novembre-2026": "2026-11-11",
   "a:https://www.catch-newz.com/international/resultats/61232-resultats-de-cmll-martes-de-glamour-du-10-novembre-2026": "2026-11-11",
   "a:https://www.catch-newz.com/international/newz/61234-carte-de-cmll-jueves-arena-coliseo-du-12-novembre-2026": "2026-11-12",
-  "a:https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026": "2026-11-12"
+  "a:https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026": "2026-11-12",
+  "a:https://www.catch-newz.com/wwe/resultats/61239-wwe-main-event-11-novembre-2026": "2026-11-12"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -493,6 +494,14 @@
     "url": "#/",
     "tag": "art",
     "short": "1 nouvelle info"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Nouvelle info · Catch-Newz",
+    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "1 nouvelle info"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -503,6 +512,14 @@
     "url": "#/",
     "tag": "art",
     "short": "2 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Nouvelle info · Catch-Newz",
+    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "1 nouvelle info"
    },
    {
     "cat": "info",
