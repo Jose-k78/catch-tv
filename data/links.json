@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T10:31:32.160Z",
+ "updated": "2026-11-12T21:18:33.071Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "m:statlight kid vs suzu suzuki": [
@@ -233,6 +233,14 @@
     "p": "VK",
     "at": "2026-11-11",
     "def": true
+   }
+  ],
+  "ev:WWE|Evolve|2026-11-11": [
+   {
+    "t": "",
+    "u": "https://youtu.be/gJdvSDzX6OU?is=o1D-aR1S_nXPbMWA",
+    "p": "YouTube",
+    "at": "2026-11-12"
    }
   ]
  }
