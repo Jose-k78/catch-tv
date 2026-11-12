@@ -1,6 +1,15 @@
 {
- "at": "2026-11-12T20:47:06.959Z",
+ "at": "2026-11-12T21:44:05.081Z",
  "items": [
+  {
+   "t": "Lizzy Rain : « Il y a deux ans jour pour jour, je me suis cassé le tibia »",
+   "u": "https://www.catch-newz.com/wwe/newz/61258-lizzy-rain-il-y-a-deux-ans-jour-pour-jour-je-me-suis-casse-le-tibia",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "La WWE prépare un RAW spécial le 4 janvier 2027",
    "u": "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-le-4-janvier-2027",
@@ -506,15 +515,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-10",
    "tags": []
-  },
-  {
-   "t": "Le rappeur Westside Gunn fait la paix avec la WWE",
-   "u": "https://www.catch-newz.com/wwe/newz/61198-le-rappeur-westside-gunn-fait-la-paix-avec-la-wwe",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -987,6 +987,10 @@
    {
     "id": "mzChNXC0J18",
     "t": "Sol Ruca looks to snatch soul from Nikkita Lyons: Main Event highlights, Nov. 11, 2026"
+   },
+   {
+    "id": "18f2DPDc9D8",
+    "t": "EXCLUSIVE: Raquel Rodriguez aims to destroy IYO SKY: Main Event highlights, Nov. 11, 2026"
    }
   ]
  },
@@ -1001,6 +1005,7 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61258-lizzy-rain-il-y-a-deux-ans-jour-pour-jour-je-me-suis-casse-le-tibia",
    "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-le-4-janvier-2027",
    "https://www.catch-newz.com/aew/newz/61254-une-organisation-difficile-a-aew-dynamite-le-11-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61257-john-cena-implique-personnellement-pour-le-john-cena-classic",
@@ -1297,15 +1302,14 @@
    "https://www.catch-newz.com/wwe/newz/60967-cm-punk-confirme-son-nom-pour-le-john-cena-classic",
    "https://www.catch-newz.com/wwe/newz/60968-un-tres-long-voyage-attend-les-wwe-superstars-pour-crown-jewel-2026",
    "https://www.catch-newz.com/international/resultats/60969-resultats-de-hoh-a-nightmare-on-elmwood",
-   "https://www.catch-newz.com/international/resultats/60965-resultats-lwa-requiem-31-octobre-2026",
-   "https://www.catch-newz.com/wwe/resultats/60930-wwe-raw-2-novembre-2026"
+   "https://www.catch-newz.com/international/resultats/60965-resultats-lwa-requiem-31-octobre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
-  "YouTube WWE": "0 nouvelles vidéos",
+  "YouTube WWE": "1 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
