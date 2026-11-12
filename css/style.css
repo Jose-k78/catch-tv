@@ -2084,3 +2084,8 @@ body.tccg img,.tsum2 img,.tbat img,.ttrain img{-webkit-user-drag:none;user-drag:
 .tgv input,.tgv select{background:#16130d;border:1px solid #3b321f;color:#f4e8c8;border-radius:8px;padding:6px;font:inherit;max-width:100%;box-sizing:border-box}
 .tgv .search input{width:100%}
 .tgv label input,.tgv label select{width:100%;min-width:0}.tgvres{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.tgv .tgvrow input,.tgv .tgvsm input{width:70px;flex:0 0 70px}
+/* 12 nov. : combat automatique + Rejouer */
+.tbauto{flex:none;height:30px;padding:0 10px;border-radius:15px;border:1px solid #6b5a2c;background:#16130d;color:#f0cf62;font-weight:800;font-size:12px;cursor:pointer;letter-spacing:.5px}
+.tbauto.on{background:linear-gradient(180deg,#f0cf62,#b98f2a);color:#1a1307;border-color:#f0cf62;animation:tbautoP 1.6s ease-in-out infinite}
+@keyframes tbautoP{50%{box-shadow:0 0 12px rgba(240,207,98,.7)}}
+.tvreplay{margin:10px 0 4px}

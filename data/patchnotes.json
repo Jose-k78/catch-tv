@@ -2,6 +2,16 @@
  "updated": "2026-11-12",
  "items": [
   {
+   "id": "2026-11-12-auto",
+   "d": "2026-11-12",
+   "t": "TCCCG : combat automatique et médailles en Event",
+   "txt": [
+    "🤖 Combat automatique : touche « ▶ AUTO » en haut du combat et l’app joue pour toi (meilleure attaque, finisher, tombé). Tes objets ne sont pas utilisés. « ⏸ AUTO » pour reprendre la main.",
+    "🔁 Rejouer : à la fin d’un combat, relance le même combat. En Match rapide c’est tout de suite, avec de nouveaux adversaires : parfait pour farmer.",
+    "🏅 Event : chaque victoire donne des médailles des catcheurs affrontés : 1 en Low, 2 en Mid, 3 en Top."
+   ]
+  },
+  {
    "id": "2026-11-12-give",
    "d": "2026-11-12",
    "mod": true,

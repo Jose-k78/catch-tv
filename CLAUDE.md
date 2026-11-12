@@ -212,6 +212,10 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
     +10 % au même type, 2 objets (chance selon qualité `QCH`), pierre-feuille-ciseaux, attaque = écart de stat (15 + 3 × écart, sinon retour
     de bâton), timing, finisher (niveau `finLv` : N100…LR200, modo `cfg.cards[base].fl` ; effets stun / vol / soin / div / boost, 1 à 3 tours
     selon la rareté), PIN et kickouts. Combats courts : la vie peut être augmentée si Jose le demande.
+  - Combat automatique (12 nov., pour farmer) : bouton « ▶ AUTO » du plateau (`ACT.tcgauto`, `ctv.tgauto`, `autoStep` / `bestMove`
+    de fight.js) : meilleure attaque, timing « BIEN », finisher dès qu'il est plein, PIN ; objets jamais utilisés en auto ; dégagement
+    auto 75 % × 0,7^n. Écran de fin : « 🔁 Rejouer » (`replay`, `lastPrep` ; Match rapide = nouveaux adversaires, sinon après l'attente).
+    Event : médailles des catcheurs affrontés par victoire (`EVMED` Low 1 / Mid 2 / Top 3 au total, partagées entre les adversaires).
   - Modo : objets (`ACT.tcgmitem` : type équipement + stats, qualité, prix, effets stun / div), taux par catégorie, évolutions.
   - Outil du modo « Rendre des cartes et ressources » (`js/tcg/give.js`, `ACT.tcggive`, `applyGive`) : Modo TCCCG › 🎁 Rendre et
     🛟 Sauvegardes (bouton par membre). Cartes (nom, forme base / évolution, rareté de la base au max, niveau), ressources, objets

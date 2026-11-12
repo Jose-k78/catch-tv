@@ -30,9 +30,12 @@ const nf = v => String(v).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 const pct = v => String(Math.round(v * 1000) / 10).replace(".", ",") + " %";
 const cooldown = () => (cfg().fight && +cfg().fight.cool) || 60; // minutes
 const coolLeft = (d, k) => Math.max(0, (d.cool[k] || 0) + cooldown() * 6e4 - Date.now());
-const leftTxt = ms => { const m = Math.ceil(ms / 6e4); return m >= 60 ? Math.floor(m / 60) + " h " + (m % 60) : m + " min"; };
+const leftTxt = ms => { const m = Math.ceil(ms / 6e4); return m >= 60 ? Math.floor(m / 60) + " h" + (m % 60 ? " " + String(m % 60).padStart(2, "0") : "") : m + " min"; };
 const sum = a => a.reduce((x, y) => x + y, 0);
 const DUR = r => RAR.indexOf(r) >= 4 ? 3 : r === "SSR" ? 2 : 1; // durée des effets selon la rareté
+// Event (12 nov.) : médailles des catcheurs affrontés, par combat gagné : Low 1, Mid 2, Top 3 (partagées entre les adversaires)
+const EVMED = { low: 1, mid: 2, top: 3 };
+const medName = f => { const s = f.src || f.def, bc = cardById(String(s.id).split(/[@#~]/)[0]); return bc ? bc.name : s.name; };
 const typeChain = () => ARCHS.map(a => '<b style="color:' + ARCH[a].c + '">' + a + "</b>").join(" ▶ ") + ' ▶ <b style="color:' + ARCH[ARCHS[0]].c + '">' + ARCHS[0] + "</b>";
 
 // ---------- les shows de la semaine (Event) ----------
@@ -131,6 +134,7 @@ function gainsBox(F, diff, n) {
   if (T.card) src.forEach(f => L.push("🃏 Carte « " + esc(f.src.name) + " »" + (F.key ? " version du show" : "") + " : " + pct(T.card * (F.quick ? 1 : D.rew))));
   else L.push('<span class="tno">🃏 Pas de carte à gagner sur ce combat</span>');
   const ch = champsNow(), belts = F.pool.filter(f => ch.has(realKey(f.src || f.def)));
+  if (F.key) { const nm = EVMED[diff] || 1; L.push("🏅 " + nm + " médaille" + (nm > 1 ? "s" : "") + " des catcheurs affrontés <small>(Low 1 · Mid 2 · Top 3)</small>"); }
   if (belts.length && BELT_DROP[F.tier]) L.push("🏆 Ceinture de " + esc((belts[0].src || belts[0].def).name) + " (champion en vrai) : " + pct(Math.min(0.6, BELT_DROP[F.tier] * D.rew)));
   return '<div class="tgains"><b>🎁 À gagner si tu gagnes</b><ul>' + L.map(x => "<li>" + x + "</li>").join("") + "</ul></div>";
 }
@@ -175,7 +179,7 @@ ACT.tcgpick = el => {
 ACT.tcgitem = el => { if (!prep) return; const id = el.dataset.id, i = prep.items.indexOf(id); if (i >= 0) prep.items.splice(i, 1); else if (prep.items.length < 2) prep.items.push(id); else toast("2 objets au plus"); changed("tcg"); };
 
 // ---------- le combat ----------
-let B = null;
+let B = null, lastPrep = null;
 const SKEY = () => "ctv.tcgfight." + ((S.user && S.user.uid) || "x");
 function persist() { if (!B || B.over) return; try { localStorage.setItem(SKEY(), JSON.stringify(Object.assign({}, B, { busy: false, saved: Date.now() }))); } catch (e) {} }
 function dropSave() { try { localStorage.removeItem(SKEY()); } catch (e) {} }
@@ -206,6 +210,8 @@ ACT.tcgfight = () => {
   B = { v: 2, k: prep.k, F: { label: F.label, tier: F.tier, key: F.key || "", uid: F.uid || "", oname: F.oname || "", quick: !!F.quick, src: prep.foes.map(i => F.pool[i] && F.pool[i].src ? F.pool[i].src.id : "").filter(Boolean), champ: prep.foes.map(i => F.pool[i]).filter(Boolean).map(f => (f.src || f.def).rn || (f.src || f.def).name) },
     tier: F.tier, diff: prep.diff, n: n, P: side(mine, lead), E: side(foes, elead), T: 0, turn: "", over: false, pin: "", log: "Pierre, feuille, ciseaux : qui commence ?", sel: -1 };
   B.P.items = prep.items.slice(0, 2);
+  B.F.meds = F.key ? prep.foes.map(i => F.pool[i]).filter(Boolean).map(medName) : [];
+  lastPrep = { k: prep.k, F: F, n: n, foes: prep.foes.slice(), team: prep.team.slice(), lead: prep.lead, sup: prep.sup, items: prep.items.slice(), diff: prep.diff };
   persist(); location.hash = "#/tccg/combat"; SFX.unlock(); SFX.bell(3); SFX.crowd(true); SFX.music(true);
 };
 const other = s => s === "P" ? "E" : "P";
@@ -230,7 +236,7 @@ export function combatView() {
   if (!B && !restore()) return eventView();
   const P = B.P, E = B.E, bg = (cfg().assets || {}).fightbg, my = B.turn === "P" && !B.busy && !B.over && !B.pin;
   let h = '<div class="tbat"' + (bg ? ' style="background-image:linear-gradient(rgba(5,4,3,.6),rgba(5,4,3,.85)),url(\'' + esc(bg) + '\')"' : "") + ">" +
-    '<div class="tbtop"><button class="tbquit" data-act="tcgquit" aria-label="Abandonner">✕</button><span class="tblabel">' + esc(B.F.label) + (B.diff && B.diff !== "low" && !B.F.quick ? ' · <b class="tdtag ' + B.diff + '">' + DIFF[B.diff].n + "</b>" : "") + '</span><button class="tbwheel" data-act="tcgtypes" aria-label="Tableau des types">' + typeWheel(30) + "</button></div>" +
+    '<div class="tbtop"><button class="tbquit" data-act="tcgquit" aria-label="Abandonner">✕</button><span class="tblabel">' + esc(B.F.label) + (B.diff && B.diff !== "low" && !B.F.quick ? ' · <b class="tdtag ' + B.diff + '">' + DIFF[B.diff].n + "</b>" : "") + '</span><button class="tbauto' + (AUTO ? " on" : "") + '" data-act="tcgauto">' + (AUTO ? "⏸ AUTO" : "▶ AUTO") + '</button><button class="tbwheel" data-act="tcgtypes" aria-label="Tableau des types">' + typeWheel(30) + "</button></div>" +
     '<div class="tbsideE">' + hpBar("E") + cardsRow("E") + "</div>" +
     '<div class="tbmid"><div class="tbturn ' + (B.turn === "P" ? "me" : B.turn === "E" ? "foe" : "") + '">' + (B.pin ? "🤼 TOMBÉ !" : !B.turn ? "✊ ✋ ✌️" : B.turn === "P" ? "▶ À TOI DE JOUER" : "⏳ TOUR DE L’ADVERSAIRE") + '</div><p class="tblog">' + esc(B.log) + "</p></div>" +
     '<div class="tbsideP">' + cardsRow("P") + hpBar("P") + "</div>";
@@ -238,7 +244,8 @@ export function combatView() {
   else if (B.pin === "P" && !B.over) h += '<button class="tbpin" data-act="tcgpin">🤼 PIN !</button>';
   else h += '<div class="tbbtns">' + (P.fin >= 100 ? '<button class="btn gold tbfinb" data-act="tcgfinpick"' + (my ? "" : " disabled") + ">🔥 FINISHER</button>" : "") +
     P.items.map(id => { const it = itemById(id); return it ? '<button class="btn small ghost" data-act="tcguse" data-id="' + id + '"' + (P.used.indexOf(id) >= 0 || !my ? " disabled" : "") + ">" + itemIc(it) + " " + esc(it.n) + "</button>" : ""; }).join("") +
-    '<small class="tbhelp">' + (my ? (B.sel >= 0 ? "Touche la carte adverse à attaquer (ou glisse ta carte dessus)" : "Touche une de tes cartes pour attaquer · touche une carte adverse pour voir ses stats") : "") + "</small></div>";
+    '<small class="tbhelp">' + (AUTO ? "🤖 Combat automatique · touche ⏸ AUTO pour reprendre la main" : my ? (B.sel >= 0 ? "Touche la carte adverse à attaquer (ou glisse ta carte dessus)" : "Touche une de tes cartes pour attaquer · touche une carte adverse pour voir ses stats") : "") + "</small></div>";
+  autoKick();
   return h + "</div>";
 }
 const redraw = () => { changed("tcg"); persist(); };
@@ -259,14 +266,14 @@ document.addEventListener("click", e => {
   if (Date.now() - dragEnd < 300) return;
   const sd = c.dataset.side, i = +c.dataset.i, my = B.turn === "P" && !B.busy && !B.over && !B.pin;
   if (B.finPick && sd === "P") { B.finPick = false; return finConfirm(i); }
-  if (sd === "P") { if (!my) return; if (stunned("P", i)) { toast("💫 Cette carte est étourdie"); return; } B.sel = B.sel === i ? -1 : i; return redraw(); }
+  if (sd === "P") { if (!my) return; if (AUTO) { toast("🤖 Combat automatique : touche ⏸ AUTO pour jouer toi-même"); return; } if (stunned("P", i)) { toast("💫 Cette carte est étourdie"); return; } B.sel = B.sel === i ? -1 : i; return redraw(); }
   if (sd === "E") { if (my && B.sel >= 0) return statPick(B.sel, i); return statsOfFoe(i); }
 });
 // glisser sa carte sur une carte adverse
 let dragEnd = 0;
 document.addEventListener("dragstart", e => { if (e.target && e.target.closest && e.target.closest(".tbat, .tsum2, .ttrain, .tbinder")) e.preventDefault(); });
 document.addEventListener("pointerdown", e => {
-  const c = e.target.closest && e.target.closest('.tbat .tbc[data-side="P"]'); if (!c || !B || B.turn !== "P" || B.busy || B.pin || B.over) return;
+  const c = e.target.closest && e.target.closest('.tbat .tbc[data-side="P"]'); if (!c || !B || AUTO || B.turn !== "P" || B.busy || B.pin || B.over) return;
   const i = +c.dataset.i; if (stunned("P", i)) return;
   const x0 = e.clientX, y0 = e.clientY; let ghost = null;
   const mv = ev => { const dx = ev.clientX - x0, dy = ev.clientY - y0; if (!ghost && Math.abs(dx) + Math.abs(dy) > 14) { ghost = c.cloneNode(true); ghost.className += " tbghost"; document.body.appendChild(ghost); } if (ghost) { ghost.style.left = ev.clientX + "px"; ghost.style.top = ev.clientY + "px"; const t = document.elementFromPoint(ev.clientX, ev.clientY), tc = t && t.closest && t.closest('.tbc[data-side="E"]'); document.querySelectorAll(".tbc.tgt").forEach(x => x.classList.remove("tgt")); if (tc) tc.classList.add("tgt"); } };
@@ -326,7 +333,7 @@ async function attack(sd, ai, ti, si) {
   if (!B || B.busy || B.over) return; B.busy = true; B.sel = -1; redraw();
   const A = B[sd], c = calc(sd, ai, ti, si);
   let tq = "good";
-  if (sd === "P") tq = await timing(c.to === "E" ? "FRAPPE AU BON MOMENT !" : "PROTÈGE-TOI : TAPE AU BON MOMENT !");
+  if (sd === "P") tq = AUTO ? "good" : await timing(c.to === "E" ? "FRAPPE AU BON MOMENT !" : "PROTÈGE-TOI : TAPE AU BON MOMENT !");
   else { const q = (DIFF[B.diff] || DIFF.low).ai; const r = Math.random(); tq = r < q * 0.4 ? "perfect" : r < 0.4 + q * 0.4 ? "good" : "miss"; }
   let dmg = c.dmg * (0.9 + Math.random() * 0.2);
   if (c.to !== sd) dmg *= { perfect: 1.3, good: 1, miss: 0.8 }[tq]; else dmg *= { perfect: 0.5, good: 1, miss: 1.2 }[tq];
@@ -365,6 +372,27 @@ function nextTurn(sd) {
   if (X.cards.every((c, i) => stunned(B.turn, i))) { say((B.turn === "P" ? "Tes cartes sont" : "Les cartes adverses sont") + " toutes étourdies : tour passé"); redraw(); return setTimeout(() => nextTurn(B.turn), 1300); }
   redraw();
   if (B.turn === "E") setTimeout(aiTurn, 1100);
+}
+// ---------- combat automatique (12 nov., pour farmer) : la meilleure attaque, timing « BIEN », finisher dès qu'il est plein ----------
+// Les objets ne sont jamais utilisés en auto (ils restent dans le sac). Réglage gardé sur le téléphone (ctv.tgauto).
+let AUTO = lsGet("ctv.tgauto") === "1", autoT = 0;
+ACT.tcgauto = () => { AUTO = !AUTO; try { localStorage.setItem("ctv.tgauto", AUTO ? "1" : ""); } catch (e) {} toast(AUTO ? "🤖 Combat automatique" : "✋ Tu reprends la main"); if (B) { B.sel = -1; B.finPick = false; redraw(); } };
+function autoKick() { clearTimeout(autoT); if (AUTO && B && !B.over) autoT = setTimeout(autoStep, 700); }
+function bestMove(sd) {
+  const X = B[sd], O = B[other(sd)], opts = [];
+  X.cards.forEach((a, ai) => { if (stunned(sd, ai)) return; O.cards.forEach((t, ti) => { for (let si = 0; si < 5; si++) { const c = calc(sd, ai, ti, si, true); opts.push({ ai: ai, ti: ti, si: si, v: c.to === other(sd) ? c.dmg : -c.dmg }); } }); });
+  opts.sort((x, y) => y.v - x.v); return opts[0] || null;
+}
+function autoStep() {
+  if (!AUTO || !B || B.over || B.busy || location.hash.indexOf("#/tccg/combat") !== 0 || document.querySelector(".tvict")) return;
+  if (!B.turn) return ACT.tcgrps({ dataset: { v: ["p", "f", "c"][Math.floor(Math.random() * 3)] } });
+  if (B.pin === "P") return pinStep();
+  if (B.pin || B.turn !== "P") return;
+  const P = B.P;
+  if (P.fin >= 100) { const L = P.cards.map((c, k) => k).filter(k => !stunned("P", k)).sort((a, b) => RAR.indexOf(P.cards[b].r) - RAR.indexOf(P.cards[a].r)); if (L.length) return finisher("P", L[0]); }
+  const o = bestMove("P"); if (!o) return nextTurn("P");
+  say("🤖 " + P.cards[o.ai].name + " attaque " + B.E.cards[o.ti].name + " en " + STATS[o.si] + "…");
+  attack("P", o.ai, o.ti, o.si);
 }
 // ---------- IA ----------
 function aiTurn() {
@@ -448,13 +476,13 @@ async function pinStep() {
   const count = async n => { cnt.textContent = n; cnt.classList.remove("pop"); void cnt.offsetWidth; cnt.classList.add("pop"); SFX.hit(false); await wait(650); };
   let out = false;
   if (pinner === "P") {
-    const q = await timing("TOMBÉ : TAPE AU BON MOMENT !");
+    const q = AUTO ? "good" : await timing("TOMBÉ : TAPE AU BON MOMENT !");
     const kc = T.ko * (B.F.quick ? 0.8 : (DIFF[B.diff] || DIFF.low).ko) * { perfect: 0.3, good: 0.7, miss: 1.3 }[q] * Math.pow(0.6, V.kick);
     await count("1"); await count("2");
     out = Math.random() < kc;
   } else {
     await count("1");
-    const q = await timing("DÉGAGE-TOI AVANT 3 !", B.P.kick);
+    const q = AUTO ? (Math.random() < 0.75 * Math.pow(0.7, B.P.kick) ? "good" : "miss") : await timing("DÉGAGE-TOI AVANT 3 !", B.P.kick);
     await count("2");
     out = q !== "miss";
   }
@@ -487,6 +515,7 @@ function end(win, quit) {
     if (Math.random() < T.drop) rew.items.push(itemDrop(T, B.F.quick));
     // la ceinture, seulement si un catcheur affronté est champion en vrai
     const ch = champsNow(); (B.F.champ || []).forEach(nm => { if (rew.items.some(isBelt)) return; const t = ch.has(realKey({ name: nm })) && titleOf(nm); if (t && Math.random() < Math.min(0.6, (BELT_DROP[B.tier] || 0) * D.rew)) rew.items.push(BELT + t.id); });
+    const M = B.F.meds || []; if (M.length) { rew.meds = {}; const s0 = Math.floor(Math.random() * M.length); for (let j = 0; j < (EVMED[B.diff] || 1); j++) { const nm = M[(s0 + j) % M.length]; rew.meds[nm] = (rew.meds[nm] || 0) + 1; } }
     if (T.card) (B.F.src || []).forEach(id => { if (Math.random() < T.card * (B.F.quick ? 1 : D.rew)) rew.cards.push(B.F.key ? id + "@" + B.F.key : id); });
   } else if (!quit) { rew.money = Math.round(T.money[0] * (B.tier === "duel" ? 0.3 : 0.2)); if (B.tier === "duel") rew.mom = rew.pop = rew.push = 8; rew.xp = Math.round(T.pxp / 3); }
   dropSave();
@@ -495,6 +524,7 @@ function end(win, quit) {
   commit(d => {
     ["money", "mom", "pop", "push", "gim"].forEach(r => { d.res[r] += rew[r]; });
     rew.items.forEach(id => { d.items[id] = (d.items[id] || 0) + 1; });
+    if (rew.meds) { d.medals = d.medals || {}; Object.keys(rew.meds).forEach(n => { d.medals[n] = (d.medals[n] || 0) + rew.meds[n]; }); }
     rew.cards.forEach(id => addCard(d, id));
     rew.up = addXp(d, rew.xp);
     team.forEach(f => { const inst = f.iid && d.cards[f.iid]; if (inst && !quit) cardXp(inst, win ? T.cxp : Math.round(T.cxp / 3)); });
@@ -510,13 +540,26 @@ function victory(win, rew, quit) {
   SFX.crowd(false); SFX.music(false); SFX.end(win);
   if (win) { fireworks(5); confetti(); }
   const ov = document.createElement("div"); ov.className = "tvict " + (win ? "win" : "lose");
-  const back = B && B.k && B.k.indexOf("#") > 0 ? "#/tccg/event" : "#/tccg/match";
+  const back = B && B.k && B.k.indexOf("#") > 0 ? "#/tccg/event" : "#/tccg/match", cl = lastPrep ? coolLeft(me(), lastPrep.k) : 0;
   ov.innerHTML = '<div class="tvbox"><h1>' + (win ? "VICTOIRE !" : quit ? "Abandon" : "DÉFAITE") + "</h1>" +
     (rew.money || rew.xp ? '<div class="tvrew">' + (rew.money ? "<span>💵 +" + rew.money + "</span>" : "") + (rew.mom ? "<span>⚡ +" + rew.mom + "</span><span>⭐ +" + rew.pop + "</span><span>📣 +" + rew.push + "</span>" : "") + (rew.gim ? "<span>🎟️ +" + rew.gim + "</span>" : "") + (rew.xp ? "<span>XP +" + rew.xp + (rew.up ? " · niveau +" + rew.up + " !" : "") + "</span>" : "") + "</div>" : "") +
     rew.items.map(id => { if (isBelt(id)) { const t = beltTitle(id); return t ? '<p class="tvdrop belt">' + beltImgHTML(t.id, "tvbelt") + " Ceinture gagnée : <b>" + esc(t.n) + "</b></p>" : ""; } const it = itemById(id); return it ? '<p class="tvdrop">🎁 ' + itemIc(it) + " " + esc(it.n) + "</p>" : ""; }).join("") +
+    Object.keys(rew.meds || {}).map(n => '<p class="tvdrop">🏅 Médaille de <b>' + esc(n) + "</b> ×" + rew.meds[n] + "</p>").join("") +
     (rew.cards.length ? '<p class="tvdrop">✨ Carte gagnée !</p><div class="trgrid">' + rew.cards.map(id => cardHTML(defOf(id), { small: true })).join("") + "</div>" : "") +
+    (lastPrep && !quit ? (cl > 0 ? '<p class="tnote">🔁 Ce combat se rejoue dans ' + leftTxt(cl) + "</p>" : '<button class="btn wide gold tvreplay" data-replay>🔁 Rejouer' + (lastPrep.k === "quick" ? " (nouveaux adversaires)" : "") + (AUTO ? " · 🤖 auto" : "") + "</button>") : "") +
     '<div class="btns"><a class="btn" href="' + back + '" data-close>Continuer</a><a class="btn ghost" href="#/tccg" data-close>Accueil</a></div></div>';
   document.body.appendChild(ov);
   const rel = backLayer(() => { ov.remove(); B = null; prep = null; });
-  ov.addEventListener("click", e => { if (e.target.closest("[data-close]")) { rel(); ov.remove(); B = null; prep = null; SFX.crowd(false); SFX.music(false); } });
+  ov.addEventListener("click", e => {
+    if (e.target.closest("[data-replay]")) { rel(); ov.remove(); B = null; prep = null; replay(); return; }
+    if (e.target.closest("[data-close]")) { rel(); ov.remove(); B = null; prep = null; SFX.crowd(false); SFX.music(false); } });
+}
+// rejouer le même combat (même équipe, même difficulté ; Match rapide : nouveaux adversaires)
+function replay() {
+  const L = lastPrep, d = me(); if (!L) return;
+  if (coolLeft(d, L.k) > 0) { toast("Ce combat se rejoue dans " + leftTxt(coolLeft(d, L.k))); location.hash = "#/tccg/match"; return; }
+  prep = { k: L.k, F: L.F, n: L.n, foes: L.foes.slice(), team: L.team.filter(i => d.cards[i]), lead: L.lead, sup: L.sup && d.cards[L.sup] ? L.sup : "", items: L.items.filter(id => (d.items[id] || 0) > 0), diff: L.diff };
+  if (L.k === "quick") { const F = foesOf("quick"); if (F) { prep.F = F; prep.foes = F.pool.map((f, i) => i).slice(0, prep.n); } }
+  if (prep.team.length !== prep.n) { toast("Une carte de ton équipe n’est plus là : choisis-en une autre"); location.hash = "#/tccg/combat-prep"; changed("tcg"); return; }
+  ACT.tcgfight(); changed("tcg");
 }
