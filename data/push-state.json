@@ -1,5 +1,5 @@
 {
- "at": "2026-11-12T03:51:52.165Z",
+ "at": "2026-11-12T04:56:12.895Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60815-lilian-garcia-se-rememore-le-premier-wwe-evolution-en-2018": "2026-10-29",
@@ -468,7 +468,8 @@
   "a:https://www.catch-newz.com/international/newz/61234-carte-de-cmll-jueves-arena-coliseo-du-12-novembre-2026": "2026-11-12",
   "a:https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026": "2026-11-12",
   "a:https://www.catch-newz.com/wwe/resultats/61239-wwe-main-event-11-novembre-2026": "2026-11-12",
-  "a:https://www.catch-newz.com/aew/newz/61242-tommaso-ciampa-vs-ilja-dragunov-est-officiel-pour-aew-full-gear": "2026-11-12"
+  "a:https://www.catch-newz.com/aew/newz/61242-tommaso-ciampa-vs-ilja-dragunov-est-officiel-pour-aew-full-gear": "2026-11-12",
+  "a:https://www.catch-newz.com/international/newz/61243-une-derniere-chance-pour-acheter-sur-le-tokon-shop-global-de-la-njpw": "2026-11-12"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -511,6 +512,14 @@
     "url": "#/",
     "tag": "art",
     "short": "1 nouvelle info"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Nouvelle info · Catch-Newz",
+    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "1 nouvelle info"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -521,6 +530,14 @@
     "url": "#/",
     "tag": "art",
     "short": "2 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Nouvelle info · Catch-Newz",
+    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "1 nouvelle info"
    },
    {
     "cat": "info",

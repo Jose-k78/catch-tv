@@ -1,9 +1,9 @@
 {
- "at": "2026-11-12T03:51:52.124Z",
+ "at": "2026-11-12T04:56:12.836Z",
  "items": [
   {
-   "t": "Tommaso Ciampa vs Ilja Dragunov est officiel pour AEW Full Gear",
-   "u": "https://www.catch-newz.com/aew/newz/61242-tommaso-ciampa-vs-ilja-dragunov-est-officiel-pour-aew-full-gear",
+   "t": "Carte de AEW Full Gear 2026",
+   "u": "https://www.catch-newz.com/aew/newz/60606-carte-aew-full-gear-2026",
    "s": "Catch-Newz",
    "d": "2026-11-12",
    "tags": [
@@ -31,12 +31,30 @@
    ]
   },
   {
+   "t": "Une dernière chance pour acheter sur le Tokon Shop Global de la NJPW",
+   "u": "https://www.catch-newz.com/international/newz/61243-une-derniere-chance-pour-acheter-sur-le-tokon-shop-global-de-la-njpw",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "NJPW"
+   ]
+  },
+  {
    "t": "Carte de CMLL Jueves Arena Coliseo du 12 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61234-carte-de-cmll-jueves-arena-coliseo-du-12-novembre-2026",
    "s": "Catch-Newz",
    "d": "2026-11-12",
    "tags": [
     "CMLL"
+   ]
+  },
+  {
+   "t": "Tommaso Ciampa vs Ilja Dragunov est officiel pour AEW Full Gear",
+   "u": "https://www.catch-newz.com/aew/newz/61242-tommaso-ciampa-vs-ilja-dragunov-est-officiel-pour-aew-full-gear",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "AEW"
    ]
   },
   {
@@ -499,23 +517,6 @@
     "WWE",
     "Raw"
    ]
-  },
-  {
-   "t": "WWE RAW : The Vision poursuivi par Oba Femi, Penta et Je'Von Evans",
-   "u": "https://www.catch-newz.com/wwe/newz/61183-wwe-raw-the-vision-poursuivi-par-oba-femi-penta-et-jevon-evans",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
-  },
-  {
-   "t": "Résultats de ChocoPro #552",
-   "u": "https://www.catch-newz.com/international/resultats/61179-resultats-de-chocopro-552",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": []
   }
  ],
  "yt": {
@@ -956,16 +957,18 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
-   "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
-   "https://www.catch-newz.com/aew/newz/61242-tommaso-ciampa-vs-ilja-dragunov-est-officiel-pour-aew-full-gear",
+   "https://www.catch-newz.com/aew/newz/60606-carte-aew-full-gear-2026",
    "https://www.catch-newz.com/wwe/resultats/61239-wwe-main-event-11-novembre-2026",
    "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61222-audiences-wwe-aew-et-tna-26-octobre-au-1er-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61243-une-derniere-chance-pour-acheter-sur-le-tokon-shop-global-de-la-njpw",
    "https://www.catch-newz.com/international/newz/61234-carte-de-cmll-jueves-arena-coliseo-du-12-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61233-resultats-de-cmll-martes-populares-du-10-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61232-resultats-de-cmll-martes-de-glamour-du-10-novembre-2026",
+   "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
+   "https://www.catch-newz.com/aew/newz/61242-tommaso-ciampa-vs-ilja-dragunov-est-officiel-pour-aew-full-gear",
    "https://www.catch-newz.com/international/newz/61231-anyme-tout-vous-gene-tout-vous-insupporte-tout-vous-derange",
    "https://www.catch-newz.com/wwe/newz/61230-carmelo-hayes-toujours-vivant-apres-wwe-raw",
    "https://www.catch-newz.com/international/resultats/61212-resultats-de-chocopro-554-new-dawn",
@@ -1251,9 +1254,7 @@
    "https://www.catch-newz.com/wwe/newz/60947-john-cena-sera-aux-wwe-survivor-series-2026",
    "https://www.catch-newz.com/wwe/newz/60946-ou-et-quand-aura-lieu-precisement-le-john-cena-classic-a-disney-world",
    "https://www.catch-newz.com/culture/cineserie/60928-dave-batista-prend-10-kilos-pour-son-role-de-kratos",
-   "https://www.catch-newz.com/wwe/newz/60944-wwe-raw-cruz-montana-rejoint-946-pour-tabasser-la-bloodline",
-   "https://www.catch-newz.com/wwe/newz/60940-joe-hendry-lance-un-cri-du-coeur-pendant-un-segment-publicitaire-a-wwe-raw",
-   "https://www.catch-newz.com/wwe/newz/60943-wwe-raw-the-vision-demolit-encore-une-fois-ses-concurrents-a-brooklyn"
+   "https://www.catch-newz.com/wwe/newz/60944-wwe-raw-cruz-montana-rejoint-946-pour-tabasser-la-bloodline"
   ]
  },
  "diag": {
