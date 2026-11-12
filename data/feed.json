@@ -1,6 +1,15 @@
 {
- "at": "2026-11-12T18:51:14.586Z",
+ "at": "2026-11-12T19:51:34.220Z",
  "items": [
+  {
+   "t": "John Cena impliqué personnellement pour le John Cena Classic",
+   "u": "https://www.catch-newz.com/wwe/newz/61257-john-cena-implique-personnellement-pour-le-john-cena-classic",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "La WWE prépare un RAW spécial le 4 janvier 2027",
    "u": "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-le-4-janvier-2027",
@@ -9,6 +18,24 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Carte de GCW Bedlam In Boise 2026",
+   "u": "https://www.catch-newz.com/international/newz/61237-carte-de-gcw-bedlam-in-boise-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": []
+  },
+  {
+   "t": "AEW Dynamite & Collision du 11 novembre : Dernière ligne droite vers AEW Full Gear",
+   "u": "https://www.voxcatch.fr/2026/11/12/resultats-aew-dynamite-collision-11-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-12",
+   "tags": [
+    "AEW",
+    "Dynamite",
+    "Collision"
    ]
   },
   {
@@ -29,17 +56,6 @@
    "tags": [
     "CMLL",
     "Viernes Espectacular"
-   ]
-  },
-  {
-   "t": "AEW Dynamite & Collision du 11 novembre : Dernière ligne droite vers AEW Full Gear",
-   "u": "https://www.voxcatch.fr/2026/11/12/resultats-aew-dynamite-collision-11-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-12",
-   "tags": [
-    "AEW",
-    "Dynamite",
-    "Collision"
    ]
   },
   {
@@ -499,23 +515,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Le WrestleCon prêt à s'unir avec l'AEW face à WrestleMania 43",
-   "u": "https://www.catch-newz.com/international/newz/61197-le-wrestlecon-pret-a-sunir-avec-laew-face-a-wrestlemania-43",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": [
-    "WWE",
-    "AEW"
-   ]
-  },
-  {
-   "t": "Résultats du jour 11 de DG The Gate Of Victory 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61181-resultats-du-jour-11-de-dg-the-gate-of-victory-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": []
   }
  ],
  "yt": {
@@ -979,6 +978,16 @@
     "id": "0MyCnMArdyA",
     "t": "Jon Moxley & Marina Shafir contre \"Switchblade\" Jay White & Mercedes Moné"
    }
+  ],
+  "WWE|Main Event|2026-11-11": [
+   {
+    "id": "CBl4SnkLLoc",
+    "t": "Otis and Ivar collide in clash of titans: Main Event highlights, Nov. 11, 2026"
+   },
+   {
+    "id": "mzChNXC0J18",
+    "t": "Sol Ruca looks to snatch soul from Nikkita Lyons: Main Event highlights, Nov. 11, 2026"
+   }
   ]
  },
  "rss": {
@@ -992,9 +1001,11 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61257-john-cena-implique-personnellement-pour-le-john-cena-classic",
    "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-le-4-janvier-2027",
-   "https://www.catch-newz.com/wwe/newz/61255-pourquoi-wwe-smackdown-du-27-novembre-ne-sera-pas-en-direct",
    "https://www.catch-newz.com/aew/newz/61254-une-organisation-difficile-a-aew-dynamite-le-11-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61237-carte-de-gcw-bedlam-in-boise-2026",
+   "https://www.catch-newz.com/wwe/newz/61255-pourquoi-wwe-smackdown-du-27-novembre-ne-sera-pas-en-direct",
    "https://www.catch-newz.com/international/newz/61235-carte-de-cmll-viernes-espectacular-du-13-novembre-2026",
    "https://www.catch-newz.com/international/newz/61253-quel-avenir-pour-killer-kross-apres-sa-perte-du-championnat-mlw",
    "https://www.catch-newz.com/wwe/resultats/61239-wwe-main-event-11-novembre-2026",
@@ -1287,16 +1298,14 @@
    "https://www.catch-newz.com/wwe/newz/60968-un-tres-long-voyage-attend-les-wwe-superstars-pour-crown-jewel-2026",
    "https://www.catch-newz.com/international/resultats/60969-resultats-de-hoh-a-nightmare-on-elmwood",
    "https://www.catch-newz.com/international/resultats/60965-resultats-lwa-requiem-31-octobre-2026",
-   "https://www.catch-newz.com/wwe/resultats/60930-wwe-raw-2-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/60964-raquel-rodriguez-a-t-elle-lambition-de-devenir-championne-du-monde",
-   "https://www.catch-newz.com/international/resultats/60953-resultats-de-cmll-lunes-clasico-du-2-novembre-2026"
+   "https://www.catch-newz.com/wwe/resultats/60930-wwe-raw-2-novembre-2026"
   ]
  },
  "diag": {
   "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
-  "YouTube WWE": "0 nouvelles vidéos",
+  "YouTube WWE": "2 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
