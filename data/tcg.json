@@ -359,5 +359,11 @@
    "on": true,
    "img": "img/tcg/mwc70peg.jpg"
   }
- ]
+ ],
+ "evoAdd": {
+  "leon-slater": [
+   "tna-x"
+  ]
+ },
+ "evo": {}
 }
