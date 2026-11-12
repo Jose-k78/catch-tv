@@ -236,7 +236,18 @@
    "medalOf": "Royce Keys"
   },
   "leon-slater": {
-   "imgLR": "img/tcg/mwdznw4m.jpg"
+   "imgLR": "img/tcg/mwdznw4m.jpg",
+   "k": "TNA",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Swanton 450",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Leon Slater"
   }
  },
  "bgm": {
