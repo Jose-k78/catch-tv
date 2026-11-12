@@ -1,15 +1,6 @@
 {
- "at": "2026-11-12T04:56:12.836Z",
+ "at": "2026-11-12T05:57:47.576Z",
  "items": [
-  {
-   "t": "Carte de AEW Full Gear 2026",
-   "u": "https://www.catch-newz.com/aew/newz/60606-carte-aew-full-gear-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "AEW"
-   ]
-  },
   {
    "t": "Preview : TNA Impact du 12 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
@@ -31,21 +22,30 @@
    ]
   },
   {
-   "t": "Une dernière chance pour acheter sur le Tokon Shop Global de la NJPW",
-   "u": "https://www.catch-newz.com/international/newz/61243-une-derniere-chance-pour-acheter-sur-le-tokon-shop-global-de-la-njpw",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "NJPW"
-   ]
-  },
-  {
    "t": "Carte de CMLL Jueves Arena Coliseo du 12 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61234-carte-de-cmll-jueves-arena-coliseo-du-12-novembre-2026",
    "s": "Catch-Newz",
    "d": "2026-11-12",
    "tags": [
     "CMLL"
+   ]
+  },
+  {
+   "t": "Carte de AEW Full Gear 2026",
+   "u": "https://www.catch-newz.com/aew/newz/60606-carte-aew-full-gear-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "AEW"
+   ]
+  },
+  {
+   "t": "Une dernière chance pour acheter sur le Tokon Shop Global de la NJPW",
+   "u": "https://www.catch-newz.com/international/newz/61243-une-derniere-chance-pour-acheter-sur-le-tokon-shop-global-de-la-njpw",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "NJPW"
    ]
   },
   {
@@ -957,16 +957,16 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
-   "https://www.catch-newz.com/aew/newz/60606-carte-aew-full-gear-2026",
    "https://www.catch-newz.com/wwe/resultats/61239-wwe-main-event-11-novembre-2026",
    "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61222-audiences-wwe-aew-et-tna-26-octobre-au-1er-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61243-une-derniere-chance-pour-acheter-sur-le-tokon-shop-global-de-la-njpw",
    "https://www.catch-newz.com/international/newz/61234-carte-de-cmll-jueves-arena-coliseo-du-12-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61233-resultats-de-cmll-martes-populares-du-10-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61232-resultats-de-cmll-martes-de-glamour-du-10-novembre-2026",
+   "https://www.catch-newz.com/aew/newz/60606-carte-aew-full-gear-2026",
+   "https://www.catch-newz.com/international/newz/61243-une-derniere-chance-pour-acheter-sur-le-tokon-shop-global-de-la-njpw",
    "https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61242-tommaso-ciampa-vs-ilja-dragunov-est-officiel-pour-aew-full-gear",
    "https://www.catch-newz.com/international/newz/61231-anyme-tout-vous-gene-tout-vous-insupporte-tout-vous-derange",
@@ -1258,7 +1258,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 12 nouveaux articles lus sur la page d'accueil (12 liens)",
+  "Catch-Newz": "pas de flux RSS : 10 nouveaux articles lus sur la page d'accueil (10 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
