@@ -859,6 +859,19 @@
    },
    "gimmick": "",
    "medalOf": "Fuwa-chan"
+  },
+  "trey-miguel": {
+   "k": "TNA",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Technician",
+   "al": "face",
+   "fin": {
+    "n": "Meteora",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Myron Reed"
   }
  },
  "bgm": {
