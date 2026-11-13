@@ -1066,6 +1066,19 @@
    },
    "gimmick": "",
    "medalOf": "Naraku"
+  },
+  "chelsea-green": {
+   "k": "WWE",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Technician",
+   "al": "face",
+   "fin": {
+    "n": "Unpretty-Her",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Chelsea Green"
   }
  },
  "bgm": {
