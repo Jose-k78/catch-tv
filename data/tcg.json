@@ -807,6 +807,19 @@
    },
    "gimmick": "",
    "medalOf": ""
+  },
+  "jeff-hardy": {
+   "k": "TNA",
+   "r": "SR",
+   "max": "UR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Swanton Bomb",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Hulk Hogan"
   }
  },
  "bgm": {
