@@ -755,6 +755,19 @@
    },
    "gimmick": "",
    "medalOf": "Lex Luger"
+  },
+  "kelani-jordan": {
+   "k": "WWE",
+   "r": "SR",
+   "max": "UR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Split Moonsault",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Kelani Jordan"
   }
  },
  "bgm": {
