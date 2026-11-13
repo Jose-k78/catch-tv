@@ -590,6 +590,19 @@
    },
    "gimmick": "",
    "medalOf": "Zack Sabre Jr."
+  },
+  "kyoki": {
+   "k": "WWE",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Timebomb",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Kyoki"
   }
  },
  "bgm": {
