@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12",
+ "updated": "2026-11-13",
  "items": {
   "giulia-mwe1suby": {
    "f": "giulia-mwe1suby.webp",
@@ -1986,10 +1986,13 @@
    ]
   },
   "elio-lefleur": {
-   "f": "elio-lefleur.webp",
+   "f": "elio-lefleur-v2.webp",
    "n": [
     "Elio LeFleur",
     "Elijah"
+   ],
+   "v": [
+    "elio-lefleur.webp"
    ]
   },
   "elton-prince": {
