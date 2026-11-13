@@ -1,6 +1,33 @@
 {
- "at": "2026-11-13T22:40:53.069Z",
+ "at": "2026-11-13T23:37:40.857Z",
  "items": [
+  {
+   "t": "La WWE prépare un RAW spécial pour le 4 janvier 2027",
+   "u": "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-pour-le-4-janvier-2027",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
+  {
+   "t": "Preview : AAA Lucha Libre du 14 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61267-preview-aaa-lucha-libre-14-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": [
+    "WWE",
+    "AAA"
+   ]
+  },
+  {
+   "t": "Carte de DDT Shout Your Love In The Yokohama Ring 2026",
+   "u": "https://www.catch-newz.com/international/newz/61286-carte-de-ddt-shout-your-love-in-the-yokohama-ring-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": []
+  },
   {
    "t": "Preview : WWE SmackDown du 13 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
@@ -12,23 +39,12 @@
    ]
   },
   {
-   "t": "La WWE prépare un RAW spécial pour le 4 janvier 2027",
-   "u": "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-pour-le-4-janvier-2027",
-   "s": "Catch-Newz",
+   "t": "Comment regarder AEW Full Gear 2026 en France ?",
+   "u": "https://www.voxcatch.fr/2026/11/13/comment-regarder-aew-full-gear-2026-en-france/",
+   "s": "VOXcatch",
    "d": "2026-11-13",
    "tags": [
-    "WWE",
-    "Raw"
-   ]
-  },
-  {
-   "t": "Preview : AAA Lucha Libre du 14 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61267-preview-aaa-lucha-libre-14-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-13",
-   "tags": [
-    "WWE",
-    "AAA"
+    "AEW"
    ]
   },
   {
@@ -59,15 +75,6 @@
    "d": "2026-11-13",
    "tags": [
     "CMLL"
-   ]
-  },
-  {
-   "t": "Comment regarder AEW Full Gear 2026 en France ?",
-   "u": "https://www.voxcatch.fr/2026/11/13/comment-regarder-aew-full-gear-2026-en-france/",
-   "s": "VOXcatch",
-   "d": "2026-11-13",
-   "tags": [
-    "AEW"
    ]
   },
   {
@@ -520,15 +527,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-11",
    "tags": []
-  },
-  {
-   "t": "Le pont en mémoire de Stu Hart ouvre à Calgary",
-   "u": "https://www.catch-newz.com/wwe/newz/61226-le-pont-en-memoire-de-stu-hart-ouvre-a-calgary",
-   "s": "Catch-Newz",
-   "d": "2026-11-11",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -1041,10 +1039,11 @@
    "https://www.catch-newz.com/wwe/resultats/61269-resultats-de-wwe-road-to-survivor-series-du-12-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61268-resultats-et-streaming-de-wwe-evolve-du-11-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61267-preview-aaa-lucha-libre-14-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61286-carte-de-ddt-shout-your-love-in-the-yokohama-ring-2026",
+   "https://www.catch-newz.com/international/resultats/61280-resultats-de-mlw-fusion-du-12-novembre-2026",
    "https://www.catch-newz.com/international/newz/61287-carte-du-jour-2-du-noah-junior-grand-prix-2-legacy-rise-2026",
    "https://www.catch-newz.com/international/resultats/61284-resultats-de-pws-meaner-than-ever",
    "https://www.catch-newz.com/international/resultats/61283-resultats-de-zero1-random-lottery-zero1-tag-strongest-tournament-2026",
-   "https://www.catch-newz.com/international/resultats/61280-resultats-de-mlw-fusion-du-12-novembre-2026",
    "https://www.catch-newz.com/international/newz/61276-carte-de-cmll-sabado-de-coliseo-du-14-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61259-tna-impact-12-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61282-resultats-de-wxw-we-love-wrestling-du-7-novembre-2026",
@@ -1333,12 +1332,11 @@
    "https://www.catch-newz.com/culture/gaming/60990-la-saison-13-de-wwe-supercard-est-lancee",
    "https://www.catch-newz.com/wwe/newz/60989-chad-gable-sort-du-silence-apres-sa-perte-de-titre-a-raw",
    "https://www.catch-newz.com/aew/newz/60988-taya-valkyrie-quitte-laew",
-   "https://www.catch-newz.com/wwe/newz/60987-spoiler-une-catcheuse-de-smackdown-dans-les-coulisses-de-wwe-nxt-du-4-novembre",
-   "https://www.catch-newz.com/international/resultats/60966-resultats-bzw-scary-banger-31-octobre-2026"
+   "https://www.catch-newz.com/wwe/newz/60987-spoiler-une-catcheuse-de-smackdown-dans-les-coulisses-de-wwe-nxt-du-4-novembre"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 11 nouveaux articles lus sur la page d'accueil (11 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
