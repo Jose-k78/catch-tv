@@ -950,6 +950,19 @@
    },
    "gimmick": "",
    "medalOf": "Kevin Nash"
+  },
+  "mike-bailey": {
+   "k": "AEW",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Ultimate Weapon",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Mike Bailey"
   }
  },
  "bgm": {
