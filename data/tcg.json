@@ -885,6 +885,19 @@
    },
    "gimmick": "",
    "medalOf": "Cody Rhodes"
+  },
+  "kc-navarro": {
+   "k": "TNA",
+   "r": "R",
+   "max": "SR",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Powerbomb",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "AJ Francis"
   }
  },
  "bgm": {
