@@ -499,6 +499,18 @@
    },
    "gimmick": "",
    "medalOf": "Chad Gable"
+  },
+  "la-bestia-del-ring": {
+   "r": "N",
+   "max": "R",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Rush"
   }
  },
  "bgm": {
