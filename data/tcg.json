@@ -615,6 +615,19 @@
    },
    "gimmick": "",
    "medalOf": "Velvet Sky"
+  },
+  "bozilla": {
+   "k": "Stardom",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Bozilla"
   }
  },
  "bgm": {
