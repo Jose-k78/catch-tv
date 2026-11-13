@@ -925,6 +925,18 @@
    },
    "gimmick": "",
    "medalOf": "Black Tiger IV"
+  },
+  "kon": {
+   "r": "N",
+   "max": "R",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Deaner"
   }
  },
  "bgm": {
