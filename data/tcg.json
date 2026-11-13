@@ -1183,6 +1183,18 @@
    },
    "gimmick": "",
    "medalOf": "Rayo Americano"
+  },
+  "james-storm": {
+   "r": "N",
+   "max": "R",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Last Call",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Ric Flair"
   }
  },
  "bgm": {
