@@ -781,6 +781,19 @@
    },
    "gimmick": "",
    "medalOf": "The Home Town Man"
+  },
+  "blake-christian": {
+   "k": "AEW",
+   "r": "SR",
+   "max": "UR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Blake Christian"
   }
  },
  "bgm": {
