@@ -436,6 +436,18 @@
    },
    "gimmick": "",
    "medalOf": "La Catalina"
+  },
+  "buff-bagwell": {
+   "r": "N",
+   "max": "R",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Buff Bagwell"
   }
  },
  "bgm": {
