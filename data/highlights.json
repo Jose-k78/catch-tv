@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12",
+ "updated": "2026-11-13",
  "note": "Vidéos des chaînes officielles uniquement. res = résultats (spoilers, affichés seulement à la demande). m = résumé match par match (promotions japonaises).",
  "items": {
   "WWE|Raw|2026-10-26": {
@@ -908,6 +908,79 @@
    ],
    "s": "AEW",
    "u": "https://www.allelitewrestling.com/post/aew-dynamite-collision-results-november-11-2026"
+  },
+  "TNA|Impact|2026-11-12": {
+   "res": [
+    "Elayna Black a battu Heather By Elegance.",
+    "Apex (Shayna Baszler et Zoey Serrano) ont battu The King Bees (Charity King et Danni Bee).",
+    "Moose a battu Samuel Shaw par disqualification.",
+    "Mustafa Ali a battu Frankie Kazarian.",
+    "Nic Nemeth a battu Harley Hudson."
+   ],
+   "seg": [
+    {
+     "k": "Annonce",
+     "t": "Santino ajoute The Nemeths au match Matt Hardy et Moose contre syX à Destination X, qui devient un match pour les titres TNA World Tag Team."
+    },
+    {
+     "k": "Backstage",
+     "t": "Brian Johnson interrompt Daria Rae au téléphone ; elle estime qu'ils sont partis du mauvais pied à cause de Santino et craint les critiques d'Indi Hartwell aux commentaires."
+    },
+    {
+     "k": "Promo",
+     "t": "syX avertissent Hardy et Moose ainsi que The Nemeths."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "John Hotch parle de la meilleure période de sa carrière ; Expressions et AJ Francis l'interrompent et AJ Francis vise le titre TNA International."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après le match de Moose, syX l'attaquent et Matt Hardy vient à son secours."
+    },
+    {
+     "k": "Backstage",
+     "t": "Heather By Elegance demande pourquoi elle n'est pas en couverture du magazine avec M By Elegance et lui demande son aide pour gagner l'Ultimate X des Knockouts."
+    },
+    {
+     "k": "Contrat",
+     "t": "Nic Nemeth s'emporte contre Santino, qui lui impose de défendre les titres par équipe ; s'il bat Elijah ce soir, Elijah obtient un match revanche pour le titre TNA contre Nemeth."
+    },
+    {
+     "k": "Promo",
+     "t": "The System affirment être sur la même longueur d'onde ; Xia Brookside annonce l'arrivée des Righteous."
+    },
+    {
+     "k": "Autre",
+     "t": "Court documentaire sur Trey Miguel et Leon Slater avant Destination X."
+    },
+    {
+     "k": "Annonce",
+     "t": "Harley Hudson et Mila Moore rejoignent The Dollhouse."
+    }
+   ],
+   "s": "Fightful",
+   "u": "https://www.fightful.com/wrestling-news/tna-impact-results-11-12-nic-nemeth-elijah-moose-compete"
+  },
+  "ROH|ROH TV|2026-11-12": {
+   "res": [
+    "The Premier Athletes (Ariya Daivari et Tony Nese) ont battu Serpentico et Orlando Colon.",
+    "Lee Moriarty a battu A.R. Fox et conserve le titre ROH Pure.",
+    "Athena a battu B3CCA dans un match Proving Ground pour le titre ROH Women's World.",
+    "Bryan Keith a battu Matt Mako.",
+    "Shane Taylor et Tehuti Miles ont battu Kiran Grey et Darian Bengston.",
+    "The Infantry (Capt. Shawn Dean et Carlie Bravo) ont battu Isaiah Broner et Ren Jones.",
+    "Robyn Renegade a battu Sirena Linton.",
+    "Bandido a battu Bishop Kaun et conserve le titre ROH World."
+   ],
+   "seg": [
+    {
+     "k": "Annonce",
+     "t": "Après le match de Robyn Renegade, Big Boom AJ et QT Marshall défient RPG Vice pour AEW Full Gear."
+    }
+   ],
+   "s": "Fightful",
+   "u": "https://www.fightful.com/wrestling-news/roh-tv-results-11-12-multiple-title-matches"
   }
  }
 }
