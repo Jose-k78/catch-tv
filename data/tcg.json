@@ -1157,6 +1157,19 @@
    },
    "gimmick": "",
    "medalOf": "Don Callis"
+  },
+  "nic-nemeth": {
+   "k": "TNA",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Danger Zone",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Nic Nemeth"
   }
  },
  "bgm": {
