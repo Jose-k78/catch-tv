@@ -937,6 +937,19 @@
    },
    "gimmick": "",
    "medalOf": "Deaner"
+  },
+  "hulk-hogan": {
+   "k": "WWF / WCW",
+   "r": "SSR",
+   "max": "LR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Atomic Leg Drop",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Kevin Nash"
   }
  },
  "bgm": {
