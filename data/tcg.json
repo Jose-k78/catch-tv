@@ -743,6 +743,18 @@
    },
    "gimmick": "",
    "medalOf": "Candice Michelle"
+  },
+  "lex-luger": {
+   "r": "N",
+   "max": "R",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Torture Rack",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Lex Luger"
   }
  },
  "bgm": {
