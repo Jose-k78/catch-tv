@@ -1,5 +1,5 @@
 {
- "at": "2026-11-13T19:51:05.342Z",
+ "at": "2026-11-13T20:50:08.670Z",
  "items": [
   {
    "t": "Preview : WWE SmackDown du 13 novembre 2026",
@@ -22,15 +22,6 @@
    ]
   },
   {
-   "t": "John Cena fait le point sur sa tenue de retraité",
-   "u": "https://www.catch-newz.com/wwe/newz/61274-john-cena-fait-le-point-sur-sa-tenue-de-retraite",
-   "s": "Catch-Newz",
-   "d": "2026-11-13",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
    "t": "Preview : AAA Lucha Libre du 14 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61267-preview-aaa-lucha-libre-14-novembre-2026",
    "s": "Catch-Newz",
@@ -41,12 +32,28 @@
    ]
   },
   {
+   "t": "Carte de West Coast Pro 8",
+   "u": "https://www.catch-newz.com/international/newz/61279-carte-de-west-coast-pro-8",
+   "s": "Catch-Newz",
+   "d": "2026-11-13",
+   "tags": []
+  },
+  {
    "t": "Comment regarder AEW Full Gear 2026 en France ?",
    "u": "https://www.voxcatch.fr/2026/11/13/comment-regarder-aew-full-gear-2026-en-france/",
    "s": "VOXcatch",
    "d": "2026-11-13",
    "tags": [
     "AEW"
+   ]
+  },
+  {
+   "t": "John Cena fait le point sur sa tenue de retraité",
+   "u": "https://www.catch-newz.com/wwe/newz/61274-john-cena-fait-le-point-sur-sa-tenue-de-retraite",
+   "s": "Catch-Newz",
+   "d": "2026-11-13",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -159,6 +166,22 @@
    "tags": [
     "TNA",
     "Impact"
+   ]
+  },
+  {
+   "t": "Résultats de IWRG Thursday Night Wrestling du 12 novembre 2026 Party Random",
+   "u": "https://www.catch-newz.com/international/resultats/61278-resultats-de-iwrg-thursday-night-wrestling-du-12-novembre-2026-party-random",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": []
+  },
+  {
+   "t": "Résultats de CMLL Jueves Arena Coliseo du 12 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61275-resultats-de-cmll-jueves-arena-coliseo-du-12-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "CMLL"
    ]
   },
   {
@@ -504,30 +527,6 @@
   {
    "t": "Résultats de VCW Queen Of The Commonwealth 2026",
    "u": "https://www.catch-newz.com/international/resultats/61209-resultats-de-vcw-queen-of-the-commonwealth-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-11",
-   "tags": []
-  },
-  {
-   "t": "Mason Rook fait son retour et attaque le champion NXT Grayson Waller",
-   "u": "https://www.catch-newz.com/wwe/newz/61221-mason-rook-fait-son-retour-et-attaque-le-champion-nxt-grayson-waller",
-   "s": "Catch-Newz",
-   "d": "2026-11-11",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
-  },
-  {
-   "t": "Résultats du jour 1 du NOAH Junior Grand Prix 2 - Legacy Rise 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61207-resultats-du-jour-1-du-noah-junior-grand-prix-2-legacy-rise-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-11",
-   "tags": []
-  },
-  {
-   "t": "Kairi Sane remonte sur le ring à la Chris Jericho Cruise",
-   "u": "https://www.catch-newz.com/international/newz/61220-kairi-sane-remonte-sur-le-ring-a-la-chris-jericho-cruise",
    "s": "Catch-Newz",
    "d": "2026-11-11",
    "tags": []
@@ -1039,11 +1038,14 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-pour-le-4-janvier-2027",
-   "https://www.catch-newz.com/wwe/newz/61274-john-cena-fait-le-point-sur-sa-tenue-de-retraite",
    "https://www.catch-newz.com/wwe/resultats/61269-resultats-de-wwe-road-to-survivor-series-du-12-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61268-resultats-et-streaming-de-wwe-evolve-du-11-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61267-preview-aaa-lucha-libre-14-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61259-tna-impact-12-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61279-carte-de-west-coast-pro-8",
+   "https://www.catch-newz.com/international/resultats/61278-resultats-de-iwrg-thursday-night-wrestling-du-12-novembre-2026-party-random",
+   "https://www.catch-newz.com/international/resultats/61275-resultats-de-cmll-jueves-arena-coliseo-du-12-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61274-john-cena-fait-le-point-sur-sa-tenue-de-retraite",
    "https://www.catch-newz.com/wwe/newz/61272-cm-punk-est-un-choix-envisageable-pour-remplacer-shawn-michaels-a-wwe-nxt",
    "https://www.catch-newz.com/international/newz/61270-trey-miguel-en-fin-de-contrat-pour-tna-destination-x",
    "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
@@ -1333,14 +1335,11 @@
    "https://www.catch-newz.com/wwe/newz/60984-gunther-reagit-a-lattaque-du-demon-finn-balor-a-smackdown",
    "https://www.catch-newz.com/wwe/newz/60983-pour-ethan-page-remporter-le-titre-intercontinental-etait-son-objectif-ultime",
    "https://www.catch-newz.com/wwe/newz/60958-pourquoi-il-ny-a-pas-de-show-de-wwe-nxt-le-3-novembre-2026",
-   "https://www.catch-newz.com/international/newz/60982-le-main-event-de-njpw-wrestle-kingdom-21-est-connu",
-   "https://www.catch-newz.com/wwe/newz/60957-la-wwe-annonce-un-second-show-a-disney-world-le-15-decembre-2026",
-   "https://www.catch-newz.com/international/resultats/60973-resultats-du-jour-8-de-dg-the-gate-of-victory-2026-partie-1",
-   "https://www.catch-newz.com/international/resultats/60974-resultats-de-sendai-girls-pro-wrestling-du-1er-novembre-2026"
+   "https://www.catch-newz.com/international/newz/60982-le-main-event-de-njpw-wrestle-kingdom-21-est-connu"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
