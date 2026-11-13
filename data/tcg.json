@@ -1170,6 +1170,19 @@
    },
    "gimmick": "",
    "medalOf": "Nic Nemeth"
+  },
+  "bravo-americano": {
+   "k": "WWE",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Rayo Americano"
   }
  },
  "bgm": {
