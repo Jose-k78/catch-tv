@@ -1079,6 +1079,19 @@
    },
    "gimmick": "",
    "medalOf": "Chelsea Green"
+  },
+  "naomi": {
+   "k": "WWE",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Split-Legged Moonsault",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Naomi"
   }
  },
  "bgm": {
