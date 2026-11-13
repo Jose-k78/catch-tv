@@ -628,6 +628,19 @@
    },
    "gimmick": "",
    "medalOf": "Bozilla"
+  },
+  "mark-davis": {
+   "k": "AEW",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Great-O-Khan"
   }
  },
  "bgm": {
