@@ -820,6 +820,19 @@
    },
    "gimmick": "",
    "medalOf": "Hulk Hogan"
+  },
+  "trish-stratus": {
+   "k": "WWE",
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Stratusfaction",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Trish Stratus"
   }
  },
  "bgm": {
