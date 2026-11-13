@@ -912,6 +912,19 @@
    },
    "gimmick": "",
    "medalOf": "Kofi Kingston"
+  },
+  "black-tiger-iv": {
+   "k": "CMLL",
+   "r": "N",
+   "max": "R",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Powerbomb",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Black Tiger IV"
   }
  },
  "bgm": {
