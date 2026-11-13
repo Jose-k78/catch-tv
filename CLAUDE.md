@@ -230,6 +230,27 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
     🛟 Sauvegardes (bouton par membre). Cartes (nom, forme base / évolution, rareté de la base au max, niveau), ressources, objets
     (dont ceintures `belt:` et `mitb`), médailles, niveau minimum ; **ajoute seulement**. Pour un membre : relit sa partie (`B.listTcg`)
     puis `B.saveTcg` (règles v12) ; pas de notification (il faudrait un nouveau type dans les règles `notifs`).
+- **Lot du 13 nov.** (choix de Jose sur le canevas « TCCCG – Propositions du 13 nov. ») :
+  - Call Up « grand écran » (`callUpView` de callup.js) : tous les boosters dans un carrousel à glisser (`.tcu`, `.tcus`), catégories en haut
+    (`ACT.tcucat`), dernier booster gardé (`ctv.tcu`), têtes d'affiche, chances, Simple / Méga, « Ouverture rapide » (`ctv.tgquick` →
+    `summon(…, { quick })` montre directement le résultat). Image d'un booster = `b.img` sinon l'asset `booster` du modo (`boosterImg`
+    de card.js) ; dos des cartes = asset `back` (`backHTML`, `backImg`) : partout, aussi dans la scène Phaser (textures `bimg`, `cback`).
+  - Roster : `#/tccg/roster` = carte vedette (`d.fav[0]`, `ACT.tcgstar`) + étagères par rareté (`shelves`) ; `#/tccg/roster/classeur` =
+    l'ancien classeur (filtres, pages de 9, « ☑️ Choisir plusieurs » `ACT.tcgselon`). L'appui long n'y sélectionne plus.
+  - Appui long sur n'importe quelle carte du TCCCG = la carte en grand (`js/tcg/peek.js`, attribut `data-pk` = id|rareté|niveau|iid posé par `cardHTML`).
+  - Combats : vie d'une équipe = somme des stats de TOUTES ses cartes (`side` de fight.js ; PV d'une carte `hpOf` = somme de ses stats) ;
+    Top = stats ×1,7 (`DIFF.top.st`), Mid reste ×1,3. Mesures : 1v1 inchangé, 2v2 1er K.O. action 4 → 6, 3v3 3-4 → 9-11.
+  - Pierre-feuille-ciseaux discret (`js/tcg/rps.js`, `rpsAnim`, gants SVG `glove`) : 3 secousses, gagnant ×1,12, perdant pâle, étiquette.
+  - Sons (`sfx.js`) : un fichier du modo joué une seule fois à la fois (`one`), sons fabriqués limités (`gate`), `SFX.stop()` en quittant le TCCCG.
+  - Modo : « ⚡ Modif rapide » (`ACT.tcgmquick`, paquet mélangé `ctv.tcgmq`, glisser à gauche = suivante, enregistrée d'abord si modifiée).
+  - Image carte ↔ fiche : pour un vrai catcheur, l'image de base de la carte EST la photo de la fiche (`data/photos.json`) ; l'ancien
+    `cards[id].img` du modo est ignoré pour une carte qui a une photo (la fiche gagne) ; changer l'image dans l'éditeur de carte appelle
+    `pushPhoto` (imagesadmin.js : WebP dans img/catcheurs/, mis en avant). Carte sans photo : son image sert de photo à la fiche (`photoOf`).
+    Photos ajoutées depuis l'app nommées `slug-vN.webp` (avant `slug-xxxx` créait de faux catcheurs via le robot).
+  - Palmarès WWE : `data/palmares.json` (items { nom: [{ t, k, x, id, ty: "t" tournoi, y }] }, `upto` = 2026-06-01), catcheurs des rosters
+    Raw / SmackDown / NXT ; `palmaresOf` l'utilise puis ajoute les règnes de `titles.json` après `upto` ; `palmaresBase` (ancien calcul)
+    reste utilisé pour le rang des cartes TCCCG (pour ne pas changer les raretés). À compléter / corriger à la main si Jose signale une erreur.
+  - Ceintures : nouvelles images World Heavyweight et Undisputed WWE (`img/titres/*-v2.webp`, anciennes gardées dans `v` de logos.json).
 - Notes : demi-étoiles de 0 à 5,5 (`RMAX`, `fmtR`, `stars`, `ratePick` / `pickRate` de util.js ; 6e étoile orange = bonus).
 - Historique : `g_<id>` = note d'un segment, `q_<id>` = segment préféré (comment = nom du show) ; préfixes m_/s_/f_/g_/q_ exclus
   des compteurs de shows (spoil.js, trophies.js, account.js). Profil : « Ses segments préférés ».

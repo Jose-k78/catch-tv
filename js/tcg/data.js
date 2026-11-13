@@ -5,7 +5,7 @@ import { fmt } from "../util.js";
 import { photoOf } from "../photos.js";
 import { wInfo, alignOf, norm } from "../wrestlers.js";
 import { groupsOf, groupById, showLogo } from "../assets.js";
-import { palmaresOf } from "../views/palmares.js";
+import { palmaresBase as palmaresOf } from "../views/palmares.js";
 import { resultWinner, sideNames } from "../views/mrate.js";
 
 export const RAR = ["N", "R", "SR", "SSR", "UR", "LR"];
@@ -155,7 +155,8 @@ export function baseCards() {
     x.max = RAR.indexOf(ov.max) >= 0 ? ov.max : x.lrPot ? "LR" : MAXR[x.r];
     if (RAR.indexOf(x.max) < RAR.indexOf(x.r)) x.max = x.r;
     x.arch = ARCH[ov.arch] ? ov.arch : guessArch(x.name, x.w, x.al);
-    if (ov.img) { x.pic = ov.img; x.nopic = false; }
+    // image : la photo de la fiche gagne (13 nov., Jose) ; l'image du modo sert aux cartes sans photo et aux cartes créées
+    if (ov.img && (x.nopic || x.custom)) { x.pic = ov.img; x.nopic = false; }
     // images alternatives (banque d'images) : UR = 1re variante, LR = version « champion » sinon 2e variante ; le modo peut choisir
     const alts = ((S.bank || {})[x.id] || []).map(f => "img/tcg/alt/" + f), ch = alts.find(f => /-champ\d*\.webp$/.test(f)), al2 = alts.filter(f => f !== ch);
     x.alts = alts;
@@ -296,7 +297,8 @@ export function statsOf(inst, def) {
   const tr = Array.isArray(inst.tr) ? inst.tr : [], eq = inst.eq ? itemById(inst.eq) : null, eqs = eq && Array.isArray(eq.st) ? eq.st : [];
   return def.st.map((v, i) => Math.round((v + lvBonus) * (1 + rUp * 0.08) * (live ? 1.1 : 1)) + (+tr[i] || 0) + (+eqs[i] || 0));
 }
-export const hpOf = st => st.reduce((a, b) => a + b, 0) * 2;
+// PV d'une carte = la somme de ses stats : en combat, la vie de l'équipe = les PV de toutes ses cartes additionnés (13 nov.)
+export const hpOf = st => st.reduce((a, b) => a + b, 0);
 export const isChampLive = def => !!def && champsNow().has(realKey(def));
 export const promoLogo = k => (k && showLogo(k, "")) || "";
 // lien entre deux cartes (même groupe / équipe) : bonus de soutien

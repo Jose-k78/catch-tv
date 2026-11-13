@@ -1,6 +1,42 @@
 {
- "updated": "2026-11-12",
+ "updated": "2026-11-13",
  "items": [
+  {
+   "id": "2026-11-13-tcccg",
+   "d": "2026-11-13",
+   "t": "TCCCG : nouveau Call Up, nouveau Roster, combats plus longs",
+   "txt": [
+    "🎴 Call Up en grand écran : tous les boosters côte à côte, tu glisses pour changer (ou tu touches une catégorie en haut). Pour chaque booster : son image, ses têtes d’affiche, tes chances par carte et les boutons Simple / Méga. Le Call Up se souvient du dernier booster regardé.",
+    "⚡ « Ouverture rapide » (sous les boosters) : toutes les cartes d’un coup, sans l’entrée.",
+    "🖼️ Les images des boosters et le dos des cartes choisis par le modo s’affichent enfin partout, même pendant l’invocation.",
+    "🃏 Roster : ta carte vedette en haut (ta 1re favorite ⭐, bouton « Changer »), puis une étagère par rareté. « Tout voir » ouvre le classeur complet ; « Choisir plusieurs » pour mettre en favori ou virer plusieurs cartes.",
+    "🔍 Maintiens ton doigt sur une carte, partout dans le jeu : elle s’affiche en grand, en entier.",
+    "❤️ Combats : la vie de l’équipe = les stats de toutes tes cartes additionnées (avant : seulement le leader). En 1 contre 1 rien ne change ; en 2 contre 2 et 3 contre 3, les combats durent bien plus longtemps. Valable aussi pour l’adversaire.",
+    "📉 PLE en Top : stats de l’adversaire ×1,7 au lieu de ×2. Avec de bonnes cartes, une bonne stratégie et un peu de chance, c’est gagnable.",
+    "✊ Pierre-feuille-ciseaux animé, en discret : les mains se secouent 3 fois, la main gagnante grossit un peu, la perdante pâlit, et « À TOI » ou « À LUI » s’affiche. On voit qui commence sans lire.",
+    "🔔 Sons réparés : la cloche ne se joue plus trois fois par-dessus elle-même, un même son ne se répète plus en double, et tout s’arrête quand on quitte le TCCCG."
+   ]
+  },
+  {
+   "id": "2026-11-13-tcctv",
+   "d": "2026-11-13",
+   "t": "Palmarès WWE et nouvelles ceintures",
+   "txt": [
+    "🏆 Fiches des catcheurs de Raw, SmackDown et NXT : palmarès WWE complet (titres WWE et NXT, Royal Rumble, Money in the Bank, King et Queen of the Ring), établi jusqu’en juin 2026 puis complété par l’historique des titres de l’app.",
+    "🥇 Nouvelles images pour le World Heavyweight Championship et l’Undisputed WWE Championship (les anciennes restent dans les archives)."
+   ]
+  },
+  {
+   "id": "2026-11-13-modo",
+   "d": "2026-11-13",
+   "mod": true,
+   "t": "Modo TCCCG : Modif rapide, image carte = photo de la fiche",
+   "txt": [
+    "⚡ Modo TCCCG › Cartes › « Modif rapide » : une carte au hasard avec son éditeur ; glisse vers la gauche (ou « Suivante ») pour la suivante. Si tu as changé quelque chose, c’est enregistré avant. Chaque carte passe une fois avant qu’on remélange.",
+    "🖼️ La carte d’un catcheur et sa fiche TCC TV partagent la même image : changer l’image de base d’une carte change la photo de sa fiche, et inversement. Quand elles étaient différentes, c’est la photo de la fiche qui reste.",
+    "📷 Les photos ajoutées depuis l’app s’appellent maintenant « nom-v2, nom-v3… » : elles ne créent plus de faux catcheurs."
+   ]
+  },
   {
    "id": "2026-11-12-designB",
    "d": "2026-11-12",

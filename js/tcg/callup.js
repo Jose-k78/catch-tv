@@ -3,12 +3,12 @@
 // 5 gimmicks = booster 5 cartes ; 50 gimmicks = Mega booster 15 cartes. Cartes « version show » 2 jours après les résultats.
 // Animation (cahier) : 3… 2… 1…, le booster descend la rampe d'entrée, lueurs dans le public selon le tirage, déchirure, slide.
 import { S, ACT, changed } from "../state.js";
-import { esc, toast, fmt, modal } from "../util.js";
+import { esc, toast, fmt, modal, lsGet, lsSet } from "../util.js";
 import { parisDay } from "../time.js";
 import { realKey, RAR, LVMAX, rates, rates2, baseCards, showPeople, showKeyLabel, cfg, defOf, titleOf, champsNow, promoLogo, cardById } from "./data.js";
 import { freeLeft, freeNextMs, useFree, me, commit, addCard, bump } from "./store.js";
 import { summon } from "./summon.js";
-import { cardHTML } from "./card.js";
+import { cardHTML, boosterImg } from "./card.js";
 import { showLogo, eventLogo } from "../assets.js";
 import { saveCfg } from "./modo.js";
 import { norm } from "../wrestlers.js";
@@ -115,32 +115,74 @@ function canPay(d, p, mega) {
 }
 const RC_NAME = { week: "Show de la semaine", ple: "PLE / PPV", free: "Gratuit", start: "Pack de départ", special: "Spécial" };
 const ratesTxt = rc => { const R = rates2(rc); return ["N", "R", "SR", "SSR", "LRP"].filter(k => +R[k]).map(k => (k === "LRP" ? "SSR → LR" : k) + " " + String(R[k]).replace(".", ",") + " %").join(" · "); };
-function tile(d, b) {
-  const c = b.c || ["#3b321f", "#0a0907"], ok = canPay(d, b.price), vog = ((cfg().vogue || {}).boosters || []).indexOf(b.id) >= 0;
-  return '<div class="tbwrap"><button class="tbooster' + (ok ? "" : " off") + '" data-act="tcgopen" data-id="' + esc(b.id) + '" style="background:' + (b.img ? "url('" + esc(b.img) + "') center/cover," : "") + "linear-gradient(160deg," + c[0] + "," + (c[1] || "#0a0907") + ')">' +
-    (b.promo ? '<span class="tbpromo">-' + b.promo + " %</span>" : vog ? '<span class="tbpromo hot">🔥</span>' : "") +
-    (b.logo ? '<img src="' + esc(b.logo) + '" alt="">' : b.id === "free" ? '<span class="tbgift">🎁</span>' : "") + "<b>" + esc(b.t) + "</b><small>" + esc(b.sub || "") + '</small><span class="tbprice">' +
-    (b.id === "free" ? (ok ? "🎁 Gratuit · reste " + freeLeft(d) : "Dans " + Math.ceil(freeNextMs() / 36e5 * 10) / 10 + " h") : b.id === "mitb" ? "💼 × " + (d.items.mitb || 0) : "Simple · " + priceTxt(b.price)) + "</span></button>" +
-    '<button class="tbinfo" data-act="tcgbinfo" data-id="' + esc(b.id) + '">👁️ Vitrine et cartes</button>' +
-    (b.multi ? '<button class="tbmega" data-act="tcgopen" data-id="' + esc(b.id) + '" data-mega="1">Multi ×15 · 🎟️ ' + megaPrice(b) + "</button>" : "") +
-    (S.isAdmin && b.id !== "mitb" ? '<span class="tbmodo"><button data-act="tcgvogb" data-id="' + esc(b.id) + '">' + (vog ? "🔥 En vogue" : "☆ Vogue") + '</button><button data-act="tcgpromo" data-id="' + esc(b.id) + '">％ Promo</button></span>' : "") + "</div>";
+// ---------- Call Up « le grand écran » (13 nov., maquette 1 choisie par Jose) ----------
+// Tous les boosters côte à côte, on glisse pour changer ; catégories en haut ; pour chaque booster : son image, les têtes
+// d'affiche, les chances, Simple / Méga ; « Ouverture rapide » (toutes les cartes d'un coup) ; le dernier booster vu est gardé.
+const CATS = [["Cadeau", "Cadeaux"], ["Shows de la semaine", "Shows"], ["PLE et PPV", "PLE"], ["Boosters spéciaux", "Spéciaux"], ["Boosters de départ", "Départ"], ["Modo", "Modo"]];
+const RCOL = { N: "#9aa8d4", R: "#4f8cff", SR: "#3ddc84", SSR: "#ffd23f", LRP: "#ff5c66" };
+export const quickOn = () => lsGet("ctv.tgquick") === "1";
+const ordered = () => { const all = boosters(), out = []; CATS.forEach(c => all.filter(b => b.cat === c[0]).forEach(b => out.push(b))); all.forEach(b => { if (out.indexOf(b) < 0) out.push(b); }); return out; };
+const leftH = ms => { const h = Math.floor(ms / 36e5), m = Math.ceil((ms % 36e5) / 6e4); return h ? h + " h " + String(m).padStart(2, "0") : m + " min"; };
+function stars(b) {
+  const L = poolOf(b), F = featOf(b), byMax = (a, c) => RAR.indexOf(c.max) - RAR.indexOf(a.max) || c.score - a.score;
+  const top = L.filter(c => F.has(c.id)).sort(byMax);
+  return { feat: top.length > 0, list: (top.length ? top : L.slice().sort(byMax)).slice(0, 3), n: L.length };
+}
+function slide(d, b) {
+  const img = boosterImg(b), c = b.c || ["#2a3a72", "#0b1636"], ok = canPay(d, b.price), vog = ((cfg().vogue || {}).boosters || []).indexOf(b.id) >= 0, st = stars(b);
+  let h = '<article class="tcus" data-id="' + esc(b.id) + '" data-cat="' + esc(b.cat) + '">' +
+    '<button class="tcupack' + (ok ? "" : " off") + '" data-act="tcgopen" data-id="' + esc(b.id) + '" style="background:' + (img ? "url('" + esc(img) + "') center/cover," : "") + "linear-gradient(160deg," + esc(c[0]) + "," + esc(c[1] || "#0b1636") + ')" aria-label="Ouvrir ' + esc(b.t) + '">' +
+    (b.promo ? '<span class="tcupromo">−' + b.promo + " %</span>" : vog ? '<span class="tcupromo hot">🔥 En vogue</span>' : "") +
+    (b.logo ? '<img class="tculogo" src="' + esc(b.logo) + '" alt="">' : img ? "" : b.id === "free" ? '<span class="tcugift">🎁</span>' : b.id === "mitb" ? '<span class="tcugift">💼</span>' : "") +
+    '<span class="tcuplate"><b>' + esc(b.t) + "</b></span></button>" +
+    '<p class="tcusub">' + esc(b.sub || "") + "</p>";
+  if (b.id === "mitb") h += '<div class="tcustars"><div class="tcust"><b>Une carte SSR au choix</b><small>' + st.n + " SSR possibles</small></div></div>";
+  else h += '<div class="tcustars"><div class="tcust"><b>' + (st.feat ? "Les têtes d’affiche" : "Les meilleures cartes") + "</b><small>" + (st.feat ? "Plus fréquentes dans ce booster" : "Jusqu’où il peut aller") + ", " + st.n + " catcheurs possibles</small></div>" +
+    st.list.map(x => '<span class="tcuc">' + cardHTML({ c: x.id, r: st.feat ? x.r : x.max, lv: 1 }, { small: true }) + "</span>").join("") + "</div>";
+  if (b.id !== "mitb") { const R = rates2(b.rc || "week"), K = ["N", "R", "SR", "SSR", "LRP"].filter(k => +R[k]), tot = K.reduce((a, k) => a + (+R[k]), 0) || 1;
+    h += '<div class="tcurates"><div class="tcurh"><b>Tes chances par carte</b><small>5 cartes' + (b.multi ? ", Méga : 15 dont 1 SSR" : "") + '</small></div><div class="tcubar">' + K.map(k => '<i style="width:' + (100 * R[k] / tot).toFixed(1) + "%;background:" + RCOL[k] + '"></i>').join("") + '</div><div class="tculeg">' + K.map(k => '<span><b style="color:' + RCOL[k] + '">' + (k === "LRP" ? "LR" : k) + "</b> " + String(R[k]).replace(".", ",") + " %</span>").join("") + "</div></div>"; }
+  if (b.id === "free") h += '<div class="tcubtns"><button class="btn tcubig" data-act="tcgopen" data-id="free"' + (ok ? "" : " disabled") + ">" + (ok ? "OUVRIR <small>gratuit, il t’en reste " + freeLeft(d) + "</small>" : "REVIENT DANS " + leftH(freeNextMs()).toUpperCase()) + "</button></div>";
+  else if (b.id === "mitb") h += '<div class="tcubtns"><button class="btn tcubig" data-act="tcgopen" data-id="mitb"' + ((d.items.mitb || 0) > 0 ? "" : " disabled") + ">CHOISIR MA SSR <small>💼 mallettes : " + (d.items.mitb || 0) + "</small></button></div>";
+  else h += '<div class="tcubtns' + (b.multi ? " two" : "") + '"><button class="btn ghost tcubig" data-act="tcgopen" data-id="' + esc(b.id) + '"' + (ok ? "" : " disabled") + ">SIMPLE <small>5 cartes, " + esc(priceTxt(b.price)) + "</small></button>" +
+    (b.multi ? '<button class="btn tcubig" data-act="tcgopen" data-id="' + esc(b.id) + '" data-mega="1"' + (canPay(d, b.price, true) ? "" : " disabled") + ">MÉGA <small>15 cartes dont 1 SSR, 🎟️ " + megaPrice(b) + "</small></button>" : "") + "</div>";
+  h += '<div class="tcumore"><button class="tculink" data-act="tcgbinfo" data-id="' + esc(b.id) + '">👁️ Toutes les cartes du booster</button>' +
+    (S.isAdmin && b.id !== "mitb" ? '<button class="tculink" data-act="tcgvogb" data-id="' + esc(b.id) + '">' + (vog ? "🔥 En vogue" : "☆ Vogue") + '</button><button class="tculink" data-act="tcgpromo" data-id="' + esc(b.id) + '">％ Promo</button>' : "") + "</div>";
+  return h + "</article>";
 }
 export function callUpView() {
-  const d = me(), B = boosters(), cats = {}, V = cfg().vogue || {};
-  B.forEach(b => { (cats[b.cat] = cats[b.cat] || []).push(b); });
-  let h = '<section class="tccghead"><h1>Call Up</h1><small>La rampe d’entrée</small></section><p class="tnote">Simple : 5 cartes · Multi : 15 cartes, taux plus hauts et 1 SSR garantie. Les cartes « version show » arrivent 2 jours après les résultats.</p>' +
-    '<details class="trates"><summary>Taux d’apparition</summary><p>' + Object.keys(RC_NAME).map(k => "<b>" + RC_NAME[k] + "</b> : " + ratesTxt(k)).join("<br>") + "<br>Multi : SR, SSR et SSR → LR ×1,4 et la 15e carte est une SSR (ou mieux).</p></details>";
-  // en vogue : boosters et cartes choisis par le modo
-  const VB = B.filter(b => (V.boosters || []).indexOf(b.id) >= 0 || b.promo), VC = (V.cards || []).map(id => cardById(id)).filter(Boolean);
-  if (VB.length) h += '<h2>🔥 En vogue <small class="tsmall">et promos</small></h2><div class="row tbrow">' + VB.map(b => tile(d, b)).join("") + "</div>";
+  const d = me(), B = ordered(), V = cfg().vogue || {}, saved = lsGet("ctv.tcu") || "";
+  let cur = B.findIndex(b => b.id === saved); if (cur < 0) cur = 0;
+  const cats = CATS.filter(c => B.some(b => b.cat === c[0])), fl = freeLeft(d);
+  let h = '<section class="tccghead"><h1>Call Up</h1><small>Glisse pour changer de booster</small></section>' +
+    '<nav class="tcucats" aria-label="Catégories">' + cats.map(c => '<button class="' + (B[cur] && B[cur].cat === c[0] ? "on" : "") + '" data-act="tcucat" data-c="' + esc(c[0]) + '">' + c[1] + (c[0] === "Cadeau" && fl ? ' <i class="tcunb">' + fl + "</i>" : "") + "</button>").join("") + "</nav>" +
+    '<div class="tcuwrap"><button class="tcunav prev" data-act="tcunav" data-v="-1" aria-label="Booster précédent">‹</button><div class="tcu" id="tcu">' + B.map(b => slide(d, b)).join("") + '</div><button class="tcunav next" data-act="tcunav" data-v="1" aria-label="Booster suivant">›</button></div>' +
+    (B.length > 12 ? '<div class="tcudots num" aria-hidden="true"><b>' + (cur + 1) + "</b> / " + B.length + "</div>" : '<div class="tcudots" aria-hidden="true">' + B.map((b, i) => '<i class="' + (i === cur ? "on" : "") + '"></i>').join("") + "</div>") +
+    '<div class="tcuquick"><span><b>Ouverture rapide</b><small>Toutes les cartes d’un coup, sans l’entrée</small></span><button class="tcusw' + (quickOn() ? " on" : "") + '" data-act="tcuquick" role="switch" aria-checked="' + quickOn() + '" aria-label="Ouverture rapide"></button></div>';
+  const VC = (V.cards || []).map(id => cardById(id)).filter(Boolean);
   if (VC.length) h += '<h2>⭐ Cartes en vogue <small class="tsmall">plus fréquentes dans les boosters</small></h2><div class="tfavs">' + VC.map(c => cardHTML({ c: c.id, r: c.max, lv: LVMAX[c.max] }, { small: true })).join("") + "</div>";
-  h += vitrine();
-  ["Cadeau", "PLE et PPV", "Shows de la semaine", "Boosters spéciaux", "Boosters de départ", "Modo"].forEach(cat => {
-    if (!cats[cat]) return;
-    h += "<h2>" + cat + (cat === "PLE et PPV" ? ' <small class="tsmall">1 mois · cartes plus rares</small>' : cat === "Shows de la semaine" ? ' <small class="tsmall">7 jours</small>' : "") + '</h2><div class="row tbrow">' + cats[cat].map(b => tile(d, b)).join("") + "</div>";
-  });
+  h += vitrine() + '<details class="trates"><summary>Taux d’apparition de tous les boosters</summary><p>' + Object.keys(RC_NAME).map(k => "<b>" + RC_NAME[k] + "</b> : " + ratesTxt(k)).join("<br>") + "<br>Méga : SR, SSR et SSR → LR ×1,4 et la 15e carte est une SSR (ou mieux). Les cartes « version show » arrivent 2 jours après les résultats.</p></details>";
+  setTimeout(() => cuInit(cur), 0);
   return h;
 }
+// le carrousel : on revient sur le dernier booster, les points et la catégorie suivent le doigt
+function cuInit(cur) {
+  const box = document.getElementById("tcu"); if (!box || box.dataset.ok) return; box.dataset.ok = "1";
+  const S2 = box.querySelectorAll(".tcus"); if (S2[cur]) box.scrollLeft = S2[cur].offsetLeft - (box.clientWidth - S2[cur].clientWidth) / 2;
+  let t = 0;
+  box.addEventListener("scroll", () => { clearTimeout(t); t = setTimeout(() => cuSync(box), 90); }, { passive: true });
+}
+function cuIdx(box) { const S2 = box.querySelectorAll(".tcus"), mid = box.scrollLeft + box.clientWidth / 2; let bi = 0, bd = 1e9; S2.forEach((x, i) => { const dd = Math.abs(x.offsetLeft + x.clientWidth / 2 - mid); if (dd < bd) { bd = dd; bi = i; } }); return bi; }
+function cuSync(box) {
+  const S2 = box.querySelectorAll(".tcus"), i = cuIdx(box), el = S2[i]; if (!el) return;
+  lsSet("ctv.tcu", el.dataset.id);
+  document.querySelectorAll(".tcudots i").forEach((x, k) => x.classList.toggle("on", k === i));
+  const nb = document.querySelector(".tcudots.num b"); if (nb) nb.textContent = i + 1;
+  document.querySelectorAll(".tcucats button").forEach(x => x.classList.toggle("on", x.dataset.c === el.dataset.cat));
+}
+const cuGo = i => { const box = document.getElementById("tcu"); if (!box) return; const S2 = box.querySelectorAll(".tcus"), el = S2[Math.max(0, Math.min(S2.length - 1, i))]; if (el) box.scrollTo({ left: el.offsetLeft - (box.clientWidth - el.clientWidth) / 2, behavior: "smooth" }); };
+ACT.tcunav = el => { const box = document.getElementById("tcu"); if (box) cuGo(cuIdx(box) + (+el.dataset.v || 0)); };
+ACT.tcucat = el => { const box = document.getElementById("tcu"); if (!box) return; const S2 = [...box.querySelectorAll(".tcus")], i = S2.findIndex(x => x.dataset.cat === el.dataset.c); if (i >= 0) cuGo(i); };
+ACT.tcuquick = el => { const on = !quickOn(); lsSet("ctv.tgquick", on ? "1" : null); el.classList.toggle("on", on); el.setAttribute("aria-checked", String(on)); toast(on ? "⚡ Ouverture rapide : toutes les cartes d’un coup" : "✨ L’entrée des cartes est de retour"); };
 // modo : booster en vogue, promo
 ACT.tcgvogb = el => { if (!S.isAdmin) return; const id = el.dataset.id; saveCfg(c => { c.vogue = c.vogue || {}; const L = c.vogue.boosters = c.vogue.boosters || [], i = L.indexOf(id); if (i >= 0) L.splice(i, 1); else L.push(id); }, "booster en vogue : " + id).then(ok => ok && toast("Enregistré ✓")); };
 ACT.tcgpromo = el => {
@@ -160,7 +202,8 @@ ACT.tcgopen = el => {
   if (!canPay(d0, b.price, mega)) { toast(b.price.free ? "Tes 3 boosters gratuits reviennent dans " + Math.ceil(freeNextMs() / 6e4) + " min" : "Pas assez de ressources : gagne-en dans les combats"); return; }
   const c = b.c || ["#3b321f", "#0a0907"];
   modal((box, close) => {
-    box.innerHTML = '<h3>Invoquer ' + (mega ? "en Multi" : "ce booster") + ' ?</h3><div class="tcfm"><div class="tbooster" style="background:linear-gradient(160deg,' + esc(c[0]) + "," + esc(c[1] || "#0a0907") + ')">' + (b.logo ? '<img src="' + esc(b.logo) + '" alt="">' : "") + "<b>" + esc(b.t) + "</b></div>" +
+    const bi = boosterImg(b);
+    box.innerHTML = '<h3>Invoquer ' + (mega ? "en Méga" : "ce booster") + ' ?</h3><div class="tcfm"><div class="tbooster" style="background:' + (bi ? "url('" + esc(bi) + "') center/cover," : "") + "linear-gradient(160deg," + esc(c[0]) + "," + esc(c[1] || "#0a0907") + ')">' + (b.logo ? '<img src="' + esc(b.logo) + '" alt="">' : "") + "<b>" + esc(b.t) + "</b></div>" +
       "<ul><li>" + (mega ? "15 cartes, dont 1 SSR garantie" : "5 cartes") + "</li><li>Coût : " + esc(mega ? "🎟️ " + megaPrice(b) + " gimmicks" : b.price.free ? "🎁 Gratuit (il t’en reste " + freeLeft(d0) + ")" : priceTxt(b.price)) + "</li>" + (featOf(b).size ? "<li>⭐ Cartes vedettes plus fréquentes</li>" : "") + "</ul></div>" +
       '<button class="btn wide" data-y>✨ Invoquer</button><button class="btn wide ghost" style="margin-top:6px" data-close>Annuler</button>';
     box.addEventListener("click", e => { if (e.target.closest("[data-close]")) return close(); if (e.target.closest("[data-y]")) { close(); openNow(b, mega); } });
@@ -177,7 +220,7 @@ export function openNow(b, mega) {
     else ["gim", "mom", "pop", "push"].forEach(k => { if (b.price[k]) d.res[k] -= b.price[k]; });
     ids.forEach(id => iids.push(addCard(d, id))); d.opened++; bump(d, "open");
   });
-  summon(b, ids, { mega: mega, again: canAgain(b), iids: S.tcgReady ? iids : [] });
+  summon(b, ids, { mega: mega, again: canAgain(b), iids: S.tcgReady ? iids : [], quick: quickOn() });
 }
 // pour l'écran de fin : peut-on réinvoquer ce booster ?
 const canAgain = b => ({ id: b.id, simple: !b.price.mitb, multi: !!b.multi, ok: () => canPay(me(), b.price, false), okm: () => canPay(me(), b.price, true), price: priceTxt(b.price), mprice: megaPrice(b) });
@@ -196,7 +239,7 @@ function mitbPick() {
       if (e.target.closest("[data-go]") && pick) { const id = pick, b = boosters().find(x => x.id === "mitb"); close();
         if (!(me().items.mitb > 0)) return;
         commit(d => { if (!(d.items.mitb > 0)) return; d.items.mitb--; addCard(d, id); d.opened++; });
-        summon(b, [id]); }
+        summon(b, [id], { quick: quickOn() }); }
     });
   });
 }

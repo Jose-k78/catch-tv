@@ -8,7 +8,7 @@ import { S, ACT, changed } from "../state.js";
 import { esc, toast, backLayer } from "../util.js";
 import { RAR, defOf, cardById } from "./data.js";
 import { me, commit, owned } from "./store.js";
-import { cardHTML } from "./card.js";
+import { cardHTML, backHTML, backImg, boosterImg } from "./card.js";
 import { loadPhaser, burst, fireworks, flash, confetti, wave } from "./phaser.js";
 import { SFX } from "./sfx.js";
 
@@ -20,7 +20,7 @@ const hex = c => { const m = String(c || "").match(/^#?([0-9a-f]{6})$/i); return
 function makeScene(Ph, b, glow) {
   return class Summon extends Ph.Scene {
     constructor() { super("summon"); }
-    preload() { if (b.logo) this.load.image("blogo", b.logo); }
+    preload() { if (b.logo) this.load.image("blogo", b.logo); const bi = boosterImg(b), ci = backImg(); if (bi) this.load.image("bimg", bi); if (ci) this.load.image("cback", ci); }
     create() {
       const W = this.scale.width, H = this.scale.height; let g = this.add.graphics();
       this.W = W; this.H = H;
@@ -60,6 +60,8 @@ function makeScene(Ph, b, glow) {
       body.fillStyle(c1); body.fillRoundedRect(-bw / 2, -bh / 2, bw, bh, 14); body.fillStyle(c0, 0.85); body.fillRoundedRect(-bw / 2 + 6, -bh / 2 + 6, bw - 12, bh - 12, 10);
       body.lineStyle(3, 0xffd23f, 1); body.strokeRoundedRect(-bw / 2, -bh / 2, bw, bh, 14);
       pk.add(body);
+      // l'image du booster (modo), recadrée pour remplir le paquet
+      if (this.textures.exists("bimg")) { const im = this.add.image(0, 0, "bimg"), iw = im.width, ih = im.height, tw = bw - 12, th = bh - 12, k = Math.max(tw / iw, th / ih), cw = tw / k, ch = th / k; im.setCrop((iw - cw) / 2, (ih - ch) / 2, cw, ch); im.setScale(k); pk.add(im); }
       if (b.logo && this.textures.exists("blogo")) { const im = this.add.image(0, -bh * 0.08, "blogo"); const k = Math.min((bw * 0.7) / im.width, (bh * 0.4) / im.height); im.setScale(k); pk.add(im); }
       pk.add(this.add.text(0, bh * 0.3, String(b.t || "Booster").slice(0, 22).toUpperCase(), { fontFamily: "Anton, Impact, sans-serif", fontSize: "16px", color: "#ffffff", align: "center", wordWrap: { width: bw - 20 }, stroke: "#000", strokeThickness: 4 }).setOrigin(0.5));
       // la bande du haut (qu'on déchire) : un morceau à part
@@ -98,10 +100,12 @@ function makeScene(Ph, b, glow) {
     jump(rainbow) {
       return new Promise(res => {
         const w = Math.min(this.W * 0.3, 140), h = w * 1.45, back = this.add.container(this.pack.x, this.pack.y).setDepth(7), bg = this.add.graphics();
-        if (rainbow) { const cols = [0xff5a5a, 0xf2c230, 0x3fdc7a, 0x5cc8f0, 0x9b5de5]; cols.forEach((c, i) => { bg.fillStyle(c); bg.fillRect(-w / 2, -h / 2 + i * h / 5, w, h / 5 + 1); }); }
-        else { bg.fillStyle(0x0f1d48); bg.fillRoundedRect(-w / 2, -h / 2, w, h, 10); }
+        const img = this.textures.exists("cback"), cols = [0xff5a5a, 0xf2c230, 0x3fdc7a, 0x5cc8f0, 0x9b5de5];
+        if (img) { const im = this.add.image(0, 0, "cback"); im.setDisplaySize(w, h); back.add(im); }
+        if (rainbow) cols.forEach((c, i) => { bg.fillStyle(c, img ? 0.35 : 1); bg.fillRect(-w / 2, -h / 2 + i * h / 5, w, h / 5 + 1); });
+        else if (!img) { bg.fillStyle(0x0f1d48); bg.fillRoundedRect(-w / 2, -h / 2, w, h, 10); }
         bg.lineStyle(4, 0xffd23f, 1); bg.strokeRoundedRect(-w / 2, -h / 2, w, h, 10);
-        back.add(bg); back.add(this.add.text(0, 0, "TCCCG", { fontFamily: "Anton, Impact, sans-serif", fontSize: "22px", color: rainbow ? "#ffffff" : "#ffd23f", stroke: "#000", strokeThickness: 4 }).setOrigin(0.5));
+        back.add(bg); if (!img) back.add(this.add.text(0, 0, "TCCCG", { fontFamily: "Anton, Impact, sans-serif", fontSize: "22px", color: rainbow ? "#ffffff" : "#ffd23f", stroke: "#000", strokeThickness: 4 }).setOrigin(0.5));
         back.setScale(0.2);
         // le public se lève, les colonnes de feu s'allument, l'écran géant annonce l'entrée
         this.tweens.add({ targets: this.crowd, y: -6, duration: 260, yoyo: true, repeat: 4 });
@@ -131,7 +135,7 @@ export async function summon(b, ids, opt) {
   const finish = (fromBack) => { if (closed) return; closed = true; if (!fromBack) rel(); try { game && game.destroy(true); } catch (e) {} ov.remove(); document.body.classList.remove("tgfull"); SFX.crowd(false); changed("tcg"); };
   SFX.unlock();
   // Phaser (sinon version simple)
-  if (!simpleFx()) {
+  if (!simpleFx() && !opt.quick) {
     try {
       const Ph = await loadPhaser(), Sc = makeScene(Ph, b, best);
       game = new Ph.Game({ type: Ph.AUTO, parent: ov.querySelector(".tsstage2"), backgroundColor: "#070d22", scale: { mode: Ph.Scale.RESIZE, width: innerWidth, height: innerHeight }, scene: [Sc], banner: false, audio: { noAudio: true } });
@@ -141,7 +145,7 @@ export async function summon(b, ids, opt) {
   }
   if (closed) return;
   stage = "tear"; hint.innerHTML = scene ? "👆 Glisse ton doigt sur le <b>haut du booster</b> pour le déchirer" : "👆 Touche pour ouvrir le booster";
-  if (!scene) { ov.querySelector(".tsstage2").innerHTML = '<div class="tspack2" style="background:linear-gradient(160deg,' + esc((b.c || [])[0] || "#2a3a72") + "," + esc((b.c || [])[1] || "#0b1636") + ')"><b>' + esc(b.t) + "</b></div>"; }
+  if (!scene && !opt.quick) { const bi = boosterImg(b); ov.querySelector(".tsstage2").innerHTML = '<div class="tspack2" style="background:' + (bi ? "url('" + esc(bi) + "') center/cover," : "") + "linear-gradient(160deg," + esc((b.c || [])[0] || "#2a3a72") + "," + esc((b.c || [])[1] || "#0b1636") + ')"><b>' + esc(b.t) + "</b></div>"; }
   const opened = () => { stage = "reveal"; hint.textContent = ""; SFX.finisher(); setTimeout(() => show(0), scene ? 700 : 200); };
   // dévoiler la carte i
   const show = async i => {
@@ -151,7 +155,7 @@ export async function summon(b, ids, opt) {
     if (scene && scene.say) scene.say("Qui arrive ?", "Carte " + (i + 1) + " sur " + defs.length);
     frontEl.innerHTML = cardHTML(def, { nozoom: true });
     backEl.className = "tsback" + (t === "lrp" ? " rainbow" : t === "ssr" ? " gold" : "");
-    backEl.innerHTML = '<div class="tc3 back"><div class="tc3back"><b>TCCCG</b><small>The Catch Card Collection Game</small></div></div>';
+    backEl.innerHTML = backHTML(false);
     inner.className = "tsfin"; flipEl.hidden = true; busyT = Date.now() + 700;
     if (t !== "low") {
       stage = "spec"; hint.textContent = t === "lrp" ? "🌈 Incroyable !" : "🔥 Le public se lève !";
@@ -228,5 +232,7 @@ export async function summon(b, ids, opt) {
       }
     });
   };
+  // ouverture rapide (Call Up) : toutes les cartes d'un coup, sans l'entrée
+  if (opt.quick) { SFX.finisher(); results(); }
 }
 void owned;

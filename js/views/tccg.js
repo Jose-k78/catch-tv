@@ -4,6 +4,7 @@
 import { S, ACT, avatar, changed } from "../state.js";
 import { esc, toast } from "../util.js";
 import { callUpView } from "../tcg/callup.js";
+import "../tcg/peek.js";
 import { rosterView } from "../tcg/roster.js";
 import { eventView, matchView, prepView, combatView } from "../tcg/fight.js";
 import { tccgHome, shopView, guideView } from "../tcg/home.js";

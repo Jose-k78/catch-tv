@@ -2,7 +2,7 @@
 // rareté (haut droite), grande image, nom + (années) + version / gimmick, badge archétype, logo de faction, symbole face / heel,
 // 5 stats, zone Finisher, petit cercle des types ; couleur dominante = celle de l'archétype. Dos de carte : TCCCG.
 import { esc } from "../util.js";
-import { ARCH, ARCHS, STATS, statsOf, defOf, promoLogo, hpOf, isChampLive, RNAME, titleOf, titleById, POWERS } from "./data.js";
+import { ARCH, ARCHS, STATS, statsOf, defOf, promoLogo, hpOf, isChampLive, RNAME, titleOf, titleById, POWERS, cfg } from "./data.js";
 import { groupLogo, beltOf } from "../assets.js";
 
 // cercle des types : les 5 couleurs dans l'ordre du cycle, flèches de qui bat qui
@@ -36,16 +36,24 @@ function beltMark(def, live) {
   const tip = def.evo ? "Évolution : " + (t ? t.n : "") : def.champ ? "Carte champion (boost permanent)" : "Champion en titre : +10 %";
   return img ? '<img class="tc3belt img" src="' + esc(img) + '" alt="" title="' + esc(tip) + '">' : '<span class="tc3belt" title="' + esc(tip) + '">🏆</span>';
 }
+// dos des cartes : l'image choisie par le modo (Modo › Musiques et assets › Dos des cartes), sinon « TCCCG »
+export const backImg = () => ((cfg().assets || {}).back) || "";
+export function backHTML(small, cls) {
+  const im = backImg();
+  return '<div class="tc3 back' + (small ? " sm" : "") + (im ? " img" : "") + (cls ? " " + cls : "") + '">' + (im ? '<img class="tc3bimg" src="' + esc(im) + '" alt="" draggable="false">' : '<div class="tc3back"><b>TCCCG</b><small>The Catch Card Collection Game</small></div>') + "</div>";
+}
+// image d'un booster : la sienne (modo), sinon le fond commun des boosters (Modo › Fond des boosters)
+export const boosterImg = b => (b && b.img) || ((cfg().assets || {}).booster) || "";
 // inst : exemplaire du joueur { c, r, lv, xp } ou une définition de carte (def) ; opt : { small, act, iid, count, back }
 export function cardHTML(inst, opt) {
   opt = opt || {};
   const def = inst.c ? defOf(inst.c) : inst; if (!def) return "";
   const r = inst.r || def.r, lv = inst.lv || 1, st = inst.c ? statsOf(inst, def) : def.st, A = ARCH[def.arch] || ARCH.Showman;
   const lg = promoLogo(def.k), fl = def.faction && groupLogo(def.faction), live = isChampLive(def);
-  if (opt.back) return '<div class="tc3 back' + (opt.small ? " sm" : "") + '"><div class="tc3back"><b>TCCCG</b><small>The Catch Card Collection Game</small></div></div>';
+  if (opt.back) return backHTML(opt.small);
   const pic = picOf(def, r);
   const ar = pic ? arStyle(arOf(pic)) : 0;
-  return '<div class="tc3 r-' + r + (opt.small ? " sm" : "") + (def.champ || live ? " champ" : "") + (def.evo ? " evo" : "") + (ar ? " ar" : "") + (opt.cls ? " " + esc(opt.cls) : "") + '" style="--ac:' + A.c + (ar ? ";--ar:" + ar.toFixed(3) : "") + '"' + (opt.act ? ' data-act="' + opt.act + '" data-iid="' + esc(opt.iid || "") + '" data-c="' + esc(def.id) + '"' : "") + ">" +
+  return '<div class="tc3 r-' + r + (opt.small ? " sm" : "") + (def.champ || live ? " champ" : "") + (def.evo ? " evo" : "") + (ar ? " ar" : "") + (opt.cls ? " " + esc(opt.cls) : "") + '" style="--ac:' + A.c + (ar ? ";--ar:" + ar.toFixed(3) : "") + '" data-pk="' + esc(def.id + "|" + r + "|" + lv + "|" + (inst.iid || opt.iid || "")) + '"' + (opt.act ? ' data-act="' + opt.act + '" data-iid="' + esc(opt.iid || "") + '" data-c="' + esc(def.id) + '"' : "") + ">" +
     '<div class="tc3foil"></div>' +
     '<div class="tc3top">' + (lg ? '<img class="tc3promo" src="' + esc(lg) + '" alt="">' : '<span class="tc3promo t">' + esc(def.k || "") + "</span>") + '<span class="tc3brand">TCCCG</span><span class="tc3r" title="' + esc(RNAME[r] || r) + '">' + r + "</span></div>" +
     '<div class="tc3pic' + (pic ? "" : " nopic") + '"' + (pic && !opt.small && !opt.nozoom ? ' data-act="zoom" data-src="' + esc(pic) + '" data-alt="' + esc(def.name) + '"' : "") + ">" +

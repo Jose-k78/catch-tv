@@ -8,6 +8,20 @@ export const muted = () => { try { return localStorage.getItem("ctv.tgsnd") === 
 const ctx = () => { if (muted()) return null; if (!C) { const A = window.AudioContext || window.webkitAudioContext; if (A) C = new A(); } if (C && C.state === "suspended") C.resume(); return C; };
 const custom = k => (cfg().bgm || {})[k] || "";
 function file(url, vol, loop) { if (muted()) return null; try { const a = new Audio(url); a.volume = vol == null ? 0.8 : vol; a.loop = !!loop; a.play().catch(() => {}); return a; } catch (e) { return null; } }
+// un seul exemplaire à la fois par son du modo (13 nov. : la cloche de 2,7 s jouée 3 fois se chevauchait) :
+// le même son relancé coupe le précédent ; relancé dans les 0,35 s, il est ignoré (deux appels pour le même coup)
+const live = {};
+function one(k, vol, loop) {
+  const url = custom(k); if (!url || muted()) return null;
+  const p = live[k];
+  if (p && !p.paused && !p.ended) { if (loop || Date.now() - (p._t || 0) < 350) return p; try { p.pause(); } catch (e) {} }
+  const a = file(url, vol, loop); if (a) { a._t = Date.now(); live[k] = a; } return a;
+}
+// sons fabriqués : le même son n'est pas relancé tant que le précédent n'a pas eu le temps de finir
+const lastAt = {};
+const gate = (k, ms) => { const n = Date.now(); if (n - (lastAt[k] || 0) < ms) return false; lastAt[k] = n; return true; };
+// tout couper (on quitte le TCCCG, on ferme une invocation)
+export function stopAll() { Object.keys(live).forEach(k => { try { live[k].pause(); } catch (e) {} delete live[k]; }); }
 function noise(c, dur) { const b = c.createBuffer(1, Math.max(1, c.sampleRate * dur), c.sampleRate), d = b.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1; const s = c.createBufferSource(); s.buffer = b; return s; }
 function env(c, g, t, a, peak, dec) { g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(peak, t + a); g.gain.exponentialRampToValueAtTime(0.0001, t + a + dec); }
 // cloche du ring : plusieurs harmoniques métalliques qui s'éteignent
@@ -43,12 +57,18 @@ function tune(win) {
 }
 // joue un son : fichier du modo s'il y en a un, sinon le son de l'app
 export const SFX = {
-  bell: n => { if (custom("bell")) { for (let i = 0; i < (n || 1); i++) setTimeout(() => file(custom("bell")), i * 450); return; } for (let i = 0; i < (n || 1); i++) bell(i * 0.42); },
-  hit: strong => custom(strong ? "finisher" : "hit") ? file(custom(strong ? "finisher" : "hit")) : (hit(strong), strong && pop(true)),
-  taunt: () => custom("taunt") ? file(custom("taunt")) : pop(false),
-  finisher: () => { if (custom("finisher")) file(custom("finisher")); else { whoosh(); setTimeout(() => { hit(true); pop(true); }, 550); } },
-  crowd: on => { if (custom("crowd")) { if (on && !crowdNode) crowdNode = { a: file(custom("crowd"), 0.35, true) }; else if (!on && crowdNode) { try { crowdNode.a && crowdNode.a.pause(); } catch (e) {} crowdNode = null; } return; } crowd(on); },
+  // fichier du modo : joué une seule fois (un fichier de cloche contient déjà ses coups) ; sinon n coups fabriqués
+  bell: n => { if (custom("bell")) { one("bell"); return; } if (!gate("bell", 900)) return; for (let i = 0; i < (n || 1); i++) bell(i * 0.42); },
+  hit: strong => { const k = strong ? "finisher" : "hit"; if (custom(k)) return one(k); if (!gate(k, strong ? 600 : 90)) return; hit(strong); if (strong && gate("pop", 1500)) pop(true); },
+  taunt: () => custom("taunt") ? one("taunt") : gate("pop", 1500) && pop(false),
+  finisher: () => { if (custom("finisher")) one("finisher"); else if (gate("fin", 1200)) { whoosh(); setTimeout(() => { hit(true); if (gate("pop", 1500)) pop(true); }, 550); } },
+  // petit « tac » discret (pierre-feuille-ciseaux)
+  tick: () => { const c = ctx(); if (!c || !gate("tick", 120)) return; const t = c.currentTime, o = c.createOscillator(), g = c.createGain(); o.type = "triangle"; o.frequency.setValueAtTime(520, t); o.frequency.exponentialRampToValueAtTime(260, t + 0.06); env(c, g, t, 0.003, 0.18, 0.07); o.connect(g).connect(c.destination); o.start(t); o.stop(t + 0.1); },
+  crowd: on => { if (custom("crowd")) { if (on) one("crowd", 0.35, true); else if (live.crowd) { try { live.crowd.pause(); } catch (e) {} delete live.crowd; } return; } crowd(on); },
   music: on => { if (!on) { if (music) { try { music.pause(); } catch (e) {} music = null; } return; } if (custom("fight") && !music) music = file(custom("fight"), 0.35, true); },
-  end: win => { SFX.bell(3); setTimeout(() => { if (custom(win ? "win" : "lose")) file(custom(win ? "win" : "lose"), 0.75); else tune(win); }, 1300); },
+  end: win => { SFX.bell(3); setTimeout(() => { if (custom(win ? "win" : "lose")) one(win ? "win" : "lose", 0.75); else tune(win); }, 1300); },
+  stop: () => { stopAll(); crowd(false); SFX.music(false); },
   unlock: () => ctx()
 };
+// on quitte le TCCCG : plus aucun son du jeu ne continue derrière
+if (typeof window !== "undefined") window.addEventListener("hashchange", () => { if (location.hash.indexOf("#/tccg") !== 0) SFX.stop(); });

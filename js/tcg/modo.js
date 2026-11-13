@@ -9,6 +9,7 @@ import { ghGetJson, ghPutJson, ghToken, ghPutBinary } from "../github.js";
 import { RAR, ARCHS, STATS, FX, ITEMS0, RATE0, cfg, baseCards, cardById, items, rates, rates2, showKeyLabel } from "./data.js";
 import { cardHTML } from "./card.js";
 import { giveButton } from "./give.js";
+import { pushPhoto } from "../views/imagesadmin.js";
 import { norm } from "../wrestlers.js";
 
 let tab = "", q = "";
@@ -43,6 +44,7 @@ export function modoView() {
   if (tab === "") {
     const L = mList();
     h += '<div class="search" style="margin:0 16px"><input id="tmq" type="search" placeholder="Chercher une carte" value="' + esc(q) + '"></div><p class="tnote">' + baseCards().length + " cartes · touche une carte pour la modifier</p>" +
+      '<button class="btn wide tmquickb" data-act="tcgmquick">⚡ Modif rapide <small>une carte au hasard, glisse pour la suivante</small></button>' +
       '<div class="tfilt"><button class="chip' + (noImg ? "" : " on") + '" data-act="tcgmnoimg" data-v="">Toutes</button><button class="chip' + (noImg ? " on" : "") + '" data-act="tcgmnoimg" data-v="1">🖼️ Sans image (' + baseCards().filter(c => !c.pic).length + ")</button></div>" +
       '<div class="trgrid">' + L.map(c => cardHTML(c, { small: true, act: "tcgmedit", iid: "" })).join("") + "</div>";
   }
@@ -93,10 +95,15 @@ document.addEventListener("input", e => { if (e.target.id === "tmq") { q = e.tar
 // ---------- modifier une carte ----------
 ACT.tcgmedit = el => {
   const c = cardById(el.dataset.c); if (!c) return;
+  const quick = el.dataset.quick === "1", again = () => ACT.tcgmedit({ dataset: { c: c.id, quick: quick ? "1" : "" } });
+  // carte d'un vrai catcheur : son image = la photo de sa fiche (13 nov.) ; une carte créée garde sa propre image
+  const fiche = !c.custom && !String(c.id).startsWith("oc-");
   const ov = Object.assign({}, (cfg().cards || {})[c.id] || {}), custom = (cfg().custom || []).find(x => x.id === c.id);
   modal((box, close) => {
     const G = S.groups || {};
-    box.innerHTML = '<div class="tczoom">' + cardHTML(c) + "</div><form class=\"tmform\" data-mf>" +
+    const Q = quick ? qDeck() : null;
+    box.innerHTML = (quick ? '<div class="tmqhead"><b>⚡ Modif rapide</b><small>Carte ' + (Q.i + 1) + " sur " + Q.d.length + ' · glisse vers la gauche pour la suivante</small><button type="button" class="btn small" data-qnext>Suivante ›</button></div>' : "") +
+      '<div class="tczoom">' + cardHTML(c) + "</div><form class=\"tmform\" data-mf>" +
       '<label>Nom sur la carte<input name="nm" maxlength="40" value="' + esc(c.name) + '"></label>' +
       (c.rn && c.rn !== c.name ? '<p class="tnote">Nom d’origine : ' + esc(c.rn) + " (la carte reste liée à ce catcheur pour les shows et les titres)</p>" : "") +
       '<label>Années / date (affichée après le nom)<input name="yr" maxlength="24" placeholder="ex. 2016– ou 1998-2003" value="' + esc(c.years || "") + '"></label>' +
@@ -113,7 +120,8 @@ ACT.tcgmedit = el => {
       '<label>Boosters spéciaux (identifiants, séparés par des virgules)<input name="bo" value="' + esc((c.boosters || []).join(", ")) + '"></label>' +
       '<label class="chk"><input type="checkbox" name="hide"' + (ov.hide ? " checked" : "") + "> Masquer la carte</label>" +
       '<div class="btns"><button type="button" class="btn small ghost" data-buff="-5">📉 Nerf −5 %</button><button type="button" class="btn small ghost" data-buff="5">📈 Buff +5 %</button><span class="tnote">Actuel : ' + (ov.buff || 0) + ' %</span></div>' +
-      '<div class="btns"><button type="button" class="btn small ghost" data-img>🖼️ Changer l’image</button>' + (ov.img ? '<button type="button" class="btn small ghost" data-noimg>Image d’origine</button>' : "") + "</div>" +
+      '<div class="btns"><button type="button" class="btn small ghost" data-img>🖼️ Changer l’image</button>' + (ov.img && !fiche ? '<button type="button" class="btn small ghost" data-noimg>Image d’origine</button>' : "") + "</div>" +
+      (fiche ? '<p class="tnote">L’image de base de cette carte est la photo de la fiche du catcheur : la changer ici change aussi sa fiche TCC TV (et inversement).</p>' : "") +
       '<div class="taltrow">' + [["", "Base", c.pic], ["UR", "UR", c.picUR], ["LR", "LR", c.picLR]].map(a => '<button type="button" class="taltb" data-alt="' + a[0] + '">' + (a[2] ? '<img src="' + esc(a[2]) + '" alt="">' : "<span>–</span>") + "<small>" + a[1] + "</small></button>").join("") + '</div><p class="tnote">Touche une vignette pour choisir l’image de base, UR ou LR dans la banque d’images (ou envoyer un fichier). En UR puis en LR, la carte change d’image toute seule.</p>' +
       '<button class="btn wide">Enregistrer</button><button type="button" class="btn wide ghost" data-evo>🏆 Évolutions par ceinture</button><button type="button" class="btn wide ghost" data-dup>⧉ Dupliquer cette carte</button>' +
       (!custom && Object.keys(ov).length ? '<button type="button" class="btn wide ghost" data-reset>↺ Revenir à la carte d’origine</button>' : "") +
@@ -121,13 +129,18 @@ ACT.tcgmedit = el => {
     const target = d => { if (custom) { d.custom = d.custom || []; let x = d.custom.find(y => y.id === c.id); if (!x) { x = { id: c.id }; d.custom.push(x); } return x; } d.cards = d.cards || {}; d.cards[c.id] = d.cards[c.id] || {}; return d.cards[c.id]; };
     box.addEventListener("click", e => {
       if (e.target.closest("[data-close]")) return close();
+      if (e.target.closest("[data-qnext]")) return quickNext();
       if (e.target.closest("[data-evo]")) { close(); return ACT.tcgmevo && ACT.tcgmevo({ dataset: { c: c.id } }); }
       const bf = e.target.closest("[data-buff]");
-      if (bf) { close(); return run(d => { const t = target(d); t.buff = (+t.buff || 0) + +bf.dataset.buff; delete t.st; }, (+bf.dataset.buff > 0 ? "buff " : "nerf ") + c.name); }
-      if (e.target.closest("[data-img]")) return pickFile("image/*", "img/tcg/", path => run(d => { target(d).img = path; }, "image de " + c.name).then(close));
+      if (bf) { close(); return run(d => { const t = target(d); t.buff = (+t.buff || 0) + +bf.dataset.buff; delete t.st; }, (+bf.dataset.buff > 0 ? "buff " : "nerf ") + c.name).then(() => quick && setTimeout(again, 300)); }
+      if (e.target.closest("[data-img]")) {
+        if (fiche) return pickRaw(f => { close(); toFiche(c, f).then(() => quick && setTimeout(again, 300)); });
+        return pickFile("image/*", "img/tcg/", path => run(d => { target(d).img = path; }, "image de " + c.name).then(close));
+      }
       const ab = e.target.closest("[data-alt]");
       if (ab) { const slot = ab.dataset.alt, fld = slot ? "img" + slot : "img"; close();
-        return bankPick(c, "Image " + (slot || "de base") + " de " + c.name, v => run(d => { const t = target(d); if (v === null) delete t[fld]; else t[fld] = v; }, "image " + (slot || "de base") + " de " + c.name).then(() => setTimeout(() => ACT.tcgmedit({ dataset: { c: c.id } }), 300)), !!slot); }
+        if (!slot && fiche) return bankPick(c, "Image de base de " + c.name + " (= photo de sa fiche)", v => (v && v !== "-" ? toFiche(c, v) : run(d => { delete target(d).img; }, "image de base de " + c.name)).then(() => setTimeout(again, 300)), false);
+        return bankPick(c, "Image " + (slot || "de base") + " de " + c.name, v => run(d => { const t = target(d); if (v === null) delete t[fld]; else t[fld] = v; }, "image " + (slot || "de base") + " de " + c.name).then(() => setTimeout(again, 300)), !!slot); }
       if (e.target.closest("[data-noimg]")) { close(); return run(d => { delete target(d).img; }, "image d’origine de " + c.name); }
       if (e.target.closest("[data-del]")) { close(); return run(d => { d.custom = (d.custom || []).filter(x => x.id !== c.id); }, "carte supprimée : " + c.name); }
       if (e.target.closest("[data-reset]")) { close(); return run(d => { if (d.cards) delete d.cards[c.id]; }, "carte d’origine : " + c.name); }
@@ -144,14 +157,49 @@ ACT.tcgmedit = el => {
       const changedSt = st.some((v, i) => v !== c.st[i]);
       close();
       const nm = f.nm.value.trim(), yr = f.yr.value.trim(), fac = f.fac.value.trim();
-      run(d => { const t = target(d);
+      saveCfg(d => { const t = target(d);
         if (custom) { if (nm) t.name = nm; t.years = yr; t.k = f.k.value; }
         else { if (nm && nm !== (c.rn || c.name)) t.name = nm; else delete t.name; if (yr !== (c.years || "") || "years" in t) t.years = yr; if (f.k.value) t.k = f.k.value; else delete t.k; }
         if (fac !== (c.faction || "") || "fac" in t) t.fac = fac;
-        t.r = f.r.value; t.max = f.max.value; t.arch = f.arch.value; t.al = f.al.value; if (changedSt) t.st = st; t.fin = { n: f.fn.value.trim(), e: f.fe.value }; t.gimmick = f.gim.value.trim(); t.medalOf = f.md.value.trim(); const bo = f.bo.value.split(",").map(x => x.trim()).filter(Boolean); if (bo.length) t.boosters = bo; else delete t.boosters; if (f.hide.checked) t.hide = true; else delete t.hide; }, "carte " + c.name);
+        t.r = f.r.value; t.max = f.max.value; t.arch = f.arch.value; t.al = f.al.value; if (changedSt) t.st = st; t.fin = { n: f.fn.value.trim(), e: f.fe.value }; t.gimmick = f.gim.value.trim(); t.medalOf = f.md.value.trim(); const bo = f.bo.value.split(",").map(x => x.trim()).filter(Boolean); if (bo.length) t.boosters = bo; else delete t.boosters; if (f.hide.checked) t.hide = true; else delete t.hide; }, "carte " + c.name)
+        .then(ok => { if (ok) { toast("Enregistré ✓"); if (quick) qStep(); } }).catch(er => { if (er && er.message !== "nokey") toast("Pas enregistré : " + er.message, { ms: 5000 }); });
     });
+    // mode rapide : glisser vers la gauche = carte suivante (enregistrée d'abord si on a changé quelque chose)
+    let dirty = false, p0 = null;
+    const quickNext = () => { if (dirty) { const f = box.querySelector("[data-mf]"); if (f.requestSubmit) f.requestSubmit(); else f.dispatchEvent(new Event("submit", { cancelable: true })); return; } close(); qStep(); };
+    box.addEventListener("input", () => { dirty = true; });
+    box.addEventListener("change", () => { dirty = true; });
+    if (quick) {
+      // le doigt peut finir hors de la fenêtre : on écoute la fin du geste sur toute la page
+      box.addEventListener("pointerdown", e => {
+        if (e.target.closest("input,select,textarea")) return; p0 = { x: e.clientX, y: e.clientY };
+        const up = ev => { document.removeEventListener("pointerup", up); if (!p0) return; const dx = ev.clientX - p0.x, dy = ev.clientY - p0.y; p0 = null; if (dx < -70 && Math.abs(dx) > Math.abs(dy) * 1.5) { ev.preventDefault(); quickNext(); } };
+        document.addEventListener("pointerup", up);
+      });
+    }
   });
 };
+// ---------- Modif rapide (13 nov.) : une carte au hasard ; on glisse pour la suivante ; chaque carte passe une fois
+// avant qu'on remélange (paquet gardé sur le téléphone : ctv.tcgmq) ----------
+const QK = "ctv.tcgmq";
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = a[i]; a[i] = a[j]; a[j] = t; } return a; };
+function qDeck() { let o = null; try { o = JSON.parse(localStorage.getItem(QK) || "null"); } catch (e) {} if (!o || !Array.isArray(o.d) || !o.d.length) o = { d: shuffle(baseCards().map(c => c.id)), i: 0 }; return o; }
+function qSave(o) { try { localStorage.setItem(QK, JSON.stringify(o)); } catch (e) {} }
+function qCur() {
+  const o = qDeck(); while (o.i < o.d.length && !cardById(o.d[o.i])) o.i++;
+  if (o.i >= o.d.length) { o.d = shuffle(baseCards().map(c => c.id)); o.i = 0; toast("🔀 Tu as vu toutes les cartes : on remélange"); }
+  qSave(o); return o;
+}
+ACT.tcgmquick = () => { const o = qCur(); ACT.tcgmedit({ dataset: { c: o.d[o.i], quick: "1" } }); };
+function qStep() { const o = qDeck(); o.i++; qSave(o); setTimeout(ACT.tcgmquick, 250); }
+// image d'une carte de catcheur = photo de sa fiche : on l'envoie dans les photos (dossier img/catcheurs) et la carte la suit
+function pickRaw(cb) { const i = document.createElement("input"); i.type = "file"; i.accept = "image/*"; i.onchange = () => { const f = i.files && i.files[0]; if (f) cb(f); }; i.click(); }
+function toFiche(c, src) {
+  return pushPhoto(c.id, c.rn || c.name, src)
+    .then(() => saveCfg(d => { if (d.cards && d.cards[c.id]) delete d.cards[c.id].img; }, "image de " + c.name + " = photo de sa fiche"))
+    .then(() => toast("✓ Image de la carte et de la fiche changées (visible d’ici 1 à 2 minutes)", { ms: 4500 }))
+    .catch(e => { if (e && e.message !== "nokey") toast("Pas enregistré : " + e.message, { ms: 5000 }); });
+}
 // banque d'images : variantes du catcheur d'abord, puis recherche dans toute la banque (photos + variantes), ou fichier
 export function bankPick(c, title, done, canNone) {
   let q = "";

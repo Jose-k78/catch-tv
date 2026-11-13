@@ -1,0 +1,1513 @@
+{
+ "updated": "2026-11-13",
+ "upto": "2026-06-01",
+ "note": "Palmarès WWE (titres WWE et NXT, Royal Rumble, Money in the Bank, King / Queen of the Ring) des catcheurs des rosters Raw, SmackDown et NXT. Établi jusqu'à juin 2026 (champ upto) ; les règnes gagnés après cette date sont ajoutés par l'app d'après data/titles.json. Un titre « (et Raw Women's) » compte aussi les règnes de l'ancien nom du même titre. Format : items { nom : [ { t, k, x (fois), id (titre de titles.json), ty: \"t\" = tournoi, y = années } ] }.",
+ "items": {
+  "Akira Tozawa": [
+   {
+    "t": "WWE Cruiserweight Championship",
+    "k": "WWE",
+    "x": 1
+   }
+  ],
+  "Angelo Dawkins": [
+   {
+    "t": "NXT Tag Team Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-tt"
+   },
+   {
+    "t": "World Tag Team Championship (et Raw Tag Team)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wtt"
+   },
+   {
+    "t": "WWE Tag Team Championship (et SmackDown Tag Team)",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-tt"
+   }
+  ],
+  "Montez Ford": [
+   {
+    "t": "NXT Tag Team Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-tt"
+   },
+   {
+    "t": "World Tag Team Championship (et Raw Tag Team)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wtt"
+   },
+   {
+    "t": "WWE Tag Team Championship (et SmackDown Tag Team)",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-tt"
+   }
+  ],
+  "Asuka": [
+   {
+    "t": "NXT Women’s Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-w"
+   },
+   {
+    "t": "WWE Women’s Championship (et Raw Women’s)",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-wc"
+   },
+   {
+    "t": "Women’s World Championship (et SmackDown Women’s)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wwc"
+   },
+   {
+    "t": "WWE Women’s Tag Team Championship",
+    "k": "WWE",
+    "x": 4,
+    "id": "wwe-wtag"
+   },
+   {
+    "t": "Royal Rumble",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2018",
+    "x": 1
+   },
+   {
+    "t": "Money in the Bank",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2020",
+    "x": 1
+   }
+  ],
+  "Austin Theory": [
+   {
+    "t": "United States Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-us"
+   },
+   {
+    "t": "Money in the Bank",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2022",
+    "x": 1
+   }
+  ],
+  "Bayley": [
+   {
+    "t": "NXT Women’s Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-w"
+   },
+   {
+    "t": "WWE Women’s Championship (et Raw Women’s)",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-wc"
+   },
+   {
+    "t": "Women’s World Championship (et SmackDown Women’s)",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-wwc"
+   },
+   {
+    "t": "WWE Women’s Tag Team Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-wtag"
+   },
+   {
+    "t": "Royal Rumble",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2024",
+    "x": 1
+   },
+   {
+    "t": "Money in the Bank",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2019",
+    "x": 1
+   }
+  ],
+  "Becky Lynch": [
+   {
+    "t": "Women’s World Championship (et SmackDown Women’s)",
+    "k": "WWE",
+    "x": 4,
+    "id": "wwe-wwc"
+   },
+   {
+    "t": "WWE Women’s Championship (et Raw Women’s)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wc"
+   },
+   {
+    "t": "NXT Women’s Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-w"
+   },
+   {
+    "t": "Women’s Intercontinental Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wic"
+   },
+   {
+    "t": "WWE Women’s Tag Team Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wtag"
+   },
+   {
+    "t": "Royal Rumble",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2019",
+    "x": 1
+   }
+  ],
+  "Bron Breakker": [
+   {
+    "t": "NXT Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "nxt"
+   },
+   {
+    "t": "Intercontinental Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-ic"
+   }
+  ],
+  "Bronson Reed": [
+   {
+    "t": "NXT North American Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-na"
+   }
+  ],
+  "Carmelo Hayes": [
+   {
+    "t": "NXT Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt"
+   },
+   {
+    "t": "NXT North American Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "nxt-na"
+   },
+   {
+    "t": "WWE Cruiserweight Championship",
+    "k": "WWE",
+    "x": 1
+   }
+  ],
+  "Chad Gable": [
+   {
+    "t": "NXT Tag Team Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-tt"
+   },
+   {
+    "t": "WWE Tag Team Championship (et SmackDown Tag Team)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-tt"
+   },
+   {
+    "t": "World Tag Team Championship (et Raw Tag Team)",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-wtt"
+   }
+  ],
+  "Otis": [
+   {
+    "t": "World Tag Team Championship (et Raw Tag Team)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wtt"
+   },
+   {
+    "t": "Money in the Bank",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2020",
+    "x": 1
+   }
+  ],
+  "Dominik Mysterio": [
+   {
+    "t": "NXT North American Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-na"
+   },
+   {
+    "t": "Intercontinental Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-ic"
+   },
+   {
+    "t": "WWE Tag Team Championship (et SmackDown Tag Team)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-tt"
+   }
+  ],
+  "Dragon Lee": [
+   {
+    "t": "NXT North American Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-na"
+   }
+  ],
+  "Ethan Page": [
+   {
+    "t": "NXT North American Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-na"
+   }
+  ],
+  "IYO SKY": [
+   {
+    "t": "NXT Women’s Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-w"
+   },
+   {
+    "t": "NXT Women’s Tag Team Championship",
+    "k": "WWE",
+    "x": 1
+   },
+   {
+    "t": "WWE Women’s Championship (et Raw Women’s)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wc"
+   },
+   {
+    "t": "Women’s World Championship (et SmackDown Women’s)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wwc"
+   },
+   {
+    "t": "WWE Women’s Tag Team Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wtag"
+   },
+   {
+    "t": "Money in the Bank",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2023",
+    "x": 1
+   }
+  ],
+  "Jacob Fatu": [
+   {
+    "t": "United States Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-us"
+   }
+  ],
+  "JD McDonagh": [
+   {
+    "t": "World Tag Team Championship (et Raw Tag Team)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wtt"
+   }
+  ],
+  "Jey Uso": [
+   {
+    "t": "WWE Tag Team Championship (et SmackDown Tag Team)",
+    "k": "WWE",
+    "x": 6,
+    "id": "wwe-tt"
+   },
+   {
+    "t": "World Tag Team Championship (et Raw Tag Team)",
+    "k": "WWE",
+    "x": 3,
+    "id": "wwe-wtt"
+   },
+   {
+    "t": "Intercontinental Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-ic"
+   },
+   {
+    "t": "World Heavyweight Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-whc"
+   },
+   {
+    "t": "Royal Rumble",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2025",
+    "x": 1
+   }
+  ],
+  "Jimmy Uso": [
+   {
+    "t": "WWE Tag Team Championship (et SmackDown Tag Team)",
+    "k": "WWE",
+    "x": 5,
+    "id": "wwe-tt"
+   },
+   {
+    "t": "World Tag Team Championship (et Raw Tag Team)",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-wtt"
+   }
+  ],
+  "LA Knight": [
+   {
+    "t": "United States Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-us"
+   }
+  ],
+  "Liv Morgan": [
+   {
+    "t": "Women’s World Championship (et SmackDown Women’s)",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-wwc"
+   },
+   {
+    "t": "Money in the Bank",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2022",
+    "x": 1
+   }
+  ],
+  "Logan Paul": [
+   {
+    "t": "United States Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-us"
+   }
+  ],
+  "Lyra Valkyria": [
+   {
+    "t": "NXT Women’s Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-w"
+   },
+   {
+    "t": "Women’s Intercontinental Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wic"
+   }
+  ],
+  "Naomi": [
+   {
+    "t": "Women’s World Championship (et SmackDown Women’s)",
+    "k": "WWE",
+    "x": 3,
+    "id": "wwe-wwc"
+   },
+   {
+    "t": "WWE Women’s Tag Team Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wtag"
+   },
+   {
+    "t": "Money in the Bank",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2025",
+    "x": 1
+   }
+  ],
+  "Nattie": [
+   {
+    "t": "Divas Championship",
+    "k": "WWE",
+    "x": 1
+   },
+   {
+    "t": "Women’s World Championship (et SmackDown Women’s)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wwc"
+   },
+   {
+    "t": "WWE Women’s Tag Team Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wtag"
+   }
+  ],
+  "Oba Femi": [
+   {
+    "t": "NXT Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt"
+   },
+   {
+    "t": "NXT North American Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-na"
+   }
+  ],
+  "Raquel Rodriguez": [
+   {
+    "t": "NXT Women’s Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-w"
+   }
+  ],
+  "Rey Mysterio": [
+   {
+    "t": "WWE Championship (Undisputed)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wwe"
+   },
+   {
+    "t": "World Heavyweight Championship (2002-2013)",
+    "k": "WWE",
+    "x": 1
+   },
+   {
+    "t": "Intercontinental Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-ic"
+   },
+   {
+    "t": "United States Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-us"
+   },
+   {
+    "t": "WWE Tag Team Championship (et SmackDown Tag Team)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-tt"
+   },
+   {
+    "t": "WWE Cruiserweight Championship",
+    "k": "WWE",
+    "x": 3
+   },
+   {
+    "t": "Royal Rumble",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2006",
+    "x": 1
+   }
+  ],
+  "Roman Reigns": [
+   {
+    "t": "WWE Championship (Undisputed)",
+    "k": "WWE",
+    "x": 4,
+    "id": "wwe-wwe"
+   },
+   {
+    "t": "WWE Universal Championship",
+    "k": "WWE",
+    "x": 2
+   },
+   {
+    "t": "United States Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-us"
+   },
+   {
+    "t": "Intercontinental Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-ic"
+   },
+   {
+    "t": "World Tag Team Championship (et Raw Tag Team)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wtt"
+   },
+   {
+    "t": "Royal Rumble",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2015",
+    "x": 1
+   }
+  ],
+  "Roxanne Perez": [
+   {
+    "t": "NXT Women’s Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "nxt-w"
+   },
+   {
+    "t": "NXT Women’s Tag Team Championship",
+    "k": "WWE",
+    "x": 1
+   }
+  ],
+  "Rusev": [
+   {
+    "t": "United States Championship",
+    "k": "WWE",
+    "x": 3,
+    "id": "wwe-us"
+   }
+  ],
+  "Seth Rollins": [
+   {
+    "t": "WWE Championship (Undisputed)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wwe"
+   },
+   {
+    "t": "WWE Universal Championship",
+    "k": "WWE",
+    "x": 2
+   },
+   {
+    "t": "World Heavyweight Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-whc"
+   },
+   {
+    "t": "Intercontinental Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-ic"
+   },
+   {
+    "t": "United States Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-us"
+   },
+   {
+    "t": "NXT Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt"
+   },
+   {
+    "t": "Royal Rumble",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2019",
+    "x": 1
+   },
+   {
+    "t": "Money in the Bank",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2014, 2025",
+    "x": 2
+   }
+  ],
+  "Solo Sikoa": [
+   {
+    "t": "NXT North American Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-na"
+   },
+   {
+    "t": "United States Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-us"
+   }
+  ],
+  "Maxxine Dupri": [
+   {
+    "t": "Women’s Intercontinental Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wic"
+   }
+  ],
+  "Stephanie Vaquer": [
+   {
+    "t": "NXT Women’s Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-w"
+   },
+   {
+    "t": "NXT Women’s North American Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-wna"
+   },
+   {
+    "t": "Women’s World Championship (et SmackDown Women’s)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wwc"
+   }
+  ],
+  "Axiom": [
+   {
+    "t": "NXT Tag Team Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-tt"
+   }
+  ],
+  "Nathan Frazer": [
+   {
+    "t": "NXT Tag Team Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-tt"
+   },
+   {
+    "t": "NXT Heritage Cup",
+    "k": "WWE",
+    "x": 1
+   }
+  ],
+  "Baron Corbin": [
+   {
+    "t": "United States Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-us"
+   },
+   {
+    "t": "King of the Ring",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2019",
+    "x": 1
+   },
+   {
+    "t": "Money in the Bank",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2017",
+    "x": 1
+   },
+   {
+    "t": "André the Giant Memorial Battle Royal",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2016",
+    "x": 1
+   }
+  ],
+  "Bianca Belair": [
+   {
+    "t": "Women’s World Championship (et SmackDown Women’s)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wwc"
+   },
+   {
+    "t": "WWE Women’s Championship (et Raw Women’s)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wc"
+   },
+   {
+    "t": "Royal Rumble",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2021",
+    "x": 1
+   }
+  ],
+  "Brie Bella": [
+   {
+    "t": "Divas Championship",
+    "k": "WWE",
+    "x": 1
+   }
+  ],
+  "Nikki Bella": [
+   {
+    "t": "Divas Championship",
+    "k": "WWE",
+    "x": 2
+   }
+  ],
+  "Charlotte Flair": [
+   {
+    "t": "NXT Women’s Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "nxt-w"
+   },
+   {
+    "t": "Divas Championship",
+    "k": "WWE",
+    "x": 1
+   },
+   {
+    "t": "WWE Women’s Championship (et Raw Women’s)",
+    "k": "WWE",
+    "x": 6,
+    "id": "wwe-wc"
+   },
+   {
+    "t": "Women’s World Championship (et SmackDown Women’s)",
+    "k": "WWE",
+    "x": 7,
+    "id": "wwe-wwc"
+   },
+   {
+    "t": "WWE Women’s Tag Team Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wtag"
+   },
+   {
+    "t": "Royal Rumble",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2020, 2025",
+    "x": 2
+   }
+  ],
+  "Chelsea Green": [
+   {
+    "t": "WWE Women’s Tag Team Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wtag"
+   },
+   {
+    "t": "Women’s United States Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wus"
+   }
+  ],
+  "CM Punk": [
+   {
+    "t": "WWE Championship (Undisputed)",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-wwe"
+   },
+   {
+    "t": "World Heavyweight Championship (2002-2013)",
+    "k": "WWE",
+    "x": 3
+   },
+   {
+    "t": "World Heavyweight Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-whc"
+   },
+   {
+    "t": "Intercontinental Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-ic"
+   },
+   {
+    "t": "World Tag Team Championship (1971-2010)",
+    "k": "WWE",
+    "x": 1
+   },
+   {
+    "t": "ECW Championship",
+    "k": "WWE",
+    "x": 1
+   },
+   {
+    "t": "Money in the Bank",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2008, 2009",
+    "x": 2
+   }
+  ],
+  "Cody Rhodes": [
+   {
+    "t": "WWE Championship (Undisputed)",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-wwe"
+   },
+   {
+    "t": "Intercontinental Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-ic"
+   },
+   {
+    "t": "Royal Rumble",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2023, 2024",
+    "x": 2
+   },
+   {
+    "t": "King of the Ring",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2025",
+    "x": 1
+   }
+  ],
+  "Damian Priest": [
+   {
+    "t": "World Heavyweight Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-whc"
+   },
+   {
+    "t": "United States Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-us"
+   },
+   {
+    "t": "NXT North American Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-na"
+   },
+   {
+    "t": "World Tag Team Championship (et Raw Tag Team)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wtt"
+   },
+   {
+    "t": "WWE Tag Team Championship (et SmackDown Tag Team)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-tt"
+   },
+   {
+    "t": "Money in the Bank",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2023",
+    "x": 1
+   }
+  ],
+  "Drew McIntyre": [
+   {
+    "t": "WWE Championship (Undisputed)",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-wwe"
+   },
+   {
+    "t": "World Heavyweight Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-whc"
+   },
+   {
+    "t": "Intercontinental Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-ic"
+   },
+   {
+    "t": "NXT Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt"
+   },
+   {
+    "t": "Royal Rumble",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2020",
+    "x": 1
+   },
+   {
+    "t": "Money in the Bank",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2024",
+    "x": 1
+   }
+  ],
+  "Elton Prince": [
+   {
+    "t": "NXT Tag Team Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "nxt-tt"
+   },
+   {
+    "t": "NXT UK Tag Team Championship",
+    "k": "WWE",
+    "x": 1
+   }
+  ],
+  "Kit Wilson": [
+   {
+    "t": "NXT Tag Team Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "nxt-tt"
+   },
+   {
+    "t": "NXT UK Tag Team Championship",
+    "k": "WWE",
+    "x": 1
+   }
+  ],
+  "Erik": [
+   {
+    "t": "NXT Tag Team Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-tt"
+   },
+   {
+    "t": "World Tag Team Championship (et Raw Tag Team)",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-wtt"
+   }
+  ],
+  "Ivar": [
+   {
+    "t": "NXT Tag Team Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-tt"
+   },
+   {
+    "t": "World Tag Team Championship (et Raw Tag Team)",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-wtt"
+   }
+  ],
+  "Finn Bálor": [
+   {
+    "t": "NXT Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "nxt"
+   },
+   {
+    "t": "WWE Universal Championship",
+    "k": "WWE",
+    "x": 1
+   },
+   {
+    "t": "Intercontinental Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-ic"
+   },
+   {
+    "t": "United States Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-us"
+   },
+   {
+    "t": "World Tag Team Championship (et Raw Tag Team)",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-wtt"
+   },
+   {
+    "t": "WWE Tag Team Championship (et SmackDown Tag Team)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-tt"
+   }
+  ],
+  "Giulia": [
+   {
+    "t": "NXT Women’s Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-w"
+   }
+  ],
+  "Gunther": [
+   {
+    "t": "World Heavyweight Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-whc"
+   },
+   {
+    "t": "Intercontinental Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-ic"
+   },
+   {
+    "t": "NXT UK Championship",
+    "k": "WWE",
+    "x": 1
+   },
+   {
+    "t": "King of the Ring",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2024",
+    "x": 1
+   }
+  ],
+  "Jacy Jayne": [
+   {
+    "t": "NXT Women’s Tag Team Championship",
+    "k": "WWE",
+    "x": 2
+   }
+  ],
+  "Jade Cargill": [
+   {
+    "t": "Queen of the Ring",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2025",
+    "x": 1
+   }
+  ],
+  "Johnny Gargano": [
+   {
+    "t": "NXT Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt"
+   },
+   {
+    "t": "NXT North American Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "nxt-na"
+   },
+   {
+    "t": "NXT Tag Team Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-tt"
+   }
+  ],
+  "Kevin Owens": [
+   {
+    "t": "WWE Universal Championship",
+    "k": "WWE",
+    "x": 1
+   },
+   {
+    "t": "Intercontinental Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-ic"
+   },
+   {
+    "t": "NXT Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt"
+   },
+   {
+    "t": "World Tag Team Championship (et Raw Tag Team)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wtt"
+   },
+   {
+    "t": "WWE Tag Team Championship (et SmackDown Tag Team)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-tt"
+   }
+  ],
+  "Matt Cardona": [
+   {
+    "t": "United States Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-us"
+   },
+   {
+    "t": "Intercontinental Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-ic"
+   },
+   {
+    "t": "World Tag Team Championship (et Raw Tag Team)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wtt"
+   }
+  ],
+  "Nia Jax": [
+   {
+    "t": "WWE Women’s Championship (et Raw Women’s)",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-wc"
+   },
+   {
+    "t": "WWE Women’s Tag Team Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-wtag"
+   },
+   {
+    "t": "Queen of the Ring",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2024",
+    "x": 1
+   }
+  ],
+  "Paige": [
+   {
+    "t": "Divas Championship",
+    "k": "WWE",
+    "x": 2
+   },
+   {
+    "t": "NXT Women’s Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-w"
+   }
+  ],
+  "R-Truth": [
+   {
+    "t": "World Tag Team Championship (et Raw Tag Team)",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-wtt"
+   },
+   {
+    "t": "WWE 24/7 Championship",
+    "k": "WWE",
+    "x": 54
+   }
+  ],
+  "Randy Orton": [
+   {
+    "t": "WWE Championship (Undisputed)",
+    "k": "WWE",
+    "x": 10,
+    "id": "wwe-wwe"
+   },
+   {
+    "t": "World Heavyweight Championship (2002-2013)",
+    "k": "WWE",
+    "x": 4
+   },
+   {
+    "t": "Intercontinental Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-ic"
+   },
+   {
+    "t": "United States Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-us"
+   },
+   {
+    "t": "World Tag Team Championship (et Raw Tag Team)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wtt"
+   },
+   {
+    "t": "WWE Tag Team Championship (et SmackDown Tag Team)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-tt"
+   },
+   {
+    "t": "Royal Rumble",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2009, 2017",
+    "x": 2
+   }
+  ],
+  "Rhea Ripley": [
+   {
+    "t": "NXT Women’s Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-w"
+   },
+   {
+    "t": "NXT UK Women’s Championship",
+    "k": "WWE",
+    "x": 1
+   },
+   {
+    "t": "WWE Women’s Championship (et Raw Women’s)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wc"
+   },
+   {
+    "t": "Women’s World Championship (et SmackDown Women’s)",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-wwc"
+   },
+   {
+    "t": "WWE Women’s Tag Team Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wtag"
+   },
+   {
+    "t": "Royal Rumble",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2023",
+    "x": 1
+   }
+  ],
+  "Sami Zayn": [
+   {
+    "t": "NXT Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt"
+   },
+   {
+    "t": "Intercontinental Championship",
+    "k": "WWE",
+    "x": 3,
+    "id": "wwe-ic"
+   },
+   {
+    "t": "World Tag Team Championship (et Raw Tag Team)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wtt"
+   },
+   {
+    "t": "WWE Tag Team Championship (et SmackDown Tag Team)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-tt"
+   }
+  ],
+  "Shinsuke Nakamura": [
+   {
+    "t": "NXT Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "nxt"
+   },
+   {
+    "t": "Intercontinental Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-ic"
+   },
+   {
+    "t": "United States Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-us"
+   },
+   {
+    "t": "WWE Tag Team Championship (et SmackDown Tag Team)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-tt"
+   },
+   {
+    "t": "Royal Rumble",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2018",
+    "x": 1
+   }
+  ],
+  "The Miz": [
+   {
+    "t": "WWE Championship (Undisputed)",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-wwe"
+   },
+   {
+    "t": "Intercontinental Championship",
+    "k": "WWE",
+    "x": 8,
+    "id": "wwe-ic"
+   },
+   {
+    "t": "United States Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "wwe-us"
+   },
+   {
+    "t": "Money in the Bank",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2010",
+    "x": 1
+   }
+  ],
+  "Tiffany Stratton": [
+   {
+    "t": "NXT Women’s Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-w"
+   },
+   {
+    "t": "WWE Women’s Championship (et Raw Women’s)",
+    "k": "WWE",
+    "x": 1,
+    "id": "wwe-wc"
+   },
+   {
+    "t": "Money in the Bank",
+    "k": "WWE",
+    "ty": "t",
+    "y": "2024",
+    "x": 1
+   }
+  ],
+  "Trick Williams": [
+   {
+    "t": "NXT Championship",
+    "k": "WWE",
+    "x": 2,
+    "id": "nxt"
+   }
+  ],
+  "Charlie Dempsey": [
+   {
+    "t": "NXT Heritage Cup",
+    "k": "WWE",
+    "x": 1
+   }
+  ],
+  "Julius Creed": [
+   {
+    "t": "NXT Tag Team Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-tt"
+   }
+  ],
+  "Brutus Creed": [
+   {
+    "t": "NXT Tag Team Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-tt"
+   }
+  ],
+  "Kelani Jordan": [
+   {
+    "t": "NXT Women’s North American Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-wna"
+   }
+  ],
+  "Lexis King": [
+   {
+    "t": "NXT Heritage Cup",
+    "k": "WWE",
+    "x": 1
+   }
+  ],
+  "Tony D'Angelo": [
+   {
+    "t": "NXT Tag Team Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-tt"
+   }
+  ],
+  "Channing \"Stacks\" Lorenzo": [
+   {
+    "t": "NXT Tag Team Championship",
+    "k": "WWE",
+    "x": 1,
+    "id": "nxt-tt"
+   }
+  ],
+  "Josh Briggs": [
+   {
+    "t": "NXT UK Tag Team Championship",
+    "k": "WWE",
+    "x": 1
+   }
+  ],
+  "Brooks Jensen": [
+   {
+    "t": "NXT UK Tag Team Championship",
+    "k": "WWE",
+    "x": 1
+   }
+  ]
+ }
+}

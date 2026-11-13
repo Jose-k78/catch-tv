@@ -4470,7 +4470,10 @@
    "f": "wwe-tough-enough.webp"
   },
   "WWE Undisputed Championship": {
-   "f": "wwe-undisputed-championship.webp"
+   "f": "wwe-undisputed-championship-v2.webp",
+   "v": [
+    "wwe-undisputed-championship.webp"
+   ]
   },
   "WWE Undisputed Championship Custom": {
    "f": "wwe-undisputed-championship-custom.webp"
@@ -4542,7 +4545,10 @@
    "f": "wwe-womens-world-championship.webp"
   },
   "WWE World Heavyweight": {
-   "f": "wwe-world-heavyweight.webp"
+   "f": "wwe-world-heavyweight-v2.webp",
+   "v": [
+    "wwe-world-heavyweight.webp"
+   ]
   },
   "WWE World Heavyweight Championship": {
    "f": "wwe-world-heavyweight-championship.webp"

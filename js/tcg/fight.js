@@ -1,6 +1,6 @@
 // TCCCG — combats (cahier de Jose du 12 nov., le memory est retiré) :
 // Event = les vrais matchs des shows des 7 derniers jours, rangés par show ; Match = Match rapide, catcheurs au hasard, défis
-// contre les membres. Préparation : 1, 2 ou 3 cartes, un leader (la somme de ses stats = la vie de toute l'équipe), 1 soutien
+// contre les membres. Préparation : 1, 2 ou 3 cartes (la somme des stats de TOUTES les cartes = la vie de l'équipe, 13 nov.), un leader 👑, 1 soutien
 // (+10 % aux cartes de son type), 2 objets de combat. Plateau : pierre-feuille-ciseaux puis chacun son tour, une carte attaque
 // par tour (toucher puis viser, ou glisser la carte sur l'adversaire), on choisit la stat : dégâts = 15 + 3 × l'écart, ×2 avec
 // l'avantage de type, ×0,5 sinon ; si sa stat est plus forte, c'est l'attaquant qui prend le coup. Barre de timing, ±10 %.
@@ -13,6 +13,7 @@ import { me, commit, owned, addCard, addXp, cardXp, bump } from "./store.js";
 import { cardHTML, typeWheel, itemIc } from "./card.js";
 import { recentShows } from "./callup.js";
 import { SFX } from "./sfx.js";
+import { rpsAnim, glove } from "./rps.js";
 import { BELT, BELT_DROP, isBelt, beltTitle, beltImgHTML } from "./evo.js";
 import { burst, pop, flash, wave, fireworks, confetti, mid, shake } from "./phaser.js";
 
@@ -23,8 +24,8 @@ const TIER = {
   top: { n: "PLE / PPV", money: [3500, 5000], mpp: [55, 80], gim: [7, 12], drop: 0.30, cxp: 160, pxp: 80, card: 0.08, ko: 0.45 },
   duel: { n: "Défi entre membres", money: [1500, 2200], mpp: [15, 25], gim: [2, 3], drop: 0, cxp: 60, pxp: 40, card: 0, ko: 0.4 }
 };
-// difficulté de l'IA : Low = normal, Mid = un peu plus fort, Top = stats doublées
-export const DIFF = { low: { n: "Low", d: "Normal", st: 1, rew: 1, ai: 0.35, ko: 0.8 }, mid: { n: "Mid", d: "Adversaire un peu plus fort", st: 1.3, rew: 1.6, ai: 0.7, ko: 1 }, top: { n: "Top", d: "Stats de l’adversaire doublées", st: 2, rew: 2.6, ai: 0.95, ko: 1.25 } };
+// difficulté de l'IA : Low = normal, Mid = un peu plus fort (×1,3), Top = stats ×1,7 (13 nov., avant ×2)
+export const DIFF = { low: { n: "Low", d: "Normal", st: 1, rew: 1, ai: 0.35, ko: 0.8 }, mid: { n: "Mid", d: "Adversaire un peu plus fort", st: 1.3, rew: 1.6, ai: 0.7, ko: 1 }, top: { n: "Top", d: "Stats de l’adversaire ×1,7", st: 1.7, rew: 2.6, ai: 0.95, ko: 1.25 } };
 const rnd = (a, b) => Math.round(a + Math.random() * (b - a));
 const nf = v => String(v).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 const pct = v => String(Math.round(v * 1000) / 10).replace(".", ",") + " %";
@@ -146,7 +147,7 @@ export function prepView() {
   while (prep.foes.length > n) prep.foes.pop();
   const foes = prep.foes.map(i => F.pool[i]).filter(Boolean), fa = foes.map(f => f.def.arch);
   const adv = x => { const a = (defOf(x.c) || {}).arch, up = fa.filter(f => typeMult(a, f) === 2).length, dn = fa.filter(f => typeMult(a, f) === 0.5).length; return up || dn ? '<span class="tadv' + (up && dn ? " mix" : up ? " up" : " dn") + '">' + (up ? "▲" : "") + (dn ? "▼" : "") + "</span>" : ""; };
-  const life = prep.lead && d.cards[prep.lead] ? sum(statsOf(Object.assign({ iid: prep.lead }, d.cards[prep.lead]))) : 0;
+  const life = prep.team.reduce((a, iid) => a + (d.cards[iid] ? sum(statsOf(Object.assign({ iid: iid }, d.cards[iid])).map(v => Math.round(v * teamBonus(d, iid, prep.sup)))) : 0), 0);
   const combatItems = items().filter(x => x.t === "combat" && (d.items[x.id] || 0) > 0);
   let h = '<a class="back" href="' + (prep.k.indexOf("#") > 0 ? "#/tccg/event" : "#/tccg/match") + '">‹ Retour</a><h1 style="margin:4px 16px">' + esc(F.label) + "</h1>";
   h += '<h2>1. Format</h2><div class="tdiff">' + [1, 2, 3].map(k => '<button class="tdf' + (n === k ? " on" : "") + '" data-act="tcgfmt" data-v="' + k + '"' + (k > F.pool.length ? " disabled" : "") + "><b>" + k + " contre " + k + "</b></button>").join("") + "</div>";
@@ -157,7 +158,7 @@ export function prepView() {
   h += '<h2>4. Ton équipe <small class="tsmall">' + prep.team.length + " / " + n + "</small></h2>" +
     '<div class="tprepteam">' + Array.from({ length: n }, (_, i) => { const iid = prep.team[i], x = iid && d.cards[iid]; return '<div class="tslot2' + (iid && iid === prep.lead ? " lead" : "") + '">' + (x ? cardHTML(Object.assign({ iid: iid }, x), { small: true, act: "tcgpick", iid: iid, badge: adv(x) }) + '<button class="tleadb" data-act="tcglead" data-iid="' + esc(iid) + '">' + (iid === prep.lead ? "👑 Leader" : "Leader ?") + "</button>" : "<span>Carte " + (i + 1) + "</span>") + "</div>"; }).join("") +
     '<div class="tslot2 sup">' + (prep.sup && d.cards[prep.sup] ? cardHTML(Object.assign({ iid: prep.sup }, d.cards[prep.sup]), { small: true, act: "tcgpick", iid: prep.sup }) : "<span>Soutien<br><small>+10 % à son type</small></span>") + "</div></div>" +
-    '<p class="tnote">' + (life ? "❤️ Vie de ton équipe = stats du leader = <b>" + life + "</b>. " : "") + "Touche des cartes ci-dessous : d’abord " + n + " carte" + (n > 1 ? "s" : "") + ", puis 1 soutien (bonus +10 % aux cartes de son type). « Leader ? » pour choisir le leader.</p>";
+    '<p class="tnote">' + (life ? "❤️ Vie de ton équipe = stats de toutes tes cartes = <b>" + life + "</b>. " : "") + "Touche des cartes ci-dessous : d’abord " + n + " carte" + (n > 1 ? "s" : "") + ", puis 1 soutien (bonus +10 % aux cartes de son type). « Leader ? » pour choisir le leader.</p>";
   if (combatItems.length) h += '<h2>5. Objets <small class="tsmall">2 au plus, un seul usage</small></h2><div class="tfilt">' + combatItems.map(x => '<button class="chip' + (prep.items.indexOf(x.id) >= 0 ? " on" : "") + '" data-act="tcgitem" data-id="' + x.id + '">' + itemIc(x) + " " + esc(x.n) + " ×" + d.items[x.id] + " · " + Math.round(QCH[x.q || "commun"] * 100) + " %</button>").join("") + "</div>";
   h += '<button class="btn wide gold" style="margin:8px 16px;width:calc(100% - 32px)" data-act="tcgfight"' + (prep.team.length === n && foes.length === n ? "" : " disabled") + ">⚔️ Lancer le combat</button>";
   h += '<div class="trgrid">' + L.filter(x => prep.team.indexOf(x.iid) < 0 && prep.sup !== x.iid).map(x => cardHTML(x, { small: true, act: "tcgpick", iid: x.iid, badge: adv(x) })).join("") + "</div>";
@@ -198,7 +199,8 @@ function fighter(def, lv, inst, r, mult) {
 }
 // pouvoir « Partenaire fidèle » : +5 % de stats aux autres cartes de l'équipe
 const partner = L => { L.forEach((c, i) => { if (c.pw === "tag") L.forEach((o, j) => { if (j !== i) o.st = o.st.map(v => Math.round(v * 1.05)); }); }); return L; };
-const side = (cards, lead) => { const hp = Math.max(30, sum(cards[lead].st)); return { cards: cards, lead: lead, hp: hp, max: hp, fin: 0, items: [], used: [], boostU: -1, divU: -1, next: 1, kick: 0 }; };
+// vie de l'équipe = les stats de TOUTES ses cartes additionnées (13 nov., Jose ; avant : celles du leader)
+const side = (cards, lead) => { const hp = Math.max(30, cards.reduce((a, c) => a + sum(c.st), 0)); return { cards: cards, lead: lead, hp: hp, max: hp, fin: 0, items: [], used: [], boostU: -1, divU: -1, next: 1, kick: 0 }; };
 ACT.tcgfight = () => {
   if (!prep) return; const d = me(), n = prep.n;
   if (prep.team.length !== n) return toast("Choisis " + n + " carte" + (n > 1 ? "s" : ""));
@@ -240,7 +242,7 @@ export function combatView() {
     '<div class="tbsideE">' + hpBar("E") + cardsRow("E") + "</div>" +
     '<div class="tbmid"><div class="tbturn ' + (B.turn === "P" ? "me" : B.turn === "E" ? "foe" : "") + '">' + (B.pin ? "🤼 TOMBÉ !" : !B.turn ? "✊ ✋ ✌️" : B.turn === "P" ? "▶ À TOI DE JOUER" : "⏳ TOUR DE L’ADVERSAIRE") + '</div><p class="tblog">' + esc(B.log) + "</p></div>" +
     '<div class="tbsideP">' + cardsRow("P") + hpBar("P") + "</div>";
-  if (!B.turn) h += '<div class="trps">' + [["p", "✊", "Pierre"], ["f", "✋", "Feuille"], ["c", "✌️", "Ciseaux"]].map(x => '<button data-act="tcgrps" data-v="' + x[0] + '"><span>' + x[1] + "</span><small>" + x[2] + "</small></button>").join("") + "</div>";
+  if (!B.turn) h += '<div class="trps">' + [["p", "Pierre"], ["f", "Feuille"], ["c", "Ciseaux"]].map(x => '<button data-act="tcgrps" data-v="' + x[0] + '" aria-label="' + x[1] + '">' + glove(x[0], "#ffd23f", "#e9b800") + "<small>" + x[1] + "</small></button>").join("") + "</div>";
   else if (B.pin === "P" && !B.over) h += '<button class="tbpin" data-act="tcgpin">🤼 PIN !</button>';
   else h += '<div class="tbbtns">' + (P.fin >= 100 ? '<button class="btn gold tbfinb" data-act="tcgfinpick"' + (my ? "" : " disabled") + ">🔥 FINISHER</button>" : "") +
     P.items.map(id => { const it = itemById(id); return it ? '<button class="btn small ghost" data-act="tcguse" data-id="' + id + '"' + (P.used.indexOf(id) >= 0 || !my ? " disabled" : "") + ">" + itemIc(it) + " " + esc(it.n) + "</button>" : ""; }).join("") +
@@ -253,8 +255,12 @@ const say = t => { B.log = t; };
 const el = (sd, i) => document.querySelector('.tbc[data-side="' + sd + '"][data-i="' + i + '"]');
 const wait = ms => new Promise(r => setTimeout(r, ms));
 // pierre-feuille-ciseaux du tout premier tour
-ACT.tcgrps = btn => {
-  if (!B || B.turn) return; const me_ = btn.dataset.v, ai = ["p", "f", "c"][Math.floor(Math.random() * 3)], ic = { p: "✊", f: "✋", c: "✌️" }, beats = { p: "c", f: "p", c: "f" };
+ACT.tcgrps = async btn => {
+  if (!B || B.turn || B.busy) return; const me_ = btn.dataset.v, ai = ["p", "f", "c"][Math.floor(Math.random() * 3)], ic = { p: "✊", f: "✋", c: "✌️" }, beats = { p: "c", f: "p", c: "f" };
+  // animation discrète : 3 secousses, les mains se montrent, le gagnant grossit un peu (rps.js)
+  B.busy = true; const res = me_ === ai ? "tie" : beats[me_] === ai ? "win" : "lose";
+  try { await rpsAnim(null, me_, ai, res); } catch (e) {}
+  if (!B) return; B.busy = false;
   if (me_ === ai) { say("Égalité " + ic[me_] + " contre " + ic[ai] + " : on recommence !"); return redraw(); }
   B.turn = beats[me_] === ai ? "P" : "E"; B.first = B.turn;
   say(ic[me_] + " contre " + ic[ai] + " : " + (B.turn === "P" ? "tu commences !" : "l’adversaire commence."));

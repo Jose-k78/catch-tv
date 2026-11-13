@@ -2200,3 +2200,101 @@ body.tccg .tshint2,body.tccg .tscount2{font-family:'Barlow Condensed',sans-serif
 body.tccg .tbat{justify-content:space-between}
 body.tccg .tbwheel span{font-size:9px;letter-spacing:0}
 body.tccg .msheet h3,body.tccg .sheet h3,body.tccg .modal h3,body.tccg .mbox h3{font-family:Anton,sans-serif;font-weight:400;letter-spacing:.6px}
+/* ---- TCCCG : Call Up « le grand écran » (13 nov., maquette 1) ---- */
+body.tccg .tcucats{display:flex;gap:3px;margin:4px 12px 10px;padding:3px;border-radius:12px;background:#0b1636;box-shadow:inset 0 0 0 1px #22306a;overflow-x:auto;scrollbar-width:none}
+body.tccg .tcucats::-webkit-scrollbar{display:none}
+body.tccg .tcucats button{flex:1 0 auto;min-height:38px;padding:4px 10px;border:0;border-radius:9px;background:none;color:#b8c4e6;font:700 15px 'Barlow Condensed',sans-serif;white-space:nowrap;cursor:pointer}
+body.tccg .tcucats button.on{background:#ffd23f;color:#0a0f1f}
+.tcunb{font-style:normal;display:inline-block;min-width:18px;padding:0 5px;border-radius:9px;background:#3ddc84;color:#0a0f1f;font-size:12px;line-height:18px}
+.tcuwrap{position:relative}
+.tcu{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 9% 8px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tcu::-webkit-scrollbar{display:none}
+.tcus{flex:0 0 82%;max-width:420px;scroll-snap-align:center;display:flex;flex-direction:column;gap:10px;min-width:0}
+.tcupack{position:relative;align-self:center;width:min(50vw,200px);aspect-ratio:166/230;border-radius:14px;border:0;overflow:hidden;cursor:pointer;padding:0;display:flex;align-items:flex-end;justify-content:center;box-shadow:0 0 0 3px #ffd23f,0 0 30px rgba(255,210,63,.45),0 14px 26px rgba(0,0,0,.5);color:#fff;font:inherit}
+.tcupack.off{filter:grayscale(.45) brightness(.75)}
+.tcupack::before{content:"";position:absolute;left:0;right:0;top:10px;height:6px;background:repeating-linear-gradient(90deg,#fff 0 5px,transparent 5px 9px);opacity:.7}
+.tculogo{position:absolute;top:24px;left:50%;transform:translateX(-50%);max-width:70%;max-height:30%;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,0,0,.6))}
+.tcugift{position:absolute;top:26%;left:50%;transform:translateX(-50%);font-size:52px}
+.tcuplate{position:relative;width:100%;padding:9px 8px 10px;background:rgba(10,15,31,.92);text-align:center}
+.tcuplate b{display:block;font:400 19px/1.05 Anton,sans-serif;letter-spacing:.5px;color:#ffd23f}
+.tcupromo{position:absolute;top:20px;right:8px;z-index:2;padding:2px 8px;border-radius:10px;background:#e63946;color:#fff;font:800 13px 'Barlow Condensed',sans-serif}
+.tcupromo.hot{background:#ffd23f;color:#0a0f1f}
+.tcusub{margin:0;text-align:center;font:700 italic 14px/1.2 'Barlow Condensed',sans-serif;color:#cfe0ff}
+.tcustars{display:flex;align-items:center;gap:6px;padding:8px 10px;border-radius:12px;background:rgba(18,49,120,.55);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1)}
+.tcust{flex:1;min-width:0}.tcust b{display:block;font:700 16px/1.1 'Barlow Condensed',sans-serif;color:#fff}.tcust small{display:block;font:500 13px/1.15 'Barlow Condensed',sans-serif;color:#b8c4e6}
+.tcuc{flex:none;position:relative;width:52px;height:79px}
+.tcuc .tc3.sm{position:absolute;left:0;top:0;width:108px!important;transform:scale(.48);transform-origin:top left}
+.tcurates{display:flex;flex-direction:column;gap:5px}
+.tcurh{display:flex;justify-content:space-between;align-items:baseline;gap:8px}.tcurh b{font:700 15px 'Barlow Condensed',sans-serif;color:#fff}.tcurh small{font:500 13px 'Barlow Condensed',sans-serif;color:#b8c4e6;text-align:right}
+.tcubar{display:flex;height:10px;border-radius:5px;overflow:hidden;box-shadow:inset 0 0 0 1px #22306a;background:#0b1636}.tcubar i{display:block;min-width:2px}
+.tculeg{display:flex;justify-content:space-between;flex-wrap:wrap;gap:2px 8px;font:500 13px 'Barlow Condensed',sans-serif;color:#e6ecff}
+.tcubtns{display:grid;grid-template-columns:1fr;gap:8px}.tcubtns.two{grid-template-columns:1fr 1fr}
+body.tccg .tcubig{flex-direction:column;gap:0;min-height:54px;line-height:1.05;padding:4px 8px;white-space:normal}
+body.tccg .tcubig small{display:block;font:700 13px/1.1 'Barlow Condensed',sans-serif;letter-spacing:0;opacity:.85}
+.tcumore{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px}
+.tculink{border:0;background:none;padding:6px 2px;color:#ffd23f;font:700 14px 'Barlow Condensed',sans-serif;cursor:pointer}
+.tcunav{position:absolute;top:110px;z-index:3;width:40px;height:40px;border-radius:50%;border:0;background:rgba(5,10,28,.75);box-shadow:inset 0 0 0 1.5px #3b4a7a;color:#fff;font-size:24px;line-height:1;cursor:pointer}
+.tcunav.prev{left:4px}.tcunav.next{right:4px}
+@media (hover:none){.tcunav{display:none}}
+.tcudots{display:flex;justify-content:center;gap:5px;margin:2px 0 10px}.tcudots i{width:8px;height:8px;border-radius:4px;background:#3b4a7a;transition:width .2s,background .2s}.tcudots i.on{width:22px;background:#ffd23f}
+.tcuquick{display:flex;align-items:center;gap:10px;margin:0 16px 12px;padding:8px 12px;border-radius:12px;background:rgba(18,49,120,.4)}
+.tcuquick span{flex:1;min-width:0}.tcuquick b{display:block;font:700 15px 'Barlow Condensed',sans-serif}.tcuquick small{display:block;font:500 13px 'Barlow Condensed',sans-serif;color:#b8c4e6}
+.tcusw{flex:none;position:relative;width:48px;height:28px;border-radius:14px;border:0;background:#0b1636;box-shadow:inset 0 0 0 1px #3b4a7a;cursor:pointer}
+.tcusw::after{content:"";position:absolute;top:4px;left:4px;width:20px;height:20px;border-radius:50%;background:#9aa8d4;transition:left .15s}
+.tcusw.on{background:#3ddc84}.tcusw.on::after{left:24px;background:#fff}
+/* dos des cartes : l'image du modo */
+.tc3.back.img{padding:0;border-color:#ffd23f}.tc3.back .tc3bimg{display:block;width:100%;height:100%;object-fit:cover;-webkit-user-drag:none}
+.tsback.rainbow .tc3.back.img::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#ff5a5a,#f2c230,#3fdc7a,#5cc8f0,#9b5de5,#ff5a5a);background-size:300% 300%;mix-blend-mode:overlay;opacity:.7;animation:trainbow 2.5s linear infinite}
+/* appui long sur une carte : la carte en grand (13 nov.) */
+.tpeek{position:fixed;inset:0;z-index:400;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:rgba(5,10,28,.88);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);animation:tpeekin .16s ease-out}
+.tpeek.out{opacity:0;transition:opacity .15s}
+.tpeekc{position:relative}.tpeekc .tc3{position:absolute;left:0;top:0;transform-origin:top left;box-shadow:0 18px 40px rgba(0,0,0,.6)}
+.tpeekh{margin:0;font:700 14px 'Barlow Condensed',sans-serif;color:#9aa8d4}
+@keyframes tpeekin{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+.tc3[data-pk]{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
+/* Roster : la vitrine et les étagères (13 nov., maquette 3) */
+.tvitr{position:relative;display:flex;align-items:flex-end;justify-content:center;gap:14px;margin:4px 12px 14px;padding:14px 8px 10px;border-radius:16px;background:radial-gradient(ellipse at 50% 100%,rgba(255,210,63,.28),transparent 60%),linear-gradient(rgba(255,236,190,.1),transparent 70%)}
+.tvitrc{flex:none;position:relative;width:126px;height:191px}.tvitrc .tc3{position:absolute;left:0;top:0;transform:scale(.6);transform-origin:top left;box-shadow:0 0 0 3px #ffd23f,0 0 26px rgba(255,210,63,.55)}
+.tvitrc .tc3.ar{width:210px}
+.tvitrt{display:flex;flex-direction:column;align-items:flex-start;gap:6px;max-width:170px;padding-bottom:6px}.tvitrt p{margin:0;font:500 14px/1.25 'Barlow Condensed',sans-serif;color:#e6ecff}
+.tshelf{margin:0 0 12px}
+.tshh{display:flex;align-items:center;gap:8px;margin:0 16px 6px}.tshh b{flex:1;font:700 15px 'Barlow Condensed',sans-serif;color:#fff}
+.tshall{border:0;background:none;padding:6px 0;color:#ffd23f;font:700 14px 'Barlow Condensed',sans-serif;cursor:pointer}
+.tshrow{display:flex;gap:8px;overflow-x:auto;padding:2px 16px 0;scrollbar-width:none;-webkit-overflow-scrolling:touch}.tshrow::-webkit-scrollbar{display:none}
+.tshc{flex:none;position:relative;width:67px;height:102px}
+.tshc .tc3.sm{position:absolute;left:0;top:0;width:108px!important;height:164px;transform:scale(.62);transform-origin:top left}
+.tshmore{flex:none;width:56px;height:102px;border-radius:8px;border:2px dashed #3b4a7a;background:rgba(11,22,54,.6);color:#ffd23f;font:400 18px Anton,sans-serif;cursor:pointer}
+.tshwood{height:8px;margin:2px 12px 0;border-radius:2px;background:linear-gradient(#b98f2a,#6b4f12);box-shadow:0 6px 10px rgba(0,0,0,.45)}
+.tselbar small{flex-basis:100%;font:500 13px 'Barlow Condensed',sans-serif;color:#9aa8d4}
+.tselbar.tclbar{position:static;flex-wrap:wrap;border-color:#2a3a72;background:rgba(15,29,72,.6)}
+/* pierre-feuille-ciseaux discret (13 nov.) */
+body.tccg .tbat .trps button svg{width:46px;height:56px;overflow:visible}
+.tpfc{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2vh;background:rgba(5,10,28,.5);animation:tpeekin .2s ease-out}
+.tpfc.out{opacity:0;transition:opacity .25s}
+.tpfch{width:min(30vw,130px);aspect-ratio:300/440;transition:transform .3s ease-out,filter .3s,opacity .3s}
+.tpfch svg{display:block;width:100%;height:100%;overflow:visible}
+.tpfch.foe{transform:rotate(180deg)}
+.tpfch.me.shake{animation:tpfcme .5s ease-in-out 3}.tpfch.foe.shake{animation:tpfcfoe .5s ease-in-out 3}
+@keyframes tpfcme{0%,100%{transform:translateY(0)}55%{transform:translateY(20px)}}
+@keyframes tpfcfoe{0%,100%{transform:rotate(180deg) translateY(0)}55%{transform:rotate(180deg) translateY(20px)}}
+.tpfch.me.win{transform:translateY(-10px) scale(1.12);filter:drop-shadow(0 0 8px rgba(255,210,63,.9))}
+.tpfch.foe.win{transform:rotate(180deg) translateY(-10px) scale(1.12);filter:drop-shadow(0 0 8px rgba(226,59,59,.85))}
+.tpfch.me.lose{transform:translateY(6px) scale(.88);filter:grayscale(1) brightness(.7);opacity:.5}
+.tpfch.foe.lose{transform:rotate(180deg) translateY(6px) scale(.88);filter:grayscale(1) brightness(.7);opacity:.5}
+.tpfch.me.tie{animation:tpfctme .35s ease-out}.tpfch.foe.tie{animation:tpfctfoe .35s ease-out}
+@keyframes tpfctme{45%{transform:translateY(-22px)}}@keyframes tpfctfoe{0%,100%{transform:rotate(180deg)}45%{transform:rotate(180deg) translateY(-22px)}}
+.tpfcm{min-height:46px;display:flex;align-items:center;justify-content:center}
+.tpfcd{display:flex;gap:22px}.tpfcd i{width:16px;height:16px;border-radius:50%;background:#22305e}.tpfcd i.on{background:#ffd23f}
+.tpfcr{display:flex;align-items:center;gap:10px;padding:6px 16px;border-radius:14px;background:rgba(3,6,15,.85);box-shadow:inset 0 0 0 2px #2a3a72;animation:tpeekin .2s ease-out}
+.tpfcr svg{width:34px;height:23px}.tpfcr b{font:400 26px/1 Anton,sans-serif;letter-spacing:1px}
+.tpfcr.win b{color:#ffd23f}.tpfcr.lose b{color:#ff6b6b}.tpfcr.tie b{color:#eef2ff}
+.tpfcme{position:relative}.tpfcp{position:absolute;left:100%;top:42%;margin-left:14px;white-space:nowrap;padding:3px 12px 2px;border-radius:14px;font:400 18px/1.1 Anton,sans-serif;letter-spacing:1px;color:#0f1d48;animation:tpeekin .25s ease-out .1s both}
+.tpfcp.win{background:#ffd23f}.tpfcp.lose{background:#ff6b6b}.tpfcp.tie{background:#eef2ff}
+.tpfc.simple .tpfch{transition:none}
+/* Modo : Modif rapide (13 nov.) */
+body.tccg .tmquickb{display:flex;flex-direction:column;gap:0;margin:8px 16px;width:calc(100% - 32px);line-height:1.1}
+body.tccg .tmquickb small{font:700 13px 'Barlow Condensed',sans-serif;letter-spacing:0;opacity:.8}
+.tmqhead{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:-4px 0 8px;padding:8px 10px;border-radius:12px;background:rgba(255,210,63,.12);box-shadow:inset 0 0 0 1px #ffd23f}
+.tmqhead b{font:400 18px Anton,sans-serif;color:#ffd23f}.tmqhead small{flex:1;min-width:140px;font:500 13px 'Barlow Condensed',sans-serif;color:#e6ecff}
+.tcustars{flex-wrap:wrap}.tcust{flex:1 1 100%}
+.tcudots.num{font:700 14px 'Barlow Condensed',sans-serif;color:#9aa8d4}.tcudots.num b{color:#ffd23f;font-size:16px}

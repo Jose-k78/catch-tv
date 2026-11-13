@@ -43,8 +43,40 @@ export function rosterView(tab, id) {
   if (sub === "eveil") return h + awakeView(d, L);
   if (sub === "doublons") return h + dupsView(d, L);
   if (sub === "evolution") return h + evoView(d, L);
-  return h + binder(d, L);
+  if (sub === "classeur" || sub === "virer") return h + binder(d, L);
+  return h + shelves(d, L);
 }
+// ---------- la vitrine et les étagères (13 nov., maquette 3 choisie par Jose) ----------
+// En haut la carte vedette (= ta 1re favorite ⭐, sinon ta meilleure carte) ; dessous une étagère par rareté ;
+// « Tout voir » ouvre le classeur complet (filtres, tri, pages, sélection) sur cette rareté.
+const bestOf = L => L.slice().sort((a, b) => RAR.indexOf(b.r) - RAR.indexOf(a.r) || b.lv - a.lv)[0];
+const starOf = (d, L) => { const f = d.fav.find(i => d.cards[i]); return f ? Object.assign({ iid: f }, d.cards[f]) : bestOf(L); };
+function shelves(d, L) {
+  const top = starOf(d, L), nb = new Set(L.map(x => baseOf(x.c))).size, fav = top && isFav(d, top.iid);
+  let h = '<p class="tnote">' + L.length + " carte" + (L.length > 1 ? "s" : "") + ", " + nb + " catcheur" + (nb > 1 ? "s" : "") + ' · <a href="#/tccg/roster/classeur" data-act="tcgshelf" data-r="">📒 Le classeur complet</a></p>';
+  if (top) h += '<section class="tvitr"><div class="tvitrc">' + cardHTML(top, { act: "tcgcard", iid: top.iid, nozoom: true }) + '</div><div class="tvitrt"><span class="tg">Ta carte vedette</span><p>' + (fav ? "Ta 1re favorite ⭐. Change-la quand tu veux." : "Ta meilleure carte. Choisis ta vedette : elle devient ta 1re favorite ⭐.") + '</p><button class="btn small ghost" data-act="tcgstar">Changer</button></div></section>';
+  ["LR", "UR", "SSR", "SR", "R", "N"].forEach(r => {
+    const X = L.filter(x => x.r === r).sort((a, b) => b.lv - a.lv || ((defOf(a.c) || {}).name || "").localeCompare((defOf(b.c) || {}).name || "")); if (!X.length) return;
+    h += '<section class="tshelf"><div class="tshh"><span class="tcr r-' + r + '">' + r + "</span><b>" + X.length + " carte" + (X.length > 1 ? "s" : "") + '</b><button class="tshall" data-act="tcgshelf" data-r="' + r + '">Tout voir ›</button></div>' +
+      '<div class="tshrow">' + X.slice(0, 24).map(x => '<span class="tshc">' + cardHTML(x, { small: true, act: "tcgcard", iid: x.iid, cls: isFav(d, x.iid) ? "isfav" : "" }) + "</span>").join("") +
+      (X.length > 24 ? '<button class="tshmore" data-act="tcgshelf" data-r="' + r + '">+' + (X.length - 24) + "</button>" : "") + '</div><div class="tshwood"></div></section>';
+  });
+  return h + '<p class="tnote thint">Maintiens une carte pour la voir en grand.</p>';
+}
+ACT.tcgshelf = el => { rf = el.dataset.r || ""; rt = ""; rp = ""; page = 0; location.hash = "#/tccg/roster/classeur"; changed("tcg"); };
+ACT.tcgstar = () => {
+  const d = me(), L = owned(d).sort((a, b) => RAR.indexOf(b.r) - RAR.indexOf(a.r) || b.lv - a.lv);
+  modal((box, close) => {
+    box.classList.add("tbibox");
+    box.innerHTML = '<h3>Ta carte vedette</h3><p class="sub">Elle passe en tête de tes favorites ⭐ et s’affiche en haut du Roster.</p><div class="trgrid tpick">' + L.slice(0, 120).map(x => '<div class="tpk" data-p="' + esc(x.iid) + '">' + cardHTML(x, { small: true }) + "</div>").join("") + '</div><button class="btn wide ghost" style="margin-top:8px" data-close>Fermer</button>';
+    box.addEventListener("click", e => {
+      if (e.target.closest("[data-close]")) return close();
+      const p = e.target.closest("[data-p]"); if (!p) return; const iid = p.dataset.p; close();
+      commit(dd => { if (!dd.cards[iid]) return; dd.fav = [iid].concat(dd.fav.filter(x => x !== iid)); });
+      toast("⭐ Nouvelle carte vedette"); changed("tcg");
+    });
+  });
+};
 // ---------- le classeur ----------
 function binder(d, L) {
   const P = Array.from(new Set(L.map(x => (defOf(x.c) || {}).k).filter(Boolean))).sort();
@@ -60,7 +92,7 @@ function binder(d, L) {
     '<select data-act="tcgrs" aria-label="Trier">' + [["rar", "Rareté"], ["lv", "Niveau"], ["pv", "Puissance"], ["type", "Type"], ["nom", "Nom"], ["new", "Plus récentes"]].map(x => '<option value="' + x[0] + '"' + (rs === x[0] ? " selected" : "") + ">Trier : " + x[1] + "</option>").join("") + "</select></div>";
   if (sel) { const S2 = [...sel], gain = S2.reduce((a, i) => a + (isFav(d, i) ? 0 : SELL[(d.cards[i] || {}).r] || 0), 0);
     h += '<div class="tselbar"><b>' + sel.size + " carte" + (sel.size > 1 ? "s" : "") + '</b><button class="btn small ghost" data-act="tcgselall">Page</button><button class="btn small ghost" data-act="tcgselfav"' + (sel.size ? "" : " disabled") + '>⭐ Favori</button><button class="btn small danger" data-act="tcgselfire"' + (sel.size ? "" : " disabled") + ">💸 +" + gain + '</button><button class="btn small ghost" data-act="tcgselx" aria-label="Annuler">✕</button></div>'; }
-  else h += '<p class="tnote thint">Appui long sur une carte pour en choisir plusieurs (favori ou virer).</p>';
+  else h += '<div class="tselbar tclbar"><a class="btn small ghost" href="#/tccg/roster">‹ Étagères</a><button class="btn small ghost" data-act="tcgselon">☑️ Choisir plusieurs</button><small>Maintiens une carte pour la voir en grand</small></div>';
   const P0 = V.slice(page * PAGE, page * PAGE + PAGE);
   h += '<div class="tbinder"><div class="tbpage trgrid tlong' + (sel ? " tselmode" : "") + '">' + P0.map(x => '<div class="tpocket">' + cardHTML(x, { small: true, act: "tcgcard", iid: x.iid, cls: (sel && sel.has(x.iid) ? "pick" : "") + (isFav(d, x.iid) ? " isfav" : "") }) + "</div>").join("") +
     Array.from({ length: PAGE - P0.length }, () => '<div class="tpocket empty"></div>').join("") + "</div>" +
@@ -79,6 +111,7 @@ if (typeof document !== "undefined") {
   document.addEventListener("touchstart", e => { x0 = e.target.closest && e.target.closest(".tbinder") ? e.touches[0].clientX : null; }, { passive: true });
   document.addEventListener("touchend", e => { if (x0 == null || sel) return; const dx = e.changedTouches[0].clientX - x0; x0 = null; if (Math.abs(dx) > 60) ACT.tcgpg({ dataset: { v: dx < 0 ? 1 : -1 } }); });
 }
+ACT.tcgselon = () => { sel = new Set(); changed("tcg"); };
 ACT.tcgselx = () => { sel = sub === "virer" ? new Set() : null; changed("tcg"); };
 ACT.tcgselall = () => { const b = document.querySelectorAll(".tbpage .tc3[data-iid]"); if (!sel) sel = new Set(); b.forEach(x => sel.add(x.dataset.iid)); changed("tcg"); };
 ACT.tcgselfav = () => {
@@ -93,17 +126,7 @@ ACT.tcgselfire = () => {
   askConfirm("Virer " + L.length + " carte" + (L.length > 1 ? "s" : "") + " ?", "Tu gagnes <b>+" + gain + " 💵</b>. Les cartes virées disparaissent pour de bon (leur équipement revient dans ton sac)." + (nf ? "<br>⭐ " + nf + " favorite" + (nf > 1 ? "s" : "") + " gardée" + (nf > 1 ? "s" : "") + "." : "") + (top ? "<br>⚠️ Dont " + top + " SSR ou plus." : ""), "💸 Virer les " + L.length + " cartes",
     () => { commit(dd => { L.forEach(i => { const it = dd.cards[i]; if (!it || isFav(dd, i)) return; dd.res.money += SELL[it.r] || 0; drop(dd, i); }); }); toast("💸 " + L.length + " cartes virées : +" + gain + " 💵"); sel = sub === "virer" ? new Set() : null; changed("tcg"); });
 };
-if (typeof document !== "undefined") {
-  const card = e => e.target.closest && e.target.closest(".trgrid.tlong .tc3[data-act=tcgcard]");
-  document.addEventListener("pointerdown", e => { const c = card(e); clearTimeout(lpT); lpOn = false; if (!c) return; const x0 = e.clientX, y0 = e.clientY, iid = c.dataset.iid;
-    lpT = setTimeout(() => { lpOn = true; lpIid = iid; if (!sel) sel = new Set(); sel.add(iid); try { navigator.vibrate && navigator.vibrate(25); } catch (er) {} changed("tcg"); }, 480);
-    const mv = ev => { if (Math.abs(ev.clientX - x0) + Math.abs(ev.clientY - y0) > 12) { clearTimeout(lpT); off(); } };
-    const off = () => { document.removeEventListener("pointermove", mv); document.removeEventListener("pointerup", up); document.removeEventListener("pointercancel", up); };
-    const up = () => { clearTimeout(lpT); if (lpOn) lpUp = Date.now(); off(); };
-    document.addEventListener("pointermove", mv); document.addEventListener("pointerup", up); document.addEventListener("pointercancel", up);
-  });
-  document.addEventListener("contextmenu", e => { if (card(e)) e.preventDefault(); });
-}
+// (13 nov.) l'appui long sur une carte montre la carte en grand partout (peek.js) ; la sélection passe par « Choisir plusieurs »
 // ---------- éveil : les cartes au niveau max qui ont tout ce qu'il faut ----------
 export function awakeCost(inst) {
   const def = defOf(inst.c), r = inst.r, cost = AWAKE[r]; if (!cost || !def) return null;

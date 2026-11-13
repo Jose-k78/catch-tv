@@ -123,7 +123,9 @@ async function upload(sec, key, file, name) {
   if (file.size > 8 * 1024 * 1024) { toast("Image trop lourde (8 Mo maximum)"); return; }
   busy("Préparation de l’image…");
   const data = await toWebp(file, C.w, C.h, C.fit), ext = /^data:image\/webp/.test(data) ? ".webp" : ".png";
-  const fname = slugOf(sec === "catcheurs" ? key : key) + "-" + Date.now().toString(36) + ext;
+  // photos des catcheurs : « nom-v2 », « nom-v3 »… comme le robot des photos (un « nom-xxxx » devenait un faux catcheur)
+  let fname = slugOf(key) + "-" + Date.now().toString(36) + ext;
+  if (sec === "catcheurs") { const it = (S.photos || {})[key], have = new Set(it ? [it.f].concat(it.v || []) : []); let n = it ? 2 : 1; fname = slugOf(key) + (n > 1 ? "-v" + n : "") + ext; while (have.has(fname) || have.has(fname.replace(/\.\w+$/, ".webp")) || have.has(fname.replace(/\.\w+$/, ".jpg"))) { n++; fname = slugOf(key) + "-v" + n + ext; } }
   busy("Envoi sur GitHub…");
   await ghPutBinary(C.dir + fname, data.split(",")[1], "Images TCC TV : nouvelle image (" + (name || key) + ")");
   await edit(sec, M => {
@@ -155,3 +157,18 @@ ACT.imgnew = () => {
     });
   });
 };
+
+// TCCCG (13 nov.) : l'image d'une carte changée par le modo devient la photo de la fiche du catcheur (et la carte suit la fiche).
+// src = un fichier choisi sur le téléphone, ou une image déjà en ligne (banque d'images, dossier des photos).
+export async function pushPhoto(key, name, src) {
+  if (!ghToken()) { ACT.ghkey && ACT.ghkey(); throw new Error("nokey"); }
+  const dir = SEC.catcheurs.dir, it = (S.photos || {})[key];
+  if (typeof src === "string" && src.indexOf(dir) === 0) {
+    const f = decodeURIComponent(src.slice(dir.length));
+    if (it && it.f === f) return true;
+    if (it && (it.v || []).indexOf(f) >= 0) { await edit("catcheurs", M => { const x = M[key]; if (!x) return; x.v = [x.f].concat((x.v || []).filter(y => y !== f)); x.f = f; }, "Images TCC TV : photo de la carte TCCCG en avant (" + key + ")"); return true; }
+  }
+  const file = typeof src === "string" ? await (await fetch(src)).blob() : src;
+  await upload("catcheurs", key, file, name);
+  return true;
+}

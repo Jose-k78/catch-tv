@@ -38,6 +38,9 @@ export function photoOf(name) {
   if (k.indexOf("the") === 0 && m.has(k.slice(3))) return m.get(k.slice(3));
   const w = wInfo(name);
   if (w) for (const n of [w.name].concat(Array.isArray(w.a) ? w.a : [])) { const p = m.get(key(n)); if (p) return p; }
+  // pas de photo de fiche : l'image que le modo a mise sur sa carte TCCCG (13 nov. : carte et fiche partagent leur image)
+  const tc = S.tcgCfg && S.tcgCfg.cards, sl = String(name).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/&/g, "-and-").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  if (tc && tc[sl] && typeof tc[sl].img === "string" && /^img\//.test(tc[sl].img)) return tc[sl].img;
   return "";
 }
 const href = n => "#/catcheur/" + encodeURIComponent(n);
