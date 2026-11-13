@@ -1129,6 +1129,18 @@
    },
    "gimmick": "",
    "medalOf": "Roddy Piper"
+  },
+  "minoru-suzuki": {
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Gotch Piledriver",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Zack Sabre Jr."
   }
  },
  "bgm": {
