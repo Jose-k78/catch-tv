@@ -1,5 +1,5 @@
 {
- "at": "2026-11-13T02:45:02.683Z",
+ "at": "2026-11-13T05:56:17.615Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/international/resultats/60814-resultats-du-jour-2-du-hop-spooktober-tour-2026": "2026-10-30",
@@ -446,7 +446,9 @@
   "a:https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-pour-le-4-janvier-2027": "2026-11-13",
   "c:AEW:2026-11-14:1dn2fqs": "2026-11-13",
   "c:AEW:2026-11-14:1a3mg41": "2026-11-13",
-  "c:TNA:2026-11-15:1bzxiz3": "2026-11-13"
+  "c:TNA:2026-11-15:1bzxiz3": "2026-11-13",
+  "a:https://www.catch-newz.com/international/newz/60640-carte-tna-destination-x-2026": "2026-11-13",
+  "a:https://www.catch-newz.com/international/resultats/61259-tna-impact-12-novembre-2026": "2026-11-13"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -457,6 +459,14 @@
     "url": "#/",
     "tag": "art",
     "short": "1 nouvelle info"
+   },
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -467,6 +477,14 @@
     "url": "#/",
     "tag": "art",
     "short": "1 nouvelle info"
+   },
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
    }
   ]
  }

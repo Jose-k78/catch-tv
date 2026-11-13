@@ -1,5 +1,5 @@
 {
- "at": "2026-11-13T02:02:06.110Z",
+ "at": "2026-11-13T05:56:17.570Z",
  "items": [
   {
    "t": "La WWE prépare un RAW spécial pour le 4 janvier 2027",
@@ -12,6 +12,15 @@
    ]
   },
   {
+   "t": "Carte de TNA Destination X 2026",
+   "u": "https://www.catch-newz.com/international/newz/60640-carte-tna-destination-x-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-13",
+   "tags": [
+    "TNA"
+   ]
+  },
+  {
    "t": "La WWE prépare un RAW spécial le 4 janvier 2027",
    "u": "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-le-4-janvier-2027",
    "s": "Catch-Newz",
@@ -19,6 +28,16 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Résultats de TNA Impact du 12 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61259-tna-impact-12-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "TNA",
+    "Impact"
    ]
   },
   {
@@ -440,16 +459,6 @@
    "tags": []
   },
   {
-   "t": "Résultats de WWE NXT du 10 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
-  },
-  {
    "t": "WWE Raw du 9 novembre : Survivor Series se prépare",
    "u": "https://www.voxcatch.fr/2026/11/10/resultats-wwe-raw-9-novembre-2026/",
    "s": "VOXcatch",
@@ -457,6 +466,16 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Résultats de WWE NXT du 10 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-10",
+   "tags": [
+    "WWE",
+    "NXT"
    ]
   },
   {
@@ -500,24 +519,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-10",
    "tags": []
-  },
-  {
-   "t": "Carte de CMLL Martes Populares du 10 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61178-carte-de-cmll-martes-populares-du-10-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": [
-    "CMLL"
-   ]
-  },
-  {
-   "t": "Bronson Reed blessé et coincé en Arabie saoudite après WWE Crown Jewel",
-   "u": "https://www.catch-newz.com/wwe/newz/61200-bronson-reed-blesse-et-coince-en-arabie-saoudite-apres-wwe-crown-jewel",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -1010,10 +1011,12 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
-   "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-pour-le-4-janvier-2027",
+   "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
+   "https://www.catch-newz.com/international/newz/60640-carte-tna-destination-x-2026",
+   "https://www.catch-newz.com/international/resultats/61259-tna-impact-12-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61254-une-organisation-difficile-a-aew-dynamite-le-11-novembre-2026",
+   "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-le-4-janvier-2027",
    "https://www.catch-newz.com/wwe/newz/61258-lizzy-rain-il-y-a-deux-ans-jour-pour-jour-je-me-suis-casse-le-tibia",
    "https://www.catch-newz.com/wwe/newz/61257-john-cena-implique-personnellement-pour-le-john-cena-classic",
@@ -1307,13 +1310,11 @@
    "https://www.catch-newz.com/international/resultats/60970-resultats-de-ddt-ultimate-party-2026",
    "https://www.catch-newz.com/international/newz/60954-carte-de-cmll-martes-populares-du-3-novembre-2026",
    "https://www.catch-newz.com/international/newz/60955-carte-de-cmll-martes-de-glamour-du-3-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/60967-cm-punk-confirme-son-nom-pour-le-john-cena-classic",
-   "https://www.catch-newz.com/wwe/newz/60968-un-tres-long-voyage-attend-les-wwe-superstars-pour-crown-jewel-2026",
-   "https://www.catch-newz.com/international/resultats/60969-resultats-de-hoh-a-nightmare-on-elmwood"
+   "https://www.catch-newz.com/wwe/newz/60967-cm-punk-confirme-son-nom-pour-le-john-cena-classic"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "4 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
