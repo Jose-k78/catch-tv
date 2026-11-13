@@ -760,7 +760,10 @@
    "img": "img/tcg/mwepigae.jpg"
   },
   "stephanie-vaquer|wwe-wwc": {
-   "img": "img/tcg/mwepjm4k.jpg"
+   "img": "img/tcg/mwepjm4k.jpg",
+   "cond": {
+    "lv": 100
+   }
   }
  },
  "vogue": {
