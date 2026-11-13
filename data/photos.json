@@ -898,11 +898,12 @@
    ]
   },
   "bozilla": {
-   "f": "bozilla-v4.webp",
+   "f": "bozilla-v3.webp",
    "n": [
     "Bozilla"
    ],
    "v": [
+    "bozilla-v4.webp",
     "bozilla.webp",
     "bozilla-v2.webp"
    ]
@@ -8089,12 +8090,6 @@
    "f": "la-catalina.webp",
    "n": [
     "La Catalina"
-   ]
-  },
-  "kyoki": {
-   "f": "kyoki.webp",
-   "n": [
-    "Kyoki"
    ]
   }
  }
