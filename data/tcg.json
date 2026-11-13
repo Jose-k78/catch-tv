@@ -963,6 +963,19 @@
    },
    "gimmick": "",
    "medalOf": "Mike Bailey"
+  },
+  "seri-yamaoka": {
+   "k": "Marigold",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Seri Yamaoka"
   }
  },
  "bgm": {
