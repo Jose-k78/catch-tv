@@ -577,6 +577,19 @@
    },
    "gimmick": "",
    "medalOf": "Ash By Elegance"
+  },
+  "hartley-jackson": {
+   "k": "NJPW",
+   "r": "R",
+   "max": "SR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Zack Sabre Jr."
   }
  },
  "bgm": {
