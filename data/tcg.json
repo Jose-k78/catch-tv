@@ -566,7 +566,18 @@
    "medalOf": "Stephanie Vaquer"
   },
   "heather-by-elegance": {
-   "imgUR": "img/catcheurs/heather-by-elegance-v2.webp"
+   "imgUR": "img/catcheurs/heather-by-elegance-v2.webp",
+   "k": "TNA",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Ash By Elegance"
   }
  },
  "bgm": {
