@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12",
+ "updated": "2026-11-13",
  "note": "Champions actuels : peut révéler des résultats récents.",
  "titles": [
   {
@@ -1988,7 +1988,15 @@
    "ev": "AEW Dynasty",
    "hist": [],
    "src": "Wikipédia",
-   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Ring_of_Honor"
+   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Ring_of_Honor",
+   "defs": [
+    {
+     "d": "2026-11-12",
+     "ev": "ROH TV",
+     "vs": "Bishop Kaun"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "roh-tv",
@@ -2021,12 +2029,17 @@
    "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Ring_of_Honor",
    "defs": [
     {
+     "d": "2026-11-12",
+     "ev": "ROH TV",
+     "vs": "A.R. Fox"
+    },
+    {
      "d": "2026-11-05",
      "ev": "ROH TV",
      "vs": "AR Fox"
     }
    ],
-   "def": 1
+   "def": 2
   },
   {
    "id": "roh-tag",
