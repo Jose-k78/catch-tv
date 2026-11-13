@@ -846,6 +846,19 @@
    },
    "gimmick": "",
    "medalOf": "Ilja Dragunov"
+  },
+  "fuwa-chan": {
+   "k": "Stardom",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Fuwa-chan"
   }
  },
  "bgm": {
