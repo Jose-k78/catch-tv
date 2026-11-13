@@ -833,6 +833,19 @@
    },
    "gimmick": "",
    "medalOf": "Trish Stratus"
+  },
+  "ilja-dragunov": {
+   "k": "AEW",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Torpedo Moscow",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Ilja Dragunov"
   }
  },
  "bgm": {
