@@ -1144,7 +1144,18 @@
   },
   "will-ospreay": {
    "imgUR": "img/catcheurs/will-ospreay.webp",
-   "imgLR": "img/catcheurs/will-ospreay-v2.webp"
+   "imgLR": "img/catcheurs/will-ospreay-v2.webp",
+   "k": "AEW",
+   "r": "SSR",
+   "max": "LR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Hidden Blade",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Don Callis"
   }
  },
  "bgm": {
