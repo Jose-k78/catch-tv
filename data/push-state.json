@@ -1,5 +1,5 @@
 {
- "at": "2026-11-13T21:44:22.861Z",
+ "at": "2026-11-13T22:40:53.109Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/international/resultats/60814-resultats-du-jour-2-du-hop-spooktober-tour-2026": "2026-10-30",
@@ -470,7 +470,29 @@
   "a:https://www.catch-newz.com/wwe/newz/61274-john-cena-fait-le-point-sur-sa-tenue-de-retraite": "2026-11-13",
   "a:https://www.catch-newz.com/international/resultats/61275-resultats-de-cmll-jueves-arena-coliseo-du-12-novembre-2026": "2026-11-13",
   "fr:2026-11-13": "2026-11-13",
-  "a:https://www.catch-newz.com/international/newz/61276-carte-de-cmll-sabado-de-coliseo-du-14-novembre-2026": "2026-11-13"
+  "a:https://www.catch-newz.com/international/newz/61276-carte-de-cmll-sabado-de-coliseo-du-14-novembre-2026": "2026-11-13",
+  "a:https://www.catch-newz.com/aew/resultats/61281-resultats-de-roh-du-12-novembre-2026": "2026-11-13"
  },
- "pend": {}
+ "pend": {
+  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
+   {
+    "cat": "info",
+    "title": "📰 Nouvelle info · Catch-Newz",
+    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "1 nouvelle info"
+   }
+  ],
+  "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
+   {
+    "cat": "info",
+    "title": "📰 Nouvelle info · Catch-Newz",
+    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "1 nouvelle info"
+   }
+  ]
+ }
 }
