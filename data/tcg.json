@@ -448,6 +448,19 @@
    },
    "gimmick": "",
    "medalOf": "Buff Bagwell"
+  },
+  "jakob-austin-young": {
+   "k": "NJPW",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Jakob Austin Young"
   }
  },
  "bgm": {
