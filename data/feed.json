@@ -1,6 +1,16 @@
 {
- "at": "2026-11-13T16:50:58.700Z",
+ "at": "2026-11-13T17:47:56.468Z",
  "items": [
+  {
+   "t": "CM Punk est un choix envisageable pour remplacer Shawn Michaels à WWE NXT",
+   "u": "https://www.catch-newz.com/wwe/newz/61272-cm-punk-est-un-choix-envisageable-pour-remplacer-shawn-michaels-a-wwe-nxt",
+   "s": "Catch-Newz",
+   "d": "2026-11-13",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
   {
    "t": "Preview : WWE SmackDown du 13 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
@@ -19,6 +29,15 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Trey Miguel en fin de contrat vers TNA Destination X",
+   "u": "https://www.catch-newz.com/international/newz/61270-trey-miguel-en-fin-de-contrat-pour-tna-destination-x",
+   "s": "Catch-Newz",
+   "d": "2026-11-13",
+   "tags": [
+    "TNA"
    ]
   },
   {
@@ -343,16 +362,6 @@
    ]
   },
   {
-   "t": "Résultats de AEW Dynamite du 11 novembre 2026",
-   "u": "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-11",
-   "tags": [
-    "AEW",
-    "Dynamite"
-   ]
-  },
-  {
    "t": "Résultats et streaming de WWE Evolve du 11 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/resultats/61268-resultats-et-streaming-de-wwe-evolve-du-11-novembre-2026",
    "s": "Catch-Newz",
@@ -360,6 +369,16 @@
    "tags": [
     "WWE",
     "Evolve"
+   ]
+  },
+  {
+   "t": "Résultats de AEW Dynamite du 11 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": [
+    "AEW",
+    "Dynamite"
    ]
   },
   {
@@ -510,23 +529,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-11",
    "tags": []
-  },
-  {
-   "t": "Romeo Malverde (Santos Escobar) remporte le Oceanic Championship",
-   "u": "https://www.catch-newz.com/international/newz/61219-romeo-malverde-santos-escobar-remporte-le-oceanic-championship",
-   "s": "Catch-Newz",
-   "d": "2026-11-11",
-   "tags": []
-  },
-  {
-   "t": "John Cena recrute une première catcheuse pour le Cena Classic à WWE NXT",
-   "u": "https://www.catch-newz.com/wwe/newz/61218-john-cena-recrute-une-premiere-catcheuse-pour-le-cena-classic-a-wwe-nxt",
-   "s": "Catch-Newz",
-   "d": "2026-11-11",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
   }
  ],
  "yt": {
@@ -1033,13 +1035,15 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/newz/61272-cm-punk-est-un-choix-envisageable-pour-remplacer-shawn-michaels-a-wwe-nxt",
    "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-pour-le-4-janvier-2027",
-   "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61270-trey-miguel-en-fin-de-contrat-pour-tna-destination-x",
    "https://www.catch-newz.com/wwe/resultats/61269-resultats-de-wwe-road-to-survivor-series-du-12-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61268-resultats-et-streaming-de-wwe-evolve-du-11-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61267-preview-aaa-lucha-libre-14-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61259-tna-impact-12-novembre-2026",
+   "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61254-une-organisation-difficile-a-aew-dynamite-le-11-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61265-bayley-sera-presente-a-smackdown-ce-vendredi-a-deux-semaines-des-survivor-series-wargames",
    "https://www.catch-newz.com/wwe/newz/61264-joe-hendry-je-suis-dans-une-situation-difficile-en-ce-moment",
@@ -1330,13 +1334,11 @@
    "https://www.catch-newz.com/wwe/newz/60957-la-wwe-annonce-un-second-show-a-disney-world-le-15-decembre-2026",
    "https://www.catch-newz.com/international/resultats/60973-resultats-du-jour-8-de-dg-the-gate-of-victory-2026-partie-1",
    "https://www.catch-newz.com/international/resultats/60974-resultats-de-sendai-girls-pro-wrestling-du-1er-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/60979-chad-gable-si-jaffronte-roman-reigns-je-serais-un-vrai-dur-a-cuire",
-   "https://www.catch-newz.com/wwe/newz/60978-19-catcheurs-de-nxt-ont-ete-call-up-ces-12-derniers-mois",
-   "https://www.catch-newz.com/wwe/newz/60977-royce-keys-ce-soir-a-nxt-personne-nest-a-labri"
+   "https://www.catch-newz.com/wwe/newz/60979-chad-gable-si-jaffronte-roman-reigns-je-serais-un-vrai-dur-a-cuire"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
