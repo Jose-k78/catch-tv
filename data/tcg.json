@@ -1015,6 +1015,18 @@
    },
    "gimmick": "",
    "medalOf": "Hirooki Goto"
+  },
+  "magenta": {
+   "r": "N",
+   "max": "R",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Magenta"
   }
  },
  "bgm": {
