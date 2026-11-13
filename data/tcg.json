@@ -692,6 +692,19 @@
    },
    "gimmick": "",
    "medalOf": "Ted DiBiase"
+  },
+  "bear-bronson": {
+   "k": "TNA",
+   "r": "N",
+   "max": "R",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Bear Bronson"
   }
  },
  "bgm": {
