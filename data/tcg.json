@@ -898,6 +898,19 @@
    },
    "gimmick": "",
    "medalOf": "AJ Francis"
+  },
+  "austin-creed": {
+   "k": "AEW",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Kofi Kingston"
   }
  },
  "bgm": {
