@@ -552,7 +552,18 @@
   "stephanie-vaquer": {
    "imgUR": "img/tcg/mwepe8sc.jpg",
    "imgLR": "img/tcg/mwepg1vi.jpg",
-   "buff": 5
+   "buff": 5,
+   "k": "WWE",
+   "r": "SSR",
+   "max": "LR",
+   "arch": "Opportunist",
+   "al": "face",
+   "fin": {
+    "n": "SVB",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Stephanie Vaquer"
   }
  },
  "bgm": {
