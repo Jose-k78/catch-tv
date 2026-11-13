@@ -976,6 +976,19 @@
    },
    "gimmick": "",
    "medalOf": "Seri Yamaoka"
+  },
+  "bronson-reed": {
+   "k": "WWE",
+   "r": "SR",
+   "max": "UR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Tsunami",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Bron Breakker"
   }
  },
  "bgm": {
