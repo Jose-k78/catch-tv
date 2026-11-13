@@ -535,6 +535,19 @@
    },
    "gimmick": "",
    "medalOf": "Bret Hart"
+  },
+  "la-parkita": {
+   "k": "AAA",
+   "r": "N",
+   "max": "R",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "La Parkita"
   }
  },
  "bgm": {
