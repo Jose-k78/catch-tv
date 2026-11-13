@@ -1117,6 +1117,18 @@
    },
    "gimmick": "",
    "medalOf": "Eddie Edwards"
+  },
+  "roddy-piper": {
+   "r": "N",
+   "max": "R",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Sleeper Hold",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Roddy Piper"
   }
  },
  "bgm": {
