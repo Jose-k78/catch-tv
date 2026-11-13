@@ -1105,6 +1105,18 @@
    },
    "gimmick": "",
    "medalOf": "Santos Escobar"
+  },
+  "kenny-king": {
+   "r": "R",
+   "max": "SR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Eddie Edwards"
   }
  },
  "bgm": {
