@@ -1,5 +1,5 @@
 {
- "at": "2026-11-13T12:26:29.029Z",
+ "at": "2026-11-13T14:50:12.762Z",
  "items": [
   {
    "t": "La WWE prépare un RAW spécial pour le 4 janvier 2027",
@@ -9,6 +9,15 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Comment regarder AEW Full Gear 2026 en France ?",
+   "u": "https://www.voxcatch.fr/2026/11/13/comment-regarder-aew-full-gear-2026-en-france/",
+   "s": "VOXcatch",
+   "d": "2026-11-13",
+   "tags": [
+    "AEW"
    ]
   },
   {
@@ -512,16 +521,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-11",
    "tags": []
-  },
-  {
-   "t": "WWE Raw du 9 novembre : Survivor Series se prépare",
-   "u": "https://www.voxcatch.fr/2026/11/10/resultats-wwe-raw-9-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-10",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
   }
  ],
  "yt": {
@@ -1328,7 +1327,7 @@
  },
  "diag": {
   "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
-  "VOXcatch": "4 articles (7 j)",
+  "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
