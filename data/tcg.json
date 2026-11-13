@@ -1092,6 +1092,19 @@
    },
    "gimmick": "",
    "medalOf": "Naomi"
+  },
+  "berto": {
+   "k": "WWE",
+   "r": "SR",
+   "max": "UR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Santos Escobar"
   }
  },
  "bgm": {
