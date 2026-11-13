@@ -511,6 +511,18 @@
    },
    "gimmick": "",
    "medalOf": "Rush"
+  },
+  "low-ki": {
+   "r": "N",
+   "max": "R",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Low Ki"
   }
  },
  "bgm": {
