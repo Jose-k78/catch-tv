@@ -1,7 +1,44 @@
 {
-  "updated": "2026-11-12",
+  "updated": "2026-11-13",
   "note": "Une storyline par jour (la plus récente en premier) : grandes histoires, rivalités, anecdotes de coulisses, faits marquants. txt = paragraphes écrits en français à partir des sources ; v = vidéos officielles ; q = recherches sur la chaîne officielle.",
   "items": [
+    {
+      "id": "n2r-1993",
+      "d": "2026-11-13",
+      "type": "Grande histoire",
+      "k": "ECW",
+      "years": "1993-2000",
+      "t": "November to Remember : le grand rendez-vous de l’ECW, né un 13 novembre",
+      "hook": "Le 13 novembre 1993, dans une petite salle de Philadelphie, une fédération encore régionale lance l’événement qui deviendra son plus grand show de l’année.",
+      "txt": [
+        "En 1993, l’ECW s’appelle encore Eastern Championship Wrestling. C’est une petite fédération de Philadelphie qui tourne dans l’ancienne salle de bingo devenue l’ECW Arena, et qui se fait connaître grâce à son émission Hardcore TV.",
+        "Le 13 novembre 1993, elle y organise le tout premier November to Remember, devant près de 1 500 spectateurs. Le show, diffusé trois jours plus tard dans Hardcore TV, sert à conclure les rivalités lancées pendant l’automne : dix matchs au programme.",
+        "En tête d’affiche, un match par équipes « le gagnant prend tout » : le champion poids lourd Sabu et Road Warrior Hawk contre le champion télévision Terry Funk et un partenaire mystère, qui se révèle être King Kong Bundy. Coup de théâtre : Bundy se retourne contre Funk, Sabu le fait tomber et repart avec les deux ceintures.",
+        "La soirée a aussi son lot de chaos typique de l’ECW : Sandman et Jim Neidhart se font tomber mutuellement, The Public Enemy gagne un « South Philly Hood match », et Tommy Dreamer et Johnny Gunn remportent les titres par équipes en seulement 9 secondes, juste après une défense de titre.",
+        "Devenue Extreme Championship Wrestling, la fédération fait de November to Remember son événement phare. Il passe en pay-per-view à partir de 1997, avec le duel Bam Bam Bigelow contre Shane Douglas pour le titre mondial, et chaque édition est annoncée sur « November Rain » de Guns N’ Roses.",
+        "La série s’arrête en 2000, quelques mois avant la faillite de l’ECW, avec une dernière édition à Villa Park, près de Chicago. Les droits appartiennent aujourd’hui à la WWE, et le nom reste attaché à l’âge d’or du catch extrême."
+      ],
+      "key": "Sabu profite de la trahison de King Kong Bundy contre Terry Funk pour repartir avec les deux ceintures de l’ECW.",
+      "v": [],
+      "q": [
+        "ECW November to Remember 1993 Sabu Terry Funk",
+        "ECW November to Remember history"
+      ],
+      "src": [
+        {
+          "n": "Wikipédia (anglais) – November to Remember (1993)",
+          "u": "https://en.wikipedia.org/wiki/November_to_Remember_(1993)"
+        },
+        {
+          "n": "Wikipédia (anglais) – November to Remember",
+          "u": "https://en.wikipedia.org/wiki/November_to_Remember"
+        },
+        {
+          "n": "Pro Wrestling Wiki – November to Remember 1993",
+          "u": "https://prowrestling.fandom.com/wiki/November_to_Remember_1993"
+        }
+      ]
+    },
     {
       "id": "misawa-kobashi",
       "d": "2026-11-12",
