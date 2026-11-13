@@ -1,6 +1,46 @@
 {
-  "updated": "2026-11-12",
+  "updated": "2026-11-13",
   "items": [
+    {
+      "id": "p-20261113-ciampa-dragunov",
+      "d": "2026-11-13",
+      "type": "",
+      "k": "AEW",
+      "q": "Full Gear : qui gagne entre Tommaso Ciampa et Ilja Dragunov ?",
+      "opts": [
+        "Tommaso Ciampa",
+        "Ilja Dragunov"
+      ],
+      "other": false,
+      "end": "2026-11-14"
+    },
+    {
+      "id": "p-20261113-cody-heel",
+      "d": "2026-11-13",
+      "type": "",
+      "k": "WWE",
+      "q": "La rumeur parle d’un heel turn de Cody Rhodes : tu es pour ?",
+      "opts": [
+        "Oui, il est temps",
+        "Non, il doit rester face"
+      ],
+      "other": false,
+      "end": ""
+    },
+    {
+      "id": "p-20261113-pwi-vaquer",
+      "d": "2026-11-13",
+      "type": "",
+      "k": "",
+      "q": "Stephanie Vaquer finit première du PWI 250 de 2026 : qui méritait la 1re place ?",
+      "opts": [
+        "Stephanie Vaquer",
+        "Mercedes Moné",
+        "Saya Kamitani"
+      ],
+      "other": true,
+      "end": "2026-11-20"
+    },
     {
       "id": "p-20261112-fg-ospreay",
       "d": "2026-11-12",
@@ -436,30 +476,6 @@
       ],
       "other": false,
       "end": "2026-11-03"
-    },
-    {
-      "id": "p-20261029-rumble",
-      "d": "2026-10-29",
-      "k": "WWE",
-      "q": "Qui gagnera le prochain Royal Rumble masculin ?",
-      "opts": [
-        "Cody Rhodes",
-        "Bron Breakker"
-      ],
-      "other": true,
-      "end": ""
-    },
-    {
-      "id": "p-20261029-wm-best",
-      "d": "2026-10-29",
-      "k": "WWE",
-      "q": "Le plus grand match de l’histoire de WrestleMania ?",
-      "opts": [
-        "Shawn Michaels contre The Undertaker (WrestleMania 25)",
-        "The Rock contre Stone Cold Steve Austin (WrestleMania X-Seven)"
-      ],
-      "other": true,
-      "end": ""
     }
   ]
 }
