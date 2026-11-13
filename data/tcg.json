@@ -705,6 +705,19 @@
    },
    "gimmick": "",
    "medalOf": "Bear Bronson"
+  },
+  "bryan-danielson": {
+   "k": "AEW",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Busaiku Knee",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Jon Moxley"
   }
  },
  "bgm": {
