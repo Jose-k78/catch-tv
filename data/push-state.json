@@ -1,5 +1,5 @@
 {
- "at": "2026-11-13T05:56:17.615Z",
+ "at": "2026-11-13T07:06:22.984Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/international/resultats/60814-resultats-du-jour-2-du-hop-spooktober-tour-2026": "2026-10-30",
@@ -448,44 +448,12 @@
   "c:AEW:2026-11-14:1a3mg41": "2026-11-13",
   "c:TNA:2026-11-15:1bzxiz3": "2026-11-13",
   "a:https://www.catch-newz.com/international/newz/60640-carte-tna-destination-x-2026": "2026-11-13",
-  "a:https://www.catch-newz.com/international/resultats/61259-tna-impact-12-novembre-2026": "2026-11-13"
+  "a:https://www.catch-newz.com/international/resultats/61259-tna-impact-12-novembre-2026": "2026-11-13",
+  "a:https://www.catch-newz.com/international/newz/61260-lei-ying-lee-quitte-la-tna": "2026-11-13",
+  "poll:p-20261113-ciampa-dragunov": "2026-11-13",
+  "poll:p-20261113-cody-heel": "2026-11-13",
+  "poll:p-20261113-pwi-vaquer": "2026-11-13",
+  "story:n2r-1993": "2026-11-13"
  },
- "pend": {
-  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
-   {
-    "cat": "info",
-    "title": "📰 Nouvelle info · Catch-Newz",
-    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "1 nouvelle info"
-   },
-   {
-    "cat": "info",
-    "title": "📰 2 nouvelles infos",
-    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "2 nouvelles infos"
-   }
-  ],
-  "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
-   {
-    "cat": "info",
-    "title": "📰 Nouvelle info · Catch-Newz",
-    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "1 nouvelle info"
-   },
-   {
-    "cat": "info",
-    "title": "📰 2 nouvelles infos",
-    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "2 nouvelles infos"
-   }
-  ]
- }
+ "pend": {}
 }

@@ -1,5 +1,5 @@
 {
- "at": "2026-11-13T05:56:17.570Z",
+ "at": "2026-11-13T07:06:22.930Z",
  "items": [
   {
    "t": "La WWE prépare un RAW spécial pour le 4 janvier 2027",
@@ -9,6 +9,15 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Lei Ying Lee quitte la TNA",
+   "u": "https://www.catch-newz.com/international/newz/61260-lei-ying-lee-quitte-la-tna",
+   "s": "Catch-Newz",
+   "d": "2026-11-13",
+   "tags": [
+    "TNA"
    ]
   },
   {
@@ -512,13 +521,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-10",
    "tags": []
-  },
-  {
-   "t": "Résultats de ChocoPro #553",
-   "u": "https://www.catch-newz.com/international/resultats/61201-resultats-de-chocopro-553",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": []
   }
  ],
  "yt": {
@@ -1013,9 +1015,10 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-pour-le-4-janvier-2027",
    "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
-   "https://www.catch-newz.com/international/newz/60640-carte-tna-destination-x-2026",
+   "https://www.catch-newz.com/international/newz/61260-lei-ying-lee-quitte-la-tna",
    "https://www.catch-newz.com/international/resultats/61259-tna-impact-12-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61254-une-organisation-difficile-a-aew-dynamite-le-11-novembre-2026",
+   "https://www.catch-newz.com/international/newz/60640-carte-tna-destination-x-2026",
    "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-le-4-janvier-2027",
    "https://www.catch-newz.com/wwe/newz/61258-lizzy-rain-il-y-a-deux-ans-jour-pour-jour-je-me-suis-casse-le-tibia",
@@ -1309,8 +1312,7 @@
    "https://www.catch-newz.com/international/resultats/60972-resultats-du-jour-7-de-dg-the-gate-of-victory-2026",
    "https://www.catch-newz.com/international/resultats/60970-resultats-de-ddt-ultimate-party-2026",
    "https://www.catch-newz.com/international/newz/60954-carte-de-cmll-martes-populares-du-3-novembre-2026",
-   "https://www.catch-newz.com/international/newz/60955-carte-de-cmll-martes-de-glamour-du-3-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/60967-cm-punk-confirme-son-nom-pour-le-john-cena-classic"
+   "https://www.catch-newz.com/international/newz/60955-carte-de-cmll-martes-de-glamour-du-3-novembre-2026"
   ]
  },
  "diag": {
