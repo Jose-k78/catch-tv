@@ -1,5 +1,5 @@
 {
- "at": "2026-11-13T09:29:25.377Z",
+ "at": "2026-11-13T10:28:49.936Z",
  "items": [
   {
    "t": "La WWE prépare un RAW spécial pour le 4 janvier 2027",
@@ -9,6 +9,15 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Joe Hendry : « Je suis dans une situation difficile en ce moment »",
+   "u": "https://www.catch-newz.com/wwe/newz/61264-joe-hendry-je-suis-dans-une-situation-difficile-en-ce-moment",
+   "s": "Catch-Newz",
+   "d": "2026-11-13",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -512,15 +521,6 @@
    "tags": [
     "WWE",
     "NXT"
-   ]
-  },
-  {
-   "t": "Résultats de CMLL Martes Populares du 10 novembre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61233-resultats-de-cmll-martes-populares-du-10-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": [
-    "CMLL"
    ]
   }
  ],
@@ -1026,9 +1026,10 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-pour-le-4-janvier-2027",
    "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61263-selon-vic-joseph-chelsea-green-est-la-catcheuse-la-plus-tenace-a-la-wwe",
+   "https://www.catch-newz.com/wwe/newz/61264-joe-hendry-je-suis-dans-une-situation-difficile-en-ce-moment",
    "https://www.catch-newz.com/international/resultats/61259-tna-impact-12-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61254-une-organisation-difficile-a-aew-dynamite-le-11-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61263-selon-vic-joseph-chelsea-green-est-la-catcheuse-la-plus-tenace-a-la-wwe",
    "https://www.catch-newz.com/wwe/newz/61262-natalya-jai-limpression-que-tout-lui-vient-trop-facilement",
    "https://www.catch-newz.com/wwe/newz/61261-damian-priest-en-a-ras-le-bol-de-voir-toujours-les-memes-personnes-au-sommet-a-la-wwe",
    "https://www.catch-newz.com/international/newz/61260-lei-ying-lee-quitte-la-tna",
@@ -1322,8 +1323,7 @@
    "https://www.catch-newz.com/wwe/resultats/60909-resultats-de-wwe-main-event28-octobre-2026",
    "https://www.catch-newz.com/international/resultats/60971-resultats-de-indy-wrestling-domingos-familiares-noche-de-muertos",
    "https://www.catch-newz.com/international/resultats/60976-resultats-de-ott-newend",
-   "https://www.catch-newz.com/international/resultats/60975-resultats-de-hop-october-onslaught-tour-2026",
-   "https://www.catch-newz.com/international/resultats/60972-resultats-du-jour-7-de-dg-the-gate-of-victory-2026"
+   "https://www.catch-newz.com/international/resultats/60975-resultats-de-hop-october-onslaught-tour-2026"
   ]
  },
  "diag": {
