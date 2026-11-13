@@ -1,6 +1,16 @@
 {
- "at": "2026-11-13T15:46:23.393Z",
+ "at": "2026-11-13T16:50:58.700Z",
  "items": [
+  {
+   "t": "Preview : WWE SmackDown du 13 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-13",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
+  },
   {
    "t": "La WWE prépare un RAW spécial pour le 4 janvier 2027",
    "u": "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-pour-le-4-janvier-2027",
@@ -9,6 +19,16 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Preview : AAA Lucha Libre du 14 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61267-preview-aaa-lucha-libre-14-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-13",
+   "tags": [
+    "WWE",
+    "AAA"
    ]
   },
   {
@@ -92,6 +112,15 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Résultats de WWE Road To Survivor Series du 12 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/61269-resultats-de-wwe-road-to-survivor-series-du-12-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -287,16 +316,6 @@
    ]
   },
   {
-   "t": "Preview : WWE SmackDown du 13 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
-  },
-  {
    "t": "Carte de AEW Full Gear 2026",
    "u": "https://www.catch-newz.com/aew/newz/60606-carte-aew-full-gear-2026",
    "s": "Catch-Newz",
@@ -331,6 +350,16 @@
    "tags": [
     "AEW",
     "Dynamite"
+   ]
+  },
+  {
+   "t": "Résultats et streaming de WWE Evolve du 11 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/61268-resultats-et-streaming-de-wwe-evolve-du-11-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-11",
+   "tags": [
+    "WWE",
+    "Evolve"
    ]
   },
   {
@@ -498,29 +527,6 @@
     "WWE",
     "NXT"
    ]
-  },
-  {
-   "t": "Résultats de 814 Wrestling Dealer's Choice",
-   "u": "https://www.catch-newz.com/international/resultats/61206-resultats-de-814-wrestling-dealers-choice",
-   "s": "Catch-Newz",
-   "d": "2026-11-11",
-   "tags": []
-  },
-  {
-   "t": "Si le John Cena Classic est nul, il ne reviendra pas en 2027",
-   "u": "https://www.catch-newz.com/wwe/newz/61205-si-le-john-cena-classic-est-nul-il-ne-reviendra-pas-en-2027",
-   "s": "Catch-Newz",
-   "d": "2026-11-11",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Résultats de Last Resort - A Tribute To Mark Wolf",
-   "u": "https://www.catch-newz.com/international/resultats/61203-resultats-de-last-resort-a-tribute-to-mark-wolf",
-   "s": "Catch-Newz",
-   "d": "2026-11-11",
-   "tags": []
   }
  ],
  "yt": {
@@ -1027,8 +1033,12 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-pour-le-4-janvier-2027",
    "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
+   "https://www.catch-newz.com/wwe/resultats/61269-resultats-de-wwe-road-to-survivor-series-du-12-novembre-2026",
+   "https://www.catch-newz.com/wwe/resultats/61268-resultats-et-streaming-de-wwe-evolve-du-11-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61267-preview-aaa-lucha-libre-14-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61259-tna-impact-12-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61254-une-organisation-difficile-a-aew-dynamite-le-11-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61265-bayley-sera-presente-a-smackdown-ce-vendredi-a-deux-semaines-des-survivor-series-wargames",
@@ -1064,7 +1074,6 @@
    "https://www.catch-newz.com/culture/cineserie/60928-dave-batista-prend-10-kilos-pour-son-role-de-kratos",
    "https://www.catch-newz.com/wwe/newz/61245-zilla-fatu-lorsque-john-cena-a-parle-dumaga-jai-eu-le-coeur-serre",
    "https://www.catch-newz.com/wwe/newz/61244-becky-lynch-liv-morgan-ne-peut-rien-faire-toute-seule",
-   "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61222-audiences-wwe-aew-et-tna-26-octobre-au-1er-novembre-2026",
    "https://www.catch-newz.com/aew/newz/60606-carte-aew-full-gear-2026",
    "https://www.catch-newz.com/international/newz/61243-une-derniere-chance-pour-acheter-sur-le-tokon-shop-global-de-la-njpw",
@@ -1323,21 +1332,18 @@
    "https://www.catch-newz.com/international/resultats/60974-resultats-de-sendai-girls-pro-wrestling-du-1er-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60979-chad-gable-si-jaffronte-roman-reigns-je-serais-un-vrai-dur-a-cuire",
    "https://www.catch-newz.com/wwe/newz/60978-19-catcheurs-de-nxt-ont-ete-call-up-ces-12-derniers-mois",
-   "https://www.catch-newz.com/wwe/newz/60977-royce-keys-ce-soir-a-nxt-personne-nest-a-labri",
-   "https://www.catch-newz.com/wwe/resultats/60909-resultats-de-wwe-main-event28-octobre-2026",
-   "https://www.catch-newz.com/international/resultats/60971-resultats-de-indy-wrestling-domingos-familiares-noche-de-muertos",
-   "https://www.catch-newz.com/international/resultats/60976-resultats-de-ott-newend"
+   "https://www.catch-newz.com/wwe/newz/60977-royce-keys-ce-soir-a-nxt-personne-nest-a-labri"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
-  "YouTube TNA": "1 nouvelles vidéos",
+  "YouTube TNA": "0 nouvelles vidéos",
   "YouTube NJPW": "0 nouvelles vidéos",
   "YouTube Stardom": "0 nouvelles vidéos",
   "YouTube Marigold": "chaîne introuvable"
