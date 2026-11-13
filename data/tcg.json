@@ -718,6 +718,19 @@
    },
    "gimmick": "",
    "medalOf": "Jon Moxley"
+  },
+  "chris-jericho": {
+   "k": "AEW",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Judas Effect",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Jake Hager"
   }
  },
  "bgm": {
