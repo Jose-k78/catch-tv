@@ -523,6 +523,18 @@
    },
    "gimmick": "",
    "medalOf": "Low Ki"
+  },
+  "brian-pillman": {
+   "r": "R",
+   "max": "SR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Air Pillman",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Bret Hart"
   }
  },
  "bgm": {
