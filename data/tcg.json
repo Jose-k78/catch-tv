@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12",
+ "updated": "2026-11-13",
  "note": "Réglages TCCCG du modo (cartes, persos, taux, objets, boosters, combats, musiques, assets). Modifié depuis l’app (⚙️ Modo TCCCG).",
  "cards": {
   "ace-austin": {
@@ -423,6 +423,19 @@
    },
    "gimmick": "",
    "medalOf": "Jade Cargill"
+  },
+  "la-catalina": {
+   "k": "AAA",
+   "r": "SR",
+   "max": "UR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "La Catalina"
   }
  },
  "bgm": {
