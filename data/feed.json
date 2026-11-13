@@ -1,5 +1,5 @@
 {
- "at": "2026-11-13T10:28:49.936Z",
+ "at": "2026-11-13T11:25:38.451Z",
  "items": [
   {
    "t": "La WWE prépare un RAW spécial pour le 4 janvier 2027",
@@ -9,6 +9,16 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Bayley sera présente à SmackDown ce vendredi à deux semaines des Survivor Series WarGames",
+   "u": "https://www.catch-newz.com/wwe/newz/61265-bayley-sera-presente-a-smackdown-ce-vendredi-a-deux-semaines-des-survivor-series-wargames",
+   "s": "Catch-Newz",
+   "d": "2026-11-13",
+   "tags": [
+    "WWE",
+    "SmackDown"
    ]
   },
   {
@@ -511,16 +521,6 @@
    "tags": [
     "WWE",
     "Raw"
-   ]
-  },
-  {
-   "t": "Résultats de WWE NXT du 10 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-10",
-   "tags": [
-    "WWE",
-    "NXT"
    ]
   }
  ],
@@ -1026,9 +1026,10 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-pour-le-4-janvier-2027",
    "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61264-joe-hendry-je-suis-dans-une-situation-difficile-en-ce-moment",
+   "https://www.catch-newz.com/wwe/newz/61265-bayley-sera-presente-a-smackdown-ce-vendredi-a-deux-semaines-des-survivor-series-wargames",
    "https://www.catch-newz.com/international/resultats/61259-tna-impact-12-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61254-une-organisation-difficile-a-aew-dynamite-le-11-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61264-joe-hendry-je-suis-dans-une-situation-difficile-en-ce-moment",
    "https://www.catch-newz.com/wwe/newz/61263-selon-vic-joseph-chelsea-green-est-la-catcheuse-la-plus-tenace-a-la-wwe",
    "https://www.catch-newz.com/wwe/newz/61262-natalya-jai-limpression-que-tout-lui-vient-trop-facilement",
    "https://www.catch-newz.com/wwe/newz/61261-damian-priest-en-a-ras-le-bol-de-voir-toujours-les-memes-personnes-au-sommet-a-la-wwe",
@@ -1322,8 +1323,7 @@
    "https://www.catch-newz.com/wwe/newz/60977-royce-keys-ce-soir-a-nxt-personne-nest-a-labri",
    "https://www.catch-newz.com/wwe/resultats/60909-resultats-de-wwe-main-event28-octobre-2026",
    "https://www.catch-newz.com/international/resultats/60971-resultats-de-indy-wrestling-domingos-familiares-noche-de-muertos",
-   "https://www.catch-newz.com/international/resultats/60976-resultats-de-ott-newend",
-   "https://www.catch-newz.com/international/resultats/60975-resultats-de-hop-october-onslaught-tour-2026"
+   "https://www.catch-newz.com/international/resultats/60976-resultats-de-ott-newend"
   ]
  },
  "diag": {
