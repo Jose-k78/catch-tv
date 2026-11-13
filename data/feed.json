@@ -1,16 +1,6 @@
 {
- "at": "2026-11-13T17:47:56.468Z",
+ "at": "2026-11-13T18:47:41.784Z",
  "items": [
-  {
-   "t": "CM Punk est un choix envisageable pour remplacer Shawn Michaels à WWE NXT",
-   "u": "https://www.catch-newz.com/wwe/newz/61272-cm-punk-est-un-choix-envisageable-pour-remplacer-shawn-michaels-a-wwe-nxt",
-   "s": "Catch-Newz",
-   "d": "2026-11-13",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
-  },
   {
    "t": "Preview : WWE SmackDown du 13 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
@@ -32,15 +22,6 @@
    ]
   },
   {
-   "t": "Trey Miguel en fin de contrat vers TNA Destination X",
-   "u": "https://www.catch-newz.com/international/newz/61270-trey-miguel-en-fin-de-contrat-pour-tna-destination-x",
-   "s": "Catch-Newz",
-   "d": "2026-11-13",
-   "tags": [
-    "TNA"
-   ]
-  },
-  {
    "t": "Preview : AAA Lucha Libre du 14 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61267-preview-aaa-lucha-libre-14-novembre-2026",
    "s": "Catch-Newz",
@@ -57,6 +38,25 @@
    "d": "2026-11-13",
    "tags": [
     "AEW"
+   ]
+  },
+  {
+   "t": "CM Punk est un choix envisageable pour remplacer Shawn Michaels à WWE NXT",
+   "u": "https://www.catch-newz.com/wwe/newz/61272-cm-punk-est-un-choix-envisageable-pour-remplacer-shawn-michaels-a-wwe-nxt",
+   "s": "Catch-Newz",
+   "d": "2026-11-13",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
+   "t": "Trey Miguel en fin de contrat vers TNA Destination X",
+   "u": "https://www.catch-newz.com/international/newz/61270-trey-miguel-en-fin-de-contrat-pour-tna-destination-x",
+   "s": "Catch-Newz",
+   "d": "2026-11-13",
+   "tags": [
+    "TNA"
    ]
   },
   {
@@ -1035,14 +1035,14 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/wwe/newz/61272-cm-punk-est-un-choix-envisageable-pour-remplacer-shawn-michaels-a-wwe-nxt",
    "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-pour-le-4-janvier-2027",
-   "https://www.catch-newz.com/international/newz/61270-trey-miguel-en-fin-de-contrat-pour-tna-destination-x",
    "https://www.catch-newz.com/wwe/resultats/61269-resultats-de-wwe-road-to-survivor-series-du-12-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61268-resultats-et-streaming-de-wwe-evolve-du-11-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61267-preview-aaa-lucha-libre-14-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61259-tna-impact-12-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61272-cm-punk-est-un-choix-envisageable-pour-remplacer-shawn-michaels-a-wwe-nxt",
+   "https://www.catch-newz.com/international/newz/61270-trey-miguel-en-fin-de-contrat-pour-tna-destination-x",
    "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61254-une-organisation-difficile-a-aew-dynamite-le-11-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61265-bayley-sera-presente-a-smackdown-ce-vendredi-a-deux-semaines-des-survivor-series-wargames",
@@ -1338,7 +1338,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
