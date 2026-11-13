@@ -667,6 +667,19 @@
    },
    "gimmick": "",
    "medalOf": "Tomoaki Honma"
+  },
+  "el-mesias": {
+   "k": "AAA",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Powerbomb",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "El Mesías"
   }
  },
  "bgm": {
