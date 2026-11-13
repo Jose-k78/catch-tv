@@ -486,6 +486,19 @@
    },
    "gimmick": "",
    "medalOf": "Cassie Lee"
+  },
+  "ivy-nile": {
+   "k": "WWE",
+   "r": "R",
+   "max": "SR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Diamond Chain Lock",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Chad Gable"
   }
  },
  "bgm": {
