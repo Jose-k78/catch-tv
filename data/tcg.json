@@ -461,6 +461,18 @@
    },
    "gimmick": "",
    "medalOf": "Jakob Austin Young"
+  },
+  "genichiro-tenryu": {
+   "r": "N",
+   "max": "R",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Powerbomb",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Genichiro Tenryu"
   }
  },
  "bgm": {
