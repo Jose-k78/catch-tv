@@ -872,6 +872,19 @@
    },
    "gimmick": "",
    "medalOf": "Myron Reed"
+  },
+  "dustin-rhodes": {
+   "k": "AEW",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Final Reckoning",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Cody Rhodes"
   }
  },
  "bgm": {
