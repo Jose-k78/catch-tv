@@ -448,6 +448,18 @@
    },
    "gimmick": "",
    "medalOf": "Buff Bagwell"
+  },
+  "chris-harris": {
+   "r": "N",
+   "max": "R",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Catatonic",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Chris Harris"
   }
  },
  "bgm": {
