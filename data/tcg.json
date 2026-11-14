@@ -1375,6 +1375,19 @@
    },
    "gimmick": "",
    "medalOf": "Kurt Angle"
+  },
+  "ricky-saints": {
+   "k": "WWE",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Roshambo",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Ricky Saints"
   }
  },
  "bgm": {
