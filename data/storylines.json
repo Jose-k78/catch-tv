@@ -1,444 +1,480 @@
 {
-  "updated": "2026-11-13",
-  "note": "Une storyline par jour (la plus récente en premier) : grandes histoires, rivalités, anecdotes de coulisses, faits marquants. txt = paragraphes écrits en français à partir des sources ; v = vidéos officielles ; q = recherches sur la chaîne officielle.",
-  "items": [
+ "updated": "2026-11-14",
+ "note": "Une storyline par jour (la plus récente en premier) : grandes histoires, rivalités, anecdotes de coulisses, faits marquants. txt = paragraphes écrits en français à partir des sources ; v = vidéos officielles ; q = recherches sur la chaîne officielle.",
+ "items": [
+  {
+   "id": "austin-car-1999",
+   "d": "2026-11-14",
+   "type": "Anecdote",
+   "t": "Survivor Series 1999 : le soir où Stone Cold s'est fait renverser",
+   "k": "WWE",
+   "years": "1999-2000",
+   "hook": "Le 14 novembre 1999, à Detroit, la star numéro un de la WWF est fauchée par une voiture sur le parking… et le main event est chamboulé en direct.",
+   "txt": [
+    "Fin 1999, la WWF est en pleine Attitude Era et Stone Cold Steve Austin en est le visage. Pour les Survivor Series, au Joe Louis Arena de Detroit, il est annoncé dans un triple threat pour le titre de la WWF face à The Rock et au champion Triple H.",
+    "Mais Austin a un vrai problème : sa nuque, abîmée depuis un piledriver raté à SummerSlam 1997, le fait souffrir et il doit être opéré. Il faut l'écrire hors des scénarios pendant de longs mois, sans perdre le spectacle prévu.",
+    "La solution trouvée par l'équipe créative est spectaculaire : pendant le show, les caméras montrent Austin sur le parking, renversé par une voiture dont on ne voit pas le conducteur. Il est évacué, laissant la place vide dans le main event.",
+    "Big Show prend sa place au dernier moment. Contre toute attente, c'est lui qui repart avec la ceinture de la WWF, en faisant tomber Triple H après un chokeslam : le géant devient champion pour la première fois.",
+    "L'énigme du « qui a renversé Austin ? » reste en suspens pendant près d'un an. À son vrai retour à l'automne 2000, l'enquête désigne Rikishi comme conducteur, puis Triple H comme cerveau de l'opération, ce qui mène à une revanche entre Austin et Triple H aux Survivor Series 2000."
+   ],
+   "key": "Stone Cold, renversé sur le parking, laisse sa place à Big Show, qui devient champion de la WWF le soir même.",
+   "v": [],
+   "q": [
+    "Survivor Series 1999 Stone Cold hit by car",
+    "Big Show vs Triple H vs The Rock Survivor Series 1999"
+   ],
+   "src": [
     {
-      "id": "n2r-1993",
-      "d": "2026-11-13",
-      "type": "Grande histoire",
-      "k": "ECW",
-      "years": "1993-2000",
-      "t": "November to Remember : le grand rendez-vous de l’ECW, né un 13 novembre",
-      "hook": "Le 13 novembre 1993, dans une petite salle de Philadelphie, une fédération encore régionale lance l’événement qui deviendra son plus grand show de l’année.",
-      "txt": [
-        "En 1993, l’ECW s’appelle encore Eastern Championship Wrestling. C’est une petite fédération de Philadelphie qui tourne dans l’ancienne salle de bingo devenue l’ECW Arena, et qui se fait connaître grâce à son émission Hardcore TV.",
-        "Le 13 novembre 1993, elle y organise le tout premier November to Remember, devant près de 1 500 spectateurs. Le show, diffusé trois jours plus tard dans Hardcore TV, sert à conclure les rivalités lancées pendant l’automne : dix matchs au programme.",
-        "En tête d’affiche, un match par équipes « le gagnant prend tout » : le champion poids lourd Sabu et Road Warrior Hawk contre le champion télévision Terry Funk et un partenaire mystère, qui se révèle être King Kong Bundy. Coup de théâtre : Bundy se retourne contre Funk, Sabu le fait tomber et repart avec les deux ceintures.",
-        "La soirée a aussi son lot de chaos typique de l’ECW : Sandman et Jim Neidhart se font tomber mutuellement, The Public Enemy gagne un « South Philly Hood match », et Tommy Dreamer et Johnny Gunn remportent les titres par équipes en seulement 9 secondes, juste après une défense de titre.",
-        "Devenue Extreme Championship Wrestling, la fédération fait de November to Remember son événement phare. Il passe en pay-per-view à partir de 1997, avec le duel Bam Bam Bigelow contre Shane Douglas pour le titre mondial, et chaque édition est annoncée sur « November Rain » de Guns N’ Roses.",
-        "La série s’arrête en 2000, quelques mois avant la faillite de l’ECW, avec une dernière édition à Villa Park, près de Chicago. Les droits appartiennent aujourd’hui à la WWE, et le nom reste attaché à l’âge d’or du catch extrême."
-      ],
-      "key": "Sabu profite de la trahison de King Kong Bundy contre Terry Funk pour repartir avec les deux ceintures de l’ECW.",
-      "v": [],
-      "q": [
-        "ECW November to Remember 1993 Sabu Terry Funk",
-        "ECW November to Remember history"
-      ],
-      "src": [
-        {
-          "n": "Wikipédia (anglais) – November to Remember (1993)",
-          "u": "https://en.wikipedia.org/wiki/November_to_Remember_(1993)"
-        },
-        {
-          "n": "Wikipédia (anglais) – November to Remember",
-          "u": "https://en.wikipedia.org/wiki/November_to_Remember"
-        },
-        {
-          "n": "Pro Wrestling Wiki – November to Remember 1993",
-          "u": "https://prowrestling.fandom.com/wiki/November_to_Remember_1993"
-        }
-      ]
+     "n": "Wikipédia (anglais) – Survivor Series (1999)",
+     "u": "https://en.wikipedia.org/wiki/Survivor_Series_(1999)"
     },
     {
-      "id": "misawa-kobashi",
-      "d": "2026-11-12",
-      "type": "Rivalité",
-      "t": "Mitsuharu Misawa contre Kenta Kobashi : les deux géants de l’All Japan",
-      "k": "AJPW",
-      "years": "1993-2005",
-      "hook": "Partenaires, rivaux, puis fondateurs d’une nouvelle fédération : leurs combats sont parmi les plus grands de l’histoire du catch japonais.",
-      "txt": [
-        "Au début des années 1990, l’All Japan Pro Wrestling vit son âge d’or grâce à quatre catcheurs surnommés les « Quatre piliers » : Mitsuharu Misawa, Toshiaki Kawada, Akira Taue et Kenta Kobashi. Misawa est le chef de file, l’as de la fédération ; Kobashi est le plus jeune, celui que le public adore pour son courage.",
-        "Les deux hommes commencent côte à côte : le 3 décembre 1993, ils remportent ensemble le tournoi par équipe de fin d’année et les titres mondiaux par équipe. Mais l’élève veut dépasser le maître, et leurs duels pour la Triple Couronne, le grand titre de l’All Japan, deviennent des rendez-vous immanquables.",
-        "Le 25 octobre 1995 au Nippon Budokan, Misawa bat Kobashi avec son Tiger Driver. Kobashi devient enfin champion en juillet 1996, mais le 20 janvier 1997 à Osaka, c’est encore Misawa qui lui reprend la ceinture. Le 31 octobre 1998, une semaine après les débuts du Burning Hammer de Kobashi, Misawa gagne de nouveau : un combat élu match de l’année. Le 11 juin 1999, il l’emporte encore, avec son Emerald Flowsion.",
-        "En juin 2000, Misawa quitte l’All Japan pour fonder la Pro Wrestling Noah, et Kobashi le suit. Le 1er mars 2003, au Nippon Budokan, Kobashi bat enfin Misawa dans un grand match pour la ceinture GHC des poids lourds. Il la garde 735 jours avec 13 défenses réussies, un règne resté légendaire.",
-        "Misawa meurt le 13 juin 2009 après un match à Hiroshima, une perte immense pour le catch japonais. Kobashi, lui, prend sa retraite le 11 mai 2013 lors de « Final Burning » au Budokan. Leur rivalité reste la référence du style « King’s Road » : des matchs très durs, longs et dramatiques."
-      ],
-      "key": "Le 1er mars 2003, Kobashi bat enfin Misawa pour la ceinture GHC et commence un règne de 735 jours.",
-      "v": [],
-      "q": [
-        "Misawa vs Kobashi 2003 GHC full match",
-        "Misawa vs Kobashi All Japan 1998 Triple Crown"
-      ],
-      "src": [
-        {
-          "n": "Wikipédia (en) — Kenta Kobashi",
-          "u": "https://en.wikipedia.org/wiki/Kenta_Kobashi"
-        },
-        {
-          "n": "Pro Wrestling Post",
-          "u": "https://prowrestlingpost.com/?p=38370"
-        }
-      ]
+     "n": "WWE.com – Survivor Series 1999, main event",
+     "u": "https://www.wwe.com/shows/survivorseries/1999/mainevent"
     },
     {
-      "id": "leon-ruff-2020",
-      "d": "2026-11-11",
-      "type": "Anecdote",
-      "t": "Leon Ruff, l’inconnu à 0 victoire devenu champion à NXT",
-      "k": "WWE",
-      "years": "2020",
-      "hook": "Il n’avait jamais gagné un seul match à la télé… et un soir, une roue de la chance l’a envoyé décrocher un titre.",
-      "txt": [
-        "Dartanyon Ruffin, né à Detroit en 1996, prend le nom de Leon Ruff en hommage à son grand-père. Formé par A. R. Fox, il fait ses débuts en 2017 et se fait remarquer à Evolve, où il remporte même les titres par équipe avec son entraîneur en 2019.",
-        "À la WWE, il joue d’abord les « locaux » : ces lutteurs engagés pour perdre face aux vedettes, comme lors d’une défaite contre Aleister Black à Raw en mars 2020. Même après avoir signé un contrat à l’été 2020, il continue d’enchaîner les défaites à NXT : il arrive en novembre avec un bilan de 0 victoire et 11 défaites.",
-        "Le 11 novembre 2020, Johnny Gargano, champion Nord-Américain de NXT et grand méchant du show, fait tourner sa « roue des challengers » pour choisir son adversaire du soir. La roue tombe sur Leon Ruff, dont le nom avait été écrit par-dessus celui d’Austin Theory. Personne n’imagine une surprise.",
-        "Mais Damian Priest, ancien champion et ennemi juré de Gargano, s’installe au bord du ring et le distrait un instant. Ruff en profite pour le tomber : l’éternel perdant devient champion Nord-Américain, un des plus gros renversements de l’histoire de NXT. « Un des plus beaux moments de ma vie », écrit-il juste après.",
-        "La semaine suivante, il conserve son titre par disqualification quand Priest le frappe volontairement. Son règne s’arrête à NXT TakeOver: WarGames, le 6 décembre, dans un match à trois contre Gargano et Priest : Gargano récupère la ceinture après 25 jours.",
-        "Ruff fait ensuite équipe avec Kushida au Dusty Rhodes Tag Team Classic 2021, puis est libéré par la WWE en août 2021. Il continue sa carrière sur le circuit indépendant (GCW) et passe brièvement par l’AEW en 2022. Mais pour les fans de NXT, il reste le symbole du petit qui gagne quand personne n’y croit."
-      ],
-      "key": "Le 11 novembre 2020, Leon Ruff, 0 victoire en 11 matchs, tombe Johnny Gargano et devient champion Nord-Américain de NXT.",
-      "v": [],
-      "q": [
-        "Leon Ruff vs Johnny Gargano NXT North American Championship 2020",
-        "Leon Ruff wins North American title NXT"
-      ],
-      "src": [
-        {
-          "n": "Wikipedia (anglais) – Leon Ruff",
-          "u": "https://en.wikipedia.org/wiki/Leon_Ruff"
-        },
-        {
-          "n": "Wrestling Inc – Leon Ruff remporte le titre",
-          "u": "https://www.wrestlinginc.com/news/2020/11/leon-ruff-wins-the-wwe-nxt-north-american-title-from-johnny-676829"
-        },
-        {
-          "n": "Wrestling Inc – réaction de Leon Ruff",
-          "u": "https://www.wrestlinginc.com/news/2020/11/leon-ruff-on-his-wwe-nxt-north-american-title-win-676851"
-        }
-      ]
-    },
-    {
-      "id": "mayu-io",
-      "d": "2026-11-08",
-      "type": "Rivalité",
-      "t": "Mayu Iwatani contre Io Shirai : les sœurs ennemies de la Stardom",
-      "k": "Stardom",
-      "years": "2012–2025",
-      "hook": "Elles ont tout gagné ensemble sous le nom de Thunder Rock, puis se sont déchirées pour la ceinture rouge… avant de se retrouver dix ans plus tard sur un autre ring.",
-      "txt": [
-        "Mayu Iwatani fait partie des toutes premières catcheuses de la Stardom : elle débute dès le premier show de la compagnie, le 23 janvier 2011. Fin 2012, après la retraite de sa partenaire Arisa Hoshiki, elle s'associe à Io Shirai. Le duo prend le nom de Thunder Rock et devient l'une des équipes phares du joshi moderne.",
-        "Le 6 mai 2015, Thunder Rock remporte les ceintures par équipe Goddesses of Stardom, alors vacantes, en battant Chelsea et Kairi Hojo. La même année, le duo gagne la Goddesses of Stardom Tag League et enchaîne onze défenses avant de perdre les titres face à Kagetsu et Kyoko Kimura le 16 juin 2016.",
-        "Mais les deux amies sont aussi rivales. Leur affrontement du 5★STAR GP, le 23 août 2015, est élu meilleur match du tournoi. Le 15 mai 2016, Io Shirai bat Mayu pour le World of Stardom Championship, la fameuse ceinture rouge. Le 11 novembre 2016, Io se retourne contre sa partenaire : Thunder Rock et le clan Threedom sont dissous.",
-        "Le 22 décembre 2016, Io conserve son titre contre Mayu au show de fin d'année, dans un match élu match de l'année 2016 de la Stardom. Il faut attendre le 21 juin 2017 et une cinquième tentative pour que Mayu batte enfin Io et décroche la ceinture rouge.",
-        "Les chemins se séparent ensuite : Io Shirai part pour la WWE, où elle devient IYO SKY, championne de NXT puis star de l'équipe principale. Mayu reste la pierre angulaire de la Stardom, remporte de nouveau la ceinture rouge en 2019 et règne longtemps sur le titre féminin IWGP, avant de quitter la compagnie en avril 2025 pour rejoindre Marigold.",
-        "Le 26 octobre 2025, les deux femmes se retrouvent en tête d'affiche de Grand Destiny, le grand show de Marigold au Ryogoku Kokugikan. IYO SKY l'emporte dans un match récompensé comme l'un des meilleurs de l'année, refermant un chapitre ouvert plus de dix ans plus tôt."
-      ],
-      "key": "Le 21 juin 2017, à sa cinquième tentative, Mayu Iwatani bat enfin son ancienne partenaire Io Shirai pour la ceinture rouge de la Stardom.",
-      "v": [],
-      "q": [
-        "Io Shirai vs Mayu Iwatani Stardom full match",
-        "IYO SKY vs Mayu Iwatani Marigold Grand Destiny"
-      ],
-      "src": [
-        {
-          "n": "Wikipédia (EN) – Mayu Iwatani",
-          "u": "https://en.wikipedia.org/wiki/Mayu_Iwatani"
-        },
-        {
-          "n": "RESURA – Mayu Iwatani vs IYO SKY: The Seven-Year Itch",
-          "u": "https://resuramag.com/2025/10/16/mayu-iwatani-vs-iyo-sky-the-seven-year-itch/"
-        }
-      ]
-    },
-    {
-      "id": "wrestling-classic-1985",
-      "d": "2026-11-07",
-      "type": "Fait marquant",
-      "t": "The Wrestling Classic : le premier vrai pay-per-view de la WWF",
-      "k": "WWE",
-      "years": "1985",
-      "hook": "Le 7 novembre 1985, la WWF tente un pari fou : un gala vendu uniquement à la séance, à la télévision… et lance sans le savoir le modèle des grands événements d’aujourd’hui.",
-      "txt": [
-        "En 1985, la WWF de Vince McMahon sort tout juste de la première WrestleMania. Mais ce show de mars a surtout été vu dans des salles en circuit fermé : la diffusion à la séance chez soi, le « pay-per-view », n’en est qu’à ses débuts. Pour tester ce nouveau marché, la WWF prépare un gala conçu dès le départ pour être vendu uniquement en pay-per-view.",
-        "Le 7 novembre 1985, au Rosemont Horizon, dans la banlieue de Chicago, The Wrestling Classic est proposé aux téléspectateurs. Le cœur de la soirée est un tournoi à élimination directe de 16 catcheurs, avec des noms comme Ricky Steamboat, Terry Funk, The Dynamite Kid, Davey Boy Smith, Tito Santana, Paul Orndorff, The Iron Sheik et un nouveau venu très remarqué : « Macho Man » Randy Savage. Au micro, le duo Gorilla Monsoon et Jesse « The Body » Ventura.",
-        "Le format impose des matchs courts, parfois expédiés en quelques secondes : The Dynamite Kid bat Nikolai Volkoff en sept secondes, et Terry Funk est éliminé par décompte à l’extérieur face à Moondog Spot. Les moments forts viennent de Randy Savage, qui élimine Ricky Steamboat en trichant avec un objet caché, puis The Dynamite Kid sur un petit paquet en demi-finale. De son côté, Junkyard Dog profite d’une exemption : son adversaire devait sortir du duel Orndorff-Santana, terminé par un double décompte à l’extérieur.",
-        "En finale, Junkyard Dog, chouchou du public, s’impose face à Savage par décompte à l’extérieur et remporte le tournoi, sous les cris de la salle. Ventura, lui, peste contre le parcours trop facile du vainqueur. Dans l’autre grand match de la soirée, Hulk Hogan défend son titre WWF contre « Rowdy » Roddy Piper : Bob Orton frappe le champion avec son plâtre, Hogan gagne par disqualification et garde la ceinture, sauvé ensuite par Paul Orndorff armé d’une chaise.",
-        "Sur le ring, la soirée n’est pas un chef-d’œuvre, mais l’essentiel est ailleurs : le gala attire plusieurs dizaines de milliers d’achats et prouve que le public est prêt à payer pour regarder le catch chez lui. Le succès pousse la WWF, puis toute l’industrie, à multiplier les pay-per-view dans les années suivantes. Survivor Series, le Royal Rumble ou SummerSlam suivront, et le modèle des grands événements payants — devenus aujourd’hui les « PLE » — est né en partie ce soir-là."
-      ],
-      "key": "Le 7 novembre 1985, The Wrestling Classic devient le premier gala de la WWF conçu pour être vendu uniquement en pay-per-view, remporté par Junkyard Dog face à Randy Savage.",
-      "v": [],
-      "q": [
-        "WWF The Wrestling Classic 1985",
-        "Randy Savage vs Ricky Steamboat Wrestling Classic 1985"
-      ],
-      "src": [
-        {
-          "n": "TJR Wrestling – The Wrestling Classic 1985",
-          "u": "https://tjrwrestling.net/tjr-retro-wwe-the-wrestling-classic-1985-review"
-        },
-        {
-          "n": "History of Wrestling",
-          "u": "https://historyofwrestling.com/the-wwf-presents-pro-wrestlings-1st-pay-per-view"
-        },
-        {
-          "n": "F4W – Daily Pro Wrestling History (11/07)",
-          "u": "https://www.f4wonline.com/news/other-wrestling/daily-pro-wrestling-history-wwfs-the-wrestling-classic"
-        }
-      ]
-    },
-    {
-      "id": "when-worlds-collide-1994",
-      "d": "2026-11-06",
-      "type": "Fait marquant",
-      "t": "When Worlds Collide : la nuit où la lucha libre a conquis l’Amérique",
-      "k": "AAA",
-      "years": "1993-1994",
-      "hook": "Le 6 novembre 1994, à Los Angeles, la AAA offre à l’Amérique un masque contre cheveux resté parmi les plus grands matchs de l’histoire.",
-      "txt": [
-        "Au début des années 1990, la AAA, fondée par Antonio Peña, bouscule la lucha libre mexicaine. Sa faction rudo la plus détestée s’appelle Los Gringos Locos : Art Barr y a convaincu Eddie Guerrero qu’il vivait dans l’ombre d’El Hijo del Santo, comme son père Gory Guerrero avait vécu dans celle du légendaire El Santo. Eddie trahit Santo, s’associe à Barr et forme La Pareja del Terror, en rouge, blanc et bleu, pour provoquer le public mexicain.",
-        "La rivalité tourne autour des titres par équipe de la AAA : El Hijo del Santo et Octagón les gagnent contre Barr et Guerrero le 5 novembre 1993, puis les perdent le 23 juillet 1994, dans un match présenté comme truqué par l’arbitre. Furieux, les deux héros masqués lancent un défi ultime : leurs masques contre les cheveux des Gringos Locos.",
-        "Le match est placé au cœur de When Worlds Collide, le 6 novembre 1994 au Los Angeles Memorial Sports Arena, devant environ 13 000 spectateurs. Grâce à Eric Bischoff et aux équipes techniques de la WCW, c’est la première fois qu’une fédération étrangère passe en direct à la télévision payante aux États-Unis. Au programme aussi : Rey Misterio Jr., Psicosis, la Pegasus Kid (Chris Benoit) ou encore une cage entre Perro Aguayo et Konnan.",
-        "En deux chutes sur trois, pendant plus de 22 minutes, Octagón et El Hijo del Santo battent La Pareja del Terror. Fidèles à leur personnage jusqu’au bout, Barr et Guerrero se coupent les cheveux l’un l’autre sur le ring. Le Wrestling Observer accorde cinq étoiles au match, une note rare à l’époque.",
-        "Le show change le regard de l’Amérique sur la lucha libre : la WCW et l’ECW recrutent bientôt plusieurs de ses vedettes, dont Eddie Guerrero et Rey Misterio Jr. Mais la fête est brève : Art Barr meurt le 23 novembre 1994, dix-sept jours plus tard, alors qu’il était encore champion par équipe avec Eddie. La AAA retire alors ce titre en son honneur."
-      ],
-      "key": "Octagón et El Hijo del Santo battent Art Barr et Eddie Guerrero dans un masque contre cheveux noté cinq étoiles, devant l’Amérique entière.",
-      "v": [],
-      "q": [
-        "When Worlds Collide 1994 Octagon Santo vs Eddie Guerrero Art Barr",
-        "AAA When Worlds Collide 1994 full show"
-      ],
-      "src": [
-        {
-          "n": "Wikipédia (en) — AAA When Worlds Collide",
-          "u": "https://en.wikipedia.org/wiki/AAA_When_Worlds_Collide"
-        },
-        {
-          "n": "PWTorch — Nov. 6 in history",
-          "u": "https://www.pwtorch.com/artman2/publish/Torch_Today_2/article_74386.shtml"
-        },
-        {
-          "n": "TJR Wrestling — critique du match",
-          "u": "https://tjrwrestling.net/5-star-match-reviews-eddy-guerrero-and-art-barr-vs-octagon-and-el-hijo-del-santo-when-worlds-collide-1994-by-alex-podgorski"
-        }
-      ]
-    },
-    {
-      "id": "gail-kim-bfg-2017",
-      "d": "2026-11-05",
-      "type": "Grande histoire",
-      "t": "Gail Kim, la reine des Knockouts qui a quitté le ring en championne",
-      "k": "TNA",
-      "years": "2007-2017",
-      "hook": "Il y a 9 ans jour pour jour, la toute première championne des Knockouts remportait sa septième ceinture… pour la rendre quelques heures plus tard et partir la tête haute.",
-      "txt": [
-        "Le 14 octobre 2007, à Bound for Glory, TNA couronne pour la première fois une championne de sa division féminine, les Knockouts. Au terme d'un gauntlet à dix catcheuses où figurent notamment Awesome Kong, ODB ou Velvet Sky, c'est Gail Kim qui l'emporte et devient la première détentrice du titre, appelé à l'époque TNA Women's World Championship.",
-        "Passée par la WWE, où elle avait déjà été championne féminine en 2003, la Canadienne y retourne de 2008 à 2011. Son départ fait parler : lors d'une bataille royale, elle sort volontairement du ring, un geste de protestation contre la place qu'on lui donnait. De retour chez TNA, elle repart aussitôt à la conquête du titre et le récupère dès novembre 2011 à Turning Point.",
-        "Les années suivantes, Gail Kim devient le pilier de la division : nouveaux sacres à Bound for Glory 2013, en juin 2014, en juillet 2015 puis encore à Bound for Glory 2016. Rivale, mentor et référence, elle est intronisée au Hall of Fame de la fédération. En juillet 2017, elle annonce que l'année sera sa dernière sur le ring.",
-        "Le 5 novembre 2017, à Bound for Glory à Ottawa, elle affronte la championne Sienna et Allie dans un match à trois. Gail Kim fait le tombé sur Sienna et décroche son septième titre des Knockouts, un record qui n'a toujours pas été égalé, tout comme son total de 711 jours de règne cumulés.",
-        "Ce dernier règne est le plus court de l'histoire de la ceinture : environ 18 heures. Lors des enregistrements suivants, diffusés dans Impact quelques jours plus tard, elle rend le titre et annonce sa retraite, en remerciant celles qui ont compté dans sa carrière, comme Trish Stratus, Lita, Molly Holly, Awesome Kong et Taryn Terrell. Comme Trish Stratus avant elle, elle quitte le catch en championne."
-      ],
-      "key": "Le 5 novembre 2017, Gail Kim bat Sienna et Allie à Bound for Glory et devient sept fois championne des Knockouts, juste avant de prendre sa retraite.",
-      "v": [],
-      "q": [
-        "Gail Kim Sienna Allie Bound for Glory 2017",
-        "Gail Kim first Knockouts Champion Bound for Glory 2007 gauntlet"
-      ],
-      "src": [
-        {
-          "n": "Wikipedia — List of TNA Knockouts World Champions",
-          "u": "https://en.wikipedia.org/wiki/List_of_TNA_Knockouts_World_Champions"
-        },
-        {
-          "n": "Fightful",
-          "u": "https://www.fightful.com/wrestling/gail-kim-becomes-knockouts-champion-impact-retirement-match"
-        },
-        {
-          "n": "Wrestling-Online",
-          "u": "https://wrestling-online.com/tna/gail-kim-relinquishes-knockouts-title-retires-as-champion"
-        }
-      ]
-    },
-    {
-      "id": "pillman-gun-1996",
-      "d": "2026-11-04",
-      "type": "Anecdote",
-      "t": "« Pillman's got a gun » : le soir où Raw est allé trop loin",
-      "k": "WWE",
-      "years": "1996",
-      "hook": "Le 4 novembre 1996, Raw diffuse en direct Stone Cold Steve Austin qui force la porte de Brian Pillman… et Pillman qui l'attend avec une arme à la main.",
-      "txt": [
-        "En 1996, Brian Pillman est l'un des personnages les plus imprévisibles du catch. Surnommé « The Loose Cannon », il a quitté la WCW au début de l'année après avoir joué de façon troublante avec la frontière entre fiction et réalité, puis a signé à la WWF. Mais un grave accident de voiture au printemps lui abîme la cheville et l'empêche de combattre.",
-        "Ne pouvant pas monter sur le ring, Pillman se retrouve dans une rivalité avec son ancien partenaire des Hollywood Blonds, Stone Cold Steve Austin, alors en pleine ascension. L'histoire veut qu'Austin s'en prenne à lui alors qu'il est blessé : la rivalité devient « personnelle ».",
-        "Le 4 novembre 1996, Raw est en direct. Le journaliste Kevin Kelly se trouve chez Pillman, à Walton dans le Kentucky, avec sa femme Melanie. Pillman, la jambe dans le plâtre, explique qu'il connaît Austin mieux que personne. On annonce qu'Austin tourne dans le quartier. Quand il arrive, Pillman sort un pistolet.",
-        "Dehors, Austin se débarrasse des amis de Pillman chargés de protéger la maison, fait le tour et brise une fenêtre. Pillman braque son arme vers lui… et le signal « se coupe ». Quand l'émission revient pour les deux dernières minutes, Pillman, retenu par ses amis, hurle, agite l'arme et lâche un juron qui passe sans censure à l'antenne.",
-        "La séquence choque les téléspectateurs et les critiques. La chaîne USA Network, mécontente, exige des excuses de la WWF et de Pillman. Le même soir, un jeune Rocky Maivia — le futur The Rock — faisait sa première apparition à Raw, presque passée inaperçue.",
-        "Avec le recul, ce segment est souvent cité comme l'un des premiers signes de l'« Attitude Era », plus provocatrice. Il reste aussi l'un des moments les plus controversés de l'histoire de Raw. Pillman, lui, nous a quittés en octobre 1997, à seulement 35 ans."
-      ],
-      "key": "En direct à la télévision, Brian Pillman braque une arme sur Steve Austin qui vient de briser une fenêtre de sa maison, avant que l'image ne se coupe.",
-      "v": [],
-      "q": [
-        "Brian Pillman Steve Austin gun Raw 1996",
-        "Pillman's got a gun WWE"
-      ],
-      "src": [
-        {
-          "n": "Wikipedia — History of WWE Raw",
-          "u": "https://en.wikipedia.org/wiki/History_of_WWE_Raw"
-        },
-        {
-          "n": "KB Wrestling Reviews — Raw du 4 novembre 1996",
-          "u": "https://kbwrestlingreviews.com/2023/02/24/monday-night-raw-november-4-1996-pillmans-got-a-gun/"
-        },
-        {
-          "n": "TJR Wrestling — 4 novembre dans l'histoire",
-          "u": "https://tjrwrestling.net/wrestling-history/november-4/"
-        }
-      ]
-    },
-    {
-      "id": "hiac-2016-charlotte-sasha",
-      "d": "2026-10-30",
-      "type": "Fait marquant",
-      "t": "Charlotte contre Sasha Banks : les femmes en tête d'affiche dans la cellule",
-      "k": "WWE",
-      "years": "2016",
-      "hook": "Le 30 octobre 2016, pour la première fois, un match féminin ferme un pay-per-view de la WWE… et il se joue dans l'Enfer de la Cellule.",
-      "txt": [
-        "En avril 2016, à WrestleMania 32, Charlotte remporte le nouveau championnat féminin de la WWE et le garde près de quatre mois. Face à elle se dresse Sasha Banks, revenue de blessure pendant l'été : à Battleground, le 24 juillet, Sasha fait abandonner Charlotte dans un match par équipes avec Bayley.",
-        "Dès le lendemain, le 25 juillet à Raw, Sasha obtient son match de championnat et gagne la ceinture. Commence alors un incroyable chassé-croisé : Charlotte reprend le titre à SummerSlam, le conserve à Clash of Champions dans un match à trois, puis Sasha le lui reprend le 3 octobre à Raw. Aucune des deux n'arrive à défendre le titre en un contre un.",
-        "Pour départager les deux rivales, la WWE choisit le match le plus dur de son catalogue : Hell in a Cell, jamais disputé par des femmes. Et elle va plus loin : le match est placé en fin de soirée, le 30 octobre 2016 à Boston. C'est la première fois qu'un match féminin est le main event d'un pay-per-view de la WWE.",
-        "Le combat démarre avant même la descente de la cage. Charlotte projette Sasha à travers la table des commentateurs avec une powerbomb ; la championne est installée sur une civière avec une minerve. Au moment où l'arbitre s'apprête à donner le titre à Charlotte par forfait, Sasha saute de la civière, attaque son adversaire, et le match commence vraiment.",
-        "Chaises, tables, marches d'acier, grillage de la cellule : les deux femmes utilisent tout. À la fin, le dos de Sasha lâche pendant une tentative de powerbomb à travers une table ; Charlotte en profite et l'achève avec Natural Selection pour remporter son troisième titre féminin — le quatrième changement de champion en 98 jours.",
-        "Ce soir-là a ouvert une porte : les femmes ont ensuite eu leur propre match en cage, leur Royal Rumble, et, en 2019, le main event de WrestleMania."
-      ],
-      "key": "Sasha Banks se relève de sa civière pour lancer le premier Hell in a Cell féminin, qui devient le premier main event féminin d'un pay-per-view WWE.",
-      "v": [],
-      "q": [
-        "Charlotte vs Sasha Banks Hell in a Cell 2016 full match",
-        "Sasha Banks Charlotte Flair rivalry 2016 WWE"
-      ],
-      "src": [
-        {
-          "n": "Sportskeeda",
-          "u": "https://sportskeeda.com/wwe/remembering-sasha-banks-vs-charlotte-flair-the-first-women-s-hell-in-a-cell"
-        },
-        {
-          "n": "CBS Sports",
-          "u": "https://www.cbssports.com/general/news/wwe-hell-in-a-cell-2016-results-owens-retains-charlotte-wins-womens-title"
-        },
-        {
-          "n": "TJR Wrestling",
-          "u": "https://tjrwrestling.net/wrestling-history/october-30/"
-        }
-      ]
-    },
-    {
-      "id": "halloween-havoc-1995",
-      "d": "2026-10-29",
-      "type": "Anecdote",
-      "t": "Halloween Havoc 1995 : des monster trucks sur un toit et un géant qui tombe du ciel",
-      "k": "WCW",
-      "years": "1995",
-      "hook": "Un duel de camions géants sur le toit d'un bâtiment, une chute « mortelle » et un débutant qui repart champion du monde : bienvenue dans la soirée la plus folle de la WCW.",
-      "txt": [
-        "En 1995, la WCW mise tout sur Hulk Hogan et lui oppose un adversaire hors normes : The Giant, un colosse de plus de 2,10 m (futur Big Show), membre du Dungeon of Doom de Kevin Sullivan, ce clan de « monstres » décidé à détrôner l'icône. Lors de Fall Brawl, le Giant écrase la précieuse Harley-Davidson de Hogan, et la rivalité est lancée.",
-        "Pour faire monter la tension avant Halloween Havoc, la WCW imagine un affrontement inédit : un « Sumo Monster Truck match ». Le principe ressemble au sumo : chacun pilote un monster truck — « Hulkster » contre « Dungeon of Doom » — et doit pousser le véhicule adverse hors d'un grand cercle. Le duel, enregistré la veille, se déroule sur le toit du Cobo Hall, à Détroit.",
-        "Hogan remporte le duel de camions, mais la bagarre continue à pied sur le toit. En se libérant d'une prise d'étranglement, il fait basculer le Giant dans le vide ; Hogan tente de le retenir, en vain, et la réalisation montre l'eau en contrebas. À l'antenne, on laisse planer le doute sur le sort du géant…",
-        "Le 29 octobre 1995, au Joe Louis Arena de Détroit, le Giant se présente pourtant tranquillement pour le main event, sans une égratignure — la WCW n'expliquera jamais vraiment sa « survie ». C'est son tout premier match à la WCW, et il défie Hogan pour le championnat du monde.",
-        "Le combat bascule dans le chaos : Jimmy Hart, le manager de Hogan, le trahit en le frappant avec son mégaphone, le Dungeon of Doom s'en mêle et un étrange personnage, The Yeti, enveloppé de bandelettes comme une momie, serre Hogan dans une étreinte à deux avec le Giant. Lex Luger, lui, se retourne contre Randy Savage. Le Giant l'emporte par disqualification.",
-        "Normalement, un titre ne change pas de mains sur une disqualification, mais le Giant repart avec la ceinture grâce à une clause glissée par Jimmy Hart dans le contrat du match. Le titre est rapidement déclaré vacant en raison de cette fin controversée. La soirée reste aujourd'hui l'une des plus improbables de l'histoire du catch, entre camions géants, chute du toit et momie-yéti."
-      ],
-      "key": "Après avoir « chuté » du toit du Cobo Hall la veille, le Giant revient indemne et bat Hulk Hogan par disqualification pour son tout premier match à la WCW.",
-      "v": [],
-      "q": [
-        "WCW Halloween Havoc 1995 Monster Truck Sumo Hogan Giant",
-        "Hulk Hogan vs The Giant Halloween Havoc 1995"
-      ],
-      "src": [
-        {
-          "n": "Philadelphia Inquirer – Throwback Thursday : Halloween Havoc 1995",
-          "u": "https://inquirer.com/philly/blogs/the-squared-circle/Throwback-Thursday-Looking-back-at-WCW-Halloween-Havoc-1995.html"
-        },
-        {
-          "n": "WWE.com – Best and Worst of WCW Halloween Havoc",
-          "u": "https://www.wwe.com/classics/classic-lists/best-worst-wcw-halloween-havoc"
-        },
-        {
-          "n": "WrestleCrap – Monster Truck Sumo Match",
-          "u": "https://www.wrestlecrap.com/inductions/monster-truck-sumo-match/"
-        },
-        {
-          "n": "TJR Wrestling – 29 octobre dans l'histoire du catch",
-          "u": "https://tjrwrestling.net/wrestling-history/october-29/"
-        }
-      ]
-    },
-    {
-      "id": "okada-omega",
-      "d": "2026-10-28",
-      "type": "Rivalité",
-      "t": "Okada contre Omega",
-      "k": "NJPW",
-      "years": "2017-2018",
-      "hook": "Quatre combats en dix-huit mois, plus de deux heures et demie de lutte cumulée, et des notes qui ont fait exploser l'échelle : la rivalité qui a redéfini le catch japonais moderne.",
-      "txt": [
-        "Fin 2016, Kazuchika Okada est le visage de la New Japan Pro-Wrestling et le champion IWGP poids lourd. Face à lui, Kenny Omega, Canadien devenu leader du Bullet Club, vient de remporter le G1 Climax, ce qui lui offre le main event du plus grand show de l'année.",
-        "Le 4 janvier 2017, à Wrestle Kingdom 11 au Tokyo Dome, les deux hommes livrent un combat d'environ 46 minutes. Okada conserve son titre grâce à son Rainmaker, mais le match marque les esprits : le journaliste Dave Meltzer lui attribue 6 étoiles, une note jamais donnée jusque-là dans son barème censé s'arrêter à 5.",
-        "La revanche a lieu le 11 juin 2017 à Dominion, à Osaka. Cette fois, rien ne départage les deux rivaux : ils luttent les 60 minutes réglementaires et le match se termine sur un nul. Quelques semaines plus tard, au G1 Climax 27, Omega prend enfin le dessus : dans un match limité à 30 minutes, il bat un Okada diminué par une blessure au cou grâce à son One-Winged Angel.",
-        "Il faut attendre Dominion, le 9 juin 2018, pour le chapitre final. Pour garantir un vainqueur, la NJPW impose un match sans limite de temps en deux chutes gagnantes sur trois. Okada prend la première, Omega égalise, puis l'emporte au bout de près de 65 minutes avec un dernier One-Winged Angel. Il met ainsi fin au règne record d'Okada et devient champion IWGP poids lourd.",
-        "Cette série a contribué à faire connaître la NJPW bien au-delà du Japon et a consacré les deux hommes parmi les meilleurs lutteurs de leur génération. Leurs chemins se sont recroisés plus tard à l'AEW, où un nouveau duel avec deux ceintures en jeu a été officialisé pour All In en 2025."
-      ],
-      "key": "Le 9 juin 2018 à Dominion, Omega remporte la troisième chute d'un match sans limite de temps et détrône enfin Okada.",
-      "v": [],
-      "q": [
-        "Kazuchika Okada vs Kenny Omega Wrestle Kingdom 11",
-        "Okada vs Omega Dominion 2018 2 out of 3 falls"
-      ],
-      "src": [
-        {
-          "n": "WrestleInn – From Kingdom to Dominion",
-          "u": "https://wrestleinn.com/2022/01/03/from-kingdom-to-dominion/"
-        },
-        {
-          "n": "TheSportster – Okada vs Omega, classement des matchs",
-          "u": "https://www.thesportster.com/kazuchika-okada-vs-kenny-omega-matches-njpw-ranked-worst-best/"
-        },
-        {
-          "n": "F4W Online – Omega vs Okada à All In",
-          "u": "https://www.f4wonline.com/news/aew/omega-vs-okada-aew-all-in-double-title-match-official"
-        }
-      ]
-    },
-    {
-      "id": "kofimania",
-      "t": "La KofiMania",
-      "k": "WWE",
-      "years": "2019",
-      "hook": "Plus de dix ans à attendre sa chance, puis deux mois où tout le public s’est rangé derrière lui : l’histoire qui a mené Kofi Kingston au sommet de WrestleMania.",
-      "txt": [
-        "Début 2019, Kofi Kingston est un pilier de la WWE depuis plus de dix ans. Champion par équipe à de nombreuses reprises avec le New Day, il n’a pourtant jamais eu de vraie chance au titre suprême : tout le monde l’apprécie, mais personne ne l’imagine à la première place.",
-        "Tout bascule en février 2019. Mustafa Ali, blessé, doit renoncer à l’Elimination Chamber et Kofi le remplace au pied levé. Lors du SmackDown qui précède, il participe à un gauntlet match : il enchaîne les adversaires pendant de longues minutes et ne s’incline qu’à la toute fin face à AJ Styles, sous les ovations. Quelques jours plus tard, dans la Chamber, il est le dernier à tomber face au champion Daniel Bryan. Une étoile est née.",
-        "Le public réclame Kofi, mais Vince McMahon, le patron dans l’histoire, refuse de le voir en champion. Semaine après semaine, il lui retire son match, ajoute des obstacles et lui impose des défis impossibles. Le 19 mars, Kofi doit battre cinq adversaires d’affilée pour obtenir sa chance : il vient à bout de Sheamus, Cesaro, Rowan (par disqualification), Samoa Joe et Randy Orton… avant que McMahon n’ajoute Daniel Bryan en personne, qui l’achève.",
-        "Ses partenaires Big E et Xavier Woods prennent alors le relais : le 26 mars, ils remportent à leur tour un gauntlet par équipe et forcent McMahon à accorder à Kofi son match de championnat à WrestleMania 35.",
-        "Le 7 avril 2019, au MetLife Stadium, Kofi Kingston bat Daniel Bryan et devient champion de la WWE, le premier né en Afrique (il est originaire du Ghana). Ses fils le rejoignent sur le ring pour une célébration restée dans toutes les mémoires. La « KofiMania » reste l’un des plus beaux exemples d’histoire portée par le public."
-      ],
-      "key": "Le gauntlet du 19 mars 2019 : cinq victoires d’affilée, puis l’entrée surprise de Daniel Bryan imposée par Vince McMahon.",
-      "v": [],
-      "q": [
-        "Kofi Kingston vs Daniel Bryan WrestleMania 35",
-        "Kofi Kingston gauntlet SmackDown 2019"
-      ],
-      "src": [
-        {
-          "n": "WWE.com (gauntlet du 19 mars 2019)",
-          "u": "https://www.wwe.com/shows/smackdown/2019-03-19/article/gauntlet-match"
-        },
-        {
-          "n": "WWE.com (WrestleMania 35)",
-          "u": "https://wwe.com/shows/wrestlemania/wrestlemania-35/daniel-bryan-vs-kofi-kingston-results"
-        },
-        {
-          "n": "Fightful",
-          "u": "https://www.fightful.com/wrestling/new-day-run-gauntlet-kofi-kingston-challenges-daniel-bryan-wwe-title-wrestlemania-35-updated-card"
-        },
-        {
-          "n": "The Ringer",
-          "u": "https://www.theringer.com/2019/04/01/mma/wrestlemania-35-match-book-daniel-bryan-vs-kofi-kingston"
-        }
-      ],
-      "d": "2026-10-26",
-      "type": "Grande histoire"
+     "n": "Fightful – Tommy Blacha raconte le tournage de l'accident",
+     "u": "https://www.fightful.com/wrestling/former-wwe-writer-tommy-blacha-recalls-filming-steve-austin-hit-and-run-angle-wwe-survivor-series"
     }
-  ]
+   ]
+  },
+  {
+   "id": "n2r-1993",
+   "d": "2026-11-13",
+   "type": "Grande histoire",
+   "k": "ECW",
+   "years": "1993-2000",
+   "t": "November to Remember : le grand rendez-vous de l’ECW, né un 13 novembre",
+   "hook": "Le 13 novembre 1993, dans une petite salle de Philadelphie, une fédération encore régionale lance l’événement qui deviendra son plus grand show de l’année.",
+   "txt": [
+    "En 1993, l’ECW s’appelle encore Eastern Championship Wrestling. C’est une petite fédération de Philadelphie qui tourne dans l’ancienne salle de bingo devenue l’ECW Arena, et qui se fait connaître grâce à son émission Hardcore TV.",
+    "Le 13 novembre 1993, elle y organise le tout premier November to Remember, devant près de 1 500 spectateurs. Le show, diffusé trois jours plus tard dans Hardcore TV, sert à conclure les rivalités lancées pendant l’automne : dix matchs au programme.",
+    "En tête d’affiche, un match par équipes « le gagnant prend tout » : le champion poids lourd Sabu et Road Warrior Hawk contre le champion télévision Terry Funk et un partenaire mystère, qui se révèle être King Kong Bundy. Coup de théâtre : Bundy se retourne contre Funk, Sabu le fait tomber et repart avec les deux ceintures.",
+    "La soirée a aussi son lot de chaos typique de l’ECW : Sandman et Jim Neidhart se font tomber mutuellement, The Public Enemy gagne un « South Philly Hood match », et Tommy Dreamer et Johnny Gunn remportent les titres par équipes en seulement 9 secondes, juste après une défense de titre.",
+    "Devenue Extreme Championship Wrestling, la fédération fait de November to Remember son événement phare. Il passe en pay-per-view à partir de 1997, avec le duel Bam Bam Bigelow contre Shane Douglas pour le titre mondial, et chaque édition est annoncée sur « November Rain » de Guns N’ Roses.",
+    "La série s’arrête en 2000, quelques mois avant la faillite de l’ECW, avec une dernière édition à Villa Park, près de Chicago. Les droits appartiennent aujourd’hui à la WWE, et le nom reste attaché à l’âge d’or du catch extrême."
+   ],
+   "key": "Sabu profite de la trahison de King Kong Bundy contre Terry Funk pour repartir avec les deux ceintures de l’ECW.",
+   "v": [],
+   "q": [
+    "ECW November to Remember 1993 Sabu Terry Funk",
+    "ECW November to Remember history"
+   ],
+   "src": [
+    {
+     "n": "Wikipédia (anglais) – November to Remember (1993)",
+     "u": "https://en.wikipedia.org/wiki/November_to_Remember_(1993)"
+    },
+    {
+     "n": "Wikipédia (anglais) – November to Remember",
+     "u": "https://en.wikipedia.org/wiki/November_to_Remember"
+    },
+    {
+     "n": "Pro Wrestling Wiki – November to Remember 1993",
+     "u": "https://prowrestling.fandom.com/wiki/November_to_Remember_1993"
+    }
+   ]
+  },
+  {
+   "id": "misawa-kobashi",
+   "d": "2026-11-12",
+   "type": "Rivalité",
+   "t": "Mitsuharu Misawa contre Kenta Kobashi : les deux géants de l’All Japan",
+   "k": "AJPW",
+   "years": "1993-2005",
+   "hook": "Partenaires, rivaux, puis fondateurs d’une nouvelle fédération : leurs combats sont parmi les plus grands de l’histoire du catch japonais.",
+   "txt": [
+    "Au début des années 1990, l’All Japan Pro Wrestling vit son âge d’or grâce à quatre catcheurs surnommés les « Quatre piliers » : Mitsuharu Misawa, Toshiaki Kawada, Akira Taue et Kenta Kobashi. Misawa est le chef de file, l’as de la fédération ; Kobashi est le plus jeune, celui que le public adore pour son courage.",
+    "Les deux hommes commencent côte à côte : le 3 décembre 1993, ils remportent ensemble le tournoi par équipe de fin d’année et les titres mondiaux par équipe. Mais l’élève veut dépasser le maître, et leurs duels pour la Triple Couronne, le grand titre de l’All Japan, deviennent des rendez-vous immanquables.",
+    "Le 25 octobre 1995 au Nippon Budokan, Misawa bat Kobashi avec son Tiger Driver. Kobashi devient enfin champion en juillet 1996, mais le 20 janvier 1997 à Osaka, c’est encore Misawa qui lui reprend la ceinture. Le 31 octobre 1998, une semaine après les débuts du Burning Hammer de Kobashi, Misawa gagne de nouveau : un combat élu match de l’année. Le 11 juin 1999, il l’emporte encore, avec son Emerald Flowsion.",
+    "En juin 2000, Misawa quitte l’All Japan pour fonder la Pro Wrestling Noah, et Kobashi le suit. Le 1er mars 2003, au Nippon Budokan, Kobashi bat enfin Misawa dans un grand match pour la ceinture GHC des poids lourds. Il la garde 735 jours avec 13 défenses réussies, un règne resté légendaire.",
+    "Misawa meurt le 13 juin 2009 après un match à Hiroshima, une perte immense pour le catch japonais. Kobashi, lui, prend sa retraite le 11 mai 2013 lors de « Final Burning » au Budokan. Leur rivalité reste la référence du style « King’s Road » : des matchs très durs, longs et dramatiques."
+   ],
+   "key": "Le 1er mars 2003, Kobashi bat enfin Misawa pour la ceinture GHC et commence un règne de 735 jours.",
+   "v": [],
+   "q": [
+    "Misawa vs Kobashi 2003 GHC full match",
+    "Misawa vs Kobashi All Japan 1998 Triple Crown"
+   ],
+   "src": [
+    {
+     "n": "Wikipédia (en) — Kenta Kobashi",
+     "u": "https://en.wikipedia.org/wiki/Kenta_Kobashi"
+    },
+    {
+     "n": "Pro Wrestling Post",
+     "u": "https://prowrestlingpost.com/?p=38370"
+    }
+   ]
+  },
+  {
+   "id": "leon-ruff-2020",
+   "d": "2026-11-11",
+   "type": "Anecdote",
+   "t": "Leon Ruff, l’inconnu à 0 victoire devenu champion à NXT",
+   "k": "WWE",
+   "years": "2020",
+   "hook": "Il n’avait jamais gagné un seul match à la télé… et un soir, une roue de la chance l’a envoyé décrocher un titre.",
+   "txt": [
+    "Dartanyon Ruffin, né à Detroit en 1996, prend le nom de Leon Ruff en hommage à son grand-père. Formé par A. R. Fox, il fait ses débuts en 2017 et se fait remarquer à Evolve, où il remporte même les titres par équipe avec son entraîneur en 2019.",
+    "À la WWE, il joue d’abord les « locaux » : ces lutteurs engagés pour perdre face aux vedettes, comme lors d’une défaite contre Aleister Black à Raw en mars 2020. Même après avoir signé un contrat à l’été 2020, il continue d’enchaîner les défaites à NXT : il arrive en novembre avec un bilan de 0 victoire et 11 défaites.",
+    "Le 11 novembre 2020, Johnny Gargano, champion Nord-Américain de NXT et grand méchant du show, fait tourner sa « roue des challengers » pour choisir son adversaire du soir. La roue tombe sur Leon Ruff, dont le nom avait été écrit par-dessus celui d’Austin Theory. Personne n’imagine une surprise.",
+    "Mais Damian Priest, ancien champion et ennemi juré de Gargano, s’installe au bord du ring et le distrait un instant. Ruff en profite pour le tomber : l’éternel perdant devient champion Nord-Américain, un des plus gros renversements de l’histoire de NXT. « Un des plus beaux moments de ma vie », écrit-il juste après.",
+    "La semaine suivante, il conserve son titre par disqualification quand Priest le frappe volontairement. Son règne s’arrête à NXT TakeOver: WarGames, le 6 décembre, dans un match à trois contre Gargano et Priest : Gargano récupère la ceinture après 25 jours.",
+    "Ruff fait ensuite équipe avec Kushida au Dusty Rhodes Tag Team Classic 2021, puis est libéré par la WWE en août 2021. Il continue sa carrière sur le circuit indépendant (GCW) et passe brièvement par l’AEW en 2022. Mais pour les fans de NXT, il reste le symbole du petit qui gagne quand personne n’y croit."
+   ],
+   "key": "Le 11 novembre 2020, Leon Ruff, 0 victoire en 11 matchs, tombe Johnny Gargano et devient champion Nord-Américain de NXT.",
+   "v": [],
+   "q": [
+    "Leon Ruff vs Johnny Gargano NXT North American Championship 2020",
+    "Leon Ruff wins North American title NXT"
+   ],
+   "src": [
+    {
+     "n": "Wikipedia (anglais) – Leon Ruff",
+     "u": "https://en.wikipedia.org/wiki/Leon_Ruff"
+    },
+    {
+     "n": "Wrestling Inc – Leon Ruff remporte le titre",
+     "u": "https://www.wrestlinginc.com/news/2020/11/leon-ruff-wins-the-wwe-nxt-north-american-title-from-johnny-676829"
+    },
+    {
+     "n": "Wrestling Inc – réaction de Leon Ruff",
+     "u": "https://www.wrestlinginc.com/news/2020/11/leon-ruff-on-his-wwe-nxt-north-american-title-win-676851"
+    }
+   ]
+  },
+  {
+   "id": "mayu-io",
+   "d": "2026-11-08",
+   "type": "Rivalité",
+   "t": "Mayu Iwatani contre Io Shirai : les sœurs ennemies de la Stardom",
+   "k": "Stardom",
+   "years": "2012–2025",
+   "hook": "Elles ont tout gagné ensemble sous le nom de Thunder Rock, puis se sont déchirées pour la ceinture rouge… avant de se retrouver dix ans plus tard sur un autre ring.",
+   "txt": [
+    "Mayu Iwatani fait partie des toutes premières catcheuses de la Stardom : elle débute dès le premier show de la compagnie, le 23 janvier 2011. Fin 2012, après la retraite de sa partenaire Arisa Hoshiki, elle s'associe à Io Shirai. Le duo prend le nom de Thunder Rock et devient l'une des équipes phares du joshi moderne.",
+    "Le 6 mai 2015, Thunder Rock remporte les ceintures par équipe Goddesses of Stardom, alors vacantes, en battant Chelsea et Kairi Hojo. La même année, le duo gagne la Goddesses of Stardom Tag League et enchaîne onze défenses avant de perdre les titres face à Kagetsu et Kyoko Kimura le 16 juin 2016.",
+    "Mais les deux amies sont aussi rivales. Leur affrontement du 5★STAR GP, le 23 août 2015, est élu meilleur match du tournoi. Le 15 mai 2016, Io Shirai bat Mayu pour le World of Stardom Championship, la fameuse ceinture rouge. Le 11 novembre 2016, Io se retourne contre sa partenaire : Thunder Rock et le clan Threedom sont dissous.",
+    "Le 22 décembre 2016, Io conserve son titre contre Mayu au show de fin d'année, dans un match élu match de l'année 2016 de la Stardom. Il faut attendre le 21 juin 2017 et une cinquième tentative pour que Mayu batte enfin Io et décroche la ceinture rouge.",
+    "Les chemins se séparent ensuite : Io Shirai part pour la WWE, où elle devient IYO SKY, championne de NXT puis star de l'équipe principale. Mayu reste la pierre angulaire de la Stardom, remporte de nouveau la ceinture rouge en 2019 et règne longtemps sur le titre féminin IWGP, avant de quitter la compagnie en avril 2025 pour rejoindre Marigold.",
+    "Le 26 octobre 2025, les deux femmes se retrouvent en tête d'affiche de Grand Destiny, le grand show de Marigold au Ryogoku Kokugikan. IYO SKY l'emporte dans un match récompensé comme l'un des meilleurs de l'année, refermant un chapitre ouvert plus de dix ans plus tôt."
+   ],
+   "key": "Le 21 juin 2017, à sa cinquième tentative, Mayu Iwatani bat enfin son ancienne partenaire Io Shirai pour la ceinture rouge de la Stardom.",
+   "v": [],
+   "q": [
+    "Io Shirai vs Mayu Iwatani Stardom full match",
+    "IYO SKY vs Mayu Iwatani Marigold Grand Destiny"
+   ],
+   "src": [
+    {
+     "n": "Wikipédia (EN) – Mayu Iwatani",
+     "u": "https://en.wikipedia.org/wiki/Mayu_Iwatani"
+    },
+    {
+     "n": "RESURA – Mayu Iwatani vs IYO SKY: The Seven-Year Itch",
+     "u": "https://resuramag.com/2025/10/16/mayu-iwatani-vs-iyo-sky-the-seven-year-itch/"
+    }
+   ]
+  },
+  {
+   "id": "wrestling-classic-1985",
+   "d": "2026-11-07",
+   "type": "Fait marquant",
+   "t": "The Wrestling Classic : le premier vrai pay-per-view de la WWF",
+   "k": "WWE",
+   "years": "1985",
+   "hook": "Le 7 novembre 1985, la WWF tente un pari fou : un gala vendu uniquement à la séance, à la télévision… et lance sans le savoir le modèle des grands événements d’aujourd’hui.",
+   "txt": [
+    "En 1985, la WWF de Vince McMahon sort tout juste de la première WrestleMania. Mais ce show de mars a surtout été vu dans des salles en circuit fermé : la diffusion à la séance chez soi, le « pay-per-view », n’en est qu’à ses débuts. Pour tester ce nouveau marché, la WWF prépare un gala conçu dès le départ pour être vendu uniquement en pay-per-view.",
+    "Le 7 novembre 1985, au Rosemont Horizon, dans la banlieue de Chicago, The Wrestling Classic est proposé aux téléspectateurs. Le cœur de la soirée est un tournoi à élimination directe de 16 catcheurs, avec des noms comme Ricky Steamboat, Terry Funk, The Dynamite Kid, Davey Boy Smith, Tito Santana, Paul Orndorff, The Iron Sheik et un nouveau venu très remarqué : « Macho Man » Randy Savage. Au micro, le duo Gorilla Monsoon et Jesse « The Body » Ventura.",
+    "Le format impose des matchs courts, parfois expédiés en quelques secondes : The Dynamite Kid bat Nikolai Volkoff en sept secondes, et Terry Funk est éliminé par décompte à l’extérieur face à Moondog Spot. Les moments forts viennent de Randy Savage, qui élimine Ricky Steamboat en trichant avec un objet caché, puis The Dynamite Kid sur un petit paquet en demi-finale. De son côté, Junkyard Dog profite d’une exemption : son adversaire devait sortir du duel Orndorff-Santana, terminé par un double décompte à l’extérieur.",
+    "En finale, Junkyard Dog, chouchou du public, s’impose face à Savage par décompte à l’extérieur et remporte le tournoi, sous les cris de la salle. Ventura, lui, peste contre le parcours trop facile du vainqueur. Dans l’autre grand match de la soirée, Hulk Hogan défend son titre WWF contre « Rowdy » Roddy Piper : Bob Orton frappe le champion avec son plâtre, Hogan gagne par disqualification et garde la ceinture, sauvé ensuite par Paul Orndorff armé d’une chaise.",
+    "Sur le ring, la soirée n’est pas un chef-d’œuvre, mais l’essentiel est ailleurs : le gala attire plusieurs dizaines de milliers d’achats et prouve que le public est prêt à payer pour regarder le catch chez lui. Le succès pousse la WWF, puis toute l’industrie, à multiplier les pay-per-view dans les années suivantes. Survivor Series, le Royal Rumble ou SummerSlam suivront, et le modèle des grands événements payants — devenus aujourd’hui les « PLE » — est né en partie ce soir-là."
+   ],
+   "key": "Le 7 novembre 1985, The Wrestling Classic devient le premier gala de la WWF conçu pour être vendu uniquement en pay-per-view, remporté par Junkyard Dog face à Randy Savage.",
+   "v": [],
+   "q": [
+    "WWF The Wrestling Classic 1985",
+    "Randy Savage vs Ricky Steamboat Wrestling Classic 1985"
+   ],
+   "src": [
+    {
+     "n": "TJR Wrestling – The Wrestling Classic 1985",
+     "u": "https://tjrwrestling.net/tjr-retro-wwe-the-wrestling-classic-1985-review"
+    },
+    {
+     "n": "History of Wrestling",
+     "u": "https://historyofwrestling.com/the-wwf-presents-pro-wrestlings-1st-pay-per-view"
+    },
+    {
+     "n": "F4W – Daily Pro Wrestling History (11/07)",
+     "u": "https://www.f4wonline.com/news/other-wrestling/daily-pro-wrestling-history-wwfs-the-wrestling-classic"
+    }
+   ]
+  },
+  {
+   "id": "when-worlds-collide-1994",
+   "d": "2026-11-06",
+   "type": "Fait marquant",
+   "t": "When Worlds Collide : la nuit où la lucha libre a conquis l’Amérique",
+   "k": "AAA",
+   "years": "1993-1994",
+   "hook": "Le 6 novembre 1994, à Los Angeles, la AAA offre à l’Amérique un masque contre cheveux resté parmi les plus grands matchs de l’histoire.",
+   "txt": [
+    "Au début des années 1990, la AAA, fondée par Antonio Peña, bouscule la lucha libre mexicaine. Sa faction rudo la plus détestée s’appelle Los Gringos Locos : Art Barr y a convaincu Eddie Guerrero qu’il vivait dans l’ombre d’El Hijo del Santo, comme son père Gory Guerrero avait vécu dans celle du légendaire El Santo. Eddie trahit Santo, s’associe à Barr et forme La Pareja del Terror, en rouge, blanc et bleu, pour provoquer le public mexicain.",
+    "La rivalité tourne autour des titres par équipe de la AAA : El Hijo del Santo et Octagón les gagnent contre Barr et Guerrero le 5 novembre 1993, puis les perdent le 23 juillet 1994, dans un match présenté comme truqué par l’arbitre. Furieux, les deux héros masqués lancent un défi ultime : leurs masques contre les cheveux des Gringos Locos.",
+    "Le match est placé au cœur de When Worlds Collide, le 6 novembre 1994 au Los Angeles Memorial Sports Arena, devant environ 13 000 spectateurs. Grâce à Eric Bischoff et aux équipes techniques de la WCW, c’est la première fois qu’une fédération étrangère passe en direct à la télévision payante aux États-Unis. Au programme aussi : Rey Misterio Jr., Psicosis, la Pegasus Kid (Chris Benoit) ou encore une cage entre Perro Aguayo et Konnan.",
+    "En deux chutes sur trois, pendant plus de 22 minutes, Octagón et El Hijo del Santo battent La Pareja del Terror. Fidèles à leur personnage jusqu’au bout, Barr et Guerrero se coupent les cheveux l’un l’autre sur le ring. Le Wrestling Observer accorde cinq étoiles au match, une note rare à l’époque.",
+    "Le show change le regard de l’Amérique sur la lucha libre : la WCW et l’ECW recrutent bientôt plusieurs de ses vedettes, dont Eddie Guerrero et Rey Misterio Jr. Mais la fête est brève : Art Barr meurt le 23 novembre 1994, dix-sept jours plus tard, alors qu’il était encore champion par équipe avec Eddie. La AAA retire alors ce titre en son honneur."
+   ],
+   "key": "Octagón et El Hijo del Santo battent Art Barr et Eddie Guerrero dans un masque contre cheveux noté cinq étoiles, devant l’Amérique entière.",
+   "v": [],
+   "q": [
+    "When Worlds Collide 1994 Octagon Santo vs Eddie Guerrero Art Barr",
+    "AAA When Worlds Collide 1994 full show"
+   ],
+   "src": [
+    {
+     "n": "Wikipédia (en) — AAA When Worlds Collide",
+     "u": "https://en.wikipedia.org/wiki/AAA_When_Worlds_Collide"
+    },
+    {
+     "n": "PWTorch — Nov. 6 in history",
+     "u": "https://www.pwtorch.com/artman2/publish/Torch_Today_2/article_74386.shtml"
+    },
+    {
+     "n": "TJR Wrestling — critique du match",
+     "u": "https://tjrwrestling.net/5-star-match-reviews-eddy-guerrero-and-art-barr-vs-octagon-and-el-hijo-del-santo-when-worlds-collide-1994-by-alex-podgorski"
+    }
+   ]
+  },
+  {
+   "id": "gail-kim-bfg-2017",
+   "d": "2026-11-05",
+   "type": "Grande histoire",
+   "t": "Gail Kim, la reine des Knockouts qui a quitté le ring en championne",
+   "k": "TNA",
+   "years": "2007-2017",
+   "hook": "Il y a 9 ans jour pour jour, la toute première championne des Knockouts remportait sa septième ceinture… pour la rendre quelques heures plus tard et partir la tête haute.",
+   "txt": [
+    "Le 14 octobre 2007, à Bound for Glory, TNA couronne pour la première fois une championne de sa division féminine, les Knockouts. Au terme d'un gauntlet à dix catcheuses où figurent notamment Awesome Kong, ODB ou Velvet Sky, c'est Gail Kim qui l'emporte et devient la première détentrice du titre, appelé à l'époque TNA Women's World Championship.",
+    "Passée par la WWE, où elle avait déjà été championne féminine en 2003, la Canadienne y retourne de 2008 à 2011. Son départ fait parler : lors d'une bataille royale, elle sort volontairement du ring, un geste de protestation contre la place qu'on lui donnait. De retour chez TNA, elle repart aussitôt à la conquête du titre et le récupère dès novembre 2011 à Turning Point.",
+    "Les années suivantes, Gail Kim devient le pilier de la division : nouveaux sacres à Bound for Glory 2013, en juin 2014, en juillet 2015 puis encore à Bound for Glory 2016. Rivale, mentor et référence, elle est intronisée au Hall of Fame de la fédération. En juillet 2017, elle annonce que l'année sera sa dernière sur le ring.",
+    "Le 5 novembre 2017, à Bound for Glory à Ottawa, elle affronte la championne Sienna et Allie dans un match à trois. Gail Kim fait le tombé sur Sienna et décroche son septième titre des Knockouts, un record qui n'a toujours pas été égalé, tout comme son total de 711 jours de règne cumulés.",
+    "Ce dernier règne est le plus court de l'histoire de la ceinture : environ 18 heures. Lors des enregistrements suivants, diffusés dans Impact quelques jours plus tard, elle rend le titre et annonce sa retraite, en remerciant celles qui ont compté dans sa carrière, comme Trish Stratus, Lita, Molly Holly, Awesome Kong et Taryn Terrell. Comme Trish Stratus avant elle, elle quitte le catch en championne."
+   ],
+   "key": "Le 5 novembre 2017, Gail Kim bat Sienna et Allie à Bound for Glory et devient sept fois championne des Knockouts, juste avant de prendre sa retraite.",
+   "v": [],
+   "q": [
+    "Gail Kim Sienna Allie Bound for Glory 2017",
+    "Gail Kim first Knockouts Champion Bound for Glory 2007 gauntlet"
+   ],
+   "src": [
+    {
+     "n": "Wikipedia — List of TNA Knockouts World Champions",
+     "u": "https://en.wikipedia.org/wiki/List_of_TNA_Knockouts_World_Champions"
+    },
+    {
+     "n": "Fightful",
+     "u": "https://www.fightful.com/wrestling/gail-kim-becomes-knockouts-champion-impact-retirement-match"
+    },
+    {
+     "n": "Wrestling-Online",
+     "u": "https://wrestling-online.com/tna/gail-kim-relinquishes-knockouts-title-retires-as-champion"
+    }
+   ]
+  },
+  {
+   "id": "pillman-gun-1996",
+   "d": "2026-11-04",
+   "type": "Anecdote",
+   "t": "« Pillman's got a gun » : le soir où Raw est allé trop loin",
+   "k": "WWE",
+   "years": "1996",
+   "hook": "Le 4 novembre 1996, Raw diffuse en direct Stone Cold Steve Austin qui force la porte de Brian Pillman… et Pillman qui l'attend avec une arme à la main.",
+   "txt": [
+    "En 1996, Brian Pillman est l'un des personnages les plus imprévisibles du catch. Surnommé « The Loose Cannon », il a quitté la WCW au début de l'année après avoir joué de façon troublante avec la frontière entre fiction et réalité, puis a signé à la WWF. Mais un grave accident de voiture au printemps lui abîme la cheville et l'empêche de combattre.",
+    "Ne pouvant pas monter sur le ring, Pillman se retrouve dans une rivalité avec son ancien partenaire des Hollywood Blonds, Stone Cold Steve Austin, alors en pleine ascension. L'histoire veut qu'Austin s'en prenne à lui alors qu'il est blessé : la rivalité devient « personnelle ».",
+    "Le 4 novembre 1996, Raw est en direct. Le journaliste Kevin Kelly se trouve chez Pillman, à Walton dans le Kentucky, avec sa femme Melanie. Pillman, la jambe dans le plâtre, explique qu'il connaît Austin mieux que personne. On annonce qu'Austin tourne dans le quartier. Quand il arrive, Pillman sort un pistolet.",
+    "Dehors, Austin se débarrasse des amis de Pillman chargés de protéger la maison, fait le tour et brise une fenêtre. Pillman braque son arme vers lui… et le signal « se coupe ». Quand l'émission revient pour les deux dernières minutes, Pillman, retenu par ses amis, hurle, agite l'arme et lâche un juron qui passe sans censure à l'antenne.",
+    "La séquence choque les téléspectateurs et les critiques. La chaîne USA Network, mécontente, exige des excuses de la WWF et de Pillman. Le même soir, un jeune Rocky Maivia — le futur The Rock — faisait sa première apparition à Raw, presque passée inaperçue.",
+    "Avec le recul, ce segment est souvent cité comme l'un des premiers signes de l'« Attitude Era », plus provocatrice. Il reste aussi l'un des moments les plus controversés de l'histoire de Raw. Pillman, lui, nous a quittés en octobre 1997, à seulement 35 ans."
+   ],
+   "key": "En direct à la télévision, Brian Pillman braque une arme sur Steve Austin qui vient de briser une fenêtre de sa maison, avant que l'image ne se coupe.",
+   "v": [],
+   "q": [
+    "Brian Pillman Steve Austin gun Raw 1996",
+    "Pillman's got a gun WWE"
+   ],
+   "src": [
+    {
+     "n": "Wikipedia — History of WWE Raw",
+     "u": "https://en.wikipedia.org/wiki/History_of_WWE_Raw"
+    },
+    {
+     "n": "KB Wrestling Reviews — Raw du 4 novembre 1996",
+     "u": "https://kbwrestlingreviews.com/2023/02/24/monday-night-raw-november-4-1996-pillmans-got-a-gun/"
+    },
+    {
+     "n": "TJR Wrestling — 4 novembre dans l'histoire",
+     "u": "https://tjrwrestling.net/wrestling-history/november-4/"
+    }
+   ]
+  },
+  {
+   "id": "hiac-2016-charlotte-sasha",
+   "d": "2026-10-30",
+   "type": "Fait marquant",
+   "t": "Charlotte contre Sasha Banks : les femmes en tête d'affiche dans la cellule",
+   "k": "WWE",
+   "years": "2016",
+   "hook": "Le 30 octobre 2016, pour la première fois, un match féminin ferme un pay-per-view de la WWE… et il se joue dans l'Enfer de la Cellule.",
+   "txt": [
+    "En avril 2016, à WrestleMania 32, Charlotte remporte le nouveau championnat féminin de la WWE et le garde près de quatre mois. Face à elle se dresse Sasha Banks, revenue de blessure pendant l'été : à Battleground, le 24 juillet, Sasha fait abandonner Charlotte dans un match par équipes avec Bayley.",
+    "Dès le lendemain, le 25 juillet à Raw, Sasha obtient son match de championnat et gagne la ceinture. Commence alors un incroyable chassé-croisé : Charlotte reprend le titre à SummerSlam, le conserve à Clash of Champions dans un match à trois, puis Sasha le lui reprend le 3 octobre à Raw. Aucune des deux n'arrive à défendre le titre en un contre un.",
+    "Pour départager les deux rivales, la WWE choisit le match le plus dur de son catalogue : Hell in a Cell, jamais disputé par des femmes. Et elle va plus loin : le match est placé en fin de soirée, le 30 octobre 2016 à Boston. C'est la première fois qu'un match féminin est le main event d'un pay-per-view de la WWE.",
+    "Le combat démarre avant même la descente de la cage. Charlotte projette Sasha à travers la table des commentateurs avec une powerbomb ; la championne est installée sur une civière avec une minerve. Au moment où l'arbitre s'apprête à donner le titre à Charlotte par forfait, Sasha saute de la civière, attaque son adversaire, et le match commence vraiment.",
+    "Chaises, tables, marches d'acier, grillage de la cellule : les deux femmes utilisent tout. À la fin, le dos de Sasha lâche pendant une tentative de powerbomb à travers une table ; Charlotte en profite et l'achève avec Natural Selection pour remporter son troisième titre féminin — le quatrième changement de champion en 98 jours.",
+    "Ce soir-là a ouvert une porte : les femmes ont ensuite eu leur propre match en cage, leur Royal Rumble, et, en 2019, le main event de WrestleMania."
+   ],
+   "key": "Sasha Banks se relève de sa civière pour lancer le premier Hell in a Cell féminin, qui devient le premier main event féminin d'un pay-per-view WWE.",
+   "v": [],
+   "q": [
+    "Charlotte vs Sasha Banks Hell in a Cell 2016 full match",
+    "Sasha Banks Charlotte Flair rivalry 2016 WWE"
+   ],
+   "src": [
+    {
+     "n": "Sportskeeda",
+     "u": "https://sportskeeda.com/wwe/remembering-sasha-banks-vs-charlotte-flair-the-first-women-s-hell-in-a-cell"
+    },
+    {
+     "n": "CBS Sports",
+     "u": "https://www.cbssports.com/general/news/wwe-hell-in-a-cell-2016-results-owens-retains-charlotte-wins-womens-title"
+    },
+    {
+     "n": "TJR Wrestling",
+     "u": "https://tjrwrestling.net/wrestling-history/october-30/"
+    }
+   ]
+  },
+  {
+   "id": "halloween-havoc-1995",
+   "d": "2026-10-29",
+   "type": "Anecdote",
+   "t": "Halloween Havoc 1995 : des monster trucks sur un toit et un géant qui tombe du ciel",
+   "k": "WCW",
+   "years": "1995",
+   "hook": "Un duel de camions géants sur le toit d'un bâtiment, une chute « mortelle » et un débutant qui repart champion du monde : bienvenue dans la soirée la plus folle de la WCW.",
+   "txt": [
+    "En 1995, la WCW mise tout sur Hulk Hogan et lui oppose un adversaire hors normes : The Giant, un colosse de plus de 2,10 m (futur Big Show), membre du Dungeon of Doom de Kevin Sullivan, ce clan de « monstres » décidé à détrôner l'icône. Lors de Fall Brawl, le Giant écrase la précieuse Harley-Davidson de Hogan, et la rivalité est lancée.",
+    "Pour faire monter la tension avant Halloween Havoc, la WCW imagine un affrontement inédit : un « Sumo Monster Truck match ». Le principe ressemble au sumo : chacun pilote un monster truck — « Hulkster » contre « Dungeon of Doom » — et doit pousser le véhicule adverse hors d'un grand cercle. Le duel, enregistré la veille, se déroule sur le toit du Cobo Hall, à Détroit.",
+    "Hogan remporte le duel de camions, mais la bagarre continue à pied sur le toit. En se libérant d'une prise d'étranglement, il fait basculer le Giant dans le vide ; Hogan tente de le retenir, en vain, et la réalisation montre l'eau en contrebas. À l'antenne, on laisse planer le doute sur le sort du géant…",
+    "Le 29 octobre 1995, au Joe Louis Arena de Détroit, le Giant se présente pourtant tranquillement pour le main event, sans une égratignure — la WCW n'expliquera jamais vraiment sa « survie ». C'est son tout premier match à la WCW, et il défie Hogan pour le championnat du monde.",
+    "Le combat bascule dans le chaos : Jimmy Hart, le manager de Hogan, le trahit en le frappant avec son mégaphone, le Dungeon of Doom s'en mêle et un étrange personnage, The Yeti, enveloppé de bandelettes comme une momie, serre Hogan dans une étreinte à deux avec le Giant. Lex Luger, lui, se retourne contre Randy Savage. Le Giant l'emporte par disqualification.",
+    "Normalement, un titre ne change pas de mains sur une disqualification, mais le Giant repart avec la ceinture grâce à une clause glissée par Jimmy Hart dans le contrat du match. Le titre est rapidement déclaré vacant en raison de cette fin controversée. La soirée reste aujourd'hui l'une des plus improbables de l'histoire du catch, entre camions géants, chute du toit et momie-yéti."
+   ],
+   "key": "Après avoir « chuté » du toit du Cobo Hall la veille, le Giant revient indemne et bat Hulk Hogan par disqualification pour son tout premier match à la WCW.",
+   "v": [],
+   "q": [
+    "WCW Halloween Havoc 1995 Monster Truck Sumo Hogan Giant",
+    "Hulk Hogan vs The Giant Halloween Havoc 1995"
+   ],
+   "src": [
+    {
+     "n": "Philadelphia Inquirer – Throwback Thursday : Halloween Havoc 1995",
+     "u": "https://inquirer.com/philly/blogs/the-squared-circle/Throwback-Thursday-Looking-back-at-WCW-Halloween-Havoc-1995.html"
+    },
+    {
+     "n": "WWE.com – Best and Worst of WCW Halloween Havoc",
+     "u": "https://www.wwe.com/classics/classic-lists/best-worst-wcw-halloween-havoc"
+    },
+    {
+     "n": "WrestleCrap – Monster Truck Sumo Match",
+     "u": "https://www.wrestlecrap.com/inductions/monster-truck-sumo-match/"
+    },
+    {
+     "n": "TJR Wrestling – 29 octobre dans l'histoire du catch",
+     "u": "https://tjrwrestling.net/wrestling-history/october-29/"
+    }
+   ]
+  },
+  {
+   "id": "okada-omega",
+   "d": "2026-10-28",
+   "type": "Rivalité",
+   "t": "Okada contre Omega",
+   "k": "NJPW",
+   "years": "2017-2018",
+   "hook": "Quatre combats en dix-huit mois, plus de deux heures et demie de lutte cumulée, et des notes qui ont fait exploser l'échelle : la rivalité qui a redéfini le catch japonais moderne.",
+   "txt": [
+    "Fin 2016, Kazuchika Okada est le visage de la New Japan Pro-Wrestling et le champion IWGP poids lourd. Face à lui, Kenny Omega, Canadien devenu leader du Bullet Club, vient de remporter le G1 Climax, ce qui lui offre le main event du plus grand show de l'année.",
+    "Le 4 janvier 2017, à Wrestle Kingdom 11 au Tokyo Dome, les deux hommes livrent un combat d'environ 46 minutes. Okada conserve son titre grâce à son Rainmaker, mais le match marque les esprits : le journaliste Dave Meltzer lui attribue 6 étoiles, une note jamais donnée jusque-là dans son barème censé s'arrêter à 5.",
+    "La revanche a lieu le 11 juin 2017 à Dominion, à Osaka. Cette fois, rien ne départage les deux rivaux : ils luttent les 60 minutes réglementaires et le match se termine sur un nul. Quelques semaines plus tard, au G1 Climax 27, Omega prend enfin le dessus : dans un match limité à 30 minutes, il bat un Okada diminué par une blessure au cou grâce à son One-Winged Angel.",
+    "Il faut attendre Dominion, le 9 juin 2018, pour le chapitre final. Pour garantir un vainqueur, la NJPW impose un match sans limite de temps en deux chutes gagnantes sur trois. Okada prend la première, Omega égalise, puis l'emporte au bout de près de 65 minutes avec un dernier One-Winged Angel. Il met ainsi fin au règne record d'Okada et devient champion IWGP poids lourd.",
+    "Cette série a contribué à faire connaître la NJPW bien au-delà du Japon et a consacré les deux hommes parmi les meilleurs lutteurs de leur génération. Leurs chemins se sont recroisés plus tard à l'AEW, où un nouveau duel avec deux ceintures en jeu a été officialisé pour All In en 2025."
+   ],
+   "key": "Le 9 juin 2018 à Dominion, Omega remporte la troisième chute d'un match sans limite de temps et détrône enfin Okada.",
+   "v": [],
+   "q": [
+    "Kazuchika Okada vs Kenny Omega Wrestle Kingdom 11",
+    "Okada vs Omega Dominion 2018 2 out of 3 falls"
+   ],
+   "src": [
+    {
+     "n": "WrestleInn – From Kingdom to Dominion",
+     "u": "https://wrestleinn.com/2022/01/03/from-kingdom-to-dominion/"
+    },
+    {
+     "n": "TheSportster – Okada vs Omega, classement des matchs",
+     "u": "https://www.thesportster.com/kazuchika-okada-vs-kenny-omega-matches-njpw-ranked-worst-best/"
+    },
+    {
+     "n": "F4W Online – Omega vs Okada à All In",
+     "u": "https://www.f4wonline.com/news/aew/omega-vs-okada-aew-all-in-double-title-match-official"
+    }
+   ]
+  },
+  {
+   "id": "kofimania",
+   "t": "La KofiMania",
+   "k": "WWE",
+   "years": "2019",
+   "hook": "Plus de dix ans à attendre sa chance, puis deux mois où tout le public s’est rangé derrière lui : l’histoire qui a mené Kofi Kingston au sommet de WrestleMania.",
+   "txt": [
+    "Début 2019, Kofi Kingston est un pilier de la WWE depuis plus de dix ans. Champion par équipe à de nombreuses reprises avec le New Day, il n’a pourtant jamais eu de vraie chance au titre suprême : tout le monde l’apprécie, mais personne ne l’imagine à la première place.",
+    "Tout bascule en février 2019. Mustafa Ali, blessé, doit renoncer à l’Elimination Chamber et Kofi le remplace au pied levé. Lors du SmackDown qui précède, il participe à un gauntlet match : il enchaîne les adversaires pendant de longues minutes et ne s’incline qu’à la toute fin face à AJ Styles, sous les ovations. Quelques jours plus tard, dans la Chamber, il est le dernier à tomber face au champion Daniel Bryan. Une étoile est née.",
+    "Le public réclame Kofi, mais Vince McMahon, le patron dans l’histoire, refuse de le voir en champion. Semaine après semaine, il lui retire son match, ajoute des obstacles et lui impose des défis impossibles. Le 19 mars, Kofi doit battre cinq adversaires d’affilée pour obtenir sa chance : il vient à bout de Sheamus, Cesaro, Rowan (par disqualification), Samoa Joe et Randy Orton… avant que McMahon n’ajoute Daniel Bryan en personne, qui l’achève.",
+    "Ses partenaires Big E et Xavier Woods prennent alors le relais : le 26 mars, ils remportent à leur tour un gauntlet par équipe et forcent McMahon à accorder à Kofi son match de championnat à WrestleMania 35.",
+    "Le 7 avril 2019, au MetLife Stadium, Kofi Kingston bat Daniel Bryan et devient champion de la WWE, le premier né en Afrique (il est originaire du Ghana). Ses fils le rejoignent sur le ring pour une célébration restée dans toutes les mémoires. La « KofiMania » reste l’un des plus beaux exemples d’histoire portée par le public."
+   ],
+   "key": "Le gauntlet du 19 mars 2019 : cinq victoires d’affilée, puis l’entrée surprise de Daniel Bryan imposée par Vince McMahon.",
+   "v": [],
+   "q": [
+    "Kofi Kingston vs Daniel Bryan WrestleMania 35",
+    "Kofi Kingston gauntlet SmackDown 2019"
+   ],
+   "src": [
+    {
+     "n": "WWE.com (gauntlet du 19 mars 2019)",
+     "u": "https://www.wwe.com/shows/smackdown/2019-03-19/article/gauntlet-match"
+    },
+    {
+     "n": "WWE.com (WrestleMania 35)",
+     "u": "https://wwe.com/shows/wrestlemania/wrestlemania-35/daniel-bryan-vs-kofi-kingston-results"
+    },
+    {
+     "n": "Fightful",
+     "u": "https://www.fightful.com/wrestling/new-day-run-gauntlet-kofi-kingston-challenges-daniel-bryan-wwe-title-wrestlemania-35-updated-card"
+    },
+    {
+     "n": "The Ringer",
+     "u": "https://www.theringer.com/2019/04/01/mma/wrestlemania-35-match-book-daniel-bryan-vs-kofi-kingston"
+    }
+   ],
+   "d": "2026-10-26",
+   "type": "Grande histoire"
+  }
+ ]
 }
