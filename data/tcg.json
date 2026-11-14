@@ -1439,6 +1439,19 @@
    },
    "gimmick": "",
    "medalOf": "Virus"
+  },
+  "flammer": {
+   "k": "AAA",
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Flammer"
   }
  },
  "bgm": {
