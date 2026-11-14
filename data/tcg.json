@@ -1602,6 +1602,19 @@
    },
    "gimmick": "",
    "medalOf": "Erik"
+  },
+  "erik": {
+   "k": "WWE",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Powerbomb",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Ivar"
   }
  },
  "bgm": {
