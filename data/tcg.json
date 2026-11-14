@@ -2051,6 +2051,19 @@
    },
    "gimmick": "",
    "medalOf": "Go Shiozaki"
+  },
+  "grayson-waller": {
+   "k": "WWE",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Grayson Waller"
   }
  },
  "bgm": {
