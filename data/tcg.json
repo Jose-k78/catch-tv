@@ -1976,6 +1976,18 @@
    },
    "gimmick": "",
    "medalOf": "Gail Kim"
+  },
+  "blue-demon-jr": {
+   "r": "N",
+   "max": "R",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Blue Demon Jr"
   }
  },
  "bgm": {
