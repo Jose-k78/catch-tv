@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13",
+ "updated": "2026-11-14",
  "note": "Champions actuels : peut révéler des résultats récents.",
  "titles": [
   {
@@ -17,27 +17,56 @@
     {
      "c": "CM Punk",
      "d": "2025-11-01",
-     "ev": "Saturday Night’s Main Event XLI"
+     "ev": "Saturday Night’s Main Event XLI",
+     "j": 169
     },
     {
      "c": "Seth Rollins",
      "d": "2025-08-02",
-     "ev": "SummerSlam"
+     "ev": "SummerSlam",
+     "j": 79
     },
     {
      "c": "CM Punk",
      "d": "2025-08-02",
-     "ev": "SummerSlam"
+     "ev": "SummerSlam",
+     "j": 0
     },
     {
      "c": "Gunther",
      "d": "2025-06-09",
-     "ev": "Raw"
+     "ev": "Raw",
+     "j": 54
     },
     {
      "c": "Jey Uso",
      "d": "2025-04-19",
-     "ev": "WrestleMania 41"
+     "ev": "WrestleMania 41",
+     "j": 51
+    },
+    {
+     "c": "Gunther",
+     "d": "2024-08-03",
+     "ev": "SummerSlam",
+     "j": 259
+    },
+    {
+     "c": "Damian Priest",
+     "d": "2024-04-07",
+     "ev": "WrestleMania XL",
+     "j": 118
+    },
+    {
+     "c": "Drew McIntyre",
+     "d": "2024-04-07",
+     "ev": "WrestleMania XL",
+     "j": 0
+    },
+    {
+     "c": "Seth Rollins",
+     "d": "2023-05-27",
+     "ev": "Night of Champions",
+     "j": 316
     }
    ],
    "src": "The SmackDown Hotel",
@@ -473,8 +502,14 @@
    "hist": [],
    "src": "The SmackDown Hotel",
    "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe",
-   "defs": [],
-   "def": 0
+   "defs": [
+    {
+     "d": "2026-11-13",
+     "ev": "SmackDown",
+     "vs": "Bakusai (Shinsuke Nakamura et Kyoki)"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "wwe-wtag",
