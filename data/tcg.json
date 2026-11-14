@@ -1692,6 +1692,19 @@
    },
    "gimmick": "",
    "medalOf": "Solo Sikoa"
+  },
+  "jay-lethal": {
+   "k": "AEW",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Lethal Injection",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Truth Martini"
   }
  },
  "bgm": {
