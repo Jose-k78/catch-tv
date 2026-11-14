@@ -1426,6 +1426,19 @@
    },
    "gimmick": "",
    "medalOf": "Blue Panther"
+  },
+  "virus": {
+   "k": "CMLL",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Powerbomb",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Virus"
   }
  },
  "bgm": {
