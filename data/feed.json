@@ -1,5 +1,5 @@
 {
- "at": "2026-11-14T00:53:17.177Z",
+ "at": "2026-11-14T01:57:27.911Z",
  "items": [
   {
    "t": "La WWE prépare un RAW spécial pour le 4 janvier 2027",
@@ -10,6 +10,23 @@
     "WWE",
     "Raw"
    ]
+  },
+  {
+   "t": "Elio LeFleur a combattu à WWE Main Event",
+   "u": "https://www.catch-newz.com/wwe/newz/61289-elio-lefleur-a-combattu-a-wwe-main-event",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": [
+    "WWE",
+    "Main Event"
+   ]
+  },
+  {
+   "t": "La scène de FinalSlam dévoilée",
+   "u": "https://www.catch-newz.com/international/newz/61288-la-scene-de-finalslam-devoilee",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": []
   },
   {
    "t": "Preview : AAA Lucha Libre du 14 novembre 2026",
@@ -27,6 +44,16 @@
    "s": "Catch-Newz",
    "d": "2026-11-14",
    "tags": []
+  },
+  {
+   "t": "Résultats de WWE SmackDown du 13 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-13",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
   },
   {
    "t": "Preview : WWE SmackDown du 13 novembre 2026",
@@ -206,13 +233,6 @@
    ]
   },
   {
-   "t": "Résultats de MLW Fusion du 12 novembre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61280-resultats-de-mlw-fusion-du-12-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": []
-  },
-  {
    "t": "AEW Dynamite & Collision du 11 novembre : Dernière ligne droite vers AEW Full Gear",
    "u": "https://www.voxcatch.fr/2026/11/12/resultats-aew-dynamite-collision-11-novembre-2026/",
    "s": "VOXcatch",
@@ -222,6 +242,13 @@
     "Dynamite",
     "Collision"
    ]
+  },
+  {
+   "t": "Résultats de MLW Fusion du 12 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61280-resultats-de-mlw-fusion-du-12-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": []
   },
   {
    "t": "Résultats de TNA Impact du 12 novembre 2026",
@@ -500,30 +527,6 @@
   {
    "t": "Anyme : « Tout vous gêne, tout vous insupporte, tout vous dérange »",
    "u": "https://www.catch-newz.com/international/newz/61231-anyme-tout-vous-gene-tout-vous-insupporte-tout-vous-derange",
-   "s": "Catch-Newz",
-   "d": "2026-11-11",
-   "tags": []
-  },
-  {
-   "t": "Carmelo Hayes toujours vivant après WWE RAW ?",
-   "u": "https://www.catch-newz.com/wwe/newz/61230-carmelo-hayes-toujours-vivant-apres-wwe-raw",
-   "s": "Catch-Newz",
-   "d": "2026-11-11",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
-  },
-  {
-   "t": "Résultats de ChocoPro #554 New Dawn",
-   "u": "https://www.catch-newz.com/international/resultats/61212-resultats-de-chocopro-554-new-dawn",
-   "s": "Catch-Newz",
-   "d": "2026-11-11",
-   "tags": []
-  },
-  {
-   "t": "Résultats du jour 13 de DG The Gate Of Victory 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61210-resultats-du-jour-13-de-dg-the-gate-of-victory-2026",
    "s": "Catch-Newz",
    "d": "2026-11-11",
    "tags": []
@@ -1033,8 +1036,11 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-pour-le-4-janvier-2027",
+   "https://www.catch-newz.com/wwe/newz/61289-elio-lefleur-a-combattu-a-wwe-main-event",
+   "https://www.catch-newz.com/international/newz/61288-la-scene-de-finalslam-devoilee",
    "https://www.catch-newz.com/aew/resultats/61281-resultats-de-roh-du-12-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61269-resultats-de-wwe-road-to-survivor-series-du-12-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61268-resultats-et-streaming-de-wwe-evolve-du-11-novembre-2026",
@@ -1329,14 +1335,11 @@
    "https://www.catch-newz.com/international/resultats/60995-resultats-du-jour-8-de-dg-the-gate-of-victory-2026-partie-2",
    "https://www.catch-newz.com/international/resultats/60994-resultats-de-cmll-martes-de-glamour-du-3-novembre-2026",
    "https://www.catch-newz.com/international/resultats/60993-resultats-de-cmll-martes-populares-du-3-novembre-2026",
-   "https://www.catch-newz.com/culture/gaming/60990-la-saison-13-de-wwe-supercard-est-lancee",
-   "https://www.catch-newz.com/wwe/newz/60989-chad-gable-sort-du-silence-apres-sa-perte-de-titre-a-raw",
-   "https://www.catch-newz.com/aew/newz/60988-taya-valkyrie-quitte-laew",
-   "https://www.catch-newz.com/wwe/newz/60987-spoiler-une-catcheuse-de-smackdown-dans-les-coulisses-de-wwe-nxt-du-4-novembre"
+   "https://www.catch-newz.com/culture/gaming/60990-la-saison-13-de-wwe-supercard-est-lancee"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
