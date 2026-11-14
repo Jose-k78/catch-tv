@@ -1911,6 +1911,19 @@
    },
    "gimmick": "",
    "medalOf": "Tessa Blanchard"
+  },
+  "dorian-van-dux": {
+   "k": "WWE",
+   "r": "N",
+   "max": "R",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Dorian Van Dux"
   }
  },
  "bgm": {
