@@ -1452,6 +1452,19 @@
    },
    "gimmick": "",
    "medalOf": "Flammer"
+  },
+  "chazz-starboy-hall": {
+   "k": "WWE",
+   "r": "R",
+   "max": "SR",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Powerbomb",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Chazz \"Starboy\" Hall"
   }
  },
  "bgm": {
