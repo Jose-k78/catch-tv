@@ -2139,6 +2139,19 @@
    },
    "gimmick": "",
    "medalOf": "Lady Metal"
+  },
+  "iyo-sky": {
+   "k": "WWE",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Over the Moonsault",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Bayley"
   }
  },
  "bgm": {
