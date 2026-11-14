@@ -2241,6 +2241,18 @@
    },
    "gimmick": "",
    "medalOf": "Yuka Sakazaki"
+  },
+  "arn-anderson": {
+   "r": "R",
+   "max": "SSR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Spinebuster",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Ric Flair"
   }
  },
  "bgm": {
