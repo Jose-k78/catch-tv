@@ -1,5 +1,5 @@
 {
- "at": "2026-11-14T01:57:27.962Z",
+ "at": "2026-11-14T03:47:17.709Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/international/newz/60844-carte-de-lol-mischief-night-mayhem-5": "2026-10-31",
@@ -440,7 +440,8 @@
   "a:https://www.catch-newz.com/international/newz/61276-carte-de-cmll-sabado-de-coliseo-du-14-novembre-2026": "2026-11-13",
   "a:https://www.catch-newz.com/aew/resultats/61281-resultats-de-roh-du-12-novembre-2026": "2026-11-13",
   "a:https://www.catch-newz.com/wwe/newz/61289-elio-lefleur-a-combattu-a-wwe-main-event": "2026-11-14",
-  "a:https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026": "2026-11-14"
+  "a:https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026": "2026-11-14",
+  "a:https://www.catch-newz.com/wwe/newz/61291-stephanie-vaquer-rejoint-lequipe-de-charlotte-flair-le-wargames-feminin-est-officiel-pour-les-survivor-series": "2026-11-14"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -459,6 +460,14 @@
     "url": "#/",
     "tag": "art",
     "short": "2 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Nouvelle info · Catch-Newz",
+    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "1 nouvelle info"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -477,6 +486,14 @@
     "url": "#/",
     "tag": "art",
     "short": "2 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Nouvelle info · Catch-Newz",
+    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "1 nouvelle info"
    }
   ]
  }

@@ -1,6 +1,15 @@
 {
- "at": "2026-11-14T02:46:27.957Z",
+ "at": "2026-11-14T03:47:17.650Z",
  "items": [
+  {
+   "t": "Stephanie Vaquer rejoint l'équipe de Charlotte Flair, le WarGames féminin est officiel pour les Survivor Series",
+   "u": "https://www.catch-newz.com/wwe/newz/61291-stephanie-vaquer-rejoint-lequipe-de-charlotte-flair-le-wargames-feminin-est-officiel-pour-les-survivor-series",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "La WWE prépare un RAW spécial pour le 4 janvier 2027",
    "u": "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-pour-le-4-janvier-2027",
@@ -523,13 +532,6 @@
     "AEW",
     "Dynamite"
    ]
-  },
-  {
-   "t": "Anyme : « Tout vous gêne, tout vous insupporte, tout vous dérange »",
-   "u": "https://www.catch-newz.com/international/newz/61231-anyme-tout-vous-gene-tout-vous-insupporte-tout-vous-derange",
-   "s": "Catch-Newz",
-   "d": "2026-11-11",
-   "tags": []
   }
  ],
  "yt": {
@@ -1036,6 +1038,7 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/newz/61291-stephanie-vaquer-rejoint-lequipe-de-charlotte-flair-le-wargames-feminin-est-officiel-pour-les-survivor-series",
    "https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-pour-le-4-janvier-2027",
@@ -1334,12 +1337,11 @@
    "https://www.catch-newz.com/international/resultats/60999-resultats-du-jour-4-du-hop-spooktober-tour-2026",
    "https://www.catch-newz.com/international/resultats/60995-resultats-du-jour-8-de-dg-the-gate-of-victory-2026-partie-2",
    "https://www.catch-newz.com/international/resultats/60994-resultats-de-cmll-martes-de-glamour-du-3-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/60993-resultats-de-cmll-martes-populares-du-3-novembre-2026",
-   "https://www.catch-newz.com/culture/gaming/60990-la-saison-13-de-wwe-supercard-est-lancee"
+   "https://www.catch-newz.com/international/resultats/60993-resultats-de-cmll-martes-populares-du-3-novembre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
