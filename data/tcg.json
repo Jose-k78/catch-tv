@@ -1490,6 +1490,19 @@
    },
    "gimmick": "",
    "medalOf": "Takuma"
+  },
+  "ruby-soho": {
+   "k": "AEW",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "No Future",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Saraya"
   }
  },
  "bgm": {
