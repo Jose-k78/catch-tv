@@ -1552,6 +1552,18 @@
    },
    "gimmick": "",
    "medalOf": "Giulia"
+  },
+  "kevin-nash": {
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Jackknife Powerbomb",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Hulk Hogan"
   }
  },
  "bgm": {
