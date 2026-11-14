@@ -2039,6 +2039,18 @@
    },
    "gimmick": "",
    "medalOf": "VertVixen"
+  },
+  "go-shiozaki": {
+   "r": "N",
+   "max": "R",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Go Flasher",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Go Shiozaki"
   }
  },
  "bgm": {
