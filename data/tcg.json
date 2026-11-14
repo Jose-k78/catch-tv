@@ -1249,6 +1249,19 @@
    },
    "gimmick": "",
    "medalOf": "Don Callis"
+  },
+  "anne-kanaya": {
+   "k": "Stardom",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Anne Kanaya"
   }
  },
  "bgm": {
