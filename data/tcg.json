@@ -1576,6 +1576,19 @@
    },
    "gimmick": "",
    "medalOf": "Kurt Angle"
+  },
+  "eddie-colon": {
+   "k": "ROH",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Eddie Colón"
   }
  },
  "bgm": {
