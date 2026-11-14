@@ -1325,6 +1325,18 @@
    },
    "gimmick": "",
    "medalOf": "Fantástico"
+  },
+  "curt-hennig": {
+   "r": "N",
+   "max": "R",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Perfect-Plex",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Curt Hennig"
   }
  },
  "bgm": {
