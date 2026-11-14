@@ -1732,6 +1732,18 @@
    },
    "gimmick": "",
    "medalOf": "Rob Van Dam"
+  },
+  "karl-anderson": {
+   "r": "R",
+   "max": "SSR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Luke Gallows"
   }
  },
  "bgm": {
