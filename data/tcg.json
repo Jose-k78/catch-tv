@@ -1615,6 +1615,18 @@
    },
    "gimmick": "",
    "medalOf": "Ivar"
+  },
+  "terry-funk": {
+   "r": "N",
+   "max": "R",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spinning Toe Hold",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Terry Funk"
   }
  },
  "bgm": {
