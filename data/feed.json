@@ -1,9 +1,27 @@
 {
- "at": "2026-11-14T18:06:13.400Z",
+ "at": "2026-11-14T18:43:09.593Z",
  "items": [
   {
-   "t": "Les ceintures de FinalSlam dévoilées",
-   "u": "https://www.catch-newz.com/international/newz/61299-les-ceintures-de-finalslam-devoilees",
+   "t": "Spike Dudley signe un contrat de légende avec la WWE",
+   "u": "https://www.catch-newz.com/wwe/newz/61301-spike-dudley-signe-un-contrat-de-legende-avec-la-wwe",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "L'AEW organise des vols privés pour Full Gear 2026",
+   "u": "https://www.catch-newz.com/aew/newz/61302-laew-organise-des-vols-prives-pour-full-gear-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": [
+    "AEW"
+   ]
+  },
+  {
+   "t": "Carte de TNT Cold Day In Hell 2026",
+   "u": "https://www.catch-newz.com/international/newz/61308-carte-de-tnt-cold-day-in-hell-2026",
    "s": "Catch-Newz",
    "d": "2026-11-14",
    "tags": []
@@ -24,6 +42,13 @@
     "WWE",
     "SmackDown"
    ]
+  },
+  {
+   "t": "Les ceintures de FinalSlam dévoilées",
+   "u": "https://www.catch-newz.com/international/newz/61299-les-ceintures-de-finalslam-devoilees",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": []
   },
   {
    "t": "Résultats de Beyond Wrestling Open Series 250",
@@ -341,16 +366,6 @@
    ]
   },
   {
-   "t": "Résultats de ROH du 12 novembre 2026",
-   "u": "https://www.catch-newz.com/aew/resultats/61281-resultats-de-roh-du-12-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "AEW",
-    "ROH"
-   ]
-  },
-  {
    "t": "AEW Dynamite & Collision du 11 novembre : Dernière ligne droite vers AEW Full Gear",
    "u": "https://www.voxcatch.fr/2026/11/12/resultats-aew-dynamite-collision-11-novembre-2026/",
    "s": "VOXcatch",
@@ -359,6 +374,16 @@
     "AEW",
     "Dynamite",
     "Collision"
+   ]
+  },
+  {
+   "t": "Résultats de ROH du 12 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/resultats/61281-resultats-de-roh-du-12-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "AEW",
+    "ROH"
    ]
   },
   {
@@ -492,34 +517,6 @@
    "d": "2026-11-12",
    "tags": [
     "CMLL"
-   ]
-  },
-  {
-   "t": "Il y a 8 ans, cette blessure a changé la carrière de Becky Lynch",
-   "u": "https://www.catch-newz.com/wwe/newz/61249-il-y-a-8-ans-cette-blessure-a-change-la-carriere-de-becky-lynch",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "AEW Full Gear 2026 : Heure et chaine pour regarder le show en direct",
-   "u": "https://www.catch-newz.com/aew/newz/61248-aew-full-gear-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "AEW"
-   ]
-  },
-  {
-   "t": "Preview : TNA Impact du 12 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "TNA",
-    "Impact"
    ]
   }
  ],
@@ -1073,10 +1070,13 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61299-les-ceintures-de-finalslam-devoilees",
+   "https://www.catch-newz.com/wwe/newz/61301-spike-dudley-signe-un-contrat-de-legende-avec-la-wwe",
+   "https://www.catch-newz.com/aew/newz/61302-laew-organise-des-vols-prives-pour-full-gear-2026",
    "https://www.catch-newz.com/international/resultats/61296-resultats-de-cmll-viernes-espectacular-du-13-novembre-2026",
-   "https://www.catch-newz.com/aew/resultats/61281-resultats-de-roh-du-12-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61308-carte-de-tnt-cold-day-in-hell-2026",
    "https://www.catch-newz.com/international/resultats/61295-resultats-de-bjw-du-23-octobre-2026",
+   "https://www.catch-newz.com/international/newz/61299-les-ceintures-de-finalslam-devoilees",
+   "https://www.catch-newz.com/aew/resultats/61281-resultats-de-roh-du-12-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61297-resultats-de-beyond-wrestling-open-series-250",
    "https://www.catch-newz.com/wwe/newz/61241-damian-priest-explique-pourquoi-il-a-soudainement-disparu-de-la-aaa",
    "https://www.catch-newz.com/wwe/resultats/61269-resultats-de-wwe-road-to-survivor-series-du-12-novembre-2026",
@@ -1368,14 +1368,11 @@
    "https://www.catch-newz.com/wwe/newz/61011-enzo-amore-pourrait-avoir-signe-son-retour-a-la-wwe",
    "https://www.catch-newz.com/wwe/newz/61009-wwe-nxt-grace-a-lintervention-de-kevin-owens-grayson-waller-conserve-son-titre-nxt-contre-cm-punk",
    "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61008-wwe-nxt-emu-aux-larmes-zilla-fatu-integre-le-john-cena-classic",
-   "https://www.catch-newz.com/wwe/newz/61007-wwe-nxt-cruz-montana-et-946-font-la-loi-dans-le-show-gris",
-   "https://www.catch-newz.com/wwe/newz/61006-wwe-nxt-noam-dar-et-romeo-moreno-remportent-le-dusty-rhodes-tag-team-classic",
-   "https://www.catch-newz.com/wwe/newz/61005-wwe-nxt-kelani-jordan-conserve-son-titre-face-a-son-adversaire-mystere-paige"
+   "https://www.catch-newz.com/wwe/newz/61008-wwe-nxt-emu-aux-larmes-zilla-fatu-integre-le-john-cena-classic"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
