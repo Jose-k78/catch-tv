@@ -1564,6 +1564,18 @@
    },
    "gimmick": "",
    "medalOf": "Hulk Hogan"
+  },
+  "charlie-haas": {
+   "r": "N",
+   "max": "R",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Powerbomb",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Kurt Angle"
   }
  },
  "bgm": {
