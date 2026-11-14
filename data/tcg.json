@@ -1363,6 +1363,18 @@
    },
    "gimmick": "",
    "medalOf": "Nobu San"
+  },
+  "booker-t": {
+   "r": "N",
+   "max": "R",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Book End",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Kurt Angle"
   }
  },
  "bgm": {
