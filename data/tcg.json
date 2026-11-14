@@ -1221,6 +1221,19 @@
    },
    "gimmick": "",
    "medalOf": "KiLynn King"
+  },
+  "tabata": {
+   "k": "CMLL",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Tabata"
   }
  },
  "bgm": {
