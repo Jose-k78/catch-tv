@@ -2215,6 +2215,19 @@
    },
    "gimmick": "",
    "medalOf": "Kehops"
+  },
+  "zoey-serrano": {
+   "k": "TNA",
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Zoey Serrano"
   }
  },
  "bgm": {
