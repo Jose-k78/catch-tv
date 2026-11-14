@@ -1720,6 +1720,18 @@
    },
    "gimmick": "",
    "medalOf": "Tetsuya Naito"
+  },
+  "rob-van-dam": {
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Five-Star Frog Splash",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Rob Van Dam"
   }
  },
  "bgm": {
