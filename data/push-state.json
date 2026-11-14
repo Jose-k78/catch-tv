@@ -1,5 +1,5 @@
 {
- "at": "2026-11-14T07:57:10.293Z",
+ "at": "2026-11-14T08:47:04.059Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/international/newz/60844-carte-de-lol-mischief-night-mayhem-5": "2026-10-31",
@@ -449,7 +449,10 @@
   "poll:p-20261114-nxt-punk": "2026-11-14",
   "poll:p-20261114-babies": "2026-11-14",
   "story:austin-car-1999": "2026-11-14",
-  "t:wwe-tt:2026-11-13:dn6tg6o": "2026-11-14"
+  "t:wwe-tt:2026-11-13:dn6tg6o": "2026-11-14",
+  "ple:AEW:2026-11-14": "2026-11-14",
+  "ple:Stardom:2026-11-14": "2026-11-14",
+  "ple:Marigold:2026-11-14": "2026-11-14"
  },
  "pend": {}
 }
