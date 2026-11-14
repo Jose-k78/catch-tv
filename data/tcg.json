@@ -1350,6 +1350,19 @@
    },
    "gimmick": "",
    "medalOf": "Bárbaro Cavernario"
+  },
+  "nobu-san": {
+   "k": "AAA",
+   "r": "N",
+   "max": "R",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Nobu San"
   }
  },
  "bgm": {
