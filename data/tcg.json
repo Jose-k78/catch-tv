@@ -1627,6 +1627,19 @@
    },
    "gimmick": "",
    "medalOf": "Terry Funk"
+  },
+  "rachael-ellering": {
+   "k": "ROH",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Rachael Ellering"
   }
  },
  "bgm": {
