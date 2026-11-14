@@ -1,15 +1,12 @@
 {
- "at": "2026-11-14T16:12:02.656Z",
+ "at": "2026-11-14T17:11:51.065Z",
  "items": [
   {
-   "t": "Damian Priest explique pourquoi il a soudainement disparu de la AAA",
-   "u": "https://www.catch-newz.com/wwe/newz/61241-damian-priest-explique-pourquoi-il-a-soudainement-disparu-de-la-aaa",
+   "t": "Résultats de Beyond Wrestling Open Series 250",
+   "u": "https://www.catch-newz.com/international/resultats/61297-resultats-de-beyond-wrestling-open-series-250",
    "s": "Catch-Newz",
    "d": "2026-11-14",
-   "tags": [
-    "WWE",
-    "AAA"
-   ]
+   "tags": []
   },
   {
    "t": "FinalSlam – Amine vs. Squeezie : Carte, diffusion… toutes les infos sur le show",
@@ -26,6 +23,16 @@
    "tags": [
     "WWE",
     "SmackDown"
+   ]
+  },
+  {
+   "t": "Damian Priest explique pourquoi il a soudainement disparu de la AAA",
+   "u": "https://www.catch-newz.com/wwe/newz/61241-damian-priest-explique-pourquoi-il-a-soudainement-disparu-de-la-aaa",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": [
+    "WWE",
+    "AAA"
    ]
   },
   {
@@ -515,15 +522,6 @@
    "d": "2026-11-12",
    "tags": [
     "WWE"
-   ]
-  },
-  {
-   "t": "Fred Rosser réagit à la fin de NJPW Academy",
-   "u": "https://www.catch-newz.com/international/newz/61240-fred-rosser-reagit-a-la-fin-de-njpw-academy",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "NJPW"
    ]
   }
  ],
@@ -1059,6 +1057,12 @@
     "t": "Damian Priest defeats Axiom: SmackDown highlights, Nov. 13, 2026",
     "sp": true
    }
+  ],
+  "ROH|ROH TV|2026-11-12": [
+   {
+    "id": "_HKgmjzM1As",
+    "t": "Serena Linton contre Robyn Renegade"
+   }
   ]
  },
  "rss": {
@@ -1072,9 +1076,10 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61296-resultats-de-cmll-viernes-espectacular-du-13-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61241-damian-priest-explique-pourquoi-il-a-soudainement-disparu-de-la-aaa",
    "https://www.catch-newz.com/aew/resultats/61281-resultats-de-roh-du-12-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61297-resultats-de-beyond-wrestling-open-series-250",
    "https://www.catch-newz.com/international/resultats/61295-resultats-de-bjw-du-23-octobre-2026",
+   "https://www.catch-newz.com/wwe/newz/61241-damian-priest-explique-pourquoi-il-a-soudainement-disparu-de-la-aaa",
    "https://www.catch-newz.com/wwe/resultats/61269-resultats-de-wwe-road-to-survivor-series-du-12-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61294-resultats-du-jour-1-de-dg-the-gate-of-evolution-2026",
    "https://www.catch-newz.com/wwe/newz/61290-carlito-jai-limpression-que-la-wwe-ne-croyait-pas-en-liv-morgan",
@@ -1368,8 +1373,7 @@
    "https://www.catch-newz.com/wwe/newz/61007-wwe-nxt-cruz-montana-et-946-font-la-loi-dans-le-show-gris",
    "https://www.catch-newz.com/wwe/newz/61006-wwe-nxt-noam-dar-et-romeo-moreno-remportent-le-dusty-rhodes-tag-team-classic",
    "https://www.catch-newz.com/wwe/newz/61005-wwe-nxt-kelani-jordan-conserve-son-titre-face-a-son-adversaire-mystere-paige",
-   "https://www.catch-newz.com/aew/newz/60874-preview-aew-dynamite-blood-and-guts-du-4-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61004-wwe-nxt-chad-gable-dragon-lee-et-rey-fenix-donnent-une-lecon-au-vanity-project"
+   "https://www.catch-newz.com/aew/newz/60874-preview-aew-dynamite-blood-and-guts-du-4-novembre-2026"
   ]
  },
  "diag": {
@@ -1378,9 +1382,9 @@
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
-  "YouTube ROH": "0 nouvelles vidéos",
+  "YouTube ROH": "1 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
-  "YouTube TNA": "1 nouvelles vidéos",
+  "YouTube TNA": "0 nouvelles vidéos",
   "YouTube NJPW": "0 nouvelles vidéos",
   "YouTube Stardom": "0 nouvelles vidéos",
   "YouTube Marigold": "chaîne introuvable"
