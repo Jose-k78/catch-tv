@@ -1846,6 +1846,18 @@
    },
    "gimmick": "",
    "medalOf": "Cole Karter"
+  },
+  "bateman": {
+   "r": "N",
+   "max": "R",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Vincent"
   }
  },
  "bgm": {
