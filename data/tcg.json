@@ -1477,6 +1477,19 @@
    },
    "gimmick": "",
    "medalOf": "Jerry Lawler"
+  },
+  "takuma": {
+   "k": "AAA",
+   "r": "R",
+   "max": "SR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Takuma"
   }
  },
  "bgm": {
