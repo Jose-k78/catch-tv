@@ -1757,6 +1757,19 @@
    },
    "gimmick": "",
    "medalOf": "Mariah May"
+  },
+  "el-santo": {
+   "k": "Lucha libre (Mexique)",
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "El Santo"
   }
  },
  "bgm": {
