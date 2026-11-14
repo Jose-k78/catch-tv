@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12",
+ "updated": "2026-11-14",
  "note": "Membres tenus à jour par la mise à jour du soir (19 h 23).",
  "items": {
   "946": {
@@ -94,18 +94,18 @@
    "y": "depuis 2020",
    "on": 1,
    "m": [
-    "Solo Sikoa",
+    "Jacob Fatu",
+    "Jey Uso",
+    "Jimmy Uso",
+    "Roman Reigns",
+    "Solo Sikoa"
+   ],
+   "ex": [
+    "Sami Zayn",
+    "Paul Heyman",
     "Tama Tonga",
     "Tonga Loa",
     "Talla Tonga"
-   ],
-   "ex": [
-    "Roman Reigns",
-    "Jey Uso",
-    "Jimmy Uso",
-    "Sami Zayn",
-    "Paul Heyman",
-    "Jacob Fatu"
    ],
    "a": [
     "Bloodline",
@@ -267,12 +267,15 @@
   "fatal-influence": {
    "n": "Fatal Influence",
    "lg": "Fatal Influence",
-   "k": "WWE NXT",
+   "k": "WWE",
    "y": "depuis 2024",
    "on": 1,
    "m": [
-    "Jacy Jayne",
     "Fallon Henley",
+    "Jacy Jayne",
+    "Lainey Reid"
+   ],
+   "ex": [
     "Jazmyn Nyx"
    ]
   },
