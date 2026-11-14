@@ -1,6 +1,13 @@
 {
- "at": "2026-11-14T14:17:25.888Z",
+ "at": "2026-11-14T15:13:15.066Z",
  "items": [
+  {
+   "t": "Résultats du jour 1 de DG The Gate Of Evolution 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61294-resultats-du-jour-1-de-dg-the-gate-of-evolution-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": []
+  },
   {
    "t": "FinalSlam – Amine vs. Squeezie : Carte, diffusion… toutes les infos sur le show",
    "u": "https://www.voxcatch.fr/2026/11/14/final-slam-amine-squeezie-infos-diffusion/",
@@ -514,15 +521,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-12",
    "tags": []
-  },
-  {
-   "t": "Zilla Fatu : « Lorsque John Cena a parlé d'Umaga, j'ai eu le cœur serré »",
-   "u": "https://www.catch-newz.com/wwe/newz/61245-zilla-fatu-lorsque-john-cena-a-parle-dumaga-jai-eu-le-coeur-serre",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -1067,6 +1065,7 @@
    "https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61281-resultats-de-roh-du-12-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61269-resultats-de-wwe-road-to-survivor-series-du-12-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61294-resultats-du-jour-1-de-dg-the-gate-of-evolution-2026",
    "https://www.catch-newz.com/wwe/newz/61290-carlito-jai-limpression-que-la-wwe-ne-croyait-pas-en-liv-morgan",
    "https://www.catch-newz.com/wwe/resultats/61268-resultats-et-streaming-de-wwe-evolve-du-11-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61266-mila-smidt-cory-zero-et-jgu-mises-a-lhonneur-dans-le-pwi-250-feminin-2026",
@@ -1362,12 +1361,11 @@
    "https://www.catch-newz.com/wwe/newz/61004-wwe-nxt-chad-gable-dragon-lee-et-rey-fenix-donnent-une-lecon-au-vanity-project",
    "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60998-la-wwe-devoile-son-plan-de-secours-pour-wrestlemania-43",
-   "https://www.catch-newz.com/wwe/newz/60997-tous-les-evenements-wwe-et-ufc-en-arabie-saoudite-auront-lieu-comme-prevu",
-   "https://www.catch-newz.com/international/newz/61002-carte-du-jour-3-de-dg-the-gate-of-evolution-2026"
+   "https://www.catch-newz.com/wwe/newz/60997-tous-les-evenements-wwe-et-ufc-en-arabie-saoudite-auront-lieu-comme-prevu"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 3 nouveaux articles lus sur la page d'accueil (3 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
