@@ -1401,6 +1401,18 @@
    },
    "gimmick": "",
    "medalOf": "Charlotte Flair"
+  },
+  "taylor-wilde": {
+   "r": "N",
+   "max": "R",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Taylor Wilde"
   }
  },
  "bgm": {
