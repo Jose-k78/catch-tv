@@ -2014,6 +2014,18 @@
    },
    "gimmick": "",
    "medalOf": "Chantel Monroe"
+  },
+  "anthony-bowens": {
+   "r": "R",
+   "max": "SR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Max Caster"
   }
  },
  "bgm": {
