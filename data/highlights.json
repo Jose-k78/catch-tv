@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13",
+ "updated": "2026-11-14",
  "note": "Vidéos des chaînes officielles uniquement. res = résultats (spoilers, affichés seulement à la demande). m = résumé match par match (promotions japonaises).",
  "items": {
   "WWE|Raw|2026-10-26": {
@@ -981,6 +981,62 @@
    ],
    "s": "Fightful",
    "u": "https://www.fightful.com/wrestling-news/roh-tv-results-11-12-multiple-title-matches"
+  },
+  "WWE|SmackDown|2026-11-13": {
+   "res": [
+    "Le match pour le titre WWE Tag Team entre MFT (Tama Tonga et Talla Tonga) et Bakusai (Shinsuke Nakamura et Kyoki) s'est terminé en no contest après l'intervention des War Raiders : MFT conserve le titre WWE Tag Team.",
+    "Damian Priest a battu Axiom.",
+    "Charlotte Flair a battu Jacy Jayne (titre United States non mis en jeu).",
+    "Gunther a battu Finn Bálor."
+   ],
+   "seg": [
+    {
+     "k": "Promo",
+     "t": "John Cena ouvre le show : le titre du John Cena Classic sera décerné le 14 décembre, avec un record de débuts de talents de NXT à Raw. Il invite Charlotte Flair, émue, qui promet de gagner."
+    },
+    {
+     "k": "Backstage",
+     "t": "Rey Mysterio et Cody Rhodes demandent à Nick Aldis un membre de SmackDown pour le match 5 contre 5 Team Mexico contre Team USA des Survivor Series."
+    },
+    {
+     "k": "Attaque",
+     "t": "Les War Raiders interrompent le match pour le titre par équipe et attaquent les quatre catcheurs."
+    },
+    {
+     "k": "Backstage",
+     "t": "CM Punk, furieux d'avoir raté une chance au titre à cause de Kevin Owens, promet d'en finir avec lui."
+    },
+    {
+     "k": "Backstage",
+     "t": "Fatal Influence se moque du choix de Charlotte Flair ; John Cena les invite à entrer dans le tournoi."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Kevin Owens interrompt Sami Zayn (avec Johnny Gargano et Candice LeRae) et réclame un match pour le titre ; Gargano l'attaque, Owens lui place un Stunner et prévient Zayn que son règne est en sursis."
+    },
+    {
+     "k": "Annonce",
+     "t": "Rey Mysterio présente Rey Fénix comme nouveau membre de la Team Mexico pour les Survivor Series."
+    },
+    {
+     "k": "Retour",
+     "t": "Le match de Charlotte Flair tourne à la bagarre générale entre deux camps de catcheuses, avec le retour de Stephanie Vaquer ; Flair annonce un match WarGames au micro."
+    },
+    {
+     "k": "Promo",
+     "t": "Tiffany Stratton, nouvelle championne WWE féminine, dédie son règne à Chelsea Green, qu'elle a trahie à Crown Jewel ; Green l'attaque, mais Stratton la frappe avec la bague de Crown Jewel."
+    },
+    {
+     "k": "Backstage",
+     "t": "Paige console Chelsea Green avant que Blake Monroe vienne se moquer d'elle."
+    },
+    {
+     "k": "Autre",
+     "t": "En fin de show, Gunther pousse Finn Bálor sur l'arbitre et profite de son absence pour un coup bas, ce qui laisse la porte ouverte à une revanche."
+    }
+   ],
+   "s": "Khel Now",
+   "u": "https://khelnow.com/wwe/wwe-smackdown-results-winners-november-13-202611"
   }
  }
 }
