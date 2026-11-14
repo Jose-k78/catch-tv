@@ -2001,6 +2001,19 @@
    },
    "gimmick": "",
    "medalOf": "Dorian Roldán"
+  },
+  "chantel-monroe": {
+   "k": "WWE",
+   "r": "N",
+   "max": "SR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Chantel Monroe"
   }
  },
  "bgm": {
