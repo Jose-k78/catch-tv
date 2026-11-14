@@ -2089,6 +2089,18 @@
    },
    "gimmick": "",
    "medalOf": "Eddie Guerrero"
+  },
+  "akane-fujita": {
+   "r": "R",
+   "max": "SR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Suzu Suzuki"
   }
  },
  "bgm": {
