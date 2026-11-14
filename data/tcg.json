@@ -1413,6 +1413,19 @@
    },
    "gimmick": "",
    "medalOf": "Taylor Wilde"
+  },
+  "blue-panther": {
+   "k": "CMLL",
+   "r": "N",
+   "max": "R",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Blue Panther Special",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Blue Panther"
   }
  },
  "bgm": {
