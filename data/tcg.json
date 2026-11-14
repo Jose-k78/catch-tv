@@ -1465,6 +1465,18 @@
    },
    "gimmick": "",
    "medalOf": "Chazz \"Starboy\" Hall"
+  },
+  "jerry-lawler": {
+   "r": "N",
+   "max": "R",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Piledriver",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Jerry Lawler"
   }
  },
  "bgm": {
