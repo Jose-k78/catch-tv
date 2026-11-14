@@ -1,6 +1,44 @@
 {
- "at": "2026-11-14T19:39:37.432Z",
+ "at": "2026-11-14T20:35:06.643Z",
  "items": [
+  {
+   "t": "FinalSlam : Djilsi accepte l'Open Challenge de Raj Dhesi (Jinder Mahal)",
+   "u": "https://www.catch-newz.com/international/newz/61314-finalslam-djilsi-accepte-lopen-challenge-de-raj-dhesi-jinder-mahal",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": []
+  },
+  {
+   "t": "Carte de AULL Dinamita Pura",
+   "u": "https://www.catch-newz.com/international/newz/61313-carte-de-aull-dinamita-pura",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": []
+  },
+  {
+   "t": "Résultats de West Coast Pro 8",
+   "u": "https://www.catch-newz.com/international/resultats/61311-resultats-de-west-coast-pro-8",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": []
+  },
+  {
+   "t": "FinalSlam – Amine vs. Squeezie : Carte, diffusion… toutes les infos sur le show",
+   "u": "https://www.voxcatch.fr/2026/11/14/final-slam-amine-squeezie-infos-diffusion/",
+   "s": "VOXcatch",
+   "d": "2026-11-14",
+   "tags": []
+  },
+  {
+   "t": "WWE SmackDown du 13 novembre : Kevin Owens défie Sami Zayn, Gunther vs. Finn Balor",
+   "u": "https://www.voxcatch.fr/2026/11/14/resultats-wwe-smackdown-13-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-14",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
+  },
   {
    "t": "Résultats de FinalSlam 2026",
    "u": "https://www.catch-newz.com/international/resultats/61304-resultats-de-finalslam-2026",
@@ -30,23 +68,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-14",
    "tags": []
-  },
-  {
-   "t": "FinalSlam – Amine vs. Squeezie : Carte, diffusion… toutes les infos sur le show",
-   "u": "https://www.voxcatch.fr/2026/11/14/final-slam-amine-squeezie-infos-diffusion/",
-   "s": "VOXcatch",
-   "d": "2026-11-14",
-   "tags": []
-  },
-  {
-   "t": "WWE SmackDown du 13 novembre : Kevin Owens défie Sami Zayn, Gunther vs. Finn Balor",
-   "u": "https://www.voxcatch.fr/2026/11/14/resultats-wwe-smackdown-13-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-14",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
   },
   {
    "t": "Spike Dudley signe un contrat de légende avec la WWE",
@@ -492,30 +513,6 @@
     "WWE",
     "SmackDown"
    ]
-  },
-  {
-   "t": "Carte de CMLL Viernes Espectacular du 13 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61235-carte-de-cmll-viernes-espectacular-du-13-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "CMLL",
-    "Viernes Espectacular"
-   ]
-  },
-  {
-   "t": "Quel avenir pour Killer Kross après sa perte du championnat MLW ?",
-   "u": "https://www.catch-newz.com/international/newz/61253-quel-avenir-pour-killer-kross-apres-sa-perte-du-championnat-mlw",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": []
-  },
-  {
-   "t": "Carte de GCW Massacre In Missoula 2026",
-   "u": "https://www.catch-newz.com/international/newz/61236-carte-de-gcw-massacre-in-missoula-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": []
   }
  ],
  "yt": {
@@ -1067,10 +1064,13 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/international/resultats/61304-resultats-de-finalslam-2026",
    "https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61309-tna-destination-x-2026-est-maintenu-mais-avec-des-changements",
+   "https://www.catch-newz.com/international/newz/61314-finalslam-djilsi-accepte-lopen-challenge-de-raj-dhesi-jinder-mahal",
    "https://www.catch-newz.com/international/resultats/61296-resultats-de-cmll-viernes-espectacular-du-13-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61313-carte-de-aull-dinamita-pura",
+   "https://www.catch-newz.com/international/resultats/61311-resultats-de-west-coast-pro-8",
+   "https://www.catch-newz.com/international/resultats/61304-resultats-de-finalslam-2026",
+   "https://www.catch-newz.com/international/newz/61309-tna-destination-x-2026-est-maintenu-mais-avec-des-changements",
    "https://www.catch-newz.com/international/newz/61307-carte-du-jour-2-de-tew-next-order-of-business-2026",
    "https://www.catch-newz.com/international/newz/61310-carte-de-tnt-ignition-aftershock-2026",
    "https://www.catch-newz.com/wwe/newz/61301-spike-dudley-signe-un-contrat-de-legende-avec-la-wwe",
@@ -1363,14 +1363,11 @@
    "https://www.catch-newz.com/international/newz/60951-la-njpw-super-junior-tag-league-2026-rend-son-verdict",
    "https://www.catch-newz.com/international/resultats/61018-resultats-de-aiw-shot-callers-2026",
    "https://www.catch-newz.com/international/resultats/61017-resultats-de-aaw-the-bourbon-street-massacre-2026",
-   "https://www.catch-newz.com/wwe/newz/61015-leon-slater-je-ne-serais-pas-champion-du-monde-tna-aujourdhui-sans-mon-passage-a-nxt",
-   "https://www.catch-newz.com/wwe/newz/61003-la-wwe-envisage-dorganiser-un-show-a-tokyo-en-2027",
-   "https://www.catch-newz.com/international/newz/60981-carte-de-njpw-wrestle-kingdom-21",
-   "https://www.catch-newz.com/wwe/newz/61010-chad-gable-complimente-vanity-project-apres-leur-match-a-nxt"
+   "https://www.catch-newz.com/wwe/newz/61015-leon-slater-je-ne-serais-pas-champion-du-monde-tna-aujourdhui-sans-mon-passage-a-nxt"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
