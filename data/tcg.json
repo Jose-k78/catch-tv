@@ -1898,6 +1898,19 @@
    },
    "gimmick": "",
    "medalOf": "Paul Bearer"
+  },
+  "tessa-blanchard": {
+   "k": "CMLL",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Powerbomb",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Tessa Blanchard"
   }
  },
  "bgm": {
