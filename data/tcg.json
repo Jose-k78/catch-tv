@@ -1236,7 +1236,8 @@
    "medalOf": "Tabata"
   },
   "kyle-fletcher": {
-   "imgUR": "img/catcheurs/kyle-fletcher.webp"
+   "imgUR": "img/catcheurs/kyle-fletcher.webp",
+   "imgLR": "-"
   }
  },
  "bgm": {
