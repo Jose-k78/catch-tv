@@ -1666,6 +1666,19 @@
    },
    "gimmick": "",
    "medalOf": "Rugido"
+  },
+  "orlando-colon": {
+   "k": "ROH",
+   "r": "N",
+   "max": "R",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Powerbomb",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Orlando Colón"
   }
  },
  "bgm": {
