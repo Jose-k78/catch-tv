@@ -1770,6 +1770,18 @@
    },
    "gimmick": "",
    "medalOf": "El Santo"
+  },
+  "uncle-howdy": {
+   "r": "R",
+   "max": "SSR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Dexter Lumis"
   }
  },
  "bgm": {
