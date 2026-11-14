@@ -1515,6 +1515,18 @@
    },
    "gimmick": "",
    "medalOf": "Diamond Dallas Page"
+  },
+  "taiyo-kea": {
+   "r": "N",
+   "max": "R",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Taiyo Kea"
   }
  },
  "bgm": {
