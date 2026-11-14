@@ -1821,6 +1821,18 @@
    },
    "gimmick": "",
    "medalOf": "Gianna Capri"
+  },
+  "eric-bischoff": {
+   "r": "R",
+   "max": "SR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Hulk Hogan"
   }
  },
  "bgm": {
