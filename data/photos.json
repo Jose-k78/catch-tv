@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13",
+ "updated": "2026-11-14",
  "items": {
   "james-storm-v3": {
    "f": "james-storm-v3.webp",
@@ -3651,12 +3651,12 @@
    ]
   },
   "kyle-fletcher": {
-   "f": "kyle-fletcher-v4.webp",
+   "f": "kyle-fletcher.webp",
    "n": [
     "Kyle Fletcher"
    ],
    "v": [
-    "kyle-fletcher.webp",
+    "kyle-fletcher-v4.webp",
     "kyle-fletcher-v2.webp"
    ]
   },
