@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13",
+ "updated": "2026-11-14",
  "promotions": {
   "WWE": {
    "c": [
@@ -60,8 +60,9 @@
      "nf": "81930099",
      "card": [
       "WarGames : The Bloodline (Roman Reigns, Jey Uso, Jimmy Uso, Jacob Fatu et Solo Sikoa) contre The 946 (Royce Keys, Carmelo Hayes, Cruz Montana, Bronco Nima et Lucien Price)",
+      "WarGames féminin : Stephanie Vaquer, Charlotte Flair, Bayley, Alexa Bliss et Tatum Paxley contre Jade Cargill et Michin contre The Fatal Influence (Jacy Jayne, Fallon Henley et Lainey Reid)",
       "Titre mondial féminin : Liv Morgan contre Becky Lynch",
-      "Élimination à 5 contre 5 : Team USA (Cody Rhodes, CM Punk, Je'Von Evans et 2 à annoncer) contre Team Mexico (Rey Mysterio, Penta et 3 à annoncer)"
+      "Élimination à 5 contre 5 : Team USA (Cody Rhodes, CM Punk, Je'Von Evans et 2 à annoncer) contre Team Mexico (Rey Mysterio, Penta, Rey Fenix et 2 à annoncer)"
      ],
      "h": "18:00",
      "tz": "America/New_York",
@@ -79,6 +80,16 @@
      "d": "",
      "w": "décembre (habituel)",
      "br": "NXT"
+    },
+    {
+     "t": "NXT TLC",
+     "d": "2026-12-12",
+     "w": "Orlando (Floride)",
+     "v": "WWE Performance Center",
+     "br": "NXT",
+     "h": "19:00",
+     "tz": "America/New_York",
+     "dur": 180
     }
    ],
    "s": {
