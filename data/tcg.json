@@ -1503,6 +1503,18 @@
    },
    "gimmick": "",
    "medalOf": "Saraya"
+  },
+  "diamond-dallas-page": {
+   "r": "N",
+   "max": "R",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Diamond Cutter",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Diamond Dallas Page"
   }
  },
  "bgm": {
