@@ -1795,6 +1795,19 @@
    },
    "gimmick": "",
    "medalOf": "La Jarochita"
+  },
+  "cutler-james": {
+   "k": "WWE",
+   "r": "R",
+   "max": "SR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Cutler James"
   }
  },
  "bgm": {
