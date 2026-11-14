@@ -2026,6 +2026,19 @@
    },
    "gimmick": "",
    "medalOf": "Max Caster"
+  },
+  "vertvixen": {
+   "k": "AEW",
+   "r": "N",
+   "max": "R",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "VertVixen"
   }
  },
  "bgm": {
