@@ -2152,6 +2152,19 @@
    },
    "gimmick": "",
    "medalOf": "Bayley"
+  },
+  "dark-silueta": {
+   "k": "CMLL",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Dark Silueta"
   }
  },
  "bgm": {
