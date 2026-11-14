@@ -2165,6 +2165,19 @@
    },
    "gimmick": "",
    "medalOf": "Dark Silueta"
+  },
+  "belcegor": {
+   "k": "AAA",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Powerbomb",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Belcegor"
   }
  },
  "bgm": {
