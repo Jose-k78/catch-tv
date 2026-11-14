@@ -1287,6 +1287,18 @@
    },
    "gimmick": "",
    "medalOf": "It's GAL"
+  },
+  "pco": {
+   "r": "N",
+   "max": "R",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Eddie Edwards"
   }
  },
  "bgm": {
