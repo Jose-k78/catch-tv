@@ -1808,6 +1808,19 @@
    },
    "gimmick": "",
    "medalOf": "Cutler James"
+  },
+  "gianna-capri": {
+   "k": "WWE",
+   "r": "N",
+   "max": "R",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Gianna Capri"
   }
  },
  "bgm": {
