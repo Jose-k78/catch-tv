@@ -1744,6 +1744,19 @@
    },
    "gimmick": "",
    "medalOf": "Luke Gallows"
+  },
+  "mina-shirakawa": {
+   "k": "AEW",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Figure Four",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Mariah May"
   }
  },
  "bgm": {
