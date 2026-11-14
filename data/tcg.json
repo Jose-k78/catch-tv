@@ -1540,6 +1540,18 @@
    },
    "gimmick": "",
    "medalOf": "Alix Brooks"
+  },
+  "himeka": {
+   "r": "N",
+   "max": "R",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Giulia"
   }
  },
  "bgm": {
