@@ -2190,6 +2190,18 @@
    },
    "gimmick": "",
    "medalOf": "Tiger Mask"
+  },
+  "jake-hager": {
+   "r": "R",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Chris Jericho"
   }
  },
  "bgm": {
