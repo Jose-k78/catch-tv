@@ -1,6 +1,32 @@
 {
- "at": "2026-11-14T04:49:56.392Z",
+ "at": "2026-11-14T05:46:30.907Z",
  "items": [
+  {
+   "t": "Carte de FinalSlam 2026",
+   "u": "https://www.catch-newz.com/international/newz/60668-carte-finalslam-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": []
+  },
+  {
+   "t": "Charlotte Flair et Fatal Influence invitées au John Cena Classic à SmackDown",
+   "u": "https://www.catch-newz.com/wwe/newz/61293-charlotte-flair-et-fatal-influence-invitees-au-john-cena-classic-a-smackdown",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
+  },
+  {
+   "t": "Perturbations des vols aux États-Unis : AEW Full Gear 2026 impacté ?",
+   "u": "https://www.catch-newz.com/aew/newz/61292-perturbations-des-vols-aux-etats-unis-aew-full-gear-2026-impacte",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": [
+    "AEW"
+   ]
+  },
   {
    "t": "Preview : AAA Lucha Libre du 14 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61267-preview-aaa-lucha-libre-14-novembre-2026",
@@ -500,36 +526,6 @@
    "tags": [
     "WWE",
     "Evolve"
-   ]
-  },
-  {
-   "t": "Résultats de AEW Dynamite du 11 novembre 2026",
-   "u": "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-11",
-   "tags": [
-    "AEW",
-    "Dynamite"
-   ]
-  },
-  {
-   "t": "Une organisation difficile à AEW Dynamite le 11 novembre 2026",
-   "u": "https://www.catch-newz.com/aew/newz/61254-une-organisation-difficile-a-aew-dynamite-le-11-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-11",
-   "tags": [
-    "AEW",
-    "Dynamite"
-   ]
-  },
-  {
-   "t": "Résultats de WWE Main Event du 11 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61239-wwe-main-event-11-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-11",
-   "tags": [
-    "WWE",
-    "Main Event"
    ]
   }
  ],
@@ -1037,8 +1033,11 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/international/newz/60668-carte-finalslam-2026",
    "https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61293-charlotte-flair-et-fatal-influence-invitees-au-john-cena-classic-a-smackdown",
+   "https://www.catch-newz.com/aew/newz/61292-perturbations-des-vols-aux-etats-unis-aew-full-gear-2026-impacte",
    "https://www.catch-newz.com/aew/resultats/61281-resultats-de-roh-du-12-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61269-resultats-de-wwe-road-to-survivor-series-du-12-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61268-resultats-et-streaming-de-wwe-evolve-du-11-novembre-2026",
@@ -1333,14 +1332,11 @@
    "https://www.catch-newz.com/international/newz/61002-carte-du-jour-3-de-dg-the-gate-of-evolution-2026",
    "https://www.catch-newz.com/international/resultats/61000-resultats-du-jour-1-du-zero1-tenka-ichi-junior-tournament-2026",
    "https://www.catch-newz.com/international/resultats/61001-resultats-de-bjw-no-ring-ueno-2026",
-   "https://www.catch-newz.com/international/resultats/60996-resultats-de-ott-halloween-slam-2026",
-   "https://www.catch-newz.com/international/resultats/60999-resultats-du-jour-4-du-hop-spooktober-tour-2026",
-   "https://www.catch-newz.com/international/resultats/60995-resultats-du-jour-8-de-dg-the-gate-of-victory-2026-partie-2",
-   "https://www.catch-newz.com/international/resultats/60994-resultats-de-cmll-martes-de-glamour-du-3-novembre-2026"
+   "https://www.catch-newz.com/international/resultats/60996-resultats-de-ott-halloween-slam-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
