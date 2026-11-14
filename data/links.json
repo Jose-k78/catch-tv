@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T09:35:23.249Z",
+ "updated": "2026-11-14T09:40:20.561Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "m:statlight kid vs suzu suzuki": [
@@ -295,6 +295,14 @@
    }
   ],
   "ev:TNA|Impact|2026-11-12": [
+   {
+    "t": "",
+    "u": "https://vkvideo.ru/video-231961829_456240054",
+    "p": "VK",
+    "at": "2026-11-14"
+   }
+  ],
+  "ev:TNA|TNA Lockdown|2026-08-23": [
    {
     "t": "",
     "u": "https://vkvideo.ru/video-231961829_456240054",
