@@ -1964,6 +1964,18 @@
    },
    "gimmick": "",
    "medalOf": "Lash Legend"
+  },
+  "gail-kim": {
+   "r": "N",
+   "max": "R",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Eat Defeat",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Gail Kim"
   }
  },
  "bgm": {
