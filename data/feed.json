@@ -1,6 +1,13 @@
 {
- "at": "2026-11-14T10:38:45.356Z",
+ "at": "2026-11-14T11:34:45.697Z",
  "items": [
+  {
+   "t": "FinalSlam – Amine vs. Squeezie : Carte, diffusion… toutes les infos sur le show",
+   "u": "https://www.voxcatch.fr/2026/11/14/final-slam-amine-squeezie-infos-diffusion/",
+   "s": "VOXcatch",
+   "d": "2026-11-14",
+   "tags": []
+  },
   {
    "t": "WWE SmackDown du 13 novembre : Kevin Owens défie Sami Zayn, Gunther vs. Finn Balor",
    "u": "https://www.voxcatch.fr/2026/11/14/resultats-wwe-smackdown-13-novembre-2026/",
@@ -515,15 +522,6 @@
    "d": "2026-11-12",
    "tags": [
     "WWE"
-   ]
-  },
-  {
-   "t": "Carte de AEW Full Gear 2026",
-   "u": "https://www.catch-newz.com/aew/newz/60606-carte-aew-full-gear-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "AEW"
    ]
   }
  ],
@@ -1370,7 +1368,7 @@
  },
  "diag": {
   "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
-  "VOXcatch": "6 articles (7 j)",
+  "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
