@@ -1707,7 +1707,19 @@
    "medalOf": "Truth Martini"
   },
   "yota-tsuji": {
-   "imgUR": "-"
+   "imgUR": "-",
+   "years": "",
+   "k": "NJPW",
+   "r": "SSR",
+   "max": "LR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Gene Blaster",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Tetsuya Naito"
   }
  },
  "bgm": {
