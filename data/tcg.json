@@ -1782,6 +1782,19 @@
    },
    "gimmick": "",
    "medalOf": "Dexter Lumis"
+  },
+  "la-jarochita": {
+   "k": "CMLL",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "La Jarochita"
   }
  },
  "bgm": {
