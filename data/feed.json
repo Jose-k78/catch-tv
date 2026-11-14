@@ -1,13 +1,6 @@
 {
- "at": "2026-11-14T22:09:28.306Z",
+ "at": "2026-11-14T23:08:16.209Z",
  "items": [
-  {
-   "t": "Carte de FSW High Octane: Calm Before The Storm 2026",
-   "u": "https://www.catch-newz.com/international/newz/61315-carte-de-fsw-high-octane-calm-before-the-storm-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-14",
-   "tags": []
-  },
   {
    "t": "FinalSlam – Amine vs. Squeezie : Carte, diffusion… toutes les infos sur le show",
    "u": "https://www.voxcatch.fr/2026/11/14/final-slam-amine-squeezie-infos-diffusion/",
@@ -24,6 +17,13 @@
     "WWE",
     "SmackDown"
    ]
+  },
+  {
+   "t": "Carte de FSW High Octane: Calm Before The Storm 2026",
+   "u": "https://www.catch-newz.com/international/newz/61315-carte-de-fsw-high-octane-calm-before-the-storm-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": []
   },
   {
    "t": "FinalSlam : Djilsi accepte l'Open Challenge de Raj Dhesi (Jinder Mahal)",
@@ -1364,8 +1364,8 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 3 nouveaux articles lus sur la page d'accueil (3 liens)",
-  "VOXcatch": "7 articles (7 j)",
+  "Catch-Newz": "pas de flux RSS : 2 nouveaux articles lus sur la page d'accueil (2 liens)",
+  "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
