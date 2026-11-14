@@ -1,6 +1,13 @@
 {
- "at": "2026-11-14T21:13:50.878Z",
+ "at": "2026-11-14T22:09:28.306Z",
  "items": [
+  {
+   "t": "Carte de FSW High Octane: Calm Before The Storm 2026",
+   "u": "https://www.catch-newz.com/international/newz/61315-carte-de-fsw-high-octane-calm-before-the-storm-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": []
+  },
   {
    "t": "FinalSlam – Amine vs. Squeezie : Carte, diffusion… toutes les infos sur le show",
    "u": "https://www.voxcatch.fr/2026/11/14/final-slam-amine-squeezie-infos-diffusion/",
@@ -503,16 +510,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-12",
    "tags": []
-  },
-  {
-   "t": "Pourquoi WWE SmackDown du 27 novembre ne sera pas en direct ?",
-   "u": "https://www.catch-newz.com/wwe/newz/61255-pourquoi-wwe-smackdown-du-27-novembre-ne-sera-pas-en-direct",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
   }
  ],
  "yt": {
@@ -1066,6 +1063,7 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61296-resultats-de-cmll-viernes-espectacular-du-13-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61315-carte-de-fsw-high-octane-calm-before-the-storm-2026",
    "https://www.catch-newz.com/international/newz/61314-finalslam-djilsi-accepte-lopen-challenge-de-raj-dhesi-jinder-mahal",
    "https://www.catch-newz.com/international/newz/61313-carte-de-aull-dinamita-pura",
    "https://www.catch-newz.com/international/resultats/61311-resultats-de-west-coast-pro-8",
@@ -1362,12 +1360,11 @@
    "https://www.catch-newz.com/wwe/newz/61021-grayson-waller-cest-chez-moi-cest-mon-show-et-ca-ne-changera-pas-de-sitot",
    "https://www.catch-newz.com/international/newz/60951-la-njpw-super-junior-tag-league-2026-rend-son-verdict",
    "https://www.catch-newz.com/international/resultats/61018-resultats-de-aiw-shot-callers-2026",
-   "https://www.catch-newz.com/international/resultats/61017-resultats-de-aaw-the-bourbon-street-massacre-2026",
-   "https://www.catch-newz.com/wwe/newz/61015-leon-slater-je-ne-serais-pas-champion-du-monde-tna-aujourdhui-sans-mon-passage-a-nxt"
+   "https://www.catch-newz.com/international/resultats/61017-resultats-de-aaw-the-bourbon-street-massacre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 2 nouveaux articles lus sur la page d'accueil (2 liens)",
+  "Catch-Newz": "pas de flux RSS : 3 nouveaux articles lus sur la page d'accueil (3 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
