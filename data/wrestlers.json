@@ -1,1 +1,1852 @@
-{"updated": "2026-11-14", "note": "Catcheurs suivis (champions, cartes annoncées, favoris des membres) et catcheurs à découvrir (disc = true, toutes fédérations et époques). txt = petit résumé en français, era = époque, ref = matchs de référence, last = 3 derniers matchs (r = résultat, spoiler), v = vidéo YouTube d'une chaîne officielle.", "items": {"Roman Reigns": {"k": "WWE", "sh": ["Raw"], "ref": [{"t": "Roman Reigns contre Cody Rhodes", "ev": "WrestleMania XL, 2024"}, {"t": "Roman Reigns contre Brock Lesnar — Last Man Standing", "ev": "SummerSlam 2022"}, {"t": "Roman Reigns contre Edge et Daniel Bryan", "ev": "WrestleMania 37, 2021"}, {"t": "Roman Reigns contre Jey Uso — « I Quit »", "ev": "Hell in a Cell 2020"}, {"t": "Roman Reigns contre CM Punk et Seth Rollins", "ev": "WrestleMania 41, 2025"}], "disc": true, "era": "WWE, depuis 2012", "txt": "Pilier de la WWE depuis les débuts du Shield en 2012, il a régné plus de 1 300 jours comme champion universel puis incontesté à la tête de la Bloodline (2020-2024). Surnommé « The Tribal Chief »."}, "Cody Rhodes": {"k": "WWE", "sh": ["SmackDown"], "a": ["Cody"], "ref": [{"t": "Cody Rhodes contre Roman Reigns", "ev": "WrestleMania XL, 2024"}, {"t": "Cody Rhodes contre Seth Rollins — Hell in a Cell", "ev": "Hell in a Cell 2022"}, {"t": "Cody Rhodes contre John Cena", "ev": "WrestleMania 41, 2025"}, {"t": "Cody Rhodes contre Brock Lesnar", "ev": "SummerSlam 2023"}, {"t": "Kenny Omega contre Cody", "ev": "NJPW G1 Special in San Francisco, 2018", "v": "muM94dA93wg"}], "last": [{"t": "Cody Rhodes et Randy Orton : face-à-face", "ev": "SmackDown", "d": "2026-10-23", "r": "Le match Cody Rhodes contre Randy Orton est officialisé à Crown Jewel, en Last Man Standing"}], "disc": true, "era": "WWE et AEW, depuis 2006", "txt": "Fils de la légende Dusty Rhodes, il quitte la WWE en 2016, cofonde la AEW en 2019 puis revient en 2022 pour « finir l’histoire » : il bat Roman Reigns à WrestleMania XL pour le titre de la WWE."}, "CM Punk": {"k": "WWE", "ref": [{"t": "CM Punk contre John Cena", "ev": "Money in the Bank 2011"}, {"t": "CM Punk contre Drew McIntyre — Hell in a Cell", "ev": "Bad Blood 2024"}, {"t": "CM Punk contre Gunther", "ev": "SummerSlam 2025"}, {"t": "CM Punk contre MJF — Dog Collar", "ev": "AEW Revolution 2022"}, {"t": "CM Punk contre Samoa Joe", "ev": "AEW All In 2023"}], "disc": true, "era": "WWE, ROH et AEW, depuis 1999", "txt": "Le « Best in the World » : 434 jours de règne comme champion de la WWE (2011-2013), départ fracassant en 2014, passage par la AEW, puis retour à la WWE fin 2023."}, "Sami Zayn": {"k": "WWE", "sh": ["SmackDown"], "ref": [{"t": "Sami Zayn contre Cesaro", "ev": "NXT ArRival, 2014"}, {"t": "Sami Zayn contre Adrian Neville — titre de NXT", "ev": "NXT TakeOver: R Evolution, 2014"}, {"t": "Sami Zayn contre Kevin Owens", "ev": "Battleground 2016"}, {"t": "Sami Zayn et Kevin Owens contre The Usos", "ev": "WrestleMania 39, 2023"}, {"t": "Sami Zayn contre Gunther — titre Intercontinental", "ev": "WrestleMania XL, 2024"}], "disc": true, "era": "WWE, depuis 2013", "txt": "Ancien El Generico sur le circuit indépendant, il devient l’un des chouchous du public à NXT puis à la WWE. Son arc avec la Bloodline en 2022-2023 est l’une des histoires les plus suivies de la décennie."}, "Liv Morgan": {"k": "WWE", "sh": ["Raw"], "ref": [{"t": "Liv Morgan contre Ronda Rousey — encaissement de la mallette", "ev": "Money in the Bank 2022"}, {"t": "Liv Morgan contre Ronda Rousey", "ev": "SummerSlam 2022"}, {"t": "Liv Morgan contre Becky Lynch", "ev": "King and Queen of the Ring 2024"}, {"t": "Liv Morgan contre Rhea Ripley", "ev": "SummerSlam 2024"}], "disc": true, "era": "WWE, depuis 2014", "txt": "Révélée au sein des Riott Squad, elle remporte la mallette Money in the Bank en 2022 et l’encaisse le soir même sur Ronda Rousey. Plusieurs fois championne du monde féminine."}, "Becky Lynch": {"k": "WWE", "sh": ["Raw"], "ref": [{"t": "Becky Lynch contre Charlotte Flair et Ronda Rousey", "ev": "WrestleMania 35, 2019"}, {"t": "Becky Lynch contre Charlotte Flair — Last Woman Standing", "ev": "Evolution 2018"}, {"t": "Becky Lynch contre Asuka", "ev": "Royal Rumble 2019"}, {"t": "Becky Lynch contre Trish Stratus — Steel Cage", "ev": "Payback 2023"}, {"t": "Becky Lynch contre Tiffany Stratton — titre de NXT", "ev": "NXT No Mercy 2023"}], "disc": true, "era": "WWE, depuis 2013", "txt": "« The Man » : elle remporte le premier main event féminin de l’histoire de WrestleMania (WrestleMania 35, face à Ronda Rousey et Charlotte Flair). Une des catcheuses les plus populaires de l’ère moderne."}, "Will Ospreay": {"k": "AEW", "ref": [{"t": "Will Ospreay contre Ricochet contre Konosuke Takeshita", "ev": "AEW", "v": "jXZm7rJp0RU"}, {"t": "Will Ospreay contre Kenny Omega", "ev": "Wrestle Kingdom 17, 2023"}, {"t": "Will Ospreay contre Kazuchika Okada", "ev": "Wrestle Kingdom 16, 2022"}, {"t": "Will Ospreay contre Bryan Danielson", "ev": "AEW Dynasty 2024"}], "disc": true, "era": "NJPW et AEW, depuis 2012", "txt": "Le prodige britannique s’impose à la NJPW, dont il devient champion du monde, avant de signer à la AEW en 2024. Réputé pour son style aérien spectaculaire et ses matchs à cinq étoiles."}, "Jon Moxley": {"k": "AEW", "ref": [{"t": "Bryan Danielson contre Jon Moxley", "ev": "AEW", "v": "LAxR8MI7baM"}, {"t": "Darby Allin contre Jon Moxley", "ev": "AEW", "v": "VpUuD7YiCYk"}, {"t": "Jon Moxley contre Kenny Omega — Lights Out", "ev": "AEW Full Gear 2019"}, {"t": "Jon Moxley contre Eddie Kingston — « I Quit »", "ev": "AEW Full Gear 2020"}], "disc": true, "era": "WWE et AEW, depuis 2004", "txt": "Ancien Dean Ambrose du Shield à la WWE, il rejoint la AEW en 2019 où il devient plusieurs fois champion du monde, réputé pour ses combats violents."}, "Kenny Omega": {"k": "AEW", "ref": [{"t": "Kenny Omega contre PAC", "ev": "AEW", "v": "Se2xpIRI9uk"}, {"t": "Kenny Omega contre Cody", "ev": "NJPW G1 Special in San Francisco, 2018", "v": "muM94dA93wg"}, {"t": "Kenny Omega contre Kazuchika Okada — 2 tombés sur 3", "ev": "NJPW Dominion 2018"}, {"t": "Kenny Omega contre Will Ospreay", "ev": "Wrestle Kingdom 17, 2023"}, {"t": "Kenny Omega contre Bryan Danielson", "ev": "AEW Winter Is Coming 2021"}], "disc": true, "era": "NJPW et AEW, depuis 2000", "txt": "Le « Cleaner » canadien marque la NJPW avec ses matchs légendaires contre Kazuchika Okada, puis devient l’un des membres fondateurs et champion du monde de la AEW."}, "Darby Allin": {"k": "AEW", "ref": [{"t": "Darby Allin contre Jon Moxley", "ev": "AEW", "v": "VpUuD7YiCYk"}, {"t": "Darby Allin contre Cody Rhodes — titre TNT", "ev": "AEW Full Gear 2020"}], "disc": true, "era": "AEW, depuis 2019", "txt": "Skateur casse-cou devenu l’un des visages de la AEW, connu pour ses plongeons risqués et ses victoires face à plus grand que lui."}, "Mercedes Moné": {"k": "AEW", "a": ["Sasha Banks"], "ref": [{"t": "Sasha Banks contre Bayley — titre féminin de NXT", "ev": "NXT TakeOver: Brooklyn, 2015"}, {"t": "Sasha Banks contre Bayley — Iron Woman", "ev": "NXT TakeOver: Respect, 2015"}, {"t": "Mercedes Moné contre Willow Nightingale — titre TBS", "ev": "AEW Double or Nothing 2024"}], "disc": true, "era": "WWE et AEW, depuis 2010", "txt": "Ex-Sasha Banks à la WWE, plusieurs fois championne et figure de la révolution féminine, elle rejoint la AEW en 2024."}, "Konosuke Takeshita": {"k": "NJPW", "ref": [{"t": "El Phantasmo contre Konosuke Takeshita — titre NJPW World TV", "ev": "The New Beginning USA, 2026", "v": "14XjixxzNvc"}, {"t": "Konosuke Takeshita contre SANADA — titre NJPW World TV", "ev": "Dominion 2026", "v": "JaYvjmqDuhg"}, {"t": "Konosuke Takeshita contre Chase Owens — titre NJPW World TV", "ev": "Wrestling Dontaku 2026", "v": "gsG4HwFkgS8"}, {"t": "Will Ospreay contre Ricochet contre Konosuke Takeshita", "ev": "AEW", "v": "jXZm7rJp0RU"}], "disc": true, "era": "DDT, AEW et NJPW, depuis 2012", "txt": "Formé à la DDT au Japon, ce colosse athlétique partage sa carrière entre la AEW et la NJPW."}, "Yota Tsuji": {"k": "NJPW", "ref": [{"t": "Yota Tsuji contre Ryohei Oiwa — titre IWGP Heavyweight", "ev": "King of Pro-Wrestling 2026"}], "disc": true, "era": "NJPW, depuis 2015", "txt": "Formé au dojo de la NJPW et révélé après son excursion à l’étranger, il est devenu l’un des visages de la nouvelle génération de la fédération."}, "Mayu Iwatani": {"k": "Marigold", "ref": [{"t": "Mayu Iwatani contre IYO SKY", "ev": "Marigold Grand Destiny 2025"}], "disc": true, "era": "Stardom puis Marigold, depuis 2011", "txt": "« L’icône de Stardom », pilier de la fédération pendant plus de dix ans, elle a rejoint Marigold en 2025."}, "Saya Kamitani": {"k": "Stardom", "ref": [{"t": "Saya Kamitani contre Tam Nakano — World of Stardom", "ev": "Stardom", "v": "J4fNyNr1XUU"}, {"t": "Saya Kamitani contre Momo Watanabe — World of Stardom", "ev": "Stardom", "v": "1qRxblbn-Wo"}], "disc": true, "era": "Stardom, depuis 2017", "txt": "Ancienne gymnaste, elle s’est imposée comme l’une des stars de Stardom et a été championne du monde de la fédération."}, "Giulia": {"k": "WWE", "sh": ["SmackDown"], "ref": [{"t": "Giulia contre Mariah May", "ev": "Stardom 5★STAR GP 2023", "v": "uvHbUAHNc74"}], "disc": true, "era": "Stardom, Marigold puis WWE, depuis 2017", "txt": "Révélée à Stardom puis à Marigold, la catcheuse italo-japonaise a rejoint la WWE en 2024."}, "Randy Savage": {"k": "WWF / WCW", "era": "Années 80-90", "txt": "« Macho Man », icône des années 80 au phrasé inimitable et deux fois champion de la WWF. Son match contre Ricky Steamboat à WrestleMania III reste une référence absolue.", "ref": [{"t": "Randy Savage contre Ricky Steamboat — titre Intercontinental", "ev": "WrestleMania III, 1987", "v": "4O9SUEHrVak"}, {"t": "Randy Savage contre Hulk Hogan — titre de la WWF", "ev": "WrestleMania V, 1989"}, {"t": "Randy Savage contre Ultimate Warrior — Retirement Match", "ev": "WrestleMania VII, 1991"}], "disc": true}, "Ricky Steamboat": {"k": "WWF / NWA", "era": "Années 70-90", "txt": "« The Dragon », modèle de technique et de vitesse, célèbre pour ses classiques contre Randy Savage et Ric Flair.", "ref": [{"t": "Randy Savage contre Ricky Steamboat — titre Intercontinental", "ev": "WrestleMania III, 1987", "v": "4O9SUEHrVak"}, {"t": "Ric Flair contre Ricky Steamboat — 2 tombés sur 3", "ev": "Clash of the Champions VI, 1989"}, {"t": "Ric Flair contre Ricky Steamboat", "ev": "Chi-Town Rumble, 1989"}], "disc": true}, "Ric Flair": {"k": "NWA / WCW / WWF", "era": "Années 70-2000", "txt": "« The Nature Boy », seize fois champion du monde, la grande star de la NWA et de la WCW dans les années 80. WOOOO !", "ref": [{"t": "Ric Flair contre Ricky Steamboat — 2 tombés sur 3", "ev": "Clash of the Champions VI, 1989"}, {"t": "Ric Flair contre Sting", "ev": "Clash of the Champions I, 1988"}, {"t": "Ric Flair contre Shawn Michaels — Career Threatening Match", "ev": "WrestleMania XXIV, 2008"}], "disc": true}, "Hulk Hogan": {"k": "WWF / WCW", "era": "Années 80-90", "txt": "Le visage de la « Hulkamania » qui a fait exploser le catch dans les années 80, puis le leader de la nWo à la WCW à partir de 1996.", "ref": [{"t": "Hulk Hogan contre André the Giant", "ev": "WrestleMania III, 1987"}, {"t": "Hulk Hogan contre Ultimate Warrior", "ev": "WrestleMania VI, 1990"}, {"t": "Hulk Hogan contre The Rock", "ev": "WrestleMania X8, 2002"}, {"t": "The Great Muta contre Hulk Hogan", "ev": "Fukuoka Dome, 1993", "v": "t8i6QEALQoE"}], "disc": true}, "André the Giant": {"k": "WWF", "era": "Années 70-80", "txt": "Le géant français (2,24 m annoncés), attraction mondiale des années 70-80. Son affrontement avec Hulk Hogan à WrestleMania III est entré dans l’histoire.", "ref": [{"t": "Hulk Hogan contre André the Giant", "ev": "WrestleMania III, 1987"}], "disc": true}, "Bret Hart": {"k": "WWF / WCW", "era": "Années 80-90", "txt": "« The Hitman », technicien hors pair, cinq fois champion de la WWF et figure majeure des années 90.", "ref": [{"t": "Bret Hart contre Shawn Michaels", "ev": "WWF", "v": "0a6SUIvOw7A"}, {"t": "Bret Hart contre « Stone Cold » Steve Austin — Submission Match", "ev": "WrestleMania 13, 1997"}, {"t": "Bret Hart contre Owen Hart", "ev": "WrestleMania X, 1994"}, {"t": "Bret Hart contre Mr. Perfect", "ev": "King of the Ring, 1993"}], "disc": true}, "Shawn Michaels": {"k": "WWF / WWE", "era": "Années 80-2010", "txt": "« Mr. WrestleMania », l’un des plus grands showmen de l’histoire, auteur de classiques contre Bret Hart, Razor Ramon et The Undertaker.", "ref": [{"t": "The Undertaker contre Shawn Michaels", "ev": "WrestleMania XXV, 2009", "v": "Gd54flkPtL4"}, {"t": "Shawn Michaels contre Razor Ramon — Ladder Match", "ev": "WrestleMania X, 1994"}, {"t": "Bret Hart contre Shawn Michaels", "ev": "WWF", "v": "0a6SUIvOw7A"}, {"t": "Shawn Michaels contre Kurt Angle", "ev": "WrestleMania 21, 2005"}], "disc": true}, "The Undertaker": {"k": "WWF / WWE", "era": "1990-2020", "txt": "« The Deadman », personnage mystique de la WWF/WWE pendant trente ans, célèbre pour sa série de 21 victoires à WrestleMania.", "ref": [{"t": "The Undertaker contre Shawn Michaels", "ev": "WrestleMania XXV, 2009", "v": "Gd54flkPtL4"}, {"t": "The Undertaker contre Mankind — Hell in a Cell", "ev": "King of the Ring, 1998"}, {"t": "The Undertaker contre Triple H — Hell in a Cell « End of an Era »", "ev": "WrestleMania XXVIII, 2012"}], "disc": true}, "Stone Cold Steve Austin": {"k": "WWF", "era": "Années 90-2000", "a": ["Steve Austin", "Stone Cold"], "txt": "Le rebelle buveur de bière, visage de l’« Attitude Era » et de sa guerre contre Mr. McMahon à la fin des années 90.", "ref": [{"t": "The Rock contre « Stone Cold » Steve Austin", "ev": "WWF", "v": "byDno7ysc7g"}, {"t": "« Stone Cold » Steve Austin contre Bret Hart — Submission Match", "ev": "WrestleMania 13, 1997"}, {"t": "« Stone Cold » Steve Austin contre Shawn Michaels", "ev": "WrestleMania XIV, 1998"}], "disc": true}, "The Rock": {"k": "WWF / WWE", "era": "Années 90-2000", "txt": "« The People’s Champion », star de l’Attitude Era avant de devenir l’un des acteurs les mieux payés d’Hollywood.", "ref": [{"t": "The Rock contre « Stone Cold » Steve Austin", "ev": "WWF", "v": "byDno7ysc7g"}, {"t": "The Rock contre Hulk Hogan", "ev": "WrestleMania X8, 2002"}, {"t": "The Rock contre John Cena", "ev": "WrestleMania XXVIII, 2012"}], "disc": true}, "Mick Foley": {"k": "WWF / WCW / ECW", "era": "Années 90", "a": ["Mankind", "Cactus Jack"], "txt": "Trois personnages (Cactus Jack, Mankind, Dude Love) et une résistance hors du commun, symbolisée par sa chute du haut de la cage au King of the Ring 1998.", "ref": [{"t": "The Undertaker contre Mankind — Hell in a Cell", "ev": "King of the Ring, 1998"}, {"t": "Cactus Jack contre Triple H — Street Fight", "ev": "Royal Rumble, 2000"}, {"t": "Mick Foley contre Edge — Hardcore Match", "ev": "WrestleMania 22, 2006"}], "disc": true}, "Eddie Guerrero": {"k": "WCW / WWE", "era": "Années 90-2000", "txt": "Issu d’une grande famille de lutteurs mexicains, « Latino Heat » devient champion de la WWE en 2004 au terme d’une histoire très émouvante. Il est décédé en 2005.", "ref": [{"t": "Eddie Guerrero contre Kurt Angle — titre de la WWE", "ev": "WrestleMania XX, 2004", "v": "vNPLhM227yc"}, {"t": "Eddie Guerrero contre Brock Lesnar — titre de la WWE", "ev": "No Way Out, 2004"}, {"t": "Eddie Guerrero contre Rey Mysterio", "ev": "Halloween Havoc, 1997"}], "disc": true}, "Rey Mysterio": {"k": "WCW / WWE", "era": "Depuis 1989", "txt": "Le plus célèbre luchador moderne, révolutionnaire du catch aérien à la WCW puis champion du monde à la WWE en 2006.", "ref": [{"t": "Rey Mysterio contre Eddie Guerrero", "ev": "Halloween Havoc, 1997"}, {"t": "Rey Mysterio contre Eddie Guerrero", "ev": "WrestleMania 21, 2005"}, {"t": "Rey Mysterio contre Kurt Angle et Randy Orton — titre mondial", "ev": "WrestleMania 22, 2006"}], "disc": true}, "Kurt Angle": {"k": "WWE / TNA", "era": "1998-2019", "txt": "Champion olympique de lutte en 1996, il devient en un temps record l’un des meilleurs catcheurs de la WWE puis de la TNA.", "ref": [{"t": "Kurt Angle contre Brock Lesnar", "ev": "WWE", "v": "ion0uETB9Mo"}, {"t": "Eddie Guerrero contre Kurt Angle — titre de la WWE", "ev": "WrestleMania XX, 2004", "v": "vNPLhM227yc"}, {"t": "Kurt Angle contre Shawn Michaels", "ev": "WrestleMania 21, 2005"}], "disc": true}, "Edge": {"k": "WWE / AEW", "era": "Depuis 1998", "a": ["Adam Copeland"], "txt": "Spécialiste des matchs à échelles et onze fois champion du monde, revenu en 2020 après neuf ans d’arrêt pour une blessure au cou. Il catche aujourd’hui à la AEW sous son vrai nom, Adam Copeland.", "ref": [{"t": "Triangle Ladder Match pour les titres par équipe", "ev": "WrestleMania 2000", "v": "16dCHSsvpG8"}, {"t": "Edge et Christian contre Hardy Boyz contre Dudley Boyz — TLC", "ev": "SummerSlam, 2000"}, {"t": "Edge et Christian contre Hardy Boyz contre Dudley Boyz — TLC II", "ev": "WrestleMania X-Seven, 2001"}, {"t": "Edge contre Mick Foley — Hardcore Match", "ev": "WrestleMania 22, 2006"}, {"t": "Edge contre The Undertaker", "ev": "WrestleMania XXIV, 2008"}], "disc": true}, "Trish Stratus": {"k": "WWE", "era": "Années 2000", "txt": "Sept fois championne féminine de la WWE, la grande star féminine des années 2000 aux côtés de Lita.", "ref": [{"t": "Trish Stratus contre Lita — titre féminin", "ev": "Raw, décembre 2004"}, {"t": "Trish Stratus contre Mickie James", "ev": "WrestleMania 22, 2006"}, {"t": "Trish Stratus contre Becky Lynch — Steel Cage", "ev": "Payback, 2023"}], "disc": true}, "Lita": {"k": "WWE", "era": "Années 2000", "txt": "Pionnière du catch aérien féminin à la WWE, célèbre pour son passage avec les Hardy Boyz et sa rivalité avec Trish Stratus.", "ref": [{"t": "Trish Stratus contre Lita — titre féminin", "ev": "Raw, décembre 2004"}], "disc": true}, "Bull Nakano": {"k": "All Japan Women / WWF", "era": "Années 80-90", "txt": "Icône du catch féminin japonais des années 80-90, reconnaissable à son look et à sa puissance ; championne féminine de la WWF en 1994.", "ref": [{"t": "Bull Nakano contre Alundra Blayze — titre féminin", "ev": "SummerSlam, 1994"}], "disc": true}, "Mitsuharu Misawa": {"k": "All Japan / NOAH", "era": "1981-2009", "txt": "Légende de la All Japan puis fondateur de la Pro Wrestling NOAH, auteur de dizaines de matchs considérés comme des chefs-d’œuvre.", "ref": [{"t": "Mitsuharu Misawa contre Toshiaki Kawada", "ev": "All Japan, 3 juin 1994"}, {"t": "Mitsuharu Misawa contre Kenta Kobashi — titre GHC", "ev": "NOAH, 2003"}], "disc": true}, "Kenta Kobashi": {"k": "All Japan / NOAH", "era": "1988-2013", "txt": "L’un des catcheurs japonais les plus respectés, icône de la All Japan et de la NOAH, revenu sur le ring après avoir vaincu un cancer.", "ref": [{"t": "Mitsuharu Misawa contre Kenta Kobashi — titre GHC", "ev": "NOAH, 2003"}, {"t": "Samoa Joe contre Kenta Kobashi", "ev": "Ring of Honor, 2005"}], "disc": true}, "Keiji Mutoh": {"k": "NJPW / All Japan", "era": "1984-2023", "a": ["The Great Muta", "Great Muta"], "txt": "Star de la NJPW et, sous la peinture de The Great Muta, personnage culte au Japon comme aux États-Unis. Il a pris sa retraite en 2023.", "ref": [{"t": "The Great Muta contre Hulk Hogan", "ev": "Fukuoka Dome, 1993", "v": "t8i6QEALQoE"}, {"t": "Keiji Mutoh contre Masahiro Chono — finale du premier G1 Climax", "ev": "Ryōgoku, 1991", "v": "5xcyEHumQxk"}, {"t": "Keiji Mutoh contre Nobuhiko Takada", "ev": "Tokyo Dome, 1995"}], "disc": true}, "Jushin Thunder Liger": {"k": "NJPW", "era": "1989-2020", "a": ["Jushin Liger"], "txt": "Légende des poids lourds-légers de la NJPW, inspiré d’un dessin animé, qui a popularisé le catch junior dans le monde entier. Retraité en 2020.", "ref": [{"t": "Jushin Thunder Liger contre Brian Pillman", "ev": "WCW SuperBrawl II, 1992"}], "disc": true}, "Hiroshi Tanahashi": {"k": "NJPW", "era": "1999-2026", "txt": "« L’Ace » qui a relancé la NJPW dans les années 2010, plusieurs fois champion IWGP. Il a pris sa retraite en 2026 et préside la fédération.", "ref": [{"t": "Kazuchika Okada contre Hiroshi Tanahashi", "ev": "Wrestle Kingdom 9, 2015"}, {"t": "Hiroshi Tanahashi contre Kenny Omega", "ev": "Wrestle Kingdom 13, 2019"}, {"t": "Hiroshi Tanahashi contre Matt Riddle — titre NJPW World TV", "ev": "The New Beginning, 2024", "v": "WX19y6rXX2Q"}], "disc": true}, "Kazuchika Okada": {"k": "NJPW / AEW", "era": "Depuis 2004", "txt": "Le « Rainmaker », recordman de règnes et de défenses du titre IWGP Heavyweight, parti à la AEW en 2024.", "ref": [{"t": "Kazuchika Okada contre Kenny Omega", "ev": "Wrestle Kingdom 11, 2017"}, {"t": "Kazuchika Okada contre Kenny Omega — 2 tombés sur 3", "ev": "Dominion, 2018"}, {"t": "Kazuchika Okada contre Hiroshi Tanahashi", "ev": "Wrestle Kingdom 9, 2015"}, {"t": "Kazuchika Okada contre Bryan Danielson", "ev": "Forbidden Door, 2023"}], "disc": true}, "AJ Styles": {"k": "TNA / NJPW / WWE", "era": "Depuis 1998", "txt": "« The Phenomenal One », pilier de la TNA, star de la NJPW, puis champion de la WWE peu après son arrivée en 2016.", "ref": [{"t": "AJ Styles contre Samoa Joe contre Christopher Daniels", "ev": "TNA Unbreakable, 2005"}, {"t": "AJ Styles contre Shinsuke Nakamura", "ev": "Wrestle Kingdom 10, 2016"}, {"t": "AJ Styles contre John Cena — titre de la WWE", "ev": "Royal Rumble, 2017"}], "disc": true}, "Asuka": {"k": "WWE", "era": "Depuis 2004", "a": ["Kana"], "txt": "Ancienne Kana au Japon, elle reste invaincue pendant plus de 900 jours à NXT avant de devenir championne à Raw et à SmackDown.", "ref": [{"t": "Asuka contre Bayley — titre féminin de NXT", "ev": "NXT TakeOver: Dallas, 2016"}, {"t": "Asuka contre Charlotte Flair", "ev": "WrestleMania 34, 2018"}], "disc": true}, "Bianca Belair": {"k": "WWE", "era": "Depuis 2016", "txt": "Ancienne athlète universitaire, l’« EST » de la WWE remporte le main event de WrestleMania 37 face à Sasha Banks.", "ref": [{"t": "Bianca Belair contre Sasha Banks", "ev": "WrestleMania 37, 2021"}, {"t": "Bianca Belair contre Becky Lynch", "ev": "WrestleMania 38, 2022"}], "disc": true}, "Rhea Ripley": {"k": "WWE", "era": "Depuis 2017", "txt": "« Mami », championne du monde féminine dominante de 2023-2024 et figure du Judgment Day.", "ref": [{"t": "Rhea Ripley contre Charlotte Flair", "ev": "WrestleMania 39, 2023"}, {"t": "Rhea Ripley contre Becky Lynch", "ev": "WrestleMania XL, 2024"}], "disc": true}, "John Cena": {"k": "WWE", "era": "2002-2025", "txt": "Visage de la WWE pendant plus de quinze ans et recordman avec 17 titres mondiaux, le dernier remporté à WrestleMania 41. Il a pris sa retraite fin 2025.", "ref": [{"t": "John Cena contre CM Punk", "ev": "Money in the Bank, 2011"}, {"t": "The Rock contre John Cena", "ev": "WrestleMania XXVIII, 2012"}, {"t": "John Cena contre AJ Styles — titre de la WWE", "ev": "Royal Rumble, 2017"}, {"t": "John Cena contre Cody Rhodes", "ev": "WrestleMania 41, 2025"}], "disc": true}, "Bryan Danielson": {"k": "ROH / WWE / AEW", "era": "1999-2024", "a": ["Daniel Bryan"], "txt": "Le « American Dragon », technicien hors pair : du circuit indépendant au main event de WrestleMania XXX, puis une seconde carrière remarquable à la AEW.", "ref": [{"t": "Daniel Bryan contre Triple H", "ev": "WrestleMania XXX, 2014"}, {"t": "Daniel Bryan contre Batista et Randy Orton — titre de la WWE", "ev": "WrestleMania XXX, 2014"}, {"t": "Bryan Danielson contre Kazuchika Okada", "ev": "Forbidden Door, 2023"}, {"t": "Bryan Danielson contre Jon Moxley", "ev": "AEW", "v": "LAxR8MI7baM"}], "disc": true}, "Shinsuke Nakamura": {"k": "NJPW / WWE", "era": "Depuis 2002", "txt": "Le « King of Strong Style », star charismatique de la NJPW avant de rejoindre la WWE en 2016.", "ref": [{"t": "Shinsuke Nakamura contre AJ Styles", "ev": "Wrestle Kingdom 10, 2016"}, {"t": "Shinsuke Nakamura contre Kota Ibushi — titre Intercontinental IWGP", "ev": "Wrestle Kingdom 9, 2015"}], "disc": true}, "El Santo": {"k": "Lucha libre (Mexique)", "era": "1942-1982", "txt": "« El Enmascarado de Plata », le plus célèbre luchador de l’histoire, héros du ring et d’une cinquantaine de films au Mexique.", "ref": [], "disc": true}, "Mil Máscaras": {"k": "Lucha libre (Mexique)", "era": "Années 60-90", "txt": "Le « luchador aux mille masques », star internationale qui a fait connaître la lucha libre au Japon et aux États-Unis dans les années 70.", "ref": [], "disc": true}, "La Parka": {"k": "AAA", "era": "Depuis 2003", "txt": "Le luchador au costume de squelette, figure emblématique et populaire de la AAA.", "ref": [{"t": "La Parka contre L.A. Park", "ev": "Triplemanía", "v": "V68StZT8kqY"}, {"t": "La Parka contre Lince Dorado", "ev": "AAA", "v": "HmEauIatAYQ"}], "disc": true}, "Randy Orton": {"k": "WWE", "era": "Depuis 2000", "nick": "The Viper, The Apex Predator, Legend Killer", "from": "St. Louis (Missouri)", "ht": "1,96 m", "wt": "125 kg", "debut": "18 mars 2000", "fin": "RKO, Punt Kick", "teams": "Evolution, The Legacy, Rated-RKO, The Wyatt Family, RK-Bro", "trainer": "Bob Orton Jr., Fit Finlay, Ohio Valley Wrestling", "txt": "Fils et petit-fils de catcheurs, « The Viper » est l’un des catcheurs les plus titrés de l’histoire de la WWE, célèbre pour son RKO.", "ref": [{"t": "Randy Orton contre Mick Foley — Hardcore match", "ev": "Backlash, 2004"}, {"t": "Randy Orton contre Chris Benoit — Titre mondial poids lourds", "ev": "SummerSlam, 2004"}, {"t": "Randy Orton contre Shawn Michaels", "ev": "Unforgiven, 2003"}, {"t": "Randy Orton contre The Undertaker — Hell in a Cell", "ev": "Armageddon, 2005"}, {"t": "Randy Orton contre Edge", "ev": "Backlash, 2020"}]}, "Gabe Kidd": {"k": "NJPW, AEW", "a": ["Gabriel Kidd"], "era": "Depuis 2011", "from": "Nottingham (Angleterre)", "ht": "1,83 m", "wt": "107 kg", "debut": "12 novembre 2011", "teams": "Bullet Club War Dogs, Death Riders, Unbound Co.", "trainer": "Marty Jones, Stixx, Katsuyori Shibata, NJPW L.A. Dojo", "txt": "Bagarreur anglais formé au dojo de Los Angeles de la NJPW, champion IWGP Global et membre des Death Riders de Jon Moxley.", "ref": [{"t": "Gabe Kidd contre Eddie Kingston — No Ropes Last Man Standing", "ev": "NJPW Resurgence, 2024"}, {"t": "Gabe Kidd contre Kaito Kiyomiya — Titre GHC poids lourds", "ev": "NOAH Grand Ship in Yokohama, 2024"}, {"t": "Gabe Kidd contre Kenny Omega", "ev": "Wrestle Dynasty, 2025"}, {"t": "Gabe Kidd contre Yota Tsuji — Titre IWGP Global", "ev": "Dominion 6.15 in Osaka-jo Hall, 2025"}, {"t": "Gabe Kidd contre Darby Allin — Coffin match", "ev": "AEW Dynamite, 2026"}]}, "Manami Toyota": {"k": "AJW (All Japan Women)", "era": "1987-2017", "disc": true, "from": "Masuda (Shimane, Japon)", "ht": "1,67 m", "wt": "68 kg", "debut": "5 août 1987", "fin": "Japanese Ocean Cyclone Suplex, Japanese Ocean Queen Bee Bomb", "teams": "Tokyo Sweethearts (avec Mima Shimoda), équipe avec Toshiyo Yamada", "trainer": "Jaguar Yokota", "txt": "Icône du catch féminin japonais (joshi) des années 1990 à la All Japan Women, réputée pour son rythme effréné et ses suplexes spectaculaires ; elle a pris sa retraite en 2017.", "ref": [{"t": "Tokyo Sweethearts contre Etsuko Mita et Toshiyo Yamada", "ev": "Wrestlemarinpiad, 1989"}, {"t": "Manami Toyota contre Toshiyo Yamada — cheveux contre cheveux", "ev": "AJW Mid Summer Typhoon, 1992"}, {"t": "Manami Toyota et Toshiyo Yamada contre Dynamite Kansai et Mayumi Ozaki — 2 tombés sur 3", "ev": "Dreamslam II, 1993"}, {"t": "Manami Toyota contre Kyoko Inoue — Titre WWWA", "ev": "AJW, 1995"}, {"t": "Manami Toyota contre Chigusa Nagayo", "ev": "AJW, 1998"}]}, "Swerve Strickland": {"k": "AEW", "a": ["Isaiah « Swerve » Scott", "Shane Strickland", "Killshot"], "era": "Depuis 2009", "from": "Tacoma (Washington)", "ht": "1,85 m", "wt": "109 kg", "debut": "2009", "teams": "Hit Row, Swerve In Our Glory (avec Keith Lee), Mogul Embassy, New Level (avec Kofi et Austin Creed)", "trainer": "Combat Zone Wrestling, D. J. Hyde, Ground Xero Wrestling", "txt": "Ancien champion du monde de l’AEW passé par la WWE et Lucha Underground, il mène désormais New Level aux côtés de Kofi et Austin Creed.", "ref": [{"t": "Swerve Strickland contre Hangman Page — Texas Deathmatch", "ev": "AEW Full Gear, 2023"}, {"t": "Swerve Strickland contre Samoa Joe — Titre mondial de l’AEW", "ev": "AEW Dynasty, 2024"}, {"t": "Swerve Strickland contre Hangman Page — Lights Out Steel Cage", "ev": "AEW All Out, 2024"}, {"t": "Killshot contre Son of Havoc — masque contre masque", "ev": "Lucha Underground Ultima Lucha Cuatro, 2018"}, {"t": "Killshot contre Dante Fox — Hell of War", "ev": "Lucha Underground Ultima Lucha Tres"}]}, "Suzu Suzuki": {"k": "Stardom", "era": "Depuis 2018", "from": "Miyazaki (Japon)", "ht": "1,57 m", "wt": "65 kg", "debut": "31 décembre 2018 (RibbonMania 2018, Ice Ribbon)", "teams": "Prominence, Crazy Star (avec Mei Seira), Neo Genesis, Mi Vida Loca", "trainer": "Tequila Saya", "txt": "Révélée à Ice Ribbon puis au sein de Prominence, elle a remporté le 5★STAR GP 2023 et dirige le clan Mi Vida Loca, championne World of Stardom depuis 2026.", "ref": [{"t": "Suzu Suzuki contre Maya Yukihi — ICE Cross Infinity Championship", "ev": "Ice Ribbon, Yokohama Bunka Gymnasium Final, 2020"}, {"t": "Suzu Suzuki contre Miyuki Takase — finale de Catch the Wave", "ev": "Wave, 2022"}, {"t": "Suzu Suzuki et Risa Sera contre Giulia et Mai Sakurai — hardcore match", "ev": "Stardom in Showcase vol.1, 2022"}, {"t": "Suzu Suzuki contre Maika — finale du 5★STAR GP", "ev": "Stardom, 2023"}, {"t": "Suzu Suzuki contre Sayaka Kurara — World of Stardom Championship", "ev": "The Conversion, 2026"}]}, "Chelsea Green": {"k": "WWE", "sh": ["SmackDown"], "a": ["Laurel Van Ness", "Jaida"], "era": "depuis 2014", "al": "face", "alD": "2026-05-22", "txt": "Catcheuse canadienne passée par la TNA (Laurel Van Ness) avant la WWE, connue pour son personnage excentrique ; elle défie Liv Morgan à Crown Jewel 2026.", "nick": "Hot Mess", "from": "Victoria (Colombie-Britannique)", "ht": "1,73 m", "wt": "57 kg", "fin": "Unpretty-Her (double underhook facebuster modifié)", "teams": "The Green Regime (avec Piper Niven et Alba Fyre), Chelsea Green et Piper Niven"}, "Tony D’Angelo": {"k": "WWE", "sh": ["NXT"], "a": ["Joey Ariola", "The Don", "Tony D"], "era": "depuis 2019", "txt": "Ancien champion de NXT au personnage de mafieux de Chicago, premier Grand Slam Champion de NXT ; il veut récupérer son titre face à Grayson Waller à Halloween Havoc 2026.", "nick": "The Don", "from": "Chicago (Illinois)", "ht": "1,83 m", "wt": "109 kg", "debut": "2019", "trainer": "WWE Performance Center", "teams": "The D’Angelo Family, Team 2.0", "ref": [{"t": "Tony D’Angelo contre Pete Dunne — Crowbar on a Pole", "ev": "NXT, 2022"}, {"t": "Tony D’Angelo contre Santos Escobar — Street Fight", "ev": "NXT Heatwave, 2022"}, {"t": "Tony D’Angelo contre Dijak — Jailhouse Street Fight", "ev": "NXT Roadblock, 2023"}, {"t": "Tony D’Angelo contre Oba Femi — titre nord-américain de NXT", "ev": "NXT, 2024"}, {"t": "Tony D’Angelo contre Joe Hendry contre Ethan Page contre Ricky Saints — titre de NXT", "ev": "NXT Stand & Deliver, 2026"}]}, "Leon Slater": {"k": "TNA", "a": ["Leon Blade"], "era": "depuis 2019", "txt": "Voltigeur anglais de Bradford, deux fois champion de la X Division de la TNA, plus jeune détenteur de ce titre ; il est à l’affiche du titre mondial de la TNA à Destination X 2026.", "from": "Bradford (Angleterre)", "ht": "1,85 m", "wt": "89 kg", "debut": "2019", "trainer": "Liam Slater", "ref": [{"t": "Leon Slater contre Moose — titre de la X Division", "ev": "TNA Slammiversary, 2025"}, {"t": "Leon Slater contre Oba Femi — titre de NXT", "ev": "NXT New Year’s Evil, 2026"}, {"t": "Leon Slater contre Carmelo Hayes — titre des États-Unis", "ev": "SmackDown, 2026"}, {"t": "Leon Slater contre Cedric Alexander — 2 out of 3 Falls, titre de la X Division", "ev": "TNA, 2026"}, {"t": "Leon Slater contre Cedric Alexander — Last Man Standing en cage, titre de la X Division", "ev": "TNA Lockdown, 2026"}]}, "Sting": {"k": "WCW, TNA, WWE, AEW", "a": ["Steve Borden"], "era": "1985–2024", "disc": true, "txt": "Icône de la WCW au maquillage de corbeau, surnommé « The Franchise of WCW », il a aussi marqué la TNA, la WWE et la AEW avant de prendre sa retraite invaincu en équipe avec Darby Allin à Revolution 2024.", "nick": "The Franchise of WCW, Every Man’s Nightmare", "from": "Venice Beach (Californie)", "ht": "1,88 m", "wt": "113 kg", "debut": "1985", "fin": "Scorpion Death Drop, Scorpion Deathlock", "teams": "Four Horsemen, nWo Wolfpac, Main Event Mafia, Sting et Lex Luger", "trainer": "Red Bastien, Rick Bassman", "ref": [{"t": "Sting contre Hollywood Hogan", "ev": "Starrcade, 1997"}, {"t": "Sting et Lex Luger contre The Steiner Brothers", "ev": "SuperBrawl, 1991"}, {"t": "Sting’s Squadron contre Dangerous Alliance — WarGames", "ev": "WrestleWar, 1992"}, {"t": "Sting contre Ric Flair", "ev": "Dernier WCW Monday Nitro, 2001"}, {"t": "Sting contre AJ Styles — titre mondial de la TNA", "ev": "Bound for Glory, 2009"}]}, "Lyra Valkyria": {"k": "WWE", "sh": ["Raw"], "a": ["Aoife Valkyrie", "Valkyrie"], "al": "heel", "alD": "2026-06-22", "nick": "Lady of the Opera", "from": "Dublin (Irlande)", "ht": "1,60 m", "wt": "59 kg", "fin": "Nightwing, Frog Splash, Roundhouse Kick", "teams": "Bayley et Lyra Valkyria, The Woke Queens"}, "Penta": {"k": "WWE", "sh": ["Raw"], "a": ["Pentagón Jr.", "Penta El Zero Miedo"], "nick": "Penta Zero Miedo", "ht": "1,80 m", "wt": "94 kg", "fin": "Sacrifice, Penta Driver"}, "Chigusa Nagayo": {"k": "AJW, GAEA Japan, Marvelous", "era": "1980–2024", "disc": true, "txt": "Moitié des Crush Gals avec Lioness Asuka, elle a fait exploser la popularité du catch féminin japonais dans les années 1980, notamment grâce à sa rivalité avec Dump Matsumoto. Elle a ensuite fondé la GAEA Japan en 1995 puis la Marvelous.", "from": "Ōmura (Nagasaki, Japon)", "ht": "1,65 m", "wt": "87 kg", "debut": "8 août 1980", "teams": "Crush Gals (avec Lioness Asuka)", "trainer": "All Japan Women's Pro-Wrestling", "ref": [{"t": "Chigusa Nagayo contre Dump Matsumoto — cheveux contre cheveux", "ev": "AJW, 1985"}, {"t": "Chigusa Nagayo contre Dump Matsumoto — cheveux contre cheveux", "ev": "AJW, 1986"}, {"t": "Chigusa Nagayo contre Yukari Omori — titre contre titre (WWWA World Single)", "ev": "AJW, 1987"}]}, "Cruz Montana": {"k": "WWE", "sh": ["Raw"], "a": ["Mike Santana", "Santana", "Mike Draztik"], "era": "NXT, depuis 2026 (Mike Santana à la TNA et à l'AEW avant)", "txt": "Ancien membre de LAX à la TNA puis de Proud and Powerful à l'AEW (avec Ortiz), Mike Santana est devenu champion du monde de la TNA avant de rejoindre la WWE à l'été 2026. Sous le nom de Cruz Montana, un hommage à son père, il est passé par NXT avant de débarquer à Raw en novembre 2026 comme nouveau membre de The 946. Il a aussi catché sous le nom de Mike Draztik à ses débuts sur la scène indépendante.", "ref": [], "teams": "The 946, LAX, Proud and Powerful"}, "Oba Femi": {"k": "WWE", "sh": ["Raw"], "al": "face", "alD": "2025-02-15", "txt": "Colosse nigérian formé au Performance Center de la WWE, devenu l'un des champions marquants de NXT avant de rejoindre Raw en 2026.", "nick": "The Ruler, The Destroyer", "from": "Lagos (Nigeria)", "ht": "1,93 m", "wt": "141 kg", "fin": "Fall From Grace (pop-up powerbomb)"}, "Stephanie Vaquer": {"k": "WWE", "sh": ["Raw"], "a": ["Dark Angel"], "al": "face", "alD": "2024-07-13", "inj": true, "txt": "Catcheuse chilienne révélée au CMLL et au Japon, arrivée à la WWE en 2024 et passée de NXT à Raw en 2025.", "nick": "La Primera, The Dark Angel", "from": "San Antonio (Chili)", "ht": "1,63 m", "wt": "50 kg", "debut": "2009", "fin": "SVB (package backbreaker), Corkscrew Moonsault, Angel Wings", "teams": "Giulia et Stephanie Vaquer, Stephanie Vaquer et Zeuxis"}, "Johnny Gargano": {"k": "WWE", "sh": ["SmackDown"], "era": "depuis 2005", "al": "face", "alD": "2026-09-04", "nick": "Johnny Wrestling, The Heart and Soul of NXT", "from": "Cleveland (Ohio)", "ht": "1,78 m", "wt": "90 kg", "debut": "2005", "fin": "Gargano Escape, One Final Beat", "teams": "#DIY (avec Tommaso Ciampa), The Way", "ref": [{"t": "Johnny Gargano contre Andrade « Cien » Almas — titre de NXT", "ev": "NXT TakeOver: Philadelphia, 2018"}, {"t": "Johnny Gargano contre Tommaso Ciampa — Unsanctioned Match", "ev": "NXT TakeOver: New Orleans, 2018"}, {"t": "Johnny Gargano contre Adam Cole — 2 out of 3 Falls, titre de NXT", "ev": "NXT TakeOver: XXV, 2019"}]}, "Ethan Page": {"k": "WWE", "sh": ["Raw"], "era": "depuis 2006", "al": "heel", "alD": "2024-05-28", "nick": "All Ego", "from": "Hamilton (Ontario, Canada)", "ht": "1,88 m", "wt": "98 kg", "debut": "2006", "fin": "Twisted Grin, Ego's Edge, Head Shot", "teams": "Rusev et Ethan Page (avec Rusev), The Monster Mash (avec Josh Alexander)"}, "Tatum Paxley": {"k": "WWE", "sh": ["SmackDown"], "era": "depuis 2022", "al": "face", "alD": "2025-10-25", "from": "Dallas (Texas)", "ht": "1,65 m", "wt": "55 kg", "debut": "2022", "fin": "Psycho Trap", "teams": "Allies of Convenience (avec Charlotte Flair et Alexa Bliss), The Culling, Chemical X, The Diamond Mine"}, "Natsupoi": {"k": "Stardom", "era": "depuis 2015", "a": ["Natsumi Maki", "Poiman", "Akupoi"], "from": "Yokohama (Japon)", "ht": "1,52 m", "wt": "47 kg", "debut": "2015 (Actwres Girl'Z), 2016 à Stardom", "trainer": "Yuna Manase", "teams": "Cosmic Angels, Donna Del Mondo, REStart", "txt": "Catcheuse aérienne de Stardom, ancienne championne Wonder of Stardom et High Speed ; elle a annoncé sa retraite pour le 3 janvier 2027."}, "Keith Lee": {"k": "AEW", "era": "Depuis 2005", "nick": "Limitless, Bearcat", "from": "Wichita Falls (Texas)", "ht": "1,88 m", "wt": "154 kg", "debut": "2005", "fin": "Spirit Bomb, Ground Zero", "teams": "Swerve in Our Glory (avec Swerve Strickland)", "txt": "Colosse étonnamment agile, révélé sur la scène indépendante puis à NXT, où il est le premier à détenir en même temps le titre NXT et le titre Nord-Américain (2020). Passé à la AEW en 2022, champion du monde par équipe avec Swerve Strickland. Il n’a plus combattu depuis le 23 décembre 2023 (victoire contre Brian Cage à Collision) : opéré deux fois début 2024, sans retour annoncé ; en octobre 2026, la AEW n’a pas de projet pour lui et il n’a pas annoncé sa retraite.", "ref": [{"t": "Keith Lee contre Dominik Dijakovic — titre Nord-Américain de la NXT", "ev": "NXT TakeOver: WarGames, 2019"}, {"t": "Keith Lee contre Adam Cole — titre de la NXT", "ev": "NXT The Great American Bash, 2020"}], "tt": [{"t": "NXT Championship", "k": "WWE", "x": 1}, {"t": "NXT North American Championship", "k": "WWE", "x": 1}, {"t": "AEW World Tag Team Championship", "k": "AEW", "x": 1}], "disc": true}, "Bray Wyatt": {"k": "WWE", "a": ["The Fiend", "Windham Rotunda", "Husky Harris"], "dc": "2023-08-24", "era": "WWE, 2009–2023", "nick": "The Eater of Worlds, The Fiend", "from": "Brooksville (Floride)", "fin": "Sister Abigail, Mandible Claw", "teams": "The Wyatt Family, The Wyatt 6", "trainer": "Mike Rotunda (son père), Florida Championship Wrestling", "txt": "Windham Rotunda, fils de Mike Rotunda et petit-fils de Blackjack Mulligan, l’un des personnages les plus créatifs de la WWE : le gourou de la Wyatt Family, l’animateur inquiétant du Firefly Fun House puis « The Fiend ». Champion de la WWE en 2017 et deux fois champion universel. Revenu en 2022, il est mort d’une crise cardiaque le 24 août 2023, à 36 ans.", "ref": [{"t": "Bray Wyatt contre John Cena", "ev": "WrestleMania XXX, 2014"}, {"t": "« The Fiend » contre Seth Rollins — Falls Count Anywhere, titre universel", "ev": "Crown Jewel, 2019"}, {"t": "Bray Wyatt contre John Cena — Firefly Fun House", "ev": "WrestleMania 36, 2020"}, {"t": "Bray Wyatt contre LA Knight — Pitch Black match", "ev": "Royal Rumble, 2023"}], "tt": [{"t": "WWE Championship", "k": "WWE", "x": 1}, {"t": "WWE Universal Championship", "k": "WWE", "x": 2}, {"t": "Raw Tag Team Championship", "k": "WWE", "x": 1}, {"t": "SmackDown Tag Team Championship", "k": "WWE", "x": 1}], "disc": true}, "Maki Itoh": {"k": "Stardom", "a": "Maki Ito", "era": "Depuis 2013", "from": "Ogōri (Fukuoka, Japon)", "ht": "1,60 m", "debut": "15 décembre 2013", "fin": "Itoh Special (Texas Cloverleaf), coup de tête « kokeshi »", "teams": "Itoh Respect Army (avec Mizuki), NEO Itoh Respect Army (avec Chris Brookes), équipe avec Miyu Yamashita", "txt": "Ancienne idole devenue catcheuse à la Tokyo Joshi Pro, connue pour son franc-parler et son personnage hors norme. Elle a signé à la Stardom le 10 janvier 2026, où elle détient le titre Kawaii of Kawaii, tout en apparaissant aussi à la AEW.", "ref": [{"t": "Maki Itoh contre Yuna Manase — International Princess Championship", "ev": "TJPW My Life; Let's Enjoy!!, 2019"}, {"t": "Britt Baker et Maki Itoh contre Thunder Rosa et Riho", "ev": "AEW Revolution, 2021"}, {"t": "Maki Itoh et Miyu Yamashita contre Daisy Monkey — Princess Tag Team Championship", "ev": "TJPW Wrestle Princess V, 2024"}, {"t": "Maki Itoh contre Aya Sakura — Kawaii of Kawaii Championship", "ev": "Stardom, 2026"}]}, "Persephone": {"k": "AEW · CMLL", "era": "Depuis 2016", "nick": "La Belleza Hecha Rudeza, Diosa de la Muerte", "from": "El Paso (Texas)", "ht": "1,63 m", "wt": "66 kg", "fin": "Lasso from El Paso, Flatliner, Springboard Frog Splash", "al": "heel", "alD": "2026-07-01", "txt": "Luchadora d’El Paso révélée au CMLL, où elle est championne du monde féminine, et arrivée à la AEW en janvier 2026. Rudo redoutable, elle mène carrière des deux côtés de la frontière.", "tt": [{"t": "CMLL World Women's Championship", "k": "CMLL", "x": 1, "id": "cmll-women"}, {"t": "CMLL Universal Amazons Championship", "k": "CMLL", "x": 1}, {"t": "AEW TBS Championship", "k": "AEW", "x": 1, "id": "aew-tbs"}]}, "Toshiaki Kawada": {"k": "All Japan", "era": "1982–2010", "disc": true, "nick": "Dangerous K", "from": "Ohira (Japon)", "ht": "1,83 m", "wt": "105 kg", "debut": "4 octobre 1982", "fin": "Powerbomb, coup de pied au visage", "teams": "Footloose (avec Hiromichi Fuyuki), Super Generation Army, Holy Demon Army (avec Akira Taue)", "trainer": "Giant Baba, Genichiro Tenryu, Akio Sato", "txt": "Pilier du « Four Pillars of Heaven » de l’All Japan des années 1990, réputé pour ses frappes très dures. Cinq fois champion Triple Crown, il a livré contre Mitsuharu Misawa et Kenta Kobashi certains des matchs les plus célèbres de l’histoire du catch japonais.", "ref": [{"t": "Toshiaki Kawada contre Mitsuharu Misawa — Triple Crown", "ev": "All Japan, 1994"}, {"t": "Toshiaki Kawada contre Stan Hansen", "ev": "All Japan, 1992"}, {"t": "Toshiaki Kawada contre Kenta Kobashi — limite d’une heure", "ev": "All Japan, 1995"}, {"t": "Toshiaki Kawada et Akira Taue contre Mitsuharu Misawa et Kenta Kobashi", "ev": "All Japan, 1995"}, {"t": "Toshiaki Kawada contre Kensuke Sasaki", "ev": "NJPW, 2000"}]}, "Marina Shafir": {"k": "AEW · ROH", "a": ["The Problem"], "era": "Depuis 2018 (NXT), AEW depuis 2021", "al": "tweener", "alD": "2026-09-30", "txt": "Ancienne combattante de MMA et membre des Four Horsewomen avec Ronda Rousey, la Moldave Marina Shafir est passée par NXT avant de rejoindre la AEW, où elle fait partie des Death Riders de Jon Moxley.", "nick": "The Problem, The Supernova from Moldova", "from": "Soroca, Moldavie", "ht": "1,70 m", "wt": "66 kg", "fin": "Achilles Lock, Toehold", "teams": "The Death Riders, The Four Horsewomen, The Beast of Burdens (avec Nyla Rose), The MegaProblems", "ref": []}, "Royce Keys": {"k": "WWE", "sh": ["Raw"], "a": ["Powerhouse Hobbs", "Will Hobbs"], "era": "Depuis 2009 (AEW en Powerhouse Hobbs), WWE depuis 2026", "al": "heel", "alD": "2026-08-24", "txt": "Connu à la AEW sous le nom de Powerhouse Hobbs, Royce Keys a fait ses débuts à la WWE au Royal Rumble 2026. Depuis août 2026, il mène à Raw le groupe The 946 contre The Bloodline.", "nick": "The Embodiment of Willpower", "from": "Palo Alto, Californie", "ht": "1,85 m", "wt": "122 kg", "debut": "2009", "fin": "Town Business, Spine on the Pine, Powerslam", "teams": "The 946", "ref": []}, "Jay White": {"k": "AEW", "a": ["Jamie White"], "al": "heel", "alD": "2026-10-21", "nick": "Switchblade, King Switch", "from": "Auckland, Nouvelle-Zélande", "ht": "1,86 m", "wt": "100 kg", "debut": "2013", "fin": "Blade Runner, Kiwi Krusher", "teams": "The Cut, Bang Bang Gang, Bullet Club"}, "Trey Miguel": {"k": "TNA", "al": "face", "alD": "2024-07-09", "nick": "The Fresh Prince of Mid-Air, Spider-Trey", "from": "Dayton, Ohio", "ht": "1,75 m", "wt": "78 kg", "debut": "2009", "fin": "Meteora, Yoshi Tonic", "teams": "The Rascalz, Lil Rascalz, FireArms, Alienated Youth"}, "Kyle Fletcher": {"k": ["AEW"], "al": "heel", "alD": "2024-10-12", "nick": "The Aussie Arrow, The Protostar", "from": "Sydney (Australie)", "ht": "1,86 m", "wt": "93 kg", "fin": "Grimstone, Sheer Drop", "teams": "The Don Callis Family, ProtOkada (avec Kazuchika Okada), Aussie Open (avec Mark Davis), ProtoShita (avec Konosuke Takeshita)"}, "Indi Hartwell": {"k": ["TNA"], "al": "face", "alD": "2025-03-09", "nick": "Impressive", "from": "Melbourne (Australie)", "ht": "1,75 m", "wt": "63 kg", "debut": "2016", "fin": "Slingshot Rocket Kick", "teams": "The Way, InDex (avec Dexter Lumis / Samuel Shaw), Undeniably Impressive (avec Tessa Blanchard)"}}}
+{
+ "updated": "2026-11-14",
+ "note": "Catcheurs suivis (champions, cartes annoncées, favoris des membres) et catcheurs à découvrir (disc = true, toutes fédérations et époques). txt = petit résumé en français, era = époque, ref = matchs de référence, last = 3 derniers matchs (r = résultat, spoiler), v = vidéo YouTube d'une chaîne officielle.",
+ "items": {
+  "Roman Reigns": {
+   "k": "WWE",
+   "sh": [
+    "Raw"
+   ],
+   "ref": [
+    {
+     "t": "Roman Reigns contre Cody Rhodes",
+     "ev": "WrestleMania XL, 2024"
+    },
+    {
+     "t": "Roman Reigns contre Brock Lesnar — Last Man Standing",
+     "ev": "SummerSlam 2022"
+    },
+    {
+     "t": "Roman Reigns contre Edge et Daniel Bryan",
+     "ev": "WrestleMania 37, 2021"
+    },
+    {
+     "t": "Roman Reigns contre Jey Uso — « I Quit »",
+     "ev": "Hell in a Cell 2020"
+    },
+    {
+     "t": "Roman Reigns contre CM Punk et Seth Rollins",
+     "ev": "WrestleMania 41, 2025"
+    }
+   ],
+   "disc": true,
+   "era": "WWE, depuis 2012",
+   "txt": "Pilier de la WWE depuis les débuts du Shield en 2012, il a régné plus de 1 300 jours comme champion universel puis incontesté à la tête de la Bloodline (2020-2024). Surnommé « The Tribal Chief »."
+  },
+  "Cody Rhodes": {
+   "k": "WWE",
+   "sh": [
+    "SmackDown"
+   ],
+   "a": [
+    "Cody"
+   ],
+   "ref": [
+    {
+     "t": "Cody Rhodes contre Roman Reigns",
+     "ev": "WrestleMania XL, 2024"
+    },
+    {
+     "t": "Cody Rhodes contre Seth Rollins — Hell in a Cell",
+     "ev": "Hell in a Cell 2022"
+    },
+    {
+     "t": "Cody Rhodes contre John Cena",
+     "ev": "WrestleMania 41, 2025"
+    },
+    {
+     "t": "Cody Rhodes contre Brock Lesnar",
+     "ev": "SummerSlam 2023"
+    },
+    {
+     "t": "Kenny Omega contre Cody",
+     "ev": "NJPW G1 Special in San Francisco, 2018",
+     "v": "muM94dA93wg"
+    }
+   ],
+   "last": [
+    {
+     "t": "Cody Rhodes et Randy Orton : face-à-face",
+     "ev": "SmackDown",
+     "d": "2026-10-23",
+     "r": "Le match Cody Rhodes contre Randy Orton est officialisé à Crown Jewel, en Last Man Standing"
+    }
+   ],
+   "disc": true,
+   "era": "WWE et AEW, depuis 2006",
+   "txt": "Fils de la légende Dusty Rhodes, il quitte la WWE en 2016, cofonde la AEW en 2019 puis revient en 2022 pour « finir l’histoire » : il bat Roman Reigns à WrestleMania XL pour le titre de la WWE."
+  },
+  "CM Punk": {
+   "k": "WWE",
+   "ref": [
+    {
+     "t": "CM Punk contre John Cena",
+     "ev": "Money in the Bank 2011"
+    },
+    {
+     "t": "CM Punk contre Drew McIntyre — Hell in a Cell",
+     "ev": "Bad Blood 2024"
+    },
+    {
+     "t": "CM Punk contre Gunther",
+     "ev": "SummerSlam 2025"
+    },
+    {
+     "t": "CM Punk contre MJF — Dog Collar",
+     "ev": "AEW Revolution 2022"
+    },
+    {
+     "t": "CM Punk contre Samoa Joe",
+     "ev": "AEW All In 2023"
+    }
+   ],
+   "disc": true,
+   "era": "WWE, ROH et AEW, depuis 1999",
+   "txt": "Le « Best in the World » : 434 jours de règne comme champion de la WWE (2011-2013), départ fracassant en 2014, passage par la AEW, puis retour à la WWE fin 2023."
+  },
+  "Sami Zayn": {
+   "k": "WWE",
+   "sh": [
+    "SmackDown"
+   ],
+   "ref": [
+    {
+     "t": "Sami Zayn contre Cesaro",
+     "ev": "NXT ArRival, 2014"
+    },
+    {
+     "t": "Sami Zayn contre Adrian Neville — titre de NXT",
+     "ev": "NXT TakeOver: R Evolution, 2014"
+    },
+    {
+     "t": "Sami Zayn contre Kevin Owens",
+     "ev": "Battleground 2016"
+    },
+    {
+     "t": "Sami Zayn et Kevin Owens contre The Usos",
+     "ev": "WrestleMania 39, 2023"
+    },
+    {
+     "t": "Sami Zayn contre Gunther — titre Intercontinental",
+     "ev": "WrestleMania XL, 2024"
+    }
+   ],
+   "disc": true,
+   "era": "WWE, depuis 2013",
+   "txt": "Ancien El Generico sur le circuit indépendant, il devient l’un des chouchous du public à NXT puis à la WWE. Son arc avec la Bloodline en 2022-2023 est l’une des histoires les plus suivies de la décennie."
+  },
+  "Liv Morgan": {
+   "k": "WWE",
+   "sh": [
+    "Raw"
+   ],
+   "ref": [
+    {
+     "t": "Liv Morgan contre Ronda Rousey — encaissement de la mallette",
+     "ev": "Money in the Bank 2022"
+    },
+    {
+     "t": "Liv Morgan contre Ronda Rousey",
+     "ev": "SummerSlam 2022"
+    },
+    {
+     "t": "Liv Morgan contre Becky Lynch",
+     "ev": "King and Queen of the Ring 2024"
+    },
+    {
+     "t": "Liv Morgan contre Rhea Ripley",
+     "ev": "SummerSlam 2024"
+    }
+   ],
+   "disc": true,
+   "era": "WWE, depuis 2014",
+   "txt": "Révélée au sein des Riott Squad, elle remporte la mallette Money in the Bank en 2022 et l’encaisse le soir même sur Ronda Rousey. Plusieurs fois championne du monde féminine."
+  },
+  "Becky Lynch": {
+   "k": "WWE",
+   "sh": [
+    "Raw"
+   ],
+   "ref": [
+    {
+     "t": "Becky Lynch contre Charlotte Flair et Ronda Rousey",
+     "ev": "WrestleMania 35, 2019"
+    },
+    {
+     "t": "Becky Lynch contre Charlotte Flair — Last Woman Standing",
+     "ev": "Evolution 2018"
+    },
+    {
+     "t": "Becky Lynch contre Asuka",
+     "ev": "Royal Rumble 2019"
+    },
+    {
+     "t": "Becky Lynch contre Trish Stratus — Steel Cage",
+     "ev": "Payback 2023"
+    },
+    {
+     "t": "Becky Lynch contre Tiffany Stratton — titre de NXT",
+     "ev": "NXT No Mercy 2023"
+    }
+   ],
+   "disc": true,
+   "era": "WWE, depuis 2013",
+   "txt": "« The Man » : elle remporte le premier main event féminin de l’histoire de WrestleMania (WrestleMania 35, face à Ronda Rousey et Charlotte Flair). Une des catcheuses les plus populaires de l’ère moderne."
+  },
+  "Will Ospreay": {
+   "k": "AEW",
+   "ref": [
+    {
+     "t": "Will Ospreay contre Ricochet contre Konosuke Takeshita",
+     "ev": "AEW",
+     "v": "jXZm7rJp0RU"
+    },
+    {
+     "t": "Will Ospreay contre Kenny Omega",
+     "ev": "Wrestle Kingdom 17, 2023"
+    },
+    {
+     "t": "Will Ospreay contre Kazuchika Okada",
+     "ev": "Wrestle Kingdom 16, 2022"
+    },
+    {
+     "t": "Will Ospreay contre Bryan Danielson",
+     "ev": "AEW Dynasty 2024"
+    }
+   ],
+   "disc": true,
+   "era": "NJPW et AEW, depuis 2012",
+   "txt": "Le prodige britannique s’impose à la NJPW, dont il devient champion du monde, avant de signer à la AEW en 2024. Réputé pour son style aérien spectaculaire et ses matchs à cinq étoiles."
+  },
+  "Jon Moxley": {
+   "k": "AEW",
+   "ref": [
+    {
+     "t": "Bryan Danielson contre Jon Moxley",
+     "ev": "AEW",
+     "v": "LAxR8MI7baM"
+    },
+    {
+     "t": "Darby Allin contre Jon Moxley",
+     "ev": "AEW",
+     "v": "VpUuD7YiCYk"
+    },
+    {
+     "t": "Jon Moxley contre Kenny Omega — Lights Out",
+     "ev": "AEW Full Gear 2019"
+    },
+    {
+     "t": "Jon Moxley contre Eddie Kingston — « I Quit »",
+     "ev": "AEW Full Gear 2020"
+    }
+   ],
+   "disc": true,
+   "era": "WWE et AEW, depuis 2004",
+   "txt": "Ancien Dean Ambrose du Shield à la WWE, il rejoint la AEW en 2019 où il devient plusieurs fois champion du monde, réputé pour ses combats violents."
+  },
+  "Kenny Omega": {
+   "k": "AEW",
+   "ref": [
+    {
+     "t": "Kenny Omega contre PAC",
+     "ev": "AEW",
+     "v": "Se2xpIRI9uk"
+    },
+    {
+     "t": "Kenny Omega contre Cody",
+     "ev": "NJPW G1 Special in San Francisco, 2018",
+     "v": "muM94dA93wg"
+    },
+    {
+     "t": "Kenny Omega contre Kazuchika Okada — 2 tombés sur 3",
+     "ev": "NJPW Dominion 2018"
+    },
+    {
+     "t": "Kenny Omega contre Will Ospreay",
+     "ev": "Wrestle Kingdom 17, 2023"
+    },
+    {
+     "t": "Kenny Omega contre Bryan Danielson",
+     "ev": "AEW Winter Is Coming 2021"
+    }
+   ],
+   "disc": true,
+   "era": "NJPW et AEW, depuis 2000",
+   "txt": "Le « Cleaner » canadien marque la NJPW avec ses matchs légendaires contre Kazuchika Okada, puis devient l’un des membres fondateurs et champion du monde de la AEW."
+  },
+  "Darby Allin": {
+   "k": "AEW",
+   "ref": [
+    {
+     "t": "Darby Allin contre Jon Moxley",
+     "ev": "AEW",
+     "v": "VpUuD7YiCYk"
+    },
+    {
+     "t": "Darby Allin contre Cody Rhodes — titre TNT",
+     "ev": "AEW Full Gear 2020"
+    }
+   ],
+   "disc": true,
+   "era": "AEW, depuis 2019",
+   "txt": "Skateur casse-cou devenu l’un des visages de la AEW, connu pour ses plongeons risqués et ses victoires face à plus grand que lui."
+  },
+  "Mercedes Moné": {
+   "k": "AEW",
+   "a": [
+    "Sasha Banks"
+   ],
+   "ref": [
+    {
+     "t": "Sasha Banks contre Bayley — titre féminin de NXT",
+     "ev": "NXT TakeOver: Brooklyn, 2015"
+    },
+    {
+     "t": "Sasha Banks contre Bayley — Iron Woman",
+     "ev": "NXT TakeOver: Respect, 2015"
+    },
+    {
+     "t": "Mercedes Moné contre Willow Nightingale — titre TBS",
+     "ev": "AEW Double or Nothing 2024"
+    }
+   ],
+   "disc": true,
+   "era": "WWE et AEW, depuis 2010",
+   "txt": "Ex-Sasha Banks à la WWE, plusieurs fois championne et figure de la révolution féminine, elle rejoint la AEW en 2024."
+  },
+  "Konosuke Takeshita": {
+   "k": "NJPW",
+   "ref": [
+    {
+     "t": "El Phantasmo contre Konosuke Takeshita — titre NJPW World TV",
+     "ev": "The New Beginning USA, 2026",
+     "v": "14XjixxzNvc"
+    },
+    {
+     "t": "Konosuke Takeshita contre SANADA — titre NJPW World TV",
+     "ev": "Dominion 2026",
+     "v": "JaYvjmqDuhg"
+    },
+    {
+     "t": "Konosuke Takeshita contre Chase Owens — titre NJPW World TV",
+     "ev": "Wrestling Dontaku 2026",
+     "v": "gsG4HwFkgS8"
+    },
+    {
+     "t": "Will Ospreay contre Ricochet contre Konosuke Takeshita",
+     "ev": "AEW",
+     "v": "jXZm7rJp0RU"
+    }
+   ],
+   "disc": true,
+   "era": "DDT, AEW et NJPW, depuis 2012",
+   "txt": "Formé à la DDT au Japon, ce colosse athlétique partage sa carrière entre la AEW et la NJPW."
+  },
+  "Yota Tsuji": {
+   "k": "NJPW",
+   "ref": [
+    {
+     "t": "Yota Tsuji contre Ryohei Oiwa — titre IWGP Heavyweight",
+     "ev": "King of Pro-Wrestling 2026"
+    }
+   ],
+   "disc": true,
+   "era": "NJPW, depuis 2015",
+   "txt": "Formé au dojo de la NJPW et révélé après son excursion à l’étranger, il est devenu l’un des visages de la nouvelle génération de la fédération."
+  },
+  "Mayu Iwatani": {
+   "k": "Marigold",
+   "ref": [
+    {
+     "t": "Mayu Iwatani contre IYO SKY",
+     "ev": "Marigold Grand Destiny 2025"
+    }
+   ],
+   "disc": true,
+   "era": "Stardom puis Marigold, depuis 2011",
+   "txt": "« L’icône de Stardom », pilier de la fédération pendant plus de dix ans, elle a rejoint Marigold en 2025."
+  },
+  "Saya Kamitani": {
+   "k": "Stardom",
+   "ref": [
+    {
+     "t": "Saya Kamitani contre Tam Nakano — World of Stardom",
+     "ev": "Stardom",
+     "v": "J4fNyNr1XUU"
+    },
+    {
+     "t": "Saya Kamitani contre Momo Watanabe — World of Stardom",
+     "ev": "Stardom",
+     "v": "1qRxblbn-Wo"
+    }
+   ],
+   "disc": true,
+   "era": "Stardom, depuis 2017",
+   "txt": "Ancienne gymnaste, elle s’est imposée comme l’une des stars de Stardom et a été championne du monde de la fédération."
+  },
+  "Giulia": {
+   "k": "WWE",
+   "sh": [
+    "SmackDown"
+   ],
+   "ref": [
+    {
+     "t": "Giulia contre Mariah May",
+     "ev": "Stardom 5★STAR GP 2023",
+     "v": "uvHbUAHNc74"
+    }
+   ],
+   "disc": true,
+   "era": "Stardom, Marigold puis WWE, depuis 2017",
+   "txt": "Révélée à Stardom puis à Marigold, la catcheuse italo-japonaise a rejoint la WWE en 2024."
+  },
+  "Randy Savage": {
+   "k": "WWF / WCW",
+   "era": "Années 80-90",
+   "txt": "« Macho Man », icône des années 80 au phrasé inimitable et deux fois champion de la WWF. Son match contre Ricky Steamboat à WrestleMania III reste une référence absolue.",
+   "ref": [
+    {
+     "t": "Randy Savage contre Ricky Steamboat — titre Intercontinental",
+     "ev": "WrestleMania III, 1987",
+     "v": "4O9SUEHrVak"
+    },
+    {
+     "t": "Randy Savage contre Hulk Hogan — titre de la WWF",
+     "ev": "WrestleMania V, 1989"
+    },
+    {
+     "t": "Randy Savage contre Ultimate Warrior — Retirement Match",
+     "ev": "WrestleMania VII, 1991"
+    }
+   ],
+   "disc": true
+  },
+  "Ricky Steamboat": {
+   "k": "WWF / NWA",
+   "era": "Années 70-90",
+   "txt": "« The Dragon », modèle de technique et de vitesse, célèbre pour ses classiques contre Randy Savage et Ric Flair.",
+   "ref": [
+    {
+     "t": "Randy Savage contre Ricky Steamboat — titre Intercontinental",
+     "ev": "WrestleMania III, 1987",
+     "v": "4O9SUEHrVak"
+    },
+    {
+     "t": "Ric Flair contre Ricky Steamboat — 2 tombés sur 3",
+     "ev": "Clash of the Champions VI, 1989"
+    },
+    {
+     "t": "Ric Flair contre Ricky Steamboat",
+     "ev": "Chi-Town Rumble, 1989"
+    }
+   ],
+   "disc": true
+  },
+  "Ric Flair": {
+   "k": "NWA / WCW / WWF",
+   "era": "Années 70-2000",
+   "txt": "« The Nature Boy », seize fois champion du monde, la grande star de la NWA et de la WCW dans les années 80. WOOOO !",
+   "ref": [
+    {
+     "t": "Ric Flair contre Ricky Steamboat — 2 tombés sur 3",
+     "ev": "Clash of the Champions VI, 1989"
+    },
+    {
+     "t": "Ric Flair contre Sting",
+     "ev": "Clash of the Champions I, 1988"
+    },
+    {
+     "t": "Ric Flair contre Shawn Michaels — Career Threatening Match",
+     "ev": "WrestleMania XXIV, 2008"
+    }
+   ],
+   "disc": true
+  },
+  "Hulk Hogan": {
+   "k": "WWF / WCW",
+   "era": "Années 80-90",
+   "txt": "Le visage de la « Hulkamania » qui a fait exploser le catch dans les années 80, puis le leader de la nWo à la WCW à partir de 1996.",
+   "ref": [
+    {
+     "t": "Hulk Hogan contre André the Giant",
+     "ev": "WrestleMania III, 1987"
+    },
+    {
+     "t": "Hulk Hogan contre Ultimate Warrior",
+     "ev": "WrestleMania VI, 1990"
+    },
+    {
+     "t": "Hulk Hogan contre The Rock",
+     "ev": "WrestleMania X8, 2002"
+    },
+    {
+     "t": "The Great Muta contre Hulk Hogan",
+     "ev": "Fukuoka Dome, 1993",
+     "v": "t8i6QEALQoE"
+    }
+   ],
+   "disc": true
+  },
+  "André the Giant": {
+   "k": "WWF",
+   "era": "Années 70-80",
+   "txt": "Le géant français (2,24 m annoncés), attraction mondiale des années 70-80. Son affrontement avec Hulk Hogan à WrestleMania III est entré dans l’histoire.",
+   "ref": [
+    {
+     "t": "Hulk Hogan contre André the Giant",
+     "ev": "WrestleMania III, 1987"
+    }
+   ],
+   "disc": true
+  },
+  "Bret Hart": {
+   "k": "WWF / WCW",
+   "era": "Années 80-90",
+   "txt": "« The Hitman », technicien hors pair, cinq fois champion de la WWF et figure majeure des années 90.",
+   "ref": [
+    {
+     "t": "Bret Hart contre Shawn Michaels",
+     "ev": "WWF",
+     "v": "0a6SUIvOw7A"
+    },
+    {
+     "t": "Bret Hart contre « Stone Cold » Steve Austin — Submission Match",
+     "ev": "WrestleMania 13, 1997"
+    },
+    {
+     "t": "Bret Hart contre Owen Hart",
+     "ev": "WrestleMania X, 1994"
+    },
+    {
+     "t": "Bret Hart contre Mr. Perfect",
+     "ev": "King of the Ring, 1993"
+    }
+   ],
+   "disc": true
+  },
+  "Shawn Michaels": {
+   "k": "WWF / WWE",
+   "era": "Années 80-2010",
+   "txt": "« Mr. WrestleMania », l’un des plus grands showmen de l’histoire, auteur de classiques contre Bret Hart, Razor Ramon et The Undertaker.",
+   "ref": [
+    {
+     "t": "The Undertaker contre Shawn Michaels",
+     "ev": "WrestleMania XXV, 2009",
+     "v": "Gd54flkPtL4"
+    },
+    {
+     "t": "Shawn Michaels contre Razor Ramon — Ladder Match",
+     "ev": "WrestleMania X, 1994"
+    },
+    {
+     "t": "Bret Hart contre Shawn Michaels",
+     "ev": "WWF",
+     "v": "0a6SUIvOw7A"
+    },
+    {
+     "t": "Shawn Michaels contre Kurt Angle",
+     "ev": "WrestleMania 21, 2005"
+    }
+   ],
+   "disc": true
+  },
+  "The Undertaker": {
+   "k": "WWF / WWE",
+   "era": "1990-2020",
+   "txt": "« The Deadman », personnage mystique de la WWF/WWE pendant trente ans, célèbre pour sa série de 21 victoires à WrestleMania.",
+   "ref": [
+    {
+     "t": "The Undertaker contre Shawn Michaels",
+     "ev": "WrestleMania XXV, 2009",
+     "v": "Gd54flkPtL4"
+    },
+    {
+     "t": "The Undertaker contre Mankind — Hell in a Cell",
+     "ev": "King of the Ring, 1998"
+    },
+    {
+     "t": "The Undertaker contre Triple H — Hell in a Cell « End of an Era »",
+     "ev": "WrestleMania XXVIII, 2012"
+    }
+   ],
+   "disc": true
+  },
+  "Stone Cold Steve Austin": {
+   "k": "WWF",
+   "era": "Années 90-2000",
+   "a": [
+    "Steve Austin",
+    "Stone Cold"
+   ],
+   "txt": "Le rebelle buveur de bière, visage de l’« Attitude Era » et de sa guerre contre Mr. McMahon à la fin des années 90.",
+   "ref": [
+    {
+     "t": "The Rock contre « Stone Cold » Steve Austin",
+     "ev": "WWF",
+     "v": "byDno7ysc7g"
+    },
+    {
+     "t": "« Stone Cold » Steve Austin contre Bret Hart — Submission Match",
+     "ev": "WrestleMania 13, 1997"
+    },
+    {
+     "t": "« Stone Cold » Steve Austin contre Shawn Michaels",
+     "ev": "WrestleMania XIV, 1998"
+    }
+   ],
+   "disc": true
+  },
+  "The Rock": {
+   "k": "WWF / WWE",
+   "era": "Années 90-2000",
+   "txt": "« The People’s Champion », star de l’Attitude Era avant de devenir l’un des acteurs les mieux payés d’Hollywood.",
+   "ref": [
+    {
+     "t": "The Rock contre « Stone Cold » Steve Austin",
+     "ev": "WWF",
+     "v": "byDno7ysc7g"
+    },
+    {
+     "t": "The Rock contre Hulk Hogan",
+     "ev": "WrestleMania X8, 2002"
+    },
+    {
+     "t": "The Rock contre John Cena",
+     "ev": "WrestleMania XXVIII, 2012"
+    }
+   ],
+   "disc": true
+  },
+  "Mick Foley": {
+   "k": "WWF / WCW / ECW",
+   "era": "Années 90",
+   "a": [
+    "Mankind",
+    "Cactus Jack"
+   ],
+   "txt": "Trois personnages (Cactus Jack, Mankind, Dude Love) et une résistance hors du commun, symbolisée par sa chute du haut de la cage au King of the Ring 1998.",
+   "ref": [
+    {
+     "t": "The Undertaker contre Mankind — Hell in a Cell",
+     "ev": "King of the Ring, 1998"
+    },
+    {
+     "t": "Cactus Jack contre Triple H — Street Fight",
+     "ev": "Royal Rumble, 2000"
+    },
+    {
+     "t": "Mick Foley contre Edge — Hardcore Match",
+     "ev": "WrestleMania 22, 2006"
+    }
+   ],
+   "disc": true
+  },
+  "Eddie Guerrero": {
+   "k": "WCW / WWE",
+   "era": "Années 90-2000",
+   "txt": "Issu d’une grande famille de lutteurs mexicains, « Latino Heat » devient champion de la WWE en 2004 au terme d’une histoire très émouvante. Il est décédé en 2005.",
+   "ref": [
+    {
+     "t": "Eddie Guerrero contre Kurt Angle — titre de la WWE",
+     "ev": "WrestleMania XX, 2004",
+     "v": "vNPLhM227yc"
+    },
+    {
+     "t": "Eddie Guerrero contre Brock Lesnar — titre de la WWE",
+     "ev": "No Way Out, 2004"
+    },
+    {
+     "t": "Eddie Guerrero contre Rey Mysterio",
+     "ev": "Halloween Havoc, 1997"
+    }
+   ],
+   "disc": true
+  },
+  "Rey Mysterio": {
+   "k": "WCW / WWE",
+   "era": "Depuis 1989",
+   "txt": "Le plus célèbre luchador moderne, révolutionnaire du catch aérien à la WCW puis champion du monde à la WWE en 2006.",
+   "ref": [
+    {
+     "t": "Rey Mysterio contre Eddie Guerrero",
+     "ev": "Halloween Havoc, 1997"
+    },
+    {
+     "t": "Rey Mysterio contre Eddie Guerrero",
+     "ev": "WrestleMania 21, 2005"
+    },
+    {
+     "t": "Rey Mysterio contre Kurt Angle et Randy Orton — titre mondial",
+     "ev": "WrestleMania 22, 2006"
+    }
+   ],
+   "disc": true
+  },
+  "Kurt Angle": {
+   "k": "WWE / TNA",
+   "era": "1998-2019",
+   "txt": "Champion olympique de lutte en 1996, il devient en un temps record l’un des meilleurs catcheurs de la WWE puis de la TNA.",
+   "ref": [
+    {
+     "t": "Kurt Angle contre Brock Lesnar",
+     "ev": "WWE",
+     "v": "ion0uETB9Mo"
+    },
+    {
+     "t": "Eddie Guerrero contre Kurt Angle — titre de la WWE",
+     "ev": "WrestleMania XX, 2004",
+     "v": "vNPLhM227yc"
+    },
+    {
+     "t": "Kurt Angle contre Shawn Michaels",
+     "ev": "WrestleMania 21, 2005"
+    }
+   ],
+   "disc": true
+  },
+  "Edge": {
+   "k": "WWE / AEW",
+   "era": "Depuis 1998",
+   "a": [
+    "Adam Copeland"
+   ],
+   "txt": "Spécialiste des matchs à échelles et onze fois champion du monde, revenu en 2020 après neuf ans d’arrêt pour une blessure au cou. Il catche aujourd’hui à la AEW sous son vrai nom, Adam Copeland.",
+   "ref": [
+    {
+     "t": "Triangle Ladder Match pour les titres par équipe",
+     "ev": "WrestleMania 2000",
+     "v": "16dCHSsvpG8"
+    },
+    {
+     "t": "Edge et Christian contre Hardy Boyz contre Dudley Boyz — TLC",
+     "ev": "SummerSlam, 2000"
+    },
+    {
+     "t": "Edge et Christian contre Hardy Boyz contre Dudley Boyz — TLC II",
+     "ev": "WrestleMania X-Seven, 2001"
+    },
+    {
+     "t": "Edge contre Mick Foley — Hardcore Match",
+     "ev": "WrestleMania 22, 2006"
+    },
+    {
+     "t": "Edge contre The Undertaker",
+     "ev": "WrestleMania XXIV, 2008"
+    }
+   ],
+   "disc": true
+  },
+  "Trish Stratus": {
+   "k": "WWE",
+   "era": "Années 2000",
+   "txt": "Sept fois championne féminine de la WWE, la grande star féminine des années 2000 aux côtés de Lita.",
+   "ref": [
+    {
+     "t": "Trish Stratus contre Lita — titre féminin",
+     "ev": "Raw, décembre 2004"
+    },
+    {
+     "t": "Trish Stratus contre Mickie James",
+     "ev": "WrestleMania 22, 2006"
+    },
+    {
+     "t": "Trish Stratus contre Becky Lynch — Steel Cage",
+     "ev": "Payback, 2023"
+    }
+   ],
+   "disc": true
+  },
+  "Lita": {
+   "k": "WWE",
+   "era": "Années 2000",
+   "txt": "Pionnière du catch aérien féminin à la WWE, célèbre pour son passage avec les Hardy Boyz et sa rivalité avec Trish Stratus.",
+   "ref": [
+    {
+     "t": "Trish Stratus contre Lita — titre féminin",
+     "ev": "Raw, décembre 2004"
+    }
+   ],
+   "disc": true
+  },
+  "Bull Nakano": {
+   "k": "All Japan Women / WWF",
+   "era": "Années 80-90",
+   "txt": "Icône du catch féminin japonais des années 80-90, reconnaissable à son look et à sa puissance ; championne féminine de la WWF en 1994.",
+   "ref": [
+    {
+     "t": "Bull Nakano contre Alundra Blayze — titre féminin",
+     "ev": "SummerSlam, 1994"
+    }
+   ],
+   "disc": true
+  },
+  "Mitsuharu Misawa": {
+   "k": "All Japan / NOAH",
+   "era": "1981-2009",
+   "txt": "Légende de la All Japan puis fondateur de la Pro Wrestling NOAH, auteur de dizaines de matchs considérés comme des chefs-d’œuvre.",
+   "ref": [
+    {
+     "t": "Mitsuharu Misawa contre Toshiaki Kawada",
+     "ev": "All Japan, 3 juin 1994"
+    },
+    {
+     "t": "Mitsuharu Misawa contre Kenta Kobashi — titre GHC",
+     "ev": "NOAH, 2003"
+    }
+   ],
+   "disc": true
+  },
+  "Kenta Kobashi": {
+   "k": "All Japan / NOAH",
+   "era": "1988-2013",
+   "txt": "L’un des catcheurs japonais les plus respectés, icône de la All Japan et de la NOAH, revenu sur le ring après avoir vaincu un cancer.",
+   "ref": [
+    {
+     "t": "Mitsuharu Misawa contre Kenta Kobashi — titre GHC",
+     "ev": "NOAH, 2003"
+    },
+    {
+     "t": "Samoa Joe contre Kenta Kobashi",
+     "ev": "Ring of Honor, 2005"
+    }
+   ],
+   "disc": true
+  },
+  "Keiji Mutoh": {
+   "k": "NJPW / All Japan",
+   "era": "1984-2023",
+   "a": [
+    "The Great Muta",
+    "Great Muta"
+   ],
+   "txt": "Star de la NJPW et, sous la peinture de The Great Muta, personnage culte au Japon comme aux États-Unis. Il a pris sa retraite en 2023.",
+   "ref": [
+    {
+     "t": "The Great Muta contre Hulk Hogan",
+     "ev": "Fukuoka Dome, 1993",
+     "v": "t8i6QEALQoE"
+    },
+    {
+     "t": "Keiji Mutoh contre Masahiro Chono — finale du premier G1 Climax",
+     "ev": "Ryōgoku, 1991",
+     "v": "5xcyEHumQxk"
+    },
+    {
+     "t": "Keiji Mutoh contre Nobuhiko Takada",
+     "ev": "Tokyo Dome, 1995"
+    }
+   ],
+   "disc": true
+  },
+  "Jushin Thunder Liger": {
+   "k": "NJPW",
+   "era": "1989-2020",
+   "a": [
+    "Jushin Liger"
+   ],
+   "txt": "Légende des poids lourds-légers de la NJPW, inspiré d’un dessin animé, qui a popularisé le catch junior dans le monde entier. Retraité en 2020.",
+   "ref": [
+    {
+     "t": "Jushin Thunder Liger contre Brian Pillman",
+     "ev": "WCW SuperBrawl II, 1992"
+    }
+   ],
+   "disc": true
+  },
+  "Hiroshi Tanahashi": {
+   "k": "NJPW",
+   "era": "1999-2026",
+   "txt": "« L’Ace » qui a relancé la NJPW dans les années 2010, plusieurs fois champion IWGP. Il a pris sa retraite en 2026 et préside la fédération.",
+   "ref": [
+    {
+     "t": "Kazuchika Okada contre Hiroshi Tanahashi",
+     "ev": "Wrestle Kingdom 9, 2015"
+    },
+    {
+     "t": "Hiroshi Tanahashi contre Kenny Omega",
+     "ev": "Wrestle Kingdom 13, 2019"
+    },
+    {
+     "t": "Hiroshi Tanahashi contre Matt Riddle — titre NJPW World TV",
+     "ev": "The New Beginning, 2024",
+     "v": "WX19y6rXX2Q"
+    }
+   ],
+   "disc": true
+  },
+  "Kazuchika Okada": {
+   "k": "NJPW / AEW",
+   "era": "Depuis 2004",
+   "txt": "Le « Rainmaker », recordman de règnes et de défenses du titre IWGP Heavyweight, parti à la AEW en 2024.",
+   "ref": [
+    {
+     "t": "Kazuchika Okada contre Kenny Omega",
+     "ev": "Wrestle Kingdom 11, 2017"
+    },
+    {
+     "t": "Kazuchika Okada contre Kenny Omega — 2 tombés sur 3",
+     "ev": "Dominion, 2018"
+    },
+    {
+     "t": "Kazuchika Okada contre Hiroshi Tanahashi",
+     "ev": "Wrestle Kingdom 9, 2015"
+    },
+    {
+     "t": "Kazuchika Okada contre Bryan Danielson",
+     "ev": "Forbidden Door, 2023"
+    }
+   ],
+   "disc": true
+  },
+  "AJ Styles": {
+   "k": "TNA / NJPW / WWE",
+   "era": "Depuis 1998",
+   "txt": "« The Phenomenal One », pilier de la TNA, star de la NJPW, puis champion de la WWE peu après son arrivée en 2016.",
+   "ref": [
+    {
+     "t": "AJ Styles contre Samoa Joe contre Christopher Daniels",
+     "ev": "TNA Unbreakable, 2005"
+    },
+    {
+     "t": "AJ Styles contre Shinsuke Nakamura",
+     "ev": "Wrestle Kingdom 10, 2016"
+    },
+    {
+     "t": "AJ Styles contre John Cena — titre de la WWE",
+     "ev": "Royal Rumble, 2017"
+    }
+   ],
+   "disc": true
+  },
+  "Asuka": {
+   "k": "WWE",
+   "era": "Depuis 2004",
+   "a": [
+    "Kana"
+   ],
+   "txt": "Ancienne Kana au Japon, elle reste invaincue pendant plus de 900 jours à NXT avant de devenir championne à Raw et à SmackDown.",
+   "ref": [
+    {
+     "t": "Asuka contre Bayley — titre féminin de NXT",
+     "ev": "NXT TakeOver: Dallas, 2016"
+    },
+    {
+     "t": "Asuka contre Charlotte Flair",
+     "ev": "WrestleMania 34, 2018"
+    }
+   ],
+   "disc": true
+  },
+  "Bianca Belair": {
+   "k": "WWE",
+   "era": "Depuis 2016",
+   "txt": "Ancienne athlète universitaire, l’« EST » de la WWE remporte le main event de WrestleMania 37 face à Sasha Banks.",
+   "ref": [
+    {
+     "t": "Bianca Belair contre Sasha Banks",
+     "ev": "WrestleMania 37, 2021"
+    },
+    {
+     "t": "Bianca Belair contre Becky Lynch",
+     "ev": "WrestleMania 38, 2022"
+    }
+   ],
+   "disc": true
+  },
+  "Rhea Ripley": {
+   "k": "WWE",
+   "era": "Depuis 2017",
+   "txt": "« Mami », championne du monde féminine dominante de 2023-2024 et figure du Judgment Day.",
+   "ref": [
+    {
+     "t": "Rhea Ripley contre Charlotte Flair",
+     "ev": "WrestleMania 39, 2023"
+    },
+    {
+     "t": "Rhea Ripley contre Becky Lynch",
+     "ev": "WrestleMania XL, 2024"
+    }
+   ],
+   "disc": true
+  },
+  "John Cena": {
+   "k": "WWE",
+   "era": "2002-2025",
+   "txt": "Visage de la WWE pendant plus de quinze ans et recordman avec 17 titres mondiaux, le dernier remporté à WrestleMania 41. Il a pris sa retraite fin 2025.",
+   "ref": [
+    {
+     "t": "John Cena contre CM Punk",
+     "ev": "Money in the Bank, 2011"
+    },
+    {
+     "t": "The Rock contre John Cena",
+     "ev": "WrestleMania XXVIII, 2012"
+    },
+    {
+     "t": "John Cena contre AJ Styles — titre de la WWE",
+     "ev": "Royal Rumble, 2017"
+    },
+    {
+     "t": "John Cena contre Cody Rhodes",
+     "ev": "WrestleMania 41, 2025"
+    }
+   ],
+   "disc": true
+  },
+  "Bryan Danielson": {
+   "k": "ROH / WWE / AEW",
+   "era": "1999-2024",
+   "a": [
+    "Daniel Bryan"
+   ],
+   "txt": "Le « American Dragon », technicien hors pair : du circuit indépendant au main event de WrestleMania XXX, puis une seconde carrière remarquable à la AEW.",
+   "ref": [
+    {
+     "t": "Daniel Bryan contre Triple H",
+     "ev": "WrestleMania XXX, 2014"
+    },
+    {
+     "t": "Daniel Bryan contre Batista et Randy Orton — titre de la WWE",
+     "ev": "WrestleMania XXX, 2014"
+    },
+    {
+     "t": "Bryan Danielson contre Kazuchika Okada",
+     "ev": "Forbidden Door, 2023"
+    },
+    {
+     "t": "Bryan Danielson contre Jon Moxley",
+     "ev": "AEW",
+     "v": "LAxR8MI7baM"
+    }
+   ],
+   "disc": true
+  },
+  "Shinsuke Nakamura": {
+   "k": "NJPW / WWE",
+   "era": "Depuis 2002",
+   "txt": "Le « King of Strong Style », star charismatique de la NJPW avant de rejoindre la WWE en 2016.",
+   "ref": [
+    {
+     "t": "Shinsuke Nakamura contre AJ Styles",
+     "ev": "Wrestle Kingdom 10, 2016"
+    },
+    {
+     "t": "Shinsuke Nakamura contre Kota Ibushi — titre Intercontinental IWGP",
+     "ev": "Wrestle Kingdom 9, 2015"
+    }
+   ],
+   "disc": true
+  },
+  "El Santo": {
+   "k": "Lucha libre (Mexique)",
+   "era": "1942-1982",
+   "txt": "« El Enmascarado de Plata », le plus célèbre luchador de l’histoire, héros du ring et d’une cinquantaine de films au Mexique.",
+   "ref": [],
+   "disc": true
+  },
+  "Mil Máscaras": {
+   "k": "Lucha libre (Mexique)",
+   "era": "Années 60-90",
+   "txt": "Le « luchador aux mille masques », star internationale qui a fait connaître la lucha libre au Japon et aux États-Unis dans les années 70.",
+   "ref": [],
+   "disc": true
+  },
+  "La Parka": {
+   "k": "AAA",
+   "era": "Depuis 2003",
+   "txt": "Le luchador au costume de squelette, figure emblématique et populaire de la AAA.",
+   "ref": [
+    {
+     "t": "La Parka contre L.A. Park",
+     "ev": "Triplemanía",
+     "v": "V68StZT8kqY"
+    },
+    {
+     "t": "La Parka contre Lince Dorado",
+     "ev": "AAA",
+     "v": "HmEauIatAYQ"
+    }
+   ],
+   "disc": true
+  },
+  "Randy Orton": {
+   "k": "WWE",
+   "era": "Depuis 2000",
+   "nick": "The Viper, The Apex Predator, Legend Killer",
+   "from": "St. Louis (Missouri)",
+   "ht": "1,96 m",
+   "wt": "125 kg",
+   "debut": "18 mars 2000",
+   "fin": "RKO, Punt Kick",
+   "teams": "Evolution, The Legacy, Rated-RKO, The Wyatt Family, RK-Bro",
+   "trainer": "Bob Orton Jr., Fit Finlay, Ohio Valley Wrestling",
+   "txt": "Fils et petit-fils de catcheurs, « The Viper » est l’un des catcheurs les plus titrés de l’histoire de la WWE, célèbre pour son RKO.",
+   "ref": [
+    {
+     "t": "Randy Orton contre Mick Foley — Hardcore match",
+     "ev": "Backlash, 2004"
+    },
+    {
+     "t": "Randy Orton contre Chris Benoit — Titre mondial poids lourds",
+     "ev": "SummerSlam, 2004"
+    },
+    {
+     "t": "Randy Orton contre Shawn Michaels",
+     "ev": "Unforgiven, 2003"
+    },
+    {
+     "t": "Randy Orton contre The Undertaker — Hell in a Cell",
+     "ev": "Armageddon, 2005"
+    },
+    {
+     "t": "Randy Orton contre Edge",
+     "ev": "Backlash, 2020"
+    }
+   ]
+  },
+  "Gabe Kidd": {
+   "k": "NJPW, AEW",
+   "a": [
+    "Gabriel Kidd"
+   ],
+   "era": "Depuis 2011",
+   "from": "Nottingham (Angleterre)",
+   "ht": "1,83 m",
+   "wt": "107 kg",
+   "debut": "12 novembre 2011",
+   "teams": "Bullet Club War Dogs, Death Riders, Unbound Co.",
+   "trainer": "Marty Jones, Stixx, Katsuyori Shibata, NJPW L.A. Dojo",
+   "txt": "Bagarreur anglais formé au dojo de Los Angeles de la NJPW, champion IWGP Global et membre des Death Riders de Jon Moxley.",
+   "ref": [
+    {
+     "t": "Gabe Kidd contre Eddie Kingston — No Ropes Last Man Standing",
+     "ev": "NJPW Resurgence, 2024"
+    },
+    {
+     "t": "Gabe Kidd contre Kaito Kiyomiya — Titre GHC poids lourds",
+     "ev": "NOAH Grand Ship in Yokohama, 2024"
+    },
+    {
+     "t": "Gabe Kidd contre Kenny Omega",
+     "ev": "Wrestle Dynasty, 2025"
+    },
+    {
+     "t": "Gabe Kidd contre Yota Tsuji — Titre IWGP Global",
+     "ev": "Dominion 6.15 in Osaka-jo Hall, 2025"
+    },
+    {
+     "t": "Gabe Kidd contre Darby Allin — Coffin match",
+     "ev": "AEW Dynamite, 2026"
+    }
+   ]
+  },
+  "Manami Toyota": {
+   "k": "AJW (All Japan Women)",
+   "era": "1987-2017",
+   "disc": true,
+   "from": "Masuda (Shimane, Japon)",
+   "ht": "1,67 m",
+   "wt": "68 kg",
+   "debut": "5 août 1987",
+   "fin": "Japanese Ocean Cyclone Suplex, Japanese Ocean Queen Bee Bomb",
+   "teams": "Tokyo Sweethearts (avec Mima Shimoda), équipe avec Toshiyo Yamada",
+   "trainer": "Jaguar Yokota",
+   "txt": "Icône du catch féminin japonais (joshi) des années 1990 à la All Japan Women, réputée pour son rythme effréné et ses suplexes spectaculaires ; elle a pris sa retraite en 2017.",
+   "ref": [
+    {
+     "t": "Tokyo Sweethearts contre Etsuko Mita et Toshiyo Yamada",
+     "ev": "Wrestlemarinpiad, 1989"
+    },
+    {
+     "t": "Manami Toyota contre Toshiyo Yamada — cheveux contre cheveux",
+     "ev": "AJW Mid Summer Typhoon, 1992"
+    },
+    {
+     "t": "Manami Toyota et Toshiyo Yamada contre Dynamite Kansai et Mayumi Ozaki — 2 tombés sur 3",
+     "ev": "Dreamslam II, 1993"
+    },
+    {
+     "t": "Manami Toyota contre Kyoko Inoue — Titre WWWA",
+     "ev": "AJW, 1995"
+    },
+    {
+     "t": "Manami Toyota contre Chigusa Nagayo",
+     "ev": "AJW, 1998"
+    }
+   ]
+  },
+  "Swerve Strickland": {
+   "k": "AEW",
+   "a": [
+    "Isaiah « Swerve » Scott",
+    "Shane Strickland",
+    "Killshot"
+   ],
+   "era": "Depuis 2009",
+   "from": "Tacoma (Washington)",
+   "ht": "1,85 m",
+   "wt": "109 kg",
+   "debut": "2009",
+   "teams": "Hit Row, Swerve In Our Glory (avec Keith Lee), Mogul Embassy, New Level (avec Kofi et Austin Creed)",
+   "trainer": "Combat Zone Wrestling, D. J. Hyde, Ground Xero Wrestling",
+   "txt": "Ancien champion du monde de l’AEW passé par la WWE et Lucha Underground, il mène désormais New Level aux côtés de Kofi et Austin Creed.",
+   "ref": [
+    {
+     "t": "Swerve Strickland contre Hangman Page — Texas Deathmatch",
+     "ev": "AEW Full Gear, 2023"
+    },
+    {
+     "t": "Swerve Strickland contre Samoa Joe — Titre mondial de l’AEW",
+     "ev": "AEW Dynasty, 2024"
+    },
+    {
+     "t": "Swerve Strickland contre Hangman Page — Lights Out Steel Cage",
+     "ev": "AEW All Out, 2024"
+    },
+    {
+     "t": "Killshot contre Son of Havoc — masque contre masque",
+     "ev": "Lucha Underground Ultima Lucha Cuatro, 2018"
+    },
+    {
+     "t": "Killshot contre Dante Fox — Hell of War",
+     "ev": "Lucha Underground Ultima Lucha Tres"
+    }
+   ]
+  },
+  "Suzu Suzuki": {
+   "k": "Stardom",
+   "era": "Depuis 2018",
+   "from": "Miyazaki (Japon)",
+   "ht": "1,57 m",
+   "wt": "65 kg",
+   "debut": "31 décembre 2018 (RibbonMania 2018, Ice Ribbon)",
+   "teams": "Prominence, Crazy Star (avec Mei Seira), Neo Genesis, Mi Vida Loca",
+   "trainer": "Tequila Saya",
+   "txt": "Révélée à Ice Ribbon puis au sein de Prominence, elle a remporté le 5★STAR GP 2023 et dirige le clan Mi Vida Loca, championne World of Stardom depuis 2026.",
+   "ref": [
+    {
+     "t": "Suzu Suzuki contre Maya Yukihi — ICE Cross Infinity Championship",
+     "ev": "Ice Ribbon, Yokohama Bunka Gymnasium Final, 2020"
+    },
+    {
+     "t": "Suzu Suzuki contre Miyuki Takase — finale de Catch the Wave",
+     "ev": "Wave, 2022"
+    },
+    {
+     "t": "Suzu Suzuki et Risa Sera contre Giulia et Mai Sakurai — hardcore match",
+     "ev": "Stardom in Showcase vol.1, 2022"
+    },
+    {
+     "t": "Suzu Suzuki contre Maika — finale du 5★STAR GP",
+     "ev": "Stardom, 2023"
+    },
+    {
+     "t": "Suzu Suzuki contre Sayaka Kurara — World of Stardom Championship",
+     "ev": "The Conversion, 2026"
+    }
+   ]
+  },
+  "Chelsea Green": {
+   "k": "WWE",
+   "sh": [
+    "SmackDown"
+   ],
+   "a": [
+    "Laurel Van Ness",
+    "Jaida"
+   ],
+   "era": "depuis 2014",
+   "al": "face",
+   "alD": "2026-05-22",
+   "txt": "Catcheuse canadienne passée par la TNA (Laurel Van Ness) avant la WWE, connue pour son personnage excentrique ; elle défie Liv Morgan à Crown Jewel 2026.",
+   "nick": "Hot Mess",
+   "from": "Victoria (Colombie-Britannique)",
+   "ht": "1,73 m",
+   "wt": "57 kg",
+   "fin": "Unpretty-Her (double underhook facebuster modifié)",
+   "teams": "The Green Regime (avec Piper Niven et Alba Fyre), Chelsea Green et Piper Niven"
+  },
+  "Tony D’Angelo": {
+   "k": "WWE",
+   "sh": [
+    "NXT"
+   ],
+   "a": [
+    "Joey Ariola",
+    "The Don",
+    "Tony D"
+   ],
+   "era": "depuis 2019",
+   "txt": "Ancien champion de NXT au personnage de mafieux de Chicago, premier Grand Slam Champion de NXT ; il veut récupérer son titre face à Grayson Waller à Halloween Havoc 2026.",
+   "nick": "The Don",
+   "from": "Chicago (Illinois)",
+   "ht": "1,83 m",
+   "wt": "109 kg",
+   "debut": "2019",
+   "trainer": "WWE Performance Center",
+   "teams": "The D’Angelo Family, Team 2.0",
+   "ref": [
+    {
+     "t": "Tony D’Angelo contre Pete Dunne — Crowbar on a Pole",
+     "ev": "NXT, 2022"
+    },
+    {
+     "t": "Tony D’Angelo contre Santos Escobar — Street Fight",
+     "ev": "NXT Heatwave, 2022"
+    },
+    {
+     "t": "Tony D’Angelo contre Dijak — Jailhouse Street Fight",
+     "ev": "NXT Roadblock, 2023"
+    },
+    {
+     "t": "Tony D’Angelo contre Oba Femi — titre nord-américain de NXT",
+     "ev": "NXT, 2024"
+    },
+    {
+     "t": "Tony D’Angelo contre Joe Hendry contre Ethan Page contre Ricky Saints — titre de NXT",
+     "ev": "NXT Stand & Deliver, 2026"
+    }
+   ]
+  },
+  "Leon Slater": {
+   "k": "TNA",
+   "a": [
+    "Leon Blade"
+   ],
+   "era": "depuis 2019",
+   "txt": "Voltigeur anglais de Bradford, deux fois champion de la X Division de la TNA, plus jeune détenteur de ce titre ; il est à l’affiche du titre mondial de la TNA à Destination X 2026.",
+   "from": "Bradford (Angleterre)",
+   "ht": "1,85 m",
+   "wt": "89 kg",
+   "debut": "2019",
+   "trainer": "Liam Slater",
+   "ref": [
+    {
+     "t": "Leon Slater contre Moose — titre de la X Division",
+     "ev": "TNA Slammiversary, 2025"
+    },
+    {
+     "t": "Leon Slater contre Oba Femi — titre de NXT",
+     "ev": "NXT New Year’s Evil, 2026"
+    },
+    {
+     "t": "Leon Slater contre Carmelo Hayes — titre des États-Unis",
+     "ev": "SmackDown, 2026"
+    },
+    {
+     "t": "Leon Slater contre Cedric Alexander — 2 out of 3 Falls, titre de la X Division",
+     "ev": "TNA, 2026"
+    },
+    {
+     "t": "Leon Slater contre Cedric Alexander — Last Man Standing en cage, titre de la X Division",
+     "ev": "TNA Lockdown, 2026"
+    }
+   ]
+  },
+  "Sting": {
+   "k": "WCW, TNA, WWE, AEW",
+   "a": [
+    "Steve Borden"
+   ],
+   "era": "1985–2024",
+   "disc": true,
+   "txt": "Icône de la WCW au maquillage de corbeau, surnommé « The Franchise of WCW », il a aussi marqué la TNA, la WWE et la AEW avant de prendre sa retraite invaincu en équipe avec Darby Allin à Revolution 2024.",
+   "nick": "The Franchise of WCW, Every Man’s Nightmare",
+   "from": "Venice Beach (Californie)",
+   "ht": "1,88 m",
+   "wt": "113 kg",
+   "debut": "1985",
+   "fin": "Scorpion Death Drop, Scorpion Deathlock",
+   "teams": "Four Horsemen, nWo Wolfpac, Main Event Mafia, Sting et Lex Luger",
+   "trainer": "Red Bastien, Rick Bassman",
+   "ref": [
+    {
+     "t": "Sting contre Hollywood Hogan",
+     "ev": "Starrcade, 1997"
+    },
+    {
+     "t": "Sting et Lex Luger contre The Steiner Brothers",
+     "ev": "SuperBrawl, 1991"
+    },
+    {
+     "t": "Sting’s Squadron contre Dangerous Alliance — WarGames",
+     "ev": "WrestleWar, 1992"
+    },
+    {
+     "t": "Sting contre Ric Flair",
+     "ev": "Dernier WCW Monday Nitro, 2001"
+    },
+    {
+     "t": "Sting contre AJ Styles — titre mondial de la TNA",
+     "ev": "Bound for Glory, 2009"
+    }
+   ]
+  },
+  "Lyra Valkyria": {
+   "k": "WWE",
+   "sh": [
+    "Raw"
+   ],
+   "a": [
+    "Aoife Valkyrie",
+    "Valkyrie"
+   ],
+   "al": "heel",
+   "alD": "2026-06-22",
+   "nick": "Lady of the Opera",
+   "from": "Dublin (Irlande)",
+   "ht": "1,60 m",
+   "wt": "59 kg",
+   "fin": "Nightwing, Frog Splash, Roundhouse Kick",
+   "teams": "Bayley et Lyra Valkyria, The Woke Queens"
+  },
+  "Penta": {
+   "k": "WWE",
+   "sh": [
+    "Raw"
+   ],
+   "a": [
+    "Pentagón Jr.",
+    "Penta El Zero Miedo"
+   ],
+   "nick": "Penta Zero Miedo",
+   "ht": "1,80 m",
+   "wt": "94 kg",
+   "fin": "Sacrifice, Penta Driver"
+  },
+  "Chigusa Nagayo": {
+   "k": "AJW, GAEA Japan, Marvelous",
+   "era": "1980–2024",
+   "disc": true,
+   "txt": "Moitié des Crush Gals avec Lioness Asuka, elle a fait exploser la popularité du catch féminin japonais dans les années 1980, notamment grâce à sa rivalité avec Dump Matsumoto. Elle a ensuite fondé la GAEA Japan en 1995 puis la Marvelous.",
+   "from": "Ōmura (Nagasaki, Japon)",
+   "ht": "1,65 m",
+   "wt": "87 kg",
+   "debut": "8 août 1980",
+   "teams": "Crush Gals (avec Lioness Asuka)",
+   "trainer": "All Japan Women's Pro-Wrestling",
+   "ref": [
+    {
+     "t": "Chigusa Nagayo contre Dump Matsumoto — cheveux contre cheveux",
+     "ev": "AJW, 1985"
+    },
+    {
+     "t": "Chigusa Nagayo contre Dump Matsumoto — cheveux contre cheveux",
+     "ev": "AJW, 1986"
+    },
+    {
+     "t": "Chigusa Nagayo contre Yukari Omori — titre contre titre (WWWA World Single)",
+     "ev": "AJW, 1987"
+    }
+   ]
+  },
+  "Cruz Montana": {
+   "k": "WWE",
+   "sh": [
+    "Raw"
+   ],
+   "a": [
+    "Mike Santana",
+    "Santana",
+    "Mike Draztik"
+   ],
+   "era": "NXT, depuis 2026 (Mike Santana à la TNA et à l'AEW avant)",
+   "txt": "Ancien membre de LAX à la TNA puis de Proud and Powerful à l'AEW (avec Ortiz), Mike Santana est devenu champion du monde de la TNA avant de rejoindre la WWE à l'été 2026. Sous le nom de Cruz Montana, un hommage à son père, il est passé par NXT avant de débarquer à Raw en novembre 2026 comme nouveau membre de The 946. Il a aussi catché sous le nom de Mike Draztik à ses débuts sur la scène indépendante.",
+   "ref": [],
+   "teams": "The 946, LAX, Proud and Powerful"
+  },
+  "Oba Femi": {
+   "k": "WWE",
+   "sh": [
+    "Raw"
+   ],
+   "al": "face",
+   "alD": "2025-02-15",
+   "txt": "Colosse nigérian formé au Performance Center de la WWE, devenu l'un des champions marquants de NXT avant de rejoindre Raw en 2026.",
+   "nick": "The Ruler, The Destroyer",
+   "from": "Lagos (Nigeria)",
+   "ht": "1,93 m",
+   "wt": "141 kg",
+   "fin": "Fall From Grace (pop-up powerbomb)"
+  },
+  "Stephanie Vaquer": {
+   "k": "WWE",
+   "sh": [
+    "Raw"
+   ],
+   "a": [
+    "Dark Angel"
+   ],
+   "al": "face",
+   "alD": "2024-07-13",
+   "inj": true,
+   "txt": "Catcheuse chilienne révélée au CMLL et au Japon, arrivée à la WWE en 2024 et passée de NXT à Raw en 2025.",
+   "nick": "La Primera, The Dark Angel",
+   "from": "San Antonio (Chili)",
+   "ht": "1,63 m",
+   "wt": "50 kg",
+   "debut": "2009",
+   "fin": "SVB (package backbreaker), Corkscrew Moonsault, Angel Wings",
+   "teams": "Giulia et Stephanie Vaquer, Stephanie Vaquer et Zeuxis"
+  },
+  "Johnny Gargano": {
+   "k": "WWE",
+   "sh": [
+    "SmackDown"
+   ],
+   "era": "depuis 2005",
+   "al": "face",
+   "alD": "2026-09-04",
+   "nick": "Johnny Wrestling, The Heart and Soul of NXT",
+   "from": "Cleveland (Ohio)",
+   "ht": "1,78 m",
+   "wt": "90 kg",
+   "debut": "2005",
+   "fin": "Gargano Escape, One Final Beat",
+   "teams": "#DIY (avec Tommaso Ciampa), The Way",
+   "ref": [
+    {
+     "t": "Johnny Gargano contre Andrade « Cien » Almas — titre de NXT",
+     "ev": "NXT TakeOver: Philadelphia, 2018"
+    },
+    {
+     "t": "Johnny Gargano contre Tommaso Ciampa — Unsanctioned Match",
+     "ev": "NXT TakeOver: New Orleans, 2018"
+    },
+    {
+     "t": "Johnny Gargano contre Adam Cole — 2 out of 3 Falls, titre de NXT",
+     "ev": "NXT TakeOver: XXV, 2019"
+    }
+   ]
+  },
+  "Ethan Page": {
+   "k": "WWE",
+   "sh": [
+    "Raw"
+   ],
+   "era": "depuis 2006",
+   "al": "heel",
+   "alD": "2024-05-28",
+   "nick": "All Ego",
+   "from": "Hamilton (Ontario, Canada)",
+   "ht": "1,88 m",
+   "wt": "98 kg",
+   "debut": "2006",
+   "fin": "Twisted Grin, Ego's Edge, Head Shot",
+   "teams": "Rusev et Ethan Page (avec Rusev), The Monster Mash (avec Josh Alexander)"
+  },
+  "Tatum Paxley": {
+   "k": "WWE",
+   "sh": [
+    "SmackDown"
+   ],
+   "era": "depuis 2022",
+   "al": "face",
+   "alD": "2025-10-25",
+   "from": "Dallas (Texas)",
+   "ht": "1,65 m",
+   "wt": "55 kg",
+   "debut": "2022",
+   "fin": "Psycho Trap",
+   "teams": "Allies of Convenience (avec Charlotte Flair et Alexa Bliss), The Culling, Chemical X, The Diamond Mine"
+  },
+  "Natsupoi": {
+   "k": "Stardom",
+   "era": "depuis 2015",
+   "a": [
+    "Natsumi Maki",
+    "Poiman",
+    "Akupoi"
+   ],
+   "from": "Yokohama (Japon)",
+   "ht": "1,52 m",
+   "wt": "47 kg",
+   "debut": "2015 (Actwres Girl'Z), 2016 à Stardom",
+   "trainer": "Yuna Manase",
+   "teams": "Cosmic Angels, Donna Del Mondo, REStart",
+   "txt": "Catcheuse aérienne de Stardom, ancienne championne Wonder of Stardom et High Speed ; elle a annoncé sa retraite pour le 3 janvier 2027."
+  },
+  "Keith Lee": {
+   "k": "AEW",
+   "era": "Depuis 2005",
+   "nick": "Limitless, Bearcat",
+   "from": "Wichita Falls (Texas)",
+   "ht": "1,88 m",
+   "wt": "154 kg",
+   "debut": "2005",
+   "fin": "Spirit Bomb, Ground Zero",
+   "teams": "Swerve in Our Glory (avec Swerve Strickland)",
+   "txt": "Colosse étonnamment agile, révélé sur la scène indépendante puis à NXT, où il est le premier à détenir en même temps le titre NXT et le titre Nord-Américain (2020). Passé à la AEW en 2022, champion du monde par équipe avec Swerve Strickland. Il n’a plus combattu depuis le 23 décembre 2023 (victoire contre Brian Cage à Collision) : opéré deux fois début 2024, sans retour annoncé ; en octobre 2026, la AEW n’a pas de projet pour lui et il n’a pas annoncé sa retraite.",
+   "ref": [
+    {
+     "t": "Keith Lee contre Dominik Dijakovic — titre Nord-Américain de la NXT",
+     "ev": "NXT TakeOver: WarGames, 2019"
+    },
+    {
+     "t": "Keith Lee contre Adam Cole — titre de la NXT",
+     "ev": "NXT The Great American Bash, 2020"
+    }
+   ],
+   "tt": [
+    {
+     "t": "NXT Championship",
+     "k": "WWE",
+     "x": 1
+    },
+    {
+     "t": "NXT North American Championship",
+     "k": "WWE",
+     "x": 1
+    },
+    {
+     "t": "AEW World Tag Team Championship",
+     "k": "AEW",
+     "x": 1
+    }
+   ],
+   "disc": true
+  },
+  "Bray Wyatt": {
+   "k": "WWE",
+   "a": [
+    "The Fiend",
+    "Windham Rotunda",
+    "Husky Harris"
+   ],
+   "dc": "2023-08-24",
+   "era": "WWE, 2009–2023",
+   "nick": "The Eater of Worlds, The Fiend",
+   "from": "Brooksville (Floride)",
+   "fin": "Sister Abigail, Mandible Claw",
+   "teams": "The Wyatt Family, The Wyatt 6",
+   "trainer": "Mike Rotunda (son père), Florida Championship Wrestling",
+   "txt": "Windham Rotunda, fils de Mike Rotunda et petit-fils de Blackjack Mulligan, l’un des personnages les plus créatifs de la WWE : le gourou de la Wyatt Family, l’animateur inquiétant du Firefly Fun House puis « The Fiend ». Champion de la WWE en 2017 et deux fois champion universel. Revenu en 2022, il est mort d’une crise cardiaque le 24 août 2023, à 36 ans.",
+   "ref": [
+    {
+     "t": "Bray Wyatt contre John Cena",
+     "ev": "WrestleMania XXX, 2014"
+    },
+    {
+     "t": "« The Fiend » contre Seth Rollins — Falls Count Anywhere, titre universel",
+     "ev": "Crown Jewel, 2019"
+    },
+    {
+     "t": "Bray Wyatt contre John Cena — Firefly Fun House",
+     "ev": "WrestleMania 36, 2020"
+    },
+    {
+     "t": "Bray Wyatt contre LA Knight — Pitch Black match",
+     "ev": "Royal Rumble, 2023"
+    }
+   ],
+   "tt": [
+    {
+     "t": "WWE Championship",
+     "k": "WWE",
+     "x": 1
+    },
+    {
+     "t": "WWE Universal Championship",
+     "k": "WWE",
+     "x": 2
+    },
+    {
+     "t": "Raw Tag Team Championship",
+     "k": "WWE",
+     "x": 1
+    },
+    {
+     "t": "SmackDown Tag Team Championship",
+     "k": "WWE",
+     "x": 1
+    }
+   ],
+   "disc": true
+  },
+  "Maki Itoh": {
+   "k": "Stardom",
+   "a": "Maki Ito",
+   "era": "Depuis 2013",
+   "from": "Ogōri (Fukuoka, Japon)",
+   "ht": "1,60 m",
+   "debut": "15 décembre 2013",
+   "fin": "Itoh Special (Texas Cloverleaf), coup de tête « kokeshi »",
+   "teams": "Itoh Respect Army (avec Mizuki), NEO Itoh Respect Army (avec Chris Brookes), équipe avec Miyu Yamashita",
+   "txt": "Ancienne idole devenue catcheuse à la Tokyo Joshi Pro, connue pour son franc-parler et son personnage hors norme. Elle a signé à la Stardom le 10 janvier 2026, où elle détient le titre Kawaii of Kawaii, tout en apparaissant aussi à la AEW.",
+   "ref": [
+    {
+     "t": "Maki Itoh contre Yuna Manase — International Princess Championship",
+     "ev": "TJPW My Life; Let's Enjoy!!, 2019"
+    },
+    {
+     "t": "Britt Baker et Maki Itoh contre Thunder Rosa et Riho",
+     "ev": "AEW Revolution, 2021"
+    },
+    {
+     "t": "Maki Itoh et Miyu Yamashita contre Daisy Monkey — Princess Tag Team Championship",
+     "ev": "TJPW Wrestle Princess V, 2024"
+    },
+    {
+     "t": "Maki Itoh contre Aya Sakura — Kawaii of Kawaii Championship",
+     "ev": "Stardom, 2026"
+    }
+   ]
+  },
+  "Persephone": {
+   "k": "AEW · CMLL",
+   "era": "Depuis 2016",
+   "nick": "La Belleza Hecha Rudeza, Diosa de la Muerte",
+   "from": "El Paso (Texas)",
+   "ht": "1,63 m",
+   "wt": "66 kg",
+   "fin": "Lasso from El Paso, Flatliner, Springboard Frog Splash",
+   "al": "heel",
+   "alD": "2026-07-01",
+   "txt": "Luchadora d’El Paso révélée au CMLL, où elle est championne du monde féminine, et arrivée à la AEW en janvier 2026. Rudo redoutable, elle mène carrière des deux côtés de la frontière.",
+   "tt": [
+    {
+     "t": "CMLL World Women's Championship",
+     "k": "CMLL",
+     "x": 1,
+     "id": "cmll-women"
+    },
+    {
+     "t": "CMLL Universal Amazons Championship",
+     "k": "CMLL",
+     "x": 1
+    },
+    {
+     "t": "AEW TBS Championship",
+     "k": "AEW",
+     "x": 1,
+     "id": "aew-tbs"
+    }
+   ]
+  },
+  "Toshiaki Kawada": {
+   "k": "All Japan",
+   "era": "1982–2010",
+   "disc": true,
+   "nick": "Dangerous K",
+   "from": "Ohira (Japon)",
+   "ht": "1,83 m",
+   "wt": "105 kg",
+   "debut": "4 octobre 1982",
+   "fin": "Powerbomb, coup de pied au visage",
+   "teams": "Footloose (avec Hiromichi Fuyuki), Super Generation Army, Holy Demon Army (avec Akira Taue)",
+   "trainer": "Giant Baba, Genichiro Tenryu, Akio Sato",
+   "txt": "Pilier du « Four Pillars of Heaven » de l’All Japan des années 1990, réputé pour ses frappes très dures. Cinq fois champion Triple Crown, il a livré contre Mitsuharu Misawa et Kenta Kobashi certains des matchs les plus célèbres de l’histoire du catch japonais.",
+   "ref": [
+    {
+     "t": "Toshiaki Kawada contre Mitsuharu Misawa — Triple Crown",
+     "ev": "All Japan, 1994"
+    },
+    {
+     "t": "Toshiaki Kawada contre Stan Hansen",
+     "ev": "All Japan, 1992"
+    },
+    {
+     "t": "Toshiaki Kawada contre Kenta Kobashi — limite d’une heure",
+     "ev": "All Japan, 1995"
+    },
+    {
+     "t": "Toshiaki Kawada et Akira Taue contre Mitsuharu Misawa et Kenta Kobashi",
+     "ev": "All Japan, 1995"
+    },
+    {
+     "t": "Toshiaki Kawada contre Kensuke Sasaki",
+     "ev": "NJPW, 2000"
+    }
+   ]
+  },
+  "Marina Shafir": {
+   "k": "AEW · ROH",
+   "a": [
+    "The Problem"
+   ],
+   "era": "Depuis 2018 (NXT), AEW depuis 2021",
+   "al": "tweener",
+   "alD": "2026-09-30",
+   "txt": "Ancienne combattante de MMA et membre des Four Horsewomen avec Ronda Rousey, la Moldave Marina Shafir est passée par NXT avant de rejoindre la AEW, où elle fait partie des Death Riders de Jon Moxley.",
+   "nick": "The Problem, The Supernova from Moldova",
+   "from": "Soroca, Moldavie",
+   "ht": "1,70 m",
+   "wt": "66 kg",
+   "fin": "Achilles Lock, Toehold",
+   "teams": "The Death Riders, The Four Horsewomen, The Beast of Burdens (avec Nyla Rose), The MegaProblems",
+   "ref": []
+  },
+  "Royce Keys": {
+   "k": "WWE",
+   "sh": [
+    "Raw"
+   ],
+   "a": [
+    "Powerhouse Hobbs",
+    "Will Hobbs"
+   ],
+   "era": "Depuis 2009 (AEW en Powerhouse Hobbs), WWE depuis 2026",
+   "al": "heel",
+   "alD": "2026-08-24",
+   "txt": "Connu à la AEW sous le nom de Powerhouse Hobbs, Royce Keys a fait ses débuts à la WWE au Royal Rumble 2026. Depuis août 2026, il mène à Raw le groupe The 946 contre The Bloodline.",
+   "nick": "The Embodiment of Willpower",
+   "from": "Palo Alto, Californie",
+   "ht": "1,85 m",
+   "wt": "122 kg",
+   "debut": "2009",
+   "fin": "Town Business, Spine on the Pine, Powerslam",
+   "teams": "The 946",
+   "ref": []
+  },
+  "Jay White": {
+   "k": "AEW",
+   "a": [
+    "Jamie White"
+   ],
+   "al": "heel",
+   "alD": "2026-10-21",
+   "nick": "Switchblade, King Switch",
+   "from": "Auckland, Nouvelle-Zélande",
+   "ht": "1,86 m",
+   "wt": "100 kg",
+   "debut": "2013",
+   "fin": "Blade Runner, Kiwi Krusher",
+   "teams": "The Cut, Bang Bang Gang, Bullet Club"
+  },
+  "Trey Miguel": {
+   "k": "TNA",
+   "al": "face",
+   "alD": "2024-07-09",
+   "nick": "The Fresh Prince of Mid-Air, Spider-Trey",
+   "from": "Dayton, Ohio",
+   "ht": "1,75 m",
+   "wt": "78 kg",
+   "debut": "2009",
+   "fin": "Meteora, Yoshi Tonic",
+   "teams": "The Rascalz, Lil Rascalz, FireArms, Alienated Youth"
+  },
+  "Kyle Fletcher": {
+   "k": "AEW",
+   "al": "heel",
+   "alD": "2024-10-12",
+   "nick": "The Aussie Arrow, The Protostar",
+   "from": "Sydney (Australie)",
+   "ht": "1,86 m",
+   "wt": "93 kg",
+   "fin": "Grimstone, Sheer Drop",
+   "teams": "The Don Callis Family, ProtOkada (avec Kazuchika Okada), Aussie Open (avec Mark Davis), ProtoShita (avec Konosuke Takeshita)"
+  },
+  "Indi Hartwell": {
+   "k": "TNA",
+   "al": "face",
+   "alD": "2025-03-09",
+   "nick": "Impressive",
+   "from": "Melbourne (Australie)",
+   "ht": "1,75 m",
+   "wt": "63 kg",
+   "debut": "2016",
+   "fin": "Slingshot Rocket Kick",
+   "teams": "The Way, InDex (avec Dexter Lumis / Samuel Shaw), Undeniably Impressive (avec Tessa Blanchard)"
+  }
+ }
+}
