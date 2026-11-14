@@ -1,6 +1,16 @@
 {
- "at": "2026-11-14T05:46:30.907Z",
+ "at": "2026-11-14T06:53:39.056Z",
  "items": [
+  {
+   "t": "Preview : AAA Lucha Libre du 14 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61267-preview-aaa-lucha-libre-14-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": [
+    "WWE",
+    "AAA"
+   ]
+  },
   {
    "t": "Carte de FinalSlam 2026",
    "u": "https://www.catch-newz.com/international/newz/60668-carte-finalslam-2026",
@@ -25,16 +35,6 @@
    "d": "2026-11-14",
    "tags": [
     "AEW"
-   ]
-  },
-  {
-   "t": "Preview : AAA Lucha Libre du 14 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61267-preview-aaa-lucha-libre-14-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-14",
-   "tags": [
-    "WWE",
-    "AAA"
    ]
   },
   {
@@ -1033,15 +1033,15 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/international/newz/60668-carte-finalslam-2026",
    "https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61293-charlotte-flair-et-fatal-influence-invitees-au-john-cena-classic-a-smackdown",
-   "https://www.catch-newz.com/aew/newz/61292-perturbations-des-vols-aux-etats-unis-aew-full-gear-2026-impacte",
    "https://www.catch-newz.com/aew/resultats/61281-resultats-de-roh-du-12-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61269-resultats-de-wwe-road-to-survivor-series-du-12-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61268-resultats-et-streaming-de-wwe-evolve-du-11-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61267-preview-aaa-lucha-libre-14-novembre-2026",
+   "https://www.catch-newz.com/international/newz/60668-carte-finalslam-2026",
+   "https://www.catch-newz.com/wwe/newz/61293-charlotte-flair-et-fatal-influence-invitees-au-john-cena-classic-a-smackdown",
+   "https://www.catch-newz.com/aew/newz/61292-perturbations-des-vols-aux-etats-unis-aew-full-gear-2026-impacte",
    "https://www.catch-newz.com/culture/gaming/60990-la-saison-13-de-wwe-supercard-est-lancee",
    "https://www.catch-newz.com/wwe/newz/61291-stephanie-vaquer-rejoint-lequipe-de-charlotte-flair-le-wargames-feminin-est-officiel-pour-les-survivor-series",
    "https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-pour-le-4-janvier-2027",
@@ -1336,7 +1336,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",

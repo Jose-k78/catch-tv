@@ -1,5 +1,5 @@
 {
- "at": "2026-11-14T05:46:30.955Z",
+ "at": "2026-11-14T06:53:39.098Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/international/newz/60844-carte-de-lol-mischief-night-mayhem-5": "2026-10-31",
@@ -443,7 +443,12 @@
   "a:https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026": "2026-11-14",
   "a:https://www.catch-newz.com/wwe/newz/61291-stephanie-vaquer-rejoint-lequipe-de-charlotte-flair-le-wargames-feminin-est-officiel-pour-les-survivor-series": "2026-11-14",
   "a:https://www.catch-newz.com/wwe/newz/61293-charlotte-flair-et-fatal-influence-invitees-au-john-cena-classic-a-smackdown": "2026-11-14",
-  "a:https://www.catch-newz.com/aew/newz/61292-perturbations-des-vols-aux-etats-unis-aew-full-gear-2026-impacte": "2026-11-14"
+  "a:https://www.catch-newz.com/aew/newz/61292-perturbations-des-vols-aux-etats-unis-aew-full-gear-2026-impacte": "2026-11-14",
+  "poll:p-20261114-wargames-femmes": "2026-11-14",
+  "poll:p-20261114-destx-slater": "2026-11-14",
+  "poll:p-20261114-nxt-punk": "2026-11-14",
+  "poll:p-20261114-babies": "2026-11-14",
+  "story:austin-car-1999": "2026-11-14"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -478,6 +483,22 @@
     "url": "#/",
     "tag": "art",
     "short": "2 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📖 Storyline du jour",
+    "body": "Survivor Series 1999 : le soir où Stone Cold s'est fait renverser",
+    "url": "#/storyline/austin-car-1999",
+    "tag": "story",
+    "short": "📖 Storyline du jour"
+   },
+   {
+    "cat": "info",
+    "title": "📊 4 nouveaux sondages",
+    "body": "WarGames féminin aux Survivor Series : l’équipe de Charlotte Flair (avec Stephanie Vaquer) va-t-elle gagner ? · Destination X : qui repart avec le titre mondial de la TNA ? · CM Punk est envisagé pour remplacer Shawn Michaels à la tête de NXT : qui voudrais-tu ? · Qui est la meilleure babies entre IYO SKY et Kris Statlander ?",
+    "url": "#/sondages",
+    "tag": "poll",
+    "short": "4 nouveaux sondages"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -512,6 +533,22 @@
     "url": "#/",
     "tag": "art",
     "short": "2 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📖 Storyline du jour",
+    "body": "Survivor Series 1999 : le soir où Stone Cold s'est fait renverser",
+    "url": "#/storyline/austin-car-1999",
+    "tag": "story",
+    "short": "📖 Storyline du jour"
+   },
+   {
+    "cat": "info",
+    "title": "📊 4 nouveaux sondages",
+    "body": "WarGames féminin aux Survivor Series : l’équipe de Charlotte Flair (avec Stephanie Vaquer) va-t-elle gagner ? · Destination X : qui repart avec le titre mondial de la TNA ? · CM Punk est envisagé pour remplacer Shawn Michaels à la tête de NXT : qui voudrais-tu ? · Qui est la meilleure babies entre IYO SKY et Kris Statlander ?",
+    "url": "#/sondages",
+    "tag": "poll",
+    "short": "4 nouveaux sondages"
    }
   ]
  }
