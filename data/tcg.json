@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13",
+ "updated": "2026-11-14",
  "note": "Réglages TCCCG du modo (cartes, persos, taux, objets, boosters, combats, musiques, assets). Modifié depuis l’app (⚙️ Modo TCCCG).",
  "cards": {
   "ace-austin": {
@@ -427,7 +427,7 @@
   },
   "la-catalina": {
    "k": "AAA",
-   "r": "SR",
+   "r": "SSR",
    "max": "UR",
    "arch": "Opportunist",
    "al": "",
