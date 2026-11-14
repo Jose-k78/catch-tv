@@ -1274,6 +1274,19 @@
    },
    "gimmick": "",
    "medalOf": "Dr. Wagner Jr"
+  },
+  "it-s-gal": {
+   "k": "WWE",
+   "r": "R",
+   "max": "SR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "It's GAL"
   }
  },
  "bgm": {
