@@ -1,6 +1,53 @@
 {
- "at": "2026-11-14T18:43:09.593Z",
+ "at": "2026-11-14T19:39:37.432Z",
  "items": [
+  {
+   "t": "Résultats de FinalSlam 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61304-resultats-de-finalslam-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": []
+  },
+  {
+   "t": "TNA Destination X 2026 est maintenu, mais avec des changements",
+   "u": "https://www.catch-newz.com/international/newz/61309-tna-destination-x-2026-est-maintenu-mais-avec-des-changements",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": [
+    "TNA"
+   ]
+  },
+  {
+   "t": "Carte du jour 2 de TEW Next Order Of Business 2026",
+   "u": "https://www.catch-newz.com/international/newz/61307-carte-du-jour-2-de-tew-next-order-of-business-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": []
+  },
+  {
+   "t": "Carte de TNT IGNition Aftershock 2026",
+   "u": "https://www.catch-newz.com/international/newz/61310-carte-de-tnt-ignition-aftershock-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": []
+  },
+  {
+   "t": "FinalSlam – Amine vs. Squeezie : Carte, diffusion… toutes les infos sur le show",
+   "u": "https://www.voxcatch.fr/2026/11/14/final-slam-amine-squeezie-infos-diffusion/",
+   "s": "VOXcatch",
+   "d": "2026-11-14",
+   "tags": []
+  },
+  {
+   "t": "WWE SmackDown du 13 novembre : Kevin Owens défie Sami Zayn, Gunther vs. Finn Balor",
+   "u": "https://www.voxcatch.fr/2026/11/14/resultats-wwe-smackdown-13-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-14",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
+  },
   {
    "t": "Spike Dudley signe un contrat de légende avec la WWE",
    "u": "https://www.catch-newz.com/wwe/newz/61301-spike-dudley-signe-un-contrat-de-legende-avec-la-wwe",
@@ -25,23 +72,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-14",
    "tags": []
-  },
-  {
-   "t": "FinalSlam – Amine vs. Squeezie : Carte, diffusion… toutes les infos sur le show",
-   "u": "https://www.voxcatch.fr/2026/11/14/final-slam-amine-squeezie-infos-diffusion/",
-   "s": "VOXcatch",
-   "d": "2026-11-14",
-   "tags": []
-  },
-  {
-   "t": "WWE SmackDown du 13 novembre : Kevin Owens défie Sami Zayn, Gunther vs. Finn Balor",
-   "u": "https://www.voxcatch.fr/2026/11/14/resultats-wwe-smackdown-13-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-14",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
   },
   {
    "t": "Les ceintures de FinalSlam dévoilées",
@@ -486,38 +516,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-12",
    "tags": []
-  },
-  {
-   "t": "Trois Françaises dans le PWI 250 de 2026",
-   "u": "https://www.catch-newz.com/international/newz/61252-trois-francaises-dans-le-pwi-250-de-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": []
-  },
-  {
-   "t": "Stephanie Vaquer finit première du PWI 250 de 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61251-stephanie-vaquer-finit-premiere-du-pwi-250-de-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "FinalSlam 2026 : Heure et chaines pour regarder le show en direct",
-   "u": "https://www.catch-newz.com/international/newz/61250-finalslam-2026-heure-et-chaines-pour-regarder-le-show-en-direct",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": []
-  },
-  {
-   "t": "Carte de CMLL Jueves Arena Coliseo du 12 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61234-carte-de-cmll-jueves-arena-coliseo-du-12-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "CMLL"
-   ]
   }
  ],
  "yt": {
@@ -1069,10 +1067,14 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/international/resultats/61304-resultats-de-finalslam-2026",
    "https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61309-tna-destination-x-2026-est-maintenu-mais-avec-des-changements",
+   "https://www.catch-newz.com/international/resultats/61296-resultats-de-cmll-viernes-espectacular-du-13-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61307-carte-du-jour-2-de-tew-next-order-of-business-2026",
+   "https://www.catch-newz.com/international/newz/61310-carte-de-tnt-ignition-aftershock-2026",
    "https://www.catch-newz.com/wwe/newz/61301-spike-dudley-signe-un-contrat-de-legende-avec-la-wwe",
    "https://www.catch-newz.com/aew/newz/61302-laew-organise-des-vols-prives-pour-full-gear-2026",
-   "https://www.catch-newz.com/international/resultats/61296-resultats-de-cmll-viernes-espectacular-du-13-novembre-2026",
    "https://www.catch-newz.com/international/newz/61308-carte-de-tnt-cold-day-in-hell-2026",
    "https://www.catch-newz.com/international/resultats/61295-resultats-de-bjw-du-23-octobre-2026",
    "https://www.catch-newz.com/international/newz/61299-les-ceintures-de-finalslam-devoilees",
@@ -1364,11 +1366,7 @@
    "https://www.catch-newz.com/wwe/newz/61015-leon-slater-je-ne-serais-pas-champion-du-monde-tna-aujourdhui-sans-mon-passage-a-nxt",
    "https://www.catch-newz.com/wwe/newz/61003-la-wwe-envisage-dorganiser-un-show-a-tokyo-en-2027",
    "https://www.catch-newz.com/international/newz/60981-carte-de-njpw-wrestle-kingdom-21",
-   "https://www.catch-newz.com/wwe/newz/61010-chad-gable-complimente-vanity-project-apres-leur-match-a-nxt",
-   "https://www.catch-newz.com/wwe/newz/61011-enzo-amore-pourrait-avoir-signe-son-retour-a-la-wwe",
-   "https://www.catch-newz.com/wwe/newz/61009-wwe-nxt-grace-a-lintervention-de-kevin-owens-grayson-waller-conserve-son-titre-nxt-contre-cm-punk",
-   "https://www.catch-newz.com/wwe/resultats/60945-spoilers-wwe-smackdown-6-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61008-wwe-nxt-emu-aux-larmes-zilla-fatu-integre-le-john-cena-classic"
+   "https://www.catch-newz.com/wwe/newz/61010-chad-gable-complimente-vanity-project-apres-leur-match-a-nxt"
   ]
  },
  "diag": {
