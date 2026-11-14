@@ -1988,6 +1988,19 @@
    },
    "gimmick": "",
    "medalOf": "Blue Demon Jr"
+  },
+  "dorian-roldan": {
+   "k": "AAA",
+   "r": "R",
+   "max": "SR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Dorian Roldán"
   }
  },
  "bgm": {
