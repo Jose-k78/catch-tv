@@ -2253,6 +2253,18 @@
    },
    "gimmick": "",
    "medalOf": "Ric Flair"
+  },
+  "wade-barrett": {
+   "r": "N",
+   "max": "R",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Bull Hammer",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Ezekiel Jackson"
   }
  },
  "bgm": {
