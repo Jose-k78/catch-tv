@@ -1,6 +1,15 @@
 {
- "at": "2026-11-14T08:47:04.003Z",
+ "at": "2026-11-14T09:42:21.628Z",
  "items": [
+  {
+   "t": "Mila Smidt, Cory Zero et JGU mises à l'honneur dans le PWI 250 féminin 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61266-mila-smidt-cory-zero-et-jgu-mises-a-lhonneur-dans-le-pwi-250-feminin-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Que faut-il penser des critiques virulentes du vidéaste ciné Regelegorila à propos de Final Slam ?",
    "u": "https://www.catch-newz.com/international/newz/61273-que-faut-il-penser-des-critiques-virulentes-du-videaste-cine-regelegorila-a-propos-de-final-slam",
@@ -107,6 +116,15 @@
    ]
   },
   {
+   "t": "Comment regarder AEW Full Gear 2026 en France ?",
+   "u": "https://www.voxcatch.fr/2026/11/13/comment-regarder-aew-full-gear-2026-en-france/",
+   "s": "VOXcatch",
+   "d": "2026-11-13",
+   "tags": [
+    "AEW"
+   ]
+  },
+  {
    "t": "Preview : WWE SmackDown du 13 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
    "s": "Catch-Newz",
@@ -114,15 +132,6 @@
    "tags": [
     "WWE",
     "SmackDown"
-   ]
-  },
-  {
-   "t": "Comment regarder AEW Full Gear 2026 en France ?",
-   "u": "https://www.voxcatch.fr/2026/11/13/comment-regarder-aew-full-gear-2026-en-france/",
-   "s": "VOXcatch",
-   "d": "2026-11-13",
-   "tags": [
-    "AEW"
    ]
   },
   {
@@ -514,15 +523,6 @@
    "d": "2026-11-12",
    "tags": [
     "NJPW"
-   ]
-  },
-  {
-   "t": "Tommaso Ciampa vs Ilja Dragunov est officiel pour AEW Full Gear",
-   "u": "https://www.catch-newz.com/aew/newz/61242-tommaso-ciampa-vs-ilja-dragunov-est-officiel-pour-aew-full-gear",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "AEW"
    ]
   }
  ],
@@ -1065,12 +1065,13 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/newz/61266-mila-smidt-cory-zero-et-jgu-mises-a-lhonneur-dans-le-pwi-250-feminin-2026",
    "https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61273-que-faut-il-penser-des-critiques-virulentes-du-videaste-cine-regelegorila-a-propos-de-final-slam",
    "https://www.catch-newz.com/aew/resultats/61281-resultats-de-roh-du-12-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61269-resultats-de-wwe-road-to-survivor-series-du-12-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61268-resultats-et-streaming-de-wwe-evolve-du-11-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61273-que-faut-il-penser-des-critiques-virulentes-du-videaste-cine-regelegorila-a-propos-de-final-slam",
    "https://www.catch-newz.com/wwe/newz/61267-preview-aaa-lucha-libre-14-novembre-2026",
    "https://www.catch-newz.com/international/newz/60668-carte-finalslam-2026",
    "https://www.catch-newz.com/wwe/newz/61293-charlotte-flair-et-fatal-influence-invitees-au-john-cena-classic-a-smackdown",
@@ -1363,15 +1364,14 @@
    "https://www.catch-newz.com/wwe/newz/60998-la-wwe-devoile-son-plan-de-secours-pour-wrestlemania-43",
    "https://www.catch-newz.com/wwe/newz/60997-tous-les-evenements-wwe-et-ufc-en-arabie-saoudite-auront-lieu-comme-prevu",
    "https://www.catch-newz.com/international/newz/61002-carte-du-jour-3-de-dg-the-gate-of-evolution-2026",
-   "https://www.catch-newz.com/international/resultats/61000-resultats-du-jour-1-du-zero1-tenka-ichi-junior-tournament-2026",
-   "https://www.catch-newz.com/international/resultats/61001-resultats-de-bjw-no-ring-ueno-2026"
+   "https://www.catch-newz.com/international/resultats/61000-resultats-du-jour-1-du-zero1-tenka-ichi-junior-tournament-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
-  "YouTube WWE": "8 nouvelles vidéos",
+  "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
