@@ -1,12 +1,15 @@
 {
- "at": "2026-11-14T15:13:15.066Z",
+ "at": "2026-11-14T16:12:02.656Z",
  "items": [
   {
-   "t": "Résultats du jour 1 de DG The Gate Of Evolution 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61294-resultats-du-jour-1-de-dg-the-gate-of-evolution-2026",
+   "t": "Damian Priest explique pourquoi il a soudainement disparu de la AAA",
+   "u": "https://www.catch-newz.com/wwe/newz/61241-damian-priest-explique-pourquoi-il-a-soudainement-disparu-de-la-aaa",
    "s": "Catch-Newz",
    "d": "2026-11-14",
-   "tags": []
+   "tags": [
+    "WWE",
+    "AAA"
+   ]
   },
   {
    "t": "FinalSlam – Amine vs. Squeezie : Carte, diffusion… toutes les infos sur le show",
@@ -24,6 +27,13 @@
     "WWE",
     "SmackDown"
    ]
+  },
+  {
+   "t": "Résultats du jour 1 de DG The Gate Of Evolution 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61294-resultats-du-jour-1-de-dg-the-gate-of-evolution-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": []
   },
   {
    "t": "Carlito : « J'ai l'impression que la WWE ne croyait pas en Liv Morgan »",
@@ -146,6 +156,16 @@
    "tags": [
     "WWE",
     "SmackDown"
+   ]
+  },
+  {
+   "t": "Résultats de CMLL Viernes Espectacular du 13 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61296-resultats-de-cmll-viernes-espectacular-du-13-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-13",
+   "tags": [
+    "CMLL",
+    "Viernes Espectacular"
    ]
   },
   {
@@ -317,15 +337,6 @@
    ]
   },
   {
-   "t": "Résultats de WWE Road To Survivor Series du 12 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61269-resultats-de-wwe-road-to-survivor-series-du-12-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
    "t": "AEW Dynamite & Collision du 11 novembre : Dernière ligne droite vers AEW Full Gear",
    "u": "https://www.voxcatch.fr/2026/11/12/resultats-aew-dynamite-collision-11-novembre-2026/",
    "s": "VOXcatch",
@@ -334,6 +345,15 @@
     "AEW",
     "Dynamite",
     "Collision"
+   ]
+  },
+  {
+   "t": "Résultats de WWE Road To Survivor Series du 12 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/61269-resultats-de-wwe-road-to-survivor-series-du-12-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-12",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -505,22 +525,6 @@
    "tags": [
     "NJPW"
    ]
-  },
-  {
-   "t": "Cody Rhodes attend la validation de l'équipe créative de la WWE pour faire son heel turn ?",
-   "u": "https://www.catch-newz.com/wwe/newz/61246-cody-rhodes-attend-la-validation-de-lequipe-creative-de-la-wwe-pour-faire-son-heel-turn",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Dave Batista prend 10 kilos pour son rôle de Kratos",
-   "u": "https://www.catch-newz.com/culture/cineserie/60928-dave-batista-prend-10-kilos-pour-son-role-de-kratos",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": []
   }
  ],
  "yt": {
@@ -1015,6 +1019,10 @@
    {
     "id": "SEBZ3huqYFQ",
     "t": "Nic Nemeth contre Elijah"
+   },
+   {
+    "id": "KCFBeWkAdjE",
+    "t": "Elayna Black contre Heather By Elegance"
    }
   ],
   "WWE|SmackDown|2026-11-13": [
@@ -1063,7 +1071,10 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61296-resultats-de-cmll-viernes-espectacular-du-13-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61241-damian-priest-explique-pourquoi-il-a-soudainement-disparu-de-la-aaa",
    "https://www.catch-newz.com/aew/resultats/61281-resultats-de-roh-du-12-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61295-resultats-de-bjw-du-23-octobre-2026",
    "https://www.catch-newz.com/wwe/resultats/61269-resultats-de-wwe-road-to-survivor-series-du-12-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61294-resultats-du-jour-1-de-dg-the-gate-of-evolution-2026",
    "https://www.catch-newz.com/wwe/newz/61290-carlito-jai-limpression-que-la-wwe-ne-croyait-pas-en-liv-morgan",
@@ -1358,21 +1369,18 @@
    "https://www.catch-newz.com/wwe/newz/61006-wwe-nxt-noam-dar-et-romeo-moreno-remportent-le-dusty-rhodes-tag-team-classic",
    "https://www.catch-newz.com/wwe/newz/61005-wwe-nxt-kelani-jordan-conserve-son-titre-face-a-son-adversaire-mystere-paige",
    "https://www.catch-newz.com/aew/newz/60874-preview-aew-dynamite-blood-and-guts-du-4-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61004-wwe-nxt-chad-gable-dragon-lee-et-rey-fenix-donnent-une-lecon-au-vanity-project",
-   "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/60998-la-wwe-devoile-son-plan-de-secours-pour-wrestlemania-43",
-   "https://www.catch-newz.com/wwe/newz/60997-tous-les-evenements-wwe-et-ufc-en-arabie-saoudite-auront-lieu-comme-prevu"
+   "https://www.catch-newz.com/wwe/newz/61004-wwe-nxt-chad-gable-dragon-lee-et-rey-fenix-donnent-une-lecon-au-vanity-project"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
-  "YouTube TNA": "0 nouvelles vidéos",
+  "YouTube TNA": "1 nouvelles vidéos",
   "YouTube NJPW": "0 nouvelles vidéos",
   "YouTube Stardom": "0 nouvelles vidéos",
   "YouTube Marigold": "chaîne introuvable"
