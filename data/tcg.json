@@ -1884,6 +1884,20 @@
    },
    "gimmick": "",
    "medalOf": "Gran Guerrero"
+  },
+  "the-undertaker": {
+   "years": "1990–2020",
+   "k": "WWF / WWE",
+   "r": "SSR",
+   "max": "LR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Tombstone Piledriver",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Paul Bearer"
   }
  },
  "bgm": {
