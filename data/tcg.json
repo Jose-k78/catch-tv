@@ -2228,6 +2228,19 @@
    },
    "gimmick": "",
    "medalOf": "Zoey Serrano"
+  },
+  "yuka-sakazaki": {
+   "k": "AEW",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Magical Merry-Go-Round",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Yuka Sakazaki"
   }
  },
  "bgm": {
