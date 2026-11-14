@@ -1208,6 +1208,19 @@
    },
    "gimmick": "",
    "medalOf": "Layla Diggs"
+  },
+  "kilynn-king": {
+   "k": "TNA",
+   "r": "N",
+   "max": "R",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "KiLynn King"
   }
  },
  "bgm": {
