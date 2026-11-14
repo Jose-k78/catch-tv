@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T23:45:44.256Z",
+ "updated": "2026-11-14T09:34:16.858Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "m:statlight kid vs suzu suzuki": [
@@ -284,6 +284,14 @@
     "p": "VK",
     "at": "2026-11-12",
     "def": true
+   }
+  ],
+  "ev:WWE|Main Event|2026-11-12": [
+   {
+    "t": "",
+    "u": "https://vkvideo.ru/video-231961829_456240056",
+    "p": "VK",
+    "at": "2026-11-14"
    }
   ]
  }
