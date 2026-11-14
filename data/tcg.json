@@ -1653,6 +1653,19 @@
    },
    "gimmick": "",
    "medalOf": "Dr. Britt Baker"
+  },
+  "rugido": {
+   "k": "CMLL",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Rugido"
   }
  },
  "bgm": {
