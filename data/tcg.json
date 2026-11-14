@@ -2126,6 +2126,19 @@
    },
    "gimmick": "",
    "medalOf": "Mike Awesome"
+  },
+  "lady-metal": {
+   "k": "CMLL",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Powerbomb",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Lady Metal"
   }
  },
  "bgm": {
