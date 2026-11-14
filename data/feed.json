@@ -1,6 +1,15 @@
 {
- "at": "2026-11-14T11:34:45.697Z",
+ "at": "2026-11-14T13:27:35.023Z",
  "items": [
+  {
+   "t": "Carlito : « J'ai l'impression que la WWE ne croyait pas en Liv Morgan »",
+   "u": "https://www.catch-newz.com/wwe/newz/61290-carlito-jai-limpression-que-la-wwe-ne-croyait-pas-en-liv-morgan",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "FinalSlam – Amine vs. Squeezie : Carte, diffusion… toutes les infos sur le show",
    "u": "https://www.voxcatch.fr/2026/11/14/final-slam-amine-squeezie-infos-diffusion/",
@@ -509,15 +518,6 @@
   {
    "t": "Zilla Fatu : « Lorsque John Cena a parlé d'Umaga, j'ai eu le cœur serré »",
    "u": "https://www.catch-newz.com/wwe/newz/61245-zilla-fatu-lorsque-john-cena-a-parle-dumaga-jai-eu-le-coeur-serre",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Becky Lynch : « Liv Morgan ne peut rien faire toute seule »",
-   "u": "https://www.catch-newz.com/wwe/newz/61244-becky-lynch-liv-morgan-ne-peut-rien-faire-toute-seule",
    "s": "Catch-Newz",
    "d": "2026-11-12",
    "tags": [
@@ -1065,6 +1065,7 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61290-carlito-jai-limpression-que-la-wwe-ne-croyait-pas-en-liv-morgan",
    "https://www.catch-newz.com/aew/resultats/61281-resultats-de-roh-du-12-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61269-resultats-de-wwe-road-to-survivor-series-du-12-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61268-resultats-et-streaming-de-wwe-evolve-du-11-novembre-2026",
@@ -1362,8 +1363,7 @@
    "https://www.catch-newz.com/wwe/newz/60764-preview-wwe-nxt-4-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/60998-la-wwe-devoile-son-plan-de-secours-pour-wrestlemania-43",
    "https://www.catch-newz.com/wwe/newz/60997-tous-les-evenements-wwe-et-ufc-en-arabie-saoudite-auront-lieu-comme-prevu",
-   "https://www.catch-newz.com/international/newz/61002-carte-du-jour-3-de-dg-the-gate-of-evolution-2026",
-   "https://www.catch-newz.com/international/resultats/61000-resultats-du-jour-1-du-zero1-tenka-ichi-junior-tournament-2026"
+   "https://www.catch-newz.com/international/newz/61002-carte-du-jour-3-de-dg-the-gate-of-evolution-2026"
   ]
  },
  "diag": {
