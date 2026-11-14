@@ -1237,7 +1237,18 @@
   },
   "kyle-fletcher": {
    "imgUR": "img/catcheurs/kyle-fletcher.webp",
-   "imgLR": "-"
+   "imgLR": "-",
+   "k": "AEW",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Grimstone",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Don Callis"
   }
  },
  "bgm": {
