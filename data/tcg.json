@@ -1871,6 +1871,19 @@
    },
    "gimmick": "",
    "medalOf": "Hirooki Goto"
+  },
+  "gran-guerrero": {
+   "k": "CMLL",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Powerbomb",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Gran Guerrero"
   }
  },
  "bgm": {
