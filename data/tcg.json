@@ -2101,6 +2101,19 @@
    },
    "gimmick": "",
    "medalOf": "Suzu Suzuki"
+  },
+  "nia-jax": {
+   "k": "WWE",
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Annihilator",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Nia Jax"
   }
  },
  "bgm": {
