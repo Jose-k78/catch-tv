@@ -1299,6 +1299,19 @@
    },
    "gimmick": "",
    "medalOf": "Eddie Edwards"
+  },
+  "shingo-takagi": {
+   "k": "NJPW",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Last of the Dragon",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Tetsuya Naito"
   }
  },
  "bgm": {
