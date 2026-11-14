@@ -1854,13 +1854,14 @@
    "who": [
     "El Grande Americano"
    ],
-   "since": "",
-   "ev": "",
+   "since": "2026-09-13",
+   "ev": "TripleManía 34",
    "hist": [
     {
      "c": "Dominik Mysterio",
      "d": "2025-09-12",
-     "ev": ""
+     "ev": "Worlds Collide: Las Vegas",
+     "j": 366
     }
    ],
    "src": "Fightful (Héroes Inmortales)",
@@ -1883,16 +1884,23 @@
    "who": [
     "La Catalina"
    ],
-   "since": "",
-   "ev": "",
-   "hist": [],
+   "since": "2026-09-13",
+   "ev": "TripleManía 34",
+   "hist": [
+    {
+     "c": "Flammer",
+     "d": "2023-08-12",
+     "ev": "TripleManía XXXI",
+     "j": 1128
+    }
+   ],
    "src": "Fightful (Héroes Inmortales)",
    "u": "https://www.fightful.com/wrestling/aaa-heroes-inmortales-results-10-24/",
    "defs": [
     {
      "d": "2026-10-24",
      "ev": "Héroes Inmortales",
-     "vs": ""
+     "vs": "Flammer et La Hiedra"
     }
    ],
    "def": 1
@@ -1907,7 +1915,7 @@
     "La Parka"
    ],
    "since": "2026-08-30",
-   "ev": "",
+   "ev": "Ola de Calor",
    "hist": [
     {
      "c": "El Hijo del Vikingo",
@@ -1930,7 +1938,7 @@
     "Rey Fénix"
    ],
    "since": "2026-05-30",
-   "ev": "",
+   "ev": "Noche de Los Grandes",
    "hist": [],
    "src": "Wikipédia",
    "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Lucha_Libre_AAA_Worldwide",
@@ -1948,18 +1956,31 @@
    "k": "AAA",
    "show": "",
    "n": "AAA World Tag Team Championship",
-   "c": "War Raiders (Erik et Ivar)",
+   "c": "El Hijo de Dr. Wagner Jr. et Galeno",
    "who": [
-    "Erik",
-    "Ivar"
+    "El Hijo de Dr. Wagner Jr.",
+    "Galeno"
    ],
-   "since": "2026-05-30",
-   "ev": "",
-   "hist": [],
-   "src": "Wikipédia",
-   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Lucha_Libre_AAA_Worldwide",
-   "defs": [],
-   "def": 0
+   "since": "2026-09-13",
+   "ev": "TripleManía 34",
+   "hist": [
+    {
+     "c": "War Raiders (Erik et Ivar)",
+     "d": "2026-05-30",
+     "ev": "Noche de Los Grandes",
+     "j": 106
+    }
+   ],
+   "src": "Sacnilk (TripleManía 34) + Khel Now (Héroes Inmortales)",
+   "u": "https://www.sacnilk.com/news/3_championships_change_hands_at_aaa_triplemania_34_night_2",
+   "defs": [
+    {
+     "d": "2026-10-24",
+     "ev": "Héroes Inmortales",
+     "vs": "Taurus et Histeria"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "aaa-mixed",
@@ -1972,7 +1993,7 @@
     "Laredo Kid"
    ],
    "since": "2026-07-25",
-   "ev": "",
+   "ev": "Verano de Escándalo",
    "hist": [],
    "src": "Wikipédia",
    "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_Lucha_Libre_AAA_Worldwide",
@@ -1991,12 +2012,13 @@
     "Berto"
    ],
    "since": "2026-09-11",
-   "ev": "",
+   "ev": "TripleManía 34",
    "hist": [
     {
      "c": "Los Psycho Circus",
-     "d": "",
-     "ev": ""
+     "d": "2024-11-17",
+     "ev": "Orígenes",
+     "j": 663
     }
    ],
    "src": "Wikipédia",
@@ -2005,7 +2027,7 @@
     {
      "d": "2026-10-24",
      "ev": "Héroes Inmortales",
-     "vs": ""
+     "vs": "La Parka, Mr. Iguana et Niño Hamburguesa"
     }
    ],
    "def": 1

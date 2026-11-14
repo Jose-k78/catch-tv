@@ -2,7 +2,7 @@
 // rareté (haut droite), grande image, nom + (années) + version / gimmick, badge archétype, logo de faction, symbole face / heel,
 // 5 stats, zone Finisher, petit cercle des types ; couleur dominante = celle de l'archétype. Dos de carte : TCCCG.
 import { esc } from "../util.js";
-import { ARCH, ARCHS, STATS, statsOf, defOf, promoLogo, hpOf, isChampLive, RNAME, titleOf, titleById, POWERS, cfg } from "./data.js";
+import { ARCH, ARCHS, STATS, statsOf, defOf, promoLogo, hpOf, isChampLive, RNAME, titleOf, titleById, POWERS, cfg, RAR, skillOf } from "./data.js";
 import { groupLogo, beltOf } from "../assets.js";
 
 // cercle des types : les 5 couleurs dans l'ordre du cycle, flèches de qui bat qui
@@ -36,6 +36,16 @@ function beltMark(def, live) {
   const tip = def.evo ? "Évolution : " + (t ? t.n : "") : def.champ ? "Carte champion (boost permanent)" : "Champion en titre : +10 %";
   return img ? '<img class="tc3belt img" src="' + esc(img) + '" alt="" title="' + esc(tip) + '">' : '<span class="tc3belt" title="' + esc(tip) + '">🏆</span>';
 }
+// carte vedette = carte fétiche d'un joueur (14 nov.) : sa 1re favorite qui existe encore, sinon sa meilleure carte.
+// Elle est en haut du Roster et sur son profil TCC TV / TCCCG.
+export function starOf(d) {
+  if (!d || !d.cards) return null;
+  const f = (d.fav || []).find(i => d.cards[i] && defOf(d.cards[i].c));
+  if (f) return Object.assign({ iid: f }, d.cards[f]);
+  let best = null;
+  Object.keys(d.cards).forEach(i => { const x = d.cards[i]; if (!x || !defOf(x.c)) return; if (!best || RAR.indexOf(x.r) > RAR.indexOf(best.r) || (x.r === best.r && (x.lv || 1) > (best.lv || 1))) best = Object.assign({ iid: i }, x); });
+  return best;
+}
 // dos des cartes : l'image choisie par le modo (Modo › Musiques et assets › Dos des cartes), sinon « TCCCG »
 export const backImg = () => ((cfg().assets || {}).back) || "";
 export function backHTML(small, cls) {
@@ -52,16 +62,21 @@ export function cardHTML(inst, opt) {
   const lg = promoLogo(def.k), fl = def.faction && groupLogo(def.faction), live = isChampLive(def);
   if (opt.back) return backHTML(opt.small);
   const pic = picOf(def, r);
+  // carte Soutien (14 nov.) : bandeau SOUTIEN, et à la place des stats son bonus de type + sa compétence (sauf sur le plateau de combat)
+  const sk = def.sup && !opt.fighter ? skillOf(def, r) : null;
   const ar = pic ? arStyle(arOf(pic)) : 0;
-  return '<div class="tc3 r-' + r + (opt.small ? " sm" : "") + (def.champ || live ? " champ" : "") + (def.evo ? " evo" : "") + (ar ? " ar" : "") + (opt.cls ? " " + esc(opt.cls) : "") + '" style="--ac:' + A.c + (ar ? ";--ar:" + ar.toFixed(3) : "") + '" data-pk="' + esc(def.id + "|" + r + "|" + lv + "|" + (inst.iid || opt.iid || "")) + '"' + (opt.act ? ' data-act="' + opt.act + '" data-iid="' + esc(opt.iid || "") + '" data-c="' + esc(def.id) + '"' : "") + ">" +
+  return '<div class="tc3 r-' + r + (opt.small ? " sm" : "") + (sk ? " sup" : "") + (def.champ || live ? " champ" : "") + (def.evo ? " evo" : "") + (ar ? " ar" : "") + (opt.cls ? " " + esc(opt.cls) : "") + '" style="--ac:' + A.c + (ar ? ";--ar:" + ar.toFixed(3) : "") + '" data-pk="' + esc(def.id + "|" + r + "|" + lv + "|" + (inst.iid || opt.iid || "")) + '"' + (opt.act ? ' data-act="' + opt.act + '" data-iid="' + esc(opt.iid || "") + '" data-c="' + esc(def.id) + '"' : "") + ">" +
     '<div class="tc3foil"></div>' +
     '<div class="tc3top">' + (lg ? '<img class="tc3promo" src="' + esc(lg) + '" alt="">' : '<span class="tc3promo t">' + esc(def.k || "") + "</span>") + '<span class="tc3brand">TCCCG</span><span class="tc3r" title="' + esc(RNAME[r] || r) + '">' + r + "</span></div>" +
     '<div class="tc3pic' + (pic ? "" : " nopic") + '"' + (pic && !opt.small && !opt.nozoom ? ' data-act="zoom" data-src="' + esc(pic) + '" data-alt="' + esc(def.name) + '"' : "") + ">" +
-      (pic ? '<img class="tc3img" src="' + esc(pic) + '" alt="" loading="lazy" decoding="async">' : '<span class="tc3empty">🖼️<small>Image à venir</small></span>') +
+      (pic ? '<img class="tc3img" src="' + esc(pic) + '" alt="" loading="lazy" decoding="async">' : '<span class="tc3empty">🖼️<small>Image à venir</small></span>')+ '<span class="tc3holo" aria-hidden="true"></span>' +
       '<span class="tc3arch">' + esc(def.arch) + "</span>" + (fl ? '<img class="tc3fac" src="' + esc(fl) + '" alt="">' : "") + alSym(def.al) +
       beltMark(def, live) +
+      (sk ? '<span class="tc3supr">SOUTIEN</span>' : "") +
       (opt.count > 1 ? '<span class="tc3count">×' + opt.count + "</span>" : "") + (opt.badge || "") + '<span class="tc3lv">Nv ' + lv + "</span></div>" +
     '<div class="tc3name"><b>' + esc(def.name) + "</b>" + (def.years ? " <small>(" + esc(def.years) + ")</small>" : "") + (def.gimmick ? '<i>' + esc(def.gimmick) + "</i>" : "") + (inst.pw && POWERS[inst.pw] && !opt.small ? '<em class="tc3pw">✦ ' + esc(POWERS[inst.pw][0]) + "</em>" : "") + "</div>" +
+    (sk ? '<div class="tc3tb">+10 % aux cartes ' + esc(def.arch) + '</div><div class="tc3sk"><b>✦ ' + esc(sk.n) + "</b><span>" + esc(sk.t) + "</span></div>" :
     '<div class="tc3stats">' + STATS.map((s, i) => '<span><small>' + s.slice(0, 3).toUpperCase() + "</small><b>" + st[i] + "</b></span>").join("") + "</div>" +
-    '<div class="tc3fin"><span>🔥 ' + esc(def.fin.n) + "</span><small>" + esc(def.fin.e) + " · PV " + hpOf(st) + "</small>" + typeWheel(opt.small ? 18 : 26, def.arch) + "</div></div>";
+    '<div class="tc3fin"><span>🔥 ' + esc(def.fin.n) + "</span><small>" + esc(def.fin.e) + " · PV " + hpOf(st) + "</small>" + typeWheel(opt.small ? 18 : 26, def.arch) + "</div>") +
+    '<span class="tc3glare" aria-hidden="true"></span><span class="tc3rn" aria-hidden="true">' + esc(String(RNAME[r] || r).toUpperCase()) + "</span></div>";
 }

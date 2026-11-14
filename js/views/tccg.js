@@ -5,6 +5,7 @@ import { S, ACT, avatar, changed } from "../state.js";
 import { esc, toast } from "../util.js";
 import { callUpView } from "../tcg/callup.js";
 import "../tcg/peek.js";
+import { syncSimple } from "../tcg/holo.js";
 import { rosterView } from "../tcg/roster.js";
 import { eventView, matchView, prepView, combatView } from "../tcg/fight.js";
 import { tccgHome, shopView, guideView } from "../tcg/home.js";
@@ -97,7 +98,7 @@ function settingsView() {
 }
 ACT.tgset = el => {
   if (el.dataset.k === "snd") { lsS("ctv.tgsnd", muted() ? null : "off"); toast(muted() ? "🔇 Sons coupés" : "🔊 Sons activés"); }
-  if (el.dataset.k === "fx") { const off = lsG("ctv.tgfx") === "simple"; lsS("ctv.tgfx", off ? null : "simple"); toast(off ? "🎬 Animations complètes" : "Animations simples"); }
+  if (el.dataset.k === "fx") { const off = lsG("ctv.tgfx") === "simple"; lsS("ctv.tgfx", off ? null : "simple"); toast(off ? "🎬 Animations complètes" : "Animations simples"); syncSimple(); }
   changed("tcg");
 };
 // appui long sur « Accueil » dans la barre du bas : retour à TCC TV

@@ -22,6 +22,8 @@ import { isStoryNote, isStoryFav, storyFavsHTML, storyFavView } from "./storylin
 import { showLogo } from "../assets.js";
 import { cropImage } from "../crop.js";
 import { wantLink } from "../want.js";
+import { cardHTML, starOf } from "../tcg/card.js";
+import { RNAME, defOf } from "../tcg/data.js";
 
 const ERR = {
   "auth/invalid-email": "Adresse e-mail invalide",
@@ -279,6 +281,19 @@ ACT.copyuid = async () => { try { await navigator.clipboard.writeText(S.user.uid
 
 // ---------------- profil ----------------
 ACT.startmode = el => { lsSet("ctv.start", el.dataset.v === "tccg" ? "tccg" : ""); document.documentElement.classList.toggle("tgstart", el.dataset.v === "tccg"); toast(el.dataset.v === "tccg" ? "L’app s’ouvrira en TCCCG" : "L’app s’ouvrira en TCC TV"); changed("profile"); };
+// carte fétiche (14 nov., demande de Jose) = la carte vedette du Roster TCCCG du membre, sur son profil TCC TV et TCCCG
+const TPEEK = {};
+function fetiche(uid, mine) {
+  let d = mine ? S.tcg : (TPEEK[uid] || {}).d;
+  if (!mine && S.user && (!TPEEK[uid] || Date.now() - TPEEK[uid].at > 300e3) && B.getTcg) {
+    const keep = TPEEK[uid]; TPEEK[uid] = { d: keep ? keep.d : undefined, at: Date.now() };
+    B.getTcg(uid).then(x => { TPEEK[uid] = { d: x || null, at: Date.now() }; changed("profile"); }).catch(() => {});
+  }
+  const c = d && starOf(d), def = c && defOf(c.c);
+  if (!def) return mine && S.tcgReady ? '<a class="pfet empty" href="#/tccg/callup"><b>🃏 Ta carte fétiche</b><small>Ouvre un booster dans le TCCCG : ta meilleure carte s’affichera ici.</small></a>' : "";
+  return '<section class="pfet">' + cardHTML(c, { small: true, nozoom: true }) + '<div class="pfett"><small>Carte fétiche · TCCCG</small><b>' + esc(def.name) + "</b><span>" + esc((RNAME[c.r] || c.r) + " · Nv " + (c.lv || 1)) + "</span>" +
+    (mine ? '<button class="btn small ghost" data-act="tcgstar">Changer</button>' : '<a class="btn small ghost" href="#/tccg/echange/m/' + encodeURIComponent(uid) + '">Voir son roster</a>') + "</div></section>";
+}
 export function profileView(uid) {
   const me = S.user && uid === S.user.uid;
   const p = prof(uid);
@@ -316,6 +331,7 @@ export function profileView(uid) {
     if (fi.count || fi.mine || fi.theirs) h += '<p class="note small" style="text-align:center;margin-top:8px">' + (fi.count ? "🔥 " + fi.count + " jour" + (fi.count > 1 ? "s" : "") + " de feud d’affilée" : "Feud en cours") +
       (fi.best > fi.count ? " · record : " + fi.best : "") + (fi.hourglass ? " · ⏳ pensez à la feud du jour avant minuit" : "") + "</p>";
   }
+  h += fetiche(uid, me);
   const fsK = p.favShow ? Object.keys(S.P).find(k => p.favShow === k || p.favShow.indexOf(k + " ") === 0) : "", fsN = fsK && p.favShow !== fsK ? p.favShow.slice(fsK.length + 1) : "";
   const fsLogo = fsK ? showLogo(fsK, fsN) || showLogo(fsK, "") : "";
   h += '<div class="favs">' + [["Show préféré", p.favShow], ["Catcheur préféré", p.favWrestler], ["Catcheuse préférée", p.favWrestlerF]]

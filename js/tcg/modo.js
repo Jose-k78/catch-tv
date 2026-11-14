@@ -3,10 +3,11 @@
 // personnages créés (N : managers, jobbers, célébrités, OC), taux d'apparition, objets (créer / modifier / supprimer, effet, prix),
 // boosters (créer : cartes auto ou à la main, nombre de cartes, prix en gimmicks, image), combats (PLE autorisés / retirés,
 // difficulté de l'IA, attente entre deux combats), musiques (victoire, défaite) et image du dos des cartes.
-import { S, ACT, FORM, changed } from "../state.js";
+import { S, B, ACT, FORM, changed } from "../state.js";
 import { esc, toast, modal, fileToDataUrl } from "../util.js";
 import { ghGetJson, ghPutJson, ghToken, ghPutBinary } from "../github.js";
-import { RAR, ARCHS, STATS, FX, ITEMS0, RATE0, cfg, baseCards, cardById, items, rates, rates2, showKeyLabel } from "./data.js";
+import { RAR, ARCHS, STATS, FX, ITEMS0, RATE0, cfg, baseCards, cardById, items, rates, rates2, showKeyLabel, SKILLS, SKQ, skillOf, baseId, hiddenCards } from "./data.js";
+import { commit, cleanSave } from "./store.js";
 import { cardHTML } from "./card.js";
 import { giveButton } from "./give.js";
 import { pushPhoto } from "../views/imagesadmin.js";
@@ -45,7 +46,7 @@ export function modoView() {
     const L = mList();
     h += '<div class="search" style="margin:0 16px"><input id="tmq" type="search" placeholder="Chercher une carte" value="' + esc(q) + '"></div><p class="tnote">' + baseCards().length + " cartes · touche une carte pour la modifier</p>" +
       '<button class="btn wide tmquickb" data-act="tcgmquick">⚡ Modif rapide <small>une carte au hasard, glisse pour la suivante</small></button>' +
-      '<div class="tfilt"><button class="chip' + (noImg ? "" : " on") + '" data-act="tcgmnoimg" data-v="">Toutes</button><button class="chip' + (noImg ? " on" : "") + '" data-act="tcgmnoimg" data-v="1">🖼️ Sans image (' + baseCards().filter(c => !c.pic).length + ")</button></div>" +
+      '<div class="tfilt">' + [["", "Toutes"], ["1", "🖼️ Sans image (" + baseCards().filter(c => !c.pic).length + ")"], ["sup", "🤝 Soutiens (" + baseCards().filter(c => c.sup).length + ")"], ["hid", "🙈 Masquées (" + hiddenCards().length + ")"]].map(x => '<button class="chip' + (noImg === x[0] ? " on" : "") + '" data-act="tcgmnoimg" data-v="' + x[0] + '">' + x[1] + "</button>").join("") + "</div>" +
       '<div class="trgrid">' + L.map(c => cardHTML(c, { small: true, act: "tcgmedit", iid: "" })).join("") + "</div>";
   }
   if (tab === "rendre") {
@@ -86,13 +87,80 @@ export function modoView() {
   }
   return h;
 }
-let noImg = false;
-const mList = () => baseCards().filter(c => (!q || norm(c.name).indexOf(norm(q)) >= 0) && (!noImg || !c.pic)).slice(0, noImg ? 200 : 60);
-ACT.tcgmnoimg = el => { noImg = !!el.dataset.v; changed("tcg"); };
+let noImg = "";
+const mList = () => (noImg === "hid" ? hiddenCards() : baseCards()).filter(c => (!q || norm(c.name).indexOf(norm(q)) >= 0) && (noImg !== "1" || !c.pic) && (noImg !== "sup" || c.sup)).slice(0, noImg ? 200 : 60);
+ACT.tcgmnoimg = el => { noImg = el.dataset.v || ""; changed("tcg"); };
 ACT.tcgmt = el => { tab = el.dataset.t || ""; changed("tcg"); };
 document.addEventListener("input", e => { if (e.target.id === "tmq") { q = e.target.value; const g = document.querySelector(".trgrid"); if (g) g.innerHTML = mList().map(c => cardHTML(c, { small: true, act: "tcgmedit" })).join(""); } });
 
 // ---------- modifier une carte ----------
+// ---------- carte Soutien (14 nov.) : catégorie + compétence réglée par le modo ----------
+function supFields(c) {
+  const k = skillOf(Object.assign({}, c, { sup: true, skill: c.skill || {} }), "N"), o = c.skill || {};
+  return '<fieldset class="tmsup"><legend>Catégorie</legend><label class="chk"><input type="radio" name="cat" value=""' + (c.sup ? "" : " checked") + "> Catcheur</label>" +
+    '<label class="chk"><input type="radio" name="cat" value="sup"' + (c.sup ? " checked" : "") + "> 🤝 Soutien <small>(case Soutien seulement : bonus de type + compétence)</small></label></fieldset>" +
+    '<div class="tmskill"' + (c.sup ? "" : " hidden") + ">" +
+    '<label>Compétence<select name="skid">' + Object.keys(SKILLS).map(id => '<option value="' + id + '"' + (id === k.id ? " selected" : "") + ">" + esc(SKILLS[id].n) + "</option>").join("") + "</select></label>" +
+    '<label>Puissance en N <small>(elle monte avec la rareté : ×2 en LR)</small><input name="skv" type="number" step="0.05" min="0" value="' + esc(+o.v > 0 ? o.v : SKILLS[k.id].v) + '"></label>' +
+    '<label>Quand<select name="skq">' + Object.keys(SKQ).map(q => '<option value="' + q + '"' + (q === k.q ? " selected" : "") + ">" + esc(SKQ[q]) + "</option>").join("") + "</select></label>" +
+    '<label>Stat (pour « Promo au micro »)<select name="sks">' + STATS.map((s, i) => '<option value="' + i + '"' + (i === k.s ? " selected" : "") + ">" + s + "</option>").join("") + "</select></label>" +
+    '<label>Texte sur la carte <small>(vide = texte automatique)</small><textarea name="skt" rows="2" maxlength="120">' + esc(o.t || "") + "</textarea></label>" +
+    '<p class="tnote tmskn"></p></div>';
+}
+function supPreview(box, c) {
+  const f = box.querySelector("[data-mf]"); if (!f || !f.cat) return;
+  const on = f.cat.value === "sup", w = box.querySelector(".tmskill"); if (w) w.hidden = !on; if (!on) return;
+  const sk = { id: f.skid.value, v: +f.skv.value, q: f.skq.value, s: +f.sks.value, t: f.skt.value }, dd = Object.assign({}, c, { sup: true, skill: sk });
+  const P = SKILLS[sk.id], a = skillOf(dd, "N"), z = skillOf(dd, "LR"), n = box.querySelector(".tmskn");
+  if (n) n.textContent = (P && P.qs.indexOf(sk.q) < 0 ? "« " + SKQ[sk.q] + " » ne va pas avec cette compétence : ce sera « " + SKQ[a.q] + " ». " : "") + "En N : " + a.t + (a.t !== z.t ? " · En LR : " + z.t : "");
+}
+// ---------- supprimer une carte définitivement (14 nov., choix de Jose) : partout, aussi dans les parties des joueurs ----------
+// Double confirmation avec le nombre de joueurs qui l'ont ; personne ne reçoit rien en échange (outil « 🎁 Rendre » pour ça).
+const sameCard = (cid, id) => { const b = baseId(cid); return !!b && (b === id || (S.photosMerged || {})[b] === id); };
+const nOf = (p, id) => Object.keys((p && p.cards) || {}).filter(i => sameCard((p.cards[i] || {}).c, id)).length;
+function delCard(c) {
+  let L = null;
+  modal((box, close) => {
+    box.innerHTML = "<h3>🗑️ Supprimer « " + esc(c.name) + ' » ?</h3><p class="sub">Je regarde quels joueurs ont cette carte…</p><button class="btn wide ghost" data-close>Annuler</button>';
+    (B.listTcg ? B.listTcg() : Promise.resolve([])).then(list => {
+      L = (list || []).filter(p => p && p.uid);
+      const who = L.map(p => ({ p: p, n: nOf(p, c.id) })).filter(x => x.n), nb = who.reduce((a, x) => a + x.n, 0);
+      box.innerHTML = '<div class="tczoom">' + cardHTML(c) + "</div><h3>🗑️ Supprimer « " + esc(c.name) + " » pour toujours ?</h3>" +
+        '<ul class="tdelw"><li>Elle sort des boosters, du Call Up, de la Vitrine et de tes listes.</li><li><b>' + (who.length ? who.length + " joueur" + (who.length > 1 ? "s la perdent" : " la perd") + " (" + nb + " exemplaire" + (nb > 1 ? "s" : "") + ", avec ses versions show, champion et évolutions)" : "Personne ne l’a pour l’instant") + "</b>.</li>" +
+        "<li>Personne ne reçoit rien en échange (tu peux rendre quelque chose avec « 🎁 Rendre »).</li><li>On ne peut pas annuler.</li></ul>" +
+        (who.length ? '<p class="tnote">' + who.map(x => esc(x.p.name || "Joueur") + " ×" + x.n).join(" · ") + "</p>" : "") +
+        '<div data-step><button class="btn wide danger" data-y1>Supprimer</button></div><button class="btn wide ghost" style="margin-top:6px" data-close>Annuler</button>';
+    }).catch(e => { box.innerHTML = '<h3>Je n’ai pas pu lire les parties des joueurs</h3><p class="sub">' + esc((e && e.message) || "") + ' — rien n’a été supprimé.</p><button class="btn wide ghost" data-close>Fermer</button>'; });
+    box.addEventListener("click", e => {
+      if (e.target.closest("[data-close]")) return close();
+      if (e.target.closest("[data-y1]")) { box.querySelector("[data-step]").innerHTML = '<p class="tdelsure">Dernière vérification : « ' + esc(c.name) + " » et tous ses exemplaires vont disparaître.</p>" + '<button class="btn wide danger" data-y2>🗑️ Oui, supprimer pour toujours</button>'; return; }
+      if (e.target.closest("[data-y2]")) { close(); doDel(c, L || []); }
+    });
+  });
+}
+async function doDel(c, L) {
+  toast("Suppression de « " + c.name + " »…");
+  const id = c.id;
+  const ok = await saveCfg(d => {
+    if ((d.custom || []).some(x => x.id === id)) d.custom = d.custom.filter(x => x.id !== id);
+    else { d.cards = d.cards || {}; d.cards[id] = { del: true }; }
+    (d.boosters || []).forEach(b => { if (Array.isArray(b.cards)) b.cards = b.cards.filter(x => baseId(x) !== id); });
+    Object.keys(d.bx || {}).forEach(k => ["add", "feat", "del", "nofeat"].forEach(f => { if (Array.isArray((d.bx[k] || {})[f])) d.bx[k][f] = d.bx[k][f].filter(x => baseId(x) !== id); }));
+    if (d.vogue && Array.isArray(d.vogue.cards)) d.vogue.cards = d.vogue.cards.filter(x => baseId(x) !== id);
+    Object.keys(d.evo || {}).forEach(k => { if (k.split("|")[0] === id) delete d.evo[k]; });
+    if (d.evoAdd) delete d.evoAdd[id];
+  }, "carte supprimée définitivement : " + c.name).catch(e => { if (e && e.message !== "nokey") toast("Pas supprimée : " + e.message, { ms: 5000 }); return false; });
+  if (!ok) return;
+  const strip = x => { let k = 0; Object.keys(x.cards || {}).forEach(i => { if (sameCard((x.cards[i] || {}).c, id)) { delete x.cards[i]; k++; } }); if (k) x.fav = (x.fav || []).filter(i => x.cards[i]); return k; };
+  let n = 0, bad = 0;
+  for (const p of L) {
+    if (!nOf(p, id)) continue;
+    if (S.user && p.uid === S.user.uid) { commit(x => { n += strip(x); }); continue; }
+    try { const fresh = B.getTcg ? await B.getTcg(p.uid) : null, x = cleanSave(fresh || p); n += strip(x); await B.saveTcg(p.uid, x); } catch (e) { bad++; }
+  }
+  toast("🗑️ « " + c.name + " » supprimée" + (n ? " · " + n + " exemplaire" + (n > 1 ? "s retirés" : " retiré") : "") + (bad ? " · " + bad + " partie" + (bad > 1 ? "s" : "") + " pas modifiée" + (bad > 1 ? "s" : "") + " (réessaie)" : ""), { ms: 6000 });
+  changed("tcg");
+}
 ACT.tcgmedit = el => {
   const c = cardById(el.dataset.c); if (!c) return;
   const quick = el.dataset.quick === "1", again = () => ACT.tcgmedit({ dataset: { c: c.id, quick: quick ? "1" : "" } });
@@ -112,20 +180,22 @@ ACT.tcgmedit = el => {
       '<label>Rareté de base<select name="r">' + RAR.map(r => "<option" + (r === c.r ? " selected" : "") + ">" + r + "</option>").join("") + "</select></label>" +
       '<label>Éveil max (rareté maximale)<select name="max">' + RAR.map(r => "<option" + (r === c.max ? " selected" : "") + ">" + r + "</option>").join("") + "</select></label>" +
       '<label>Archétype<select name="arch">' + ARCHS.map(a => "<option" + (a === c.arch ? " selected" : "") + ">" + a + "</option>").join("") + "</select></label>" +
+      supFields(c) +
       '<label>Alignement<select name="al">' + [["", "–"], ["face", "Face"], ["heel", "Heel"], ["tweener", "Tweener"]].map(a => '<option value="' + a[0] + '"' + (a[0] === c.al ? " selected" : "") + ">" + a[1] + "</option>").join("") + "</select></label>" +
       STATS.map((s, i) => '<label>' + s + ' <input name="s' + i + '" type="number" min="1" value="' + c.st[i] + '"></label>').join("") +
       '<label>Finisher<input name="fn" maxlength="40" value="' + esc(c.fin.n) + '"></label><label>Effet<select name="fe">' + FX.map(f => "<option" + (f === c.fin.e ? " selected" : "") + ">" + f + "</option>").join("") + "</select></label>" +
       '<label>Gimmick / version<input name="gim" maxlength="40" value="' + esc(c.gimmick || "") + '"></label>' +
       '<label>Médailles pour l’éveil LR (catcheur)<input name="md" maxlength="60" value="' + esc(c.medalOf || "") + '"></label>' +
       '<label>Boosters spéciaux (identifiants, séparés par des virgules)<input name="bo" value="' + esc((c.boosters || []).join(", ")) + '"></label>' +
-      '<label class="chk"><input type="checkbox" name="hide"' + (ov.hide ? " checked" : "") + "> Masquer la carte</label>" +
+      '<label class="chk"><input type="checkbox" name="hide"' + (ov.hide ? " checked" : "") + "> Masquer la carte <small>(elle sort des boosters et des listes ; ceux qui l’ont la gardent)</small></label>" +
       '<div class="btns"><button type="button" class="btn small ghost" data-buff="-5">📉 Nerf −5 %</button><button type="button" class="btn small ghost" data-buff="5">📈 Buff +5 %</button><span class="tnote">Actuel : ' + (ov.buff || 0) + ' %</span></div>' +
       '<div class="btns"><button type="button" class="btn small ghost" data-img>🖼️ Changer l’image</button>' + (ov.img && !fiche ? '<button type="button" class="btn small ghost" data-noimg>Image d’origine</button>' : "") + "</div>" +
       (fiche ? '<p class="tnote">L’image de base de cette carte est la photo de la fiche du catcheur : la changer ici change aussi sa fiche TCC TV (et inversement).</p>' : "") +
       '<div class="taltrow">' + [["", "Base", c.pic], ["UR", "UR", c.picUR], ["LR", "LR", c.picLR]].map(a => '<button type="button" class="taltb" data-alt="' + a[0] + '">' + (a[2] ? '<img src="' + esc(a[2]) + '" alt="">' : "<span>–</span>") + "<small>" + a[1] + "</small></button>").join("") + '</div><p class="tnote">Touche une vignette pour choisir l’image de base, UR ou LR dans la banque d’images (ou envoyer un fichier). En UR puis en LR, la carte change d’image toute seule.</p>' +
       '<button class="btn wide">Enregistrer</button><button type="button" class="btn wide ghost" data-evo>🏆 Évolutions par ceinture</button><button type="button" class="btn wide ghost" data-dup>⧉ Dupliquer cette carte</button>' +
       (!custom && Object.keys(ov).length ? '<button type="button" class="btn wide ghost" data-reset>↺ Revenir à la carte d’origine</button>' : "") +
-      (custom ? '<button type="button" class="btn wide ghost danger" data-del>Supprimer cette carte</button>' : "") + '</form><button class="btn wide ghost" style="margin-top:8px" data-close>Fermer</button>';
+      '<button type="button" class="btn wide ghost danger" data-del>🗑️ Supprimer la carte définitivement</button></form><button class="btn wide ghost" style="margin-top:8px" data-close>Fermer</button>';
+    setTimeout(() => supPreview(box, c), 0);
     const target = d => { if (custom) { d.custom = d.custom || []; let x = d.custom.find(y => y.id === c.id); if (!x) { x = { id: c.id }; d.custom.push(x); } return x; } d.cards = d.cards || {}; d.cards[c.id] = d.cards[c.id] || {}; return d.cards[c.id]; };
     box.addEventListener("click", e => {
       if (e.target.closest("[data-close]")) return close();
@@ -142,7 +212,7 @@ ACT.tcgmedit = el => {
         if (!slot && fiche) return bankPick(c, "Image de base de " + c.name + " (= photo de sa fiche)", v => (v && v !== "-" ? toFiche(c, v) : run(d => { delete target(d).img; }, "image de base de " + c.name)).then(() => setTimeout(again, 300)), false);
         return bankPick(c, "Image " + (slot || "de base") + " de " + c.name, v => run(d => { const t = target(d); if (v === null) delete t[fld]; else t[fld] = v; }, "image " + (slot || "de base") + " de " + c.name).then(() => setTimeout(again, 300)), !!slot); }
       if (e.target.closest("[data-noimg]")) { close(); return run(d => { delete target(d).img; }, "image d’origine de " + c.name); }
-      if (e.target.closest("[data-del]")) { close(); return run(d => { d.custom = (d.custom || []).filter(x => x.id !== c.id); }, "carte supprimée : " + c.name); }
+      if (e.target.closest("[data-del]")) { close(); return delCard(c); }
       if (e.target.closest("[data-reset]")) { close(); return run(d => { if (d.cards) delete d.cards[c.id]; }, "carte d’origine : " + c.name); }
       if (e.target.closest("[data-dup]")) {
         // copie complète (devient une carte « créée » : on peut tout changer, la supprimer)
@@ -161,14 +231,15 @@ ACT.tcgmedit = el => {
         if (custom) { if (nm) t.name = nm; t.years = yr; t.k = f.k.value; }
         else { if (nm && nm !== (c.rn || c.name)) t.name = nm; else delete t.name; if (yr !== (c.years || "") || "years" in t) t.years = yr; if (f.k.value) t.k = f.k.value; else delete t.k; }
         if (fac !== (c.faction || "") || "fac" in t) t.fac = fac;
-        t.r = f.r.value; t.max = f.max.value; t.arch = f.arch.value; t.al = f.al.value; if (changedSt) t.st = st; t.fin = { n: f.fn.value.trim(), e: f.fe.value }; t.gimmick = f.gim.value.trim(); t.medalOf = f.md.value.trim(); const bo = f.bo.value.split(",").map(x => x.trim()).filter(Boolean); if (bo.length) t.boosters = bo; else delete t.boosters; if (f.hide.checked) t.hide = true; else delete t.hide; }, "carte " + c.name)
+        t.r = f.r.value; t.max = f.max.value; t.arch = f.arch.value; t.al = f.al.value; if (changedSt) t.st = st; t.fin = { n: f.fn.value.trim(), e: f.fe.value }; t.gimmick = f.gim.value.trim(); t.medalOf = f.md.value.trim(); const bo = f.bo.value.split(",").map(x => x.trim()).filter(Boolean); if (bo.length) t.boosters = bo; else delete t.boosters; if (f.hide.checked) t.hide = true; else delete t.hide;
+        if (f.cat.value === "sup") { t.sup = true; const id = SKILLS[f.skid.value] ? f.skid.value : "coup", sk = { id: id, v: +f.skv.value > 0 ? +f.skv.value : SKILLS[id].v, q: f.skq.value, s: +f.sks.value || 0 }; if (f.skt.value.trim()) sk.t = f.skt.value.trim().slice(0, 120); t.sk = sk; } else delete t.sup; }, "carte " + c.name)
         .then(ok => { if (ok) { toast("Enregistré ✓"); if (quick) qStep(); } }).catch(er => { if (er && er.message !== "nokey") toast("Pas enregistré : " + er.message, { ms: 5000 }); });
     });
     // mode rapide : glisser vers la gauche = carte suivante (enregistrée d'abord si on a changé quelque chose)
     let dirty = false, p0 = null;
     const quickNext = () => { if (dirty) { const f = box.querySelector("[data-mf]"); if (f.requestSubmit) f.requestSubmit(); else f.dispatchEvent(new Event("submit", { cancelable: true })); return; } close(); qStep(); };
-    box.addEventListener("input", () => { dirty = true; });
-    box.addEventListener("change", () => { dirty = true; });
+    box.addEventListener("input", () => { dirty = true; supPreview(box, c); });
+    box.addEventListener("change", e => { dirty = true; if (e.target.name === "skid") { const P = SKILLS[e.target.value]; if (P) { box.querySelector("[name=skv]").value = P.v; box.querySelector("[name=skq]").value = P.q; } } supPreview(box, c); });
     if (quick) {
       // le doigt peut finir hors de la fenêtre : on écoute la fin du geste sur toute la page
       box.addEventListener("pointerdown", e => {

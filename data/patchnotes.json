@@ -1,6 +1,39 @@
 {
- "updated": "2026-11-13",
+ "updated": "2026-11-14",
  "items": [
+  {
+   "id": "2026-11-14-tcccg",
+   "d": "2026-11-14",
+   "t": "TCCCG : cartes en métal holo, cartes Soutien, favorites à glisser",
+   "txt": [
+    "💎 La rareté se voit au premier coup d’œil : chaque carte a un cadre en métal (bronze N, argent R, or SR, or brillant SSR, arc-en-ciel UR, diamant LR), une pierre en haut à droite dont la forme change, et le nom de la rareté gravé en bas. Un reflet passe sur le cadre à partir de SR.",
+    "✨ Images holo : à partir de R, l’image brille (argent, paillettes dorées, étoiles, arc-en-ciel, diamant). Passe le doigt sur une grande carte : elle penche et les reflets suivent ton doigt. Avec « Animations simples » (Paramètres du TCCCG), rien ne bouge.",
+    "🤝 Nouvelles cartes Soutien (bandeau SOUTIEN) : elles ne vont que dans la case Soutien d’un combat. En plus du bonus de type (+10 %), elles ont une compétence écrite sur la carte : coup bas, soin, distraction de l’arbitre, finisher plus rempli… Plus la rareté est haute, plus elle est forte. Une carte normale peut toujours aller en soutien (+10 % seulement).",
+    "🗂️ Préparation d’un combat : filtre « Soutiens » pour trouver tes cartes Soutien, et leur compétence s’affiche avant de lancer le combat puis sous ton équipe pendant le combat.",
+    "⭐ Accueil : tes cartes favorites ne rétrécissent plus quand il y en a beaucoup ; fais glisser la rangée de gauche à droite pour toutes les voir.",
+    "🃏 Carte fétiche : ta carte vedette (Roster › « Changer ») s’affiche maintenant sur ton profil TCC TV et TCCCG, pour tous les membres."
+   ]
+  },
+  {
+   "id": "2026-11-14-tcctv",
+   "d": "2026-11-14",
+   "t": "Profils et AAA",
+   "txt": [
+    "🃏 Sur le profil d’un membre : sa carte fétiche du TCCCG, avec « Voir son roster ».",
+    "🇲🇽 AAA : champions mis à jour, et le clan Los Perros del Mal avec ses membres de 2026."
+   ]
+  },
+  {
+   "id": "2026-11-14-modo",
+   "d": "2026-11-14",
+   "mod": true,
+   "t": "Modo TCCCG : cartes Soutien, supprimer une carte",
+   "txt": [
+    "🤝 Éditeur de carte › Catégorie : Catcheur ou Soutien. Pour un Soutien : la compétence (8 au choix), sa puissance en N (elle monte avec la rareté, ×2 en LR), quand elle marche, la stat (Promo au micro) et le texte de la carte (vide = texte automatique). L’aperçu montre la compétence en N et en LR.",
+    "🗑️ « Supprimer la carte définitivement » sur toutes les cartes : l’app compte les joueurs qui l’ont, demande 2 confirmations, puis la retire du jeu, des boosters et des parties des joueurs (avec ses versions show, champion et évolutions). Rien n’est donné en échange : utilise « 🎁 Rendre » si besoin.",
+    "🙈 « Masquer » ne fait plus disparaître la carte chez les joueurs qui l’ont : elle sort seulement des boosters et des listes. Nouveaux filtres dans Modo › Cartes : « 🤝 Soutiens » et « 🙈 Masquées »."
+   ]
+  },
   {
    "id": "2026-11-13-tcccg",
    "d": "2026-11-13",

@@ -251,6 +251,22 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
     Raw / SmackDown / NXT ; `palmaresOf` l'utilise puis ajoute les règnes de `titles.json` après `upto` ; `palmaresBase` (ancien calcul)
     reste utilisé pour le rang des cartes TCCCG (pour ne pas changer les raretés). À compléter / corriger à la main si Jose signale une erreur.
   - Ceintures : nouvelles images World Heavyweight et Undisputed WWE (`img/titres/*-v2.webp`, anciennes gardées dans `v` de logos.json).
+- **Lot du 14 nov.** (choix de Jose sur le canevas « TCCCG – Propositions du 14 nov. ») :
+  - Raretés = cadres en métal + holo (bloc « Lot du 14 nov. » à la fin de style.css) : le cadre est le fond de `.tc3` (`--metal` par rareté,
+    `::before` = panneau intérieur), pierre = `.tc3r` en position absolue (forme `--shape`), nom gravé `.tc3rn`, reflet du cadre `.tc3foil`
+    (masque), holo de l'image `.tc3holo` (bouge tout seul ; grandes cartes : suit le doigt via `js/tcg/holo.js`, `--hx` / `--hy`, classe
+    `tilt`, la carte penche), `.tc3glare`. « Animations simples » / moins d'animations : classe `html.tgsimple` (`syncSimple`), rien ne bouge.
+  - Cartes Soutien : `cfg.cards[id].sup` + `sk = { id, v (puissance en N), q (quand), s (stat), t (texte) }` ; `SKILLS`, `SKQ`, `SKMUL`,
+    `skillOf(def, r)` de data.js (puissance × rareté). `cardHTML` : bandeau `.tc3supr`, `.tc3tb` + `.tc3sk` à la place des stats (sauf
+    `opt.fighter`, plateau de combat). fight.js : la case Soutien accepte toute carte, une carte Soutien ne va jamais dans l'équipe ; compétence
+    `B.P.sk` (`skFire` start / turn / low, `shieldMul`, Distraction dans `pinStep`, Objet caché = `B.P.gift`, Promo au micro = `statSk`).
+    Les adversaires (rapide, au hasard, défis) ne sont jamais des cartes Soutien. Modo : éditeur « Catégorie » + compétence (`supFields`, `supPreview`).
+  - Supprimer une carte (modo, `delCard` / `doDel` de modo.js) : DÉFINITIF (choix de Jose) : `cards[id].del` (ou retirée de `custom`), retirée des
+    boosters / bx / vogue / evo, et de toutes les parties (`B.listTcg`, `B.getTcg`, `B.saveTcg`, favoris compris), sans compensation.
+    « Masquer » (`hide`) : la carte sort des boosters et listes mais reste chez ceux qui l'ont (`HIDDEN`, `hiddenCards`, `cardById` la trouve).
+  - Accueil : favorites `.tfavs` en `flex:none` (plus de rétrécissement), rangée à glisser. Carte fétiche = carte vedette (`starOf(d)` de card.js)
+    sur le profil TCC TV / TCCCG (`fetiche` d'account.js ; autre membre : `B.getTcg(uid)`, nouvelle fonction des deux backends).
+  - AAA (14 nov.) : champions vérifiés (titres par équipe, dates Mega / Reina), Los Perros del Mal 2026 dans groups.json.
 - Notes : demi-étoiles de 0 à 5,5 (`RMAX`, `fmtR`, `stars`, `ratePick` / `pickRate` de util.js ; 6e étoile orange = bonus).
 - Historique : `g_<id>` = note d'un segment, `q_<id>` = segment préféré (comment = nom du show) ; préfixes m_/s_/f_/g_/q_ exclus
   des compteurs de shows (spoil.js, trophies.js, account.js). Profil : « Ses segments préférés ».

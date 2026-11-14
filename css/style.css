@@ -1853,7 +1853,7 @@ body.tccg .tc3,body.tccg .tbooster,body.tccg .tround,body.tccg .tbig,body.tccg .
 body.tccg .tc3:active,body.tccg .tbooster:active,body.tccg .tround:active,body.tccg .tban:active,body.tccg .btn:active,body.tccg .tfoe:active,body.tccg .tdf:active{transform:scale(.94);filter:brightness(1.15)}
 body.tccg .tbig:active{transform:scale(.9)}
 /* cartes rares : reflet qui passe en continu */
-body.tccg .tc3.r-UR::after,body.tccg .tc3.r-LR::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.28) 50%,transparent 60%) 0 0/260% 100%;animation:tfoil 3.2s linear infinite;mix-blend-mode:screen}
+/* (14 nov.) l’ancien reflet UR / LR sur toute la carte est remplacé par le reflet du cadre en métal : voir « Lot du 14 nov. » */
 /* gros bouton COMBATS qui respire, boosters disponibles qui scintillent */
 body.tccg .tbig{animation:tbreath 2.2s ease-in-out infinite}
 @keyframes tbreath{0%,100%{box-shadow:0 0 0 0 rgba(255,210,63,.5)}50%{box-shadow:0 0 0 12px rgba(255,210,63,0)}}
@@ -2298,3 +2298,96 @@ body.tccg .tmquickb small{font:700 13px 'Barlow Condensed',sans-serif;letter-spa
 .tmqhead b{font:400 18px Anton,sans-serif;color:#ffd23f}.tmqhead small{flex:1;min-width:140px;font:500 13px 'Barlow Condensed',sans-serif;color:#e6ecff}
 .tcustars{flex-wrap:wrap}.tcust{flex:1 1 100%}
 .tcudots.num{font:700 14px 'Barlow Condensed',sans-serif;color:#9aa8d4}.tcudots.num b{color:#ffd23f;font-size:16px}
+/* ---------- Lot du 14 nov. (choix de Jose sur le canevas « TCCCG – Propositions du 14 nov. ») ---------- */
+/* rareté = cadre en métal (bronze, argent, or, or brillant, arc-en-ciel, diamant) + pierre en haut à droite + nom gravé en bas,
+   reflet qui passe sur le cadre (SR et plus) et holo sur l'image qui suit le doigt (js/tcg/holo.js) ou bouge tout seul */
+@property --tca{syntax:'<angle>';inherits:false;initial-value:0deg}
+.tc3:not(.back){border:0;padding:12px 12px 16px;--metal:linear-gradient(135deg,#6b3f1d,#d9a066 25%,#7a4a22 50%,#c98f52 75%,#6b3f1d);background:var(--metal)}
+.tc3:not(.back)::before{content:"";position:absolute;inset:6px 6px 13px;border-radius:10px;z-index:0;pointer-events:none;background:linear-gradient(165deg,color-mix(in srgb,var(--ac) 55%,#000),#0b1636 75%);box-shadow:inset 0 0 0 1px rgba(0,0,0,.6)}
+.tc3.sm:not(.back){padding:7px 7px 9px}
+.tc3.sm:not(.back)::before{inset:4px 4px 5px;border-radius:7px}
+.tc3pic{z-index:1}
+.tc3pic>*:not(.tc3img):not(.tc3holo){z-index:2}
+.tc3.r-R:not(.back){--metal:linear-gradient(135deg,#7d8693,#f6f8fb 25%,#8d96a3 50%,#e4e8ee 75%,#7d8693)}
+.tc3.r-SR:not(.back){--metal:linear-gradient(135deg,#94690c,#ffe27a 25%,#a8790f 50%,#ffd23f 75%,#94690c);box-shadow:0 0 12px rgba(255,210,63,.35),0 8px 24px rgba(0,0,0,.55)}
+.tc3.r-SSR:not(.back){--metal:linear-gradient(135deg,#a8790f,#fff3c4 20%,#ffd23f 40%,#b8860b 60%,#fff3c4 80%,#a8790f);box-shadow:0 0 18px rgba(255,214,90,.6),0 8px 24px rgba(0,0,0,.55)}
+.tc3.r-UR:not(.back){--metal:conic-gradient(from var(--tca),#ff4d6d,#ffb84d,#5ee6a0,#4dc3ff,#b64dff,#ff4d6d);animation:tcspin 5s linear infinite;box-shadow:0 0 22px rgba(180,120,255,.55),0 8px 24px rgba(0,0,0,.55)}
+.tc3.r-LR:not(.back){--metal:conic-gradient(from var(--tca),#fff 0 6%,#b9efff 6% 14%,#fff 14% 20%,#d8ccff 20% 28%,#fff 28% 34%,#aef7e6 34% 42%,#fff 42% 50%,#b9efff 50% 58%,#fff 58% 64%,#d8ccff 64% 72%,#fff 72% 78%,#aef7e6 78% 86%,#fff 86%);animation:tcspin 9s linear infinite,tclr 2.2s ease-in-out infinite}
+.tc3.evo:not(.back){box-shadow:0 0 0 1px #ffd23f,0 0 16px rgba(255,210,63,.5)}
+@keyframes tcspin{to{--tca:360deg}}
+@keyframes tclr{0%,100%{box-shadow:0 0 18px rgba(191,243,255,.6),0 8px 24px rgba(0,0,0,.55)}50%{box-shadow:0 0 40px rgba(191,243,255,1),0 0 70px rgba(160,200,255,.4)}}
+/* reflet qui passe sur le cadre seulement */
+.tc3:not(.back) .tc3foil{inset:0;padding:6px 6px 13px;border-radius:inherit;z-index:3;opacity:0;animation:none;background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.95) 50%,transparent 60%) 0 0/260% 100% no-repeat;-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
+.tc3.sm:not(.back) .tc3foil{padding:4px 4px 5px}
+.tc3.r-SR:not(.back) .tc3foil{opacity:.8;animation:tcsheen 4.5s ease-in-out infinite}
+.tc3.r-SSR:not(.back) .tc3foil,.tc3.r-UR:not(.back) .tc3foil,.tc3.r-LR:not(.back) .tc3foil{opacity:1;animation:tcsheen 3.2s ease-in-out infinite}
+@keyframes tcsheen{0%,35%{background-position:160% 0}70%,100%{background-position:-110% 0}}
+/* la pierre (rareté) en haut à droite : sa forme change avec la rareté */
+.tc3:not(.back) .tc3r{position:absolute;right:3px;top:3px;z-index:4;width:32px;height:32px;padding:0;border-radius:0;background:none;display:grid;place-items:center;font:400 10px/1 Anton,sans-serif;letter-spacing:0;color:#0b1636;filter:drop-shadow(0 1px 2px rgba(0,0,0,.75));--gem:radial-gradient(circle at 35% 30%,#f0c08a,#8a5a2b);--shape:circle(46%)}
+.tc3:not(.back) .tc3r::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--gem);clip-path:var(--shape)}
+.tc3.r-N .tc3r{color:#fff}
+.tc3.r-R .tc3r{--gem:radial-gradient(circle at 35% 30%,#fff,#9aa3ad);--shape:polygon(50% 2%,98% 50%,50% 98%,2% 50%)}
+.tc3.r-SR .tc3r{--gem:radial-gradient(circle at 35% 30%,#fff6c9,#e0a800);--shape:polygon(25% 5%,75% 5%,98% 50%,75% 95%,25% 95%,2% 50%)}
+.tc3.r-SSR .tc3r{--gem:radial-gradient(circle at 40% 35%,#fffbe6,#ffd23f 55%,#c48a00);--shape:polygon(50% 0,63% 33%,98% 36%,71% 59%,80% 95%,50% 76%,20% 95%,29% 59%,2% 36%,37% 33%);width:38px;height:38px;font-size:8px;padding-top:3px}
+.tc3.r-UR .tc3r{--gem:conic-gradient(#ff4d6d,#ffb84d,#5ee6a0,#4dc3ff,#b64dff,#ff4d6d);--shape:polygon(50% 0,63% 33%,98% 36%,71% 59%,80% 95%,50% 76%,20% 95%,29% 59%,2% 36%,37% 33%);width:38px;height:38px;font-size:9px;padding-top:3px;color:#111}
+.tc3.r-LR .tc3r{--gem:linear-gradient(135deg,#fff,#9fe8ff 40%,#fff 55%,#c8b6ff);--shape:polygon(50% 0,100% 36%,50% 100%,0 36%);width:38px;height:36px;font-size:9px;padding-bottom:6px;color:#05303f}
+.tc3.r-UR .tc3r::after,.tc3.r-LR .tc3r::after{content:"";position:absolute;right:1px;top:1px;width:10px;height:10px;background:#fff;clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);animation:tctwk 1.8s ease-in-out infinite}
+@keyframes tctwk{0%,100%{opacity:0;transform:scale(.3) rotate(0)}50%{opacity:1;transform:scale(1) rotate(45deg)}}
+.tc3.sm:not(.back) .tc3r{right:2px;top:2px;width:19px;height:19px;font-size:6px}
+.tc3.sm.r-SSR .tc3r,.tc3.sm.r-UR .tc3r,.tc3.sm.r-LR .tc3r{width:23px;height:23px;font-size:6px;padding-top:2px}
+.tc3.sm.r-LR .tc3r{padding:0 0 4px}
+.tc3.sm .tc3r::after{display:none}
+/* nom de la rareté gravé en bas du cadre (grandes cartes) */
+.tc3rn{position:absolute;left:24px;right:24px;bottom:0;height:13px;z-index:2;display:flex;align-items:center;justify-content:center;font:400 8px/1 Anton,sans-serif;letter-spacing:.2em;color:rgba(24,14,4,.85);text-shadow:0 1px 0 rgba(255,255,255,.5);pointer-events:none;white-space:nowrap;overflow:hidden}
+.tc3.r-N .tc3rn{color:#ffe9cf;text-shadow:0 1px 0 rgba(0,0,0,.6)}.tc3.r-UR .tc3rn{color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.85)}.tc3.r-LR .tc3rn{color:#0a3a52;text-shadow:0 1px 0 #fff}
+.tc3.sm .tc3rn,.tc3.back .tc3rn,.tc3.back .tc3holo,.tc3.back .tc3glare{display:none}
+/* holo sur l'image : bouge tout seul, suit le doigt sur les grandes cartes (--hx / --hy posés par holo.js) */
+.tc3holo{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;mix-blend-mode:color-dodge;background-position:var(--hx,50%) var(--hy,50%);background-size:240% 240%}
+.tc3.r-R .tc3holo{opacity:.3;background-image:repeating-linear-gradient(110deg,#5b6470 0 6%,#e8edf3 9%,#5b6470 14%)}
+.tc3.r-SR .tc3holo{opacity:.4;background-image:radial-gradient(circle,rgba(255,226,120,.8) 0 .7px,transparent 1.3px),linear-gradient(110deg,transparent 30%,rgba(255,200,60,.8) 50%,transparent 70%);background-size:11px 11px,240% 240%}
+.tc3.r-SSR .tc3holo{opacity:.5;background-image:radial-gradient(circle,rgba(255,255,255,.7) 0 .8px,transparent 1.5px),repeating-linear-gradient(120deg,rgba(255,226,120,0) 0 8%,rgba(255,226,120,.9) 12%,rgba(255,226,120,0) 16%);background-size:15px 15px,240% 240%}
+.tc3.r-UR .tc3holo{opacity:.5;mix-blend-mode:overlay;background-image:repeating-linear-gradient(115deg,#ff4d6d 0 5%,#ffb84d 8%,#5ee6a0 11%,#4dc3ff 14%,#b64dff 17%,#ff4d6d 20%);background-size:300% 300%}
+.tc3.r-LR .tc3holo{opacity:.5;mix-blend-mode:overlay;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.55) 0 1px,transparent 1px 9px),repeating-linear-gradient(-45deg,rgba(255,255,255,.55) 0 1px,transparent 1px 9px),repeating-linear-gradient(115deg,#9fe8ff 0 5%,#fff 8%,#c8b6ff 11%,#fff 14%,#9fffe0 17%,#9fe8ff 20%);background-size:auto,auto,300% 300%}
+@keyframes tcholo{0%,100%{background-position:15% 20%}50%{background-position:85% 80%}}
+.tc3:not(.sm):not(.tilt) .tc3holo,.tc3.sm.r-SSR .tc3holo,.tc3.sm.r-UR .tc3holo,.tc3.sm.r-LR .tc3holo{animation:tcholo 6s ease-in-out infinite}
+.tc3glare{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:0;mix-blend-mode:overlay;border-radius:inherit;background:radial-gradient(circle,rgba(255,255,255,.8),rgba(255,255,255,0) 42%) no-repeat;background-size:200% 200%;background-position:calc(100% - var(--hx,50%)) calc(100% - var(--hy,50%));transition:opacity .2s}
+.tc3.tilt .tc3glare{opacity:.35}.tc3.tilt.r-R .tc3glare,.tc3.tilt.r-SR .tc3glare{opacity:.55}.tc3.tilt.r-SSR .tc3glare,.tc3.tilt.r-UR .tc3glare,.tc3.tilt.r-LR .tc3glare{opacity:.9}
+.tc3:not(.sm):not(.back){touch-action:pan-y}
+.tpeek .tc3,.tscard .tc3{touch-action:none}
+.tc3.tilt{transition:none}
+/* « Animations simples » ou téléphone réglé sur « moins d'animations » : plus rien ne bouge sur les cartes */
+html.tgsimple .tc3,html.tgsimple .tc3 *,html.tgsimple .tc3::before,html.tgsimple .tc3 .tc3r::after{animation:none!important}
+@media (prefers-reduced-motion:reduce){.tc3,.tc3 *,.tc3 .tc3r::after{animation:none!important}}
+/* accueil : les favorites ne rétrécissent plus, on les fait glisser de gauche à droite */
+.tfavs{scroll-snap-type:x proximity;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+.tfavs>.tc3{flex:none;scroll-snap-align:start}
+/* carte fétiche sur le profil TCC TV / TCCCG */
+.pfet{display:flex;align-items:center;gap:14px;margin:6px 16px 14px;padding:10px 12px;border-radius:var(--r2,14px);background:var(--card);border:1px solid var(--line);color:var(--text);text-decoration:none}
+.pfet .tc3.sm{flex:none;cursor:default}
+.pfett{display:flex;flex-direction:column;gap:3px;min-width:0}
+.pfett small{font-size:12px;color:var(--mute)}.pfett b{font-size:19px;line-height:1.15}.pfett span{font-size:14px;color:var(--mute)}.pfett .btn{align-self:flex-start;margin-top:6px}
+.pfet.empty{flex-direction:column;align-items:flex-start;gap:2px}.pfet.empty b{font-size:16px}.pfet.empty small{font-size:14px;color:var(--mute)}
+/* cartes Soutien : bandeau SOUTIEN en haut de l'image, puis bonus de type + compétence à la place des stats */
+.tc3supr{position:absolute;left:0;right:0;top:0;z-index:2;background:rgba(255,255,255,.93);color:#0b1636;font:400 10px/1.5 Anton,sans-serif;letter-spacing:.22em;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,.4)}
+.tc3.sup .tal,.tc3.sup .tc3belt{top:19px}.tc3.sup .tc3count{top:40px}
+.tc3tb{position:relative;z-index:1;text-align:center;font-size:11px;font-weight:800;color:#0b1636;background:var(--ac);border-radius:6px;padding:2px 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tc3sk{position:relative;z-index:1;background:rgba(0,0,0,.5);border-radius:7px;padding:4px 7px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18);min-height:42px}
+.tc3sk b{display:block;font-size:12px;color:#ffd23f;line-height:1.1}
+.tc3sk span{display:block;margin-top:2px;font-size:10px;line-height:1.2;color:#eef2ff;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.tc3.sm .tc3supr{font-size:6px;letter-spacing:.16em}.tc3.sm.sup .tal,.tc3.sm.sup .tc3belt{top:11px}
+.tc3.sm .tc3tb{font-size:6.5px;padding:1px 3px;border-radius:4px}
+.tc3.sm .tc3sk{padding:2px 4px;min-height:0;border-radius:5px}.tc3.sm .tc3sk b{font-size:7.5px}.tc3.sm .tc3sk span{font-size:6px;-webkit-line-clamp:2}
+/* combat : la compétence du soutien sous ton équipe */
+.tbsk{display:flex;align-items:center;gap:8px;margin:4px auto 0;max-width:420px;padding:5px 10px;border-radius:10px;background:rgba(11,22,54,.85);box-shadow:inset 0 0 0 1px #2a3a72;font:600 13px/1.2 'Barlow Condensed',sans-serif;color:#dfe6ff}
+.tbsk b{color:#ffd23f;white-space:nowrap}.tbsk.used{opacity:.55}.tbsk.fire{animation:tbskf .9s ease-out}
+@keyframes tbskf{0%{box-shadow:inset 0 0 0 2px #ffd23f,0 0 0 0 rgba(255,210,63,.8)}100%{box-shadow:inset 0 0 0 1px #2a3a72,0 0 0 14px rgba(255,210,63,0)}}
+.tprepsk{margin:4px 16px 0;padding:8px 10px;border-radius:10px;background:rgba(255,210,63,.1);box-shadow:inset 0 0 0 1px rgba(255,210,63,.5);font-size:14px;line-height:1.3}
+.tprepsk b{color:#ffd23f}
+/* modo : catégorie Soutien + compétence, suppression définitive */
+.tmsup{border:0;margin:6px 0;padding:8px 10px;border-radius:10px;background:rgba(255,210,63,.08);box-shadow:inset 0 0 0 1px rgba(255,210,63,.35)}
+.tmsup legend{padding:0 4px;font-weight:800;color:#ffd23f}.tmsup .chk small{opacity:.75}
+.tmskill{display:flex;flex-direction:column;gap:2px;margin:0 0 6px;padding:8px 10px;border-radius:10px;background:rgba(255,255,255,.04);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+.tmskill[hidden]{display:none}.tmskill textarea{width:100%;box-sizing:border-box}
+.tmskn{margin:4px 0 0}
+.tdelw{margin:8px 0;padding-left:20px;line-height:1.35}.tdelw li{margin:3px 0}
+.tdelsure{margin:6px 0;padding:8px 10px;border-radius:10px;background:rgba(226,59,59,.15);box-shadow:inset 0 0 0 1px #e23b3b;color:#ffd0d0;font-weight:700}

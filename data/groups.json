@@ -2335,16 +2335,27 @@
   "los-perros-del-mal": {
    "n": "Los Perros del Mal",
    "lg": "Los Perros del Mal",
-   "k": "CMLL · AAA",
-   "y": "2004–2019",
-   "on": 0,
+   "k": "AAA · CMLL",
+   "y": "2004–2019, depuis 2026",
+   "on": 1,
    "m": [
+    "Daga",
+    "Angel",
+    "Berto",
+    "Karmen Petrovic",
+    "Damián 666"
+   ],
+   "ex": [
     "Perro Aguayo Jr.",
     "Héctor Garza",
     "Mr. Águila",
-    "Damián 666",
     "Halloween",
-    "El Hijo del Fantasma"
+    "El Hijo del Fantasma",
+    "X-Fury",
+    "Bronco Nima"
+   ],
+   "a": [
+    "Perros del Mal"
    ]
   },
   "club-venus": {

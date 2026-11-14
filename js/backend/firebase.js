@@ -388,6 +388,7 @@ export async function tcgBackups(uid) {
 export async function tcgBackupsAll() { const r = await F.getDocs(F.collection(db, "tcgbak")); return r.docs.map(s => { const d = data(s); d._id = s.id; d.at = ms(d.at); return d; }); }
 export function saveTcg(uid, d) { return F.setDoc(F.doc(db, "tcg", uid), Object.assign({}, d, { at: F.serverTimestamp() })); }
 // ---- TCCCG entre membres : parties des autres (rosters), échanges, enchères, défis (collection tcgx) ----
+export async function getTcg(uid) { const s = await F.getDoc(F.doc(db, "tcg", uid)); return s.exists() ? data(s) : null; }
 export async function listTcg() { const r = await F.getDocs(F.query(F.collection(db, "tcg"), F.limit(300))); return r.docs.map(s => { const d = data(s); d.uid = s.id; d.at = ms(d.at); return d; }); }
 export function watchTcgx(cb) { return F.onSnapshot(F.query(F.collection(db, "tcgx"), F.orderBy("at", "desc"), F.limit(300)), r => cb(r.docs.map(s => { const d = data(s); d.id = s.id; d.at = ms(d.at) || Date.now(); return d; })), () => cb([])); }
 export async function addTcgx(d) { const r = await F.addDoc(F.collection(db, "tcgx"), Object.assign({}, d, { at: F.serverTimestamp() })); return r.id; }

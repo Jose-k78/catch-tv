@@ -74,6 +74,45 @@ export const RATES2 = {
 };
 export const rates2 = cat => Object.assign({}, RATES2[cat] || RATES2.week, ((cfg().rates2 || {})[cat]) || {});
 export const MEDAL = name => "md:" + name;
+// ---------- cartes Soutien (14 nov.) : compétences ----------
+// Le modo choisit la compétence, sa puissance, quand elle marche (q) et peut écrire son texte. La puissance monte avec la rareté.
+// fx : dmg (dégâts à l'adversaire), heal (PV), kick (le tombé adverse échoue), fin (barre de finisher), shield (dégâts reçus en moins),
+// boost (prochaine attaque ×), stat (une stat de toute l'équipe +%), item (un objet de combat en plus)
+export const SKILLS = {
+  coup: { n: "Coup bas", fx: "dmg", v: 25, q: "start", u: "dégâts", qs: ["start", "every3", "low"] },
+  soin: { n: "Soigneur", fx: "heal", v: 20, q: "every3", u: "PV", qs: ["every3", "low"] },
+  dist: { n: "Distraction", fx: "kick", v: 1, q: "once", u: "", qs: ["once"] },
+  plan: { n: "Plan de match", fx: "fin", v: 30, q: "start", u: "% de barre de finisher", qs: ["start", "every3", "low"] },
+  garde: { n: "Garde du corps", fx: "shield", v: 30, q: "start", u: "% de dégâts en moins", qs: ["start", "low", "all"] },
+  inter: { n: "Intervention", fx: "boost", v: 1.5, q: "low", u: "× sur l’attaque", qs: ["start", "every3", "low"] },
+  micro: { n: "Promo au micro", fx: "stat", v: 10, q: "all", s: 2, u: "% de stat", qs: ["all"] },
+  objet: { n: "Objet caché", fx: "item", v: 1, q: "start", u: "objet", qs: ["start"] }
+};
+export const SKQ = { start: "Au 1er tour", every3: "Tous les 3 tours", low: "1 fois, quand ta vie passe sous 30 %", all: "Tout le combat", once: "1 fois dans le combat" };
+export const SKMUL = { N: 1, R: 1.15, SR: 1.3, SSR: 1.5, UR: 1.75, LR: 2 };
+const fr = v => String(v).replace(".", ",");
+// la compétence d'une carte Soutien à une rareté donnée : { id, n, fx, q, v, s, t (texte) }
+export function skillOf(def, r) {
+  if (!def || !def.sup) return null;
+  const o = def.skill || {}, P = SKILLS[o.id] || SKILLS.coup, id = SKILLS[o.id] ? o.id : "coup";
+  const q = P.qs.indexOf(o.q) >= 0 ? o.q : P.q, m = SKMUL[r || def.r] || 1, base = +o.v > 0 ? +o.v : P.v, s = STATS[+o.s] ? +o.s : (P.s || 0);
+  let v = base;
+  if (P.fx === "boost") v = Math.round((1 + (base - 1) * m) * 100) / 100;
+  else if (P.fx === "shield") v = Math.min(80, Math.round(base * m));
+  else if (P.fx === "fin") v = Math.min(100, Math.round(base * m));
+  else if (P.fx === "dmg" || P.fx === "heal" || P.fx === "stat") v = Math.round(base * m);
+  const Q = SKQ[q], T = {
+    dmg: Q + " : " + v + " dégâts à l’équipe adverse.",
+    heal: Q + " : +" + v + " PV à ton équipe.",
+    kick: "1 fois : le tombé adverse échoue, ton équipe se dégage.",
+    fin: Q + " : ta barre de finisher +" + v + " %.",
+    shield: q === "all" ? "Tout le combat : dégâts reçus −" + v + " %." : q === "low" ? "Sous 30 % de vie : dégâts reçus −" + v + " % pendant 2 tours." : "Les 2 premiers tours : dégâts reçus −" + v + " %.",
+    boost: Q + " : ta prochaine attaque ×" + fr(v) + ".",
+    stat: "Tout le combat : " + STATS[s] + " +" + v + " % pour toute l’équipe.",
+    item: "Commence le combat avec 1 objet de combat en plus."
+  }[P.fx];
+  return { id: id, n: P.n, fx: P.fx, q: q, v: v, s: s, t: String(o.t || "").trim() || T };
+}
 
 const hashN = s => { let h = 2166136261; String(s).split("").forEach(c => { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); }); return h >>> 0; };
 export const cfg = () => (S.tcgCfg && typeof S.tcgCfg === "object" ? S.tcgCfg : {});
@@ -174,13 +213,22 @@ export function baseCards() {
     x.medalOf = ov.medalOf || partnerOf(x) || x.name; // médailles demandées pour l'éveil vers LR
     x.boosters = Array.isArray(ov.boosters) ? ov.boosters : null;
     x.hide = !!ov.hide;
+    // supprimée définitivement par le modo (14 nov.) : plus nulle part (ses exemplaires sont retirés des parties, modo.js)
+    x.del = !!ov.del;
+    // carte Soutien (14 nov.) : ne va que dans la case Soutien ; bonus de type + une compétence réglée par le modo
+    x.sup = !!ov.sup;
+    if (x.sup) x.skill = Object.assign({}, ov.sk || {});
   });
-  BASE = list.filter(x => !x.hide); BKEY = key;
+  // une carte masquée sort des boosters et des listes, mais ceux qui l'ont la gardent et la voient toujours (14 nov.)
+  BASE = list.filter(x => !x.hide && !x.del); HIDDEN = list.filter(x => x.hide && !x.del); BKEY = key;
   return BASE;
 }
+let HIDDEN = [];
+export const hiddenCards = () => { baseCards(); return HIDDEN; };
 function partnerOf(x) { const g = x.gs.cur[0] || x.gs.past[0]; if (!g) return ""; const G = groupById(g); return G && (G.m || []).find(n => norm(n) !== realKey(x)) || ""; }
 // (un catcheur fusionné avec un autre garde ses cartes : l'ancien identifiant mène à la nouvelle carte)
-export const cardById = id => baseCards().find(c => c.id === id) || ((S.photosMerged || {})[id] ? baseCards().find(c => c.id === S.photosMerged[id]) : null) || null;
+const byId = id => baseCards().find(c => c.id === id) || HIDDEN.find(c => c.id === id) || null;
+export const cardById = id => byId(id) || ((S.photosMerged || {})[id] ? byId(S.photosMerged[id]) : null) || null;
 export const cardByName = name => { const n = norm(name); return baseCards().find(c => realKey(c) === n) || baseCards().find(c => norm(c.name) === n) || null; };
 export function champsNow() { const s = new Set(); (S.titles || []).forEach(t => { [t.c].concat(t.who || []).forEach(c => { if (c) s.add(norm(String(c).replace(/\s*\(.*\)$/, ""))); }); }); return s; }
 export function titleOf(name) { const n = norm(name); return (S.titles || []).find(t => [t.c].concat(t.who || []).some(c => c && norm(String(c).replace(/\s*\(.*\)$/, "")) === n)) || null; }
