@@ -1,6 +1,15 @@
 {
- "at": "2026-11-15T08:48:16.510Z",
+ "at": "2026-11-15T10:40:41.485Z",
  "items": [
+  {
+   "t": "Carte de CMLL Domingo Familiar du 15 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61277-carte-de-cmll-domingo-familiar-du-15-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-15",
+   "tags": [
+    "CMLL"
+   ]
+  },
   {
    "t": "Résultats de AEW Full Gear 2026",
    "u": "https://www.voxcatch.fr/2026/11/15/resultats-aew-full-gear-2026/",
@@ -480,15 +489,6 @@
   {
    "t": "Joe Hendry : « Je suis dans une situation difficile en ce moment »",
    "u": "https://www.catch-newz.com/wwe/newz/61264-joe-hendry-je-suis-dans-une-situation-difficile-en-ce-moment",
-   "s": "Catch-Newz",
-   "d": "2026-11-13",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Selon Vic Joseph, Chelsea Green est la catcheuse la plus tenace à la WWE",
-   "u": "https://www.catch-newz.com/wwe/newz/61263-selon-vic-joseph-chelsea-green-est-la-catcheuse-la-plus-tenace-a-la-wwe",
    "s": "Catch-Newz",
    "d": "2026-11-13",
    "tags": [
@@ -1084,6 +1084,7 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61306-resultats-et-streaming-aaa-lucha-libre-14-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61277-carte-de-cmll-domingo-familiar-du-15-novembre-2026",
    "https://www.catch-newz.com/culture/cineserie/61026-chris-jericho-aura-un-role-dans-le-film-i-am-the-teeth",
    "https://www.catch-newz.com/aew/newz/61323-aew-full-gear-mjf-de-retour",
    "https://www.catch-newz.com/aew/newz/61322-ilja-dragunov-remporte-son-premier-championnat-a-aew-full-gear-2026",
@@ -1381,16 +1382,15 @@
    "https://www.catch-newz.com/wwe/newz/61042-danhausen-bientot-en-santahausen-pour-le-temps-des-fetes",
    "https://www.catch-newz.com/international/newz/61012-preview-tna-impact-5-novembre-2026",
    "https://www.catch-newz.com/international/newz/61027-carte-de-iwrg-galli-thursday-night-wrestling-du-5-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61032-the-miz-ce-que-carmelo-hayes-accomplit-aujourdhui-avec-946-est-incroyable",
-   "https://www.catch-newz.com/international/newz/61033-decouvrez-les-participants-a-la-ajpw-real-world-tag-league-2026"
+   "https://www.catch-newz.com/wwe/newz/61032-the-miz-ce-que-carmelo-hayes-accomplit-aujourdhui-avec-946-est-incroyable"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 1 nouveaux articles lus sur la page d'accueil (1 liens)",
+  "Catch-Newz": "pas de flux RSS : 2 nouveaux articles lus sur la page d'accueil (2 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
-  "YouTube AEW": "1 nouvelles vidéos",
+  "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
   "YouTube TNA": "0 nouvelles vidéos",
