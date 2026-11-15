@@ -2324,6 +2324,18 @@
    },
    "gimmick": "",
    "medalOf": "Rey Pegasus"
+  },
+  "jazz": {
+   "r": "N",
+   "max": "R",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Jazz"
   }
  },
  "bgm": {
