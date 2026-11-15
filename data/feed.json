@@ -1,6 +1,13 @@
 {
- "at": "2026-11-15T00:04:51.023Z",
+ "at": "2026-11-15T00:59:46.807Z",
  "items": [
+  {
+   "t": "FinalSlam : Match exceptionnel entre Squeezie et AmineMaTue, un champion couronné",
+   "u": "https://www.catch-newz.com/international/newz/61317-finalslam-match-exceptionnel-entre-squeezie-et-aminematue-un-champion-couronne",
+   "s": "Catch-Newz",
+   "d": "2026-11-15",
+   "tags": []
+  },
   {
    "t": "FinalSlam : Nate Prince détruit le rêve de Maxime Biaggi",
    "u": "https://www.catch-newz.com/international/newz/61316-finalslam-nate-prince-detruit-le-reve-de-maxime-biaggi",
@@ -253,16 +260,6 @@
    "tags": []
   },
   {
-   "t": "Résultats de WWE SmackDown du 13 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-13",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
-  },
-  {
    "t": "Résultats de CMLL Viernes Espectacular du 13 novembre 2026",
    "u": "https://www.catch-newz.com/international/resultats/61296-resultats-de-cmll-viernes-espectacular-du-13-novembre-2026",
    "s": "Catch-Newz",
@@ -279,6 +276,16 @@
    "d": "2026-11-13",
    "tags": [
     "AEW"
+   ]
+  },
+  {
+   "t": "Résultats de WWE SmackDown du 13 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-13",
+   "tags": [
+    "WWE",
+    "SmackDown"
    ]
   },
   {
@@ -496,15 +503,6 @@
   {
    "t": "Lizzy Rain : « Il y a deux ans jour pour jour, je me suis cassé le tibia »",
    "u": "https://www.catch-newz.com/wwe/newz/61258-lizzy-rain-il-y-a-deux-ans-jour-pour-jour-je-me-suis-casse-le-tibia",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "John Cena impliqué personnellement pour le John Cena Classic",
-   "u": "https://www.catch-newz.com/wwe/newz/61257-john-cena-implique-personnellement-pour-le-john-cena-classic",
    "s": "Catch-Newz",
    "d": "2026-11-12",
    "tags": [
@@ -1061,9 +1059,10 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/international/newz/61317-finalslam-match-exceptionnel-entre-squeezie-et-aminematue-un-champion-couronne",
+   "https://www.catch-newz.com/international/resultats/61296-resultats-de-cmll-viernes-espectacular-du-13-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026",
    "https://www.catch-newz.com/international/newz/61316-finalslam-nate-prince-detruit-le-reve-de-maxime-biaggi",
-   "https://www.catch-newz.com/international/resultats/61296-resultats-de-cmll-viernes-espectacular-du-13-novembre-2026",
    "https://www.catch-newz.com/international/newz/61315-carte-de-fsw-high-octane-calm-before-the-storm-2026",
    "https://www.catch-newz.com/international/newz/61314-finalslam-djilsi-accepte-lopen-challenge-de-raj-dhesi-jinder-mahal",
    "https://www.catch-newz.com/international/newz/61313-carte-de-aull-dinamita-pura",
@@ -1359,12 +1358,11 @@
    "https://www.catch-newz.com/wwe/newz/61022-wwe-crown-jewel-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
    "https://www.catch-newz.com/wwe/newz/61020-paige-appelee-a-la-derniere-minute-pour-wwe-nxt",
    "https://www.catch-newz.com/wwe/newz/61021-grayson-waller-cest-chez-moi-cest-mon-show-et-ca-ne-changera-pas-de-sitot",
-   "https://www.catch-newz.com/international/newz/60951-la-njpw-super-junior-tag-league-2026-rend-son-verdict",
-   "https://www.catch-newz.com/international/resultats/61018-resultats-de-aiw-shot-callers-2026"
+   "https://www.catch-newz.com/international/newz/60951-la-njpw-super-junior-tag-league-2026-rend-son-verdict"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 3 nouveaux articles lus sur la page d'accueil (3 liens)",
+  "Catch-Newz": "pas de flux RSS : 2 nouveaux articles lus sur la page d'accueil (2 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
