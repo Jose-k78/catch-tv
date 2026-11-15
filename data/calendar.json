@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14",
+ "updated": "2026-11-15",
  "promotions": {
   "WWE": {
    "c": [
@@ -365,7 +365,10 @@
      "v": "Boeing Center",
      "card": [
       "Titre mondial féminin de la ROH : Athena contre Hyan"
-     ]
+     ],
+     "h": "19:00",
+     "tz": "America/New_York",
+     "dur": 180
     }
    ],
    "s": {
