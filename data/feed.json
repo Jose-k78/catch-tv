@@ -1,5 +1,5 @@
 {
- "at": "2026-11-15T20:36:36.569Z",
+ "at": "2026-11-15T21:15:05.941Z",
  "items": [
   {
    "t": "Preview : WWE NXT du 17 novembre 2026",
@@ -9,15 +9,6 @@
    "tags": [
     "WWE",
     "NXT"
-   ]
-  },
-  {
-   "t": "Interview Exclusive avec Princesse Lauriana : son match contre Kay Lee Ray, AEW Grand Slam France, ses blessures...",
-   "u": "https://www.catch-newz.com/chroniques/nos-interviews/61327-interview-exclusive-avec-princesse-lauriana-son-match-contre-kay-lee-ray-aew-grand-slam-france-ses-blessures",
-   "s": "Catch-Newz",
-   "d": "2026-11-15",
-   "tags": [
-    "AEW"
    ]
   },
   {
@@ -31,22 +22,15 @@
    ]
   },
   {
+   "t": "Carte de Max Proad Homenaje A Numa Y Zafiro Infernal",
+   "u": "https://www.catch-newz.com/international/newz/61346-carte-de-max-proad-homenaje-a-numa-y-zafiro-infernal",
+   "s": "Catch-Newz",
+   "d": "2026-11-15",
+   "tags": []
+  },
+  {
    "t": "Carte de IWRG Función Espectacular du 15 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61343-carte-de-iwrg-funcion-espectacular-du-15-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-15",
-   "tags": []
-  },
-  {
-   "t": "Résultats de Freelance Wrestling Hadouken",
-   "u": "https://www.catch-newz.com/international/resultats/61345-resultats-de-freelance-wrestling-hadouken",
-   "s": "Catch-Newz",
-   "d": "2026-11-15",
-   "tags": []
-  },
-  {
-   "t": "Résultats de TNT Cold Day In Hell 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61341-resultats-de-tnt-cold-day-in-hell-2026",
    "s": "Catch-Newz",
    "d": "2026-11-15",
    "tags": []
@@ -64,6 +48,29 @@
    "t": "Résultats de FinalSlam",
    "u": "https://www.voxcatch.fr/2026/11/15/resultats-finalslam/",
    "s": "VOXcatch",
+   "d": "2026-11-15",
+   "tags": []
+  },
+  {
+   "t": "Interview Exclusive avec Princesse Lauriana : son match contre Kay Lee Ray, AEW Grand Slam France, ses blessures...",
+   "u": "https://www.catch-newz.com/chroniques/nos-interviews/61327-interview-exclusive-avec-princesse-lauriana-son-match-contre-kay-lee-ray-aew-grand-slam-france-ses-blessures",
+   "s": "Catch-Newz",
+   "d": "2026-11-15",
+   "tags": [
+    "AEW"
+   ]
+  },
+  {
+   "t": "Résultats de Freelance Wrestling Hadouken",
+   "u": "https://www.catch-newz.com/international/resultats/61345-resultats-de-freelance-wrestling-hadouken",
+   "s": "Catch-Newz",
+   "d": "2026-11-15",
+   "tags": []
+  },
+  {
+   "t": "Résultats de TNT Cold Day In Hell 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61341-resultats-de-tnt-cold-day-in-hell-2026",
+   "s": "Catch-Newz",
    "d": "2026-11-15",
    "tags": []
   },
@@ -472,15 +479,6 @@
    "tags": [
     "WWE",
     "SmackDown"
-   ]
-  },
-  {
-   "t": "Perturbations des vols aux États-Unis : AEW Full Gear 2026 impacté ?",
-   "u": "https://www.catch-newz.com/aew/newz/61292-perturbations-des-vols-aux-etats-unis-aew-full-gear-2026-impacte",
-   "s": "Catch-Newz",
-   "d": "2026-11-14",
-   "tags": [
-    "AEW"
    ]
   }
  ],
@@ -1072,10 +1070,11 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/61228-preview-wwe-nxt-17-novembre-2026",
-   "https://www.catch-newz.com/chroniques/nos-interviews/61327-interview-exclusive-avec-princesse-lauriana-son-match-contre-kay-lee-ray-aew-grand-slam-france-ses-blessures",
    "https://www.catch-newz.com/aew/newz/61333-preview-aew-dynamite-18-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61330-resultats-de-wwe-nxt-live-event-du-14-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61346-carte-de-max-proad-homenaje-a-numa-y-zafiro-infernal",
    "https://www.catch-newz.com/international/newz/61343-carte-de-iwrg-funcion-espectacular-du-15-novembre-2026",
+   "https://www.catch-newz.com/chroniques/nos-interviews/61327-interview-exclusive-avec-princesse-lauriana-son-match-contre-kay-lee-ray-aew-grand-slam-france-ses-blessures",
    "https://www.catch-newz.com/international/resultats/61345-resultats-de-freelance-wrestling-hadouken",
    "https://www.catch-newz.com/international/resultats/61341-resultats-de-tnt-cold-day-in-hell-2026",
    "https://www.catch-newz.com/wwe/resultats/61306-resultats-et-streaming-aaa-lucha-libre-14-novembre-2026",
@@ -1369,12 +1368,11 @@
    "https://www.catch-newz.com/wwe/newz/61058-zoey-serrano-se-sent-plus-libre-en-dehors-de-la-wwe",
    "https://www.catch-newz.com/international/newz/61057-la-branche-americaine-de-njpw-ferme-ses-portes",
    "https://www.catch-newz.com/wwe/newz/61034-cody-rhodes-a-perdu-la-bataille-face-a-50-cent",
-   "https://www.catch-newz.com/wwe/newz/61025-la-wwe-va-organiser-un-show-le-1er-janvier-2027",
-   "https://www.catch-newz.com/international/resultats/61036-resultats-de-stardom-crimson-nightmare-2026"
+   "https://www.catch-newz.com/wwe/newz/61025-la-wwe-va-organiser-un-show-le-1er-janvier-2027"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
