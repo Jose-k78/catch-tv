@@ -2575,6 +2575,19 @@
    },
    "gimmick": "",
    "medalOf": "Jordynne Grace"
+  },
+  "hina": {
+   "k": "Stardom",
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Saya Kamitani"
   }
  },
  "bgm": {
