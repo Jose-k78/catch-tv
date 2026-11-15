@@ -267,6 +267,15 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   - Accueil : favorites `.tfavs` en `flex:none` (plus de rétrécissement), rangée à glisser. Carte fétiche = carte vedette (`starOf(d)` de card.js)
     sur le profil TCC TV / TCCCG (`fetiche` d'account.js ; autre membre : `B.getTcg(uid)`, nouvelle fonction des deux backends).
   - AAA (14 nov.) : champions vérifiés (titres par équipe, dates Mega / Reina), Los Perros del Mal 2026 dans groups.json.
+- **Lot du 15 nov.** (choix de Jose sur le canevas « TCCCG – Boosters en sachet », forme d'après une capture qu'il a envoyée) :
+  - Boosters = sachets « alu brillant » (`js/tcg/pack.js`) : `packHTML(b, opt)` (Call Up `.tcupack`, confirmation `.tcfmp`, ouverture sans Phaser
+    `.tspack2`) ; dents de scie = masque conic de `.tpk-b`, soudures `.tpk-s`, pointillé `.tpk-cut`, reflets `.tpk-g` / `.tpk-sh`, étoiles `.tpk-sp`,
+    tailles en `cqw` (container query) ; bloc « Lot du 15 nov. » à la fin de style.css. Couleur de l'alu = catégorie (`FOIL`, `foilOf`) :
+    Cadeaux vert, Shows argent, PLE or, Spéciaux bleu, Départ cuivre, Modo rouge.
+  - Scène Phaser (summon.js `addPack`) : le même sachet dessiné sur canvas (`paintPack` corps / bande du haut séparés par `tearJag`, `paintGlow`),
+    reflet = `preFX.addShine` (WebGL), étoiles `tstar` ; on déchire le long du pointillé (`stripBox`, `tearLine` à 12,5 %).
+  - Méga = 3 sachets de 5 cartes déchirés l'un après l'autre (`per`, `nPk`, `nextPack`, `glowOf` par sachet, « Sachet 2 sur 3 ») ; confirmation
+    avec 3 sachets. `cuGo` garde tout de suite le booster visé (`ctv.tcu`).
 - Notes : demi-étoiles de 0 à 5,5 (`RMAX`, `fmtR`, `stars`, `ratePick` / `pickRate` de util.js ; 6e étoile orange = bonus).
 - Historique : `g_<id>` = note d'un segment, `q_<id>` = segment préféré (comment = nom du show) ; préfixes m_/s_/f_/g_/q_ exclus
   des compteurs de shows (spoil.js, trophies.js, account.js). Profil : « Ses segments préférés ».

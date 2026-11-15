@@ -8,7 +8,8 @@ import { parisDay } from "../time.js";
 import { realKey, RAR, LVMAX, rates, rates2, baseCards, showPeople, showKeyLabel, cfg, defOf, titleOf, champsNow, promoLogo, cardById } from "./data.js";
 import { freeLeft, freeNextMs, useFree, me, commit, addCard, bump } from "./store.js";
 import { summon } from "./summon.js";
-import { cardHTML, boosterImg } from "./card.js";
+import { cardHTML } from "./card.js";
+import { packHTML } from "./pack.js";
 import { showLogo, eventLogo } from "../assets.js";
 import { saveCfg } from "./modo.js";
 import { norm } from "../wrestlers.js";
@@ -129,12 +130,11 @@ function stars(b) {
   return { feat: top.length > 0, list: (top.length ? top : L.slice().sort(byMax)).slice(0, 3), n: L.length };
 }
 function slide(d, b) {
-  const img = boosterImg(b), c = b.c || ["#2a3a72", "#0b1636"], ok = canPay(d, b.price), vog = ((cfg().vogue || {}).boosters || []).indexOf(b.id) >= 0, st = stars(b);
+  const ok = canPay(d, b.price), vog = ((cfg().vogue || {}).boosters || []).indexOf(b.id) >= 0, st = stars(b);
   let h = '<article class="tcus" data-id="' + esc(b.id) + '" data-cat="' + esc(b.cat) + '">' +
-    '<button class="tcupack' + (ok ? "" : " off") + '" data-act="tcgopen" data-id="' + esc(b.id) + '" style="background:' + (img ? "url('" + esc(img) + "') center/cover," : "") + "linear-gradient(160deg," + esc(c[0]) + "," + esc(c[1] || "#0b1636") + ')" aria-label="Ouvrir ' + esc(b.t) + '">' +
-    (b.promo ? '<span class="tcupromo">−' + b.promo + " %</span>" : vog ? '<span class="tcupromo hot">🔥 En vogue</span>' : "") +
-    (b.logo ? '<img class="tculogo" src="' + esc(b.logo) + '" alt="">' : img ? "" : b.id === "free" ? '<span class="tcugift">🎁</span>' : b.id === "mitb" ? '<span class="tcugift">💼</span>' : "") +
-    '<span class="tcuplate"><b>' + esc(b.t) + "</b></span></button>" +
+    // le booster en forme de sachet (15 nov.)
+    '<button class="tcupack' + (ok ? "" : " off") + '" data-act="tcgopen" data-id="' + esc(b.id) + '" aria-label="Ouvrir ' + esc(b.t) + '">' + packHTML(b) +
+    (b.promo ? '<span class="tcupromo">−' + b.promo + " %</span>" : vog ? '<span class="tcupromo hot">🔥 En vogue</span>' : "") + "</button>" +
     '<p class="tcusub">' + esc(b.sub || "") + "</p>";
   if (b.id === "mitb") h += '<div class="tcustars"><div class="tcust"><b>Une carte SSR au choix</b><small>' + st.n + " SSR possibles</small></div></div>";
   else h += '<div class="tcustars"><div class="tcust"><b>' + (st.feat ? "Les têtes d’affiche" : "Les meilleures cartes") + "</b><small>" + (st.feat ? "Plus fréquentes dans ce booster" : "Jusqu’où il peut aller") + ", " + st.n + " catcheurs possibles</small></div>" +
@@ -144,7 +144,7 @@ function slide(d, b) {
   if (b.id === "free") h += '<div class="tcubtns"><button class="btn tcubig" data-act="tcgopen" data-id="free"' + (ok ? "" : " disabled") + ">" + (ok ? "OUVRIR <small>gratuit, il t’en reste " + freeLeft(d) + "</small>" : "REVIENT DANS " + leftH(freeNextMs()).toUpperCase()) + "</button></div>";
   else if (b.id === "mitb") h += '<div class="tcubtns"><button class="btn tcubig" data-act="tcgopen" data-id="mitb"' + ((d.items.mitb || 0) > 0 ? "" : " disabled") + ">CHOISIR MA SSR <small>💼 mallettes : " + (d.items.mitb || 0) + "</small></button></div>";
   else h += '<div class="tcubtns' + (b.multi ? " two" : "") + '"><button class="btn ghost tcubig" data-act="tcgopen" data-id="' + esc(b.id) + '"' + (ok ? "" : " disabled") + ">SIMPLE <small>5 cartes, " + esc(priceTxt(b.price)) + "</small></button>" +
-    (b.multi ? '<button class="btn tcubig" data-act="tcgopen" data-id="' + esc(b.id) + '" data-mega="1"' + (canPay(d, b.price, true) ? "" : " disabled") + ">MÉGA <small>15 cartes dont 1 SSR, 🎟️ " + megaPrice(b) + "</small></button>" : "") + "</div>";
+    (b.multi ? '<button class="btn tcubig" data-act="tcgopen" data-id="' + esc(b.id) + '" data-mega="1"' + (canPay(d, b.price, true) ? "" : " disabled") + ">MÉGA <small>3 sachets, 15 cartes dont 1 SSR, 🎟️ " + megaPrice(b) + "</small></button>" : "") + "</div>";
   h += '<div class="tcumore"><button class="tculink" data-act="tcgbinfo" data-id="' + esc(b.id) + '">👁️ Toutes les cartes du booster</button>' +
     (S.isAdmin && b.id !== "mitb" ? '<button class="tculink" data-act="tcgvogb" data-id="' + esc(b.id) + '">' + (vog ? "🔥 En vogue" : "☆ Vogue") + '</button><button class="tculink" data-act="tcgpromo" data-id="' + esc(b.id) + '">％ Promo</button>' : "") + "</div>";
   return h + "</article>";
@@ -179,7 +179,8 @@ function cuSync(box) {
   const nb = document.querySelector(".tcudots.num b"); if (nb) nb.textContent = i + 1;
   document.querySelectorAll(".tcucats button").forEach(x => x.classList.toggle("on", x.dataset.c === el.dataset.cat));
 }
-const cuGo = i => { const box = document.getElementById("tcu"); if (!box) return; const S2 = box.querySelectorAll(".tcus"), el = S2[Math.max(0, Math.min(S2.length - 1, i))]; if (el) box.scrollTo({ left: el.offsetLeft - (box.clientWidth - el.clientWidth) / 2, behavior: "smooth" }); };
+// (15 nov.) le booster visé est gardé tout de suite : si l'écran se redessine pendant le glissement, on reste dessus
+const cuGo = i => { const box = document.getElementById("tcu"); if (!box) return; const S2 = box.querySelectorAll(".tcus"), el = S2[Math.max(0, Math.min(S2.length - 1, i))]; if (el) { lsSet("ctv.tcu", el.dataset.id); box.scrollTo({ left: el.offsetLeft - (box.clientWidth - el.clientWidth) / 2, behavior: "smooth" }); } };
 ACT.tcunav = el => { const box = document.getElementById("tcu"); if (box) cuGo(cuIdx(box) + (+el.dataset.v || 0)); };
 ACT.tcucat = el => { const box = document.getElementById("tcu"); if (!box) return; const S2 = [...box.querySelectorAll(".tcus")], i = S2.findIndex(x => x.dataset.cat === el.dataset.c); if (i >= 0) cuGo(i); };
 ACT.tcuquick = el => { const on = !quickOn(); lsSet("ctv.tgquick", on ? "1" : null); el.classList.toggle("on", on); el.setAttribute("aria-checked", String(on)); toast(on ? "⚡ Ouverture rapide : toutes les cartes d’un coup" : "✨ L’entrée des cartes est de retour"); };
@@ -200,11 +201,11 @@ ACT.tcgopen = el => {
   const mega = el.dataset.mega === "1", d0 = me();
   if (b.id === "mitb") return mitbPick();
   if (!canPay(d0, b.price, mega)) { toast(b.price.free ? "Tes 3 boosters gratuits reviennent dans " + Math.ceil(freeNextMs() / 6e4) + " min" : "Pas assez de ressources : gagne-en dans les combats"); return; }
-  const c = b.c || ["#3b321f", "#0a0907"];
   modal((box, close) => {
-    const bi = boosterImg(b);
-    box.innerHTML = '<h3>Invoquer ' + (mega ? "en Méga" : "ce booster") + ' ?</h3><div class="tcfm"><div class="tbooster" style="background:' + (bi ? "url('" + esc(bi) + "') center/cover," : "") + "linear-gradient(160deg," + esc(c[0]) + "," + esc(c[1] || "#0a0907") + ')">' + (b.logo ? '<img src="' + esc(b.logo) + '" alt="">' : "") + "<b>" + esc(b.t) + "</b></div>" +
-      "<ul><li>" + (mega ? "15 cartes, dont 1 SSR garantie" : "5 cartes") + "</li><li>Coût : " + esc(mega ? "🎟️ " + megaPrice(b) + " gimmicks" : b.price.free ? "🎁 Gratuit (il t’en reste " + freeLeft(d0) + ")" : priceTxt(b.price)) + "</li>" + (featOf(b).size ? "<li>⭐ Cartes vedettes plus fréquentes</li>" : "") + "</ul></div>" +
+    // Méga = 3 sachets d'un coup (choix de Jose du 15 nov.)
+    const pk = packHTML(b, { cls: "sm", tag: mega ? "Méga" : "" });
+    box.innerHTML = '<h3>Invoquer ' + (mega ? "en Méga" : "ce booster") + ' ?</h3><div class="tcfm"><div class="tcfmp' + (mega ? " three" : "") + '" aria-hidden="true">' + (mega ? packHTML(b, { cls: "sm", notitle: true, still: true }) + packHTML(b, { cls: "sm", notitle: true, still: true }) : "") + pk + (mega ? '<b class="tcfmx">×3</b>' : "") + "</div>" +
+      "<ul><li>" + (mega ? "3 sachets : 15 cartes, dont 1 SSR garantie" : "1 sachet : 5 cartes") + "</li><li>Coût : " + esc(mega ? "🎟️ " + megaPrice(b) + " gimmicks" : b.price.free ? "🎁 Gratuit (il t’en reste " + freeLeft(d0) + ")" : priceTxt(b.price)) + "</li>" + (featOf(b).size ? "<li>⭐ Cartes vedettes plus fréquentes</li>" : "") + "</ul></div>" +
       '<button class="btn wide" data-y>✨ Invoquer</button><button class="btn wide ghost" style="margin-top:6px" data-close>Annuler</button>';
     box.addEventListener("click", e => { if (e.target.closest("[data-close]")) return close(); if (e.target.closest("[data-y]")) { close(); openNow(b, mega); } });
   });

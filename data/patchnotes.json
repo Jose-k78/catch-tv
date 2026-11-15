@@ -1,6 +1,19 @@
 {
- "updated": "2026-11-14",
+ "updated": "2026-11-15",
  "items": [
+  {
+   "id": "2026-11-15-tcccg",
+   "d": "2026-11-15",
+   "t": "TCCCG : les boosters deviennent des sachets",
+   "txt": [
+    "🎁 Chaque booster est maintenant un vrai sachet en alu brillant : bords en dents de scie en haut et en bas, soudures rayées, plis aux coins. Dans le Call Up, il flotte, un reflet passe dessus et de petites étoiles brillent.",
+    "🎨 La couleur de l’alu dit la catégorie du booster : vert pour les cadeaux, argent pour les shows de la semaine, or pour les PLE et PPV, bleu pour les boosters spéciaux, cuivre pour les packs de départ.",
+    "✂️ Pour ouvrir, glisse ton doigt sur le pointillé du sachet, d’un bord à l’autre : la bande du haut s’envole et les cartes sortent.",
+    "✨ Méga : la confirmation montre 3 sachets, et tu les déchires l’un après l’autre (5 cartes chacun). « Passer » marche toujours.",
+    "🔧 Call Up : en touchant une catégorie, l’appli reste bien sur le booster choisi.",
+    "🐢 Avec « Animations simples », le sachet ne bouge pas et s’ouvre d’une simple touche."
+   ]
+  },
   {
    "id": "2026-11-14-tcccg",
    "d": "2026-11-14",
