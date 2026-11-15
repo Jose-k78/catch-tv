@@ -2499,6 +2499,18 @@
    },
    "gimmick": "",
    "medalOf": "Nick Wayne"
+  },
+  "vader": {
+   "r": "R",
+   "max": "SR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Vader Bomb",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Vader"
   }
  },
  "bgm": {
