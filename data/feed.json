@@ -1,13 +1,6 @@
 {
- "at": "2026-11-15T08:01:20.017Z",
+ "at": "2026-11-15T08:48:16.510Z",
  "items": [
-  {
-   "t": "Chris Jericho aura un rôle dans le film ''I Am The Teeth''",
-   "u": "https://www.catch-newz.com/culture/cineserie/61026-chris-jericho-aura-un-role-dans-le-film-i-am-the-teeth",
-   "s": "Catch-Newz",
-   "d": "2026-11-15",
-   "tags": []
-  },
   {
    "t": "Résultats de AEW Full Gear 2026",
    "u": "https://www.voxcatch.fr/2026/11/15/resultats-aew-full-gear-2026/",
@@ -21,6 +14,13 @@
    "t": "Résultats de FinalSlam",
    "u": "https://www.voxcatch.fr/2026/11/15/resultats-finalslam/",
    "s": "VOXcatch",
+   "d": "2026-11-15",
+   "tags": []
+  },
+  {
+   "t": "Chris Jericho aura un rôle dans le film ''I Am The Teeth''",
+   "u": "https://www.catch-newz.com/culture/cineserie/61026-chris-jericho-aura-un-role-dans-le-film-i-am-the-teeth",
+   "s": "Catch-Newz",
    "d": "2026-11-15",
    "tags": []
   },
@@ -1067,6 +1067,10 @@
    {
     "id": "JY6EHyfKRGM",
     "t": "Adam Copeland contre Kazuchika Okada"
+   },
+   {
+    "id": "QAITFb3MXMs",
+    "t": "Will Ospreay contre Kyle Fletcher"
    }
   ]
  },
@@ -1382,11 +1386,11 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 2 nouveaux articles lus sur la page d'accueil (2 liens)",
+  "Catch-Newz": "pas de flux RSS : 1 nouveaux articles lus sur la page d'accueil (1 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
-  "YouTube WWE": "4 nouvelles vidéos",
-  "YouTube AEW": "3 nouvelles vidéos",
+  "YouTube WWE": "0 nouvelles vidéos",
+  "YouTube AEW": "1 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
   "YouTube TNA": "0 nouvelles vidéos",
