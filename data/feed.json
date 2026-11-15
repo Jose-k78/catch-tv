@@ -1,17 +1,17 @@
 {
- "at": "2026-11-15T02:47:55.364Z",
+ "at": "2026-11-15T03:49:33.839Z",
  "items": [
-  {
-   "t": "Combien de spectateurs pour FinalSlam ?",
-   "u": "https://www.catch-newz.com/international/newz/61320-combien-de-spectateurs-pour-finalslam",
-   "s": "Catch-Newz",
-   "d": "2026-11-15",
-   "tags": []
-  },
   {
    "t": "Résultats de FinalSlam",
    "u": "https://www.voxcatch.fr/2026/11/15/resultats-finalslam/",
    "s": "VOXcatch",
+   "d": "2026-11-15",
+   "tags": []
+  },
+  {
+   "t": "Combien de spectateurs pour FinalSlam ?",
+   "u": "https://www.catch-newz.com/international/newz/61320-combien-de-spectateurs-pour-finalslam",
+   "s": "Catch-Newz",
    "d": "2026-11-15",
    "tags": []
   },
@@ -1052,8 +1052,8 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/international/newz/61320-combien-de-spectateurs-pour-finalslam",
    "https://www.catch-newz.com/international/resultats/61296-resultats-de-cmll-viernes-espectacular-du-13-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61320-combien-de-spectateurs-pour-finalslam",
    "https://www.catch-newz.com/international/newz/61319-finalslam-premiere-reaction-daminematue-apres-sa-victoire-contre-squeezie",
    "https://www.catch-newz.com/international/newz/61318-finalslam-squeezie-veut-deja-une-revanche-contre-aminematue",
    "https://www.catch-newz.com/international/newz/61317-finalslam-match-exceptionnel-entre-squeezie-et-aminematue-un-champion-couronne",
@@ -1355,7 +1355,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 2 nouveaux articles lus sur la page d'accueil (2 liens)",
+  "Catch-Newz": "pas de flux RSS : 1 nouveaux articles lus sur la page d'accueil (1 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
