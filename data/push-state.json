@@ -1,5 +1,5 @@
 {
- "at": "2026-11-15T06:57:15.868Z",
+ "at": "2026-11-15T08:01:20.056Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/international/newz/60864-carte-de-hoh-a-nightmare-on-elmwood": "2026-11-01",
@@ -435,76 +435,18 @@
   "poll:p-20261115-kasper-aew": "2026-11-15",
   "poll:p-20261115-owens-zayn": "2026-11-15",
   "poll:p-20261115-raw-4janvier": "2026-11-15",
-  "story:deadly-game-1998": "2026-11-15"
+  "story:deadly-game-1998": "2026-11-15",
+  "t:aew-world:2026-11-14:d1evr9pj": "2026-11-15",
+  "t:aew-women:2026-11-14:d61ok8q": "2026-11-15",
+  "t:aew-intl:2026-11-14:dg1o25a": "2026-11-15",
+  "t:aew-tbs:2026-11-14:d1vlsi2f": "2026-11-15",
+  "t:aew-nat:2026-11-14:c": "2026-11-15",
+  "t:aew-tag:2026-11-14:d1un3t2w": "2026-11-15",
+  "t:aew-trios:2026-11-14:c": "2026-11-15",
+  "t:aew-wtag:2026-11-14:c": "2026-11-15",
+  "ple:TNA:2026-11-15": "2026-11-15",
+  "ple:Stardom:2026-11-15": "2026-11-15",
+  "ple:Marigold:2026-11-15": "2026-11-15"
  },
- "pend": {
-  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
-   {
-    "cat": "info",
-    "title": "📰 3 nouvelles infos",
-    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "3 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 3 nouvelles infos",
-    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "3 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📖 Storyline du jour",
-    "body": "Survivor Series 1998 : le « Deadly Game » qui fait de The Rock un champion",
-    "url": "#/storyline/deadly-game-1998",
-    "tag": "story",
-    "short": "📖 Storyline du jour"
-   },
-   {
-    "cat": "info",
-    "title": "📊 3 nouveaux sondages",
-    "body": "Les Kasper Brothers (ex-Creed Brothers) signent à l’AEW : contre quelle équipe doivent-ils commencer ? · Kevin Owens défie Sami Zayn à SmackDown : qui doit gagner cette nouvelle bataille ? · La WWE prépare un Raw spécial le 4 janvier 2027 : qu’aimerais-tu y voir ?",
-    "url": "#/sondages",
-    "tag": "poll",
-    "short": "3 nouveaux sondages"
-   }
-  ],
-  "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
-   {
-    "cat": "info",
-    "title": "📰 3 nouvelles infos",
-    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "3 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 3 nouvelles infos",
-    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "3 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📖 Storyline du jour",
-    "body": "Survivor Series 1998 : le « Deadly Game » qui fait de The Rock un champion",
-    "url": "#/storyline/deadly-game-1998",
-    "tag": "story",
-    "short": "📖 Storyline du jour"
-   },
-   {
-    "cat": "info",
-    "title": "📊 3 nouveaux sondages",
-    "body": "Les Kasper Brothers (ex-Creed Brothers) signent à l’AEW : contre quelle équipe doivent-ils commencer ? · Kevin Owens défie Sami Zayn à SmackDown : qui doit gagner cette nouvelle bataille ? · La WWE prépare un Raw spécial le 4 janvier 2027 : qu’aimerais-tu y voir ?",
-    "url": "#/sondages",
-    "tag": "poll",
-    "short": "3 nouveaux sondages"
-   }
-  ]
- }
+ "pend": {}
 }
