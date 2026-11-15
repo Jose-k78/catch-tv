@@ -2349,6 +2349,19 @@
    },
    "gimmick": "",
    "medalOf": "Frankie Kazarian"
+  },
+  "atlantis-jr": {
+   "k": "CMLL",
+   "r": "R",
+   "max": "SR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Atlantis Jr."
   }
  },
  "bgm": {
