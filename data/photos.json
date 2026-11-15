@@ -5286,9 +5286,12 @@
    ]
   },
   "rayo-americano": {
-   "f": "rayo-americano.webp",
+   "f": "rayo-americano-v2.webp",
    "n": [
     "Rayo Americano"
+   ],
+   "v": [
+    "rayo-americano.webp"
    ]
   },
   "rayo-metalico": {
