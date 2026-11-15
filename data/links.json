@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T07:13:07.849Z",
+ "updated": "2026-11-15T22:48:37.350Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "m:statlight kid vs suzu suzuki": [
@@ -322,6 +322,15 @@
     "t": "",
     "u": "https://vksport.vkvideo.ru/video-54361599_456301486",
     "p": "VK",
+    "at": "2026-11-15",
+    "def": true
+   }
+  ],
+  "ev:AAA|Lucha Libre AAA|2026-11-14": [
+   {
+    "t": "",
+    "u": "https://www.youtube.com/live/RLZAY6ORPYk?is=wxSqSgwddprwQL51",
+    "p": "YouTube",
     "at": "2026-11-15",
     "def": true
    }
