@@ -1,5 +1,5 @@
 {
- "at": "2026-11-15T05:50:42.004Z",
+ "at": "2026-11-15T06:57:15.868Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/international/newz/60864-carte-de-hoh-a-nightmare-on-elmwood": "2026-11-01",
@@ -428,7 +428,14 @@
   "pick:AEW:2026-11-14": "2026-11-14",
   "a:https://www.catch-newz.com/aew/resultats/61305-aew-full-gear-2026": "2026-11-15",
   "a:https://www.catch-newz.com/aew/newz/61321-les-kasper-brothers-creed-brothers-signent-a-laew": "2026-11-15",
-  "a:https://www.catch-newz.com/wwe/resultats/61306-resultats-et-streaming-aaa-lucha-libre-14-novembre-2026": "2026-11-15"
+  "a:https://www.catch-newz.com/wwe/resultats/61306-resultats-et-streaming-aaa-lucha-libre-14-novembre-2026": "2026-11-15",
+  "a:https://www.catch-newz.com/aew/newz/61323-aew-full-gear-mjf-de-retour": "2026-11-15",
+  "a:https://www.catch-newz.com/aew/newz/61322-ilja-dragunov-remporte-son-premier-championnat-a-aew-full-gear-2026": "2026-11-15",
+  "a:https://www.voxcatch.fr/2026/11/15/resultats-aew-full-gear-2026/": "2026-11-15",
+  "poll:p-20261115-kasper-aew": "2026-11-15",
+  "poll:p-20261115-owens-zayn": "2026-11-15",
+  "poll:p-20261115-raw-4janvier": "2026-11-15",
+  "story:deadly-game-1998": "2026-11-15"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -439,6 +446,30 @@
     "url": "#/",
     "tag": "art",
     "short": "3 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 3 nouvelles infos",
+    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "3 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📖 Storyline du jour",
+    "body": "Survivor Series 1998 : le « Deadly Game » qui fait de The Rock un champion",
+    "url": "#/storyline/deadly-game-1998",
+    "tag": "story",
+    "short": "📖 Storyline du jour"
+   },
+   {
+    "cat": "info",
+    "title": "📊 3 nouveaux sondages",
+    "body": "Les Kasper Brothers (ex-Creed Brothers) signent à l’AEW : contre quelle équipe doivent-ils commencer ? · Kevin Owens défie Sami Zayn à SmackDown : qui doit gagner cette nouvelle bataille ? · La WWE prépare un Raw spécial le 4 janvier 2027 : qu’aimerais-tu y voir ?",
+    "url": "#/sondages",
+    "tag": "poll",
+    "short": "3 nouveaux sondages"
    }
   ],
   "gYOlkXsJc3WedSykoBNyeWg2ELx1": [
@@ -449,6 +480,30 @@
     "url": "#/",
     "tag": "art",
     "short": "3 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 3 nouvelles infos",
+    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "3 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📖 Storyline du jour",
+    "body": "Survivor Series 1998 : le « Deadly Game » qui fait de The Rock un champion",
+    "url": "#/storyline/deadly-game-1998",
+    "tag": "story",
+    "short": "📖 Storyline du jour"
+   },
+   {
+    "cat": "info",
+    "title": "📊 3 nouveaux sondages",
+    "body": "Les Kasper Brothers (ex-Creed Brothers) signent à l’AEW : contre quelle équipe doivent-ils commencer ? · Kevin Owens défie Sami Zayn à SmackDown : qui doit gagner cette nouvelle bataille ? · La WWE prépare un Raw spécial le 4 janvier 2027 : qu’aimerais-tu y voir ?",
+    "url": "#/sondages",
+    "tag": "poll",
+    "short": "3 nouveaux sondages"
    }
   ]
  }
