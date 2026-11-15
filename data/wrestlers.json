@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14",
+ "updated": "2026-11-15",
  "note": "Catcheurs suivis (champions, cartes annoncées, favoris des membres) et catcheurs à découvrir (disc = true, toutes fédérations et époques). txt = petit résumé en français, era = époque, ref = matchs de référence, last = 3 derniers matchs (r = résultat, spoiler), v = vidéo YouTube d'une chaîne officielle.",
  "items": {
   "Roman Reigns": {
@@ -1847,6 +1847,45 @@
    "debut": "2016",
    "fin": "Slingshot Rocket Kick",
    "teams": "The Way, InDex (avec Dexter Lumis / Samuel Shaw), Undeniably Impressive (avec Tessa Blanchard)"
+  },
+  "El Grande Americano": {
+   "k": [
+    "WWE",
+    "AAA"
+   ],
+   "sh": [
+    "Raw"
+   ],
+   "a": [
+    "Ludwig Kaiser",
+    "Marcel Barthel",
+    "Axel Dieter Jr."
+   ],
+   "al": "face",
+   "alD": "2025-12-20",
+   "txt": "Catcheur allemand de la WWE, ancien Ludwig Kaiser d’Imperium, qui lutte sous le masque d’El Grande Americano depuis juin 2025, à la WWE comme à la AAA, avec Los Americanos.",
+   "from": "Hanovre (Allemagne)",
+   "ht": "1,91 m",
+   "wt": "100 kg",
+   "fin": "Diving Headbutt, Ankle Lock",
+   "teams": "Los Americanos (avec Rayo Americano et Bravo Americano), Imperium, Ringkampf"
+  },
+  "La Catalina": {
+   "k": [
+    "AAA"
+   ],
+   "a": [
+    "Katrina Cortez",
+    "Catalina García",
+    "Jessy"
+   ],
+   "al": "face",
+   "alD": "2022-03-06",
+   "txt": "Catcheuse chilienne passée par la WWE sous le nom de Katrina Cortez (2019–2021), puis par le CMLL ; elle lutte à la AAA depuis avril 2026.",
+   "nick": "La Diva del Ring",
+   "from": "Santiago du Chili (Chili)",
+   "debut": "2015",
+   "fin": "Double Chickenwing Facebuster, Rolling Thunder X-Factor, Rolling Senton"
   }
  }
 }
