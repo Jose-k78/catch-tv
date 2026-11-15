@@ -6407,11 +6407,14 @@
    ]
   },
   "swerve-strickland": {
-   "f": "swerve-strickland.webp",
+   "f": "swerve-strickland-v2.webp",
    "n": [
     "Swerve Strickland",
     "Isaiah Scott",
     "Isaiah \"Swerve\" Scott"
+   ],
+   "v": [
+    "swerve-strickland.webp"
    ]
   },
   "syuri": {
