@@ -2562,6 +2562,19 @@
    },
    "gimmick": "",
    "medalOf": "Hijo del Villano III Jr."
+  },
+  "jordynne-grace": {
+   "k": "WWE",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Juggernaut Driver",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Jordynne Grace"
   }
  },
  "bgm": {
