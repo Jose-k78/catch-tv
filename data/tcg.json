@@ -2414,6 +2414,19 @@
    },
    "gimmick": "",
    "medalOf": "Forastero"
+  },
+  "mance-warner": {
+   "k": "ROH",
+   "r": "R",
+   "max": "SR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Mance Warner"
   }
  },
  "bgm": {
