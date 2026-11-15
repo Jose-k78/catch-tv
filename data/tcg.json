@@ -2459,6 +2459,20 @@
    },
    "gimmick": "",
    "medalOf": "Great-O-Khan"
+  },
+  "randy-orton": {
+   "years": "",
+   "k": "WWE",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Aggressor",
+   "al": "heel",
+   "fin": {
+    "n": "RKO",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Triple H"
   }
  },
  "bgm": {
