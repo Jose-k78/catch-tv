@@ -2393,13 +2393,14 @@
    "r": "R",
    "max": "SSR",
    "arch": "Showman",
-   "al": "",
+   "al": "face",
    "fin": {
     "n": "Black Widow",
     "e": "Soin"
    },
    "gimmick": "",
-   "medalOf": "AJ Lee"
+   "medalOf": "AJ Lee",
+   "k": "WWE"
   },
   "forastero": {
    "k": "AAA",
