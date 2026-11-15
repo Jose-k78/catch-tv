@@ -2446,6 +2446,19 @@
     "q": "start",
     "s": 0
    }
+  },
+  "jeff-cobb": {
+   "k": "NJPW",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Tour of the Islands",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Great-O-Khan"
   }
  },
  "bgm": {
