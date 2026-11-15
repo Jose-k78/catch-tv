@@ -1,6 +1,13 @@
 {
- "at": "2026-11-14T23:08:16.209Z",
+ "at": "2026-11-15T00:04:51.023Z",
  "items": [
+  {
+   "t": "FinalSlam : Nate Prince détruit le rêve de Maxime Biaggi",
+   "u": "https://www.catch-newz.com/international/newz/61316-finalslam-nate-prince-detruit-le-reve-de-maxime-biaggi",
+   "s": "Catch-Newz",
+   "d": "2026-11-15",
+   "tags": []
+  },
   {
    "t": "FinalSlam – Amine vs. Squeezie : Carte, diffusion… toutes les infos sur le show",
    "u": "https://www.voxcatch.fr/2026/11/14/final-slam-amine-squeezie-infos-diffusion/",
@@ -503,13 +510,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Carte de GCW Bedlam In Boise 2026",
-   "u": "https://www.catch-newz.com/international/newz/61237-carte-de-gcw-bedlam-in-boise-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": []
   }
  ],
  "yt": {
@@ -1062,6 +1062,7 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61316-finalslam-nate-prince-detruit-le-reve-de-maxime-biaggi",
    "https://www.catch-newz.com/international/resultats/61296-resultats-de-cmll-viernes-espectacular-du-13-novembre-2026",
    "https://www.catch-newz.com/international/newz/61315-carte-de-fsw-high-octane-calm-before-the-storm-2026",
    "https://www.catch-newz.com/international/newz/61314-finalslam-djilsi-accepte-lopen-challenge-de-raj-dhesi-jinder-mahal",
@@ -1359,12 +1360,11 @@
    "https://www.catch-newz.com/wwe/newz/61020-paige-appelee-a-la-derniere-minute-pour-wwe-nxt",
    "https://www.catch-newz.com/wwe/newz/61021-grayson-waller-cest-chez-moi-cest-mon-show-et-ca-ne-changera-pas-de-sitot",
    "https://www.catch-newz.com/international/newz/60951-la-njpw-super-junior-tag-league-2026-rend-son-verdict",
-   "https://www.catch-newz.com/international/resultats/61018-resultats-de-aiw-shot-callers-2026",
-   "https://www.catch-newz.com/international/resultats/61017-resultats-de-aaw-the-bourbon-street-massacre-2026"
+   "https://www.catch-newz.com/international/resultats/61018-resultats-de-aiw-shot-callers-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 2 nouveaux articles lus sur la page d'accueil (2 liens)",
+  "Catch-Newz": "pas de flux RSS : 3 nouveaux articles lus sur la page d'accueil (3 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
