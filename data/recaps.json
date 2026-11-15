@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14",
+ "updated": "2026-11-15",
  "items": {
   "WWE|Raw|2026-10-26": {
    "txt": "Depuis le Save Mart Center de Fresno. Becky Lynch et Stephanie Vaquer se disputent la place d’aspirante n°1 au titre mondial féminin. Bayley et Lyra Valkyria règlent leurs comptes dans un match sans disqualification, IYO SKY affronte la championne intercontinentale Raquel Rodriguez sans titre en jeu (avec une chance au titre en vue), et Chad Gable et Dragon Lee font équipe contre Big Cass et Ethan Page.",
@@ -160,6 +160,11 @@
    "txt": "La NJPW et le CMLL se retrouvent à l'Arena México pour Lucha Kingdom. Hechicero défend le titre mondial toutes catégories du CMLL contre Zack Sabre Jr., Syuri met en jeu le titre féminin IWGP face à Kira, et les titres par équipe de NJPW Strong se jouent à trois équipes. Místico et Último Guerrero affrontent Yota Tsuji et Hirooki Goto, tandis que Konosuke Takeshita croise Bárbaro Cavernario et Shota Umino affronte Soberano Jr.",
    "s": "Fightful",
    "u": "https://www.fightful.com/?p=334003"
+  },
+  "WWE|Raw|2026-11-16": {
+   "txt": "Raw pose ses valises au Lenovo Center de Raleigh, en Caroline du Nord. Raquel Rodriguez met en jeu le titre Intercontinental féminin face à Iyo Sky, et les Usos, pour The Bloodline, affrontent Carmelo Hayes et Cruz Montana, pour The 946 : l’équipe gagnante offre l’avantage à son clan pour le WarGames des Survivor Series. John Cena est aussi annoncé.",
+   "s": "Khel Now",
+   "u": "https://khelnow.com/wwe/wwe-raw-next-week-november-16-202611"
   }
  }
 }
