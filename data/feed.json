@@ -1,21 +1,41 @@
 {
- "at": "2026-11-15T16:12:29.246Z",
+ "at": "2026-11-15T17:12:55.662Z",
  "items": [
   {
-   "t": "Ruby Hardy, fille de Jeff Hardy, s'entraine avec son père",
-   "u": "https://www.catch-newz.com/international/newz/61329-ruby-hardy-fille-de-jeff-hardy-sentraine-avec-son-pere",
-   "s": "Catch-Newz",
-   "d": "2026-11-15",
-   "tags": []
-  },
-  {
-   "t": "Carte de CMLL Domingo Familiar du 15 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61277-carte-de-cmll-domingo-familiar-du-15-novembre-2026",
+   "t": "Preview : AEW Dynamite du 18 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/newz/61333-preview-aew-dynamite-18-novembre-2026",
    "s": "Catch-Newz",
    "d": "2026-11-15",
    "tags": [
-    "CMLL"
+    "AEW",
+    "Dynamite"
    ]
+  },
+  {
+   "t": "L'avantage WarGames sera en jeu à WWE RAW du 16 novembre",
+   "u": "https://www.catch-newz.com/wwe/newz/61334-lavantage-wargames-sera-en-jeu-a-wwe-raw-du-16-novembre",
+   "s": "Catch-Newz",
+   "d": "2026-11-15",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
+  {
+   "t": "CM Punk veut continuer à catcher encore au moins 5 ans",
+   "u": "https://www.catch-newz.com/wwe/newz/61331-cm-punk-veut-continuer-a-catcher-encore-au-moins-5-ans",
+   "s": "Catch-Newz",
+   "d": "2026-11-15",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Résultats de TNT IGNition Aftershock 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61336-resultats-de-tnt-ignition-aftershock-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-15",
+   "tags": []
   },
   {
    "t": "Résultats de AEW Full Gear 2026",
@@ -32,6 +52,22 @@
    "s": "VOXcatch",
    "d": "2026-11-15",
    "tags": []
+  },
+  {
+   "t": "Ruby Hardy, fille de Jeff Hardy, s'entraine avec son père",
+   "u": "https://www.catch-newz.com/international/newz/61329-ruby-hardy-fille-de-jeff-hardy-sentraine-avec-son-pere",
+   "s": "Catch-Newz",
+   "d": "2026-11-15",
+   "tags": []
+  },
+  {
+   "t": "Carte de CMLL Domingo Familiar du 15 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61277-carte-de-cmll-domingo-familiar-du-15-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-15",
+   "tags": [
+    "CMLL"
+   ]
   },
   {
    "t": "Quel score pour FinalSlam sur TMC ?",
@@ -157,6 +193,15 @@
    "tags": [
     "WWE",
     "AAA"
+   ]
+  },
+  {
+   "t": "Résultats de CMLL Sabado De Coliseo du 14 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61335-resultats-de-cmll-sabado-de-coliseo-du-14-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-14",
+   "tags": [
+    "CMLL"
    ]
   },
   {
@@ -448,45 +493,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-13",
    "tags": []
-  },
-  {
-   "t": "Résultats de PWS Meaner Than Ever",
-   "u": "https://www.catch-newz.com/international/resultats/61284-resultats-de-pws-meaner-than-ever",
-   "s": "Catch-Newz",
-   "d": "2026-11-13",
-   "tags": []
-  },
-  {
-   "t": "Résultats de ZERO1 Random Lottery! ZERO1 Tag Strongest Tournament 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61283-resultats-de-zero1-random-lottery-zero1-tag-strongest-tournament-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-13",
-   "tags": []
-  },
-  {
-   "t": "Carte de CMLL Sabado De Coliseo du 14 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61276-carte-de-cmll-sabado-de-coliseo-du-14-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-13",
-   "tags": [
-    "CMLL"
-   ]
-  },
-  {
-   "t": "Carte de West Coast Pro 8",
-   "u": "https://www.catch-newz.com/international/newz/61279-carte-de-west-coast-pro-8",
-   "s": "Catch-Newz",
-   "d": "2026-11-13",
-   "tags": []
-  },
-  {
-   "t": "John Cena fait le point sur sa tenue de retraité",
-   "u": "https://www.catch-newz.com/wwe/newz/61274-john-cena-fait-le-point-sur-sa-tenue-de-retraite",
-   "s": "Catch-Newz",
-   "d": "2026-11-13",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -1076,9 +1082,14 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/aew/newz/61333-preview-aew-dynamite-18-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61334-lavantage-wargames-sera-en-jeu-a-wwe-raw-du-16-novembre",
+   "https://www.catch-newz.com/wwe/newz/61331-cm-punk-veut-continuer-a-catcher-encore-au-moins-5-ans",
    "https://www.catch-newz.com/wwe/resultats/61330-resultats-de-wwe-nxt-live-event-du-14-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61329-ruby-hardy-fille-de-jeff-hardy-sentraine-avec-son-pere",
    "https://www.catch-newz.com/wwe/resultats/61306-resultats-et-streaming-aaa-lucha-libre-14-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61336-resultats-de-tnt-ignition-aftershock-2026",
+   "https://www.catch-newz.com/international/resultats/61335-resultats-de-cmll-sabado-de-coliseo-du-14-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61329-ruby-hardy-fille-de-jeff-hardy-sentraine-avec-son-pere",
    "https://www.catch-newz.com/international/newz/61277-carte-de-cmll-domingo-familiar-du-15-novembre-2026",
    "https://www.catch-newz.com/international/newz/61326-quel-score-pour-finalslam-sur-tmc",
    "https://www.catch-newz.com/international/newz/61328-squeezie-jai-tout-donne-jespere-que-le-divertissement-aura-ete-a-la-hauteur",
@@ -1370,16 +1381,11 @@
    "https://www.catch-newz.com/international/newz/61051-carte-de-dradition-tastumi-fujinami-55th-celebration-dragon-expo-2026",
    "https://www.catch-newz.com/international/newz/61037-carte-de-sendai-girls-pro-wrestling-du-6-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61045-chihiro-hashimoto-impressionnee-par-un-ancien-de-la-wwe",
-   "https://www.catch-newz.com/international/newz/61047-carte-de-new-texas-pro-wrestling-texas-contenders-series-70",
-   "https://www.catch-newz.com/international/newz/61046-carte-de-beyond-wrestling-open-series-253",
-   "https://www.catch-newz.com/international/resultats/61043-resultats-de-stardom-path-of-thunder-2026",
-   "https://www.catch-newz.com/international/newz/61028-carte-de-cmll-jueves-arena-coliseo-du-5-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61041-une-celebration-en-preparation-pour-les-30-ans-de-the-rock-a-la-wwe",
-   "https://www.catch-newz.com/wwe/newz/61040-la-wwe-offre-une-prime-de-risque-pour-aller-a-crown-jewel-2026"
+   "https://www.catch-newz.com/international/newz/61047-carte-de-new-texas-pro-wrestling-texas-contenders-series-70"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
