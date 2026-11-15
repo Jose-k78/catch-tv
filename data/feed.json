@@ -1,6 +1,20 @@
 {
- "at": "2026-11-15T14:18:18.175Z",
+ "at": "2026-11-15T15:14:19.348Z",
  "items": [
+  {
+   "t": "Quel score pour FinalSlam sur TMC ?",
+   "u": "https://www.catch-newz.com/international/newz/61326-quel-score-pour-finalslam-sur-tmc",
+   "s": "Catch-Newz",
+   "d": "2026-11-15",
+   "tags": []
+  },
+  {
+   "t": "Squeezie : « J'ai tout donné, j'espère que le divertissement aura été à la hauteur »",
+   "u": "https://www.catch-newz.com/international/newz/61328-squeezie-jai-tout-donne-jespere-que-le-divertissement-aura-ete-a-la-hauteur",
+   "s": "Catch-Newz",
+   "d": "2026-11-15",
+   "tags": []
+  },
   {
    "t": "Carte de CMLL Domingo Familiar du 15 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61277-carte-de-cmll-domingo-familiar-du-15-novembre-2026",
@@ -474,25 +488,6 @@
    "d": "2026-11-13",
    "tags": [
     "TNA"
-   ]
-  },
-  {
-   "t": "Bayley sera présente à SmackDown ce vendredi à deux semaines des Survivor Series WarGames",
-   "u": "https://www.catch-newz.com/wwe/newz/61265-bayley-sera-presente-a-smackdown-ce-vendredi-a-deux-semaines-des-survivor-series-wargames",
-   "s": "Catch-Newz",
-   "d": "2026-11-13",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
-  },
-  {
-   "t": "Joe Hendry : « Je suis dans une situation difficile en ce moment »",
-   "u": "https://www.catch-newz.com/wwe/newz/61264-joe-hendry-je-suis-dans-une-situation-difficile-en-ce-moment",
-   "s": "Catch-Newz",
-   "d": "2026-11-13",
-   "tags": [
-    "WWE"
    ]
   }
  ],
@@ -1083,6 +1078,8 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/international/newz/61326-quel-score-pour-finalslam-sur-tmc",
+   "https://www.catch-newz.com/international/newz/61328-squeezie-jai-tout-donne-jespere-que-le-divertissement-aura-ete-a-la-hauteur",
    "https://www.catch-newz.com/wwe/resultats/61306-resultats-et-streaming-aaa-lucha-libre-14-novembre-2026",
    "https://www.catch-newz.com/international/newz/61277-carte-de-cmll-domingo-familiar-du-15-novembre-2026",
    "https://www.catch-newz.com/culture/cineserie/61026-chris-jericho-aura-un-role-dans-le-film-i-am-the-teeth",
@@ -1380,13 +1377,11 @@
    "https://www.catch-newz.com/wwe/newz/61041-une-celebration-en-preparation-pour-les-30-ans-de-the-rock-a-la-wwe",
    "https://www.catch-newz.com/wwe/newz/61040-la-wwe-offre-une-prime-de-risque-pour-aller-a-crown-jewel-2026",
    "https://www.catch-newz.com/wwe/newz/61042-danhausen-bientot-en-santahausen-pour-le-temps-des-fetes",
-   "https://www.catch-newz.com/international/newz/61012-preview-tna-impact-5-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61027-carte-de-iwrg-galli-thursday-night-wrestling-du-5-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61032-the-miz-ce-que-carmelo-hayes-accomplit-aujourdhui-avec-946-est-incroyable"
+   "https://www.catch-newz.com/international/newz/61012-preview-tna-impact-5-novembre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 2 nouveaux articles lus sur la page d'accueil (2 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
