@@ -2285,6 +2285,19 @@
     "q": "start",
     "s": 0
    }
+  },
+  "el-texano-jr": {
+   "k": "AAA",
+   "r": "R",
+   "max": "SR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "El Texano Jr."
   }
  },
  "bgm": {
