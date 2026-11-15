@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14",
+ "updated": "2026-11-15",
  "items": {
   "james-storm-v3": {
    "f": "james-storm-v3.webp",
@@ -7432,9 +7432,12 @@
    ]
   },
   "angel": {
-   "f": "angel.webp",
+   "f": "angel-v2.webp",
    "n": [
     "Angel"
+   ],
+   "v": [
+    "angel.webp"
    ]
   },
   "killer-kross": {
