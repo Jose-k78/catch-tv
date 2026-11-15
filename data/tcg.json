@@ -2511,6 +2511,19 @@
    },
    "gimmick": "",
    "medalOf": "Vader"
+  },
+  "miyu-amasaki": {
+   "k": "Stardom",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Saya Kamitani"
   }
  },
  "bgm": {
