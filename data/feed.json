@@ -1,6 +1,32 @@
 {
- "at": "2026-11-15T17:12:55.662Z",
+ "at": "2026-11-15T18:05:52.635Z",
  "items": [
+  {
+   "t": "L'AEW lance le teasing du retour de Toni Storm",
+   "u": "https://www.catch-newz.com/aew/newz/61340-laew-lance-le-teasing-du-retour-de-toni-storm",
+   "s": "Catch-Newz",
+   "d": "2026-11-15",
+   "tags": [
+    "AEW"
+   ]
+  },
+  {
+   "t": "Rey Fenix et El Carnicero blessés pendant AAA Lucha Libre",
+   "u": "https://www.catch-newz.com/wwe/newz/61339-rey-fenix-et-el-carnicero-blesses-pendant-aaa-lucha-libre",
+   "s": "Catch-Newz",
+   "d": "2026-11-15",
+   "tags": [
+    "WWE",
+    "AAA"
+   ]
+  },
+  {
+   "t": "La fille d'Eddie Guerrero remporte son premier match",
+   "u": "https://www.catch-newz.com/international/newz/61332-la-fille-deddie-guerrero-remporte-son-premier-match",
+   "s": "Catch-Newz",
+   "d": "2026-11-15",
+   "tags": []
+  },
   {
    "t": "Preview : AEW Dynamite du 18 novembre 2026",
    "u": "https://www.catch-newz.com/aew/newz/61333-preview-aew-dynamite-18-novembre-2026",
@@ -10,6 +36,22 @@
     "AEW",
     "Dynamite"
    ]
+  },
+  {
+   "t": "Résultats de AEW Full Gear 2026",
+   "u": "https://www.voxcatch.fr/2026/11/15/resultats-aew-full-gear-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-15",
+   "tags": [
+    "AEW"
+   ]
+  },
+  {
+   "t": "Résultats de FinalSlam",
+   "u": "https://www.voxcatch.fr/2026/11/15/resultats-finalslam/",
+   "s": "VOXcatch",
+   "d": "2026-11-15",
+   "tags": []
   },
   {
    "t": "L'avantage WarGames sera en jeu à WWE RAW du 16 novembre",
@@ -34,22 +76,6 @@
    "t": "Résultats de TNT IGNition Aftershock 2026",
    "u": "https://www.catch-newz.com/international/resultats/61336-resultats-de-tnt-ignition-aftershock-2026",
    "s": "Catch-Newz",
-   "d": "2026-11-15",
-   "tags": []
-  },
-  {
-   "t": "Résultats de AEW Full Gear 2026",
-   "u": "https://www.voxcatch.fr/2026/11/15/resultats-aew-full-gear-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-15",
-   "tags": [
-    "AEW"
-   ]
-  },
-  {
-   "t": "Résultats de FinalSlam",
-   "u": "https://www.voxcatch.fr/2026/11/15/resultats-finalslam/",
-   "s": "VOXcatch",
    "d": "2026-11-15",
    "tags": []
   },
@@ -466,33 +492,6 @@
     "CMLL",
     "Viernes Espectacular"
    ]
-  },
-  {
-   "t": "Résultats de WWE SmackDown du 13 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-13",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
-  },
-  {
-   "t": "Preview : WWE SmackDown du 13 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-13",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
-  },
-  {
-   "t": "Carte du jour 2 du NOAH Junior Grand Prix 2 - Legacy Rise 2026",
-   "u": "https://www.catch-newz.com/international/newz/61287-carte-du-jour-2-du-noah-junior-grand-prix-2-legacy-rise-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-13",
-   "tags": []
   }
  ],
  "yt": {
@@ -1082,13 +1081,16 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/aew/newz/61340-laew-lance-le-teasing-du-retour-de-toni-storm",
+   "https://www.catch-newz.com/wwe/newz/61339-rey-fenix-et-el-carnicero-blesses-pendant-aaa-lucha-libre",
+   "https://www.catch-newz.com/international/newz/61332-la-fille-deddie-guerrero-remporte-son-premier-match",
    "https://www.catch-newz.com/aew/newz/61333-preview-aew-dynamite-18-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61334-lavantage-wargames-sera-en-jeu-a-wwe-raw-du-16-novembre",
-   "https://www.catch-newz.com/wwe/newz/61331-cm-punk-veut-continuer-a-catcher-encore-au-moins-5-ans",
    "https://www.catch-newz.com/wwe/resultats/61330-resultats-de-wwe-nxt-live-event-du-14-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61306-resultats-et-streaming-aaa-lucha-libre-14-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61336-resultats-de-tnt-ignition-aftershock-2026",
    "https://www.catch-newz.com/international/resultats/61335-resultats-de-cmll-sabado-de-coliseo-du-14-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61334-lavantage-wargames-sera-en-jeu-a-wwe-raw-du-16-novembre",
+   "https://www.catch-newz.com/wwe/newz/61331-cm-punk-veut-continuer-a-catcher-encore-au-moins-5-ans",
+   "https://www.catch-newz.com/international/resultats/61336-resultats-de-tnt-ignition-aftershock-2026",
    "https://www.catch-newz.com/international/newz/61329-ruby-hardy-fille-de-jeff-hardy-sentraine-avec-son-pere",
    "https://www.catch-newz.com/international/newz/61277-carte-de-cmll-domingo-familiar-du-15-novembre-2026",
    "https://www.catch-newz.com/international/newz/61326-quel-score-pour-finalslam-sur-tmc",
@@ -1378,10 +1380,7 @@
    "https://www.catch-newz.com/international/newz/61049-carte-de-nhb-the-chains-volume-103",
    "https://www.catch-newz.com/international/resultats/61053-resultats-de-chocopro-548",
    "https://www.catch-newz.com/international/resultats/61052-resultats-de-chocopro-547",
-   "https://www.catch-newz.com/international/newz/61051-carte-de-dradition-tastumi-fujinami-55th-celebration-dragon-expo-2026",
-   "https://www.catch-newz.com/international/newz/61037-carte-de-sendai-girls-pro-wrestling-du-6-novembre-2026",
-   "https://www.catch-newz.com/aew/newz/61045-chihiro-hashimoto-impressionnee-par-un-ancien-de-la-wwe",
-   "https://www.catch-newz.com/international/newz/61047-carte-de-new-texas-pro-wrestling-texas-contenders-series-70"
+   "https://www.catch-newz.com/international/newz/61051-carte-de-dradition-tastumi-fujinami-55th-celebration-dragon-expo-2026"
   ]
  },
  "diag": {
