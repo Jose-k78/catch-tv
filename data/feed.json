@@ -1,6 +1,20 @@
 {
- "at": "2026-11-15T01:59:40.299Z",
+ "at": "2026-11-15T02:47:55.364Z",
  "items": [
+  {
+   "t": "Combien de spectateurs pour FinalSlam ?",
+   "u": "https://www.catch-newz.com/international/newz/61320-combien-de-spectateurs-pour-finalslam",
+   "s": "Catch-Newz",
+   "d": "2026-11-15",
+   "tags": []
+  },
+  {
+   "t": "Résultats de FinalSlam",
+   "u": "https://www.voxcatch.fr/2026/11/15/resultats-finalslam/",
+   "s": "VOXcatch",
+   "d": "2026-11-15",
+   "tags": []
+  },
   {
    "t": "FinalSlam : Première réaction d'AmineMaTue après sa victoire contre Squeezie",
    "u": "https://www.catch-newz.com/international/newz/61319-finalslam-premiere-reaction-daminematue-apres-sa-victoire-contre-squeezie",
@@ -12,13 +26,6 @@
    "t": "FinalSlam : Squeezie veut déjà une revanche contre AmineMaTue",
    "u": "https://www.catch-newz.com/international/newz/61318-finalslam-squeezie-veut-deja-une-revanche-contre-aminematue",
    "s": "Catch-Newz",
-   "d": "2026-11-15",
-   "tags": []
-  },
-  {
-   "t": "Résultats de FinalSlam",
-   "u": "https://www.voxcatch.fr/2026/11/15/resultats-finalslam/",
-   "s": "VOXcatch",
    "d": "2026-11-15",
    "tags": []
   },
@@ -494,16 +501,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-12",
    "tags": []
-  },
-  {
-   "t": "Résultats de TNA Impact du 12 novembre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61259-tna-impact-12-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-12",
-   "tags": [
-    "TNA",
-    "Impact"
-   ]
   }
  ],
  "yt": {
@@ -1055,9 +1052,10 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/international/newz/61320-combien-de-spectateurs-pour-finalslam",
+   "https://www.catch-newz.com/international/resultats/61296-resultats-de-cmll-viernes-espectacular-du-13-novembre-2026",
    "https://www.catch-newz.com/international/newz/61319-finalslam-premiere-reaction-daminematue-apres-sa-victoire-contre-squeezie",
    "https://www.catch-newz.com/international/newz/61318-finalslam-squeezie-veut-deja-une-revanche-contre-aminematue",
-   "https://www.catch-newz.com/international/resultats/61296-resultats-de-cmll-viernes-espectacular-du-13-novembre-2026",
    "https://www.catch-newz.com/international/newz/61317-finalslam-match-exceptionnel-entre-squeezie-et-aminematue-un-champion-couronne",
    "https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026",
    "https://www.catch-newz.com/international/newz/61316-finalslam-nate-prince-detruit-le-reve-de-maxime-biaggi",
@@ -1353,12 +1351,11 @@
    "https://www.catch-newz.com/international/resultats/61019-resultats-du-jour-2-du-zero1-tenka-ichi-junior-tournament-2026",
    "https://www.catch-newz.com/wwe/newz/61024-la-wwe-annonce-11-nouveaux-shows-pour-debut-2027",
    "https://www.catch-newz.com/international/newz/61016-les-equipes-participantes-a-la-njpw-world-tag-league-2026-devoilees",
-   "https://www.catch-newz.com/wwe/newz/61022-wwe-crown-jewel-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
-   "https://www.catch-newz.com/wwe/newz/61020-paige-appelee-a-la-derniere-minute-pour-wwe-nxt"
+   "https://www.catch-newz.com/wwe/newz/61022-wwe-crown-jewel-2026-heure-et-chaine-pour-regarder-le-show-en-direct"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 3 nouveaux articles lus sur la page d'accueil (3 liens)",
+  "Catch-Newz": "pas de flux RSS : 2 nouveaux articles lus sur la page d'accueil (2 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
