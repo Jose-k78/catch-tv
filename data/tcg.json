@@ -2601,6 +2601,19 @@
    },
    "gimmick": "",
    "medalOf": "Lacey Lane"
+  },
+  "swerve-strickland": {
+   "k": "AEW",
+   "r": "SSR",
+   "max": "LR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Swerve Stomp",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Top Dolla"
   }
  },
  "bgm": {
