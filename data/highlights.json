@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14",
+ "updated": "2026-11-15",
  "note": "Vidéos des chaînes officielles uniquement. res = résultats (spoilers, affichés seulement à la demande). m = résumé match par match (promotions japonaises).",
  "items": {
   "WWE|Raw|2026-10-26": {
@@ -1037,6 +1037,54 @@
    ],
    "s": "Khel Now",
    "u": "https://khelnow.com/wwe/wwe-smackdown-results-winners-november-13-202611"
+  },
+  "AEW|PLE|2026-11-14": {
+   "res": [
+    "Jack Perry a battu The Beast Mortos (avant-show).",
+    "Kevin Knight, Wardlow et El Clon ont battu Jordan Cruz, Jaden Monroe et RJ Wylde (avant-show).",
+    "Big Boom! A.J., QT Marshall, Darius Martin et Matt Sydal ont battu Lance Archer, Josh Alexander, Rocky Romero et Trent Beretta (avant-show).",
+    "Queen Aminata a battu Persephone, Skye Blue et Hyan et conserve le titre TBS (avant-show).",
+    "Kazuchika Okada a battu Adam Copeland et conserve le titre International de la AEW.",
+    "The Young Bucks ont battu Mark Davis et Jake Doyle et conservent le titre mondial par équipe de la AEW.",
+    "Swerve Strickland, Kofi et Austin Creed ont battu Hangman Adam Page, Brody King et Bandido dans un Texas Death Match et remportent le titre mondial des trios de la AEW.",
+    "Kris Statlander et Harley Cameron ont battu Jamie Hayter et Alex Windsor et remportent le titre mondial féminin par équipe de la AEW.",
+    "Ilja Dragunov a battu Tommaso Ciampa et remporte le titre National de la AEW.",
+    "Mercedes Moné a battu Marina Shafir et conserve le titre mondial féminin de la AEW.",
+    "The Cut ont battu The Death Riders et The Conglomeration dans l’Anarchy in the Arena.",
+    "Will Ospreay a battu Kyle Fletcher et conserve le titre mondial de la AEW."
+   ],
+   "seg": [
+    {
+     "k": "Annonce",
+     "t": "Après sa victoire en avant-show, Jack Perry envoie un message à Samoa Joe, qui le défie pour une revanche à Dynamite le 18 novembre."
+    },
+    {
+     "k": "Autre",
+     "t": "Maya World ne peut pas rejoindre Phoenix à cause d’une interdiction de vol nationale : le match pour le titre TBS se dispute à quatre sans elle."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après la défense des Young Bucks, les Motor City Machine Guns viennent leur serrer la main, mais Jacob et Drew Kasper attaquent les deux équipes ; FTR s’en mêle et Stokely Hathaway accueille les Kasper."
+    },
+    {
+     "k": "Autre",
+     "t": "Les ceintures des trios sont redessinées avec des plaques en hommage à PAC."
+    },
+    {
+     "k": "Autre",
+     "t": "Pendant l’Anarchy in the Arena, Wheeler Yuta, Claudio Castagnoli et KeMalito interviennent ; Jay White fait le tombé sur Jon Moxley."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Avant le main event, Will Ospreay lorgne le contrat pour le titre mondial d’Andrade El Idolo avant que les deux hommes ne se serrent dans les bras."
+    },
+    {
+     "k": "Retour",
+     "t": "Après le main event, un homme masqué attaque Will Ospreay : c’est MJF, de retour pour la première fois depuis All In, qui piétine la ceinture mondiale de la AEW et s’enfuit par la foule."
+    }
+   ],
+   "s": "Wrestle Purists",
+   "u": "https://wrestlepurists.com/aew-full-gear-2026-results-mjf-returns-will-ospreay-retains/"
   }
  }
 }
