@@ -2486,6 +2486,19 @@
    },
    "gimmick": "",
    "medalOf": "Tommy Billington"
+  },
+  "christian-cage": {
+   "k": "AEW",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Killswitch",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Nick Wayne"
   }
  },
  "bgm": {
