@@ -959,9 +959,12 @@
    ]
   },
   "bravo-americano": {
-   "f": "bravo-americano.webp",
+   "f": "bravo-americano-v2.webp",
    "n": [
     "Bravo Americano"
+   ],
+   "v": [
+    "bravo-americano.webp"
    ]
   },
   "bret-hart": {
