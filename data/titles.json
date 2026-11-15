@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14",
+ "updated": "2026-11-15",
  "note": "Champions actuels : peut révéler des résultats récents.",
  "titles": [
   {
@@ -754,8 +754,14 @@
    ],
    "src": "Wikipédia",
    "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_All_Elite_Wrestling",
-   "defs": [],
-   "def": 0
+   "defs": [
+    {
+     "d": "2026-11-14",
+     "ev": "Full Gear",
+     "vs": "Kyle Fletcher"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "aew-women",
@@ -777,8 +783,14 @@
    ],
    "src": "Wikipédia",
    "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_All_Elite_Wrestling",
-   "defs": [],
-   "def": 0
+   "defs": [
+    {
+     "d": "2026-11-14",
+     "ev": "Full Gear",
+     "vs": "Marina Shafir"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "aew-intl",
@@ -800,8 +812,14 @@
    ],
    "src": "Wikipédia",
    "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_All_Elite_Wrestling",
-   "defs": [],
-   "def": 0
+   "defs": [
+    {
+     "d": "2026-11-14",
+     "ev": "Full Gear",
+     "vs": "Adam Copeland"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "aew-tnt",
@@ -859,12 +877,17 @@
    "u": "https://www.wrestleview.com/top-story/396143-aew-fright-night-dynamite-results-two-title-matches-10-28-26/",
    "defs": [
     {
+     "d": "2026-11-14",
+     "ev": "Full Gear",
+     "vs": "Persephone, Skye Blue et Hyan"
+    },
+    {
      "d": "2026-11-11",
      "ev": "Collision",
      "vs": "Hyan et Skye Blue"
     }
    ],
-   "def": 1
+   "def": 2
   },
   {
    "id": "aew-cont",
@@ -888,13 +911,22 @@
    "k": "AEW",
    "show": "",
    "n": "AEW National Championship",
-   "c": "Tommaso Ciampa",
+   "c": "Ilja Dragunov",
    "who": [
-    "Tommaso Ciampa"
+    "Ilja Dragunov"
    ],
-   "since": "2026-11-07",
-   "ev": "Collision",
+   "since": "2026-11-14",
+   "ev": "Full Gear",
    "hist": [
+    {
+     "c": "Tommaso Ciampa",
+     "who": [
+      "Tommaso Ciampa"
+     ],
+     "d": "2026-11-07",
+     "ev": "Collision",
+     "j": 7
+    },
     {
      "c": "Andrade El Ídolo",
      "d": "2026-07-26",
@@ -902,16 +934,10 @@
      "j": 104
     }
    ],
-   "src": "POST Wrestling",
-   "u": "https://www.postwrestling.com/2026/11/07/tommaso-ciampa-wins-national-championship-from-andrade-el-idolo-on-aew-collision/",
-   "defs": [
-    {
-     "d": "2026-11-11",
-     "ev": "Dynamite",
-     "vs": "« Speedball » Mike Bailey"
-    }
-   ],
-   "def": 1
+   "src": "Wrestle Purists",
+   "u": "https://wrestlepurists.com/aew-full-gear-2026-results-mjf-returns-will-ospreay-retains/",
+   "defs": [],
+   "def": 0
   },
   {
    "id": "aew-tag",
@@ -927,61 +953,82 @@
    "hist": [],
    "src": "Wikipédia",
    "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_All_Elite_Wrestling",
-   "defs": [],
-   "def": 0
+   "defs": [
+    {
+     "d": "2026-11-14",
+     "ev": "Full Gear",
+     "vs": "Mark Davis et Jake Doyle"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "aew-trios",
    "k": "AEW",
    "show": "",
    "n": "AEW World Trios Championship",
-   "c": "Hangman Page, Brody King et Bandido",
+   "c": "Swerve Strickland et The New Level (Kofi et Austin Creed)",
    "who": [
-    "Hangman Adam Page",
-    "Brody King",
-    "Bandido"
+    "Swerve Strickland",
+    "Kofi",
+    "Austin Creed"
    ],
-   "since": "2026-10-17",
-   "ev": "WrestleDream",
+   "since": "2026-11-14",
+   "ev": "Full Gear",
    "hist": [
+    {
+     "c": "Hangman Page, Brody King et Bandido",
+     "who": [
+      "Hangman Adam Page",
+      "Brody King",
+      "Bandido"
+     ],
+     "d": "2026-10-17",
+     "ev": "WrestleDream",
+     "j": 28
+    },
     {
      "c": "The New Level (Swerve Strickland, Kofi et Austin Creed)",
      "d": "",
      "ev": ""
     }
    ],
-   "src": "Wikipédia",
-   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_All_Elite_Wrestling",
-   "defs": [
-    {
-     "d": "2026-11-11",
-     "ev": "Dynamite",
-     "vs": "The New Level (Austin Creed et Kofi) (double décompte à l’extérieur)"
-    }
-   ],
-   "def": 1
+   "src": "Wrestle Purists",
+   "u": "https://wrestlepurists.com/aew-full-gear-2026-results-mjf-returns-will-ospreay-retains/",
+   "defs": [],
+   "def": 0
   },
   {
    "id": "aew-wtag",
    "k": "AEW",
    "show": "",
    "n": "AEW Women’s World Tag Team Championship",
-   "c": "The Brawling Birds (Jamie Hayter et Alex Windsor)",
+   "c": "Wrathlander (Kris Statlander et Harley Cameron)",
    "who": [
-    "Jamie Hayter",
-    "Alex Windsor"
+    "Kris Statlander",
+    "Harley Cameron"
    ],
-   "since": "2026-08-30",
-   "ev": "All In",
+   "since": "2026-11-14",
+   "ev": "Full Gear",
    "hist": [
+    {
+     "c": "The Brawling Birds (Jamie Hayter et Alex Windsor)",
+     "who": [
+      "Jamie Hayter",
+      "Alex Windsor"
+     ],
+     "d": "2026-08-30",
+     "ev": "All In",
+     "j": 76
+    },
     {
      "c": "Divine Dominion (Megan Bayne et Lena Kross)",
      "d": "",
      "ev": ""
     }
    ],
-   "src": "Wikipédia",
-   "u": "https://en.wikipedia.org/wiki/List_of_current_champions_in_All_Elite_Wrestling",
+   "src": "Wrestle Purists",
+   "u": "https://wrestlepurists.com/aew-full-gear-2026-results-mjf-returns-will-ospreay-retains/",
    "defs": [],
    "def": 0
   },
