@@ -1,6 +1,46 @@
 {
-  "updated": "2026-11-14",
+  "updated": "2026-11-15",
   "items": [
+    {
+      "id": "p-20261115-kasper-aew",
+      "d": "2026-11-15",
+      "type": "",
+      "k": "AEW",
+      "q": "Les Kasper Brothers (ex-Creed Brothers) signent à l’AEW : contre quelle équipe doivent-ils commencer ?",
+      "opts": [
+        "FTR",
+        "The Young Bucks"
+      ],
+      "other": true,
+      "end": ""
+    },
+    {
+      "id": "p-20261115-owens-zayn",
+      "d": "2026-11-15",
+      "type": "",
+      "k": "WWE",
+      "q": "Kevin Owens défie Sami Zayn à SmackDown : qui doit gagner cette nouvelle bataille ?",
+      "opts": [
+        "Kevin Owens",
+        "Sami Zayn"
+      ],
+      "other": false,
+      "end": ""
+    },
+    {
+      "id": "p-20261115-raw-4janvier",
+      "d": "2026-11-15",
+      "type": "",
+      "k": "WWE",
+      "q": "La WWE prépare un Raw spécial le 4 janvier 2027 : qu’aimerais-tu y voir ?",
+      "opts": [
+        "Un grand retour surprise",
+        "Un changement de titre",
+        "Un dream match inédit"
+      ],
+      "other": true,
+      "end": "2027-01-04"
+    },
     {
       "id": "p-20261114-wargames-femmes",
       "d": "2026-11-14",
@@ -415,19 +455,6 @@
       "end": "2026-11-06"
     },
     {
-      "id": "p-20261030-havoc-nxt",
-      "d": "2026-10-30",
-      "type": "",
-      "k": "WWE",
-      "q": "Halloween Havoc : qui sort champion de NXT ?",
-      "opts": [
-        "Grayson Waller",
-        "Tony D’Angelo"
-      ],
-      "other": false,
-      "end": "2026-10-31"
-    },
-    {
       "id": "p-20261030-fg-continental",
       "d": "2026-10-30",
       "type": "",
@@ -436,19 +463,6 @@
       "opts": [
         "Jon Moxley",
         "Jay White"
-      ],
-      "other": false,
-      "end": "2026-11-14"
-    },
-    {
-      "id": "p-20261030-fg-ospreay",
-      "d": "2026-10-30",
-      "type": "",
-      "k": "AEW",
-      "q": "Full Gear : Will Ospreay contre Kyle Fletcher, qui gagne ?",
-      "opts": [
-        "Will Ospreay",
-        "Kyle Fletcher"
       ],
       "other": false,
       "end": "2026-11-14"
@@ -465,19 +479,6 @@
       ],
       "other": false,
       "end": "2026-11-01"
-    },
-    {
-      "id": "p-20261029-dm-reigns-omega",
-      "d": "2026-10-29",
-      "k": "",
-      "type": "match",
-      "q": "Dream match : Roman Reigns contre Kenny Omega, qui gagne ?",
-      "opts": [
-        "Roman Reigns",
-        "Kenny Omega"
-      ],
-      "other": false,
-      "end": "2026-11-02"
     },
     {
       "id": "p-20261029-babies-1",
