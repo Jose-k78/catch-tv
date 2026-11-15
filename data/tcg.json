@@ -2549,6 +2549,19 @@
    },
    "gimmick": "",
    "medalOf": "CM Punk"
+  },
+  "hijo-del-villano-iii-jr": {
+   "k": "CMLL",
+   "r": "N",
+   "max": "R",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Hijo del Villano III Jr."
   }
  },
  "bgm": {
