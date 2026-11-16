@@ -2730,6 +2730,19 @@
     "q": "every3",
     "s": 0
    }
+  },
+  "carlie-bravo": {
+   "k": "AEW",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Shawn Dean"
   }
  },
  "bgm": {
