@@ -2769,6 +2769,19 @@
    },
    "gimmick": "",
    "medalOf": "Tehuti Miles"
+  },
+  "drago": {
+   "k": "AAA",
+   "r": "N",
+   "max": "R",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Drago"
   }
  },
  "bgm": {
