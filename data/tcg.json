@@ -2627,6 +2627,25 @@
    },
    "gimmick": "",
    "medalOf": "Hank Walker"
+  },
+  "rick-rude": {
+   "r": "R",
+   "max": "SR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Rick Rude",
+   "sup": true,
+   "sk": {
+    "id": "garde",
+    "v": 30,
+    "q": "start",
+    "s": 0
+   }
   }
  },
  "bgm": {
