@@ -1,5 +1,5 @@
 {
- "at": "2026-11-16T19:30:57.269Z",
+ "at": "2026-11-16T20:22:23.305Z",
  "items": [
   {
    "t": "Preview : WWE RAW du 16 novembre 2026",
@@ -12,13 +12,6 @@
    ]
   },
   {
-   "t": "''Protection (très) rapprochée'' avec CM Punk débarque sur Netflix",
-   "u": "https://www.catch-newz.com/culture/cineserie/61374-protection-tres-rapprochee-avec-cm-punk-debarque-sur-netflix",
-   "s": "Catch-Newz",
-   "d": "2026-11-16",
-   "tags": []
-  },
-  {
    "t": "Carte de CMLL Revolución De Campeones - Lunes Clasico du 16 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61344-carte-de-cmll-revolucion-de-campeones-lunes-clasico-du-16-novembre-2026",
    "s": "Catch-Newz",
@@ -26,6 +19,13 @@
    "tags": [
     "CMLL"
    ]
+  },
+  {
+   "t": "''Protection (très) rapprochée'' avec CM Punk débarque sur Netflix",
+   "u": "https://www.catch-newz.com/culture/cineserie/61374-protection-tres-rapprochee-avec-cm-punk-debarque-sur-netflix",
+   "s": "Catch-Newz",
+   "d": "2026-11-16",
+   "tags": []
   },
   {
    "t": "Le Texas Death Match était un objectif à accomplir pour Kofi",
@@ -1102,8 +1102,8 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/61358-preview-wwe-raw-16-novembre-2026",
-   "https://www.catch-newz.com/culture/cineserie/61374-protection-tres-rapprochee-avec-cm-punk-debarque-sur-netflix",
    "https://www.catch-newz.com/international/newz/61344-carte-de-cmll-revolucion-de-campeones-lunes-clasico-du-16-novembre-2026",
+   "https://www.catch-newz.com/culture/cineserie/61374-protection-tres-rapprochee-avec-cm-punk-debarque-sur-netflix",
    "https://www.catch-newz.com/aew/newz/61371-le-texas-death-match-etait-un-objectif-a-accomplir-pour-kofi",
    "https://www.catch-newz.com/wwe/newz/61370-mr-kennedy-signe-un-contrat-de-legende-avec-la-wwe",
    "https://www.catch-newz.com/international/newz/61369-les-premiers-mots-de-mister-v-apres-sa-prestation-xxl-a-finalslam",
@@ -1404,7 +1404,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 3 nouveaux articles lus sur la page d'accueil (3 liens)",
+  "Catch-Newz": "pas de flux RSS : 2 nouveaux articles lus sur la page d'accueil (2 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",

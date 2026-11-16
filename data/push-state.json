@@ -1,5 +1,5 @@
 {
- "at": "2026-11-16T18:23:01.876Z",
+ "at": "2026-11-16T20:22:23.367Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/aew/newz/60884-sheamus-je-profite-juste-de-mon-conge": "2026-11-02",
@@ -435,7 +435,9 @@
   "a:https://www.catch-newz.com/international/newz/61344-carte-de-cmll-revolucion-de-campeones-lunes-clasico-du-16-novembre-2026": "2026-11-16",
   "fd:NJPW:2026-11-16": "2026-11-16",
   "a:https://www.catch-newz.com/wwe/newz/61370-mr-kennedy-signe-un-contrat-de-legende-avec-la-wwe": "2026-11-16",
-  "a:https://www.catch-newz.com/aew/newz/61371-le-texas-death-match-etait-un-objectif-a-accomplir-pour-kofi": "2026-11-16"
+  "a:https://www.catch-newz.com/aew/newz/61371-le-texas-death-match-etait-un-objectif-a-accomplir-pour-kofi": "2026-11-16",
+  "pick:NJPW:2026-11-16": "2026-11-16",
+  "fr:2026-11-16": "2026-11-16"
  },
  "pend": {}
 }
