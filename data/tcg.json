@@ -2983,6 +2983,18 @@
    "gimmick": "",
    "medalOf": "Paul heyman",
    "k": "WWE"
+  },
+  "scorpio-sky": {
+   "r": "R",
+   "max": "SR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Christopher Daniels"
   }
  },
  "bgm": {
