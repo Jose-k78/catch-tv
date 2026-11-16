@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15",
+ "updated": "2026-11-16",
  "note": "Vidéos des chaînes officielles uniquement. res = résultats (spoilers, affichés seulement à la demande). m = résumé match par match (promotions japonaises).",
  "items": {
   "WWE|Raw|2026-10-26": {
@@ -1085,6 +1085,64 @@
    ],
    "s": "Wrestle Purists",
    "u": "https://wrestlepurists.com/aew-full-gear-2026-results-mjf-returns-will-ospreay-retains/"
+  },
+  "CMLL|Viernes Espectacular|2026-11-13": {
+   "res": [
+    "Los Viajeros del Espacio (Hombre Bala Jr., Max Star, Valiente Jr. et Futuro) ont battu Virus, Cancerbero, Carnífice et Inquisidor.",
+    "God's Eye (Syuri et Ami Sohrei) ont battu Thunder Rosa et Kira.",
+    "Rugido a battu Vegas Depredador.",
+    "Volador Jr. a battu Black Tiger.",
+    "Bandido et Brillante Jr. ont battu Bárbaro Cavernario et Yutani (2 tombés sur 3).",
+    "Le Sky Team (Místico, Máscara Dorada et Neón) a battu Hechicero, Zandokan Jr. et Ángel de Oro (2 tombés sur 3)."
+   ],
+   "seg": [
+    {
+     "k": "Retour",
+     "t": "Le Sky Team (Místico, Máscara Dorada et Neón) se reforme pour le combat principal, accompagné de KeMonito, face au trio de Hechicero accompagné de KeMalito."
+    },
+    {
+     "k": "Autre",
+     "t": "Yota Tsuji (NJPW) fait une apparition à l'Arena México, en vue de l'événement CMLL / NJPW Lucha Kingdom."
+    }
+   ],
+   "m": [
+    {
+     "t": "Huit hommes : Viajeros del Espacio contre Virus, Cancerbero, Carnífice et Inquisidor",
+     "r": "Victoire des Viajeros del Espacio."
+    },
+    {
+     "t": "Équipes féminines : God's Eye contre Thunder Rosa et Kira",
+     "r": "Syuri et Ami Sohrei l'emportent."
+    },
+    {
+     "t": "Simple : Rugido contre Vegas Depredador",
+     "r": "Victoire de Rugido."
+    },
+    {
+     "t": "Simple : Volador Jr. contre Black Tiger",
+     "r": "Victoire de Volador Jr."
+    },
+    {
+     "t": "2 tombés sur 3 : Bandido et Brillante Jr. contre Bárbaro Cavernario et Yutani",
+     "r": "Bandido et Brillante Jr. gagnent."
+    },
+    {
+     "t": "2 tombés sur 3 : Sky Team contre Hechicero, Zandokan Jr. et Ángel de Oro",
+     "r": "Le Sky Team réuni l'emporte."
+    }
+   ],
+   "s": "Fightful",
+   "u": "https://www.fightful.com/wrestling-news/cmll-viernes-espectacular-results-11-13-2026-sky-team-reunites-yota-tsuji-appears-bandido-syuri-more"
+  },
+  "AAA|Lucha Libre AAA|2026-11-14": {
+   "w": [
+    {
+     "n": "YouTube (épisode complet)",
+     "u": "https://www.youtube.com/watch?v=saYGiwAv9FU"
+    }
+   ],
+   "s": "Fightful",
+   "u": "https://www.fightful.com/wrestling-news/watch-full-episode-lucha-libre-aaa-november-14-2026"
   }
  }
 }
