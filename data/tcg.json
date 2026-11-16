@@ -2995,6 +2995,18 @@
    },
    "gimmick": "",
    "medalOf": "Christopher Daniels"
+  },
+  "wolfgang": {
+   "r": "N",
+   "max": "R",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Joe Coffey"
   }
  },
  "bgm": {
