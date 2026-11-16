@@ -2970,6 +2970,18 @@
     "q": "start",
     "s": 0
    }
+  },
+  "brock-lesnar": {
+   "r": "SSR",
+   "max": "LR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "F-5",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Paul heyman"
   }
  },
  "bgm": {
