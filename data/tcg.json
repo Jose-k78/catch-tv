@@ -3007,6 +3007,19 @@
    },
    "gimmick": "",
    "medalOf": "Joe Coffey"
+  },
+  "dmt-azul": {
+   "k": "AAA",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "DMT Azul"
   }
  },
  "bgm": {
