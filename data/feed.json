@@ -1,5 +1,5 @@
 {
- "at": "2026-11-16T18:23:01.834Z",
+ "at": "2026-11-16T19:30:57.269Z",
  "items": [
   {
    "t": "Preview : WWE RAW du 16 novembre 2026",
@@ -12,13 +12,11 @@
    ]
   },
   {
-   "t": "Le Texas Death Match était un objectif à accomplir pour Kofi",
-   "u": "https://www.catch-newz.com/aew/newz/61371-le-texas-death-match-etait-un-objectif-a-accomplir-pour-kofi",
+   "t": "''Protection (très) rapprochée'' avec CM Punk débarque sur Netflix",
+   "u": "https://www.catch-newz.com/culture/cineserie/61374-protection-tres-rapprochee-avec-cm-punk-debarque-sur-netflix",
    "s": "Catch-Newz",
    "d": "2026-11-16",
-   "tags": [
-    "AEW"
-   ]
+   "tags": []
   },
   {
    "t": "Carte de CMLL Revolución De Campeones - Lunes Clasico du 16 novembre 2026",
@@ -27,6 +25,15 @@
    "d": "2026-11-16",
    "tags": [
     "CMLL"
+   ]
+  },
+  {
+   "t": "Le Texas Death Match était un objectif à accomplir pour Kofi",
+   "u": "https://www.catch-newz.com/aew/newz/61371-le-texas-death-match-etait-un-objectif-a-accomplir-pour-kofi",
+   "s": "Catch-Newz",
+   "d": "2026-11-16",
+   "tags": [
+    "AEW"
    ]
   },
   {
@@ -466,16 +473,6 @@
    "tags": [
     "WWE",
     "SmackDown"
-   ]
-  },
-  {
-   "t": "Résultats de WWE NXT Live Event du 14 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61330-resultats-de-wwe-nxt-live-event-du-14-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-14",
-   "tags": [
-    "WWE",
-    "NXT"
    ]
   }
  ],
@@ -1105,8 +1102,9 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/61358-preview-wwe-raw-16-novembre-2026",
-   "https://www.catch-newz.com/aew/newz/61371-le-texas-death-match-etait-un-objectif-a-accomplir-pour-kofi",
+   "https://www.catch-newz.com/culture/cineserie/61374-protection-tres-rapprochee-avec-cm-punk-debarque-sur-netflix",
    "https://www.catch-newz.com/international/newz/61344-carte-de-cmll-revolucion-de-campeones-lunes-clasico-du-16-novembre-2026",
+   "https://www.catch-newz.com/aew/newz/61371-le-texas-death-match-etait-un-objectif-a-accomplir-pour-kofi",
    "https://www.catch-newz.com/wwe/newz/61370-mr-kennedy-signe-un-contrat-de-legende-avec-la-wwe",
    "https://www.catch-newz.com/international/newz/61369-les-premiers-mots-de-mister-v-apres-sa-prestation-xxl-a-finalslam",
    "https://www.catch-newz.com/international/newz/61364-jordan-oliver-finalslam",
@@ -1402,8 +1400,7 @@
    "https://www.catch-newz.com/aew/newz/61088-aew-a-battu-nxt-et-son-programme-xxl-le-4-novembre",
    "https://www.catch-newz.com/international/resultats/61078-resultats-de-sendai-girls-pro-wrestling-du-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61060-audiences-wwe-aew-et-tna-19-au-25-octobre-2026",
-   "https://www.catch-newz.com/wwe/newz/61087-wwe-smackdown-kevin-owens-rive-les-epaules-de-son-ennemi-jure-cm-punk",
-   "https://www.catch-newz.com/wwe/newz/61086-wwe-smackdown-charlotte-flair-de-retour-apres-quelques-semaines-dabsence"
+   "https://www.catch-newz.com/wwe/newz/61087-wwe-smackdown-kevin-owens-rive-les-epaules-de-son-ennemi-jure-cm-punk"
   ]
  },
  "diag": {
@@ -1414,7 +1411,7 @@
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
-  "YouTube TNA": "1 nouvelles vidéos",
+  "YouTube TNA": "0 nouvelles vidéos",
   "YouTube NJPW": "0 nouvelles vidéos",
   "YouTube Stardom": "0 nouvelles vidéos",
   "YouTube Marigold": "chaîne introuvable"
