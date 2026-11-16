@@ -2711,6 +2711,25 @@
    },
    "gimmick": "",
    "medalOf": "Fallon Henley"
+  },
+  "sid-vicious": {
+   "r": "N",
+   "max": "R",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Sid Vicious",
+   "sup": true,
+   "sk": {
+    "id": "soin",
+    "v": 20,
+    "q": "every3",
+    "s": 0
+   }
   }
  },
  "bgm": {
