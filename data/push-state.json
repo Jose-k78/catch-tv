@@ -1,5 +1,5 @@
 {
- "at": "2026-11-15T23:09:15.772Z",
+ "at": "2026-11-16T05:33:32.994Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/aew/newz/60884-sheamus-je-profite-juste-de-mon-conge": "2026-11-02",
@@ -419,10 +419,19 @@
   "a:https://www.catch-newz.com/chroniques/nos-interviews/61327-interview-exclusive-avec-princesse-lauriana-son-match-contre-kay-lee-ray-aew-grand-slam-france-ses-blessures": "2026-11-15",
   "fr:2026-11-15": "2026-11-15",
   "pick:TNA:2026-11-15": "2026-11-15",
-  "a:https://www.catch-newz.com/wwe/newz/61358-preview-wwe-raw-16-novembre-2026": "2026-11-16"
+  "a:https://www.catch-newz.com/wwe/newz/61358-preview-wwe-raw-16-novembre-2026": "2026-11-16",
+  "a:https://www.catch-newz.com/international/resultats/61359-resultats-tna-destination-x-2026": "2026-11-16"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
+   {
+    "cat": "info",
+    "title": "📰 Nouvelle info · Catch-Newz",
+    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "1 nouvelle info"
+   },
    {
     "cat": "info",
     "title": "📰 Nouvelle info · Catch-Newz",
