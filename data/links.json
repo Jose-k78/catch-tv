@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T22:50:11.654Z",
+ "updated": "2026-11-16T13:38:21.369Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "m:statlight kid vs suzu suzuki": [
@@ -341,6 +341,14 @@
     "u": "https://vksport.vkvideo.ru/video-54361599_456301494",
     "p": "VK",
     "at": "2026-11-15"
+   }
+  ],
+  "ev:Marigold|PLE|2026-11-14": [
+   {
+    "t": "",
+    "u": "https://vkvideo.ru/video-217831186_456241601",
+    "p": "VK",
+    "at": "2026-11-16"
    }
   ]
  }
