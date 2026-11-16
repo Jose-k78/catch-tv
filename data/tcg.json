@@ -2795,6 +2795,19 @@
    },
    "gimmick": "",
    "medalOf": "Bestia Negra"
+  },
+  "persephone": {
+   "k": "AEW · CMLL",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Opportunist",
+   "al": "heel",
+   "fin": {
+    "n": "Lasso from El Paso",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Persephone"
   }
  },
  "bgm": {
