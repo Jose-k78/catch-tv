@@ -1,7 +1,43 @@
 {
-  "updated": "2026-11-15",
+  "updated": "2026-11-16",
   "note": "Une storyline par jour (la plus récente en premier) : grandes histoires, rivalités, anecdotes de coulisses, faits marquants. txt = paragraphes écrits en français à partir des sources ; v = vidéos officielles ; q = recherches sur la chaîne officielle.",
   "items": [
+    {
+      "id": "ss-2003-austin",
+      "d": "2026-11-16",
+      "type": "Fait marquant",
+      "t": "Survivor Series 2003 : la nuit où Stone Cold a perdu son poste et l’Undertaker a été enterré vivant",
+      "k": "WWE",
+      "years": "2003",
+      "hook": "Un 16 novembre à Dallas, en une seule soirée, la WWE a « mis à la retraite » Stone Cold Steve Austin et enterré l’Undertaker sous une pelleteuse.",
+      "txt": [
+        "Fin 2003, Stone Cold Steve Austin ne combat plus : ses blessures au cou l’ont éloigné du ring et il est devenu co-manager général de Raw, aux côtés d’Eric Bischoff. Interdit de toute violence physique, il passe son temps à se disputer avec son rival de bureau. Les deux hommes décident de régler leurs comptes lors des Survivor Series du 16 novembre 2003, à l’American Airlines Center de Dallas, devant environ 13 500 spectateurs.",
+        "L’enjeu est simple : deux équipes de cinq s’affrontent. Si l’équipe d’Austin perd, il doit quitter son poste ; si elle gagne, il retrouve le droit de se battre. Pour Austin : Shawn Michaels, Rob Van Dam, Booker T et les Dudley Boyz. Pour Bischoff : Chris Jericho, Christian, Randy Orton, Scott Steiner et Mark Henry.",
+        "Le match tourne au récital de Shawn Michaels, qui se retrouve seul contre plusieurs adversaires et refuse d’abandonner, le visage en sang. Mais au moment où il semble pouvoir renverser la situation, Batista surgit, lui place une Batista Bomb, et Randy Orton n’a plus qu’à faire le tombé. L’équipe de Bischoff gagne après plus de 27 minutes, et Austin doit partir.",
+        "La même soirée réserve un autre choc : Mr. McMahon affronte l’Undertaker dans un match « Buried Alive », où il faut enterrer son adversaire dans une tombe. Alors que l’Undertaker domine, son frère Kane intervient, le jette dans la fosse, et McMahon termine le travail aux commandes d’une pelleteuse. C’est la fin du personnage du « American Badass » à moto : l’Undertaker reviendra au printemps 2004 dans la peau du Deadman.",
+        "Le lendemain, Austin fait ses adieux à Raw dans un discours présenté comme la fin de sa carrière. L’absence ne dure pourtant qu’un mois et demi : le 29 décembre 2003, il revient en « shérif » de la WWE, avant de quitter vraiment la télévision hebdomadaire quelques mois plus tard, après WrestleMania XX. Ce soir-là, Goldberg avait aussi conservé son titre mondial face à Triple H."
+      ],
+      "key": "Batista porte une Batista Bomb à Shawn Michaels et Randy Orton fait le tombé : Stone Cold perd son poste de manager général de Raw.",
+      "v": [],
+      "q": [
+        "Survivor Series 2003 Team Austin vs Team Bischoff full match",
+        "Undertaker vs Mr. McMahon Buried Alive Survivor Series 2003"
+      ],
+      "src": [
+        {
+          "n": "Wikipédia (en) — Survivor Series (2003)",
+          "u": "https://en.wikipedia.org/wiki/Survivor_Series_(2003)"
+        },
+        {
+          "n": "F4W Online — Daily Pro Wrestling History (11/16)",
+          "u": "https://www.f4wonline.com/news/other-wrestling/daily-pro-wrestling-history-11-16-wwe-survivor-series-2003"
+        },
+        {
+          "n": "KB Wrestling Reviews",
+          "u": "https://kbwrestlingreviews.com/2011/11/12/history-of-survivor-series-count-up-2003-austin-vs-bischoff/"
+        }
+      ]
+    },
     {
       "id": "deadly-game-1998",
       "d": "2026-11-15",
