@@ -19,13 +19,14 @@
    "r": "SSR",
    "max": "UR",
    "arch": "Aggressor",
-   "al": "",
+   "al": "face",
    "fin": {
     "n": "Spear",
     "e": "Boost"
    },
    "gimmick": "",
-   "medalOf": "Kevin Owens"
+   "medalOf": "Kevin Owens",
+   "k": "WWE"
   },
   "mayu-iwatani": {
    "r": "SSR",
