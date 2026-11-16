@@ -2782,6 +2782,19 @@
    },
    "gimmick": "",
    "medalOf": "Drago"
+  },
+  "bestia-negra": {
+   "k": "CMLL",
+   "r": "N",
+   "max": "R",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Bestia Negra"
   }
  },
  "bgm": {
