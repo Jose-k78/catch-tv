@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15",
+ "updated": "2026-11-16",
  "note": "Réglages TCCCG du modo (cartes, persos, taux, objets, boosters, combats, musiques, assets). Modifié depuis l’app (⚙️ Modo TCCCG).",
  "cards": {
   "ace-austin": {
@@ -2614,6 +2614,19 @@
    },
    "gimmick": "",
    "medalOf": "Top Dolla"
+  },
+  "hank-walker": {
+   "k": "WWE",
+   "r": "R",
+   "max": "SR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Hank Walker"
   }
  },
  "bgm": {
