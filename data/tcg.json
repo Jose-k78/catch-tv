@@ -2659,6 +2659,19 @@
    },
    "gimmick": "",
    "medalOf": "Mayumi Ozaki"
+  },
+  "maika": {
+   "k": "Stardom",
+   "r": "SR",
+   "max": "UR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Michinoku Driver",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Giulia"
   }
  },
  "bgm": {
