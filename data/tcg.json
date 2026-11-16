@@ -2848,6 +2848,19 @@
    },
    "gimmick": "",
    "medalOf": "Nick Jackson"
+  },
+  "nick-jackson": {
+   "k": "AEW",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Meltzer Driver",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Matt Jackson"
   }
  },
  "bgm": {
