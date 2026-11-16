@@ -1,14 +1,12 @@
 {
- "at": "2026-11-16T11:21:10.200Z",
+ "at": "2026-11-16T13:35:25.576Z",
  "items": [
   {
-   "t": "Iyo Sky absente des Survivor Series WarGames pour la première fois cette année ?",
-   "u": "https://www.catch-newz.com/wwe/newz/61366-iyo-sky-absente-des-survivor-series-wargames-pour-la-premiere-fois-cette-annee",
+   "t": "Brawks a eu seulement 10 jours pour devenir catcheur",
+   "u": "https://www.catch-newz.com/international/newz/61367-brawks-a-eu-seulement-10-jours-pour-devenir-catcheur",
    "s": "Catch-Newz",
    "d": "2026-11-16",
-   "tags": [
-    "WWE"
-   ]
+   "tags": []
   },
   {
    "t": "Preview : WWE RAW du 16 novembre 2026",
@@ -28,6 +26,31 @@
    "tags": [
     "WWE",
     "NXT"
+   ]
+  },
+  {
+   "t": "Carte de CMLL Revolución De Campeones - Lunes Clasico du 16 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61344-carte-de-cmll-revolucion-de-campeones-lunes-clasico-du-16-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-16",
+   "tags": [
+    "CMLL"
+   ]
+  },
+  {
+   "t": "Résultats de Beyond Wrestling Open RI 72",
+   "u": "https://www.catch-newz.com/international/resultats/61356-resultats-de-beyond-wrestling-open-ri-72",
+   "s": "Catch-Newz",
+   "d": "2026-11-16",
+   "tags": []
+  },
+  {
+   "t": "Iyo Sky absente des Survivor Series WarGames pour la première fois cette année ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61366-iyo-sky-absente-des-survivor-series-wargames-pour-la-premiere-fois-cette-annee",
+   "s": "Catch-Newz",
+   "d": "2026-11-16",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -455,29 +478,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-14",
    "tags": []
-  },
-  {
-   "t": "Résultats de West Coast Pro 8",
-   "u": "https://www.catch-newz.com/international/resultats/61311-resultats-de-west-coast-pro-8",
-   "s": "Catch-Newz",
-   "d": "2026-11-14",
-   "tags": []
-  },
-  {
-   "t": "Résultats de FinalSlam 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61304-resultats-de-finalslam-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-14",
-   "tags": []
-  },
-  {
-   "t": "TNA Destination X 2026 est maintenu, mais avec des changements",
-   "u": "https://www.catch-newz.com/international/newz/61309-tna-destination-x-2026-est-maintenu-mais-avec-des-changements",
-   "s": "Catch-Newz",
-   "d": "2026-11-14",
-   "tags": [
-    "TNA"
-   ]
   }
  ],
  "yt": {
@@ -1093,9 +1093,12 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/wwe/newz/61366-iyo-sky-absente-des-survivor-series-wargames-pour-la-premiere-fois-cette-annee",
+   "https://www.catch-newz.com/international/newz/61367-brawks-a-eu-seulement-10-jours-pour-devenir-catcheur",
    "https://www.catch-newz.com/wwe/newz/61358-preview-wwe-raw-16-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61228-preview-wwe-nxt-17-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61344-carte-de-cmll-revolucion-de-campeones-lunes-clasico-du-16-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61356-resultats-de-beyond-wrestling-open-ri-72",
+   "https://www.catch-newz.com/wwe/newz/61366-iyo-sky-absente-des-survivor-series-wargames-pour-la-premiere-fois-cette-annee",
    "https://www.catch-newz.com/international/resultats/61350-resultats-de-bjw-du-30-octobre-2026",
    "https://www.catch-newz.com/aew/newz/61365-les-premiers-mots-dilja-dragunov-apres-son-sacre-a-aew-full-gear",
    "https://www.catch-newz.com/wwe/newz/61363-ethan-page-toutes-les-federations-precedentes-nont-pas-su-reconnaitre-qui-jetais-ni-ce-que-japportais",
@@ -1389,14 +1392,11 @@
    "https://www.catch-newz.com/wwe/newz/61082-wwe-crown-jewel-les-commentateurs-ne-seront-pas-en-arabie-saoudite",
    "https://www.catch-newz.com/international/newz/61085-carte-de-mcw-pro-wrestling-2026-chesapeake-beach",
    "https://www.catch-newz.com/international/newz/61081-carte-de-rcw-no-one-will-survive-2026",
-   "https://www.catch-newz.com/international/resultats/61072-resultats-de-cmll-jueves-arena-coliseo-du-5-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61080-carte-de-mcw-endgame-2026",
-   "https://www.catch-newz.com/international/newz/61079-carte-de-iwa-boiling-point-2026",
-   "https://www.catch-newz.com/international/resultats/61071-resultats-de-chocopro-549-back-to-new"
+   "https://www.catch-newz.com/international/resultats/61072-resultats-de-cmll-jueves-arena-coliseo-du-5-novembre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
