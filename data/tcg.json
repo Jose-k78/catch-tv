@@ -2809,6 +2809,19 @@
    },
    "gimmick": "",
    "medalOf": "Persephone"
+  },
+  "yoshi-hashi": {
+   "k": "NJPW",
+   "r": "R",
+   "max": "SR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Karma",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Hirooki Goto"
   }
  },
  "bgm": {
