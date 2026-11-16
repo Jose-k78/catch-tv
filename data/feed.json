@@ -1,5 +1,5 @@
 {
- "at": "2026-11-16T17:09:01.250Z",
+ "at": "2026-11-16T18:23:01.834Z",
  "items": [
   {
    "t": "Preview : WWE RAW du 16 novembre 2026",
@@ -12,12 +12,12 @@
    ]
   },
   {
-   "t": "Mr. Kennedy signe un contrat de légende avec la WWE",
-   "u": "https://www.catch-newz.com/wwe/newz/61370-mr-kennedy-signe-un-contrat-de-legende-avec-la-wwe",
+   "t": "Le Texas Death Match était un objectif à accomplir pour Kofi",
+   "u": "https://www.catch-newz.com/aew/newz/61371-le-texas-death-match-etait-un-objectif-a-accomplir-pour-kofi",
    "s": "Catch-Newz",
    "d": "2026-11-16",
    "tags": [
-    "WWE"
+    "AEW"
    ]
   },
   {
@@ -27,6 +27,15 @@
    "d": "2026-11-16",
    "tags": [
     "CMLL"
+   ]
+  },
+  {
+   "t": "Mr. Kennedy signe un contrat de légende avec la WWE",
+   "u": "https://www.catch-newz.com/wwe/newz/61370-mr-kennedy-signe-un-contrat-de-legende-avec-la-wwe",
+   "s": "Catch-Newz",
+   "d": "2026-11-16",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -467,16 +476,6 @@
    "tags": [
     "WWE",
     "NXT"
-   ]
-  },
-  {
-   "t": "Résultats et streaming de AAA Lucha Libre du 14 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61306-resultats-et-streaming-aaa-lucha-libre-14-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-14",
-   "tags": [
-    "WWE",
-    "AAA"
    ]
   }
  ],
@@ -1089,6 +1088,10 @@
    {
     "id": "4UNHg23wB8k",
     "t": "Elijah's Concert Leads to IMPROMPTU Match | TNA Destination X 2026 Highlights"
+   },
+   {
+    "id": "FCNxxdevPbo",
+    "t": "Mustafa Ali SNAPS and DESTROYS Frankie Kazarian | TNA Destination X 2026 Highlights"
    }
   ]
  },
@@ -1102,8 +1105,9 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/61358-preview-wwe-raw-16-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61370-mr-kennedy-signe-un-contrat-de-legende-avec-la-wwe",
+   "https://www.catch-newz.com/aew/newz/61371-le-texas-death-match-etait-un-objectif-a-accomplir-pour-kofi",
    "https://www.catch-newz.com/international/newz/61344-carte-de-cmll-revolucion-de-campeones-lunes-clasico-du-16-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61370-mr-kennedy-signe-un-contrat-de-legende-avec-la-wwe",
    "https://www.catch-newz.com/international/newz/61369-les-premiers-mots-de-mister-v-apres-sa-prestation-xxl-a-finalslam",
    "https://www.catch-newz.com/international/newz/61364-jordan-oliver-finalslam",
    "https://www.catch-newz.com/international/newz/61368-finalslam-des-streamers-se-sont-desistes-en-decouvrant-quil-fallait-un-entrainement-incroyable",
@@ -1399,8 +1403,7 @@
    "https://www.catch-newz.com/international/resultats/61078-resultats-de-sendai-girls-pro-wrestling-du-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61060-audiences-wwe-aew-et-tna-19-au-25-octobre-2026",
    "https://www.catch-newz.com/wwe/newz/61087-wwe-smackdown-kevin-owens-rive-les-epaules-de-son-ennemi-jure-cm-punk",
-   "https://www.catch-newz.com/wwe/newz/61086-wwe-smackdown-charlotte-flair-de-retour-apres-quelques-semaines-dabsence",
-   "https://www.catch-newz.com/wwe/resultats/61059-resultats-de-wwe-road-to-survivor-series-du-5-novembre-2026"
+   "https://www.catch-newz.com/wwe/newz/61086-wwe-smackdown-charlotte-flair-de-retour-apres-quelques-semaines-dabsence"
   ]
  },
  "diag": {
@@ -1409,9 +1412,9 @@
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
-  "YouTube ROH": "1 nouvelles vidéos",
+  "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
-  "YouTube TNA": "0 nouvelles vidéos",
+  "YouTube TNA": "1 nouvelles vidéos",
   "YouTube NJPW": "0 nouvelles vidéos",
   "YouTube Stardom": "0 nouvelles vidéos",
   "YouTube Marigold": "chaîne introuvable"
