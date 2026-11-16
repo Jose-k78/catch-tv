@@ -1,6 +1,45 @@
 {
-  "updated": "2026-11-15",
+  "updated": "2026-11-16",
   "items": [
+    {
+      "id": "p-20261116-toni-storm",
+      "d": "2026-11-16",
+      "type": "",
+      "k": "AEW",
+      "q": "L’AEW annonce le retour de Toni Storm : contre qui doit-elle repartir en rivalité ?",
+      "opts": [
+        "Mercedes Moné",
+        "Marina Shafir"
+      ],
+      "other": true,
+      "end": ""
+    },
+    {
+      "id": "p-20261116-punk-5ans",
+      "d": "2026-11-16",
+      "type": "",
+      "k": "WWE",
+      "q": "CM Punk veut catcher encore au moins 5 ans : tu y crois ?",
+      "opts": [
+        "Oui",
+        "Non"
+      ],
+      "other": false,
+      "end": ""
+    },
+    {
+      "id": "p-20261116-dream-austin-moxley",
+      "d": "2026-11-16",
+      "type": "match",
+      "k": "",
+      "q": "Dream match : Stone Cold Steve Austin contre Jon Moxley, qui gagne ?",
+      "opts": [
+        "Stone Cold Steve Austin",
+        "Jon Moxley"
+      ],
+      "other": false,
+      "end": "2026-11-19"
+    },
     {
       "id": "p-20261115-kasper-aew",
       "d": "2026-11-15",
@@ -416,32 +455,6 @@
       "end": "2026-11-08"
     },
     {
-      "id": "p-20261104-cj-liv-chelsea",
-      "d": "2026-11-04",
-      "type": "",
-      "k": "WWE",
-      "q": "Crown Jewel : Liv Morgan contre Chelsea Green, qui gagne ?",
-      "opts": [
-        "Liv Morgan",
-        "Chelsea Green"
-      ],
-      "other": false,
-      "end": "2026-11-07"
-    },
-    {
-      "id": "p-20261104-cena-classic",
-      "d": "2026-11-04",
-      "type": "",
-      "k": "WWE",
-      "q": "Qui va remporter le John Cena Classic ?",
-      "opts": [
-        "CM Punk",
-        "Oba Femi"
-      ],
-      "other": true,
-      "end": "2026-12-14"
-    },
-    {
       "id": "p-20261104-babies",
       "d": "2026-11-04",
       "type": "babies",
@@ -453,19 +466,6 @@
       ],
       "other": false,
       "end": "2026-11-06"
-    },
-    {
-      "id": "p-20261030-fg-continental",
-      "d": "2026-10-30",
-      "type": "",
-      "k": "AEW",
-      "q": "Full Gear : qui gagne le titre Continental ?",
-      "opts": [
-        "Jon Moxley",
-        "Jay White"
-      ],
-      "other": false,
-      "end": "2026-11-14"
     },
     {
       "id": "p-20261030-babies",
