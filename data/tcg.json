@@ -2932,6 +2932,19 @@
    },
    "gimmick": "",
    "medalOf": "Sonya Deville"
+  },
+  "jessy-jackson": {
+   "k": "AAA",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Jessy Jackson"
   }
  },
  "bgm": {
