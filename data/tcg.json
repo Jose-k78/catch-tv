@@ -2861,6 +2861,19 @@
    },
    "gimmick": "",
    "medalOf": "Matt Jackson"
+  },
+  "cedric-alexander": {
+   "k": "TNA",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Lumbar Check",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "MVP"
   }
  },
  "bgm": {
