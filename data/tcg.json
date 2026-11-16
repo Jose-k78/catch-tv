@@ -3020,6 +3020,25 @@
    },
    "gimmick": "",
    "medalOf": "DMT Azul"
+  },
+  "masato-yoshino": {
+   "r": "N",
+   "max": "R",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Masato Yoshino",
+   "sup": true,
+   "sk": {
+    "id": "coup",
+    "v": 25,
+    "q": "start",
+    "s": 0
+   }
   }
  },
  "bgm": {
