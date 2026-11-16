@@ -1,5 +1,5 @@
 {
- "at": "2026-11-16T05:33:32.994Z",
+ "at": "2026-11-16T07:08:07.143Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/aew/newz/60884-sheamus-je-profite-juste-de-mon-conge": "2026-11-02",
@@ -420,26 +420,12 @@
   "fr:2026-11-15": "2026-11-15",
   "pick:TNA:2026-11-15": "2026-11-15",
   "a:https://www.catch-newz.com/wwe/newz/61358-preview-wwe-raw-16-novembre-2026": "2026-11-16",
-  "a:https://www.catch-newz.com/international/resultats/61359-resultats-tna-destination-x-2026": "2026-11-16"
+  "a:https://www.catch-newz.com/international/resultats/61359-resultats-tna-destination-x-2026": "2026-11-16",
+  "a:https://www.catch-newz.com/international/newz/61360-ricky-sosa-represente-fierement-la-belgique-a-tna-destination-x-2026": "2026-11-16",
+  "poll:p-20261116-toni-storm": "2026-11-16",
+  "poll:p-20261116-punk-5ans": "2026-11-16",
+  "poll:p-20261116-dream-austin-moxley": "2026-11-16",
+  "story:ss-2003-austin": "2026-11-16"
  },
- "pend": {
-  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
-   {
-    "cat": "info",
-    "title": "📰 Nouvelle info · Catch-Newz",
-    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "1 nouvelle info"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Nouvelle info · Catch-Newz",
-    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "1 nouvelle info"
-   }
-  ]
- }
+ "pend": {}
 }

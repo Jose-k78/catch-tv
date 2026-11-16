@@ -1,9 +1,9 @@
 {
- "at": "2026-11-16T05:33:32.936Z",
+ "at": "2026-11-16T07:08:07.096Z",
  "items": [
   {
-   "t": "Résultats de TNA Destination X 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61359-resultats-tna-destination-x-2026",
+   "t": "Ricky Sosa représente fièrement la Belgique à TNA Destination X 2026",
+   "u": "https://www.catch-newz.com/international/newz/61360-ricky-sosa-represente-fierement-la-belgique-a-tna-destination-x-2026",
    "s": "Catch-Newz",
    "d": "2026-11-16",
    "tags": [
@@ -38,6 +38,15 @@
    "tags": [
     "AEW",
     "Dynamite"
+   ]
+  },
+  {
+   "t": "Résultats de TNA Destination X 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61359-resultats-tna-destination-x-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-16",
+   "tags": [
+    "TNA"
    ]
   },
   {
@@ -462,13 +471,6 @@
   {
    "t": "Les ceintures de FinalSlam dévoilées",
    "u": "https://www.catch-newz.com/international/newz/61299-les-ceintures-de-finalslam-devoilees",
-   "s": "Catch-Newz",
-   "d": "2026-11-14",
-   "tags": []
-  },
-  {
-   "t": "Résultats de Beyond Wrestling Open Series 250",
-   "u": "https://www.catch-newz.com/international/resultats/61297-resultats-de-beyond-wrestling-open-series-250",
    "s": "Catch-Newz",
    "d": "2026-11-14",
    "tags": []
@@ -1061,12 +1063,14 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/international/resultats/61359-resultats-tna-destination-x-2026",
+   "https://www.catch-newz.com/international/newz/61360-ricky-sosa-represente-fierement-la-belgique-a-tna-destination-x-2026",
    "https://www.catch-newz.com/wwe/newz/61358-preview-wwe-raw-16-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61228-preview-wwe-nxt-17-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61333-preview-aew-dynamite-18-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61330-resultats-de-wwe-nxt-live-event-du-14-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61350-resultats-de-bjw-du-30-octobre-2026",
    "https://www.catch-newz.com/international/resultats/61357-resultats-de-unagi-sayaka-produce-du-8-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61359-resultats-tna-destination-x-2026",
    "https://www.catch-newz.com/international/newz/61355-finalslam-a-t-il-battu-un-record-historique-pour-le-catch",
    "https://www.catch-newz.com/international/newz/61351-squeezie-montre-un-619-reussi-en-entrainement-et-sexcuse",
    "https://www.catch-newz.com/international/resultats/61354-resultats-de-aull-dinamita-pura",
@@ -1358,13 +1362,11 @@
    "https://www.catch-newz.com/wwe/newz/61070-ambassade-americaine-felicite-la-wwe-pour-crown-jewel-2026",
    "https://www.catch-newz.com/wwe/newz/61067-crown-jewel-2026-aura-bien-lieu-ce-samedi-en-arabie-saoudite-que-faut-il-en-penser",
    "https://www.catch-newz.com/international/resultats/61054-tna-impact-5-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61066-natalya-carmella-devrait-revenir-et-faire-quelque-chose-damusant-a-la-wwe",
-   "https://www.catch-newz.com/aew/newz/61044-preview-roh-du-5-novembre-2026",
-   "https://www.catch-newz.com/aew/resultats/60992-aew-dynamite-blood-and-guts-4-novembre-2026"
+   "https://www.catch-newz.com/wwe/newz/61066-natalya-carmella-devrait-revenir-et-faire-quelque-chose-damusant-a-la-wwe"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
