@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15",
+ "updated": "2026-11-16",
  "note": "Catcheurs suivis (champions, cartes annoncées, favoris des membres) et catcheurs à découvrir (disc = true, toutes fédérations et époques). txt = petit résumé en français, era = époque, ref = matchs de référence, last = 3 derniers matchs (r = résultat, spoiler), v = vidéo YouTube d'une chaîne officielle.",
  "items": {
   "Roman Reigns": {
@@ -1886,6 +1886,69 @@
    "from": "Santiago du Chili (Chili)",
    "debut": "2015",
    "fin": "Double Chickenwing Facebuster, Rolling Thunder X-Factor, Rolling Senton"
+  },
+  "Raven": {
+   "k": "ECW · WCW · WWF · TNA",
+   "era": "1988–2023",
+   "disc": true,
+   "a": [
+    "Johnny Polo",
+    "Scotty Flamingo"
+   ],
+   "from": "Short Hills (New Jersey)",
+   "ht": "1,85 m",
+   "wt": "107 kg",
+   "debut": "20 février 1988",
+   "fin": "Evenflow DDT, Raven Effect DDT",
+   "teams": "Raven's Nest (ECW), The Flock (WCW), The Gathering (TNA), Serotonin (TNA)",
+   "trainer": "Larry Sharpe (Monster Factory)",
+   "txt": "Figure sombre et torturée de l’ECW des années 1990, chef du Raven's Nest et deux fois champion du monde de l’ECW. Il a ensuite mené The Flock à la WCW, accumulé les règnes de champion Hardcore à la WWF et remporté le titre mondial NWA à la TNA en 2005.",
+   "tt": [
+    {
+     "t": "ECW World Heavyweight Championship",
+     "k": "ECW",
+     "x": 2
+    },
+    {
+     "t": "ECW World Tag Team Championship",
+     "k": "ECW",
+     "x": 4
+    },
+    {
+     "t": "WCW United States Heavyweight Championship",
+     "k": "WCW",
+     "x": 1
+    },
+    {
+     "t": "WCW World Tag Team Championship",
+     "k": "WCW",
+     "x": 1
+    },
+    {
+     "t": "WCW Light Heavyweight Championship",
+     "k": "WCW",
+     "x": 1
+    },
+    {
+     "t": "NWA World Heavyweight Championship",
+     "k": "TNA",
+     "x": 1
+    }
+   ],
+   "ref": [
+    {
+     "t": "Raven contre Tommy Dreamer — Loser Leaves ECW",
+     "ev": "Wrestlepalooza, 1997"
+    },
+    {
+     "t": "Raven contre Shane Douglas — Hair vs. Hair",
+     "ev": "NWA-TNA Weekly PPV #62, 2003"
+    },
+    {
+     "t": "Raven contre Sean Waltman",
+     "ev": "Final Resolution, 2006"
+    }
+   ]
   }
  }
 }
