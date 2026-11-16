@@ -2756,6 +2756,19 @@
    },
    "gimmick": "",
    "medalOf": "Great-O-Khan"
+  },
+  "tehuti-miles": {
+   "k": "ROH",
+   "r": "N",
+   "max": "R",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Tehuti Miles"
   }
  },
  "bgm": {
