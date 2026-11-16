@@ -1,5 +1,5 @@
 {
- "at": "2026-11-15T23:09:15.722Z",
+ "at": "2026-11-16T00:17:13.891Z",
  "items": [
   {
    "t": "Preview : WWE RAW du 16 novembre 2026",
@@ -10,20 +10,6 @@
     "WWE",
     "Raw"
    ]
-  },
-  {
-   "t": "FinalSlam a-t-il battu un record historique pour le catch ?",
-   "u": "https://www.catch-newz.com/international/newz/61355-finalslam-a-t-il-battu-un-record-historique-pour-le-catch",
-   "s": "Catch-Newz",
-   "d": "2026-11-16",
-   "tags": []
-  },
-  {
-   "t": "Squeezie montre un 619 réussi en entrainement et s'excuse",
-   "u": "https://www.catch-newz.com/international/newz/61351-squeezie-montre-un-619-reussi-en-entrainement-et-sexcuse",
-   "s": "Catch-Newz",
-   "d": "2026-11-16",
-   "tags": []
   },
   {
    "t": "Preview : WWE NXT du 17 novembre 2026",
@@ -44,6 +30,20 @@
     "AEW",
     "Dynamite"
    ]
+  },
+  {
+   "t": "FinalSlam a-t-il battu un record historique pour le catch ?",
+   "u": "https://www.catch-newz.com/international/newz/61355-finalslam-a-t-il-battu-un-record-historique-pour-le-catch",
+   "s": "Catch-Newz",
+   "d": "2026-11-16",
+   "tags": []
+  },
+  {
+   "t": "Squeezie montre un 619 réussi en entrainement et s'excuse",
+   "u": "https://www.catch-newz.com/international/newz/61351-squeezie-montre-un-619-reussi-en-entrainement-et-sexcuse",
+   "s": "Catch-Newz",
+   "d": "2026-11-16",
+   "tags": []
   },
   {
    "t": "Résultats de AULL Dinamita Pura",
@@ -1063,11 +1063,11 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/61358-preview-wwe-raw-16-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61355-finalslam-a-t-il-battu-un-record-historique-pour-le-catch",
-   "https://www.catch-newz.com/international/newz/61351-squeezie-montre-un-619-reussi-en-entrainement-et-sexcuse",
    "https://www.catch-newz.com/wwe/newz/61228-preview-wwe-nxt-17-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61333-preview-aew-dynamite-18-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61330-resultats-de-wwe-nxt-live-event-du-14-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61355-finalslam-a-t-il-battu-un-record-historique-pour-le-catch",
+   "https://www.catch-newz.com/international/newz/61351-squeezie-montre-un-619-reussi-en-entrainement-et-sexcuse",
    "https://www.catch-newz.com/international/resultats/61354-resultats-de-aull-dinamita-pura",
    "https://www.catch-newz.com/international/newz/61348-carte-de-arena-del-valle-carnaval-2026",
    "https://www.catch-newz.com/international/resultats/61352-resultats-du-jour-2-de-dg-the-gate-of-evolution-2026-partie-1",
@@ -1365,7 +1365,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
