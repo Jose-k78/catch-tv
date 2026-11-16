@@ -2919,6 +2919,19 @@
    },
    "gimmick": "",
    "medalOf": "Chris Jericho"
+  },
+  "shayna-baszler": {
+   "k": "TNA",
+   "r": "SR",
+   "max": "UR",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Kirifuda Clutch",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Sonya Deville"
   }
  },
  "bgm": {
