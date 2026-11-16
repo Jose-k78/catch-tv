@@ -2893,6 +2893,19 @@
     "q": "start",
     "s": 0
    }
+  },
+  "chris-carter": {
+   "k": "AAA",
+   "r": "N",
+   "max": "R",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Chris Carter"
   }
  },
  "bgm": {
