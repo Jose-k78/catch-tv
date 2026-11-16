@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15",
+ "updated": "2026-11-16",
  "items": {
   "swerve-strickland-v2": {
    "f": "swerve-strickland-v2.webp",
@@ -3788,13 +3788,13 @@
    ]
   },
   "lainey-reid": {
-   "f": "lainey-reid.webp",
+   "f": "lainey-reid-v3.webp",
    "n": [
     "Lainey Reid"
    ],
    "v": [
-    "lainey-reid-v2.webp",
-    "lainey-reid-v3.webp"
+    "lainey-reid.webp",
+    "lainey-reid-v2.webp"
    ]
   },
   "lance-archer": {
