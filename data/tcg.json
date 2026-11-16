@@ -2874,6 +2874,25 @@
    },
    "gimmick": "",
    "medalOf": "MVP"
+  },
+  "antonio-inoki": {
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Enzuigiri",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Antonio Inoki",
+   "sup": true,
+   "sk": {
+    "id": "coup",
+    "v": 25,
+    "q": "start",
+    "s": 0
+   }
   }
  },
  "bgm": {
