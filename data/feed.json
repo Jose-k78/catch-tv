@@ -1,14 +1,23 @@
 {
- "at": "2026-11-17T15:24:05.996Z",
+ "at": "2026-11-17T16:30:47.026Z",
  "items": [
   {
-   "t": "Alex Shelley blessé suite au Best of 5 Series à AEW Dynamite",
-   "u": "https://www.catch-newz.com/aew/newz/61384-alex-shelley-blesse-suite-au-best-of-5-series-a-aew-dynamite",
+   "t": "Preview : WWE NXT du 17 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61228-preview-wwe-nxt-17-novembre-2026",
    "s": "Catch-Newz",
    "d": "2026-11-17",
    "tags": [
-    "AEW",
-    "Dynamite"
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
+   "t": "Carte du jour 1 de la NJPW World Tag League 2026",
+   "u": "https://www.catch-newz.com/international/newz/61215-carte-du-jour-1-de-la-njpw-world-tag-league-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-17",
+   "tags": [
+    "NJPW"
    ]
   },
   {
@@ -19,6 +28,16 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Alex Shelley blessé suite au Best of 5 Series à AEW Dynamite",
+   "u": "https://www.catch-newz.com/aew/newz/61384-alex-shelley-blesse-suite-au-best-of-5-series-a-aew-dynamite",
+   "s": "Catch-Newz",
+   "d": "2026-11-17",
+   "tags": [
+    "AEW",
+    "Dynamite"
    ]
   },
   {
@@ -199,16 +218,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-16",
    "tags": []
-  },
-  {
-   "t": "Preview : WWE NXT du 17 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61228-preview-wwe-nxt-17-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-16",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
   },
   {
    "t": "Brawks a eu seulement 10 jours pour devenir catcheur",
@@ -481,13 +490,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Résultats de TNT IGNition Aftershock 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61336-resultats-de-tnt-ignition-aftershock-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-15",
-   "tags": []
   }
  ],
  "yt": {
@@ -1170,10 +1172,12 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61373-wwe-raw-16-novembre-2026",
-   "https://www.catch-newz.com/aew/newz/61384-alex-shelley-blesse-suite-au-best-of-5-series-a-aew-dynamite",
+   "https://www.catch-newz.com/wwe/newz/61228-preview-wwe-nxt-17-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61380-resultats-de-wwe-nxt-live-event-du-15-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61215-carte-du-jour-1-de-la-njpw-world-tag-league-2026",
    "https://www.catch-newz.com/international/resultats/61387-resultats-de-cmll-revolucion-de-campeones-lunes-clasico-du-16-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61386-resultats-de-cmll-domingo-familiar-du-15-novembre-2026",
+   "https://www.catch-newz.com/aew/newz/61384-alex-shelley-blesse-suite-au-best-of-5-series-a-aew-dynamite",
    "https://www.catch-newz.com/international/newz/61388-video-ce-spot-impressionnant-etait-prevu-pour-squeezie-et-amine-a-finalslam",
    "https://www.catch-newz.com/wwe/newz/61358-preview-wwe-raw-16-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61385-resultats-du-jour-1-de-la-ajpw-real-world-tag-league-2026",
@@ -1194,7 +1198,6 @@
    "https://www.catch-newz.com/international/newz/61369-les-premiers-mots-de-mister-v-apres-sa-prestation-xxl-a-finalslam",
    "https://www.catch-newz.com/international/newz/61364-jordan-oliver-finalslam",
    "https://www.catch-newz.com/international/newz/61368-finalslam-des-streamers-se-sont-desistes-en-decouvrant-quil-fallait-un-entrainement-incroyable",
-   "https://www.catch-newz.com/wwe/newz/61228-preview-wwe-nxt-17-novembre-2026",
    "https://www.catch-newz.com/international/newz/61367-brawks-a-eu-seulement-10-jours-pour-devenir-catcheur",
    "https://www.catch-newz.com/international/resultats/61356-resultats-de-beyond-wrestling-open-ri-72",
    "https://www.catch-newz.com/wwe/newz/61366-iyo-sky-absente-des-survivor-series-wargames-pour-la-premiere-fois-cette-annee",
@@ -1467,12 +1470,11 @@
    "https://www.catch-newz.com/international/resultats/61103-resultats-de-aull-triple-amenaza",
    "https://www.catch-newz.com/wwe/newz/61101-wwe-crown-jewel-une-courte-celebration-pour-chelsea-green",
    "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61099-wwe-crown-jewel-jevon-evans-et-penta-champions-par-equipe",
-   "https://www.catch-newz.com/wwe/newz/61095-wwe-crown-jewel-cody-rhodes-le-dernier-homme-debout"
+   "https://www.catch-newz.com/wwe/newz/61099-wwe-crown-jewel-jevon-evans-et-penta-champions-par-equipe"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "8 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
