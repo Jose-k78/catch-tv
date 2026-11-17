@@ -1,5 +1,5 @@
 {
- "at": "2026-11-17T05:57:13.194Z",
+ "at": "2026-11-17T07:10:04.062Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60935-apres-sa-defaite-contre-drew-mcintyre-au-royal-rumble-sami-zayn-etait-persuade-quil-nallait-jamais-remporter-le-titre-mondial": "2026-11-03",
@@ -412,40 +412,5 @@
   "a:https://www.catch-newz.com/wwe/newz/61379-la-wwe-prepare-un-nouveau-performance-center-en-2027": "2026-11-17",
   "a:https://www.catch-newz.com/wwe/newz/61383-aj-styles-lance-son-podcast-sur-la-plateforme-wwe": "2026-11-17"
  },
- "pend": {
-  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
-   {
-    "cat": "info",
-    "title": "📰 Nouvelle info · Catch-Newz",
-    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "1 nouvelle info"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Nouvelle info · Catch-Newz",
-    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "1 nouvelle info"
-   },
-   {
-    "cat": "info",
-    "title": "📰 2 nouvelles infos",
-    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "2 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 2 nouvelles infos",
-    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "2 nouvelles infos"
-   }
-  ]
- }
+ "pend": {}
 }
