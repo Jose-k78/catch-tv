@@ -1,6 +1,24 @@
 {
- "at": "2026-11-17T16:30:47.026Z",
+ "at": "2026-11-17T17:32:30.709Z",
  "items": [
+  {
+   "t": "L'AEW signe une collaboration avec USA Wrestling pour les JO",
+   "u": "https://www.catch-newz.com/aew/newz/61390-aew-signe-une-collaboration-avec-usa-wrestling-pour-les-jo",
+   "s": "Catch-Newz",
+   "d": "2026-11-17",
+   "tags": [
+    "AEW"
+   ]
+  },
+  {
+   "t": "La prochaine apparition des Kasper Brothers à l'AEW s'annonce",
+   "u": "https://www.catch-newz.com/aew/newz/61391-la-prochaine-apparition-des-kasper-brothers-a-laew-sannonce",
+   "s": "Catch-Newz",
+   "d": "2026-11-17",
+   "tags": [
+    "AEW"
+   ]
+  },
   {
    "t": "Preview : WWE NXT du 17 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61228-preview-wwe-nxt-17-novembre-2026",
@@ -12,15 +30,6 @@
    ]
   },
   {
-   "t": "Carte du jour 1 de la NJPW World Tag League 2026",
-   "u": "https://www.catch-newz.com/international/newz/61215-carte-du-jour-1-de-la-njpw-world-tag-league-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-17",
-   "tags": [
-    "NJPW"
-   ]
-  },
-  {
    "t": "WWE Raw du 16 novembre : La Team USA s’agrandit, le 946 prend l’avantage dans le WarGames",
    "u": "https://www.voxcatch.fr/2026/11/17/resultats-wwe-raw-16-novembre-2026/",
    "s": "VOXcatch",
@@ -28,6 +37,15 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Carte du jour 1 de la NJPW World Tag League 2026",
+   "u": "https://www.catch-newz.com/international/newz/61215-carte-du-jour-1-de-la-njpw-world-tag-league-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-17",
+   "tags": [
+    "NJPW"
    ]
   },
   {
@@ -471,25 +489,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-15",
    "tags": []
-  },
-  {
-   "t": "L'avantage WarGames sera en jeu à WWE RAW du 16 novembre",
-   "u": "https://www.catch-newz.com/wwe/newz/61334-lavantage-wargames-sera-en-jeu-a-wwe-raw-du-16-novembre",
-   "s": "Catch-Newz",
-   "d": "2026-11-15",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
-  },
-  {
-   "t": "CM Punk veut continuer à catcher encore au moins 5 ans",
-   "u": "https://www.catch-newz.com/wwe/newz/61331-cm-punk-veut-continuer-a-catcher-encore-au-moins-5-ans",
-   "s": "Catch-Newz",
-   "d": "2026-11-15",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -1172,11 +1171,13 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61373-wwe-raw-16-novembre-2026",
+   "https://www.catch-newz.com/aew/newz/61390-aew-signe-une-collaboration-avec-usa-wrestling-pour-les-jo",
+   "https://www.catch-newz.com/aew/newz/61391-la-prochaine-apparition-des-kasper-brothers-a-laew-sannonce",
    "https://www.catch-newz.com/wwe/newz/61228-preview-wwe-nxt-17-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61380-resultats-de-wwe-nxt-live-event-du-15-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61215-carte-du-jour-1-de-la-njpw-world-tag-league-2026",
    "https://www.catch-newz.com/international/resultats/61387-resultats-de-cmll-revolucion-de-campeones-lunes-clasico-du-16-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61386-resultats-de-cmll-domingo-familiar-du-15-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61215-carte-du-jour-1-de-la-njpw-world-tag-league-2026",
    "https://www.catch-newz.com/aew/newz/61384-alex-shelley-blesse-suite-au-best-of-5-series-a-aew-dynamite",
    "https://www.catch-newz.com/international/newz/61388-video-ce-spot-impressionnant-etait-prevu-pour-squeezie-et-amine-a-finalslam",
    "https://www.catch-newz.com/wwe/newz/61358-preview-wwe-raw-16-novembre-2026",
@@ -1468,13 +1469,11 @@
    "https://www.catch-newz.com/international/resultats/61105-resultats-de-mcw-pro-wrestling-monster-mash-2026",
    "https://www.catch-newz.com/wwe/newz/61102-wwe-crown-jewel-roman-reigns-prouve-encore-une-fois-sa-superiorite",
    "https://www.catch-newz.com/international/resultats/61103-resultats-de-aull-triple-amenaza",
-   "https://www.catch-newz.com/wwe/newz/61101-wwe-crown-jewel-une-courte-celebration-pour-chelsea-green",
-   "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61099-wwe-crown-jewel-jevon-evans-et-penta-champions-par-equipe"
+   "https://www.catch-newz.com/wwe/newz/61101-wwe-crown-jewel-une-courte-celebration-pour-chelsea-green"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "8 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
