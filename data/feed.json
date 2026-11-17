@@ -1,6 +1,16 @@
 {
- "at": "2026-11-17T07:10:03.994Z",
+ "at": "2026-11-17T09:58:57.338Z",
  "items": [
+  {
+   "t": "WWE Raw du 16 novembre : La Team USA s’agrandit, le 946 prend l’avantage dans le WarGames",
+   "u": "https://www.voxcatch.fr/2026/11/17/resultats-wwe-raw-16-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-17",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
   {
    "t": "La WWE prépare un nouveau Performance Center en 2027",
    "u": "https://www.catch-newz.com/wwe/newz/61379-la-wwe-prepare-un-nouveau-performance-center-en-2027",
@@ -281,6 +291,16 @@
    "tags": []
   },
   {
+   "t": "Résultats de WWE NXT Live Event du 15 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/61380-resultats-de-wwe-nxt-live-event-du-15-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-15",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
    "t": "Résultats de AEW Full Gear 2026",
    "u": "https://www.voxcatch.fr/2026/11/15/resultats-aew-full-gear-2026/",
    "s": "VOXcatch",
@@ -463,24 +483,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-15",
    "tags": []
-  },
-  {
-   "t": "AEW Full Gear : MJF de retour",
-   "u": "https://www.catch-newz.com/aew/newz/61323-aew-full-gear-mjf-de-retour",
-   "s": "Catch-Newz",
-   "d": "2026-11-15",
-   "tags": [
-    "AEW"
-   ]
-  },
-  {
-   "t": "Ilja Dragunov remporte son premier championnat à AEW Full Gear 2026",
-   "u": "https://www.catch-newz.com/aew/newz/61322-ilja-dragunov-remporte-son-premier-championnat-a-aew-full-gear-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-15",
-   "tags": [
-    "AEW"
-   ]
   }
  ],
  "yt": {
@@ -1163,6 +1165,7 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61373-wwe-raw-16-novembre-2026",
+   "https://www.catch-newz.com/wwe/resultats/61380-resultats-de-wwe-nxt-live-event-du-15-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61358-preview-wwe-raw-16-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61379-la-wwe-prepare-un-nouveau-performance-center-en-2027",
    "https://www.catch-newz.com/wwe/newz/61383-aj-styles-lance-son-podcast-sur-la-plateforme-wwe",
@@ -1460,13 +1463,12 @@
    "https://www.catch-newz.com/wwe/resultats/61092-wwe-crown-jewel-2026",
    "https://www.catch-newz.com/wwe/newz/61094-lordre-des-matchs-de-wwe-crown-jewel-2026",
    "https://www.catch-newz.com/culture/gaming/60799-royce-keys-cest-sans-aucun-doute-une-grande-reussite-pour-moi",
-   "https://www.catch-newz.com/wwe/newz/61089-countdown-to-wwe-crown-jewel-2026",
-   "https://www.catch-newz.com/wwe/newz/61091-johnny-gargano-a-rey-fenix-toi-et-ton-stupide-frere-vous-navez-aucun-honneur"
+   "https://www.catch-newz.com/wwe/newz/61089-countdown-to-wwe-crown-jewel-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 2 nouveaux articles lus sur la page d'accueil (2 liens)",
-  "VOXcatch": "7 articles (7 j)",
+  "Catch-Newz": "pas de flux RSS : 3 nouveaux articles lus sur la page d'accueil (3 liens)",
+  "VOXcatch": "8 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
