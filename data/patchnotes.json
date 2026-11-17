@@ -1,6 +1,32 @@
 {
- "updated": "2026-11-15",
+ "updated": "2026-11-16",
  "items": [
+  {
+   "id": "2026-11-16-tcccg",
+   "d": "2026-11-16",
+   "t": "TCCCG : nouvelles cartes, cartes Legends et agents libres",
+   "txt": [
+    "🃏 Toutes les cartes changent de look : l’image prend toute la carte et se fond dans le décor (plus de coupure nette), le nom du catcheur est écrit en géant à la verticale derrière lui, et une bande de la couleur de son type longe le bord gauche.",
+    "📊 En bas, un cadre avec le nom, le type, le niveau, la roue des types, des jauges (PV puis Force, Agilité, Charisme, Endurance, Technique) et le finisher.",
+    "💎 Chaque rareté a son décor façon catch : gymnase d’un show indé en N (Rookie), plateau télé en R (Mid-card), arène pleine en SR (Upper card). À partir de SSR ça brille : projecteurs, feu et pyro en SSR (Main event), ceinture géante et confettis en UR (Champion), rayons de lumière et paillettes en LR (Légende).",
+    "🔤 La rareté est écrite en haut à droite en lettres de métal (bronze, argent, or, or brillant, arc-en-ciel, diamant), sans cadre autour. Le cadre de rareté autour de la carte reste.",
+    "🔄 Appui long sur une carte : elle s’affiche en 3D. Glisse ton doigt pour la faire tourner et voir sa tranche et son dos ; touche-la pour la retourner, « De face » pour la remettre droite. Touche à côté pour fermer.",
+    "👑 Nouvelles cartes Legends : elles ne vont que dans la case Soutien, donnent +5 % à toute ton équipe, et quand ton équipe tombe à 25 % de vie (ou à 0 : ça te sauve du tombé), la légende fait son retour surprise : elle entre sur le ring, soigne 60 % de ses PV et joue 3 de tes tours avant de repartir.",
+    "⛓️ Agents libres : un catcheur qui n’est dans aucun roster a une chaîne brisée sur fond vert à la place du logo de sa promotion. Le même symbole est sur les boosters Agent Libre.",
+    "🐢 Petites cartes (roster, combats) : rien ne bouge pour garder le jeu fluide. Avec « Animations simples », plus rien ne bouge du tout."
+   ]
+  },
+  {
+   "id": "2026-11-16-modo",
+   "d": "2026-11-16",
+   "mod": true,
+   "t": "Modo : catégorie Legends et modif rapide à zéro",
+   "txt": [
+    "👑 Éditeur de carte › Catégorie : nouveau choix « Legends ». Pas de compétence par défaut ; si tu en choisis une, elle s’ajoute au retour surprise.",
+    "🔎 Modo › Cartes : filtre « 👑 Legends » pour retrouver les cartes Legends.",
+    "⚡ Modif rapide : on repart de zéro (nouveau mélange de toutes les cartes), avec la catégorie dans la fiche pour régler les Legends. Bouton « ↺ Modif rapide : repartir à zéro » pour recommencer quand tu veux."
+   ]
+  },
   {
    "id": "2026-11-15-tcccg",
    "d": "2026-11-15",

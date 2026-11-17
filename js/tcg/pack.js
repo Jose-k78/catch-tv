@@ -4,11 +4,13 @@
 // packHTML = la version HTML (Call Up, confirmation, ouverture sans Phaser) ; paintPack = la même chose dessinée sur un canvas
 // pour la scène Phaser de l'invocation (summon.js).
 import { esc } from "../util.js";
-import { boosterImg } from "./card.js";
+import { boosterImg, faSvg, FA_PATHS } from "./card.js";
 
 // couleur de l'alu : Cadeaux vert, Shows argent, PLE or, Spéciaux bleu, Départ cuivre, Modo rouge
 export const FOIL = { "Cadeau": "#6ee7a6", "Shows de la semaine": "#d6dbe4", "PLE et PPV": "#ffd23f", "Boosters spéciaux": "#8fb8ff", "Boosters de départ": "#e9a273", "Modo": "#ff8a8a" };
 export const foilOf = b => FOIL[(b && b.cat) || ""] || "#8fb8ff";
+// boosters des agents libres (16 nov.) : le symbole « chaîne brisée » des cartes agents libres
+export const isFaPack = b => !!b && (b.id === "fa" || b.id === "mitb");
 export const packTag = b => b.id === "free" ? "Gratuit" : b.id === "mitb" ? "1 SSR au choix" : "5 cartes";
 const colOk = c => /^#[0-9a-f]{3,8}$|^rgba?\([\d\s.,%]+\)$/i.test(String(c || "").trim());
 const cols = b => { const c = (b && b.c) || []; return [colOk(c[0]) ? c[0] : "#2a3a72", colOk(c[1]) ? c[1] : "#0b1636"]; };
@@ -21,6 +23,7 @@ export function packHTML(b, opt) {
     (img ? '<img class="tpk-img" src="' + esc(img) + '" alt="" draggable="false" decoding="async">' : "") +
     (b.logo ? '<img class="tpk-logo" src="' + esc(b.logo) + '" alt="" draggable="false">' : !img && (b.id === "free" || b.id === "mitb") ? '<span class="tpk-gift">' + (b.id === "free" ? "🎁" : "💼") + "</span>" : "") +
     '<span class="tpk-f"></span><span class="tpk-w"></span><span class="tpk-g"></span>' +
+    (isFaPack(b) ? '<span class="tpk-fa" title="Agent libre" role="img" aria-label="Agent libre">' + faSvg() + "<small>AGENT LIBRE</small></span>" : "") +
     (opt.still ? "" : '<span class="tpk-sh"></span><span class="tpk-sp"><i></i><i></i><i></i><i></i></span>') +
     '<span class="tpk-s t"><b>TCCCG</b></span><span class="tpk-s b"></span><span class="tpk-cut"></span>' +
     (opt.notitle ? "" : '<span class="tpk-t"><b>' + esc(opt.title || b.t || "Booster") + "</b>" + (opt.tag === "" ? "" : "<small>" + esc(opt.tag || packTag(b)) + "</small>") + "</span>") +
@@ -93,6 +96,14 @@ export function paintPack(b, w, h, part, jag, src) {
   x.font = "400 " + fs + "px Anton, Impact, sans-serif"; x.textBaseline = "middle"; x.fillStyle = mix(F, [6, 16, 46], 0.75);
   const ws = word.split("").map(l => x.measureText(l).width), tot = ws.reduce((a, v) => a + v, 0) + sp * (word.length - 1);
   let tx = (w - tot) / 2; word.split("").forEach((l, i) => { x.fillText(l, tx, sh * 0.56); tx += ws[i] + sp; });
+  // symbole « agent libre » (16 nov.) : pastille verte, chaîne brisée dorée
+  if (isFaPack(b) && part !== "strip" && typeof Path2D === "function") {
+    const r0 = w * 0.11, cx = w * 0.18, cy = h * 0.24;
+    x.save(); x.shadowColor = "rgba(0,0,0,.5)"; x.shadowBlur = 6; x.fillStyle = "#0d4a2a"; x.beginPath(); x.arc(cx, cy, r0, 0, Math.PI * 2); x.fill(); x.shadowBlur = 0;
+    x.lineWidth = 2; x.strokeStyle = "#ffd23f"; x.stroke();
+    x.translate(cx - r0 * 0.62, cy - r0 * 0.62); x.scale(r0 * 1.24 / 24, r0 * 1.24 / 24); x.lineWidth = 2.4; x.lineCap = "round"; x.lineJoin = "round"; x.strokeStyle = "#ffd23f";
+    FA_PATHS.forEach(d => x.stroke(new Path2D(d))); x.restore();
+  }
   // pointillés « déchirer ici »
   x.setLineDash([5, 4]); x.strokeStyle = "rgba(255,255,255,.65)"; x.lineWidth = 2; x.beginPath(); x.moveTo(w * 0.07, h * 0.125); x.lineTo(w * 0.93, h * 0.125); x.stroke(); x.setLineDash([]);
   x.restore();

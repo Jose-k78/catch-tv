@@ -94,6 +94,7 @@ const fr = v => String(v).replace(".", ",");
 // la compétence d'une carte Soutien à une rareté donnée : { id, n, fx, q, v, s, t (texte) }
 export function skillOf(def, r) {
   if (!def || !def.sup) return null;
+  if (def.leg && !(def.skill && SKILLS[def.skill.id])) return null; // une Legends n'a une compétence que si le modo en a choisi une
   const o = def.skill || {}, P = SKILLS[o.id] || SKILLS.coup, id = SKILLS[o.id] ? o.id : "coup";
   const q = P.qs.indexOf(o.q) >= 0 ? o.q : P.q, m = SKMUL[r || def.r] || 1, base = +o.v > 0 ? +o.v : P.v, s = STATS[+o.s] ? +o.s : (P.s || 0);
   let v = base;
@@ -145,6 +146,7 @@ export function baseCards() {
   const c = cfg(), key = Object.keys(S.photos || {}).length + "|" + (S.titles || []).length + "|" + Object.keys(S.wrestlers || {}).length + "|" + Object.keys(S.finishers || {}).length + "|" + JSON.stringify(c.cards || {}).length + "|" + (c.custom || []).length + "|" + Object.keys(S.rosters || {}).length + "|" + Object.keys(S.bank || {}).length;
   if (BASE && BKEY === key) return BASE;
   const champs = champsNow();
+  const hasRo = Object.keys(S.rosters || {}).length > 0;
   const roster = new Map(); Object.keys(S.rosters || {}).forEach(k => Object.keys(S.rosters[k] || {}).forEach(g => (S.rosters[k][g] || []).forEach(n => { if (!roster.has(norm(n))) roster.set(norm(n), { k: k, g: g }); })));
   const list = [];
   Object.keys(S.photos || {}).forEach(slug => {
@@ -218,6 +220,11 @@ export function baseCards() {
     // carte Soutien (14 nov.) : ne va que dans la case Soutien ; bonus de type + une compétence réglée par le modo
     x.sup = !!ov.sup;
     if (x.sup) x.skill = Object.assign({}, ov.sk || {});
+    // carte Legends (16 nov.) : comme une carte Soutien (case Soutien seulement) + son rôle en combat, le « retour surprise »
+    // (fight.js) ; la compétence de soutien est en plus, seulement si le modo en choisit une
+    x.leg = !!ov.leg; if (x.leg) { x.sup = true; x.skill = Object.assign({}, ov.sk || {}); }
+    // agent libre (16 nov.) : catcheur dans aucun roster → symbole « chaîne brisée » à la place du logo de la promotion
+    x.fa = !x.custom && hasRo && ![x.rn].concat(((S.photos || {})[x.id] || {}).n || [], (x.w && Array.isArray(x.w.a)) ? x.w.a : []).some(n => roster.has(norm(n)));
   });
   // une carte masquée sort des boosters et des listes, mais ceux qui l'ont la gardent et la voient toujours (14 nov.)
   BASE = list.filter(x => !x.hide && !x.del); HIDDEN = list.filter(x => x.hide && !x.del); BKEY = key;

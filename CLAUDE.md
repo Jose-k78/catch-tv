@@ -276,6 +276,24 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
     reflet = `preFX.addShine` (WebGL), étoiles `tstar` ; on déchire le long du pointillé (`stripBox`, `tearLine` à 12,5 %).
   - Méga = 3 sachets de 5 cartes déchirés l'un après l'autre (`per`, `nPk`, `nextPack`, `glowOf` par sachet, « Sachet 2 sur 3 ») ; confirmation
     avec 3 sachets. `cuGo` garde tout de suite le booster visé (`ctv.tcu`).
+- **Lot du 16 nov.** (choix de Jose sur le canevas « TCCCG – Cartes ») :
+  - Nouvelle carte (`cardHTML` de card.js, classes `.tc3.tc4` + `t4*`, bloc « Lot du 16 nov. » à la fin de style.css ; remplace l'intérieur
+    du 14 nov. : pierre, nom gravé, holo de l'image) : image sur toute la carte, placée d'après sa partie visible (`measure` / `fitStyle` :
+    bords transparents ignorés, mémorisé par image ; photo non détourée = classe `photo`, fondu en ovale), fondu sur les bords, nom géant
+    vertical `.t4giant` (`--gs`), bande du type `.t4strip`, cadre du bas `.t4fr` (nom `--ns`, années / gimmick / pouvoir, type, niveau, roue,
+    jauges `.t4gg` PV + 5 stats sur 80, finisher), lettres de rareté en métal `.t4rl` + rang `TIER` (ROOKIE… LÉGENDE), cadre `.t4rim`
+    (`--metal`, UR / LR tournent), décor par rareté `DECO` (`rz-N` gymnase… `rz-LR` rayons ; particules `.t4zk.fr` seulement sur les grandes
+    cartes ; SSR et plus : `.t4shine`). Tailles des cartes inchangées (cqw = % de la largeur) ; `aspect-ratio` seulement là où la hauteur est
+    libre (`.tfincard`, `.tsfront`). Le format « carte au format de l'image » (`ar`, 6 nov.) n'existe plus.
+  - Appui long = vue 3D (peek.js : `.tv3d-in` tourne au doigt, face `.tv3f` / dos `.tv3b` = `backHTML`, tranches `.tv3e`, boutons Faire un tour /
+    Voir le dos / De face / Fermer ; toucher la carte = la retourner, toucher à côté = fermer) ; holo.js ne fait plus pencher dans `.tpeek`.
+  - Cartes **Legends** : `cfg.cards[id].leg` (data.js : `x.leg` ⇒ `x.sup` ; `skillOf` = null sans compétence choisie) ; case Soutien seulement ;
+    fight.js : +5 % à toute l'équipe (`teamBonus`), « retour surprise » (`B.P.leg`, `legIn` dans `afterAction` quand la vie ≤ 25 % ou à 0 :
+    soigne 60 % de la somme de ses stats, la carte entre dans `B.P.cards` pour 3 tours du joueur, `legTurn`, encart `legBox`). Modo :
+    Catégorie « 👑 Legends » (compétence « Aucune » par défaut), filtre Legends ; modif rapide repartie de zéro (`ctv.tcgmq2`, bouton
+    `ACT.tcgmqzero`). `fightNow()` exporté pour les tests.
+  - Agents libres : `x.fa` (catcheur dans aucun roster, alias compris) → chaîne brisée `faMark` à la place du logo ; boosters `fa` et `mitb` :
+    `.tpk-fa` (HTML) et le même symbole dessiné dans `paintPack`.
 - Notes : demi-étoiles de 0 à 5,5 (`RMAX`, `fmtR`, `stars`, `ratePick` / `pickRate` de util.js ; 6e étoile orange = bonus).
 - Historique : `g_<id>` = note d'un segment, `q_<id>` = segment préféré (comment = nom du show) ; préfixes m_/s_/f_/g_/q_ exclus
   des compteurs de shows (spoil.js, trophies.js, account.js). Profil : « Ses segments préférés ».

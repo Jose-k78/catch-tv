@@ -13,14 +13,14 @@ function reset() {
 }
 function move(e) {
   const c = e.target && e.target.closest && e.target.closest(".tc3:not(.sm):not(.back)");
-  if (!c) { if (cur) reset(); return; }
+  // dans la vue 3D (appui long, peek.js) c'est elle qui fait tourner la carte
+  if (!c || c.closest(".tpeek")) { if (cur) reset(); return; }
   if (simple()) return;
   if (cur && cur !== c) reset();
   const r = c.getBoundingClientRect(); if (!r.width || !r.height) return;
   const x = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)), y = Math.max(0, Math.min(1, (e.clientY - r.top) / r.height));
   if (cur !== c) {
-    // dans l'aperçu en grand (appui long), la carte a déjà un zoom : on fait pencher son cadre
-    const t = c.closest(".tpeekc") || c;
+    const t = c;
     cur = c; c._tt = t; t._t0 = t.style.transform || ""; c.classList.add("tilt");
   }
   c.style.setProperty("--hx", Math.round(x * 100) + "%"); c.style.setProperty("--hy", Math.round(y * 100) + "%");

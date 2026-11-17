@@ -2246,7 +2246,7 @@ body.tccg .tcubig small{display:block;font:700 13px/1.1 'Barlow Condensed',sans-
 .tpeek{position:fixed;inset:0;z-index:400;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:rgba(5,10,28,.88);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);animation:tpeekin .16s ease-out}
 .tpeek.out{opacity:0;transition:opacity .15s}
 .tpeekc{position:relative}.tpeekc .tc3{position:absolute;left:0;top:0;transform-origin:top left;box-shadow:0 18px 40px rgba(0,0,0,.6)}
-.tpeekh{margin:0;font:700 14px 'Barlow Condensed',sans-serif;color:#9aa8d4}
+.tpeekh{margin:0;padding:0 16px;text-align:center;font:700 14px 'Barlow Condensed',sans-serif;color:#9aa8d4}
 @keyframes tpeekin{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
 .tc3[data-pk]{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
 /* Roster : la vitrine et les étagères (13 nov., maquette 3) */
@@ -2453,3 +2453,205 @@ html.tgsimple .tc3,html.tgsimple .tc3 *,html.tgsimple .tc3::before,html.tgsimple
 html.tgsimple .tpk,html.tgsimple .tpk *,html.tgsimple .tcupack>.tpk{animation:none!important}
 html.tgsimple .tpk-sh,html.tgsimple .tpk-sp{display:none}
 @media (prefers-reduced-motion:reduce){.tpk,.tpk *,.tcupack>.tpk{animation:none!important}.tpk-sh,.tpk-sp{display:none}}
+
+/* =====================================================================
+   Lot du 16 nov. — nouvelle carte (choix de Jose sur le canevas « TCCCG – Cartes ») : l'image prend toute la carte (fondu, plus de
+   coupure nette), nom géant à la verticale derrière le catcheur, bande du type à gauche, cadre du bas avec les jauges (PV + 5 stats),
+   décor « façon catch » selon la rareté (ça brille à partir de SSR), lettres de rareté en métal, cadre de rareté autour de la carte.
+   Le haut de la carte (.tc3) garde ses tailles (210×318, petite 108×164…) ; tout l'intérieur est en cqw (1 cqw = 1 % de sa largeur).
+   ===================================================================== */
+.tc3.tc4:not(.back){display:block;padding:0;gap:0;border:0;border-radius:12px;background:#05081a;animation:none;container-type:inline-size;isolation:isolate;overflow:hidden;color:#fff;font-family:'Barlow Condensed',sans-serif;box-shadow:0 6px 16px rgba(0,0,0,.55)}
+/* là où la carte n'a pas de hauteur fixe (fin de combat, révélation de l'invocation) elle garde ses proportions */
+.tfincard .tc3.tc4,.tsfront .tc3.tc4{aspect-ratio:210/318}
+.tc3.tc4::before{content:none}
+.tc3.tc4.sm:not(.back){padding:0;border-radius:8px}
+.tc3.tc4.champ:not(.pick){outline:0}
+.tc4 b,.tc4 small,.tc4 i,.tc4 em{font-style:normal}
+.tc4>*{box-sizing:border-box}
+/* fond « arène » (couleur du type), refait par chaque rareté plus bas */
+.tc4 .t4bg{position:absolute;inset:0;z-index:0;background:radial-gradient(70% 40% at 50% 34%,color-mix(in srgb,var(--ac) 60%,#fff 0%),transparent 70%),linear-gradient(180deg,color-mix(in srgb,var(--ac) 45%,#0b1636),#05081a)}
+.tc4 .t4zk{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.tc4 .t4zk.bk{z-index:1}.tc4 .t4zk.fr{z-index:3}
+/* nom géant à la verticale derrière le catcheur */
+.tc4 .t4giant{position:absolute;z-index:1;left:1cqw;top:0;bottom:0;display:flex;align-items:center;justify-content:center;overflow:hidden;pointer-events:none}
+.tc4 .t4giant b{writing-mode:vertical-rl;transform:rotate(180deg);font:400 var(--gs,30cqw)/.9 Anton,sans-serif;text-transform:uppercase;white-space:nowrap;color:color-mix(in srgb,var(--ac) 78%,transparent);-webkit-text-stroke:.4cqw color-mix(in srgb,var(--ac) 60%,#fff);text-shadow:0 0 6cqw rgba(0,0,0,.35)}
+/* cordes du ring derrière le catcheur (N, R, SR) */
+.tc4 .t4ropes{position:absolute;z-index:1;left:0;right:0;top:40%;height:16cqw;opacity:.6;pointer-events:none;
+  background:linear-gradient(var(--rp1,#e63946),var(--rp1,#e63946)) 0 0/100% 1.1cqw no-repeat,linear-gradient(var(--rp2,#f4f4f4),var(--rp2,#f4f4f4)) 0 7cqw/100% 1.1cqw no-repeat,linear-gradient(var(--rp3,#2a63cc),var(--rp3,#2a63cc)) 0 14cqw/100% 1.1cqw no-repeat}
+/* le « sol » : une lueur du type sous le catcheur, qui fait le lien avec le cadre du bas */
+.tc4 .t4floor{position:absolute;z-index:2;left:-10%;right:-10%;bottom:28%;height:30%;pointer-events:none;background:radial-gradient(50% 50% at 50% 60%,color-mix(in srgb,var(--ac) 45%,transparent),transparent 70%)}
+/* l'image : placée par card.js (partie visible mesurée), fondu sur les bords ; photo non détourée = fondu en ovale */
+.tc4 .t4art{position:absolute;inset:0;z-index:2;pointer-events:none}
+.tc4 .t4art[data-act=zoom]{pointer-events:auto;cursor:zoom-in}
+.tc4 .t4img{position:absolute;left:4cqw;top:6cqw;width:100cqw;height:auto;max-width:none;display:block;-webkit-user-drag:none;filter:drop-shadow(0 2cqw 4cqw rgba(0,0,0,.55));
+  -webkit-mask:linear-gradient(to bottom,transparent 0,#000 7%,#000 60%,transparent 92%),linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 100%);-webkit-mask-composite:source-in;
+  mask:linear-gradient(to bottom,transparent 0,#000 7%,#000 60%,transparent 92%) intersect,linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 100%)}
+.tc4.photo .t4img{-webkit-mask:radial-gradient(ellipse 50% 56% at 50% 42%,#000 50%,transparent 100%);mask:radial-gradient(ellipse 50% 56% at 50% 42%,#000 50%,transparent 100%)}
+.tc4 .t4empty{position:absolute;left:3cqw;right:0;top:22%;display:flex;flex-direction:column;align-items:center;gap:1cqw;font-size:16cqw;line-height:1;opacity:.6}
+.tc4 .t4empty small{font:800 5cqw/1 'Barlow Condensed',sans-serif;color:#ffd23f}
+/* bande de la couleur du type à gauche */
+.tc4 .t4strip{position:absolute;z-index:5;left:0;top:0;bottom:0;width:3cqw;background:var(--ac)}
+/* logo de la promotion (ou symbole agent libre), puis faction / ceinture / face-heel en colonne dessous */
+.tc4 .t4promo{position:absolute;z-index:7;left:6cqw;top:4cqw;width:11cqw;height:11cqw;padding:.6cqw;border-radius:2.4cqw;object-fit:contain;background:rgba(255,255,255,.9);box-shadow:0 .6cqw 1.6cqw rgba(0,0,0,.6),0 0 0 .5cqw rgba(255,255,255,.25)}
+.tc4 .t4promo.t{width:auto;height:auto;padding:1.2cqw 2.4cqw;border-radius:99px;background:rgba(5,10,28,.78);font:800 3.2cqw/1 'Barlow Condensed',sans-serif;letter-spacing:.04em;color:#fff;white-space:nowrap}
+.tc4 .t4fa{display:grid;place-items:center;padding:1.6cqw;border-radius:50%;background:radial-gradient(circle at 35% 30%,#1f8a52,#0b3a21 75%);color:#ffd23f;box-shadow:0 0 0 .5cqw #ffd23f,0 .6cqw 1.6cqw rgba(0,0,0,.6)}
+.tc4 .t4fa svg{width:100%;height:100%;display:block;filter:drop-shadow(0 .3cqw 0 rgba(0,0,0,.5))}
+.tc4 .t4side{position:absolute;z-index:7;left:6cqw;top:18cqw;width:11cqw;display:flex;flex-direction:column;align-items:center;gap:1.6cqw;pointer-events:none}
+.tc4 .t4fac{width:11cqw;max-height:9cqw;object-fit:contain;filter:drop-shadow(0 .4cqw 1cqw #000)}
+.tc4 .t4side .tal,.tc4 .t4side .tc3belt{position:static;font-size:7cqw;line-height:1;filter:drop-shadow(0 .4cqw 1cqw #000)}
+.tc3.tc4 .t4side .tc3belt.img{width:13cqw;max-height:9cqw;height:auto;font-size:0}
+/* lettres de rareté en métal (pas de cadre autour) + nom de la rareté façon catch */
+.tc4 .t4rl{position:absolute;z-index:7;right:3.4cqw;top:2.6cqw;display:flex;flex-direction:column;align-items:flex-end;gap:.6cqw;pointer-events:none}
+.tc4 .t4rl b,.tc4 .t4rl small{background:var(--lt);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:.22cqw rgba(20,12,0,.55);filter:drop-shadow(0 .45cqw 0 rgba(0,0,0,.65)) drop-shadow(0 0 1.1cqw rgba(0,0,0,.6)) drop-shadow(0 0 var(--lg,0) var(--lgc,transparent))}
+.tc4 .t4rl b{font:400 11cqw/.9 Anton,sans-serif;letter-spacing:.02em}
+.tc4 .t4rl small{font:400 3.2cqw/1 Anton,sans-serif;letter-spacing:.18em;-webkit-text-stroke:0}
+.tc4 .t4rl .spk{position:absolute;right:-1.4cqw;top:-1.4cqw;width:4cqw;height:4cqw;background:#fff;clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);filter:drop-shadow(0 0 1cqw #b9efff);animation:zglit 2s ease-in-out infinite}
+.tc4 .t4cnt{position:absolute;z-index:8;right:3cqw;top:20cqw;padding:.4cqw 2.2cqw;border-radius:99px;background:#ffd23f;color:#111;font:800 5cqw/1.2 'Barlow Condensed',sans-serif}
+.tc4 .tadv{z-index:8;left:auto;right:3cqw;bottom:46%}
+.tc3.tc4.isfav::after{z-index:9;left:5cqw;bottom:46%;font-size:7cqw}
+/* le cadre du bas : il commence par un fondu (pas de bord) */
+.tc4 .t4fr{position:absolute;z-index:4;left:0;right:0;bottom:0;min-height:44%;padding:11cqw 5cqw 4.4cqw 7cqw;display:flex;flex-direction:column;justify-content:flex-end;gap:1.5cqw;
+  background:linear-gradient(180deg,transparent 0,rgba(5,10,28,.7) 20%,rgba(5,10,28,.93) 45%,rgba(5,10,28,.97))}
+.tc4 .t4nm{display:block;font:400 var(--ns,9.5cqw)/.95 Anton,sans-serif;text-transform:uppercase;letter-spacing:.01em;text-shadow:0 .6cqw 0 #000,0 0 3cqw rgba(0,0,0,.6);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tc4 .t4sub{display:block;font:700 3.6cqw/1.15 'Barlow Condensed',sans-serif;color:#dfe6ff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tc4 .t4sub i{color:#ffd23f}.tc4 .t4sub .tc3pw{display:inline;margin:0;font-size:inherit}
+.tc4 .t4meta{display:flex;align-items:center;gap:2cqw;min-height:8cqw}
+.tc4 .t4arch{display:inline-flex;align-items:center;padding:.8cqw 2.4cqw;border-radius:99px;background:var(--ac);color:#0b1636;font:800 3.4cqw/1 'Barlow Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase}
+.tc4 .t4lv{font:800 3.8cqw/1 'Barlow Condensed',sans-serif;letter-spacing:.04em}
+.tc4 .t4meta .twheel{flex:none;width:8.5cqw;height:8.5cqw;margin-left:auto}
+/* jauges : PV + 5 stats qui montent comme un égaliseur */
+.tc4 .t4gg{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1.6cqw;padding:1.8cqw 2.2cqw;border-radius:2.6cqw;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 .4cqw rgba(255,255,255,.12)}
+.tc4 .t4gg span{display:flex;flex-direction:column;align-items:center;gap:.9cqw;font:800 2.6cqw/1 'Barlow Condensed',sans-serif;color:#9fb0e0;letter-spacing:.04em}
+.tc4 .t4gg b{font:400 4.2cqw/1 Anton,sans-serif;color:#fff}
+.tc4 .t4gg i{display:block;height:10cqw;width:3.2cqw;border-radius:2cqw;background:linear-gradient(to top,var(--ac) var(--v),rgba(255,255,255,.12) var(--v))}
+.tc4 .t4gg .t4hp i{background:#e63946}.tc4 .t4gg .t4hp b{color:#ff9aa2}
+.tc4 .t4fin{display:block;font:700 3.7cqw/1.1 'Barlow Condensed',sans-serif;color:#ffd23f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tc4 .t4fin em{color:#dfe6ff}
+/* cartes Soutien / Legends : bandeau + bonus + compétence à la place des jauges */
+.tc4 .t4tag{align-self:flex-start;padding:.6cqw 2.4cqw;border-radius:1.6cqw;background:#fff;color:#0b1636;font:400 3.4cqw/1.25 Anton,sans-serif;letter-spacing:.14em;box-shadow:0 .4cqw 1.2cqw rgba(0,0,0,.5)}
+.tc4 .t4tag.leg{background:linear-gradient(135deg,#fff3c4,#ffd23f 45%,#c48a00);color:#2a1a00}
+.tc4 .t4sp{display:flex;flex-direction:column;gap:1.4cqw}
+.tc4 .t4tb{align-self:flex-start;padding:.8cqw 2.6cqw;border-radius:2cqw;background:var(--ac);color:#0b1636;font:800 3.6cqw/1.1 'Barlow Condensed',sans-serif}
+.tc4 .t4sp.leg .t4tb{background:linear-gradient(135deg,#fff3c4,#ffd23f 50%,#d9a400)}
+.tc4 .t4sk{padding:1.6cqw 2.6cqw;border-radius:2.4cqw;background:rgba(255,255,255,.07);box-shadow:inset 0 0 0 .4cqw rgba(255,255,255,.14)}
+.tc4 .t4sk b{display:block;font:800 4cqw/1.1 'Barlow Condensed',sans-serif;color:#ffd23f}
+.tc4 .t4sk span{display:-webkit-box;margin-top:.5cqw;font:600 3.5cqw/1.2 'Barlow Condensed',sans-serif;color:#eef2ff;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+/* petite carte : nom + niveau seulement, rien ne bouge (sauf le reflet et le cadre des SSR et plus) */
+.tc4.sm .t4fr{min-height:30%;padding:6cqw 4cqw 5cqw 7cqw;gap:1.2cqw}
+.tc4.sm .t4nm{font-size:calc(var(--ns,9.5cqw) * 1.25)}
+.tc4.sm .t4lv{font-size:8cqw}
+.tc4.sm .t4tag{font-size:6.4cqw;letter-spacing:.06em;padding:.4cqw 2cqw}
+.tc4.sm .t4rl b{font-size:16cqw}
+.tc4.sm .t4promo{width:17cqw;height:17cqw;left:6cqw;top:4cqw}
+.tc4.sm .t4promo.t{width:auto;height:auto;font-size:6cqw}
+.tc4.sm .t4side{top:24cqw;width:17cqw}.tc4.sm .t4fac{width:15cqw;max-height:13cqw}.tc4.sm .t4side .tal,.tc4.sm .t4side .tc3belt{font-size:11cqw}.tc3.tc4.sm .t4side .tc3belt.img{width:17cqw;max-height:13cqw}
+.tc4.sm .t4cnt{top:19cqw;font-size:9cqw}
+.tc4.sm .t4empty{font-size:22cqw}.tc4.sm .t4empty small{font-size:8cqw}
+.tc4.sm .t4img{filter:none}
+.tc4.sm .zbeam,.tc4.sm .zflame,.tc4.sm .zholo,.tc4.sm .zrays,.tc4.sm .zcp,.tc4.sm .t4rl b,.tc4.sm .t4rl small{animation:none!important}
+/* cadre de rareté (fin, en métal) */
+.tc4 .t4rim{position:absolute;inset:0;z-index:6;border-radius:inherit;padding:2.2cqw;background:var(--metal);pointer-events:none;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
+.tc4 .t4riv{position:absolute;z-index:7;bottom:.5cqw;width:3cqw;height:3cqw;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,var(--rv,#9aa3ad) 45%,#2e323b);box-shadow:0 .3cqw .6cqw rgba(0,0,0,.6)}
+.tc4 .t4riv.a{left:.5cqw}.tc4 .t4riv.b{right:.5cqw}
+.tc4 .t4gloss{position:absolute;inset:0;z-index:7;pointer-events:none;mix-blend-mode:screen;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.18) 38%,transparent 46%)}
+.tc4 .t4shine{position:absolute;inset:0;z-index:7;pointer-events:none;mix-blend-mode:screen;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.55) 48%,rgba(255,255,255,.1) 52%,transparent 60%) no-repeat;background-size:280% 100%;background-position:170% 0;animation:zsweep 3.6s ease-in-out infinite}
+@keyframes zsweep{0%,35%{background-position:170% 0}80%,100%{background-position:-70% 0}}
+/* reflet qui suit le doigt (grande carte qui penche, holo.js) */
+.tc4 .t4glare{position:absolute;inset:0;z-index:8;pointer-events:none;opacity:0;mix-blend-mode:screen;transition:opacity .2s;background:radial-gradient(circle at var(--hx,50%) var(--hy,50%),rgba(255,255,255,.5),transparent 45%)}
+.tc4.tilt .t4glare{opacity:.55}
+.tc3.tc4.evo:not(.back){box-shadow:0 0 0 1px #ffd23f,0 0 16px rgba(255,210,63,.5)}
+.tc3.tc4.champ .t4rim{filter:drop-shadow(0 0 2cqw rgba(255,210,63,.8))}
+
+/* --- N · Rookie : show indé dans un gymnase, une ampoule, bronze rayé --- */
+.tc4.rz-N{--metal:repeating-linear-gradient(115deg,rgba(255,255,255,.14) 0 .3cqw,transparent .3cqw 2.6cqw),linear-gradient(135deg,#5a3418,#c98f52 25%,#6b3f1d 50%,#b77d45 75%,#5a3418);--rv:#b77d45;--rp1:#cfc6b4;--rp2:#cfc6b4;--rp3:#cfc6b4;--lt:linear-gradient(180deg,#ffdcae 0%,#d9a066 34%,#8a5226 54%,#c98f52 74%,#5a3418 100%)}
+.tc4.rz-N .t4bg{background:radial-gradient(34% 22% at 50% 3%,rgba(255,226,170,.6),transparent 70%),radial-gradient(70% 40% at 50% 40%,rgba(255,200,140,.12),transparent 70%),repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 .4cqw,transparent .4cqw 7cqw),linear-gradient(180deg,#3b322a,#1d1915 55%,#0e0c0a)}
+.tc4 .zbulb{position:absolute;left:50%;top:1.5cqw;width:5cqw;height:5cqw;margin-left:-2.5cqw;border-radius:50%;background:radial-gradient(circle,#fff6d8,#ffcf7a 50%,transparent 70%);filter:blur(.3cqw)}
+.tc4.rz-N .t4ropes{opacity:.45}
+/* --- R · Mid-card : plateau TV, barre de LED, acier brossé --- */
+.tc4.rz-R{--metal:repeating-linear-gradient(90deg,rgba(255,255,255,.22) 0 .2cqw,transparent .2cqw .9cqw),linear-gradient(135deg,#6f7885,#eef1f5 25%,#8d96a3 50%,#dfe3e9 75%,#6f7885);--rv:#c7ced8;--lt:linear-gradient(180deg,#fff 0%,#e4e8ee 34%,#7d8693 54%,#c7ced8 74%,#4b525d 100%)}
+.tc4.rz-R .t4bg{background:radial-gradient(60% 30% at 50% 30%,rgba(140,190,255,.38),transparent 70%),repeating-conic-gradient(from 170deg at 50% -8%,rgba(160,200,255,.08) 0 3deg,transparent 3deg 11deg),linear-gradient(180deg,#1c2c4a,#0d1730 55%,#070c1c)}
+.tc4 .zled{position:absolute;left:0;right:0;top:19%;height:2.2cqw;background:linear-gradient(90deg,transparent,#5cc8f0 20%,#fff 50%,#5cc8f0 80%,transparent);filter:blur(.5cqw);opacity:.75}
+.tc4 .zled2{position:absolute;left:8%;right:8%;top:21.5%;height:.6cqw;background:repeating-linear-gradient(90deg,#9fdcff 0 1.2cqw,transparent 1.2cqw 2cqw);opacity:.6}
+/* --- SR · Upper card : arène pleine, flashs du public, or gravé --- */
+.tc4.rz-SR{--metal:repeating-linear-gradient(45deg,rgba(0,0,0,.14) 0 .35cqw,transparent .35cqw 1.6cqw),linear-gradient(135deg,#94690c,#ffe27a 25%,#a8790f 50%,#ffd23f 75%,#94690c);--rv:#ffd23f;--lt:linear-gradient(180deg,#fff6c9 0%,#ffd23f 36%,#a8790f 56%,#ffe27a 76%,#7a5a00 100%)}
+.tc4.rz-SR .t4bg{background:radial-gradient(1.2cqw 1.2cqw at 12% 70%,#fff,transparent),radial-gradient(1cqw 1cqw at 28% 64%,#ffe9a8,transparent),radial-gradient(1.4cqw 1.4cqw at 46% 74%,#fff,transparent),radial-gradient(1cqw 1cqw at 63% 66%,#bfe3ff,transparent),radial-gradient(1.3cqw 1.3cqw at 82% 72%,#fff,transparent),radial-gradient(.9cqw .9cqw at 92% 62%,#ffe9a8,transparent),
+  radial-gradient(2.4cqw 2.4cqw at 20% 80%,rgba(255,255,255,.25),transparent),radial-gradient(3cqw 3cqw at 70% 82%,rgba(255,220,150,.22),transparent),repeating-conic-gradient(from 160deg at 50% -10%,rgba(255,240,200,.1) 0 4deg,transparent 4deg 12deg),
+  radial-gradient(70% 40% at 50% 34%,color-mix(in srgb,var(--ac) 60%,#fff 0%),transparent 70%),linear-gradient(180deg,#2a1f4a,#120d2a 55%,#070516)}
+.tc3.tc4.r-SR:not(.back){box-shadow:0 0 12px rgba(255,210,63,.3),0 6px 16px rgba(0,0,0,.55)}
+/* --- SSR · Main event : projecteurs qui bougent, colonnes de feu, pyro ; ça brille --- */
+.tc4.rz-SSR{--metal:linear-gradient(135deg,#a8790f,#fff3c4 20%,#ffd23f 40%,#b8860b 60%,#fff3c4 80%,#a8790f);--rv:#fff3c4;--lt:linear-gradient(105deg,transparent 38%,rgba(255,255,255,.95) 50%,transparent 62%) 0 0/260% 100% no-repeat,linear-gradient(180deg,#fffbe6 0%,#ffd23f 36%,#b8860b 56%,#fff3c4 76%,#8a6400 100%);--lg:1.6cqw;--lgc:rgba(255,210,63,.7)}
+.tc4.rz-SSR .t4bg{background:radial-gradient(60% 40% at 50% 36%,rgba(255,210,63,.45),transparent 70%),linear-gradient(180deg,#2b1a05,#140c03 55%,#070401)}
+.tc3.tc4.r-SSR:not(.back){box-shadow:0 0 16px rgba(255,214,90,.55),0 6px 16px rgba(0,0,0,.55)}
+.tc4 .zbeam{position:absolute;top:-10%;width:30cqw;height:120%;transform-origin:50% 0;background:linear-gradient(180deg,rgba(255,240,190,.55),transparent 85%);clip-path:polygon(42% 0,58% 0,100% 100%,0 100%);opacity:.8;animation:zbeam 4.5s ease-in-out infinite alternate;transform:rotate(var(--b0))}
+.tc4 .zbeam.a{left:6%;--b0:-18deg;--b1:12deg}.tc4 .zbeam.b{right:6%;--b0:18deg;--b1:-12deg;animation-delay:-2.2s}
+@keyframes zbeam{from{transform:rotate(var(--b0))}to{transform:rotate(var(--b1))}}
+.tc4 .zpyro{position:absolute;bottom:40%;width:1.2cqw;height:1.2cqw;border-radius:50%;background:#ffd23f;box-shadow:0 0 2cqw #ff9a2e;opacity:0;animation:zspark 2.4s ease-out infinite}
+@keyframes zspark{0%{opacity:0;transform:translateY(0) scale(1)}10%{opacity:1}100%{opacity:0;transform:translateY(-55cqw) scale(.3)}}
+.tc4 .zpyro:nth-child(1){left:6%}.tc4 .zpyro:nth-child(2){left:12%;animation-delay:.6s}.tc4 .zpyro:nth-child(3){left:9%;animation-delay:1.3s}.tc4 .zpyro:nth-child(4){left:15%;animation-delay:1.9s}
+.tc4 .zpyro:nth-child(5){right:6%;animation-delay:.3s}.tc4 .zpyro:nth-child(6){right:12%;animation-delay:.9s}.tc4 .zpyro:nth-child(7){right:9%;animation-delay:1.6s}.tc4 .zpyro:nth-child(8){right:15%;animation-delay:2.1s}
+.tc4 .zflame{position:absolute;bottom:40%;width:8cqw;height:16cqw;background:radial-gradient(50% 60% at 50% 100%,#fff3c4,#ffb02e 35%,rgba(255,80,20,.6) 60%,transparent 75%);filter:blur(.6cqw);transform-origin:50% 100%;animation:zflame .5s ease-in-out infinite alternate;opacity:.85}
+.tc4 .zflame.a{left:3%}.tc4 .zflame.b{right:3%;animation-delay:-.25s}
+@keyframes zflame{from{transform:scaleY(.8)}to{transform:scaleY(1.15)}}
+/* --- UR · Champion : ceinture derrière, holo arc-en-ciel, confettis --- */
+.tc4.rz-UR{--metal:conic-gradient(#ff4d6d,#ffb84d,#5ee6a0,#4dc3ff,#b64dff,#ff4d6d);--lt:linear-gradient(90deg,#ff4d6d,#ffb84d,#fff27a,#5ee6a0,#4dc3ff,#b64dff,#ff4d6d) 0 0/220% 100%;--lg:1.8cqw;--lgc:rgba(190,140,255,.75)}
+.tc4.rz-UR .t4rim{background:conic-gradient(from var(--tca),#ff4d6d,#ffb84d,#5ee6a0,#4dc3ff,#b64dff,#ff4d6d);animation:t4spin 6s linear infinite}
+.tc4.rz-UR .t4bg{background:radial-gradient(60% 40% at 50% 36%,rgba(200,160,255,.35),transparent 70%),linear-gradient(180deg,#1b1240,#0d0826 55%,#050312)}
+.tc3.tc4.r-UR:not(.back){box-shadow:0 0 18px rgba(180,120,255,.55),0 6px 16px rgba(0,0,0,.55)}
+@keyframes t4spin{to{--tca:360deg}}
+.tc4 .zbelt{position:absolute;left:50%;top:3%;width:104cqw;height:50cqw;margin-left:-52cqw;opacity:.8}
+.tc4 .zstrap{position:absolute;left:0;right:0;top:50%;height:13cqw;margin-top:-6.5cqw;background:linear-gradient(180deg,#1b1b1f,#050506);border-top:.4cqw dashed rgba(255,255,255,.3);border-bottom:.4cqw dashed rgba(255,255,255,.3)}
+.tc4 .zcp{position:absolute;left:50%;top:0;width:78cqw;height:50cqw;margin-left:-39cqw;border-radius:50% / 46%;background:conic-gradient(from var(--tca),#ff4d6d,#ffb84d,#fff27a,#5ee6a0,#4dc3ff,#b64dff,#ff4d6d);animation:t4spin 6s linear infinite;box-shadow:inset 0 0 0 1.6cqw rgba(255,255,255,.35)}
+.tc4 .zsp{position:absolute;top:50%;width:11cqw;height:15cqw;margin-top:-7.5cqw;border-radius:2cqw;background:linear-gradient(135deg,#ffe27a,#b8860b)}
+.tc4 .zsp.a{left:1cqw}.tc4 .zsp.b{right:1cqw}
+.tc4 .zholo{position:absolute;inset:0;mix-blend-mode:overlay;opacity:.55;background:linear-gradient(125deg,#ff4d6d,#ffb84d,#fff27a,#5ee6a0,#4dc3ff,#b64dff,#ff4d6d,#ffb84d);background-size:300% 300%;animation:zholo 6s linear infinite}
+@keyframes zholo{0%{background-position:0% 30%}50%{background-position:100% 70%}100%{background-position:0% 30%}}
+.tc4 .zconf{position:absolute;top:-6%;width:1.6cqw;height:2.6cqw;opacity:.9;animation:zconf 3.4s linear infinite}
+@keyframes zconf{0%{transform:translateY(0) rotate(0)}100%{transform:translateY(150cqw) rotate(540deg)}}
+.tc4 .zconf:nth-child(1){left:8%;background:#ff4d6d}.tc4 .zconf:nth-child(2){left:22%;background:#ffd23f;animation-delay:1.1s}.tc4 .zconf:nth-child(3){left:38%;background:#4dc3ff;animation-delay:2.2s}
+.tc4 .zconf:nth-child(4){left:55%;background:#5ee6a0;animation-delay:.5s}.tc4 .zconf:nth-child(5){left:70%;background:#b64dff;animation-delay:1.7s}.tc4 .zconf:nth-child(6){left:86%;background:#fff;animation-delay:2.8s}
+.tc4 .zconf:nth-child(7){left:30%;background:#ffb84d;animation-delay:2.5s}.tc4 .zconf:nth-child(8){left:78%;background:#ff4d6d;animation-delay:.9s}
+/* --- LR · Légende : rayons qui tournent, aura, paillettes, diamant --- */
+.tc4.rz-LR{--metal:conic-gradient(#fff 0 6%,#b9efff 6% 14%,#fff 14% 20%,#d8ccff 20% 28%,#fff 28% 34%,#aef7e6 34% 42%,#fff 42% 50%,#b9efff 50% 58%,#fff 58% 64%,#d8ccff 64% 72%,#fff 72% 78%,#aef7e6 78% 86%,#fff 86%);--lt:linear-gradient(105deg,transparent 38%,#fff 50%,transparent 62%) 0 0/260% 100% no-repeat,linear-gradient(135deg,#fff 0%,#b9efff 22%,#fff 42%,#d8ccff 62%,#aef7e6 82%,#fff 100%);--lg:2cqw;--lgc:rgba(185,239,255,.85)}
+.tc4.rz-LR .t4rim{background:conic-gradient(from var(--tca),#fff 0 6%,#b9efff 6% 14%,#fff 14% 20%,#d8ccff 20% 28%,#fff 28% 34%,#aef7e6 34% 42%,#fff 42% 50%,#b9efff 50% 58%,#fff 58% 64%,#d8ccff 64% 72%,#fff 72% 78%,#aef7e6 78% 86%,#fff 86%);animation:t4spin 6s linear infinite}
+.tc4.rz-LR .t4bg{background:radial-gradient(55% 40% at 50% 36%,rgba(255,255,255,.55),rgba(185,239,255,.2) 45%,transparent 72%),linear-gradient(180deg,#14233a,#0a1222 55%,#04070f)}
+.tc3.tc4.r-LR:not(.back){box-shadow:0 0 22px rgba(191,243,255,.65),0 6px 16px rgba(0,0,0,.55)}
+.tc4 .zrays{position:absolute;left:50%;top:36%;width:220cqw;height:220cqw;margin:-110cqw 0 0 -110cqw;background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.22) 0 5deg,transparent 5deg 15deg);-webkit-mask:radial-gradient(circle,#000 8%,transparent 45%);mask:radial-gradient(circle,#000 8%,transparent 45%);animation:zrot 24s linear infinite}
+@keyframes zrot{to{transform:rotate(360deg)}}
+.tc4.rz-LR:not(.sm) .t4img{filter:drop-shadow(0 0 2.4cqw rgba(255,255,255,.75)) drop-shadow(0 0 6cqw rgba(185,239,255,.6))}
+.tc4 .zglit{position:absolute;width:3cqw;height:3cqw;background:#fff;clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);opacity:0;animation:zglit 2.2s ease-in-out infinite;filter:drop-shadow(0 0 1cqw #b9efff)}
+@keyframes zglit{0%,100%{opacity:0;transform:scale(.3) rotate(0)}50%{opacity:1;transform:scale(1) rotate(45deg)}}
+.tc4 .zglit:nth-child(1){left:10%;top:14%}.tc4 .zglit:nth-child(2){left:78%;top:22%;animation-delay:.5s}.tc4 .zglit:nth-child(3){left:20%;top:40%;animation-delay:1.1s;width:2cqw;height:2cqw}
+.tc4 .zglit:nth-child(4){left:86%;top:46%;animation-delay:1.5s}.tc4 .zglit:nth-child(5){left:55%;top:8%;animation-delay:.8s;width:2.2cqw;height:2.2cqw}.tc4 .zglit:nth-child(6){left:40%;top:30%;animation-delay:1.8s;width:1.8cqw;height:1.8cqw}
+.tc4 .zglit:nth-child(7){left:66%;top:52%;animation-delay:.3s}.tc4 .zglit:nth-child(8){left:6%;top:56%;animation-delay:1.3s;width:2cqw;height:2cqw}
+.tc4.rz-LR .t4shine{background:linear-gradient(105deg,transparent 38%,rgba(185,239,255,.55) 45%,rgba(255,255,255,.75) 49%,rgba(216,204,255,.55) 53%,transparent 60%) no-repeat;background-size:280% 100%;animation-duration:2.8s}
+/* les lettres brillent (SSR, LR) ou changent de couleur (UR) */
+.tc4.rz-SSR .t4rl b,.tc4.rz-SSR .t4rl small,.tc4.rz-LR .t4rl b,.tc4.rz-LR .t4rl small{animation:zlshine 2.8s ease-in-out infinite}
+@keyframes zlshine{0%,30%{background-position:160% 0,0 0}80%,100%{background-position:-60% 0,0 0}}
+.tc4.rz-UR .t4rl b,.tc4.rz-UR .t4rl small{animation:zlrain 3s linear infinite}
+@keyframes zlrain{to{background-position:220% 0}}
+/* boosters des agents libres : le même symbole sur le sachet */
+.tpk-fa{position:absolute;z-index:3;left:8%;top:17%;display:flex;flex-direction:column;align-items:center;gap:1cqw;width:24cqw;color:#ffd23f;filter:drop-shadow(0 1cqw 2cqw rgba(0,0,0,.6))}
+.tpk-fa svg{width:20cqw;height:20cqw;padding:3.2cqw;border-radius:50%;box-sizing:border-box;background:radial-gradient(circle at 35% 30%,#1f8a52,#0b3a21 75%);box-shadow:0 0 0 1cqw #ffd23f}
+.tpk-fa small{font:400 5cqw/1 Anton,sans-serif;letter-spacing:.06em;white-space:nowrap;color:#ffd23f;text-shadow:0 .5cqw 0 rgba(0,0,0,.7)}
+/* vue 3D de l'appui long (peek.js) : on fait tourner la carte au doigt (face, tranche, dos) */
+.tpeek .tv3d{perspective:1100px;touch-action:none;cursor:grab;-webkit-user-select:none;user-select:none}
+.tpeek .tv3d:active{cursor:grabbing}
+.tv3d-in{position:relative;transform-style:preserve-3d;transition:transform .06s linear}
+.tv3d-in.slow{transition:transform 1.2s cubic-bezier(.3,.8,.3,1)}
+.tv3f,.tv3b{position:absolute;left:0;top:0;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.tv3f{transform:translateZ(2px)}.tv3b{transform:rotateY(180deg) translateZ(2px)}
+.tv3f .tc3,.tv3b .tc3{position:absolute;left:0;top:0;transform-origin:top left;box-shadow:0 18px 40px rgba(0,0,0,.6)}
+.tv3e{position:absolute;background:linear-gradient(90deg,#7d8693,#f6f8fb 50%,#7d8693)}
+.tv3e.l,.tv3e.r{top:3%;bottom:3%;width:4px;margin-left:-2px}.tv3e.l{left:0;transform:rotateY(90deg)}.tv3e.r{left:100%;transform:rotateY(90deg)}
+.tv3e.t,.tv3e.b{left:3%;right:3%;height:4px;margin-top:-2px}.tv3e.t{top:0;transform:rotateX(90deg)}.tv3e.b{top:100%;transform:rotateX(90deg)}
+.tv3gl{position:absolute;inset:0;z-index:9;pointer-events:none;border-radius:12px;mix-blend-mode:screen;opacity:0;background:linear-gradient(105deg,transparent calc(var(--gx,50%) - 18%),rgba(255,255,255,.38) var(--gx,50%),transparent calc(var(--gx,50%) + 18%))}
+.tv3ctl{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:0 12px;margin-top:6px}
+.tv3ctl button{min-height:40px;padding:0 14px;border-radius:10px;border:0;background:#0b1636;box-shadow:inset 0 0 0 2px #3b4a7a;color:#fff;font:700 15px/1 'Barlow Condensed',sans-serif;cursor:pointer}
+.tv3ctl button:focus-visible{outline:3px solid #ffd23f;outline-offset:2px}
+/* combat : la carte Legends */
+.tbsup.leg{background:linear-gradient(135deg,#fff3c4,#ffd23f 50%,#c48a00);color:#2a1a00}
+.tblegb b{color:#ffd23f}
+.tprepsk.leg{background:rgba(255,210,63,.16);box-shadow:inset 0 0 0 2px #ffd23f}
+.tmqzero{display:block;margin:-2px 16px 8px auto}
+html.tgsimple .tv3d-in{transition:none}
+@media (prefers-reduced-motion:reduce){.tv3d-in.slow{transition-duration:.01s}}

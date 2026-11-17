@@ -128,11 +128,16 @@ ACT.tcgprep = el => {
 };
 // carte Soutien (14 nov.) : jamais dans l'équipe, seulement dans la case Soutien ; sa compétence s'ajoute au bonus de type
 const isSupC = (d, iid) => { const x = d.cards[iid], df = x && defOf(x.c); return !!(df && df.sup); };
-const supSkill = (d, iid) => { const x = iid && d.cards[iid], df = x && defOf(x.c); return df && df.sup ? Object.assign({ name: df.name, used: 0 }, skillOf(df, x.r)) : null; };
+const supSkill = (d, iid) => { const x = iid && d.cards[iid], df = x && defOf(x.c), k = df && df.sup ? skillOf(df, x.r) : null; return k ? Object.assign({ name: df.name, used: 0 }, k) : null; };
+// carte Legends (16 nov.) : case Soutien seulement ; +5 % à toute l'équipe et son « retour surprise » : quand ton équipe tombe à 25 % de PV
+// (ou à 0, ça sauve du tombé), la légende entre sur le ring, soigne 60 % de ses PV (somme de ses stats) et joue 3 de tes tours, puis repart
+const isLegC = (d, iid) => { const x = iid && d.cards[iid], df = x && defOf(x.c); return !!(df && df.leg); };
+const LEG_AT = 0.25, LEG_HEAL = 0.6, LEG_TURNS = 3;
+const legInfo = (d, iid) => { if (!isLegC(d, iid)) return null; const x = Object.assign({ iid: iid }, d.cards[iid]), df = defOf(x.c), st = statsOf(x, df); return { name: df.name, heal: Math.round(sum(st) * LEG_HEAL) }; };
 const statSk = (k, st) => k && k.fx === "stat" ? st.map((v, j) => j === k.s ? Math.round(v * (1 + k.v / 100)) : v) : st;
 let pflt = "";
 ACT.tcgpflt = el => { pflt = el.dataset.v || ""; changed("tcg"); };
-const teamBonus = (d, iid, supIid) => { const s = supIid && d.cards[supIid], a = d.cards[iid]; return s && a && (defOf(s.c) || {}).arch === (defOf(a.c) || {}).arch ? 1.1 : 1; };
+const teamBonus = (d, iid, supIid) => { const s = supIid && d.cards[supIid], a = d.cards[iid]; if (s && a && isLegC(d, supIid)) return 1.05; return s && a && (defOf(s.c) || {}).arch === (defOf(a.c) || {}).arch ? 1.1 : 1; };
 function gainsBox(F, diff, n) {
   const T = TIER[F.tier], D = DIFF[diff] || DIFF.low, gm = (F.quick ? 1 : D.rew) * (0.6 + 0.2 * n), rg = a => nf(Math.round(a[0] * gm)) + "–" + nf(Math.round(a[1] * gm));
   const L = ["💵 " + rg(T.money), "⚡⭐📣 " + rg(T.mpp) + " de chaque", "🎟️ " + rg(T.gim) + " gimmicks", "✨ XP joueur et cartes"];
@@ -164,8 +169,9 @@ export function prepView() {
   h += '<h2>4. Ton équipe <small class="tsmall">' + prep.team.length + " / " + n + "</small></h2>" +
     '<div class="tprepteam">' + Array.from({ length: n }, (_, i) => { const iid = prep.team[i], x = iid && d.cards[iid]; return '<div class="tslot2' + (iid && iid === prep.lead ? " lead" : "") + '">' + (x ? cardHTML(Object.assign({ iid: iid }, x), { small: true, act: "tcgpick", iid: iid, badge: adv(x) }) + '<button class="tleadb" data-act="tcglead" data-iid="' + esc(iid) + '">' + (iid === prep.lead ? "👑 Leader" : "Leader ?") + "</button>" : "<span>Carte " + (i + 1) + "</span>") + "</div>"; }).join("") +
     '<div class="tslot2 sup">' + (prep.sup && d.cards[prep.sup] ? cardHTML(Object.assign({ iid: prep.sup }, d.cards[prep.sup]), { small: true, act: "tcgpick", iid: prep.sup }) : "<span>Soutien<br><small>+10 % à son type (+ compétence d’une carte Soutien)</small></span>") + "</div></div>" +
+    (legInfo(d, prep.sup) ? '<p class="tprepsk leg">👑 <b>Legends · ' + esc(legInfo(d, prep.sup).name) + "</b> : +5 % à toute ton équipe. Retour surprise : quand ton équipe tombe à 25 % de vie, la légende entre sur le ring, soigne " + legInfo(d, prep.sup).heal + " PV et joue 3 tours.</p>" : "") +
     (psk ? '<p class="tprepsk">🤝 <b>' + esc(psk.name) + " · " + esc(psk.n) + "</b> : " + esc(psk.t) + "</p>" : "") +
-    '<p class="tnote">' + (life ? "❤️ Vie de ton équipe = stats de toutes tes cartes = <b>" + life + "</b>. " : "") + "Touche des cartes ci-dessous : d’abord " + n + " carte" + (n > 1 ? "s" : "") + ", puis 1 soutien (bonus +10 % aux cartes de son type ; une carte Soutien ajoute sa compétence et ne va que dans cette case). « Leader ? » pour choisir le leader.</p>";
+    '<p class="tnote">' + (life ? "❤️ Vie de ton équipe = stats de toutes tes cartes = <b>" + life + "</b>. " : "") + "Touche des cartes ci-dessous : d’abord " + n + " carte" + (n > 1 ? "s" : "") + ", puis 1 soutien (bonus +10 % aux cartes de son type ; une carte Soutien ajoute sa compétence et ne va que dans cette case ; une carte Legends donne +5 % à tous et fait un retour surprise). « Leader ? » pour choisir le leader.</p>";
   if (combatItems.length) h += '<h2>5. Objets <small class="tsmall">2 au plus, un seul usage</small></h2><div class="tfilt">' + combatItems.map(x => '<button class="chip' + (prep.items.indexOf(x.id) >= 0 ? " on" : "") + '" data-act="tcgitem" data-id="' + x.id + '">' + itemIc(x) + " " + esc(x.n) + " ×" + d.items[x.id] + " · " + Math.round(QCH[x.q || "commun"] * 100) + " %</button>").join("") + "</div>";
   h += '<button class="btn wide gold" style="margin:8px 16px;width:calc(100% - 32px)" data-act="tcgfight"' + (prep.team.length === n && foes.length === n ? "" : " disabled") + ">⚔️ Lancer le combat</button>";
   const nsup = L.filter(x => isSupC(d, x.iid)).length;
@@ -217,18 +223,21 @@ ACT.tcgfight = () => {
   const F = prep.F, D = DIFF[prep.diff] || DIFF.low, mult = F.quick ? 0.85 : F.tier === "duel" ? 1 : D.st;
   if (prep.team.some(iid => isSupC(d, iid))) return toast("Une carte Soutien ne va que dans la case Soutien");
   const sk = supSkill(d, prep.sup);
-  const mine = prep.team.map(iid => { const x = Object.assign({ iid: iid }, d.cards[iid]), f = fighter(defOf(x.c), x.lv, x); const bo = teamBonus(d, iid, prep.sup); f.st = statSk(sk, f.st.map(v => Math.round(v * bo))); f.sup = bo > 1; return f; });
+  const mine = prep.team.map(iid => { const x = Object.assign({ iid: iid }, d.cards[iid]), f = fighter(defOf(x.c), x.lv, x); const bo = teamBonus(d, iid, prep.sup); f.st = statSk(sk, f.st.map(v => Math.round(v * bo))); f.sup = bo > 1 ? Math.round((bo - 1) * 100) : 0; return f; });
   const foes = prep.foes.map(i => F.pool[i]).filter(Boolean).map(f => fighter(f.def, f.lv, f.inst || null, f.inst && f.inst.r, mult));
   partner(mine); partner(foes);
   const lead = Math.max(0, prep.team.indexOf(prep.lead)), elead = foes.reduce((bi, f, i) => sum(f.st) > sum(foes[bi].st) ? i : bi, 0);
   B = { v: 2, k: prep.k, F: { label: F.label, tier: F.tier, key: F.key || "", uid: F.uid || "", oname: F.oname || "", quick: !!F.quick, src: prep.foes.map(i => F.pool[i] && F.pool[i].src ? F.pool[i].src.id : "").filter(Boolean), champ: prep.foes.map(i => F.pool[i]).filter(Boolean).map(f => (f.src || f.def).rn || (f.src || f.def).name) },
     tier: F.tier, diff: prep.diff, n: n, P: side(mine, lead), E: side(foes, elead), T: 0, turn: "", over: false, pin: "", log: "Pierre, feuille, ciseaux : qui commence ?", sel: -1 };
   B.P.items = prep.items.slice(0, 2);
+  if (isLegC(d, prep.sup)) { const x = Object.assign({ iid: prep.sup }, d.cards[prep.sup]), f = fighter(defOf(x.c), x.lv, x); f.leg = 1; B.P.leg = { st: "wait", f: f, heal: Math.round(sum(f.st) * LEG_HEAL), left: 0 }; }
   if (sk) { B.P.sk = sk; if (sk.fx === "item") { const pool = items().filter(x => x.t === "combat" && B.P.items.indexOf(x.id) < 0); if (pool.length) { const it = pool[Math.floor(Math.random() * pool.length)]; B.P.items.push(it.id); B.P.gift = it.id; sk.used = 1; } } }
   B.F.meds = F.key ? prep.foes.map(i => F.pool[i]).filter(Boolean).map(medName) : [];
   lastPrep = { k: prep.k, F: F, n: n, foes: prep.foes.slice(), team: prep.team.slice(), lead: prep.lead, sup: prep.sup, items: prep.items.slice(), diff: prep.diff };
   persist(); location.hash = "#/tccg/combat"; SFX.unlock(); SFX.bell(3); SFX.crowd(true); SFX.music(true);
 };
+// le combat en cours (lecture seule, pour les tests automatiques)
+export const fightNow = () => B;
 const other = s => s === "P" ? "E" : "P";
 const stunned = (sd, i) => B[sd].cards[i].stun >= B.T;
 const mods = sd => (B[sd].boostU >= B.T ? 1.5 : 1) * (B[sd].divU >= B.T ? 0.5 : 1);
@@ -264,12 +273,33 @@ function skBox() {
   const done = k.used && (k.q === "start" || k.q === "low" || k.q === "once" || k.fx === "item");
   return '<div class="tbsk' + (done ? " used" : "") + (B.skFx && Date.now() - B.skFx < 1200 ? " fire" : "") + '"><b>🤝 ' + esc(k.name) + " · " + esc(k.n) + "</b><span>" + esc(done && k.fx !== "item" ? "Déjà utilisée" : k.t) + "</span></div>";
 }
+// ---------- la carte Legends (16 nov.) ----------
+function legIn() {
+  const P = B && B.P, L = P && P.leg; if (!L || L.st !== "wait" || B.over || P.hp > P.max * LEG_AT) return false;
+  const h0 = Math.max(0, P.hp); P.hp = Math.min(P.max, h0 + L.heal); L.st = "in"; L.left = LEG_TURNS; L.at = Date.now();
+  const f = Object.assign({}, L.f, { stun: -1 }); P.cards.push(f);
+  say("👑 RETOUR SURPRISE ! " + f.name + " entre sur le ring : +" + (P.hp - h0) + " PV pour ton équipe");
+  try { SFX.crowd(true); SFX.bell(1); } catch (e) {}
+  setTimeout(() => { const e = el("P", P.cards.length - 1) || document.querySelector(".tblegb"); if (e) { const p = mid(e); burst(p[0], p[1], 40); pop(p[0], p[1] - 30, "LEGENDS !", "#ffd23f", 30); } }, 120);
+  return true;
+}
+function legTurn() {
+  const P = B.P, L = P.leg; if (!L || L.st !== "in") return;
+  if (L.left > 0) { L.left--; return; }
+  const i = P.cards.findIndex(c => c.leg); if (i >= 0) P.cards.splice(i, 1);
+  L.st = "done"; say("👑 " + L.f.name + " quitte le ring sous les applaudissements");
+}
+function legBox() {
+  const L = B.P.leg; if (!L) return "";
+  const t = L.st === "wait" ? "Retour surprise quand ton équipe tombe à 25 % de vie : +" + L.heal + " PV et 3 tours sur le ring" : L.st === "in" ? "Sur le ring ! Encore " + (L.left + 1) + " tour" + (L.left ? "s" : "") : "Elle a fait son retour";
+  return '<div class="tbsk tblegb' + (L.st === "done" ? " used" : "") + (L.at && Date.now() - L.at < 1500 ? " fire" : "") + '"><b>👑 Legends · ' + esc(L.f.name) + "</b><span>" + esc(t) + "</span></div>";
+}
 const mTxt = m => m === 2 ? " · avantage de type ×2" : m === 0.5 ? " · désavantage ×0,5" : "";
 function hpBar(sd) { const X = B[sd], p = Math.max(0, Math.round(X.hp / X.max * 100)); return '<div class="tbhp ' + sd + '"><span class="tbhpt">❤️ ' + Math.max(0, X.hp) + " / " + X.max + '</span><i style="width:' + p + '%" class="' + (p > 50 ? "g" : p > 25 ? "y" : "r") + '"></i></div><div class="tbfin ' + (X.fin >= 100 ? "full" : "") + '"><span>🔥 FINISHER ' + Math.min(100, Math.round(X.fin)) + ' %</span><i style="width:' + Math.min(100, X.fin) + '%"></i></div>'; }
 function cardsRow(sd) {
   const X = B[sd];
   return '<div class="tbrow ' + sd + '">' + X.cards.map((c, i) => '<div class="tbc' + (i === X.lead ? " lead" : "") + (sd === "P" && B.sel === i ? " sel" : "") + (stunned(sd, i) ? " stun" : "") + '" data-side="' + sd + '" data-i="' + i + '">' +
-    cardHTML(c.inst || { c: c.id, r: c.r, lv: c.lv }, { small: true, nozoom: true, fighter: true }) + '<span class="tbtype" style="background:' + (ARCH[c.arch] || {}).c + '">' + esc(c.arch) + "</span>" + (i === X.lead ? '<span class="tblead">👑</span>' : "") + (stunned(sd, i) ? '<span class="tbstun">💫</span>' : "") + (c.sup ? '<span class="tbsup">+10 %</span>' : "") + "</div>").join("") + "</div>";
+    cardHTML(c.inst || { c: c.id, r: c.r, lv: c.lv }, { small: true, nozoom: true, fighter: true }) + '<span class="tbtype" style="background:' + (ARCH[c.arch] || {}).c + '">' + esc(c.arch) + "</span>" + (i === X.lead ? '<span class="tblead">👑</span>' : "") + (stunned(sd, i) ? '<span class="tbstun">💫</span>' : "") + (c.sup ? '<span class="tbsup">+' + (c.sup === true ? 10 : c.sup) + " %</span>" : "") + (c.leg ? '<span class="tbsup leg">👑</span>' : "") + "</div>").join("") + "</div>";
 }
 export function combatView() {
   if (!B && !restore()) return eventView();
@@ -278,7 +308,7 @@ export function combatView() {
     '<div class="tbtop"><button class="tbquit" data-act="tcgquit" aria-label="Abandonner">✕</button><span class="tblabel">' + esc(B.F.label) + (B.diff && B.diff !== "low" && !B.F.quick ? ' · <b class="tdtag ' + B.diff + '">' + DIFF[B.diff].n + "</b>" : "") + '</span><button class="tbauto' + (AUTO ? " on" : "") + '" data-act="tcgauto">' + (AUTO ? "⏸ AUTO" : "▶ AUTO") + '</button><button class="tbwheel" data-act="tcgtypes" aria-label="Roue des types"><span>TYPES</span></button></div>' +
     '<div class="tbsideE">' + hpBar("E") + cardsRow("E") + "</div>" +
     '<div class="tbmid"><div class="tbturn ' + (B.turn === "P" ? "me" : B.turn === "E" ? "foe" : "") + '">' + (B.pin ? "🤼 TOMBÉ !" : !B.turn ? "✊ ✋ ✌️" : B.turn === "P" ? "▶ À TOI DE JOUER" : "⏳ TOUR DE L’ADVERSAIRE") + '</div><p class="tblog">' + esc(B.log) + "</p></div>" +
-    '<div class="tbsideP">' + cardsRow("P") + hpBar("P") + skBox() + "</div>";
+    '<div class="tbsideP">' + cardsRow("P") + hpBar("P") + legBox() + skBox() + "</div>";
   if (!B.turn) h += '<div class="trps">' + [["p", "Pierre"], ["f", "Feuille"], ["c", "Ciseaux"]].map(x => '<button data-act="tcgrps" data-v="' + x[0] + '" aria-label="' + x[1] + '">' + glove(x[0], "#ffd23f", "#e9b800") + "<small>" + x[1] + "</small></button>").join("") + "</div>";
   else if (B.pin === "P" && !B.over) h += '<button class="tbpin" data-act="tcgpin">🤼 PIN !</button>';
   else h += '<div class="tbbtns">' + (P.fin >= 100 ? '<button class="btn gold tbfinb" data-act="tcgfinpick"' + (my ? "" : " disabled") + ">🔥 FINISHER</button>" : "") +
@@ -405,14 +435,15 @@ async function attack(sd, ai, ti, si) {
 function afterAction(sd, again) {
   if (B.over) return;
   skFire("low");
-  if (B.E.hp <= 0 && !B.pin) { B.pin = "P"; say("L’équipe adverse est à terre : touche PIN pour le tombé !"); redraw(); return; }
+  const li = legIn() ? B.log + " · " : "";
+  if (B.E.hp <= 0 && !B.pin) { B.pin = "P"; say(li + "L’équipe adverse est à terre : touche PIN pour le tombé !"); redraw(); return; }
   if (B.P.hp <= 0 && !B.pin) { B.pin = "E"; say("Ton équipe est à terre… l’adversaire tente le tombé !"); redraw(); setTimeout(pinStep, 900); return; }
   if (again) { say(B.log + " · 🔁 Tu rejoues !"); redraw(); return; }
   nextTurn(sd);
 }
 function nextTurn(sd) {
   B.T++; B.turn = other(sd); B.sel = -1;
-  if (B.turn === "P") { B.P.tn = (B.P.tn || 0) + 1; if (skFire("turn") && B.E.hp <= 0) { B.pin = "P"; say(B.log + " · l’équipe adverse est à terre : touche PIN !"); redraw(); return; } }
+  if (B.turn === "P") { B.P.tn = (B.P.tn || 0) + 1; legTurn(); if (skFire("turn") && B.E.hp <= 0) { B.pin = "P"; say(B.log + " · l’équipe adverse est à terre : touche PIN !"); redraw(); return; } }
   const X = B[B.turn];
   // toutes les cartes étourdies : tour sauté
   if (X.cards.every((c, i) => stunned(B.turn, i))) { say((B.turn === "P" ? "Tes cartes sont" : "Les cartes adverses sont") + " toutes étourdies : tour passé"); redraw(); return setTimeout(() => nextTurn(B.turn), 1300); }

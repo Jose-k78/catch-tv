@@ -45,8 +45,9 @@ export function modoView() {
   if (tab === "") {
     const L = mList();
     h += '<div class="search" style="margin:0 16px"><input id="tmq" type="search" placeholder="Chercher une carte" value="' + esc(q) + '"></div><p class="tnote">' + baseCards().length + " cartes · touche une carte pour la modifier</p>" +
-      '<button class="btn wide tmquickb" data-act="tcgmquick">⚡ Modif rapide <small>une carte au hasard, glisse pour la suivante</small></button>' +
-      '<div class="tfilt">' + [["", "Toutes"], ["1", "🖼️ Sans image (" + baseCards().filter(c => !c.pic).length + ")"], ["sup", "🤝 Soutiens (" + baseCards().filter(c => c.sup).length + ")"], ["hid", "🙈 Masquées (" + hiddenCards().length + ")"]].map(x => '<button class="chip' + (noImg === x[0] ? " on" : "") + '" data-act="tcgmnoimg" data-v="' + x[0] + '">' + x[1] + "</button>").join("") + "</div>" +
+      '<button class="btn wide tmquickb" data-act="tcgmquick">⚡ Modif rapide <small>une carte au hasard, glisse pour la suivante' + (qPos() ? " · reprise carte " + qPos() : "") + '</small></button>' +
+      '<button class="btn small ghost tmqzero" data-act="tcgmqzero">↺ Modif rapide : repartir à zéro</button>' +
+      '<div class="tfilt">' + [["", "Toutes"], ["1", "🖼️ Sans image (" + baseCards().filter(c => !c.pic).length + ")"], ["sup", "🤝 Soutiens (" + baseCards().filter(c => c.sup && !c.leg).length + ")"], ["leg", "👑 Legends (" + baseCards().filter(c => c.leg).length + ")"], ["hid", "🙈 Masquées (" + hiddenCards().length + ")"]].map(x => '<button class="chip' + (noImg === x[0] ? " on" : "") + '" data-act="tcgmnoimg" data-v="' + x[0] + '">' + x[1] + "</button>").join("") + "</div>" +
       '<div class="trgrid">' + L.map(c => cardHTML(c, { small: true, act: "tcgmedit", iid: "" })).join("") + "</div>";
   }
   if (tab === "rendre") {
@@ -88,7 +89,7 @@ export function modoView() {
   return h;
 }
 let noImg = "";
-const mList = () => (noImg === "hid" ? hiddenCards() : baseCards()).filter(c => (!q || norm(c.name).indexOf(norm(q)) >= 0) && (noImg !== "1" || !c.pic) && (noImg !== "sup" || c.sup)).slice(0, noImg ? 200 : 60);
+const mList = () => (noImg === "hid" ? hiddenCards() : baseCards()).filter(c => (!q || norm(c.name).indexOf(norm(q)) >= 0) && (noImg !== "1" || !c.pic) && (noImg !== "sup" || (c.sup && !c.leg)) && (noImg !== "leg" || c.leg)).slice(0, noImg ? 200 : 60);
 ACT.tcgmnoimg = el => { noImg = el.dataset.v || ""; changed("tcg"); };
 ACT.tcgmt = el => { tab = el.dataset.t || ""; changed("tcg"); };
 document.addEventListener("input", e => { if (e.target.id === "tmq") { q = e.target.value; const g = document.querySelector(".trgrid"); if (g) g.innerHTML = mList().map(c => cardHTML(c, { small: true, act: "tcgmedit" })).join(""); } });
@@ -96,11 +97,12 @@ document.addEventListener("input", e => { if (e.target.id === "tmq") { q = e.tar
 // ---------- modifier une carte ----------
 // ---------- carte Soutien (14 nov.) : catégorie + compétence réglée par le modo ----------
 function supFields(c) {
-  const k = skillOf(Object.assign({}, c, { sup: true, skill: c.skill || {} }), "N"), o = c.skill || {};
+  const k = skillOf(Object.assign({}, c, { sup: true, leg: false, skill: c.skill || {} }), "N"), o = c.skill || {}, noSk = c.leg && !(c.skill && SKILLS[c.skill.id]);
   return '<fieldset class="tmsup"><legend>Catégorie</legend><label class="chk"><input type="radio" name="cat" value=""' + (c.sup ? "" : " checked") + "> Catcheur</label>" +
-    '<label class="chk"><input type="radio" name="cat" value="sup"' + (c.sup ? " checked" : "") + "> 🤝 Soutien <small>(case Soutien seulement : bonus de type + compétence)</small></label></fieldset>" +
+    '<label class="chk"><input type="radio" name="cat" value="sup"' + (c.sup && !c.leg ? " checked" : "") + "> 🤝 Soutien <small>(case Soutien seulement : bonus de type + compétence)</small></label>" +
+    '<label class="chk"><input type="radio" name="cat" value="leg"' + (c.leg ? " checked" : "") + "> 👑 Legends <small>(case Soutien seulement : +5 % à toute l’équipe et retour surprise quand l’équipe tombe à 25 % de vie ; une compétence en plus seulement si tu en choisis une)</small></label></fieldset>" +
     '<div class="tmskill"' + (c.sup ? "" : " hidden") + ">" +
-    '<label>Compétence<select name="skid">' + Object.keys(SKILLS).map(id => '<option value="' + id + '"' + (id === k.id ? " selected" : "") + ">" + esc(SKILLS[id].n) + "</option>").join("") + "</select></label>" +
+    '<label>Compétence<select name="skid"><option value=""' + (noSk ? " selected" : "") + ">— Aucune (Legends seulement) —</option>" + Object.keys(SKILLS).map(id => '<option value="' + id + '"' + (!noSk && id === k.id ? " selected" : "") + ">" + esc(SKILLS[id].n) + "</option>").join("") + "</select></label>" +
     '<label>Puissance en N <small>(elle monte avec la rareté : ×2 en LR)</small><input name="skv" type="number" step="0.05" min="0" value="' + esc(+o.v > 0 ? o.v : SKILLS[k.id].v) + '"></label>' +
     '<label>Quand<select name="skq">' + Object.keys(SKQ).map(q => '<option value="' + q + '"' + (q === k.q ? " selected" : "") + ">" + esc(SKQ[q]) + "</option>").join("") + "</select></label>" +
     '<label>Stat (pour « Promo au micro »)<select name="sks">' + STATS.map((s, i) => '<option value="' + i + '"' + (i === k.s ? " selected" : "") + ">" + s + "</option>").join("") + "</select></label>" +
@@ -109,8 +111,10 @@ function supFields(c) {
 }
 function supPreview(box, c) {
   const f = box.querySelector("[data-mf]"); if (!f || !f.cat) return;
-  const on = f.cat.value === "sup", w = box.querySelector(".tmskill"); if (w) w.hidden = !on; if (!on) return;
-  const sk = { id: f.skid.value, v: +f.skv.value, q: f.skq.value, s: +f.sks.value, t: f.skt.value }, dd = Object.assign({}, c, { sup: true, skill: sk });
+  const on = f.cat.value === "sup" || f.cat.value === "leg", w = box.querySelector(".tmskill"); if (w) w.hidden = !on; if (!on) return;
+  const n0 = box.querySelector(".tmskn");
+  if (!SKILLS[f.skid.value]) { if (n0) n0.textContent = f.cat.value === "leg" ? "Pas de compétence : la carte Legends donne +5 % à toute l’équipe et fait son retour surprise." : "Une carte Soutien a toujours une compétence : ce sera « Coup de main »."; if (f.cat.value === "leg") return; }
+  const sk = { id: SKILLS[f.skid.value] ? f.skid.value : "coup", v: +f.skv.value, q: f.skq.value, s: +f.sks.value, t: f.skt.value }, dd = Object.assign({}, c, { sup: true, leg: false, skill: sk });
   const P = SKILLS[sk.id], a = skillOf(dd, "N"), z = skillOf(dd, "LR"), n = box.querySelector(".tmskn");
   if (n) n.textContent = (P && P.qs.indexOf(sk.q) < 0 ? "« " + SKQ[sk.q] + " » ne va pas avec cette compétence : ce sera « " + SKQ[a.q] + " ». " : "") + "En N : " + a.t + (a.t !== z.t ? " · En LR : " + z.t : "");
 }
@@ -232,14 +236,19 @@ ACT.tcgmedit = el => {
         else { if (nm && nm !== (c.rn || c.name)) t.name = nm; else delete t.name; if (yr !== (c.years || "") || "years" in t) t.years = yr; if (f.k.value) t.k = f.k.value; else delete t.k; }
         if (fac !== (c.faction || "") || "fac" in t) t.fac = fac;
         t.r = f.r.value; t.max = f.max.value; t.arch = f.arch.value; t.al = f.al.value; if (changedSt) t.st = st; t.fin = { n: f.fn.value.trim(), e: f.fe.value }; t.gimmick = f.gim.value.trim(); t.medalOf = f.md.value.trim(); const bo = f.bo.value.split(",").map(x => x.trim()).filter(Boolean); if (bo.length) t.boosters = bo; else delete t.boosters; if (f.hide.checked) t.hide = true; else delete t.hide;
-        if (f.cat.value === "sup") { t.sup = true; const id = SKILLS[f.skid.value] ? f.skid.value : "coup", sk = { id: id, v: +f.skv.value > 0 ? +f.skv.value : SKILLS[id].v, q: f.skq.value, s: +f.sks.value || 0 }; if (f.skt.value.trim()) sk.t = f.skt.value.trim().slice(0, 120); t.sk = sk; } else delete t.sup; }, "carte " + c.name)
+        const mkSk = () => { const id = SKILLS[f.skid.value] ? f.skid.value : "coup", sk = { id: id, v: +f.skv.value > 0 ? +f.skv.value : SKILLS[id].v, q: f.skq.value, s: +f.sks.value || 0 }; if (f.skt.value.trim()) sk.t = f.skt.value.trim().slice(0, 120); return sk; };
+        // Legends (16 nov.) : t.leg, compétence seulement si le modo en a choisi une
+        if (f.cat.value === "sup") { t.sup = true; delete t.leg; t.sk = mkSk(); } else if (f.cat.value === "leg") { t.leg = true; delete t.sup; if (SKILLS[f.skid.value]) t.sk = mkSk(); else delete t.sk; } else { delete t.sup; delete t.leg; } }, "carte " + c.name)
         .then(ok => { if (ok) { toast("Enregistré ✓"); if (quick) qStep(); } }).catch(er => { if (er && er.message !== "nokey") toast("Pas enregistré : " + er.message, { ms: 5000 }); });
     });
     // mode rapide : glisser vers la gauche = carte suivante (enregistrée d'abord si on a changé quelque chose)
     let dirty = false, p0 = null;
     const quickNext = () => { if (dirty) { const f = box.querySelector("[data-mf]"); if (f.requestSubmit) f.requestSubmit(); else f.dispatchEvent(new Event("submit", { cancelable: true })); return; } close(); qStep(); };
     box.addEventListener("input", () => { dirty = true; supPreview(box, c); });
-    box.addEventListener("change", e => { dirty = true; if (e.target.name === "skid") { const P = SKILLS[e.target.value]; if (P) { box.querySelector("[name=skv]").value = P.v; box.querySelector("[name=skq]").value = P.q; } } supPreview(box, c); });
+    box.addEventListener("change", e => { dirty = true;
+      // Legends : pas de compétence par défaut ; Soutien : toujours une compétence
+      if (e.target.name === "cat") { const sel = box.querySelector("[name=skid]"); if (sel && e.target.value === "leg" && !(c.leg && c.skill && SKILLS[c.skill.id])) sel.value = ""; if (sel && e.target.value === "sup" && !SKILLS[sel.value]) { sel.value = (c.skill && SKILLS[c.skill.id]) ? c.skill.id : "coup"; const P = SKILLS[sel.value]; box.querySelector("[name=skv]").value = P.v; box.querySelector("[name=skq]").value = P.q; } }
+      if (e.target.name === "skid") { const P = SKILLS[e.target.value]; if (P) { box.querySelector("[name=skv]").value = P.v; box.querySelector("[name=skq]").value = P.q; } } supPreview(box, c); });
     if (quick) {
       // le doigt peut finir hors de la fenêtre : on écoute la fin du geste sur toute la page
       box.addEventListener("pointerdown", e => {
@@ -251,8 +260,12 @@ ACT.tcgmedit = el => {
   });
 };
 // ---------- Modif rapide (13 nov.) : une carte au hasard ; on glisse pour la suivante ; chaque carte passe une fois
-// avant qu'on remélange (paquet gardé sur le téléphone : ctv.tcgmq) ----------
-const QK = "ctv.tcgmq";
+// avant qu'on remélange (paquet gardé sur le téléphone). 16 nov. : on repart à zéro (nouveau paquet ctv.tcgmq2, Jose veut repasser
+// toutes les cartes pour régler les Legends) + bouton « ↺ repartir à zéro » ----------
+const QK = "ctv.tcgmq2";
+try { localStorage.removeItem("ctv.tcgmq"); } catch (e) {}
+function qPos() { try { const o = JSON.parse(localStorage.getItem(QK) || "null"); return o && Array.isArray(o.d) && o.i > 0 ? (o.i + 1) + " sur " + o.d.length : ""; } catch (e) { return ""; } }
+ACT.tcgmqzero = () => { try { localStorage.removeItem(QK); } catch (e) {} toast("↺ Modif rapide : on repart de zéro, nouveau mélange"); setTimeout(ACT.tcgmquick, 200); };
 const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = a[i]; a[i] = a[j]; a[j] = t; } return a; };
 function qDeck() { let o = null; try { o = JSON.parse(localStorage.getItem(QK) || "null"); } catch (e) {} if (!o || !Array.isArray(o.d) || !o.d.length) o = { d: shuffle(baseCards().map(c => c.id)), i: 0 }; return o; }
 function qSave(o) { try { localStorage.setItem(QK, JSON.stringify(o)); } catch (e) {} }
