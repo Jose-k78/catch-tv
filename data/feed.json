@@ -1,9 +1,9 @@
 {
- "at": "2026-11-17T12:59:14.363Z",
+ "at": "2026-11-17T14:14:47.791Z",
  "items": [
   {
-   "t": "Résultats du jour 1 de la AJPW Real World Tag League 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61385-resultats-du-jour-1-de-la-ajpw-real-world-tag-league-2026",
+   "t": "Vidéo : Ce spot impressionnant était prévu pour Squeezie et Amine à FinalSlam",
+   "u": "https://www.catch-newz.com/international/newz/61388-video-ce-spot-impressionnant-etait-prevu-pour-squeezie-et-amine-a-finalslam",
    "s": "Catch-Newz",
    "d": "2026-11-17",
    "tags": []
@@ -17,6 +17,13 @@
     "WWE",
     "Raw"
    ]
+  },
+  {
+   "t": "Résultats du jour 1 de la AJPW Real World Tag League 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61385-resultats-du-jour-1-de-la-ajpw-real-world-tag-league-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-17",
+   "tags": []
   },
   {
    "t": "La WWE prépare un nouveau Performance Center en 2027",
@@ -103,6 +110,15 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Résultats de CMLL Revolución De Campeones - Lunes Clasico du 16 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61387-resultats-de-cmll-revolucion-de-campeones-lunes-clasico-du-16-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-16",
+   "tags": [
+    "CMLL"
    ]
   },
   {
@@ -466,22 +482,6 @@
   {
    "t": "Ruby Hardy, fille de Jeff Hardy, s'entraine avec son père",
    "u": "https://www.catch-newz.com/international/newz/61329-ruby-hardy-fille-de-jeff-hardy-sentraine-avec-son-pere",
-   "s": "Catch-Newz",
-   "d": "2026-11-15",
-   "tags": []
-  },
-  {
-   "t": "Carte de CMLL Domingo Familiar du 15 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61277-carte-de-cmll-domingo-familiar-du-15-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-15",
-   "tags": [
-    "CMLL"
-   ]
-  },
-  {
-   "t": "Quel score pour FinalSlam sur TMC ?",
-   "u": "https://www.catch-newz.com/international/newz/61326-quel-score-pour-finalslam-sur-tmc",
    "s": "Catch-Newz",
    "d": "2026-11-15",
    "tags": []
@@ -1167,8 +1167,10 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61373-wwe-raw-16-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61388-video-ce-spot-impressionnant-etait-prevu-pour-squeezie-et-amine-a-finalslam",
    "https://www.catch-newz.com/wwe/resultats/61380-resultats-de-wwe-nxt-live-event-du-15-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61358-preview-wwe-raw-16-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61387-resultats-de-cmll-revolucion-de-campeones-lunes-clasico-du-16-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61386-resultats-de-cmll-domingo-familiar-du-15-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61385-resultats-du-jour-1-de-la-ajpw-real-world-tag-league-2026",
    "https://www.catch-newz.com/wwe/newz/61379-la-wwe-prepare-un-nouveau-performance-center-en-2027",
@@ -1463,13 +1465,11 @@
    "https://www.catch-newz.com/wwe/newz/61023-preview-wwe-smackdown-6-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61099-wwe-crown-jewel-jevon-evans-et-penta-champions-par-equipe",
    "https://www.catch-newz.com/wwe/newz/61095-wwe-crown-jewel-cody-rhodes-le-dernier-homme-debout",
-   "https://www.catch-newz.com/aew/resultats/61073-resultats-de-roh-du-5-novembre-2026",
-   "https://www.catch-newz.com/wwe/resultats/61092-wwe-crown-jewel-2026",
-   "https://www.catch-newz.com/wwe/newz/61094-lordre-des-matchs-de-wwe-crown-jewel-2026"
+   "https://www.catch-newz.com/aew/resultats/61073-resultats-de-roh-du-5-novembre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "8 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
