@@ -1,6 +1,16 @@
 {
- "at": "2026-11-17T01:50:14.684Z",
+ "at": "2026-11-17T02:50:53.704Z",
  "items": [
+  {
+   "t": "WWE RAW : Bataille pour rejoindre l'équipe USA aux Survivor Series",
+   "u": "https://www.catch-newz.com/wwe/newz/61381-wwe-raw-la-bataille-pour-rejoindre-equipe-usa-aux-survivor-series",
+   "s": "Catch-Newz",
+   "d": "2026-11-17",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
   {
    "t": "Lonni pourrait continuer le catch après FinalSlam",
    "u": "https://www.catch-newz.com/international/newz/61376-lonni-pourrait-continuer-le-catch-apres-finalslam",
@@ -464,13 +474,6 @@
   {
    "t": "Combien de spectateurs pour FinalSlam ?",
    "u": "https://www.catch-newz.com/international/newz/61320-combien-de-spectateurs-pour-finalslam",
-   "s": "Catch-Newz",
-   "d": "2026-11-15",
-   "tags": []
-  },
-  {
-   "t": "FinalSlam : Première réaction d'AmineMaTue après sa victoire contre Squeezie",
-   "u": "https://www.catch-newz.com/international/newz/61319-finalslam-premiere-reaction-daminematue-apres-sa-victoire-contre-squeezie",
    "s": "Catch-Newz",
    "d": "2026-11-15",
    "tags": []
@@ -1099,6 +1102,23 @@
    {
     "id": "ZiGihQLlC-E",
     "t": "EXCLUSIVE: Gable and Fenix challenge Nima and Price to a match on Main Event: Raw highlights"
+   },
+   {
+    "id": "jzGIk_ZIZHM",
+    "t": "Becky Lynch confronts Liv Morgan with a pre-Survivor Series challenge: Raw highlights"
+   },
+   {
+    "id": "OAnL_15VvWU",
+    "t": "John Cena explains what The John Cena Classic is all about: Raw highlights, Nov. 16, 2026"
+   },
+   {
+    "id": "YPK4qyhcQm8",
+    "t": "LA Knight beats The Miz to join Team USA at Survivor Series: Raw highlights, Nov. 16, 2026",
+    "sp": true
+   },
+   {
+    "id": "u1RuZMHzAgY",
+    "t": "Cody Rhodes and CM Punk set up LA Knight and The Miz to battle for Team USA spot: Raw highlights"
    }
   ]
  },
@@ -1112,9 +1132,10 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61373-wwe-raw-16-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61381-wwe-raw-la-bataille-pour-rejoindre-equipe-usa-aux-survivor-series",
+   "https://www.catch-newz.com/wwe/newz/61358-preview-wwe-raw-16-novembre-2026",
    "https://www.catch-newz.com/international/newz/61376-lonni-pourrait-continuer-le-catch-apres-finalslam",
    "https://www.catch-newz.com/international/newz/61375-byilhan-montre-comment-il-sest-blesse-avant-finalslam",
-   "https://www.catch-newz.com/wwe/newz/61358-preview-wwe-raw-16-novembre-2026",
    "https://www.catch-newz.com/international/newz/61377-amine-blessure",
    "https://www.catch-newz.com/international/newz/61378-carte-de-beyond-wrestling-open-ri-76",
    "https://www.catch-newz.com/international/newz/61344-carte-de-cmll-revolucion-de-campeones-lunes-clasico-du-16-novembre-2026",
@@ -1409,15 +1430,14 @@
    "https://www.catch-newz.com/international/newz/61076-carte-de-gcw-the-crossroads-2026",
    "https://www.catch-newz.com/international/newz/61084-carte-de-mcw-pro-wrestling-autumn-armageddon-2026",
    "https://www.catch-newz.com/international/newz/61083-carte-de-vcw-queen-of-the-commonwealth-2026",
-   "https://www.catch-newz.com/newz/11984-100-derniers-commentaires-sur-catch-newz",
-   "https://www.catch-newz.com/international/newz/61077-carte-de-gnpw-never-say-die-2026"
+   "https://www.catch-newz.com/newz/11984-100-derniers-commentaires-sur-catch-newz"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 3 nouveaux articles lus sur la page d'accueil (3 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
-  "YouTube WWE": "1 nouvelles vidéos",
+  "YouTube WWE": "4 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
