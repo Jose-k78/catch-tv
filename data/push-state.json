@@ -1,5 +1,5 @@
 {
- "at": "2026-11-17T21:23:44.181Z",
+ "at": "2026-11-17T22:25:46.625Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60935-apres-sa-defaite-contre-drew-mcintyre-au-royal-rumble-sami-zayn-etait-persuade-quil-nallait-jamais-remporter-le-titre-mondial": "2026-11-03",
@@ -425,7 +425,19 @@
   "a:https://www.catch-newz.com/international/newz/61399-carte-de-cmll-martes-de-glamour-du-17-novembre-2026-lucha-de-naciones": "2026-11-17",
   "fr:2026-11-17": "2026-11-17",
   "a:https://www.catch-newz.com/international/newz/61404-carte-du-jour-2-de-la-njpw-world-tag-league-2026": "2026-11-17",
-  "a:https://www.catch-newz.com/international/newz/61401-carte-de-cmll-martes-populares-du-17-novembre-2026": "2026-11-17"
+  "a:https://www.catch-newz.com/international/newz/61401-carte-de-cmll-martes-populares-du-17-novembre-2026": "2026-11-17",
+  "a:https://www.catch-newz.com/wwe/newz/61412-pour-ses-debuts-en-roster-principal-cruz-montana-a-rive-les-epaules-dun-ancien-champion-du-monde": "2026-11-17"
  },
- "pend": {}
+ "pend": {
+  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
+   {
+    "cat": "info",
+    "title": "📰 Nouvelle info · Catch-Newz",
+    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "1 nouvelle info"
+   }
+  ]
+ }
 }

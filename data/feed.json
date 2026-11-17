@@ -1,6 +1,15 @@
 {
- "at": "2026-11-17T21:23:44.123Z",
+ "at": "2026-11-17T22:25:46.575Z",
  "items": [
+  {
+   "t": "Pour ses débuts en roster principal, Cruz Montana a rivé les épaules d'un ancien champion du monde",
+   "u": "https://www.catch-newz.com/wwe/newz/61412-pour-ses-debuts-en-roster-principal-cruz-montana-a-rive-les-epaules-dun-ancien-champion-du-monde",
+   "s": "Catch-Newz",
+   "d": "2026-11-17",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Preview : WWE NXT du 17 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61228-preview-wwe-nxt-17-novembre-2026",
@@ -12,13 +21,11 @@
    ]
   },
   {
-   "t": "Carte du jour 2 de la NJPW World Tag League 2026",
-   "u": "https://www.catch-newz.com/international/newz/61404-carte-du-jour-2-de-la-njpw-world-tag-league-2026",
+   "t": "Résultats du jour 3 de DG The Gate Of Evolution 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61409-resultats-du-jour-3-de-dg-the-gate-of-evolution-2026",
    "s": "Catch-Newz",
    "d": "2026-11-17",
-   "tags": [
-    "NJPW"
-   ]
+   "tags": []
   },
   {
    "t": "Carte de CMLL Martes Populares du 17 novembre 2026",
@@ -46,6 +53,15 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Carte du jour 2 de la NJPW World Tag League 2026",
+   "u": "https://www.catch-newz.com/international/newz/61404-carte-du-jour-2-de-la-njpw-world-tag-league-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-17",
+   "tags": [
+    "NJPW"
    ]
   },
   {
@@ -455,13 +471,6 @@
    ]
   },
   {
-   "t": "Résultats de IWRG Función Espectacular du 15 novembre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61397-resultats-de-iwrg-funcion-espectacular-du-15-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-15",
-   "tags": []
-  },
-  {
    "t": "Résultats de AEW Full Gear 2026",
    "u": "https://www.voxcatch.fr/2026/11/15/resultats-aew-full-gear-2026/",
    "s": "VOXcatch",
@@ -478,6 +487,13 @@
    "tags": []
   },
   {
+   "t": "Résultats de IWRG Función Espectacular du 15 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61397-resultats-de-iwrg-funcion-espectacular-du-15-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-15",
+   "tags": []
+  },
+  {
    "t": "Résultats de CMLL Domingo Familiar du 15 novembre 2026",
    "u": "https://www.catch-newz.com/international/resultats/61386-resultats-de-cmll-domingo-familiar-du-15-novembre-2026",
    "s": "Catch-Newz",
@@ -485,20 +501,6 @@
    "tags": [
     "CMLL"
    ]
-  },
-  {
-   "t": "Carte de Arena Del Valle Carnaval 2026",
-   "u": "https://www.catch-newz.com/international/newz/61348-carte-de-arena-del-valle-carnaval-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-15",
-   "tags": []
-  },
-  {
-   "t": "Résultats du jour 2 de DG The Gate Of Evolution 2026 Partie 1",
-   "u": "https://www.catch-newz.com/international/resultats/61352-resultats-du-jour-2-de-dg-the-gate-of-evolution-2026-partie-1",
-   "s": "Catch-Newz",
-   "d": "2026-11-15",
-   "tags": []
   }
  ],
  "yt": {
@@ -1181,11 +1183,13 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61373-wwe-raw-16-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61412-pour-ses-debuts-en-roster-principal-cruz-montana-a-rive-les-epaules-dun-ancien-champion-du-monde",
    "https://www.catch-newz.com/wwe/newz/61228-preview-wwe-nxt-17-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61380-resultats-de-wwe-nxt-live-event-du-15-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61404-carte-du-jour-2-de-la-njpw-world-tag-league-2026",
+   "https://www.catch-newz.com/international/resultats/61409-resultats-du-jour-3-de-dg-the-gate-of-evolution-2026",
    "https://www.catch-newz.com/international/newz/61401-carte-de-cmll-martes-populares-du-17-novembre-2026",
    "https://www.catch-newz.com/international/newz/61403-carte-de-cmll-indy-wrestling-dtu-du-17-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61404-carte-du-jour-2-de-la-njpw-world-tag-league-2026",
    "https://www.catch-newz.com/international/resultats/61397-resultats-de-iwrg-funcion-espectacular-du-15-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61400-iyo-sky-etoffe-encore-plus-son-palmares-a-la-wwe",
    "https://www.catch-newz.com/international/resultats/61398-resultats-de-cmll-njpw-lucha-kingdom",
@@ -1477,9 +1481,7 @@
    "https://www.catch-newz.com/aew/newz/61114-carte-de-eve-157-elite-encounters-2",
    "https://www.catch-newz.com/international/newz/61120-carte-de-tjpw-all-rise-2026",
    "https://www.catch-newz.com/international/newz/61117-carte-du-jour-5-de-dg-the-gate-of-evolution-2026",
-   "https://www.catch-newz.com/international/newz/61112-carte-du-jour-1-de-tew-next-order-of-business-2026",
-   "https://www.catch-newz.com/international/newz/61111-carte-de-mlw-saturday-night-superfight-2026",
-   "https://www.catch-newz.com/international/resultats/61109-resultats-de-stardom-nighter-korakuen-hall-du-27-octobre-2026"
+   "https://www.catch-newz.com/international/newz/61112-carte-du-jour-1-de-tew-next-order-of-business-2026"
   ]
  },
  "diag": {
