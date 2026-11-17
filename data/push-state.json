@@ -1,5 +1,5 @@
 {
- "at": "2026-11-17T03:52:07.385Z",
+ "at": "2026-11-17T05:57:13.194Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60935-apres-sa-defaite-contre-drew-mcintyre-au-royal-rumble-sami-zayn-etait-persuade-quil-nallait-jamais-remporter-le-titre-mondial": "2026-11-03",
@@ -408,7 +408,9 @@
   "a:https://www.catch-newz.com/wwe/resultats/61373-wwe-raw-16-novembre-2026": "2026-11-17",
   "a:https://www.catch-newz.com/wwe/newz/61381-wwe-raw-la-bataille-pour-rejoindre-equipe-usa-aux-survivor-series": "2026-11-17",
   "a:https://www.catch-newz.com/aew/newz/61372-laew-devoile-les-participants-du-continental-classic-2026": "2026-11-17",
-  "a:https://www.catch-newz.com/wwe/newz/61382-liv-morgan-selectionnee-pour-le-john-cena-classic": "2026-11-17"
+  "a:https://www.catch-newz.com/wwe/newz/61382-liv-morgan-selectionnee-pour-le-john-cena-classic": "2026-11-17",
+  "a:https://www.catch-newz.com/wwe/newz/61379-la-wwe-prepare-un-nouveau-performance-center-en-2027": "2026-11-17",
+  "a:https://www.catch-newz.com/wwe/newz/61383-aj-styles-lance-son-podcast-sur-la-plateforme-wwe": "2026-11-17"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -427,6 +429,14 @@
     "url": "#/",
     "tag": "art",
     "short": "1 nouvelle info"
+   },
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
    },
    {
     "cat": "info",
