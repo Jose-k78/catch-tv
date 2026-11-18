@@ -3346,6 +3346,18 @@
    },
    "gimmick": "",
    "medalOf": "Jax Presley"
+  },
+  "mephisto": {
+   "r": "N",
+   "max": "R",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Mephisto"
   }
  },
  "bgm": {
