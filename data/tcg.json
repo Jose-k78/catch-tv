@@ -3253,6 +3253,19 @@
    "gimmick": "",
    "medalOf": "Sgt. Slaughter",
    "leg": true
+  },
+  "griff-garrison": {
+   "k": "AEW",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Powerbomb",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Brian Pillman Jr."
   }
  },
  "bgm": {
