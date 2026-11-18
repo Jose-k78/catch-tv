@@ -3471,6 +3471,19 @@
    },
    "gimmick": "",
    "medalOf": "Lola Vice"
+  },
+  "psycho-clown": {
+   "k": "AAA",
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Psycho Driver",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Psycho Clown"
   }
  },
  "bgm": {
