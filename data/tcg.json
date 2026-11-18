@@ -3398,6 +3398,19 @@
    },
    "gimmick": "",
    "medalOf": "Kris Statlander"
+  },
+  "austin-gunn": {
+   "k": "AEW",
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Jay White"
   }
  },
  "bgm": {
