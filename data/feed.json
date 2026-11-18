@@ -1,5 +1,5 @@
 {
- "at": "2026-11-18T20:26:56.552Z",
+ "at": "2026-11-18T21:24:39.458Z",
  "items": [
   {
    "t": "Preview : AEW Dynamite du 18 novembre 2026",
@@ -19,6 +19,16 @@
    "tags": [
     "TNA",
     "Impact"
+   ]
+  },
+  {
+   "t": "WWE NXT du 17 novembre : Kelani Jordan vs. Kendal Gray",
+   "u": "https://www.voxcatch.fr/2026/11/18/resultats-wwe-nxt-17-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-18",
+   "tags": [
+    "WWE",
+    "NXT"
    ]
   },
   {
@@ -59,16 +69,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-18",
    "tags": []
-  },
-  {
-   "t": "WWE NXT du 17 novembre : Kelani Jordan vs. Kendal Gray",
-   "u": "https://www.voxcatch.fr/2026/11/18/resultats-wwe-nxt-17-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-18",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
   },
   {
    "t": "Résultats de AAA/Producciones IRC Noche De Titanes",
@@ -1243,12 +1243,12 @@
    "https://www.catch-newz.com/wwe/resultats/61421-wwe-nxt-17-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61373-wwe-raw-16-novembre-2026",
    "https://www.catch-newz.com/international/newz/61431-preview-tna-impact-19-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61434-resultats-de-cmll-martes-populares-du-17-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61443-une-ville-potentielle-pour-aew-all-in-2027",
    "https://www.catch-newz.com/wwe/newz/61442-r-truth-remercie-les-fans-qui-lont-soutenu-suite-au-deces-de-son-papa",
    "https://www.catch-newz.com/international/resultats/61420-resultats-de-beyond-wrestling-open-ri-74",
    "https://www.catch-newz.com/international/resultats/61444-resultats-de-maxproad-promociones-pedrin-40-aniversario-del-dr-wagner-jr",
    "https://www.catch-newz.com/international/resultats/61415-resultats-de-mpw-clash-of-the-titans",
-   "https://www.catch-newz.com/international/resultats/61434-resultats-de-cmll-martes-populares-du-17-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61438-resultats-de-aaa-producciones-irc-noche-de-titanes",
    "https://www.catch-newz.com/international/resultats/61433-resultats-de-cmll-martes-de-glamour-du-17-novembre-2026-lucha-de-naciones",
    "https://www.catch-newz.com/international/resultats/61435-resultats-de-2cw-fair-warning",
@@ -1542,7 +1542,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 10 nouveaux articles lus sur la page d'accueil (10 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "8 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
