@@ -3731,6 +3731,19 @@
    },
    "gimmick": "",
    "medalOf": "Masato Tanaka"
+  },
+  "arlequin": {
+   "k": "CMLL",
+   "r": "N",
+   "max": "R",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Arlequín"
   }
  },
  "bgm": {
