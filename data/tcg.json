@@ -3536,6 +3536,26 @@
    },
    "gimmick": "",
    "medalOf": "Soberano Jr."
+  },
+  "jerry-lynn": {
+   "k": "AEW",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Cradle Piledriver",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Jerry Lynn",
+   "sup": true,
+   "sk": {
+    "id": "garde",
+    "v": 30,
+    "q": "start",
+    "s": 4
+   }
   }
  },
  "bgm": {
