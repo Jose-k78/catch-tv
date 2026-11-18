@@ -1,6 +1,26 @@
 {
- "at": "2026-11-18T15:26:18.988Z",
+ "at": "2026-11-18T16:32:09.618Z",
  "items": [
+  {
+   "t": "Preview : AEW Dynamite du 18 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/newz/61333-preview-aew-dynamite-18-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-18",
+   "tags": [
+    "AEW",
+    "Dynamite"
+   ]
+  },
+  {
+   "t": "WWE NXT du 17 novembre : Kelani Jordan vs. Kendal Gray",
+   "u": "https://www.voxcatch.fr/2026/11/18/resultats-wwe-nxt-17-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-18",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
   {
    "t": "Une gifle dingue de Kelani Jordan sur l'arbitre pour conserver son titre NXT contre Kendal Grey",
    "u": "https://www.catch-newz.com/wwe/newz/61427-une-gifle-dingue-de-kelani-jordan-sur-larbitre-pour-conserver-son-titre-nxt-contre-kendal-grey",
@@ -17,16 +37,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-18",
    "tags": []
-  },
-  {
-   "t": "WWE NXT du 17 novembre : Kelani Jordan vs. Kendal Gray",
-   "u": "https://www.voxcatch.fr/2026/11/18/resultats-wwe-nxt-17-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-18",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
   },
   {
    "t": "Résultats du jour 4 de DG The Gate Of Evolution 2026",
@@ -496,15 +506,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-16",
    "tags": []
-  },
-  {
-   "t": "Iyo Sky absente des Survivor Series WarGames pour la première fois cette année ?",
-   "u": "https://www.catch-newz.com/wwe/newz/61366-iyo-sky-absente-des-survivor-series-wargames-pour-la-premiere-fois-cette-annee",
-   "s": "Catch-Newz",
-   "d": "2026-11-16",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -1229,11 +1230,12 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/aew/newz/61333-preview-aew-dynamite-18-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61421-wwe-nxt-17-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61373-wwe-raw-16-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61408-resultats-de-alto-voltaje-cmll-du-15-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61427-une-gifle-dingue-de-kelani-jordan-sur-larbitre-pour-conserver-son-titre-nxt-contre-kendal-grey",
    "https://www.catch-newz.com/international/resultats/61419-resultats-de-beyond-wrestling-open-series-252",
-   "https://www.catch-newz.com/international/resultats/61408-resultats-de-alto-voltaje-cmll-du-15-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61228-preview-wwe-nxt-17-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61410-resultats-du-jour-4-de-dg-the-gate-of-evolution-2026",
    "https://www.catch-newz.com/wwe/newz/61426-quelle-est-la-suite-pour-raquel-rodriguez-apres-sa-perte-de-titre-intercontinental",
@@ -1296,7 +1298,6 @@
    "https://www.catch-newz.com/wwe/newz/61363-ethan-page-toutes-les-federations-precedentes-nont-pas-su-reconnaitre-qui-jetais-ni-ce-que-japportais",
    "https://www.catch-newz.com/wwe/newz/61362-quelles-sont-les-adversaires-ideales-pour-paige",
    "https://www.catch-newz.com/international/newz/61361-philippe-chereau-une-seule-chose-a-dire-simplement-merci",
-   "https://www.catch-newz.com/aew/newz/61333-preview-aew-dynamite-18-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61353-resultats-du-jour-2-de-dg-the-gate-of-evolution-2026-partie-2",
    "https://www.catch-newz.com/international/newz/61360-ricky-sosa-represente-fierement-la-belgique-a-tna-destination-x-2026",
    "https://www.catch-newz.com/wwe/resultats/61330-resultats-de-wwe-nxt-live-event-du-14-novembre-2026",
@@ -1532,7 +1533,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "8 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
