@@ -127,7 +127,15 @@
     "e": "Soin"
    },
    "gimmick": "",
-   "medalOf": "Luke Harper"
+   "medalOf": "Luke Harper",
+   "years": "2009–2023",
+   "sup": true,
+   "sk": {
+    "id": "inter",
+    "v": 1.5,
+    "q": "all",
+    "s": 4
+   }
   },
   "cruz-montana": {
    "img": "img/tcg/alt/santana-base.webp",
