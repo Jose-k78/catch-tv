@@ -3240,6 +3240,19 @@
    },
    "gimmick": "",
    "medalOf": "Tank Ledger"
+  },
+  "sgt-slaughter": {
+   "r": "R",
+   "max": "SR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Cobra Clutch",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Sgt. Slaughter",
+   "leg": true
   }
  },
  "bgm": {
