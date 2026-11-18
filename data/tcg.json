@@ -3846,6 +3846,26 @@
    },
    "gimmick": "",
    "medalOf": "Histeria"
+  },
+  "jushin-thunder-liger": {
+   "k": "NJPW",
+   "r": "SSR",
+   "max": "LR",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Liger Bomb",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Jushin Thunder Liger",
+   "leg": true,
+   "sk": {
+    "id": "inter",
+    "v": 1.5,
+    "q": "low",
+    "s": 0
+   }
   }
  },
  "bgm": {
