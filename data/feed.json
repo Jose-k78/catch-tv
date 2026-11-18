@@ -1,5 +1,5 @@
 {
- "at": "2026-11-18T16:32:09.618Z",
+ "at": "2026-11-18T17:29:35.862Z",
  "items": [
   {
    "t": "Preview : AEW Dynamite du 18 novembre 2026",
@@ -9,6 +9,15 @@
    "tags": [
     "AEW",
     "Dynamite"
+   ]
+  },
+  {
+   "t": "Roman Reigns la tête d'affiche du WWE Royal Rumble 2027",
+   "u": "https://www.catch-newz.com/wwe/newz/61430-roman-reigns-la-tete-daffiche-du-wwe-royal-rumble-2027",
+   "s": "Catch-Newz",
+   "d": "2026-11-18",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -496,13 +505,6 @@
   {
    "t": "Brawks a eu seulement 10 jours pour devenir catcheur",
    "u": "https://www.catch-newz.com/international/newz/61367-brawks-a-eu-seulement-10-jours-pour-devenir-catcheur",
-   "s": "Catch-Newz",
-   "d": "2026-11-16",
-   "tags": []
-  },
-  {
-   "t": "Résultats de Beyond Wrestling Open RI 72",
-   "u": "https://www.catch-newz.com/international/resultats/61356-resultats-de-beyond-wrestling-open-ri-72",
    "s": "Catch-Newz",
    "d": "2026-11-16",
    "tags": []
@@ -1233,6 +1235,7 @@
    "https://www.catch-newz.com/aew/newz/61333-preview-aew-dynamite-18-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61421-wwe-nxt-17-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61373-wwe-raw-16-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61430-roman-reigns-la-tete-daffiche-du-wwe-royal-rumble-2027",
    "https://www.catch-newz.com/international/resultats/61408-resultats-de-alto-voltaje-cmll-du-15-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61427-une-gifle-dingue-de-kelani-jordan-sur-larbitre-pour-conserver-son-titre-nxt-contre-kendal-grey",
    "https://www.catch-newz.com/international/resultats/61419-resultats-de-beyond-wrestling-open-series-252",
@@ -1528,12 +1531,11 @@
    "https://www.catch-newz.com/international/newz/61115-carte-de-iwrg-funcion-espectacular-du-8-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61134-randy-orton-promet-de-revenir-apres-wwe-crown-jewel-2026",
    "https://www.catch-newz.com/wwe/resultats/61068-wwe-smackdown-6-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61131-les-catcheurs-auront-besoin-de-jetons-pour-le-john-cena-classic",
-   "https://www.catch-newz.com/wwe/newz/61132-zilla-fatu-devoile-un-cadeau-de-john-cena-pour-la-competition-classic"
+   "https://www.catch-newz.com/wwe/newz/61131-les-catcheurs-auront-besoin-de-jetons-pour-le-john-cena-classic"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "8 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
