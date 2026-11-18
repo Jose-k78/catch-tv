@@ -3624,6 +3624,18 @@
     "q": "start",
     "s": 2
    }
+  },
+  "bushi": {
+   "r": "N",
+   "max": "R",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Tetsuya Naito"
   }
  },
  "bgm": {
