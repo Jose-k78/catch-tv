@@ -4129,7 +4129,10 @@
   "bayley|wwe-wwc": {
    "off": true
   },
-  "austin-theory|wwe-tt": {}
+  "austin-theory|wwe-tt": {},
+  "iyo-sky|wwe-wic": {
+   "img": "img/tcg/mwlxpbie.jpg"
+  }
  },
  "vogue": {
   "boosters": [
