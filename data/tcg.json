@@ -2136,7 +2136,8 @@
     "e": "Stun"
    },
    "gimmick": "",
-   "medalOf": "Mike Awesome"
+   "medalOf": "Mike Awesome",
+   "leg": true
   },
   "lady-metal": {
    "k": "CMLL",
