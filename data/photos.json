@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16",
+ "updated": "2026-11-18",
  "items": {
   "swerve-strickland-v2": {
    "f": "swerve-strickland-v2.webp",
@@ -7531,9 +7531,12 @@
    ]
   },
   "joe-gacy": {
-   "f": "joe-gacy.webp",
+   "f": "joe-gacy-v2.webp",
    "n": [
     "Joe Gacy"
+   ],
+   "v": [
+    "joe-gacy.webp"
    ]
   },
   "peter-avalon": {
