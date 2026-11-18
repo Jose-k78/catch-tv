@@ -3569,6 +3569,18 @@
    },
    "gimmick": "",
    "medalOf": "AJ Styles"
+  },
+  "killer-kross": {
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Rush"
   }
  },
  "bgm": {
