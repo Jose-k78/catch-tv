@@ -1,6 +1,25 @@
 {
- "at": "2026-11-18T02:48:13.272Z",
+ "at": "2026-11-18T03:52:41.665Z",
  "items": [
+  {
+   "t": "Décès de ''Cowboy'' Bill Watts",
+   "u": "https://www.catch-newz.com/wwe/newz/61423-deces-de-cowboy-bill-watts",
+   "s": "Catch-Newz",
+   "d": "2026-11-18",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Deux nouveaux noms pour le John Cena Classic à WWE NXT le 17 novembre",
+   "u": "https://www.catch-newz.com/wwe/newz/61422-deux-nouveaux-noms-pour-le-john-cena-classic-a-wwe-nxt-le-17-novembre",
+   "s": "Catch-Newz",
+   "d": "2026-11-18",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
   {
    "t": "Trish Stratus est un véritable exemple pour Zoey Stark",
    "u": "https://www.catch-newz.com/wwe/newz/61417-trish-stratus-est-un-veritable-exemple-pour-zoey-stark",
@@ -30,6 +49,16 @@
    "s": "Catch-Newz",
    "d": "2026-11-18",
    "tags": []
+  },
+  {
+   "t": "Résultats de WWE NXT du 17 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/61421-wwe-nxt-17-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-17",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
   },
   {
    "t": "Preview : WWE NXT du 17 novembre 2026",
@@ -475,30 +504,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-16",
    "tags": []
-  },
-  {
-   "t": "Squeezie montre un 619 réussi en entrainement et s'excuse",
-   "u": "https://www.catch-newz.com/international/newz/61351-squeezie-montre-un-619-reussi-en-entrainement-et-sexcuse",
-   "s": "Catch-Newz",
-   "d": "2026-11-16",
-   "tags": []
-  },
-  {
-   "t": "Résultats de AULL Dinamita Pura",
-   "u": "https://www.catch-newz.com/international/resultats/61354-resultats-de-aull-dinamita-pura",
-   "s": "Catch-Newz",
-   "d": "2026-11-16",
-   "tags": []
-  },
-  {
-   "t": "Résultats de WWE NXT Live Event du 15 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61380-resultats-de-wwe-nxt-live-event-du-15-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-15",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
   }
  ],
  "yt": {
@@ -1187,6 +1192,22 @@
    {
     "id": "FS-vU6GKhmg",
     "t": "Myles Borne prevents Tony D’Angelo from defeating Kam Hendrix: NXT highlights, Nov. 17, 2026"
+   },
+   {
+    "id": "DZ6s7_H84E0",
+    "t": "Tristan Angels prevails against Sean Legacy and Saquon Shugars: NXT highlights, Nov. 17, 2026"
+   },
+   {
+    "id": "-sd8W5ZPLqY",
+    "t": "Mason Rook unleashes on Shiloh Hill after John Cena Classic snub: NXT highlights, Nov. 17, 2026"
+   },
+   {
+    "id": "MGKcJ0J2zsM",
+    "t": "Hank, Tank, Noam Dar and Romeo Moreno face Vanity Project next week: NXT highlights, Nov. 17, 2026"
+   },
+   {
+    "id": "fMqRNna0yUk",
+    "t": "Zilla Fatu overcomes Dion Lennox thanks to Perros del Mal: NXT highlights, Nov. 17, 2026"
    }
   ]
  },
@@ -1199,7 +1220,10 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/resultats/61421-wwe-nxt-17-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61373-wwe-raw-16-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61423-deces-de-cowboy-bill-watts",
+   "https://www.catch-newz.com/wwe/newz/61422-deux-nouveaux-noms-pour-le-john-cena-classic-a-wwe-nxt-le-17-novembre",
    "https://www.catch-newz.com/wwe/newz/61228-preview-wwe-nxt-17-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61380-resultats-de-wwe-nxt-live-event-du-15-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61417-trish-stratus-est-un-veritable-exemple-pour-zoey-stark",
@@ -1495,17 +1519,14 @@
    "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61126-combien-de-billets-vendus-pour-finalslam",
    "https://www.catch-newz.com/wwe/newz/61093-preview-aaa-heroes-inmortales-7-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61100-resultats-de-dominion-wrestling-hail-to-the-king-2026",
-   "https://www.catch-newz.com/international/resultats/61097-resultats-de-dradition-tastumi-fujinami-55th-celebration-dragon-expo-2026",
-   "https://www.catch-newz.com/aew/newz/61125-tommaso-ciampa-remporte-le-championnat-national-a-aew-collision-du-bateau",
-   "https://www.catch-newz.com/wwe/newz/61124-rey-mysterio-suspendu-de-la-aaa-et-accuse-dinfidelite"
+   "https://www.catch-newz.com/international/resultats/61100-resultats-de-dominion-wrestling-hail-to-the-king-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 3 nouveaux articles lus sur la page d'accueil (3 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
-  "YouTube WWE": "3 nouvelles vidéos",
+  "YouTube WWE": "4 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",

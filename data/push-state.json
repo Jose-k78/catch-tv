@@ -1,5 +1,5 @@
 {
- "at": "2026-11-17T23:23:00.376Z",
+ "at": "2026-11-18T03:52:41.718Z",
  "sa": true,
  "sent": {
   "poll:p-20261104-cj-liv-chelsea": "2026-11-04",
@@ -386,7 +386,10 @@
   "a:https://www.catch-newz.com/international/newz/61404-carte-du-jour-2-de-la-njpw-world-tag-league-2026": "2026-11-17",
   "a:https://www.catch-newz.com/international/newz/61401-carte-de-cmll-martes-populares-du-17-novembre-2026": "2026-11-17",
   "a:https://www.catch-newz.com/wwe/newz/61412-pour-ses-debuts-en-roster-principal-cruz-montana-a-rive-les-epaules-dun-ancien-champion-du-monde": "2026-11-17",
-  "a:https://www.catch-newz.com/wwe/newz/61417-trish-stratus-est-un-veritable-exemple-pour-zoey-stark": "2026-11-18"
+  "a:https://www.catch-newz.com/wwe/newz/61417-trish-stratus-est-un-veritable-exemple-pour-zoey-stark": "2026-11-18",
+  "a:https://www.catch-newz.com/wwe/newz/61423-deces-de-cowboy-bill-watts": "2026-11-18",
+  "a:https://www.catch-newz.com/wwe/newz/61422-deux-nouveaux-noms-pour-le-john-cena-classic-a-wwe-nxt-le-17-novembre": "2026-11-18",
+  "a:https://www.catch-newz.com/wwe/resultats/61421-wwe-nxt-17-novembre-2026": "2026-11-18"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -405,6 +408,14 @@
     "url": "#/",
     "tag": "art",
     "short": "1 nouvelle info"
+   },
+   {
+    "cat": "info",
+    "title": "📰 3 nouvelles infos",
+    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "3 nouvelles infos"
    }
   ]
  }
