@@ -1,6 +1,58 @@
 {
-  "updated": "2026-11-16",
+  "updated": "2026-11-18",
   "items": [
+    {
+      "id": "p-20261118-usa-mexique",
+      "d": "2026-11-18",
+      "type": "",
+      "k": "WWE",
+      "q": "Survivor Series : qui gagne le match à élimination Team USA contre Team Mexico ?",
+      "opts": [
+        "Team USA",
+        "Team Mexico"
+      ],
+      "other": false,
+      "end": "2026-11-28"
+    },
+    {
+      "id": "p-20261118-liv-becky",
+      "d": "2026-11-18",
+      "type": "",
+      "k": "WWE",
+      "q": "Survivor Series : qui repart avec le Women's World Championship, Liv Morgan ou Becky Lynch ?",
+      "opts": [
+        "Liv Morgan",
+        "Becky Lynch"
+      ],
+      "other": false,
+      "end": "2026-11-28"
+    },
+    {
+      "id": "p-20261118-wargames-h",
+      "d": "2026-11-18",
+      "type": "",
+      "k": "WWE",
+      "q": "WarGames masculin aux Survivor Series : The Bloodline ou The 946, qui gagne ?",
+      "opts": [
+        "The Bloodline",
+        "The 946"
+      ],
+      "other": false,
+      "end": "2026-11-28"
+    },
+    {
+      "id": "p-20261118-babies",
+      "d": "2026-11-18",
+      "type": "babies",
+      "k": "",
+      "q": "Qui est la meilleure babies entre Tiffany Stratton et Mercedes Moné ?",
+      "opts": [
+        "Tiffany Stratton",
+        "Mercedes Moné"
+      ],
+      "other": false,
+      "end": "2026-11-20"
+    },
     {
       "id": "p-20261116-toni-storm",
       "d": "2026-11-16",
@@ -410,46 +462,6 @@
       "opts": [
         "Stephanie Vaquer",
         "Starlight Kid"
-      ],
-      "other": false,
-      "end": "2026-11-08"
-    },
-    {
-      "id": "p-20261105-enzo-retour",
-      "d": "2026-11-05",
-      "type": "",
-      "k": "WWE",
-      "q": "Enzo Amore de retour à la WWE : bonne idée ?",
-      "opts": [
-        "Oui",
-        "Non"
-      ],
-      "other": false,
-      "end": ""
-    },
-    {
-      "id": "p-20261105-reine-knockouts",
-      "d": "2026-11-05",
-      "type": "",
-      "k": "TNA",
-      "q": "Quelle catcheuse a le plus marqué la division des Knockouts ?",
-      "opts": [
-        "Gail Kim",
-        "Awesome Kong",
-        "Mickie James"
-      ],
-      "other": true,
-      "end": ""
-    },
-    {
-      "id": "p-20261105-dm-lita-mone",
-      "d": "2026-11-05",
-      "type": "match",
-      "k": "",
-      "q": "Dream match : Lita contre Mercedes Moné, qui gagne ?",
-      "opts": [
-        "Lita",
-        "Mercedes Moné"
       ],
       "other": false,
       "end": "2026-11-08"
