@@ -3306,6 +3306,19 @@
    },
    "gimmick": "",
    "medalOf": "Queen Aminata"
+  },
+  "bron-breakker": {
+   "k": "WWE",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Bronson Reed"
   }
  },
  "bgm": {
