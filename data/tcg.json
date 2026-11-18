@@ -3266,6 +3266,19 @@
    },
    "gimmick": "",
    "medalOf": "Brian Pillman Jr."
+  },
+  "myka-lockwood": {
+   "k": "WWE",
+   "r": "R",
+   "max": "SR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Myka Lockwood"
   }
  },
  "bgm": {
