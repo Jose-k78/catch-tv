@@ -3662,6 +3662,19 @@
    },
    "gimmick": "",
    "medalOf": "Valkyria"
+  },
+  "maxxine-dupri": {
+   "k": "WWE",
+   "r": "R",
+   "max": "SR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Kick",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Bron Breakker"
   }
  },
  "bgm": {
