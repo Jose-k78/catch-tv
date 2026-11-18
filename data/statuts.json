@@ -1,0 +1,32 @@
+{
+ "note": "Mode Univers : statut des personnes de la base TCC TV (photos, fiches) qui ne sont pas dans les rosters actuels. dead = décédés (année ; Hall of Fame « In memoriam », jamais jouables). out = hors du jeu. staff = personnel, pas catcheur : [rôle, fédération] (rôles : comm commentateur, mgr manager/valet, gm GM, prod producteur, writer scénariste, coach). ret = retraités vivants : recrutables comme staff, manager, apparition ou caméo. Tout le reste = catcheur actif. Vérifié le 18 nov. 2026 (wrestlinginc.com : décès 2025 et 2026 ; retraites de Cena, Tanahashi, Tam Nakano, Meiko Satomura, El Hijo del Santo).",
+ "updated": "2026-11-18",
+ "dead": {
+  "André the Giant": "1993", "Antonio Inoki": "2022", "Akebono": "2024", "Bam Bam Bigelow": "2007", "Brian Pillman": "1997", "Bruno Sammartino": "2018",
+  "Curt Hennig": "2003", "Davey Boy Smith": "2002", "Dory Funk Jr": "2026", "Dusty Rhodes": "2015", "Eddie Guerrero": "2005", "Giant Baba": "1999",
+  "Harley Race": "2019", "Hayabusa": "2016", "Héctor Garza": "2013", "Hulk Hogan": "2025", "Iron Sheik": "2023", "Ivan Koloff": "2017", "Jay Briscoe": "2023",
+  "Jim Neidhart": "2018", "Jimmy Snuka": "2017", "Joe Doering": "2026", "Kerry Von Erich": "1993", "Kevin Sullivan": "2024", "Mike Awesome": "2007",
+  "Miss Elizabeth": "2003", "Mitsuharu Misawa": "2009", "Mr. Fuji": "2016", "Owen Hart": "1999", "PAC": "2026", "Paul Orndorff": "2021", "Randy Savage": "2011",
+  "Rick Rude": "1999", "Road Warrior Animal": "2020", "Road Warrior Hawk": "2003", "Roddy Piper": "2015", "Sabu": "2025", "Scott Hall": "2022",
+  "Shinya Hashimoto": "2005", "Sid Vicious": "2024", "Steve Williams": "2009", "Terry Funk": "2023", "Terry Gordy": "2001", "Ultimate Warrior": "2014", "Vader": "2018"
+ },
+ "out": ["Chris Benoit", "Vince McMahon", "Sunny", "Vacant"],
+ "staff": {
+  "Paul Heyman": ["mgr", "WWE"], "Prince Nana": ["mgr", "AEW"], "Don Callis": ["mgr", "AEW"], "Mark Sterling": ["mgr", "AEW"], "Scarlett": ["mgr", ""],
+  "Paul Ellering": ["mgr", ""], "Konnan": ["mgr", "AAA"], "Arn Anderson": ["coach", ""], "Tully Blanchard": ["mgr", ""], "Jake Roberts": ["mgr", ""],
+  "Eric Bischoff": ["gm", ""], "Shane McMahon": ["gm", ""], "William Regal": ["gm", "AEW"], "Shawn Michaels": ["writer", "WWE"], "Gedo": ["writer", "NJPW"],
+  "Jimmy Jacobs": ["writer", ""], "Dean Malenko": ["prod", ""], "Joey Mercury": ["prod", ""], "Abyss": ["prod", "WWE"], "Gail Kim": ["prod", "TNA"],
+  "Lance Storm": ["coach", ""], "Doug Williams": ["coach", ""], "Al Snow": ["coach", ""], "Booker T": ["comm", "WWE"], "Nigel McGuinness": ["comm", "AEW"],
+  "Taz": ["comm", "AEW"], "Wade Barrett": ["comm", "WWE"], "Jerry Lawler": ["comm", ""], "Bully Ray": ["comm", ""], "Mark Henry": ["comm", ""]
+ },
+ "ret": [
+  "Abdullah the Butcher", "Akira Hokuto", "Akira Maeda", "Akira Taue", "Atsushi Onita", "Awesome Kong", "Barry Windham", "Batista", "Beth Phoenix", "Bob Backlund",
+  "Bob Holly", "Bret Hart", "Brian Knobbs", "Bull Nakano", "Candice Michelle", "Charlie Haas", "Chigusa Nagayo", "Cien Caras", "David Otunga", "Diamond Dallas Page",
+  "El Hijo del Santo", "Gangrel", "Genichiro Tenryu", "Great Khali", "Greg Valentine", "Hiroshi Tanahashi", "Honky Tonk Man", "Jaguar Yokota", "Jazz", "Jerry Sags",
+  "Joey Abs", "John Cena", "Jushin Thunder Liger", "Kagetsu", "Keiji Mutoh", "Ken Shamrock", "Kenta Kobashi", "Kevin Nash", "Kevin Von Erich", "Kurt Angle",
+  "Kyoko Inoue", "Lex Luger", "Lita", "Manami Toyota", "Masahiro Chono", "Masato Yoshino", "Meiko Satomura", "Michelle McCool", "Mick Foley", "Mike Rotunda",
+  "Mil Máscaras", "Perry Saturn", "Raven", "Ric Flair", "Rick Steiner", "Ricky Steamboat", "Ron Simmons", "Ronda Rousey", "Sandman", "Scott Steiner",
+  "Scotty 2 Hotty", "Sean Waltman", "Sgt. Slaughter", "Shane Douglas", "Shinjiro Otani", "Stacy Keibler", "Stan Hansen", "Stone Cold Steve Austin", "Tam Nakano",
+  "Taylor Wilde", "Ted DiBiase", "Ted DiBiase Jr.", "The Rock", "The Undertaker", "Tito Santana", "Toshiaki Kawada", "Torrie Wilson", "Trish Stratus"
+ ]
+}

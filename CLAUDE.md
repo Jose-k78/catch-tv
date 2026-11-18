@@ -321,6 +321,31 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
       `ui2.js` : Ma fédé (effectif, développement, infirmerie, promesses, moral), Créatif (divisions `G.divs` / `G.dv`, storylines + générateur `genSL`,
       clans, équipes, titres, tournois à 8, classement), Activité (événements, contrats TV et sponsors, finances, merch, générateur d'idées), carte d'un
       show `#/univers/ev/<id>` (formulaire `#uvbook` relu à chaque changement) et résultats.
+- **Mode Univers v2** (18 nov., 2e « heure du codage », réponses de Jose de 08 h 26 à 09 h 08 ; réservé au modo) — moteur et écrans dans `js/univers/` :
+  - Données : `data/statuts.json` (`dead` { nom: année } → Hall of Fame « In memoriam », jamais jouables ; `out` = exclus partout, ex. Chris Benoit,
+    Vince McMahon ; `staff` { nom: [rôle, fédé] } = commentateurs / managers / GM → staff ; `ret` = légendes retraitées : staff, apparition ou caméo) et
+    `data/gimmicks.json` (`items` { nom: [surnom, type] }). La tâche de 19 h 23 complète ces deux fichiers (décès vérifiés : PAC, Dory Funk Jr, Joe Doering).
+  - `data.js` (catalogues : types de match `MT`, enjeux, fins, consignes, segments `SEG`, rôles du staff `SROLE`, gimmicks `GT`, traditions `TRAD0`,
+    villes, salles, tournées, diffuseurs, licences, revendications `DEM`, trophées `ACH`, magazine `MAGN` = « TCC 100 », jamais PWI), `base.js` (petites
+    fonctions partagées, relations `relAdd` clé "a|b"), `v2.js` (`upgrade(G, opt)` : toute partie passe en `G.v = 2` à l'ouverture — `openSlot` de ui.js —
+    ou à la création avec `{ fresh, mode, diff }`), `match.js` (moteur des shows : `ev.items` = liste ordonnée de matchs `{it:"m", t, sides, title, stip,
+    fin, cons, dur, win, spots, oc, tour, trad, cashin}` et segments `{it:"s", k, w}` ; `prepShow` / `stepLive` / `orderLive` pour le direct, `runShow`
+    sans ordres ; `ev.storm` "keep", `ev.celeb`, `ev.bonus` (ville)), `deal.js` (négociation, contrats, staff, légendes, partenariats), `crea.js`
+    (gimmicks, tournois bracket / league / gauntlet, traditions, mallette, n°1 challenger, draft, mentor, chapitres `CHAP`), `biz.js` (salles, billets,
+    tournées, diffuseurs, licences, banque, grandir, objectifs du trimestre `quarterEval`, offres d'emploi, conseils `advise`), `life.js` (vie du monde :
+    jour / semaine / mois / année, hors du ring, demandes des catcheurs, magazine, HOF), `sim.js` (`stepDay`, `startGame`).
+  - Écrans : `ui.js` (parties, nouvelle partie avec mode Carrière / Bac à sable + difficulté, accueil, courrier v2 et ses actions `MACTS`, monde, fiche
+    `#/univers/c/<id>/<s|c|h|r|d>`), `ui2.js` (Ma fédé dont Staff, Créatif dont Gimmicks / Tournois / Traditions / Draft / titres h-f-x, Activité dont
+    Business / Partenaires / Audiences), `ui3.js` (recherche + comparer, négociation `#/univers/nego/<id>`, rompre, staff, légendes, gimmicks, relations),
+    `ui4.js` (carte du show `#/univers/ev/<id>`, Gorilla `#/univers/live/<id>` — `U.goLive(ev)`, rapport, tournois, traditions, draft), `ui5.js`
+    (business, partenaires, audiences, diffuseurs, page fédé `#/univers/fed/<id>`, HOF, magazine, encyclopédie, Bureau `#/univers/bureau/<obj|rep|ach|sem|
+    agenda|cfg>`, écran de défilement des jours = `ACT.uvnext` / `startDays`, « Aller jusqu’au… », tuto `G.tuto`, fin de partie `G.over`).
+  - Pendant le direct, `persist` n'enregistre pas (fin du show = sauvegarde). Changer d'écran arrête le défilement des jours.
+  - CSS : bloc « Lot du 18 nov. (v2) » à la fin de style.css. Attention aux noms de classes déjà pris par TCC TV (`.seg`, `.res`, `.done`…) :
+    toujours préfixer (`uv…`) ou utiliser `sg`, `rs`, `dn`.
+  - Tests : /tmp/claude-0/t/t52.cjs (parcours complet, 320 px), sim52.cjs (1 an simulé : ~1,5 s, sauvegarde ~1 Mo).
+  - Retirés à la demande de Jose : voler une star, votes des fans, partage vers TCC TV, éditeur, audience minute par minute. Plus tard : créer son catcheur,
+    mode Carrière catcheur.
 - Notes : demi-étoiles de 0 à 5,5 (`RMAX`, `fmtR`, `stars`, `ratePick` / `pickRate` de util.js ; 6e étoile orange = bonus).
 - Historique : `g_<id>` = note d'un segment, `q_<id>` = segment préféré (comment = nom du show) ; préfixes m_/s_/f_/g_/q_ exclus
   des compteurs de shows (spoil.js, trophies.js, account.js). Profil : « Ses segments préférés ».
@@ -379,6 +404,8 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   - shows déplacés : `no` (dates sans épisode) et `e` (épisode spécial à une autre date) dans `data/calendar.json` ; heures toujours
     données dans le fuseau du show (`h` + `tz`) : le changement d'heure est calculé par l'app ;
   - compléter `data/finishers.json` (finisher actuel de chaque catcheur des rosters, d'après Wikipédia ; ne pas écraser ceux déjà là) ;
+  - Mode Univers : compléter `data/statuts.json` (décès vérifiés dans `dead` avec l'année, retraites dans `ret`, commentateurs / managers / GM dans
+    `staff`) et `data/gimmicks.json` (surnom + type de personnage) ; ne jamais retirer une entrée, ne jamais mettre un décès non vérifié ;
   - ne jamais toucher à `data/links.json` (liens du modo), aux images ni à `data/logos.json` / `data/photos.json`.
 
 ## Données et mises à jour automatiques

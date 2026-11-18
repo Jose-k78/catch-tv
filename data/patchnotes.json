@@ -13,6 +13,29 @@
    ]
   },
   {
+   "id": "2026-11-18-univers2",
+   "d": "2026-11-18",
+   "mod": true,
+   "t": "Mode Univers : la grosse mise à jour (modo)",
+   "txt": [
+    "🧹 Le monde est corrigé : les catcheurs décédés ne sont plus jouables, ils sont au Hall of Fame (In memoriam). Les commentateurs, managers et GM sont maintenant dans les staffs. Les légendes retraitées peuvent venir dans ton staff, pour une apparition dans un match ou un caméo.",
+    "🚻 Hommes et femmes sont séparés partout. Un titre est masculin, féminin ou intergender (équipes masculines, féminines ou mixtes). Les matchs mixtes se règlent dans Bureau › Réglages. L’IA suit les mêmes règles.",
+    "🤝 Négociation en direct : patience de l’agent, personnalité, offres des autres fédérations avec une date limite, revendications (son partenaire, un titre, le main event, ne jamais perdre proprement…). Ce que tu acceptes devient une promesse. Après la signature : tu l’annonces ou tu gardes la surprise pour ses débuts.",
+    "📝 Contrats : exclusif ou non (le non exclusif catche aussi dans de petites fédérations), libérer (tu payes le reste, 90 jours sans signer ailleurs), rupture à l’amiable, suspension, placard. Impossible de voler une star : tu peux seulement la contacter pour qu’elle ne prolonge pas. L’IA renvoie aussi.",
+    "🔎 Monde › Catcheurs : recherche avec plein de filtres, tri, comparer 2 catcheurs, et un signal « signerait ? ». Nouveaux talents de temps en temps (circuit indé, centre de formation).",
+    "🎭 Fiche : gimmick (surnom, type), finisher, élan, le public, push, relations (amis / rivaux : à +90 une tag team se crée toute seule), entraînement et mentor. Créatif › Gimmicks : propose un nouveau personnage (il peut refuser ou faire un flop).",
+    "👔 Ma fédé › Staff : commentateurs, producteurs, scénaristes, coachs, médecins, recruteurs, arbitres, annonceurs, GM, managers, réseaux sociaux, commercial. Les commentateurs se choisissent show par show.",
+    "🗒️ La carte du show : tous les types de match, enjeux, fins, consignes, open challenge (n’importe qui peut répondre, même une légende ou un agent libre : plus c’est une surprise, plus ça fait le buzz), plein de segments (aussi en coulisses), durée du show, ordre, entrées, note estimée, affiche, matchs de tournoi, traditions, encaisser la mallette.",
+    "🎬 Le show : tu le passes, ou tu le vis en direct depuis la Gorilla position (accélérer, rallonger, changer le vainqueur, intervention, médecin, pub, vitesse ×1 à ×4). Ensuite, un rapport détaillé : qui a été mis en valeur ou enterré, les botchs, les conséquences.",
+    "🏆 Créatif : chapitres des storylines semaine par semaine, prestige et design des ceintures, n°1 challenger, tournois (tableau, ligue ou gauntlet joués dans tes shows, finale dans un grand show), traditions de chaque fédération (Royal Rumble, Money in the Bank…) à renommer ou créer, draft par show.",
+    "💼 Activité : salles et billets, tournées à l’étranger, offres des diffuseurs (jour, heure, durée), audiences par semaine, licences, banque et investisseur, grandir (2e show, marque de développement, streaming, racheter une fédération), partenaires (prêter, louer, show commun, invasion).",
+    "🌍 Le monde vit : événements hors du ring (films, mariages, scandales, tempêtes…), podcasts, conférences de presse, stratégies de l’IA, page de chaque fédération, Hall of Fame chaque année, encyclopédie, et le magazine « TCC 100 » : le top 100 de l’année avec une vraie couverture.",
+    "🗂️ Nouveau : le Bureau du GM. Mode Carrière (objectifs du propriétaire chaque trimestre : tu peux être viré, la faillite = fin de partie) ou Bac à sable, difficulté, réputation et offres d’emploi, trophées, résumé de chaque semaine, agenda, réglages, et un petit tuto.",
+    "📅 « Jour suivant » : un calendrier qui défile (environ 1 seconde par jour) avec les actus du jour, un bouton Arrêter, Rapide / Instantané, et « Aller jusqu’au… ».",
+    "💾 Tes parties de la 1re version sont mises à niveau automatiquement en les ouvrant."
+   ]
+  },
+  {
    "id": "2026-11-18-univers",
    "d": "2026-11-18",
    "mod": true,

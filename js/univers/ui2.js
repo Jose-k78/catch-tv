@@ -2,7 +2,13 @@
 import { ACT, FORM } from "../state.js";
 import { esc, toast, modal } from "../util.js";
 import { STYLES, ROLES, MONTHS, dayLabel, shortDate, dateOf, fmtM, fmtK, stars, recTxt, clamp, rnd, pick, uid, trainee } from "./world.js";
-import { meF, roster, avail, injured, risk, teamName, wn, mail, news, buzz, playMatch, playShow, autoCard, heatBetween, DUR, SPOTS } from "./sim.js";
+import { meF, roster, avail, injured, risk, teamName, wn, mail, news, buzz } from "./sim.js";
+import { isBig } from "./base.js";
+import { contenders, CHAP } from "./crea.js";
+import { gimOf } from "./v2.js";
+import { staffBody, gimBody } from "./ui3.js";
+import { toursBody, tradBody, draftBody } from "./ui4.js";
+import { bizBody, partBody, audBody, tvBody } from "./ui5.js";
 import { U, go, redraw, persist, shell, tabs, chips, face, crest, imgT, imgEv, imgTeam, imgBtn } from "./core.js";
 import { promoteYoung } from "./ui.js";
 
@@ -13,6 +19,8 @@ const morC = v => v >= 65 ? "#63d69c" : v >= 45 ? "#ffd27a" : "#ff8a7e";
 const e_ = w => (w && w.sx === "f" ? "e" : "");
 const ini = n => String(n || "?").split(/\s+/).map(x => x[0]).join("").slice(0, 2).toUpperCase();
 const DIVL = { h: "Masculin", f: "Féminin", tag: "Par équipes" };
+const CATL = t => t.div === "tag" ? ({ h: "Équipes masculines", f: "Équipes féminines", x: "Équipes mixtes" }[t.cat] || "Par équipes") : ({ h: "Masculin", f: "Féminin", x: "Intergender" }[t.cat] || DIVL[t.div]);
+const catOk = (t, w) => !t.cat || t.cat === "x" || w.sx === t.cat;
 const big = ev => ev.kind === "ple" || ev.kind === "ppv";
 const kindL = ev => ev.kind === "tv" ? "Show TV" : ev.kind.toUpperCase();
 export const divOf = (G, w) => (G.dv || {})[w.id] || (w.sx === "f" ? "f" : "h");
@@ -38,17 +46,18 @@ const done = () => { persist(); redraw(); };
 // ======================= MA FÉDÉ =======================
 export function fedeView(tab) {
   const G = U.G; tab = tab || "e";
-  const T = tabs("#/univers/fede", [["e", "Mon effectif"], ["dev", "Développement"], ["inf", "Infirmerie"], ["p", "Promesses"], ["m", "Moral"]], tab);
+  const T = tabs("#/univers/fede", [["e", "Mon effectif"], ["staff", "Staff"], ["dev", "Développement"], ["inf", "Infirmerie"], ["p", "Promesses"], ["m", "Moral"]], tab);
   const R = mine(G);
   let body = "";
   if (tab === "e") {
     const dv = U.f.eff, L = dv === "tous" ? R : R.filter(w => divOf(G, w) === dv), sal = R.reduce((s, w) => s + (w.ct ? w.ct.sal : 0), 0);
     body = chips("eff", [["tous", "Tous"]].concat(G.divs.filter(d => d.id !== "tag").map(d => [d.id, d.n])), dv) +
       '<p class="uvmut">' + L.length + " catcheur" + (L.length > 1 ? "s" : "") + " · salaires : " + fmtK(sal) + " par an</p>" +
-      (L.length ? L.map(w => '<a class="uvw" href="#/univers/c/' + esc(w.id) + '">' + face(G, w, 40) + '<span class="uvgrow"><b>' + esc(w.n) + "</b><small>" + (w.ct ? ROLES[w.ct.role] + " · " : "") + STYLES[w.sty][0] + " · " + (w.al === "heel" ? "Heel" : "Face") + " · " + recTxt(w.rec) + "</small>" +
+      (L.length ? L.map(w => '<a class="uvw" href="#/univers/c/' + esc(w.id) + '">' + face(G, w, 40) + '<span class="uvgrow"><b>' + esc(w.n) + "</b><small>" + (w.ct ? ROLES[w.ct.role] + " · " : "") + STYLES[w.sty][0] + " · " + (w.al === "heel" ? "Heel" : "Face") + " · " + recTxt(w.rec) + (w.push > 0 ? ' · <span class="uvok">push</span>' : "") + (w.guest && w.guest.to === G.me ? " · prêté" + e_(w) : w.guest ? " · prêté" + e_(w) + " ailleurs" : "") + (w.bench ? " · au placard" : "") + (w.susp > G.day ? " · suspendu" + e_(w) : "") + "</small>" +
         (injured(G, w) ? '<small class="uvko">Blessé' + e_(w) + " jusqu’au " + esc(shortDate(w.inj.until)) + "</small>" : '<span class="uvenl">' + bar(w.en, enC(w.en)) + "<i>" + Math.round(w.en) + " %</i></span>") +
         '</span><span class="uvnote">' + Math.round(w.pop) + "<small>POP</small></span></a>").join("") : '<p class="uvempty">Personne dans cette division.</p>');
-  } else if (tab === "dev") {
+  } else if (tab === "staff") body = staffBody(G);
+  else if (tab === "dev") {
     const D = G.dev || [];
     body = '<div class="uvtile"><p class="uvsm">Les jeunes progressent chaque semaine. Quand la barre est pleine, tu peux les faire monter dans ton effectif.</p><button type="button" class="uvbtn pri" data-act="uvrecruit"' + (D.length >= 6 ? " disabled" : "") + ">Recruter un jeune (30 k$)</button>" + (D.length >= 6 ? '<p class="uvmut">6 jeunes au maximum.</p>' : "") + "</div>" +
       (D.length ? D.map(y => '<div class="uvcard"><div class="uvrow"><span class="uvav ini" style="width:40px;height:40px;background:#63d69c">' + esc(ini(y.n)) + '</span><div class="uvgrow"><b>' + esc(y.n) + "</b><small>" + y.age + " ans · " + esc(y.coach) + ' · potentiel <span class="uvstars" aria-label="' + y.pot + ' sur 5">' + "★".repeat(y.pot) + "☆".repeat(5 - y.pot) + "</span></small></div></div>" +
@@ -69,7 +78,7 @@ export function fedeView(tab) {
   } else {
     const avgM = R.length ? Math.round(R.reduce((s, w) => s + w.mor, 0) / R.length) : 0, c = [0, 0, 0];
     R.forEach(w => c[w.mor >= 65 ? 0 : w.mor >= 45 ? 1 : 2]++);
-    const why = w => [G.day - w.last > 21 ? "pas utilisé" + e_(w) + " depuis longtemps" : "", (G.prom || []).some(p => p.w === w.id && p.st === "ratee") ? "promesse non tenue" : "", (G.tens || []).some(t => t.a === w.id || t.b === w.id) ? "conflit en coulisses" : "", w.rec[1] > w.rec[0] + 3 ? "trop de défaites" : "", w.ct && w.ct.role === "low" && w.pop > 50 ? "rôle trop petit" : ""].filter(Boolean).join(", ");
+    const why = w => [G.day - Math.max(w.last, 0) > 21 ? "pas utilisé" + e_(w) + " depuis longtemps" : "", (G.prom || []).some(p => p.w === w.id && p.st === "ratee") ? "promesse non tenue" : "", (G.tens || []).some(t => t.a === w.id || t.b === w.id) ? "conflit en coulisses" : "", w.rec[1] > w.rec[0] + 3 ? "trop de défaites" : "", w.ct && w.ct.role === "low" && w.pop > 50 ? "rôle trop petit" : ""].filter(Boolean).join(", ");
     body = '<div class="uvtile"><div class="uvth">Moral du vestiaire <i>' + avgM + ' / 100</i></div><div class="uvbig" style="color:' + morC(avgM) + '">' + morTxt(avgM) + "</div>" + bar(avgM, morC(avgM)) +
       '<div class="uvkv3"><div><b class="uvok">' + c[0] + "</b>contents</div><div><b>" + c[1] + '</b>moyens</div><div><b class="uvko">' + c[2] + "</b>pas contents</div></div></div>" +
       '<h3 class="uvh3">Les moins contents</h3>' + R.slice().sort((a, b) => a.mor - b.mor).slice(0, 8).map(w => '<a class="uvw" href="#/univers/c/' + esc(w.id) + '/d">' + face(G, w, 36) + '<span class="uvgrow"><b>' + esc(w.n) + "</b><small>" + esc(why(w) || "rien de grave") + '</small></span><span class="uvnote" style="color:' + morC(w.mor) + '">' + Math.round(w.mor) + "<small>MORAL</small></span></a>").join("") +
@@ -125,24 +134,27 @@ function slCard(G, s) {
   const ed = U.f.sled === s.id, ids = s.a.concat(s.b);
   if (ed) return '<form class="uvcard uvform" data-form="uvsledit" data-s="' + esc(s.id) + '"><label class="uvfld">Nom<input name="n" maxlength="60" value="' + esc(s.n) + '"></label>' +
     '<label class="uvfld">Durée<select name="len">' + [2, 3, 4, 5, 6, 7, 8, 10, 12].map(n => '<option value="' + n + '"' + (n === s.len ? " selected" : "") + ">" + n + " semaines</option>").join("") + "</select></label>" +
-    '<label class="uvfld">Fin de la storyline<select name="turn">' + turnOpts(G, ids, s.turn) + '</select></label><div class="uvrow2"><button class="uvbtn pri">Enregistrer</button><button type="button" class="uvbtn ghost" data-act="uvsled" data-s="">Annuler</button></div></form>';
+    '<label class="uvfld">Fin de la storyline<select name="turn">' + turnOpts(G, ids, s.turn) + "</select></label>" +
+    '<fieldset class="uvfs"><legend>Chapitres (semaine par semaine)</legend><p class="uvsm">Mets le bon segment ou le bon match dans tes shows de la semaine : un chapitre réussi fait monter la heat.</p>' + Array.from({ length: s.len }, (x, k) => '<label class="uvmini">Semaine ' + (k + 1) + '<select name="c' + k + '"><option value="">Libre</option>' + Object.keys(CHAP).map(c => '<option value="' + c + '"' + ((s.plan || [])[k] === c ? " selected" : "") + ">" + esc(CHAP[c]) + "</option>").join("") + "</select></label>").join("") + "</fieldset>" +
+    '<div class="uvrow2"><button class="uvbtn pri">Enregistrer</button><button type="button" class="uvbtn ghost" data-act="uvsled" data-s="">Annuler</button></div></form>';
   return '<div class="uvcard"><div class="uvrow"><div class="uvgrow"><b>' + esc(s.n) + "</b><small>" + esc(teamName(G, s.a)) + " contre " + esc(teamName(G, s.b)) + '</small></div><span class="uvmut">Semaine ' + Math.min(s.wk + 1, s.len) + " / " + s.len + "</span></div>" +
     (s.p ? '<p class="uvsm">' + esc(s.p) + "</p>" : "") + '<div class="uvst2"><span>Heat</span>' + bar(s.heat, s.heat >= 60 ? "#ff6b5e" : "#f5b13d") + "<b>" + s.heat + "</b></div>" +
-    '<p class="uvsm">' + esc(turnTxt(G, s.turn)) + ' · fais-les s’affronter chaque semaine pour faire monter la heat.</p><div class="uvrow2"><button type="button" class="uvbtn sm" data-act="uvsled" data-s="' + esc(s.id) + '">Modifier</button><button type="button" class="uvbtn sm del" data-act="uvsldel" data-s="' + esc(s.id) + '">Supprimer</button></div></div>';
+    (s.plan && s.plan.some(Boolean) ? '<div class="uvchips wrap">' + s.plan.map((c, k) => c ? '<span class="uvchip' + (k === s.wk ? " on" : "") + (k < s.wk ? " his" : "") + '">S' + (k + 1) + " · " + esc(CHAP[c] || c) + "</span>" : "").join("") + "</div>" : "") +
+    '<p class="uvsm">' + esc(turnTxt(G, s.turn)) + (s.plan && s.plan[s.wk] ? " · cette semaine : " + esc(CHAP[s.plan[s.wk]] || "") : " · fais-les s’affronter chaque semaine pour faire monter la heat") + '.</p><div class="uvrow2"><button type="button" class="uvbtn sm" data-act="uvsled" data-s="' + esc(s.id) + '">Modifier</button><button type="button" class="uvbtn sm del" data-act="uvsldel" data-s="' + esc(s.id) + '">Supprimer</button></div></div>';
 }
 export function creatifView(tab) {
   const G = U.G; tab = tab || "sl";
-  const T = tabs("#/univers/creatif", [["div", "Divisions"], ["sl", "Storylines"], ["cl", "Clans"], ["eq", "Équipes"], ["ti", "Titres"], ["to", "Tournois"], ["cla", "Classement"]], tab);
+  const T = tabs("#/univers/creatif", [["div", "Divisions"], ["sl", "Storylines"], ["gim", "Gimmicks"], ["cl", "Clans"], ["eq", "Équipes"], ["ti", "Titres"], ["to", "Tournois"], ["trad", "Traditions"], ["draft", "Draft"], ["cla", "Classement"]], tab);
   const R = mine(G);
   let body = "";
   if (tab === "div") {
-    body = '<p class="uvsm">Range tes catcheurs comme tu veux. Mettre quelqu’un dans la division féminine ou masculine change aussi les matchs que l’IA lui donne.</p>' + G.divs.map(d => {
+    body = '<p class="uvsm">Range tes catcheurs dans des divisions (cruiserweights, jeunes…). Les hommes et les femmes restent séparés : un match mixte n’est possible que si tu l’autorises (Bureau › Réglages) ou pour un titre intergender.</p>' + G.divs.map(d => {
       if (d.id === "tag") { const tm = G.teams.filter(t => t.fed === G.me); return '<div class="uvcard"><div class="uvrow"><b class="uvgrow">' + esc(d.n) + '</b><span class="uvmut">' + tm.length + " équipe" + (tm.length > 1 ? "s" : "") + '</span></div><div class="uvmem">' + tm.map(t => '<span class="uvpill">' + esc(t.n) + "</span>").join("") + '</div><a class="uvbtn ghost" href="#/univers/creatif/eq">Gérer les équipes</a></div>'; }
       const M = R.filter(w => divOf(G, w) === d.id);
       return '<div class="uvcard">' + (U.f.dved === d.id ? '<form class="uvinl" data-form="uvdvren" data-d="' + esc(d.id) + '"><input name="n" value="' + esc(d.n) + '" maxlength="40" aria-label="Nom de la division"><button class="uvbtn pri">Enregistrer</button></form>'
         : '<div class="uvrow"><b class="uvgrow">' + esc(d.n) + '</b><span class="uvmut">' + M.length + '</span><button type="button" class="uvbtn sm ghost" data-act="uvdved" data-d="' + esc(d.id) + '">Renommer</button>' + (d.c ? '<button type="button" class="uvbtn sm del" data-act="uvdvdel" data-d="' + esc(d.id) + '">Supprimer</button>' : "") + "</div>") +
         '<div class="uvmem">' + M.map(w => '<span class="uvpill">' + face(G, w, 22) + esc(w.n) + (d.c ? '<button type="button" data-act="uvdvrm" data-w="' + esc(w.id) + '" aria-label="Retirer ' + esc(w.n) + '">×</button>' : "") + "</span>").join("") + "</div>" +
-        '<form class="uvinl" data-form="uvdvadd" data-d="' + esc(d.id) + '"><select name="w" aria-label="Ajouter un catcheur à ' + esc(d.n) + '">' + wOpts(G, "", { ph: "Ajouter un catcheur…", f: w => divOf(G, w) !== d.id }) + '</select><button class="uvbtn">Ajouter</button></form></div>';
+        '<form class="uvinl" data-form="uvdvadd" data-d="' + esc(d.id) + '"><select name="w" aria-label="Ajouter un catcheur à ' + esc(d.n) + '">' + wOpts(G, "", { ph: "Ajouter un catcheur…", f: w => divOf(G, w) !== d.id && ((d.id !== "h" && d.id !== "f") || w.sx === d.id) }) + '</select><button class="uvbtn">Ajouter</button></form></div>';
     }).join("") + '<form class="uvcard uvinl" data-form="uvdvnew"><input name="n" maxlength="40" placeholder="Nom de la nouvelle division" aria-label="Nom de la nouvelle division" required><button class="uvbtn pri">Créer</button></form>';
   } else if (tab === "sl") {
     const A = G.sl.filter(s => s.fed === G.me && !s.done), Dn = G.sl.filter(s => s.fed === G.me && s.done).slice(-8).reverse(), I = U.f.gen;
@@ -165,19 +177,21 @@ export function creatifView(tab) {
         (isC ? '<form class="uvinl" data-form="uvgradd" data-g="' + esc(x.id) + '"><select name="w" aria-label="Ajouter un membre">' + wOpts(G, "", { ph: "Ajouter un membre…", f: w => x.m.indexOf(w.id) < 0 }) + '</select><button class="uvbtn">Ajouter</button></form>' : '<div class="uvst2"><span>Entente</span>' + bar(x.chem, "#63d69c") + "<b>" + x.chem + "</b></div>") + "</div>"; }).join("") : '<p class="uvempty">' + (isC ? "Aucun clan." : "Aucune équipe.") + "</p>") +
       '<form class="uvcard uvform" data-form="uvgrnew" data-t="' + tab + '"><h3 class="uvh3">' + (isC ? "Nouveau clan" : "Nouvelle équipe") + '</h3><label class="uvfld">Nom<input name="n" maxlength="40" required></label>' +
       [1, 2].concat(isC ? [3] : []).map(i => '<label class="uvfld">Membre ' + i + '<select name="m' + i + '" required>' + wOpts(G, "") + "</select></label>").join("") + '<button class="uvbtn pri">Créer</button></form>';
-  } else if (tab === "ti") {
+  } else if (tab === "gim") body = gimBody(G);
+  else if (tab === "trad") body = tradBody(G);
+  else if (tab === "draft") body = draftBody(G);
+  else if (tab === "to") body = toursBody(G);
+  else if (tab === "ti") {
     const L = Object.values(G.T).filter(t => t.fed === G.me);
-    body = (L.length ? L.map(t => { const im = imgT(G, t), tm = G.teams.filter(x => x.fed === G.me), ch = champIds(t);
-      return '<div class="uvcard uvtitle"><div class="uvrow">' + (im ? '<img class="uvbelt big" src="' + esc(im) + '" alt="">' : BELT_SVG) + '<div class="uvgrow"><b>' + esc(t.n) + "</b><small>" + DIVL[t.div] + "</small><small>Champion" + (t.div === "f" ? "ne" : "") + " : <b>" + esc(champName(G, t)) + "</b>" + (ch.length ? " · depuis " + (G.day - t.since) + " jours · " + (t.defs || 0) + " défense" + ((t.defs || 0) > 1 ? "s" : "") : "") + "</small></div></div>" +
-        '<div class="uvrow2">' + imgBtn("t:" + t.id, "🖼️ Changer la ceinture") + "</div>" +
-        '<form class="uvinl" data-form="uvtch" data-t="' + esc(t.id) + '"><select name="w" aria-label="Nouveau champion">' + (t.div === "tag" ? '<option value="">— Choisir une équipe —</option>' + tm.map(x => '<option value="' + esc(x.id) + '">' + esc(x.n) + "</option>").join("") : wOpts(G, "", { f: w => divOf(G, w) !== (t.div === "f" ? "h" : "f") })) + '</select><button class="uvbtn">Nommer champion</button></form>' +
+    body = '<p class="uvsm">Un titre est masculin, féminin ou intergender (les équipes : masculines, féminines ou mixtes). Son prestige monte avec les beaux matchs et les défenses, et baisse s’il n’est pas défendu.</p>' +
+      (L.length ? L.map(t => { const im = imgT(G, t), tm = G.teams.filter(x => x.fed === G.me && x.m.every(i => G.W[i] && catOk(t, G.W[i]))), ch = champIds(t), C = contenders(G, t).slice(0, 3);
+      return '<div class="uvcard uvtitle"><div class="uvrow">' + (im ? '<img class="uvbelt big" src="' + esc(im) + '" alt="">' : BELT_SVG) + '<div class="uvgrow"><b>' + esc(t.n) + "</b><small>" + esc(CATL(t)) + " · " + ((t.hist || []).length) + " règne" + ((t.hist || []).length > 1 ? "s" : "") + "</small><small>Champion" + (t.cat === "f" ? "ne" : "") + " : <b>" + esc(champName(G, t)) + "</b>" + (ch.length ? " · depuis " + (G.day - t.since) + " jours · " + (t.defs || 0) + " défense" + ((t.defs || 0) > 1 ? "s" : "") : "") + "</small></div></div>" +
+        '<div class="uvst2"><span>Prestige</span>' + bar(t.pres || 50, (t.pres || 50) >= 70 ? "#f5b13d" : "#6fb3ff") + "<b>" + Math.round(t.pres || 50) + "</b></div>" +
+        (C.length ? '<p class="uvsm">Prétendants : ' + C.map((c, i) => esc(c.w.n) + (i === 0 ? " (n°1)" : "")).join(" · ") + '</p><button type="button" class="uvbtn sm" data-act="uvshot" data-t="' + esc(t.id) + '" data-w="' + esc(C[0].w.id) + '">Faire de ' + esc(C[0].w.n) + " le n°1 challenger</button>" : "") +
+        '<div class="uvrow2">' + imgBtn("t:" + t.id, "🖼️ Design de la ceinture") + "</div>" +
+        '<form class="uvinl" data-form="uvtch" data-t="' + esc(t.id) + '"><select name="w" aria-label="Nouveau champion">' + (t.div === "tag" ? '<option value="">— Choisir une équipe —</option>' + tm.map(x => '<option value="' + esc(x.id) + '">' + esc(x.n) + "</option>").join("") : wOpts(G, "", { f: w => catOk(t, w) })) + '</select><button class="uvbtn">Nommer champion</button></form>' +
         '<div class="uvrow2">' + (ch.length ? '<button type="button" class="uvbtn sm ghost" data-act="uvtvac" data-t="' + esc(t.id) + '">Rendre vacant</button>' : "") + '<button type="button" class="uvbtn sm del" data-act="uvtdel" data-t="' + esc(t.id) + '">Supprimer le titre</button></div></div>'; }).join("") : '<p class="uvempty">Aucun titre.</p>') +
-      '<form class="uvcard uvform" data-form="uvtnew"><h3 class="uvh3">Nouveau titre</h3><label class="uvfld">Nom<input name="n" maxlength="50" required placeholder="Ex. : Championnat Télévision"></label><label class="uvfld">Pour<select name="div"><option value="h">Les hommes</option><option value="f">Les femmes</option><option value="tag">Les équipes</option></select></label><button class="uvbtn pri">Créer le titre</button></form>';
-  } else if (tab === "to") {
-    const L = (G.tours || []).filter(t => t.fed === G.me).slice().reverse(), RN = ["Quarts de finale", "Demi-finales", "Finale"];
-    body = L.map(t => '<div class="uvcard"><div class="uvrow"><b class="uvgrow">' + esc(t.n) + "</b>" + (t.win ? '<span class="uvstat ok">Vainqueur : ' + esc(wn(G, t.win)) + "</span>" : "") + '</div><div class="uvbr">' + t.r.map((r, i) => '<div class="uvbrc"><small>' + RN[i] + "</small>" + r.map(m => '<div class="uvbrm"><span' + (m.w === m.a ? ' class="w"' : "") + ">" + esc(wn(G, m.a)) + "</span><span" + (m.w === m.b ? ' class="w"' : "") + ">" + esc(m.b ? wn(G, m.b) : "?") + "</span></div>").join("") + "</div>").join("") + "</div>" +
-      '<div class="uvrow2">' + (t.win ? "" : '<button type="button" class="uvbtn pri" data-act="uvtoplay" data-t="' + esc(t.id) + '">Jouer : ' + RN[t.cur] + "</button>") + '<button type="button" class="uvbtn sm del" data-act="uvtodel" data-t="' + esc(t.id) + '">Supprimer</button></div></div>').join("") +
-      '<form class="uvcard uvform" data-form="uvtonew"><h3 class="uvh3">Nouveau tournoi à 8</h3><p class="uvsm">Les 8 catcheurs les plus populaires de la division, en forme, sont pris. Chaque tour se joue quand tu veux (fatigue comprise).</p><label class="uvfld">Nom<input name="n" maxlength="50" required placeholder="Ex. : King of the Ring"></label><label class="uvfld">Division<select name="div">' + G.divs.filter(d => d.id !== "tag").map(d => '<option value="' + esc(d.id) + '">' + esc(d.n) + "</option>").join("") + '</select></label><button class="uvbtn pri">Créer le tournoi</button></form>';
+      '<form class="uvcard uvform" data-form="uvtnew"><h3 class="uvh3">Nouveau titre</h3><label class="uvfld">Nom<input name="n" maxlength="50" required placeholder="Ex. : Championnat Télévision"></label><label class="uvfld">Pour<select name="div"><option value="h">Les hommes</option><option value="f">Les femmes</option><option value="x">Intergender (hommes et femmes)</option><option value="tagh">Les équipes masculines</option><option value="tagf">Les équipes féminines</option><option value="tagx">Les équipes mixtes</option></select></label><label class="uvfld">Prestige de départ<select name="p"><option value="35">Petit titre</option><option value="50" selected>Titre secondaire</option><option value="70">Titre majeur</option></select></label><button class="uvbtn pri">Créer le titre</button></form>';
   } else {
     const pts = w => w.rec[0] * 3 + w.rec[2];
     body = '<p class="uvsm">3 points par victoire, 1 par draw (cette année).</p>' + G.divs.filter(d => d.id !== "tag").map(d => { const L = R.filter(w => divOf(G, w) === d.id).sort((a, b) => pts(b) - pts(a) || b.pop - a.pop).slice(0, 10); if (!L.length) return "";
@@ -193,7 +207,7 @@ FORM.uvdvnew = f => { const n = f.n.value.trim(); if (!n) return; U.G.divs.push(
 FORM.uvdvadd = f => {
   const G = U.G, w = G.W[f.w.value], d = f.dataset.d; if (!w) return;
   G.dv = G.dv || {};
-  if (d === "h" || d === "f") { w.sx = d; delete G.dv[w.id]; } else G.dv[w.id] = d;
+  if (d === "h" || d === "f") { if (w.sx !== d) { toast("Hommes et femmes restent dans leur division"); return; } delete G.dv[w.id]; } else G.dv[w.id] = d;
   done();
 };
 ACT.uvdvrm = el => { const G = U.G; delete (G.dv || {})[el.dataset.w]; done(); };
@@ -216,6 +230,7 @@ FORM.uvsledit = f => {
   const G = U.G, s = G.sl.find(x => x.id === f.dataset.s); if (!s) return;
   s.n = f.n.value.trim() || s.n; s.len = +f.len.value || s.len;
   const v = f.turn.value; s.turn = v ? { w: v.split(":")[0], to: v.split(":")[1] } : null;
+  s.plan = Array.from({ length: s.len }, (x, k) => { const e = f.elements.namedItem("c" + k); return e ? e.value : ((s.plan || [])[k] || ""); });
   U.f.sled = ""; done();
 };
 ACT.uvsldel = el => { const G = U.G, id = el.dataset.s; ask("Supprimer cette storyline ?", "Supprimer", () => { G.sl = G.sl.filter(x => x.id !== id); done(); }); };
@@ -240,48 +255,17 @@ FORM.uvgrnew = f => {
 // titres
 FORM.uvtch = f => {
   const G = U.G, t = G.T[f.dataset.t], v = f.w.value; if (!t || !v) return;
-  if (t.div === "tag") { const tm = G.teams.find(x => x.id === v); if (!tm) return; t.champ = tm.m.slice(0, 2); } else t.champ = v;
+  if (t.div === "tag") { const tm = G.teams.find(x => x.id === v); if (!tm) return; t.champ = tm.m.slice(0, 2); } else { if (G.W[v] && !catOk(t, G.W[v])) { toast("Ce titre est " + CATL(t).toLowerCase()); return; } t.champ = v; }
+  t.hist = t.hist || []; const last = t.hist[t.hist.length - 1]; if (last && last.to == null) last.to = G.day; t.hist.push({ w: champIds(t), from: G.day, defs: 0 });
   t.since = G.day; t.defs = 0;
   champIds(t).forEach(i => { const w = G.W[i]; if (w) { w.hist.push({ d: G.day, t: "Nommé" + e_(w) + " champion" + (w.sx === "f" ? "ne" : "") + " : " + t.n }); w.mor = clamp(w.mor + 8); } });
   news(G, { seg: "ecran", f: "nous", t: champName(G, t) + " : " + t.n, txt: "Le GM a décidé : " + champName(G, t) + " devient champion" + (t.div === "f" ? "ne" : "") + "." });
   done();
 };
-ACT.uvtvac = el => { const t = U.G.T[el.dataset.t]; if (!t) return; t.champ = t.div === "tag" ? [] : ""; t.since = U.G.day; done(); };
+ACT.uvtvac = el => { const t = U.G.T[el.dataset.t]; if (!t) return; const last = (t.hist || [])[(t.hist || []).length - 1]; if (last && last.to == null) last.to = U.G.day; t.champ = t.div === "tag" ? [] : ""; t.since = U.G.day; done(); };
+ACT.uvshot = el => { const G = U.G, t = G.T[el.dataset.t], w = G.W[el.dataset.w]; if (!t || !w) return; G.shots = (G.shots || []).filter(x => x.t !== t.id).concat({ w: w.id, t: t.id, by: "GM", d: G.day }); news(G, { seg: "ecran", f: "nous", t: w.n + " devient n°1 challenger", txt: "Prochain objectif : le " + t.n + "." }); toast(w.n + " aura son match de titre (l’IA le met sur la carte)"); done(); };
 ACT.uvtdel = el => { const G = U.G, t = G.T[el.dataset.t]; if (!t) return; ask("Supprimer le titre « " + t.n + " » ?", "Supprimer", () => { delete G.T[t.id]; done(); }); };
-FORM.uvtnew = f => { const G = U.G, n = f.n.value.trim(); if (!n) return; const id = uid("t"); G.T[id] = { id: id, fed: G.me, n: n, div: f.div.value, champ: f.div.value === "tag" ? [] : "", since: G.day, defs: 0 }; toast("Titre créé : choisis son champion ou fais un tournoi"); done(); };
-// tournois
-FORM.uvtonew = f => {
-  const G = U.G, n = f.n.value.trim(), d = f.div.value; if (!n) return;
-  const L = mine(G).filter(w => divOf(G, w) === d && avail(G, w)).slice(0, 8);
-  if (L.length < 8) { toast("Il faut 8 catcheurs disponibles dans cette division (" + L.length + ")"); return; }
-  const s = [0, 7, 3, 4, 1, 6, 2, 5].map(i => L[i].id);
-  G.tours = G.tours || []; G.tours.push({ id: uid("o"), fed: G.me, n: n, div: d, r: [[0, 2, 4, 6].map(i => ({ a: s[i], b: s[i + 1], w: "" }))], cur: 0, win: "" });
-  news(G, { seg: "ecran", f: "nous", t: "Tournoi : " + n, txt: "8 catcheurs pour une seule place au sommet." }); done();
-};
-ACT.uvtoplay = el => {
-  const G = U.G, t = (G.tours || []).find(x => x.id === el.dataset.t); if (!t || t.win) return;
-  const round = t.r[t.cur], out = [];
-  round.forEach(m => {
-    if (m.w) return;
-    const A = G.W[m.a], B = G.W[m.b];
-    if (!avail(G, A) || !avail(G, B)) { m.w = avail(G, A) ? m.a : m.b; out.push(wn(G, m.w) + " gagne par forfait"); return; }
-    const r = playMatch(G, { a: [m.a], b: [m.b], kind: "simple", dur: "moyen", win: "ia", spots: [] }, { ev: t.n });
-    let w = r ? r.win : "a"; if (w === "nul") w = rnd() < 0.5 ? "a" : "b";
-    m.w = w === "a" ? m.a : m.b; m.r = r ? r.r : 50; out.push(wn(G, m.w) + " (" + stars(m.r) + ")");
-  });
-  if (round.length === 1) {
-    t.win = round[0].w; const w = G.W[t.win];
-    if (w) { w.pop = clamp(w.pop + 4, 1, 99); w.mor = clamp(w.mor + 10); w.hist.push({ d: G.day, t: "Remporte le tournoi " + t.n }); }
-    news(G, { seg: "ecran", f: "nous", t: wn(G, t.win) + " remporte " + t.n, txt: "Victoire en finale contre " + wn(G, round[0].w === round[0].a ? round[0].b : round[0].a) + "." });
-    toast(wn(G, t.win) + " remporte le tournoi !");
-  } else {
-    const nx = []; for (let i = 0; i < round.length; i += 2) nx.push({ a: round[i].w, b: round[i + 1].w, w: "" });
-    t.r.push(nx); t.cur++; toast("Qualifiés : " + out.join(", "));
-  }
-  done();
-};
-ACT.uvtodel = el => { const G = U.G, id = el.dataset.t; ask("Supprimer ce tournoi ?", "Supprimer", () => { G.tours = G.tours.filter(x => x.id !== id); done(); }); };
-
+FORM.uvtnew = f => { const G = U.G, n = f.n.value.trim(); if (!n) return; const v = f.div.value, tag = v.indexOf("tag") === 0, cat = tag ? v.slice(3) : v, id = uid("t"); G.T[id] = { id: id, fed: G.me, n: n, div: tag ? "tag" : cat === "f" ? "f" : "h", cat: cat, pres: +f.p.value || 50, hist: [], champ: tag ? [] : "", since: G.day, defs: 0 }; toast("Titre créé : choisis son champion ou fais un tournoi"); done(); };
 // ======================= ACTIVITÉ =======================
 const MER = { "T-shirt": 25, "Casquette": 20, "Figurine": 40, "Poster": 12 };
 const PUB = [
@@ -315,13 +299,13 @@ function genIdea(G, ty, txt) {
 }
 export function activiteView(tab) {
   const G = U.G, f = meF(G); tab = tab || "ev";
-  const T = tabs("#/univers/activite", [["ev", "Événements"], ["ct", "Contrats TV et pub"], ["fin", "Finances"], ["mer", "Merchandising"], ["idee", "Générateur d’idées"]], tab);
+  const T = tabs("#/univers/activite", [["ev", "Événements"], ["ct", "Contrats TV et pub"], ["biz", "Business"], ["part", "Partenaires"], ["aud", "Audiences"], ["fin", "Finances"], ["mer", "Merchandising"], ["idee", "Idées"]], tab);
   let body = "";
   if (tab === "ev") {
     const up = G.ev.filter(e => e.fed === G.me && !e.done).sort((a, b) => a.day - b.day), past = G.ev.filter(e => e.fed === G.me && e.done).sort((a, b) => b.day - a.day).slice(0, 12);
     const evImg = e => { const s = imgEv(G, e); return s ? '<img class="uvevimg" src="' + esc(s) + '" alt="">' : crest(G, G.me, 52); };
     body = up.slice(0, 24).map(e => '<div class="uvev' + (big(e) ? " big" : "") + '">' + evImg(e) + '<div class="uvgrow"><b>' + esc(e.n) + "</b><small>" + esc(dayLabel(e.day)) + " · " + kindL(e) + (e.day === G.day ? " · ce soir" : "") + "</small>" +
-      (big(e) ? "<small>Hype " + Math.round(G.hype[e.id] || 3) + " / 10</small>" : "") + (e.card && e.card.length ? '<small class="uvok">Carte prête : ' + e.card.length + " match" + (e.card.length > 1 ? "s" : "") + "</small>" : "") +
+      (big(e) ? "<small>Hype " + Math.round(G.hype[e.id] || 3) + " / 10</small>" : "") + ((e.items || []).length ? '<small class="uvok">Carte prête : ' + e.items.filter(x => x.it === "m").length + " match" + (e.items.filter(x => x.it === "m").length > 1 ? "s" : "") + ", " + e.items.filter(x => x.it === "s").length + " segment" + (e.items.filter(x => x.it === "s").length > 1 ? "s" : "") + "</small>" : "") + (e.id === G.mania ? '<small class="uvhot">Ton plus grand show de l’année</small>' : "") +
       '</div><div class="uvcol"><a class="uvbtn sm pri" href="#/univers/ev/' + encodeURIComponent(e.id) + '">' + (e.day === G.day ? "Jouer" : "Préparer") + '</a><div class="uvrow2">' + imgBtn("e:" + e.fed + "|" + e.n, "🖼️") + (e.day > G.day ? '<button type="button" class="uvbtn sm ghost" data-act="uvevdel" data-id="' + esc(e.id) + '" aria-label="Supprimer ' + esc(e.n) + '">✕</button>' : "") + "</div></div></div>").join("") +
       '<details class="uvdet"><summary>Créer un événement</summary><form class="uvform" data-form="uvevnew"><label class="uvfld">Nom<input name="n" maxlength="40" required placeholder="Ex. : Night of Glory"></label>' +
       '<label class="uvfld">Type<select name="k"><option value="big">Grand événement (' + (f.big === "PLE" ? "PLE" : "PPV") + ')</option><option value="tv">Épisode spécial (TV)</option></select></label>' +
@@ -329,10 +313,13 @@ export function activiteView(tab) {
       (past.length ? '<h3 class="uvh3">Déjà joués</h3>' + past.map(e => '<a class="uvline" href="#/univers/ev/' + encodeURIComponent(e.id) + '"><span class="uvdate">' + esc(shortDate(e.day)) + '</span><span class="uvgrow">' + esc(e.n) + "</span><b>" + (e.res ? stars(e.res.r) + " · " + fmtM(e.res.aud) : "") + "</b></a>").join("") : "");
   } else if (tab === "ct") {
     const sp = (G.spons || []).filter(s => s.until > G.day), cd = (G.spSeek || -99) + 14 - G.day;
-    body = '<div class="uvtile"><div class="uvth">Contrat TV <i>' + esc(f.tv.n) + '</i></div><div class="uvkv"><span>Par show</span>' + fmtK(f.tv.pay) + '</div><div class="uvkv"><span>Objectif d’audience</span>' + fmtM(f.tv.min) + '</div><div class="uvkv"><span>Fin</span>' + esc(dayLabel(f.tv.end, true)) + '</div><p class="uvsm">Le diffuseur proposera un nouveau contrat un mois avant la fin (dans le courrier). Une bonne audience = un meilleur contrat.</p></div>' +
+    body = tvBody(G) +
       '<h3 class="uvh3">Sponsors</h3>' + (sp.length ? sp.map(s => '<div class="uvcard"><div class="uvkv"><span><b>' + esc(s.n) + "</b></span>" + fmtK(s.pay) + ' par show</div><p class="uvsm">Payé si l’audience dépasse ' + fmtM(s.min) + " · jusqu’au " + esc(shortDate(s.until)) + "</p></div>").join("") : '<p class="uvempty">Aucun sponsor pour l’instant.</p>') +
       '<button type="button" class="uvbtn pri" data-act="uvspseek"' + (cd > 0 ? " disabled" : "") + ">" + (cd > 0 ? "Chercher un sponsor (dans " + cd + " j)" : "Chercher un sponsor") + "</button>";
-  } else if (tab === "fin") {
+  } else if (tab === "biz") body = bizBody(G);
+  else if (tab === "part") body = partBody(G);
+  else if (tab === "aud") body = audBody(G);
+  else if (tab === "fin") {
     const c = G.fin.cur, inc = c.tv + c.tix + c.merch + c.pub, out = c.sal + c.prod, H = G.fin.hist.slice(-12);
     const sal = Math.round(roster(G).reduce((s, w) => s + (w.ct ? w.ct.sal : 0), 0) / 12);
     const net = h => h.tv + h.tix + h.merch + h.pub - h.sal - h.prod, mx = Math.max(1, ...H.map(h => Math.abs(net(h))));
@@ -358,7 +345,7 @@ export function activiteView(tab) {
 FORM.uvevnew = f => {
   const G = U.G, n = f.n.value.trim(), d = +f.d.value; if (!n || !(d > G.day)) return;
   const kind = f.k.value === "tv" ? "tv" : meF(G).big === "PLE" ? "ple" : "ppv";
-  G.ev.push({ id: uid(G.me + "-ev"), fed: G.me, n: n, kind: kind, day: d, card: [], seg: [], done: false });
+  G.ev.push({ id: uid(G.me + "-ev"), fed: G.me, n: n, kind: kind, day: d, items: [], done: false });
   if (kind !== "tv") G.hype[G.ev[G.ev.length - 1].id] = 3;
   toast("Événement créé : " + n + " (" + shortDate(d) + ")"); done();
 };
@@ -378,7 +365,7 @@ ACT.uvmerdel = el => { const G = U.G; G.merch = G.merch.filter(p => p.id !== el.
 ACT.uvagen = el => { const t = document.getElementById("uvagt"); U.f.agtxt = t ? t.value : ""; U.f.agen = genIdea(U.G, el.dataset.ty, U.f.agtxt); redraw(); };
 ACT.uvagdo = () => {
   const G = U.G, I = U.f.agen, f = meF(G); if (!I) return;
-  if (I.ty === "ev") { const id = uid(G.me + "-ev"); G.ev.push({ id: id, fed: G.me, n: I.n, kind: f.big === "PLE" ? "ple" : "ppv", day: I.day, card: [], seg: [], done: false }); G.hype[id] = 3; toast("Événement créé : " + I.n + " (" + shortDate(I.day) + ")"); }
+  if (I.ty === "ev") { const id = uid(G.me + "-ev"); G.ev.push({ id: id, fed: G.me, n: I.n, kind: f.big === "PLE" ? "ple" : "ppv", day: I.day, items: [], done: false }); G.hype[id] = 3; toast("Événement créé : " + I.n + " (" + shortDate(I.day) + ")"); }
   else {
     if (!pay(G, I.cost)) return;
     const w = G.W[I.w], nb = G.ev.filter(e => e.fed === G.me && big(e) && !e.done && e.day >= G.day).sort((a, b) => a.day - b.day)[0];
@@ -391,96 +378,4 @@ ACT.uvagdo = () => {
     }
   }
   U.f.agen = null; done();
-};
-
-// ======================= LA CARTE D'UN SHOW =======================
-const NEWM = () => ({ a: [], b: [], kind: "simple", title: "", dur: "moyen", win: "ia", spots: [] });
-function sideSel(G, name, v, lbl) { return '<select name="' + name + '" aria-label="' + esc(lbl) + '">' + wOpts(G, v || "", { book: true }) + "</select>"; }
-function titleOpts(G, m) {
-  const L = Object.values(G.T).filter(t => t.fed === G.me && (m.kind === "equipe" ? t.div === "tag" : t.div !== "tag"));
-  return '<option value="">' + (m.kind === "equipe" ? "Pas de titre" : "— Quel titre ? —") + "</option>" + L.map(t => '<option value="' + esc(t.id) + '"' + (t.id === m.title ? " selected" : "") + ">" + esc(t.n) + " (" + esc(champName(G, t)) + ")</option>").join("");
-}
-function matchBox(G, ev, m, i, n) {
-  const tag = m.kind === "equipe", sl = m.a[0] && m.b[0] ? heatBetween(G, m.a, m.b) : null, tired = m.a.concat(m.b).some(id => G.W[id] && G.W[id].en < 40);
-  return '<fieldset class="uvmatch"><legend>' + (i === n - 1 && n > 1 ? "Main event" : "Match " + (i + 1)) + "</legend>" +
-    '<div class="uvrow2"><select name="k' + i + '" aria-label="Type de match"><option value="simple"' + (m.kind === "simple" ? " selected" : "") + '>Simple</option><option value="titre"' + (m.kind === "titre" ? " selected" : "") + '>Pour un titre</option><option value="equipe"' + (tag ? " selected" : "") + ">Par équipes</option></select>" +
-    (m.kind !== "simple" ? '<select name="t' + i + '" aria-label="Titre en jeu">' + titleOpts(G, m) + "</select>" : "") + "</div>" +
-    '<div class="uvsides"><div>' + sideSel(G, "a" + i + "_0", m.a[0], "Camp 1") + (tag ? sideSel(G, "a" + i + "_1", m.a[1], "Camp 1, partenaire") : "") + '</div><i>contre</i><div>' + sideSel(G, "b" + i + "_0", m.b[0], "Camp 2") + (tag ? sideSel(G, "b" + i + "_1", m.b[1], "Camp 2, partenaire") : "") + "</div></div>" +
-    '<div class="uvrow2"><label class="uvmini">Durée<select name="d' + i + '">' + Object.keys(DUR).map(k => '<option value="' + k + '"' + (m.dur === k ? " selected" : "") + ">" + DUR[k][0] + " (" + DUR[k][1] + " min)</option>").join("") + "</select></label>" +
-    '<label class="uvmini">Vainqueur<select name="w' + i + '"><option value="ia"' + (m.win === "ia" ? " selected" : "") + '>L’IA décide</option><option value="a"' + (m.win === "a" ? " selected" : "") + '>Camp 1</option><option value="b"' + (m.win === "b" ? " selected" : "") + '>Camp 2</option><option value="nul"' + (m.win === "nul" ? " selected" : "") + ">Draw</option></select></label></div>" +
-    '<div class="uvspots" role="group" aria-label="Moments forts">' + Object.keys(SPOTS).map(k => '<label class="uvspot"><input type="checkbox" name="s' + i + '" value="' + k + '"' + ((m.spots || []).indexOf(k) >= 0 ? " checked" : "") + "><span>" + SPOTS[k][0] + "</span></label>").join("") + "</div>" +
-    (sl || tired ? '<p class="uvsm">' + (sl ? '<span class="uvhot">Storyline « ' + esc(sl.n) + " » : heat " + sl.heat + "</span> " : "") + (tired ? '<span class="uvko">Quelqu’un est fatigué : le match sera moins bon et le risque de blessure monte.</span>' : "") + "</p>" : "") +
-    '<div class="uvrow2">' + (i > 0 ? '<button type="button" class="uvbtn sm ghost" data-act="uvbmv" data-ev="' + esc(ev.id) + '" data-i="' + i + '">Monter</button>' : "") + '<button type="button" class="uvbtn sm del" data-act="uvbdel" data-ev="' + esc(ev.id) + '" data-i="' + i + '">Retirer</button></div></fieldset>';
-}
-function resultsView(G, ev) {
-  const r = ev.res || {}, im = imgEv(G, ev), mineEv = ev.fed === G.me;
-  const line = m => { const A = teamName(G, m.a), B = teamName(G, m.b), t = m.title && G.T[m.title];
-    return '<div class="uvres"><div class="uvrow"><span class="uvgrow">' + (m.win === "a" ? "<b>" + esc(A) + "</b> bat " + esc(B) : m.win === "b" ? "<b>" + esc(B) + "</b> bat " + esc(A) : esc(A) + " et " + esc(B) + " : draw") + '</span><span class="uvstar">' + stars(m.r) + "</span></div>" +
-      (t ? '<small class="' + (m.change ? "uvhot" : "uvmut") + '">' + (m.change ? "Nouveau champion : " : "Le champion garde son titre : ") + esc(t.n) + "</small>" : "") + (m.notes || []).map(x => '<small class="uvko">' + esc(x) + "</small>").join("") + "</div>"; };
-  const body = '<a class="uvback" href="#/univers/' + (mineEv ? "activite/ev" : "g") + '">‹ Retour</a><div class="uvevhead">' + (im ? '<img class="uvevimg big" src="' + esc(im) + '" alt="">' : crest(G, ev.fed, 64)) + '<div class="uvgrow"><h2>' + esc(ev.n) + "</h2><small>" + esc(dayLabel(ev.day, true)) + " · " + kindL(ev) + "</small>" + (mineEv ? imgBtn("e:" + ev.fed + "|" + ev.n) : "") + "</div></div>" +
-    '<div class="uvkv3"><div><b>' + stars(r.r || 0) + "</b>note</div><div><b>" + fmtM(r.aud || 0) + "</b>téléspectateurs</div>" + (r.money != null ? "<div><b class=\"" + (r.money >= 0 ? "uvok" : "uvko") + '">' + fmtK(r.money) + "</b>recettes</div>" : "") + "</div>" +
-    (r.m ? '<h3 class="uvh3">Les matchs</h3>' + r.m.map(line).join("") : "") +
-    (r.s && r.s.length ? '<h3 class="uvh3">Au micro</h3>' + r.s.map(s => '<div class="uvres"><div class="uvrow"><span class="uvgrow">Promo de <b>' + esc(wn(G, s.w)) + '</b></span><span class="uvstar">' + stars(s.r) + "</span></div></div>").join("") : "") +
-    '<a class="uvbtn pri" href="#/univers/g">Menu général</a>';
-  return shell(mineEv ? "activite" : "g", "Résultats", "", body);
-}
-export function bookView(id) {
-  const G = U.G, ev = G.ev.find(e => e.id === id);
-  if (!ev) return shell("activite", "Show", "", '<p class="uvempty">Ce show n’existe plus.</p><a class="uvbtn" href="#/univers/activite/ev">Mes événements</a>');
-  if (ev.done || ev.fed !== G.me) return resultsView(G, ev);
-  ev.card = ev.card || []; ev.seg = ev.seg || [];
-  const today = ev.day === G.day, im = imgEv(G, ev);
-  const body = '<a class="uvback" href="#/univers/activite/ev">‹ Mes événements</a><div class="uvevhead">' + (im ? '<img class="uvevimg big" src="' + esc(im) + '" alt="">' : crest(G, G.me, 64)) + '<div class="uvgrow"><h2>' + esc(ev.n) + "</h2><small>" + esc(dayLabel(ev.day, true)) + " · " + kindL(ev) + (big(ev) ? " · hype " + Math.round(G.hype[ev.id] || 3) + " / 10" : "") + "</small>" + imgBtn("e:" + ev.fed + "|" + ev.n) + "</div></div>" +
-    (today ? "" : '<p class="uvsm">Ce show a lieu le ' + esc(dayLabel(ev.day)) + " : ta carte est gardée jusque-là.</p>") +
-    '<form id="uvbook" class="uvbook" data-ev="' + esc(ev.id) + '" onsubmit="return false">' + ev.card.map((m, i) => matchBox(G, ev, m, i, ev.card.length)).join("") +
-    '<fieldset class="uvmatch"><legend>Segments au micro</legend>' + ev.seg.map((s, j) => '<div class="uvrow2"><select name="p' + j + '" aria-label="Segment ' + (j + 1) + '">' + wOpts(G, s.w, { book: true }) + '</select><button type="button" class="uvbtn sm del" data-act="uvpdel" data-ev="' + esc(ev.id) + '" data-i="' + j + '">Retirer</button></div>').join("") +
-    '<button type="button" class="uvbtn sm" data-act="uvpadd" data-ev="' + esc(ev.id) + '">Ajouter une promo</button></fieldset></form>' +
-    '<div class="uvrow2"><button type="button" class="uvbtn" data-act="uvbadd" data-ev="' + esc(ev.id) + '">Ajouter un match</button><button type="button" class="uvbtn ghost" data-act="uvbauto" data-ev="' + esc(ev.id) + '">Carte faite par l’IA</button>' + (ev.card.length ? '<button type="button" class="uvbtn ghost" data-act="uvbclear" data-ev="' + esc(ev.id) + '">Tout effacer</button>' : "") + "</div>" +
-    (today ? '<button type="button" class="uvbtn pri big" data-act="uvbplay" data-ev="' + esc(ev.id) + '">Jouer le show</button>' : "");
-  return shell("activite", "La carte du show", "", body);
-}
-const evOf = el => U.G.ev.find(e => e.id === el.dataset.ev);
-function readBook(f, ev) {
-  const G = U.G, v = n => { const x = f.elements.namedItem(n); return x ? x.value : ""; };
-  ev.card = ev.card.map((m, i) => {
-    const kind = v("k" + i) || m.kind, tag = kind === "equipe", wasT = m.title;
-    const nm = { kind: kind, a: [v("a" + i + "_0")].concat(tag ? [v("a" + i + "_1")] : []).filter(Boolean), b: [v("b" + i + "_0")].concat(tag ? [v("b" + i + "_1")] : []).filter(Boolean), title: kind === m.kind ? v("t" + i) : "", dur: v("d" + i) || "moyen", win: v("w" + i) || "ia", spots: Array.from(f.querySelectorAll('input[name="s' + i + '"]:checked')).map(x => x.value) };
-    if (kind === "simple") nm.title = "";
-    if (kind === "titre" && !nm.title) { const t = Object.values(G.T).find(t => t.fed === G.me && t.div !== "tag"); nm.title = t ? t.id : ""; }
-    // le titre vient d'être choisi : le champion se met dans le camp 1
-    if (nm.title && nm.title !== wasT) { const t = G.T[nm.title], c = t ? champIds(t).filter(id => G.W[id] && avail(G, G.W[id])) : []; if (c.length) { nm.b = nm.b.filter(id => c.indexOf(id) < 0); nm.a = tag ? c.slice(0, 2) : [c[0]]; } }
-    return nm;
-  });
-  ev.seg = ev.seg.map((s, j) => ({ w: v("p" + j), kind: "promo" }));
-}
-if (typeof document !== "undefined") document.addEventListener("change", e => {
-  const f = e.target.closest && e.target.closest("#uvbook"); if (!f || !U.G) return;
-  const ev = U.G.ev.find(x => x.id === f.dataset.ev); if (!ev || ev.done) return;
-  readBook(f, ev); done();
-});
-const syncBook = ev => { const f = document.getElementById("uvbook"); if (f && f.dataset.ev === ev.id) readBook(f, ev); };
-ACT.uvbadd = el => { const ev = evOf(el); if (!ev) return; syncBook(ev); if (ev.card.length >= 10) { toast("10 matchs au maximum"); return; } ev.card.push(NEWM()); done(); };
-ACT.uvbdel = el => { const ev = evOf(el); if (!ev) return; syncBook(ev); ev.card.splice(+el.dataset.i, 1); done(); };
-ACT.uvbmv = el => { const ev = evOf(el), i = +el.dataset.i; if (!ev || i < 1) return; syncBook(ev); const x = ev.card[i]; ev.card[i] = ev.card[i - 1]; ev.card[i - 1] = x; done(); };
-ACT.uvpadd = el => { const ev = evOf(el); if (!ev) return; syncBook(ev); if (ev.seg.length >= 3) { toast("3 promos au maximum"); return; } ev.seg.push({ w: "", kind: "promo" }); done(); };
-ACT.uvpdel = el => { const ev = evOf(el); if (!ev) return; syncBook(ev); ev.seg.splice(+el.dataset.i, 1); done(); };
-ACT.uvbauto = el => { const ev = evOf(el); if (!ev) return; autoCard(U.G, ev); toast("Carte faite par l’IA : tu peux encore la changer"); done(); };
-ACT.uvbclear = el => { const ev = evOf(el); if (!ev) return; ev.card = []; ev.seg = []; done(); };
-ACT.uvbplay = el => {
-  const G = U.G, ev = evOf(el); if (!ev || ev.done) return; syncBook(ev);
-  if (ev.day !== G.day) { toast("Ce show a lieu le " + dayLabel(ev.day)); return; }
-  if (!ev.card.length) { toast("Ajoute au moins un match (ou « Carte faite par l’IA »)"); return; }
-  const seen = new Set();
-  for (let i = 0; i < ev.card.length; i++) {
-    const m = ev.card[i], need = m.kind === "equipe" ? 2 : 1, nm = "Match " + (i + 1) + " : ";
-    if (m.a.length < need || m.b.length < need) { toast(nm + "il manque des catcheurs"); return; }
-    if (m.kind === "titre" && !m.title) { toast(nm + "choisis le titre en jeu"); return; }
-    for (const id of m.a.concat(m.b)) { if (seen.has(id)) { toast(wn(G, id) + " est dans deux matchs"); return; } seen.add(id); if (!avail(G, G.W[id])) { toast(wn(G, id) + " ne peut pas catcher"); return; } }
-    const t = m.title && G.T[m.title], c = t ? champIds(t) : [];
-    if (c.length && !c.every(id => m.a.concat(m.b).indexOf(id) >= 0)) { toast(nm + "le champion (" + champName(G, t) + ") doit être dans le match"); return; }
-  }
-  ev.seg = ev.seg.filter(s => s.w && !seen.has(s.w) && avail(G, G.W[s.w]));
-  playShow(G, ev);
-  G.mail.forEach(m => { if (m.k === "show" && m.ev === ev.id && !m.done) { m.done = "Show joué."; m.read = true; } });
-  persist(true); window.scrollTo(0, 0); redraw();
 };

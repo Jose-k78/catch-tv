@@ -1,0 +1,29 @@
+{
+ "note": "Mode Univers : surnoms connus des catcheurs (gimmick affiché sur la fiche) et type de personnage. t = monstre, heros, comique, arrogant, mystique, rebelle, technicien, sportif, showman, combattant, leader, cool, outsider, luchador, ace. Le GM peut tout changer dans sa partie. À compléter (comme data/finishers.json), sans écraser ce qui est là.",
+ "updated": "2026-11-18",
+ "items": {
+  "Roman Reigns": ["The Original Tribal Chief", "leader"], "Cody Rhodes": ["The American Nightmare", "heros"], "Seth Rollins": ["The Visionary", "arrogant"],
+  "CM Punk": ["Best in the World", "rebelle"], "Gunther": ["The Ring General", "combattant"], "Rhea Ripley": ["Mami", "rebelle"], "Bianca Belair": ["The EST", "sportif"],
+  "Becky Lynch": ["The Man", "rebelle"], "Charlotte Flair": ["The Queen", "arrogant"], "Bayley": ["The Role Model", "heros"], "Drew McIntyre": ["The Scottish Warrior", "combattant"],
+  "Randy Orton": ["The Viper", "cool"], "LA Knight": ["The Megastar", "showman"], "Sami Zayn": ["The Underdog from the Underground", "outsider"],
+  "Kevin Owens": ["The Prizefighter", "combattant"], "Damian Priest": ["The Archer of Infamy", "mystique"], "Dominik Mysterio": ["Dirty Dom", "arrogant"],
+  "Liv Morgan": ["The Miracle Kid", "rebelle"], "Jade Cargill": ["Storm", "sportif"], "Sheamus": ["The Celtic Warrior", "combattant"], "AJ Styles": ["The Phenomenal One", "technicien"],
+  "Rey Mysterio": ["The Master of the 619", "luchador"], "Jacob Fatu": ["The Samoan Werewolf", "monstre"], "John Cena": ["The Champ", "heros"], "Brock Lesnar": ["The Beast Incarnate", "monstre"],
+  "The Miz": ["The A-Lister", "arrogant"], "Asuka": ["The Empress of Tomorrow", "mystique"], "IYO SKY": ["The Genius of the Sky", "technicien"], "Naomi": ["The Glow", "showman"],
+  "Nia Jax": ["The Irresistible Force", "monstre"], "Oba Femi": ["The Ruler", "monstre"], "Ethan Page": ["All Ego", "arrogant"], "Carmelo Hayes": ["HIM", "cool"],
+  "Kofi Kingston": ["The Dreadlocked Dynamo", "heros"], "Finn Bálor": ["The Prince", "mystique"], "Bobby Lashley": ["The All Mighty", "monstre"],
+  "Braun Strowman": ["The Monster Among Men", "monstre"], "Kairi Sane": ["The Pirate Princess", "heros"], "Natalya": ["The Queen of Harts", "technicien"], "Nattie": ["The Queen of Harts", "technicien"],
+  "Alexa Bliss": ["The Goddess", "mystique"], "Shinsuke Nakamura": ["The King of Strong Style", "showman"], "Logan Paul": ["The Maverick", "arrogant"], "Rusev": ["The Bulgarian Brute", "monstre"],
+  "The Undertaker": ["The Deadman", "mystique"], "The Rock": ["The Great One", "showman"], "Stone Cold Steve Austin": ["The Texas Rattlesnake", "rebelle"],
+  "Shawn Michaels": ["The Heartbreak Kid", "showman"], "Ric Flair": ["The Nature Boy", "arrogant"], "Bret Hart": ["The Hitman", "technicien"], "Batista": ["The Animal", "monstre"],
+  "Adam Copeland": ["The Rated-R Superstar", "rebelle"], "Christian Cage": ["Captain Charisma", "arrogant"], "Chris Jericho": ["Le Champion", "showman"],
+  "Kenny Omega": ["The Cleaner", "technicien"], "Will Ospreay": ["The Aerial Assassin", "sportif"], "Kazuchika Okada": ["The Rainmaker", "ace"], "Hiroshi Tanahashi": ["The Ace", "ace"],
+  "MJF": ["The Salt of the Earth", "arrogant"], "Mercedes Moné": ["The CEO", "arrogant"], "Toni Storm": ["Timeless", "showman"], "Hangman Adam Page": ["Hangman", "cool"],
+  "Orange Cassidy": ["Freshly Squeezed", "comique"], "Samoa Joe": ["The Samoan Submission Machine", "combattant"], "Kyle Fletcher": ["The Protostar", "sportif"],
+  "Konosuke Takeshita": ["The Alpha", "sportif"], "Ricochet": ["The One and Only", "showman"], "Bryan Danielson": ["The American Dragon", "technicien"],
+  "Claudio Castagnoli": ["The Swiss Superman", "sportif"], "Kris Statlander": ["Galaxy's Greatest Alien", "comique"], "Athena": ["The Fallen Goddess", "arrogant"],
+  "Thunder Rosa": ["La Mera Mera", "luchador"], "Eddie Kingston": ["The Mad King", "combattant"], "Lance Archer": ["The Murderhawk Monster", "monstre"], "Jay White": ["Switchblade", "cool"],
+  "Shingo Takagi": ["The Dragon", "combattant"], "Hiromu Takahashi": ["Time Bomb", "rebelle"], "Místico": ["El Príncipe de Plata y Oro", "luchador"], "Mistico": ["El Príncipe de Plata y Oro", "luchador"],
+  "Nic Nemeth": ["The Wanted Man", "showman"], "Undertaker": ["The Deadman", "mystique"], "Hulk Hogan": ["The Hulkster", "heros"], "Randy Savage": ["Macho Man", "showman"]
+ }
+}

@@ -4,7 +4,7 @@ import { esc, toast, lsGet, lsSet, modal, fileToDataUrl } from "../util.js";
 import { showLogo, beltOf, beltVersions, artVersions, eventLogo, BELT, groupLogo } from "../assets.js";
 import { saveSlot } from "./save.js";
 import { dayLabel, dateOf, weekOf, fmtM } from "./world.js";
-import { meF, nextDay, autoCard, playShow, myEventToday } from "./sim.js";
+import { meF, autoCard, playShow } from "./sim.js";
 
 export const U = { G: null, slot: 0, loading: false, f: { mail: "tout", actu: "coul", actuF: "tout", buzz: "tout", mw: "tous", mq: "", mfed: "", msty: "", mn: 40, eff: "tous", sty: "", chat: {}, gen: null, agen: null, nego: {} } };
 export const go = h => { location.hash = h; };
@@ -14,6 +14,8 @@ export const redraw = () => changed("univ");
 let saveT = 0;
 export function persist(now) {
   const G = U.G, slot = U.slot; if (!G || !slot) return;
+  // pendant le direct (Gorilla position), la sauvegarde attend la fin du show
+  if (U.live && U.live.L && !U.live.L.done) return;
   clearTimeout(saveT);
   const run = () => { const f = meF(G), aud = f.aud.length ? f.aud[f.aud.length - 1] : 0; saveSlot(slot, G, { n: f.n, sh: f.sh, c: f.c, fed: G.me, day: G.day, aud: aud, at: Date.now() }).catch(e => toast("⚠️ " + (e.message || "Sauvegarde impossible"))); };
   if (now) run(); else saveT = setTimeout(run, 600);
@@ -78,10 +80,10 @@ const P = {
   menu: "M4 7h16M4 12h16M4 17h16", g: "M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z", courrier: "M3 6h18v12H3zM3 7l9 6 9-6",
   actu: "M4 5h13v14H5a1 1 0 0 1-1-1zM17 8h3v10a1 1 0 0 1-1 1h-2M7 9h7M7 12h7M7 15h4", buzz: "M3 10v4h3l7 4V6l-7 4zM16 9a4 4 0 0 1 0 6M19 6a8 8 0 0 1 0 12",
   monde: "M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18zM3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18", fede: "M12 3l8 3v6c0 4.5-3.4 7.7-8 9-4.6-1.3-8-4.5-8-9V6zM9 12l2 2 4-4",
-  creatif: "M4 20l4-1 11-11-3-3L5 16zM14 6l3 3", activite: "M4 20V10M10 20V4M16 20v-7M3 20h18", parties: "M6 4h9l3 3v13H6zM9 4v5h6V4M9 14h6"
+  creatif: "M4 20l4-1 11-11-3-3L5 16zM14 6l3 3", activite: "M4 20V10M10 20V4M16 20v-7M3 20h18", bureau: "M4 9h16v11H4zM9 9V5h6v4M4 14h16", parties: "M6 4h9l3 3v13H6zM9 4v5h6V4M9 14h6"
 };
 export const svg = d => '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="' + d + '"></path></svg>';
-const NAV = [["g", "Accueil"], ["courrier", "Courrier"], ["actu", "Actu"], ["buzz", "Buzz"], ["monde", "Monde"], ["fede", "Ma fédé"], ["creatif", "Créatif"], ["activite", "Activité"]];
+const NAV = [["g", "Accueil"], ["courrier", "Courrier"], ["actu", "Actu"], ["buzz", "Buzz"], ["monde", "Monde"], ["fede", "Ma fédé"], ["creatif", "Créatif"], ["activite", "Activité"], ["bureau", "Bureau"]];
 export const unread = G => G.mail.filter(m => !m.read).length;
 export function shell(sec, title, tabs, body) {
   const G = U.G, hide = lsGet("ctv.univ.rail") === "0", n = unread(G);
@@ -107,8 +109,8 @@ export function showPrompt(ev) {
   modal((box, close) => {
     box.classList.add("uvmodal");
     box.innerHTML = "<h3>Ce soir : " + esc(ev.n) + "</h3><p class=\"uvmut\">Avant de passer au jour suivant, il faut jouer le show de ce soir.</p>" +
-      '<button type="button" class="uvbtn pri" data-a="book">Préparer la carte</button><button type="button" class="uvbtn" data-a="auto">Laisser l’IA faire la carte et jouer</button><button type="button" class="uvbtn ghost" data-a="x">Plus tard</button>';
-    box.addEventListener("click", e => { const b = e.target.closest("button[data-a]"); if (!b) return; close(); if (b.dataset.a === "book") go("#/univers/ev/" + encodeURIComponent(ev.id)); if (b.dataset.a === "auto") autoPlay(ev); });
+      '<button type="button" class="uvbtn pri" data-a="book">Préparer la carte</button><button type="button" class="uvbtn" data-a="live">Vivre en direct (carte de l’IA si elle est vide)</button><button type="button" class="uvbtn" data-a="auto">Laisser l’IA tout faire (passer le show)</button><button type="button" class="uvbtn ghost" data-a="x">Plus tard</button>';
+    box.addEventListener("click", e => { const b = e.target.closest("button[data-a]"); if (!b) return; close(); if (b.dataset.a === "book") go("#/univers/ev/" + encodeURIComponent(ev.id)); if (b.dataset.a === "auto") autoPlay(ev); if (b.dataset.a === "live" && U.goLive) U.goLive(ev); });
   });
 }
 export function autoPlay(ev) {
@@ -116,13 +118,5 @@ export function autoPlay(ev) {
   G.mail.forEach(m => { if (m.k === "show" && m.ev === ev.id && !m.done) { m.done = "Show joué par l’IA."; m.read = true; } });
   persist(true); go("#/univers/ev/" + encodeURIComponent(ev.id)); redraw();
 }
-ACT.uvnext = () => {
-  const G = U.G; if (!G) return;
-  const r = nextDay(G);
-  if (r.block) { showPrompt(r.block); return; }
-  persist(true);
-  const today = myEventToday(G);
-  toast(r.days > 1 ? r.days + " jours passés" + (today ? " · ce soir : " + today.n : G._new ? " · nouveau message" : "") : (today ? "Ce soir : " + today.n : G._new ? "Nouveau message" : "Jour suivant"));
-  if (today) { redraw(); setTimeout(() => showPrompt(today), 250); } else redraw();
-};
+// « Jour suivant » : l'écran de défilement des jours est dans ui5.js (ACT.uvnext)
 export const audTxt = v => fmtM(v || 0);

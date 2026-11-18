@@ -1,13 +1,18 @@
-// Mode Univers (18 nov.) : routage des écrans #/univers/…
-// #/univers = les 3 parties · #/univers/nouveau/<n> · #/univers/g (menu général) · courrier[/id] · actu · buzz · monde/<w|f|a>
-// · c/<id>/<s|c|h|d> (fiche) · fede/<onglet> · creatif/<onglet> · activite/<onglet> · ev/<id> (carte du show, résultats).
+// Mode Univers (18 nov., v2) : routage des écrans #/univers/…
+// #/univers = les 3 parties · #/univers/nouveau/<n> · #/univers/g (menu général) · courrier[/id] · actu · buzz
+// · monde/<w|f|a|hof|mag|enc> · fed/<id> (page d'une fédération) · c/<id>/<s|c|h|r|d> (fiche) · nego/<id> (négociation)
+// · fede/<onglet> · creatif/<onglet> · activite/<onglet> · ev/<id> (carte du show, résultats) · live/<id> (Gorilla position)
+// · bureau/<obj|rep|ach|sem|agenda|cfg>.
 // Réservé au modo pour l'instant (S.realAdmin) : les membres voient « Bientôt ». Les parties restent sur le téléphone.
 import { S } from "../state.js";
 import { lsGet } from "../util.js";
 import { U, redraw } from "../univers/core.js";
-import { loadSlot, metaAll } from "../univers/save.js";
-import { partiesView, newView, homeView, courrierView, actuView, buzzView, mondeView, ficheView } from "../univers/ui.js";
-import { fedeView, creatifView, activiteView, bookView } from "../univers/ui2.js";
+import { metaAll } from "../univers/save.js";
+import { partiesView, newView, homeView, courrierView, actuView, buzzView, mondeView, ficheView, openSlot } from "../univers/ui.js";
+import { fedeView, creatifView, activiteView } from "../univers/ui2.js";
+import { negoView } from "../univers/ui3.js";
+import { bookView, liveView } from "../univers/ui4.js";
+import { fedView, bureauView } from "../univers/ui5.js";
 
 export const univOn = () => !!S.realAdmin;
 let tried = 0;
@@ -22,7 +27,7 @@ export function universView(a, b, c) {
     const s = +(lsGet("ctv.univ.slot") || 0);
     if (s && tried !== s && metaAll().some(m => m.slot === s)) {
       tried = s; U.loading = true;
-      loadSlot(s).then(G => { U.loading = false; if (G) { U.G = G; U.slot = s; } redraw(); }).catch(() => { U.loading = false; redraw(); });
+      openSlot(s).then(G => { U.loading = false; if (G) { U.G = G; U.slot = s; } redraw(); }).catch(() => { U.loading = false; redraw(); });
       return wait("Chargement de ta partie…");
     }
     return partiesView();
@@ -32,11 +37,15 @@ export function universView(a, b, c) {
     case "actu": return actuView();
     case "buzz": return buzzView();
     case "monde": return mondeView(b);
+    case "fed": return fedView(b);
     case "c": return ficheView(b, c);
+    case "nego": return negoView(b);
     case "fede": return fedeView(b);
     case "creatif": return creatifView(b);
     case "activite": return activiteView(b);
     case "ev": return bookView(b);
+    case "live": return liveView(b);
+    case "bureau": return bureauView(b);
   }
   return homeView();
 }
