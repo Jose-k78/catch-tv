@@ -3484,6 +3484,19 @@
    },
    "gimmick": "",
    "medalOf": "Psycho Clown"
+  },
+  "kit-wilson": {
+   "k": "WWE",
+   "r": "R",
+   "max": "SR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Kit Wilson"
   }
  },
  "bgm": {
