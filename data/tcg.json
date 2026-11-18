@@ -3111,6 +3111,20 @@
    },
    "gimmick": "",
    "medalOf": "Orange Cassidy"
+  },
+  "okumura": {
+   "k": "CMLL",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Okumura",
+   "leg": true
   }
  },
  "bgm": {
