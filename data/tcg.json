@@ -3833,6 +3833,19 @@
    },
    "gimmick": "",
    "medalOf": "Misa Matsui"
+  },
+  "histeria": {
+   "k": "AAA",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Histeria"
   }
  },
  "bgm": {
