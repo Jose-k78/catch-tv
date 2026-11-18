@@ -1,5 +1,5 @@
 {
- "at": "2026-11-18T21:24:39.458Z",
+ "at": "2026-11-18T22:22:58.752Z",
  "items": [
   {
    "t": "Preview : AEW Dynamite du 18 novembre 2026",
@@ -20,6 +20,13 @@
     "TNA",
     "Impact"
    ]
+  },
+  {
+   "t": "Résultats du jour 5 de DG The Gate Of Evolution 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61411-resultats-du-jour-5-de-dg-the-gate-of-evolution-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-18",
+   "tags": []
   },
   {
    "t": "WWE NXT du 17 novembre : Kelani Jordan vs. Kendal Gray",
@@ -241,15 +248,6 @@
    ]
   },
   {
-   "t": "Résultats de CMLL Martes Populares du 17 novembre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61434-resultats-de-cmll-martes-populares-du-17-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-17",
-   "tags": [
-    "CMLL"
-   ]
-  },
-  {
    "t": "WWE Raw du 16 novembre : La Team USA s’agrandit, le 946 prend l’avantage dans le WarGames",
    "u": "https://www.voxcatch.fr/2026/11/17/resultats-wwe-raw-16-novembre-2026/",
    "s": "VOXcatch",
@@ -257,6 +255,15 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Résultats de CMLL Martes Populares du 17 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61434-resultats-de-cmll-martes-populares-du-17-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-17",
+   "tags": [
+    "CMLL"
    ]
   },
   {
@@ -505,16 +512,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-17",
    "tags": []
-  },
-  {
-   "t": "Résultats de WWE RAW du 16 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61373-wwe-raw-16-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-16",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
   }
  ],
  "yt": {
@@ -1243,6 +1240,7 @@
    "https://www.catch-newz.com/wwe/resultats/61421-wwe-nxt-17-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61373-wwe-raw-16-novembre-2026",
    "https://www.catch-newz.com/international/newz/61431-preview-tna-impact-19-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61411-resultats-du-jour-5-de-dg-the-gate-of-evolution-2026",
    "https://www.catch-newz.com/international/resultats/61434-resultats-de-cmll-martes-populares-du-17-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61443-une-ville-potentielle-pour-aew-all-in-2027",
    "https://www.catch-newz.com/wwe/newz/61442-r-truth-remercie-les-fans-qui-lont-soutenu-suite-au-deces-de-son-papa",
@@ -1537,8 +1535,7 @@
    "https://www.catch-newz.com/international/resultats/61145-resultats-de-tjpw-garafes-a-cultural-shock-sensation-in-shibuya",
    "https://www.catch-newz.com/wwe/resultats/61122-resultats-et-streaming-aaa-heroes-inmortales-7-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61148-resultats-de-gcw-dead-on-arrival-2026",
-   "https://www.catch-newz.com/international/newz/61146-carte-du-jour-1-du-noah-junior-grand-prix-2026",
-   "https://www.catch-newz.com/international/resultats/61143-resultats-de-chocopro-550"
+   "https://www.catch-newz.com/international/newz/61146-carte-du-jour-1-du-noah-junior-grand-prix-2026"
   ]
  },
  "diag": {
