@@ -3424,6 +3424,25 @@
    },
    "gimmick": "",
    "medalOf": "James Drake"
+  },
+  "don-callis": {
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Konosuke Takeshita",
+   "sup": true,
+   "sk": {
+    "id": "dist",
+    "v": 2,
+    "q": "once",
+    "s": 4
+   }
   }
  },
  "bgm": {
