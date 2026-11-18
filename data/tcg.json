@@ -3675,6 +3675,25 @@
    },
    "gimmick": "",
    "medalOf": "Bron Breakker"
+  },
+  "bobby-roode": {
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Glorious DDT",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Bobby Roode",
+   "sup": true,
+   "sk": {
+    "id": "plan",
+    "v": 35,
+    "q": "start",
+    "s": 0
+   }
   }
  },
  "bgm": {
