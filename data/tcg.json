@@ -3866,6 +3866,19 @@
     "q": "low",
     "s": 0
    }
+  },
+  "blake-monroe": {
+   "k": "WWE",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "heel",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Blake Monroe"
   }
  },
  "bgm": {
