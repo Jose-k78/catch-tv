@@ -3950,6 +3950,12 @@
     "oc-sami-zayn-honorary-uce-mn13"
    ],
    "del": []
+  },
+  "free": {
+   "feat": [
+    "will-ospreay"
+   ],
+   "nofeat": []
   }
  },
  "assets": {
@@ -4124,9 +4130,6 @@
   "boosters": [
    "c:b-mwc0gcda",
    "c:b-mwc70wmo"
-  ],
-  "cards": [
-   "will-ospreay"
   ]
  }
 }
