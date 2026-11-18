@@ -3593,6 +3593,18 @@
    },
    "gimmick": "",
    "medalOf": "Jeff Cobb"
+  },
+  "bully-ray": {
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Bully Bomb",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Devon"
   }
  },
  "bgm": {
