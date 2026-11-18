@@ -3510,6 +3510,19 @@
    },
    "gimmick": "",
    "medalOf": "Jon Moxley"
+  },
+  "dutch": {
+   "k": "TNA",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Vincent"
   }
  },
  "bgm": {
