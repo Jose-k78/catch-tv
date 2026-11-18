@@ -3372,6 +3372,19 @@
    },
    "gimmick": "",
    "medalOf": "Bron Breakker"
+  },
+  "lee-johnson": {
+   "k": "AEW",
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Dustin Rhodes"
   }
  },
  "bgm": {
