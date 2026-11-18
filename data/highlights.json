@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16",
+ "updated": "2026-11-18",
  "note": "Vidéos des chaînes officielles uniquement. res = résultats (spoilers, affichés seulement à la demande). m = résumé match par match (promotions japonaises).",
  "items": {
   "WWE|Raw|2026-10-26": {
@@ -108,16 +108,6 @@
    ],
    "s": "Wrestling Inc.",
    "u": "https://www.wrestlinginc.com/2293763/tna-thursday-night-impact-october-22-2026-results/"
-  },
-  "AEW|PLE|2026-10-17": {
-   "v": [],
-   "res": [
-    "Les Motor City Machine Guns ont battu FTR (1er match de la série au meilleur des cinq)",
-    "Hangman Page, Brody King et Bandido remportent les titres Trios",
-    "Ilja Dragunov fait ses débuts à la AEW"
-   ],
-   "s": "Wrestling Inc.",
-   "u": "https://www.wrestlinginc.com/2289656/aew-wrestledream-2026-motor-city-machine-guns-ftr-1-0-series-lead/"
   },
   "AAA|PLE|2026-10-24": {
    "v": [],
@@ -1143,6 +1133,105 @@
    ],
    "s": "Fightful",
    "u": "https://www.fightful.com/wrestling-news/watch-full-episode-lucha-libre-aaa-november-14-2026"
+  },
+  "WWE|Raw|2026-11-16": {
+   "res": [
+    "LA Knight a battu The Miz (avec Kit Wilson) et devient le 4e membre de l'équipe USA pour Survivor Series.",
+    "Stephanie Vaquer a battu Jacy Jayne par disqualification après l'intervention de Fallon Henley et Lainey Reid (Fatal Influence).",
+    "IYO SKY a battu Raquel Rodriguez et remporte le titre Intercontinental féminin.",
+    "The 946 (Carmelo Hayes et Cruz Montana) ont battu The Usos (Jey et Jimmy Uso) et gagnent l'avantage pour le WarGames masculin."
+   ],
+   "seg": [
+    {
+     "k": "Annonce",
+     "t": "Adam Pearce prévient The Bloodline : toute intervention extérieure dans le match pour l'avantage du WarGames donnera l'avantage à l'autre équipe."
+    },
+    {
+     "k": "Promo",
+     "t": "Cody Rhodes parle du match à 5 contre 5 USA contre Mexique de Survivor Series ; CM Punk le rejoint, puis The Miz et Kit Wilson demandent à entrer dans l'équipe."
+    },
+    {
+     "k": "Promo",
+     "t": "LA Knight arrive et propose un match contre The Miz pour trancher ; après le match, Punk et Rhodes s'en prennent à Kit Wilson."
+    },
+    {
+     "k": "Annonce",
+     "t": "John Cena présente Liv Morgan comme nouvelle invitée de la John Cena Classic."
+    },
+    {
+     "k": "Promo",
+     "t": "Becky Lynch s'en prend à Liv Morgan et l'invite à l'attaquer ; Morgan s'échappe, un match entre elles à Survivor Series se dessine."
+    },
+    {
+     "k": "Attaque",
+     "t": "Fatal Influence attaque Stephanie Vaquer après son match ; Bayley vient l'aider mais Fatal Influence reste debout, un WarGames féminin se profile."
+    },
+    {
+     "k": "Backstage",
+     "t": "Jacob Fatu s'énerve des conditions du match pour l'avantage, Solo Sikoa tente de le calmer."
+    },
+    {
+     "k": "Promo",
+     "t": "Oba Femi annonce qu'il va s'occuper de The Vision après leur attaque sur Penta et Je'Von Evans."
+    },
+    {
+     "k": "Annonce",
+     "t": "Rey Mysterio révèle que Dragon Lee est le 4e membre de l'équipe Mexique."
+    },
+    {
+     "k": "Backstage",
+     "t": "Ethan Page, champion Intercontinental, confronte Rey Fénix, son prétendant n° 1."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Après la victoire de The 946, Solo Sikoa et Jacob Fatu rejoignent The Usos sur le ring pour un face-à-face."
+    },
+    {
+     "k": "Annonce",
+     "t": "Raw de la semaine prochaine commencera plus tôt (double enregistrement avec SmackDown) ; Sol Ruca contre Lyra Valkyria est annoncé."
+    }
+   ],
+   "s": "Wrestling Inc.",
+   "u": "https://www.wrestlinginc.com/2317253/wwe-raw-november-16-2026-results/"
+  },
+  "TNA|PLE|2026-11-15": {
+   "res": [
+    "Elijah a battu Vincent (pré-show).",
+    "Tasha Steelz a battu M By Elegance, Heather By Elegance, Shotzi Blackheart, Kiera Hogan et Shayna Baszler dans un Ultimate X et devient prétendante n° 1 au titre Knockouts.",
+    "Matt Hardy a battu Joseph Sawyer dans un match sans disqualification.",
+    "Ricky Sosa a battu Fabian Aichner, Amir Jordan, The Home Town Man et Jason Hotch dans un match à 5 par élimination et remporte la World X-Cup 2026.",
+    "Frankie Kazarian contre Mustafa Ali (Call Your Shot Trophy) : sans résultat (no contest).",
+    "KC Navarro a battu Cedric Alexander, John Skyler, Joe Alonzo, A.J. Francis et TJP dans un Ultimate X et devient prétendant n° 1 au titre X-Division.",
+    "Leon Slater a battu Trey Miguel et conserve le titre mondial de la TNA."
+   ],
+   "seg": [
+    {
+     "k": "Attaque",
+     "t": "Vincent attaque Elijah pendant sa chanson avant leur match ; Santino Marella chauffe ensuite la salle."
+    },
+    {
+     "k": "Attaque",
+     "t": "Joseph Sawyer attaque Matt Hardy pendant sa promo ; la sécurité les sépare et Santino Marella lance le match sans disqualification."
+    },
+    {
+     "k": "Annonce",
+     "t": "La World X-Cup, prévue en tournoi, devient un match à 5 à cause de problèmes de voyage."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après le no contest, Mustafa Ali frappe Kazarian avec la cloche et une chaise, puis s'en prend au public au micro."
+    },
+    {
+     "k": "Annonce",
+     "t": "Une vidéo annonce Taryn Terrell, Mila Moore et Harley Hudson à Impact jeudi."
+    },
+    {
+     "k": "Promo",
+     "t": "Leon Slater défie ses prétendants au bord du ring avant que Trey Miguel n'arrive dans les coulisses juste avant le match."
+    }
+   ],
+   "s": "Wrestling Inc.",
+   "u": "https://www.wrestlinginc.com/2316787/tna-destination-x-november-15-2026-results/"
   }
  }
 }
