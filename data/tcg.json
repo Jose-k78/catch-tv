@@ -3177,6 +3177,19 @@
    },
    "gimmick": "",
    "medalOf": "Serpentico"
+  },
+  "reyna-isis": {
+   "k": "CMLL",
+   "r": "N",
+   "max": "R",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Reyna Isis"
   }
  },
  "bgm": {
