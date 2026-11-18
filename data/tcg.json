@@ -4145,6 +4145,9 @@
   "boosters": [
    "c:b-mwc0gcda",
    "c:b-mwc70wmo"
+  ],
+  "cards": [
+   "the-beast-mortos"
   ]
  }
 }
