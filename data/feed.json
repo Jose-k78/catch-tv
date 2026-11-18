@@ -1,6 +1,15 @@
 {
- "at": "2026-11-18T03:52:41.665Z",
+ "at": "2026-11-18T04:57:24.094Z",
  "items": [
+  {
+   "t": "Bronson Reed de retour aux États-Unis après WWE Crown Jewel",
+   "u": "https://www.catch-newz.com/wwe/newz/61424-bronson-reed-de-retour-aux-etats-unis-apres-wwe-crown-jewel",
+   "s": "Catch-Newz",
+   "d": "2026-11-18",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Décès de ''Cowboy'' Bill Watts",
    "u": "https://www.catch-newz.com/wwe/newz/61423-deces-de-cowboy-bill-watts",
@@ -497,13 +506,6 @@
    "tags": [
     "TNA"
    ]
-  },
-  {
-   "t": "FinalSlam a-t-il battu un record historique pour le catch ?",
-   "u": "https://www.catch-newz.com/international/newz/61355-finalslam-a-t-il-battu-un-record-historique-pour-le-catch",
-   "s": "Catch-Newz",
-   "d": "2026-11-16",
-   "tags": []
   }
  ],
  "yt": {
@@ -1208,6 +1210,14 @@
    {
     "id": "fMqRNna0yUk",
     "t": "Zilla Fatu overcomes Dion Lennox thanks to Perros del Mal: NXT highlights, Nov. 17, 2026"
+   },
+   {
+    "id": "ZsaaBPn6JYw",
+    "t": "Kelani Jordan contre Kendal Grey"
+   },
+   {
+    "id": "W9iWGmfm3n0",
+    "t": "Full NXT highlights: Nov. 17, 2026"
    }
   ]
  },
@@ -1220,11 +1230,12 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/newz/61424-bronson-reed-de-retour-aux-etats-unis-apres-wwe-crown-jewel",
    "https://www.catch-newz.com/wwe/resultats/61421-wwe-nxt-17-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61373-wwe-raw-16-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61228-preview-wwe-nxt-17-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61423-deces-de-cowboy-bill-watts",
    "https://www.catch-newz.com/wwe/newz/61422-deux-nouveaux-noms-pour-le-john-cena-classic-a-wwe-nxt-le-17-novembre",
-   "https://www.catch-newz.com/wwe/newz/61228-preview-wwe-nxt-17-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61380-resultats-de-wwe-nxt-live-event-du-15-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61417-trish-stratus-est-un-veritable-exemple-pour-zoey-stark",
    "https://www.catch-newz.com/international/resultats/61414-resultats-de-beyond-wrestling-open-ri-73",
@@ -1518,15 +1529,14 @@
    "https://www.catch-newz.com/wwe/newz/61127-chelsea-green-jai-perdu-mon-titre-mais-jai-aussi-perdu-une-amie",
    "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61126-combien-de-billets-vendus-pour-finalslam",
-   "https://www.catch-newz.com/wwe/newz/61093-preview-aaa-heroes-inmortales-7-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61100-resultats-de-dominion-wrestling-hail-to-the-king-2026"
+   "https://www.catch-newz.com/wwe/newz/61093-preview-aaa-heroes-inmortales-7-novembre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
-  "YouTube WWE": "4 nouvelles vidéos",
+  "YouTube WWE": "2 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",

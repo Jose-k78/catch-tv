@@ -1,5 +1,5 @@
 {
- "at": "2026-11-18T03:52:41.718Z",
+ "at": "2026-11-18T04:57:24.150Z",
  "sa": true,
  "sent": {
   "poll:p-20261104-cj-liv-chelsea": "2026-11-04",
@@ -389,7 +389,8 @@
   "a:https://www.catch-newz.com/wwe/newz/61417-trish-stratus-est-un-veritable-exemple-pour-zoey-stark": "2026-11-18",
   "a:https://www.catch-newz.com/wwe/newz/61423-deces-de-cowboy-bill-watts": "2026-11-18",
   "a:https://www.catch-newz.com/wwe/newz/61422-deux-nouveaux-noms-pour-le-john-cena-classic-a-wwe-nxt-le-17-novembre": "2026-11-18",
-  "a:https://www.catch-newz.com/wwe/resultats/61421-wwe-nxt-17-novembre-2026": "2026-11-18"
+  "a:https://www.catch-newz.com/wwe/resultats/61421-wwe-nxt-17-novembre-2026": "2026-11-18",
+  "a:https://www.catch-newz.com/wwe/newz/61424-bronson-reed-de-retour-aux-etats-unis-apres-wwe-crown-jewel": "2026-11-18"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -416,6 +417,14 @@
     "url": "#/",
     "tag": "art",
     "short": "3 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Nouvelle info · Catch-Newz",
+    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "1 nouvelle info"
    }
   ]
  }
