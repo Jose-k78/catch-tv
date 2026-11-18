@@ -1,6 +1,15 @@
 {
- "at": "2026-11-18T04:57:24.094Z",
+ "at": "2026-11-18T05:58:52.736Z",
  "items": [
+  {
+   "t": "Zack Sabre Jr. devient champion du monde à la CMLL",
+   "u": "https://www.catch-newz.com/international/newz/61402-zack-sabre-jr-devient-champion-du-monde-a-la-cmll",
+   "s": "Catch-Newz",
+   "d": "2026-11-18",
+   "tags": [
+    "CMLL"
+   ]
+  },
   {
    "t": "Bronson Reed de retour aux États-Unis après WWE Crown Jewel",
    "u": "https://www.catch-newz.com/wwe/newz/61424-bronson-reed-de-retour-aux-etats-unis-apres-wwe-crown-jewel",
@@ -492,15 +501,6 @@
   {
    "t": "Ricky Sosa représente fièrement la Belgique à TNA Destination X 2026",
    "u": "https://www.catch-newz.com/international/newz/61360-ricky-sosa-represente-fierement-la-belgique-a-tna-destination-x-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-16",
-   "tags": [
-    "TNA"
-   ]
-  },
-  {
-   "t": "Résultats de TNA Destination X 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61359-resultats-tna-destination-x-2026",
    "s": "Catch-Newz",
    "d": "2026-11-16",
    "tags": [
@@ -1230,10 +1230,11 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/wwe/newz/61424-bronson-reed-de-retour-aux-etats-unis-apres-wwe-crown-jewel",
    "https://www.catch-newz.com/wwe/resultats/61421-wwe-nxt-17-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61373-wwe-raw-16-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61402-zack-sabre-jr-devient-champion-du-monde-a-la-cmll",
    "https://www.catch-newz.com/wwe/newz/61228-preview-wwe-nxt-17-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61424-bronson-reed-de-retour-aux-etats-unis-apres-wwe-crown-jewel",
    "https://www.catch-newz.com/wwe/newz/61423-deces-de-cowboy-bill-watts",
    "https://www.catch-newz.com/wwe/newz/61422-deux-nouveaux-noms-pour-le-john-cena-classic-a-wwe-nxt-le-17-novembre",
    "https://www.catch-newz.com/wwe/resultats/61380-resultats-de-wwe-nxt-live-event-du-15-novembre-2026",
@@ -1528,15 +1529,14 @@
    "https://www.catch-newz.com/wwe/newz/61128-elton-prince-de-retour-sur-x-comment-va-t-il",
    "https://www.catch-newz.com/wwe/newz/61127-chelsea-green-jai-perdu-mon-titre-mais-jai-aussi-perdu-une-amie",
    "https://www.catch-newz.com/aew/newz/61013-preview-aew-collision-7-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61126-combien-de-billets-vendus-pour-finalslam",
-   "https://www.catch-newz.com/wwe/newz/61093-preview-aaa-heroes-inmortales-7-novembre-2026"
+   "https://www.catch-newz.com/wwe/newz/61126-combien-de-billets-vendus-pour-finalslam"
   ]
  },
  "diag": {
   "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
-  "YouTube WWE": "2 nouvelles vidéos",
+  "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
