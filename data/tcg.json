@@ -3807,6 +3807,19 @@
    },
    "gimmick": "",
    "medalOf": "Jimmy Jacobs"
+  },
+  "piper-niven": {
+   "k": "WWE",
+   "r": "R",
+   "max": "SR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Michinoku Driver",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Piper Niven"
   }
  },
  "bgm": {
