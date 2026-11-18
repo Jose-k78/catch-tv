@@ -3820,6 +3820,19 @@
    },
    "gimmick": "",
    "medalOf": "Piper Niven"
+  },
+  "misa-matsui": {
+   "k": "Marigold",
+   "r": "R",
+   "max": "SR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Misa Matsui"
   }
  },
  "bgm": {
