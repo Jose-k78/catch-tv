@@ -3458,6 +3458,19 @@
    "gimmick": "",
    "medalOf": "Shelton Benjamin",
    "leg": true
+  },
+  "lola-vice": {
+   "k": "WWE",
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Lola Vice"
   }
  },
  "bgm": {
