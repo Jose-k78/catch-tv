@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16",
+ "updated": "2026-11-18",
  "note": "Réglages TCCCG du modo (cartes, persos, taux, objets, boosters, combats, musiques, assets). Modifié depuis l’app (⚙️ Modo TCCCG).",
  "cards": {
   "ace-austin": {
@@ -1368,8 +1368,8 @@
    "medalOf": "Nobu San"
   },
   "booker-t": {
-   "r": "N",
-   "max": "R",
+   "r": "SR",
+   "max": "SSR",
    "arch": "Dominator",
    "al": "",
    "fin": {
@@ -1377,7 +1377,14 @@
     "e": "Stun"
    },
    "gimmick": "",
-   "medalOf": "Kurt Angle"
+   "medalOf": "Kurt Angle",
+   "sup": true,
+   "sk": {
+    "id": "plan",
+    "v": 30,
+    "q": "start",
+    "s": 0
+   }
   },
   "ricky-saints": {
    "k": "WWE",
