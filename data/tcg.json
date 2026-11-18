@@ -3497,6 +3497,19 @@
    },
    "gimmick": "",
    "medalOf": "Kit Wilson"
+  },
+  "daniel-garcia": {
+   "k": "AEW",
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Dragon Tamer",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Jon Moxley"
   }
  },
  "bgm": {
