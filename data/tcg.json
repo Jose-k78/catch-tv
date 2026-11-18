@@ -3190,6 +3190,18 @@
    },
    "gimmick": "",
    "medalOf": "Reyna Isis"
+  },
+  "stu-grayson": {
+   "r": "N",
+   "max": "R",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Evil Uno"
   }
  },
  "bgm": {
