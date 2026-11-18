@@ -3138,6 +3138,19 @@
    },
    "gimmick": "",
    "medalOf": "Minoru Suzuki"
+  },
+  "brody-king": {
+   "k": "AEW",
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Ganso Bomb",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Hangman Adam Page"
   }
  },
  "bgm": {
