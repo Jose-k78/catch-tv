@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16",
+ "updated": "2026-11-18",
  "note": "Membres tenus à jour par la mise à jour du soir (19 h 23).",
  "items": {
   "946": {
@@ -67,9 +67,11 @@
    "on": 1,
    "m": [
     "Chad Gable",
-    "Brutus Creed",
-    "Julius Creed",
     "Ivy Nile"
+   ],
+   "ex": [
+    "Brutus Creed",
+    "Julius Creed"
    ]
   },
   "balor-club": {
@@ -2652,6 +2654,21 @@
     "New Level"
    ],
    "ref": []
+  },
+  "kasper-brothers": {
+   "n": "The Kasper Brothers",
+   "lg": "",
+   "k": "AEW",
+   "y": "depuis 2026",
+   "on": 1,
+   "m": [
+    "Drew Kasper",
+    "Jacob Kasper"
+   ],
+   "a": [
+    "The Creed Brothers",
+    "Creed Brothers"
+   ]
   }
  }
 }
