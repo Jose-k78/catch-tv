@@ -3605,6 +3605,25 @@
    },
    "gimmick": "",
    "medalOf": "Devon"
+  },
+  "akira-taue": {
+   "r": "N",
+   "max": "R",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Nodowa Otoshi",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Akira Taue",
+   "sup": true,
+   "sk": {
+    "id": "objet",
+    "v": 1,
+    "q": "start",
+    "s": 2
+   }
   }
  },
  "bgm": {
