@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16",
+ "updated": "2026-11-18",
  "note": "Catcheurs suivis (champions, cartes annoncées, favoris des membres) et catcheurs à découvrir (disc = true, toutes fédérations et époques). txt = petit résumé en français, era = époque, ref = matchs de référence, last = 3 derniers matchs (r = résultat, spoiler), v = vidéo YouTube d'une chaîne officielle.",
  "items": {
   "Roman Reigns": {
@@ -1949,6 +1949,41 @@
      "ev": "Final Resolution, 2006"
     }
    ]
+  },
+  "LA Knight": {
+   "k": "WWE",
+   "sh": [
+    "Raw"
+   ],
+   "a": [
+    "Eli Drake"
+   ],
+   "al": "face",
+   "alD": "2023-08-07",
+   "nick": "The Megastar",
+   "from": "Los Angeles (Californie)",
+   "ht": "1,85 m",
+   "wt": "106 kg",
+   "debut": "2003",
+   "fin": "BFT (Blunt Force Trauma)",
+   "teams": "Maximum Male Models, The Rising",
+   "txt": "Ancien Eli Drake à la TNA, « The Megastar » est devenu l’un des catcheurs les plus populaires de la WWE grâce à son charisme au micro."
+  },
+  "Dragon Lee": {
+   "k": "WWE / AAA",
+   "sh": [
+    "Raw"
+   ],
+   "al": "face",
+   "alD": "2022-08-17",
+   "nick": "El Niño Maravilla",
+   "from": "Tala (Jalisco, Mexique)",
+   "ht": "1,71 m",
+   "wt": "75 kg",
+   "debut": "2014",
+   "fin": "Operation Dragon, Dragon Driver",
+   "teams": "LWO, Los Hermanos Lee, La Facción Ingobernable",
+   "txt": "Luchador mexicain révélé au CMLL, passé par la ROH et la NJPW avant de rejoindre la WWE, où il fait partie de la LWO."
   }
  }
 }
