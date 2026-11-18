@@ -3293,6 +3293,19 @@
    },
    "gimmick": "",
    "medalOf": "Zandokan Jr."
+  },
+  "queen-aminata": {
+   "k": "AEW",
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Queen Aminata"
   }
  },
  "bgm": {
