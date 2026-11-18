@@ -3320,6 +3320,19 @@
    },
    "gimmick": "",
    "medalOf": "Bronson Reed"
+  },
+  "lee-moriarty": {
+   "k": "AEW",
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Border City Stretch",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Lee Moriarty"
   }
  },
  "bgm": {
