@@ -3636,6 +3636,19 @@
    },
    "gimmick": "",
    "medalOf": "Tetsuya Naito"
+  },
+  "megaton": {
+   "k": "Marigold",
+   "r": "N",
+   "max": "R",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Megaton"
   }
  },
  "bgm": {
