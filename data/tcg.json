@@ -3952,10 +3952,10 @@
    "del": []
   },
   "free": {
-   "feat": [
+   "feat": [],
+   "nofeat": [
     "will-ospreay"
-   ],
-   "nofeat": []
+   ]
   }
  },
  "assets": {
