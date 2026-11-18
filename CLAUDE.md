@@ -73,7 +73,7 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   (partagé par l'app et le service des notifications : même action des deux côtés, différente pour chacun).
 - TCCCG (`js/views/tccg.js`, `#/tccg/…`) : la partie cartes (TCG), **ouverte à tous les membres connectés depuis le 6 nov.**
   (les réglages restent au modo : `S.isAdmin`), interface noir et doré (`body.tccg`), onglets Accueil / Call Up / Roster / Échange / Shop ;
-  icône « TCCCG » dans la barre du bas (pastille rouge = propositions d'échange reçues).
+  dans la barre du bas, on y va par l'onglet « Jeux » (depuis le 18 nov.).
 - Plus de photos automatiques Wikimedia ni de page « Crédits photos » (retirées le 30 oct.) : seules les images choisies par
   le modérateur. Fonds animés et musique : copies légères (`media/bg/*-leger.mp4`, `media/music-leger.mp3`, originaux
   gardés), musique en pause par défaut.
@@ -294,6 +294,33 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
     `ACT.tcgmqzero`). `fightNow()` exporté pour les tests.
   - Agents libres : `x.fa` (catcheur dans aucun roster, alias compris) → chaîne brisée `faMark` à la place du logo ; boosters `fa` et `mitb` :
     `.tpk-fa` (HTML) et le même symbole dessiné dans `paintPack`.
+- **Lot du 18 nov.** (« heure du codage » : onglet Jeux, « booster » partout, Mode Univers V1 d'après le canevas « Mode Univers – Menus ») :
+  - Barre du bas : « Jeux » (`#/jeux`, `js/views/jeux.js`, icône `GAMES_ICON`) remplace « TCCCG » ; hub de 3 tuiles : TCCCG (`#/tccg`),
+    Univers (`#/univers`, modo seulement : `S.realAdmin`, sinon « Bientôt »), Coming soon (pas cliquable). `navOn("jeux")` = jeux + univers.
+  - TCCCG : le mot « sachet » n'est plus affiché nulle part (« booster » : guide, Call Up, Méga, invocation, patch notes du 15 nov.).
+  - **Mode Univers** (`js/univers/`, vue `js/views/univers.js`, CSS bloc « Lot du 18 nov. » à la fin de style.css, `body.univ` = plein écran :
+    en-tête, bandeau, barre du bas et pied cachés ; graphite `#0f1219` + ambre `#f5b13d`, Anton + Barlow Condensed) :
+    - `world.js` : `newWorld({ take: "WWE" } | { create: { n, sh, c, show, wd } })` construit le monde depuis la base de TCC TV (`baseCards`, rosters,
+      `S.titles` — un champion de moins de 7 jours n'est pas montré —, groupes actifs = équipes / clans avec `g` = id du groupe, vrais noms d'événements
+      `S.P[k].e`) ; catcheur `{ id, n, pic, fed, br, sx, st[7], sty, al, pop, en, mor, age, rec, car, pers, inj, hist, ct{sal,end,role}, p0, last }` ;
+      7 stats `ST`, styles `STYLES` (voltigeurs connus `HIGH`, sinon archétype de la carte TCCCG), femmes = liste WWE_F + rosters féminins + titres féminins ;
+      fédération créée = id "ME", 3 000 k$, 10 hommes + 6 femmes agents libres (complétés par des catcheurs inventés `indie()` : presque toutes les
+      catcheuses sont sous contrat) ; jour 0 = lundi 1er janv. Année 1 (`dateOf`, `dayLabel`).
+    - `sim.js` : `stepDay` (repos, IA des autres fédérations, imprévus, contrats, hebdo, mensuel, annuel), `nextDay` (« Jour suivant » enchaîne jusqu'au
+      prochain message important ou au prochain show), `playMatch` / `playShow` (note, audience, recettes, blessures selon la barre d'endurance, titres),
+      `autoCard`, `ensureMyEvents` (shows TV 14 j à l'avance ; épisode supprimé = `G.noTv`). Équilibrage mesuré sur 1 an simulé : audience de base
+      vers `k × 0,05 × 1,04^pop`, popularité avec frein près de 100 ; les catcheurs contents et pas main event prolongent seuls d'un an ; moral −
+      par semaine sans match (vedettes surtout) ; Stardom / Marigold (IA) ne signent que des femmes (`onlyF`) ; nouveaux agents libres inventés chaque mois s'il en manque.
+    - `save.js` : 3 parties sur le téléphone (IndexedDB `ctv-univers`, sinon localStorage `ctv.univ.s<n>`), liste `ctv.univ.meta`, dernière partie `ctv.univ.slot`.
+      Pas de Firestore (pas de changement des règles).
+    - `core.js` : `U` (partie en cours, filtres), `persist`, cadre `shell` (barre latérale `ctv.univ.rail`, « Jour suivant »), images : base de TCC TV
+      (photos, ceintures `beltOf`, logos des shows / événements / groupes) remplaçables **dans la partie seulement** (`G.img["w:id" | "t:id" | "f:K" |
+      "e:K|nom" | "g:id"]`, `ACT.uvimg` : versions des dossiers, toutes les ceintures pour un titre créé, image du téléphone).
+    - `ui.js` : parties, nouvelle partie, menu général, courrier (actions par type), actu, buzz, monde (catcheurs, fédérations, récompenses), fiche
+      (`#/univers/c/<id>/<s|c|h|d>` : style, bilan, stats, endurance + repos, contrat / négociation avec humeur en direct, suivre, historique, dialogue + promesses).
+      `ui2.js` : Ma fédé (effectif, développement, infirmerie, promesses, moral), Créatif (divisions `G.divs` / `G.dv`, storylines + générateur `genSL`,
+      clans, équipes, titres, tournois à 8, classement), Activité (événements, contrats TV et sponsors, finances, merch, générateur d'idées), carte d'un
+      show `#/univers/ev/<id>` (formulaire `#uvbook` relu à chaque changement) et résultats.
 - Notes : demi-étoiles de 0 à 5,5 (`RMAX`, `fmtR`, `stars`, `ratePick` / `pickRate` de util.js ; 6e étoile orange = bonus).
 - Historique : `g_<id>` = note d'un segment, `q_<id>` = segment préféré (comment = nom du show) ; préfixes m_/s_/f_/g_/q_ exclus
   des compteurs de shows (spoil.js, trophies.js, account.js). Profil : « Ses segments préférés ».

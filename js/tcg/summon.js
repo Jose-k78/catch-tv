@@ -146,7 +146,7 @@ export async function summon(b, ids, opt) {
   // Méga = 3 sachets de 5 cartes, déchirés l'un après l'autre (choix de Jose du 15 nov.) ; la lumière d'un sachet = sa meilleure carte
   const per = opt.mega && defs.length > 5 ? 5 : defs.length, nPk = Math.ceil(defs.length / per);
   const glowOf = k => { const T = tiers.slice(k * per, k * per + per); return T.indexOf("lrp") >= 0 ? "rainbow" : T.indexOf("ssr") >= 0 ? "gold" : defs.slice(k * per, k * per + per).some(x => x.r === "SR") ? "violet" : "white"; };
-  const pkLabel = k => nPk > 1 ? "Sachet " + (k + 1) + " / " + nPk : "";
+  const pkLabel = k => nPk > 1 ? "Booster " + (k + 1) + " / " + nPk : "";
   let pk = 0, pending = 0;
   const ov = document.createElement("div"); ov.className = "tsum2"; document.body.appendChild(ov); document.body.classList.add("tgfull");
   ov.innerHTML = '<div class="tsstage2"></div><div class="tsui"><button class="tsskip2">Passer ⏭</button><p class="tshint2">Le booster arrive…</p><div class="tsflip" hidden><div class="tsfin"><div class="tsback"></div><div class="tsfront"></div></div></div><p class="tscount2"></p></div>';
@@ -165,7 +165,7 @@ export async function summon(b, ids, opt) {
     } catch (e) { scene = null; }
   }
   if (closed) return;
-  const tearHint = () => (nPk > 1 ? "<b>Sachet " + (pk + 1) + " sur " + nPk + "</b> · " : "") + (scene ? "👆 Glisse ton doigt sur le <b>pointillé</b> pour déchirer le sachet" : "👆 Touche le sachet pour l’ouvrir");
+  const tearHint = () => (nPk > 1 ? "<b>Booster " + (pk + 1) + " sur " + nPk + "</b> · " : "") + (scene ? "👆 Glisse ton doigt sur le <b>pointillé</b> pour déchirer le booster" : "👆 Touche le booster pour l’ouvrir");
   // sans Phaser (« Animations simples ») : le sachet en HTML
   const htmlPack = () => { ov.querySelector(".tsstage2").innerHTML = '<div class="tspack2">' + packHTML(b, { tag: pkLabel(pk) || undefined }) + "</div>"; };
   stage = "tear"; hint.innerHTML = tearHint();
@@ -173,8 +173,8 @@ export async function summon(b, ids, opt) {
   const opened = () => { stage = "reveal"; hint.textContent = ""; SFX.finisher(); const hp = ov.querySelector(".tspack2"); if (hp) hp.classList.add("gone"); setTimeout(() => show(Math.max(pending, pk * per)), scene ? 700 : 200); };
   // sachet suivant d'une Méga (on arrive à la carte « target »)
   const nextPack = async (k, target) => {
-    pk = k; pending = target; stage = "drop"; flipEl.hidden = true; countEl.textContent = ""; hint.textContent = "Sachet " + (k + 1) + " sur " + nPk + "…";
-    if (scene) { scene.say(b.t, "Sachet " + (k + 1) + " sur " + nPk); scene.addPack(glowOf(k), pkLabel(k)); await new Promise(r => { scene.events.once("landed", r); setTimeout(r, 1600); }); }
+    pk = k; pending = target; stage = "drop"; flipEl.hidden = true; countEl.textContent = ""; hint.textContent = "Booster " + (k + 1) + " sur " + nPk + "…";
+    if (scene) { scene.say(b.t, "Booster " + (k + 1) + " sur " + nPk); scene.addPack(glowOf(k), pkLabel(k)); await new Promise(r => { scene.events.once("landed", r); setTimeout(r, 1600); }); }
     else htmlPack();
     if (closed || stage !== "drop") return;
     stage = "tear"; hint.innerHTML = tearHint();
@@ -225,7 +225,7 @@ export async function summon(b, ids, opt) {
   ov.addEventListener("pointermove", e => { if (!p0 || !tearing || !scene) return; scene.tearLine(p0.x, e.clientX, scene.stripBox().y + scene.bh * 0.125); });
   ov.addEventListener("pointerup", e => {
     if (!p0) return; const dx = e.clientX - p0.x, dy = e.clientY - p0.y, sw = Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy); const was = p0; p0 = null;
-    if (stage === "tear") { if (!scene) return opened(); if (tearing && Math.abs(dx) > scene.bw * 0.45) { scene.tear(); opened(); } else { scene.tearG.clear(); if (!tearing) hint.innerHTML = (nPk > 1 ? "<b>Sachet " + (pk + 1) + " sur " + nPk + "</b> · " : "") + "👆 Glisse ton doigt sur le <b>pointillé</b>, d’un bord à l’autre"; } return; }
+    if (stage === "tear") { if (!scene) return opened(); if (tearing && Math.abs(dx) > scene.bw * 0.45) { scene.tear(); opened(); } else { scene.tearG.clear(); if (!tearing) hint.innerHTML = (nPk > 1 ? "<b>Booster " + (pk + 1) + " sur " + nPk + "</b> · " : "") + "👆 Glisse ton doigt sur le <b>pointillé</b>, d’un bord à l’autre"; } return; }
     if (stage === "back" && (sw || Math.abs(dx) < 10)) return reveal();
     if (stage === "face" && (sw && dx < 0 || Math.abs(dx) < 10 && Math.abs(dy) < 10)) return next();
     void was;

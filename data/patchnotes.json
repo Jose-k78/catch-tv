@@ -1,6 +1,34 @@
 {
- "updated": "2026-11-16",
+ "updated": "2026-11-18",
  "items": [
+  {
+   "id": "2026-11-18-jeux",
+   "d": "2026-11-18",
+   "t": "Nouvel onglet « Jeux »",
+   "txt": [
+    "🎮 Dans la barre du bas, « TCCCG » devient « Jeux ». Touche-le pour choisir ton jeu : TCCCG, Univers ou Coming soon. Le jeu se lance sur celui que tu touches.",
+    "🃏 TCCCG ne change pas : tu retrouves ta partie comme avant.",
+    "🌍 Univers, le mode où tu diriges une fédération de catch, arrive bientôt pour tout le monde.",
+    "🎁 TCCCG : on dit maintenant « booster » partout (Call Up, ouverture, Méga, guide)."
+   ]
+  },
+  {
+   "id": "2026-11-18-univers",
+   "d": "2026-11-18",
+   "mod": true,
+   "t": "Mode Univers : 1re version (modo)",
+   "txt": [
+    "🌍 Jeux › Univers : tu deviens GM. 3 parties, gardées sur ton téléphone. Tu crées ta fédération (nom, sigle, couleur, show TV, jour) ou tu en prends une existante ; toutes les autres sont gérées par l’IA.",
+    "📅 Calendrier en jours et mois, Année 1, 2… « Jour suivant » fait passer les jours tout seul jusqu’au prochain message ou au prochain show. But : faire la meilleure audience de l’année.",
+    "🧭 Barre latérale : Accueil, Courrier, Actu (En coulisses / À l’écran), Buzz, Monde, Ma fédé, Créatif, Activité. Touche ☰ « Cacher » pour la masquer, ☰ en haut pour la remettre.",
+    "🤼 Les catcheurs, titres, champions, équipes, logos des shows et des événements viennent de la base de TCC TV. Chaque catcheur a 7 stats (Apparence, Ring, Micro, Charisme, Endurance, Star power, Fiabilité), un style (aérien, bagarreur, technique, puroresu, équilibré), face ou heel, son bilan victoires / défaites / draws et une barre d’endurance : plus elle est basse, plus il risque de se blesser.",
+    "🖼️ « Changer l’image » sur les catcheurs, ceintures, fédérations et événements : une autre version de tes dossiers ou une image du téléphone. Ça reste dans la partie, les images de l’appli ne bougent pas.",
+    "📝 La carte d’un show : matchs simples, pour un titre ou par équipes, durée, vainqueur (ou l’IA décide), moments forts, promos au micro, ou « Carte faite par l’IA ». Puis note, audience et recettes.",
+    "✍️ Créatif : divisions, storylines (générateur à partir de quelques mots, heel / face turn à la fin), clans, équipes, titres, tournois à 8, classement. Activité : événements PPV / PLE, contrats TV et sponsors, finances, merchandising, générateur d’idées (événements et coups de pub).",
+    "🗞️ La vie du monde : blessures, maladies, problèmes d’avion, bagarres en coulisses, retraites, rumeurs, fins de contrat, signatures de l’IA, awards à la fin de l’année.",
+    "🙈 Pas de spoiler : un champion couronné depuis moins de 7 jours n’est pas montré, c’est l’ancien qui commence la partie."
+   ]
+  },
   {
    "id": "2026-11-16-tcccg",
    "d": "2026-11-16",
@@ -30,14 +58,14 @@
   {
    "id": "2026-11-15-tcccg",
    "d": "2026-11-15",
-   "t": "TCCCG : les boosters deviennent des sachets",
+   "t": "TCCCG : les boosters en alu brillant",
    "txt": [
-    "🎁 Chaque booster est maintenant un vrai sachet en alu brillant : bords en dents de scie en haut et en bas, soudures rayées, plis aux coins. Dans le Call Up, il flotte, un reflet passe dessus et de petites étoiles brillent.",
+    "🎁 Chaque booster est maintenant en alu brillant : bords en dents de scie en haut et en bas, soudures rayées, plis aux coins. Dans le Call Up, il flotte, un reflet passe dessus et de petites étoiles brillent.",
     "🎨 La couleur de l’alu dit la catégorie du booster : vert pour les cadeaux, argent pour les shows de la semaine, or pour les PLE et PPV, bleu pour les boosters spéciaux, cuivre pour les packs de départ.",
-    "✂️ Pour ouvrir, glisse ton doigt sur le pointillé du sachet, d’un bord à l’autre : la bande du haut s’envole et les cartes sortent.",
-    "✨ Méga : la confirmation montre 3 sachets, et tu les déchires l’un après l’autre (5 cartes chacun). « Passer » marche toujours.",
+    "✂️ Pour ouvrir, glisse ton doigt sur le pointillé du booster, d’un bord à l’autre : la bande du haut s’envole et les cartes sortent.",
+    "✨ Méga : la confirmation montre 3 boosters, et tu les déchires l’un après l’autre (5 cartes chacun). « Passer » marche toujours.",
     "🔧 Call Up : en touchant une catégorie, l’appli reste bien sur le booster choisi.",
-    "🐢 Avec « Animations simples », le sachet ne bouge pas et s’ouvre d’une simple touche."
+    "🐢 Avec « Animations simples », le booster ne bouge pas et s’ouvre d’une simple touche."
    ]
   },
   {

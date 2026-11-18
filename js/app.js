@@ -48,6 +48,8 @@ import { renderWImage } from "./views/wimage.js";
 import { loadPushCfg, syncPush, resetPushSync } from "./push.js";
 import "./share.js";
 import { wantView, syncWants } from "./want.js";
+import { jeuxView, GAMES_ICON } from "./views/jeux.js";
+import { universView, univOn } from "./views/univers.js";
 
 let route = { name: "home" }, routeSubs = [], userSubs = [], dirty = false, searchFocused = false;
 const NEEDS_USER = { settings: 1, editprofile: 1, chat: 1, newchat: 1, conv: 1, convinfo: 1, profile: 1, members: 1, favs: 1, notifs: 1, activity: 1, ideas: 1, trophies: 1 };
@@ -61,7 +63,7 @@ const REL = {
   members: ["activity", "areplies", "polls", "pollVotes", "picks", "content", "history", "users", "friends", "feuds", "blocks", "profiles", "auth", "tick"], favs: ["profile", "profiles", "friends", "auth", "content"], hl: ["history", "spoil", "content"],
   event: ["event", "history", "auth", "activity", "links", "profiles", "content"], want: ["history", "auth", "content", "tick"], cal: ["content", "history", "auth", "images", "spoil", "tick", "picks"],
   polls: ["polls", "pollVotes", "auth", "blocks", "hof", "content", "profiles"], picks: ["content", "picks", "profiles", "auth", "blocks", "tick"], pick: ["content", "picks", "profiles", "auth", "blocks", "tick"],
-  ideas: ["ideas", "profiles", "auth", "blocks"],
+  ideas: ["ideas", "profiles", "auth", "blocks"], jeux: ["auth"], univers: ["univ", "auth"],
   trophies: ["profile", "profiles", "history", "pollVotes", "picks", "friends", "feuds", "ideas", "myact", "slammys", "auth", "content"],
 };
 
@@ -85,6 +87,8 @@ function parse() {
     case "groupe": return parts[1] ? { name: "group", id: parts[1].slice(0, 80) } : { name: "search", q: "" };
     case "tccg": return { name: "tccg", tab: parts[1] || "", sub: parts[2] || "", id: parts[3] || "" };
     case "autre": return { name: "autre" };
+    case "jeux": return { name: "jeux" };
+    case "univers": return { name: "univers", a: parts[1] || "", b: parts[2] || "", c: parts[3] || "" };
     case "passes": return { name: "passes", k: parts[1] || "", n: parts[2] || "" };
     case "tournois": return parts[1] ? { name: "serie", id: parts[1] } : { name: "tournois" };
     case "tournoi": return { name: "tournoi", id: parts[1] || "" };
@@ -184,6 +188,7 @@ function render() {
   mountTicker(route);
   document.body.classList.toggle("wide", route.name === "home");
   document.body.classList.toggle("tccg", tgOn());
+  document.body.classList.toggle("univ", route.name === "univers" && univOn()); // mode Univers : plein écran, sa propre barre latérale
   document.body.classList.toggle("tgfull", (route.name === "tccg" && route.tab === "combat") || !!document.querySelector(".tsum2, .ttrain")); // combat : barres cachées
   let h = "";
   const waiting = NEEDS_USER[route.name] && !S.user;
@@ -208,6 +213,8 @@ function render() {
     case "group": h = groupView(route.id); break;
     case "tccg": h = tccgView(route.tab, route.sub, route.id); break;
     case "autre": h = autreView(); break;
+    case "jeux": h = jeuxView(); break;
+    case "univers": h = universView(route.a, route.b, route.c); break;
     case "passes": h = pastView(route.k, route.n); break;
     case "tournois": h = tournoisView(); break;
     case "serie": h = serieView(route.id); break;
@@ -248,12 +255,13 @@ function render() {
 }
 
 // Barre de navigation du bas : Accueil · Recherche · Membres · Messages · Profil
-const NAV = [["home", "#/", "Accueil", "home"], ["player", "#/player", "TCC Play", "tplay"], ["tccg", "#/tccg", "TCCCG", "cards"], ["members", "#/membres", "Membres", "globe"], ["chat", "#/chat", "Messages", "chat"], ["me", "#/profil", "Profil", "user"]];
+const NAV = [["home", "#/", "Accueil", "home"], ["player", "#/player", "TCC Play", "tplay"], ["jeux", "#/jeux", "Jeux", "games"], ["members", "#/membres", "Membres", "globe"], ["chat", "#/chat", "Messages", "chat"], ["me", "#/profil", "Profil", "user"]];
 function navOn(id) {
   const r = route.name;
   if (id === "home") return r === "home" || r === "promo" || r === "titles" || r === "title" || r === "matches" || r === "hl" || r === "polls" || r === "picks" || r === "pick" || r === "cal";
   if (id === "search") return r === "search" || r === "wrestler" || r === "event";
   if (id === "player") return r === "player";
+  if (id === "jeux") return r === "jeux" || r === "univers";
   if (id === "members") return r === "members" || (r === "profile" && S.user && route.uid && route.uid !== S.user.uid);
   if (id === "chat") return r === "chat" || r === "conv" || r === "newchat" || r === "convinfo";
   if (id === "me") return (r === "profile" && (!S.user || !route.uid || route.uid === S.user.uid)) || r === "settings" || r === "editprofile" || r === "auth" || r === "ideas" || r === "trophies";
@@ -273,7 +281,7 @@ function updateHeader() {
   else if (nav) nav.innerHTML = NAV.map(x => {
     const badge = x[0] === "chat" ? n : x[0] === "members" ? soc : 0, pdot = x[0] === "me" && S.user && pnNew();
     const href = x[0] === "me" && !S.user ? "#/connexion" : x[1];
-    const ico = x[0] === "me" && S.user ? avatar(S.profile || {}, 26) : x[3] === "cards" ? TICON.cards : x[3] === "tplay" ? TPLAY_ICON : ICON[x[3]];
+    const ico = x[0] === "me" && S.user ? avatar(S.profile || {}, 26) : x[3] === "games" ? GAMES_ICON : x[3] === "tplay" ? TPLAY_ICON : ICON[x[3]];
     return '<a class="bn' + (navOn(x[0]) ? " on" : "") + '" href="' + href + '"' + (navOn(x[0]) ? ' aria-current="page"' : "") + '><span class="bni">' + ico + (badge ? '<span class="badge">' + cnt(badge) + "</span>" : pdot ? '<span class="badge pdotb" aria-label="nouveauté"></span>' : "") + "</span><small>" + x[2] + "</small></a>";
   }).join("");
   const fav = document.getElementById("favbtn");
