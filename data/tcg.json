@@ -530,8 +530,8 @@
    "medalOf": "Low Ki"
   },
   "brian-pillman": {
-   "r": "R",
-   "max": "SR",
+   "r": "SR",
+   "max": "SSR",
    "arch": "Aggressor",
    "al": "",
    "fin": {
@@ -539,7 +539,8 @@
     "e": "Boost"
    },
    "gimmick": "",
-   "medalOf": "Bret Hart"
+   "medalOf": "Bret Hart",
+   "leg": true
   },
   "la-parkita": {
    "k": "AAA",
