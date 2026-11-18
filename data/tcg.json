@@ -3098,6 +3098,19 @@
    },
    "gimmick": "",
    "medalOf": "Homicide"
+  },
+  "tomohiro-ishii": {
+   "k": "AEW",
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Brainbuster",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Orange Cassidy"
   }
  },
  "bgm": {
