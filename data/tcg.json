@@ -3556,6 +3556,19 @@
     "q": "start",
     "s": 4
    }
+  },
+  "michin": {
+   "k": "WWE",
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Eat Defeat",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "AJ Styles"
   }
  },
  "bgm": {
