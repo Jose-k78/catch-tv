@@ -3072,6 +3072,19 @@
    },
    "gimmick": "",
    "medalOf": "Megan Bayne"
+  },
+  "aero-star": {
+   "k": "AAA",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Showman",
+   "al": "",
+   "fin": {
+    "n": "Coup de coude du peuple",
+    "e": "Soin"
+   },
+   "gimmick": "",
+   "medalOf": "Aero Star"
   }
  },
  "bgm": {
