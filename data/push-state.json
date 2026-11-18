@@ -1,27 +1,7 @@
 {
- "at": "2026-11-18T20:26:56.663Z",
+ "at": "2026-11-18T23:22:23.220Z",
  "sa": true,
  "sent": {
-  "poll:p-20261104-cj-liv-chelsea": "2026-11-04",
-  "poll:p-20261104-cena-classic": "2026-11-04",
-  "poll:p-20261104-babies": "2026-11-04",
-  "story:pillman-gun-1996": "2026-11-04",
-  "a:https://www.catch-newz.com/wwe/newz/60978-19-catcheurs-de-nxt-ont-ete-call-up-ces-12-derniers-mois": "2026-11-04",
-  "a:https://www.catch-newz.com/wwe/newz/60977-royce-keys-ce-soir-a-nxt-personne-nest-a-labri": "2026-11-04",
-  "t:wwe-ic:2026-11-02:c": "2026-11-04",
-  "t:njpw-global:2026-11-03:d874v2v": "2026-11-04",
-  "t:njpw-jrtag:2026-11-03:c": "2026-11-04",
-  "a:https://www.catch-newz.com/wwe/newz/60979-chad-gable-si-jaffronte-roman-reigns-je-serais-un-vrai-dur-a-cuire": "2026-11-04",
-  "a:https://www.catch-newz.com/international/newz/60982-le-main-event-de-njpw-wrestle-kingdom-21-est-connu": "2026-11-04",
-  "a:https://www.catch-newz.com/wwe/newz/60983-pour-ethan-page-remporter-le-titre-intercontinental-etait-son-objectif-ultime": "2026-11-04",
-  "a:https://www.catch-newz.com/wwe/newz/60984-gunther-reagit-a-lattaque-du-demon-finn-balor-a-smackdown": "2026-11-04",
-  "a:https://www.catch-newz.com/wwe/newz/60986-le-videaste-sturry-pousse-pour-que-le-luchador-francais-elio-lefleur-fasse-partie-du-john-cena-classic": "2026-11-04",
-  "a:https://www.catch-newz.com/wwe/newz/60985-raquel-rodriguez-je-pense-que-les-fans-vont-se-souvenir-de-nous": "2026-11-04",
-  "a:https://www.catch-newz.com/wwe/newz/60987-spoiler-une-catcheuse-de-smackdown-dans-les-coulisses-de-wwe-nxt-du-4-novembre": "2026-11-04",
-  "a:https://www.catch-newz.com/wwe/newz/60989-chad-gable-sort-du-silence-apres-sa-perte-de-titre-a-raw": "2026-11-04",
-  "a:https://www.catch-newz.com/aew/newz/60988-taya-valkyrie-quitte-laew": "2026-11-04",
-  "fr:2026-11-04": "2026-11-04",
-  "a:https://www.catch-newz.com/culture/gaming/60990-la-saison-13-de-wwe-supercard-est-lancee": "2026-11-04",
   "a:https://www.catch-newz.com/wwe/newz/60998-la-wwe-devoile-son-plan-de-secours-pour-wrestlemania-43": "2026-11-05",
   "a:https://www.catch-newz.com/wwe/newz/60997-tous-les-evenements-wwe-et-ufc-en-arabie-saoudite-auront-lieu-comme-prevu": "2026-11-05",
   "a:https://www.catch-newz.com/wwe/newz/61004-wwe-nxt-chad-gable-dragon-lee-et-rey-fenix-donnent-une-lecon-au-vanity-project": "2026-11-05",
@@ -413,7 +393,20 @@
   "a:https://www.catch-newz.com/international/newz/61431-preview-tna-impact-19-novembre-2026": "2026-11-18",
   "a:https://www.catch-newz.com/aew/newz/61443-une-ville-potentielle-pour-aew-all-in-2027": "2026-11-18",
   "a:https://www.catch-newz.com/wwe/newz/61442-r-truth-remercie-les-fans-qui-lont-soutenu-suite-au-deces-de-son-papa": "2026-11-18",
-  "fr:2026-11-18": "2026-11-18"
+  "fr:2026-11-18": "2026-11-18",
+  "a:https://www.catch-newz.com/international/newz/61452-carte-de-njpw-tanahashi-jam-2": "2026-11-19",
+  "a:https://www.catch-newz.com/international/newz/61451-carte-de-cmll-x-nfl-noche-de-cascos-y-mascaras": "2026-11-19"
  },
- "pend": {}
+ "pend": {
+  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
+   }
+  ]
+ }
 }

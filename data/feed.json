@@ -1,6 +1,34 @@
 {
- "at": "2026-11-18T22:22:58.752Z",
+ "at": "2026-11-18T23:22:23.165Z",
  "items": [
+  {
+   "t": "Preview : TNA Impact du 19 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61431-preview-tna-impact-19-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-19",
+   "tags": [
+    "TNA",
+    "Impact"
+   ]
+  },
+  {
+   "t": "Carte de NJPW Tanahashi Jam 2",
+   "u": "https://www.catch-newz.com/international/newz/61452-carte-de-njpw-tanahashi-jam-2",
+   "s": "Catch-Newz",
+   "d": "2026-11-19",
+   "tags": [
+    "NJPW"
+   ]
+  },
+  {
+   "t": "Carte de CMLL x NFL Noche de Cascos y Máscaras",
+   "u": "https://www.catch-newz.com/international/newz/61451-carte-de-cmll-x-nfl-noche-de-cascos-y-mascaras",
+   "s": "Catch-Newz",
+   "d": "2026-11-19",
+   "tags": [
+    "CMLL"
+   ]
+  },
   {
    "t": "Preview : AEW Dynamite du 18 novembre 2026",
    "u": "https://www.catch-newz.com/aew/newz/61333-preview-aew-dynamite-18-novembre-2026",
@@ -12,23 +40,6 @@
    ]
   },
   {
-   "t": "Preview : TNA Impact du 19 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61431-preview-tna-impact-19-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-18",
-   "tags": [
-    "TNA",
-    "Impact"
-   ]
-  },
-  {
-   "t": "Résultats du jour 5 de DG The Gate Of Evolution 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61411-resultats-du-jour-5-de-dg-the-gate-of-evolution-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-18",
-   "tags": []
-  },
-  {
    "t": "WWE NXT du 17 novembre : Kelani Jordan vs. Kendal Gray",
    "u": "https://www.voxcatch.fr/2026/11/18/resultats-wwe-nxt-17-novembre-2026/",
    "s": "VOXcatch",
@@ -37,6 +48,13 @@
     "WWE",
     "NXT"
    ]
+  },
+  {
+   "t": "Résultats du jour 5 de DG The Gate Of Evolution 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61411-resultats-du-jour-5-de-dg-the-gate-of-evolution-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-18",
+   "tags": []
   },
   {
    "t": "Une ville potentielle pour AEW All In 2027",
@@ -498,20 +516,6 @@
     "WWE",
     "Raw"
    ]
-  },
-  {
-   "t": "Lonni pourrait continuer le catch après FinalSlam",
-   "u": "https://www.catch-newz.com/international/newz/61376-lonni-pourrait-continuer-le-catch-apres-finalslam",
-   "s": "Catch-Newz",
-   "d": "2026-11-17",
-   "tags": []
-  },
-  {
-   "t": "Byilhan montre comment il s'est blessé avant FinalSlam",
-   "u": "https://www.catch-newz.com/international/newz/61375-byilhan-montre-comment-il-sest-blesse-avant-finalslam",
-   "s": "Catch-Newz",
-   "d": "2026-11-17",
-   "tags": []
   }
  ],
  "yt": {
@@ -1135,6 +1139,10 @@
    {
     "id": "LwFGsmI_izw",
     "t": "Trey Miguel's Fight and Courage | TNA Destination X 2026 Highlights"
+   },
+   {
+    "id": "HswvCi9blaI",
+    "t": "Mustafa Ali SNAPS | TNA Destination X 2026 Highlights"
    }
   ],
   "WWE|Raw|2026-11-16": [
@@ -1240,6 +1248,9 @@
    "https://www.catch-newz.com/wwe/resultats/61421-wwe-nxt-17-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61373-wwe-raw-16-novembre-2026",
    "https://www.catch-newz.com/international/newz/61431-preview-tna-impact-19-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61452-carte-de-njpw-tanahashi-jam-2",
+   "https://www.catch-newz.com/international/newz/61451-carte-de-cmll-x-nfl-noche-de-cascos-y-mascaras",
+   "https://www.catch-newz.com/international/resultats/61439-resultats-de-promociones-cantu-du-16-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61411-resultats-du-jour-5-de-dg-the-gate-of-evolution-2026",
    "https://www.catch-newz.com/international/resultats/61434-resultats-de-cmll-martes-populares-du-17-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61443-une-ville-potentielle-pour-aew-all-in-2027",
@@ -1532,21 +1543,18 @@
    "https://www.catch-newz.com/wwe/newz/61151-cruz-montana-sort-enfin-du-silence-apres-avoir-rejoint-946-la-semaine-derniere",
    "https://www.catch-newz.com/international/resultats/61144-resultats-de-chocopro-551",
    "https://www.catch-newz.com/international/resultats/61141-resultats-de-cmll-garza-producciones-du-5-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61145-resultats-de-tjpw-garafes-a-cultural-shock-sensation-in-shibuya",
-   "https://www.catch-newz.com/wwe/resultats/61122-resultats-et-streaming-aaa-heroes-inmortales-7-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61148-resultats-de-gcw-dead-on-arrival-2026",
-   "https://www.catch-newz.com/international/newz/61146-carte-du-jour-1-du-noah-junior-grand-prix-2026"
+   "https://www.catch-newz.com/international/resultats/61145-resultats-de-tjpw-garafes-a-cultural-shock-sensation-in-shibuya"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "8 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
-  "YouTube TNA": "0 nouvelles vidéos",
+  "YouTube TNA": "1 nouvelles vidéos",
   "YouTube NJPW": "0 nouvelles vidéos",
   "YouTube Stardom": "0 nouvelles vidéos",
   "YouTube Marigold": "chaîne introuvable"
