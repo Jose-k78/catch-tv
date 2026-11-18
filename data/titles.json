@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16",
+ "updated": "2026-11-18",
  "note": "Champions actuels : peut révéler des résultats récents.",
  "titles": [
   {
@@ -334,15 +334,25 @@
    "k": "WWE",
    "show": "Raw",
    "n": "Women’s Intercontinental Championship",
-   "c": "Raquel Rodriguez",
+   "c": "IYO SKY",
    "who": [
-    "Raquel Rodriguez"
+    "IYO SKY"
    ],
-   "since": "2026-07-27",
-   "ev": "",
-   "hist": [],
-   "src": "The SmackDown Hotel",
-   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe",
+   "since": "2026-11-16",
+   "ev": "Raw",
+   "hist": [
+    {
+     "c": "Raquel Rodriguez",
+     "who": [
+      "Raquel Rodriguez"
+     ],
+     "d": "2026-07-27",
+     "ev": "",
+     "j": 112
+    }
+   ],
+   "src": "Wrestling Inc.",
+   "u": "https://www.wrestlinginc.com/2317253/wwe-raw-november-16-2026-results/",
    "defs": [],
    "def": 0
   },
@@ -1072,8 +1082,14 @@
    ],
    "src": "ChaseYourSport (Bound for Glory)",
    "u": "https://chaseyoursport.com/pro-wrestling/tna-bound-for-glory-2026-results/13629",
-   "defs": [],
-   "def": 0
+   "defs": [
+    {
+     "d": "2026-11-15",
+     "ev": "Destination X",
+     "vs": "Trey Miguel"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "tna-x",
