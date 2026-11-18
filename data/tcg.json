@@ -3719,6 +3719,18 @@
    },
    "gimmick": "",
    "medalOf": "Johnny Nitro"
+  },
+  "masato-tanaka": {
+   "r": "N",
+   "max": "R",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Masato Tanaka"
   }
  },
  "bgm": {
