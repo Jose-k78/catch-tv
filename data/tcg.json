@@ -3125,6 +3125,19 @@
    "gimmick": "",
    "medalOf": "Okumura",
    "leg": true
+  },
+  "el-desperado": {
+   "k": "NJPW",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Pinche Loco",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Minoru Suzuki"
   }
  },
  "bgm": {
