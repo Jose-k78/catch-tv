@@ -3694,6 +3694,19 @@
     "q": "start",
     "s": 0
    }
+  },
+  "wheeler-yuta": {
+   "k": "AEW",
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Jon Moxley"
   }
  },
  "bgm": {
