@@ -3649,6 +3649,19 @@
    },
    "gimmick": "",
    "medalOf": "Megaton"
+  },
+  "valkyria": {
+   "k": "CMLL",
+   "r": "N",
+   "max": "R",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Powerbomb",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Valkyria"
   }
  },
  "bgm": {
