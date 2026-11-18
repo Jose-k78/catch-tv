@@ -3227,6 +3227,19 @@
    },
    "gimmick": "",
    "medalOf": "LA Knight"
+  },
+  "tank-ledger": {
+   "k": "WWE",
+   "r": "R",
+   "max": "SR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Tank Ledger"
   }
  },
  "bgm": {
