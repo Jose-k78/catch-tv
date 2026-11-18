@@ -386,7 +386,7 @@
    "medalOf": "Daga"
   },
   "joe-gacy": {
-   "r": "R",
+   "r": "N",
    "max": "SR",
    "arch": "Dominator",
    "al": "",
@@ -395,8 +395,7 @@
     "e": "Stun"
    },
    "gimmick": "",
-   "medalOf": "Uncle Howdy",
-   "k": "TNA"
+   "medalOf": ""
   },
   "pagano": {
    "img": "img/catcheurs/pagano-v2.webp",
