@@ -3580,6 +3580,19 @@
    },
    "gimmick": "",
    "medalOf": "Rush"
+  },
+  "great-o-khan": {
+   "k": "NJPW",
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Eliminator",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Jeff Cobb"
   }
  },
  "bgm": {
