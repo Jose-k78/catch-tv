@@ -3358,6 +3358,19 @@
    },
    "gimmick": "",
    "medalOf": "Mephisto"
+  },
+  "austin-theory": {
+   "k": "WWE",
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "A-Town Down",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Bron Breakker"
   }
  },
  "bgm": {
