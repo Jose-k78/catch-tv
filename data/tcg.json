@@ -3443,6 +3443,21 @@
     "q": "once",
     "s": 4
    }
+  },
+  "kurt-angle": {
+   "years": "",
+   "k": "WWE",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Angle Slam",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Shelton Benjamin",
+   "leg": true
   }
  },
  "bgm": {
