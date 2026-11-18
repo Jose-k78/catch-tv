@@ -3280,6 +3280,19 @@
    },
    "gimmick": "",
    "medalOf": "Myka Lockwood"
+  },
+  "zandokan-jr": {
+   "k": "CMLL",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Zandokan Jr."
   }
  },
  "bgm": {
