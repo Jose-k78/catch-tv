@@ -3770,6 +3770,19 @@
    },
    "gimmick": "",
    "medalOf": "Moose"
+  },
+  "felino-jr": {
+   "k": "CMLL",
+   "r": "SR",
+   "max": "SSR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "Felino Jr."
   }
  },
  "bgm": {
