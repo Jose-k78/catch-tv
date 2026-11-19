@@ -1,5 +1,5 @@
 {
- "at": "2026-11-19T08:41:41.908Z",
+ "at": "2026-11-19T10:00:21.037Z",
  "items": [
   {
    "t": "Preview : TNA Impact du 19 novembre 2026",
@@ -9,6 +9,32 @@
    "tags": [
     "TNA",
     "Impact"
+   ]
+  },
+  {
+   "t": "Carte du jour 4 de la NJPW World Tag League 2026",
+   "u": "https://www.catch-newz.com/international/newz/61405-carte-du-jour-4-de-la-njpw-world-tag-league-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-19",
+   "tags": [
+    "NJPW"
+   ]
+  },
+  {
+   "t": "Résultats de Beyond Wrestling Open Series 253",
+   "u": "https://www.catch-newz.com/international/resultats/61440-resultats-de-beyond-wrestling-open-series-253",
+   "s": "Catch-Newz",
+   "d": "2026-11-19",
+   "tags": []
+  },
+  {
+   "t": "AEW Dynamite du 18 novembre : Début du Continental Classic, le championnat TBS en jeu",
+   "u": "https://www.voxcatch.fr/2026/11/19/resultats-aew-dynamite-18-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-19",
+   "tags": [
+    "AEW",
+    "Dynamite"
    ]
   },
   {
@@ -491,32 +517,6 @@
    "tags": [
     "AEW"
    ]
-  },
-  {
-   "t": "Carte du jour 1 de la NJPW World Tag League 2026",
-   "u": "https://www.catch-newz.com/international/newz/61215-carte-du-jour-1-de-la-njpw-world-tag-league-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-17",
-   "tags": [
-    "NJPW"
-   ]
-  },
-  {
-   "t": "Alex Shelley blessé suite au Best of 5 Series à AEW Dynamite",
-   "u": "https://www.catch-newz.com/aew/newz/61384-alex-shelley-blesse-suite-au-best-of-5-series-a-aew-dynamite",
-   "s": "Catch-Newz",
-   "d": "2026-11-17",
-   "tags": [
-    "AEW",
-    "Dynamite"
-   ]
-  },
-  {
-   "t": "Vidéo : Ce spot impressionnant était prévu pour Squeezie et Amine à FinalSlam",
-   "u": "https://www.catch-newz.com/international/newz/61388-video-ce-spot-impressionnant-etait-prevu-pour-squeezie-et-amine-a-finalslam",
-   "s": "Catch-Newz",
-   "d": "2026-11-17",
-   "tags": []
   }
  ],
  "yt": {
@@ -1276,6 +1276,8 @@
    "https://www.catch-newz.com/wwe/resultats/61373-wwe-raw-16-novembre-2026",
    "https://www.catch-newz.com/international/newz/61431-preview-tna-impact-19-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61333-preview-aew-dynamite-18-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61405-carte-du-jour-4-de-la-njpw-world-tag-league-2026",
+   "https://www.catch-newz.com/international/resultats/61440-resultats-de-beyond-wrestling-open-series-253",
    "https://www.catch-newz.com/international/resultats/61437-resultats-de-pwk-now-or-never-v",
    "https://www.catch-newz.com/international/resultats/61439-resultats-de-promociones-cantu-du-16-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61436-resultats-de-tlw-mac-mcmurray-memorial-rumble-2026",
@@ -1568,14 +1570,12 @@
    "https://www.catch-newz.com/international/newz/61113-carte-de-cmll-lunes-clasico-du-9-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61157-r-truth-annonce-le-triste-deces-de-son-papa",
    "https://www.catch-newz.com/international/resultats/61147-resultats-de-dg-prime-zone-plus-22",
-   "https://www.catch-newz.com/international/newz/61156-la-jeune-catcheuse-de-la-tna-jada-stone-a-eu-un-accident-de-voiture-ce-vendredi",
-   "https://www.catch-newz.com/wwe/newz/61155-paige-japprecie-vraiment-chaque-seconde-que-je-passe-a-la-tele-et-sur-ce-ring",
-   "https://www.catch-newz.com/international/resultats/61139-resultats-de-tjpw-all-rise-2026"
+   "https://www.catch-newz.com/international/newz/61156-la-jeune-catcheuse-de-la-tna-jada-stone-a-eu-un-accident-de-voiture-ce-vendredi"
   ]
  },
  "diag": {
   "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
-  "VOXcatch": "8 articles (7 j)",
+  "VOXcatch": "9 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
