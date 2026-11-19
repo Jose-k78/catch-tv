@@ -1,5 +1,5 @@
 {
- "at": "2026-11-19T07:09:10.270Z",
+ "at": "2026-11-19T08:41:41.908Z",
  "items": [
   {
    "t": "Preview : TNA Impact du 19 novembre 2026",
@@ -10,6 +10,13 @@
     "TNA",
     "Impact"
    ]
+  },
+  {
+   "t": "Résultats de PWK Now Or Never V",
+   "u": "https://www.catch-newz.com/international/resultats/61437-resultats-de-pwk-now-or-never-v",
+   "s": "Catch-Newz",
+   "d": "2026-11-19",
+   "tags": []
   },
   {
    "t": "Résultats de TLW Mac McMurray Memorial Rumble 2026",
@@ -507,13 +514,6 @@
   {
    "t": "Vidéo : Ce spot impressionnant était prévu pour Squeezie et Amine à FinalSlam",
    "u": "https://www.catch-newz.com/international/newz/61388-video-ce-spot-impressionnant-etait-prevu-pour-squeezie-et-amine-a-finalslam",
-   "s": "Catch-Newz",
-   "d": "2026-11-17",
-   "tags": []
-  },
-  {
-   "t": "Résultats du jour 1 de la AJPW Real World Tag League 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61385-resultats-du-jour-1-de-la-ajpw-real-world-tag-league-2026",
    "s": "Catch-Newz",
    "d": "2026-11-17",
    "tags": []
@@ -1276,8 +1276,9 @@
    "https://www.catch-newz.com/wwe/resultats/61373-wwe-raw-16-novembre-2026",
    "https://www.catch-newz.com/international/newz/61431-preview-tna-impact-19-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61333-preview-aew-dynamite-18-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61436-resultats-de-tlw-mac-mcmurray-memorial-rumble-2026",
+   "https://www.catch-newz.com/international/resultats/61437-resultats-de-pwk-now-or-never-v",
    "https://www.catch-newz.com/international/resultats/61439-resultats-de-promociones-cantu-du-16-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61436-resultats-de-tlw-mac-mcmurray-memorial-rumble-2026",
    "https://www.catch-newz.com/aew/newz/61457-big-boom-aj-en-fin-de-contrat-avec-laew-pour-debut-2027",
    "https://www.catch-newz.com/wwe/newz/61456-the-rock-et-roman-reigns-se-lancent-des-fleurs-sur-les-reseaux-sociaux",
    "https://www.catch-newz.com/aew/newz/61448-kenny-omega-fera-de-la-njpw-sa-priorite-sil-remporte-le-titre-iwgp",
@@ -1569,8 +1570,7 @@
    "https://www.catch-newz.com/international/resultats/61147-resultats-de-dg-prime-zone-plus-22",
    "https://www.catch-newz.com/international/newz/61156-la-jeune-catcheuse-de-la-tna-jada-stone-a-eu-un-accident-de-voiture-ce-vendredi",
    "https://www.catch-newz.com/wwe/newz/61155-paige-japprecie-vraiment-chaque-seconde-que-je-passe-a-la-tele-et-sur-ce-ring",
-   "https://www.catch-newz.com/international/resultats/61139-resultats-de-tjpw-all-rise-2026",
-   "https://www.catch-newz.com/wwe/newz/61154-randy-orton-na-gagne-que-3-matchs-en-ple-depuis-son-retour-en-2023"
+   "https://www.catch-newz.com/international/resultats/61139-resultats-de-tjpw-all-rise-2026"
   ]
  },
  "diag": {
