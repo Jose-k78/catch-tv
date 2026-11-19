@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18",
+ "updated": "2026-11-19",
  "note": "Champions actuels : peut révéler des résultats récents.",
  "titles": [
   {
@@ -614,6 +614,11 @@
    "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe",
    "defs": [
     {
+     "d": "2026-11-17",
+     "ev": "NXT",
+     "vs": "Kendal Grey"
+    },
+    {
      "d": "2026-11-04",
      "ev": "NXT",
      "vs": "Paige"
@@ -624,7 +629,7 @@
      "vs": "Wren Sinclair"
     }
    ],
-   "def": 2
+   "def": 3
   },
   {
    "id": "nxt-na",
