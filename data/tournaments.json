@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T23:43:51.413Z",
+ "updated": "2026-11-19T05:06:55.000Z",
  "note": "Tournois (rubrique Tournoi de l'app). items : un tournoi = { id, n, k, serie, y, st (à venir | en cours | terminé), from, to, type (bracket | blocs), about, rounds: [{ n, m: [{ a, b, w, res, v (id YouTube officiel) }] }], blocs: [{ n, rows: [{ w, pts }] }], winner, art: { txt: [...], faits: [...], pop }, src: [{ n, u }] }. series : présentation, anciens gagnants (past : [{ y, w }]), anecdotes. Rempli par la mise à jour du soir ; liens vidéo du modo dans data/links.json (« tn:id »). Champs du modo : lock (true = verrouillé : la mise à jour du soir ne modifie ni ne supprime ce tournoi), feat (à la une), img (image), modo (date de sa dernière modif).",
  "items": [
   {
@@ -145,18 +145,125 @@
    "k": "AEW",
    "serie": "cc",
    "y": 2026,
-   "st": "à venir",
+   "st": "en cours",
    "from": "2026-11-18",
    "type": "blocs",
-   "about": "Début le 18 novembre à Dynamite (Mission Ballroom, Denver). Participants et ligues ajoutés dès leur annonce.",
+   "about": "12 catcheurs en deux ligues de 6 (Gold et Blue), tous contre tous : 3 points la victoire, 1 point le match nul. Les deux premiers de chaque ligue vont en demi-finale ; demi-finales et finale le 19 décembre à Worlds End (Minneapolis). Le vainqueur devient champion continental (Jon Moxley, le champion, est dans la ligue Gold).",
    "src": [
     {
+     "n": "AEW (site officiel)",
+     "u": "https://www.allelitewrestling.com/continental-classic"
+    },
+    {
+     "n": "Sports Illustrated (les ligues)",
+     "u": "https://www.si.com/fannation/wrestling/aew/tony-khan-announces-2026-aew-continental-classic-participants"
+    },
+    {
+     "n": "Sports Illustrated (Dynamite du 18 nov.)",
+     "u": "https://www.si.com/fannation/wrestling/aew/aew-dynamite-results-nov18"
+    },
+    {
+     "n": "Wrestling Attitude (classement et Collision)",
+     "u": "https://www.wrestlingattitude.com/2026/11/aew-continental-classic-standings-night-one.html"
+    },
+    {
      "n": "Wrestling Inc",
-     "u": "https://www.wrestlinginc.com/2258136/aew-continental-classic-2026-tournament-kickoff-date-november-18-denver-colorado/"
+     "u": "https://www.wrestlinginc.com/2316989/aew-tony-khan-2026-continental-classic-start-date-selection-special/"
     },
     {
      "n": "Fightful",
      "u": "https://www.fightful.com/?p=328480"
+    }
+   ],
+   "to": "2026-12-19",
+   "blocs": [
+    {
+     "n": "Ligue Gold",
+     "rows": [
+      {
+       "w": "Jon Moxley"
+      },
+      {
+       "w": "Kevin Knight"
+      },
+      {
+       "w": "Orange Cassidy"
+      },
+      {
+       "w": "Nick Wayne"
+      },
+      {
+       "w": "Mike Bailey"
+      },
+      {
+       "w": "Tommaso Ciampa"
+      }
+     ]
+    },
+    {
+     "n": "Ligue Blue",
+     "rows": [
+      {
+       "w": "Jay White"
+      },
+      {
+       "w": "Adam Page"
+      },
+      {
+       "w": "Brody King"
+      },
+      {
+       "w": "Daniel Garcia"
+      },
+      {
+       "w": "Ricochet"
+      },
+      {
+       "w": "Bandido"
+      }
+     ]
+    }
+   ],
+   "rounds": [
+    {
+     "n": "Soirée 1 · Dynamite du 18 nov. (Denver)",
+     "m": [
+      {
+       "a": "Jon Moxley",
+       "b": "Orange Cassidy",
+       "w": "Orange Cassidy",
+       "res": "Ligue Gold : Orange Cassidy bat Jon Moxley par tombé (trois Orange Punches) — 3 points pour Cassidy."
+      },
+      {
+       "a": "Mike Bailey",
+       "b": "Nick Wayne",
+       "w": "Nick Wayne",
+       "res": "Ligue Gold : Nick Wayne bat Mike Bailey par tombé, en tirant sur le collant de Bailey pendant un contre-tombé — 3 points pour Wayne, victoire contestée."
+      },
+      {
+       "a": "Adam Page",
+       "b": "Bandido",
+       "w": "Bandido",
+       "res": "Ligue Blue : Bandido bat Adam Page avec son 21 Plex, après avoir contré le Buckshot Lariat — 3 points pour Bandido."
+      }
+     ]
+    },
+    {
+     "n": "Soirée 2 · Collision du 21 nov. (Green Bay)",
+     "m": [
+      {
+       "a": "Brody King",
+       "b": "Daniel Garcia"
+      },
+      {
+       "a": "Jay White",
+       "b": "Ricochet"
+      },
+      {
+       "a": "Tommaso Ciampa",
+       "b": "Kevin Knight"
+      }
+     ]
     }
    ]
   },
@@ -501,6 +608,10 @@
    ],
    "past": [
     {
+     "y": 2025,
+     "w": "Jon Moxley"
+    },
+    {
      "y": 2024,
      "w": "Kazuchika Okada"
     },
@@ -513,6 +624,10 @@
     {
      "n": "Wrestling Inc",
      "u": "https://www.wrestlinginc.com/2258136/aew-continental-classic-2026-tournament-kickoff-date-november-18-denver-colorado/"
+    },
+    {
+     "n": "Wrestling Inc (vainqueur 2025)",
+     "u": "https://www.wrestlinginc.com/2316989/aew-tony-khan-2026-continental-classic-start-date-selection-special/"
     }
    ]
   },
