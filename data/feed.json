@@ -1,6 +1,16 @@
 {
- "at": "2026-11-19T21:22:04.735Z",
+ "at": "2026-11-19T22:23:33.428Z",
  "items": [
+  {
+   "t": "AEW Dynamite du 18 novembre : Début du Continental Classic, le championnat TBS en jeu",
+   "u": "https://www.voxcatch.fr/2026/11/19/resultats-aew-dynamite-18-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-19",
+   "tags": [
+    "AEW",
+    "Dynamite"
+   ]
+  },
   {
    "t": "Preview : AEW Collision du 21 novembre 2026",
    "u": "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
@@ -38,16 +48,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-19",
    "tags": []
-  },
-  {
-   "t": "AEW Dynamite du 18 novembre : Début du Continental Classic, le championnat TBS en jeu",
-   "u": "https://www.voxcatch.fr/2026/11/19/resultats-aew-dynamite-18-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-19",
-   "tags": [
-    "AEW",
-    "Dynamite"
-   ]
   },
   {
    "t": "Résultats du jour 2 du NOAH Junior Grand Prix 2 - Lethal Odyssey Tour 2026",
@@ -285,6 +285,16 @@
    ]
   },
   {
+   "t": "WWE NXT du 17 novembre : Kelani Jordan vs. Kendal Gray",
+   "u": "https://www.voxcatch.fr/2026/11/18/resultats-wwe-nxt-17-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-18",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
    "t": "Résultats de AEW Dynamite du 18 novembre 2026",
    "u": "https://www.catch-newz.com/aew/resultats/61449-aew-dynamite-18-novembre-2026",
    "s": "Catch-Newz",
@@ -302,16 +312,6 @@
    "tags": [
     "WWE",
     "Main Event"
-   ]
-  },
-  {
-   "t": "WWE NXT du 17 novembre : Kelani Jordan vs. Kendal Gray",
-   "u": "https://www.voxcatch.fr/2026/11/18/resultats-wwe-nxt-17-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-18",
-   "tags": [
-    "WWE",
-    "NXT"
    ]
   },
   {
@@ -1575,7 +1575,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 0 nouveaux articles lus sur la page d'accueil (0 liens)",
   "VOXcatch": "9 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
