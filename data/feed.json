@@ -1,6 +1,24 @@
 {
- "at": "2026-11-19T14:23:27.740Z",
+ "at": "2026-11-19T16:32:31.526Z",
  "items": [
+  {
+   "t": "Oba Femi est la prochaine grande star de la WWE selon Nick Khan",
+   "u": "https://www.catch-newz.com/wwe/newz/61461-oba-femi-est-la-prochaine-grande-star-de-la-wwe-selon-nick-khan",
+   "s": "Catch-Newz",
+   "d": "2026-11-19",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Le retour à la WWE est inévitable pour Jeff Hardy",
+   "u": "https://www.catch-newz.com/wwe/newz/61460-le-retour-a-la-wwe-est-inevitable-pour-jeff-hardy",
+   "s": "Catch-Newz",
+   "d": "2026-11-19",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Preview : TNA Impact du 19 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61431-preview-tna-impact-19-novembre-2026",
@@ -10,6 +28,22 @@
     "TNA",
     "Impact"
    ]
+  },
+  {
+   "t": "Carte de NJPW Bound For Unbound",
+   "u": "https://www.catch-newz.com/international/newz/60618-carte-de-njpw-bound-for-unbound",
+   "s": "Catch-Newz",
+   "d": "2026-11-19",
+   "tags": [
+    "NJPW"
+   ]
+  },
+  {
+   "t": "Carte de Beyond Wrestling Open Series 255",
+   "u": "https://www.catch-newz.com/international/newz/61454-carte-de-beyond-wrestling-open-series-255",
+   "s": "Catch-Newz",
+   "d": "2026-11-19",
+   "tags": []
   },
   {
    "t": "AEW Dynamite du 18 novembre : Début du Continental Classic, le championnat TBS en jeu",
@@ -481,38 +515,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-17",
    "tags": []
-  },
-  {
-   "t": "La WWE célèbre le 30e anniversaire des débuts de The Rock",
-   "u": "https://www.catch-newz.com/wwe/newz/61393-la-wwe-celebre-le-30e-anniversaire-des-debuts-de-the-rock",
-   "s": "Catch-Newz",
-   "d": "2026-11-17",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Résultats de GCW Bedlam In Boise 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61396-resultats-de-gcw-bedlam-in-boise-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-17",
-   "tags": []
-  },
-  {
-   "t": "Carte de KHAO Anarchie du 21 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61394-carte-khao-anarchie-du-21-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-17",
-   "tags": []
-  },
-  {
-   "t": "WWE Royal Rumble 2027 : La vente de billets est lancée",
-   "u": "https://www.catch-newz.com/wwe/newz/61392-wwe-royal-rumble-2027-la-vente-de-billets-est-lancee",
-   "s": "Catch-Newz",
-   "d": "2026-11-17",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -1267,11 +1269,15 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/newz/61461-oba-femi-est-la-prochaine-grande-star-de-la-wwe-selon-nick-khan",
+   "https://www.catch-newz.com/wwe/newz/61460-le-retour-a-la-wwe-est-inevitable-pour-jeff-hardy",
    "https://www.catch-newz.com/aew/resultats/61449-aew-dynamite-18-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61421-wwe-nxt-17-novembre-2026",
-   "https://www.catch-newz.com/wwe/resultats/61373-wwe-raw-16-novembre-2026",
    "https://www.catch-newz.com/international/newz/61431-preview-tna-impact-19-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61333-preview-aew-dynamite-18-novembre-2026",
+   "https://www.catch-newz.com/international/newz/60618-carte-de-njpw-bound-for-unbound",
+   "https://www.catch-newz.com/international/newz/61454-carte-de-beyond-wrestling-open-series-255",
+   "https://www.catch-newz.com/wwe/resultats/61373-wwe-raw-16-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61445-resultats-de-tjpw-fall-tour-2026-ray-of-hope-in-nagoya",
    "https://www.catch-newz.com/international/newz/61453-carte-de-new-texas-pro-wrestling-texas-contenders-series-71",
    "https://www.catch-newz.com/international/newz/61405-carte-du-jour-4-de-la-njpw-world-tag-league-2026",
@@ -1562,15 +1568,11 @@
    "https://www.catch-newz.com/international/newz/61164-amine-promet-un-show-dexception-malgre-les-critiques-sur-son-organisation-de-final-slam",
    "https://www.catch-newz.com/international/newz/61161-en-direct-conference-de-presse-de-final-slam-du-9-novembre",
    "https://www.catch-newz.com/wwe/newz/61160-comment-sera-couronne-le-gagnant-du-wwe-john-cena-classic",
-   "https://www.catch-newz.com/wwe/newz/61159-john-cena-en-conge-apres-le-john-cena-classic",
-   "https://www.catch-newz.com/international/newz/61162-donovan-dijak-quitte-la-mlw",
-   "https://www.catch-newz.com/international/resultats/61149-resultats-du-jour-9-de-dg-the-gate-of-victory-2026",
-   "https://www.catch-newz.com/international/newz/61113-carte-de-cmll-lunes-clasico-du-9-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61157-r-truth-annonce-le-triste-deces-de-son-papa"
+   "https://www.catch-newz.com/wwe/newz/61159-john-cena-en-conge-apres-le-john-cena-classic"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "9 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
