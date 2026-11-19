@@ -1,5 +1,5 @@
 {
- "at": "2026-11-19T05:00:15.256Z",
+ "at": "2026-11-19T05:59:04.619Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60998-la-wwe-devoile-son-plan-de-secours-pour-wrestlemania-43": "2026-11-05",
@@ -399,7 +399,8 @@
   "a:https://www.catch-newz.com/aew/resultats/61449-aew-dynamite-18-novembre-2026": "2026-11-19",
   "a:https://www.catch-newz.com/wwe/newz/61456-the-rock-et-roman-reigns-se-lancent-des-fleurs-sur-les-reseaux-sociaux": "2026-11-19",
   "a:https://www.catch-newz.com/aew/newz/61448-kenny-omega-fera-de-la-njpw-sa-priorite-sil-remporte-le-titre-iwgp": "2026-11-19",
-  "a:https://www.catch-newz.com/aew/newz/61455-mjf-lance-un-challenge-a-will-ospreay-pour-aew-worlds-end": "2026-11-19"
+  "a:https://www.catch-newz.com/aew/newz/61455-mjf-lance-un-challenge-a-will-ospreay-pour-aew-worlds-end": "2026-11-19",
+  "a:https://www.catch-newz.com/aew/newz/61457-big-boom-aj-en-fin-de-contrat-avec-laew-pour-debut-2027": "2026-11-19"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -426,6 +427,14 @@
     "url": "#/",
     "tag": "art",
     "short": "3 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Nouvelle info · Catch-Newz",
+    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "1 nouvelle info"
    }
   ]
  }

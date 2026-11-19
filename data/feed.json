@@ -1,6 +1,25 @@
 {
- "at": "2026-11-19T05:00:15.201Z",
+ "at": "2026-11-19T05:59:04.566Z",
  "items": [
+  {
+   "t": "Big Boom AJ en fin de contrat avec l'AEW pour début 2027",
+   "u": "https://www.catch-newz.com/aew/newz/61457-big-boom-aj-en-fin-de-contrat-avec-laew-pour-debut-2027",
+   "s": "Catch-Newz",
+   "d": "2026-11-19",
+   "tags": [
+    "AEW"
+   ]
+  },
+  {
+   "t": "Preview : TNA Impact du 19 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61431-preview-tna-impact-19-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-19",
+   "tags": [
+    "TNA",
+    "Impact"
+   ]
+  },
   {
    "t": "The Rock et Roman Reigns se lancent des fleurs sur les réseaux sociaux",
    "u": "https://www.catch-newz.com/wwe/newz/61456-the-rock-et-roman-reigns-se-lancent-des-fleurs-sur-les-reseaux-sociaux",
@@ -27,16 +46,6 @@
    "d": "2026-11-19",
    "tags": [
     "AEW"
-   ]
-  },
-  {
-   "t": "Preview : TNA Impact du 19 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61431-preview-tna-impact-19-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-19",
-   "tags": [
-    "TNA",
-    "Impact"
    ]
   },
   {
@@ -505,15 +514,6 @@
   {
    "t": "La WWE prépare un nouveau Performance Center en 2027",
    "u": "https://www.catch-newz.com/wwe/newz/61379-la-wwe-prepare-un-nouveau-performance-center-en-2027",
-   "s": "Catch-Newz",
-   "d": "2026-11-17",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "AJ Styles lance son podcast sur la plateforme WWE",
-   "u": "https://www.catch-newz.com/wwe/newz/61383-aj-styles-lance-son-podcast-sur-la-plateforme-wwe",
    "s": "Catch-Newz",
    "d": "2026-11-17",
    "tags": [
@@ -1253,6 +1253,14 @@
    {
     "id": "xmBIchpXIFA",
     "t": "Queen Aminata contre Maya World vs AZM vs Mina Shirakawa"
+   },
+   {
+    "id": "X1bTcp4UJM8",
+    "t": "Hangman Page contre Bandido"
+   },
+   {
+    "id": "BhjEq5KGVn8",
+    "t": "Hangman Page contre Bandido"
    }
   ]
  },
@@ -1268,12 +1276,13 @@
    "https://www.catch-newz.com/aew/resultats/61449-aew-dynamite-18-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61421-wwe-nxt-17-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61373-wwe-raw-16-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61456-the-rock-et-roman-reigns-se-lancent-des-fleurs-sur-les-reseaux-sociaux",
-   "https://www.catch-newz.com/aew/newz/61448-kenny-omega-fera-de-la-njpw-sa-priorite-sil-remporte-le-titre-iwgp",
-   "https://www.catch-newz.com/aew/newz/61455-mjf-lance-un-challenge-a-will-ospreay-pour-aew-worlds-end",
+   "https://www.catch-newz.com/aew/newz/61457-big-boom-aj-en-fin-de-contrat-avec-laew-pour-debut-2027",
    "https://www.catch-newz.com/international/newz/61431-preview-tna-impact-19-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61333-preview-aew-dynamite-18-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61439-resultats-de-promociones-cantu-du-16-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61456-the-rock-et-roman-reigns-se-lancent-des-fleurs-sur-les-reseaux-sociaux",
+   "https://www.catch-newz.com/aew/newz/61448-kenny-omega-fera-de-la-njpw-sa-priorite-sil-remporte-le-titre-iwgp",
+   "https://www.catch-newz.com/aew/newz/61455-mjf-lance-un-challenge-a-will-ospreay-pour-aew-worlds-end",
    "https://www.catch-newz.com/international/newz/61452-carte-de-njpw-tanahashi-jam-2",
    "https://www.catch-newz.com/international/newz/61451-carte-de-cmll-x-nfl-noche-de-cascos-y-mascaras",
    "https://www.catch-newz.com/international/resultats/61411-resultats-du-jour-5-de-dg-the-gate-of-evolution-2026",
@@ -1563,12 +1572,11 @@
    "https://www.catch-newz.com/wwe/newz/61155-paige-japprecie-vraiment-chaque-seconde-que-je-passe-a-la-tele-et-sur-ce-ring",
    "https://www.catch-newz.com/international/resultats/61139-resultats-de-tjpw-all-rise-2026",
    "https://www.catch-newz.com/wwe/newz/61154-randy-orton-na-gagne-que-3-matchs-en-ple-depuis-son-retour-en-2023",
-   "https://www.catch-newz.com/wwe/newz/61153-allons-nous-enfin-voir-jessika-carr-sur-un-ring-de-la-wwe-prochainement",
-   "https://www.catch-newz.com/wwe/newz/61152-nikki-bella-quand-je-partirai-elles-vont-toutes-me-manquer"
+   "https://www.catch-newz.com/wwe/newz/61153-allons-nous-enfin-voir-jessika-carr-sur-un-ring-de-la-wwe-prochainement"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "8 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
