@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18",
+ "updated": "2026-11-19",
  "note": "Vidéos des chaînes officielles uniquement. res = résultats (spoilers, affichés seulement à la demande). m = résumé match par match (promotions japonaises).",
  "items": {
   "WWE|Raw|2026-10-26": {
@@ -1232,6 +1232,59 @@
    ],
    "s": "Wrestling Inc.",
    "u": "https://www.wrestlinginc.com/2316787/tna-destination-x-november-15-2026-results/"
+  },
+  "WWE|NXT|2026-11-17": {
+   "res": [
+    "Kam Hendrix a battu Tony D'Angelo après une distraction de Myles Borne.",
+    "Chantel Monroe a battu Layla Diggs.",
+    "Zilla Fatu a battu Dion Lennox (avec Osiris Griffin et Cutler James).",
+    "Tristan Angels a battu Saquon Shugars et Sean Legacy dans un match à trois.",
+    "Kelani Jordan a battu Kendal Grey (avec Wren Sinclair) par arrêt de l'arbitre et conserve le titre NXT Women's."
+   ],
+   "seg": [
+    {
+     "k": "Annonce",
+     "t": "Une vidéo montre John Cena invitant Izzi Dame à la John Cena Classic ; Zaria, furieuse, file vers le ring."
+    },
+    {
+     "k": "Attaque",
+     "t": "Zaria appelle Izzi Dame et l'étend au sol ; Dame éclate de rire, allongée sur le ring."
+    },
+    {
+     "k": "Annonce",
+     "t": "John Cena invite aussi Shiloh Hill à la John Cena Classic."
+    },
+    {
+     "k": "Backstage",
+     "t": "Grayson Waller interrompt Mason Rook et Robert Stone pour réclamer un match contre le champion NXT Shiloh Hill ; Rook prévient que Hill passera après lui."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Thea Hail confronte Chantel Monroe, qui se vante de sa victoire, dans le vestiaire des femmes."
+    },
+    {
+     "k": "Autre",
+     "t": "Hommage à « Cowboy » Bill Watts, dont le décès vient d'être annoncé."
+    },
+    {
+     "k": "Promo",
+     "t": "Noam Dar et Romeo Moreno appellent le Vanity Project ; Hank Walker et Tank Ledger s'en mêlent et Jackson Drake met son titre North American en jeu."
+    },
+    {
+     "k": "Annonce",
+     "t": "Robert Stone annonce un match par équipes à 8 : Dar, Moreno, Walker et Ledger contre le Vanity Project, dont Myka Lockwood se déclare la 4e membre."
+    },
+    {
+     "k": "Backstage",
+     "t": "BirthRight et Los Perros del Mal (AAA) s'accrochent en coulisses."
+    },
+    {
+     "k": "Annonce",
+     "t": "La semaine prochaine : Zaria contre Izzi Dame pour le titre Women's North American, Shiloh Hill contre Mason Rook pour devenir aspirant n°1 au titre NXT, et le match à 8."
+    }
+   ],
+   "s": "Wrestling Inc.",
+   "u": "https://www.wrestlinginc.com/2318773/wwe-nxt-november-17-2026-results/"
   }
  }
 }
