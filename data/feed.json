@@ -1,5 +1,5 @@
 {
- "at": "2026-11-19T10:57:57.259Z",
+ "at": "2026-11-19T11:54:59.886Z",
  "items": [
   {
    "t": "Preview : TNA Impact du 19 novembre 2026",
@@ -12,13 +12,6 @@
    ]
   },
   {
-   "t": "Carte de New Texas Pro Wrestling Texas Contenders Series 71",
-   "u": "https://www.catch-newz.com/international/newz/61453-carte-de-new-texas-pro-wrestling-texas-contenders-series-71",
-   "s": "Catch-Newz",
-   "d": "2026-11-19",
-   "tags": []
-  },
-  {
    "t": "AEW Dynamite du 18 novembre : Début du Continental Classic, le championnat TBS en jeu",
    "u": "https://www.voxcatch.fr/2026/11/19/resultats-aew-dynamite-18-novembre-2026/",
    "s": "VOXcatch",
@@ -27,6 +20,13 @@
     "AEW",
     "Dynamite"
    ]
+  },
+  {
+   "t": "Carte de New Texas Pro Wrestling Texas Contenders Series 71",
+   "u": "https://www.catch-newz.com/international/newz/61453-carte-de-new-texas-pro-wrestling-texas-contenders-series-71",
+   "s": "Catch-Newz",
+   "d": "2026-11-19",
+   "tags": []
   },
   {
    "t": "Carte du jour 4 de la NJPW World Tag League 2026",
@@ -1572,7 +1572,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "9 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
