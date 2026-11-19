@@ -1,15 +1,6 @@
 {
- "at": "2026-11-19T05:59:04.566Z",
+ "at": "2026-11-19T07:09:10.270Z",
  "items": [
-  {
-   "t": "Big Boom AJ en fin de contrat avec l'AEW pour début 2027",
-   "u": "https://www.catch-newz.com/aew/newz/61457-big-boom-aj-en-fin-de-contrat-avec-laew-pour-debut-2027",
-   "s": "Catch-Newz",
-   "d": "2026-11-19",
-   "tags": [
-    "AEW"
-   ]
-  },
   {
    "t": "Preview : TNA Impact du 19 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61431-preview-tna-impact-19-novembre-2026",
@@ -18,6 +9,22 @@
    "tags": [
     "TNA",
     "Impact"
+   ]
+  },
+  {
+   "t": "Résultats de TLW Mac McMurray Memorial Rumble 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61436-resultats-de-tlw-mac-mcmurray-memorial-rumble-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-19",
+   "tags": []
+  },
+  {
+   "t": "Big Boom AJ en fin de contrat avec l'AEW pour début 2027",
+   "u": "https://www.catch-newz.com/aew/newz/61457-big-boom-aj-en-fin-de-contrat-avec-laew-pour-debut-2027",
+   "s": "Catch-Newz",
+   "d": "2026-11-19",
+   "tags": [
+    "AEW"
    ]
   },
   {
@@ -510,15 +517,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-17",
    "tags": []
-  },
-  {
-   "t": "La WWE prépare un nouveau Performance Center en 2027",
-   "u": "https://www.catch-newz.com/wwe/newz/61379-la-wwe-prepare-un-nouveau-performance-center-en-2027",
-   "s": "Catch-Newz",
-   "d": "2026-11-17",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -1276,10 +1274,11 @@
    "https://www.catch-newz.com/aew/resultats/61449-aew-dynamite-18-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61421-wwe-nxt-17-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61373-wwe-raw-16-novembre-2026",
-   "https://www.catch-newz.com/aew/newz/61457-big-boom-aj-en-fin-de-contrat-avec-laew-pour-debut-2027",
    "https://www.catch-newz.com/international/newz/61431-preview-tna-impact-19-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61333-preview-aew-dynamite-18-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61436-resultats-de-tlw-mac-mcmurray-memorial-rumble-2026",
    "https://www.catch-newz.com/international/resultats/61439-resultats-de-promociones-cantu-du-16-novembre-2026",
+   "https://www.catch-newz.com/aew/newz/61457-big-boom-aj-en-fin-de-contrat-avec-laew-pour-debut-2027",
    "https://www.catch-newz.com/wwe/newz/61456-the-rock-et-roman-reigns-se-lancent-des-fleurs-sur-les-reseaux-sociaux",
    "https://www.catch-newz.com/aew/newz/61448-kenny-omega-fera-de-la-njpw-sa-priorite-sil-remporte-le-titre-iwgp",
    "https://www.catch-newz.com/aew/newz/61455-mjf-lance-un-challenge-a-will-ospreay-pour-aew-worlds-end",
@@ -1571,8 +1570,7 @@
    "https://www.catch-newz.com/international/newz/61156-la-jeune-catcheuse-de-la-tna-jada-stone-a-eu-un-accident-de-voiture-ce-vendredi",
    "https://www.catch-newz.com/wwe/newz/61155-paige-japprecie-vraiment-chaque-seconde-que-je-passe-a-la-tele-et-sur-ce-ring",
    "https://www.catch-newz.com/international/resultats/61139-resultats-de-tjpw-all-rise-2026",
-   "https://www.catch-newz.com/wwe/newz/61154-randy-orton-na-gagne-que-3-matchs-en-ple-depuis-son-retour-en-2023",
-   "https://www.catch-newz.com/wwe/newz/61153-allons-nous-enfin-voir-jessika-carr-sur-un-ring-de-la-wwe-prochainement"
+   "https://www.catch-newz.com/wwe/newz/61154-randy-orton-na-gagne-que-3-matchs-en-ple-depuis-son-retour-en-2023"
   ]
  },
  "diag": {
@@ -1580,7 +1578,7 @@
   "VOXcatch": "8 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
-  "YouTube AEW": "2 nouvelles vidéos",
+  "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
   "YouTube TNA": "0 nouvelles vidéos",
