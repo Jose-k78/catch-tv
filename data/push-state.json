@@ -1,5 +1,5 @@
 {
- "at": "2026-11-19T01:49:34.379Z",
+ "at": "2026-11-19T05:00:15.256Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/60998-la-wwe-devoile-son-plan-de-secours-pour-wrestlemania-43": "2026-11-05",
@@ -396,7 +396,10 @@
   "fr:2026-11-18": "2026-11-18",
   "a:https://www.catch-newz.com/international/newz/61452-carte-de-njpw-tanahashi-jam-2": "2026-11-19",
   "a:https://www.catch-newz.com/international/newz/61451-carte-de-cmll-x-nfl-noche-de-cascos-y-mascaras": "2026-11-19",
-  "a:https://www.catch-newz.com/aew/resultats/61449-aew-dynamite-18-novembre-2026": "2026-11-19"
+  "a:https://www.catch-newz.com/aew/resultats/61449-aew-dynamite-18-novembre-2026": "2026-11-19",
+  "a:https://www.catch-newz.com/wwe/newz/61456-the-rock-et-roman-reigns-se-lancent-des-fleurs-sur-les-reseaux-sociaux": "2026-11-19",
+  "a:https://www.catch-newz.com/aew/newz/61448-kenny-omega-fera-de-la-njpw-sa-priorite-sil-remporte-le-titre-iwgp": "2026-11-19",
+  "a:https://www.catch-newz.com/aew/newz/61455-mjf-lance-un-challenge-a-will-ospreay-pour-aew-worlds-end": "2026-11-19"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -415,6 +418,14 @@
     "url": "#/",
     "tag": "art",
     "short": "1 nouvelle info"
+   },
+   {
+    "cat": "info",
+    "title": "📰 3 nouvelles infos",
+    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "3 nouvelles infos"
    }
   ]
  }
