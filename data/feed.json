@@ -1,16 +1,18 @@
 {
- "at": "2026-11-19T17:28:06.283Z",
+ "at": "2026-11-19T18:22:42.829Z",
  "items": [
   {
-   "t": "Carte de BZW Miracle et BZW Alcatraz 2026",
-   "u": "https://www.catch-newz.com/international/newz/61463-carte-de-bzw-miracle-et-bzw-alcatraz-2026",
+   "t": "Moins de PPV du côté de la TNA et ça commence avec Final Resolution 2026",
+   "u": "https://www.catch-newz.com/international/newz/61465-moins-de-ppv-du-cote-de-la-tna-et-ca-commence-avec-final-resolution",
    "s": "Catch-Newz",
    "d": "2026-11-19",
-   "tags": []
+   "tags": [
+    "TNA"
+   ]
   },
   {
-   "t": "Nous avons interrogé certains spectateurs de Final Slam, quelques minutes avant le show",
-   "u": "https://www.catch-newz.com/international/newz/61459-nous-avons-interroge-certains-spectateurs-de-final-slam-quelques-minutes-avant-le-show",
+   "t": "Interview exclusive avec Mr. Okkin, manager général de Final Slam",
+   "u": "https://www.catch-newz.com/international/newz/61462-interview-exclusive-avec-mr-okkin-manager-general-de-final-slam",
    "s": "Catch-Newz",
    "d": "2026-11-19",
    "tags": []
@@ -43,6 +45,20 @@
     "AEW",
     "Dynamite"
    ]
+  },
+  {
+   "t": "Carte de BZW Miracle et BZW Alcatraz 2026",
+   "u": "https://www.catch-newz.com/international/newz/61463-carte-de-bzw-miracle-et-bzw-alcatraz-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-19",
+   "tags": []
+  },
+  {
+   "t": "Nous avons interrogé certains spectateurs de Final Slam, quelques minutes avant le show",
+   "u": "https://www.catch-newz.com/international/newz/61459-nous-avons-interroge-certains-spectateurs-de-final-slam-quelques-minutes-avant-le-show",
+   "s": "Catch-Newz",
+   "d": "2026-11-19",
+   "tags": []
   },
   {
    "t": "Oba Femi est la prochaine grande star de la WWE selon Nick Khan",
@@ -185,6 +201,16 @@
    "tags": [
     "AEW",
     "Dynamite"
+   ]
+  },
+  {
+   "t": "Résultats de WWE Main Event du 18 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/61464-wwe-main-event-18-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-18",
+   "tags": [
+    "WWE",
+    "Main Event"
    ]
   },
   {
@@ -484,33 +510,6 @@
    "d": "2026-11-17",
    "tags": [
     "CMLL"
-   ]
-  },
-  {
-   "t": "Carte de CMLL/Indy Wrestling/DTU du 17 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61403-carte-de-cmll-indy-wrestling-dtu-du-17-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-17",
-   "tags": [
-    "CMLL"
-   ]
-  },
-  {
-   "t": "Carte du jour 2 de la NJPW World Tag League 2026",
-   "u": "https://www.catch-newz.com/international/newz/61404-carte-du-jour-2-de-la-njpw-world-tag-league-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-17",
-   "tags": [
-    "NJPW"
-   ]
-  },
-  {
-   "t": "Iyo Sky étoffe encore plus son palmarès à la WWE",
-   "u": "https://www.catch-newz.com/wwe/newz/61400-iyo-sky-etoffe-encore-plus-son-palmares-a-la-wwe",
-   "s": "Catch-Newz",
-   "d": "2026-11-17",
-   "tags": [
-    "WWE"
    ]
   }
  ],
@@ -1268,10 +1267,13 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61449-aew-dynamite-18-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61421-wwe-nxt-17-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61463-carte-de-bzw-miracle-et-bzw-alcatraz-2026",
-   "https://www.catch-newz.com/international/newz/61459-nous-avons-interroge-certains-spectateurs-de-final-slam-quelques-minutes-avant-le-show",
+   "https://www.catch-newz.com/international/newz/61465-moins-de-ppv-du-cote-de-la-tna-et-ca-commence-avec-final-resolution",
+   "https://www.catch-newz.com/wwe/resultats/61464-wwe-main-event-18-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61462-interview-exclusive-avec-mr-okkin-manager-general-de-final-slam",
    "https://www.catch-newz.com/international/newz/61431-preview-tna-impact-19-novembre-2026",
    "https://www.catch-newz.com/international/newz/61450-carte-de-cmll-jueves-arena-coliseo-du-19-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61463-carte-de-bzw-miracle-et-bzw-alcatraz-2026",
+   "https://www.catch-newz.com/international/newz/61459-nous-avons-interroge-certains-spectateurs-de-final-slam-quelques-minutes-avant-le-show",
    "https://www.catch-newz.com/wwe/newz/61461-oba-femi-est-la-prochaine-grande-star-de-la-wwe-selon-nick-khan",
    "https://www.catch-newz.com/wwe/newz/61460-le-retour-a-la-wwe-est-inevitable-pour-jeff-hardy",
    "https://www.catch-newz.com/aew/newz/61333-preview-aew-dynamite-18-novembre-2026",
@@ -1562,14 +1564,11 @@
    "https://www.catch-newz.com/international/resultats/61175-resultats-de-gnpw-gennext-bobby-jones-memorial-rumble-2026",
    "https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026",
    "https://www.catch-newz.com/international/newz/61163-philippe-chereau-a-la-defense-de-final-slam",
-   "https://www.catch-newz.com/international/newz/61129-combien-de-temps-va-durer-finalslam",
-   "https://www.catch-newz.com/international/newz/61172-carte-de-beyond-wrestling-open-ri-75",
-   "https://www.catch-newz.com/international/resultats/61167-resultats-de-invasion-indy-domingo-popular-du-1er-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61164-amine-promet-un-show-dexception-malgre-les-critiques-sur-son-organisation-de-final-slam"
+   "https://www.catch-newz.com/international/newz/61129-combien-de-temps-va-durer-finalslam"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "9 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
