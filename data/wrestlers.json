@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18",
+ "updated": "2026-11-19",
  "note": "Catcheurs suivis (champions, cartes annoncées, favoris des membres) et catcheurs à découvrir (disc = true, toutes fédérations et époques). txt = petit résumé en français, era = époque, ref = matchs de référence, last = 3 derniers matchs (r = résultat, spoiler), v = vidéo YouTube d'une chaîne officielle.",
  "items": {
   "Roman Reigns": {
@@ -31,7 +31,9 @@
    ],
    "disc": true,
    "era": "WWE, depuis 2012",
-   "txt": "Pilier de la WWE depuis les débuts du Shield en 2012, il a régné plus de 1 300 jours comme champion universel puis incontesté à la tête de la Bloodline (2020-2024). Surnommé « The Tribal Chief »."
+   "txt": "Pilier de la WWE depuis les débuts du Shield en 2012, il a régné plus de 1 300 jours comme champion universel puis incontesté à la tête de la Bloodline (2020-2024). Surnommé « The Tribal Chief ».",
+   "al": "face",
+   "alD": "2026-10-19"
   },
   "Cody Rhodes": {
    "k": "WWE",
@@ -1984,6 +1986,21 @@
    "fin": "Operation Dragon, Dragon Driver",
    "teams": "LWO, Los Hermanos Lee, La Facción Ingobernable",
    "txt": "Luchador mexicain révélé au CMLL, passé par la ROH et la NJPW avant de rejoindre la WWE, où il fait partie de la LWO."
+  },
+  "Dusty Rhodes": {
+   "k": "NWA / WCW / WWF / ECW / TNA",
+   "era": "Années 60-2010",
+   "disc": true,
+   "dc": "2015-06-11",
+   "txt": "« The American Dream », figure du « Common Man » de la NWA et de Jim Crockett Promotions, triple champion du monde poids lourd de la NWA, il est ensuite devenu un formateur et un booker majeur. Père de Dustin et Cody Rhodes.",
+   "nick": "The American Dream",
+   "from": "Austin (Texas)",
+   "ht": "1,88 m",
+   "wt": "125 kg",
+   "debut": "1967",
+   "fin": "Bionic Elbow",
+   "teams": "The Texas Outlaws (avec Dick Murdoch), America's Team (avec Magnum T.A.), The Super Powers (avec Nikita Koloff)",
+   "trainer": "Joe Blanchard"
   }
  }
 }
