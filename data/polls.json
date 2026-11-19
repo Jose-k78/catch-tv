@@ -1,6 +1,59 @@
 {
-  "updated": "2026-11-18",
+  "updated": "2026-11-19",
   "items": [
+    {
+      "id": "p-20261119-rock-ss",
+      "d": "2026-11-19",
+      "type": "",
+      "k": "WWE",
+      "q": "The Rock annonce son retour aux Survivor Series : que va-t-il faire ?",
+      "opts": [
+        "Aider Roman Reigns",
+        "Attaquer Roman Reigns",
+        "Juste un discours au micro"
+      ],
+      "other": true,
+      "end": "2026-11-28"
+    },
+    {
+      "id": "p-20261119-mjf-ospreay",
+      "d": "2026-11-19",
+      "type": "",
+      "k": "AEW",
+      "q": "MJF défie Will Ospreay pour AEW Worlds End : qui gagnerait ce match ?",
+      "opts": [
+        "MJF",
+        "Will Ospreay"
+      ],
+      "other": false,
+      "end": "2026-12-19"
+    },
+    {
+      "id": "p-20261119-bigboomaj",
+      "d": "2026-11-19",
+      "type": "",
+      "k": "AEW",
+      "q": "Big Boom AJ est en fin de contrat avec l'AEW début 2027 : que doit-il faire ?",
+      "opts": [
+        "Prolonger à l'AEW",
+        "Partir à la WWE"
+      ],
+      "other": true,
+      "end": ""
+    },
+    {
+      "id": "p-20261119-dream-trish-mayu",
+      "d": "2026-11-19",
+      "type": "match",
+      "k": "",
+      "q": "Dream match : Trish Stratus contre Mayu Iwatani, qui gagne ?",
+      "opts": [
+        "Trish Stratus",
+        "Mayu Iwatani"
+      ],
+      "other": false,
+      "end": "2026-11-22"
+    },
     {
       "id": "p-20261118-usa-mexique",
       "d": "2026-11-18",
@@ -396,62 +449,6 @@
       ],
       "other": false,
       "end": "2026-11-28"
-    },
-    {
-      "id": "p-20261107-creed",
-      "d": "2026-11-07",
-      "type": "",
-      "k": "",
-      "q": "Les Creed Brothers quittent la WWE : où aimerais-tu les voir ?",
-      "opts": [
-        "AEW",
-        "TNA",
-        "NJPW"
-      ],
-      "other": true,
-      "end": ""
-    },
-    {
-      "id": "p-20261107-best-ss",
-      "d": "2026-11-07",
-      "type": "",
-      "k": "WWE",
-      "q": "Le Survivor Series le plus marquant de l’histoire ?",
-      "opts": [
-        "1990 (débuts de l’Undertaker)",
-        "1997 (Montréal)",
-        "2002 (1re Elimination Chamber)"
-      ],
-      "other": true,
-      "end": ""
-    },
-    {
-      "id": "p-20261106-rock-30ans",
-      "d": "2026-11-06",
-      "type": "",
-      "k": "WWE",
-      "q": "30 ans de The Rock à la WWE : comment fêter ça ?",
-      "opts": [
-        "Un dernier match",
-        "Un grand discours",
-        "Un segment avec un ancien rival"
-      ],
-      "other": true,
-      "end": ""
-    },
-    {
-      "id": "p-20261106-lucha-match",
-      "d": "2026-11-06",
-      "type": "",
-      "k": "",
-      "q": "Le plus grand match de lucha libre de l’histoire ?",
-      "opts": [
-        "Santo et Octagón contre Guerrero et Barr (1994)",
-        "Atlantis contre Último Guerrero (2014)",
-        "Rey Misterio Jr. contre Psicosis"
-      ],
-      "other": true,
-      "end": ""
     },
     {
       "id": "p-20261106-babies",
