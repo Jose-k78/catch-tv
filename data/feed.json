@@ -1,16 +1,6 @@
 {
- "at": "2026-11-20T11:54:53.776Z",
+ "at": "2026-11-20T13:02:28.626Z",
  "items": [
-  {
-   "t": "Jade Cargill était « une trop grande star » pour faire ses débuts à NXT avant le roster principal ?",
-   "u": "https://www.catch-newz.com/wwe/newz/61488-jade-cargill-etait-une-trop-grande-star-pour-faire-ses-debuts-a-nxt-avant-le-roster-principal",
-   "s": "Catch-Newz",
-   "d": "2026-11-20",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
-  },
   {
    "t": "Preview : AEW Collision du 21 novembre 2026",
    "u": "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
@@ -19,6 +9,16 @@
    "tags": [
     "AEW",
     "Collision"
+   ]
+  },
+  {
+   "t": "Jade Cargill était « une trop grande star » pour faire ses débuts à NXT avant le roster principal ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61488-jade-cargill-etait-une-trop-grande-star-pour-faire-ses-debuts-a-nxt-avant-le-roster-principal",
+   "s": "Catch-Newz",
+   "d": "2026-11-20",
+   "tags": [
+    "WWE",
+    "NXT"
    ]
   },
   {
@@ -1279,12 +1279,12 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61449-aew-dynamite-18-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61488-jade-cargill-etait-une-trop-grande-star-pour-faire-ses-debuts-a-nxt-avant-le-roster-principal",
    "https://www.catch-newz.com/wwe/resultats/61487-resultats-et-streaming-wwe-evolve-18-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61486-tna-impact-19-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61446-preview-roh-du-19-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61464-wwe-main-event-18-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61488-jade-cargill-etait-une-trop-grande-star-pour-faire-ses-debuts-a-nxt-avant-le-roster-principal",
    "https://www.catch-newz.com/international/resultats/61479-resultats-de-njpw-tanahashi-jam-2",
    "https://www.catch-newz.com/international/newz/61406-carte-du-jour-5-de-la-njpw-world-tag-league-2026",
    "https://www.catch-newz.com/international/resultats/61478-resultats-de-beyond-wrestling-open-ri-76",
@@ -1581,7 +1581,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "8 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
