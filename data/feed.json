@@ -1,5 +1,5 @@
 {
- "at": "2026-11-20T05:59:24.240Z",
+ "at": "2026-11-20T07:09:17.703Z",
  "items": [
   {
    "t": "Preview : AEW Collision du 21 novembre 2026",
@@ -1277,14 +1277,14 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/resultats/61449-aew-dynamite-18-novembre-2026",
-   "https://www.catch-newz.com/wwe/resultats/61421-wwe-nxt-17-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61487-resultats-et-streaming-wwe-evolve-18-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61486-tna-impact-19-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61446-preview-roh-du-19-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61464-wwe-main-event-18-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61474-resultats-du-jour-4-du-noah-junior-grand-prix-2-lethal-odyssey-tour-2026",
    "https://www.catch-newz.com/international/newz/61483-preview-mlw-fusion-du-19-novembre-2026",
+   "https://www.catch-newz.com/wwe/resultats/61421-wwe-nxt-17-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61474-resultats-du-jour-4-du-noah-junior-grand-prix-2-lethal-odyssey-tour-2026",
    "https://www.catch-newz.com/international/resultats/61480-resultats-de-cmll-x-nfl-noche-de-cascos-y-mascaras",
    "https://www.catch-newz.com/international/newz/61473-carte-du-jour-5-du-noah-junior-grand-prix-2-lethal-odyssey-tour-2026",
    "https://www.catch-newz.com/international/resultats/61477-resultats-de-beyond-wrestling-open-series-254",
@@ -1579,7 +1579,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "8 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
