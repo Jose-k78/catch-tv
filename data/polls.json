@@ -1,6 +1,58 @@
 {
-  "updated": "2026-11-19",
+  "updated": "2026-11-20",
   "items": [
+    {
+      "id": "p-20261120-cody-heel",
+      "d": "2026-11-20",
+      "type": "",
+      "k": "WWE",
+      "q": "Plusieurs voix s’opposent à un heel turn de Cody Rhodes : et toi, tu en veux un ?",
+      "opts": [
+        "Oui, il est temps",
+        "Non, il doit rester face"
+      ],
+      "other": false,
+      "end": ""
+    },
+    {
+      "id": "p-20261120-rock-rumble",
+      "d": "2026-11-20",
+      "type": "",
+      "k": "WWE",
+      "q": "Charlotte Flair espère voir The Rock dans le Royal Rumble 2027 : il y sera ?",
+      "opts": [
+        "Oui, il entrera dans le Rumble",
+        "Non, pas de Rumble pour lui"
+      ],
+      "other": false,
+      "end": ""
+    },
+    {
+      "id": "p-20261120-jeff-hardy",
+      "d": "2026-11-20",
+      "type": "",
+      "k": "WWE",
+      "q": "Le retour de Jeff Hardy à la WWE serait inévitable : comment doit-il revenir ?",
+      "opts": [
+        "En équipe avec Matt Hardy",
+        "En solo"
+      ],
+      "other": true,
+      "end": ""
+    },
+    {
+      "id": "p-20261120-babies",
+      "d": "2026-11-20",
+      "type": "babies",
+      "k": "",
+      "q": "Qui est la meilleure babies entre Liv Morgan et Athena ?",
+      "opts": [
+        "Liv Morgan",
+        "Athena"
+      ],
+      "other": false,
+      "end": "2026-11-22"
+    },
     {
       "id": "p-20261119-rock-ss",
       "d": "2026-11-19",
@@ -397,34 +449,6 @@
       "end": "2026-11-28"
     },
     {
-      "id": "p-20261108-ciampa-national",
-      "d": "2026-11-08",
-      "type": "",
-      "k": "AEW",
-      "q": "Tommaso Ciampa champion National de l’AEW : combien de temps va durer son règne ?",
-      "opts": [
-        "Moins d’un mois",
-        "Quelques mois",
-        "Plus de six mois"
-      ],
-      "other": false,
-      "end": ""
-    },
-    {
-      "id": "p-20261108-charlotte-retour",
-      "d": "2026-11-08",
-      "type": "",
-      "k": "WWE",
-      "q": "Charlotte Flair est de retour : contre qui doit-elle repartir en rivalité ?",
-      "opts": [
-        "Tiffany Stratton",
-        "Jade Cargill",
-        "Rhea Ripley"
-      ],
-      "other": true,
-      "end": ""
-    },
-    {
       "id": "p-20261108-babies",
       "d": "2026-11-08",
       "type": "babies",
@@ -436,19 +460,6 @@
       ],
       "other": false,
       "end": "2026-11-10"
-    },
-    {
-      "id": "p-20261107-wargames",
-      "d": "2026-11-07",
-      "type": "",
-      "k": "WWE",
-      "q": "Survivor Series WarGames : si The Bloodline affronte The 946, qui gagne ?",
-      "opts": [
-        "The Bloodline",
-        "The 946"
-      ],
-      "other": false,
-      "end": "2026-11-28"
     },
     {
       "id": "p-20261106-babies",
