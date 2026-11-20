@@ -1,7 +1,43 @@
 {
-  "updated": "2026-11-19",
+  "updated": "2026-11-20",
   "note": "Une storyline par jour (la plus récente en premier) : grandes histoires, rivalités, anecdotes de coulisses, faits marquants. txt = paragraphes écrits en français à partir des sources ; v = vidéos officielles ; q = recherches sur la chaîne officielle.",
   "items": [
+    {
+      "id": "ss-2011-rock-punk",
+      "d": "2026-11-20",
+      "type": "Fait marquant",
+      "t": "Survivor Series 2011 : le retour de The Rock sur le ring et le sacre de CM Punk au Madison Square Garden",
+      "k": "WWE",
+      "years": "2011",
+      "hook": "Le 20 novembre 2011, au Madison Square Garden, The Rock remonte sur un ring après sept ans d’absence et CM Punk lance l’un des plus longs règnes de l’ère moderne.",
+      "txt": [
+        "En 2011, The Rock revient à la WWE après des années consacrées au cinéma. En février, il est choisi comme animateur de WrestleMania XXVII et provoque John Cena : à la fin du show, il l’aide à perdre contre The Miz. Le lendemain, les deux hommes annoncent qu’ils s’affronteront un an plus tard, à WrestleMania XXVIII.",
+        "En attendant ce « Once in a Lifetime », la WWE imagine un coup surprenant : faire équipe les deux rivaux. Après une attaque de The Miz et R-Truth, l’équipe The Rock et John Cena est annoncée pour les Survivor Series du 20 novembre 2011, au Madison Square Garden de New York, la salle mythique de la fédération.",
+        "Le match a une valeur particulière : c’est le premier combat de The Rock dans un show de la WWE depuis WrestleMania XX en 2004. Le public de New York lui réserve un accueil énorme, tandis que Cena est copieusement hué. Le match se termine quand The Rock place un Rock Bottom puis son People’s Elbow sur The Miz pour la victoire. Après le match, il fait tomber Cena d’un Rock Bottom, rappelant que leur rivalité n’est pas finie.",
+        "Le même soir, en fin de show, CM Punk affronte Alberto Del Rio pour le WWE Championship. Punk, devenu la voix rebelle de la WWE depuis sa fameuse « pipebomb » de l’été, fait abandonner Del Rio avec l’Anaconda Vise et redevient champion.",
+        "Ce règne de CM Punk durera 434 jours, le plus long de l’époque depuis la fin des années 1980, jusqu’au Royal Rumble 2013. La soirée de New York a donc lancé à la fois le plus grand affrontement de WrestleMania XXVIII et l’ère de Punk au sommet de la WWE."
+      ],
+      "key": "The Rock fait tomber The Miz devant le Madison Square Garden pour son premier match en sept ans, puis CM Punk décroche le WWE Championship.",
+      "v": [],
+      "q": [
+        "Survivor Series 2011 The Rock John Cena vs Miz R-Truth",
+        "CM Punk vs Alberto Del Rio Survivor Series 2011"
+      ],
+      "src": [
+        {
+          "n": "Wikipédia (en) – Survivor Series (2011)",
+          "u": "https://en.wikipedia.org/wiki/Survivor_Series_(2011)"
+        },
+        {
+          "n": "WWE.com – Survivor Series 2011",
+          "u": "https://wwe.com/shows/survivorseries/2011"
+        },
+        {
+          "n": "TJR Wrestling – Survivor Series 2011 review",
+          "u": "https://tjrwrestling.net/review/wwe-survivor-series-2011-review/"
+        }
+      ]
+    },
     {
       "id": "diy-revival-toronto-2016",
       "d": "2026-11-19",
