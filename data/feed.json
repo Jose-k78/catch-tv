@@ -1,6 +1,33 @@
 {
- "at": "2026-11-20T15:26:24.924Z",
+ "at": "2026-11-20T16:27:28.258Z",
  "items": [
+  {
+   "t": "Preview : WWE SmackDown du 20 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61491-preview-wwe-smackdown-20-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-20",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
+  },
+  {
+   "t": "Preview : AEW Collision du 21 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-20",
+   "tags": [
+    "AEW",
+    "Collision"
+   ]
+  },
+  {
+   "t": "Princesse Lauriana : « C'était clairement le combat le plus important de ma carrière »",
+   "u": "https://www.catch-newz.com/international/newz/61492-princesse-lauriana-cetait-clairement-le-combat-le-plus-important-de-ma-carriere",
+   "s": "Catch-Newz",
+   "d": "2026-11-20",
+   "tags": []
+  },
   {
    "t": "Elayna Black (ex-Cora Jade) révèle le plus gros conseil que lui a donné CM Punk",
    "u": "https://www.catch-newz.com/wwe/newz/61490-elayna-black-ex-cora-jade-revele-le-plus-gros-conseil-que-lui-a-donne-cm-punk",
@@ -17,16 +44,6 @@
    "d": "2026-11-20",
    "tags": [
     "WWE"
-   ]
-  },
-  {
-   "t": "Preview : AEW Collision du 21 novembre 2026",
-   "u": "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-20",
-   "tags": [
-    "AEW",
-    "Collision"
    ]
   },
   {
@@ -433,16 +450,6 @@
    ]
   },
   {
-   "t": "Résultats de WWE Main Event du 18 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61464-wwe-main-event-18-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-18",
-   "tags": [
-    "WWE",
-    "Main Event"
-   ]
-  },
-  {
    "t": "WWE NXT du 17 novembre : Kelani Jordan vs. Kendal Gray",
    "u": "https://www.voxcatch.fr/2026/11/18/resultats-wwe-nxt-17-novembre-2026/",
    "s": "VOXcatch",
@@ -450,6 +457,16 @@
    "tags": [
     "WWE",
     "NXT"
+   ]
+  },
+  {
+   "t": "Résultats de WWE Main Event du 18 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/61464-wwe-main-event-18-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-18",
+   "tags": [
+    "WWE",
+    "Main Event"
    ]
   },
   {
@@ -490,20 +507,6 @@
   {
    "t": "Résultats de Beyond Wrestling Open RI 74",
    "u": "https://www.catch-newz.com/international/resultats/61420-resultats-de-beyond-wrestling-open-ri-74",
-   "s": "Catch-Newz",
-   "d": "2026-11-18",
-   "tags": []
-  },
-  {
-   "t": "Résultats de MaxProad/Promociones Pedrin 40 Aniversario del Dr. Wagner Jr.",
-   "u": "https://www.catch-newz.com/international/resultats/61444-resultats-de-maxproad-promociones-pedrin-40-aniversario-del-dr-wagner-jr",
-   "s": "Catch-Newz",
-   "d": "2026-11-18",
-   "tags": []
-  },
-  {
-   "t": "Résultats de MPW Clash Of The Titans",
-   "u": "https://www.catch-newz.com/international/resultats/61415-resultats-de-mpw-clash-of-the-titans",
    "s": "Catch-Newz",
    "d": "2026-11-18",
    "tags": []
@@ -1277,13 +1280,15 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/newz/61491-preview-wwe-smackdown-20-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61449-aew-dynamite-18-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61490-elayna-black-ex-cora-jade-revele-le-plus-gros-conseil-que-lui-a-donne-cm-punk",
-   "https://www.catch-newz.com/wwe/newz/61489-pas-de-retraite-prevue-pour-jeff-hardy",
    "https://www.catch-newz.com/wwe/resultats/61487-resultats-et-streaming-wwe-evolve-18-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61486-tna-impact-19-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61446-preview-roh-du-19-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61492-princesse-lauriana-cetait-clairement-le-combat-le-plus-important-de-ma-carriere",
+   "https://www.catch-newz.com/wwe/newz/61490-elayna-black-ex-cora-jade-revele-le-plus-gros-conseil-que-lui-a-donne-cm-punk",
+   "https://www.catch-newz.com/wwe/newz/61489-pas-de-retraite-prevue-pour-jeff-hardy",
    "https://www.catch-newz.com/wwe/resultats/61464-wwe-main-event-18-novembre-2026",
    "https://www.catch-newz.com/international/newz/61476-carte-de-njpw-road-to-world-tag-league-2026",
    "https://www.catch-newz.com/wwe/newz/61428-lonni-sur-la-route-de-la-wwe-apres-finalslam",
@@ -1574,13 +1579,11 @@
    "https://www.catch-newz.com/culture/gossip/61199-le-chien-de-jon-moxley-et-renee-paquette-est-decede",
    "https://www.catch-newz.com/wwe/newz/61198-le-rappeur-westside-gunn-fait-la-paix-avec-la-wwe",
    "https://www.catch-newz.com/international/newz/61197-le-wrestlecon-pret-a-sunir-avec-laew-face-a-wrestlemania-43",
-   "https://www.catch-newz.com/international/resultats/61181-resultats-du-jour-11-de-dg-the-gate-of-victory-2026",
-   "https://www.catch-newz.com/wwe/newz/61195-rey-fenix-lance-un-tournoi-pour-son-championnat-aaa-cruiserweight",
-   "https://www.catch-newz.com/international/newz/61196-la-tna-annonce-le-representant-du-canada-pour-la-world-x-cup-2026"
+   "https://www.catch-newz.com/international/resultats/61181-resultats-du-jour-11-de-dg-the-gate-of-victory-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "8 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
