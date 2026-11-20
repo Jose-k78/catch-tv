@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T08:23:18.850Z",
+ "updated": "2026-11-20T08:23:37.140Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "m:statlight kid vs suzu suzuki": [
@@ -405,6 +405,14 @@
    {
     "t": "",
     "u": "https://vkvideo.ru/video-231961829_456240069",
+    "p": "VK",
+    "at": "2026-11-20"
+   }
+  ],
+  "ev:ROH|ROH TV|2026-11-19": [
+   {
+    "t": "",
+    "u": "https://vkvideo.ru/video-231961829_456240070",
     "p": "VK",
     "at": "2026-11-20"
    }
