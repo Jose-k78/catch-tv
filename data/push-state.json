@@ -1,5 +1,5 @@
 {
- "at": "2026-11-19T23:17:18.269Z",
+ "at": "2026-11-20T05:59:24.289Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/61055-stephanie-vaquer-de-retour-en-live-event-le-5-novembre": "2026-11-06",
@@ -376,7 +376,8 @@
   "a:https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026": "2026-11-19",
   "fr:2026-11-19": "2026-11-19",
   "a:https://www.catch-newz.com/international/resultats/61480-resultats-de-cmll-x-nfl-noche-de-cascos-y-mascaras": "2026-11-20",
-  "a:https://www.catch-newz.com/aew/newz/61446-preview-roh-du-19-novembre-2026": "2026-11-20"
+  "a:https://www.catch-newz.com/aew/newz/61446-preview-roh-du-19-novembre-2026": "2026-11-20",
+  "a:https://www.catch-newz.com/international/resultats/61486-tna-impact-19-novembre-2026": "2026-11-20"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -387,6 +388,14 @@
     "url": "#/",
     "tag": "art",
     "short": "2 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Nouvelle info · Catch-Newz",
+    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "1 nouvelle info"
    }
   ]
  }
