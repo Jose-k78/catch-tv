@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19",
+ "updated": "2026-11-20",
  "note": "Champions actuels : peut révéler des résultats récents.",
  "titles": [
   {
@@ -892,6 +892,11 @@
    "u": "https://www.wrestleview.com/top-story/396143-aew-fright-night-dynamite-results-two-title-matches-10-28-26/",
    "defs": [
     {
+     "d": "2026-11-18",
+     "ev": "Dynamite",
+     "vs": "AZM, Maya World et Mina Shirakawa"
+    },
+    {
      "d": "2026-11-14",
      "ev": "Full Gear",
      "vs": "Persephone, Skye Blue et Hyan"
@@ -902,7 +907,7 @@
      "vs": "Hyan et Skye Blue"
     }
    ],
-   "def": 2
+   "def": 3
   },
   {
    "id": "aew-cont",
