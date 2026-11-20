@@ -1,5 +1,5 @@
 {
- "at": "2026-11-20T17:27:41.743Z",
+ "at": "2026-11-20T18:27:20.183Z",
  "items": [
   {
    "t": "Preview : WWE SmackDown du 20 novembre 2026",
@@ -12,22 +12,20 @@
    ]
   },
   {
-   "t": "Rich Swann va quitter la TNA",
-   "u": "https://www.catch-newz.com/international/newz/61497-rich-swann-va-quitter-la-tna",
+   "t": "Keanu Carver placé en garde préventive pendant l’attente de son procès",
+   "u": "https://www.catch-newz.com/wwe/newz/61499-keanu-carver-place-en-garde-preventive-pendant-lattente-de-son-proces",
    "s": "Catch-Newz",
    "d": "2026-11-20",
    "tags": [
-    "TNA"
+    "WWE"
    ]
   },
   {
-   "t": "L'AEW va dévoiler les vidéos de Toni Storm",
-   "u": "https://www.catch-newz.com/aew/newz/61494-laew-va-devoiler-les-videos-de-toni-storm",
+   "t": "Comment faire un match de catch et capturer un masque dans GTA 6 ?",
+   "u": "https://www.catch-newz.com/culture/gaming/61493-comment-faire-un-match-de-catch-et-capturer-un-masque-dans-gta-6",
    "s": "Catch-Newz",
    "d": "2026-11-20",
-   "tags": [
-    "AEW"
-   ]
+   "tags": []
   },
   {
    "t": "Preview : AEW Collision du 21 novembre 2026",
@@ -47,6 +45,24 @@
    "tags": [
     "CMLL",
     "Viernes Espectacular"
+   ]
+  },
+  {
+   "t": "Rich Swann va quitter la TNA",
+   "u": "https://www.catch-newz.com/international/newz/61497-rich-swann-va-quitter-la-tna",
+   "s": "Catch-Newz",
+   "d": "2026-11-20",
+   "tags": [
+    "TNA"
+   ]
+  },
+  {
+   "t": "L'AEW va dévoiler les vidéos de Toni Storm",
+   "u": "https://www.catch-newz.com/aew/newz/61494-laew-va-devoiler-les-videos-de-toni-storm",
+   "s": "Catch-Newz",
+   "d": "2026-11-20",
+   "tags": [
+    "AEW"
    ]
   },
   {
@@ -496,23 +512,6 @@
     "WWE",
     "Main Event"
    ]
-  },
-  {
-   "t": "Preview : AEW Dynamite du 18 novembre 2026",
-   "u": "https://www.catch-newz.com/aew/newz/61333-preview-aew-dynamite-18-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-18",
-   "tags": [
-    "AEW",
-    "Dynamite"
-   ]
-  },
-  {
-   "t": "Résultats du jour 5 de DG The Gate Of Evolution 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61411-resultats-du-jour-5-de-dg-the-gate-of-evolution-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-18",
-   "tags": []
   }
  ],
  "yt": {
@@ -1284,13 +1283,15 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/61491-preview-wwe-smackdown-20-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61497-rich-swann-va-quitter-la-tna",
-   "https://www.catch-newz.com/aew/newz/61494-laew-va-devoiler-les-videos-de-toni-storm",
+   "https://www.catch-newz.com/wwe/newz/61499-keanu-carver-place-en-garde-preventive-pendant-lattente-de-son-proces",
+   "https://www.catch-newz.com/culture/gaming/61493-comment-faire-un-match-de-catch-et-capturer-un-masque-dans-gta-6",
    "https://www.catch-newz.com/wwe/resultats/61487-resultats-et-streaming-wwe-evolve-18-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61486-tna-impact-19-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61446-preview-roh-du-19-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
    "https://www.catch-newz.com/international/newz/61484-carte-de-cmll-viernes-espectacular-du-20-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61497-rich-swann-va-quitter-la-tna",
+   "https://www.catch-newz.com/aew/newz/61494-laew-va-devoiler-les-videos-de-toni-storm",
    "https://www.catch-newz.com/aew/resultats/61449-aew-dynamite-18-novembre-2026",
    "https://www.catch-newz.com/international/newz/61492-princesse-lauriana-cetait-clairement-le-combat-le-plus-important-de-ma-carriere",
    "https://www.catch-newz.com/wwe/newz/61490-elayna-black-ex-cora-jade-revele-le-plus-gros-conseil-que-lui-a-donne-cm-punk",
@@ -1580,9 +1581,7 @@
    "https://www.catch-newz.com/international/resultats/61119-resultats-de-invasion-indy-domingo-popular-du-8-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61202-resultats-du-jour-4-du-zero1-tenka-ichi-junior-tournament-2026",
    "https://www.catch-newz.com/international/resultats/61201-resultats-de-chocopro-553",
-   "https://www.catch-newz.com/international/newz/61178-carte-de-cmll-martes-populares-du-10-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61200-bronson-reed-blesse-et-coince-en-arabie-saoudite-apres-wwe-crown-jewel",
-   "https://www.catch-newz.com/culture/gossip/61199-le-chien-de-jon-moxley-et-renee-paquette-est-decede"
+   "https://www.catch-newz.com/international/newz/61178-carte-de-cmll-martes-populares-du-10-novembre-2026"
   ]
  },
  "diag": {
