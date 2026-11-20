@@ -1,5 +1,5 @@
 {
- "at": "2026-11-20T19:34:00.039Z",
+ "at": "2026-11-20T20:22:00.522Z",
  "items": [
   {
    "t": "Preview : WWE SmackDown du 20 novembre 2026",
@@ -32,13 +32,6 @@
    ]
   },
   {
-   "t": "Carte de OTT Weirdos, Manbeasts And Gores",
-   "u": "https://www.catch-newz.com/international/newz/61485-carte-de-ott-weirdos-manbeasts-and-gores",
-   "s": "Catch-Newz",
-   "d": "2026-11-20",
-   "tags": []
-  },
-  {
    "t": "Carte de CMLL Viernes Espectacular du 20 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61484-carte-de-cmll-viernes-espectacular-du-20-novembre-2026",
    "s": "Catch-Newz",
@@ -47,6 +40,13 @@
     "CMLL",
     "Viernes Espectacular"
    ]
+  },
+  {
+   "t": "Carte de OTT Weirdos, Manbeasts And Gores",
+   "u": "https://www.catch-newz.com/international/newz/61485-carte-de-ott-weirdos-manbeasts-and-gores",
+   "s": "Catch-Newz",
+   "d": "2026-11-20",
+   "tags": []
   },
   {
    "t": "Le chien de Jon Moxley et Renee Paquette est décédé",
@@ -1282,8 +1282,8 @@
    "https://www.catch-newz.com/international/resultats/61486-tna-impact-19-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61446-preview-roh-du-19-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61485-carte-de-ott-weirdos-manbeasts-and-gores",
    "https://www.catch-newz.com/international/newz/61484-carte-de-cmll-viernes-espectacular-du-20-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61485-carte-de-ott-weirdos-manbeasts-and-gores",
    "https://www.catch-newz.com/culture/gossip/61199-le-chien-de-jon-moxley-et-renee-paquette-est-decede",
    "https://www.catch-newz.com/wwe/newz/61499-keanu-carver-place-en-garde-preventive-pendant-lattente-de-son-proces",
    "https://www.catch-newz.com/culture/gaming/61493-comment-faire-un-match-de-catch-et-capturer-un-masque-dans-gta-6",
@@ -1579,7 +1579,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "8 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
