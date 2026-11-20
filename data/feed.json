@@ -1,5 +1,5 @@
 {
- "at": "2026-11-20T20:22:00.522Z",
+ "at": "2026-11-20T21:20:17.189Z",
  "items": [
   {
    "t": "Preview : WWE SmackDown du 20 novembre 2026",
@@ -10,6 +10,13 @@
     "WWE",
     "SmackDown"
    ]
+  },
+  {
+   "t": "Des prises de catch dans GTA 6",
+   "u": "https://www.catch-newz.com/culture/gaming/61498-des-prises-de-catch-dans-gta-6",
+   "s": "Catch-Newz",
+   "d": "2026-11-20",
+   "tags": []
   },
   {
    "t": "Preview : AAA Lucha Libre du 21 novembre 2026",
@@ -30,6 +37,20 @@
     "AEW",
     "Collision"
    ]
+  },
+  {
+   "t": "Carte du jour 6 du NOAH Junior Grand Prix 2 - Lethal Odyssey Tour 2026",
+   "u": "https://www.catch-newz.com/international/newz/61501-carte-du-jour-6-du-noah-junior-grand-prix-2-lethal-odyssey-tour-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-20",
+   "tags": []
+  },
+  {
+   "t": "Carte de NHB PitFighter X21: Because The Night - A Tribute To Jeff Cannonball",
+   "u": "https://www.catch-newz.com/international/newz/61500-carte-de-nhb-pitfighter-x21-because-the-night-a-tribute-to-jeff-cannonball",
+   "s": "Catch-Newz",
+   "d": "2026-11-20",
+   "tags": []
   },
   {
    "t": "Carte de CMLL Viernes Espectacular du 20 novembre 2026",
@@ -477,34 +498,6 @@
    "d": "2026-11-19",
    "tags": [
     "AEW"
-   ]
-  },
-  {
-   "t": "Carte de NJPW Tanahashi Jam 2",
-   "u": "https://www.catch-newz.com/international/newz/61452-carte-de-njpw-tanahashi-jam-2",
-   "s": "Catch-Newz",
-   "d": "2026-11-19",
-   "tags": [
-    "NJPW"
-   ]
-  },
-  {
-   "t": "Carte de CMLL x NFL Noche de Cascos y Máscaras",
-   "u": "https://www.catch-newz.com/international/newz/61451-carte-de-cmll-x-nfl-noche-de-cascos-y-mascaras",
-   "s": "Catch-Newz",
-   "d": "2026-11-19",
-   "tags": [
-    "CMLL"
-   ]
-  },
-  {
-   "t": "Résultats et streaming de WWE Evolve du 18 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61487-resultats-et-streaming-wwe-evolve-18-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-18",
-   "tags": [
-    "WWE",
-    "Evolve"
    ]
   }
  ],
@@ -1277,11 +1270,14 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/61491-preview-wwe-smackdown-20-novembre-2026",
+   "https://www.catch-newz.com/culture/gaming/61498-des-prises-de-catch-dans-gta-6",
    "https://www.catch-newz.com/wwe/newz/61496-preview-aaa-lucha-libre-21-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61487-resultats-et-streaming-wwe-evolve-18-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61486-tna-impact-19-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61446-preview-roh-du-19-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61501-carte-du-jour-6-du-noah-junior-grand-prix-2-lethal-odyssey-tour-2026",
+   "https://www.catch-newz.com/international/newz/61500-carte-de-nhb-pitfighter-x21-because-the-night-a-tribute-to-jeff-cannonball",
    "https://www.catch-newz.com/international/newz/61484-carte-de-cmll-viernes-espectacular-du-20-novembre-2026",
    "https://www.catch-newz.com/international/newz/61485-carte-de-ott-weirdos-manbeasts-and-gores",
    "https://www.catch-newz.com/culture/gossip/61199-le-chien-de-jon-moxley-et-renee-paquette-est-decede",
@@ -1572,14 +1568,11 @@
    "https://www.catch-newz.com/international/newz/61219-romeo-malverde-santos-escobar-remporte-le-oceanic-championship",
    "https://www.catch-newz.com/wwe/newz/61218-john-cena-recrute-une-premiere-catcheuse-pour-le-cena-classic-a-wwe-nxt",
    "https://www.catch-newz.com/international/resultats/61176-resultats-de-cmll-lunes-clasico-du-9-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61206-resultats-de-814-wrestling-dealers-choice",
-   "https://www.catch-newz.com/wwe/newz/61205-si-le-john-cena-classic-est-nul-il-ne-reviendra-pas-en-2027",
-   "https://www.catch-newz.com/international/resultats/61203-resultats-de-last-resort-a-tribute-to-mark-wolf",
-   "https://www.catch-newz.com/international/resultats/61119-resultats-de-invasion-indy-domingo-popular-du-8-novembre-2026"
+   "https://www.catch-newz.com/international/resultats/61206-resultats-de-814-wrestling-dealers-choice"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 10 nouveaux articles lus sur la page d'accueil (10 liens)",
   "VOXcatch": "8 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
