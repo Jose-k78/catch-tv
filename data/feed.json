@@ -1,21 +1,11 @@
 {
- "at": "2026-11-20T22:19:20.178Z",
+ "at": "2026-11-20T23:17:40.820Z",
  "items": [
-  {
-   "t": "Preview : WWE SmackDown du 20 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61491-preview-wwe-smackdown-20-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-20",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
-  },
   {
    "t": "Preview : AAA Lucha Libre du 21 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61496-preview-aaa-lucha-libre-21-novembre-2026",
    "s": "Catch-Newz",
-   "d": "2026-11-20",
+   "d": "2026-11-21",
    "tags": [
     "WWE",
     "AAA"
@@ -25,10 +15,20 @@
    "t": "Preview : AEW Collision du 21 novembre 2026",
    "u": "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
    "s": "Catch-Newz",
-   "d": "2026-11-20",
+   "d": "2026-11-21",
    "tags": [
     "AEW",
     "Collision"
+   ]
+  },
+  {
+   "t": "Preview : WWE SmackDown du 20 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61491-preview-wwe-smackdown-20-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-20",
+   "tags": [
+    "WWE",
+    "SmackDown"
    ]
   },
   {
@@ -1573,7 +1573,7 @@
  },
  "diag": {
   "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
-  "VOXcatch": "8 articles (7 j)",
+  "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
