@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19",
+ "updated": "2026-11-20",
  "note": "Vidéos des chaînes officielles uniquement. res = résultats (spoilers, affichés seulement à la demande). m = résumé match par match (promotions japonaises).",
  "items": {
   "WWE|Raw|2026-10-26": {
@@ -1285,6 +1285,64 @@
    ],
    "s": "Wrestling Inc.",
    "u": "https://www.wrestlinginc.com/2318773/wwe-nxt-november-17-2026-results/"
+  },
+  "AEW|Dynamite|2026-11-18": {
+   "res": [
+    "Orange Cassidy a battu Jon Moxley (Continental Classic, Gold League).",
+    "Nick Wayne a battu « Speedball » Mike Bailey (Continental Classic, Gold League).",
+    "Les Kasper Brothers (Drew Kasper et Jacob Kasper) ont battu deux catcheurs locaux.",
+    "Samoa Joe a battu Jack Perry.",
+    "Queen Aminata a battu AZM, Maya World et Mina Shirakawa et conserve le titre TBS de la AEW.",
+    "Bandido a battu Hangman Adam Page (Continental Classic, Blue League)."
+   ],
+   "seg": [
+    {
+     "k": "Promo",
+     "t": "Après la victoire de Cassidy, Nick Wayne interrompt, traite Cassidy et Moxley de « vieux » et promet de gagner le Continental Classic."
+    },
+    {
+     "k": "Promo",
+     "t": "Darby Allin envoie un message : il vient pour Wardlow et Kyle Fletcher."
+    },
+    {
+     "k": "Promo",
+     "t": "Don Callis affirme avoir un plan pour s'emparer de tous les titres de la AEW."
+    },
+    {
+     "k": "Annonce",
+     "t": "Les Young Bucks et MCMG défient FTR et les Kasper Brothers pour « Winter is Coming » ; Stokely Hathaway accepte."
+    },
+    {
+     "k": "Promo",
+     "t": "MJF revient sur ses histoires avec Ospreay et se proclame le seul vrai champion de la AEW."
+    },
+    {
+     "k": "Backstage",
+     "t": "Les Death Riders s'en prennent verbalement à The Dogs : pour Garcia, c'est l'heure des « playoffs »."
+    },
+    {
+     "k": "Annonce",
+     "t": "Ilja Dragunov refuse de rejoindre la Family de Don Callis mais défendra son titre contre n'importe lequel de ses membres ; Callis annonce Dragunov contre El Clon à Collision."
+    },
+    {
+     "k": "Célébration",
+     "t": "Swerve Strickland et The New Level fêtent leurs titres Trios ; ils refusent l'offre de Callis, la Family encercle le ring et Prince Nana les rebaptise The Dangerous New Level."
+    },
+    {
+     "k": "Célébration",
+     "t": "The Cut et Mercedes Moné fêtent leurs victoires de Full Gear avec l'équipe féminine de lutte des États-Unis, mais AZM gâche la fête."
+    },
+    {
+     "k": "Backstage",
+     "t": "Swerve Strickland interrompt une interview de Hangman Page pour lui rappeler qu'il lui doit encore quelque chose."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Andrade El Idolo vise le titre mondial ; Kyle Fletcher réclame une revanche contre Ospreay et défie Andrade pour la semaine prochaine."
+    }
+   ],
+   "s": "Fightful",
+   "u": "https://www.fightful.com/wrestling/aew-dynamite-results-11-18-2026-hangman-page-vs-bandido-tbs-title-match-mjf-mercedes-mone-more/"
   }
  }
 }
