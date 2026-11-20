@@ -1,5 +1,5 @@
 {
- "at": "2026-11-20T09:57:32.664Z",
+ "at": "2026-11-20T10:57:57.356Z",
  "items": [
   {
    "t": "Preview : AEW Collision du 21 novembre 2026",
@@ -9,6 +9,24 @@
    "tags": [
     "AEW",
     "Collision"
+   ]
+  },
+  {
+   "t": "Résultats de NJPW Tanahashi Jam 2",
+   "u": "https://www.catch-newz.com/international/resultats/61479-resultats-de-njpw-tanahashi-jam-2",
+   "s": "Catch-Newz",
+   "d": "2026-11-20",
+   "tags": [
+    "NJPW"
+   ]
+  },
+  {
+   "t": "Carte du jour 5 de la NJPW World Tag League 2026",
+   "u": "https://www.catch-newz.com/international/newz/61406-carte-du-jour-5-de-la-njpw-world-tag-league-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-20",
+   "tags": [
+    "NJPW"
    ]
   },
   {
@@ -62,13 +80,6 @@
    ]
   },
   {
-   "t": "Preview : MLW Fusion du 19 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61483-preview-mlw-fusion-du-19-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-19",
-   "tags": []
-  },
-  {
    "t": "AEW Dynamite du 18 novembre : Début du Continental Classic, le championnat TBS en jeu",
    "u": "https://www.voxcatch.fr/2026/11/19/resultats-aew-dynamite-18-novembre-2026/",
    "s": "VOXcatch",
@@ -77,6 +88,13 @@
     "AEW",
     "Dynamite"
    ]
+  },
+  {
+   "t": "Preview : MLW Fusion du 19 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61483-preview-mlw-fusion-du-19-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-19",
+   "tags": []
   },
   {
    "t": "Résultats de Beyond Wrestling Open Series 254",
@@ -490,20 +508,6 @@
     "WWE",
     "NXT"
    ]
-  },
-  {
-   "t": "Résultats de Beyond Wrestling Open Series 252",
-   "u": "https://www.catch-newz.com/international/resultats/61419-resultats-de-beyond-wrestling-open-series-252",
-   "s": "Catch-Newz",
-   "d": "2026-11-18",
-   "tags": []
-  },
-  {
-   "t": "Résultats du jour 4 de DG The Gate Of Evolution 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61410-resultats-du-jour-4-de-dg-the-gate-of-evolution-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-18",
-   "tags": []
   }
  ],
  "yt": {
@@ -1280,6 +1284,8 @@
    "https://www.catch-newz.com/aew/newz/61446-preview-roh-du-19-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61464-wwe-main-event-18-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61479-resultats-de-njpw-tanahashi-jam-2",
+   "https://www.catch-newz.com/international/newz/61406-carte-du-jour-5-de-la-njpw-world-tag-league-2026",
    "https://www.catch-newz.com/international/resultats/61478-resultats-de-beyond-wrestling-open-ri-76",
    "https://www.catch-newz.com/international/newz/61483-preview-mlw-fusion-du-19-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61421-wwe-nxt-17-novembre-2026",
@@ -1571,9 +1577,7 @@
    "https://www.catch-newz.com/wwe/newz/61194-trick-williams-bat-gunther-en-dark-match-a-raw-les-fans-crient-au-scandale",
    "https://www.catch-newz.com/international/newz/61119-carte-de-invasion-indy-domingo-popular-du-8-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61191-jey-uso-veut-participer-au-john-cena-classic",
-   "https://www.catch-newz.com/wwe/newz/61158-preview-wwe-raw-9-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61182-resultats-de-eve-156-eve-for-vendetta",
-   "https://www.catch-newz.com/international/resultats/61180-resultats-du-jour-10-de-dg-the-gate-of-victory-2026"
+   "https://www.catch-newz.com/wwe/newz/61158-preview-wwe-raw-9-novembre-2026"
   ]
  },
  "diag": {
