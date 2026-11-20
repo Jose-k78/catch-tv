@@ -1,9 +1,18 @@
 {
- "at": "2026-11-20T14:16:31.242Z",
+ "at": "2026-11-20T15:26:24.924Z",
  "items": [
   {
-   "t": "Lonni sur la route de la WWE après FinalSlam ?",
-   "u": "https://www.catch-newz.com/wwe/newz/61428-lonni-sur-la-route-de-la-wwe-apres-finalslam",
+   "t": "Elayna Black (ex-Cora Jade) révèle le plus gros conseil que lui a donné CM Punk",
+   "u": "https://www.catch-newz.com/wwe/newz/61490-elayna-black-ex-cora-jade-revele-le-plus-gros-conseil-que-lui-a-donne-cm-punk",
+   "s": "Catch-Newz",
+   "d": "2026-11-20",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Pas de retraite prévue pour Jeff Hardy ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61489-pas-de-retraite-prevue-pour-jeff-hardy",
    "s": "Catch-Newz",
    "d": "2026-11-20",
    "tags": [
@@ -18,6 +27,24 @@
    "tags": [
     "AEW",
     "Collision"
+   ]
+  },
+  {
+   "t": "Carte de NJPW Road To World Tag League 2026",
+   "u": "https://www.catch-newz.com/international/newz/61476-carte-de-njpw-road-to-world-tag-league-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-20",
+   "tags": [
+    "NJPW"
+   ]
+  },
+  {
+   "t": "Lonni sur la route de la WWE après FinalSlam ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61428-lonni-sur-la-route-de-la-wwe-apres-finalslam",
+   "s": "Catch-Newz",
+   "d": "2026-11-20",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -480,32 +507,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-18",
    "tags": []
-  },
-  {
-   "t": "Résultats de AAA/Producciones IRC Noche De Titanes",
-   "u": "https://www.catch-newz.com/wwe/resultats/61438-resultats-de-aaa-producciones-irc-noche-de-titanes",
-   "s": "Catch-Newz",
-   "d": "2026-11-18",
-   "tags": [
-    "WWE",
-    "AAA"
-   ]
-  },
-  {
-   "t": "Résultats de 2CW Fair Warning",
-   "u": "https://www.catch-newz.com/international/resultats/61435-resultats-de-2cw-fair-warning",
-   "s": "Catch-Newz",
-   "d": "2026-11-18",
-   "tags": []
-  },
-  {
-   "t": "The Rock annonce son retour aux WWE Survivor Series 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61432-the-rock-annonce-son-retour-aux-wwe-survivor-series-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-18",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -1276,13 +1277,16 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/wwe/newz/61428-lonni-sur-la-route-de-la-wwe-apres-finalslam",
    "https://www.catch-newz.com/aew/resultats/61449-aew-dynamite-18-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61490-elayna-black-ex-cora-jade-revele-le-plus-gros-conseil-que-lui-a-donne-cm-punk",
+   "https://www.catch-newz.com/wwe/newz/61489-pas-de-retraite-prevue-pour-jeff-hardy",
    "https://www.catch-newz.com/wwe/resultats/61487-resultats-et-streaming-wwe-evolve-18-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61486-tna-impact-19-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61446-preview-roh-du-19-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61464-wwe-main-event-18-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61476-carte-de-njpw-road-to-world-tag-league-2026",
+   "https://www.catch-newz.com/wwe/newz/61428-lonni-sur-la-route-de-la-wwe-apres-finalslam",
    "https://www.catch-newz.com/international/newz/61214-carte-du-jour-2-de-la-ajpw-real-world-tag-league-2026",
    "https://www.catch-newz.com/wwe/newz/61488-jade-cargill-etait-une-trop-grande-star-pour-faire-ses-debuts-a-nxt-avant-le-roster-principal",
    "https://www.catch-newz.com/international/resultats/61479-resultats-de-njpw-tanahashi-jam-2",
@@ -1572,14 +1576,11 @@
    "https://www.catch-newz.com/international/newz/61197-le-wrestlecon-pret-a-sunir-avec-laew-face-a-wrestlemania-43",
    "https://www.catch-newz.com/international/resultats/61181-resultats-du-jour-11-de-dg-the-gate-of-victory-2026",
    "https://www.catch-newz.com/wwe/newz/61195-rey-fenix-lance-un-tournoi-pour-son-championnat-aaa-cruiserweight",
-   "https://www.catch-newz.com/international/newz/61196-la-tna-annonce-le-representant-du-canada-pour-la-world-x-cup-2026",
-   "https://www.catch-newz.com/international/resultats/61169-resultats-de-eve-157-elite-encounters-2",
-   "https://www.catch-newz.com/international/newz/61177-carte-de-cmll-martes-de-glamour-du-10-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61194-trick-williams-bat-gunther-en-dark-match-a-raw-les-fans-crient-au-scandale"
+   "https://www.catch-newz.com/international/newz/61196-la-tna-annonce-le-representant-du-canada-pour-la-world-x-cup-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
   "VOXcatch": "8 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
