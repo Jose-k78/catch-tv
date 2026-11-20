@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19",
+ "updated": "2026-11-20",
  "promotions": {
   "WWE": {
    "c": [
@@ -252,7 +252,10 @@
      "t": "Worlds End",
      "d": "2026-12-19",
      "w": "Minneapolis",
-     "v": "Target Center Minneapolis"
+     "v": "Target Center Minneapolis",
+     "h": "19:00",
+     "tz": "America/New_York",
+     "dur": 240
     }
    ],
    "s": {
