@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20",
+ "updated": "2026-11-21",
  "note": "Catcheurs suivis (champions, cartes annoncées, favoris des membres) et catcheurs à découvrir (disc = true, toutes fédérations et époques). txt = petit résumé en français, era = époque, ref = matchs de référence, last = 3 derniers matchs (r = résultat, spoiler), v = vidéo YouTube d'une chaîne officielle.",
  "items": {
   "Roman Reigns": {
@@ -2059,6 +2059,148 @@
    "ht": "1,91 m",
    "wt": "107 kg",
    "txt": "Ex-Julius Creed à la WWE (Diamond Mine, American Made), champion par équipes de NXT avec son frère Drew en 2022. Contrat terminé en novembre 2026 : les Kasper Brothers débarquent à la AEW sous leurs vrais noms à Full Gear."
+  },
+  "Action Andretti": {
+   "k": "AEW · ROH",
+   "al": "heel",
+   "alD": "2025-01-18",
+   "nick": "The Sight To See",
+   "from": "Philadelphia, Pennsylvanie",
+   "ht": "1,83 m",
+   "wt": "84 kg",
+   "fin": "Running Shooting Star Press",
+   "teams": "The Opps (depuis août 2026), CRU, Lio Rush & Action Andretti",
+   "txt": "Voltigeur de Philadelphie passé par la MCW, Action Andretti est devenu méchant en janvier 2025 aux côtés de Lio Rush. Il est aujourd'hui membre de The Opps.",
+   "ref": []
+  },
+  "Hyan": {
+   "k": "AEW · ROH",
+   "a": [
+    "La Ninja",
+    "Hyaneyoung"
+   ],
+   "al": "face",
+   "alD": "2014-07-26",
+   "nick": "The Renaissance Woman",
+   "from": "Houston, Texas",
+   "debut": "2014",
+   "fin": "Beauty Sleep (chickenwing facebuster), CT Knee",
+   "teams": "Hyan & Maya World",
+   "txt": "Catcheuse de Houston passée par SHIMMER, la RevPro, NOAH et la wXw, Hyan a remporté le Queen of Indies 2024. Elle est sous contrat AEW / ROH depuis novembre 2025.",
+   "ref": []
+  },
+  "Lainey Reid": {
+   "k": "WWE",
+   "sh": [
+    "SmackDown"
+   ],
+   "a": [
+    "Tylynn Register"
+   ],
+   "al": "heel",
+   "alD": "2024-09-20",
+   "nick": "Modern Day Southern Belle, The Sweet Dream",
+   "from": "Gadsden, Alabama",
+   "ht": "1,67 m",
+   "wt": "61 kg",
+   "debut": "2023",
+   "fin": "Running Knee Strike",
+   "teams": "Fatal Influence (avec Jacy Jayne et Fallon Henley)",
+   "txt": "Arrivée à NXT fin 2023, Lainey Reid forme Fatal Influence avec Jacy Jayne et Fallon Henley. Elle est passée à SmackDown en avril 2026.",
+   "ref": []
+  },
+  "Atlantis": {
+   "k": "CMLL",
+   "disc": true,
+   "era": "depuis 1983",
+   "nick": "El Ídolo de los Niños",
+   "from": "Guadalajara",
+   "ht": "1,73 m",
+   "wt": "82 kg",
+   "debut": "1983",
+   "trainer": "Diablo Velasco",
+   "teams": "Los Guerreros de la Atlántida, Los Reyes de la Atlántida, La Ola Azul (avec Mr. Niebla)",
+   "al": "face",
+   "txt": "Légende masquée du CMLL depuis 1983, Atlantis a remporté les masques de Villano III, Último Guerrero et La Sombra lors de matchs restés célèbres. Il est entré au Hall of Fame du Wrestling Observer en 2013.",
+   "tt": [
+    {
+     "t": "CMLL World Light Heavyweight Championship",
+     "k": "CMLL",
+     "x": 2
+    },
+    {
+     "t": "CMLL World Tag Team Championship",
+     "k": "CMLL",
+     "x": 5
+    },
+    {
+     "t": "CMLL World Trios Championship",
+     "k": "CMLL",
+     "x": 4
+    }
+   ],
+   "ref": [
+    {
+     "t": "Atlantis contre Talismán — masque contre masque",
+     "ev": "Aniversario de l'EMLL, 1984"
+    },
+    {
+     "t": "Atlantis contre Mano Negra — masque contre masque",
+     "ev": "60. Aniversario du CMLL, 1993"
+    },
+    {
+     "t": "Atlantis contre Villano III — masque contre masque",
+     "ev": "Juicio Final, 2000"
+    },
+    {
+     "t": "Atlantis contre Último Guerrero — masque contre masque",
+     "ev": "81. Aniversario du CMLL, 2014"
+    },
+    {
+     "t": "Atlantis contre La Sombra — masque contre masque",
+     "ev": "82. Aniversario du CMLL, 2015"
+    }
+   ]
+  },
+  "Jacy Jayne": {
+   "k": "WWE",
+   "sh": [
+    "SmackDown"
+   ],
+   "al": "heel",
+   "alD": "2024-03-19"
+  },
+  "Fallon Henley": {
+   "k": "WWE",
+   "sh": [
+    "SmackDown"
+   ],
+   "al": "heel",
+   "alD": "2024-04-30"
+  },
+  "Lucien Price": {
+   "k": "WWE",
+   "sh": [
+    "Raw"
+   ],
+   "al": "heel",
+   "alD": "2026-08-24"
+  },
+  "Bronco Nima": {
+   "k": "WWE",
+   "sh": [
+    "Raw"
+   ],
+   "al": "heel",
+   "alD": "2026-08-24"
+  },
+  "Je'Von Evans": {
+   "k": "WWE",
+   "sh": [
+    "Raw"
+   ],
+   "al": "face",
+   "alD": "2018-01-26"
   }
  }
 }
