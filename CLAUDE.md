@@ -294,6 +294,9 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
     `ACT.tcgmqzero`). `fightNow()` exporté pour les tests.
   - Agents libres : `x.fa` (catcheur dans aucun roster, alias compris) → chaîne brisée `faMark` à la place du logo ; boosters `fa` et `mitb` :
     `.tpk-fa` (HTML) et le même symbole dessiné dans `paintPack`.
+- **TCCCG, 21 nov. (soir)** : packs de départ (`boosters` de callup.js) : plus de « NJPW Strong Pack » (Strong est dans le NJPW Pack via le groupe
+  « NJPW Strong et partenaires ») ; Stardom + Marigold + TJPW = un seul **Joshi Pack** (`p:Joshi`, `ks` = JOSHI, logo SVG `JOSHI_LOGO` en base64,
+  aussi chargé par Phaser). Pas de pack NOAH pour l'instant (choix de Jose).
 - **Lot du 18 nov.** (« heure du codage » : onglet Jeux, « booster » partout, Mode Univers V1 d'après le canevas « Mode Univers – Menus ») :
   - Barre du bas : « Jeux » (`#/jeux`, `js/views/jeux.js`, icône `GAMES_ICON`) remplace « TCCCG » ; hub de 3 tuiles : TCCCG (`#/tccg`),
     Univers (`#/univers`, modo seulement : `S.realAdmin`, sinon « Bientôt »), Qui suis-je ? (21 nov.), Coming soon (pas cliquable). `navOn("jeux")` = jeux + univers.

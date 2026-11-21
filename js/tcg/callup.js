@@ -24,6 +24,11 @@ export function recentShows(days) {
 }
 const showLogoOf = key => { const p = key.split("|"); if (p[1] === "PLE") { const e = ((S.P[p[0]] || {}).e || []).find(x => x.d === p[2]); return (e && eventLogo(Object.assign({ k: p[0] }, e))) || showLogo(p[0], ""); } return showLogo(p[0], p[1]) || showLogo(p[0], ""); };
 const colorsOf = k => (S.P[k] && S.P[k].c) || ["#3b321f", "#0a0907"];
+// Joshi Pack : les catcheuses de Stardom, Marigold et TJPW ; logo dessiné (texte), aussi lu par la scène d'invocation
+const JOSHI = ["Stardom", "Marigold", "TJPW"];
+const JOSHI_LOGO = "data:image/svg+xml;base64," + btoa(unescape(encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="320" height="130" viewBox="0 0 320 130"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe3f1"/><stop offset=".55" stop-color="#ff5fa8"/><stop offset="1" stop-color="#b0125f"/></linearGradient></defs>' +
+  '<text x="160" y="84" text-anchor="middle" font-family="Impact,Anton,Arial Black,sans-serif" font-size="86" font-weight="900" letter-spacing="4" fill="url(#g)" stroke="#2a0f3a" stroke-width="5" paint-order="stroke">JOSHI</text>' +
+  '<text x="160" y="118" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" font-weight="700" letter-spacing="3" fill="#fff" stroke="#2a0f3a" stroke-width="4" paint-order="stroke">STARDOM · MARIGOLD · TJPW</text></svg>')));
 const inRoster = () => { const s = new Set(); Object.keys(S.rosters || {}).forEach(k => Object.keys(S.rosters[k] || {}).forEach(g => (S.rosters[k][g] || []).forEach(n => s.add(norm(n))))); return s; };
 
 // Boosters (cahier du 12 nov.) : PLE / PPV (1 mois), shows de la semaine (7 jours, cartes moins fortes), 3 gratuits toutes
@@ -39,7 +44,11 @@ export function boosters() {
     out.push({ id: "s:" + key, key: key, t: showKeyLabel(key), sub: p[0] + " · " + fmt(p[2]) + (ver ? " · cartes du show !" : " · cartes du show dans " + Math.ceil((2 * DAY - age) / DAY) + " j") + (ple ? " · encore " + Math.max(1, Math.ceil((31 * DAY - age) / DAY)) + " j" : ""), n: 5, price: { gim: 5 }, multi: true, logo: showLogoOf(key), c: colorsOf(p[0]), cat: ple ? "PLE et PPV" : "Shows de la semaine", ver: ver, rc: ple ? "ple" : "week" });
   });
   (C.boosters || []).filter(b => b && b.id && !b.del && (b.on !== false || S.isAdmin)).forEach(b => out.push(Object.assign({ cat: "Boosters spéciaux", price: { gim: +b.gim || 5 }, n: 5, multi: true, rc: "special" }, b, { id: "c:" + b.id, t: b.t || b.n || "Booster" })));
-  ["WWE", "AEW", "NJPW"].concat(Object.keys(S.P || {}).filter(k => ["WWE", "AEW", "NJPW"].indexOf(k) < 0)).filter(k => S.P[k]).forEach(k => out.push({ id: "p:" + k, k: k, t: k + " Pack", sub: "Pack de départ · 5 cartes", n: 5, price: { mom: 60, pop: 60, push: 60 }, logo: showLogo(k, ""), c: colorsOf(k), cat: "Boosters de départ", rc: "start" }));
+  // packs de départ : un par promotion ; NJPW Strong est dans le pack NJPW ; Stardom, Marigold et TJPW = un seul Joshi Pack (21 nov., Jose)
+  let joshi = false;
+  ["WWE", "AEW", "NJPW"].concat(Object.keys(S.P || {}).filter(k => ["WWE", "AEW", "NJPW"].indexOf(k) < 0)).filter(k => S.P[k] && k !== "NJPW Strong").forEach(k => {
+    if (JOSHI.indexOf(k) >= 0) { if (!joshi) { joshi = true; out.push({ id: "p:Joshi", k: "Joshi", ks: JOSHI, t: "Joshi Pack", sub: "Stardom · Marigold · TJPW · 5 cartes", n: 5, price: { mom: 60, pop: 60, push: 60 }, logo: JOSHI_LOGO, c: ["#c2185b", "#2a0f3a"], cat: "Boosters de départ", rc: "start" }); } return; }
+    out.push({ id: "p:" + k, k: k, t: k + " Pack", sub: "Pack de départ · 5 cartes", n: 5, price: { mom: 60, pop: 60, push: 60 }, logo: showLogo(k, ""), c: colorsOf(k), cat: "Boosters de départ", rc: "start" }); });
   if (S.isAdmin) out.push({ id: "fa", t: "Hors rosters (modo)", sub: "Visible par le modo · catcheurs hors des rosters", n: 5, price: { gim: 0 }, cat: "Modo", rc: "special" });
   // promo du modo : prix en gimmicks réduit
   out.forEach(b => { const pc = +promo[b.id] || 0; if (pc > 0 && b.price.gim) { b.promo = pc; b.price = Object.assign({}, b.price, { gim: Math.max(1, Math.round(b.price.gim * (100 - pc) / 100)), mprice: Math.max(1, Math.round(50 * (100 - pc) / 100)) }); } });
@@ -55,7 +64,7 @@ function autoPool(b) {
   if (b.id === "mitb") return P.filter(c => c.r === "SSR" && !c.custom);
   // booster d'un show : les catcheurs de sa promotion, ceux du show en vedette
   if (b.key) { const pp = showPeople(b.key).map(x => x.c), ids = new Set(pp.map(c => c.id)), f = inPromo(b.key.split("|")[0]); return pp.concat(P.filter(c => !ids.has(c.id) && f(c))); }
-  if (b.k && b.id.indexOf("p:") === 0) { const L = P.filter(inPromo(b.k)); return L.length >= 10 ? L : P; }
+  if (b.k && b.id.indexOf("p:") === 0) { const fs = (b.ks || [b.k]).map(inPromo), L = P.filter(c => fs.some(f => f(c))); return L.length >= 10 ? L : P; }
   if (b.id === "fa") { const r = inRoster(); return P.filter(c => !r.has(realKey(c)) && (!c.boosters || !c.boosters.length)); }
   if (b.id.indexOf("c:") === 0) {
     if (Array.isArray(b.cards) && b.cards.length) { const want = b.cards.map(norm); return P.filter(c => want.indexOf(realKey(c)) >= 0 || want.indexOf(norm(c.name)) >= 0 || want.indexOf(norm(c.id)) >= 0); }
