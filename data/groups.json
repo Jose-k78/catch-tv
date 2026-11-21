@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20",
+ "updated": "2026-11-21",
  "note": "Membres tenus à jour par la mise à jour du soir (19 h 23).",
  "items": {
   "946": {
@@ -2668,6 +2668,145 @@
    "a": [
     "The Creed Brothers",
     "Creed Brothers"
+   ]
+  },
+  "vanity-project": {
+   "n": "The Vanity Project",
+   "lg": "",
+   "k": "WWE NXT",
+   "y": "depuis 2025",
+   "on": 1,
+   "m": [
+    "Jackson Drake",
+    "Brad Baylor",
+    "Ricky Smokes",
+    "Myka Lockwood"
+   ],
+   "a": [
+    "Vanity Project"
+   ]
+  },
+  "darkstate": {
+   "n": "DarkState",
+   "lg": "",
+   "k": "WWE NXT",
+   "y": "depuis 2025",
+   "on": 1,
+   "m": [
+    "Dion Lennox",
+    "Cutler James",
+    "Osiris Griffin"
+   ],
+   "ex": [
+    "Saquon Shugars"
+   ]
+  },
+  "birthright": {
+   "n": "BirthRight",
+   "lg": "",
+   "k": "WWE NXT",
+   "y": "depuis 2026",
+   "on": 1,
+   "m": [
+    "Lexis King",
+    "Channing \"Stacks\" Lorenzo",
+    "Uriah Connors",
+    "Charlie Dempsey",
+    "Arianna Grace"
+   ],
+   "a": [
+    "Birth Right"
+   ]
+  },
+  "hank-and-tank": {
+   "n": "Hank & Tank",
+   "lg": "",
+   "k": "WWE NXT",
+   "y": "depuis 2024",
+   "on": 1,
+   "m": [
+    "Hank Walker",
+    "Tank Ledger"
+   ],
+   "a": [
+    "Hank and Tank"
+   ]
+  },
+  "otm": {
+   "n": "OTM",
+   "lg": "",
+   "k": "WWE NXT",
+   "y": "depuis 2024",
+   "on": 1,
+   "m": [
+    "Bronco Nima",
+    "Lucien Price"
+   ]
+  },
+  "the-culling": {
+   "n": "The Culling",
+   "lg": "",
+   "k": "WWE NXT",
+   "y": "depuis 2024",
+   "on": 1,
+   "m": [
+    "Izzi Dame",
+    "Niko Vance"
+   ],
+   "ex": [
+    "Shawn Spears",
+    "Brooks Jensen",
+    "Tatum Paxley"
+   ],
+   "a": [
+    "Culling"
+   ]
+  },
+  "wrenqcc": {
+   "n": "WrenQCC",
+   "lg": "",
+   "k": "WWE NXT",
+   "y": "depuis 2025",
+   "on": 1,
+   "m": [
+    "Wren Sinclair",
+    "Kendal Grey"
+   ]
+  },
+  "legacy-van-dux": {
+   "n": "Sean Legacy et Dorian Van Dux",
+   "lg": "",
+   "k": "WWE NXT",
+   "y": "depuis 2026",
+   "on": 1,
+   "m": [
+    "Sean Legacy",
+    "Dorian Van Dux"
+   ]
+  },
+  "dar-moreno": {
+   "n": "Noam Dar et Romeo Moreno",
+   "lg": "",
+   "k": "WWE NXT",
+   "y": "depuis 2026",
+   "on": 1,
+   "m": [
+    "Noam Dar",
+    "Romeo Moreno"
+   ],
+   "a": [
+    "Supernova 11"
+   ]
+  },
+  "fraxiom": {
+   "n": "Fraxiom",
+   "lg": "",
+   "k": "WWE",
+   "y": "depuis 2024",
+   "on": 1,
+   "m": [
+    "Nathan Frazer",
+    "Axiom"
    ]
   }
  }
