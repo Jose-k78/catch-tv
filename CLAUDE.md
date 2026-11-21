@@ -486,6 +486,9 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   - fiches (`data/wrestlers.json`) : `dc` = date de décès (AAAA-MM-JJ) pour un catcheur décédé ; `tt` = palmarès complet
     (titres et tournois gagnés, Royal Rumble… seulement des promotions de l'app) ;
   - groupes : membres de The 946 (WWE, depuis 2026), MFT, The Bloodline 2026.
+  - rosters NOAH (par unité) et TJPW (« Roster féminin ») ajoutés le 21 nov. à la demande de Jose : les tenir à jour d'après `src` de
+    data/rosters.json. Ce ne sont pas des promotions de l'app (pas d'onglet, pas de page roster) : ils servent à la recherche, aux cartes
+    TCCCG, à la Babies du mois (TJPW) et aux agents libres du mode Univers. Photos seulement depuis le dossier « people » de Jose.
   - résumés des PLE / PPV : s'aider aussi de https://mibih.wordpress.com/category/wrestling-reviews/latest-wrestling-ppv-reviews/ (réécrire en français, ne pas copier) ;
   - shows déplacés : `no` (dates sans épisode) et `e` (épisode spécial à une autre date) dans `data/calendar.json` ; heures toujours
     données dans le fuseau du show (`h` + `tz`) : le changement d'heure est calculé par l'app ;

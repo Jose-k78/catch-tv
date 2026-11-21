@@ -10,7 +10,9 @@
   "Stardom": "https://en.wikipedia.org/wiki/List_of_World_Wonder_Ring_Stardom_personnel",
   "Marigold": "https://en.wikipedia.org/wiki/List_of_Dream_Star_Fighting_Marigold_personnel",
   "ROH": "https://www.thesmackdownhotel.com/roster/?promotion=roh",
-  "CMLL": "https://cmll.com/"
+  "CMLL": "https://cmll.com/",
+  "NOAH": "https://en.wikipedia.org/wiki/List_of_Pro_Wrestling_Noah_personnel",
+  "TJPW": "https://en.wikipedia.org/wiki/List_of_Tokyo_Joshi_Pro-Wrestling_personnel"
  },
  "items": {
   "WWE": {
@@ -918,6 +920,109 @@
     "Shoko Koshino",
     "Victoria Yuzuki",
     "Yuuka Yamazaki"
+   ]
+  },
+  "NOAH": {
+   "Main Unit": [
+    "Kaito Kiyomiya",
+    "Kenoh",
+    "Naomichi Marufuji",
+    "Yoshiki Inamura",
+    "Kazuyuki Fujita",
+    "Shuhei Taniguchi",
+    "Shuji Kondo",
+    "Alejandro",
+    "Amakusa",
+    "Black Menso-re",
+    "Daiki Odashima",
+    "Dragon Bane",
+    "Eita",
+    "Harutoki",
+    "Hiroto Tsuruya",
+    "Jack Morris",
+    "Junta Miyawaki",
+    "Katsumi Inahata",
+    "Midori Takahashi",
+    "Super Crazy",
+    "Yuto Kikuchi",
+    "Yuto Koyanagi"
+   ],
+   "Team 2000X": [
+    "Ozawa",
+    "Takashi Sugiura",
+    "Masa Kitamiya",
+    "Alpha Wolf",
+    "Jun Masaoka",
+    "Kai Fujimura",
+    "Knull",
+    "Owadasan",
+    "Tadasuke",
+    "Yo-Hey",
+    "Yoshi Tatsu"
+   ],
+   "Passion Ratel’s": [
+    "Manabu Soya",
+    "Daiki Inaba",
+    "Saxon Huxley",
+    "Yuki Iino"
+   ],
+   "Team Noah": [
+    "Atsushi Kotoge",
+    "Hajime Ohara",
+    "Hi69",
+    "Muhammad Yone"
+   ],
+   "White Raven Sqwad": [
+    "Kenta",
+    "Hayata",
+    "Shane Haste",
+    "Tetsuya Endo"
+   ],
+   "Los Tranquilos de Japón": [
+    "Tetsuya Naito",
+    "Bushi",
+    "Ryusei"
+   ],
+   "Sans unité": [
+    "Doc Gallows",
+    "Karl Anderson",
+    "Kid Lykos",
+    "Kid Lykos II",
+    "Kieron Lacey",
+    "Mark Trew"
+   ]
+  },
+  "TJPW": {
+   "Roster féminin": [
+    "Miyu Yamashita",
+    "Shoko Nakajima",
+    "Rika Tatsumi",
+    "Mizuki",
+    "Yuki Arai",
+    "Miu Watanabe",
+    "Hyper Misao",
+    "Suzume",
+    "Arisu Endo",
+    "Yuki Kamifuku",
+    "Yuki Aino",
+    "Raku",
+    "Pom Harajuku",
+    "Haru Kazashiro",
+    "Himawari",
+    "Mahiro Kiryu",
+    "Sakura Hattori",
+    "Wakana Uehara",
+    "Shino Suzuki",
+    "Toga",
+    "Mifu Ashida",
+    "Uta Takami",
+    "Kira Summer",
+    "Chika Nanase",
+    "Ren Konatsu",
+    "Shion Kanzaki",
+    "Chieri Sakimori",
+    "Momo Sato",
+    "Yui Musubi"
    ]
   }
  }
