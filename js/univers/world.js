@@ -6,6 +6,7 @@
 import { S } from "../state.js";
 import { baseCards } from "../tcg/data.js";
 import { norm } from "../wrestlers.js";
+import { udata } from "./data.js";
 
 export const ST = ["Apparence", "Ring", "Micro", "Charisme", "Endurance", "Star power", "Fiabilité"];
 export const STYLES = {
@@ -83,6 +84,7 @@ export function femaleSet() {
   const out = new Set(WWE_F);
   Object.keys(S.rosters || {}).forEach(k => { const r = S.rosters[k] || {}; Object.keys(r).forEach(g => { if (FEM.test(g) || k === "Stardom" || k === "Marigold") (r[g] || []).forEach(n => out.add(norm(n))); }); });
   (S.titles || []).forEach(t => { if (WTITLE.test(String(t.n || ""))) [t.c].concat(t.who || [], (t.hist || []).map(h => h.c)).forEach(n => { if (n) out.add(norm(n)); }); });
+  ((udata().st || {}).fem || []).forEach(n => out.add(norm(n)));   // catcheuses listées dans data/statuts.json (21 nov.)
   return out;
 }
 function styleOf(x, k) {

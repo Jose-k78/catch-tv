@@ -6,6 +6,7 @@ import { clamp, rnd, pick, dateOf, dayLabel, fmtM, fmtK, stars, STY_FAT, STY_INJ
 import { MT, STIP, FIN, CONS, DUR, ENT, SEG, CITIES, VENUES } from "./data.js";
 import { meF, wn, roster, avail, mail, news, buzz, FANS, relGet, relAdd, staffQ, ach, isBig, champIds, teamName, sideName, ini, e_, cap } from "./base.js";
 import { fitOf, gimOf } from "./v2.js";
+import { dnaBonus, dnaShow, sportWinner, markFinish } from "./dna.js";
 
 const avg = a => a.length ? a.reduce((s, x) => s + x, 0) / a.length : 0;
 const CHEM = { "aer|aer": 5, "pur|pur": 6, "tec|tec": 5, "bag|bag": 3, "aer|tec": 3, "aer|bag": 2, "bag|pur": 4, "pur|tec": 4, "aer|pur": 3, "bag|tec": 1 };
@@ -65,6 +66,7 @@ function parts(G, ev, m) {
   const mu = muCount(G, m.sides); if (mu >= 2) extra -= (mu - 1) * 3;
   const prod = staffQ(G, "prod"), comm = ev.comm && ev.comm.length ? avg(ev.comm.map(i => (G.staff[i] || {}).q || 40)) : staffQ(G, "comm");
   const staff = ev.fed === G.me ? (prod ? (prod - 50) / 12 : -2) + (comm ? (comm - 50) / 15 : -3) : 1;
+  extra += dnaBonus(G, ev, m, all, D);
   return { ring: ring, chem: chem, story: story, crowd: crowd, dur: dur, extra: extra, staff: staff, sl: sl, mu: mu, tired: tired };
 }
 export function estimate(G, ev, it) {
@@ -116,10 +118,12 @@ export function simMatch(G, ev, m, mod) {
   if (mod.botch) { botch.push({ w: mod.botch, sev: 1 }); q -= 3; }
   const rating = clamp(q, 5, 100);
   // vainqueur et fin
-  let win = mod.win != null ? mod.win : m.win;
+  // mode Mark : personne ne choisit le vainqueur, le match se joue comme un vrai sport
+  let win = G.mark ? sportWinner(G, m, mod) : mod.win != null ? mod.win : m.win;
   if (win == null || win === "ia" || win === "") win = pickWinner(G, m);
   if (typeof win === "string" && win !== "nul") win = +win;
-  let fin = m.fin && m.fin !== "auto" ? m.fin : win === "nul" ? pick(["dco", "nc", "dq"]) : autoFin(G, m, win, rnd);
+  let fin = m.fin && m.fin !== "auto" && !G.mark ? m.fin : win === "nul" ? pick(["dco", "nc", "dq"]) : autoFin(G, m, win, rnd);
+  if (G.mark) { const mf = markFinish(G, m, mod, win, fin, notes); win = mf.win; fin = mf.fin; if (mod.restarted) q += 3; }
   if (mod.runin) { fin = "interf"; notes.push(wn(G, mod.runin) + " est intervenu" + e_(G.W[mod.runin]) + " !"); }
   if (mod.medic) { fin = "nc"; win = "nul"; notes.push("Le médecin a arrêté le match"); }
   if (win === "nul" && fin === "clean") fin = "dco";
@@ -150,8 +154,8 @@ export function simMatch(G, ev, m, mod) {
   all.forEach(w => {
     const won = ws.indexOf(w) >= 0, draw = win === "nul"; let dp = 0, dm = 0;
     if (draw) { w.rec[2]++; dp = rating / 160; }
-    else if (won) { w.rec[0]++; w.lossRun = 0; dp = (0.5 + rating / 90 + (m.title ? 1 : 0) + (w.push || 0) * 0.6) * gm(w); dm = fin === "clean" || fin === "subm" ? 8 : 5; w.mor = clamp(w.mor + 2); }
-    else { w.rec[1]++; w.lossRun = (w.lossRun || 0) + 1; dp = m.cons === "protect" ? 0 : -0.4 + (rating > 75 ? 0.6 : 0); dm = m.cons === "protect" ? -2 : -5; w.mor = clamp(w.mor - 1); }
+    else if (won) { w.rec[0]++; w.lossRun = 0; w.winRun = (w.winRun || 0) + 1; dp = (0.5 + rating / 90 + (m.title ? 1 : 0) + (w.push || 0) * 0.6) * gm(w); dm = fin === "clean" || fin === "subm" ? 8 : 5; w.mor = clamp(w.mor + 2); }
+    else { w.rec[1]++; w.lossRun = (w.lossRun || 0) + 1; w.winRun = 0; dp = m.cons === "protect" ? 0 : -0.4 + (rating > 75 ? 0.6 : 0); dm = m.cons === "protect" ? -2 : -5; w.mor = clamp(w.mor - 1); }
     if (m.cons === "squash") dp += won ? 1.5 : -1.5; if (m.cons === "strong") dp += 0.5;
     if (w.farewell && w.farewell.until >= G.day) dp += 0.5;
     w.pop = clamp(w.pop + dp, 1, 99); w.mom = clamp((w.mom || 0) + dm, -50, 50);
@@ -366,6 +370,9 @@ export function orderLive(G, ev, L, o, v) {
   if (o === "win") { C.mod.win = v === "nul" ? "nul" : +v; return true; }
   if (o === "runin") { C.mod.runin = v; C.beats.splice(C.k, 0, { t: C.min - 1, txt: wn(G, v) + " débarque dans le ring !", ty: "runin", who: v }); return true; }
   if (o === "medic") { C.mod.medic = true; C.beats.splice(C.k, C.beats.length - C.k, { t: C.min, txt: "Le médecin entre sur le ring : on arrête tout." }); return true; }
+  if (o === "sec") { C.mod.sec = true; C.beats.splice(C.k, 0, { t: C.min, txt: "Le GM envoie la sécurité autour du ring : personne ne viendra déranger ce match." }); return true; }
+  if (o === "sanc") { C.mod.sanc = true; C.beats.splice(C.k, 0, { t: C.min, txt: "Le GM parle à l’arbitre : à la moindre triche, c’est la disqualification !" }); return true; }
+  if (o === "restart") { C.mod.restart = true; C.beats.splice(C.k, 0, { t: C.min, txt: "Le GM prévient : pas de fin en queue de poisson ce soir, il faudra un vainqueur !" }); return true; }
   if (o === "pub") { L.crowd = clamp(L.crowd - 3); L.money += 15; C.beats.splice(C.k, 0, { t: C.min, txt: "Coupure pub… le public attend." }); return true; }
   return false;
 }
@@ -436,7 +443,7 @@ function finishShow(G, ev, L) {
   });
   // trophées et guerre des audiences
   ach(G, "first"); if (rating >= 80) ach(G, "r4"); if (rating >= 98) ach(G, "r5"); if (aud >= 1) ach(G, "m1");
-  missionsShow(G, ev);
+  missionsShow(G, ev); dnaShow(G, ev, res);
   if (rival) { const ra = rival.aud.length ? rival.aud[rival.aud.length - 1] : 0; if (aud > ra) { ach(G, "war"); news(G, { seg: "coul", f: "nous", t: "Guerre des audiences : " + f.n + " gagne", txt: ev.n + " (" + fmtM(aud) + ") bat " + rival.n + " (" + fmtM(ra) + ")." }); } }
 }
 // résultats d'un match de tournoi / de tradition

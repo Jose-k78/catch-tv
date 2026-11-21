@@ -15,6 +15,8 @@ import { metaAll, loadSlot, delSlot } from "./save.js";
 import { U, go, redraw, persist, shell, tabs, chips, face, crest, mailAv, wnH, teamH, sidesH, whoIn, imgFed, imgEv, imgT, imgW, imgBtn, unread, audTxt, autoPlay } from "./core.js";
 import { searchBody, statTxt, signal, legendBox, relBody } from "./ui3.js";
 import { hofBody, magBody, encBody, homeExtra, tutoCheck } from "./ui5.js";
+import { gmFace, gmName } from "./setup.js";
+import { DNA, dnaMain } from "./dna.js";
 
 const pctBar = (v, c) => '<span class="uvbar"><i style="width:' + clamp(v) + "%" + (c ? ";background:" + c : "") + '"></i></span>';
 const enC = v => v >= 60 ? "#63d69c" : v >= 35 ? "#ffd27a" : "#ff8a7e";
@@ -34,37 +36,7 @@ export function partiesView() {
   }
   return h + "</div>";
 }
-export function newView(slot) {
-  const feds = Object.keys(FEDS0);
-  return '<div class="uvparties"><a class="uvback" href="#/univers">‹ Les parties</a><h1>Nouvelle partie</h1><p class="uvmut">Partie ' + esc(slot) + "</p>" +
-    '<form class="uvform" data-form="uvcreate"><input type="hidden" name="slot" value="' + esc(slot) + '">' +
-    '<fieldset class="uvfs"><legend>Comment veux-tu jouer ?</legend>' +
-    '<label class="uvchoice"><input type="radio" name="mode" value="create" checked><span><b>Créer ma fédération</b><small>Tu choisis le nom, le logo, les ceintures et les PPV. Tu commences petit avec des agents libres ; plus ton show est célèbre, plus tu peux signer des stars.</small></span></label>' +
-    '<label class="uvchoice"><input type="radio" name="mode" value="take"><span><b>Prendre une fédération existante</b><small>Avec ses catcheurs sous contrat. Les autres sont gérées par l’IA.</small></span></label></fieldset>' +
-    '<fieldset class="uvfs cr"><legend>Ta fédération</legend><label class="uvfld">Nom<input name="n" maxlength="40" value="TCC Pro Wrestling"></label>' +
-    '<label class="uvfld">Sigle (2 à 5 lettres)<input name="sh" maxlength="5" value="TCC"></label><label class="uvfld">Couleur<input type="color" name="c" value="#f5b13d"></label>' +
-    '<label class="uvfld">Nom du show TV<input name="show" maxlength="30" value="TCC Monday"></label>' +
-    '<label class="uvfld">Jour du show<select name="wd"><option value="1">Lundi</option><option value="2">Mardi</option><option value="3">Mercredi</option><option value="4">Jeudi</option><option value="5">Vendredi</option><option value="6">Samedi</option><option value="0">Dimanche</option></select></label></fieldset>' +
-    '<fieldset class="uvfs tk"><legend>La fédération</legend><label class="uvfld">Fédération<select name="take">' + feds.map(k => '<option value="' + k + '">' + esc(k) + "</option>").join("") + "</select></label></fieldset>" +
-    '<fieldset class="uvfs"><legend>Mode de jeu</legend>' +
-    '<label class="uvchoice"><input type="radio" name="gm" value="carriere" checked><span><b>Carrière</b><small>Le propriétaire te fixe des objectifs chaque trimestre. Rate-les trop souvent et tu es viré ; la faillite = fin de partie.</small></span></label>' +
-    '<label class="uvchoice"><input type="radio" name="gm" value="sandbox"><span><b>Bac à sable</b><small>Pas d’objectifs, pas de renvoi, pas de faillite : tu fais ce que tu veux.</small></span></label>' +
-    '<label class="uvfld">Difficulté<select name="diff"><option value="facile">Facile (plus d’argent, objectifs plus doux)</option><option value="normal" selected>Normal</option><option value="difficile">Difficile (moins d’argent, objectifs plus durs)</option></select></label></fieldset>' +
-    '<button class="uvbtn pri">Commencer l’Année 1</button></form></div>';
-}
-FORM.uvcreate = async f => {
-  const slot = +f.slot.value, mode = f.mode.value, gm = f.gm.value, diff = f.diff.value;
-  if (!Object.keys(S.rosters || {}).length) { toast("Les données de TCC TV ne sont pas encore chargées, réessaie dans un instant"); return; }
-  const btn = f.querySelector("button"); if (btn) { btn.disabled = true; btn.textContent = "Création du monde…"; }
-  await loadUData();
-  setTimeout(() => {
-    try {
-      const G0 = mode === "take" ? newWorld({ take: f.take.value }) : newWorld({ create: { n: f.n.value.trim(), sh: f.sh.value.trim() || "MOI", c: f.c.value, show: f.show.value.trim() || "Mon show", wd: f.wd.value } });
-      const G = upgrade(G0, { fresh: true, mode: gm, diff: diff }); G.tuto = 0;
-      startGame(G); U.G = G; U.slot = slot; try { localStorage.setItem("ctv.univ.slot", String(slot)); } catch (e) {} persist(true); go("#/univers/g");
-    } catch (e) { console.error(e); toast("Création impossible : " + (e.message || e)); if (btn) { btn.disabled = false; btn.textContent = "Commencer l’Année 1"; } }
-  }, 30);
-};
+// la création d'une partie est dans setup.js (21 nov.)
 // charger une partie (et la mettre à niveau si elle vient d'une ancienne version)
 export async function openSlot(s) {
   const G = await loadSlot(s).catch(() => null); if (!G) return null;
@@ -87,7 +59,7 @@ export function homeView() {
   const mails = G.mail.slice().reverse().slice(0, 3), inj = R.filter(w => injured(G, w)).length, tired = R.filter(w => w.en < 50 && !injured(G, w)).length;
   const mor = R.length ? Math.round(R.reduce((s, w) => s + w.mor, 0) / R.length) : 0, prom = (G.prom || []).filter(p => p.st === "cours").length;
   const newsL = G.news.slice().reverse().slice(0, 3), cur = G.fin.cur, month = cur.tv + cur.tix + cur.merch + cur.pub - cur.sal - cur.prod;
-  const body = (today ? '<div class="uvalert"><b>Ce soir : ' + esc(today.n) + '</b><div class="uvrow2"><a class="uvbtn pri" href="#/univers/ev/' + encodeURIComponent(today.id) + '">Préparer la carte</a><button type="button" class="uvbtn" data-act="uvautolive" data-id="' + esc(today.id) + '">Vivre en direct</button><button type="button" class="uvbtn ghost" data-act="uvautoplay" data-id="' + esc(today.id) + '">Laisser l’IA faire</button></div></div>' : "") +
+  const body = (G.gm ? '<div class="uvgmh">' + gmFace(G, 36) + '<span class="uvgrow"><small>Ton GM</small><b>' + esc(gmName(G)) + '</b></span><a class="uvgmtag" href="#/univers/bureau/rep">' + (G.mark ? "Mark" : "Smart") + (G.dna ? " · " + esc(DNA[dnaMain(G)].n) : "") + "</a></div>" : "") + (today ? '<div class="uvalert"><b>Ce soir : ' + esc(today.n) + '</b><div class="uvrow2"><a class="uvbtn pri" href="#/univers/ev/' + encodeURIComponent(today.id) + '">Préparer la carte</a><button type="button" class="uvbtn" data-act="uvautolive" data-id="' + esc(today.id) + '">Vivre en direct</button><button type="button" class="uvbtn ghost" data-act="uvautoplay" data-id="' + esc(today.id) + '">Laisser l’IA faire</button></div></div>' : "") +
     '<div class="uvfedrow big">' + crest(G, G.me, 46) + "<div><b>" + esc(f.n) + "</b><small>" + (rank ? rank + "e sur " + feds.length + " à l’audience" : "") + " · " + fmtK(f.money) + " en banque · réputation " + Math.round(G.rep || 50) + "</small></div></div>" +
     (U.homeV3 ? U.homeV3(G) : "") + homeExtra(G) +
     '<a class="uvtile" href="#/univers/courrier"><div class="uvth">Courrier <i>' + unread(G) + " non lu" + (unread(G) > 1 ? "s" : "") + "</i></div>" + mails.map(m => '<div class="uvline">' + mailAv(G, m, 28) + "<span class=\"uvgrow\">" + esc(m.subj) + "</span>" + (m.read ? "" : '<span class="uvdot" aria-label="non lu"></span>') + "</div>").join("") + "</a>" +

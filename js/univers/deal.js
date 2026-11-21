@@ -4,9 +4,10 @@ import { clamp, rnd, pick, uid, salOf, dayLabel, shortDate, fmtK } from "./world
 import { DEM, SROLE } from "./data.js";
 import { meF, wn, roster, mail, news, buzz, FANS, relsOf, relAdd, ach, e_, ini, isBig, staffQ } from "./base.js";
 import { addStaff } from "./v2.js";
+import { DNA, dnaMain, dnaLike } from "./dna.js";
 
 export function demandOf(G, w) { const f = meF(G); return Math.max(20, Math.round(salOf(w) * (1 + Math.max(0, w.pop - f.pop) / 60) * (1 - Math.max(-0.1, Math.min(0.15, ((G.rep || 50) - 50) / 300))) / 10) * 10); }
-export const attract = (G, w) => { const f = meF(G); return (f.pop - w.pop) / 3 + ((G.rep || 50) - 50) / 4 + (w.fed === G.me ? (w.mor - 55) / 4 : 0); };
+export const attract = (G, w) => { const f = meF(G); return (f.pop - w.pop) / 3 + ((G.rep || 50) - 50) / 4 + (w.fed === G.me ? (w.mor - 55) / 4 : 0) + (dnaLike(G, w) ? 5 : 0); };
 const PERSD = { Ambitieux: ["wintitle", "shot", "me"], "Leader du vestiaire": ["me", "creative"], Loyal: [], "Caractériel": ["noclean", "creative"], Bosseur: [], "Fêtard": ["days", "bonus"], Discret: ["days"], Diva: ["noclean", "creative", "me"], Mentor: ["days"], "Râleur": ["bonus", "merch"], Perfectionniste: ["creative"], Showman: ["merch", "debut"] };
 const SAYD = { partner: x => "Je viens seulement si tu signes aussi " + x + ".", wintitle: () => "Je veux une ceinture dès mon arrivée. Pas dans un an : tout de suite.", shot: () => "Je veux un match de titre dans les deux mois.", me: () => "Je suis une tête d’affiche : je veux le main event.",
   debut: () => "Je veux débuter dans un grand show, devant beaucoup de monde.", noclean: () => "Une chose : je ne perds jamais proprement. C’est écrit dans le contrat ou rien.", days: () => "Mon corps a besoin de repos : 6 matchs par mois, pas plus.", part: () => "Je veux garder mes dates sur le circuit indé (non exclusif).",
@@ -23,6 +24,8 @@ export function negStart(G, wid) {
   const mg = Object.values(G.staff || {}).find(s => s.role === "mgr" && s.w === wid && s.fed !== G.me);
   const n = w.pop < 40 ? 1 : w.pop < 62 ? 2 : 3, dem = [];
   if (fr && rnd() < 0.7) dem.push({ k: "partner", w: fr.id }); if (mg && rnd() < 0.7) dem.push({ k: "mgr", s: mg.id });
+  // mode Mark : on ne promet pas une victoire (pas de « ceinture tout de suite » ni de « je ne perds jamais proprement »)
+  if (G.mark) { for (let i = pool.length - 1; i >= 0; i--) if (pool[i] === "wintitle" || pool[i] === "noclean") pool.splice(i, 1, "shot"); }
   pool.sort(() => rnd() - 0.5).forEach(k => { if (dem.length < n && !dem.some(d => d.k === k) && DEM[k]) dem.push({ k: k }); });
   const base = demandOf(G, w), riv = [];
   const A = (G.auct || {})[wid];
@@ -32,6 +35,7 @@ export function negStart(G, wid) {
   }
   const N = { w: wid, round: 0, pat: clamp(100 - ((w.pers || []).indexOf("Caractériel") >= 0 ? 20 : 0) - ((w.pers || []).indexOf("Diva") >= 0 ? 10 : 0)), dem: dem, riv: riv, base: base, until: G.day + (riv.length ? 6 + Math.floor(rnd() * 5) : 21), log: [], done: false };
   N.log.push(["him", (w.fed === G.me ? "On parle de mon avenir ? D’accord, je t’écoute." : "Bonjour. " + (w.sx === "f" ? "Ma cliente " : "Mon client ") + w.n + " est prêt" + e_(w) + " à écouter ton offre.") + (dem.length ? " Mais " + (w.sx === "f" ? "elle" : "il") + " a des conditions." : "")]);
+  if (dnaLike(G, w)) N.log.push(["him", (w.fed === G.me ? "Ce qui me plaît ici" : "Ce qui lui plaît chez vous") + " : la " + DNA[dnaMain(G)].n.toLowerCase() + ". C’est " + (w.fed === G.me ? "mon" : "son") + " style."]);
   dem.forEach(d => N.log.push(["him", SAYD[d.k](d.w ? wn(G, d.w) : d.s ? ((G.staff[d.s] || {}).n || "") : "")]));
   riv.forEach(r => N.log.push(["riv", (G.F[r.fed] || {}).n + " lui propose " + fmtK(r.sal) + " par an."]));
   G.neg[wid] = N; return N;

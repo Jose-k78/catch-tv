@@ -3546,3 +3546,36 @@ ol.uvrank li>span.uvgrow{display:block}
 .uvtvcrowd{background:rgba(0,0,0,.5)}
 .uvtvfans{display:none}
 @media (prefers-reduced-motion:reduce){.uvtv .uvfans g,.uvtv .uvarms path,.uvtv circle.ph{animation:none}}
+/* ===== Lot du 21 nov. (heure du codage) : création de partie en 2 étapes, GM, ADN, mode Mark ===== */
+.uvnew .uvchoice i{font-style:normal;color:#a3abbd;font-weight:400;font-size:14px}
+.uvww{display:none;margin-top:10px}
+.uvform:has(select[name=take] option[value=WWE]:checked) .uvww{display:grid;gap:8px}
+.uvform:has(input[value=create]:checked) span.tk{display:none}
+span.tk{display:block}
+.uvmfree{margin-top:6px;width:100%;max-width:200px;background:#161b26;border:1px solid #2a3040;border-radius:10px;color:#eef1f6;padding:8px 10px;font:inherit}
+.uvsetup{padding-bottom:110px}
+.uvsuhd{display:flex;gap:12px;align-items:center;background:#161b26;border:1px solid #2a3040;border-radius:14px;padding:12px;margin:10px 0}
+.uvsuhd b{display:block;font-size:18px}
+.uvsuhd small{display:flex;gap:6px;align-items:center;color:#a3abbd;font-size:14px;flex-wrap:wrap}
+.uvsunum{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:8px}
+.uvsunum span{background:#161b26;border-radius:12px;padding:10px 6px;text-align:center}
+.uvsunum b{display:block;font-family:Anton,Impact,sans-serif;font-size:20px;color:#f5b13d;font-weight:400}
+.uvsunum small{color:#a3abbd;font-size:12px}
+button.uvtab{background:none;border:0;border-bottom:3px solid transparent;cursor:pointer;font:inherit;font-weight:700;font-size:15px}
+.uvsur{display:flex;gap:10px;align-items:center;padding:8px 4px;border-bottom:1px solid #222838;opacity:.55}
+.uvsur.on{opacity:1}
+.uvsur b{display:block;font-size:16px}
+.uvsur small{color:#a3abbd;font-size:13px}
+.uvsur .uvbtn{flex:none;min-width:112px}
+.uvsugo{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(transparent,#0f1219 30%);display:grid;gap:6px;justify-items:center}
+.uvsugo .uvbtn{width:100%;max-width:420px}
+.uvsugo p{margin:0;font-size:14px}
+.uvgmh{display:flex;gap:10px;align-items:center;margin-bottom:10px}
+.uvgmh small{display:block;color:#a3abbd;font-size:12px}
+.uvgmh b{font-size:17px}
+.uvgmtag{flex:none;padding:5px 10px;border-radius:99px;border:1px solid #2a3040;color:#f5b13d;font-weight:700;font-size:13px;text-decoration:none}
+.uvdna{border-left:4px solid var(--dc,#f5b13d)}
+.uvdna .uvbig{color:var(--dc,#f5b13d)}
+.uvtvmk{margin:6px 0 0;color:#a3abbd;font-size:13px}
+.uvnew .uvfs{min-width:0}
+.uvnew .uvfld input[type=file]{max-width:100%;min-width:0;font-size:14px}

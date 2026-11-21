@@ -1,6 +1,7 @@
 // Mode Univers v2 : mise à niveau d'une partie (nouvelle ou ancienne sauvegarde) — statuts des personnes (décédés → Hall of Fame,
 // staff, légendes retraitées), staff, gimmicks, relations, catégories et prestige des titres, traditions, salles, réglages, objectifs.
 import { initRival, initMissions } from "./goals.js";
+import { dnaInit, DNA_OF } from "./dna.js";
 import { S } from "../state.js";
 import { norm } from "../wrestlers.js";
 import { clamp, rnd, pick, uid, h01, hash, dateOf, salOf } from "./world.js";
@@ -58,6 +59,7 @@ export function upgrade(G, opt) {
   // v3 (21 nov.) : la fédération rivale et les missions du propriétaire
   if (G.v < 3) { initRival(G); initMissions(G); G._ach = []; G.v = 3; }
   applyStatus(G, opt);
+  if (!G.dna && G.me) dnaInit(G, DNA_OF[G.me] || "wwe");   // ADN (21 nov.) : les anciennes parties prennent celui de leur fédération
   return G;
 }
 // 21 nov. (2e lot) : à chaque ouverture, si data/statuts.json a changé : vraies années de naissance (born), catcheuses (fem),

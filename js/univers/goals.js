@@ -100,7 +100,7 @@ function avgLast(G, n, f) { const L = (G.ev || []).filter(e => e.fed === G.me &&
 function makeMission(G) {
   const f = meF(G), act = (G.mis || []).filter(m => m.st === "cours").map(m => m.k), R = roster(G).filter(w => w.fed === G.me && !w.ret);
   const kd = G.diff === "facile" ? 1.25 : G.diff === "difficile" ? 0.85 : 1, rec = (G.misLog || []).slice(-3).map(m => m.k);
-  const opts = MK.filter(k => act.indexOf(k) < 0 && rec.indexOf(k) < 0);
+  const opts = MK.filter(k => act.indexOf(k) < 0 && rec.indexOf(k) < 0 && !(G.mark && k === "win"));   // mode Mark : on ne fait gagner personne
   for (let tries = 0; tries < 12; tries++) {
     const k = pick(opts); if (!k) return null;
     const m = { id: uid("mi"), k: k, from: G.day, until: G.day + 21, st: "cours" };

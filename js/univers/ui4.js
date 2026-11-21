@@ -89,10 +89,10 @@ function matchEditor(G, ev, it, i) {
     '<label class="uvfld">Type de match<select name="t">' + MTG.map(g => '<optgroup label="' + esc(g[0]) + '">' + g[1].map(k => opt(k, MT[k].n, it.t)).join("") + "</optgroup>").join("") + "</select></label>" + sides +
     '<label class="uvfld">Titre en jeu<select name="title">' + opt("", "Aucun", it.title) + titles.map(t => opt(t.id, t.n + " — " + (champIds(t).length ? teamName(G, champIds(t)) : "vacant") + (t.cat === "x" ? " (intergender)" : t.cat === "f" ? " (féminin)" : ""), it.title)).join("") + "</select></label>" +
     '<div class="uvfgrid"><label class="uvmini">Enjeu<select name="stip">' + Object.keys(STIP).map(k => opt(k, STIP[k], it.stip)).join("") + "</select></label>" +
-    '<label class="uvmini">Fin du match<select name="fin">' + Object.keys(FIN).map(k => opt(k, FIN[k][0], it.fin || "auto")).join("") + "</select></label>" +
+    (G.mark ? "" : '<label class="uvmini">Fin du match<select name="fin">' + Object.keys(FIN).map(k => opt(k, FIN[k][0], it.fin || "auto")).join("") + "</select></label>") +
     '<label class="uvmini">Consigne<select name="cons">' + Object.keys(CONS).map(k => opt(k, CONS[k][0], it.cons)).join("") + "</select></label>" +
     '<label class="uvmini">Durée<select name="dur">' + Object.keys(DUR).map(k => opt(k, DUR[k][0] + " (" + DUR[k][1] + " min)", it.dur)).join("") + "</select></label>" +
-    '<label class="uvmini">Vainqueur<select name="win">' + opt("ia", "L’IA décide", it.win) + it.sides.map((s, j) => opt(j, "Camp " + (j + 1) + (s.length ? " : " + teamName(G, s) : ""), it.win)).join("") + opt("nul", "Draw", it.win) + "</select></label></div>" +
+    (G.mark ? "</div><p class=\"uvsm\">Mode Mark : personne ne choisit le vainqueur. Le match se joue sur le ring (forme, stats, élan, fatigue… et un peu de chance).</p>" : '<label class="uvmini">Vainqueur<select name="win">' + opt("ia", "L’IA décide", it.win) + it.sides.map((s, j) => opt(j, "Camp " + (j + 1) + (s.length ? " : " + teamName(G, s) : ""), it.win)).join("") + opt("nul", "Draw", it.win) + "</select></label></div>") +
     '<div class="uvspots" role="group" aria-label="Moments forts">' + Object.keys(SPOTS).map(k => '<label class="uvspot"><input type="checkbox" name="spot" value="' + k + '"' + ((it.spots || []).indexOf(k) >= 0 ? " checked" : "") + "><span>" + SPOTS[k][0] + "</span></label>").join("") + "</div>" +
     '<button type="button" class="uvbtn sm pri" data-act="uvbed" data-ev="' + esc(ev.id) + '" data-i="-1">OK</button></form>';
 }

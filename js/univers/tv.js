@@ -47,7 +47,8 @@ ACT.uvtvq = () => { const LV = U.live; if (LV) { LV.sp = 0; clearInterval(timer)
 ACT.uvtvord = el => { const LV = U.live; if (!LV) return; LV.ord = !LV.ord; redraw(); };
 function order(o, v) {
   const G = U.G, LV = U.live; if (!LV) return; const ev = G.ev.find(e => e.id === LV.ev);
-  if (orderLive(G, ev, LV.L, o, v)) toast({ faster: "On accélère !", longer: "Encore un dégagement…", finish: "Va au finish !", win: "Consigne transmise à l’arbitre", runin: "Intervention lancée !", medic: "Le médecin y va", pub: "Coupure pub" }[o] || "OK");
+  if (G.mark && (o === "win" || o === "longer" || o === "finish")) return;
+  if (orderLive(G, ev, LV.L, o, v)) toast({ sec: "La sécurité est en place", sanc: "L’arbitre est prévenu", restart: "Il faudra un vainqueur !", faster: G.mark ? "Le temps presse !" : "On accélère !", longer: "Encore un dégagement…", finish: "Va au finish !", win: "Consigne transmise à l’arbitre", runin: "Intervention lancée !", medic: "Le médecin y va", pub: "Coupure pub" }[o] || "OK");
 }
 // réponses aux moments clés et ordres du tiroir
 ACT.uvkey = el => {
@@ -143,6 +144,14 @@ function keyPanel(G, L, LV) {
   const it = C.it, S = (it.sides || []).filter(s => s.length), w = LV.key.who && G.W[LV.key.who];
   if (LV.key.k === "inj") return '<div class="uvtvkey" role="dialog" aria-label="Moment clé"><b>' + (w ? esc(w.n) + " a l’air blessé" + (w.sx === "f" ? "e" : "") + " !" : "Blessure possible !") + "</b><p>Tu arrêtes tout ou le match continue ?</p>" +
     '<button type="button" class="uvbtn del" data-act="uvkey" data-k="medic">Envoyer le médecin (match arrêté)</button><button type="button" class="uvbtn" data-act="uvkey" data-k="go">On continue (risqué)</button></div>';
+  // mode Mark : le GM agit à l'écran (sécurité, sanction, relance, quelqu'un qui débarque) mais ne choisit jamais le vainqueur
+  if (G.mark) return '<div class="uvtvkey" role="dialog" aria-label="Moment clé"><small>Moment clé</small><b>' + (w ? esc(w.n) + " a failli gagner !" : "Le tombé a failli passer !") + "</b><p>Tu es au bord du ring. Que fait le GM ?</p>" +
+    '<button type="button" class="uvbtn pri" data-act="uvkey" data-k="go">Regarder la suite</button>' +
+    (C.mod.sec ? "" : '<button type="button" class="uvbtn" data-act="uvkey" data-k="sec">Envoyer la sécurité autour du ring</button>') +
+    (C.mod.sanc ? "" : '<button type="button" class="uvbtn" data-act="uvkey" data-k="sanc">Prévenir l’arbitre : la triche = disqualification</button>') +
+    (C.mod.restart ? "" : '<button type="button" class="uvbtn" data-act="uvkey" data-k="restart">Annoncer : il faudra un vainqueur ce soir</button>') +
+    '<button type="button" class="uvbtn" data-act="uvkey" data-k="runin">Faire entrer quelqu’un…</button>' +
+    '<button type="button" class="uvbtn ghost sm" data-act="uvkey" data-k="nokey">Ne plus me demander ce soir</button></div>';
   return '<div class="uvtvkey" role="dialog" aria-label="Moment clé"><small>Moment clé</small><b>' + (w ? esc(w.n) + " a failli gagner !" : "Le tombé a failli passer !") + "</b><p>Tu parles à l’arbitre dans l’oreillette :</p>" +
     '<button type="button" class="uvbtn pri" data-act="uvkey" data-k="go">Laisser le match se finir</button>' +
     '<button type="button" class="uvbtn" data-act="uvkey" data-k="longer">Encore un dégagement ! (plus long, le public adore)</button>' +
@@ -154,6 +163,10 @@ function keyPanel(G, L, LV) {
 function drawer(G, L) {
   const C = L.cur; if (!C) return '<div class="uvtvdr"><p>Les ordres arrivent au prochain segment.</p></div>';
   const S = C.it.it === "m" ? (C.it.sides || []).filter(s => s.length) : [];
+  if (G.mark) { const b = (o, t, on) => on ? "" : '<button type="button" class="uvbtn sm" data-act="uvtvo" data-o="' + o + '">' + t + "</button>";
+    return '<div class="uvtvdr" role="group" aria-label="Le GM agit"><div class="uvrow2">' + (S.length ? b("sec", "Sécurité au bord du ring", C.mod.sec) + b("sanc", "Prévenir l’arbitre", C.mod.sanc) + b("restart", "Il faut un vainqueur", C.mod.restart) + b("faster", "Annoncer le temps limite", C.mod.faster) : "") +
+      '<button type="button" class="uvbtn sm" data-act="uvtvo" data-o="pub">Coupure pub</button>' + (C.alert === "inj" && !C.mod.medic ? '<button type="button" class="uvbtn sm del" data-act="uvtvo" data-o="medic">Envoyer le médecin</button>' : "") + "</div>" +
+      (S.length ? '<div class="uvrow2"><button type="button" class="uvbtn sm ghost" data-act="uvkey" data-k="runin">Faire entrer quelqu’un…</button></div>' : "") + '<p class="uvtvmk">Mode Mark : le résultat se joue sur le ring.</p></div>'; }
   return '<div class="uvtvdr" role="group" aria-label="Tes ordres"><div class="uvrow2"><button type="button" class="uvbtn sm" data-act="uvtvo" data-o="faster">Accélérer</button><button type="button" class="uvbtn sm" data-act="uvtvo" data-o="longer">Rallonger</button>' +
     (S.length ? '<button type="button" class="uvbtn sm" data-act="uvtvo" data-o="finish">Aller au finish</button>' : "") + '<button type="button" class="uvbtn sm" data-act="uvtvo" data-o="pub">Couper à la pub</button>' + (C.alert === "inj" && !C.mod.medic ? '<button type="button" class="uvbtn sm del" data-act="uvtvo" data-o="medic">Envoyer le médecin</button>' : "") + "</div>" +
     (S.length ? '<div class="uvrow2">' + S.map((s, j) => '<button type="button" class="uvbtn sm ghost" data-act="uvtvo" data-o="win" data-v="' + j + '">Vainqueur : ' + esc(teamName(G, s)) + "</button>").join("") + '<button type="button" class="uvbtn sm ghost" data-act="uvtvo" data-o="win" data-v="nul">Draw</button><button type="button" class="uvbtn sm ghost" data-act="uvkey" data-k="runin">Intervention…</button></div>' : "") + "</div>";

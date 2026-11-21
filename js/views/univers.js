@@ -8,13 +8,15 @@ import { S } from "../state.js";
 import { lsGet } from "../util.js";
 import { U, redraw } from "../univers/core.js";
 import { metaAll } from "../univers/save.js";
-import { partiesView, newView, homeView, courrierView, actuView, buzzView, mondeView, ficheView, openSlot } from "../univers/ui.js";
+import { partiesView, homeView, courrierView, actuView, buzzView, mondeView, ficheView, openSlot } from "../univers/ui.js";
 import { fedeView, creatifView, activiteView } from "../univers/ui2.js";
 import { negoView } from "../univers/ui3.js";
 import { bookView } from "../univers/ui4.js";
 import { liveView } from "../univers/tv.js";
 import { fedView, bureauView } from "../univers/ui5.js";
 import { decideView } from "../univers/ui6.js";
+import { newView, setupView } from "../univers/setup.js";
+import { kfy } from "../univers/dna.js";
 
 export const univOn = () => !!S.realAdmin;
 let tried = 0;
@@ -34,6 +36,11 @@ export function universView(a, b, c) {
     }
     return partiesView();
   }
+  if (U.G.setup) return setupView();
+  const out = route(a, b, c);
+  return U.G.mark ? kfy(out) : out;   // mode Mark : aucun mot des coulisses à l'écran
+}
+function route(a, b, c) {
   switch (a) {
     case "courrier": return courrierView(b);
     case "actu": return actuView();

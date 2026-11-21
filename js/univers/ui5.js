@@ -10,6 +10,8 @@ import { setVenue, setTix, planTour, tvOffers, takeTv, licOk, takeLic, borrow, i
 import { part, propose, lend, rent, invasion, jointShow } from "./deal.js";
 import { hofInduct } from "./life.js";
 import { gimOf } from "./v2.js";
+import { DNA, dnaMain, dnaNext } from "./dna.js";
+import { gmFace, gmName } from "./setup.js";
 import { U, go, redraw, persist, shell, tabs, chips, face, crest, wnH, teamH, sidesH, whoIn, imgT, imgBtn, showPrompt } from "./core.js";
 
 const bar = (v, c) => '<span class="uvbar"><i style="width:' + clamp(v) + "%" + (c ? ";background:" + c : "") + '"></i></span>';
@@ -139,7 +141,11 @@ export function bureauView(tab) {
     body = U.rivBody ? U.rivBody(G) : "";
   } else if (tab === "rep") {
     const jobs = G.mail.filter(m => m.k === "job" && !m.done && G.F[m.fed]);
-    body = '<div class="uvtile"><div class="uvth">Ta réputation de GM</div><div class="uvbig">' + Math.round(G.rep || 50) + " / 100</div>" + bar(G.rep || 50) + '<p class="uvsm">Bons shows, objectifs tenus, awards et stars dans le ' + MAGN + " la font monter. Les promesses non tenues et les renvois de stars la font baisser. Plus elle est haute, plus les stars veulent signer chez toi, et d’autres fédérations peuvent te proposer leur poste de GM.</p></div>" +
+    const dk = dnaMain(G), dn = dnaNext(G);
+    body = (G.dna ? '<div class="uvtile uvdna" style="--dc:' + DNA[dk].c + '"><div class="uvth">L’ADN de ta fédération</div><div class="uvbig">' + esc(DNA[dk].n) + "</div><p class=\"uvsm\">" + esc(DNA[dk].ex) + " · " + esc(DNA[dk].d) + "</p>" +
+      (dn ? '<p class="uvsm">Les journalistes commencent à te comparer à la <b>' + esc(DNA[dn].n.toLowerCase()) + "</b> (" + esc(DNA[dn].ex) + ").</p>" : '<p class="uvsm">Ton public sait ce qu’il vient voir.</p>') +
+      '<p class="uvmut">L’ADN change avec ce que tu programmes. Les catcheurs qui aiment ton style écoutent mieux tes offres.</p></div>' : "") +
+      '<div class="uvtile"><div class="uvth">Ta réputation de GM</div><div class="uvbig">' + Math.round(G.rep || 50) + " / 100</div>" + bar(G.rep || 50) + '<p class="uvsm">Bons shows, objectifs tenus, awards et stars dans le ' + MAGN + " la font monter. Les promesses non tenues et les renvois de stars la font baisser. Plus elle est haute, plus les stars veulent signer chez toi, et d’autres fédérations peuvent te proposer leur poste de GM.</p></div>" +
       '<h3 class="uvh3">Offres d’emploi</h3>' + (jobs.length ? jobs.map(m => '<div class="uvcard uvrow">' + crest(G, m.fed, 36) + '<div class="uvgrow"><b>' + esc(G.F[m.fed].n) + "</b><small>" + esc(shortDate(m.d)) + '</small></div><button type="button" class="uvbtn sm pri" data-act="uvjob" data-f="' + esc(m.fed) + '" data-m="' + esc(m.id) + '">Accepter</button></div>').join("") : '<p class="uvempty">Aucune offre pour l’instant.</p>');
   } else if (tab === "ach") {
     body = '<div class="uvachg">' + Object.keys(ACH).map(k => '<div class="uvach' + ((G.ach || {})[k] != null ? " on" : "") + '"><b>' + ((G.ach || {})[k] != null ? "🏆" : "🔒") + "</b><span>" + esc(ACH[k][0]) + "</span><small>" + esc(ACH[k][1]) + "</small></div>").join("") + "</div>";
@@ -156,12 +162,17 @@ export function bureauView(tab) {
       '<b>S’arrêter quand…</b><label class="uvspot"><input type="checkbox" name="stopWk"' + (c.stopWk ? " checked" : "") + '><span>Le résumé de la semaine arrive</span></label><label class="uvspot"><input type="checkbox" name="stopInj"' + (c.stopInj ? " checked" : "") + "><span>Un blessé revient</span></label>" +
       '<label class="uvspot"><input type="checkbox" name="mixed"' + (f.mixed ? " checked" : "") + '><span>Autoriser les matchs hommes contre femmes dans ma fédération</span></label>' +
       '<label class="uvspot"><input type="checkbox" name="motn"' + (c.motn ? " checked" : "") + '><span>Prime automatique de 10 k$ au match de la soirée</span></label>' +
-      '<label class="uvspot"><input type="checkbox" name="tips"' + (c.tips !== false ? " checked" : "") + '><span>Les conseils du bras droit</span></label><button class="uvbtn pri">Enregistrer</button></form>' +
+      '<label class="uvspot"><input type="checkbox" name="tips"' + (c.tips !== false ? " checked" : "") + '><span>Les conseils du bras droit</span></label>' +
+      '<b>Toi, le GM</b><div class="uvrow">' + gmFace(G, 44) + '<label class="uvfld uvgrow">Ton nom<input name="gmn" maxlength="30" value="' + esc(gmName(G)) + '"></label></div><button type="button" class="uvbtn sm" data-act="uvgmpic">Changer ta photo</button>' +
+      '<b>Ton univers</b><label class="uvchoice"><input type="radio" name="um" value="smart"' + (G.mark ? "" : " checked") + '><span><b>Smart</b><small>Tu choisis les vainqueurs et tu écris les histoires.</small></span></label>' +
+      '<label class="uvchoice"><input type="radio" name="um" value="mark"' + (G.mark ? " checked" : "") + '><span><b>Mark</b><small>Le catch est vrai : le résultat se joue sur le ring, tout est raconté comme à la télé.</small></span></label>' +
+      '<button class="uvbtn pri">Enregistrer</button></form>' +
       '<button type="button" class="uvbtn ghost" data-act="uvtuto" data-s="0">Revoir le tuto</button>';
   }
   return shell("bureau", "Bureau du GM", T, body);
 }
-FORM.uvcfg = f => { const G = U.G; G.cfg = Object.assign(G.cfg || {}, { speed: +f.speed.value, stopWk: f.stopWk.checked, stopInj: f.stopInj.checked, motn: f.motn.checked, tips: f.tips.checked }); meF(G).mixed = f.mixed.checked; persist(); toast("Réglages enregistrés"); redraw(); };
+FORM.uvcfg = f => { const G = U.G; G.cfg = Object.assign(G.cfg || {}, { speed: +f.speed.value, stopWk: f.stopWk.checked, stopInj: f.stopInj.checked, motn: f.motn.checked, tips: f.tips.checked }); meF(G).mixed = f.mixed.checked;
+  G.gm = G.gm || {}; G.gm.n = (f.gmn.value || "").trim().slice(0, 30) || G.gm.n || "Le GM"; G.mark = f.um.value === "mark"; try { localStorage.setItem("ctv.univ.um", G.mark ? "mark" : "smart"); } catch (e) {} persist(); toast("Réglages enregistrés"); redraw(); };
 ACT.uvjob = el => { const G = U.G, m = G.mail.find(x => x.id === el.dataset.m); modal((box, close) => { box.classList.add("uvmodal"); box.innerHTML = "<h3>Devenir GM de " + esc((G.F[el.dataset.f] || {}).n || "") + " ?</h3><p class=\"uvmut\">Ta fédération actuelle sera gérée par l’IA. Ton staff reste là-bas.</p><button type=\"button\" class=\"uvbtn pri\" data-y=\"1\">Oui, j’y vais</button><button type=\"button\" class=\"uvbtn ghost\" data-n=\"1\">Non</button>"; box.addEventListener("click", e => { if (e.target.closest("[data-n]")) close(); if (e.target.closest("[data-y]")) { toast(switchFed(G, el.dataset.f)); if (m) m.done = "Accepté"; persist(true); close(); go("#/univers/g"); redraw(); } }); }); };
 
 // ---------- l'écran de défilement des jours ----------
