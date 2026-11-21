@@ -392,6 +392,25 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
     circuit indé `G.indie` (`#/univers/indie`), types d'histoires `STY` / `slMake` / `slEnd`, Butterfly `G.bfly`, Ghost (`ghost`, `ghost2`),
     liens des groupes `groupsLink`, base du modo `data/univers.json` (`names`, `img` ; écrite avec la clé GitHub du modo, appliquée aux
     nouvelles parties par `applyBase`).
+- **Mode Univers, lot du 21 nov. (soir)** (« heure du codage » de 13 h 08 ; test /tmp/claude-0/t/t58.cjs, + tcal.cjs, tseg.cjs) :
+  - Vrai calendrier : `data/univers-calendrier.json` (PLE / PPV 2026 de chaque fédé : `feds.K = [{ t, d, br?, co? }]`, `mania`) + `cal.js` :
+    `calYear` (année 1 ; PPV inventés `BIGNAMES` seulement sans données), `calNext` (chaque année : reprend la version du joueur — nom, date
+    `md` / `wdk`, suppressions — et fait monter les numéros `bumpName`), `calUpgrade` (anciennes parties, une fois : `G.calv`). NXT = `br: "NXT"`
+    (joués par le GM de NXT si `G.solo` ≠ NXT : `soloFlag`, `ev.ai`, lancés par `brandDay`). Événements communs `co` → `ev.part`. AAA = fédé
+    sœur de la WWE (`SISTER`, `sisterLink` : partenariat permanent `deal.sis`, `sisterGuests` dans `autoCard`). Carte d'un grand show : renommer /
+    déplacer l'événement (`evn`, `evd`, `evm`).
+  - Segments : `segs.js` = 200 segments (100 avant / 100 après, 10 familles chacun, d'après les 2 listes de Jose) en lignes « clé|nom|texte|
+    fréquence|impact|conditions|effets », fusionnés dans `SEG` (data.js) ; `CHAIN` (suites), `ASSOC` + `segSearch` (recherche avec mots associés).
+    `segx.js` : `cast` (rôles {a} {b} {c} {m} {f} selon la situation), `segReco` (conseillés), `autoSegs` (le direct en crée tout seul, en chaînes,
+    historique `G.segh` pour ne pas répéter), `segFx` (effets ; les rares font l'actu). Carte (ui4) : bloc conseillés + « Voir la liste » + recherche
+    (`[data-segq]`, filtrée sans redessiner). Un catcheur peut faire segment → match → segment (`usedIn` = matchs seulement).
+  - Accompagnateurs : `it.mgr = [{ id (catcheur ou staff), sd }]` + managers attitrés (`accList`, `it.noMgr`) ; interviennent dans `simMatch`.
+    L'IA ne fait jamais s'affronter deux partenaires (`pals` dans `autoCard`), le joueur est prévenu (`partnerWarn`).
+  - Mode Mark, vrai GM : moments `gm` du direct → `LV.key.k = "gm"` (tv.js) → `gmAct` (match.js : sécurité, laisser faire, match tout de suite
+    `forceNow`, amende, suspension `w.susp`, interdit de bord de ring `w.rban`) ; show passé sans le direct → sanction à décider en coulisses
+    (`G.gmq` → scène `sanc`) ; scènes GM `mk: 1` de vn.js (bagarre, plainte, titre, repos, retard, refus) ; matchs imposés `G.force` (prochain show).
+  - Prêts entre shows (`loanAsk`, `loanGive`, `w.loan`, retour automatique) ; noms changés dans les parties existantes : `statuts.json` `rn` / `rnG`
+    (appliqués par `applyStatus`).
 - **Jeu « Qui suis-je ? »** (21 nov., `js/views/qsj.js`, `#/qsj`, `#/qsj/modo` ; 3e tuile de l'onglet Jeux, membres connectés) : 3 catcheurs par jour
   (Paris), même tirage pour tous : facile = fiche dans l'app et top 25 % du rang des cartes TCCCG, moyen = reste du top 40 %, difficile = 40-75 %,
   seulement les catcheurs avec photo et assez d'indices (`goodFor`), jamais les exclus de statuts.json ; ordre fixé par le jour (`picks(day)`).

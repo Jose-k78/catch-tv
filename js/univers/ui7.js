@@ -6,14 +6,14 @@ import { U, go, redraw, persist, shell, face, crest, imgShow } from "./core.js";
 import { meF, roster, isMine, champIds } from "./base.js";
 import { fmtM, stars, dayLabel } from "./world.js";
 import { MACTS } from "./ui.js";
-import { brands, others, brandGM, brandRoster, tradeAsk, tradeValue, callUpPool, callUp, meet, hosts, visit, draftTurn, draftPool, draftPick, draftStep, draftEnd } from "./brand.js";
+import { brands, others, brandGM, brandRoster, tradeAsk, tradeValue, callUpPool, callUp, meet, hosts, visit, draftTurn, draftPool, draftPick, draftStep, draftEnd, loanAsk, loanGive, loans } from "./brand.js";
 
 const logo = (G, br, sz) => { const s = imgShow(G, G.me, br); return s ? '<img class="uvbrl" src="' + esc(s) + '" alt="' + esc(br) + '" style="width:' + sz + "px;height:" + sz + 'px">' : '<span class="uvbrl ini" style="width:' + sz + "px;height:" + sz + 'px">' + esc(br.slice(0, 3).toUpperCase()) + "</span>"; };
 const line = (G, w, btns) => '<div class="uvline uvbrw">' + face(G, w, 38) + '<a class="uvgrow" href="#/univers/c/' + esc(w.id) + '"><b>' + esc(w.n) + "</b><small>Pop " + Math.round(w.pop) + (Object.values(G.T).some(t => champIds(t).indexOf(w.id) >= 0) ? " · champion" + (w.sx === "f" ? "ne" : "") : "") + "</small></a>" + btns + "</div>";
 
 // catcheur d'un autre show : nom sur toute la largeur, boutons dessous
 const line2 = (G, w) => '<div class="uvbrw2">' + face(G, w, 40) + '<a href="#/univers/c/' + esc(w.id) + '"><b>' + esc(w.n) + "</b><small>Pop " + Math.round(w.pop) + (Object.values(G.T).some(t => champIds(t).indexOf(w.id) >= 0) ? " · champion" + (w.sx === "f" ? "ne" : "") : "") + "</small></a>" +
-  '<div class="uvbrb"><button type="button" class="uvbtn sm" data-act="uvmeet" data-w="' + esc(w.id) + '">Rencontrer</button><button type="button" class="uvbtn sm" data-act="uvtrade" data-w="' + esc(w.id) + '">Échanger</button></div></div>';
+  '<div class="uvbrb"><button type="button" class="uvbtn sm" data-act="uvmeet" data-w="' + esc(w.id) + '">Rencontrer</button><button type="button" class="uvbtn sm" data-act="uvtrade" data-w="' + esc(w.id) + '">Échanger</button><button type="button" class="uvbtn sm ghost" data-act="uvloan" data-w="' + esc(w.id) + '">Emprunter</button></div></div>';
 ACT.uvbrall = el => { U.f.brAll = U.f.brAll || {}; U.f.brAll[el.dataset.b] = 1; redraw(); };
 // ---------- Ma fédé › Autres shows ----------
 U.brandBody = G => {
@@ -25,8 +25,16 @@ U.brandBody = G => {
       return '<details class="uvbrand"' + (br === others(G)[0] ? " open" : "") + "><summary>" + logo(G, br, 44) + '<span class="uvgrow"><b>' + esc(br) + "</b><small>GM : " + esc(brandGM(G, br)) + " · " + R.length + " catcheurs" + (B && B.last ? " · dernier show " + stars(B.last.r) + " · " + fmtM(B.last.aud) : "") + "</small></span></summary>" +
         (U.f.brAll && U.f.brAll[br] ? R : R.slice(0, 12)).map(w => line2(G, w)).join("") + (R.length > 12 && !(U.f.brAll && U.f.brAll[br]) ? '<button type="button" class="uvbtn ghost" data-act="uvbrall" data-b="' + esc(br) + '">Voir les ' + (R.length - 12) + " autres</button>" : "") + "</details>"; }).join("") +
     (cu.length ? '<h3 class="uvh3">Faire monter un talent</h3><p class="uvsm">Deux montées par mois au plus. Les champions restent dans leur show.</p>' + cu.map(w => line(G, w, '<small class="uvmut">' + esc(w.br) + '</small><button type="button" class="uvbtn sm pri" data-act="uvcallup" data-w="' + esc(w.id) + '">Faire monter</button>')).join("") : "") +
+    (loans(G).length ? '<h3 class="uvh3">Prêts en cours</h3>' + loans(G).map(w => line(G, w, '<small class="uvmut">' + esc(w.loan.from) + " → " + esc(w.loan.to) + " · jusqu’au " + esc(dayLabel(w.loan.until)) + "</small>")).join("") : "") +
     (V.length ? '<h3 class="uvh3">Apparitions prévues</h3>' + V.map(v => line(G, G.W[v.w], '<small class="uvmut">' + esc(v.n) + " · " + esc(dayLabel(v.day)) + "</small>")).join("") : "");
 };
+// prêts : emprunter un catcheur d'un autre show, ou prêter un des miens (1, 2 ou 4 semaines)
+const weeksBox = (title, cb, brs) => modal((box, close) => { box.classList.add("uvmodal");
+  box.innerHTML = "<h3>" + esc(title) + "</h3>" + (brs ? brs.map(b => '<div class="uvrow2"><b class="uvgrow">' + esc(b) + "</b>" + [1, 2, 4].map(n => '<button type="button" class="uvbtn sm" data-b="' + esc(b) + '" data-n="' + n + '">' + n + " sem.</button>").join("") + "</div>").join("")
+    : '<div class="uvrow2">' + [1, 2, 4].map(n => '<button type="button" class="uvbtn" data-n="' + n + '">' + n + " semaine" + (n > 1 ? "s" : "") + "</button>").join("") + "</div>") + '<button type="button" class="uvbtn ghost" data-x="1">Fermer</button>';
+  box.addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; if (b.dataset.x) return close(); if (b.dataset.n) { close(); cb(+b.dataset.n, b.dataset.b); } }); });
+ACT.uvloan = el => { const G = U.G, w = G.W[el.dataset.w]; if (!w) return; weeksBox("Emprunter " + w.n + " pendant…", n => { const r = loanAsk(G, w.id, n); if (r) toast(r, { ms: 3500 }); persist(); redraw(); }); };
+ACT.uvlend = el => { const G = U.G, w = G.W[el.dataset.w]; if (!w) return; weeksBox("Prêter " + w.n + " à…", (n, b) => { const r = loanGive(G, w.id, b, n); if (r) toast(r, { ms: 3500 }); persist(); redraw(); }, others(G)); };
 ACT.uvcallup = el => { const G = U.G, r = callUp(G, el.dataset.w); if (r) toast(r, { ms: 3500 }); persist(); redraw(); };
 // rencontrer : une petite scène dans les couloirs
 ACT.uvmeet = el => {
@@ -66,7 +74,7 @@ ACT.uvvisit = el => {
 U.ficheX = (G, w) => {
   if (!w || w.ret) return "";
   if (G.solo && w.fed === G.me && w.br && w.br !== G.solo) return '<div class="uvrow2 uvfx"><button type="button" class="uvbtn sm" data-act="uvmeet" data-w="' + esc(w.id) + '">Le rencontrer</button><button type="button" class="uvbtn sm pri" data-act="uvtrade" data-w="' + esc(w.id) + '">Proposer un échange</button>' + (callUpPool(G).indexOf(w) >= 0 ? '<button type="button" class="uvbtn sm" data-act="uvcallup" data-w="' + esc(w.id) + '">Faire monter</button>' : "") + "</div>";
-  if (isMine(G, w)) return '<div class="uvrow2 uvfx"><button type="button" class="uvbtn sm" data-act="uvvisit" data-w="' + esc(w.id) + '">Faire une apparition…</button></div>';
+  if (isMine(G, w)) return '<div class="uvrow2 uvfx"><button type="button" class="uvbtn sm" data-act="uvvisit" data-w="' + esc(w.id) + '">Faire une apparition…</button>' + (G.solo && others(G).length && !w.loan ? '<button type="button" class="uvbtn sm ghost" data-act="uvlend" data-w="' + esc(w.id) + '">Prêter à un autre show…</button>' : "") + (w.loan ? '<small class="uvmut">Prêté' + (w.sx === "f" ? "e" : "") + " (" + esc(w.loan.from) + " → " + esc(w.loan.to) + ") jusqu’au " + esc(dayLabel(w.loan.until)) + "</small>" : "") + "</div>";
   return "";
 };
 

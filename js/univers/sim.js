@@ -8,6 +8,7 @@ import { SPOTS, heatBetween as hb2, autoCard, runShow, simMatch, nextBig } from 
 import { lifeDaily, lifeWeekly, lifeMonthly, lifeYearly } from "./life.js";
 import { demandOf } from "./deal.js";
 import { brandDay, brandMonthly } from "./brand.js";
+import { calNext, maniaOf, soloFlag } from "./cal.js";
 import { vnDaily } from "./vn.js";
 import { extraDaily } from "./extra.js";
 
@@ -30,8 +31,8 @@ export function ensureMyEvents(G) {
     });
   }
 }
-export const myEventToday = G => G.ev.find(e => e.fed === G.me && e.day === G.day && !e.done);
-export const nextMyEvents = (G, n) => G.ev.filter(e => e.fed === G.me && e.day >= G.day && !e.done).sort((a, b) => a.day - b.day).slice(0, n || 3);
+export const myEventToday = G => G.ev.find(e => e.fed === G.me && e.day === G.day && !e.done && !e.ai);
+export const nextMyEvents = (G, n) => G.ev.filter(e => e.fed === G.me && e.day >= G.day && !e.done && !e.ai).sort((a, b) => a.day - b.day).slice(0, n || 3);
 
 function aiDay(G) {
   const wd = dateOf(G.day).wd;
@@ -86,8 +87,8 @@ function yearly(G) {
   A.forEach(a => { if (a.fed === G.me) G.rep = clamp((G.rep || 50) + 2); });
   lifeYearly(G, y);
   Object.values(G.W).forEach(w => { w.car = [w.car[0] + w.rec[0], w.car[1] + w.rec[1], w.car[2] + w.rec[2]]; w.rec = [0, 0, 0]; w.age++; w.p0 = w.pop; w.nm = 0; w.sr = 0; });
-  const yy = y + 1; Object.keys(G.F).forEach(k => { const old = G.ev.filter(e => e.fed === k && /-big-/.test(e.id)); const names = old.map(e => e.n).filter((n, i, a) => a.indexOf(n) === i); for (let m = 0; m < 12; m++) G.ev.push({ id: k + "-big-" + yy + "-" + m, fed: k, n: names.length ? names[m % names.length] : "Grand show " + (m + 1), kind: G.F[k].big === "PLE" ? "ple" : "ppv", day: lastSat(yy, m), items: [], done: false }); });
-  const mn = G.ev.find(e => e.fed === G.me && e.id === G.me + "-big-" + yy + "-3"); if (mn) G.mania = mn.id;
+  calNext(G, y);   // l'année suivante reprend le calendrier tel que le joueur l'a laissé (vrais PLE, numéros +1)
+  G.ev.forEach(e => soloFlag(G, e));
   G.best = { match: null, show: null };
 }
 export function awardsOf(G, y) {
@@ -137,7 +138,7 @@ export function startGame(G) {
   ensureMyEvents(G);
   const f = meF(G);
   if (!(G.dev || []).length) G.dev = [trainee(), trainee()];
-  const nm = G.ev.filter(e => e.fed === G.me && isBig(e)).sort((a, b) => a.day - b.day); G.mania = (nm[3] || nm[nm.length - 1] || {}).id || "";
+  G.ev.forEach(e => soloFlag(G, e)); G.mania = maniaOf(G, G.me, 1);
   mail(G, { k: "info", from: "Le propriétaire", role: f.n, c: "#f5b13d", ini: "PR", subj: "Bienvenue, " + ((G.gm && G.gm.n && G.gm.n !== "Le GM") ? G.gm.n : "nouveau GM") + " !", body: "Te voilà à la tête de " + f.n + (G.solo ? " (" + G.solo + ")" : "") + ".\nTon but : faire la meilleure audience de l’année" + (G.mode === "sandbox" ? " (mode bac à sable : pas de pression)." : ", et tenir les objectifs de chaque trimestre (Bureau).") + "\n« Jour suivant » fait défiler les jours jusqu’au prochain message ou au prochain show.\nTon premier show : " + ((nextMyEvents(G, 1)[0] || {}).n || "bientôt") + "." });
   if (f.id === "ME") mail(G, { k: "info", from: "Ton recruteur", role: "Ton staff", c: "#63d69c", ini: "RE", subj: "Ton roster de départ", body: "Tu commences avec " + roster(G).length + " agents libres peu connus.\nPlus ta fédération sera célèbre, plus tu pourras signer des stars (Monde › Catcheurs du monde)." });
   news(G, { seg: "coul", f: "nous", t: f.n + " a un nouveau GM", txt: "Les fans attendent de voir ce que ça va donner." });

@@ -4,10 +4,13 @@ import { qWord } from "./vn.js";
 import { ENTX } from "./extra.js";
 import { ACT, FORM } from "../state.js";
 import { esc, toast, modal } from "../util.js";
-import { STYLES, MONTHS, dayLabel, shortDate, dateOf, fmtM, fmtK, stars, clamp, rnd, pick, uid } from "./world.js";
+import { STYLES, MONTHS, MLEN, dayOfDate, dayLabel, shortDate, dateOf, fmtM, fmtK, stars, clamp, rnd, pick, uid } from "./world.js";
 import { MT, STIP, FIN, CONS, DUR, ENT, SEG, VENUES, CITIES, GT } from "./data.js";
 import { meF, wn, roster, avail, why, myStaff, isBig, champIds, teamName, sideName, e_, mail, ach } from "./base.js";
 import { runTimer } from "./tv.js";
+import { segCtx, segReco, segText, cast, pals, mgrOf } from "./segx.js";
+import { SFAM, segSearch, norm } from "./segs.js";
+import { accList } from "./match.js";
 import { SPOTS, mtOf, idsOf, checkMatch, estimate, estimateShow, autoCard, pendingTour, prepShow, stepLive, orderLive, runShow, resLine, timeOf, itemMin, cityOf } from "./match.js";
 import { createTour, saveTrad, cashIn, contenders, autoDraft, setBrand, caseOf } from "./crea.js";
 import { advise, promoVideo } from "./biz.js";
@@ -30,7 +33,7 @@ function wSel(G, ev, name, used, filter) {
   return '<button type="button" class="uvbtn sm uvaddw" data-act="uvpickw" data-k="' + name + '">+ Ajouter un catcheur</button>';
 }
 const wInfo = (G, ev, w) => { const ok = okFor(G, ev, w); return "Pop " + Math.round(w.pop) + " · endurance " + Math.round(w.en) + " %" + (ok ? (w.en < 40 ? " · fatigué" + e_(w) : "") + (w.ret ? " · légende" : w.fed !== G.me ? " · invité" + e_(w) : "") : " · " + why(G, w)); };
-const usedIn = ev => ev.items.reduce((s, it) => s.concat(it.it === "m" ? idsOf(it) : it.w || []), []);
+const usedIn = ev => ev.items.reduce((s, it) => s.concat(it.it === "m" ? idsOf(it) : []), []);   // un catcheur peut faire segment → match → segment (21 nov.)
 
 // ---------- la carte ----------
 export function bookView(id) {
@@ -49,6 +52,7 @@ export function bookView(id) {
     '<label class="uvfld">Entrées<select name="ent">' + ENT.map((x, i) => '<option value="' + i + '"' + ((ev.ent || 0) === i ? " selected" : "") + ">" + esc(x[0]) + (x[1] ? " (" + fmtK(x[1]) + ")" : "") + "</option>").join("") + "</select></label>" +
     (isBig(ev) ? '<label class="uvfld">Salle<select name="venue">' + VENUES.map((v, i) => '<option value="' + i + '"' + ((ev.venue != null ? ev.venue : f.venue) === i ? " selected" : "") + ">" + esc(v[0]) + " · " + v[1].toLocaleString("fr-FR") + " places · " + fmtK(v[2]) + "</option>").join("") + "</select></label>" +
       '<label class="uvfld">Ville<select name="city">' + CITIES.map((x, i) => '<option value="' + i + '"' + ((ev.city != null ? ev.city : f.home) === i ? " selected" : "") + ">" + esc(x[0]) + (x[1] >= 4 ? " (public brûlant)" : x[1] <= -1 ? " (public froid)" : "") + "</option>").join("") + "</select></label>" +
+      '<label class="uvfld">Nom de l’événement<input name="evn" maxlength="40" value="' + esc(ev.n) + '"></label>' + (ev.day > G.day ? '<div class="uvfld">Date (elle sera reprise les années suivantes)<div class="uvrow2"><select name="evd" aria-label="Jour">' + Array.from({ length: 31 }, (x, i) => '<option value="' + (i + 1) + '"' + (dateOf(ev.day).dm === i + 1 ? " selected" : "") + ">" + (i + 1) + "</option>").join("") + '</select><select name="evm" aria-label="Mois">' + MONTHS.map((m, i) => '<option value="' + i + '"' + (dateOf(ev.day).m === i ? " selected" : "") + ">" + m + "</option>").join("") + "</select></div></div>" : "") +
       '<label class="uvspot"><input type="checkbox" name="mania"' + (G.mania === ev.id ? " checked" : "") + '><span>Le grand show de l’année (« la route vers… »)</span></label>' +
       '<div class="uvrow2"><button type="button" class="uvbtn sm" data-act="uvpromo" data-ev="' + esc(ev.id) + '"' + ((ev.promo || 0) >= 3 ? " disabled" : "") + ">Vidéo de promo (20 k$) · " + (ev.promo || 0) + '/3</button><button type="button" class="uvbtn sm" data-act="uvposter" data-ev="' + esc(ev.id) + '">Voir l’affiche</button></div>' : "") + "</form></details>";
   const list = ev.items.map((it, i) => itemCard(G, ev, it, i)).join("");
@@ -76,7 +80,7 @@ function itemCard(G, ev, it, i) {
   return '<div class="uvitem' + (ed ? " ed" : "") + (last ? " main" : "") + '"><div class="uvrow"><span class="uvtag" style="background:' + (last ? "#f5b13d" : "#eef1f6") + '">' + (last && n > 1 ? "Main event" : "Match " + (i + 1)) + '</span><b class="uvgrow">' + esc(T.n) + (t ? " · " + esc(t.n) : "") + "</b>" + (e.r ? '<span class="uvstar">' + stars(e.r) + "</span>" : "") + "</div>" +
     '<div class="uvvsr">' + (it.sides || []).map(s => '<span class="uvside">' + (s.length ? s.map(x => face(G, G.W[x], 26)).join("") + "<i>" + esc(teamName(G, s)) + "</i>" : "<i>?</i>") + "</span>").join('<em>contre</em>') + "</div>" +
     '<p class="uvsm">' + [DUR[it.dur] ? DUR[it.dur][0] + " (" + itemMin(it) + " min)" : "", it.stip ? STIP[it.stip] : "", it.fin && it.fin !== "auto" ? FIN[it.fin][0] : "", it.cons ? CONS[it.cons][0] : "", it.tour ? "Tournoi" : "", it.trad ? "Tradition" : "", it.cashin ? "Encaissement de la mallette" : "", it.oc ? (it.oc.rand ? "Adversaire surprise" : it.oc.secret ? "Adversaire gardé secret" : "") : ""].filter(Boolean).map(esc).join(" · ") + "</p>" +
-    (err ? '<p class="uvko">' + esc(err) + "</p>" : "") + (e.warn || []).slice(0, 2).map(x => '<p class="uvsm uvwarn">' + esc(x) + "</p>").join("") + mv + (ed ? matchEditor(G, ev, it, i) : "") + "</div>";
+    (err ? '<p class="uvko">' + esc(err) + "</p>" : "") + (partnerWarn(G, it) ? '<p class="uvsm uvwarn">⚠ ' + esc(partnerWarn(G, it)) + "</p>" : "") + (it.forced ? '<p class="uvsm uvwarn">Match imposé par le GM</p>' : "") + (accList(G, ev, it).length ? '<p class="uvsm">Au bord du ring : ' + esc(accList(G, ev, it).map(x => accN(G, x.id)).join(", ")) + "</p>" : "") + (e.warn || []).slice(0, 2).map(x => '<p class="uvsm uvwarn">' + esc(x) + "</p>").join("") + mv + (ed ? matchEditor(G, ev, it, i) : "") + "</div>";
 }
 function matchEditor(G, ev, it, i) {
   const T = mtOf(it), used = usedIn(ev), f = meF(G), tag = T.p === 2 || (Array.isArray(T.p) && T.p[0] >= 2);
@@ -89,6 +93,7 @@ function matchEditor(G, ev, it, i) {
       (T.s === "n" || (typeof T.s === "number" && it.sides.length < T.s) ? '<button type="button" class="uvbtn sm" data-act="uvsnew" data-ev="' + esc(ev.id) + '" data-i="' + i + '">+ Un camp</button>' : "");
   return '<form class="uvform uvited" id="uvit" data-ev="' + esc(ev.id) + '" data-i="' + i + '" onsubmit="return false">' +
     '<label class="uvfld">Type de match<select name="t">' + MTG.map(g => '<optgroup label="' + esc(g[0]) + '">' + g[1].map(k => opt(k, MT[k].n, it.t)).join("") + "</optgroup>").join("") + "</select></label>" + sides +
+    accBox(G, ev, it, i) +
     '<label class="uvfld">Titre en jeu<select name="title">' + opt("", "Aucun", it.title) + titles.map(t => opt(t.id, t.n + " — " + (champIds(t).length ? teamName(G, champIds(t)) : "vacant") + (t.cat === "x" ? " (intergender)" : t.cat === "f" ? " (féminin)" : ""), it.title)).join("") + "</select></label>" +
     '<div class="uvfgrid"><label class="uvmini">Enjeu<select name="stip">' + Object.keys(STIP).map(k => opt(k, STIP[k], it.stip)).join("") + "</select></label>" +
     (G.mark ? "" : '<label class="uvmini">Fin du match<select name="fin">' + Object.keys(FIN).map(k => opt(k, FIN[k][0], it.fin || "auto")).join("") + "</select></label>") +
@@ -105,9 +110,81 @@ function segEditor(G, ev, it, i) {
   const S = SEG[it.k] || SEG.promo, used = usedIn(ev).filter(x => (it.w || []).indexOf(x) < 0), cameo = (G.appear || []).filter(a => a.ev === ev.id).map(a => a.w);
   const opt = (v, l, cur) => '<option value="' + esc(v) + '"' + (String(cur) === String(v) ? " selected" : "") + ">" + esc(l) + "</option>";
   const sel = j => { const cur = (it.w || [])[j]; return '<div class="uvfld"><span>' + (j === 0 ? "Qui" : "Avec") + '</span><div class="uvrow2">' + (cur ? '<span class="uvpill">' + wnH(G, cur) + '<button type="button" data-act="uvsegw" data-j="' + j + '" aria-label="Retirer">×</button></span>' : "") + '<button type="button" class="uvbtn sm uvaddw" data-act="uvpickw" data-k="w' + j + '">' + (cur ? "Changer" : "Choisir") + "</button></div></div>"; };
-  return '<form class="uvform uvited" id="uvit" data-ev="' + esc(ev.id) + '" data-i="' + i + '" onsubmit="return false"><label class="uvfld">Segment<select name="k">' + ["ring", "bs"].map(at => '<optgroup label="' + (at === "bs" ? "En coulisses" : "Sur le ring") + '">' + Object.keys(SEG).filter(k => SEG[k].at === at).map(k => opt(k, SEG[k].n, it.k)).join("") + "</optgroup>").join("") + "</select></label>" +
+  const X = segNear(G, ev, i), rec = segRecoFor(G, ev, i, X);
+  const R0 = { a: (it.w || [])[0] || "", b: (it.w || [])[1] || "" };
+  return '<form class="uvform uvited" id="uvit" data-ev="' + esc(ev.id) + '" data-i="' + i + '" onsubmit="return false">' +
+    '<div class="uvsegcur"><small>' + (S.ph ? (S.ph === "pre" ? "Avant-match" : "Après-match") + " · " + esc(SFAM[S.ph + ":" + S.fam] || "") : S.at === "bs" ? "En coulisses" : "Sur le ring") + "</small><b>" + esc(S.n) + "</b>" + (S.d && R0.a ? "<p>" + esc(segText(G, S, R0)) + "</p>" : S.d ? "<p>" + esc(S.d.replace(/\{[a-z0-9]+\}/g, "…")) + "</p>" : "") + "</div>" +
+    '<div class="uvfld"><span>' + (segNear(G, ev, i, "post") && segNear(G, ev, i, "pre") ? "Conseillés entre ces deux matchs" : X ? (X.ph === "pre" ? "Conseillés avant ce match" : "Conseillés après ce match") : "Conseillés") + '</span><div class="uvsegrec">' + rec.map(x => segBtn(G, x.k, x.R)).join("") + "</div></div>" +
+    '<details class="uvdet uvsegall"><summary>Voir la liste des segments (' + Object.keys(SEG).length + ")</summary>" +
+    '<input class="uvin" type="search" data-segq="1" placeholder="Chercher : ceinture, bagarre, manager…" aria-label="Chercher un segment"><p class="uvsm uvsegn" aria-live="polite"></p><div class="uvsegres"></div>' +
+    '<div class="uvseggrp">' + segGroups().map(g => "<h4>" + esc(g[0]) + "</h4>" + g[1].map(k => segBtn(G, k)).join("")).join("") + "</div></details>" +
     Array.from({ length: Math.max(1, S.p) }, (x, j) => sel(j)).join("") + '<button type="button" class="uvbtn sm pri" data-act="uvbed" data-ev="' + esc(ev.id) + '" data-i="-1">OK</button></form>';
 }
+// ---------- segments : conseillés, liste, recherche (21 nov.) ----------
+// le match juste après (avant-match) ou juste avant (après-match) ; si le vainqueur est choisi, l'après-match en tient compte
+function segNear(G, ev, i, ph) {
+  const nx = ev.items[i + 1], pv = ev.items[i - 1];
+  if (ph !== "post" && nx && nx.it === "m" && idsOf(nx).length >= 2) return segCtx(G, ev, nx, null, "pre");
+  if (ph !== "pre" && pv && pv.it === "m" && idsOf(pv).length >= 2) { const w = pv.win === "ia" || pv.win === "nul" || pv.win == null || G.mark ? -1 : +pv.win, ch = pv.title && G.T[pv.title] ? champIds(G.T[pv.title]) : [];
+    const res = w >= 0 ? { sides: pv.sides, win: w, fin: pv.fin && pv.fin !== "auto" ? pv.fin : "clean", change: !!(ch.length && !ch.every(x => (pv.sides[w] || []).indexOf(x) >= 0)) } : null;
+    return segCtx(G, ev, pv, res, "post"); }
+  return null;
+}
+const CLASSIC = sl => sl ? ["face", "contract", "brawl", "ambush", "promo"] : ["promo", "bsint", "office", "parking", "comedy"];
+function segRecoFor(G, ev, i, X) {
+  // entre deux matchs : 3 idées d'après le match d'avant + 2 d'avant le match suivant
+  const Xa = segNear(G, ev, i, "post"), Xb = segNear(G, ev, i, "pre");
+  if (Xa && Xb) { const A = segReco(G, Xa, 3), B2 = segReco(G, Xb, 5).filter(x => !A.some(y => SEG[y.k].fam === SEG[x.k].fam && SEG[y.k].ph === SEG[x.k].ph)); const L = A.concat(B2).slice(0, 5); if (L.length >= 3) return L; }
+  if (X) { const L = segReco(G, X, 5); if (L.length >= 3) return L; }
+  const it = ev.items[i], a = (it.w || [])[0], sl = a && (G.sl || []).find(s => !s.done && (s.a.indexOf(a) >= 0 || s.b.indexOf(a) >= 0));
+  return CLASSIC(!!sl).map(k => ({ k: k, R: sl ? { a: a, b: (sl.a.indexOf(a) >= 0 ? sl.b : sl.a)[0] } : null }));
+}
+const segGroups = () => { const G2 = [], fam = {}; Object.keys(SEG).forEach(k => { const S = SEG[k], g = S.ph ? (S.ph === "pre" ? "Avant-match · " : "Après-match · ") + (SFAM[S.ph + ":" + S.fam] || "") : S.at === "bs" ? "En coulisses (classiques)" : "Sur le ring (classiques)"; (fam[g] = fam[g] || []).push(k); });
+  Object.keys(fam).sort((a, b) => (a.indexOf("classiques") >= 0) - (b.indexOf("classiques") >= 0)).forEach(g => G2.push([g, fam[g]])); return G2; };
+const FRL = ["", " · inhabituel", " · rare", " · légendaire"];
+function segBtn(G, k, R) {
+  const S = SEG[k] || {}, d = S.d ? (R && R.a ? segText(G, S, R) : S.d.replace(/\{[a-z0-9]+\}/g, "…")) : S.at === "bs" ? "En coulisses" : "Sur le ring";
+  return '<button type="button" class="uvsegb' + (S.fr >= 2 ? " rare" : "") + '" data-act="uvsegk" data-k="' + esc(k) + '"' + (R && R.a ? ' data-a="' + esc(R.a) + '" data-b="' + esc(R.b || "") + '"' : "") + "><b>" + esc(S.n) + "</b><small>" + esc(d) + esc(FRL[S.fr || 0] || "") + "</small></button>";
+}
+ACT.uvsegk = el => {
+  const G = U.G, f = el.closest("#uvit"); if (!f) return; const ev = G.ev.find(x => x.id === f.dataset.ev), i = +f.dataset.i, it = ev && ev.items[i]; if (!it) return;
+  const k = el.dataset.k, S = SEG[k]; if (!S) return; it.k = k;
+  if (el.dataset.a) it.w = [el.dataset.a, el.dataset.b].filter(Boolean);
+  else if (!(it.w || []).length) { const X = S.ph ? segNear(G, ev, i, S.ph) || segNear(G, ev, i) : segNear(G, ev, i), R = X && S.ph === X.ph ? cast(G, S, X) : null;
+    if (R) it.w = [R.a, R.b].filter(Boolean); else if (X) it.w = X.sides.map(s => s[0]).filter(Boolean).slice(0, 2); }   // le segment ne colle pas parfaitement : les catcheurs du match, à changer si besoin
+  it.w = (it.w || []).filter(Boolean).slice(0, Math.max(1, S.p)); persist(); redraw();
+};
+// la recherche filtre la liste sans tout redessiner (le clavier reste ouvert)
+if (typeof document !== "undefined") document.addEventListener("input", e => {
+  const q = e.target && e.target.dataset && e.target.dataset.segq ? e.target : null; if (!q || !U.G) return;
+  const box = q.closest(".uvsegall"), res = box.querySelector(".uvsegres"), grp = box.querySelector(".uvseggrp"), n = box.querySelector(".uvsegn");
+  if (!q.value.trim()) { res.innerHTML = ""; grp.hidden = false; n.textContent = ""; return; }
+  const L = segSearch(SEG, q.value, Object.keys(SEG)); grp.hidden = true;
+  n.textContent = L.length ? L.length + " segment" + (L.length > 1 ? "s" : "") : "Aucun segment ne correspond.";
+  res.innerHTML = L.slice(0, 60).map(k => segBtn(U.G, k)).join("");
+});
+// ---------- accompagnateurs au bord du ring ----------
+const accN = (G, id) => (G.W[id] || (G.staff || {})[id] || {}).n || "?";
+function accBox(G, ev, it, i) {
+  const L = accList(G, ev, it);
+  return '<div class="uvfld"><span>Au bord du ring (accompagnateurs, managers)</span><div class="uvmem">' + (L.length ? L.map((x, j) => '<span class="uvpill">' + face(G, G.W[x.id] || (G.staff || {})[x.id], 22) + esc(accN(G, x.id)) + " · camp " + (x.sd + 1) + (x.auto ? " (son manager)" : "") +
+      (x.auto ? "" : '<button type="button" data-act="uvaccrm" data-ev="' + esc(ev.id) + '" data-i="' + i + '" data-id="' + esc(x.id) + '" aria-label="Retirer ' + esc(accN(G, x.id)) + '">×</button>') + "</span>").join("") : '<span class="uvsm">Personne</span>') + "</div>" +
+    '<div class="uvrow2">' + (it.sides || []).map((s, j) => s.length ? '<button type="button" class="uvbtn sm ghost" data-act="uvpickacc" data-ev="' + esc(ev.id) + '" data-i="' + i + '" data-j="' + j + '">+ Avec le camp ' + (j + 1) + "</button>" : "").join("") + "</div>" +
+    (L.some(x => x.auto) ? '<label class="uvspot"><input type="checkbox" name="nomgr"' + (it.noMgr ? " checked" : "") + "><span>Les managers restent en coulisses ce soir</span></label>" : "") + "</div>";
+}
+ACT.uvpickacc = el => {
+  const G = U.G, ev = evOf(el), i = +el.dataset.i, it = ev && ev.items[i], j = +el.dataset.j; if (!it) return;
+  const inM = new Set(usedIn(ev)), side = it.sides[j] || [], near = new Set(side.reduce((s, w) => s.concat(pals(G, w), ((G.clans || []).find(c => c.m.indexOf(w) >= 0) || { m: [] }).m), []));
+  const ok = w => w && !inM.has(w.id) && !(w.rban > G.day) && !(it.mgr || []).some(x => x.id === w.id);
+  const W = poolFor(G, ev).filter(w => ok(w) && okFor(G, ev, w)).sort((a, b) => near.has(b.id) - near.has(a.id) || b.pop - a.pop);
+  const M = Object.values(G.staff || {}).filter(s => s.role === "mgr" && s.fed === G.me && !(s.rban > G.day) && !(it.mgr || []).some(x => x.id === s.id));
+  pickW(G, "Qui accompagne le camp " + (j + 1) + " ?", [["Managers de ton staff", M.map(s => ({ w: s, info: s.w && G.W[s.w] ? "Manager de " + G.W[s.w].n : "Manager / valet" }))],
+    ["Partenaires et clan", W.filter(w => near.has(w.id)).map(w => ({ w: w, info: "Pop " + Math.round(w.pop) }))], ["Effectif", W.filter(w => !near.has(w.id)).map(w => ({ w: w, info: "Pop " + Math.round(w.pop) + (w.al === "heel" ? " · heel" : " · face") }))]],
+    id => { it.mgr = (it.mgr || []).filter(x => x.id !== id).concat({ id: id, sd: j }).slice(-4); persist(); redraw(); });
+};
+ACT.uvaccrm = el => { const ev = evOf(el), it = ev && ev.items[+el.dataset.i]; if (!it) return; it.mgr = (it.mgr || []).filter(x => x.id !== el.dataset.id); persist(); redraw(); };
+// deux partenaires d'équipe l'un contre l'autre : l'IA ne le fait jamais, le joueur est prévenu (histoire de trahison ?)
+const partnerWarn = (G, it) => { const S = (it.sides || []); for (let a = 0; a < S.length; a++) for (let b = a + 1; b < S.length; b++) for (const x of S[a]) for (const y of S[b]) if (pals(G, x).indexOf(y) >= 0) return wn(G, x) + " et " + wn(G, y) + " font équipe ensemble : à réserver à une histoire de trahison."; return ""; };
 // le formulaire de l'élément ouvert : relu à chaque changement
 function readItem(f, ev) {
   const i = +f.dataset.i, it = ev.items[i]; if (!it) return; const v = n => (f.elements.namedItem(n) || {}).value;
@@ -117,6 +194,7 @@ function readItem(f, ev) {
   ["title", "stip", "fin", "cons", "dur", "ent"].forEach(k => { const x = v(k); if (x != null) it[k] = x; });
   const w = v("win"); if (w != null) it.win = w === "ia" || w === "nul" ? w : +w;
   it.spots = Array.from(f.querySelectorAll('input[name="spot"]:checked')).map(x => x.value);
+  const nm = f.elements.namedItem("nomgr"); if (nm) it.noMgr = nm.checked;
   if (it.t === "open") { it.oc = it.oc || {}; it.oc.rand = !!(f.elements.namedItem("ocrand") || {}).checked; const sec = f.elements.namedItem("ocsec"); if (sec) it.oc.secret = sec.checked; const ow = v("ocw"); if (ow) { it.sides[1] = [ow]; it.oc.w = ow; } if (it.oc.rand) it.sides[1] = []; }
   // un catcheur choisi dans un « + Ajouter… »
   it.sides.forEach((s, j) => { const a = v("add" + j); if (a && s.indexOf(a) < 0) s.push(a); });
@@ -126,10 +204,13 @@ function readItem(f, ev) {
 }
 const G0 = () => U.G;
 if (typeof document !== "undefined") document.addEventListener("change", e => {
-  const f = e.target.closest && e.target.closest("#uvit, #uvshowset"); if (!f || !U.G) return;
+  const f = e.target.closest && e.target.closest("#uvit, #uvshowset"); if (!f || !U.G || (e.target.dataset && e.target.dataset.segq)) return;
   const ev = U.G.ev.find(x => x.id === f.dataset.ev); if (!ev || ev.done) return;
   if (f.id === "uvit") readItem(f, ev);
-  else { const v = n => (f.elements.namedItem(n) || {}).value; ev.comm = Array.from(f.querySelectorAll('input[name="comm"]:checked')).map(x => x.value).slice(0, 3); ev.ent = +v("ent") || 0; if (v("venue") != null) ev.venue = +v("venue"); if (v("city") != null) ev.city = +v("city"); const m = f.elements.namedItem("mania"); if (m) { if (m.checked) U.G.mania = ev.id; else if (U.G.mania === ev.id) U.G.mania = ""; } }
+  else { const v = n => (f.elements.namedItem(n) || {}).value; ev.comm = Array.from(f.querySelectorAll('input[name="comm"]:checked')).map(x => x.value).slice(0, 3); ev.ent = +v("ent") || 0; if (v("venue") != null) ev.venue = +v("venue"); if (v("city") != null) ev.city = +v("city"); const m = f.elements.namedItem("mania"); if (m) { if (m.checked) U.G.mania = ev.id; else if (U.G.mania === ev.id) U.G.mania = ""; }
+    // renommer / déplacer un grand événement : l'année suivante reprend ce choix (calNext de cal.js)
+    const nn = (v("evn") || "").trim(); if (nn && nn !== ev.n) ev.n = nn.slice(0, 40);
+    if (v("evd") != null && v("evm") != null) { const y = dateOf(ev.day).y, mm = +v("evm"), dd = Math.min(+v("evd"), MLEN[mm]), nd = dayOfDate(y, mm, dd); if (nd !== ev.day && nd > U.G.day) { ev.day = nd; ev.md = [mm, dd]; ev.wdk = dateOf(nd).wd; } } }
   persist(); redraw();
 });
 // choisir un catcheur avec sa photo (carte du show)
@@ -142,7 +223,7 @@ ACT.uvpickw = el => {
     persist(); redraw(); };
   if (k === "oc") { const mine = poolFor(G, ev).filter(w => used.indexOf(w.id) < 0 && okFor(G, ev, w)), legs = Object.values(G.W).filter(w => w.ret && w.leg && !w.staff).sort((a, b) => b.pop - a.pop).slice(0, 15), fa = Object.values(G.W).filter(w => !w.fed && !w.ret && !(w.nc > G.day)).sort((a, b) => b.pop - a.pop).slice(0, 15);
     return pickW(G, "Qui répond au défi ?", [["Ton effectif", mine.map(row)], ["Légendes (cachet)", legs.map(w => ({ w: w, info: "Pop " + Math.round(w.pop) + " · légende" }))], ["Agents libres", fa.map(w => ({ w: w, info: "Pop " + Math.round(w.pop) + " · agent libre" }))]], done); }
-  if (k[0] === "w") { const cameo = (G.appear || []).filter(a => a.ev === ev.id).map(a => a.w), j = +k.slice(1), P = poolFor(G, ev).concat(cameo.map(x => G.W[x]).filter(w => w && poolFor(G, ev).indexOf(w) < 0)).filter(w => used.indexOf(w.id) < 0 || (it.w || [])[j] === w.id);
+  if (k[0] === "w") { const cameo = (G.appear || []).filter(a => a.ev === ev.id).map(a => a.w), j = +k.slice(1), P = poolFor(G, ev).concat(cameo.map(x => G.W[x]).filter(w => w && poolFor(G, ev).indexOf(w) < 0)).filter(w => (it.w || []).indexOf(w.id) < 0 || (it.w || [])[j] === w.id);
     return pickW(G, j === 0 ? "Qui fait ce segment ?" : "Avec qui ?", [["", P.map(w => ({ w: w, info: "Pop " + Math.round(w.pop) + (w.secret ? " · signature secrète" : w.ret ? " · légende" : "") }))]], done); }
   const P = poolFor(G, ev).filter(w => used.indexOf(w.id) < 0);
   pickW(G, "Ajouter au camp " + (+k.slice(3) + 1), [["Disponibles", P.filter(w => okFor(G, ev, w)).map(row)], ["Pas disponibles", P.filter(w => !okFor(G, ev, w)).map(row)]], done);
@@ -204,7 +285,7 @@ function checkCard(G, ev) {
   const seen = new Set();
   for (let i = 0; i < ev.items.length; i++) {
     const it = ev.items[i], nm = (it.it === "m" ? "Match " : "Segment ") + (i + 1) + " : ";
-    if (it.it === "s") { const S = SEG[it.k] || SEG.promo; if (S.p && (it.w || []).length < S.p) return nm + "il manque quelqu’un"; for (const id of it.w) { if (seen.has(id) && !(G.W[id] || {}).ret) return wn(G, id) + " est deux fois sur la carte"; seen.add(id); } continue; }
+    if (it.it === "s") { const S = SEG[it.k] || SEG.promo; if (S.p && (it.w || []).length < S.p) return nm + "il manque quelqu’un"; if (new Set(it.w).size < (it.w || []).length) return nm + "le même catcheur est deux fois dans ce segment"; continue; }
     if (it.t === "open" && it.oc && it.oc.rand && !(it.sides[1] || []).length) { const L = Object.values(G.W).filter(w => (w.ret ? !w.staff && w.leg : (!w.fed && !(w.nc > G.day)) || (w.fed === G.me && avail(G, w))) && !seen.has(w.id) && usedIn(ev).indexOf(w.id) < 0 && w.id !== it.sides[0][0] && w.sx === (G.W[it.sides[0][0]] || {}).sx); const r = pick(L.sort((a, b) => b.pop - a.pop).slice(0, 25)); if (r) { it.sides[1] = [r.id]; it.oc.w = r.id; } }
     const err = checkMatch(G, ev, it); if (err) return nm + err;
     for (const id of idsOf(it)) { const w = G.W[id]; if (seen.has(id) && !it.cashin) return wn(G, id) + " est dans deux matchs"; seen.add(id); if (w && !w.ret && w.fed !== G.me && w.fed !== ev.part && !(w.guest && w.guest.to === G.me) && guestsFor(G, ev).indexOf(id) < 0 && !(it.t === "open" && !w.fed)) return nm + wn(G, id) + " n’est pas dans ta fédération"; if (w && !w.ret && w.fed && !avail(G, w, ev.day) && !it.cashin) return nm + wn(G, id) + " ne peut pas catcher (" + why(G, w) + ")"; }
@@ -224,7 +305,7 @@ function afterShow(G, ev) {
 }
 function play(G, ev, live) {
   U.f.bi = -1; const err = checkCard(G, ev); if (err) { toast(err); return false; }
-  if (live) { U.live = { ev: ev.id, L: prepShow(G, ev), sp: 1 }; go("#/univers/live/" + encodeURIComponent(ev.id)); setTimeout(() => runTimer(), 400); return true; }
+  if (live) { const L0 = prepShow(G, ev); L0.live = true; U.live = { ev: ev.id, L: L0, sp: 1 }; go("#/univers/live/" + encodeURIComponent(ev.id)); setTimeout(() => runTimer(), 400); return true; }
   runShow(G, ev); afterShow(G, ev); doneMail(G, ev); persist(true); window.scrollTo(0, 0); redraw(); return true;
 }
 const doneMail = (G, ev) => G.mail.forEach(m => { if (m.k === "show" && m.ev === ev.id && !m.done) { m.done = "Show joué."; m.read = true; } });

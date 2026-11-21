@@ -95,7 +95,7 @@ function sign(G, w, o, N) {
 }
 // annoncer une signature ou la garder secrète jusqu'à ses débuts
 export function announce(G, wid, secret, evId) {
-  const w = G.W[wid], f = meF(G); if (!w) return;
+  const w = G.W[wid], f = meF(G); if (!w) return; w.sgd = G.day;
   if (secret) { w.secret = true; w.leak = false; w.debutEv = evId || ""; }
   else { w.secret = false; news(G, { seg: "coul", f: "transferts", t: f.n + " signe " + w.n, txt: w.n + " rejoint " + f.n + "." }); buzz(G, { f: "fans", who: "Fan de catch", at: pick(FANS), ini: "FA", c: "#6fb3ff", txt: f.n + " a signé " + w.n + " ! J’ai hâte de voir ça." }); const nb = (G.ev || []).find(e => e.id === evId); if (nb) G.hype[nb.id] = clamp((G.hype[nb.id] || 3) + w.pop / 40, 0, 10); }
 }

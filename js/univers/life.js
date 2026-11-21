@@ -38,7 +38,7 @@ export function lifeDaily(G) {
   if (rnd() < 0.075) outside(G);
 }
 function signAI(G, w, fid, sal) {
-  if (!G.F[fid]) return; w.fed = fid; w.ct = { sal: sal, end: G.day + 365 + Math.floor(rnd() * 400), role: w.pop > 70 ? "up" : "mid", exc: true, cl: {} }; w.br = fid === "WWE" ? pick(G.F[fid].shows).n : "";
+  if (!G.F[fid]) return; w.fed = fid; w.sgd = G.day; w.ct = { sal: sal, end: G.day + 365 + Math.floor(rnd() * 400), role: w.pop > 70 ? "up" : "mid", exc: true, cl: {} }; w.br = fid === "WWE" ? pick(G.F[fid].shows).n : "";
   news(G, { seg: "coul", f: "transferts", t: G.F[fid].n + " signe " + w.n, txt: w.n + " rejoint " + G.F[fid].n + (w.pop > 70 ? " : une belle prise." : ".") });
 }
 export function retireW(G, w, farewellDone) {

@@ -3,6 +3,7 @@
 // Apparence, Ring, Micro, Charisme, Endurance, Star power, Fiabilité + style de catch + face / heel + popularité, barre d'endurance,
 // moral, contrat, bilan victoires / défaites / draws. Toutes les autres fédérations sont gérées par l'IA. Pas de vraie année :
 // Année 1, Année 2… ; le jour 0 est le lundi 1er janvier de l'Année 1.
+import { calYear } from "./cal.js";
 import { S } from "../state.js";
 import { baseCards } from "../tcg/data.js";
 import { norm } from "../wrestlers.js";
@@ -21,7 +22,7 @@ export const STY_INJ = { aer: 1.3, bag: 1.1, tec: 0.7, pur: 1.2, equ: 1 };     /
 export const ROLES = { me: "Main event", up: "Upper card", mid: "Mid-card", low: "Lower card" };
 export const TRAITS = ["Ambitieux", "Leader du vestiaire", "Loyal", "Caractériel", "Bosseur", "Fêtard", "Discret", "Diva", "Mentor", "Râleur", "Perfectionniste", "Showman"];
 export const MONTHS = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
-const MLEN = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+export const MLEN = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 export const WD = ["Dim.", "Lun.", "Mar.", "Mer.", "Jeu.", "Ven.", "Sam."];
 export const WDL = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
 
@@ -37,7 +38,7 @@ export const FEDS0 = {
   ROH: { aud: 0.5, pres: 55, money: 25000, shows: [["ROH TV", 4]], big: "PPV" },
   Marigold: { aud: 0.3, pres: 45, money: 12000, shows: [["Marigold Fields", 0]], big: "PPV" }
 };
-const BIGNAMES = ["Clash of Crowns", "Night of Glory", "Breaking Point", "Last Stand", "Spring Riot", "Golden Ring", "Fire and Fury", "Blood Moon",
+export const BIGNAMES = ["Clash of Crowns", "Night of Glory", "Breaking Point", "Last Stand", "Spring Riot", "Golden Ring", "Fire and Fury", "Blood Moon",
   "Final Bell", "Uprising", "Summer Storm", "Hall of Pain", "No Way Back", "Iron Will", "Thunder Dome", "Grand Finale"];
 // catcheuses de la WWE (les autres rosters sont déjà séparés : féminin, Knockouts, Amazonas, Stardom, Marigold)
 const WWE_F = ["alix brooks", "asuka", "bayley", "becky lynch", "b-fab", "bianca belair", "blake monroe", "brie bella", "candice lerae", "chantel monroe",
@@ -188,13 +189,8 @@ export function newWorld(opt) {
     if (m.length === 2) teams.push({ id: uid("t"), fed: g.k, n: g.n, m: m, chem: 70, g: gk });
     else if (m.length >= 3) clans.push({ id: uid("c"), fed: g.k, n: g.n, m: m.slice(0, 6), al: W[m[0]].al, g: gk });
   });
-  // grands événements de l'année (un par mois, le dernier samedi)
-  const ev = [];
-  Object.keys(F).forEach(k => {
-    const real = ((((S.P || {})[k] || {}).e) || []).map(e => e.t).filter(t => t && !/—|\bRaw\b|SmackDown|Dynamite|Collision|Impact|NXT\b/.test(t));
-    const names = real.filter((t, i) => real.indexOf(t) === i).concat(BIGNAMES.filter(x => real.indexOf(x) < 0));
-    for (let m = 0; m < 12; m++) ev.push({ id: k + "-big-" + m, fed: k, n: names[m % names.length], kind: F[k].big === "PLE" ? "ple" : "ppv", day: lastSat(1, m), card: [], seg: [], done: false });
-  });
+  // grands événements de l'année : les vrais PLE / PPV de 2026 (data/univers-calendrier.json), inventés seulement pour une fédé sans aucun
+  const ev = calYear(F, 1, me);
   const G = {
     v: 1, me: me, day: 0, W: W, F: F, T: T, teams: teams, clans: clans, ev: ev, sl: [], tours: [], divs: [{ id: "h", n: "Division masculine" }, { id: "f", n: "Division féminine" }, { id: "tag", n: "Équipes" }],
     dv: {}, mail: [], news: [], buzz: [], hype: {}, prom: [], tens: [], dev: [], merch: [], spons: [], offers: [], fin: { cur: { tv: 0, tix: 0, merch: 0, pub: 0, sal: 0, prod: 0 }, hist: [] },

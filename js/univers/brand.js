@@ -23,7 +23,8 @@ export function brandDay(G) {
   if (!G.solo) return;
   const f = meF(G), wd = dateOf(G.day).wd;
   f.shows.forEach(s => { if (s.wd === wd && s.n !== G.solo) { const ev = { id: f.id + "-" + G.day + s.n, fed: f.id, n: s.n, kind: "tv", day: G.day, br: s.n, ai: true }; autoCard(G, ev); runShow(G, ev); } });
-  visitsDay(G);
+  G.ev.filter(e => e.fed === G.me && e.ai && e.day === G.day && !e.done).forEach(e => { if (!(e.items || []).length) autoCard(G, e); runShow(G, e); });   // PLE de NXT / du roster principal
+  visitsDay(G); loansDay(G);
   const t = dateOf(G.day);
   if (t.m === 3 && t.dm === 22 && !(G.draft && G.draft.y === t.y)) draftOpen(G);
   if (G.draft && G.draft.st === "due" && G.day >= G.draft.until) { draftRun(G, true); }
@@ -110,6 +111,32 @@ export function visit(G, wid, hid) {
   let d = G.day + 1; while (dateOf(d).wd !== h.wd && d < G.day + 8) d++;
   G.visits = (G.visits || []).concat({ w: wid, h: hid, n: h.n, day: d }); cap(G.visits, 40);
   return w.n + " fera une apparition à " + h.n + " le " + dayLabel(d) + ".";
+}
+// ---------- prêts entre les shows de la même fédération (21 nov., demande de Jose) ----------
+// w.loan = { from: show d'origine, to: show qui l'accueille, until } ; à la fin, le catcheur rentre chez lui
+const isChampW = (G, w) => Object.values(G.T).some(t => champIds(t).indexOf(w.id) >= 0);
+export function loanAsk(G, wid, weeks) {
+  const w = G.W[wid]; if (!w || w.fed !== G.me || !w.br || w.br === G.solo || w.loan) return "";
+  G.loanT = G.loanT || {}; const br = w.br; if ((G.loanT[br] || -99) > G.day - 7) return brandGM(G, br) + " a déjà répondu à une demande cette semaine.";
+  G.loanT[br] = G.day;
+  if (isChampW(G, w)) return brandGM(G, br) + " refuse : on ne prête pas un champion de " + br + ".";
+  const p = 0.7 - w.pop / 220 + (w.gml || 0) / 80 - (weeks || 2) * 0.04 + ((G.lent || {})[br] || 0) * 0.12;
+  if (rnd() > p) return brandGM(G, br) + " refuse de prêter " + w.n + " pour l’instant.";
+  w.loan = { from: br, to: G.solo, until: G.day + (weeks || 2) * 7 }; w.br = G.solo; w.mor = clamp(w.mor + 3);
+  G.lent = G.lent || {}; G.lent[br] = Math.max(0, (G.lent[br] || 0) - 1);
+  news(G, { seg: "coul", f: "nous", t: w.n + " prêté" + e_(w) + " à " + G.solo, txt: br + " prête " + w.n + " pendant " + (weeks || 2) + " semaine" + ((weeks || 2) > 1 ? "s" : "") + "." });
+  return brandGM(G, br) + " accepte : " + w.n + " est à " + G.solo + " jusqu’au " + dayLabel(w.loan.until) + ".";
+}
+// prêter un de mes catcheurs à un autre show : l'autre GM te le revaudra
+export function loanGive(G, wid, br, weeks) {
+  const w = G.W[wid]; if (!isMine(G, w) || w.loan || others(G).indexOf(br) < 0) return "";
+  if (isChampW(G, w)) return "Un champion reste dans son show.";
+  w.loan = { from: G.solo, to: br, until: G.day + (weeks || 2) * 7 }; w.br = br; G.lent = G.lent || {}; G.lent[br] = (G.lent[br] || 0) + 1; w.gml = clamp((w.gml || 0) + 2, -20, 40);
+  return w.n + " part à " + br + " jusqu’au " + dayLabel(w.loan.until) + ". " + brandGM(G, br) + " s’en souviendra.";
+}
+export const loans = G => Object.values(G.W).filter(w => w.loan && w.fed === G.me);
+function loansDay(G) {
+  Object.values(G.W).forEach(w => { if (!w.loan) return; if (w.fed !== G.me || w.loan.until <= G.day) { if (w.fed === G.me) { w.br = w.loan.from; if (w.loan.to === G.solo || w.loan.from === G.solo) mail(G, { k: "info", from: "Le bureau", role: "Fédération", c: "#6fb3ff", ini: "FD", subj: w.n + " rentre à " + w.loan.from, body: "Le prêt de " + w.n + " est terminé." }); } delete w.loan; } });
 }
 export const busyAway = (G, wid, day) => (G.visits || []).some(v => v.w === wid && v.day === day && !v.done);
 function visitsDay(G) {

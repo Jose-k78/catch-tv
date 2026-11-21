@@ -3728,3 +3728,22 @@ button.uvtab{background:none;border:0;border-bottom:3px solid transparent;cursor
 .uvmcard .uvdpic{display:flex;justify-content:center;gap:10px;padding:16px 0}
 #uvyt{left:auto;right:8px;bottom:calc(196px + env(safe-area-inset-bottom));width:144px}
 #uvyt iframe{width:144px;height:81px}
+/* ---------- Mode Univers, lot du 21 nov. (soir) : segments d'avant / d'après-match, accompagnateurs, GM du mode Mark ---------- */
+.uvsegcur{padding:10px 12px;border-radius:12px;background:#1b2130;border-left:4px solid #f5b13d;margin-bottom:10px}
+.uvsegcur small{display:block;color:#a3abbd;font-size:12px}
+.uvsegcur b{display:block;font:400 20px/1.1 Anton,sans-serif;letter-spacing:.3px;margin:2px 0}
+.uvsegcur p{margin:4px 0 0;color:#dfe3ea;font-size:14px;line-height:1.35}
+.uvsegrec,.uvsegres,.uvseggrp{display:flex;flex-direction:column;gap:6px}
+.uvsegb{display:block;width:100%;text-align:left;padding:9px 11px;border-radius:10px;border:1px solid #2a3142;background:#151a24;color:#eef1f6;cursor:pointer}
+.uvsegb b{display:block;font-size:15px}
+.uvsegb small{display:block;color:#a3abbd;font-size:12.5px;line-height:1.3;margin-top:2px}
+.uvsegb.rare{border-color:#8a6a2a}
+.uvsegb.rare b::after{content:" ★";color:#f5b13d}
+.uvsegb:focus-visible{outline:2px solid #f5b13d;outline-offset:2px}
+.uvsegall summary{cursor:pointer;font-weight:700;padding:6px 0}
+.uvsegall .uvin{width:100%;margin:6px 0}
+.uvseggrp h4{margin:10px 0 2px;color:#f5b13d;font:400 15px/1.2 Anton,sans-serif;letter-spacing:.3px}
+.uvtvseg.auto small{color:#f5b13d}
+.uvtvseg.rare blockquote{box-shadow:0 0 0 3px #f5b13d,0 0 24px rgba(245,177,61,.45)}
+.uvtvkey.gm{box-shadow:0 0 0 2px #ff6b5e,0 10px 30px rgba(0,0,0,.5)}
+.uvtvkey .uvrow2{flex-wrap:wrap}

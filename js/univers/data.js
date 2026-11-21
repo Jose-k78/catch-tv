@@ -1,11 +1,12 @@
 // Mode Univers v2 (lot du 18 nov., 2e partie) : catalogues du jeu (types de match, stipulations, fins, consignes, segments, staff,
 // gimmicks, traditions des fédérations, villes, salles, pays, diffuseurs, licences, événements hors du ring, trophées) + statuts des personnes.
+import { SEGX } from "./segs.js";
 let UD = null, UDp = null;
 // data/statuts.json (décédés, retraités, staff, hors jeu) et data/gimmicks.json (surnoms connus), chargés une fois
 export function loadUData() {
   if (UD) return Promise.resolve(UD);
-  if (!UDp) UDp = Promise.all(["data/statuts.json", "data/gimmicks.json", "data/univers.json"].map(u => fetch(u + "?v=" + Math.floor(Date.now() / 36e5)).then(r => r.ok ? r.json() : {}).catch(() => ({}))))
-    .then(([st, gm, uv]) => (UD = { st: st || {}, gm: (gm && gm.items) || {}, uv: uv || {} }));   // univers.json = base commune du modo (noms, images)
+  if (!UDp) UDp = Promise.all(["data/statuts.json", "data/gimmicks.json", "data/univers.json", "data/univers-calendrier.json"].map(u => fetch(u + "?v=" + Math.floor(Date.now() / 36e5)).then(r => r.ok ? r.json() : {}).catch(() => ({}))))
+    .then(([st, gm, uv, cal]) => (UD = { st: st || {}, gm: (gm && gm.items) || {}, uv: uv || {}, cal: cal && cal.feds ? cal : null }));   // univers.json = base commune du modo (noms, images)
   return UDp;
 }
 export const udata = () => UD || { st: {}, gm: {} };
@@ -72,6 +73,7 @@ export const SEG = {
   sign: { n: "Signature d’un nouveau", at: "bs", p: 1, st: [5, 3], min: 3, pop: 1 }, injangle: { n: "Blessure jouée pour l’histoire", at: "bs", p: 1, st: [3, 2], min: 3, heat: 6 },
   catering: { n: "Au catering", at: "bs", p: 2, st: [2, 3], min: 2, rel: 4 }, guest: { n: "Célébrité invitée", at: "ring", p: 1, st: [3, 5], min: 5, hype: 1 }
 };
+Object.assign(SEG, SEGX);   // + 200 segments d'avant / d'après-match (segs.js)
 // ---------- staff ----------
 export const SROLE = {
   comm: ["Commentateur·rice", "Les matchs sont mieux notés à la télé ; un bon duo marche mieux."], prod: ["Producteur·rice", "De meilleurs matchs et moins de botchs."],

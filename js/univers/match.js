@@ -8,6 +8,8 @@ import { meF, wn, roster, avail, mail, news, buzz, FANS, relGet, relAdd, staffQ,
 import { fitOf, gimOf } from "./v2.js";
 import { dnaBonus, dnaShow, sportWinner, markFinish } from "./dna.js";
 import { pleMix } from "./brand.js";
+import { sisterGuests } from "./cal.js";
+import { segCtx, autoSegs, segFx, segText, pals, mgrOf } from "./segx.js";
 import { bondPerf, vnAfterShow, promiseKept } from "./vn.js";
 import { heroBonus, ENTX, entOf, entCost, hasTal, extraAfterShow } from "./extra.js";
 
@@ -99,7 +101,7 @@ function autoFin(G, m, winSide, rnd2) {
   const S = m.sides.map(s => s.map(i => G.W[i]).filter(Boolean)), W = S[winSide] || [];
   if (/battle|rumble|gauntlet|chamber|ladder|tlc|ultimatex|wargames|cage|cell|lms|iquit|ironman|falls|nodq|fca/.test(m.t)) return m.t === "iquit" || m.t === "sub" ? "subm" : "clean";
   if (m.t === "sub") return "subm";
-  const heel = W.some(w => w.al === "heel"), mgr = (m.mgr || []).length;
+  const heel = W.some(w => w.al === "heel"), mgr = (m.mgr || []).some(x => x.sd === winSide);
   const x = rnd2();
   if (heel && x < 0.18) return "cheat"; if (heel && mgr && x < 0.3) return "interf"; if (x < 0.035) return "dq"; if (x < 0.05) return "co";
   if (W.some(w => w.st[1] > 70 && w.sty === "tec") && x < 0.35) return "subm"; if (x > 0.93) return "rollup"; return "clean";
@@ -115,6 +117,8 @@ export function simMatch(G, ev, m, mod) {
   let q = P.ring + P.chem + P.story + P.crowd + P.dur + P.extra + P.staff + (rnd() - 0.5) * 14;
   const notes = [], botch = [], inj = [];
   if (mod.faster) q -= 2; if (mod.longer) q += avg(all.map(w => w.st[4])) > 65 ? 3 : -4; if (mod.cut) { q -= 10; notes.push("La télé a coupé avant la fin du match !"); }
+  const acc = mod.ban ? [] : accList(G, ev, m);
+  if (acc.length) q += Math.min(3, acc.length); if (mod.nodq) q += 3;
   if (mod.chant) { q -= 4; notes.push("Le public scandait le nom de " + wn(G, mod.chant) + " pendant le match"); }
   // botchs
   const prod = mine ? staffQ(G, "prod") : 50, cf = (CONS[m.cons || ""] || CONS[""])[2];
@@ -128,6 +132,14 @@ export function simMatch(G, ev, m, mod) {
   if (typeof win === "string" && win !== "nul") win = +win;
   let fin = m.fin && m.fin !== "auto" && !G.mark ? m.fin : win === "nul" ? pick(["dco", "nc", "dq"]) : autoFin(G, m, win, rnd);
   if (G.mark) { const mf = markFinish(G, m, mod, win, fin, notes); win = mf.win; fin = mf.fin; if (mod.restarted) q += 3; }
+  if (mod.nodq && ["dq", "co", "dco"].indexOf(fin) >= 0) fin = "clean";
+  // un accompagnateur intervient (pas si la sécurité est là) ; en mode Mark, l'arbitre peut le voir et disqualifier son camp
+  if (acc.length && !mod.sec && typeof win === "number") { const x = pick(acc), XW = G.W[x.id], heel = (S[x.sd] || []).some(w => w.al === "heel") || (XW && XW.al === "heel");
+    if (rnd() < (heel ? 0.3 : 0.14)) {
+      if (G.mark) { if (rnd() < (mod.sanc ? 0.6 : 0.35)) { if (x.sd === win && !mod.nodq) { const o = sides.findIndex((s, i) => i !== x.sd); if (o >= 0) { win = o; fin = "dq"; notes.push("L’arbitre a vu " + wn(G, x.id) + " intervenir : disqualification !"); } } else notes.push("L’arbitre renvoie " + wn(G, x.id) + " en coulisses"); }
+        else if (x.sd !== win && rnd() < 0.4) { win = x.sd; fin = "interf"; notes.push(wn(G, x.id) + " intervient depuis le bord du ring et fait gagner son camp !"); } }
+      else if (x.sd === win && (!m.fin || m.fin === "auto") && ["clean", "rollup", "subm"].indexOf(fin) >= 0) { if (heel) fin = "interf"; notes.push(wn(G, x.id) + " a aidé depuis le bord du ring"); }
+    } }
   if (mod.runin) { fin = "interf"; notes.push(wn(G, mod.runin) + " est intervenu" + e_(G.W[mod.runin]) + " !"); }
   if (mod.medic) { fin = "nc"; win = "nul"; notes.push("Le médecin a arrêté le match"); }
   if (win === "nul" && fin === "clean") fin = "dco";
@@ -213,6 +225,15 @@ export function simSeg(G, ev, s) {
   if (S.p && !W.length) return null;
   const mine = ev.fed === G.me && !ev.ai;
   W.forEach(w => { w.pop = clamp(w.pop + (q - 55) / 25 + (S.pop ? 1.5 : 0), 1, 99); w.last = w.last < G.day ? G.day - 1 : w.last; });
+  if (S.ph) {   // segment d'avant / d'après-match (segs.js) : rôles et effets de segx.js ; un avant-match prépare le match qui suit (ev.pm)
+    const R = { a: (s.w || [])[0] || "", b: (s.w || [])[1] || "" }, fed = ev.fed, A = G.W[R.a];
+    if (A) { const m = mgrOf(G, R.a, fed); if (m) R.m = m.n; const p = pals(G, R.a)[0]; if (p) R.c = wn(G, p); const cl = (G.clans || []).find(c => c.m.indexOf(R.a) >= 0); if (cl) { R.f = cl.n; R.clan = cl.id; } }
+    const i = ev.items.indexOf(s), nx = S.ph === "pre" ? ev.items.slice(i + 1).find(x => x.it === "m") : null, pv = S.ph === "post" ? ev.items.slice(0, Math.max(0, i)).reverse().find(x => x.it === "m") : null;
+    const X = segCtx(G, ev, nx || pv, pv && pv._res, S.ph); X.mod = ev.pm = ev.pm || {}; X.next = h => { if (mine) { const nb = nextBig(G); if (nb) G.hype[nb.id] = clamp((G.hype[nb.id] || 3) + h * (q > 60 ? 1 : 0.5), 0, 10); } };
+    if (S.c.indexOf("tit") >= 0 && X.title) { const ch = champIds(X.title); if (ch[0] && !G.W[R.a]) R.a = ch[0]; }
+    const o = segFx(G, ev, s.k, R, X); o.notes.forEach(n => notes.push(n));
+    return { it: "s", k: s.k, w: (s.w || []).slice(), r: clamp(q + (S.imp || 0) * 2, 5, 100), notes: notes, txt: segText(G, S, R) };
+  }
   const sl = W.length >= 2 ? heatBetween(G, [[W[0].id], [W[1].id]]) : W.length ? (G.sl || []).find(x => !x.done && (x.a.indexOf(W[0].id) >= 0 || x.b.indexOf(W[0].id) >= 0)) : null;
   if (sl) sl.kinds = (sl.kinds || []).concat(s.k);
   if (sl && S.heat) { sl.heat = clamp(sl.heat + S.heat * (1 + (mine ? staffQ(G, "writer") : 50) / 150) * (q > 60 ? 1 : 0.6)); sl.met = G.day; }
@@ -231,9 +252,14 @@ const NEWM = (t, sides, o) => Object.assign({ it: "m", t: t, sides: sides, title
 export function autoCard(G, ev) {
   const f = G.F[ev.fed], big = isBig(ev), used = new Set(), BR = ev.br || (G.solo && ev.fed === G.me && !ev.ai ? G.solo : ""), okB = i => !BR || !f.split || !G.W[i].br || G.W[i].br === BR;   // WWE un seul show : mes grands événements = mon show
   const gu = (G.appear || []).filter(a => a.ev === ev.id && a.k === "match").map(a => G.W[a.w]).filter(Boolean);
+  if (ev.fed !== G.me && ev.part && G.F[ev.part]) roster(G, ev.part).filter(w => w.pop >= 40).sort((a, b) => b.pop - a.pop).slice(0, 10).forEach(w => gu.push(w));   // événement commun (Forbidden Door, Worlds Collide…)
+  sisterGuests(G, ev, rnd).forEach(w => gu.push(w));
   const pool = roster(G, ev.fed).concat(gu.filter(w => roster(G, ev.fed).indexOf(w) < 0)).filter(w => (w.ret ? !w.staff : avail(G, w, ev.day)) && w.en >= 25 && !(G.rest && G.rest[w.id] > G.day) && !w.secret && (!BR || !f.split || !w.br || w.br === BR)).sort((a, b) => (b.pop + rnd() * 25) - (a.pop + rnd() * 25));
   const take = (sx, ex) => { const w = pool.find(x => !used.has(x.id) && (!sx || x.sx === sx) && (!ex || ex.indexOf(x.id) < 0)); if (w) used.add(w.id); return w; };
+  const vs = (sx, a) => take(sx, pals(G, a.id));   // l'IA ne fait jamais s'affronter deux partenaires d'équipe
   const items = [];
+  // matchs imposés par le GM (sanction « match imposé » ou bagarre) : au prochain show de ma fédé
+  if (ev.fed === G.me && !ev.ai) { G.force = (G.force || []).filter(x => x.until >= G.day); G.force.slice().forEach(x => { const A = G.W[x.a], B = G.W[x.b]; if (A && B && !used.has(A.id) && !used.has(B.id) && okB(A.id) && okB(B.id) && avail(G, A, ev.day) && avail(G, B, ev.day)) { used.add(A.id); used.add(B.id); items.push(NEWM("simple", [[A.id], [B.id]], { forced: 1 })); G.force = G.force.filter(y => y !== x); } }); }
   // matchs de tournoi en attente
   (G.tours || []).filter(t => t.fed === ev.fed && !t.win).forEach(t => { const pm = pendingTour(G, t, ev).slice(0, big ? 2 : 1); pm.forEach(x => { if (x.m.every(i => !used.has(i) && G.W[i] && okB(i) && avail(G, G.W[i], ev.day))) { x.m.forEach(i => used.add(i)); items.push(x.g ? NEWM("gauntlet", x.m.map(i => [i]), { tour: { id: t.id, k: x.k }, dur: "long" }) : NEWM("simple", [[x.m[0]], [x.m[1]]], { tour: { id: t.id, k: x.k }, dur: x.fin ? "long" : "moyen" })); } }); });
   // tradition du mois au grand show
@@ -262,21 +288,21 @@ export function autoCard(G, ev) {
     if (champIds(t).length && !ch.length) return;
     ch.forEach(i => used.add(i));
     const ex = (G.shots || []).find(s => s.t === t.id && G.W[s.w] && !used.has(s.w) && avail(G, G.W[s.w], ev.day));
-    const opp = ex ? (used.add(ex.w), G.W[ex.w]) : take(sx || (ch[0] && G.W[ch[0]].sx), ch);
+    const opp = ex ? (used.add(ex.w), G.W[ex.w]) : take(sx || (ch[0] && G.W[ch[0]].sx), ch.concat(ch[0] ? pals(G, ch[0]) : []));
     if (ex) G.shots = G.shots.filter(s => s !== ex);
     if (!opp) { ch.forEach(i => used.delete(i)); return; }
     if (!ch.length) { const o2 = take(opp.sx); if (o2) items.push(NEWM("simple", [[opp.id], [o2.id]], { title: t.id })); return; }
     items.push(NEWM("simple", [ch.slice(0, 1), [opp.id]], { title: t.id, dur: big ? "long" : "moyen" }));
   });
   // storylines
-  (G.sl || []).filter(s => !s.done && s.fed === ev.fed).forEach(s => { if (items.length >= (big ? 8 : 5)) return; const a = s.a.find(i => G.W[i] && !used.has(i) && avail(G, G.W[i], ev.day)), b = s.b.find(i => G.W[i] && !used.has(i) && avail(G, G.W[i], ev.day)); if (a && b && G.W[a].sx === G.W[b].sx) { used.add(a); used.add(b); items.push(NEWM("simple", [[a], [b]], { dur: big ? "long" : "moyen" })); } });
+  (G.sl || []).filter(s => !s.done && s.fed === ev.fed).forEach(s => { if (items.length >= (big ? 8 : 5)) return; const a = s.a.find(i => G.W[i] && okB(i) && !used.has(i) && avail(G, G.W[i], ev.day)), b = s.b.find(i => G.W[i] && okB(i) && !used.has(i) && avail(G, G.W[i], ev.day)); if (a && b && G.W[a].sx === G.W[b].sx) { used.add(a); used.add(b); items.push(NEWM("simple", [[a], [b]], { dur: big ? "long" : "moyen" })); } });
   // le reste de la carte
   const want = big ? 7 : 4; let guard = 0;
   while (items.filter(x => x.it === "m").length < want && guard++ < 12) {
     const sx = rnd() < 0.68 ? "h" : "f";
     if (rnd() < 0.22) { const tm = (G.teams || []).filter(x => x.fed === ev.fed && x.m.every(i => G.W[i] && okB(i) && avail(G, G.W[i], ev.day) && !used.has(i) && G.W[i].sx === sx)); if (tm.length >= 2) { tm[0].m.concat(tm[1].m).forEach(i => used.add(i)); items.push(NEWM("tag", [tm[0].m.slice(), tm[1].m.slice()])); continue; } }
-    if (big && rnd() < 0.2) { const a = take(sx), b = take(sx), c = take(sx); if (a && b && c) { items.push(NEWM("triple", [[a.id], [b.id], [c.id]])); continue; } [a, b, c].forEach(x => x && used.delete(x.id)); }
-    const a = take(sx), b = a && take(sx); if (!a || !b) { if (a) used.delete(a.id); continue; }
+    if (big && rnd() < 0.2) { const a = take(sx), b = a && vs(sx, a), c = b && take(sx, pals(G, a.id).concat(pals(G, b.id))); if (a && b && c) { items.push(NEWM("triple", [[a.id], [b.id], [c.id]])); continue; } [a, b, c].forEach(x => x && used.delete(x.id)); }
+    const a = take(sx), b = a && vs(sx, a); if (!a || !b) { if (a) used.delete(a.id); continue; }
     items.push(NEWM("simple", [[a.id], [b.id]], { dur: pick(["court", "moyen", "moyen", "long"]) }));
   }
   // main event à la fin : le match le plus important
@@ -322,6 +348,7 @@ function startItem(G, ev, L) {
   const W = it.it === "s" ? it.w : idsOf(it);
   const names = W.map(i => wn(G, i));
   beats.push({ t: 0, txt: it.it === "s" ? (SEG[it.k] || SEG.promo).n + " : " + names.join(" et ") : (mtOf(it).n + " : " + sideName(G, it.sides) + (it.title ? " — " + ((G.T[it.title] || {}).n || "") + " en jeu" : "")), big: 1 });
+  if (it.it === "s" && SEG[it.k] && SEG[it.k].d && W.length) beats.push({ t: 1, txt: segText(G, SEG[it.k], { a: W[0], b: W[1] || "" }), ty: "seg", who: W[0], vs: W[1] || "" });
   // qui a l'avantage à chaque moment (la photo de celui qui attaque est mise en avant, la barre d'élan bouge)
   const sides = it.it === "m" ? (it.sides || []).filter(s => s && s.length) : [];
   const duo = () => { if (it.it === "s") return [W[0], W[1] || ""]; const i = Math.floor(rnd() * sides.length), o = sides.filter((s, j) => j !== i); return [pick(sides[i] || W), o.length ? pick(pick(o)) : ""]; };
@@ -337,28 +364,66 @@ function startItem(G, ev, L) {
   // le public pousse un catcheur absent du match : il scande son nom
   const pushed = L.mine && it.it === "m" && L.i === ev.items.length - 1 ? roster(G).find(w => (w.crowd || 0) >= 75 && !(w.push > 0) && idsOf(it).indexOf(w.id) < 0) : null;
   if (pushed && rnd() < 0.5) beats.splice(beats.length - 1, 0, { t: beats[beats.length - 1].t, txt: "Le public scande « " + pushed.n + " ! » pendant le main event…", ev: "chant:" + pushed.id, ty: "chant", who: pushed.id });
-  return { it: it, est: est, beats: beats, k: 0, mod: {}, min: itemMin(it) };
+  const mod = {}, C = { it: it, est: est, beats: beats, k: 0, mod: mod, min: itemMin(it), pre: [] };
+  if (it.it === "m") {
+    if (ev.pm) { Object.assign(mod, ev.pm); delete ev.pm; }
+    // les accompagnateurs au bord du ring (choisis dans la carte, et les managers attitrés)
+    const acc = accList(G, ev, it); C.acc = acc;
+    acc.slice(0, 3).forEach(x => beats.splice(1, 0, { t: 0, txt: wn(G, x.id) + " accompagne " + teamName(G, it.sides[x.sd] || []) + " jusqu’au ring.", ty: "acc", who: G.W[x.id] ? x.id : (it.sides[x.sd] || [])[0] || "" }));
+    // le direct crée parfois tout seul un avant-match (rivalité, titre, personnalités), parfois en chaîne
+    const prev = ev.items[L ? L.i - 1 : -1];
+    if (L && !it.noAuto && !(prev && prev.it === "s" && (SEG[prev.k] || {}).ph === "pre")) {
+      const X = segCtx(G, ev, it, null, "pre", L); X.mod = mod; X.next = h => { if (L.mine) { const nb = nextBig(G); if (nb) G.hype[nb.id] = clamp((G.hype[nb.id] || 3) + h, 0, 10); } };
+      const ch = autoSegs(G, X); let at = 1 + Math.min(3, acc.length);
+      ch.forEach(x => { const S = SEG[x.k], o = segFx(G, ev, x.k, x.R, X); C.pre.push({ k: x.k, w: [x.R.a, x.R.b].filter(Boolean), notes: o.notes });
+        beats.splice(at++, 0, { t: 0, txt: segText(G, S, x.R), ty: "pre", seg: x.k, segn: S.n, rare: S.fr >= 2, gm: o.gm, who: x.R.a, vs: x.R.b, w: [x.R.a, x.R.b].filter(Boolean) });
+        o.notes.forEach(n => beats.splice(at++, 0, { t: 0, txt: n, ty: "pre", seg: x.k, segn: S.n, who: x.R.a, vs: x.R.b, w: [x.R.a, x.R.b].filter(Boolean) })); });
+      if (mod.nodq || mod.sanc || mod.ban) C.est = estimate(G, ev, it);
+    }
+  }
+  return C;
+}
+// qui est au bord du ring : it.mgr = [{ id (catcheur ou staff), sd (camp) }] + les managers attitrés (staff « Manager / valet »)
+export function accList(G, ev, it) {
+  const L = (it.mgr || []).filter(x => (G.W[x.id] || (G.staff || {})[x.id]) && !((G.W[x.id] || {}).rban > G.day));
+  (it.sides || []).forEach((s, sd) => s.forEach(w => { const m = mgrOf(G, w, ev.fed); if (m && !it.noMgr && !L.some(x => x.id === m.id) && !(m.rban > G.day)) L.push({ id: m.id, sd: sd, auto: 1 }); }));
+  return L;
 }
 // avance d'un « moment » ; renvoie { line } ou { end: résultat du segment } ou { show: résultats du show }
 export function stepLive(G, ev, L) {
   if (L.done) return { show: ev.res };
-  if (!L.cur) { L.cur = startItem(G, ev, L); if (!L.cur) return finishLive(G, ev, L); }
+  if (!L.cur && L.q && L.q.length) { const line = L.q.shift(); L.log.push(line); cap(L.log, 80); return { line: line }; }
+  if (!L.cur) { if (L.i >= ev.items.length) return finishLive(G, ev, L); L.cur = startItem(G, ev, L); if (!L.cur) return finishLive(G, ev, L); }
   const C = L.cur;
   if (C.k < C.beats.length) {
     const b = C.beats[C.k++]; L.clock += C.k === 1 ? (C.it.it === "m" ? 3 : 1) : Math.max(1, b.t - (C.beats[C.k - 2] || { t: 0 }).t);
     if (b.ev) { const p = b.ev.split(":"); if (p[0] === "botch") C.mod.botch = p[1]; if (p[0] === "inj") C.mod.injW = p[1]; if (p[0] === "chant") C.mod.chant = p[1]; C.alert = p[0]; }
     L.crowd = clamp(L.crowd + (C.est.r - 55) / 12 + (rnd() - 0.5) * 4);
     // élan : la barre penche vers le camp de celui qui attaque
-    if (b.who && C.it.it === "m") { const si = C.it.sides.findIndex(s => s.indexOf(b.who) >= 0); if (si >= 0) C.mom = clamp((C.mom || 0) + (si === 0 ? 1 : -1) * (b.ty === "near" ? 35 : 22) + (rnd() - 0.5) * 10, -100, 100); }
-    const line = { c: L.clock, txt: b.txt, big: b.big, alert: b.ev ? b.ev.split(":")[0] : "", ty: b.ty || (b.big ? "intro" : ""), who: b.who || "", vs: b.vs || "", i: L.i }; L.log.push(line); cap(L.log, 80);
+    if (b.who && C.it.it === "m" && !b.seg && b.ty !== "acc") { const si = C.it.sides.findIndex(s => s.indexOf(b.who) >= 0); if (si >= 0) C.mom = clamp((C.mom || 0) + (si === 0 ? 1 : -1) * (b.ty === "near" ? 35 : 22) + (rnd() - 0.5) * 10, -100, 100); }
+    const line = { c: L.clock, txt: b.txt, big: b.big, alert: b.ev ? b.ev.split(":")[0] : "", ty: b.ty || (b.big ? "intro" : ""), who: b.who || "", vs: b.vs || "", i: L.i };
+    if (b.seg) Object.assign(line, { seg: b.seg, segn: b.segn, rare: b.rare, gm: b.gm, w: b.w }); L.log.push(line); cap(L.log, 80);
     return { line: line };
   }
   // fin du segment
   if (L.clock > L.len + 5 && ev.kind === "tv" && C.it.it === "m") C.mod.cut = true;
   const r = C.it.it === "m" ? simMatch(G, ev, C.it, C.mod) : simSeg(G, ev, C.it);
   if (r) { r.min = C.min; L.out.push(r); L.log.push({ c: L.clock, txt: resLine(G, r), res: 1, i: L.i, ty: "res" }); L.crowd = clamp(L.crowd + (r.r - 60) / 6); }
+  if (r && C.it.it === "m") {
+    C.it._res = r; r.auto = (C.pre || []).map(x => ({ k: x.k, w: x.w, ph: "pre" }));
+    const nx = ev.items[L.i + 1];
+    if (!C.it.noAuto && !(nx && nx.it === "s" && (SEG[nx.k] || {}).ph === "post")) {
+      const X = segCtx(G, ev, C.it, r, "post", L); X.next = h => { if (L.mine) { const nb = nextBig(G); if (nb) G.hype[nb.id] = clamp((G.hype[nb.id] || 3) + h, 0, 10); } };
+      L.q = L.q || [];
+      autoSegs(G, X).forEach(x => { const S = SEG[x.k], o = segFx(G, ev, x.k, x.R, X), w = [x.R.a, x.R.b].filter(Boolean);
+        r.auto.push({ k: x.k, w: w, ph: "post" }); o.notes.forEach(n => r.notes.push(n));
+        L.q.push({ c: L.clock, txt: segText(G, S, x.R), ty: "post", seg: x.k, segn: S.n, rare: S.fr >= 2, gm: o.gm, who: x.R.a, vs: x.R.b, w: w, i: L.i });
+        o.notes.forEach(n => L.q.push({ c: L.clock, txt: n, ty: "post", seg: x.k, segn: S.n, who: x.R.a, vs: x.R.b, w: w, i: L.i }));
+        if (o.now) forceNow(G, ev, L, o.now); });
+    }
+  }
   L.cur = null; L.i++;
-  if (L.i >= ev.items.length) return finishLive(G, ev, L);
+  if (L.i >= ev.items.length && !(L.q && L.q.length)) return finishLive(G, ev, L);
   return { end: r };
 }
 export function resLine(G, r) {
@@ -381,7 +446,29 @@ export function orderLive(G, ev, L, o, v) {
   if (o === "pub") { L.crowd = clamp(L.crowd - 3); L.money += 15; C.beats.splice(C.k, 0, { t: C.min, txt: "Coupure pub… le public attend." }); return true; }
   return false;
 }
-function finishLive(G, ev, L) { L.done = true; finishShow(G, ev, L); return { show: ev.res }; }
+// mode Mark : la décision du GM pendant le direct (bagarre, refus, conflit)
+export function gmAct(G, ev, L, k, a, b) {
+  const A = G.W[a], B = G.W[b], C = L.cur, sl = A && B ? heatBetween(G, [[a], [b]]) : null;
+  const say = txt => { const line = { t: C ? C.min : 0, c: L.clock, txt: txt, ty: C ? "pre" : "gm", seg: "gm", segn: "Décision du GM", who: a || "", vs: b || "", w: [a, b].filter(x => G.W[x]), i: L.i }; if (C) C.beats.splice(C.k, 0, line); else (L.q = L.q || []).unshift(line); };
+  if (k === "gmsec") { if (sl) sl.heat = clamp(sl.heat - 2); L.crowd = clamp(L.crowd - 1); if (C) C.mod.sec = true; say("La sécurité débarque et sépare tout le monde."); return "La sécurité est là"; }
+  if (k === "gmlet") { if (sl) sl.heat = clamp(sl.heat + 4); L.crowd = clamp(L.crowd + 4); if (B && rnd() < 0.25) B.en = clamp(B.en - 10); say("Le GM laisse faire : tout le public est debout !"); return "Tu laisses faire"; }
+  if (k === "gmnow") { if (!C && forceNow(G, ev, L, [a, b])) return "Match ce soir !"; G.force = (G.force || []).concat({ a: a, b: b, until: G.day + 21 }); say("Le GM annonce : " + wn(G, a) + " contre " + wn(G, b) + " au prochain show !"); return "Match imposé au prochain show"; }
+  if (!A || A.fed !== G.me) return "";
+  if (k === "gmfine") { meF(G).money += 10; A.mor = clamp(A.mor - 5); A.fines = (A.fines || 0) + 1; say("Le GM inflige une amende de 10 k$ à " + A.n + "."); return "Amende de 10 k$"; }
+  if (k === "gmsusp") { A.susp = Math.max(A.susp || 0, G.day + 7); A.mor = clamp(A.mor - 8); say(A.n + " est suspendu" + e_(A) + " une semaine par le GM !"); return A.n + " suspendu" + e_(A) + " 1 semaine"; }
+  if (k === "gmban") { A.rban = G.day + 30; A.mor = clamp(A.mor - 3); say(A.n + " est interdit" + e_(A) + " de bord de ring pendant un mois."); return "Interdit" + e_(A) + " de bord de ring"; }
+  return "";
+}
+// « Je veux le match tout de suite ! » (ou un match imposé par le GM) : ajouté juste après
+export function forceNow(G, ev, L, ab) {
+  const A = G.W[ab[0]], B = G.W[ab[1]]; if (!A || !B || A.sx !== B.sx || !avail(G, A, ev.day) || !avail(G, B, ev.day) || ev.items.filter(x => x.it === "m").length >= 14) return false;
+  if (ev.items.slice(L.i + 1).some(x => x.it === "m" && idsOf(x).some(i => i === A.id || i === B.id))) return false;
+  ev.items.splice(L.i + 1, 0, NEWM("simple", [[A.id], [B.id]], { dur: "court", now: 1, noAuto: true }));
+  (L.q = L.q || []).push({ c: L.clock, txt: "Le GM accepte : " + A.n + " contre " + B.n + ", tout de suite !", ty: "post", seg: "now", segn: "Match imposé", who: A.id, vs: B.id, w: [A.id, B.id], i: L.i });
+  return true;
+}
+function finishLive(G, ev, L) { L.done = true;
+  if (L.mine && G.mark && !L.live) { const g = L.log.find(x => x.gm && !x.asked && G.W[x.who] && G.W[x.who].fed === G.me); if (g) { G.gmq = (G.gmq || []).concat({ k: "sanc", w: g.who, o: g.vs || "", why: g.segn, d: G.day }); cap(G.gmq, 12); } } (ev.items || []).forEach(x => { delete x._res; }); delete ev.pm; finishShow(G, ev, L); return { show: ev.res }; }
 export function runShow(G, ev) { const L = prepShow(G, ev); let g = 0; while (!L.done && g++ < 2000) stepLive(G, ev, L); return ev.res; }
 export const playShow = runShow;
 
@@ -400,7 +487,7 @@ function finishShow(G, ev, L) {
   let aud = f.aud0 * (1 + (starOn - 65) / 220) * (1 + (prev - 65) / 260) * (1 + Math.min(0.25, heat / 600)) * (big ? 1 + hype / 25 : 1) * war * (ev.celeb ? 1.06 : 1) * (0.95 + rnd() * 0.1);
   aud = Math.max(0.02, Math.round(aud * 100) / 100);
   if (ev.ai) {   // WWE un seul show : un autre show de la WWE, dirigé par son propre GM (ni mon argent, ni mon audience)
-    G.brands = G.brands || {}; const B = (G.brands[ev.br] = G.brands[ev.br] || { aud: [] }); B.aud.push(aud); cap(B.aud, 12); B.last = { n: ev.n, d: G.day, r: Math.round(rating), aud: aud };
+    G.brands = G.brands || {}; const bk = ev.kind === "tv" ? ev.br : (ev.br || "PLE"); const B = (G.brands[bk] = G.brands[bk] || { aud: [] }); B.aud.push(aud); cap(B.aud, 12); B.last = { n: ev.n, d: G.day, r: Math.round(rating), aud: aud };
     B.m = ms.map(x => ({ s: x.sides, w: x.win, r: Math.round(x.r), t: x.title, c: x.change, ty: x.t })).slice(-6);
     ev.done = true; ev.res = { r: rating, aud: aud };
     const best = ms.slice().sort((a, b) => b.r - a.r)[0]; if (best && (best.change || (best.r > 80 && rnd() < 0.4))) news(G, { seg: "ecran", f: "autres", t: ev.n + " · " + stars(rating), txt: (best.change ? "Changement de titre ! " : "Match du soir : ") + sideName(G, best.sides) + "." });

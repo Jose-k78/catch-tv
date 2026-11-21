@@ -753,5 +753,13 @@
   "Unagi Sayaka",
   "Velvet Sky",
   "Vita VonStarr"
- ]
+ ],
+ "rn": {
+  "Brutus Creed": "Drew Kasper",
+  "Julius Creed": "Jacob Kasper"
+ },
+ "rnG": {
+  "The Creed Brothers": "The Kasper Brothers",
+  "Creed Brothers": "The Kasper Brothers"
+ }
 }

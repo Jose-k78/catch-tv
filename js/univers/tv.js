@@ -6,7 +6,7 @@ import { esc, toast } from "../util.js";
 import { U, go, redraw, persist, face, imgW, imgEv, imgT, crest, pickW, wnH } from "./core.js";
 import { meF, roster, avail, wn, teamName } from "./base.js";
 import { MT, SEG, FIN } from "./data.js";
-import { mtOf, idsOf, stepLive, orderLive } from "./match.js";
+import { mtOf, idsOf, stepLive, orderLive, gmAct } from "./match.js";
 import { stars, fmtM, fmtK, clamp } from "./world.js";
 
 const SPD = { 1: 1700, 2: 800, 4: 330 };
@@ -33,6 +33,8 @@ function tick(G, LV) {
   if (last.res || last.big) LV.hold = LV.sp === 1 ? 1 : LV.sp === 2 ? 1 : 0;
   // moment clé (seulement à ton show, une fois par match) : on met en pause et on te demande
   const C = LV.L.cur;
+  // mode Mark : bagarre, refus, conflit pendant le direct → le GM réagit tout de suite
+  if (LV.L.mine && G.mark && last.gm && !last.asked && !LV.noKey) { last.asked = true; LV.key = { k: "gm", a: last.who, b: last.vs, n: last.segn || "Ça dégénère !", pre: last.ty === "pre" }; LV.sp0 = LV.sp; LV.sp = 0; clearInterval(timer); redraw(); return; }
   if (LV.L.mine && C && !LV.noKey && !C.asked && ((last.ty === "near" && C.it.it === "m") || last.alert === "inj")) {
     C.asked = true; LV.key = { k: last.alert === "inj" ? "inj" : "near", who: last.who }; LV.sp0 = LV.sp; LV.sp = 0; clearInterval(timer);
   }
@@ -57,6 +59,7 @@ ACT.uvkey = el => {
   if (a === "runin") { const ids = C ? idsOf(C.it) : [], R = roster(G).filter(w => ids.indexOf(w.id) < 0 && avail(G, w));
     return pickW(G, "Qui débarque dans le ring ?", [["", R.map(w => ({ w: w, info: "Pop " + Math.round(w.pop) + (w.al === "heel" ? " · heel" : " · face") }))]], id => { order("runin", id); resume(); }); }
   if (a === "nokey") { LV.noKey = true; return resume(); }
+  if (a.indexOf("gm") === 0 && LV.key && LV.key.k === "gm") { const ev = G.ev.find(e => e.id === LV.ev), t = gmAct(G, ev, LV.L, a, LV.key.a, LV.key.b); if (t) toast(t, { ms: 2600 }); return resume(); }
   if (a === "win") order("win", el.dataset.v);
   else if (a !== "go") order(a);
   resume();
@@ -119,6 +122,10 @@ function stage(G, ev, L) {
   if (!last) { const im = imgEv(G, ev), first = ev.items[0];
     return '<div class="uvtvopen">' + (im ? '<img src="' + esc(im) + '" alt="">' : crest(G, ev.fed, 96)) + "<h2>" + esc(ev.n) + "</h2><p>" + ev.items.length + " segments au programme · le public entre dans la salle…</p>" + (first ? "<small>Pour commencer : " + esc(first.it === "m" ? (mtOf(first).n + " — " + sideNameS(G, first.sides)) : (SEG[first.k] || SEG.promo).n) + "</small>" : "") + "</div>"; }
   const it = ev.items[last.i != null ? last.i : L.i];
+  // un segment d'avant / d'après-match (créé par le direct) ou une décision du GM
+  if (last.seg) { const W2 = (last.w || []).filter(i => G.W[i]);
+    return '<div class="uvtvseg auto' + (last.rare ? " rare" : "") + '"><small>' + (last.seg === "gm" ? "Décision du GM" : esc(last.segn || "") + " · " + (last.ty === "pre" ? "avant le match" : "après le match")) + (last.rare ? " · moment rare" : "") + '</small><div class="uvtvsegp">' +
+      W2.slice(0, 2).map(i => '<span class="uvtvp big' + (i === last.who || W2.length === 1 ? " on" : "") + '">' + face(G, G.W[i], 120) + "</span>").join("") + '</div><blockquote aria-live="polite">' + esc(last.txt) + "</blockquote></div>"; }
   // le résultat d'un match ou d'un segment
   if (last.res) { const r = L.out[L.out.length - 1] || {};
     if (r.it === "s") return '<div class="uvtvres seg"><small>Fin du segment</small>' + (r.w || []).slice(0, 2).map(i => '<span class="uvtvp big on">' + face(G, G.W[i], 120) + "</span>").join("") + '<div class="uvtvstars">' + stars(r.r) + "</div>" + (r.notes || []).slice(0, 2).map(n => "<p>" + esc(n) + "</p>").join("") + "</div>";
@@ -142,6 +149,13 @@ function stage(G, ev, L) {
 }
 const sideNameS = (G, sides) => (sides || []).map(s => teamName(G, s)).join(" contre ");
 function keyPanel(G, L, LV) {
+  if (LV.key && LV.key.k === "gm") { const K = LV.key, A = G.W[K.a], B = G.W[K.b], an = A ? esc(A.n) : "lui";
+    return '<div class="uvtvkey gm" role="dialog" aria-label="Le GM doit réagir"><small>Le GM doit réagir</small><b>' + esc(K.n) + "</b><p>" + (A && B ? an + " et " + esc(B.n) + " : que fais-tu ?" : "Que fais-tu ?") + "</p>" +
+      '<button type="button" class="uvbtn pri" data-act="uvkey" data-k="gmsec">Envoyer la sécurité</button>' +
+      '<button type="button" class="uvbtn" data-act="uvkey" data-k="gmlet">Laisser faire (le public adore, c’est risqué)</button>' +
+      (!K.pre && A && B && A.sx === B.sx ? '<button type="button" class="uvbtn" data-act="uvkey" data-k="gmnow">Ils règlent ça tout de suite : match ce soir !</button>' : "") +
+      (A && A.fed === G.me ? '<div class="uvrow2"><button type="button" class="uvbtn sm" data-act="uvkey" data-k="gmfine">Amende pour ' + an + '</button><button type="button" class="uvbtn sm" data-act="uvkey" data-k="gmsusp">Suspendre ' + an + ' 1 semaine</button><button type="button" class="uvbtn sm" data-act="uvkey" data-k="gmban">' + an + " interdit" + (A.sx === "f" ? "e" : "") + " de bord de ring</button></div>" : "") +
+      '<button type="button" class="uvbtn ghost sm" data-act="uvkey" data-k="nokey">Ne plus me demander ce soir</button></div>'; }
   const C = L.cur; if (!LV.key || !C) return "";
   const it = C.it, S = (it.sides || []).filter(s => s.length), w = LV.key.who && G.W[LV.key.who];
   if (LV.key.k === "inj") return '<div class="uvtvkey" role="dialog" aria-label="Moment clé"><b>' + (w ? esc(w.n) + " a l’air blessé" + (w.sx === "f" ? "e" : "") + " !" : "Blessure possible !") + "</b><p>Tu arrêtes tout ou le match continue ?</p>" +

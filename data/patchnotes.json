@@ -2,6 +2,26 @@
  "updated": "2026-11-21",
  "items": [
   {
+   "id": "2026-11-21-univers3",
+   "d": "2026-11-21",
+   "mod": true,
+   "t": "Mode Univers : vrai calendrier, 200 segments et un vrai GM",
+   "txt": [
+    "📅 Le vrai calendrier 2026 : les PLE et PPV de chaque fédération à leurs vraies dates (WrestleMania 42, All In, Wrestle Kingdom, Triplemanía XXXIV…). Il revient chaque année, avec le numéro qui monte (WrestleMania 43…). Si tu renommes, déplaces ou supprimes un grand événement, l’année suivante garde ton choix. Des PPV inventés seulement pour une fédération qui n’en a pas.",
+    "🟡 NXT a ses propres PLE (Vengeance Day, Stand & Deliver, Heatwave…), à part de ceux de Raw et SmackDown. Si tu ne diriges qu’un show, les PLE des autres sont joués par leur GM.",
+    "🇲🇽 AAA est la fédération sœur de la WWE : elle garde son calendrier et ses titres, mais les deux partagent des catcheurs et se retrouvent à Worlds Collide.",
+    "🎙️ 200 nouveaux segments d’avant-match et d’après-match en 20 familles (face-à-face, attaques, trahisons, titres, retours, public, chaos, GM…), du plus courant au légendaire. Chacun a ses conditions (rivalité, titre, clan, manager, partenaire, personnalité), son impact et ses suites possibles.",
+    "🔎 Dans la carte du show, un segment s’ouvre avec 4 ou 5 idées conseillées pour le match d’avant ou d’après, puis « Voir la liste des segments » avec une recherche : « ceinture » trouve aussi les segments de champion, de titre, de mallette…",
+    "📺 Le direct crée aussi ses propres segments tout seul, selon les rivalités, les titres et les personnalités, parfois en chaîne (le champion brandit sa ceinture → le challenger refuse de reculer → le manager s’en mêle → bousculade). Ils ne se répètent pas, et les plus rares deviennent de vrais événements (actu, historique du catcheur).",
+    "🔁 Un catcheur peut apparaître plusieurs fois dans un show : un segment, puis son match, puis encore un segment.",
+    "🤝 Les accompagnateurs : choisis qui vient au bord du ring avec chaque camp (manager de ton staff, partenaire, membre du clan). Les managers attitrés viennent d’office. Ils peuvent aider… ou se faire renvoyer en coulisses.",
+    "🚫 L’IA ne fait plus jamais s’affronter deux partenaires d’équipe. Toi, tu peux toujours, mais tu es prévenu (pour une histoire de trahison).",
+    "🎭 Mode Mark, un vrai GM : pendant le direct, quand ça dégénère, tu réagis tout de suite (sécurité, laisser faire, match tout de suite, amende, suspension, interdit de bord de ring). En coulisses : bagarres, plaintes, demandes de match de titre ou de repos, retards, refus de perdre. Les sanctions comptent vraiment (un suspendu ne peut pas catcher, un match imposé arrive au prochain show).",
+    "🔄 Prêts entre les shows d’une même fédération : emprunte un catcheur de Raw ou NXT pour 1, 2 ou 4 semaines, ou prête un des tiens (Ma fédé › Autres shows, ou sur sa fiche).",
+    "✏️ Les parties déjà commencées suivent les changements de nom : Brutus et Julius Creed s’appellent maintenant Drew et Jacob Kasper (sans changer de fédération)."
+   ]
+  },
+  {
    "id": "2026-11-21-univers2",
    "d": "2026-11-21",
    "mod": true,

@@ -118,6 +118,30 @@ export const SCN = {
     ch: [["« Tu l’as mérité. Chaque seconde. »", { a: 4, c: 4, mor: 4 }, "{n} te serre dans ses bras devant toute la presse."],
       ["« Et maintenant, on vise encore plus haut. »", { c: 3, r: 1 }, "« Encore plus haut ? J’adore cette idée. »"],
       ["« Profite. Demain, on retourne au travail. »", { c: 2 }, "{n} éclate de rire : « Toujours le même ! »"]] },
+  // ---------- le vrai GM (mode Mark surtout, demande de Jose) : bagarres, conflits, demandes, sanctions ----------
+  sanc: { bg: "bureau", only: 1, ok: (G, w) => mineW(G, w), t: ["{n} est assis{e} en face de toi. Hier soir, ça a dégénéré{o2}.", "« Quoi ? On m’a cherché, c’est tout. »"],
+    ch: [["« Amende de 10 k$. »", { fine: 10, r: 2, mor: -4 }, "« Sérieusement ?… D’accord. C’est noté. »"],
+      ["« Suspendu{e} une semaine. »", { susp: 7, r: 5, c: -3, mor: -8 }, "{n} claque la porte en sortant."],
+      ["« Interdit{e} de bord de ring pendant un mois. »", { rban: 30, r: 1 }, "« Ça me va. Je n’ai besoin de personne. »"],
+      ["« Tu veux te battre ? Match imposé au prochain show. »", { force: 1, a: 3, mor: 3 }, "« Enfin quelqu’un qui comprend ! »"],
+      ["« Je ferme les yeux pour cette fois. »", { a: 3, c: -2, r: -2 }, "« Merci, boss. Ça ne se reproduira pas. »"]] },
+  bagarre: { bg: "couloir", mk: 1, ok: (G, w, o) => mineW(G, w) && o && mineW(G, o) && relGet(G, w.id, o.id) <= -25, other: (G, w) => roster(G).filter(x => x.fed === G.me && x.id !== w.id && relGet(G, w.id, x.id) <= -25),
+    t: ["Des cris dans le couloir : {n} et {o} en viennent aux mains !", "Tout le vestiaire te regarde. C’est toi le GM."],
+    ch: [["« Je vous sépare, et on parle tous les trois. »", { rel: 12, c: 2 }, "Ils se serrent la main du bout des doigts."],
+      ["« Amende pour vous deux. »", { fine: 5, fineO: 5, r: 2 }, "Personne n’ose répondre."],
+      ["« Vous réglerez ça sur le ring, au prochain show. »", { force: 1, feud: 1, a: 2 }, "{n} sourit : « Avec plaisir. »"],
+      ["Les laisser se débrouiller.", { rel: -10, r: 2 }, "La bagarre continue jusqu’au parking…"]] },
+  plainte: { bg: "bureau", mk: 1, ok: (G, w, o) => mineW(G, w) && o && mineW(G, o), other: (G, w) => roster(G).filter(x => x.fed === G.me && x.id !== w.id && relGet(G, w.id, x.id) <= -15),
+    t: ["{n} entre sans frapper.", "« {o} me fait mal pour de vrai pendant les matchs. Fais quelque chose. »"],
+    ch: [["« Je vais parler à {o}. »", { rel: 6, c: 3 }, "« Merci. Je compte sur toi. »"], ["« Amende pour {o}. »", { fineO: 5, c: 5 }, "« Enfin ! »"], ["« Débrouillez-vous entre vous. »", { c: -4, r: 2 }, "« Super… merci pour rien. »"]] },
+  titre: { bg: "bureau", mk: 1, ok: (G, w) => mineW(G, w) && (w.winRun || 0) >= 3 && !champ(G, w), t: ["{n} pose ses bottes sur ton bureau.", "« Trois victoires de suite. Je veux mon match de titre. »"],
+    ch: [["« Tu l’auras. »", { shot: 1, c: 4, mor: 6 }, "« Je savais que tu étais quelqu’un de bien. »"], ["« Gagne encore, on en reparle. »", { mor: -2, r: 1 }, "« Encore ? Très bien. »"], ["« Pas maintenant. »", { c: -4, r: 3, mor: -6 }, "« On en reparlera… crois-moi. »"]] },
+  repos: { bg: "vestiaire", mk: 1, ok: (G, w) => mineW(G, w) && w.en < 35, t: ["{n} boite jusqu’à ton bureau.", "« Je suis cassé{e}. Laisse-moi souffler une semaine. »"],
+    ch: [["« Repose-toi une semaine. »", { rest: 7, c: 4 }, "« Merci, vraiment. »"], ["« Encore un show, puis repos. »", { mor: -3, rest: 3 }, "« … D’accord. »"], ["« Non, j’ai besoin de toi. »", { c: -5, r: 3, mor: -5 }, "« Si je me blesse, ce sera ta faute. »"]] },
+  retard: { bg: "parking", mk: 1, ok: (G, w) => mineW(G, w) && rnd() < 0.35, t: ["{n} arrive en courant, une heure après tout le monde.", "« Les bouchons, je te jure ! »"],
+    ch: [["« Amende de 5 k$. »", { fine: 5, r: 1 }, "« C’est dur, mais c’est juste. »"], ["« Dernier avertissement. »", { r: 1, c: 1 }, "« Promis, ça n’arrivera plus. »"], ["« Ça arrive à tout le monde. »", { a: 3, c: 2 }, "« Merci ! Tu es le meilleur GM. »"]] },
+  refus: { bg: "couloir", mk: 1, ok: (G, w) => mineW(G, w) && w.pop >= 65 && (w.lossRun || 0) >= 2, t: ["{n} t’attend devant le bureau, les bras croisés.", "« Encore perdre ? Non. La prochaine fois, je gagne ou je ne monte pas. »"],
+    ch: [["« C’est moi le GM. Tu feras ton match. »", { r: 4, c: -3 }, "« On verra bien. »"], ["« D’accord, on va te remettre en avant. »", { c: 4, mor: 5, push: 1 }, "« Voilà qui est mieux. »"], ["« Suspendu{e} une semaine. Réfléchis. »", { susp: 7, r: 6, mor: -8 }, "{n} part sans un mot."]] },
   libre: { bg: "couloir", ok: (G, w) => !!w && !w.fed && !w.ret && !w.staff, free: 1, t: ["Un ancien de la maison te présente {n}, sans contrat en ce moment.", "« Je cherche un endroit où on me laisse m’exprimer. Votre show me plaît. »"],
     ch: [["« Passe à mon bureau, on va parler contrat. »", { a: 4, c: 4, go: "nego" }, "« Avec plaisir ! »"],
       ["« On garde le contact. »", { a: 3 }, "« Merci. J’attends ton appel. »"],
@@ -128,12 +152,12 @@ const SCK = Object.keys(SCN);
 export function sceneFor(G, wid, only) {
   const R = roster(G).filter(w => w.fed === G.me && !w.ret), FA = Object.values(G.W).filter(w => !w.fed && !w.ret && !w.staff && w.pop >= 35);
   const tries = [];
-  (only ? [only] : SCK.filter(k => !SCN[k].only).sort(() => rnd() - 0.5)).forEach(k => { const S = SCN[k]; const pool = wid ? [G.W[wid]] : S.free ? FA.slice().sort(() => rnd() - 0.5).slice(0, 6) : S.lead ? R.slice().sort((a, b) => influence(G, b) - influence(G, a)).slice(0, 3) : R.slice().sort(() => rnd() - 0.5).slice(0, 8);
+  (only ? [only] : SCK.filter(k => !SCN[k].only && (!SCN[k].mk || G.mark)).sort(() => rnd() - 0.5).sort((a, b) => G.mark && rnd() < 0.5 ? !!SCN[b].mk - !!SCN[a].mk : 0)).forEach(k => { const S = SCN[k]; const pool = wid ? [G.W[wid]] : S.free ? FA.slice().sort(() => rnd() - 0.5).slice(0, 6) : S.lead ? R.slice().sort((a, b) => influence(G, b) - influence(G, a)).slice(0, 3) : R.slice().sort(() => rnd() - 0.5).slice(0, 8);
     pool.forEach(w => { if (!w) return; const os = S.other ? S.other(G, w) : [], o = os.length ? pick(os) : null; if (S.ok(G, w, o)) tries.push({ k: k, w: w.id, o: o ? o.id : "" }); }); });
   const recent = (G.scLog || []).slice(-6).map(x => x.k);
   return tries.find(t => recent.indexOf(t.k) < 0) || tries[0] || null;
 }
-export function sceneText(G, sc) { const S = SCN[sc.k], w = G.W[sc.w], o = sc.o ? G.W[sc.o] : null, f = s => F(G, s, w, o).replace(/\{oe\}/g, o && o.sx === "f" ? "e" : ""); return { bg: S.bg, t: S.t.map(f), ch: S.ch.map(c => f(c[0])), rep: S.ch.map(c => f(c[2])) }; }
+export function sceneText(G, sc) { const S = SCN[sc.k], w = G.W[sc.w], o = sc.o ? G.W[sc.o] : null, f = s => F(G, s, w, o).replace(/\{oe\}/g, o && o.sx === "f" ? "e" : "").replace(/\{o2\}/g, o ? " avec " + o.n : ""); return { bg: S.bg, t: S.t.map(f), ch: S.ch.map(c => f(c[0])), rep: S.ch.map(c => f(c[2])) }; }
 // la réponse choisie : les conséquences (cachées)
 export function scenePick(G, sc, i) {
   const S = SCN[sc.k], c = S.ch[i], w = G.W[sc.w], o = sc.o ? G.W[sc.o] : null; if (!c || !w) return null;
@@ -147,6 +171,14 @@ export function scenePick(G, sc, i) {
   if (fx.money) { const f = meF(G); f.money += fx.money; G.fin.cur.prod -= fx.money; }
   if (fx.train) { const i2 = [1, 2, 3, 4][Math.floor(rnd() * 4)]; w.st[i2] = clamp(w.st[i2] + 2); }
   if (fx.help && o) { o.mor = clamp(o.mor + 6); bondAdd(o, { c: 3 }); }
+  // les sanctions et décisions du GM
+  if (fx.fine) { meF(G).money += fx.fine; w.fines = (w.fines || 0) + 1; }
+  if (fx.fineO && o) { meF(G).money += fx.fineO; o.mor = clamp(o.mor - 4); o.fines = (o.fines || 0) + 1; bondAdd(o, { r: 2 }); }
+  if (fx.susp) w.susp = Math.max(w.susp || 0, G.day + fx.susp);
+  if (fx.rban) w.rban = G.day + fx.rban;
+  if (fx.force && o && o.sx === w.sx) G.force = (G.force || []).concat({ a: w.id, b: o.id, until: G.day + 21 });
+  if (fx.push) w.push = Math.max(w.push || 0, 1);
+  if (fx.shot) { const t = Object.values(G.T).find(t => t.fed === G.me && t.div !== "tag" && (t.cat === w.sx || t.cat === "x") && champIds(t).indexOf(w.id) < 0); if (t) G.shots = (G.shots || []).concat({ w: w.id, t: t.id, by: "Le GM", d: G.day }); }
   if (fx.feud && o) G.sl.push({ id: uid("s"), fed: G.me, n: w.n + " contre " + o.n, a: [w.id], b: [o.id], len: 5, wk: 0, heat: 30, turn: null, done: false, from: G.day });
   G.scLog = (G.scLog || []).concat({ k: sc.k, w: w.id, d: G.day, i: i }); cap(G.scLog, 40);
   // la confiance d'un leader se propage un peu à ses amis
@@ -217,17 +249,19 @@ export function telReply(G, th, key, lab) {
 }
 
 // ---------- chaque jour : une scène qui attend, des messages ----------
+const gmQueue = G => { (G.gmq || []).splice(0).forEach(q => { if (G.W[q.w] && G.W[q.w].fed === G.me) { G.scQ = G.scQ || []; G.scQ.unshift({ k: q.k, w: q.w, o: q.o || "", why: q.why || "", until: G.day + 4 }); } }); };
 export function vnDaily(G) {
-  telDaily(G);
+  telDaily(G); gmQueue(G);
   if (dateOf(G.day).wd === 1) lockerWeekly(G);
   G.scQ = (G.scQ || []).filter(s => s.until >= G.day);
-  if (!G.scQ.length && rnd() < 0.1) { const s = sceneFor(G); if (s) G.scQ.push(Object.assign(s, { until: G.day + 3 })); }
+  if (!G.scQ.length && rnd() < (G.mark ? 0.25 : 0.1)) { const s = sceneFor(G); if (s) G.scQ.push(Object.assign(s, { until: G.day + 3 })); }
 }
 // après un de mes shows : quelqu'un veut souvent me voir
 export function vnAfterShow(G, ev, res) {
   if (ev.fed !== G.me || ev.ai) return;
   (res || []).filter(r => r.it === "m" && typeof r.win === "number").forEach(r => { (r.sides[r.win] || []).forEach(i => { const w = G.W[i]; if (w && w.fed === G.me && w.b && w.b.r >= 30 && rnd() < 0.3) w.mor = clamp(w.mor - 2); }); });
-  if ((G.scQ || []).length < 2 && rnd() < 0.45) { const s = sceneFor(G); if (s) G.scQ = (G.scQ || []).concat(Object.assign(s, { until: G.day + 3 })); }
+  gmQueue(G);
+  if ((G.scQ || []).length < 2 && rnd() < (G.mark ? 0.7 : 0.45)) { const s = sceneFor(G); if (s) G.scQ = (G.scQ || []).concat(Object.assign(s, { until: G.day + 3 })); }
 }
 export const promiseKept = (G, p) => { const w = G.W[p.w]; if (w) bondAdd(w, { c: 6 }); };
 export const promiseBroken = (G, p) => { const w = G.W[p.w]; if (w) { bondAdd(w, { c: -10, r: 3 }); G.bfly = G.bfly || []; if (!G.bfly.some(b => b.k === "grudge" && b.w === w.id)) G.bfly.push({ k: "grudge", w: w.id, d: G.day, at: G.day + 240 + Math.floor(rnd() * 500) }); } };

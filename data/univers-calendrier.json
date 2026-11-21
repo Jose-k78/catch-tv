@@ -1,0 +1,419 @@
+{
+ "note": "Calendrier du mode Univers : les vrais grands événements (PLE / PPV) de 2026 de chaque promotion = Année 1 de la partie, répétés chaque année (numéros augmentés : WrestleMania 42 → 43…). br = show de la WWE (NXT), co = promotions associées (événement commun, leurs catcheurs sont réservables), mania = le plus grand show de l'année. Si le joueur modifie ses événements (nom, suppression, ajout), l'année suivante reprend SA version. Sources : Wikipédia « 2026 in professional wrestling », WWE.com, AEW, calendar.json de l'app (nov. 2026).",
+ "y": 2026,
+ "mania": {
+  "WWE": "WrestleMania",
+  "AEW": "All In",
+  "NJPW": "Wrestle Kingdom",
+  "AAA": "Triplemanía",
+  "TNA": "Bound for Glory",
+  "CMLL": "Aniversario",
+  "Stardom": "All Star Grand Queendom",
+  "ROH": "Final Battle",
+  "Marigold": "Grand Destiny"
+ },
+ "feds": {
+  "WWE": [
+   {
+    "t": "Royal Rumble",
+    "d": "2026-01-31"
+   },
+   {
+    "t": "Elimination Chamber",
+    "d": "2026-02-28"
+   },
+   {
+    "t": "NXT Vengeance Day",
+    "d": "2026-03-07",
+    "br": "NXT"
+   },
+   {
+    "t": "NXT Stand & Deliver",
+    "d": "2026-04-04",
+    "br": "NXT"
+   },
+   {
+    "t": "WrestleMania 42",
+    "d": "2026-04-18"
+   },
+   {
+    "t": "Backlash",
+    "d": "2026-05-09"
+   },
+   {
+    "t": "Clash in Italy",
+    "d": "2026-05-31"
+   },
+   {
+    "t": "Night of Champions",
+    "d": "2026-06-27"
+   },
+   {
+    "t": "NXT The Great American Bash",
+    "d": "2026-06-28",
+    "br": "NXT"
+   },
+   {
+    "t": "SummerSlam",
+    "d": "2026-08-01"
+   },
+   {
+    "t": "NXT Heatwave",
+    "d": "2026-08-30",
+    "br": "NXT"
+   },
+   {
+    "t": "Worlds Collide",
+    "d": "2026-09-26",
+    "co": [
+     "AAA"
+    ]
+   },
+   {
+    "t": "Money in the Bank",
+    "d": "2026-10-10"
+   },
+   {
+    "t": "NXT Halloween Havoc",
+    "d": "2026-10-31",
+    "br": "NXT"
+   },
+   {
+    "t": "Crown Jewel",
+    "d": "2026-11-07"
+   },
+   {
+    "t": "Survivor Series: WarGames",
+    "d": "2026-11-28"
+   },
+   {
+    "t": "Wrestlepalooza",
+    "d": "2026-12-12"
+   },
+   {
+    "t": "NXT TLC",
+    "d": "2026-12-12",
+    "br": "NXT"
+   }
+  ],
+  "AEW": [
+   {
+    "t": "Grand Slam Australia",
+    "d": "2026-02-14"
+   },
+   {
+    "t": "Revolution",
+    "d": "2026-03-15"
+   },
+   {
+    "t": "Dynasty",
+    "d": "2026-04-12"
+   },
+   {
+    "t": "Double or Nothing",
+    "d": "2026-05-24"
+   },
+   {
+    "t": "Forbidden Door",
+    "d": "2026-06-28",
+    "co": [
+     "NJPW",
+     "CMLL",
+     "Stardom"
+    ]
+   },
+   {
+    "t": "Redemption",
+    "d": "2026-07-26"
+   },
+   {
+    "t": "Grand Slam Mexico",
+    "d": "2026-08-05",
+    "co": [
+     "CMLL"
+    ]
+   },
+   {
+    "t": "All In",
+    "d": "2026-08-30"
+   },
+   {
+    "t": "All Out",
+    "d": "2026-09-26"
+   },
+   {
+    "t": "WrestleDream",
+    "d": "2026-10-17"
+   },
+   {
+    "t": "Full Gear",
+    "d": "2026-11-14"
+   },
+   {
+    "t": "Worlds End",
+    "d": "2026-12-19"
+   }
+  ],
+  "NJPW": [
+   {
+    "t": "Wrestle Kingdom 20",
+    "d": "2026-01-04"
+   },
+   {
+    "t": "New Year Dash!!",
+    "d": "2026-01-05"
+   },
+   {
+    "t": "The New Beginning in Osaka",
+    "d": "2026-02-11"
+   },
+   {
+    "t": "The New Beginning USA",
+    "d": "2026-02-27"
+   },
+   {
+    "t": "Sakura Genesis",
+    "d": "2026-04-04"
+   },
+   {
+    "t": "Wrestling Hizen no Kuni",
+    "d": "2026-04-29"
+   },
+   {
+    "t": "Wrestling Dontaku",
+    "d": "2026-05-03"
+   },
+   {
+    "t": "Dominion in Osaka-jo Hall",
+    "d": "2026-06-14"
+   },
+   {
+    "t": "G1 Climax 36 — finale",
+    "d": "2026-08-16"
+   },
+   {
+    "t": "King of Pro-Wrestling",
+    "d": "2026-10-12"
+   },
+   {
+    "t": "Power Struggle",
+    "d": "2026-11-03"
+   },
+   {
+    "t": "Lucha Kingdom",
+    "d": "2026-11-16",
+    "co": [
+     "CMLL"
+    ]
+   },
+   {
+    "t": "World Tag League — finale",
+    "d": "2026-12-13"
+   }
+  ],
+  "AAA": [
+   {
+    "t": "Rey de Reyes",
+    "d": "2026-03-14"
+   },
+   {
+    "t": "Noche de los Grandes",
+    "d": "2026-05-30"
+   },
+   {
+    "t": "Verano de Escándalo",
+    "d": "2026-07-25"
+   },
+   {
+    "t": "Triplemanía XXXIV",
+    "d": "2026-09-13"
+   },
+   {
+    "t": "Héroes Inmortales",
+    "d": "2026-10-24"
+   },
+   {
+    "t": "Guerra de Titanes",
+    "d": "2026-12-19"
+   }
+  ],
+  "TNA": [
+   {
+    "t": "Genesis",
+    "d": "2026-01-17"
+   },
+   {
+    "t": "No Surrender",
+    "d": "2026-02-13"
+   },
+   {
+    "t": "Sacrifice",
+    "d": "2026-03-27"
+   },
+   {
+    "t": "Rebellion",
+    "d": "2026-04-11"
+   },
+   {
+    "t": "Slammiversary",
+    "d": "2026-06-28"
+   },
+   {
+    "t": "Lockdown",
+    "d": "2026-08-23"
+   },
+   {
+    "t": "Bound for Glory",
+    "d": "2026-10-11"
+   },
+   {
+    "t": "Destination X",
+    "d": "2026-11-15"
+   }
+  ],
+  "CMLL": [
+   {
+    "t": "Sin Salida",
+    "d": "2026-01-02"
+   },
+   {
+    "t": "La Noche de las Amazonas",
+    "d": "2026-03-06"
+   },
+   {
+    "t": "Homenaje a Dos Leyendas",
+    "d": "2026-03-20"
+   },
+   {
+    "t": "CMLL contre MLW",
+    "d": "2026-05-01"
+   },
+   {
+    "t": "Fantastica Mania Mexico",
+    "d": "2026-06-19"
+   },
+   {
+    "t": "Grand Prix",
+    "d": "2026-08-07"
+   },
+   {
+    "t": "93 Aniversario",
+    "d": "2026-09-18"
+   },
+   {
+    "t": "Fantastica Mania UK",
+    "d": "2026-10-17"
+   },
+   {
+    "t": "Rey del Inframundo — finale",
+    "d": "2026-10-30"
+   },
+   {
+    "t": "Día de Muertos",
+    "d": "2026-11-02"
+   },
+   {
+    "t": "Azteca Lucha",
+    "d": "2026-11-07"
+   }
+  ],
+  "Stardom": [
+   {
+    "t": "New Year Dream",
+    "d": "2026-01-03"
+   },
+   {
+    "t": "Supreme Fight",
+    "d": "2026-02-07"
+   },
+   {
+    "t": "Cinderella Tournament — finale",
+    "d": "2026-03-15"
+   },
+   {
+    "t": "All Star Grand Queendom",
+    "d": "2026-04-26"
+   },
+   {
+    "t": "Queens Dynasty",
+    "d": "2026-05-23"
+   },
+   {
+    "t": "The Conversion",
+    "d": "2026-06-20"
+   },
+   {
+    "t": "5★Star Grand Prix — finale",
+    "d": "2026-08-23"
+   },
+   {
+    "t": "Path of Thunder",
+    "d": "2026-10-18"
+   },
+   {
+    "t": "Crimson Nightmare",
+    "d": "2026-10-29"
+   },
+   {
+    "t": "Goddesses of Stardom Tag League — finale",
+    "d": "2026-11-29"
+   },
+   {
+    "t": "Dream Queendom",
+    "d": "2026-12-29"
+   }
+  ],
+  "ROH": [
+   {
+    "t": "Global Wars",
+    "d": "2026-01-31"
+   },
+   {
+    "t": "Global Wars Canada",
+    "d": "2026-03-27"
+   },
+   {
+    "t": "Supercard of Honor",
+    "d": "2026-05-15"
+   },
+   {
+    "t": "Global Wars Cincinnati",
+    "d": "2026-06-10"
+   },
+   {
+    "t": "Death Before Dishonor",
+    "d": "2026-08-21"
+   },
+   {
+    "t": "Final Battle",
+    "d": "2026-12-04"
+   }
+  ],
+  "Marigold": [
+   {
+    "t": "First Dream",
+    "d": "2026-01-03"
+   },
+   {
+    "t": "New Year's Golden Garden",
+    "d": "2026-01-24"
+   },
+   {
+    "t": "Shine Forever",
+    "d": "2026-05-23"
+   },
+   {
+    "t": "Grand Destiny",
+    "d": "2026-10-24"
+   },
+   {
+    "t": "Battle Heart",
+    "d": "2026-11-14"
+   },
+   {
+    "t": "True Victory — finale",
+    "d": "2026-12-28"
+   }
+  ]
+ }
+}

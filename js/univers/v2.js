@@ -2,6 +2,7 @@
 // staff, légendes retraitées), staff, gimmicks, relations, catégories et prestige des titres, traditions, salles, réglages, objectifs.
 import { initRival, initMissions } from "./goals.js";
 import { dnaInit, DNA_OF } from "./dna.js";
+import { calUpgrade, sisterLink } from "./cal.js";
 import { S } from "../state.js";
 import { norm } from "../wrestlers.js";
 import { clamp, rnd, pick, uid, h01, hash, dateOf, salOf } from "./world.js";
@@ -59,13 +60,21 @@ export function upgrade(G, opt) {
   // v3 (21 nov.) : la fédération rivale et les missions du propriétaire
   if (G.v < 3) { initRival(G); initMissions(G); G._ach = []; G.v = 3; }
   applyStatus(G, opt);
-  if (!G.dna && G.me) dnaInit(G, DNA_OF[G.me] || "wwe");   // ADN (21 nov.) : les anciennes parties prennent celui de leur fédération
+  if (!G.dna && G.me) dnaInit(G, DNA_OF[G.me] || "wwe");
+  if (!opt || !opt.fresh) calUpgrade(G); else G.calv = 1;   // vrai calendrier (21 nov.)
+  sisterLink(G);   // ADN (21 nov.) : les anciennes parties prennent celui de leur fédération
   return G;
 }
 // 21 nov. (2e lot) : à chaque ouverture, si data/statuts.json a changé : vraies années de naissance (born), catcheuses (fem),
 // retraités (ret : jamais actifs), décès (Hall of Fame), personnel (staff)
 function applyStatus(G, opt) {
-  const st = udata().st || {}; if (!st.born && !st.fem) return;
+  const st = udata().st || {};
+  // vrais noms qui ont changé (statuts.json « rn », ex. Brutus / Julius Creed → Drew / Jacob Kasper) : renommés sans changer de fédération
+  const rn = {}; Object.keys(st.rn || {}).forEach(n => { rn[norm(n)] = st.rn[n]; });
+  if (Object.keys(rn).length) Object.values(G.W).forEach(w => { const to = w.n && rn[norm(w.n)]; if (to && w.n !== to) { w.rn0 = w.rn0 || w.n; (w.hist = w.hist || []).push({ d: G.day || 0, t: "S’appelle maintenant " + to }); w.n = to; } });
+  const rg = {}; Object.keys(st.rnG || {}).forEach(n => { rg[norm(n)] = st.rnG[n]; });
+  if (Object.keys(rg).length) (G.teams || []).concat(G.clans || []).forEach(t => { const to = t.n && rg[norm(t.n)]; if (to) t.n = to; });
+  if (!st.born && !st.fem) return;
   const stamp = (st.updated || "") + "|" + Object.keys(st.born || {}).length + "|" + (st.ret || []).length + "|" + Object.keys(st.dead || {}).length + "|" + (st.fem || []).length;
   if (G.stv === stamp) return;
   const born = {}; Object.keys(st.born || {}).forEach(n => { born[norm(n)] = st.born[n]; });
