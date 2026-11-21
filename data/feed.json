@@ -1,5 +1,5 @@
 {
- "at": "2026-11-21T10:19:44.073Z",
+ "at": "2026-11-21T11:16:14.557Z",
  "items": [
   {
    "t": "Preview : AAA Lucha Libre du 21 novembre 2026",
@@ -9,6 +9,23 @@
    "tags": [
     "WWE",
     "AAA"
+   ]
+  },
+  {
+   "t": "Carte de Beyond Wrestling Rent Free",
+   "u": "https://www.catch-newz.com/international/newz/61482-carte-de-beyond-wrestling-rent-free",
+   "s": "Catch-Newz",
+   "d": "2026-11-21",
+   "tags": []
+  },
+  {
+   "t": "WWE SmackDown du 20 novembre : Kevin Owens vs. Gunther, Nouveau membre pour la Team USA",
+   "u": "https://www.voxcatch.fr/2026/11/21/resultats-wwe-smackdown-20-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-21",
+   "tags": [
+    "WWE",
+    "SmackDown"
    ]
   },
   {
@@ -482,22 +499,6 @@
   {
    "t": "Carte de New Texas Pro Wrestling Texas Contenders Series 71",
    "u": "https://www.catch-newz.com/international/newz/61453-carte-de-new-texas-pro-wrestling-texas-contenders-series-71",
-   "s": "Catch-Newz",
-   "d": "2026-11-19",
-   "tags": []
-  },
-  {
-   "t": "Carte du jour 4 de la NJPW World Tag League 2026",
-   "u": "https://www.catch-newz.com/international/newz/61405-carte-du-jour-4-de-la-njpw-world-tag-league-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-19",
-   "tags": [
-    "NJPW"
-   ]
-  },
-  {
-   "t": "Résultats de Beyond Wrestling Open Series 253",
-   "u": "https://www.catch-newz.com/international/resultats/61440-resultats-de-beyond-wrestling-open-series-253",
    "s": "Catch-Newz",
    "d": "2026-11-19",
    "tags": []
@@ -1314,6 +1315,7 @@
    "https://www.catch-newz.com/wwe/newz/61496-preview-aaa-lucha-libre-21-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61491-preview-wwe-smackdown-20-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61487-resultats-et-streaming-wwe-evolve-18-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61482-carte-de-beyond-wrestling-rent-free",
    "https://www.catch-newz.com/international/newz/61407-carte-du-jour-6-de-la-njpw-world-tag-league-2026",
    "https://www.catch-newz.com/international/newz/61481-carte-de-beyond-wrestling-still-alive",
    "https://www.catch-newz.com/international/newz/61484-carte-de-cmll-viernes-espectacular-du-20-novembre-2026",
@@ -1608,13 +1610,12 @@
    "https://www.catch-newz.com/wwe/resultats/61193-wwe-evolve-4-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61209-resultats-de-vcw-queen-of-the-commonwealth-2026",
    "https://www.catch-newz.com/wwe/newz/61221-mason-rook-fait-son-retour-et-attaque-le-champion-nxt-grayson-waller",
-   "https://www.catch-newz.com/international/resultats/61207-resultats-du-jour-1-du-noah-junior-grand-prix-2-legacy-rise-2026",
-   "https://www.catch-newz.com/wwe/resultats/61192-wwe-main-event-4-novembre-2026"
+   "https://www.catch-newz.com/international/resultats/61207-resultats-du-jour-1-du-noah-junior-grand-prix-2-legacy-rise-2026"
   ]
  },
  "diag": {
   "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
-  "VOXcatch": "7 articles (7 j)",
+  "VOXcatch": "8 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
