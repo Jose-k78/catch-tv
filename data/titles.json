@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20",
+ "updated": "2026-11-21",
  "note": "Champions actuels : peut révéler des résultats récents.",
  "titles": [
   {
@@ -1094,12 +1094,17 @@
    "u": "https://chaseyoursport.com/pro-wrestling/tna-bound-for-glory-2026-results/13629",
    "defs": [
     {
+     "d": "2026-11-19",
+     "ev": "Impact",
+     "vs": "Nic Nemeth"
+    },
+    {
      "d": "2026-11-15",
      "ev": "Destination X",
      "vs": "Trey Miguel"
     }
    ],
-   "def": 1
+   "def": 2
   },
   {
    "id": "tna-x",
