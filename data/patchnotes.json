@@ -2,6 +2,16 @@
  "updated": "2026-11-18",
  "items": [
   {
+   "id": "2026-11-21-photos",
+   "d": "2026-11-21",
+   "t": "Nouvelles photos des catcheurs",
+   "txt": [
+    "📸 464 catcheurs ont une nouvelle photo (fiches, recherche, cartes du TCCCG). L’ancienne photo est gardée : le modo peut la remettre en avant.",
+    "🆕 40 catcheurs qui n’avaient pas encore de photo en ont une (dont Triple H, Chyna, Braun Strowman, Rikishi, Mandy Rose…).",
+    "🧹 Les faux catcheurs en double (« Asuka V3 », « Joe Gacy V2 »…) ont disparu : leurs cartes du TCCCG sont rattachées au vrai catcheur, personne ne perd rien."
+   ]
+  },
+  {
    "id": "2026-11-18-jeux",
    "d": "2026-11-18",
    "t": "Nouvel onglet « Jeux »",

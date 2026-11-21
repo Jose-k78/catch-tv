@@ -346,6 +346,13 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   - Tests : /tmp/claude-0/t/t52.cjs (parcours complet, 320 px), sim52.cjs (1 an simulé : ~1,5 s, sauvegarde ~1 Mo).
   - Retirés à la demande de Jose : voler une star, votes des fans, partage vers TCC TV, éditeur, audience minute par minute. Plus tard : créer son catcheur,
     mode Carrière catcheur.
+- **Lot du 21 nov.** (photos) : dossier de Jose « Beyond\people » (mod Steam de Pro Wrestling Simulator, PNG 500 × 500, `Nom.png` + `Nom_altN.png`) :
+  seules les photos de base des catcheurs connus de l'app (rosters, fiches, groupes, photos existantes) ; les personnages fictifs, célébrités (« !USER »)
+  et catcheurs absents de l'app ne sont pas installés. Photo identique à une version existante (comparaison d'image, décalage toléré) = pas installée ;
+  sinon `slug-vN.webp` mise en avant, l'ancienne gardée dans `v` (choix de Jose : en avant pour tous, même si la photo du dossier est souvent plus ancienne).
+  Faux catcheurs « Nom V2 / V3 » (créés par le robot à partir d'une version ajoutée depuis l'app) retirés de photos.json et rattachés dans `merged`.
+  `merged` avait été perdu (le robot réécrivait photos.json sans lui) : remis + robot corrigé (`photos.mjs` garde les autres champs et rattache
+  `nom-vN.webp` au même catcheur). Vieux noms : « Jungle Boy » = Jack Perry, « La Sombra » = Andrade (photo en version + alias, pas de doublon).
 - Notes : demi-étoiles de 0 à 5,5 (`RMAX`, `fmtR`, `stars`, `ratePick` / `pickRate` de util.js ; 6e étoile orange = bonus).
 - Historique : `g_<id>` = note d'un segment, `q_<id>` = segment préféré (comment = nom du show) ; préfixes m_/s_/f_/g_/q_ exclus
   des compteurs de shows (spoil.js, trophies.js, account.js). Profil : « Ses segments préférés ».

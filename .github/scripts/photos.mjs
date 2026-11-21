@@ -58,7 +58,8 @@ for (const s of Object.keys(idx.items)) {
 // sinon nouvelle entrée en tête de liste
 const head = {};
 for (const f of fresh) {
-  const stem = f.replace(IMG, ""), name = nameOf(stem), k = key(name);
+  // « nom-v2.webp » (version ajoutée depuis l'app) = le même catcheur, jamais un nouveau (« Asuka V3 » devenait un faux catcheur)
+  const stem = f.replace(IMG, ""), name = nameOf(stem.replace(/-v\d+$/, "")), k = key(name);
   const old = Object.values(idx.items).find(it => [it.f.replace(IMG, "").replace(/-v\d+$/, "")].concat(it.n || []).some(n => key(n) === k));
   if (old) { old.v = [old.f].concat(Array.isArray(old.v) ? old.v : []); old.f = f; console.log("Nouvelle photo en avant : " + f + " (" + (old.n || [])[0] + ")"); continue; }
   let slug = slugOf(stem); while (idx.items[slug] || head[slug]) slug += "-2";
@@ -67,6 +68,7 @@ for (const f of fresh) {
 }
 
 if (!fresh.length && !gone) { console.log("Photos : rien de neuf (" + files.length + ")"); process.exit(0); }
-idx = { updated: new Date().toISOString().slice(0, 10), items: Object.assign(head, idx.items) };
+// on garde les autres champs (merged = catcheurs fusionnés : les cartes TCCCG des anciens noms les suivent)
+idx = Object.assign({}, idx, { updated: new Date().toISOString().slice(0, 10), items: Object.assign(head, idx.items) });
 fs.writeFileSync(OUT, JSON.stringify(idx, null, 1) + "\n");
 console.log("Photos : " + Object.keys(idx.items).length + " dans la liste (" + fresh.length + " neuve(s), " + gone + " retirée(s))");
