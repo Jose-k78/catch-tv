@@ -2,6 +2,26 @@
  "updated": "2026-11-21",
  "items": [
   {
+   "id": "2026-11-21-univers2",
+   "d": "2026-11-21",
+   "mod": true,
+   "t": "Mode Univers : la grosse mise à jour",
+   "txt": [
+    "🆕 Nouvelle partie en 2 étapes : ton nom et ta photo de GM, le logo, un 2e show si tu veux, la WWE entière ou un seul show, le budget (petit, normal, gros ou le montant de ton choix), Smart ou Mark, et l’ADN de ta fédération. Ensuite tu gardes ou laisses partir tes catcheurs et tu recrutes des agents libres.",
+    "🎭 Mode Mark : le catch est vrai. Tu programmes les matchs mais tu ne choisis jamais qui gagne (forme, stats, élan, fatigue… et un peu de chance). En direct, tu agis comme un GM à l’écran : sécurité, arbitre prévenu, il faut un vainqueur, quelqu’un qui débarque. Aucun mot des coulisses.",
+    "🧬 L’ADN de ta fédération (Spectacle, Sport de combat, Liberté créative, Lucha libre, Joshi, Lutte pure) : il change avec ce que tu programmes et attire les catcheurs qui aiment ton style.",
+    "📺 WWE avec un seul show : les autres shows ont leur GM. Tu peux échanger avec eux, croiser leurs catcheurs, faire monter des talents de NXT et d’Evolve, envoyer tes catcheurs en apparition, et vivre la soirée du draft fin avril.",
+    "🏟️ Le direct se joue devant un vrai ring et des fans qui bougent. Entrées spectaculaires (lumières, pyro, musique en live), héros local qui fait exploser sa ville, sponsors sur le tablier.",
+    "🎵 Musique d’entrée : colle un lien YouTube sur la fiche d’un catcheur. Elle se joue à son entrée, quand il gagne et quand il débarque. Gardée dans ta partie seulement (Bureau › Réglages pour couper).",
+    "🎬 Les coulisses : 6 lieux dessinés, des scènes à choix (amitié, confiance, rivalité), « Faire un tour dans les coulisses », un téléphone avec les SMS des catcheurs et du staff, l’onglet Vestiaire (leaders, groupes, solitaires, tensions) et la négociation face à face.",
+    "🙈 Infos cachées : les stats, l’endurance, les relations et la réputation sont en mots. Seuls l’argent, l’audience et la popularité restent en chiffres. Ton staff t’aide à découvrir le reste.",
+    "⭐ Toi aussi tu progresses : niveaux de GM et talents (Bureau › Toi). Chaque catcheur a un rêve de carrière à découvrir et à réaliser.",
+    "🗓️ House show en 2 touches, carte de la tournée, réunion créative du lundi, circuit indé, 8 types d’histoires (quête du titre, alliance, trahison, retour, mystère…), renommer un catcheur, centre de formation avec remise de diplôme.",
+    "🦋 Le passé revient : un catcheur renvoyé, une promesse rompue ou une vieille rivalité peuvent refaire surface des années plus tard.",
+    "🔧 Corrections : vrais âges, retraités qui ne catchent plus, catcheuses bien classées, effectif séparé Hommes / Femmes, plus de catcheur à la fois dans un match et un segment."
+   ]
+  },
+  {
    "id": "2026-11-21-qsj2",
    "d": "2026-11-21",
    "t": "« Qui suis-je ? » réparé",

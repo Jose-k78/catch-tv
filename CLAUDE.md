@@ -369,6 +369,29 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
     → `ACT.uvkey` ; tiroir des ordres ; générique de fin (`U.liveEnd`) puis rapport. Les anciens écrans du direct de ui4.js sont retirés
     (`U.afterLive`, `U.resultsView`).
   - Tests : /tmp/claude-0/t/t53.cjs (nouveautés), t52b.cjs (ancien parcours adapté), sim53.cjs (1 an : rivale et missions).
+- **Mode Univers, grosse mise à jour** (21 nov., « heure du codage avec la réparation » ; tests /tmp/claude-0/t/t54 à t57) :
+  - `v2.js applyStatus` : à chaque ouverture, vrais âges (`statuts.json` `born`), retraités hors effectif, catcheuses (`fem`, aussi dans `femaleSet`
+    à la création) ; effectif « Tous » séparé Hommes / Femmes ; direct devant un ring dessiné + fans (`arenaBG` de tv.js).
+  - `setup.js` : création en 2 étapes (`#/univers/nouveau/<n>` puis `#/univers/setup`, `G.setup` tant que l'effectif n'est pas lancé) : GM
+    `G.gm { n, pic }`, logo `G.img["f:ME"]`, 2e show, WWE entière ou `G.solo`, budget (petit / normal / gros / libre), `G.mark` (le dernier choix
+    est gardé : `ctv.univ.um`), ADN. Bureau › Réglages : nom / photo du GM, Smart / Mark, musiques.
+  - `dna.js` : `G.dna` (6 styles, 100 au total, jamais montré en chiffres : `dnaMain`, `dnaNext`), `dnaBonus` (note), `dnaShow` (évolue après
+    chaque show, lettre de la presse), `dnaLike` (négociation) ; mode Mark : `sportWinner` (forme, stats, élan, fatigue, chance), `markFinish`
+    (sécurité `sec`, arbitre `sanc`, relance `restart`), `kfy` = vocabulaire kayfabe appliqué à tout l'écran par views/univers.js.
+  - `brand.js` + `ui7.js` : WWE un seul show (`G.solo`) : `roster(G)` = mon show, `roster(G, "WWE")` = toute la fédé, `isMine` ; les autres
+    shows jouent en `ev.ai` (sans mon argent ni mon audience, `G.brands`), GM `G.bgm`, échanges `tradeAsk` (1 essai / semaine / show), rencontres
+    `meet` (`w.gml`), montées `callUp` (2 / mois, pas les champions), apparitions `visit` (`G.visits`, `avail` les bloque ce soir-là), draft en
+    direct `G.draft` (`#/univers/draft`, fin avril, 5 tours, stars et champions protégés, bras droit après 7 jours), `pleMix` (grands événements).
+  - `vn.js` + `ui8.js` : lien caché GM ↔ catcheur `w.b { a, c, r }` (`bondAdd`, effets `bondPerf` / `bondNeg`), scènes `SCN` (`#/univers/scene`,
+    `G.scQ`, `G.scCur`, 2 tours / jour `G.walk`), décors SVG `decor(k)` (couloir, bureau, vestiaire, parking, cantine, presse, gym), téléphone
+    `G.tel` (`#/univers/tel`, « Tél. » dans la barre), vestiaire `locker` (Ma fédé › Vestiaire), infos cachées (`grade`, `known`, `G.known`,
+    « Demander au recruteur »), négociation et dialogue face à face (`U.negoScene`). Jamais de romance.
+  - `extra.js` + `ui9.js` : entrées par match `it.ent` (`ENTX`, effets `.uventfx`), musique YouTube `G.mus[id] = { v, t }` (lecteur `#uvyt`
+    visible, `ctv.univ.mus` = "0" pour couper), héros local (`fromOf` = `from` des fiches), sponsors sur le tablier, rêves `w.dream`,
+    XP / talents `G.gmx` (Bureau › Toi), house shows `G.house`, carte `#/univers/carte` (`G.cities`), réunion `G.meet` (`#/univers/reunion`),
+    circuit indé `G.indie` (`#/univers/indie`), types d'histoires `STY` / `slMake` / `slEnd`, Butterfly `G.bfly`, Ghost (`ghost`, `ghost2`),
+    liens des groupes `groupsLink`, base du modo `data/univers.json` (`names`, `img` ; écrite avec la clé GitHub du modo, appliquée aux
+    nouvelles parties par `applyBase`).
 - **Jeu « Qui suis-je ? »** (21 nov., `js/views/qsj.js`, `#/qsj`, `#/qsj/modo` ; 3e tuile de l'onglet Jeux, membres connectés) : 3 catcheurs par jour
   (Paris), même tirage pour tous : facile = fiche dans l'app et top 25 % du rang des cartes TCCCG, moyen = reste du top 40 %, difficile = 40-75 %,
   seulement les catcheurs avec photo et assez d'indices (`goodFor`), jamais les exclus de statuts.json ; ordre fixé par le jour (`picks(day)`).
