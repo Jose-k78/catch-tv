@@ -11,6 +11,7 @@ import { upgrade } from "./v2.js";
 import { startGame } from "./sim.js";
 import { demandOf } from "./deal.js";
 import { DNA, DNA_OF, dnaInit, dnaMain } from "./dna.js";
+import { applyBase } from "./extra.js";
 import { U, go, redraw, persist, face, crest } from "./core.js";
 
 const WD = [["1", "Lundi"], ["2", "Mardi"], ["3", "Mercredi"], ["4", "Jeudi"], ["5", "Vendredi"], ["6", "Samedi"], ["0", "Dimanche"]];
@@ -68,6 +69,7 @@ FORM.uvcreate = async f => {
       const G0 = mode === "take" ? newWorld({ take: f.take.value }) : newWorld({ create: { n: f.n.value.trim(), sh: f.sh.value.trim() || "MOI", c: f.c.value, show: f.show.value.trim() || "Mon show", wd: f.wd.value } });
       if (show2 && G0.F.ME && String(wd2) !== String(f.wd.value)) G0.F.ME.shows.push({ n: show2, wd: +wd2 });
       const G = upgrade(G0, { fresh: true, mode: gm, diff: diff }), fd = meF(G); G.tuto = 0;
+      applyBase(G);   // noms et images choisis par le modo pour toutes les nouvelles parties
       G.gm = { n: gmn || "Le GM", pic: pic };
       if (logo) { G.img = G.img || {}; G.img["f:" + G.me] = logo; }
       if (money === "petit") fd.money = Math.round(fd.money * 0.5); else if (money === "gros") fd.money = Math.round(fd.money * 2.5); else if (money === "libre" && free > 0) fd.money = clamp(free, 100, 2000000);

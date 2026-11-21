@@ -20,7 +20,7 @@ export const bondWord = w => { const b = w.b || { a: 0, c: 0, r: 0 }; return b.r
 
 // ---------- informations cachées ----------
 export const grade = v => v >= 85 ? "Exceptionnel" : v >= 72 ? "Très bon" : v >= 60 ? "Bon" : v >= 45 ? "Correct" : "Faible";
-export const known = (G, w) => !!w && (isMine(G, w) || w.fed === G.me || w.pop >= 60 || !!(G.known || {})[w.id] || myStaff(G, "scout").some(s => s.q >= 70));
+export const known = (G, w) => !!w && (isMine(G, w) || w.fed === G.me || w.pop >= (G.gmx && G.gmx.tal.indexOf("eye") >= 0 ? 40 : 60) || !!(G.known || {})[w.id] || myStaff(G, "scout").some(s => s.q >= 70));
 export const enWord = v => v >= 80 ? "En pleine forme" : v >= 60 ? "En forme" : v >= 40 ? "Fatigué" : "Épuisé";
 export const relWord = v => v >= 70 ? "Très proches" : v >= 35 ? "Amis" : v >= 10 ? "Bons rapports" : v > -10 ? "Neutres" : v > -40 ? "Tendus" : "Ennemis";
 export const qWord = q => q >= 80 ? "excellent" : q >= 65 ? "très bon" : q >= 50 ? "bon" : q >= 35 ? "moyen" : "débutant";
@@ -114,6 +114,10 @@ export const SCN = {
     ch: [["« Oui. (30 k$) »", { a: 3, c: 4, train: 1, money: -30 }, "« Tu ne le regretteras pas ! »"],
       ["« Le coach du roster suffit. »", { c: -1 }, "« Dommage. »"],
       ["« Commence par arriver à l’heure. »", { a: -3, r: 2 }, "« Sérieux ? »"]] },
+  reve: { bg: "presse", only: 1, ok: (G, w) => mineW(G, w), t: ["Les flashs crépitent encore. {n} a les yeux qui brillent.", "« Tu te rends compte ? Mon rêve… c’est fait. Merci de m’avoir donné cette chance. »"],
+    ch: [["« Tu l’as mérité. Chaque seconde. »", { a: 4, c: 4, mor: 4 }, "{n} te serre dans ses bras devant toute la presse."],
+      ["« Et maintenant, on vise encore plus haut. »", { c: 3, r: 1 }, "« Encore plus haut ? J’adore cette idée. »"],
+      ["« Profite. Demain, on retourne au travail. »", { c: 2 }, "{n} éclate de rire : « Toujours le même ! »"]] },
   libre: { bg: "couloir", ok: (G, w) => !!w && !w.fed && !w.ret && !w.staff, free: 1, t: ["Un ancien de la maison te présente {n}, sans contrat en ce moment.", "« Je cherche un endroit où on me laisse m’exprimer. Votre show me plaît. »"],
     ch: [["« Passe à mon bureau, on va parler contrat. »", { a: 4, c: 4, go: "nego" }, "« Avec plaisir ! »"],
       ["« On garde le contact. »", { a: 3 }, "« Merci. J’attends ton appel. »"],
@@ -124,7 +128,7 @@ const SCK = Object.keys(SCN);
 export function sceneFor(G, wid, only) {
   const R = roster(G).filter(w => w.fed === G.me && !w.ret), FA = Object.values(G.W).filter(w => !w.fed && !w.ret && !w.staff && w.pop >= 35);
   const tries = [];
-  (only ? [only] : SCK.slice().sort(() => rnd() - 0.5)).forEach(k => { const S = SCN[k]; const pool = wid ? [G.W[wid]] : S.free ? FA.slice().sort(() => rnd() - 0.5).slice(0, 6) : S.lead ? R.slice().sort((a, b) => influence(G, b) - influence(G, a)).slice(0, 3) : R.slice().sort(() => rnd() - 0.5).slice(0, 8);
+  (only ? [only] : SCK.filter(k => !SCN[k].only).sort(() => rnd() - 0.5)).forEach(k => { const S = SCN[k]; const pool = wid ? [G.W[wid]] : S.free ? FA.slice().sort(() => rnd() - 0.5).slice(0, 6) : S.lead ? R.slice().sort((a, b) => influence(G, b) - influence(G, a)).slice(0, 3) : R.slice().sort(() => rnd() - 0.5).slice(0, 8);
     pool.forEach(w => { if (!w) return; const os = S.other ? S.other(G, w) : [], o = os.length ? pick(os) : null; if (S.ok(G, w, o)) tries.push({ k: k, w: w.id, o: o ? o.id : "" }); }); });
   const recent = (G.scLog || []).slice(-6).map(x => x.k);
   return tries.find(t => recent.indexOf(t.k) < 0) || tries[0] || null;
@@ -133,7 +137,9 @@ export function sceneText(G, sc) { const S = SCN[sc.k], w = G.W[sc.w], o = sc.o 
 // la réponse choisie : les conséquences (cachées)
 export function scenePick(G, sc, i) {
   const S = SCN[sc.k], c = S.ch[i], w = G.W[sc.w], o = sc.o ? G.W[sc.o] : null; if (!c || !w) return null;
-  const fx = c[1]; bondAdd(w, fx);
+  let fx = c[1]; if (G.gmx && G.gmx.tal.indexOf("pote") >= 0) fx = Object.assign({}, fx, { a: fx.a > 0 ? fx.a * 1.25 : fx.a, c: fx.c > 0 ? fx.c * 1.25 : fx.c });   // talent « Ami des catcheurs »
+  bondAdd(w, fx);
+  if (sc.k === "leader" && i === 1) { G.bfly = G.bfly || []; G.bfly.push({ k: "leader", w: w.id, d: G.day, at: G.day + 240 + Math.floor(rnd() * 500) }); }   // Butterfly Effect
   if (fx.rel && o) { const k = [w.id, o.id].sort().join("|"); G.rel = G.rel || {}; G.rel[k] = clamp((G.rel[k] || 0) + fx.rel, -100, 100); }
   if (fx.learn && o) learn(G, o.id);
   if (fx.mentor && o) { G.ment = G.ment || {}; G.ment[o.id] = w.id; }
@@ -224,4 +230,4 @@ export function vnAfterShow(G, ev, res) {
   if ((G.scQ || []).length < 2 && rnd() < 0.45) { const s = sceneFor(G); if (s) G.scQ = (G.scQ || []).concat(Object.assign(s, { until: G.day + 3 })); }
 }
 export const promiseKept = (G, p) => { const w = G.W[p.w]; if (w) bondAdd(w, { c: 6 }); };
-export const promiseBroken = (G, p) => { const w = G.W[p.w]; if (w) bondAdd(w, { c: -10, r: 3 }); };
+export const promiseBroken = (G, p) => { const w = G.W[p.w]; if (w) { bondAdd(w, { c: -10, r: 3 }); G.bfly = G.bfly || []; if (!G.bfly.some(b => b.k === "grudge" && b.w === w.id)) G.bfly.push({ k: "grudge", w: w.id, d: G.day, at: G.day + 240 + Math.floor(rnd() * 500) }); } };

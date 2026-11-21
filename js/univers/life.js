@@ -2,6 +2,7 @@
 // catcheurs, âge et progression, mentors, retraites et tournées d'adieu, événements hors du ring, IA (signatures, licenciements, stratégie),
 // partenariats, médias, salaires et revenus, objectifs, réputation, Hall of Fame, magazine TCC 100, résumé de la semaine.
 import { promiseBroken } from "./vn.js";
+import { slEnd } from "./extra.js";
 import { rivalWeek } from "./goals.js";
 import { clamp, rnd, pick, uid, dateOf, dayLabel, shortDate, fmtK, fmtM, stars, salOf, indie, trainee } from "./world.js";
 import { CELEBS, SPONS, MAGN, CITIES, TOURS } from "./data.js";
@@ -105,6 +106,7 @@ export function lifeWeekly(G) {
     if (s.wk >= s.len) {
       s.done = true;
       if (s.turn) { const w = G.W[s.turn.w]; if (w && w.al !== s.turn.to) { w.al = s.turn.to; w.hist.push({ d: G.day, t: (s.turn.to === "heel" ? "Heel" : "Face") + " turn" }); news(G, { seg: "ecran", f: s.fed === G.me ? "nous" : "autres", t: w.n + (s.turn.to === "heel" ? " fait son heel turn !" : " fait son face turn !"), txt: "À la fin de la storyline « " + s.n + " », " + w.n + " change de camp." }); if (s.fed === G.me) ach(G, "turn"); } }
+      slEnd(G, s);
       if (s.fed === G.me) mail(G, { k: "info", from: "Ta directrice créative", role: "Créatif", c: "#c9a7ff", ini: "DC", subj: "Fin de la storyline « " + s.n + " »", body: "Heat finale : " + s.heat + "/100." + (s.chOk ? "\nChapitres réussis : " + s.chOk + "." : "") + (s.heat > 60 ? "\nLe public a adoré." : "\nElle n’a pas vraiment pris."), imp: false });
     }
   });

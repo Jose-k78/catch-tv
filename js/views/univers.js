@@ -18,6 +18,7 @@ import { decideView } from "../univers/ui6.js";
 import { newView, setupView } from "../univers/setup.js";
 import { draftView } from "../univers/ui7.js";
 import { sceneView, telView } from "../univers/ui8.js";
+import { reunionView, indieView, carteView } from "../univers/ui9.js";
 import { kfy } from "../univers/dna.js";
 
 export const univOn = () => !!S.realAdmin;
@@ -61,6 +62,9 @@ function route(a, b, c) {
     case "draft": return draftView();
     case "scene": return sceneView();
     case "tel": return telView(b);
+    case "reunion": return reunionView();
+    case "indie": return indieView();
+    case "carte": return carteView();
   }
   return homeView();
 }

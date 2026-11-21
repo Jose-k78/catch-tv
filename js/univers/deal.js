@@ -6,8 +6,10 @@ import { meF, wn, roster, mail, news, buzz, FANS, relsOf, relAdd, ach, e_, ini, 
 import { addStaff } from "./v2.js";
 import { DNA, dnaMain, dnaLike, dnaLe } from "./dna.js";
 import { bondNeg } from "./vn.js";
+import { hasTal, seed, xpAdd } from "./extra.js";
 
-export function demandOf(G, w) { const f = meF(G); return Math.max(20, Math.round(salOf(w) * (1 + Math.max(0, w.pop - f.pop) / 60) * (1 - Math.max(-0.1, Math.min(0.15, ((G.rep || 50) - 50) / 300))) / 10) * 10); }
+export function demandOf(G, w) { const f = meF(G); return Math.round((hasTal(G, "neg") ? 0.92 : 1) * Math.max(20, Math.round(salOf(w) * (1 + Math.max(0, w.pop - f.pop) / 60) * (1 - Math.max(-0.1, Math.min(0.15, ((G.rep || 50) - 50) / 300))) / 10) * 10));
+}
 export const attract = (G, w) => { const f = meF(G); return (f.pop - w.pop) / 3 + ((G.rep || 50) - 50) / 4 + (w.fed === G.me ? (w.mor - 55) / 4 : 0) + (dnaLike(G, w) ? 5 : 0) + bondNeg(w); };
 const PERSD = { Ambitieux: ["wintitle", "shot", "me"], "Leader du vestiaire": ["me", "creative"], Loyal: [], "Caractériel": ["noclean", "creative"], Bosseur: [], "Fêtard": ["days", "bonus"], Discret: ["days"], Diva: ["noclean", "creative", "me"], Mentor: ["days"], "Râleur": ["bonus", "merch"], Perfectionniste: ["creative"], Showman: ["merch", "debut"] };
 const SAYD = { partner: x => "Je viens seulement si tu signes aussi " + x + ".", wintitle: () => "Je veux une ceinture dès mon arrivée. Pas dans un an : tout de suite.", shot: () => "Je veux un match de titre dans les deux mois.", me: () => "Je suis une tête d’affiche : je veux le main event.",
@@ -73,7 +75,7 @@ export function negOffer(G, wid, o) {
 }
 function sign(G, w, o, N) {
   const f = meF(G), was = w.fed;
-  w.fed = G.me; w.guest = null;
+  w.fed = G.me; w.guest = null; xpAdd(G, 5);
   const cl = {}; N.dem.forEach(d => { if (o.acc && o.acc[d.k]) cl[d.k] = true; });
   w.ct = { sal: o.sal, end: G.day + o.dur * 365, role: o.role, exc: o.exc !== false, cl: cl };
   if (o.bonus) { f.money -= o.bonus; G.fin.cur.prod += o.bonus; }
@@ -103,6 +105,7 @@ export const releaseCost = (G, w) => !w.ct ? 0 : Math.round(w.ct.sal * Math.max(
 export function release(G, wid, kind, weeks) {
   const w = G.W[wid], f = meF(G); if (!w || w.fed !== G.me) return "";
   if (kind === "susp") { w.susp = G.day + (weeks || 2) * 7; w.mor = clamp(w.mor - 15); w.pop = clamp(w.pop - 1, 1, 99); w.hist.push({ d: G.day, t: "Suspendu" + e_(w) + " " + (weeks || 2) + " semaines" }); news(G, { seg: "coul", f: "nous", t: w.n + " suspendu" + e_(w), txt: "Sanction de " + (weeks || 2) + " semaines." }); return w.n + " est suspendu" + e_(w) + " jusqu’au " + shortDate(w.susp) + " (sans salaire)."; }
+  if (kind !== "susp" && kind !== "bench" && (w.age <= 30 || w.pop >= 50)) seed(G, "fired", w.id);   // Butterfly Effect : il reviendra peut-être te hanter
   if (kind === "bench") { w.bench = !w.bench; if (w.bench) w.mor = clamp(w.mor - 5); return w.bench ? w.n + " est mis" + e_(w) + " au placard : payé" + e_(w) + ", mais plus sur les cartes." : w.n + " revient dans l’effectif."; }
   const cost = kind === "amiable" ? Math.round(releaseCost(G, w) * 0.3) : releaseCost(G, w);
   if (kind === "amiable" && !(w.mor < 50 || w.ask)) return "";
@@ -148,7 +151,7 @@ export const guestsFor = (G, ev) => (G.appear || []).filter(a => a.ev === ev.id)
 
 // ---------- partenariats ----------
 export function part(G, fid) { G.part = G.part || {}; if (!G.part[fid]) { const f = G.F[fid]; G.part[fid] = { rel: f && f.strat === "agressif" ? -20 : f && f.strat === "jeunes" ? 10 : 0, deal: null }; } return G.part[fid]; }
-export function partAdd(G, fid, v) { if (!fid || !G.F[fid] || fid === G.me) return; const p = part(G, fid); p.rel = clamp(p.rel + v, -100, 100); }
+export function partAdd(G, fid, v) { if (!fid || !G.F[fid] || fid === G.me) return; const p = part(G, fid); p.rel = clamp(p.rel + (v > 0 && hasTal(G, "dip") ? v * 1.5 : v), -100, 100); }
 export function propose(G, fid) {
   const p = part(G, fid), f = G.F[fid]; if (!f || p.deal) return "";
   if (p.rel >= 15 && rnd() < 0.35 + p.rel / 140) { p.deal = { since: G.day, until: G.day + 365 }; p.rel = clamp(p.rel + 6, -100, 100); ach(G, "part"); news(G, { seg: "coul", f: "nous", t: "Partenariat : " + meF(G).n + " et " + f.n, txt: "Les deux fédérations vont échanger des catcheurs." }); return f.n + " accepte : partenariat d’un an !"; }

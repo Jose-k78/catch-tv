@@ -1,4 +1,5 @@
 // Mode Univers : Ma fédé, Créatif, Activité, préparation d'un show (la carte des matchs) et résultats.
+import { slMake, STY } from "./extra.js";
 import { ACT, FORM } from "../state.js";
 import { esc, toast, modal } from "../util.js";
 import { STYLES, ROLES, MONTHS, dayLabel, shortDate, dateOf, fmtM, fmtK, stars, recTxt, clamp, rnd, pick, uid, trainee } from "./world.js";
@@ -51,7 +52,7 @@ export function fedeView(tab) {
   let body = "";
   if (tab === "e") {
     const dv = U.f.eff, L = dv === "tous" ? R : R.filter(w => divOf(G, w) === dv), sal = R.reduce((s, w) => s + (w.ct ? w.ct.sal : 0), 0);
-    body = chips("eff", [["tous", "Tous"]].concat(G.divs.filter(d => d.id !== "tag").map(d => [d.id, d.n])), dv) +
+    body = (U.loansBox ? U.loansBox(G) : "") + chips("eff", [["tous", "Tous"]].concat(G.divs.filter(d => d.id !== "tag").map(d => [d.id, d.n])), dv) +
       '<p class="uvmut">' + L.length + " catcheur" + (L.length > 1 ? "s" : "") + " · salaires : " + fmtK(sal) + " par an</p>" +
       (L.length ? (dv === "tous" ? [["h", "Hommes"], ["f", "Femmes"]] : [["", ""]]).map(g => { const L2 = g[0] ? L.filter(w => w.sx === g[0]) : L; return (g[0] ? '<h3 class="uvh3">' + g[1] + " <small>" + L2.length + "</small></h3>" : "") + L2.map(w => '<a class="uvw" href="#/univers/c/' + esc(w.id) + '">' + face(G, w, 40) + '<span class="uvgrow"><b>' + esc(w.n) + "</b><small>" + (w.ct ? ROLES[w.ct.role] + " · " : "") + STYLES[w.sty][0] + " · " + (w.al === "heel" ? "Heel" : "Face") + " · " + recTxt(w.rec) + (w.push > 0 ? ' · <span class="uvok">push</span>' : "") + (w.guest && w.guest.to === G.me ? " · prêté" + e_(w) : w.guest ? " · prêté" + e_(w) + " ailleurs" : "") + (w.bench ? " · au placard" : "") + (w.susp > G.day ? " · suspendu" + e_(w) : "") + "</small>" +
         (injured(G, w) ? '<small class="uvko">Blessé' + e_(w) + " jusqu’au " + esc(shortDate(w.inj.until)) + "</small>" : '<span class="uvenl">' + bar(w.en, enC(w.en)) + "<i>" + Math.round(w.en) + " %</i></span>") +
@@ -61,7 +62,7 @@ export function fedeView(tab) {
   else if (tab === "staff") body = staffBody(G);
   else if (tab === "dev") {
     const D = G.dev || [];
-    body = '<div class="uvtile"><p class="uvsm">Les jeunes progressent chaque semaine. Quand la barre est pleine, tu peux les faire monter dans ton effectif.</p><button type="button" class="uvbtn pri" data-act="uvrecruit"' + (D.length >= 6 ? " disabled" : "") + ">Recruter un jeune (30 k$)</button>" + (D.length >= 6 ? '<p class="uvmut">6 jeunes au maximum.</p>' : "") + "</div>" +
+    body = (U.devHead ? U.devHead(G) : "") + '<div class="uvtile"><p class="uvsm">Les jeunes progressent chaque semaine. Quand la barre est pleine, tu peux les faire monter dans ton effectif.</p><button type="button" class="uvbtn pri" data-act="uvrecruit"' + (D.length >= 6 ? " disabled" : "") + ">Recruter un jeune (30 k$)</button>" + (D.length >= 6 ? '<p class="uvmut">6 jeunes au maximum.</p>' : "") + "</div>" +
       (D.length ? D.map(y => '<div class="uvcard"><div class="uvrow"><span class="uvav ini" style="width:40px;height:40px;background:#63d69c">' + esc(ini(y.n)) + '</span><div class="uvgrow"><b>' + esc(y.n) + "</b><small>" + y.age + " ans · " + esc(y.coach) + ' · potentiel <span class="uvstars" aria-label="' + y.pot + ' sur 5">' + "★".repeat(y.pot) + "☆".repeat(5 - y.pot) + "</span></small></div></div>" +
         bar(y.prog, y.prog >= 100 ? "#63d69c" : "") + '<div class="uvrow2">' + (y.prog >= 100 ? '<button type="button" class="uvbtn pri" data-act="uvpromote" data-y="' + esc(y.id) + '">' + (y.sx === "f" ? "La" : "Le") + " faire monter</button>" : '<span class="uvmut">Formation : ' + Math.round(y.prog) + " %</span>") +
         '<button type="button" class="uvbtn ghost" data-act="uvfire" data-y="' + esc(y.id) + '">Renvoyer</button></div></div>').join("") : '<p class="uvempty">Le centre est vide : recrute un jeune.</p>');
@@ -166,9 +167,10 @@ export function creatifView(tab) {
       '<button type="button" class="uvbtn pri" data-act="uvslgen">' + (I ? "Autre idée" : "Proposer une storyline") + "</button>" +
       (I ? '<div class="uvidea"><b>' + esc(I.n) + "</b><p>" + esc(I.p) + '</p><div class="uvvs">' + face(G, G.W[I.a[0]], 34) + "<span>" + esc(teamName(G, I.a)) + "</span><i>contre</i><span>" + esc(teamName(G, I.b)) + "</span>" + face(G, G.W[I.b[0]], 34) + '</div><p class="uvsm">' + I.len + " semaines · " + esc(turnTxt(G, I.turn)) + '</p><button type="button" class="uvbtn pri" data-act="uvsllaunch">Lancer cette storyline</button></div>' : "") + "</div>" +
       '<h3 class="uvh3">En cours</h3>' + (A.length ? A.map(s => slCard(G, s)).join("") : '<p class="uvempty">Aucune storyline en cours.</p>') +
-      '<details class="uvdet"><summary>Créer une storyline à la main</summary><form class="uvform" data-form="uvslnew"><label class="uvfld">Nom<input name="n" maxlength="60" required placeholder="Nom de la storyline"></label>' +
+      '<details class="uvdet"><summary>Créer une storyline à la main</summary><form class="uvform" data-form="uvslnew"><label class="uvfld">Nom<input name="n" maxlength="60" placeholder="Nom (facultatif)"></label>' +
       '<label class="uvfld">Camp 1<select name="a" required>' + wOpts(G, "") + '</select></label><label class="uvfld">Camp 2<select name="b" required>' + wOpts(G, "") + "</select></label>" +
       '<label class="uvfld">Durée<select name="len">' + [3, 4, 5, 6, 8, 10].map(n => '<option value="' + n + '"' + (n === 5 ? " selected" : "") + ">" + n + " semaines</option>").join("") + "</select></label>" +
+      '<label class="uvfld">Type d’histoire<select name="ty">' + (U.styOpts ? U.styOpts() : "") + "</select></label>" +
       '<label class="uvfld">Fin<select name="turn"><option value="">Pas de turn</option><option value="a">Le camp 1 change de camp</option><option value="b">Le camp 2 change de camp</option></select></label><button class="uvbtn pri">Créer</button></form></details>' +
       (Dn.length ? '<h3 class="uvh3">Terminées</h3>' + Dn.map(s => '<div class="uvline"><span class="uvgrow">' + esc(s.n) + '</span><span class="uvmut">heat ' + s.heat + "</span></div>").join("") : "");
   } else if (tab === "cl" || tab === "eq") {
@@ -176,7 +178,7 @@ export function creatifView(tab) {
     body = '<p class="uvsm">' + (isC ? "Un clan = 3 catcheurs ou plus qui se battent ensemble." : "Une équipe = 2 catcheurs. Plus ils font équipe, meilleure est leur entente.") + "</p>" +
       (L.length ? L.map(x => { const lg = imgTeam(G, x); return '<div class="uvcard"><div class="uvrow">' + (lg ? '<img class="uvcrest" src="' + esc(lg) + '" alt="" style="width:40px;height:40px">' : '<span class="uvcrest ini" style="width:40px;height:40px;background:#c9a7ff">' + esc(ini(x.n)) + "</span>") + '<b class="uvgrow">' + esc(x.n) + "</b>" + imgBtn("g:" + x.id, "🖼️") + '<button type="button" class="uvbtn sm del" data-act="uvgrdel" data-g="' + esc(x.id) + '">Supprimer</button></div>' +
         '<div class="uvmem">' + x.m.map(i => G.W[i] ? '<span class="uvpill">' + face(G, G.W[i], 22) + esc(G.W[i].n) + (isC ? '<button type="button" data-act="uvgrrm" data-g="' + esc(x.id) + '" data-w="' + esc(i) + '" aria-label="Retirer ' + esc(G.W[i].n) + '">×</button>' : "") + "</span>" : "").join("") + "</div>" +
-        (isC ? '<form class="uvinl" data-form="uvgradd" data-g="' + esc(x.id) + '"><select name="w" aria-label="Ajouter un membre">' + wOpts(G, "", { ph: "Ajouter un membre…", f: w => x.m.indexOf(w.id) < 0 }) + '</select><button class="uvbtn">Ajouter</button></form>' : '<div class="uvst2"><span>Entente</span>' + bar(x.chem, "#63d69c") + "<b>" + x.chem + "</b></div>") + "</div>"; }).join("") : '<p class="uvempty">' + (isC ? "Aucun clan." : "Aucune équipe.") + "</p>") +
+        (isC ? '<form class="uvinl" data-form="uvgradd" data-g="' + esc(x.id) + '"><select name="w" aria-label="Ajouter un membre">' + wOpts(G, "", { ph: "Ajouter un membre…", f: w => x.m.indexOf(w.id) < 0 }) + '</select><button class="uvbtn">Ajouter</button></form>' : '<div class="uvst2"><span>Entente</span>' + bar(x.chem, "#63d69c") + "</div>") + (isC && U.clanTeams ? U.clanTeams(G, x) : "") + "</div>"; }).join("") : '<p class="uvempty">' + (isC ? "Aucun clan." : "Aucune équipe.") + "</p>") +
       '<form class="uvcard uvform" data-form="uvgrnew" data-t="' + tab + '"><h3 class="uvh3">' + (isC ? "Nouveau clan" : "Nouvelle équipe") + '</h3><label class="uvfld">Nom<input name="n" maxlength="40" required></label>' +
       [1, 2].concat(isC ? [3] : []).map(i => '<label class="uvfld">Membre ' + i + '<select name="m' + i + '" required>' + wOpts(G, "") + "</select></label>").join("") + '<button class="uvbtn pri">Créer</button></form>';
   } else if (tab === "gim") body = gimBody(G);
@@ -239,6 +241,8 @@ ACT.uvsldel = el => { const G = U.G, id = el.dataset.s; ask("Supprimer cette sto
 FORM.uvslnew = f => {
   const G = U.G, a = f.a.value, b = f.b.value; if (!a || !b || a === b) { toast("Choisis deux catcheurs différents"); return; }
   const tv = f.turn.value, tw = tv === "a" ? a : tv === "b" ? b : "";
+  const ty = (f.elements.namedItem("ty") || {}).value || "classic";
+  if (ty !== "classic") { const s = slMake(G, ty, a, b, f.n.value.trim() || "", +f.len.value || 5); if (tw && !s.turn) s.turn = { w: tw, to: G.W[tw].al === "heel" ? "face" : "heel" }; G.sl.push(s); toast("Histoire créée : " + STY[ty][0]); done(); return; }
   G.sl.push({ id: uid("s"), fed: G.me, n: f.n.value.trim() || wn(G, a) + " contre " + wn(G, b), a: [a], b: [b], len: +f.len.value || 5, wk: 0, heat: 20, turn: tw ? { w: tw, to: G.W[tw].al === "heel" ? "face" : "heel" } : null, done: false, from: G.day });
   toast("Storyline créée"); done();
 };

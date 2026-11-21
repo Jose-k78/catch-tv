@@ -164,7 +164,7 @@ U.pops = () => {
   modal((box, close) => {
     box.classList.add("uvmodal", "uvpop");
     box.innerHTML = '<div class="uvpopr" aria-hidden="true"></div>' +
-      P.map(p => '<div class="uvpopi mis"><span class="uvpopb">✓</span><div><small>Mission réussie</small><b>' + esc(p.t) + "</b><p>+" + fmtK(p.m) + (p.s ? " · confiance du patron +" + p.s : "") + "</p></div></div>").join("") +
+      P.map(p => p.lv ? '<div class="uvpopi mis"><span class="uvpopb">★</span><div><small>Niveau supérieur</small><b>' + esc(p.t) + "</b><p>Un talent t’attend dans Bureau › Toi.</p></div></div>" : '<div class="uvpopi mis"><span class="uvpopb">✓</span><div><small>Mission réussie</small><b>' + esc(p.t) + "</b><p>+" + fmtK(p.m) + (p.s ? " · confiance du patron +" + p.s : "") + "</p></div></div>").join("") +
       A.map(k => '<div class="uvpopi"><span class="uvpopb">🏆</span><div><small>Trophée débloqué</small><b>' + esc(ACH[k][0]) + "</b><p>" + esc(ACH[k][1]) + "</p></div></div>").join("") +
       '<button type="button" class="uvbtn pri" data-x="1">Super !</button>';
     box.addEventListener("click", e => { if (e.target.closest("[data-x]")) close(); });

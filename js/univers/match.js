@@ -9,6 +9,7 @@ import { fitOf, gimOf } from "./v2.js";
 import { dnaBonus, dnaShow, sportWinner, markFinish } from "./dna.js";
 import { pleMix } from "./brand.js";
 import { bondPerf, vnAfterShow, promiseKept } from "./vn.js";
+import { heroBonus, ENTX, entOf, entCost, hasTal, extraAfterShow } from "./extra.js";
 
 const avg = a => a.length ? a.reduce((s, x) => s + x, 0) / a.length : 0;
 const CHEM = { "aer|aer": 5, "pur|pur": 6, "tec|tec": 5, "bag|bag": 3, "aer|tec": 3, "aer|bag": 2, "bag|pur": 4, "pur|tec": 4, "aer|pur": 3, "bag|tec": 1 };
@@ -68,7 +69,8 @@ function parts(G, ev, m) {
   const mu = muCount(G, m.sides); if (mu >= 2) extra -= (mu - 1) * 3;
   const prod = staffQ(G, "prod"), comm = ev.comm && ev.comm.length ? avg(ev.comm.map(i => (G.staff[i] || {}).q || 40)) : staffQ(G, "comm");
   const staff = ev.fed === G.me && !ev.ai ? (prod ? (prod - 50) / 12 : -2) + (comm ? (comm - 50) / 15 : -3) : 1;
-  extra += dnaBonus(G, ev, m, all, D) + (ev.fed === G.me && !ev.ai ? bondPerf(G, all) : 0);   // le lien GM ↔ catcheurs (caché)
+  extra += dnaBonus(G, ev, m, all, D) + (ev.fed === G.me && !ev.ai ? bondPerf(G, all) : 0);
+  if (ev.fed === G.me && !ev.ai) crowd += heroBonus(G, ev, all) + (ENTX[entOf(ev, m)] || ENTX[0])[2] * 0.6 + (hasTal(G, "show") ? 2 : 0);   // héros local, entrée spectaculaire, talent Showman   // le lien GM ↔ catcheurs (caché)
   return { ring: ring, chem: chem, story: story, crowd: crowd, dur: dur, extra: extra, staff: staff, sl: sl, mu: mu, tired: tired };
 }
 export function estimate(G, ev, it) {
@@ -283,7 +285,7 @@ export function autoCard(G, ev) {
   // segments
   const mic = pool.filter(w => !used.has(w.id)).sort((a, b) => b.st[2] - a.st[2]);
   if (mic[0]) items.splice(Math.min(1, items.length), 0, { it: "s", k: pick(["promo", "bsint", "parking", "office"]), w: [mic[0].id] });
-  const slp = (G.sl || []).find(s => !s.done && s.fed === ev.fed && s.a.concat(s.b).every(i => G.W[i] && okB(i) && avail(G, G.W[i], ev.day)));
+  const slp = (G.sl || []).find(s => !s.done && s.fed === ev.fed && s.a.concat(s.b).every(i => G.W[i] && okB(i) && !used.has(i) && avail(G, G.W[i], ev.day)));   // pas quelqu'un qui a déjà un match ce soir
   if (slp && !big) items.splice(Math.floor(items.length / 2), 0, { it: "s", k: pick(["face", "brawl", "ambush", "attack"]), w: [slp.a[0], slp.b[0]] });
   ev.items = items; ev.card = []; ev.seg = [];
   return ev;
@@ -426,8 +428,8 @@ function finishShow(G, ev, L) {
   const V = VENUES[ev.venue != null ? ev.venue : f.venue] || VENUES[1], c = cityOf(G, ev), reg = (f.reg || {})[c ? c[3] : "us"] || f.pop;
   const demand = (300 + Math.pow(reg, 1.75) * (big ? 9 : 3.2)) * (1 + (c ? c[1] : 0) / 25) * (big ? 1 + hype / 12 : 1) * Math.max(0.3, 1.6 - (f.tix || 25) / 60) * (ev.storm === "keep" ? 0.6 : 1);
   const att = Math.round(Math.min(V[1], demand)), full = att >= V[1] * 0.98;
-  const tix = Math.round(att * (f.tix || 25) / 1000), tv = big ? 0 : f.tv.pay, ent = (ENT[ev.ent || 0] || ENT[0])[1], prod = (big ? 110 : 25) + V[2];
-  const pub = (G.spons || []).filter(s => s.until > G.day && aud >= s.min).reduce((s, x) => s + x.pay, 0), stream = f.exp && f.exp.stream ? Math.round((f.exp.subs || 0) * (big ? 0.012 : 0.002)) : 0;
+  const tix = Math.round(att * (f.tix || 25) / 1000), tv = big ? 0 : f.tv.pay, ent = (ENT[ev.ent || 0] || ENT[0])[1] + entCost(ev), prod = Math.round(((big ? 110 : 25) + V[2]) * (hasTal(G, "eco") ? 0.9 : 1));
+  const pub = (G.spons || []).filter(s => s.until > G.day && aud >= s.min).reduce((s, x) => s + x.pay + Math.round(x.pay * Math.min(1, aud / 3) * 0.5), 0)   /* sponsors sur le tablier : payés aussi selon la visibilité */, stream = f.exp && f.exp.stream ? Math.round((f.exp.subs || 0) * (big ? 0.012 : 0.002)) : 0;
   const money = tv + tix + pub + stream + L.money + (ev.bonus || 0) - prod - ent;
   G.fin.cur.tv += tv + stream; G.fin.cur.tix += tix; G.fin.cur.pub += pub + L.money + (ev.bonus || 0); G.fin.cur.prod += prod + ent; f.money += money;
   Object.assign(ev.res, { att: att, cap: V[1], full: full, money: money, war: rival ? { n: rival.n, id: rival.id } : null });
@@ -453,7 +455,7 @@ function finishShow(G, ev, L) {
   });
   // trophées et guerre des audiences
   ach(G, "first"); if (rating >= 80) ach(G, "r4"); if (rating >= 98) ach(G, "r5"); if (aud >= 1) ach(G, "m1");
-  missionsShow(G, ev); dnaShow(G, ev, res); vnAfterShow(G, ev, res);
+  missionsShow(G, ev); dnaShow(G, ev, res); vnAfterShow(G, ev, res); extraAfterShow(G, ev, res);
   if (rival) { const ra = rival.aud.length ? rival.aud[rival.aud.length - 1] : 0; if (aud > ra) { ach(G, "war"); news(G, { seg: "coul", f: "nous", t: "Guerre des audiences : " + f.n + " gagne", txt: ev.n + " (" + fmtM(aud) + ") bat " + rival.n + " (" + fmtM(ra) + ")." }); } }
 }
 // résultats d'un match de tournoi / de tradition

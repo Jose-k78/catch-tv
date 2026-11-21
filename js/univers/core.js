@@ -85,9 +85,9 @@ ACT.uvimg = el => {
     box.innerHTML = "<h3>Changer l’image</h3><p class=\"uvmut\">Le changement reste dans cette partie : les images de l’appli ne bougent pas.</p>" +
       (list.length ? '<div class="uvimgs">' + list.map(u => '<button type="button" class="uvimgc' + (u === cur ? " on" : "") + '" data-u="' + esc(u) + '"><img src="' + esc(u) + '" alt="" loading="lazy"></button>').join("") + "</div>" : '<p class="uvmut">Pas d’autre image dans tes dossiers pour celui-ci.</p>') +
       '<label class="uvbtn">Importer une image du téléphone<input type="file" accept="image/*" hidden></label>' +
-      (cur ? '<button type="button" class="uvbtn ghost" data-reset="1">Remettre l’image de base</button>' : "") + '<button type="button" class="uvbtn ghost" data-close="1">Fermer</button>';
+      (cur ? '<button type="button" class="uvbtn ghost" data-reset="1">Remettre l’image de base</button>' : "") + (S.isAdmin && cur && !/^data:/.test(cur) ? '<button type="button" class="uvbtn ghost" data-all="1">✏️ Cette image pour tous (modo)</button>' : "") + '<button type="button" class="uvbtn ghost" data-close="1">Fermer</button>';
     const set = v => { G.img = G.img || {}; if (v) G.img[key] = v; else delete G.img[key]; persist(); close(); redraw(); };
-    box.addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; if (b.dataset.u) set(b.dataset.u); if (b.dataset.reset) set(""); if (b.dataset.close) close(); });
+    box.addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; if (b.dataset.u) set(b.dataset.u); if (b.dataset.reset) set(""); if (b.dataset.close) close(); if (b.dataset.all && U.modoImg) { U.modoImg(key, cur); close(); } });
     box.querySelector("input[type=file]").addEventListener("change", async e => { const f = e.target.files && e.target.files[0]; if (!f) return; try { set(await fileToDataUrl(f, 360, 360, false, 60000)); } catch (er) { toast("Image illisible"); } });
   });
 };

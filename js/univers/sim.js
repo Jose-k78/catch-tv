@@ -9,6 +9,7 @@ import { lifeDaily, lifeWeekly, lifeMonthly, lifeYearly } from "./life.js";
 import { demandOf } from "./deal.js";
 import { brandDay, brandMonthly } from "./brand.js";
 import { vnDaily } from "./vn.js";
+import { extraDaily } from "./extra.js";
 
 export { meF, wOf, wn, roster, avail, injured, risk, teamName, mail, news, buzz, DUR, SPOTS, autoCard };
 export const playShow = runShow;
@@ -113,6 +114,7 @@ export function stepDay(G) {
   aiDay(G);
   brandDay(G);
   vnDaily(G);
+  extraDaily(G);
   lifeDaily(G);
   missionsDaily(G);
   contracts(G);

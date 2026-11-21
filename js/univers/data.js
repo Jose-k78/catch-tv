@@ -4,8 +4,8 @@ let UD = null, UDp = null;
 // data/statuts.json (décédés, retraités, staff, hors jeu) et data/gimmicks.json (surnoms connus), chargés une fois
 export function loadUData() {
   if (UD) return Promise.resolve(UD);
-  if (!UDp) UDp = Promise.all(["data/statuts.json", "data/gimmicks.json"].map(u => fetch(u + "?v=" + Math.floor(Date.now() / 36e5)).then(r => r.ok ? r.json() : {}).catch(() => ({}))))
-    .then(([st, gm]) => (UD = { st: st || {}, gm: (gm && gm.items) || {} }));
+  if (!UDp) UDp = Promise.all(["data/statuts.json", "data/gimmicks.json", "data/univers.json"].map(u => fetch(u + "?v=" + Math.floor(Date.now() / 36e5)).then(r => r.ok ? r.json() : {}).catch(() => ({}))))
+    .then(([st, gm, uv]) => (UD = { st: st || {}, gm: (gm && gm.items) || {}, uv: uv || {} }));   // univers.json = base commune du modo (noms, images)
   return UDp;
 }
 export const udata = () => UD || { st: {}, gm: {} };

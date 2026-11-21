@@ -1,5 +1,6 @@
 // Mode Univers v2 : business, partenaires, audiences, diffuseurs, pages des fédérations, Hall of Fame, magazine TCC 100,
 // encyclopédie, bureau du GM (objectifs, réputation, trophées, résumés, agenda, réglages), écran de défilement des jours, tuto.
+const lsMus = () => { try { return localStorage.getItem("ctv.univ.mus") !== "0"; } catch (e) { return true; } };
 import { ACT, FORM } from "../state.js";
 import { esc, toast, modal } from "../util.js";
 import { MONTHS, WDL, dayLabel, shortDate, dateOf, fmtM, fmtK, stars, clamp, recTxt } from "./world.js";
@@ -128,7 +129,7 @@ export function encBody(G) {
 // ---------- le bureau du GM ----------
 export function bureauView(tab) {
   const G = U.G, f = meF(G); tab = tab || "obj";
-  const T = tabs("#/univers/bureau", [["obj", "Objectifs"], ["riv", "Rivale"], ["rep", "Réputation"], ["ach", "Trophées"], ["sem", "Semaines"], ["agenda", "Agenda"], ["cfg", "Réglages"]], tab);
+  const T = tabs("#/univers/bureau", [["obj", "Objectifs"], ["toi", "Toi"], ["riv", "Rivale"], ["rep", "Réputation"], ["ach", "Trophées"], ["sem", "Semaines"], ["agenda", "Agenda"], ["cfg", "Réglages"]], tab);
   let body = "";
   if (tab === "obj") {
     const o = G.obj || { goals: [], sec: 70 }, shows = G.ev.filter(e => e.fed === G.me && e.done && e.res && e.day >= G.day - 91), tv = shows.filter(e => e.kind === "tv");
@@ -140,6 +141,7 @@ export function bureauView(tab) {
     body += U.misBody ? U.misBody(G) : "";
   } else if (tab === "riv") {
     body = U.rivBody ? U.rivBody(G) : "";
+  } else if (tab === "toi" && U.gmBody) { body = U.gmBody(G);
   } else if (tab === "rep") {
     const jobs = G.mail.filter(m => m.k === "job" && !m.done && G.F[m.fed]);
     const dk = dnaMain(G), dn = dnaNext(G);
@@ -164,6 +166,7 @@ export function bureauView(tab) {
       '<label class="uvspot"><input type="checkbox" name="mixed"' + (f.mixed ? " checked" : "") + '><span>Autoriser les matchs hommes contre femmes dans ma fédération</span></label>' +
       '<label class="uvspot"><input type="checkbox" name="motn"' + (c.motn ? " checked" : "") + '><span>Prime automatique de 10 k$ au match de la soirée</span></label>' +
       '<label class="uvspot"><input type="checkbox" name="tips"' + (c.tips !== false ? " checked" : "") + '><span>Les conseils du bras droit</span></label>' +
+      '<label class="uvspot"><input type="checkbox" name="mus"' + (lsMus() ? " checked" : "") + '><span>Musiques d’entrée pendant le direct (liens YouTube mis sur les fiches)</span></label>' +
       '<b>Toi, le GM</b><div class="uvrow">' + gmFace(G, 44) + '<label class="uvfld uvgrow">Ton nom<input name="gmn" maxlength="30" value="' + esc(gmName(G)) + '"></label></div><button type="button" class="uvbtn sm" data-act="uvgmpic">Changer ta photo</button>' +
       '<b>Ton univers</b><label class="uvchoice"><input type="radio" name="um" value="smart"' + (G.mark ? "" : " checked") + '><span><b>Smart</b><small>Tu choisis les vainqueurs et tu écris les histoires.</small></span></label>' +
       '<label class="uvchoice"><input type="radio" name="um" value="mark"' + (G.mark ? " checked" : "") + '><span><b>Mark</b><small>Le catch est vrai : le résultat se joue sur le ring, tout est raconté comme à la télé.</small></span></label>' +
@@ -173,7 +176,7 @@ export function bureauView(tab) {
   return shell("bureau", "Bureau du GM", T, body);
 }
 FORM.uvcfg = f => { const G = U.G; G.cfg = Object.assign(G.cfg || {}, { speed: +f.speed.value, stopWk: f.stopWk.checked, stopInj: f.stopInj.checked, motn: f.motn.checked, tips: f.tips.checked }); meF(G).mixed = f.mixed.checked;
-  G.gm = G.gm || {}; G.gm.n = (f.gmn.value || "").trim().slice(0, 30) || G.gm.n || "Le GM"; G.mark = f.um.value === "mark"; try { localStorage.setItem("ctv.univ.um", G.mark ? "mark" : "smart"); } catch (e) {} persist(); toast("Réglages enregistrés"); redraw(); };
+  G.gm = G.gm || {}; G.gm.n = (f.gmn.value || "").trim().slice(0, 30) || G.gm.n || "Le GM"; G.mark = f.um.value === "mark"; try { localStorage.setItem("ctv.univ.mus", f.mus.checked ? "1" : "0"); } catch (e) {} try { localStorage.setItem("ctv.univ.um", G.mark ? "mark" : "smart"); } catch (e) {} persist(); toast("Réglages enregistrés"); redraw(); };
 ACT.uvjob = el => { const G = U.G, m = G.mail.find(x => x.id === el.dataset.m); modal((box, close) => { box.classList.add("uvmodal"); box.innerHTML = "<h3>Devenir GM de " + esc((G.F[el.dataset.f] || {}).n || "") + " ?</h3><p class=\"uvmut\">Ta fédération actuelle sera gérée par l’IA. Ton staff reste là-bas.</p><button type=\"button\" class=\"uvbtn pri\" data-y=\"1\">Oui, j’y vais</button><button type=\"button\" class=\"uvbtn ghost\" data-n=\"1\">Non</button>"; box.addEventListener("click", e => { if (e.target.closest("[data-n]")) close(); if (e.target.closest("[data-y]")) { toast(switchFed(G, el.dataset.f)); if (m) m.done = "Accepté"; persist(true); close(); go("#/univers/g"); redraw(); } }); }); };
 
 // ---------- l'écran de défilement des jours ----------

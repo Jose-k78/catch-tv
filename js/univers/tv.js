@@ -96,8 +96,9 @@ function arenaBG(G, ev) {
       // les fans
       '<g class="uvfans">' + fans + '</g><g class="uvarms">' + arms + '</g><g>' + flash + "</g></svg>";
   }
-  const f = G.F[ev.fed] || {};
-  return '<div class="uvtvbg" aria-hidden="true">' + BG.replace('<text class="uvtvapr" x="200" y="503" text-anchor="middle"></text>', '<text class="uvtvapr" x="200" y="503" text-anchor="middle">' + esc(String(f.sh || f.n || "").toUpperCase()) + "</text>") + "</div>";
+  const f = G.F[ev.fed] || {}, sp = ev.fed === G.me ? (G.spons || []).filter(s => s.until > G.day).slice(0, 2) : [];   // sponsors sur le tablier (visibilité payée)
+  return '<div class="uvtvbg" aria-hidden="true">' + BG.replace('<text class="uvtvapr" x="200" y="503" text-anchor="middle"></text>', '<text class="uvtvapr" x="200" y="503" text-anchor="middle">' + esc(String(f.sh || f.n || "").toUpperCase()) + "</text>" +
+    sp.map((s, i) => '<text class="uvtvspn" x="' + (i ? 336 : 64) + '" y="500" text-anchor="middle">' + esc(String(s.n).toUpperCase().slice(0, 14)) + "</text>").join("")) + "</div>";
 }
 
 // ---------- l'écran ----------
@@ -113,6 +114,7 @@ function finTxt(r) {
 }
 function stage(G, ev, L) {
   const C = L.cur, last = L.log[L.log.length - 1];
+  if (U.liveMusic) U.liveMusic(G, ev, L, last);   // musique d'entrée (YouTube, réglée par le joueur dans sa partie)
   // avant le début : l'affiche du show
   if (!last) { const im = imgEv(G, ev), first = ev.items[0];
     return '<div class="uvtvopen">' + (im ? '<img src="' + esc(im) + '" alt="">' : crest(G, ev.fed, 96)) + "<h2>" + esc(ev.n) + "</h2><p>" + ev.items.length + " segments au programme · le public entre dans la salle…</p>" + (first ? "<small>Pour commencer : " + esc(first.it === "m" ? (mtOf(first).n + " — " + sideNameS(G, first.sides)) : (SEG[first.k] || SEG.promo).n) + "</small>" : "") + "</div>"; }
@@ -129,7 +131,7 @@ function stage(G, ev, L) {
     return '<div class="uvtvseg"><small>' + esc((SEG[it.k] || SEG.promo).n) + '</small><div class="uvtvsegp">' + W.slice(0, 2).map(i => '<span class="uvtvp big' + (i === last.who || W.length === 1 ? " on" : "") + '">' + face(G, G.W[i], 120) + "</span>").join("") + "</div>" + '<blockquote aria-live="polite">' + esc(last.txt) + "</blockquote></div>"; }
   const S = (it.sides || []).filter(s => s.length), t = it.title && G.T[it.title];
   // l'entrée des catcheurs
-  if (last.big || last.ty === "intro") return '<div class="uvtvent"><small>' + esc(mtOf(it).n) + (L.i === ev.items.length - 1 ? " · MAIN EVENT" : "") + "</small>" +
+  if (last.big || last.ty === "intro") return '<div class="uvtvent ex' + (U.entLv ? U.entLv(ev, it) : 0) + '">' + (U.entFx ? U.entFx(G, ev, it) : "") + "<small>" + esc(mtOf(it).n) + (L.i === ev.items.length - 1 ? " · MAIN EVENT" : "") + (it.ai ? " · " + esc(it.ai) : "") + "</small>" +
     (t ? '<div class="uvtvbelt">' + (imgT(G, t) ? '<img src="' + esc(imgT(G, t)) + '" alt="">' : "") + "<span>" + esc(t.n) + " en jeu</span></div>" : "") +
     '<div class="uvtvvs">' + S.slice(0, 4).map((s, j) => sideBox(G, s, "e" + (j % 2), "", true)).join('<i class="uvtvx">VS</i>') + "</div>" + (S.length > 4 ? "<p>+ " + (S.length - 4) + " autres camps</p>" : "") + "</div>";
   // le match

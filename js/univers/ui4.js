@@ -1,6 +1,7 @@
 // Mode Univers v2 : la carte du show (tous les types de match, enjeux, fins, consignes, open challenge, segments, tournois,
 // traditions, mallette), le show en direct depuis la Gorilla position, le rapport détaillé, les tournois, les traditions, le draft.
 import { qWord } from "./vn.js";
+import { ENTX } from "./extra.js";
 import { ACT, FORM } from "../state.js";
 import { esc, toast, modal } from "../util.js";
 import { STYLES, MONTHS, dayLabel, shortDate, dateOf, fmtM, fmtK, stars, clamp, rnd, pick, uid } from "./world.js";
@@ -93,6 +94,7 @@ function matchEditor(G, ev, it, i) {
     (G.mark ? "" : '<label class="uvmini">Fin du match<select name="fin">' + Object.keys(FIN).map(k => opt(k, FIN[k][0], it.fin || "auto")).join("") + "</select></label>") +
     '<label class="uvmini">Consigne<select name="cons">' + Object.keys(CONS).map(k => opt(k, CONS[k][0], it.cons)).join("") + "</select></label>" +
     '<label class="uvmini">Durée<select name="dur">' + Object.keys(DUR).map(k => opt(k, DUR[k][0] + " (" + DUR[k][1] + " min)", it.dur)).join("") + "</select></label>" +
+    '<label class="uvmini">Entrée<select name="ent">' + ENTX.map((e, k) => opt(k, e[0] + (e[1] ? " (" + e[1] + " k$)" : ""), +(it.ent || 0))).join("") + "</select></label>" +
     (G.mark ? "</div><p class=\"uvsm\">Mode Mark : personne ne choisit le vainqueur. Le match se joue sur le ring (forme, stats, élan, fatigue… et un peu de chance).</p>" : '<label class="uvmini">Vainqueur<select name="win">' + opt("ia", "L’IA décide", it.win) + it.sides.map((s, j) => opt(j, "Camp " + (j + 1) + (s.length ? " : " + teamName(G, s) : ""), it.win)).join("") + opt("nul", "Draw", it.win) + "</select></label></div>") +
     '<div class="uvspots" role="group" aria-label="Moments forts">' + Object.keys(SPOTS).map(k => '<label class="uvspot"><input type="checkbox" name="spot" value="' + k + '"' + ((it.spots || []).indexOf(k) >= 0 ? " checked" : "") + "><span>" + SPOTS[k][0] + "</span></label>").join("") + "</div>" +
     '<button type="button" class="uvbtn sm pri" data-act="uvbed" data-ev="' + esc(ev.id) + '" data-i="-1">OK</button></form>';
@@ -112,7 +114,7 @@ function readItem(f, ev) {
   if (it.it === "s") { it.k = v("k") || it.k; const S = SEG[it.k] || SEG.promo; it.w = (it.w || []).slice(0, Math.max(1, S.p)).filter(Boolean); return; }
   const t = v("t") || it.t; if (t !== it.t) { const T = MT[t] || MT.simple, ids = idsOf(it); it.t = t; const ns = T.s === "n" ? Math.max(T.min, Math.min(T.max, ids.length || T.min)) : T.s, pp = Array.isArray(T.p) ? T.p[0] : T.p;
     if (T.open) { it.sides = [ids.slice(0, 1), []]; it.oc = { rand: false, secret: true }; } else if (pp === 1) it.sides = Array.from({ length: Math.max(2, Math.min(ns, ids.length || ns)) }, (x, j) => ids[j] ? [ids[j]] : []); else { const n2 = typeof T.s === "number" ? T.s : 2; it.sides = Array.from({ length: n2 }, (x, j) => ids.slice(j * pp, j * pp + pp)); } if (T.dur) it.dur = "long"; it.win = "ia"; }
-  ["title", "stip", "fin", "cons", "dur"].forEach(k => { const x = v(k); if (x != null) it[k] = x; });
+  ["title", "stip", "fin", "cons", "dur", "ent"].forEach(k => { const x = v(k); if (x != null) it[k] = x; });
   const w = v("win"); if (w != null) it.win = w === "ia" || w === "nul" ? w : +w;
   it.spots = Array.from(f.querySelectorAll('input[name="spot"]:checked')).map(x => x.value);
   if (it.t === "open") { it.oc = it.oc || {}; it.oc.rand = !!(f.elements.namedItem("ocrand") || {}).checked; const sec = f.elements.namedItem("ocsec"); if (sec) it.oc.secret = sec.checked; const ow = v("ocw"); if (ow) { it.sides[1] = [ow]; it.oc.w = ow; } if (it.oc.rand) it.sides[1] = []; }

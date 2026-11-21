@@ -1,5 +1,6 @@
 // Mode Univers v3 (21 nov.) : la fédération rivale (guerre des audiences chaque semaine, ses coups bas) et les missions du propriétaire
 // (3 en même temps, récompense en argent + confiance, échec = confiance en baisse). Les écrans sont dans ui6.js.
+import { xpAdd } from "./extra.js";
 import { clamp, rnd, pick, uid, dayLabel, shortDate, fmtK, fmtM, stars } from "./world.js";
 import { meF, roster, mail, news, buzz, FANS, ach, isBig, champIds, e_, cap } from "./base.js";
 
@@ -39,7 +40,7 @@ export function rivalWeek(G, wk) {
   // à taille égale : chacun est comparé à son audience habituelle (sinon une petite fédé ne gagnerait jamais)
   const f = meF(G), R = G.riv, hc = hcap(G, wk), need = Math.round(them * hc * 100) / 100, won = me >= need;
   R.hist.push({ wk: wk, d: G.day - 1, me: me, them: them, need: need, won: won }); cap(R.hist, 52);
-  if (won) { R.w++; R.st = R.st > 0 ? R.st + 1 : 1; f.pop = clamp(f.pop + 0.3, 5, 99); if (G.obj && G.mode !== "sandbox") G.obj.sec = clamp(G.obj.sec + 1, 0, 100); }
+  if (won) { R.w++; R.st = R.st > 0 ? R.st + 1 : 1; xpAdd(G, 8); f.pop = clamp(f.pop + 0.3, 5, 99); if (G.obj && G.mode !== "sandbox") G.obj.sec = clamp(G.obj.sec + 1, 0, 100); }
   else { R.l++; R.st = R.st < 0 ? R.st - 1 : -1; if (G.obj && G.mode !== "sandbox") G.obj.sec = clamp(G.obj.sec - 1, 0, 100); }
   R.best = Math.max(R.best || 0, R.st);
   const line = pick(won ? TAUNT_W : TAUNT_L); R.taunts.push({ d: G.day, t: line, won: won }); cap(R.taunts, 12);
@@ -123,7 +124,7 @@ function makeMission(G) {
 }
 export function initMissions(G) { if (!G.mis) G.mis = []; if (!G.misLog) G.misLog = []; }
 function finish(G, m, ok) {
-  m.st = ok ? "ok" : "ko"; m.end = G.day; G.misLog = (G.misLog || []).concat({ k: m.k, t: m.t, ok: ok, d: G.day, rw: m.rw }); cap(G.misLog, 40);
+  m.st = ok ? "ok" : "ko"; m.end = G.day; if (ok) xpAdd(G, 15); G.misLog = (G.misLog || []).concat({ k: m.k, t: m.t, ok: ok, d: G.day, rw: m.rw }); cap(G.misLog, 40);
   const f = meF(G), sb = G.mode === "sandbox";
   if (ok) {
     f.money += m.rw.m; G.fin.cur.pub += m.rw.m; if (G.obj && !sb) G.obj.sec = clamp(G.obj.sec + m.rw.s, 0, 100);
