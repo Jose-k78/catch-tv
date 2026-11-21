@@ -1,6 +1,15 @@
 {
- "at": "2026-11-21T01:46:47.787Z",
+ "at": "2026-11-21T02:48:29.128Z",
  "items": [
+  {
+   "t": "Hacksaw Jim Duggan cinquième membre de la team USA pour les Survivor Series ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61502-hacksaw-jim-duggan-cinquieme-membre-de-la-team-usa-pour-les-survivor-series",
+   "s": "Catch-Newz",
+   "d": "2026-11-21",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Preview : AAA Lucha Libre du 21 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61496-preview-aaa-lucha-libre-21-novembre-2026",
@@ -31,8 +40,8 @@
    ]
   },
   {
-   "t": "Preview : WWE SmackDown du 20 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61491-preview-wwe-smackdown-20-novembre-2026",
+   "t": "Résultats de WWE SmackDown du 20 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/61495-wwe-smackdown-20-novembre-2026",
    "s": "Catch-Newz",
    "d": "2026-11-20",
    "tags": [
@@ -41,8 +50,8 @@
    ]
   },
   {
-   "t": "Résultats de WWE SmackDown du 20 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61495-wwe-smackdown-20-novembre-2026",
+   "t": "Preview : WWE SmackDown du 20 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61491-preview-wwe-smackdown-20-novembre-2026",
    "s": "Catch-Newz",
    "d": "2026-11-20",
    "tags": [
@@ -248,16 +257,6 @@
    ]
   },
   {
-   "t": "Preview : ROH du 19 novembre 2026",
-   "u": "https://www.catch-newz.com/aew/newz/61446-preview-roh-du-19-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-19",
-   "tags": [
-    "AEW",
-    "ROH"
-   ]
-  },
-  {
    "t": "AEW Dynamite du 18 novembre : Début du Continental Classic, le championnat TBS en jeu",
    "u": "https://www.voxcatch.fr/2026/11/19/resultats-aew-dynamite-18-novembre-2026/",
    "s": "VOXcatch",
@@ -265,6 +264,16 @@
    "tags": [
     "AEW",
     "Dynamite"
+   ]
+  },
+  {
+   "t": "Preview : ROH du 19 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/newz/61446-preview-roh-du-19-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-19",
+   "tags": [
+    "AEW",
+    "ROH"
    ]
   },
   {
@@ -489,15 +498,6 @@
    "d": "2026-11-19",
    "tags": [
     "AEW"
-   ]
-  },
-  {
-   "t": "The Rock et Roman Reigns se lancent des fleurs sur les réseaux sociaux",
-   "u": "https://www.catch-newz.com/wwe/newz/61456-the-rock-et-roman-reigns-se-lancent-des-fleurs-sur-les-reseaux-sociaux",
-   "s": "Catch-Newz",
-   "d": "2026-11-19",
-   "tags": [
-    "WWE"
    ]
   }
  ],
@@ -1258,6 +1258,25 @@
     "id": "voXHjxBtJWI",
     "t": "Nic Nemeth contre Leon Slater for the TNA World Title"
    }
+  ],
+  "WWE|SmackDown|2026-11-20": [
+   {
+    "id": "8XmYXsQNUtc",
+    "t": "Haku helps War Raiders defeat Bakusai: SmackDown highlights, Nov. 20, 2026",
+    "sp": true
+   },
+   {
+    "id": "Dvuqd_4-m6A",
+    "t": "Jade Cargill earns WarGames Advantage: SmackDown highlights, Nov. 20, 2026"
+   },
+   {
+    "id": "_K5AsrzSEr4",
+    "t": "Tiffany Stratton steals Chelsea Green's Crown Jewel ring again: SmackDown highlights, Nov. 20, 2026"
+   },
+   {
+    "id": "1LD93n9rDRk",
+    "t": "Gunther interrupts Kevin Owens: SmackDown highlights, Nov. 20, 2026"
+   }
   ]
  },
  "rss": {
@@ -1269,13 +1288,14 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/wwe/newz/61491-preview-wwe-smackdown-20-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61495-wwe-smackdown-20-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61491-preview-wwe-smackdown-20-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61502-hacksaw-jim-duggan-cinquieme-membre-de-la-team-usa-pour-les-survivor-series",
    "https://www.catch-newz.com/wwe/newz/61496-preview-aaa-lucha-libre-21-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61487-resultats-et-streaming-wwe-evolve-18-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61486-tna-impact-19-novembre-2026",
-   "https://www.catch-newz.com/aew/newz/61446-preview-roh-du-19-novembre-2026",
    "https://www.catch-newz.com/international/newz/61484-carte-de-cmll-viernes-espectacular-du-20-novembre-2026",
+   "https://www.catch-newz.com/aew/newz/61446-preview-roh-du-19-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61499-keanu-carver-place-en-garde-preventive-dans-lattente-de-son-proces",
    "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
    "https://www.catch-newz.com/culture/gaming/61498-des-prises-de-catch-dans-gta-6",
@@ -1567,15 +1587,14 @@
    "https://www.catch-newz.com/wwe/resultats/61192-wwe-main-event-4-novembre-2026",
    "https://www.catch-newz.com/international/newz/61220-kairi-sane-remonte-sur-le-ring-a-la-chris-jericho-cruise",
    "https://www.catch-newz.com/international/resultats/61204-resultats-de-god-of-the-ring-anniversary-iii",
-   "https://www.catch-newz.com/international/newz/61219-romeo-malverde-santos-escobar-remporte-le-oceanic-championship",
-   "https://www.catch-newz.com/wwe/newz/61218-john-cena-recrute-une-premiere-catcheuse-pour-le-cena-classic-a-wwe-nxt"
+   "https://www.catch-newz.com/international/newz/61219-romeo-malverde-santos-escobar-remporte-le-oceanic-championship"
   ]
  },
  "diag": {
   "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
-  "YouTube WWE": "0 nouvelles vidéos",
+  "YouTube WWE": "4 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
