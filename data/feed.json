@@ -1,5 +1,5 @@
 {
- "at": "2026-11-21T04:53:41.976Z",
+ "at": "2026-11-21T08:09:06.062Z",
  "items": [
   {
    "t": "Preview : AAA Lucha Libre du 21 novembre 2026",
@@ -10,6 +10,13 @@
     "WWE",
     "AAA"
    ]
+  },
+  {
+   "t": "Carte de Beyond Wrestling Still Alive",
+   "u": "https://www.catch-newz.com/international/newz/61481-carte-de-beyond-wrestling-still-alive",
+   "s": "Catch-Newz",
+   "d": "2026-11-21",
+   "tags": []
   },
   {
    "t": "Gunther subit sa première défaite en match simple sans titre en jeu à la WWE",
@@ -489,13 +496,6 @@
   {
    "t": "Résultats de PWK Now Or Never V",
    "u": "https://www.catch-newz.com/international/resultats/61437-resultats-de-pwk-now-or-never-v",
-   "s": "Catch-Newz",
-   "d": "2026-11-19",
-   "tags": []
-  },
-  {
-   "t": "Résultats de TLW Mac McMurray Memorial Rumble 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61436-resultats-de-tlw-mac-mcmurray-memorial-rumble-2026",
    "s": "Catch-Newz",
    "d": "2026-11-19",
    "tags": []
@@ -1312,6 +1312,7 @@
    "https://www.catch-newz.com/wwe/newz/61496-preview-aaa-lucha-libre-21-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61491-preview-wwe-smackdown-20-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61487-resultats-et-streaming-wwe-evolve-18-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61481-carte-de-beyond-wrestling-still-alive",
    "https://www.catch-newz.com/international/newz/61484-carte-de-cmll-viernes-espectacular-du-20-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61503-gunther-subit-sa-premiere-defaite-en-match-simple-sans-titre-en-jeu-a-la-wwe",
    "https://www.catch-newz.com/wwe/newz/61502-hacksaw-jim-duggan-cinquieme-membre-de-la-team-usa-pour-les-survivor-series",
@@ -1606,15 +1607,14 @@
    "https://www.catch-newz.com/wwe/newz/61221-mason-rook-fait-son-retour-et-attaque-le-champion-nxt-grayson-waller",
    "https://www.catch-newz.com/international/resultats/61207-resultats-du-jour-1-du-noah-junior-grand-prix-2-legacy-rise-2026",
    "https://www.catch-newz.com/wwe/resultats/61192-wwe-main-event-4-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61220-kairi-sane-remonte-sur-le-ring-a-la-chris-jericho-cruise",
-   "https://www.catch-newz.com/international/resultats/61204-resultats-de-god-of-the-ring-anniversary-iii"
+   "https://www.catch-newz.com/international/newz/61220-kairi-sane-remonte-sur-le-ring-a-la-chris-jericho-cruise"
   ]
  },
  "diag": {
   "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
-  "YouTube WWE": "1 nouvelles vidéos",
+  "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
