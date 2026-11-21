@@ -134,16 +134,21 @@ export function qsjLoad(force) {
   Q.busy = true; if (Q.st !== "ok") Q.st = "load"; const rev = Q.rev || 0, d0 = today(), ds = [prevDay(d0), d0]; if (S.realAdmin) for (let i = 1; i <= 7; i++) ds.push(addDay(d0, i));
   Promise.all([B.qsjDays(ds), B.qsjGet(S.user.uid), B.qsjList().catch(() => []), loadUData().catch(() => null)]).then(r => {
     // une partie enregistrée pendant le chargement est plus récente que celle du serveur : on la garde
-    Q.days = r[0] || {}; if ((Q.rev || 0) === rev) Q.me = r[1]; Q.list = r[2] || []; Q.st = "ok"; Q.at = Date.now(); Q.uid = S.user.uid; Q.day = d0; Q.busy = false; changed("qsj");
+    Q.days = r[0] || {}; if ((Q.rev || 0) === rev) { Q.me = r[1]; if (Q.me) Q.me.days = fromDb(Q.me.days); } Q.list = r[2] || []; Q.st = "ok"; Q.at = Date.now(); Q.uid = S.user.uid; Q.day = d0; Q.busy = false; changed("qsj");
   }).catch(e => { Q.busy = false; if (Q.st !== "ok") { Q.st = "err"; Q.err = (e && e.message) || "erreur"; } changed("qsj"); });
 }
+// Firestore refuse les tableaux dans un tableau (21 nov. : les tuiles ne se retournaient plus) : la base garde { t, e, p, g }
+const toDb = days => { const o = {}; Object.keys(days || {}).forEach(d => { const x = days[d] || {}, y = {}; Object.keys(x).forEach(k => { const v = x[k]; y[k] = Array.isArray(v) ? { t: v[0] | 0, e: v[1] | 0, p: v[2] | 0, g: (v[3] || []).map(String).slice(-5) } : v; }); o[d] = y; }); return o; };
+const fromDb = days => { const o = {}; Object.keys(days || {}).forEach(d => { const x = days[d] || {}, y = {}; Object.keys(x).forEach(k => { const v = x[k]; y[k] = v && typeof v === "object" && !Array.isArray(v) && "t" in v ? [v.t | 0, v.e | 0, v.p | 0, Array.isArray(v.g) ? v.g : []] : v; }); o[d] = y; }); return o; };
 const myDoc = () => { const Q = S.qsj || {}; return Q.me || { name: "", pts: 0, n: 0, g: 0, days: {} }; };
 const stOf = (doc, day, k) => ((doc.days || {})[day] || {})[k] || null; // [tuiles montrées, état 0 en cours / 1 trouvé / 2 raté, points, [essais]]
 function save(doc) {
   doc.name = String((S.profile && S.profile.pseudo) || doc.name || "Joueur").slice(0, 40);
   const keys = Object.keys(doc.days || {}).sort(); if (keys.length > 90) keys.slice(0, keys.length - 90).forEach(k => delete doc.days[k]);
   S.qsj.me = doc; S.qsj.rev = (S.qsj.rev || 0) + 1;
-  const p = B.qsjSave(S.user.uid, { name: doc.name, pts: doc.pts | 0, n: doc.n | 0, g: doc.g | 0, days: doc.days }).then(() => { S.qsj.at = 0; }).catch(e => toast("Partie non enregistrée : " + ((e && e.message) || "erreur"), { ms: 4000 }));
+  // l'écran se met à jour même si l'envoi échoue (avant : une erreur de Firebase bloquait tout)
+  let p = null; const fail = e => toast("Partie non enregistrée : " + ((e && e.message) || "erreur"), { ms: 4000 });
+  try { p = Promise.resolve(B.qsjSave(S.user.uid, { name: doc.name, pts: doc.pts | 0, n: doc.n | 0, g: doc.g | 0, days: toDb(doc.days) })).then(() => { S.qsj.at = 0; }).catch(fail); } catch (e) { fail(e); }
   changed("qsj"); return p;
 }
 function play(k, guess) {
@@ -195,6 +200,25 @@ function tileHTML(t, i, open, flip, mult) {
   if (!open) return '<li class="qsjt"><span class="qsjb"><b>?</b></span><span class="qsjtx"><small>Indice ' + (i + 1) + "</small>Trouvé ici : " + (5 - i) * mult + " pt" + ((5 - i) * mult > 1 ? "s" : "") + "</span></li>";
   return '<li class="qsjt on' + (flip ? " flip" : "") + '"><span class="qsjb' + (t.sil ? " sil" : "") + '">' + (t.img ? '<img src="' + esc(t.img) + '" alt="" loading="lazy">' : "<i>" + esc(t.ic || "•") + "</i>") + '</span><span class="qsjtx"><small>Indice ' + (i + 1) + "</small>" + esc(t.t) + "</span></li>";
 }
+// 21 nov. (demande de Jose) : les tuiles sont des cartes posées sur un ring ; on les retourne une à une, les indices s'écrivent dessous
+const RING = '<svg class="qsjrsvg" viewBox="0 0 360 230" aria-hidden="true" preserveAspectRatio="none">' +
+  '<defs><linearGradient id="qsjmat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfd6e3"/><stop offset="1" stop-color="#f1f3f8"/></linearGradient>' +
+  '<linearGradient id="qsjapr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b8101a"/><stop offset="1" stop-color="#5c060b"/></linearGradient></defs>' +
+  '<polygon points="40,46 320,46 356,196 4,196" fill="url(#qsjmat)"/><polygon points="4,196 356,196 356,228 4,228" fill="url(#qsjapr)"/>' +
+  '<text x="180" y="219" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="15" fill="#fff" letter-spacing="3">QUI SUIS-JE ?</text>' +
+  '<g stroke-linecap="round" fill="none"><path d="M40 30H320" stroke="#e5322d" stroke-width="3"/><path d="M40 38H320" stroke="#fff" stroke-width="3"/><path d="M40 46H320" stroke="#2f6fe0" stroke-width="3"/>' +
+  '<path d="M40 30L4 170M40 38L4 183M40 46L4 196" stroke="#cfd6e3" stroke-width="2.2"/><path d="M320 30L356 170M320 38L356 183M320 46L356 196" stroke="#cfd6e3" stroke-width="2.2"/></g>' +
+  '<rect x="36" y="18" width="8" height="32" rx="2" fill="#2a2d36"/><rect x="316" y="18" width="8" height="32" rx="2" fill="#2a2d36"/>' +
+  '<rect x="0" y="150" width="9" height="50" rx="2" fill="#2a2d36"/><rect x="351" y="150" width="9" height="50" rx="2" fill="#2a2d36"/>' +
+  '<g fill="none" stroke-linecap="round"><path d="M9 152H351" stroke="#e5322d" stroke-width="3.5" opacity=".95"/><path d="M9 166H351" stroke="#fff" stroke-width="3.5" opacity=".95"/><path d="M9 180H351" stroke="#2f6fe0" stroke-width="3.5" opacity=".95"/></g></svg>';
+function ringHTML(tiles, shown, flipKey, mult, k) {
+  return '<div class="qsjring" role="list" aria-label="Les 5 cartes indices">' + RING + tiles.map((t, i) => {
+    const open = i < shown, flip = flipKey === k + (i + 1);
+    return '<div class="qsjc c' + i + (open ? " on" : "") + (flip ? " flip" : "") + '" role="listitem" aria-label="' + (open ? "Indice " + (i + 1) + " : " + esc(t.t) : "Carte " + (i + 1) + " cachée, " + (5 - i) * mult + " points si tu trouves ici") + '"><div class="qsjci">' +
+      '<div class="qsjcb"><b>?</b><small>' + (5 - i) * mult + " pt" + ((5 - i) * mult > 1 ? "s" : "") + "</small></div>" +
+      '<div class="qsjcf' + (t.sil ? " sil" : "") + '"><span class="qsjcn">' + (i + 1) + "</span>" + (t.img ? '<img src="' + esc(t.img) + '" alt="" loading="lazy">' : "<i>" + esc(t.ic || "•") + "</i>") + "</div></div></div>";
+  }).join("") + "</div>";
+}
 const midnight = () => { const m = 1440 - parisMin(); return Math.floor(m / 60) + " h " + String(m % 60).padStart(2, "0"); };
 export function qsjView(tab) {
   if (!S.user) return '<section class="qsj"><a class="uvback" href="#/jeux">‹ Jeux</a><h1>Qui suis-je ?</h1><p class="jxlead">Connecte-toi pour jouer : 3 catcheurs à deviner chaque jour, et un classement entre membres.</p><a class="btn" href="#/connexion">Se connecter</a></section>';
@@ -210,7 +234,7 @@ export function qsjView(tab) {
   if (!p) h += '<p class="qsjempty">Pas de catcheur pour ce niveau aujourd’hui.</p>';
   else {
     const done = s[1], shown = done ? 5 : s[0];
-    h += '<ol class="qsjtiles">' + p.tiles.map((t, i) => tileHTML(t, i, i < shown, S.qsjFlip === k + (i + 1), mult)).join("") + "</ol>";
+    h += ringHTML(p.tiles, shown, S.qsjFlip, mult, k) + '<ol class="qsjtiles">' + p.tiles.map((t, i) => i < shown ? tileHTML(t, i, true, S.qsjFlip === k + (i + 1), mult) : "").reverse().join("") + "</ol>";
     if (!done) h += '<form class="qsjf" data-form="qsjguess" data-k="' + k + '" autocomplete="off"><label class="sr-only" for="qsjin">Qui est-ce ?</label><input id="qsjin" name="g" type="search" placeholder="Qui suis-je ? Écris un nom…" autocomplete="off" spellcheck="false"><div id="qsjsug" class="qsjsug"></div>' +
       '<div class="qsjbt"><button class="btn primary">Valider</button><button type="button" class="btn" data-act="qsjpass" data-k="' + k + '">Je passe</button></div>' + ((s[3] || []).length ? '<p class="qsjno">Déjà essayé : ' + s[3].map(esc).join(", ") + "</p>" : "") + "</form>";
     else { const won = s[1] === 1, w = S.qsjWin && S.qsjWin.k === k;

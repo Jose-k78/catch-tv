@@ -2,6 +2,15 @@
  "updated": "2026-11-21",
  "items": [
   {
+   "id": "2026-11-21-qsj2",
+   "d": "2026-11-21",
+   "t": "« Qui suis-je ? » réparé",
+   "txt": [
+    "🔧 Les cartes se retournent de nouveau : ta partie n’était pas enregistrée et l’écran restait bloqué après le premier essai.",
+    "🃏 Nouvelle présentation : les 5 indices sont des cartes posées sur un ring. Elles se retournent une par une, et les indices s’écrivent en dessous (le plus récent en haut)."
+   ]
+  },
+  {
    "id": "2026-11-21-qsj",
    "d": "2026-11-21",
    "t": "Nouveau jeu : « Qui suis-je ? »",
