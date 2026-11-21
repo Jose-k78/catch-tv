@@ -1,5 +1,5 @@
 {
- "at": "2026-11-21T02:48:29.168Z",
+ "at": "2026-11-21T03:49:28.392Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/61082-wwe-crown-jewel-les-commentateurs-ne-seront-pas-en-arabie-saoudite": "2026-11-07",
@@ -364,10 +364,19 @@
   "fr:2026-11-20": "2026-11-20",
   "a:https://www.catch-newz.com/wwe/newz/61499-keanu-carver-place-en-garde-preventive-dans-lattente-de-son-proces": "2026-11-21",
   "a:https://www.catch-newz.com/wwe/resultats/61495-wwe-smackdown-20-novembre-2026": "2026-11-21",
-  "a:https://www.catch-newz.com/wwe/newz/61502-hacksaw-jim-duggan-cinquieme-membre-de-la-team-usa-pour-les-survivor-series": "2026-11-21"
+  "a:https://www.catch-newz.com/wwe/newz/61502-hacksaw-jim-duggan-cinquieme-membre-de-la-team-usa-pour-les-survivor-series": "2026-11-21",
+  "a:https://www.catch-newz.com/wwe/newz/61503-gunther-subit-sa-premiere-defaite-en-match-simple-sans-titre-en-jeu-a-la-wwe": "2026-11-21"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
+   {
+    "cat": "info",
+    "title": "📰 Nouvelle info · Catch-Newz",
+    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "1 nouvelle info"
+   },
    {
     "cat": "info",
     "title": "📰 Nouvelle info · Catch-Newz",
