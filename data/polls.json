@@ -1,6 +1,47 @@
 {
-  "updated": "2026-11-20",
+  "updated": "2026-11-21",
   "items": [
+    {
+      "id": "p-20261121-team-usa",
+      "d": "2026-11-21",
+      "type": "",
+      "k": "WWE",
+      "q": "Survivor Series : qui sera le 5e membre de la Team USA ?",
+      "opts": [
+        "Hacksaw Jim Duggan",
+        "Une star du roster actuel"
+      ],
+      "other": true,
+      "end": "2026-11-28"
+    },
+    {
+      "id": "p-20261121-rich-swann",
+      "d": "2026-11-21",
+      "type": "",
+      "k": "TNA",
+      "q": "Rich Swann va quitter la TNA : où doit-il signer ?",
+      "opts": [
+        "AEW",
+        "WWE",
+        "Rester indépendant"
+      ],
+      "other": true,
+      "end": ""
+    },
+    {
+      "id": "p-20261121-equipe-fem",
+      "d": "2026-11-21",
+      "type": "",
+      "k": "",
+      "q": "Quelle est la plus grande équipe féminine de l'histoire ?",
+      "opts": [
+        "Crush Gals",
+        "Jumping Bomb Angels",
+        "The Kabuki Warriors"
+      ],
+      "other": true,
+      "end": ""
+    },
     {
       "id": "p-20261120-cody-heel",
       "d": "2026-11-20",
@@ -407,46 +448,6 @@
       ],
       "other": true,
       "end": ""
-    },
-    {
-      "id": "p-20261111-trick-gunther",
-      "d": "2026-11-11",
-      "type": "",
-      "k": "WWE",
-      "q": "Trick Williams a battu Gunther en dark match à Raw : il mérite un vrai match télévisé contre lui ?",
-      "opts": [
-        "Oui",
-        "Non"
-      ],
-      "other": false,
-      "end": ""
-    },
-    {
-      "id": "p-20261111-surprise",
-      "d": "2026-11-11",
-      "type": "",
-      "k": "",
-      "q": "La plus grosse surprise de l’histoire du catch ?",
-      "opts": [
-        "Le 1-2-3 Kid bat Razor Ramon (1993)",
-        "Leon Ruff bat Johnny Gargano (2020)",
-        "Kofi Kingston champion à WrestleMania 35"
-      ],
-      "other": true,
-      "end": ""
-    },
-    {
-      "id": "p-20261108-cody-wargames",
-      "d": "2026-11-08",
-      "type": "",
-      "k": "WWE",
-      "q": "Survivor Series : l’équipe du capitaine Cody Rhodes va-t-elle gagner les WarGames ?",
-      "opts": [
-        "Oui",
-        "Non"
-      ],
-      "other": false,
-      "end": "2026-11-28"
     },
     {
       "id": "p-20261108-babies",
