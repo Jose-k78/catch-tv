@@ -63,15 +63,13 @@
    "n": "American Made",
    "lg": "American Made",
    "k": "WWE",
-   "y": "depuis 2024",
-   "on": 1,
+   "y": "2024–2026",
+   "on": 0,
    "m": [
     "Chad Gable",
-    "Ivy Nile"
-   ],
-   "ex": [
     "Brutus Creed",
-    "Julius Creed"
+    "Julius Creed",
+    "Ivy Nile"
    ]
   },
   "balor-club": {
@@ -2658,8 +2656,8 @@
   "kasper-brothers": {
    "n": "The Kasper Brothers",
    "lg": "",
-   "k": "AEW",
-   "y": "depuis 2026",
+   "k": "AEW · WWE",
+   "y": "depuis 2021",
    "on": 1,
    "m": [
     "Drew Kasper",
@@ -2667,7 +2665,8 @@
    ],
    "a": [
     "The Creed Brothers",
-    "Creed Brothers"
+    "Creed Brothers",
+    "Los Hermanos Americanos"
    ]
   },
   "vanity-project": {

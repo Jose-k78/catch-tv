@@ -2001,6 +2001,64 @@
    "fin": "Bionic Elbow",
    "teams": "The Texas Outlaws (avec Dick Murdoch), America's Team (avec Magnum T.A.), The Super Powers (avec Nikita Koloff)",
    "trainer": "Joe Blanchard"
+  },
+  "Drew Kasper": {
+   "k": "AEW",
+   "era": "WWE et AEW, depuis 2021",
+   "from": "Lexington (Ohio)",
+   "al": "heel",
+   "alD": "2026-11-14",
+   "tt": [
+    {
+     "t": "NXT Tag Team Championship",
+     "k": "WWE",
+     "x": 1,
+     "id": "nxt-tt"
+    },
+    {
+     "t": "Dusty Rhodes Tag Team Classic",
+     "k": "WWE",
+     "ty": "t",
+     "y": "2022",
+     "x": 1
+    }
+   ],
+   "a": [
+    "Brutus Creed",
+    "Bruto Credo"
+   ],
+   "ht": "1,80 m",
+   "wt": "120 kg",
+   "txt": "Ex-Brutus Creed à la WWE (Diamond Mine, American Made), champion par équipes de NXT avec son frère Jacob en 2022. Contrat terminé en novembre 2026 : les Kasper Brothers débarquent à la AEW sous leurs vrais noms à Full Gear."
+  },
+  "Jacob Kasper": {
+   "k": "AEW",
+   "era": "WWE et AEW, depuis 2021",
+   "from": "Lexington (Ohio)",
+   "al": "heel",
+   "alD": "2026-11-14",
+   "tt": [
+    {
+     "t": "NXT Tag Team Championship",
+     "k": "WWE",
+     "x": 1,
+     "id": "nxt-tt"
+    },
+    {
+     "t": "Dusty Rhodes Tag Team Classic",
+     "k": "WWE",
+     "ty": "t",
+     "y": "2022",
+     "x": 1
+    }
+   ],
+   "a": [
+    "Julius Creed",
+    "Julio Credo"
+   ],
+   "ht": "1,91 m",
+   "wt": "107 kg",
+   "txt": "Ex-Julius Creed à la WWE (Diamond Mine, American Made), champion par équipes de NXT avec son frère Drew en 2022. Contrat terminé en novembre 2026 : les Kasper Brothers débarquent à la AEW sous leurs vrais noms à Full Gear."
   }
  }
 }

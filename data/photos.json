@@ -1275,7 +1275,9 @@
   "brutus-creed": {
    "f": "brutus-creed.webp",
    "n": [
-    "Brutus Creed"
+    "Drew Kasper",
+    "Brutus Creed",
+    "Bruto Credo"
    ],
    "v": [
     "brutus-creed-v2.webp",
@@ -3436,7 +3438,9 @@
   "julius-creed": {
    "f": "julius-creed.webp",
    "n": [
-    "Julius Creed"
+    "Jacob Kasper",
+    "Julius Creed",
+    "Julio Credo"
    ],
    "v": [
     "julius-creed-v2.webp",
@@ -8352,6 +8356,8 @@
   "brian-pillman-jr": "lexis-king",
   "santana": "cruz-montana",
   "mike-santana": "cruz-montana",
-  "mike-draztik": "cruz-montana"
+  "mike-draztik": "cruz-montana",
+  "drew-kasper": "brutus-creed",
+  "jacob-kasper": "julius-creed"
  }
 }
