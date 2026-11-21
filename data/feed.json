@@ -1,6 +1,24 @@
 {
- "at": "2026-11-21T17:16:42.075Z",
+ "at": "2026-11-21T18:12:14.332Z",
  "items": [
+  {
+   "t": "The Rock : ''Je serai aux Survivor Series pour dire merci''",
+   "u": "https://www.catch-newz.com/wwe/newz/61508-the-rock-je-serai-aux-survivor-series-pour-dire-merci",
+   "s": "Catch-Newz",
+   "d": "2026-11-21",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "The Rock fait passer Pat McAfee à travers d'une table avant Survivor Series",
+   "u": "https://www.catch-newz.com/wwe/newz/61506-the-rock-fait-passer-pat-mcafee-a-travers-dune-table-avant-survivor-series",
+   "s": "Catch-Newz",
+   "d": "2026-11-21",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Preview : AEW Collision du 21 novembre 2026",
    "u": "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
@@ -296,6 +314,15 @@
    "tags": []
   },
   {
+   "t": "Résultats de WWE Road To Survivor Series du 19 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/61509-resultats-de-wwe-road-to-survivor-series-du-19-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-19",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
    "t": "AEW Dynamite du 18 novembre : Début du Continental Classic, le championnat TBS en jeu",
    "u": "https://www.voxcatch.fr/2026/11/19/resultats-aew-dynamite-18-novembre-2026/",
    "s": "VOXcatch",
@@ -479,29 +506,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Carte de NJPW Bound For Unbound",
-   "u": "https://www.catch-newz.com/international/newz/60618-carte-de-njpw-bound-for-unbound",
-   "s": "Catch-Newz",
-   "d": "2026-11-19",
-   "tags": [
-    "NJPW"
-   ]
-  },
-  {
-   "t": "Carte de Beyond Wrestling Open Series 255",
-   "u": "https://www.catch-newz.com/international/newz/61454-carte-de-beyond-wrestling-open-series-255",
-   "s": "Catch-Newz",
-   "d": "2026-11-19",
-   "tags": []
-  },
-  {
-   "t": "Résultats de TJPW Fall Tour 2026 - Ray Of Hope In Nagoya",
-   "u": "https://www.catch-newz.com/international/resultats/61445-resultats-de-tjpw-fall-tour-2026-ray-of-hope-in-nagoya",
-   "s": "Catch-Newz",
-   "d": "2026-11-19",
-   "tags": []
   }
  ],
  "yt": {
@@ -1311,7 +1315,10 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/newz/61508-the-rock-je-serai-aux-survivor-series-pour-dire-merci",
    "https://www.catch-newz.com/wwe/resultats/61495-wwe-smackdown-20-novembre-2026",
+   "https://www.catch-newz.com/wwe/resultats/61509-resultats-de-wwe-road-to-survivor-series-du-19-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61506-the-rock-fait-passer-pat-mcafee-a-travers-dune-table-avant-survivor-series",
    "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61496-preview-aaa-lucha-libre-21-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61491-preview-wwe-smackdown-20-novembre-2026",
@@ -1607,14 +1614,11 @@
    "https://www.catch-newz.com/international/resultats/61211-resultats-de-gcw-the-crossroads-2026",
    "https://www.catch-newz.com/international/resultats/61208-resultats-du-jour-12-de-dg-the-gate-of-victory-2026",
    "https://www.catch-newz.com/wwe/newz/61224-une-longue-absence-pour-randy-orton-apres-crown-jewel",
-   "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026",
-   "https://www.catch-newz.com/wwe/resultats/61193-wwe-evolve-4-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61209-resultats-de-vcw-queen-of-the-commonwealth-2026",
-   "https://www.catch-newz.com/wwe/newz/61221-mason-rook-fait-son-retour-et-attaque-le-champion-nxt-grayson-waller"
+   "https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "8 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
