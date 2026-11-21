@@ -449,7 +449,8 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
     données dans le fuseau du show (`h` + `tz`) : le changement d'heure est calculé par l'app ;
   - compléter `data/finishers.json` (finisher actuel de chaque catcheur des rosters, d'après Wikipédia ; ne pas écraser ceux déjà là) ;
   - Mode Univers : compléter `data/statuts.json` (décès vérifiés dans `dead` avec l'année, retraites dans `ret`, commentateurs / managers / GM dans
-    `staff`) et `data/gimmicks.json` (surnom + type de personnage) ; ne jamais retirer une entrée, ne jamais mettre un décès non vérifié ;
+    `staff`, années de naissance vérifiées dans `born` — 423 au 21 nov., ajouter ~20 catcheurs des rosters par soir, seulement des années sûres)
+    et `data/gimmicks.json` (surnom + type de personnage) ; ne jamais retirer une entrée, ne jamais mettre un décès non vérifié ;
   - ne jamais toucher à `data/links.json` (liens du modo), aux images ni à `data/logos.json` / `data/photos.json`.
 
 ## Données et mises à jour automatiques
