@@ -1,5 +1,5 @@
 {
- "at": "2026-11-20T23:17:40.820Z",
+ "at": "2026-11-21T00:18:27.933Z",
  "items": [
   {
    "t": "Preview : AAA Lucha Libre du 21 novembre 2026",
@@ -9,6 +9,15 @@
    "tags": [
     "WWE",
     "AAA"
+   ]
+  },
+  {
+   "t": "Keanu Carver placé en garde préventive dans l’attente de son procès",
+   "u": "https://www.catch-newz.com/wwe/newz/61499-keanu-carver-place-en-garde-preventive-dans-lattente-de-son-proces",
+   "s": "Catch-Newz",
+   "d": "2026-11-21",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -489,15 +498,6 @@
    "tags": [
     "AEW",
     "NJPW"
-   ]
-  },
-  {
-   "t": "MJF lance un challenge à Will Ospreay pour AEW Worlds End",
-   "u": "https://www.catch-newz.com/aew/newz/61455-mjf-lance-un-challenge-a-will-ospreay-pour-aew-worlds-end",
-   "s": "Catch-Newz",
-   "d": "2026-11-19",
-   "tags": [
-    "AEW"
    ]
   }
  ],
@@ -1271,6 +1271,7 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/61491-preview-wwe-smackdown-20-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61496-preview-aaa-lucha-libre-21-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61499-keanu-carver-place-en-garde-preventive-dans-lattente-de-son-proces",
    "https://www.catch-newz.com/wwe/resultats/61487-resultats-et-streaming-wwe-evolve-18-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61486-tna-impact-19-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61446-preview-roh-du-19-novembre-2026",
@@ -1567,12 +1568,11 @@
    "https://www.catch-newz.com/international/resultats/61204-resultats-de-god-of-the-ring-anniversary-iii",
    "https://www.catch-newz.com/international/newz/61219-romeo-malverde-santos-escobar-remporte-le-oceanic-championship",
    "https://www.catch-newz.com/wwe/newz/61218-john-cena-recrute-une-premiere-catcheuse-pour-le-cena-classic-a-wwe-nxt",
-   "https://www.catch-newz.com/international/resultats/61176-resultats-de-cmll-lunes-clasico-du-9-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61206-resultats-de-814-wrestling-dealers-choice"
+   "https://www.catch-newz.com/international/resultats/61176-resultats-de-cmll-lunes-clasico-du-9-novembre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "7 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
