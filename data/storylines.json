@@ -1,7 +1,40 @@
 {
-  "updated": "2026-11-20",
+  "updated": "2026-11-21",
   "note": "Une storyline par jour (la plus récente en premier) : grandes histoires, rivalités, anecdotes de coulisses, faits marquants. txt = paragraphes écrits en français à partir des sources ; v = vidéos officielles ; q = recherches sur la chaîne officielle.",
   "items": [
+    {
+      "id": "crush-gals",
+      "d": "2026-11-21",
+      "type": "Grande histoire",
+      "t": "Les Crush Gals : Chigusa Nagayo et Lioness Asuka, les idoles qui ont fait exploser le catch féminin au Japon",
+      "k": "Stardom",
+      "years": "1983-2005",
+      "hook": "Dans les années 80, deux jeunes catcheuses de l'All Japan Women ont rempli les salles, vendu des disques et attiré des millions de téléspectateurs : bien avant la Stardom, il y avait les Crush Gals.",
+      "txt": [
+        "Tout commence le 4 janvier 1983 à l'All Japan Women's Pro-Wrestling (AJW) : Chigusa Nagayo et Lioness Asuka, deux jeunes lutteuses arrivées en 1980, s'affrontent en simple. Le public adore leur duel, et la direction décide de les réunir en équipe. Leur nom vient d'un surnom d'Akira Maeda (« Crush ») et d'un magazine pour jeunes filles, Gals.",
+        "Le 25 août 1984, à Korakuen Hall, elles battent les Dynamite Girls (Jumbo Hori et Yukari Omori) et deviennent championnes WWWA World Tag Team, le grand titre par équipe de l'AJW. Le même mois sort leur chanson « Bible of Fire », vendue à plus de 100 000 exemplaires : les Crush Gals deviennent de vraies idoles, adorées surtout par les adolescentes qui remplissent les salles.",
+        "Il leur fallait des méchantes à la hauteur : ce sera Dump Matsumoto et son clan Gokuaku Domei. À partir de 1985, leurs matchs diffusés sur Fuji TV dépassent régulièrement 12 points d'audience. Le 28 août 1985 à l'Osaka-Jo Hall, Nagayo perd un match cheveux contre cheveux face à Dump et doit se faire raser la tête, une image restée célèbre. Elle prend sa revanche en 1986 en coupant à son tour les cheveux de sa grande ennemie.",
+        "Les deux partenaires sont aussi rivales : en 1987, Asuka remporte face à Nagayo un long match pour devenir challenger au titre WWWA en simple, souvent cité parmi les meilleurs combats de l'histoire de l'AJW. Nagayo devient ensuite championne du monde WWWA et est élue MVP de l'AJW en 1987. Au total, les Crush Gals tiennent quatre fois les ceintures WWWA par équipe.",
+        "Mais l'AJW impose alors à ses catcheuses de prendre leur retraite vers 26 ans. Nagayo fait ses adieux le 6 mai 1989 à WrestleMarinepiad '89, aux côtés d'Asuka, et sa partenaire, alors championne du monde, la suit quelques semaines plus tard. Elles reviendront toutes les deux dans les années 90 : Nagayo fonde GAEA Japan en 1995, Asuka y arrive d'abord en méchante avant de reformer l'équipe sous le nom de « Crush 2000 ».",
+        "Le dernier match des Crush Gals a lieu le 3 avril 2005 pour les 10 ans de GAEA, une victoire. Asuka se retire, et Nagayo perd quelques jours plus tard son dernier grand match contre son élève Meiko Satomura. Aujourd'hui, de Mayu Iwatani à IYO SKY, toutes les stars du joshi moderne marchent sur la route ouverte par ces deux idoles."
+      ],
+      "key": "Le 28 août 1985, Chigusa Nagayo perd son match cheveux contre cheveux face à Dump Matsumoto et se fait raser la tête devant un public en larmes : le sommet de la folie Crush Gals.",
+      "v": [],
+      "q": [
+        "Crush Gals vs Dump Matsumoto hair match 1985",
+        "Chigusa Nagayo vs Lioness Asuka 1987"
+      ],
+      "src": [
+        {
+          "n": "Wikipedia (anglais) – Crush Gals",
+          "u": "https://en.wikipedia.org/wiki/Crush_Gals"
+        },
+        {
+          "n": "Wikipedia (anglais) – Chigusa Nagayo",
+          "u": "https://en.wikipedia.org/wiki/Chigusa_Nagayo"
+        }
+      ]
+    },
     {
       "id": "ss-2011-rock-punk",
       "d": "2026-11-20",
