@@ -1,5 +1,6 @@
 // Mode Univers v2 : la carte du show (tous les types de match, enjeux, fins, consignes, open challenge, segments, tournois,
 // traditions, mallette), le show en direct depuis la Gorilla position, le rapport détaillé, les tournois, les traditions, le draft.
+import { qWord } from "./vn.js";
 import { ACT, FORM } from "../state.js";
 import { esc, toast, modal } from "../util.js";
 import { STYLES, MONTHS, dayLabel, shortDate, dateOf, fmtM, fmtK, stars, clamp, rnd, pick, uid } from "./world.js";
@@ -43,7 +44,7 @@ export function bookView(id) {
     '<div class="uvtile uvest"><div class="uvrow"><span class="uvgrow">Note estimée</span><b class="uvstar">' + (est ? stars(est) : "—") + '</b></div><div class="uvst2 wide"><span>Durée ' + tm + " / " + len + " min</span>" + bar(tm / len * 100, tm > len + 10 ? "#ff8a7e" : tm < len - 40 ? "#ffd27a" : "#63d69c") + "<b>" + (tm > len ? "+" + (tm - len) : tm - len) + "</b></div>" +
     (tips.length ? '<ul class="uvtips">' + tips.map(t => "<li>" + esc(t[1]) + "</li>").join("") + "</ul>" : "") + "</div>" +
     '<details class="uvdet"><summary>Réglages du show</summary><form class="uvform" id="uvshowset" data-ev="' + esc(ev.id) + '" onsubmit="return false">' +
-    (comm.length ? '<div class="uvfld">Commentateurs (3 au plus)<div class="uvchips wrap">' + comm.map(s => '<label class="uvspot"><input type="checkbox" name="comm" value="' + esc(s.id) + '"' + (sel.indexOf(s.id) >= 0 ? " checked" : "") + "><span>" + esc(s.n) + " (" + s.q + ")</span></label>").join("") + "</div></div>" : '<p class="uvko">Pas de commentateur dans ton staff (Ma fédé › Staff).</p>') +
+    (comm.length ? '<div class="uvfld">Commentateurs (3 au plus)<div class="uvchips wrap">' + comm.map(s => '<label class="uvspot"><input type="checkbox" name="comm" value="' + esc(s.id) + '"' + (sel.indexOf(s.id) >= 0 ? " checked" : "") + "><span>" + esc(s.n) + " (" + qWord(s.q) + ")</span></label>").join("") + "</div></div>" : '<p class="uvko">Pas de commentateur dans ton staff (Ma fédé › Staff).</p>') +
     '<label class="uvfld">Entrées<select name="ent">' + ENT.map((x, i) => '<option value="' + i + '"' + ((ev.ent || 0) === i ? " selected" : "") + ">" + esc(x[0]) + (x[1] ? " (" + fmtK(x[1]) + ")" : "") + "</option>").join("") + "</select></label>" +
     (isBig(ev) ? '<label class="uvfld">Salle<select name="venue">' + VENUES.map((v, i) => '<option value="' + i + '"' + ((ev.venue != null ? ev.venue : f.venue) === i ? " selected" : "") + ">" + esc(v[0]) + " · " + v[1].toLocaleString("fr-FR") + " places · " + fmtK(v[2]) + "</option>").join("") + "</select></label>" +
       '<label class="uvfld">Ville<select name="city">' + CITIES.map((x, i) => '<option value="' + i + '"' + ((ev.city != null ? ev.city : f.home) === i ? " selected" : "") + ">" + esc(x[0]) + (x[1] >= 4 ? " (public brûlant)" : x[1] <= -1 ? " (public froid)" : "") + "</option>").join("") + "</select></label>" +

@@ -1,6 +1,7 @@
 // Mode Univers v2 : la vie du monde, jour après jour — storylines (aussi celles de l'IA), relations, push du public, demandes des
 // catcheurs, âge et progression, mentors, retraites et tournées d'adieu, événements hors du ring, IA (signatures, licenciements, stratégie),
 // partenariats, médias, salaires et revenus, objectifs, réputation, Hall of Fame, magazine TCC 100, résumé de la semaine.
+import { promiseBroken } from "./vn.js";
 import { rivalWeek } from "./goals.js";
 import { clamp, rnd, pick, uid, dateOf, dayLabel, shortDate, fmtK, fmtM, stars, salOf, indie, trainee } from "./world.js";
 import { CELEBS, SPONS, MAGN, CITIES, TOURS } from "./data.js";
@@ -126,7 +127,7 @@ export function lifeWeekly(G) {
   const bq = staffQ(G, "biz");
   if (rnd() < 0.14 + bq / 400) { const pay = Math.round((20 + f.pop * 1.8) * (1 + bq / 200) / 5) * 5, min = Math.round(f.aud0 * 0.9 * 100) / 100; mail(G, { k: "sponsor", from: pick(SPONS), role: "Sponsor", c: "#ffd27a", ini: "SP", subj: "Offre de pub : " + pay + " k$ par show", body: "Nous voulons notre logo sur ton ring pendant 6 mois.\n" + pay + " k$ par show, si l’audience reste au-dessus de " + fmtM(min) + ".", pay: pay, min: min }); }
   // promesses ratées
-  (G.prom || []).forEach(p => { if (p.st === "cours" && p.until < G.day) { p.st = "ratee"; G.rep = clamp((G.rep || 50) - 1); const w = G.W[p.w]; if (w) { w.mor = clamp(w.mor - 20); say(G, w, { k: "info", c: "#ff8a7e", subj: "Tu m’avais promis…", body: "Tu n’as pas tenu ta promesse (" + p.txt.toLowerCase() + "). Je m’en souviendrai.", imp: false }); } } });
+  (G.prom || []).forEach(p => { if (p.st === "cours" && p.until < G.day) { p.st = "ratee"; promiseBroken(G, p); G.rep = clamp((G.rep || 50) - 1); const w = G.W[p.w]; if (w) { w.mor = clamp(w.mor - 20); say(G, w, { k: "info", c: "#ff8a7e", subj: "Tu m’avais promis…", body: "Tu n’as pas tenu ta promesse (" + p.txt.toLowerCase() + "). Je m’en souviendrai.", imp: false }); } } });
   // relations : clans, mentors, amitiés qui créent des tag teams, rivalités qui explosent
   (G.clans || []).forEach(c => c.m.forEach((a, i) => c.m.slice(i + 1).forEach(b => relAdd(G, a, b, 1))));
   Object.keys(G.ment || {}).forEach(y => { const v = G.ment[y], Y = G.W[y], V = G.W[v]; if (!Y || !V || Y.fed !== G.me || V.fed !== G.me) { delete G.ment[y]; return; } relAdd(G, y, v, 3); [1, 2, 3].forEach(i => { Y.st[i] = clamp(Y.st[i] + 0.15 + V.st[i] / 1000); }); V.mor = clamp(V.mor + ((V.pers || []).indexOf("Mentor") >= 0 ? 2 : 0.5)); });

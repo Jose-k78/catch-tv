@@ -1,5 +1,6 @@
 // Mode Univers v2 : écrans des personnes — recherche poussée et comparaison, négociation en direct, rompre un contrat,
 // staff (et légendes : staff, apparition, caméo), gimmicks, relations.
+import { known, grade, relWord, qWord } from "./vn.js";
 import { ACT, FORM } from "../state.js";
 import { esc, toast, modal } from "../util.js";
 import { ST, STYLES, ROLES, dayLabel, shortDate, fmtK, recTxt, clamp } from "./world.js";
@@ -15,7 +16,8 @@ const fedN = (G, k) => k ? ((G.F[k] || {}).n || k) : "Libre";
 const IL = w => w && w.sx === "f" ? "Elle" : "Il", LE = w => w && w.sx === "f" ? "la" : "le";
 const moodTxt = (w, sc) => sc >= 1 ? [IL(w) + " signerait tout de suite", "ok"] : sc >= -1.5 ? [IL(w) + " hésite : encore un effort", "mid"] : ["Pas d’accord du tout", "ko"];
 // sans recruteur, on ne connaît que des stats approximatives des catcheurs des autres
-export const statTxt = (G, w, i) => w.fed === G.me || myStaff(G, "scout").some(s => s.q >= 55) ? String(w.st[i]) : "≈" + Math.round(w.st[i] / 10) * 10;
+// infos cachées (21 nov.) : des mots, jamais de chiffres ; « ? » tant que ton staff ne le connaît pas
+export const statTxt = (G, w, i) => known(G, w) ? grade(w.st[i]) : "?";
 export function signal(G, w) {
   if (w.ret) return ["Légende", "leg"]; if (w.staff) return ["Dans un staff", "off"];
   if (w.nc > G.day) return ["Libre le " + shortDate(w.nc), "off"];
@@ -98,7 +100,7 @@ export function negoView(id) {
   const O = U.f.nego[id] = U.f.nego[id] || { sal: w.fed === G.me && w.ct ? Math.max(w.ct.sal, N.base) : N.base, dur: 2, role: (w.ct && w.ct.role) || (w.pop > 75 ? "me" : w.pop > 55 ? "up" : "mid"), exc: true, acc: {}, bonus: 0 };
   const sc = negScore(G, id, O), md = moodTxt(w, sc);
   const body = back + '<div class="uvfhead">' + face(G, w, 64) + '<div class="uvgrow"><h2>' + esc(w.n) + "</h2><small>" + esc(fedN(G, w.fed)) + " · popularité " + Math.round(w.pop) + " · " + (w.pers || []).join(", ") + "</small><small>Il demande environ <b>" + fmtK(N.base) + "</b> par an</small></div></div>" +
-    '<div class="uvst2 wide"><span>Patience de l’agent</span>' + bar(N.pat, N.pat > 50 ? "#63d69c" : N.pat > 25 ? "#ffd27a" : "#ff8a7e") + "<b>" + N.pat + "</b></div>" +
+    (U.negoScene ? U.negoScene(G, w, N) : "") + '<p class="uvpat ' + (N.pat > 50 ? "ok" : N.pat > 25 ? "mid" : "ko") + '">' + (w.fed === G.me ? "" : "L’agent ") + (N.pat > 50 ? "reste patient." : N.pat > 25 ? "commence à s’impatienter." : "est à bout de patience !") + "</p>" +
     (N.riv.length ? '<div class="uvtile"><div class="uvth">Les autres offres <i>jusqu’au ' + esc(shortDate(N.until)) + "</i></div>" + N.riv.map(r => '<div class="uvline">' + crest(G, r.fed, 26) + '<span class="uvgrow">' + esc((G.F[r.fed] || {}).n || "") + "</span><b>" + fmtK(r.sal) + "/an</b></div>").join("") + "</div>" : "") +
     '<div class="uvchat" aria-live="polite">' + N.log.slice(-10).map(m => '<div class="uvbub ' + (m[0] === "me" ? "me" : m[0] === "riv" ? "riv" : "him") + '">' + esc(m[1]) + "</div>").join("") + "</div>" +
     (N.done ? '<p class="uvdone" role="status">' + (w.fed === G.me && w.ct && w.ct.end > G.day + 300 ? "Contrat signé." : "Négociation terminée.") + "</p>" :
@@ -157,7 +159,7 @@ ACT.uvrel = el => {
 // ---------- Ma fédé › Staff ----------
 export function staffBody(G) {
   const f = meF(G), mine = myStaff(G), R = roster(G).filter(w => w.fed === G.me), role = U.f.srole || "comm";
-  const S = s => '<div class="uvcard"><div class="uvrow">' + (s.pic ? '<img class="uvav" src="' + esc(s.pic) + '" alt="" style="width:40px;height:40px">' : '<span class="uvav ini" style="width:40px;height:40px;background:#6fb3ff">' + esc(s.n.split(" ").map(x => x[0]).join("").slice(0, 2)) + "</span>") + '<div class="uvgrow"><b>' + esc(s.n) + (s.real ? ' <span class="uvtag" style="background:#ffd27a">Vrai</span>' : "") + "</b><small>" + esc(SROLE[s.role][0]) + " · " + fmtK(s.sal) + " par an</small></div><span class=\"uvnote\">" + s.q + "<small>QUALITÉ</small></span></div>" + bar(s.q, "#6fb3ff") +
+  const S = s => '<div class="uvcard"><div class="uvrow">' + (s.pic ? '<img class="uvav" src="' + esc(s.pic) + '" alt="" style="width:40px;height:40px">' : '<span class="uvav ini" style="width:40px;height:40px;background:#6fb3ff">' + esc(s.n.split(" ").map(x => x[0]).join("").slice(0, 2)) + "</span>") + '<div class="uvgrow"><b>' + esc(s.n) + (s.real ? ' <span class="uvtag" style="background:#ffd27a">Vrai</span>' : "") + "</b><small>" + esc(SROLE[s.role][0]) + " · " + fmtK(s.sal) + " par an</small></div><span class=\"uvnote uvnotew\">" + qWord(s.q) + "<small>NIVEAU</small></span></div>" +
     (s.fed === G.me ? (s.role === "mgr" ? '<label class="uvmini">Manager de<select data-act="uvmgr" data-s="' + esc(s.id) + '"><option value="">Personne</option>' + R.map(w => '<option value="' + esc(w.id) + '"' + (s.w === w.id ? " selected" : "") + ">" + esc(w.n) + "</option>").join("") + "</select></label>" : "") + '<button type="button" class="uvbtn sm ghost" data-act="uvsfire" data-s="' + esc(s.id) + '">Se séparer</button>' : '<button type="button" class="uvbtn sm pri" data-act="uvshire" data-s="' + esc(s.id) + '">Engager</button>') + "</div>";
   const market = Object.values(G.staff).filter(s => !s.fed && s.role === role).sort((a, b) => b.q - a.q);
   const legs = Object.values(G.W).filter(w => w.ret && w.leg && !w.staff).sort((a, b) => b.pop - a.pop).slice(0, 12);
@@ -217,7 +219,7 @@ ACT.uvgim = el => {
 // ---------- relations (fiche) ----------
 export function relBody(G, w) {
   const L = relsOf(G, w.id).filter(r => G.W[r.id]), fr = L.filter(r => r.v > 0).slice(0, 8), en = L.filter(r => r.v < 0).reverse().slice(0, 8);
-  const row = r => '<a class="uvw" href="#/univers/c/' + esc(r.id) + '/r">' + face(G, G.W[r.id], 32) + '<span class="uvgrow"><b>' + esc(wn(G, r.id)) + '</b><span class="uvrelb ' + (r.v > 0 ? "f" : "e") + '"><i style="width:' + Math.abs(r.v) + '%"></i></span></span><b class="' + (r.v > 0 ? "uvok" : "uvko") + '">' + (r.v > 0 ? "+" : "") + Math.round(r.v) + "</b></a>";
-  return '<p class="uvsm">Faire équipe, être dans le même clan ou avoir un mentor rapproche. Les feuds, les botchs et les bagarres éloignent. À +90, une tag team se crée toute seule.</p><h3 class="uvh3">Amis</h3>' + (fr.length ? fr.map(row).join("") : '<p class="uvempty">Pas encore d’ami proche.</p>') + '<h3 class="uvh3">Rivaux</h3>' + (en.length ? en.map(row).join("") : '<p class="uvempty">Pas de rival.</p>');
+  const row = r => '<a class="uvw" href="#/univers/c/' + esc(r.id) + '/r">' + face(G, G.W[r.id], 32) + '<span class="uvgrow"><b>' + esc(wn(G, r.id)) + '</b><span class="uvrelb ' + (r.v > 0 ? "f" : "e") + '"><i style="width:' + Math.abs(r.v) + '%"></i></span></span><b class="' + (r.v > 0 ? "uvok" : "uvko") + '">' + relWord(r.v) + "</b></a>";
+  return '<p class="uvsm">Faire équipe, être dans le même clan ou avoir un mentor rapproche. Les feuds, les botchs et les bagarres éloignent. Quand deux catcheurs deviennent très proches, une tag team se crée toute seule.</p><h3 class="uvh3">Amis</h3>' + (fr.length ? fr.map(row).join("") : '<p class="uvempty">Pas encore d’ami proche.</p>') + '<h3 class="uvh3">Rivaux</h3>' + (en.length ? en.map(row).join("") : '<p class="uvempty">Pas de rival.</p>');
 }
 export { why };

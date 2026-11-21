@@ -17,6 +17,7 @@ import { fedView, bureauView } from "../univers/ui5.js";
 import { decideView } from "../univers/ui6.js";
 import { newView, setupView } from "../univers/setup.js";
 import { draftView } from "../univers/ui7.js";
+import { sceneView, telView } from "../univers/ui8.js";
 import { kfy } from "../univers/dna.js";
 
 export const univOn = () => !!S.realAdmin;
@@ -58,6 +59,8 @@ function route(a, b, c) {
     case "bureau": return bureauView(b);
     case "decide": return decideView();
     case "draft": return draftView();
+    case "scene": return sceneView();
+    case "tel": return telView(b);
   }
   return homeView();
 }

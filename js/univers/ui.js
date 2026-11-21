@@ -16,6 +16,7 @@ import { U, go, redraw, persist, shell, tabs, chips, face, crest, mailAv, wnH, t
 import { searchBody, statTxt, signal, legendBox, relBody } from "./ui3.js";
 import { hofBody, magBody, encBody, homeExtra, tutoCheck } from "./ui5.js";
 import { gmFace, gmName } from "./setup.js";
+import { known, bondWord, enWord, bondAdd } from "./vn.js";
 import { DNA, dnaMain } from "./dna.js";
 
 const pctBar = (v, c) => '<span class="uvbar"><i style="width:' + clamp(v) + "%" + (c ? ";background:" + c : "") + '"></i></span>';
@@ -59,7 +60,7 @@ export function homeView() {
   const mails = G.mail.slice().reverse().slice(0, 3), inj = R.filter(w => injured(G, w)).length, tired = R.filter(w => w.en < 50 && !injured(G, w)).length;
   const mor = R.length ? Math.round(R.reduce((s, w) => s + w.mor, 0) / R.length) : 0, prom = (G.prom || []).filter(p => p.st === "cours").length;
   const newsL = G.news.slice().reverse().slice(0, 3), cur = G.fin.cur, month = cur.tv + cur.tix + cur.merch + cur.pub - cur.sal - cur.prod;
-  const body = (U.draftTile ? U.draftTile(G) : "") + (G.gm ? '<div class="uvgmh">' + gmFace(G, 36) + '<span class="uvgrow"><small>Ton GM</small><b>' + esc(gmName(G)) + '</b></span><a class="uvgmtag" href="#/univers/bureau/rep">' + (G.mark ? "Mark" : "Smart") + (G.dna ? " · " + esc(DNA[dnaMain(G)].n) : "") + "</a></div>" : "") + (today ? '<div class="uvalert"><b>Ce soir : ' + esc(today.n) + '</b><div class="uvrow2"><a class="uvbtn pri" href="#/univers/ev/' + encodeURIComponent(today.id) + '">Préparer la carte</a><button type="button" class="uvbtn" data-act="uvautolive" data-id="' + esc(today.id) + '">Vivre en direct</button><button type="button" class="uvbtn ghost" data-act="uvautoplay" data-id="' + esc(today.id) + '">Laisser l’IA faire</button></div></div>' : "") +
+  const body = (U.draftTile ? U.draftTile(G) : "") + (U.sceneTile ? U.sceneTile(G) : "") + (G.gm ? '<div class="uvgmh">' + gmFace(G, 36) + '<span class="uvgrow"><small>Ton GM</small><b>' + esc(gmName(G)) + '</b></span><a class="uvgmtag" href="#/univers/bureau/rep">' + (G.mark ? "Mark" : "Smart") + (G.dna ? " · " + esc(DNA[dnaMain(G)].n) : "") + "</a></div>" : "") + (today ? '<div class="uvalert"><b>Ce soir : ' + esc(today.n) + '</b><div class="uvrow2"><a class="uvbtn pri" href="#/univers/ev/' + encodeURIComponent(today.id) + '">Préparer la carte</a><button type="button" class="uvbtn" data-act="uvautolive" data-id="' + esc(today.id) + '">Vivre en direct</button><button type="button" class="uvbtn ghost" data-act="uvautoplay" data-id="' + esc(today.id) + '">Laisser l’IA faire</button></div></div>' : "") +
     '<div class="uvfedrow big">' + crest(G, G.me, 46) + "<div><b>" + esc(f.n) + "</b><small>" + (rank ? rank + "e sur " + feds.length + " à l’audience" : "") + " · " + fmtK(f.money) + " en banque · réputation " + Math.round(G.rep || 50) + "</small></div></div>" +
     (U.homeV3 ? U.homeV3(G) : "") + homeExtra(G) +
     '<a class="uvtile" href="#/univers/courrier"><div class="uvth">Courrier <i>' + unread(G) + " non lu" + (unread(G) > 1 ? "s" : "") + "</i></div>" + mails.map(m => '<div class="uvline">' + mailAv(G, m, 28) + "<span class=\"uvgrow\">" + esc(m.subj) + "</span>" + (m.read ? "" : '<span class="uvdot" aria-label="non lu"></span>') + "</div>").join("") + "</a>" +
@@ -284,7 +285,7 @@ export function ficheView(id, tab) {
     "<small>" + (w.ret ? "Légende retraitée" : esc(fedN(G, w.fed)) + (w.br && w.fed === "WWE" ? " · " + esc(w.br) : "") + (w.ct ? " · " + ROLES[w.ct.role] + (w.ct.exc === false ? " · non exclusif" : "") : "")) + " · " + w.age + " ans · " + alTxt(w.al) + "</small>" +
     "<small>Popularité <b>" + Math.round(w.pop) + "</b> · Moral <b>" + (w.mor >= 65 ? "Bon" : w.mor >= 45 ? "Moyen" : "Mauvais") + "</b>" + (w.push > 0 ? ' · <span class="uvok">Push</span>' : "") + "</small>" + imgBtn("w:" + w.id) + "</div></div>" + (U.ficheX ? U.ficheX(G, w) : "") +
     '<div class="uvpers"><span>' + esc(GT[g.t] ? GT[g.t][0] : "Personnage") + "</span>" + (fin ? "<span>Finisher : " + esc(fin) + "</span>" : "") + w.pers.map(p => "<span>" + esc(p) + "</span>").join("") + (injured(G, w) ? '<span class="uvko">Blessé' + e_(w) + " jusqu’au " + esc(shortDate(w.inj.until)) + "</span>" : "") + (w.susp > G.day ? '<span class="uvko">Suspendu' + e_(w) + "</span>" : "") + (w.bench ? '<span class="uvko">Au placard</span>' : "") + (w.farewell ? '<span class="uvok">Tournée d’adieu</span>' : "") + (w.secret ? '<span class="uvok">Signature secrète</span>' : "") + "</div>" +
-    (w.ret ? "" : '<div class="uvenb"><div><span>Endurance ' + Math.round(w.en) + ' %</span><span class="uv' + R[1] + '">Risque de blessure : ' + R[0] + "</span></div>" + pctBar(w.en, enC(w.en)) + "</div>");
+    (w.ret ? "" : '<div class="uvenb"><div><span>' + enWord(w.en) + '</span><span class="uv' + R[1] + '">Risque de blessure : ' + R[0] + "</span></div>" + pctBar(w.en, enC(w.en)) + "</div>");
   const T = tabs("#/univers/c/" + encodeURIComponent(id), [["s", "Stats"], ["c", "Contrat"], ["h", "Historique"], ["r", "Relations"]].concat(mine ? [["d", "Dialogue"]] : []), tab);
   let body = head;
   if (w.ret && tab !== "h" && tab !== "r") body += legendBox(G, w);
@@ -297,7 +298,8 @@ export function ficheView(id, tab) {
       (mine ? '<p class="uvsm">Un catcheur poussé gagne plus souvent et monte plus vite. Si le public ne suit pas, il peut le rejeter.</p><button type="button" class="uvbtn sm' + (w.push > 0 ? "" : " pri") + '" data-act="uvpush" data-w="' + esc(w.id) + '">' + (w.push > 0 ? "Arrêter le push" : "Le pousser (push)") + "</button>" : "") + "</div>" +
       (w.ret ? "" : '<h3 class="uvh3">Style de catch</h3><div class="uvchips wrap">' + Object.keys(STYLES).map(s => '<button type="button" class="uvchip' + (s === sv ? " on" : "") + (s === w.sty ? " his" : "") + '" aria-pressed="' + (s === sv) + '" data-act="uvsty" data-v="' + s + '">' + STYLES[s][0] + (s === w.sty ? " (son style)" : "") + "</button>").join("") + '</div><p class="uvsm">' + esc(STYLES[sv][1]) + "</p>" + (mine && sv !== w.sty ? '<button type="button" class="uvbtn sm" data-act="uvsetsty" data-w="' + esc(w.id) + '" data-v="' + sv + '">Lui donner ce style</button>' : "")) +
       '<h3 class="uvh3">Bilan de l’année</h3><div class="uvwld"><div><b>' + w.rec[0] + "</b>Victoires</div><div><b>" + w.rec[1] + "</b>Défaites</div><div><b>" + w.rec[2] + '</b>Draws</div></div><p class="uvmut">Carrière : ' + (w.car[0] + w.rec[0]) + " victoires, " + (w.car[1] + w.rec[1]) + " défaites, " + (w.car[2] + w.rec[2]) + " draws</p>" +
-      '<h3 class="uvh3">Stats</h3>' + ST.map((n, i) => '<div class="uvst"><span>' + n + "</span>" + pctBar(w.st[i]) + "<b>" + esc(statTxt(G, w, i)) + "</b></div>").join("") +
+      '<h3 class="uvh3">Stats</h3>' + ST.map((n, i) => { const t = statTxt(G, w, i); return '<div class="uvst uvstw"><span>' + n + '</span><b class="uvgr g' + ["Faible", "Correct", "Bon", "Très bon", "Exceptionnel"].indexOf(t) + '">' + esc(t) + "</b></div>"; }).join("") +
+      (known(G, w) ? (mine ? '<p class="uvsm">' + esc(w.n) + " " + esc(bondWord(w)) + ".</p>" : "") : '<p class="uvsm">Ton staff ne connaît pas encore bien ' + esc(w.n) + '.</p><button type="button" class="uvbtn sm" data-act="uvscoutw" data-w="' + esc(w.id) + '">Demander au recruteur</button>') +
       (mine ? '<div class="uvtile"><div class="uvth">Entraînement et mentor</div><form class="uvform" data-form="uvtrain" data-w="' + esc(w.id) + '"><label class="uvfld">Travailler en priorité<select name="i"><option value="">Rien de spécial</option>' + ST.map((n, i) => '<option value="' + i + '"' + (w.train === i ? " selected" : "") + ">" + esc(n) + "</option>").join("") + "</select></label>" +
         (w.age <= 30 ? '<label class="uvfld">Mentor<select name="m"><option value="">Pas de mentor</option>' + roster(G).filter(x => x.fed === G.me && x.id !== w.id && x.age >= 32 && x.sx === w.sx).sort((a, b) => b.pop - a.pop).map(x => '<option value="' + esc(x.id) + '"' + ((G.ment || {})[w.id] === x.id ? " selected" : "") + ">" + esc(x.n) + "</option>").join("") + "</select></label>" : "") + '<button class="uvbtn">Enregistrer</button></form>' +
         '<p class="uvsm">Chaque match fait baisser la barre d’endurance, le repos la fait remonter. Plus elle est basse, plus le risque de blessure monte.</p>' +
@@ -320,7 +322,7 @@ export function ficheView(id, tab) {
   } else if (tab === "r") body += relBody(G, w);
   else if (tab === "d" && mine) {
     const C = U.f.chat[w.id] || [["him", "Salut boss. Tu voulais me voir ?"]];
-    body += '<div class="uvchat">' + C.map(m => '<div class="uvbub ' + m[0] + '">' + esc(m[1]) + "</div>").join("") + "</div>" +
+    body += (U.negoScene ? U.negoScene(G, w, { log: C }) : "") + '<div class="uvchat">' + C.map(m => '<div class="uvbub ' + m[0] + '">' + esc(m[1]) + "</div>").join("") + "</div>" +
       '<div class="uvacts">' + SAY.map(o => '<button type="button" class="uvbtn" data-act="uvsay" data-w="' + esc(w.id) + '" data-o="' + o[0] + '">' + esc(o[1]) + "</button>").join("") + "</div>";
   }
   return shell(mine ? "fede" : "monde", w.n, T, body);
@@ -331,11 +333,13 @@ ACT.uvwatch = el => { const G = U.G; G.watch = G.watch || []; if (G.watch.indexO
 ACT.uvrest = el => { const G = U.G; G.rest = G.rest || {}; G.rest[el.dataset.w] = G.day + 7; persist(); toast("Repos jusqu’au " + shortDate(G.day + 7) + " : il ne sera pas mis sur les cartes de l’IA"); redraw(); };
 ACT.uvpush = el => { const G = U.G, w = G.W[el.dataset.w]; if (!w || w.fed !== G.me) return; w.push = w.push > 0 ? 0 : 1; if (w.push) w.mor = clamp(w.mor + 5); toast(w.push ? w.n + " est poussé" + e_(w) + " !" : "Push arrêté"); persist(); redraw(); };
 FORM.uvtrain = f => { const G = U.G, id = f.dataset.w; setTrain(G, id, f.i.value); if (f.m) setMentor(G, id, f.m.value); persist(); toast("Enregistré"); redraw(); };
+// demander au recruteur (3 par jour) : les stats d'un catcheur en mots
+ACT.uvscoutw = el => { const G = U.G; G.scoutD = G.scoutD && G.scoutD.d === G.day ? G.scoutD : { d: G.day, n: 0 }; if (G.scoutD.n >= 3) { toast("Ton recruteur a déjà fait 3 rapports aujourd’hui."); return; } G.scoutD.n++; G.known = G.known || {}; G.known[el.dataset.w] = G.day + 1; persist(); toast("Rapport reçu"); redraw(); };
 ACT.uvsay = el => {
   const G = U.G, w = G.W[el.dataset.w], o = SAY.find(x => x[0] === el.dataset.o); if (!w || !o) return;
   const C = U.f.chat[w.id] || [["him", "Salut boss. Tu voulais me voir ?"]];
   C.push(["me", o[1]], ["him", o[2](w)]); U.f.chat[w.id] = C.slice(-8);
-  w.mor = clamp(w.mor + o[3]);
+  w.mor = clamp(w.mor + o[3]); bondAdd(w, o[0] === "recadrer" ? { c: -3, r: 3 } : o[3] > 0 ? { a: 2, c: 1 } : {});
   if (o[0] === "titre") G.prom.push({ id: uid("p"), w: w.id, t: "titre", until: G.day + 30, st: "cours", txt: "Match de titre avant le " + shortDate(G.day + 30) });
   if (o[0] === "main") { const nb = G.ev.filter(e => e.fed === G.me && e.kind !== "tv" && !e.done && e.day >= G.day).sort((a, b) => a.day - b.day)[0]; G.prom.push({ id: uid("p"), w: w.id, t: "main", until: nb ? nb.day : G.day + 30, st: "cours", txt: "Main event de " + (nb ? nb.n : "du prochain grand show") }); }
   if (o[0] === "repos") { G.rest = G.rest || {}; G.rest[w.id] = G.day + 7; }

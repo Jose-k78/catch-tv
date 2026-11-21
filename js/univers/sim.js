@@ -8,6 +8,7 @@ import { SPOTS, heatBetween as hb2, autoCard, runShow, simMatch, nextBig } from 
 import { lifeDaily, lifeWeekly, lifeMonthly, lifeYearly } from "./life.js";
 import { demandOf } from "./deal.js";
 import { brandDay, brandMonthly } from "./brand.js";
+import { vnDaily } from "./vn.js";
 
 export { meF, wOf, wn, roster, avail, injured, risk, teamName, mail, news, buzz, DUR, SPOTS, autoCard };
 export const playShow = runShow;
@@ -111,6 +112,7 @@ export function stepDay(G) {
   dailyBody(G);
   aiDay(G);
   brandDay(G);
+  vnDaily(G);
   lifeDaily(G);
   missionsDaily(G);
   contracts(G);

@@ -8,6 +8,7 @@ import { meF, wn, roster, avail, mail, news, buzz, FANS, relGet, relAdd, staffQ,
 import { fitOf, gimOf } from "./v2.js";
 import { dnaBonus, dnaShow, sportWinner, markFinish } from "./dna.js";
 import { pleMix } from "./brand.js";
+import { bondPerf, vnAfterShow, promiseKept } from "./vn.js";
 
 const avg = a => a.length ? a.reduce((s, x) => s + x, 0) / a.length : 0;
 const CHEM = { "aer|aer": 5, "pur|pur": 6, "tec|tec": 5, "bag|bag": 3, "aer|tec": 3, "aer|bag": 2, "bag|pur": 4, "pur|tec": 4, "aer|pur": 3, "bag|tec": 1 };
@@ -67,7 +68,7 @@ function parts(G, ev, m) {
   const mu = muCount(G, m.sides); if (mu >= 2) extra -= (mu - 1) * 3;
   const prod = staffQ(G, "prod"), comm = ev.comm && ev.comm.length ? avg(ev.comm.map(i => (G.staff[i] || {}).q || 40)) : staffQ(G, "comm");
   const staff = ev.fed === G.me && !ev.ai ? (prod ? (prod - 50) / 12 : -2) + (comm ? (comm - 50) / 15 : -3) : 1;
-  extra += dnaBonus(G, ev, m, all, D);
+  extra += dnaBonus(G, ev, m, all, D) + (ev.fed === G.me && !ev.ai ? bondPerf(G, all) : 0);   // le lien GM ↔ catcheurs (caché)
   return { ring: ring, chem: chem, story: story, crowd: crowd, dur: dur, extra: extra, staff: staff, sl: sl, mu: mu, tired: tired };
 }
 export function estimate(G, ev, it) {
@@ -448,11 +449,11 @@ function finishShow(G, ev, L) {
   (G.prom || []).forEach(p => {
     if (p.st !== "cours") return;
     const inTitle = ms.some(r => r.title && idsOf(r).indexOf(p.w) >= 0), inMain = main && idsOf(main).indexOf(p.w) >= 0, inShow = res.some(r => (r.it === "m" ? idsOf(r) : r.w).indexOf(p.w) >= 0);
-    if ((p.t === "titre" && inTitle) || (p.t === "main" && inMain && big) || (p.t === "debut" && inShow && big) || (p.t === "me" && inMain)) { p.st = "tenue"; const w = G.W[p.w]; if (w) w.mor = clamp(w.mor + 15); }
+    if ((p.t === "titre" && inTitle) || (p.t === "main" && inMain && big) || (p.t === "debut" && inShow && big) || (p.t === "me" && inMain) || (p.t === "show" && inShow)) { p.st = "tenue"; promiseKept(G, p); const w = G.W[p.w]; if (w) w.mor = clamp(w.mor + 15); }
   });
   // trophées et guerre des audiences
   ach(G, "first"); if (rating >= 80) ach(G, "r4"); if (rating >= 98) ach(G, "r5"); if (aud >= 1) ach(G, "m1");
-  missionsShow(G, ev); dnaShow(G, ev, res);
+  missionsShow(G, ev); dnaShow(G, ev, res); vnAfterShow(G, ev, res);
   if (rival) { const ra = rival.aud.length ? rival.aud[rival.aud.length - 1] : 0; if (aud > ra) { ach(G, "war"); news(G, { seg: "coul", f: "nous", t: "Guerre des audiences : " + f.n + " gagne", txt: ev.n + " (" + fmtM(aud) + ") bat " + rival.n + " (" + fmtM(ra) + ")." }); } }
 }
 // résultats d'un match de tournoi / de tradition

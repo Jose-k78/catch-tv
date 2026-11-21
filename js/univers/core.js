@@ -130,18 +130,18 @@ export const imgBtn = (key, label) => '<button type="button" class="uvimgbtn" da
 
 // ---------- cadre commun ----------
 const P = {
-  menu: "M4 7h16M4 12h16M4 17h16", g: "M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z", courrier: "M3 6h18v12H3zM3 7l9 6 9-6",
+  menu: "M4 7h16M4 12h16M4 17h16", tel: "M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM11 18h2M9 6h6", g: "M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z", courrier: "M3 6h18v12H3zM3 7l9 6 9-6",
   actu: "M4 5h13v14H5a1 1 0 0 1-1-1zM17 8h3v10a1 1 0 0 1-1 1h-2M7 9h7M7 12h7M7 15h4", buzz: "M3 10v4h3l7 4V6l-7 4zM16 9a4 4 0 0 1 0 6M19 6a8 8 0 0 1 0 12",
   monde: "M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18zM3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18", fede: "M12 3l8 3v6c0 4.5-3.4 7.7-8 9-4.6-1.3-8-4.5-8-9V6zM9 12l2 2 4-4",
   creatif: "M4 20l4-1 11-11-3-3L5 16zM14 6l3 3", activite: "M4 20V10M10 20V4M16 20v-7M3 20h18", bureau: "M4 9h16v11H4zM9 9V5h6v4M4 14h16", parties: "M6 4h9l3 3v13H6zM9 4v5h6V4M9 14h6"
 };
 export const svg = d => '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="' + d + '"></path></svg>';
-const NAV = [["g", "Accueil"], ["courrier", "Courrier"], ["actu", "Actu"], ["buzz", "Buzz"], ["monde", "Monde"], ["fede", "Ma fédé"], ["creatif", "Créatif"], ["activite", "Activité"], ["bureau", "Bureau"]];
+const NAV = [["g", "Accueil"], ["courrier", "Courrier"], ["tel", "Tél."], ["actu", "Actu"], ["buzz", "Buzz"], ["monde", "Monde"], ["fede", "Ma fédé"], ["creatif", "Créatif"], ["activite", "Activité"], ["bureau", "Bureau"]];
 export const unread = G => G.mail.filter(m => !m.read).length;
 export function shell(sec, title, tabs, body) {
   const G = U.G, hide = lsGet("ctv.univ.rail") === "0", n = unread(G);
   const rail = hide ? "" : '<nav class="uvrail" aria-label="Barre latérale du mode Univers"><button type="button" class="uvrl" data-act="uvrail" aria-label="Cacher la barre latérale">' + svg(P.menu) + "<span>Cacher</span></button>" +
-    NAV.map(x => '<a class="uvrl' + (x[0] === sec ? " on" : "") + '" href="#/univers/' + x[0] + '"' + (x[0] === sec ? ' aria-current="page"' : "") + ">" + svg(P[x[0]]) + "<span>" + x[1] + "</span>" + (x[0] === "courrier" && n ? '<b class="uvbdg">' + (n > 99 ? "99+" : n) + "</b>" : "") + "</a>").join("") +
+    NAV.map(x => '<a class="uvrl' + (x[0] === sec ? " on" : "") + '" href="#/univers/' + x[0] + '"' + (x[0] === sec ? ' aria-current="page"' : "") + ">" + svg(P[x[0]]) + "<span>" + x[1] + "</span>" + (x[0] === "courrier" && n ? '<b class="uvbdg">' + (n > 99 ? "99+" : n) + "</b>" : "") + (x[0] === "tel" && U.telBadge && U.telBadge(G) ? '<b class="uvbdg">' + U.telBadge(G) + "</b>" : "") + "</a>").join("") +
     '<a class="uvrl" href="#/univers">' + svg(P.parties) + "<span>Parties</span></a></nav>";
   const date = dayLabel(G.day) + " · Année " + dateOf(G.day).y;
   // trophées / missions réussies : la fenêtre s'ouvre sur l'accueil, le courrier, le bureau ou les résultats (jamais au milieu d'un formulaire)

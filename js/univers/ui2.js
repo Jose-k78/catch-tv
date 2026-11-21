@@ -46,7 +46,7 @@ const done = () => { persist(); redraw(); };
 // ======================= MA FÉDÉ =======================
 export function fedeView(tab) {
   const G = U.G; tab = tab || "e";
-  const T = tabs("#/univers/fede", [["e", "Mon effectif"]].concat(G.solo ? [["br", "Autres shows"]] : [], [["staff", "Staff"], ["dev", "Développement"], ["inf", "Infirmerie"], ["p", "Promesses"], ["m", "Moral"]]), tab);
+  const T = tabs("#/univers/fede", [["e", "Mon effectif"]].concat(G.solo ? [["br", "Autres shows"]] : [], [["vest", "Vestiaire"], ["staff", "Staff"], ["dev", "Développement"], ["inf", "Infirmerie"], ["p", "Promesses"], ["m", "Moral"]]), tab);
   const R = mine(G);
   let body = "";
   if (tab === "e") {
@@ -57,6 +57,7 @@ export function fedeView(tab) {
         (injured(G, w) ? '<small class="uvko">Blessé' + e_(w) + " jusqu’au " + esc(shortDate(w.inj.until)) + "</small>" : '<span class="uvenl">' + bar(w.en, enC(w.en)) + "<i>" + Math.round(w.en) + " %</i></span>") +
         '</span><span class="uvnote">' + Math.round(w.pop) + "<small>POP</small></span></a>").join(""); }).join("") : '<p class="uvempty">Personne dans cette division.</p>');
   } else if (tab === "br" && U.brandBody) body = U.brandBody(G);
+  else if (tab === "vest" && U.lockerBody) body = U.lockerBody(G);
   else if (tab === "staff") body = staffBody(G);
   else if (tab === "dev") {
     const D = G.dev || [];

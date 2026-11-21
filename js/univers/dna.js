@@ -7,13 +7,16 @@ import { mail, news, champIds } from "./base.js";
 
 const avg = a => a.length ? a.reduce((s, x) => s + x, 0) / a.length : 0;
 export const DNA = {
-  wwe: { n: "Spectacle", ex: "comme la WWE", d: "Les stars, le charisme, les promos et les grandes entrées comptent plus que tout.", c: "#e8423f" },
-  njpw: { n: "Sport de combat", ex: "comme la NJPW", d: "Des matchs longs et durs, des rivalités qui durent, des tournois prestigieux.", sty: ["bag", "pur"], c: "#f5b13d" },
-  aew: { n: "Liberté créative", ex: "comme l’AEW", d: "Tous les styles sur la même carte, des matchs techniques et fous.", sty: ["tec", "aer"], c: "#c9a7ff" },
-  lucha: { n: "Lucha libre", ex: "comme l’AAA et le CMLL", d: "Voltige, vitesse, matchs à six et masques.", sty: ["aer"], c: "#63d69c" },
-  joshi: { n: "Joshi", ex: "comme Stardom et Marigold", d: "Les catcheuses en tête d’affiche, un rythme rapide et intense.", c: "#ff8ad8" },
-  pure: { n: "Lutte pure", ex: "comme ROH", d: "Technique, respect de l’adversaire, victoires propres.", sty: ["tec", "pur"], c: "#6fb3ff" }
+  wwe: { g: "m", n: "Spectacle", ex: "comme la WWE", d: "Les stars, le charisme, les promos et les grandes entrées comptent plus que tout.", c: "#e8423f" },
+  njpw: { g: "m", n: "Sport de combat", ex: "comme la NJPW", d: "Des matchs longs et durs, des rivalités qui durent, des tournois prestigieux.", sty: ["bag", "pur"], c: "#f5b13d" },
+  aew: { g: "f", n: "Liberté créative", ex: "comme l’AEW", d: "Tous les styles sur la même carte, des matchs techniques et fous.", sty: ["tec", "aer"], c: "#c9a7ff" },
+  lucha: { g: "f", n: "Lucha libre", ex: "comme l’AAA et le CMLL", d: "Voltige, vitesse, matchs à six et masques.", sty: ["aer"], c: "#63d69c" },
+  joshi: { g: "m", n: "Joshi", ex: "comme Stardom et Marigold", d: "Les catcheuses en tête d’affiche, un rythme rapide et intense.", c: "#ff8ad8" },
+  pure: { g: "f", n: "Lutte pure", ex: "comme ROH", d: "Technique, respect de l’adversaire, victoires propres.", sty: ["tec", "pur"], c: "#6fb3ff" }
 };
+// « le spectacle », « au spectacle » / « la lucha libre », « à la lucha libre »
+export const dnaLe = k => (DNA[k].g === "m" ? "le " : "la ") + DNA[k].n.toLowerCase();
+export const dnaAu = k => (DNA[k].g === "m" ? "au " : "à la ") + DNA[k].n.toLowerCase();
 export const DNA_OF = { WWE: "wwe", TNA: "wwe", AEW: "aew", NJPW: "njpw", AAA: "lucha", CMLL: "lucha", Stardom: "joshi", Marigold: "joshi", ROH: "pure" };
 export function dnaInit(G, k) {
   k = DNA[k] ? k : DNA_OF[G.me] || "wwe";
@@ -58,8 +61,8 @@ export function dnaShow(G, ev, res) {
   Object.keys(DNA).forEach(k => { G.dna[k] = Math.round((G.dna[k] || 0) * 1000 / tot) / 10; });
   const k1 = dnaMain(G);
   if (k1 !== k0) {
-    mail(G, { k: "info", from: "La presse spécialisée", role: "Magazine", c: DNA[k1].c, ini: "PR", subj: "Ta fédération a changé de visage", body: "Les fans le disent partout : ton show ressemble de plus en plus à de la " + DNA[k1].n.toLowerCase() + " (" + DNA[k1].ex + ").\nLes catcheurs de ce style auront plus envie de venir chez toi ; le public attend maintenant ce genre de matchs." });
-    news(G, { seg: "coul", f: "nous", t: "Nouvelle identité", txt: "Le show change de style : place à la " + DNA[k1].n.toLowerCase() + "." });
+    mail(G, { k: "info", from: "La presse spécialisée", role: "Magazine", c: DNA[k1].c, ini: "PR", subj: "Ta fédération a changé de visage", body: "Les fans le disent partout : ton show ressemble de plus en plus " + dnaAu(k1) + " (" + DNA[k1].ex + ").\nLes catcheurs de ce style auront plus envie de venir chez toi ; le public attend maintenant ce genre de matchs." });
+    news(G, { seg: "coul", f: "nous", t: "Nouvelle identité", txt: "Le show change de style : place " + dnaAu(k1) + "." });
   }
 }
 // un catcheur aime-t-il ton style ? (négociation et recrutement)
