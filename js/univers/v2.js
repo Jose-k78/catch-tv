@@ -57,7 +57,40 @@ export function upgrade(G, opt) {
   if ((G.v || 1) < 2) up2(G, opt);
   // v3 (21 nov.) : la fédération rivale et les missions du propriétaire
   if (G.v < 3) { initRival(G); initMissions(G); G._ach = []; G.v = 3; }
+  applyStatus(G, opt);
   return G;
+}
+// 21 nov. (2e lot) : à chaque ouverture, si data/statuts.json a changé : vraies années de naissance (born), catcheuses (fem),
+// retraités (ret : jamais actifs), décès (Hall of Fame), personnel (staff)
+function applyStatus(G, opt) {
+  const st = udata().st || {}; if (!st.born && !st.fem) return;
+  const stamp = (st.updated || "") + "|" + Object.keys(st.born || {}).length + "|" + (st.ret || []).length + "|" + Object.keys(st.dead || {}).length + "|" + (st.fem || []).length;
+  if (G.stv === stamp) return;
+  const born = {}; Object.keys(st.born || {}).forEach(n => { born[norm(n)] = st.born[n]; });
+  const fem = new Set((st.fem || []).map(norm)), ret = new Set((st.ret || []).map(norm));
+  const dead = {}; Object.keys(st.dead || {}).forEach(n => { dead[norm(n)] = [n, st.dead[n]]; });
+  const staffN = {}; Object.keys(st.staff || {}).forEach(n => { staffN[norm(n)] = [n].concat(st.staff[n]); });
+  const yr = 2026 + Math.floor((G.day || 0) / 365), fixed = [];
+  G.hof = G.hof || []; G.staff = G.staff || {};
+  Object.values(G.W).forEach(w => {
+    if (!w.n || /^y/.test(w.id)) return;
+    const n = norm(w.n);
+    if (dead[n]) { if (!G.hof.some(x => x.n === dead[n][0])) G.hof.push({ n: dead[n][0], pic: w.pic, y: dead[n][1], k: "mem" }); if (w.fed === G.me) fixed.push(w.n); removeW(G, w.id); return; }
+    if (staffN[n] && !Object.values(G.staff).some(s => s.n === w.n)) {
+      const sf = w.fed === G.me ? G.me : staffN[n][2] && G.F[staffN[n][2]] ? staffN[n][2] : "";
+      addStaff(G, { n: w.n, pic: w.pic, role: staffN[n][1], fed: sf, q: clamp(58 + h01(w.n + "q") * 30), real: true, sx: w.sx, sal: w.fed === G.me && w.ct ? w.ct.sal : 0 });
+      if (w.fed === G.me) fixed.push(w.n); removeW(G, w.id); return;
+    }
+    if (fem.has(n)) w.sx = "f";
+    if (born[n] && w.by !== born[n]) { w.by = born[n]; w.age = clamp(yr - born[n], 16, 90); }
+    if (ret.has(n) && !w.ret) {
+      if (w.fed === G.me) fixed.push(w.n);
+      Object.values(G.T || {}).forEach(t => { if (champIds(t).indexOf(w.id) >= 0) t.champ = Array.isArray(t.champ) ? [] : null; });
+      w.fed = ""; w.ct = null; w.ret = true; w.leg = true;
+    }
+  });
+  G.stv = stamp;
+  if (fixed.length && !(opt && opt.fresh)) mail(G, { k: "info", from: "Ton comptable", role: "Mise à jour du jeu", c: "#ffd27a", ini: "MAJ", subj: "Mise à jour : ton effectif a été corrigé", body: "Ces personnes ne sont plus des catcheurs actifs (retraite, décès ou staff) : " + fixed.join(", ") + ".", imp: false });
 }
 function up2(G, opt) {
   const D = udata(), st = D.st || {};

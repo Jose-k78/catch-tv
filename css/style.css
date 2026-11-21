@@ -3525,3 +3525,24 @@ ol.uvrank li>span.uvgrow{display:block}
 .qsjcn{position:absolute;top:4%;left:7%;font:400 clamp(10px,3vw,15px)/1 Anton,sans-serif;color:#e5322d}
 .qsjtiles .qsjt:first-child{box-shadow:inset 0 0 0 2px #e5322d}
 @media (prefers-reduced-motion:reduce){.qsjc.flip .qsjci{animation:none}.qsjci{transition:none}}
+/* Univers : le direct devant un vrai ring et des fans (21 nov., 2e lot) */
+.uvtv{background:#07080c}
+.uvtvbg{position:fixed;inset:0;z-index:0;pointer-events:none}
+.uvtvbgs{width:100%;height:100%;display:block}
+.uvtv>*:not(.uvtvbg){position:relative;z-index:1}
+.uvtvapr{font:400 22px Anton,Impact,sans-serif;fill:#f5b13d;letter-spacing:4px}
+.uvfans g{fill:#05060a}
+.uvfans g.f1{fill:#0a0d14}.uvfans g.f2{fill:#0f131c}
+.uvarms path{stroke:#0a0d14;stroke-width:5;stroke-linecap:round}
+.uvtv .uvfans g,.uvtv .uvarms path{animation:uvfan var(--cz,1.6s) ease-in-out infinite alternate;transform-box:fill-box}
+.uvtv .uvfans g.f1{animation-delay:-.3s}.uvtv .uvfans g.f2{animation-delay:-.7s}
+.uvtv.hot1 .uvfans g,.uvtv.hot1 .uvarms path{animation:none}
+.uvtv.hot1 .uvarms,.uvtv.hot2 .uvarms{opacity:.25}
+@keyframes uvfan{to{transform:translateY(-4px)}}
+.uvtv circle.ph{fill:#fff;opacity:0}
+.uvtv.hot3 circle.ph,.uvtv.hot4 circle.ph{animation:uvph 2.8s steps(1) infinite}
+@keyframes uvph{0%{opacity:0}92%{opacity:0}94%{opacity:1}100%{opacity:0}}
+.uvtvstage>div{background:rgba(7,9,14,.38);border-radius:18px;padding:12px 10px}
+.uvtvcrowd{background:rgba(0,0,0,.5)}
+.uvtvfans{display:none}
+@media (prefers-reduced-motion:reduce){.uvtv .uvfans g,.uvtv .uvarms path,.uvtv circle.ph{animation:none}}

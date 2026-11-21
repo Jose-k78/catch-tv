@@ -62,6 +62,43 @@ ACT.uvkey = el => {
 };
 ACT.uvtvo = el => { order(el.dataset.o, el.dataset.v); if (el.dataset.o === "runin") return; redraw(); };
 
+// ---------- le décor : un vrai ring vu par la caméra télé et des silhouettes de fans (21 nov., 2e lot, demande de Jose) ----------
+let BG = "";
+function arenaBG(G, ev) {
+  if (!BG) {
+    let fans = "", arms = "", flash = "";
+    // 3 rangées de fans en bas et sur les côtés (positions fixes : même image à chaque fois)
+    [[530, 20, 15, 0.92], [556, 24, 18, 1], [588, 28, 22, 1]].forEach((r, ri) => {
+      for (let x = -10 + (ri % 2) * 13; x < 410; x += r[1]) {
+        const j = ((x * 37 + ri * 101) % 17) - 8, y = r[0] + (j % 5), s = r[2] * (0.86 + ((x * 13 + ri) % 7) / 25);
+        fans += '<g class="f' + (ri + (x % 3)) % 3 + '"><circle cx="' + (x + j * 0.4).toFixed(1) + '" cy="' + (y - s * 0.95).toFixed(1) + '" r="' + (s * 0.42).toFixed(1) + '"/><rect x="' + (x + j * 0.4 - s * 0.72).toFixed(1) + '" y="' + (y - s * 0.55).toFixed(1) + '" width="' + (s * 1.44).toFixed(1) + '" height="' + (s * 1.4).toFixed(1) + '" rx="' + (s * 0.5).toFixed(1) + '"/></g>';
+        if ((x * 7 + ri * 3) % 9 === 0) arms += '<path class="arm" d="M' + (x + s * 0.4).toFixed(1) + " " + (y - s * 0.4).toFixed(1) + "l" + (s * 0.3).toFixed(1) + " " + (-s * 1.1).toFixed(1) + '"/>';
+        if ((x * 11 + ri) % 23 === 0) flash += '<circle class="ph" cx="' + (x + 4).toFixed(1) + '" cy="' + (y - s * 1.2).toFixed(1) + '" r="2.2" style="animation-delay:' + ((x % 7) * 0.4).toFixed(1) + 's"/>';
+      }
+    });
+    BG = '<svg class="uvtvbgs" viewBox="0 0 400 680" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs>' +
+      '<radialGradient id="uvsp" cx="50%" cy="38%" r="55%"><stop offset="0" stop-color="#3b4a6e" stop-opacity=".9"/><stop offset=".55" stop-color="#151b2a"/><stop offset="1" stop-color="#07080c"/></radialGradient>' +
+      '<linearGradient id="uvmat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9aa6bd"/><stop offset="1" stop-color="#dfe4ee"/></linearGradient>' +
+      '<linearGradient id="uvapr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b2233"/><stop offset="1" stop-color="#0c1019"/></linearGradient>' +
+      '<linearGradient id="uvbeam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff6d8" stop-opacity=".35"/><stop offset="1" stop-color="#fff6d8" stop-opacity="0"/></linearGradient></defs>' +
+      '<rect width="400" height="680" fill="url(#uvsp)"/>' +
+      '<polygon points="120,0 160,0 230,430 110,430" fill="url(#uvbeam)"/><polygon points="250,0 285,0 300,430 180,430" fill="url(#uvbeam)"/>' +
+      // le ring
+      '<polygon points="88,330 312,330 366,470 34,470" fill="url(#uvmat)"/><polygon points="34,470 366,470 366,520 34,520" fill="url(#uvapr)"/>' +
+      '<text class="uvtvapr" x="200" y="503" text-anchor="middle">' + "</text>" +
+      '<g fill="none" stroke-linecap="round"><path d="M88 296H312M88 308H312M88 320H312" stroke="#cfd6e3" stroke-width="2.5"/>' +
+      '<path d="M88 296L34 420M88 308L34 445M88 320L34 470M312 296L366 420M312 308L366 445M312 320L366 470" stroke="#cfd6e3" stroke-width="2.6"/>' +
+      '<path d="M40 420H360" stroke="#e5322d" stroke-width="4"/><path d="M38 445H362" stroke="#f4f6fb" stroke-width="4"/><path d="M36 470H364" stroke="#2f6fe0" stroke-width="4"/></g>' +
+      '<rect x="84" y="284" width="8" height="48" rx="2" fill="#2a2d36"/><rect x="308" y="284" width="8" height="48" rx="2" fill="#2a2d36"/>' +
+      '<rect x="28" y="404" width="12" height="80" rx="3" fill="#2a2d36"/><rect x="360" y="404" width="12" height="80" rx="3" fill="#2a2d36"/>' +
+      '<rect x="29" y="414" width="10" height="12" fill="#e5322d"/><rect x="361" y="414" width="10" height="12" fill="#e5322d"/>' +
+      // les fans
+      '<g class="uvfans">' + fans + '</g><g class="uvarms">' + arms + '</g><g>' + flash + "</g></svg>";
+  }
+  const f = G.F[ev.fed] || {};
+  return '<div class="uvtvbg" aria-hidden="true">' + BG.replace('<text class="uvtvapr" x="200" y="503" text-anchor="middle"></text>', '<text class="uvtvapr" x="200" y="503" text-anchor="middle">' + esc(String(f.sh || f.n || "").toUpperCase()) + "</text>") + "</div>";
+}
+
 // ---------- l'écran ----------
 const hh = m => Math.floor(m / 60) + ":" + String(m % 60).padStart(2, "0");
 const crowdOf = c => c >= 80 ? ["Brûlant", "hot4"] : c >= 62 ? ["Chaud", "hot3"] : c >= 45 ? ["Tiède", "hot2"] : ["Froid", "hot1"];
@@ -123,7 +160,7 @@ function drawer(G, L) {
 }
 function endScreen(G, ev) {
   const r = ev.res || {}, items = r.items || [], ms = items.filter(x => x.it === "m"), best = ms.slice().sort((a, b) => b.r - a.r)[0], f = meF(G), war = r.war;
-  return '<div class="uvtv end"><div class="uvtvtop"><span class="uvtvon off">FIN</span><b>' + esc(ev.n) + '</b></div><div class="uvtvstage"><div class="uvtvfinal"><small>C’est la fin du show</small><div class="uvtvstars big">' + stars(r.r || 0) + "</div>" +
+  return '<div class="uvtv end">' + arenaBG(G, ev) + '<div class="uvtvtop"><span class="uvtvon off">FIN</span><b>' + esc(ev.n) + '</b></div><div class="uvtvstage"><div class="uvtvfinal"><small>C’est la fin du show</small><div class="uvtvstars big">' + stars(r.r || 0) + "</div>" +
     '<div class="uvkv3"><div><b>' + fmtM(r.aud || 0) + "</b>téléspectateurs</div>" + (r.money != null ? '<div><b class="' + (r.money >= 0 ? "uvok" : "uvko") + '">' + fmtK(r.money) + "</b>recettes</div>" : "") + (r.att ? "<div><b>" + r.att.toLocaleString("fr-FR") + "</b>" + (r.full ? "spectateurs · COMPLET" : "spectateurs") + "</div>" : "") + "</div>" +
     (best ? '<p class="uvtvbest"><small>Le match du soir</small>' + best.sides.map(s => s.map(i => face(G, G.W[i], 44)).join("")).join('<i>VS</i>') + "<span>" + esc(sideNameS(G, best.sides)) + " · " + stars(best.r) + "</span></p>" : "") +
     (war ? '<p class="uvsm">Ce soir-là, ' + esc(war.n) + " passait aussi à la télé.</p>" : "") +
@@ -138,7 +175,7 @@ export function liveView(id) {
   if (!LV) return '<div class="uvtv"><div class="uvtvstage"><div class="uvtvopen"><h2>' + esc(ev.n) + '</h2><p>Le direct n’est pas lancé.</p><a class="uvbtn pri" href="#/univers/ev/' + encodeURIComponent(id) + '">Retour à la carte</a></div></div></div>';
   const L = LV.L, cr = crowdOf(L.crowd), im = imgEv(G, ev);
   const dots = ev.items.map((x, i) => { const r = L.out[i]; return '<span class="uvtvd' + (i === L.i ? " on" : i < L.i ? " dn" : "") + '" title="' + esc(x.it === "m" ? sideNameS(G, x.sides) : (SEG[x.k] || SEG.promo).n) + '">' + (r ? stars(r.r) : i === ev.items.length - 1 ? "ME" : i + 1) + "</span>"; }).join("");
-  return '<div class="uvtv ' + cr[1] + (LV.key ? " paused" : "") + '" style="--cz:' + (2.2 - clamp(L.crowd) / 60).toFixed(2) + 's">' +
+  return '<div class="uvtv ' + cr[1] + (LV.key ? " paused" : "") + '" style="--cz:' + (2.2 - clamp(L.crowd) / 60).toFixed(2) + 's">' + arenaBG(G, ev) +
     '<div class="uvtvtop"><span class="uvtvon">EN DIRECT</span>' + (im ? '<img class="uvtvlogo" src="' + esc(im) + '" alt="">' : "") + "<b>" + esc(ev.n) + '</b><span class="uvtvclk">' + hh(L.clock) + " / " + hh(L.len) + '</span><button type="button" class="uvtvx2" data-act="uvtvq" aria-label="Quitter le direct (pause)">✕</button></div>' +
     '<div class="uvtvstage">' + stage(G, ev, L) + "</div>" +
     '<div class="uvtvcrowd" role="img" aria-label="Public : ' + cr[0] + '"><div class="uvtvfans" aria-hidden="true"></div><span>Public <b>' + cr[0] + '</b></span><span class="uvtvcb"><i style="width:' + clamp(L.crowd) + '%"></i></span><b>' + Math.round(L.crowd) + "</b></div>" +
