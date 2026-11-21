@@ -7,6 +7,7 @@ import { DUR } from "./data.js";
 import { SPOTS, heatBetween as hb2, autoCard, runShow, simMatch, nextBig } from "./match.js";
 import { lifeDaily, lifeWeekly, lifeMonthly, lifeYearly } from "./life.js";
 import { demandOf } from "./deal.js";
+import { brandDay, brandMonthly } from "./brand.js";
 
 export { meF, wOf, wn, roster, avail, injured, risk, teamName, mail, news, buzz, DUR, SPOTS, autoCard };
 export const playShow = runShow;
@@ -21,7 +22,7 @@ export function ensureMyEvents(G) {
   for (let d = G.day; d <= G.day + MY_EV_AHEAD; d++) {
     const wd = dateOf(d).wd;
     f.shows.forEach(s => {
-      if (s.wd !== wd) return;
+      if (s.wd !== wd || (G.solo && s.n !== G.solo)) return;   // WWE un seul show : les autres shows ont leur GM
       const id = G.me + "-tv-" + d + "-" + s.n;
       if (!G.ev.some(e => e.id === id) && (G.noTv || []).indexOf(id) < 0) G.ev.push({ id: id, fed: G.me, n: s.n, kind: "tv", day: d, items: [], done: false, br: f.split ? s.n : "" });
     });
@@ -109,11 +110,12 @@ export function stepDay(G) {
   const t = dateOf(G.day);
   dailyBody(G);
   aiDay(G);
+  brandDay(G);
   lifeDaily(G);
   missionsDaily(G);
   contracts(G);
   if (t.wd === 1) lifeWeekly(G);
-  if (t.dm === 1) { lifeMonthly(G); rivalMonthly(G); }
+  if (t.dm === 1) { lifeMonthly(G); rivalMonthly(G); brandMonthly(G); }
   if (t.m === 0 && t.dm === 1 && G.day > 0) yearly(G);
   ensureMyEvents(G);
   const ev = myEventToday(G);

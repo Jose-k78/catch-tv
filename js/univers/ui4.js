@@ -303,7 +303,7 @@ FORM.uvtrad = f => { const v = n => (f.elements.namedItem(n) || {}).value; saveT
 
 // ---------- Créatif › Draft ----------
 export function draftBody(G) {
-  const f = meF(G); if (f.shows.length < 2) return '<p class="uvempty">Il faut au moins 2 shows pour séparer l’effectif en marques (Activité › Business › Grandir : un 2e show).</p>';
+  const f = meF(G); if (G.solo) return '<p class="uvsm">Tu diriges seulement ' + esc(G.solo) + '. Les autres shows ont leur GM. Le draft a lieu chaque année fin avril : tu y choisis tes catcheurs en direct.</p><a class="uvbtn" href="#/univers/fede/br">Les autres shows</a>'; if (f.shows.length < 2) return '<p class="uvempty">Il faut au moins 2 shows pour séparer l’effectif en marques (Activité › Business › Grandir : un 2e show).</p>';
   const R = roster(G).filter(w => w.fed === G.me).sort((a, b) => b.pop - a.pop);
   return '<label class="uvspot"><input type="checkbox" data-act="uvsplit"' + (f.split ? " checked" : "") + '><span>Séparer l’effectif par show (brand split)</span></label>' +
     (f.split ? '<button type="button" class="uvbtn" data-act="uvdraft">Faire le draft automatiquement</button>' + f.shows.map(s => { const L = R.filter(w => w.br === s.n); return '<h3 class="uvh3">' + esc(s.n) + " (" + L.length + ")</h3>"; }).join("") +

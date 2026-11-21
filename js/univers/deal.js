@@ -76,7 +76,7 @@ function sign(G, w, o, N) {
   const cl = {}; N.dem.forEach(d => { if (o.acc && o.acc[d.k]) cl[d.k] = true; });
   w.ct = { sal: o.sal, end: G.day + o.dur * 365, role: o.role, exc: o.exc !== false, cl: cl };
   if (o.bonus) { f.money -= o.bonus; G.fin.cur.prod += o.bonus; }
-  if (f.id === "WWE" && f.split) w.br = w.br || f.shows[0].n;
+  if (f.id === "WWE" && f.split) w.br = G.solo || w.br || f.shows[0].n;
   w.mor = clamp(w.mor + 8); w.hist.push({ d: G.day, t: (was === G.me ? "Prolonge" : "Signe") + " chez " + f.n + " (" + o.dur + " an" + (o.dur > 1 ? "s" : "") + ")" });
   const P = (t, days, txt) => G.prom.push({ id: uid("p"), w: w.id, t: t, until: G.day + days, st: "cours", txt: txt });
   if (cl.wintitle) P("wintitle", 90, "Gagner un titre avant le " + shortDate(G.day + 90));

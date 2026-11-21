@@ -10,7 +10,9 @@ export const wn = (G, id) => (G.W[id] || (G.staff || {})[id] || {}).n || "?";
 export const ini = n => String(n || "?").split(/\s+/).map(x => x[0]).join("").slice(0, 2).toUpperCase();
 export const e_ = w => (w && w.sx === "f" ? "e" : "");
 // catcheurs actifs d'une fédération (prêtés chez nous compris)
-export const roster = (G, fed) => { fed = fed || G.me; return Object.values(G.W).filter(w => !w.ret && (w.fed === fed || (w.guest && w.guest.to === fed && w.guest.until >= G.day))); };
+// WWE avec un seul show (G.solo, 21 nov.) : roster(G) = les catcheurs de MON show ; roster(G, "WWE") = toute la fédération
+export const roster = (G, fed) => { const my = !fed && G.solo; fed = fed || G.me; return Object.values(G.W).filter(w => !w.ret && (w.fed === fed || (w.guest && w.guest.to === fed && w.guest.until >= G.day)) && (!my || w.fed !== G.me || !w.br || w.br === G.solo)); };
+export const isMine = (G, w) => !!w && w.fed === G.me && (!G.solo || !w.br || w.br === G.solo);
 export const injured = (G, w) => !!(w && w.inj && w.inj.until > G.day && !w.inj.play);
 // disponible pour un show : pas blessé, pas absent, pas suspendu, pas au placard ; un non exclusif est parfois sur le circuit indé
 export const avail = (G, w, day) => {
@@ -18,6 +20,7 @@ export const avail = (G, w, day) => {
   if (w.inj && w.inj.until > d && !w.inj.play) return false;
   if (w.off && w.off > d) return false; if (w.susp && w.susp > d) return false; if (w.bench) return false;
   if (w.ct && w.ct.exc === false && (hash(w.id + "|" + d) % 10) < 3) return false;
+  if ((G.visits || []).some(v => v.w === w.id && v.day === d && !v.done)) return false;   // en apparition ailleurs ce soir-là
   return true;
 };
 export const why = (G, w) => !w ? "" : w.ret ? "retraité" + e_(w) : w.inj && w.inj.until > G.day && !w.inj.play ? "blessé" + e_(w) : w.off > G.day ? "absent" + e_(w) : w.susp > G.day ? "suspendu" + e_(w) : w.bench ? "au placard" : w.ct && w.ct.exc === false && !avail(G, w) ? "sur le circuit indé ce jour-là" : "";

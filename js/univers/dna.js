@@ -25,7 +25,7 @@ export const dnaNext = G => { const d = G.dna || {}, L = Object.keys(DNA).sort((
 const ofSty = (all, L) => all.filter(w => (L || []).indexOf(w.sty) >= 0).length;
 // bonus (ou malus) de note pour un match chez moi, selon mon ADN principal
 export function dnaBonus(G, ev, m, all, D) {
-  if (!G.dna || ev.fed !== G.me || !all.length) return 0;
+  if (!G.dna || ev.fed !== G.me || ev.ai || !all.length) return 0;
   const k = dnaMain(G), s = Math.min(1.3, (G.dna[k] || 55) / 55); let b = 0;
   if (k === "wwe") b = (avg(all.map(w => w.st[5])) + avg(all.map(w => w.st[3])) - 120) / 14 + (m.title ? 1 : 0);
   else if (k === "njpw") b = (D >= 20 ? 3 : D <= 8 ? -2 : 0) + (avg(all.map(w => w.st[1])) - 60) / 12 + Math.min(3, ofSty(all, DNA.njpw.sty));
@@ -37,7 +37,7 @@ export function dnaBonus(G, ev, m, all, D) {
 }
 // après chaque show chez moi : l'ADN bouge un peu selon ce que j'ai programmé
 export function dnaShow(G, ev, res) {
-  if (!G.dna || ev.fed !== G.me || !res || !res.length) return;
+  if (!G.dna || ev.fed !== G.me || ev.ai || !res || !res.length) return;
   const inc = {}, add = (k, v) => { inc[k] = (inc[k] || 0) + v; }, sty = new Set();
   res.forEach((r, i) => {
     if (r.it === "s") { add("wwe", 0.5); return; }

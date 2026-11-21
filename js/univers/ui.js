@@ -6,7 +6,7 @@ import { ST, STYLES, ROLES, FEDS0, dayLabel, shortDate, dateOf, fmtM, fmtK, star
 import { newWorld } from "./world.js";
 import { loadUData, GT, DEM, SROLE } from "./data.js";
 import { meF, roster, avail, injured, risk, startGame, nextMyEvents, awardsOf, mail, news, teamName, wn } from "./sim.js";
-import { e_, relAdd, champIds, isBig } from "./base.js";
+import { e_, relAdd, champIds, isBig, isMine } from "./base.js";
 import { upgrade, gimOf, fitOf } from "./v2.js";
 import { setMentor, setTrain } from "./crea.js";
 import { retireW } from "./life.js";
@@ -59,7 +59,7 @@ export function homeView() {
   const mails = G.mail.slice().reverse().slice(0, 3), inj = R.filter(w => injured(G, w)).length, tired = R.filter(w => w.en < 50 && !injured(G, w)).length;
   const mor = R.length ? Math.round(R.reduce((s, w) => s + w.mor, 0) / R.length) : 0, prom = (G.prom || []).filter(p => p.st === "cours").length;
   const newsL = G.news.slice().reverse().slice(0, 3), cur = G.fin.cur, month = cur.tv + cur.tix + cur.merch + cur.pub - cur.sal - cur.prod;
-  const body = (G.gm ? '<div class="uvgmh">' + gmFace(G, 36) + '<span class="uvgrow"><small>Ton GM</small><b>' + esc(gmName(G)) + '</b></span><a class="uvgmtag" href="#/univers/bureau/rep">' + (G.mark ? "Mark" : "Smart") + (G.dna ? " · " + esc(DNA[dnaMain(G)].n) : "") + "</a></div>" : "") + (today ? '<div class="uvalert"><b>Ce soir : ' + esc(today.n) + '</b><div class="uvrow2"><a class="uvbtn pri" href="#/univers/ev/' + encodeURIComponent(today.id) + '">Préparer la carte</a><button type="button" class="uvbtn" data-act="uvautolive" data-id="' + esc(today.id) + '">Vivre en direct</button><button type="button" class="uvbtn ghost" data-act="uvautoplay" data-id="' + esc(today.id) + '">Laisser l’IA faire</button></div></div>' : "") +
+  const body = (U.draftTile ? U.draftTile(G) : "") + (G.gm ? '<div class="uvgmh">' + gmFace(G, 36) + '<span class="uvgrow"><small>Ton GM</small><b>' + esc(gmName(G)) + '</b></span><a class="uvgmtag" href="#/univers/bureau/rep">' + (G.mark ? "Mark" : "Smart") + (G.dna ? " · " + esc(DNA[dnaMain(G)].n) : "") + "</a></div>" : "") + (today ? '<div class="uvalert"><b>Ce soir : ' + esc(today.n) + '</b><div class="uvrow2"><a class="uvbtn pri" href="#/univers/ev/' + encodeURIComponent(today.id) + '">Préparer la carte</a><button type="button" class="uvbtn" data-act="uvautolive" data-id="' + esc(today.id) + '">Vivre en direct</button><button type="button" class="uvbtn ghost" data-act="uvautoplay" data-id="' + esc(today.id) + '">Laisser l’IA faire</button></div></div>' : "") +
     '<div class="uvfedrow big">' + crest(G, G.me, 46) + "<div><b>" + esc(f.n) + "</b><small>" + (rank ? rank + "e sur " + feds.length + " à l’audience" : "") + " · " + fmtK(f.money) + " en banque · réputation " + Math.round(G.rep || 50) + "</small></div></div>" +
     (U.homeV3 ? U.homeV3(G) : "") + homeExtra(G) +
     '<a class="uvtile" href="#/univers/courrier"><div class="uvth">Courrier <i>' + unread(G) + " non lu" + (unread(G) > 1 ? "s" : "") + "</i></div>" + mails.map(m => '<div class="uvline">' + mailAv(G, m, 28) + "<span class=\"uvgrow\">" + esc(m.subj) + "</span>" + (m.read ? "" : '<span class="uvdot" aria-label="non lu"></span>') + "</div>").join("") + "</a>" +
@@ -200,6 +200,7 @@ ACT.uvmail = el => {
     // la rivale se moque de toi
     case "tauntyes": { const nb = nextMyEvents(G, 20).find(e => e.kind !== "tv"); if (nb) G.hype[nb.id] = clamp((G.hype[nb.id] || 3) + 1, 0, 10); f.pop = clamp(f.pop + 0.3, 5, 99); if (rnd() < 0.25) { G.rep = clamp((G.rep || 50) - 1); out = "Ta réponse fait le buzz… mais certains la trouvent déplacée."; } else out = "Ta réponse fait le buzz : les fans adorent la guerre !"; } break;
     case "tauntno": G.rep = clamp((G.rep || 50) + 1); out = "Tu restes au-dessus de ça : ta réputation monte."; break;
+    default: if (U.mact && U.mact[a]) { const r = U.mact[a](G, m); if (r === false) return; if (r) out = r; }   // réponses ajoutées par d'autres fichiers (brand.js…)
   }
   // le propriétaire suit tes décisions (mode carrière)
   const ps = PATRON[a]; if (ps && G.obj && G.mode !== "sandbox") G.obj.sec = clamp(G.obj.sec + ps, 0, 100);
@@ -275,13 +276,13 @@ const SAY = [
 const momTxt = v => v >= 40 ? ["En feu", "ok"] : v >= 10 ? ["En forme", "ok"] : v > -10 ? ["Normal", "mid"] : ["En perte de vitesse", "ko"];
 export function ficheView(id, tab) {
   const G = U.G, w = G.W[id]; if (!w) return shell("monde", "Catcheur", "", '<p class="uvempty">Catcheur introuvable.</p>');
-  const mine = w.fed === G.me && !w.ret; tab = tab || "s";
+  const mine = isMine(G, w) && !w.ret; tab = tab || "s";
   if (U.f.styW !== id) { U.f.styW = id; U.f.sty = ""; }
   const R = risk(w), pic = imgW(G, w), g = gimOf(w), fin = (S.finishers || {})[w.n] || "";
   const head = '<a class="uvback" href="#/univers/' + (mine ? "fede/e" : "monde/w") + '">‹ ' + (mine ? "Mon effectif" : "Catcheurs du monde") + "</a>" +
     '<div class="uvfhead">' + (pic ? '<img class="uvfpic" src="' + esc(pic) + '" alt="">' : face(G, w, 76)) + '<div class="uvgrow"><h2>' + esc(w.n) + "</h2>" + (g.n ? '<small class="uvgimn">« ' + esc(g.n) + " »</small>" : "") +
-    "<small>" + (w.ret ? "Légende retraitée" : esc(fedN(G, w.fed)) + (w.ct ? " · " + ROLES[w.ct.role] + (w.ct.exc === false ? " · non exclusif" : "") : "")) + " · " + w.age + " ans · " + alTxt(w.al) + "</small>" +
-    "<small>Popularité <b>" + Math.round(w.pop) + "</b> · Moral <b>" + (w.mor >= 65 ? "Bon" : w.mor >= 45 ? "Moyen" : "Mauvais") + "</b>" + (w.push > 0 ? ' · <span class="uvok">Push</span>' : "") + "</small>" + imgBtn("w:" + w.id) + "</div></div>" +
+    "<small>" + (w.ret ? "Légende retraitée" : esc(fedN(G, w.fed)) + (w.br && w.fed === "WWE" ? " · " + esc(w.br) : "") + (w.ct ? " · " + ROLES[w.ct.role] + (w.ct.exc === false ? " · non exclusif" : "") : "")) + " · " + w.age + " ans · " + alTxt(w.al) + "</small>" +
+    "<small>Popularité <b>" + Math.round(w.pop) + "</b> · Moral <b>" + (w.mor >= 65 ? "Bon" : w.mor >= 45 ? "Moyen" : "Mauvais") + "</b>" + (w.push > 0 ? ' · <span class="uvok">Push</span>' : "") + "</small>" + imgBtn("w:" + w.id) + "</div></div>" + (U.ficheX ? U.ficheX(G, w) : "") +
     '<div class="uvpers"><span>' + esc(GT[g.t] ? GT[g.t][0] : "Personnage") + "</span>" + (fin ? "<span>Finisher : " + esc(fin) + "</span>" : "") + w.pers.map(p => "<span>" + esc(p) + "</span>").join("") + (injured(G, w) ? '<span class="uvko">Blessé' + e_(w) + " jusqu’au " + esc(shortDate(w.inj.until)) + "</span>" : "") + (w.susp > G.day ? '<span class="uvko">Suspendu' + e_(w) + "</span>" : "") + (w.bench ? '<span class="uvko">Au placard</span>' : "") + (w.farewell ? '<span class="uvok">Tournée d’adieu</span>' : "") + (w.secret ? '<span class="uvok">Signature secrète</span>' : "") + "</div>" +
     (w.ret ? "" : '<div class="uvenb"><div><span>Endurance ' + Math.round(w.en) + ' %</span><span class="uv' + R[1] + '">Risque de blessure : ' + R[0] + "</span></div>" + pctBar(w.en, enC(w.en)) + "</div>");
   const T = tabs("#/univers/c/" + encodeURIComponent(id), [["s", "Stats"], ["c", "Contrat"], ["h", "Historique"], ["r", "Relations"]].concat(mine ? [["d", "Dialogue"]] : []), tab);

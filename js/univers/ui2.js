@@ -46,7 +46,7 @@ const done = () => { persist(); redraw(); };
 // ======================= MA FÉDÉ =======================
 export function fedeView(tab) {
   const G = U.G; tab = tab || "e";
-  const T = tabs("#/univers/fede", [["e", "Mon effectif"], ["staff", "Staff"], ["dev", "Développement"], ["inf", "Infirmerie"], ["p", "Promesses"], ["m", "Moral"]], tab);
+  const T = tabs("#/univers/fede", [["e", "Mon effectif"]].concat(G.solo ? [["br", "Autres shows"]] : [], [["staff", "Staff"], ["dev", "Développement"], ["inf", "Infirmerie"], ["p", "Promesses"], ["m", "Moral"]]), tab);
   const R = mine(G);
   let body = "";
   if (tab === "e") {
@@ -56,7 +56,8 @@ export function fedeView(tab) {
       (L.length ? (dv === "tous" ? [["h", "Hommes"], ["f", "Femmes"]] : [["", ""]]).map(g => { const L2 = g[0] ? L.filter(w => w.sx === g[0]) : L; return (g[0] ? '<h3 class="uvh3">' + g[1] + " <small>" + L2.length + "</small></h3>" : "") + L2.map(w => '<a class="uvw" href="#/univers/c/' + esc(w.id) + '">' + face(G, w, 40) + '<span class="uvgrow"><b>' + esc(w.n) + "</b><small>" + (w.ct ? ROLES[w.ct.role] + " · " : "") + STYLES[w.sty][0] + " · " + (w.al === "heel" ? "Heel" : "Face") + " · " + recTxt(w.rec) + (w.push > 0 ? ' · <span class="uvok">push</span>' : "") + (w.guest && w.guest.to === G.me ? " · prêté" + e_(w) : w.guest ? " · prêté" + e_(w) + " ailleurs" : "") + (w.bench ? " · au placard" : "") + (w.susp > G.day ? " · suspendu" + e_(w) : "") + "</small>" +
         (injured(G, w) ? '<small class="uvko">Blessé' + e_(w) + " jusqu’au " + esc(shortDate(w.inj.until)) + "</small>" : '<span class="uvenl">' + bar(w.en, enC(w.en)) + "<i>" + Math.round(w.en) + " %</i></span>") +
         '</span><span class="uvnote">' + Math.round(w.pop) + "<small>POP</small></span></a>").join(""); }).join("") : '<p class="uvempty">Personne dans cette division.</p>');
-  } else if (tab === "staff") body = staffBody(G);
+  } else if (tab === "br" && U.brandBody) body = U.brandBody(G);
+  else if (tab === "staff") body = staffBody(G);
   else if (tab === "dev") {
     const D = G.dev || [];
     body = '<div class="uvtile"><p class="uvsm">Les jeunes progressent chaque semaine. Quand la barre est pleine, tu peux les faire monter dans ton effectif.</p><button type="button" class="uvbtn pri" data-act="uvrecruit"' + (D.length >= 6 ? " disabled" : "") + ">Recruter un jeune (30 k$)</button>" + (D.length >= 6 ? '<p class="uvmut">6 jeunes au maximum.</p>' : "") + "</div>" +

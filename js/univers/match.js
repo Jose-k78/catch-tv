@@ -7,6 +7,7 @@ import { MT, STIP, FIN, CONS, DUR, ENT, SEG, CITIES, VENUES } from "./data.js";
 import { meF, wn, roster, avail, mail, news, buzz, FANS, relGet, relAdd, staffQ, ach, isBig, champIds, teamName, sideName, ini, e_, cap } from "./base.js";
 import { fitOf, gimOf } from "./v2.js";
 import { dnaBonus, dnaShow, sportWinner, markFinish } from "./dna.js";
+import { pleMix } from "./brand.js";
 
 const avg = a => a.length ? a.reduce((s, x) => s + x, 0) / a.length : 0;
 const CHEM = { "aer|aer": 5, "pur|pur": 6, "tec|tec": 5, "bag|bag": 3, "aer|tec": 3, "aer|bag": 2, "bag|pur": 4, "pur|tec": 4, "aer|pur": 3, "bag|tec": 1 };
@@ -65,7 +66,7 @@ function parts(G, ev, m) {
   const tired = all.filter(w => w.en < 40).length; extra -= tired * 2.5; all.forEach(w => { if (w.inj && w.inj.play && w.inj.until > G.day) extra -= 4; });
   const mu = muCount(G, m.sides); if (mu >= 2) extra -= (mu - 1) * 3;
   const prod = staffQ(G, "prod"), comm = ev.comm && ev.comm.length ? avg(ev.comm.map(i => (G.staff[i] || {}).q || 40)) : staffQ(G, "comm");
-  const staff = ev.fed === G.me ? (prod ? (prod - 50) / 12 : -2) + (comm ? (comm - 50) / 15 : -3) : 1;
+  const staff = ev.fed === G.me && !ev.ai ? (prod ? (prod - 50) / 12 : -2) + (comm ? (comm - 50) / 15 : -3) : 1;
   extra += dnaBonus(G, ev, m, all, D);
   return { ring: ring, chem: chem, story: story, crowd: crowd, dur: dur, extra: extra, staff: staff, sl: sl, mu: mu, tired: tired };
 }
@@ -107,7 +108,7 @@ export function simMatch(G, ev, m, mod) {
   mod = mod || {};
   const T = mtOf(m); let P = parts(G, ev, m);
   if (!P) return null;
-  const mine = ev.fed === G.me, sides = m.sides.map(s => s.slice()), S = sides.map(s => s.map(i => G.W[i]).filter(Boolean)), all = S.reduce((a, s) => a.concat(s), []);
+  const mine = ev.fed === G.me && !ev.ai, sides = m.sides.map(s => s.slice()), S = sides.map(s => s.map(i => G.W[i]).filter(Boolean)), all = S.reduce((a, s) => a.concat(s), []);
   let q = P.ring + P.chem + P.story + P.crowd + P.dur + P.extra + P.staff + (rnd() - 0.5) * 14;
   const notes = [], botch = [], inj = [];
   if (mod.faster) q -= 2; if (mod.longer) q += avg(all.map(w => w.st[4])) > 65 ? 3 : -4; if (mod.cut) { q -= 10; notes.push("La télé a coupé avant la fin du match !"); }
@@ -207,7 +208,7 @@ export function simSeg(G, ev, s) {
   const S = SEG[s.k] || SEG.promo, W = (s.w || []).map(i => G.W[i]).filter(Boolean), notes = [];
   let q = estimate(G, ev, s).r + (rnd() - 0.5) * 16;
   if (S.p && !W.length) return null;
-  const mine = ev.fed === G.me;
+  const mine = ev.fed === G.me && !ev.ai;
   W.forEach(w => { w.pop = clamp(w.pop + (q - 55) / 25 + (S.pop ? 1.5 : 0), 1, 99); w.last = w.last < G.day ? G.day - 1 : w.last; });
   const sl = W.length >= 2 ? heatBetween(G, [[W[0].id], [W[1].id]]) : W.length ? (G.sl || []).find(x => !x.done && (x.a.indexOf(W[0].id) >= 0 || x.b.indexOf(W[0].id) >= 0)) : null;
   if (sl) sl.kinds = (sl.kinds || []).concat(s.k);
@@ -225,13 +226,13 @@ export const nextBig = (G, fed) => (G.ev || []).filter(e => e.fed === (fed || G.
 // ---------- cartes faites par l'IA ----------
 const NEWM = (t, sides, o) => Object.assign({ it: "m", t: t, sides: sides, title: "", stip: "", fin: "auto", cons: "", dur: "moyen", win: "ia", spots: [] }, o || {});
 export function autoCard(G, ev) {
-  const f = G.F[ev.fed], big = isBig(ev), used = new Set();
+  const f = G.F[ev.fed], big = isBig(ev), used = new Set(), BR = ev.br || (G.solo && ev.fed === G.me && !ev.ai ? G.solo : ""), okB = i => !BR || !f.split || !G.W[i].br || G.W[i].br === BR;   // WWE un seul show : mes grands événements = mon show
   const gu = (G.appear || []).filter(a => a.ev === ev.id && a.k === "match").map(a => G.W[a.w]).filter(Boolean);
-  const pool = roster(G, ev.fed).concat(gu.filter(w => roster(G, ev.fed).indexOf(w) < 0)).filter(w => (w.ret ? !w.staff : avail(G, w, ev.day)) && w.en >= 25 && !(G.rest && G.rest[w.id] > G.day) && !w.secret && (!ev.br || !f.split || !w.br || w.br === ev.br)).sort((a, b) => (b.pop + rnd() * 25) - (a.pop + rnd() * 25));
+  const pool = roster(G, ev.fed).concat(gu.filter(w => roster(G, ev.fed).indexOf(w) < 0)).filter(w => (w.ret ? !w.staff : avail(G, w, ev.day)) && w.en >= 25 && !(G.rest && G.rest[w.id] > G.day) && !w.secret && (!BR || !f.split || !w.br || w.br === BR)).sort((a, b) => (b.pop + rnd() * 25) - (a.pop + rnd() * 25));
   const take = (sx, ex) => { const w = pool.find(x => !used.has(x.id) && (!sx || x.sx === sx) && (!ex || ex.indexOf(x.id) < 0)); if (w) used.add(w.id); return w; };
   const items = [];
   // matchs de tournoi en attente
-  (G.tours || []).filter(t => t.fed === ev.fed && !t.win).forEach(t => { const pm = pendingTour(G, t, ev).slice(0, big ? 2 : 1); pm.forEach(x => { if (x.m.every(i => !used.has(i) && G.W[i] && avail(G, G.W[i], ev.day))) { x.m.forEach(i => used.add(i)); items.push(x.g ? NEWM("gauntlet", x.m.map(i => [i]), { tour: { id: t.id, k: x.k }, dur: "long" }) : NEWM("simple", [[x.m[0]], [x.m[1]]], { tour: { id: t.id, k: x.k }, dur: x.fin ? "long" : "moyen" })); } }); });
+  (G.tours || []).filter(t => t.fed === ev.fed && !t.win).forEach(t => { const pm = pendingTour(G, t, ev).slice(0, big ? 2 : 1); pm.forEach(x => { if (x.m.every(i => !used.has(i) && G.W[i] && okB(i) && avail(G, G.W[i], ev.day))) { x.m.forEach(i => used.add(i)); items.push(x.g ? NEWM("gauntlet", x.m.map(i => [i]), { tour: { id: t.id, k: x.k }, dur: "long" }) : NEWM("simple", [[x.m[0]], [x.m[1]]], { tour: { id: t.id, k: x.k }, dur: x.fin ? "long" : "moyen" })); } }); });
   // tradition du mois au grand show
   if (big) (G.trad || []).filter(x => x.fed === ev.fed && x.on && x.k === "match" && x.m === dateOf(ev.day).m && !(x.done || {})[dateOf(ev.day).y]).forEach(x => {
     (x.x === "hf" ? ["h", "f"] : [x.x]).forEach(sx => { if (x.t === "simple" && x.pr === "apuestas") { const a = take(sx), b = take(sx); if (a && b) items.push(NEWM("simple", [[a.id], [b.id]], { trad: x.id, stip: "maskhair", dur: "long" })); return; }
@@ -246,11 +247,11 @@ export function autoCard(G, ev) {
   const titles = Object.values(G.T).filter(t => t.fed === ev.fed && (big || rnd() < 0.22));
   titles.forEach(t => {
     if (items.length >= (big ? 8 : 4)) return;
-    const ch = champIds(t).filter(i => G.W[i] && avail(G, G.W[i], ev.day) && !used.has(i) && (!ev.br || !f.split || !G.W[i].br || G.W[i].br === ev.br));
+    const ch = champIds(t).filter(i => G.W[i] && okB(i) && avail(G, G.W[i], ev.day) && !used.has(i) && (!BR || !f.split || !G.W[i].br || G.W[i].br === BR));
     const sx = t.cat === "x" ? "" : t.cat;
     if (t.div === "tag") {
       if (ch.length !== 2 && champIds(t).length) return;
-      const tm = (G.teams || []).find(x => x.fed === ev.fed && x.m.every(i => G.W[i] && avail(G, G.W[i], ev.day) && !used.has(i) && ch.indexOf(i) < 0 && (!sx || G.W[i].sx === sx)));
+      const tm = (G.teams || []).find(x => x.fed === ev.fed && x.m.every(i => G.W[i] && okB(i) && avail(G, G.W[i], ev.day) && !used.has(i) && ch.indexOf(i) < 0 && (!sx || G.W[i].sx === sx)));
       if (!tm) return; ch.concat(tm.m).forEach(i => used.add(i));
       if (ch.length === 2) items.push(NEWM("tag", [ch.slice(), tm.m.slice()], { title: t.id }));
       return;
@@ -270,7 +271,7 @@ export function autoCard(G, ev) {
   const want = big ? 7 : 4; let guard = 0;
   while (items.filter(x => x.it === "m").length < want && guard++ < 12) {
     const sx = rnd() < 0.68 ? "h" : "f";
-    if (rnd() < 0.22) { const tm = (G.teams || []).filter(x => x.fed === ev.fed && x.m.every(i => G.W[i] && avail(G, G.W[i], ev.day) && !used.has(i) && G.W[i].sx === sx)); if (tm.length >= 2) { tm[0].m.concat(tm[1].m).forEach(i => used.add(i)); items.push(NEWM("tag", [tm[0].m.slice(), tm[1].m.slice()])); continue; } }
+    if (rnd() < 0.22) { const tm = (G.teams || []).filter(x => x.fed === ev.fed && x.m.every(i => G.W[i] && okB(i) && avail(G, G.W[i], ev.day) && !used.has(i) && G.W[i].sx === sx)); if (tm.length >= 2) { tm[0].m.concat(tm[1].m).forEach(i => used.add(i)); items.push(NEWM("tag", [tm[0].m.slice(), tm[1].m.slice()])); continue; } }
     if (big && rnd() < 0.2) { const a = take(sx), b = take(sx), c = take(sx); if (a && b && c) { items.push(NEWM("triple", [[a.id], [b.id], [c.id]])); continue; } [a, b, c].forEach(x => x && used.delete(x.id)); }
     const a = take(sx), b = a && take(sx); if (!a || !b) { if (a) used.delete(a.id); continue; }
     items.push(NEWM("simple", [[a.id], [b.id]], { dur: pick(["court", "moyen", "moyen", "long"]) }));
@@ -281,7 +282,7 @@ export function autoCard(G, ev) {
   // segments
   const mic = pool.filter(w => !used.has(w.id)).sort((a, b) => b.st[2] - a.st[2]);
   if (mic[0]) items.splice(Math.min(1, items.length), 0, { it: "s", k: pick(["promo", "bsint", "parking", "office"]), w: [mic[0].id] });
-  const slp = (G.sl || []).find(s => !s.done && s.fed === ev.fed && s.a.concat(s.b).every(i => G.W[i] && avail(G, G.W[i], ev.day)));
+  const slp = (G.sl || []).find(s => !s.done && s.fed === ev.fed && s.a.concat(s.b).every(i => G.W[i] && okB(i) && avail(G, G.W[i], ev.day)));
   if (slp && !big) items.splice(Math.floor(items.length / 2), 0, { it: "s", k: pick(["face", "brawl", "ambush", "attack"]), w: [slp.a[0], slp.b[0]] });
   ev.items = items; ev.card = []; ev.seg = [];
   return ev;
@@ -307,6 +308,7 @@ const LINES = {
 };
 export function prepShow(G, ev) {
   if (!ev.items || !ev.items.length) autoCard(G, ev);
+  pleMix(G, ev);   // WWE un seul show : les autres shows apportent leurs matchs aux grands événements
   const f = G.F[ev.fed], c = cityOf(G, ev), mine = ev.fed === G.me;
   return { ev: ev.id, i: 0, clock: 0, len: showLen(G, ev), crowd: clamp(50 + (c ? c[1] * 4 : 0) + (ENT[ev.ent || 0] || ENT[0])[2] * 3 + (isBig(ev) ? 8 : 0) + (G.hype[ev.id] || 0) * 2), out: [], log: [], cur: null, done: false, mine: mine, money: 0 };
 }
@@ -394,6 +396,13 @@ function finishShow(G, ev, L) {
   if (!big) { const wd = dateOf(ev.day).wd; Object.values(G.F).forEach(o => { if (o.id !== f.id && o.shows.some(s => s.wd === wd)) { const k = 1 - 0.1 * o.pop / (o.pop + f.pop); if (k < war) { war = k; rival = o; } } }); }
   let aud = f.aud0 * (1 + (starOn - 65) / 220) * (1 + (prev - 65) / 260) * (1 + Math.min(0.25, heat / 600)) * (big ? 1 + hype / 25 : 1) * war * (ev.celeb ? 1.06 : 1) * (0.95 + rnd() * 0.1);
   aud = Math.max(0.02, Math.round(aud * 100) / 100);
+  if (ev.ai) {   // WWE un seul show : un autre show de la WWE, dirigé par son propre GM (ni mon argent, ni mon audience)
+    G.brands = G.brands || {}; const B = (G.brands[ev.br] = G.brands[ev.br] || { aud: [] }); B.aud.push(aud); cap(B.aud, 12); B.last = { n: ev.n, d: G.day, r: Math.round(rating), aud: aud };
+    B.m = ms.map(x => ({ s: x.sides, w: x.win, r: Math.round(x.r), t: x.title, c: x.change, ty: x.t })).slice(-6);
+    ev.done = true; ev.res = { r: rating, aud: aud };
+    const best = ms.slice().sort((a, b) => b.r - a.r)[0]; if (best && (best.change || (best.r > 80 && rnd() < 0.4))) news(G, { seg: "ecran", f: "autres", t: ev.n + " · " + stars(rating), txt: (best.change ? "Changement de titre ! " : "Match du soir : ") + sideName(G, best.sides) + "." });
+    return;
+  }
   f.aud.push(aud); cap(f.aud, 16); f.lastR = rating;
   if (!f.k) f.k = f.aud0 / (0.05 * Math.pow(1.04, f.pop));
   f.aud0 = Math.max(0.05, f.aud0 + (f.k * 0.05 * Math.pow(1.04, f.pop) - f.aud0) * 0.06 + f.aud0 * (rating - 70) / 2500);

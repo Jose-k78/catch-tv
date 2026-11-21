@@ -3579,3 +3579,51 @@ button.uvtab{background:none;border:0;border-bottom:3px solid transparent;cursor
 .uvtvmk{margin:6px 0 0;color:#a3abbd;font-size:13px}
 .uvnew .uvfs{min-width:0}
 .uvnew .uvfld input[type=file]{max-width:100%;min-width:0;font-size:14px}
+/* WWE avec un seul show : autres shows, échanges, rencontres, draft en direct */
+.uvbrl{border-radius:10px;object-fit:contain;background:#0b0e14;flex:none}
+.uvbrl.ini{display:inline-flex;align-items:center;justify-content:center;font-family:Anton,Impact,sans-serif;color:#f5b13d;font-size:13px}
+.uvbrand{background:#161b26;border:1px solid #2a3040;border-radius:14px;margin:10px 0;padding:4px 10px}
+.uvbrand>summary{display:flex;gap:10px;align-items:center;padding:8px 0;cursor:pointer;list-style:none}
+.uvbrand>summary::-webkit-details-marker{display:none}
+.uvbrand summary b{display:block;font-size:18px}
+.uvbrand summary small{color:#a3abbd;font-size:13px}
+.uvbrw{gap:8px}
+.uvbrw a{color:inherit;text-decoration:none;min-width:0}
+.uvbrw a b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.uvbrw a small{color:#a3abbd;font-size:13px}
+.uvbrw .uvbtn{flex:none}
+.uvfx{margin:6px 0 4px}
+.uvscene{height:150px;border-radius:14px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:10px;background:linear-gradient(#232a3a,#141925)}
+.uvquote.good{border-left-color:#63d69c}.uvquote.bad{border-left-color:#ff8a7e}
+.uvtrade{display:flex;align-items:center;justify-content:space-around;gap:8px;margin:10px 0;text-align:center}
+.uvtrade>div{display:grid;justify-items:center;gap:4px;min-width:0}
+.uvtrade>div>small{color:#a3abbd}
+.uvtrade>i{font-style:normal;font-size:28px;color:#f5b13d}
+.uvtradel{max-height:42vh;overflow:auto;display:grid;gap:4px;margin-bottom:10px}
+.uvpkr.on{border-color:#f5b13d;background:#2a2414}
+.uvdraft{display:grid;gap:12px}
+.uvdrhd{text-align:center}
+.uvdrhd b{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:34px;letter-spacing:.04em;color:#f5b13d}
+.uvdrhd small{color:#a3abbd}
+.uvdro{display:flex;justify-content:center;gap:12px}
+.uvdro span{display:grid;justify-items:center;gap:3px;opacity:.45;padding:6px;border-radius:12px;border:2px solid transparent}
+.uvdro span.on{opacity:1;border-color:#f5b13d}
+.uvdro span.me small{color:#f5b13d;font-weight:700}
+.uvdro small{font-size:12px}
+.uvdrc{display:grid;justify-items:center;gap:6px;text-align:center;padding:16px;border-radius:18px;background:radial-gradient(circle at 50% 0,#3a2e12,#141925 70%);border:1px solid #3a3320}
+.uvdrc small{color:#f5b13d;font-weight:700;letter-spacing:.06em}
+.uvdrc b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:28px;line-height:1.1}
+.uvdrc span{color:#a3abbd;font-size:14px}
+.uvdrc .uvav{border-radius:18px;animation:uvdrin .6s cubic-bezier(.2,1.4,.4,1)}
+@keyframes uvdrin{from{transform:scale(.6);opacity:0}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.uvdrc .uvav{animation:none}}
+.uvdrme{margin:0;text-align:center;font-family:Anton,Impact,sans-serif;font-size:24px;color:#63d69c}
+.uvdrh{display:flex;align-items:center;gap:8px;padding:4px 0;border-bottom:1px solid #222838}
+.uvdrh span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.uvdrh small{color:#a3abbd;font-size:12px}
+.uvbrw2{display:grid;grid-template-columns:40px 1fr;gap:6px 10px;align-items:center;padding:9px 0;border-bottom:1px solid #222838}
+.uvbrw2 a{color:inherit;text-decoration:none;min-width:0}
+.uvbrw2 a b{display:block;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.uvbrw2 a small{color:#a3abbd;font-size:13px}
+.uvbrb{grid-column:2;display:flex;gap:6px;flex-wrap:wrap}
+.uvbrand>.uvbtn.ghost{width:100%;margin:8px 0}
