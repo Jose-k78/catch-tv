@@ -1,5 +1,5 @@
 {
- "at": "2026-11-21T11:16:14.557Z",
+ "at": "2026-11-21T12:14:57.048Z",
  "items": [
   {
    "t": "Preview : AAA Lucha Libre du 21 novembre 2026",
@@ -12,13 +12,6 @@
    ]
   },
   {
-   "t": "Carte de Beyond Wrestling Rent Free",
-   "u": "https://www.catch-newz.com/international/newz/61482-carte-de-beyond-wrestling-rent-free",
-   "s": "Catch-Newz",
-   "d": "2026-11-21",
-   "tags": []
-  },
-  {
    "t": "WWE SmackDown du 20 novembre : Kevin Owens vs. Gunther, Nouveau membre pour la Team USA",
    "u": "https://www.voxcatch.fr/2026/11/21/resultats-wwe-smackdown-20-novembre-2026/",
    "s": "VOXcatch",
@@ -27,6 +20,13 @@
     "WWE",
     "SmackDown"
    ]
+  },
+  {
+   "t": "Carte de Beyond Wrestling Rent Free",
+   "u": "https://www.catch-newz.com/international/newz/61482-carte-de-beyond-wrestling-rent-free",
+   "s": "Catch-Newz",
+   "d": "2026-11-21",
+   "tags": []
   },
   {
    "t": "Carte du jour 6 de la NJPW World Tag League 2026",
@@ -1614,7 +1614,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "8 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
