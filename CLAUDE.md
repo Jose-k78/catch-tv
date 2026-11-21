@@ -296,7 +296,7 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
     `.tpk-fa` (HTML) et le même symbole dessiné dans `paintPack`.
 - **Lot du 18 nov.** (« heure du codage » : onglet Jeux, « booster » partout, Mode Univers V1 d'après le canevas « Mode Univers – Menus ») :
   - Barre du bas : « Jeux » (`#/jeux`, `js/views/jeux.js`, icône `GAMES_ICON`) remplace « TCCCG » ; hub de 3 tuiles : TCCCG (`#/tccg`),
-    Univers (`#/univers`, modo seulement : `S.realAdmin`, sinon « Bientôt »), Coming soon (pas cliquable). `navOn("jeux")` = jeux + univers.
+    Univers (`#/univers`, modo seulement : `S.realAdmin`, sinon « Bientôt »), Qui suis-je ? (21 nov.), Coming soon (pas cliquable). `navOn("jeux")` = jeux + univers.
   - TCCCG : le mot « sachet » n'est plus affiché nulle part (« booster » : guide, Call Up, Méga, invocation, patch notes du 15 nov.).
   - **Mode Univers** (`js/univers/`, vue `js/views/univers.js`, CSS bloc « Lot du 18 nov. » à la fin de style.css, `body.univ` = plein écran :
     en-tête, bandeau, barre du bas et pied cachés ; graphite `#0f1219` + ambre `#f5b13d`, Anton + Barlow Condensed) :
@@ -346,6 +346,40 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   - Tests : /tmp/claude-0/t/t52.cjs (parcours complet, 320 px), sim52.cjs (1 an simulé : ~1,5 s, sauvegarde ~1 Mo).
   - Retirés à la demande de Jose : voler une star, votes des fans, partage vers TCC TV, éditeur, audience minute par minute. Plus tard : créer son catcheur,
     mode Carrière catcheur.
+- **Mode Univers v3** (21 nov., « heure du codage » ; Jose : « on a l'impression de cliquer partout » ; il a gardé la barre de gauche, pas de son) :
+  - Photo à côté de chaque nom : `wnH` / `teamH` / `sidesH` de core.js (nom + photo), `mailAv` (photo du catcheur concerné dans le courrier),
+    `whoIn` (actu / buzz : photo du catcheur dont parle le texte), `pickW` (liste avec photos et recherche) ; tous les `<select>` de catcheurs
+    du mode Univers deviennent un bouton avec photo (`enhanceSel` : MutationObserver, le select reste caché dans le formulaire et reçoit
+    `change`) ; la carte du show utilise `ACT.uvpickw` (+ Ajouter, Qui / Avec d'un segment, qui répond à l'open challenge).
+  - `ui6.js` : décisions en cartes (`#/univers/decide`, `decOf` = lettre avec au moins 2 réponses hors « aller à… », `decisions(G)`, glisser à
+    droite = 1re réponse, à gauche = dernière ; `ACT.uvdec`, `U.dres` = résultat + écarts des 4 jauges `gauges(G)` patron / vestiaire / public /
+    argent) ; une lettre à décision s'ouvre aussi en carte dans le courrier (`U.deckCard`) ; le défilement des jours ouvre la carte quand il s'arrête
+    sur une nouvelle décision. `PATRON` (ui.js) : effet des réponses sur la confiance du propriétaire. Accueil (`U.homeV3`) : tuile Décisions, guerre
+    des audiences, missions. Bureau › Rivale (`U.rivBody`) et missions dans Bureau › Objectifs (`U.misBody`). Fenêtre trophées / missions (`U.pops`,
+    `G._ach` / `G._pop`) seulement sur l'accueil, le courrier, le bureau et les résultats.
+  - `goals.js` : rivale `G.riv = { id, w, l, st, best, hist, taunts }` (fédé la plus proche en popularité, même soir de préférence, `pickRival`) ;
+    chaque lundi `rivalWeek` (life.js) : gagne si ton audience ≥ la sienne × (tes 4 semaines d'avant / les siennes) = « à taille égale »
+    (`hcap` ; mesuré sur 1 an : ~50 % de victoires) ; `rivalMonthly` : signe un agent libre, se moque (lettre `taunt`), approche une star (`rumor`).
+    Missions `G.mis` (3 au plus, une nouvelle par jour, 21-28 jours) : r4 / show / main (étoiles), full, war, sign, pop, champ, money, win, hype ;
+    `missionsDaily` (sim.js), `missionsShow` (fin d'un de tes shows) ; récompense (60 + pop × 2,5) k$ et confiance +4, échec −2. Trophées mis1,
+    mis10, war3, war10, rivko. Les parties passent en `G.v = 3` (`upgrade` de v2.js).
+  - `tv.js` : le direct en plein écran `.uvtv` (sans la barre de gauche) : ouverture, entrée (photos, ceinture en jeu), match (élan `C.mom`, celui qui
+    attaque mis en avant, commentaire avec les noms : `LINES` de match.js avec {a} / {b}, `beat.ty` / `who`), tombé « 1… 2… DÉGAGEMENT ! »,
+    résultat (vainqueur, étoiles, nouveau champion), segments au micro, public animé ; moments clés (`LV.key`, 1 par match : tombé raté ou blessure)
+    → `ACT.uvkey` ; tiroir des ordres ; générique de fin (`U.liveEnd`) puis rapport. Les anciens écrans du direct de ui4.js sont retirés
+    (`U.afterLive`, `U.resultsView`).
+  - Tests : /tmp/claude-0/t/t53.cjs (nouveautés), t52b.cjs (ancien parcours adapté), sim53.cjs (1 an : rivale et missions).
+- **Jeu « Qui suis-je ? »** (21 nov., `js/views/qsj.js`, `#/qsj`, `#/qsj/modo` ; 3e tuile de l'onglet Jeux, membres connectés) : 3 catcheurs par jour
+  (Paris), même tirage pour tous : facile = fiche dans l'app et top 25 % du rang des cartes TCCCG, moyen = reste du top 40 %, difficile = 40-75 %,
+  seulement les catcheurs avec photo et assez d'indices (`goodFor`), jamais les exclus de statuts.json ; ordre fixé par le jour (`picks(day)`).
+  5 tuiles (`tilesOf`) : indices du plus vaste au plus précis (fédération + logo, débuts, face / heel, catcheuse, show WWE / division, personnage,
+  groupe + logo, titre + ceinture — jamais un règne de moins de 7 jours —, grand match, finisher, surnom), la 5e = silhouette + initiales ; aucun
+  indice ne contient le nom (`leaks`). Points (6 − tuile) × 1 / 2 / 3, 30 max par jour ; 10 gimmicks TCCCG par point (`commit`). Firestore (règles
+  v13) : `qsj/{jour}` = choix du modo { e, m, h } (noms), `qsjp/{uid}` = { name, pts, n, g, days: { jour: { e: [tuiles, état 0/1/2, points, essais],
+  r } } } (90 jours gardés), classement = `qsjList` (pts). Suggestions (`knownNames`, accents ignorés), « Je passe », « Hier, c'était… », partage
+  en cases colorées (`B.sendRoom`). Test : /tmp/claude-0/t/tq.cjs.
+- Tournois en blocs (21 nov.) : points de `rows[].pts` sinon calculés d'après les matchs des `rounds` (gagnant `w`, « nul » ; 3 pts la victoire,
+  2 pour NJPW / Stardom / Marigold, ou ce que dit `about`) ; classement + bilan V / D / N derrière un spoiler tant que le tournoi n'est pas « terminé ».
 - **Lot du 21 nov.** (photos) : dossier de Jose « Beyond\people » (mod Steam de Pro Wrestling Simulator, PNG 500 × 500, `Nom.png` + `Nom_altN.png`) :
   seules les photos de base des catcheurs connus de l'app (rosters, fiches, groupes, photos existantes) ; les personnages fictifs, célébrités (« !USER »)
   et catcheurs absents de l'app ne sont pas installés. Photo identique à une version existante (comparaison d'image, décalage toléré) = pas installée ;
@@ -392,7 +426,7 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   `push/{uid}` ; bandeau « Installer l'app ». `data/push.json` = { vapid (clé publique), url (service Cloudflare) }.
 - `cloudflare/` : service des notifications instantanées (messages privés, feuds, annonces), installé par
   `.github/workflows/push-worker.yml`. `cloudflare/push-core.mjs` est partagé avec le robot.
-- `firestore.rules` : règles (version 12 : partie TCCCG qui ne recule pas, collection `tcgbak` ; version 11 : collection `tcgx` pour échanges / enchères / défis, champs `name` et `esc` de `tcg` ;
+- `firestore.rules` : règles (version 13 : jeu « Qui suis-je ? », collections `qsj` et `qsjp` ; version 12 : partie TCCCG qui ne recule pas, collection `tcgbak` ; version 11 : collection `tcgx` pour échanges / enchères / défis, champs `name` et `esc` de `tcg` ;
   version 10 : notes = nombre de 0 à 5,5). À chaque changement, donner le texte complet à Jose pour qu'il le colle
   dans Firebase › Firestore › Règles › Publier.
 

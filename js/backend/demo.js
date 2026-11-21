@@ -258,3 +258,9 @@ export function watchTcgx(cb) { return watch(() => cb(Object.keys(DB.tcgx || {})
 export async function addTcgx(d) { DB.tcgx = DB.tcgx || {}; const id = uidGen(); DB.tcgx[id] = Object.assign(clone(d), { at: Date.now() }); save(); return id; }
 export async function txTcgx(id, fn) { const cur = DB.tcgx && DB.tcgx[id]; if (!cur) throw new Error("introuvable"); const patch = fn(Object.assign(clone(cur), { id: id })); if (!patch) throw new Error("plus possible"); Object.assign(cur, clone(patch)); save(); return Object.assign(clone(cur), { id: id }); }
 export async function showRates(k, d) { return Object.keys(DB.activity).map(id => Object.assign(clone(DB.activity[id]), { id: id })).filter(a => a.kind === "rate" && a.k === k && a.d === d); }
+// ---- Jeu « Qui suis-je ? » (21 nov.) ----
+export async function qsjDays(days) { const o = {}; days.forEach(d => { if (DB.qsj && DB.qsj[d]) o[d] = clone(DB.qsj[d]); }); return o; }
+export async function qsjSetDay(day, o) { DB.qsj = DB.qsj || {}; if (o) DB.qsj[day] = clone(o); else delete DB.qsj[day]; save(); }
+export async function qsjGet(uid) { return DB.qsjp && DB.qsjp[uid] ? clone(DB.qsjp[uid]) : null; }
+export async function qsjSave(uid, d) { DB.qsjp = DB.qsjp || {}; DB.qsjp[uid] = Object.assign(clone(d), { at: Date.now() }); save(); }
+export async function qsjList() { return Object.keys(DB.qsjp || {}).map(uid => { const d = DB.qsjp[uid]; return { uid: uid, name: d.name || "", pts: d.pts || 0, n: d.n || 0, g: d.g || 0 }; }).sort((a, b) => b.pts - a.pts).slice(0, 100); }

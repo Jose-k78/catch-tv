@@ -5,11 +5,12 @@ import { esc, toast, modal } from "../util.js";
 import { STYLES, MONTHS, dayLabel, shortDate, dateOf, fmtM, fmtK, stars, clamp, rnd, pick, uid } from "./world.js";
 import { MT, STIP, FIN, CONS, DUR, ENT, SEG, VENUES, CITIES, GT } from "./data.js";
 import { meF, wn, roster, avail, why, myStaff, isBig, champIds, teamName, sideName, e_, mail, ach } from "./base.js";
+import { runTimer } from "./tv.js";
 import { SPOTS, mtOf, idsOf, checkMatch, estimate, estimateShow, autoCard, pendingTour, prepShow, stepLive, orderLive, runShow, resLine, timeOf, itemMin, cityOf } from "./match.js";
 import { createTour, saveTrad, cashIn, contenders, autoDraft, setBrand, caseOf } from "./crea.js";
 import { advise, promoVideo } from "./biz.js";
 import { guestsFor } from "./deal.js";
-import { U, go, redraw, persist, shell, tabs, chips, face, crest, imgEv, imgT, imgBtn } from "./core.js";
+import { U, go, redraw, persist, shell, tabs, chips, face, crest, pickW, wnH, teamH, sidesH, whoIn, imgEv, imgT, imgBtn } from "./core.js";
 
 const bar = (v, c) => '<span class="uvbar"><i style="width:' + clamp(v) + "%" + (c ? ";background:" + c : "") + '"></i></span>';
 const MTG = [["Simples et équipes", ["simple", "tag", "mixte", "six", "huit", "handicap"]], ["À plusieurs", ["triple", "fatal4", "battle", "rumble", "gauntlet", "chamber"]], ["Avec du matériel", ["ladder", "tlc", "table", "cage", "cell", "wargames", "ultimatex"]], ["Règles spéciales", ["nodq", "lms", "iquit", "ironman", "falls", "sub", "lumber", "fca"]], ["Défi", ["open"]]];
@@ -24,8 +25,9 @@ export function poolFor(G, ev) {
 }
 const okFor = (G, ev, w) => w && (w.ret ? guestsFor(G, ev).indexOf(w.id) >= 0 : avail(G, w, ev.day)) && !w.bench;
 function wSel(G, ev, name, used, filter) {
-  return '<select name="' + name + '" aria-label="Ajouter un catcheur"><option value="">+ Ajouter…</option>' + poolFor(G, ev).filter(w => used.indexOf(w.id) < 0 && (!filter || filter(w))).map(w => { const ok = okFor(G, ev, w); return '<option value="' + esc(w.id) + '"' + (ok ? "" : " disabled") + ">" + esc(w.n) + " · " + Math.round(w.en) + " %" + (ok ? (w.en < 40 ? " · fatigué" + e_(w) : "") + (w.ret ? " · légende" : w.fed !== G.me ? " · invité" + e_(w) : "") : " · " + why(G, w)) + "</option>"; }).join("") + "</select>";
+  return '<button type="button" class="uvbtn sm uvaddw" data-act="uvpickw" data-k="' + name + '">+ Ajouter un catcheur</button>';
 }
+const wInfo = (G, ev, w) => { const ok = okFor(G, ev, w); return "Pop " + Math.round(w.pop) + " · endurance " + Math.round(w.en) + " %" + (ok ? (w.en < 40 ? " · fatigué" + e_(w) : "") + (w.ret ? " · légende" : w.fed !== G.me ? " · invité" + e_(w) : "") : " · " + why(G, w)); };
 const usedIn = ev => ev.items.reduce((s, it) => s.concat(it.it === "m" ? idsOf(it) : it.w || []), []);
 
 // ---------- la carte ----------
@@ -66,7 +68,7 @@ function itemCard(G, ev, it, i) {
   if (it.it === "s") {
     const S = SEG[it.k] || SEG.promo, W = (it.w || []).filter(Boolean);
     return '<div class="uvitem sg' + (ed ? " ed" : "") + '"><div class="uvrow"><span class="uvtag" style="background:' + (S.at === "bs" ? "#c9a7ff" : "#6fb3ff") + '">' + (S.at === "bs" ? "Coulisses" : "Ring") + '</span><b class="uvgrow">' + esc(S.n) + "</b>" + (e.r ? '<span class="uvstar">' + stars(e.r) + "</span>" : "") + "</div>" +
-      '<p class="uvsm">' + (W.length ? W.map(x => esc(wn(G, x))).join(" et ") : "Personne") + " · " + S.min + " min</p>" + mv + (ed ? segEditor(G, ev, it, i) : "") + "</div>";
+      '<p class="uvsm">' + (W.length ? W.map(x => wnH(G, x)).join(" et ") : "Personne") + " · " + S.min + " min</p>" + mv + (ed ? segEditor(G, ev, it, i) : "") + "</div>";
   }
   const T = mtOf(it), err = checkMatch(G, ev, it), t = it.title && G.T[it.title];
   return '<div class="uvitem' + (ed ? " ed" : "") + (last ? " main" : "") + '"><div class="uvrow"><span class="uvtag" style="background:' + (last ? "#f5b13d" : "#eef1f6") + '">' + (last && n > 1 ? "Main event" : "Match " + (i + 1)) + '</span><b class="uvgrow">' + esc(T.n) + (t ? " · " + esc(t.n) : "") + "</b>" + (e.r ? '<span class="uvstar">' + stars(e.r) + "</span>" : "") + "</div>" +
@@ -95,22 +97,18 @@ function matchEditor(G, ev, it, i) {
     '<button type="button" class="uvbtn sm pri" data-act="uvbed" data-ev="' + esc(ev.id) + '" data-i="-1">OK</button></form>';
 }
 function sideChips(G, it, j) { return '<div class="uvmem">' + (it.sides[j] || []).map(x => '<span class="uvpill">' + face(G, G.W[x], 22) + esc(wn(G, x)) + '<button type="button" data-act="uvsrm" data-j="' + j + '" data-w="' + esc(x) + '" aria-label="Retirer ' + esc(wn(G, x)) + '">×</button></span>').join("") + "</div>"; }
-function ocSel(G, ev, used) {
-  const mine = poolFor(G, ev).filter(w => used.indexOf(w.id) < 0 && okFor(G, ev, w)), legs = Object.values(G.W).filter(w => w.ret && w.leg && !w.staff).sort((a, b) => b.pop - a.pop).slice(0, 15), fa = Object.values(G.W).filter(w => !w.fed && !w.ret && !(w.nc > G.day)).sort((a, b) => b.pop - a.pop).slice(0, 15);
-  const o = w => '<option value="' + esc(w.id) + '">' + esc(w.n) + " (" + Math.round(w.pop) + ")</option>";
-  return '<select name="ocw" aria-label="Qui répond"><option value="">Qui répond ?</option><optgroup label="Ton effectif">' + mine.map(o).join("") + '</optgroup><optgroup label="Légendes (cachet)">' + legs.map(o).join("") + '</optgroup><optgroup label="Agents libres">' + fa.map(o).join("") + "</optgroup></select>";
-}
+function ocSel(G, ev, used) { return '<button type="button" class="uvbtn sm uvaddw" data-act="uvpickw" data-k="oc">Qui répond au défi ?</button>'; }
 function segEditor(G, ev, it, i) {
   const S = SEG[it.k] || SEG.promo, used = usedIn(ev).filter(x => (it.w || []).indexOf(x) < 0), cameo = (G.appear || []).filter(a => a.ev === ev.id).map(a => a.w);
   const opt = (v, l, cur) => '<option value="' + esc(v) + '"' + (String(cur) === String(v) ? " selected" : "") + ">" + esc(l) + "</option>";
-  const sel = j => '<label class="uvfld">' + (j === 0 ? "Qui" : "Avec") + '<select name="w' + j + '"><option value="">—</option>' + poolFor(G, ev).concat(cameo.map(x => G.W[x]).filter(w => w && poolFor(G, ev).indexOf(w) < 0)).filter(w => used.indexOf(w.id) < 0 || (it.w || [])[j] === w.id).map(w => opt(w.id, w.n + (w.secret ? " (signature secrète)" : w.ret ? " (légende)" : ""), (it.w || [])[j] || "")).join("") + "</select></label>";
+  const sel = j => { const cur = (it.w || [])[j]; return '<div class="uvfld"><span>' + (j === 0 ? "Qui" : "Avec") + '</span><div class="uvrow2">' + (cur ? '<span class="uvpill">' + wnH(G, cur) + '<button type="button" data-act="uvsegw" data-j="' + j + '" aria-label="Retirer">×</button></span>' : "") + '<button type="button" class="uvbtn sm uvaddw" data-act="uvpickw" data-k="w' + j + '">' + (cur ? "Changer" : "Choisir") + "</button></div></div>"; };
   return '<form class="uvform uvited" id="uvit" data-ev="' + esc(ev.id) + '" data-i="' + i + '" onsubmit="return false"><label class="uvfld">Segment<select name="k">' + ["ring", "bs"].map(at => '<optgroup label="' + (at === "bs" ? "En coulisses" : "Sur le ring") + '">' + Object.keys(SEG).filter(k => SEG[k].at === at).map(k => opt(k, SEG[k].n, it.k)).join("") + "</optgroup>").join("") + "</select></label>" +
     Array.from({ length: Math.max(1, S.p) }, (x, j) => sel(j)).join("") + '<button type="button" class="uvbtn sm pri" data-act="uvbed" data-ev="' + esc(ev.id) + '" data-i="-1">OK</button></form>';
 }
 // le formulaire de l'élément ouvert : relu à chaque changement
 function readItem(f, ev) {
   const i = +f.dataset.i, it = ev.items[i]; if (!it) return; const v = n => (f.elements.namedItem(n) || {}).value;
-  if (it.it === "s") { it.k = v("k") || it.k; const S = SEG[it.k] || SEG.promo; it.w = Array.from({ length: Math.max(1, S.p) }, (x, j) => v("w" + j) || "").filter(Boolean); return; }
+  if (it.it === "s") { it.k = v("k") || it.k; const S = SEG[it.k] || SEG.promo; it.w = (it.w || []).slice(0, Math.max(1, S.p)).filter(Boolean); return; }
   const t = v("t") || it.t; if (t !== it.t) { const T = MT[t] || MT.simple, ids = idsOf(it); it.t = t; const ns = T.s === "n" ? Math.max(T.min, Math.min(T.max, ids.length || T.min)) : T.s, pp = Array.isArray(T.p) ? T.p[0] : T.p;
     if (T.open) { it.sides = [ids.slice(0, 1), []]; it.oc = { rand: false, secret: true }; } else if (pp === 1) it.sides = Array.from({ length: Math.max(2, Math.min(ns, ids.length || ns)) }, (x, j) => ids[j] ? [ids[j]] : []); else { const n2 = typeof T.s === "number" ? T.s : 2; it.sides = Array.from({ length: n2 }, (x, j) => ids.slice(j * pp, j * pp + pp)); } if (T.dur) it.dur = "long"; it.win = "ia"; }
   ["title", "stip", "fin", "cons", "dur"].forEach(k => { const x = v(k); if (x != null) it[k] = x; });
@@ -131,6 +129,22 @@ if (typeof document !== "undefined") document.addEventListener("change", e => {
   else { const v = n => (f.elements.namedItem(n) || {}).value; ev.comm = Array.from(f.querySelectorAll('input[name="comm"]:checked')).map(x => x.value).slice(0, 3); ev.ent = +v("ent") || 0; if (v("venue") != null) ev.venue = +v("venue"); if (v("city") != null) ev.city = +v("city"); const m = f.elements.namedItem("mania"); if (m) { if (m.checked) U.G.mania = ev.id; else if (U.G.mania === ev.id) U.G.mania = ""; } }
   persist(); redraw();
 });
+// choisir un catcheur avec sa photo (carte du show)
+ACT.uvpickw = el => {
+  const G = U.G, f = el.closest("#uvit"); if (!f) return; const ev = G.ev.find(x => x.id === f.dataset.ev), it = ev && ev.items[+f.dataset.i]; if (!it) return;
+  readItem(f, ev); const k = el.dataset.k, used = usedIn(ev), row = w => ({ w: w, ok: okFor(G, ev, w), info: wInfo(G, ev, w) });
+  const done = id => { if (k.indexOf("add") === 0) { const s = it.sides[+k.slice(3)]; if (s && s.indexOf(id) < 0) s.push(id); }
+    else if (k === "oc") { it.oc = it.oc || {}; it.sides[1] = [id]; it.oc.w = id; it.oc.rand = false; }
+    else { const j = +k.slice(1); it.w = (it.w || []).slice(); it.w[j] = id; it.w = it.w.filter(Boolean); }
+    persist(); redraw(); };
+  if (k === "oc") { const mine = poolFor(G, ev).filter(w => used.indexOf(w.id) < 0 && okFor(G, ev, w)), legs = Object.values(G.W).filter(w => w.ret && w.leg && !w.staff).sort((a, b) => b.pop - a.pop).slice(0, 15), fa = Object.values(G.W).filter(w => !w.fed && !w.ret && !(w.nc > G.day)).sort((a, b) => b.pop - a.pop).slice(0, 15);
+    return pickW(G, "Qui répond au défi ?", [["Ton effectif", mine.map(row)], ["Légendes (cachet)", legs.map(w => ({ w: w, info: "Pop " + Math.round(w.pop) + " · légende" }))], ["Agents libres", fa.map(w => ({ w: w, info: "Pop " + Math.round(w.pop) + " · agent libre" }))]], done); }
+  if (k[0] === "w") { const cameo = (G.appear || []).filter(a => a.ev === ev.id).map(a => a.w), j = +k.slice(1), P = poolFor(G, ev).concat(cameo.map(x => G.W[x]).filter(w => w && poolFor(G, ev).indexOf(w) < 0)).filter(w => used.indexOf(w.id) < 0 || (it.w || [])[j] === w.id);
+    return pickW(G, j === 0 ? "Qui fait ce segment ?" : "Avec qui ?", [["", P.map(w => ({ w: w, info: "Pop " + Math.round(w.pop) + (w.secret ? " · signature secrète" : w.ret ? " · légende" : "") }))]], done); }
+  const P = poolFor(G, ev).filter(w => used.indexOf(w.id) < 0);
+  pickW(G, "Ajouter au camp " + (+k.slice(3) + 1), [["Disponibles", P.filter(w => okFor(G, ev, w)).map(row)], ["Pas disponibles", P.filter(w => !okFor(G, ev, w)).map(row)]], done);
+};
+ACT.uvsegw = el => { const G = U.G, f = el.closest("#uvit"); if (!f) return; const ev = G.ev.find(x => x.id === f.dataset.ev), it = ev && ev.items[+f.dataset.i]; if (!it) return; it.w = (it.w || []).filter((x, j) => j !== +el.dataset.j); persist(); redraw(); };
 ACT.uvbed = el => { U.f.bev = el.dataset.ev; U.f.bi = +el.dataset.i; redraw(); };
 ACT.uvbadd2 = el => { const ev = evOf(el); if (!ev) return; if (ev.items.filter(x => x.it === "m").length >= 12) { toast("12 matchs au maximum"); return; } ev.items.push(NEWM()); U.f.bev = ev.id; U.f.bi = ev.items.length - 1; persist(); redraw(); };
 ACT.uvsegadd = el => { const ev = evOf(el); if (!ev) return; ev.items.push({ it: "s", k: "promo", w: [] }); U.f.bev = ev.id; U.f.bi = ev.items.length - 1; persist(); redraw(); };
@@ -166,7 +180,7 @@ ACT.uvcash = el => {
   const C = (G.mitb || []).filter(x => x.fed === G.me && G.W[x.w]), T = ev.items.filter(it => it.it === "m" && it.title).map(it => G.T[it.title]).filter(Boolean);
   modal((box, close) => {
     box.classList.add("uvmodal");
-    box.innerHTML = "<h3>Encaisser la mallette</h3><p class=\"uvmut\">Juste après le match de titre, le porteur de la mallette attaque le champion épuisé.</p>" + C.map((c, i) => T.map((t, j) => '<button type="button" class="uvbtn" data-c="' + i + '" data-t="' + j + '">' + esc(wn(G, c.w) + " encaisse sur le " + t.n) + "</button>").join("")).join("") + '<button type="button" class="uvbtn ghost" data-x="1">Annuler</button>';
+    box.innerHTML = "<h3>Encaisser la mallette</h3><p class=\"uvmut\">Juste après le match de titre, le porteur de la mallette attaque le champion épuisé.</p>" + C.map((c, i) => T.map((t, j) => '<button type="button" class="uvbtn" data-c="' + i + '" data-t="' + j + '">' + wnH(G, c.w) + " encaisse sur le " + t.n + "</button>").join("")).join("") + '<button type="button" class="uvbtn ghost" data-x="1">Annuler</button>';
     box.addEventListener("click", e => { if (e.target.closest("[data-x]")) close(); const b = e.target.closest("[data-c]"); if (!b) return; if (cashIn(G, ev, C[+b.dataset.c].w, T[+b.dataset.t].id)) toast("Encaissement prévu juste après le match de titre !"); persist(); close(); redraw(); });
   });
 };
@@ -177,7 +191,7 @@ ACT.uvposter = el => {
     box.classList.add("uvmodal", "uvwide");
     box.innerHTML = '<div class="uvposter" style="--pc:' + esc(f.c || "#f5b13d") + '"><div class="uvpt">' + (im ? '<img src="' + esc(im) + '" alt="">' : crest(G, G.me, 56)) + "<b>" + esc(f.n) + "</b></div><h2>" + esc(ev.n) + "</h2>" +
       (me ? '<div class="uvpvs">' + me.sides.slice(0, 2).map(s => '<div class="uvpw">' + (s[0] ? face(G, G.W[s[0]], 110) : "") + "<b>" + esc(teamName(G, s)) + "</b></div>").join('<i>VS</i>') + "</div>" : '<p class="uvmut">Ajoute un main event pour l’affiche.</p>') +
-      '<ul class="uvpu">' + ms.slice(0, -1).slice(-4).map(m => "<li>" + esc(sideName(G, m.sides)) + "</li>").join("") + '</ul><p class="uvpd">' + esc(dayLabel(ev.day, true)) + (c ? " · " + esc(c[0]) : "") + "</p></div>" + '<button type="button" class="uvbtn ghost" data-x="1">Fermer</button>';
+      '<ul class="uvpu">' + ms.slice(0, -1).slice(-4).map(m => "<li>" + sidesH(G, m.sides) + "</li>").join("") + '</ul><p class="uvpd">' + esc(dayLabel(ev.day, true)) + (c ? " · " + esc(c[0]) : "") + "</p></div>" + '<button type="button" class="uvbtn ghost" data-x="1">Fermer</button>';
     box.addEventListener("click", e => { if (e.target.closest("[data-x]")) close(); });
   });
 };
@@ -188,7 +202,7 @@ function checkCard(G, ev) {
   for (let i = 0; i < ev.items.length; i++) {
     const it = ev.items[i], nm = (it.it === "m" ? "Match " : "Segment ") + (i + 1) + " : ";
     if (it.it === "s") { const S = SEG[it.k] || SEG.promo; if (S.p && (it.w || []).length < S.p) return nm + "il manque quelqu’un"; for (const id of it.w) { if (seen.has(id) && !(G.W[id] || {}).ret) return wn(G, id) + " est deux fois sur la carte"; seen.add(id); } continue; }
-    if (it.t === "open" && it.oc && it.oc.rand && !(it.sides[1] || []).length) { const L = Object.values(G.W).filter(w => (w.ret ? !w.staff && w.leg : (!w.fed && !(w.nc > G.day)) || (w.fed === G.me && avail(G, w))) && !seen.has(w.id) && w.id !== it.sides[0][0] && w.sx === (G.W[it.sides[0][0]] || {}).sx); const r = pick(L.sort((a, b) => b.pop - a.pop).slice(0, 25)); if (r) { it.sides[1] = [r.id]; it.oc.w = r.id; } }
+    if (it.t === "open" && it.oc && it.oc.rand && !(it.sides[1] || []).length) { const L = Object.values(G.W).filter(w => (w.ret ? !w.staff && w.leg : (!w.fed && !(w.nc > G.day)) || (w.fed === G.me && avail(G, w))) && !seen.has(w.id) && usedIn(ev).indexOf(w.id) < 0 && w.id !== it.sides[0][0] && w.sx === (G.W[it.sides[0][0]] || {}).sx); const r = pick(L.sort((a, b) => b.pop - a.pop).slice(0, 25)); if (r) { it.sides[1] = [r.id]; it.oc.w = r.id; } }
     const err = checkMatch(G, ev, it); if (err) return nm + err;
     for (const id of idsOf(it)) { const w = G.W[id]; if (seen.has(id) && !it.cashin) return wn(G, id) + " est dans deux matchs"; seen.add(id); if (w && !w.ret && w.fed !== G.me && w.fed !== ev.part && !(w.guest && w.guest.to === G.me) && guestsFor(G, ev).indexOf(id) < 0 && !(it.t === "open" && !w.fed)) return nm + wn(G, id) + " n’est pas dans ta fédération"; if (w && !w.ret && w.fed && !avail(G, w, ev.day) && !it.cashin) return nm + wn(G, id) + " ne peut pas catcher (" + why(G, w) + ")"; }
     const t = it.title && G.T[it.title], c = t ? champIds(t).filter(x => G.W[x] && avail(G, G.W[x], ev.day)) : [];
@@ -216,68 +230,23 @@ ACT.uvbplay2 = el => { const ev = evOf(el); if (ev) play(U.G, ev, false); };
 // « Vivre en direct » depuis l'accueil, le courrier ou la fenêtre du soir : carte de l'IA si elle est vide
 U.goLive = ev => { const G = U.G; if (!ev || ev.done) return; if (ev.day !== G.day) { go("#/univers/ev/" + encodeURIComponent(ev.id)); return; } if (!(ev.items || []).length) autoCard(G, ev); if (!play(G, ev, true)) go("#/univers/ev/" + encodeURIComponent(ev.id)); };
 
-// ---------- le show en direct (Gorilla position) ----------
-let timer = 0;
-const SPD = { 1: 1700, 2: 800, 4: 330 };
-function runTimer() {
-  clearInterval(timer); const LV = U.live; if (!LV || LV.sp === 0) return;
-  timer = setInterval(() => {
-    const G = U.G, LV2 = U.live; if (!G || !LV2) { clearInterval(timer); return; }
-    if (location.hash.indexOf("#/univers/live/") !== 0) { clearInterval(timer); LV2.sp = 0; return; }
-    if (document.activeElement && document.activeElement.closest && document.activeElement.closest(".uvorders select")) return;
-    tick(G, LV2);
-  }, SPD[LV.sp] || 1700);
-}
-function tick(G, LV) {
-  const ev = G.ev.find(e => e.id === LV.ev); if (!ev) return;
-  const r = stepLive(G, ev, LV.L);
-  if (r.show) { clearInterval(timer); afterShow(G, ev); doneMail(G, ev); persist(true); toast("Fin du show : " + stars(ev.res.r)); U.live = null; go("#/univers/ev/" + encodeURIComponent(ev.id)); }
-  redraw();
-}
-ACT.uvlsp = el => { const LV = U.live; if (!LV) return; const v = el.dataset.v; if (v === "end") { const G = U.G, ev = G.ev.find(e => e.id === LV.ev); let g = 0; while (U.live && g++ < 3000) { const r = stepLive(G, ev, LV.L); if (r.show) { afterShow(G, ev); doneMail(G, ev); persist(true); U.live = null; go("#/univers/ev/" + encodeURIComponent(ev.id)); break; } } clearInterval(timer); redraw(); return; } LV.sp = +v; runTimer(); redraw(); };
-ACT.uvord = el => {
-  const G = U.G, LV = U.live; if (!LV) return; const ev = G.ev.find(e => e.id === LV.ev), o = el.dataset.o;
-  let v = el.dataset.v; if (o === "win" || o === "runin") { const s = document.querySelector('.uvorders select[name="' + o + '"]'); v = s ? s.value : ""; if (!v) { toast("Choisis d’abord"); return; } }
-  if (orderLive(G, ev, LV.L, o, v)) toast({ faster: "On accélère !", longer: "On rallonge", finish: "Va au finish !", win: "Changement de vainqueur transmis à l’arbitre", runin: "Intervention lancée", medic: "Le médecin y va", pub: "Coupure pub" }[o] || "OK");
-  redraw();
-};
-export function liveView(id) {
-  const G = U.G, ev = G.ev.find(e => e.id === id);
-  if (!ev) return shell("activite", "En direct", "", '<p class="uvempty">Show introuvable.</p>');
-  if (ev.done) return resultsView(G, ev);
-  const LV = U.live && U.live.ev === id ? U.live : null;
-  if (!LV) return shell("activite", "En direct", "", '<div class="uvtile"><p>Le direct n’est pas lancé.</p><a class="uvbtn pri" href="#/univers/ev/' + encodeURIComponent(id) + '">Retour à la carte</a></div>');
-  const L = LV.L, C = L.cur, it = C ? C.it : ev.items[L.i], hh = m => Math.floor(m / 60) + " h " + String(m % 60).padStart(2, "0");
-  const crowdL = L.crowd >= 80 ? "Brûlant" : L.crowd >= 62 ? "Chaud" : L.crowd >= 45 ? "Tiède" : "Froid";
-  const ids = it ? (it.it === "m" ? idsOf(it) : it.w || []) : [], R = roster(G).filter(w => ids.indexOf(w.id) < 0 && avail(G, w));
-  const orders = !C ? "" : '<div class="uvorders" role="group" aria-label="Tes ordres"><b>Tes ordres</b><div class="uvrow2">' +
-    '<button type="button" class="uvbtn sm" data-act="uvord" data-o="faster">Accélérer</button><button type="button" class="uvbtn sm" data-act="uvord" data-o="longer">Rallonger</button>' + (C.it.it === "m" ? '<button type="button" class="uvbtn sm" data-act="uvord" data-o="finish">Aller au finish</button>' : "") + '<button type="button" class="uvbtn sm" data-act="uvord" data-o="pub">Couper à la pub</button>' +
-    (C.alert === "inj" && !C.mod.medic ? '<button type="button" class="uvbtn sm del" data-act="uvord" data-o="medic">Envoyer le médecin</button>' : "") + "</div>" +
-    (C.it.it === "m" ? '<div class="uvinl"><select name="win" aria-label="Nouveau vainqueur"><option value="">Changer le vainqueur…</option>' + C.it.sides.map((s, j) => '<option value="' + j + '">' + esc(teamName(G, s)) + "</option>").join("") + '<option value="nul">Draw</option></select><button type="button" class="uvbtn sm" data-act="uvord" data-o="win">OK</button></div>' +
-      '<div class="uvinl"><select name="runin" aria-label="Intervention"><option value="">Envoyer une intervention…</option>' + R.slice(0, 40).map(w => '<option value="' + esc(w.id) + '">' + esc(w.n) + "</option>").join("") + '</select><button type="button" class="uvbtn sm" data-act="uvord" data-o="runin">Go</button></div>' : "") + "</div>";
-  const body = '<div class="uvlive"><div class="uvlhead"><span class="uvon">EN DIRECT</span><b>' + esc(ev.n) + '</b><span class="uvclock">' + hh(L.clock) + " / " + hh(L.len) + "</span></div>" +
-    '<div class="uvst2 wide"><span>Public : ' + crowdL + "</span>" + bar(L.crowd, L.crowd >= 62 ? "#ff6b5e" : L.crowd >= 45 ? "#ffd27a" : "#6fb3ff") + "<b>" + Math.round(L.crowd) + "</b></div>" +
-    (it ? '<div class="uvlnow"><small>' + (L.i + 1) + " / " + ev.items.length + (L.i === ev.items.length - 1 ? " · Main event" : "") + "</small><b>" + esc(it.it === "m" ? mtOf(it).n + (it.title ? " · " + ((G.T[it.title] || {}).n || "") : "") : (SEG[it.k] || SEG.promo).n) + '</b><div class="uvvsr">' + (it.it === "m" ? it.sides.map(s => '<span class="uvside">' + s.map(x => face(G, G.W[x], 30)).join("") + "<i>" + esc(teamName(G, s)) + "</i></span>").join("<em>contre</em>") : '<span class="uvside">' + ids.map(x => face(G, G.W[x], 30)).join("") + "<i>" + esc(teamName(G, ids)) + "</i></span>") + "</div>" + (C && C.alert ? '<p class="uvalertl ' + C.alert + '">' + ({ botch: "Botch !", inj: "Blessure possible !", chant: "Le public scande un autre nom…" }[C.alert] || "") + "</p>" : "") + "</div>" : "") +
-    orders +
-    '<div class="uvspeed" role="group" aria-label="Vitesse"><button type="button" class="uvbtn sm' + (LV.sp === 0 ? " pri" : "") + '" data-act="uvlsp" data-v="0" aria-pressed="' + (LV.sp === 0) + '">⏸ Pause</button>' + [1, 2, 4].map(v => '<button type="button" class="uvbtn sm' + (LV.sp === v ? " pri" : "") + '" data-act="uvlsp" data-v="' + v + '" aria-pressed="' + (LV.sp === v) + '">×' + v + "</button>").join("") + '<button type="button" class="uvbtn sm ghost" data-act="uvlsp" data-v="end">⏭ Fin</button></div>' +
-    '<ol class="uvlog" aria-live="polite">' + L.log.slice(-14).reverse().map(l => '<li class="' + (l.res ? "rs" : l.big ? "big" : "") + (l.alert ? " al" : "") + '"><span>' + hh(l.c).replace(" h ", ":") + "</span>" + esc(l.txt) + "</li>").join("") + "</ol>" +
-    '<div class="uvlcard">' + ev.items.map((x, i) => { const r = L.out[i]; return '<div class="uvlci' + (i === L.i ? " on" : i < L.i ? " dn" : "") + '"><span>' + (i < L.i ? "✓" : i === L.i ? "▶" : i + 1) + "</span><i>" + esc(x.it === "m" ? sideName(G, x.sides) : (SEG[x.k] || SEG.promo).n) + "</i>" + (r ? "<b>" + stars(r.r) + "</b>" : "") + "</div>"; }).join("") + "</div></div>";
-  return shell("activite", "Gorilla position", "", body);
-}
+// ---------- le show en direct : plein écran « comme à la télé » (tv.js) ----------
+U.afterLive = (G, ev) => { afterShow(G, ev); doneMail(G, ev); };
+U.resultsView = (G, ev) => resultsView(G, ev);
 
 // ---------- les résultats : rapport détaillé ----------
 export function resultsView(G, ev) {
   const r = ev.res || {}, im = imgEv(G, ev), mine = ev.fed === G.me;
   const items = r.items || (r.m || []).map(m => ({ it: "m", t: m.kind === "equipe" ? "tag" : "simple", sides: [m.a, m.b], win: m.win === "a" ? 0 : m.win === "b" ? 1 : "nul", r: m.r, title: m.title, change: m.change, notes: m.notes || [] })).concat((r.s || []).map(s => ({ it: "s", k: "promo", w: [s.w], r: s.r, notes: [] })));
   const line = (x, i) => {
-    if (x.it === "s") return '<div class="uvres"><div class="uvrow"><span class="uvgrow">' + esc((SEG[x.k] || SEG.promo).n) + " : <b>" + esc(teamName(G, x.w)) + '</b></span><span class="uvstar">' + stars(x.r) + "</span></div>" + (x.notes || []).map(n => "<small>" + esc(n) + "</small>").join("") + "</div>";
+    if (x.it === "s") return '<div class="uvres"><div class="uvrow"><span class="uvgrow">' + esc((SEG[x.k] || SEG.promo).n) + " : <b>" + teamH(G, x.w) + '</b></span><span class="uvstar">' + stars(x.r) + "</span></div>" + (x.notes || []).map(n => "<small>" + esc(n) + "</small>").join("") + "</div>";
     const W = typeof x.win === "number" ? x.sides[x.win] : null, t = x.title && G.T[x.title], P = x.parts;
-    return '<details class="uvres"' + (i === items.length - 1 ? " open" : "") + '><summary><div class="uvrow"><span class="uvgrow"><small>' + esc((MT[x.t] || MT.simple).n) + (t ? " · " + esc(t.n) : "") + "</small>" + (W ? "<b>" + esc(teamName(G, W)) + "</b> bat " + esc(x.sides.filter((s, j) => j !== x.win).map(s => teamName(G, s)).join(", ")) : esc(sideName(G, x.sides)) + " : pas de vainqueur") + '</span><span class="uvstar">' + stars(x.r) + "</span></div></summary>" +
+    return '<details class="uvres"' + (i === items.length - 1 ? " open" : "") + '><summary><div class="uvrow"><span class="uvgrow"><small>' + esc((MT[x.t] || MT.simple).n) + (t ? " · " + esc(t.n) : "") + "</small>" + (W ? "<b>" + teamH(G, W) + "</b> bat " + esc(x.sides.filter((s, j) => j !== x.win).map(s => teamName(G, s)).join(", ")) : sidesH(G, x.sides) + " : pas de vainqueur") + '</span><span class="uvstar">' + stars(x.r) + "</span></div></summary>" +
       (x.fin ? '<p class="uvsm">Fin : ' + esc((FIN[x.fin] || ["?"])[0]) + (x.dur ? " · " + esc((DUR[x.dur] || ["?"])[0]) : "") + "</p>" : "") + (t ? '<p class="' + (x.change ? "uvhot" : "uvsm") + '">' + (x.change ? "NOUVEAU CHAMPION : " + esc(t.n) : "Le champion garde le " + esc(t.n)) + "</p>" : "") +
       (P ? '<div class="uvparts">' + [["Ring", P.ring, 70], ["Alchimie", P.chem, 10], ["Histoire", P.story, 15], ["Public", P.crowd, 12], ["Durée", P.dur, 8]].map(p => '<div class="uvst2"><span>' + p[0] + "</span>" + bar(Math.max(0, p[1]) / p[2] * 100, p[1] < 0 ? "#ff8a7e" : "#6fb3ff") + "<b>" + (p[1] > 0 ? "+" : "") + p[1] + "</b></div>").join("") + "</div>" : "") +
-      (x.hero ? '<p class="uvok">Mis' + e_(G.W[x.hero]) + " en valeur : " + esc(wn(G, x.hero)) + "</p>" : "") + ((x.cons || []).filter(c => c.up).map(c => '<p class="uvok">' + esc(wn(G, c.w)) + " sort grandi" + e_(G.W[c.w]) + " de sa défaite</p>").join("")) + (x.buried ? '<p class="uvko">Enterré' + e_(G.W[x.buried]) + " : " + esc(wn(G, x.buried)) + "</p>" : "") +
-      (x.botch || []).map(b => '<p class="uvko">Botch ' + (b.sev === 2 ? "grave" : "") + " de " + esc(wn(G, b.w)) + "</p>").join("") + (x.notes || []).map(n => '<p class="uvsm">' + esc(n) + "</p>").join("") +
-      ((x.cons || []).length ? '<div class="uvconsq">' + x.cons.map(c => "<span>" + esc(wn(G, c.w)) + ' <b class="' + (c.pop >= 0 ? "uvok" : "uvko") + '">' + (c.pop >= 0 ? "+" : "") + c.pop + "</b></span>").join("") + "</div>" : "") +
+      (x.hero ? '<p class="uvok">Mis' + e_(G.W[x.hero]) + " en valeur : " + wnH(G, x.hero) + "</p>" : "") + ((x.cons || []).filter(c => c.up).map(c => '<p class="uvok">' + wnH(G, c.w) + " sort grandi" + e_(G.W[c.w]) + " de sa défaite</p>").join("")) + (x.buried ? '<p class="uvko">Enterré' + e_(G.W[x.buried]) + " : " + wnH(G, x.buried) + "</p>" : "") +
+      (x.botch || []).map(b => '<p class="uvko">Botch ' + (b.sev === 2 ? "grave" : "") + " de " + wnH(G, b.w) + "</p>").join("") + (x.notes || []).map(n => '<p class="uvsm">' + esc(n) + "</p>").join("") +
+      ((x.cons || []).length ? '<div class="uvconsq">' + x.cons.map(c => "<span>" + wnH(G, c.w) + ' <b class="' + (c.pop >= 0 ? "uvok" : "uvko") + '">' + (c.pop >= 0 ? "+" : "") + c.pop + "</b></span>").join("") + "</div>" : "") +
       (mine && ev.day >= G.day - 1 && !x.prime ? '<div class="uvrow2"><span class="uvsm">Prime :</span>' + [10, 25, 50].map(v => '<button type="button" class="uvbtn sm ghost" data-act="uvprime" data-ev="' + esc(ev.id) + '" data-i="' + i + '" data-v="' + v + '">' + v + " k$</button>").join("") + "</div>" : x.prime ? '<p class="uvok">Prime de ' + x.prime + " k$ donnée</p>" : "") + "</details>";
   };
   const body = '<a class="uvback" href="#/univers/' + (mine ? "activite/ev" : "g") + '">‹ Retour</a><div class="uvevhead">' + (im ? '<img class="uvevimg big" src="' + esc(im) + '" alt="">' : crest(G, ev.fed, 64)) + '<div class="uvgrow"><h2>' + esc(ev.n) + "</h2><small>" + esc(dayLabel(ev.day, true)) + " · " + (ev.kind === "tv" ? "Show TV" : ev.kind.toUpperCase()) + "</small>" + (mine ? imgBtn("e:" + ev.fed + "|" + ev.n) : "") + "</div></div>" +
@@ -299,10 +268,10 @@ export function toursBody(G) {
   const card = t => {
     const img = (G.img || {})["o:" + t.id];
     let inner = "";
-    if (t.fmt === "league") inner = t.blocks.map((B, bi) => '<div class="uvlg"><small>' + (t.blocks.length > 1 ? "Bloc " + "ABCD"[bi] : "Classement") + "</small>" + B.m.slice().sort((a, b) => (B.pts[b] || 0) - (B.pts[a] || 0)).map(x => '<div class="uvline"><span class="uvgrow">' + esc(wn(G, x)) + "</span><b>" + (B.pts[x] || 0) + " pts</b></div>").join("") + '<p class="uvsm">' + B.g.filter(g => g.w).length + " / " + B.g.length + " matchs joués</p></div>").join("") + (t.final ? '<p class="uvsm">Finale : ' + esc(wn(G, t.final.a)) + " contre " + esc(wn(G, t.final.b)) + (t.final.w ? " → " + esc(wn(G, t.final.w)) : " (au prochain grand show)") + "</p>" : "");
-    else if (t.fmt === "gauntlet") inner = '<p class="uvsm">' + t.m.map(x => esc(wn(G, x))).join(", ") + "</p>";
+    if (t.fmt === "league") inner = t.blocks.map((B, bi) => '<div class="uvlg"><small>' + (t.blocks.length > 1 ? "Bloc " + "ABCD"[bi] : "Classement") + "</small>" + B.m.slice().sort((a, b) => (B.pts[b] || 0) - (B.pts[a] || 0)).map(x => '<div class="uvline"><span class="uvgrow">' + wnH(G, x) + "</span><b>" + (B.pts[x] || 0) + " pts</b></div>").join("") + '<p class="uvsm">' + B.g.filter(g => g.w).length + " / " + B.g.length + " matchs joués</p></div>").join("") + (t.final ? '<p class="uvsm">Finale : ' + wnH(G, t.final.a) + " contre " + wnH(G, t.final.b) + (t.final.w ? " → " + wnH(G, t.final.w) : " (au prochain grand show)") + "</p>" : "");
+    else if (t.fmt === "gauntlet") inner = '<p class="uvsm">' + t.m.map(x => wnH(G, x)).join(", ") + "</p>";
     else inner = '<div class="uvbr">' + t.r.map(r => '<div class="uvbrc"><small>' + RN(r.length) + "</small>" + r.map(m => '<div class="uvbrm"><span' + (m.w && m.w === m.a ? ' class="w"' : "") + ">" + esc(m.a ? wn(G, m.a) : "?") + "</span><span" + (m.w && m.w === m.b ? ' class="w"' : "") + ">" + esc(m.b ? wn(G, m.b) : "?") + "</span></div>").join("") + "</div>").join("") + "</div>";
-    return '<div class="uvcard"><div class="uvrow">' + (img ? '<img class="uvbelt big" src="' + esc(img) + '" alt="">' : '<span class="uvcup" aria-hidden="true">🏆</span>') + '<div class="uvgrow"><b>' + esc(t.n) + (t.ed > 1 ? " (édition " + t.ed + ")" : "") + "</b><small>" + ({ bracket: "Tableau", league: "Ligue", gauntlet: "Gauntlet" }[t.fmt] || "") + " · " + t.size + " · " + ({ h: "hommes", f: "femmes", x: "intergender" }[t.cat] || "") + " · prestige " + Math.round(t.pres || 40) + "</small><small>Récompense : " + ({ shot: "match de titre", trophy: "trophée", case: "mallette" }[t.pr] || "") + "</small></div>" + (t.win ? '<span class="uvstat ok">' + esc(wn(G, t.win)) + "</span>" : "") + "</div>" + inner +
+    return '<div class="uvcard"><div class="uvrow">' + (img ? '<img class="uvbelt big" src="' + esc(img) + '" alt="">' : '<span class="uvcup" aria-hidden="true">🏆</span>') + '<div class="uvgrow"><b>' + esc(t.n) + (t.ed > 1 ? " (édition " + t.ed + ")" : "") + "</b><small>" + ({ bracket: "Tableau", league: "Ligue", gauntlet: "Gauntlet" }[t.fmt] || "") + " · " + t.size + " · " + ({ h: "hommes", f: "femmes", x: "intergender" }[t.cat] || "") + " · prestige " + Math.round(t.pres || 40) + "</small><small>Récompense : " + ({ shot: "match de titre", trophy: "trophée", case: "mallette" }[t.pr] || "") + "</small></div>" + (t.win ? '<span class="uvstat ok">' + wnH(G, t.win) + "</span>" : "") + "</div>" + inner +
       (t.win ? "" : '<p class="uvsm">Les matchs se jouent dans tes shows : « + Match du tournoi » dans la carte. La finale, dans un grand show.</p>') + '<div class="uvrow2">' + imgBtn("o:" + t.id, "🏆 Image du trophée") + '<button type="button" class="uvbtn sm del" data-act="uvtodel2" data-t="' + esc(t.id) + '">Supprimer</button></div></div>';
   };
   return L.map(card).join("") + '<form class="uvcard uvform" data-form="uvtonew2"><h3 class="uvh3">Nouveau tournoi</h3><label class="uvfld">Nom<input name="n" maxlength="50" required list="uvtnames" placeholder="Ex. : King of the Ring"><datalist id="uvtnames">' + names.map(n => '<option value="' + esc(n) + '">').join("") + "</datalist></label>" +

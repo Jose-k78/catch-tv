@@ -8,7 +8,7 @@ import { meF, wn, roster, avail, why, mail, relsOf, myStaff, e_, isBig } from ".
 import { demandOf, attract, negStart, negOffer, negScore, announce, release, releaseCost, canContact, contact, hireStaff, fireStaff, hireLegend, appear, appearFee } from "./deal.js";
 import { fitOf, gimOf } from "./v2.js";
 import { gimIdeas, gimChance, proposeGim } from "./crea.js";
-import { U, go, redraw, persist, shell, tabs, chips, face, crest, imgBtn } from "./core.js";
+import { U, go, redraw, persist, shell, tabs, chips, face, crest, wnH, teamH, sidesH, whoIn, imgBtn } from "./core.js";
 
 const bar = (v, c) => '<span class="uvbar"><i style="width:' + clamp(v) + "%" + (c ? ";background:" + c : "") + '"></i></span>';
 const fedN = (G, k) => k ? ((G.F[k] || {}).n || k) : "Libre";
@@ -55,7 +55,7 @@ export function searchBody(G) {
     ST.map((n, i) => '<label class="uvmini">' + n + " min.<input type=\"number\" name=\"st" + i + '" min="0" max="100" step="5" value="' + esc(F.st[i]) + '"></label>').join("") +
     '<label class="uvspot"><input type="checkbox" name="bud"' + (F.bud ? " checked" : "") + "><span>Dans mon budget</span></label></div></details>" +
     '<div class="uvrow2"><button class="uvbtn pri">Chercher</button><button type="button" class="uvbtn ghost" data-act="uvsreset">Effacer les filtres</button></div></form>' +
-    (cmp.length ? '<div class="uvcmpbar" role="status"><span>' + cmp.map(i => esc(wn(G, i))).join(" · ") + '</span><button type="button" class="uvbtn sm pri" data-act="uvcmp"' + (cmp.length < 2 ? " disabled" : "") + '>Comparer</button><button type="button" class="uvbtn sm ghost" data-act="uvcmpclr">Vider</button></div>' : "") +
+    (cmp.length ? '<div class="uvcmpbar" role="status"><span>' + cmp.map(i => wnH(G, i)).join(" · ") + '</span><button type="button" class="uvbtn sm pri" data-act="uvcmp"' + (cmp.length < 2 ? " disabled" : "") + '>Comparer</button><button type="button" class="uvbtn sm ghost" data-act="uvcmpclr">Vider</button></div>' : "") +
     '<p class="uvmut">' + L.length + " résultat" + (L.length > 1 ? "s" : "") + " · touche un nom pour sa fiche, ☐ pour comparer</p>" +
     L.slice(0, F.n).map(w => { const sg = signal(G, w), g = gimOf(w); return '<div class="uvw"><a class="uvwl" href="#/univers/c/' + esc(w.id) + '">' + face(G, w, 40) + '<span class="uvgrow"><b>' + esc(w.n) + "</b>" + (g.n ? "<small class=\"uvgimn\">« " + esc(g.n) + " »</small>" : "") + "<small>" + esc(fedN(G, w.fed)) + " · " + w.age + " ans · " + STYLES[w.sty][0] + " · " + (w.al === "heel" ? "Heel" : "Face") + " · " + recTxt(w.rec) + "</small><small><span class=\"uvsig " + sg[1] + '">' + esc(sg[0]) + "</span>" + (w.fed === G.me || w.ret ? "" : " · demande " + fmtK(demandOf(G, w)) + "/an") + "</small></span>" +
       '<span class="uvnote">' + Math.round(w.pop) + '<small>POP</small></span></a><label class="uvck" aria-label="Comparer ' + esc(w.n) + '"><input type="checkbox" data-act="uvcmpt" data-w="' + esc(w.id) + '"' + (cmp.indexOf(w.id) >= 0 ? " checked" : "") + "></label></div>"; }).join("") +
@@ -103,7 +103,7 @@ export function negoView(id) {
     '<div class="uvchat" aria-live="polite">' + N.log.slice(-10).map(m => '<div class="uvbub ' + (m[0] === "me" ? "me" : m[0] === "riv" ? "riv" : "him") + '">' + esc(m[1]) + "</div>").join("") + "</div>" +
     (N.done ? '<p class="uvdone" role="status">' + (w.fed === G.me && w.ct && w.ct.end > G.day + 300 ? "Contrat signé." : "Négociation terminée.") + "</p>" :
     '<form class="uvform uvcard" id="uvneg2" data-w="' + esc(id) + '" onsubmit="return false">' +
-    (N.dem.length ? '<h3 class="uvh3">Ses revendications</h3>' + N.dem.map(d => '<label class="uvchoice"><input type="checkbox" name="d_' + d.k + '"' + (O.acc[d.k] ? " checked" : "") + '><span><b>' + esc(DEM[d.k]) + (d.w ? " : " + esc(wn(G, d.w)) : "") + "</b><small>Accepter = c’est écrit dans son contrat (et suivi dans Promesses).</small></span></label>").join("") : "") +
+    (N.dem.length ? '<h3 class="uvh3">Ses revendications</h3>' + N.dem.map(d => '<label class="uvchoice"><input type="checkbox" name="d_' + d.k + '"' + (O.acc[d.k] ? " checked" : "") + '><span><b>' + esc(DEM[d.k]) + (d.w ? " : " + wnH(G, d.w) : "") + "</b><small>Accepter = c’est écrit dans son contrat (et suivi dans Promesses).</small></span></label>").join("") : "") +
     '<label class="uvfld">Salaire par an : <output>' + fmtK(O.sal) + '</output><input type="range" name="sal" min="' + Math.max(20, Math.round(N.base * 0.4 / 10) * 10) + '" max="' + Math.round(N.base * 2.4 / 10) * 10 + '" step="10" value="' + O.sal + '"></label>' +
     '<label class="uvfld">Durée : <output>' + O.dur + " an" + (O.dur > 1 ? "s" : "") + '</output><input type="range" name="dur" min="1" max="5" step="1" value="' + O.dur + '"></label>' +
     '<label class="uvfld">Rôle promis<select name="role">' + Object.keys(ROLES).map(r => '<option value="' + r + '"' + (r === O.role ? " selected" : "") + ">" + ROLES[r] + "</option>").join("") + "</select></label>" +

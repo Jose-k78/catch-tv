@@ -88,17 +88,27 @@ export function tournoiView(id) {
     (t.from ? "<small>Du " + fmt(t.from) + (t.to ? " au " + fmt(t.to) : "") + "</small>" : "") + "</section>" + (t.img ? '<img class="tnimg" src="' + esc(t.img) + '" alt="" loading="lazy">' : "") + tnModoBar(t);
   if (t.winner) h += '<div class="bkchamp">' + (face(t.winner, 80) || "") + "<span>🏆 Vainqueur</span><b>" + linkNames(t.winner) + "</b></div>";
   if ((t.about || "") !== "") h += '<p class="note" style="margin:8px 16px">' + linkNames(t.about) + "</p>";
-  // blocs (tous contre tous)
+  // blocs (tous contre tous) : le classement avec les points reste derrière un spoiler tant que le tournoi n'est pas fini (21 nov.)
+  // points : ceux de data/tournaments.json, sinon calculés d'après les matchs joués (rounds : gagnant w, « nul »)
+  const live = t.st !== "terminé", pw = (String(t.about || "").match(/(\d+)\s*points?\s*(?:la|par)\s*victoire/i) || [])[1], pd = (String(t.about || "").match(/(\d+)\s*points?\s*(?:le|par)\s*(?:match\s*)?nul/i) || [])[1];
+  const WIN = +pw || (/NJPW|Stardom|Marigold/.test(t.k || "") ? 2 : 3), DRAW = pd != null ? +pd : 1;
   (t.blocs || []).forEach(b => {
-    const rows = (b.rows || []).slice().sort((x, y) => (y.pts || 0) - (x.pts || 0)), hasPts = rows.some(r => r.pts != null);
-    h += "<h2>" + esc(b.n || "Bloc") + '</h2><div class="board">' + rows.map((r, i) => '<a class="brow" href="#/catcheur/' + encodeURIComponent(r.w) + '"><span class="brk">' + (hasPts ? i + 1 : "•") + "</span>" + faceImg(r.w, 28) + "<b>" + esc(r.w) + "</b>" + (hasPts && r.pts != null ? '<span class="bpts">' + r.pts + " pts</span>" : "") + "</a>").join("") + "</div>";
+    const names = (b.rows || []).map(r => r.w), rec = {};
+    names.forEach(n => { rec[n] = { v: 0, d: 0, n: 0 }; });
+    (t.rounds || []).forEach(r => (r.m || []).forEach(m => { if (!m.w || !(m.a in rec) || !(m.b in rec)) return; if (/^(nul|match nul|draw)$/i.test(m.w)) { rec[m.a].n++; rec[m.b].n++; } else if (m.w in rec) { rec[m.w].v++; rec[m.w === m.a ? m.b : m.a].d++; } }));
+    const played = names.some(n => rec[n].v + rec[n].d + rec[n].n > 0);
+    const rows = (b.rows || []).map(r => ({ w: r.w, pts: r.pts != null ? r.pts : played ? rec[r.w].v * WIN + rec[r.w].n * DRAW : null, rc: rec[r.w] })).sort((x, y) => (y.pts || 0) - (x.pts || 0)), hasPts = rows.some(r => r.pts != null);
+    const board = '<div class="board">' + rows.map((r, i) => '<a class="brow" href="#/catcheur/' + encodeURIComponent(r.w) + '"><span class="brk">' + (hasPts ? i + 1 : "•") + "</span>" + faceImg(r.w, 28) + "<b>" + esc(r.w) + "</b>" + (hasPts && r.pts != null ? '<span class="bpts">' + r.pts + " pts" + (played ? "<small> · " + r.rc.v + " V · " + r.rc.d + " D" + (r.rc.n ? " · " + r.rc.n + " N" : "") + "</small>" : "") + "</span>" : "") + "</a>").join("") + "</div>";
+    h += "<h2>" + esc(b.n || "Bloc") + "</h2>";
+    if (live && hasPts) h += '<div class="board">' + (b.rows || []).map(r => '<a class="brow" href="#/catcheur/' + encodeURIComponent(r.w) + '"><span class="brk">•</span>' + faceImg(r.w, 28) + "<b>" + esc(r.w) + "</b></a>").join("") + "</div>" + spoilBlock("Voir le classement et les points (spoiler)", board);
+    else h += board;
   });
   // tableau (élimination)
   if ((t.rounds || []).length) {
     const tree = '<div class="tntree">' + t.rounds.map((r, ri) => '<div class="bkcol"><small>' + esc(r.n || "Tour " + (ri + 1)) + "</small>" + (r.m || []).map((m, mi) =>
       '<div class="bkmini">' + [m.a, m.b].map(n => '<span class="' + (m.w && n === m.w ? "win" : m.w ? "out" : "") + '">' + (n ? faceImg(n, 18) + esc(n) : "?") + "</span>").join("") + "</div>").join("") + "</div>").join("") + "</div>";
     // tournoi en cours : les résultats du tableau restent derrière un spoiler
-    h += "<h2>Le tableau</h2>" + (t.st === "en cours" ? spoilBlock("👀 Voir le tableau et les qualifiés (spoiler)", tree) : tree);
+    h += "<h2>Le tableau</h2>" + (t.st === "en cours" ? spoilBlock("Voir le tableau et les qualifiés (spoiler)", tree) : tree);
     // matchs : résultat, vidéo officielle ou lien du modo
     h += "<h2>Les matchs</h2>";
     t.rounds.forEach((r, ri) => (r.m || []).forEach((m, mi) => {

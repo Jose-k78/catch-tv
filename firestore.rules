@@ -1,6 +1,7 @@
 rules_version = '2';
 
-// Règles de sécurité TCC TV (version 12 : sauvegardes TCCCG — une partie ne peut plus « reculer », copies du robot lisibles).
+// Règles de sécurité TCC TV (version 13 : jeu « Qui suis-je ? » — choix du modo et partie de chaque joueur).
+// (version 12 : sauvegardes TCCCG — une partie ne peut plus « reculer », copies du robot lisibles).
 // (version 11 : TCCCG ouvert à tous — échanges, enchères et défis entre membres).
 // (version 10 : notes de 0 à 5,5 par demi-étoile).
 // (version 9 : partie TCCCG de chaque joueur).
@@ -417,6 +418,30 @@ service cloud.firestore {
           || (resource.data.ty == 'trade' && request.auth.uid == resource.data.to && resource.data.st == 'open' && request.resource.data.st in ['ok','no'])
           || (resource.data.ty == 'auc' && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['bids','wc'])));
       allow delete: if signedIn() && (request.auth.uid == resource.data.from || isAdmin());
+    }
+
+    // ---------- Jeu « Qui suis-je ? » ----------
+    // qsj/{AAAA-MM-JJ} : les catcheurs choisis par le modo pour ce jour (sinon tirage automatique) ; tout le monde lit, le modo écrit.
+    match /qsj/{day} {
+      allow read: if signedIn();
+      allow write: if isAdmin() && (request.resource == null || (request.resource.data.keys().hasOnly(['e','m','h'])
+        && (!('e' in request.resource.data) || str(request.resource.data.e, 80))
+        && (!('m' in request.resource.data) || str(request.resource.data.m, 80))
+        && (!('h' in request.resource.data) || str(request.resource.data.h, 80))));
+    }
+    // qsjp/{uid} : la partie de chaque joueur (points de tous les temps, jours joués) ; tout le monde lit (classement),
+    // chacun écrit la sienne, et les points ne peuvent que monter (30 au plus d'un coup).
+    match /qsjp/{uid} {
+      function qsjOk(d) {
+        return d.keys().hasOnly(['name','pts','n','g','days','at'])
+          && str(d.name, 40) && d.pts is int && d.pts >= 0 && d.n is int && d.n >= 0 && d.g is int && d.g >= 0
+          && d.days is map && d.days.size() <= 100 && d.at == request.time;
+      }
+      allow read: if signedIn();
+      allow create: if isMe(uid) && qsjOk(request.resource.data) && request.resource.data.pts <= 30;
+      allow update: if isAdmin() || (isMe(uid) && qsjOk(request.resource.data)
+        && request.resource.data.pts >= resource.data.pts && request.resource.data.pts <= resource.data.pts + 30);
+      allow delete: if isAdmin();
     }
 
     // ---------- Annonces du modérateur : tout le monde les lit, seul l'admin les publie ----------

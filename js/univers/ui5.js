@@ -10,7 +10,7 @@ import { setVenue, setTix, planTour, tvOffers, takeTv, licOk, takeLic, borrow, i
 import { part, propose, lend, rent, invasion, jointShow } from "./deal.js";
 import { hofInduct } from "./life.js";
 import { gimOf } from "./v2.js";
-import { U, go, redraw, persist, shell, tabs, chips, face, crest, imgT, imgBtn, showPrompt } from "./core.js";
+import { U, go, redraw, persist, shell, tabs, chips, face, crest, wnH, teamH, sidesH, whoIn, imgT, imgBtn, showPrompt } from "./core.js";
 
 const bar = (v, c) => '<span class="uvbar"><i style="width:' + clamp(v) + "%" + (c ? ";background:" + c : "") + '"></i></span>';
 const opt = (v, l, cur) => '<option value="' + esc(v) + '"' + (String(cur) === String(v) ? " selected" : "") + ">" + esc(l) + "</option>";
@@ -84,8 +84,8 @@ export function fedView(id) {
   const R = roster(G, id).sort((a, b) => b.pop - a.pop), A = (G.aiShows || {})[id] || [], T = Object.values(G.T).filter(t => t.fed === id), p = id === G.me ? null : part(G, id);
   const body = '<a class="uvback" href="#/univers/monde/f">‹ Fédérations</a><div class="uvfhead">' + crest(G, id, 64) + '<div class="uvgrow"><h2>' + esc(o.n) + "</h2><small>" + (id === G.me ? "Ta fédération" : "Gérée par l’IA · " + esc(STRAT[o.strat] || "")) + "</small><small>Prestige <b>" + Math.round(o.pop) + "</b> · audience " + fmtM(o.aud.length ? o.aud[o.aud.length - 1] : o.aud0) + " · " + R.length + " catcheurs</small>" + imgBtn("f:" + id) + "</div></div>" +
     (p ? '<div class="uvst2 wide"><span>Relation</span><span class="uvrelb ' + (p.rel >= 0 ? "f" : "e") + '"><i style="width:' + Math.abs(p.rel) + '%"></i></span><b>' + Math.round(p.rel) + "</b></div>" : "") +
-    '<h3 class="uvh3">Titres</h3>' + T.map(t => '<div class="uvline">' + (imgT(G, t) ? '<img class="uvbelt" src="' + esc(imgT(G, t)) + '" alt="">' : "") + '<span class="uvgrow">' + esc(t.n) + "</span><b>" + esc(champIds(t).length ? teamName(G, champIds(t)) : "vacant") + "</b></div>").join("") +
-    '<h3 class="uvh3">Derniers shows</h3>' + (A.length ? A.slice().reverse().map(s => '<details class="uvres"><summary><div class="uvrow"><span class="uvgrow"><b>' + esc(s.n) + "</b><small> · " + esc(shortDate(s.d)) + " · " + fmtM(s.aud) + '</small></span><span class="uvstar">' + stars(s.r) + "</span></div></summary>" + s.m.map(m => '<p class="uvsm">' + (typeof m.w === "number" ? "<b>" + esc(teamName(G, m.s[m.w])) + "</b> bat " + esc(m.s.filter((x, j) => j !== m.w).map(x => teamName(G, x)).join(", ")) : esc(sideName(G, m.s)) + " : pas de vainqueur") + " · " + stars(m.r) + (m.c ? " · nouveau champion" : "") + "</p>").join("") + "</details>").join("") : '<p class="uvempty">Pas encore de show.</p>') +
+    '<h3 class="uvh3">Titres</h3>' + T.map(t => '<div class="uvline">' + (imgT(G, t) ? '<img class="uvbelt" src="' + esc(imgT(G, t)) + '" alt="">' : "") + '<span class="uvgrow">' + esc(t.n) + "</span><b>" + (champIds(t).length ? teamH(G, champIds(t)) : "vacant") + "</b></div>").join("") +
+    '<h3 class="uvh3">Derniers shows</h3>' + (A.length ? A.slice().reverse().map(s => '<details class="uvres"><summary><div class="uvrow"><span class="uvgrow"><b>' + esc(s.n) + "</b><small> · " + esc(shortDate(s.d)) + " · " + fmtM(s.aud) + '</small></span><span class="uvstar">' + stars(s.r) + "</span></div></summary>" + s.m.map(m => '<p class="uvsm">' + (typeof m.w === "number" ? "<b>" + teamH(G, m.s[m.w]) + "</b> bat " + esc(m.s.filter((x, j) => j !== m.w).map(x => teamName(G, x)).join(", ")) : sidesH(G, m.s) + " : pas de vainqueur") + " · " + stars(m.r) + (m.c ? " · nouveau champion" : "") + "</p>").join("") + "</details>").join("") : '<p class="uvempty">Pas encore de show.</p>') +
     '<h3 class="uvh3">Les plus populaires</h3>' + R.slice(0, 12).map(w => '<a class="uvw" href="#/univers/c/' + esc(w.id) + '">' + face(G, w, 32) + '<span class="uvgrow"><b>' + esc(w.n) + "</b><small>" + recTxt(w.rec) + '</small></span><span class="uvnote">' + Math.round(w.pop) + "<small>POP</small></span></a>").join("");
   return shell("monde", o.n, "", body);
 }
@@ -113,11 +113,11 @@ export function encBody(G) {
   const longest = reigns.filter(r => r.from >= 0).sort((a, b) => b.d - a.d).slice(0, 8), defs = reigns.slice().sort((a, b) => b.defs - a.defs).slice(0, 5);
   const W = Object.values(G.W).filter(w => w.fed && !w.ret), wins = W.slice().sort((a, b) => (b.car[0] + b.rec[0]) - (a.car[0] + a.rec[0])).slice(0, 5);
   let body = chips("enc", [["rec", "Records"], ["tit", "Titres"], ["big", "Grands shows"]], tab);
-  if (tab === "rec") body += '<h3 class="uvh3">Plus longs règnes (dans ta partie)</h3>' + longest.map(r => '<div class="uvline"><span class="uvgrow">' + esc(teamName(G, r.w)) + "<small> · " + esc(r.t.n) + "</small></span><b>" + r.d + " j</b></div>").join("") +
-    '<h3 class="uvh3">Plus de défenses</h3>' + defs.map(r => '<div class="uvline"><span class="uvgrow">' + esc(teamName(G, r.w)) + "<small> · " + esc(r.t.n) + "</small></span><b>" + r.defs + "</b></div>").join("") +
+  if (tab === "rec") body += '<h3 class="uvh3">Plus longs règnes (dans ta partie)</h3>' + longest.map(r => '<div class="uvline"><span class="uvgrow">' + teamH(G, r.w) + "<small> · " + esc(r.t.n) + "</small></span><b>" + r.d + " j</b></div>").join("") +
+    '<h3 class="uvh3">Plus de défenses</h3>' + defs.map(r => '<div class="uvline"><span class="uvgrow">' + teamH(G, r.w) + "<small> · " + esc(r.t.n) + "</small></span><b>" + r.defs + "</b></div>").join("") +
     '<h3 class="uvh3">Plus de victoires en carrière</h3>' + wins.map(w => '<div class="uvline"><span class="uvgrow">' + esc(w.n) + "</span><b>" + (w.car[0] + w.rec[0]) + "</b></div>").join("") +
     '<h3 class="uvh3">Meilleurs matchs</h3>' + (G.topM || []).slice(0, 10).map(m => '<div class="uvline"><span class="uvgrow">' + esc(m.txt) + "<small> · " + esc(m.ev || "") + " · " + esc(shortDate(m.d)) + '</small></span><span class="uvstar">' + stars(m.r) + "</span></div>").join("");
-  else if (tab === "tit") body += T.map(t => '<details class="uvres"><summary><div class="uvrow"><span class="uvgrow"><b>' + esc(t.n) + "</b><small> · " + esc((G.F[t.fed] || {}).n || "") + "</small></span><b>" + t.hist.length + "</b></div></summary>" + t.hist.slice().reverse().map(h => '<p class="uvsm">' + esc(teamName(G, h.w)) + " · depuis le " + esc(h.from < 0 ? "début" : shortDate(h.from)) + (h.to != null ? " jusqu’au " + esc(shortDate(h.to)) : " (en cours)") + " · " + (h.defs || 0) + " défense(s)</p>").join("") + "</details>").join("");
+  else if (tab === "tit") body += T.map(t => '<details class="uvres"><summary><div class="uvrow"><span class="uvgrow"><b>' + esc(t.n) + "</b><small> · " + esc((G.F[t.fed] || {}).n || "") + "</small></span><b>" + t.hist.length + "</b></div></summary>" + t.hist.slice().reverse().map(h => '<p class="uvsm">' + teamH(G, h.w) + " · depuis le " + esc(h.from < 0 ? "début" : shortDate(h.from)) + (h.to != null ? " jusqu’au " + esc(shortDate(h.to)) : " (en cours)") + " · " + (h.defs || 0) + " défense(s)</p>").join("") + "</details>").join("");
   else body += (G.topS || []).map(s => '<div class="uvline"><span class="uvgrow">' + esc(s.n) + "<small> · " + esc((G.F[s.fed] || {}).n || "") + " · " + esc(shortDate(s.d)) + '</small></span><span class="uvstar">' + stars(s.r) + "</span></div>").join("") || '<p class="uvempty">Pas encore de grand show.</p>';
   return body;
 }
@@ -125,7 +125,7 @@ export function encBody(G) {
 // ---------- le bureau du GM ----------
 export function bureauView(tab) {
   const G = U.G, f = meF(G); tab = tab || "obj";
-  const T = tabs("#/univers/bureau", [["obj", "Objectifs"], ["rep", "Réputation"], ["ach", "Trophées"], ["sem", "Semaines"], ["agenda", "Agenda"], ["cfg", "Réglages"]], tab);
+  const T = tabs("#/univers/bureau", [["obj", "Objectifs"], ["riv", "Rivale"], ["rep", "Réputation"], ["ach", "Trophées"], ["sem", "Semaines"], ["agenda", "Agenda"], ["cfg", "Réglages"]], tab);
   let body = "";
   if (tab === "obj") {
     const o = G.obj || { goals: [], sec: 70 }, shows = G.ev.filter(e => e.fed === G.me && e.done && e.res && e.day >= G.day - 91), tv = shows.filter(e => e.kind === "tv");
@@ -134,6 +134,9 @@ export function bureauView(tab) {
     body = '<div class="uvtile"><div class="uvth">Mode <i>' + (G.mode === "sandbox" ? "Bac à sable" : "Carrière") + " · " + ({ facile: "Facile", normal: "Normal", difficile: "Difficile" }[G.diff] || "Normal") + "</i></div>" + (G.mode === "sandbox" ? '<p class="uvsm">Pas d’objectifs, pas de faillite : amuse-toi.</p>' :
       '<p class="uvsm">Confiance du propriétaire</p><div class="uvbig" style="color:' + (o.sec >= 50 ? "#63d69c" : o.sec >= 25 ? "#ffd27a" : "#ff8a7e") + '">' + Math.round(o.sec) + " / 100</div>" + bar(o.sec, o.sec >= 50 ? "#63d69c" : o.sec >= 25 ? "#ffd27a" : "#ff8a7e") + '<p class="uvsm">À 0, tu es viré. Bilan à la fin de ' + MONTHS[nextQ != null ? nextQ : 11] + ".</p>") + "</div>" +
       (G.mode === "sandbox" ? "" : '<h3 class="uvh3">Ce trimestre</h3>' + o.goals.map(g => { const v = cur[g.k], ok = v >= g.v; return '<div class="uvcard"><div class="uvrow"><span class="uvgrow"><b>' + (g.k === "aud" ? "Audience moyenne des shows TV" : g.k === "money" ? "Argent en banque" : "Note moyenne des shows") + "</b><small>Objectif : " + (g.k === "aud" ? fmtM(g.v) : g.k === "money" ? fmtK(g.v) : g.v + "/100") + '</small></span><span class="uvstat ' + (ok ? "ok" : "ko") + '">' + (g.k === "aud" ? fmtM(v) : g.k === "money" ? fmtK(v) : Math.round(v)) + "</span></div></div>"; }).join(""));
+    body += U.misBody ? U.misBody(G) : "";
+  } else if (tab === "riv") {
+    body = U.rivBody ? U.rivBody(G) : "";
   } else if (tab === "rep") {
     const jobs = G.mail.filter(m => m.k === "job" && !m.done && G.F[m.fed]);
     body = '<div class="uvtile"><div class="uvth">Ta réputation de GM</div><div class="uvbig">' + Math.round(G.rep || 50) + " / 100</div>" + bar(G.rep || 50) + '<p class="uvsm">Bons shows, objectifs tenus, awards et stars dans le ' + MAGN + " la font monter. Les promesses non tenues et les renvois de stars la font baisser. Plus elle est haute, plus les stars veulent signer chez toi, et d’autres fédérations peuvent te proposer leur poste de GM.</p></div>" +
@@ -175,14 +178,16 @@ function paint(G, info) {
 }
 function weekCard(G) {
   const w = (G.weeks || [])[G.weeks.length - 1]; if (!w) return "";
-  return '<div class="uvwkc"><b>Résumé de la semaine</b><p>Audience ' + fmtM(w.aud) + (w.rank ? " · " + w.rank + "e sur " + w.of : "") + " · " + (w.money >= 0 ? "+" : "") + fmtK(w.money) + "</p>" + (w.best ? "<p>Meilleur match : " + esc(w.best.txt) + " (" + stars(w.best.r) + ")</p>" : "") + '<div class="uvrow2"><button type="button" class="uvbtn pri" data-ov="go">Continuer</button><button type="button" class="uvbtn ghost" data-ov="stop">Fermer</button></div></div>';
+  return '<div class="uvwkc"><b>Résumé de la semaine</b><p>Audience ' + fmtM(w.aud) + (w.rank ? " · " + w.rank + "e sur " + w.of : "") + " · " + (w.money >= 0 ? "+" : "") + fmtK(w.money) + "</p>" + (w.best ? "<p>Meilleur match : " + esc(w.best.txt) + " (" + stars(w.best.r) + ")</p>" : "") + (w.war ? '<p class="uvwarl">Guerre des audiences : ' + (w.war.won ? '<span class="uvok">tu bats ' + esc(w.war.n) + "</span>" : '<span class="uvko">' + esc(w.war.n) + " gagne</span>") + " (" + fmtM(w.war.me) + " contre " + fmtM(w.war.them) + ")</p>" : "") + '<div class="uvrow2"><button type="button" class="uvbtn pri" data-ov="go">Continuer</button><button type="button" class="uvbtn ghost" data-ov="stop">Fermer</button></div></div>';
 }
 export function startDays(target) {
   const G = U.G; if (!G) return;
   if (G.over) { toast("La partie est finie : regarde le menu général"); return; }
   const today = myEventToday(G); if (today) { showPrompt(today); return; }
   const id = ++run; G._new = 0; G._week = false; let n = 0;
-  const done = why => { if (id !== run) return; closeOv(); persist(true); const ev = myEventToday(G); toast(n > 1 ? n + " jours passés" + (ev ? " · ce soir : " + ev.n : G._new ? " · nouveau message" : "") : ev ? "Ce soir : " + ev.n : "Jour suivant"); redraw(); if (ev) setTimeout(() => showPrompt(ev), 250); };
+  const done = why => { if (id !== run) return; closeOv(); persist(true); const ev = myEventToday(G); toast(n > 1 ? n + " jours passés" + (ev ? " · ce soir : " + ev.n : G._new ? " · nouveau message" : "") : ev ? "Ce soir : " + ev.n : "Jour suivant"); redraw(); if (ev) setTimeout(() => showPrompt(ev), 250);
+    // une nouvelle décision importante : on l'ouvre en carte
+    else if (G._new && U.deckCard) { const last = G.mail.slice().reverse().find(m => !m.read && m.imp !== false); if (last && U.deckCard(G, last)) go("#/univers/decide"); } };
   const step = () => {
     if (id !== run) return;
     stepDay(G); n++;

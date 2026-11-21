@@ -1,6 +1,7 @@
 // Mode Univers v2 : les matchs, les segments et les shows (cartes de l'IA, estimation, show en direct depuis la Gorilla position,
 // rapport de match détaillé et conséquences). Un show = liste ordonnée ev.items : { it: "m", t, sides, title, stip, fin, cons, dur, win, spots,
 // oc, tour, trad, mgr } (match) ou { it: "s", k, w: [ids], t } (segment). Le show en direct et le show « passé » utilisent le même moteur.
+import { missionsShow } from "./goals.js";
 import { clamp, rnd, pick, dateOf, dayLabel, fmtM, fmtK, stars, STY_FAT, STY_INJ } from "./world.js";
 import { MT, STIP, FIN, CONS, DUR, ENT, SEG, CITIES, VENUES } from "./data.js";
 import { meF, wn, roster, avail, mail, news, buzz, FANS, relGet, relAdd, staffQ, ach, isBig, champIds, teamName, sideName, ini, e_, cap } from "./base.js";
@@ -292,12 +293,13 @@ export function pendingTour(G, t, ev) {
 
 // ---------- le show (en direct ou passé) ----------
 const LINES = {
-  start: ["Les deux se jaugent au centre du ring.", "La cloche sonne, ça part tout de suite !", "Le public est debout dès le début.", "On commence prudemment, prise de bras."],
-  mid: ["Enchaînement impressionnant au coin du ring.", "Gros coup de poing, le public réagit !", "Sortie du ring, on se bat à l’extérieur.", "Prise de soumission, il tend la main vers les cordes…", "Plongeon par-dessus la 3e corde !", "Le rythme monte, quelle intensité.", "Contre-attaque au dernier moment !"],
-  near: ["1… 2… NON ! Dégagement à deux !", "Finisher… et kick-out ! Incroyable !", "Le public y a cru, mais non !", "Il s’accroche aux cordes juste à temps !"],
+  start: ["{a} et {b} se jaugent au centre du ring.", "La cloche sonne : {a} se jette sur {b} !", "Le public est debout dès le début.", "Prise de bras de {a}, {b} cherche une sortie.", "{a} provoque {b} : le public siffle et applaudit."],
+  mid: ["{a} enchaîne {b} dans le coin du ring !", "Gros coup de {a}, le public réagit !", "{a} et {b} se battent à l’extérieur du ring.", "{a} place une soumission… {b} tend la main vers les cordes !", "Plongeon de {a} par-dessus la 3e corde !", "{a} reprend le dessus, quelle intensité.", "Contre-attaque de {a} au dernier moment !", "{a} grimpe sur la 3e corde…", "{a} soulève {b}… et le projette au tapis !"],
+  near: ["{a} place son finisher… 1… 2… {b} dégage !", "Tombé de {a} ! 1… 2… NON !", "{b} s’accroche aux cordes juste à temps !", "Finisher de {a}… kick-out de {b} ! Incroyable !"],
   hot: ["« This is awesome ! » scande le public.", "Toute l’arène est debout.", "Les fans tapent des pieds dans les tribunes."],
   cold: ["Le public est un peu silencieux.", "Quelques fans regardent leur téléphone…"],
-  seg: ["Le micro en main, il fait monter la pression.", "Le public répond à chaque phrase.", "Échange tendu, ça peut exploser à tout moment.", "La caméra suit l’action dans les coulisses."]
+  seg: ["{a} prend le micro et fait monter la pression.", "Le public répond à chaque phrase de {a}.", "Échange tendu avec {b} : ça peut exploser à tout moment.", "La caméra suit {a} dans les coulisses."],
+  seg1: ["{a} prend le micro et fait monter la pression.", "Le public répond à chaque phrase de {a}.", "{a} regarde la caméra droit dans les yeux.", "La caméra suit {a} dans les coulisses."]
 };
 export function prepShow(G, ev) {
   if (!ev.items || !ev.items.length) autoCard(G, ev);
@@ -311,16 +313,21 @@ function startItem(G, ev, L) {
   const W = it.it === "s" ? it.w : idsOf(it);
   const names = W.map(i => wn(G, i));
   beats.push({ t: 0, txt: it.it === "s" ? (SEG[it.k] || SEG.promo).n + " : " + names.join(" et ") : (mtOf(it).n + " : " + sideName(G, it.sides) + (it.title ? " — " + ((G.T[it.title] || {}).n || "") + " en jeu" : "")), big: 1 });
+  // qui a l'avantage à chaque moment (la photo de celui qui attaque est mise en avant, la barre d'élan bouge)
+  const sides = it.it === "m" ? (it.sides || []).filter(s => s && s.length) : [];
+  const duo = () => { if (it.it === "s") return [W[0], W[1] || ""]; const i = Math.floor(rnd() * sides.length), o = sides.filter((s, j) => j !== i); return [pick(sides[i] || W), o.length ? pick(pick(o)) : ""]; };
+  const fill = (t, a, b) => t.replace(/\{a\}/g, wn(G, a)).replace(/\{b\}/g, b ? wn(G, b) : "son adversaire");
   for (let k = 1; k < n; k++) {
-    const pool = it.it === "s" ? LINES.seg : k === 1 ? LINES.start : k >= n - 2 ? LINES.near : LINES.mid; let txt = pick(pool), ev2 = "";
-    if (it.it === "m" && rnd() < 0.06) { const b = pick(W); txt = "Aïe… mouvement raté par " + wn(G, b) + " (botch) !"; ev2 = "botch:" + b; }
-    else if (it.it === "m" && rnd() < 0.025 + (W.some(i => G.W[i] && G.W[i].en < 35) ? 0.04 : 0)) { const b = pick(W); txt = wn(G, b) + " se tient le genou… il a l’air blessé !"; ev2 = "inj:" + b; }
-    else if (est.r >= 70 && rnd() < 0.3) txt = pick(LINES.hot); else if (est.r < 45 && rnd() < 0.4) txt = pick(LINES.cold);
-    beats.push({ t: Math.round(k * itemMin(it) / n), txt: txt, ev: ev2 });
+    const ty = it.it === "s" ? "seg" : k === 1 ? "start" : k >= n - 2 ? "near" : "mid", p = duo(), a = p[0], b = p[1];
+    let txt = fill(pick(ty === "seg" ? (b ? LINES.seg : LINES.seg1) : LINES[ty]), a, b), ev2 = "", t2 = ty;
+    if (it.it === "m" && rnd() < 0.06) { txt = "Aïe… mouvement raté par " + wn(G, a) + " (botch) !"; ev2 = "botch:" + a; t2 = "botch"; }
+    else if (it.it === "m" && rnd() < 0.025 + (W.some(i => G.W[i] && G.W[i].en < 35) ? 0.04 : 0)) { txt = wn(G, a) + " se tient le genou… " + (G.W[a] && G.W[a].sx === "f" ? "elle" : "il") + " a l’air blessé" + e_(G.W[a]) + " !"; ev2 = "inj:" + a; t2 = "inj"; }
+    else if (ty !== "near" && est.r >= 70 && rnd() < 0.3) { txt = pick(LINES.hot); t2 = "hot"; } else if (ty !== "near" && est.r < 45 && rnd() < 0.4) { txt = pick(LINES.cold); t2 = "cold"; }
+    beats.push({ t: Math.round(k * itemMin(it) / n), txt: txt, ev: ev2, ty: t2, who: t2 === "hot" || t2 === "cold" ? "" : a, vs: b });
   }
   // le public pousse un catcheur absent du match : il scande son nom
   const pushed = L.mine && it.it === "m" && L.i === ev.items.length - 1 ? roster(G).find(w => (w.crowd || 0) >= 75 && !(w.push > 0) && idsOf(it).indexOf(w.id) < 0) : null;
-  if (pushed && rnd() < 0.5) beats.splice(beats.length - 1, 0, { t: beats[beats.length - 1].t, txt: "Le public scande « " + pushed.n + " ! » pendant le main event…", ev: "chant:" + pushed.id });
+  if (pushed && rnd() < 0.5) beats.splice(beats.length - 1, 0, { t: beats[beats.length - 1].t, txt: "Le public scande « " + pushed.n + " ! » pendant le main event…", ev: "chant:" + pushed.id, ty: "chant", who: pushed.id });
   return { it: it, est: est, beats: beats, k: 0, mod: {}, min: itemMin(it) };
 }
 // avance d'un « moment » ; renvoie { line } ou { end: résultat du segment } ou { show: résultats du show }
@@ -332,13 +339,15 @@ export function stepLive(G, ev, L) {
     const b = C.beats[C.k++]; L.clock += C.k === 1 ? (C.it.it === "m" ? 3 : 1) : Math.max(1, b.t - (C.beats[C.k - 2] || { t: 0 }).t);
     if (b.ev) { const p = b.ev.split(":"); if (p[0] === "botch") C.mod.botch = p[1]; if (p[0] === "inj") C.mod.injW = p[1]; if (p[0] === "chant") C.mod.chant = p[1]; C.alert = p[0]; }
     L.crowd = clamp(L.crowd + (C.est.r - 55) / 12 + (rnd() - 0.5) * 4);
-    const line = { c: L.clock, txt: b.txt, big: b.big, alert: b.ev ? b.ev.split(":")[0] : "" }; L.log.push(line); cap(L.log, 80);
+    // élan : la barre penche vers le camp de celui qui attaque
+    if (b.who && C.it.it === "m") { const si = C.it.sides.findIndex(s => s.indexOf(b.who) >= 0); if (si >= 0) C.mom = clamp((C.mom || 0) + (si === 0 ? 1 : -1) * (b.ty === "near" ? 35 : 22) + (rnd() - 0.5) * 10, -100, 100); }
+    const line = { c: L.clock, txt: b.txt, big: b.big, alert: b.ev ? b.ev.split(":")[0] : "", ty: b.ty || (b.big ? "intro" : ""), who: b.who || "", vs: b.vs || "", i: L.i }; L.log.push(line); cap(L.log, 80);
     return { line: line };
   }
   // fin du segment
   if (L.clock > L.len + 5 && ev.kind === "tv" && C.it.it === "m") C.mod.cut = true;
   const r = C.it.it === "m" ? simMatch(G, ev, C.it, C.mod) : simSeg(G, ev, C.it);
-  if (r) { r.min = C.min; L.out.push(r); L.log.push({ c: L.clock, txt: resLine(G, r), res: 1 }); L.crowd = clamp(L.crowd + (r.r - 60) / 6); }
+  if (r) { r.min = C.min; L.out.push(r); L.log.push({ c: L.clock, txt: resLine(G, r), res: 1, i: L.i, ty: "res" }); L.crowd = clamp(L.crowd + (r.r - 60) / 6); }
   L.cur = null; L.i++;
   if (L.i >= ev.items.length) return finishLive(G, ev, L);
   return { end: r };
@@ -352,10 +361,10 @@ export function resLine(G, r) {
 export function orderLive(G, ev, L, o, v) {
   const C = L.cur; if (!C) return false;
   if (o === "faster") { C.mod.faster = true; C.beats.splice(C.k, Math.max(0, C.beats.length - C.k - 1)); C.min = Math.round(C.min * 0.7); return true; }
-  if (o === "longer") { C.mod.longer = true; C.beats.splice(C.beats.length - 1, 0, { t: C.min + 3, txt: pick(LINES.near) }, { t: C.min + 6, txt: pick(LINES.mid) }); C.min += 6; return true; }
+  if (o === "longer") { C.mod.longer = true; const ids = idsOf(C.it), a = pick(ids), b = pick(ids.filter(x => x !== a)) || "", f2 = t => t.replace(/\{a\}/g, wn(G, a)).replace(/\{b\}/g, b ? wn(G, b) : "son adversaire"); C.beats.splice(C.beats.length - 1, 0, { t: C.min + 3, txt: f2(pick(LINES.near)), ty: "near", who: a, vs: b }, { t: C.min + 6, txt: f2(pick(LINES.mid)), ty: "mid", who: b || a, vs: a }); C.min += 6; return true; }
   if (o === "finish") { C.beats.splice(C.k, Math.max(0, C.beats.length - C.k - 1)); return true; }
   if (o === "win") { C.mod.win = v === "nul" ? "nul" : +v; return true; }
-  if (o === "runin") { C.mod.runin = v; C.beats.splice(C.k, 0, { t: C.min - 1, txt: wn(G, v) + " débarque dans le ring !" }); return true; }
+  if (o === "runin") { C.mod.runin = v; C.beats.splice(C.k, 0, { t: C.min - 1, txt: wn(G, v) + " débarque dans le ring !", ty: "runin", who: v }); return true; }
   if (o === "medic") { C.mod.medic = true; C.beats.splice(C.k, C.beats.length - C.k, { t: C.min, txt: "Le médecin entre sur le ring : on arrête tout." }); return true; }
   if (o === "pub") { L.crowd = clamp(L.crowd - 3); L.money += 15; C.beats.splice(C.k, 0, { t: C.min, txt: "Coupure pub… le public attend." }); return true; }
   return false;
@@ -427,6 +436,7 @@ function finishShow(G, ev, L) {
   });
   // trophées et guerre des audiences
   ach(G, "first"); if (rating >= 80) ach(G, "r4"); if (rating >= 98) ach(G, "r5"); if (aud >= 1) ach(G, "m1");
+  missionsShow(G, ev);
   if (rival) { const ra = rival.aud.length ? rival.aud[rival.aud.length - 1] : 0; if (aud > ra) { ach(G, "war"); news(G, { seg: "coul", f: "nous", t: "Guerre des audiences : " + f.n + " gagne", txt: ev.n + " (" + fmtM(aud) + ") bat " + rival.n + " (" + fmtM(ra) + ")." }); } }
 }
 // résultats d'un match de tournoi / de tradition

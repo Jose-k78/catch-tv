@@ -1,5 +1,6 @@
 // Mode Univers : le temps qui passe (un jour, « Jour suivant »), les shows des autres fédérations, les contrats qui finissent,
 // le début de partie. Le moteur des matchs est dans match.js, la vie du monde dans life.js, les contrats dans deal.js.
+import { missionsDaily, rivalMonthly } from "./goals.js";
 import { dateOf, dayLabel, shortDate, clamp, rnd, pick, salOf, trainee, fmtK, stars, lastSat } from "./world.js";
 import { meF, wOf, wn, roster, avail, injured, risk, teamName, mail, news, buzz, isBig, champIds, ini, e_, cap } from "./base.js";
 import { DUR } from "./data.js";
@@ -109,9 +110,10 @@ export function stepDay(G) {
   dailyBody(G);
   aiDay(G);
   lifeDaily(G);
+  missionsDaily(G);
   contracts(G);
   if (t.wd === 1) lifeWeekly(G);
-  if (t.dm === 1) lifeMonthly(G);
+  if (t.dm === 1) { lifeMonthly(G); rivalMonthly(G); }
   if (t.m === 0 && t.dm === 1 && G.day > 0) yearly(G);
   ensureMyEvents(G);
   const ev = myEventToday(G);

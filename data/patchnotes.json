@@ -1,6 +1,44 @@
 {
- "updated": "2026-11-18",
+ "updated": "2026-11-21",
  "items": [
+  {
+   "id": "2026-11-21-qsj",
+   "d": "2026-11-21",
+   "t": "Nouveau jeu : « Qui suis-je ? »",
+   "txt": [
+    "🕵️ Dans l’onglet Jeux, une 3e tuile : « Qui suis-je ? ». Chaque jour, 3 catcheurs à deviner : un facile, un moyen, un difficile.",
+    "🃏 5 tuiles face cachée. La 1re se retourne avec un indice (logo de sa fédération, groupe, ceinture, prise de finition…), du plus vague au plus précis. Écris ta réponse : si c’est faux, la tuile suivante se retourne. La dernière montre sa silhouette.",
+    "⭐ Plus tu trouves vite, plus tu marques : 5 points à la 1re tuile, puis 4, 3, 2, 1. ×2 pour le moyen, ×3 pour le difficile (30 points par jour au maximum).",
+    "⌨️ Des noms te sont proposés pendant que tu écris (les accents ne comptent pas). Le bouton « Je passe » retourne la tuile suivante.",
+    "🌙 À minuit, le jeu du jour se ferme et 3 nouveaux catcheurs arrivent. « Hier, c’était… » te donne les réponses de la veille.",
+    "🏆 Classement de tous les temps entre les membres, et 10 gimmicks du TCCCG par point gagné.",
+    "📣 Partage ton résultat dans la Gorilla Position en cases colorées, sans dévoiler les réponses."
+   ]
+  },
+  {
+   "id": "2026-11-21-tournois",
+   "d": "2026-11-21",
+   "t": "Tournois en ligues",
+   "txt": [
+    "📊 Les tournois en ligues ou en blocs (Continental Classic, G1 Climax…) montrent maintenant le classement avec les points et le bilan de chacun (victoires, défaites, nuls).",
+    "🙈 Tant que le tournoi n’est pas fini, ce classement reste caché derrière un bouton spoiler : on voit seulement les participants."
+   ]
+  },
+  {
+   "id": "2026-11-21-univers",
+   "d": "2026-11-21",
+   "mod": true,
+   "t": "Mode Univers plus vivant",
+   "txt": [
+    "🃏 Les décisions arrivent en cartes : le patron ou un catcheur apparaît en grand avec sa photo et te parle. Glisse à droite ou à gauche (ou touche ta réponse) et regarde bouger tes 4 jauges : patron, vestiaire, public, argent.",
+    "📺 Le show se vit comme à la télé, en plein écran : entrée des catcheurs avec leurs photos, barre d’élan, compte « 1… 2… » au tombé, public qui gronde ou explose, résultat et nouveau champion en grand, puis le générique de fin.",
+    "⚡ Moments clés : quand un tombé a failli passer, le direct s’arrête et tu parles à l’arbitre (laisser faire, encore un dégagement, finir maintenant, changer le vainqueur, envoyer quelqu’un).",
+    "⚔️ Une fédération rivale : chaque lundi, guerre des audiences à taille égale (on compare chacun à ses semaines d’avant). Elle peut aussi signer des agents libres avant toi, approcher tes stars ou se moquer de toi dans la presse. Bureau › Rivale.",
+    "🎯 Missions du propriétaire : 3 en même temps (un match à X étoiles, salle comble, battre la rivale, signer une star…), avec de l’argent et sa confiance à gagner. Fenêtre de célébration quand tu réussis une mission ou un trophée (5 nouveaux trophées).",
+    "📸 Une photo à côté de chaque nom : courrier, actu, buzz, résultats, titres, storylines… Les menus pour choisir un catcheur sont remplacés par une liste avec les photos.",
+    "🔧 Open challenge : l’adversaire tiré au hasard n’est plus quelqu’un déjà sur la carte."
+   ]
+  },
   {
    "id": "2026-11-21-photos",
    "d": "2026-11-21",

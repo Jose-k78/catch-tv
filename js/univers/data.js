@@ -140,7 +140,9 @@ export const ACH = {
   rich: ["Coffre-fort", "Avoir 10 M$ en banque"], stade: ["Stade plein", "Remplir un stade"], abroad: ["Tournée mondiale", "Faire une tournée à l’étranger"],
   part: ["Main dans la main", "Signer un partenariat"], oclegend: ["Ça fait boum", "Une légende répond à un open challenge"], hof: ["Immortel", "Faire une cérémonie du Hall of Fame"],
   turn: ["Changement de camp", "Faire un heel turn ou un face turn"], team: ["Inséparables", "Une amitié crée une tag team"], repack: ["Nouvelle peau", "Réussir un changement de gimmick"],
-  war: ["Guerre gagnée", "Battre un rival qui passe le même soir"], buy: ["Empire", "Racheter une fédération"], crowd: ["La voix du peuple", "Suivre un catcheur poussé par le public"]
+  war: ["Guerre gagnée", "Battre un rival qui passe le même soir"], buy: ["Empire", "Racheter une fédération"], crowd: ["La voix du peuple", "Suivre un catcheur poussé par le public"],
+  mis1: ["Bon élément", "Réussir une mission du propriétaire"], mis10: ["L’homme de confiance", "Réussir 10 missions du propriétaire"],
+  war3: ["Série noire pour la rivale", "Battre la rivale 3 semaines de suite"], war10: ["Dix victoires", "Gagner 10 semaines de la guerre des audiences"], rivko: ["Plus grand que la rivale", "Dépasser la rivale en popularité"]
 };
 // événements hors du ring (poids, fonction dans life.js)
 export const CELEBS = ["un rappeur très connu", "une star de cinéma", "un champion de MMA", "une chanteuse pop", "un footballeur célèbre", "un youtubeur géant"];

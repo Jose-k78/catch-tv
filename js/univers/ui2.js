@@ -9,7 +9,7 @@ import { gimOf } from "./v2.js";
 import { staffBody, gimBody } from "./ui3.js";
 import { toursBody, tradBody, draftBody } from "./ui4.js";
 import { bizBody, partBody, audBody, tvBody } from "./ui5.js";
-import { U, go, redraw, persist, shell, tabs, chips, face, crest, imgT, imgEv, imgTeam, imgBtn } from "./core.js";
+import { U, go, redraw, persist, shell, tabs, chips, face, crest, wnH, teamH, sidesH, whoIn, imgT, imgEv, imgTeam, imgBtn } from "./core.js";
 import { promoteYoung } from "./ui.js";
 
 const bar = (v, c) => '<span class="uvbar"><i style="width:' + clamp(v) + "%" + (c ? ";background:" + c : "") + '"></i></span>';
@@ -82,7 +82,7 @@ export function fedeView(tab) {
     body = '<div class="uvtile"><div class="uvth">Moral du vestiaire <i>' + avgM + ' / 100</i></div><div class="uvbig" style="color:' + morC(avgM) + '">' + morTxt(avgM) + "</div>" + bar(avgM, morC(avgM)) +
       '<div class="uvkv3"><div><b class="uvok">' + c[0] + "</b>contents</div><div><b>" + c[1] + '</b>moyens</div><div><b class="uvko">' + c[2] + "</b>pas contents</div></div></div>" +
       '<h3 class="uvh3">Les moins contents</h3>' + R.slice().sort((a, b) => a.mor - b.mor).slice(0, 8).map(w => '<a class="uvw" href="#/univers/c/' + esc(w.id) + '/d">' + face(G, w, 36) + '<span class="uvgrow"><b>' + esc(w.n) + "</b><small>" + esc(why(w) || "rien de grave") + '</small></span><span class="uvnote" style="color:' + morC(w.mor) + '">' + Math.round(w.mor) + "<small>MORAL</small></span></a>").join("") +
-      '<h3 class="uvh3">Conflits en coulisses</h3>' + ((G.tens || []).length ? G.tens.map((t, i) => '<div class="uvcard uvrow"><div class="uvgrow"><b>' + esc(wn(G, t.a)) + " et " + esc(wn(G, t.b)) + "</b><small>Depuis le " + esc(shortDate(t.d)) + '</small></div><button type="button" class="uvbtn sm" data-act="uvreco" data-i="' + i + '">Réconcilier (10 k$)</button></div>').join("") : '<p class="uvempty">Aucun conflit en ce moment.</p>');
+      '<h3 class="uvh3">Conflits en coulisses</h3>' + ((G.tens || []).length ? G.tens.map((t, i) => '<div class="uvcard uvrow"><div class="uvgrow"><b>' + wnH(G, t.a) + " et " + wnH(G, t.b) + "</b><small>Depuis le " + esc(shortDate(t.d)) + '</small></div><button type="button" class="uvbtn sm" data-act="uvreco" data-i="' + i + '">Réconcilier (10 k$)</button></div>').join("") : '<p class="uvempty">Aucun conflit en ce moment.</p>');
   }
   return shell("fede", "Ma fédération", T, body);
 }
@@ -137,7 +137,7 @@ function slCard(G, s) {
     '<label class="uvfld">Fin de la storyline<select name="turn">' + turnOpts(G, ids, s.turn) + "</select></label>" +
     '<fieldset class="uvfs"><legend>Chapitres (semaine par semaine)</legend><p class="uvsm">Mets le bon segment ou le bon match dans tes shows de la semaine : un chapitre réussi fait monter la heat.</p>' + Array.from({ length: s.len }, (x, k) => '<label class="uvmini">Semaine ' + (k + 1) + '<select name="c' + k + '"><option value="">Libre</option>' + Object.keys(CHAP).map(c => '<option value="' + c + '"' + ((s.plan || [])[k] === c ? " selected" : "") + ">" + esc(CHAP[c]) + "</option>").join("") + "</select></label>").join("") + "</fieldset>" +
     '<div class="uvrow2"><button class="uvbtn pri">Enregistrer</button><button type="button" class="uvbtn ghost" data-act="uvsled" data-s="">Annuler</button></div></form>';
-  return '<div class="uvcard"><div class="uvrow"><div class="uvgrow"><b>' + esc(s.n) + "</b><small>" + esc(teamName(G, s.a)) + " contre " + esc(teamName(G, s.b)) + '</small></div><span class="uvmut">Semaine ' + Math.min(s.wk + 1, s.len) + " / " + s.len + "</span></div>" +
+  return '<div class="uvcard"><div class="uvrow"><div class="uvgrow"><b>' + esc(s.n) + "</b><small>" + teamH(G, s.a) + " contre " + teamH(G, s.b) + '</small></div><span class="uvmut">Semaine ' + Math.min(s.wk + 1, s.len) + " / " + s.len + "</span></div>" +
     (s.p ? '<p class="uvsm">' + esc(s.p) + "</p>" : "") + '<div class="uvst2"><span>Heat</span>' + bar(s.heat, s.heat >= 60 ? "#ff6b5e" : "#f5b13d") + "<b>" + s.heat + "</b></div>" +
     (s.plan && s.plan.some(Boolean) ? '<div class="uvchips wrap">' + s.plan.map((c, k) => c ? '<span class="uvchip' + (k === s.wk ? " on" : "") + (k < s.wk ? " his" : "") + '">S' + (k + 1) + " · " + esc(CHAP[c] || c) + "</span>" : "").join("") + "</div>" : "") +
     '<p class="uvsm">' + esc(turnTxt(G, s.turn)) + (s.plan && s.plan[s.wk] ? " · cette semaine : " + esc(CHAP[s.plan[s.wk]] || "") : " · fais-les s’affronter chaque semaine pour faire monter la heat") + '.</p><div class="uvrow2"><button type="button" class="uvbtn sm" data-act="uvsled" data-s="' + esc(s.id) + '">Modifier</button><button type="button" class="uvbtn sm del" data-act="uvsldel" data-s="' + esc(s.id) + '">Supprimer</button></div></div>';
@@ -185,7 +185,7 @@ export function creatifView(tab) {
     const L = Object.values(G.T).filter(t => t.fed === G.me);
     body = '<p class="uvsm">Un titre est masculin, féminin ou intergender (les équipes : masculines, féminines ou mixtes). Son prestige monte avec les beaux matchs et les défenses, et baisse s’il n’est pas défendu.</p>' +
       (L.length ? L.map(t => { const im = imgT(G, t), tm = G.teams.filter(x => x.fed === G.me && x.m.every(i => G.W[i] && catOk(t, G.W[i]))), ch = champIds(t), C = contenders(G, t).slice(0, 3);
-      return '<div class="uvcard uvtitle"><div class="uvrow">' + (im ? '<img class="uvbelt big" src="' + esc(im) + '" alt="">' : BELT_SVG) + '<div class="uvgrow"><b>' + esc(t.n) + "</b><small>" + esc(CATL(t)) + " · " + ((t.hist || []).length) + " règne" + ((t.hist || []).length > 1 ? "s" : "") + "</small><small>Champion" + (t.cat === "f" ? "ne" : "") + " : <b>" + esc(champName(G, t)) + "</b>" + (ch.length ? " · depuis " + (G.day - t.since) + " jours · " + (t.defs || 0) + " défense" + ((t.defs || 0) > 1 ? "s" : "") : "") + "</small></div></div>" +
+      return '<div class="uvcard uvtitle"><div class="uvrow">' + (im ? '<img class="uvbelt big" src="' + esc(im) + '" alt="">' : BELT_SVG) + '<div class="uvgrow"><b>' + esc(t.n) + "</b><small>" + esc(CATL(t)) + " · " + ((t.hist || []).length) + " règne" + ((t.hist || []).length > 1 ? "s" : "") + "</small><small>Champion" + (t.cat === "f" ? "ne" : "") + " : <b>" + (champIds(t).length ? teamH(G, champIds(t)) : "Vacant") + "</b>" + (ch.length ? " · depuis " + (G.day - t.since) + " jours · " + (t.defs || 0) + " défense" + ((t.defs || 0) > 1 ? "s" : "") : "") + "</small></div></div>" +
         '<div class="uvst2"><span>Prestige</span>' + bar(t.pres || 50, (t.pres || 50) >= 70 ? "#f5b13d" : "#6fb3ff") + "<b>" + Math.round(t.pres || 50) + "</b></div>" +
         (C.length ? '<p class="uvsm">Prétendants : ' + C.map((c, i) => esc(c.w.n) + (i === 0 ? " (n°1)" : "")).join(" · ") + '</p><button type="button" class="uvbtn sm" data-act="uvshot" data-t="' + esc(t.id) + '" data-w="' + esc(C[0].w.id) + '">Faire de ' + esc(C[0].w.n) + " le n°1 challenger</button>" : "") +
         '<div class="uvrow2">' + imgBtn("t:" + t.id, "🖼️ Design de la ceinture") + "</div>" +
@@ -196,7 +196,7 @@ export function creatifView(tab) {
     const pts = w => w.rec[0] * 3 + w.rec[2];
     body = '<p class="uvsm">3 points par victoire, 1 par draw (cette année).</p>' + G.divs.filter(d => d.id !== "tag").map(d => { const L = R.filter(w => divOf(G, w) === d.id).sort((a, b) => pts(b) - pts(a) || b.pop - a.pop).slice(0, 10); if (!L.length) return "";
       return '<h3 class="uvh3">' + esc(d.n) + '</h3><ol class="uvrank">' + L.map(w => '<li><a href="#/univers/c/' + esc(w.id) + '">' + face(G, w, 28) + '<span class="uvgrow">' + esc(w.n) + "<small>" + recTxt(w.rec) + "</small></span><b>" + pts(w) + " pts</b></a></li>").join("") + "</ol>"; }).join("") +
-      (G.teams.some(t => t.fed === G.me) ? '<h3 class="uvh3">Équipes</h3><ol class="uvrank">' + G.teams.filter(t => t.fed === G.me).sort((a, b) => b.chem - a.chem).map(t => "<li><span class=\"uvgrow\">" + esc(t.n) + "<small>" + esc(teamName(G, t.m)) + "</small></span><b>" + t.chem + "</b></li>").join("") + "</ol>" : "");
+      (G.teams.some(t => t.fed === G.me) ? '<h3 class="uvh3">Équipes</h3><ol class="uvrank">' + G.teams.filter(t => t.fed === G.me).sort((a, b) => b.chem - a.chem).map(t => "<li><span class=\"uvgrow\">" + esc(t.n) + "<small>" + teamH(G, t.m) + "</small></span><b>" + t.chem + "</b></li>").join("") + "</ol>" : "");
   }
   return shell("creatif", "Créatif", T, body);
 }

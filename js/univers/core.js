@@ -37,6 +37,24 @@ export function face(G, w, sz, cls) {
   return s ? '<img class="uvav ' + (cls || "") + '" src="' + esc(s) + '" alt="" loading="lazy" style="width:' + z + "px;height:" + z + 'px">'
     : '<span class="uvav ini ' + (cls || "") + '" style="width:' + z + "px;height:" + z + "px;background:" + (w && w.fed === U.G.me ? "#f5b13d" : w && !w.fed ? "#63d69c" : "#a3abbd") + '">' + esc(initials(w && w.n)) + "</span>";
 }
+// un nom toujours accompagné de sa photo (21 nov. : « toujours afficher les photos à côté des noms »)
+export function wnH(G, id, sz) { const w = (G.W || {})[id] || (G.staff || {})[id]; return '<span class="uvwn">' + face(G, w || { n: "?" }, sz || 22, "in") + esc((w && w.n) || "?") + "</span>"; }
+export const teamH = (G, ids, sz) => (ids || []).map(i => wnH(G, i, sz)).join(" et ");
+export const sidesH = (G, sides, sz) => (sides || []).map(s => teamH(G, s, sz)).join(" contre ");
+// un texte (titre d'actu, buzz…) qui parle d'un catcheur : sa photo devant, si on reconnaît son nom
+let NIX = null, NIXG = null;
+export function whoIn(G, txt) {
+  if (!txt) return null;
+  if (NIXG !== G) { NIXG = G; NIX = Object.values(G.W).filter(w => w.n && w.n.length >= 5 && !w.ret).sort((a, b) => b.pop - a.pop).map(w => [w.n, w.id]); }
+  for (let i = 0; i < NIX.length; i++) if (txt.indexOf(NIX[i][0]) >= 0) return G.W[NIX[i][1]] || null;
+  return null;
+}
+// l'expéditeur d'un message : la photo du catcheur concerné, sinon ses initiales
+export function mailAv(G, m, sz) {
+  const w = (m.w && G.W[m.w]) || (m.fromW && G.W[m.fromW]);
+  if (w && (m.from === w.n || /^Agent de /.test(m.from || "") || m.k === "demand" || m.k === "req" || m.k === "retire" || m.k === "askrel" || m.k === "playhurt" || m.k === "inj")) return face(G, w, sz);
+  return '<span class="uvav ini" style="width:' + sz + "px;height:" + sz + "px;background:" + esc(m.c || "#a3abbd") + '">' + esc(m.ini || "") + "</span>";
+}
 export function crest(G, k, sz) {
   const f = G.F[k], s = imgFed(G, k), z = sz || 40;
   return s ? '<img class="uvcrest" src="' + esc(s) + '" alt="' + esc(f ? f.n : k) + '" style="width:' + z + "px;height:" + z + 'px">' : '<span class="uvcrest ini" style="width:' + z + "px;height:" + z + "px;background:" + esc((f && f.c) || "#f5b13d") + '">' + esc((f && f.sh) || k) + "</span>";
@@ -73,6 +91,41 @@ ACT.uvimg = el => {
     box.querySelector("input[type=file]").addEventListener("change", async e => { const f = e.target.files && e.target.files[0]; if (!f) return; try { set(await fileToDataUrl(f, 360, 360, false, 60000)); } catch (er) { toast("Image illisible"); } });
   });
 };
+// choisir un catcheur dans une liste avec les photos (remplace les menus déroulants : toujours la photo à côté du nom)
+// groups = [[titre, [{ w, ok, info }]]] ; cb(id)
+export function pickW(G, title, groups, cb) {
+  modal((box, close) => {
+    box.classList.add("uvmodal", "uvpick");
+    const row = r => '<button type="button" class="uvpkr"' + (r.ok === false ? " disabled" : "") + ' data-w="' + esc(r.w.id) + '">' + face(G, r.w, 40) + '<span class="uvgrow"><b>' + esc(r.w.n) + "</b>" + (r.info ? "<small>" + esc(r.info) + "</small>" : "") + "</span></button>";
+    const paint = q => { const n = (q || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""), ok = w => !n || w.n.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").indexOf(n) >= 0;
+      const h = groups.map(g => { const L = g[1].filter(r => ok(r.w)); return L.length ? (g[0] ? '<h4 class="uvpkh">' + esc(g[0]) + "</h4>" : "") + L.map(row).join("") : ""; }).join("");
+      box.querySelector(".uvpkl").innerHTML = h || '<p class="uvempty">Personne ne correspond.</p>'; };
+    box.innerHTML = "<h3>" + esc(title) + '</h3><input class="uvin" type="search" placeholder="Chercher un nom…" aria-label="Chercher un nom"><div class="uvpkl" role="list"></div><button type="button" class="uvbtn ghost" data-x="1">Fermer</button>';
+    paint("");
+    box.querySelector("input").addEventListener("input", e => paint(e.target.value));
+    box.addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; if (b.dataset.x) close(); if (b.dataset.w && !b.disabled) { close(); cb(b.dataset.w); } });
+  });
+}
+// tous les menus déroulants de catcheurs du mode Univers deviennent un bouton avec la photo (le menu reste caché dans le formulaire)
+function enhanceSel(sel) {
+  const G = U.G; if (!G) return; sel.dataset.wx = "1";
+  const opts = Array.from(sel.options).filter(o => o.value);
+  if (!opts.length || !opts.every(o => G.W[o.value])) return;
+  const b = document.createElement("button"); b.type = "button"; b.className = "uvwselb";
+  const ph = (sel.options[0] && !sel.options[0].value ? sel.options[0].textContent : "") || "Choisir…";
+  const paint = () => { const w = G.W[sel.value]; b.innerHTML = w ? face(G, w, 26) + "<span>" + esc(w.n) + "</span>" : "<span>" + esc(ph) + "</span>"; };
+  paint(); sel.classList.add("uvwselh"); sel.tabIndex = -1; sel.setAttribute("aria-hidden", "true"); sel.after(b);
+  if (sel.getAttribute("aria-label")) b.setAttribute("aria-label", sel.getAttribute("aria-label"));
+  b.addEventListener("click", () => {
+    const groups = [], add = (g, o) => { const w = G.W[o.value], t = o.textContent, i = t.indexOf(w.n); let L = groups.find(x => x[0] === g); if (!L) groups.push(L = [g, []]); L[1].push({ w: w, ok: !o.disabled, info: (i >= 0 ? t.slice(i + w.n.length) : t).replace(/^[\s·(]+|[\s)]+$/g, "") }); };
+    Array.from(sel.children).forEach(c => { if (c.tagName === "OPTGROUP") Array.from(c.children).forEach(o => o.value && add(c.label, o)); else if (c.value) add("", c); });
+    pickW(G, ph.replace(/^[—+\s]+|[—\s]+$/g, "") || "Choisir", groups, id => { sel.value = id; paint(); sel.dispatchEvent(new Event("change", { bubbles: true })); });
+  });
+}
+if (typeof document !== "undefined" && typeof MutationObserver !== "undefined") {
+  const scan = () => { if (!document.body.classList.contains("univ") || !U.G) return; document.querySelectorAll(".uv select:not([data-wx]), .uvmodal select:not([data-wx])").forEach(enhanceSel); };
+  let qd = 0; new MutationObserver(() => { if (qd) return; qd = 1; requestAnimationFrame(() => { qd = 0; scan(); }); }).observe(document.documentElement, { childList: true, subtree: true });
+}
 export const imgBtn = (key, label) => '<button type="button" class="uvimgbtn" data-act="uvimg" data-k="' + esc(key) + '">' + (label || "🖼️ Changer l’image") + "</button>";
 
 // ---------- cadre commun ----------
@@ -91,6 +144,8 @@ export function shell(sec, title, tabs, body) {
     NAV.map(x => '<a class="uvrl' + (x[0] === sec ? " on" : "") + '" href="#/univers/' + x[0] + '"' + (x[0] === sec ? ' aria-current="page"' : "") + ">" + svg(P[x[0]]) + "<span>" + x[1] + "</span>" + (x[0] === "courrier" && n ? '<b class="uvbdg">' + (n > 99 ? "99+" : n) + "</b>" : "") + "</a>").join("") +
     '<a class="uvrl" href="#/univers">' + svg(P.parties) + "<span>Parties</span></a></nav>";
   const date = dayLabel(G.day) + " · Année " + dateOf(G.day).y;
+  // trophées / missions réussies : la fenêtre s'ouvre sur l'accueil, le courrier, le bureau ou les résultats (jamais au milieu d'un formulaire)
+  if (((G._ach || []).length || (G._pop || []).length) && U.pops && /^(g|courrier|bureau|activite)$/.test(sec) && !document.querySelector(".uvform input:focus")) setTimeout(() => U.pops && U.pops(), 450);
   return '<div class="uv' + (hide ? " norail" : "") + '">' + rail + '<div class="uvmain"><header class="uvtop">' +
     (hide ? '<button type="button" class="uvhb" data-act="uvrail" aria-label="Afficher la barre latérale">' + svg(P.menu) + "</button>" : "") +
     '<div class="uvtt"><b>' + esc(title) + "</b><small>" + esc(date) + (sec === "g" ? " · semaine " + weekOf(G.day) : "") + "</small></div>" +

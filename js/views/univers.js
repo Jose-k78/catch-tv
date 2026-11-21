@@ -2,7 +2,7 @@
 // #/univers = les 3 parties · #/univers/nouveau/<n> · #/univers/g (menu général) · courrier[/id] · actu · buzz
 // · monde/<w|f|a|hof|mag|enc> · fed/<id> (page d'une fédération) · c/<id>/<s|c|h|r|d> (fiche) · nego/<id> (négociation)
 // · fede/<onglet> · creatif/<onglet> · activite/<onglet> · ev/<id> (carte du show, résultats) · live/<id> (Gorilla position)
-// · bureau/<obj|rep|ach|sem|agenda|cfg>.
+// · bureau/<obj|rep|ach|sem|agenda|cfg|riv> · decide (décisions en cartes, 21 nov.).
 // Réservé au modo pour l'instant (S.realAdmin) : les membres voient « Bientôt ». Les parties restent sur le téléphone.
 import { S } from "../state.js";
 import { lsGet } from "../util.js";
@@ -11,8 +11,10 @@ import { metaAll } from "../univers/save.js";
 import { partiesView, newView, homeView, courrierView, actuView, buzzView, mondeView, ficheView, openSlot } from "../univers/ui.js";
 import { fedeView, creatifView, activiteView } from "../univers/ui2.js";
 import { negoView } from "../univers/ui3.js";
-import { bookView, liveView } from "../univers/ui4.js";
+import { bookView } from "../univers/ui4.js";
+import { liveView } from "../univers/tv.js";
 import { fedView, bureauView } from "../univers/ui5.js";
+import { decideView } from "../univers/ui6.js";
 
 export const univOn = () => !!S.realAdmin;
 let tried = 0;
@@ -46,6 +48,7 @@ export function universView(a, b, c) {
     case "ev": return bookView(b);
     case "live": return liveView(b);
     case "bureau": return bureauView(b);
+    case "decide": return decideView();
   }
   return homeView();
 }

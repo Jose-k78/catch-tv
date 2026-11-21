@@ -79,7 +79,7 @@ export const stars = r => { const s = Math.max(0, Math.min(5, Math.round(r / 5) 
 export const recTxt = r => (r && r.length ? r[0] + "-" + r[1] + "-" + r[2] : "0-0-0");
 
 // ---------- génération d'une nouvelle partie ----------
-function femaleSet() {
+export function femaleSet() {
   const out = new Set(WWE_F);
   Object.keys(S.rosters || {}).forEach(k => { const r = S.rosters[k] || {}; Object.keys(r).forEach(g => { if (FEM.test(g) || k === "Stardom" || k === "Marigold") (r[g] || []).forEach(n => out.add(norm(n))); }); });
   (S.titles || []).forEach(t => { if (WTITLE.test(String(t.n || ""))) [t.c].concat(t.who || [], (t.hist || []).map(h => h.c)).forEach(n => { if (n) out.add(norm(n)); }); });

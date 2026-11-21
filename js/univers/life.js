@@ -1,6 +1,7 @@
 // Mode Univers v2 : la vie du monde, jour après jour — storylines (aussi celles de l'IA), relations, push du public, demandes des
 // catcheurs, âge et progression, mentors, retraites et tournées d'adieu, événements hors du ring, IA (signatures, licenciements, stratégie),
 // partenariats, médias, salaires et revenus, objectifs, réputation, Hall of Fame, magazine TCC 100, résumé de la semaine.
+import { rivalWeek } from "./goals.js";
 import { clamp, rnd, pick, uid, dateOf, dayLabel, shortDate, fmtK, fmtM, stars, salOf, indie, trainee } from "./world.js";
 import { CELEBS, SPONS, MAGN, CITIES, TOURS } from "./data.js";
 import { meF, wn, roster, avail, injured, mail, news, buzz, FANS, relGet, relAdd, relsOf, staffQ, myStaff, ach, isBig, champIds, ini, e_, cap, teamName } from "./base.js";
@@ -178,6 +179,7 @@ export function lifeWeekly(G) {
   const prevWk = wk - 1, A = (G.wk || {})[prevWk] || {}, L = Object.keys(A).sort((x, y) => A[y] - A[x]);
   const bm = (G.topM || []).filter(m => m.fed === G.me && m.d >= G.day - 7).sort((a, b) => b.r - a.r)[0] || (G.ev || []).filter(e => e.fed === G.me && e.done && e.day >= G.day - 7 && e.res && e.res.items).reduce((b, e) => b.concat(e.res.items.filter(x => x.it === "m").map(x => ({ r: x.r, txt: x.sides.map(s => s.map(i => wn(G, i)).join(" et ")).join(" contre "), ev: e.n }))), []).sort((a, b) => b.r - a.r)[0];
   G.weeks.push({ w: prevWk, d: G.day - 1, aud: A[G.me] || 0, rank: L.indexOf(G.me) + 1, of: L.length, lead: L[0] || "", best: bm ? { r: bm.r, txt: bm.txt, ev: bm.ev } : null, money: f.money - (G.wMoney == null ? f.money : G.wMoney), news: G.news.filter(n => n.d >= G.day - 7 && n.f === "nous").slice(-3).map(n => n.t) });
+  const war = rivalWeek(G, prevWk); if (war) G.weeks[G.weeks.length - 1].war = { won: war.won, me: war.me, them: war.them, n: (G.F[G.riv.id] || {}).n || "" };
   cap(G.weeks, 60); G.wMoney = f.money; if (L[0] === G.me && L.length > 3) ach(G, "top");
   if (G.cfg && G.cfg.stopWk && A[G.me]) G._week = true;
 }

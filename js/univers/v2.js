@@ -1,5 +1,6 @@
 // Mode Univers v2 : mise à niveau d'une partie (nouvelle ou ancienne sauvegarde) — statuts des personnes (décédés → Hall of Fame,
 // staff, légendes retraitées), staff, gimmicks, relations, catégories et prestige des titres, traditions, salles, réglages, objectifs.
+import { initRival, initMissions } from "./goals.js";
 import { S } from "../state.js";
 import { norm } from "../wrestlers.js";
 import { clamp, rnd, pick, uid, h01, hash, dateOf, salOf } from "./world.js";
@@ -53,7 +54,12 @@ export function makeObj(G, q) {
 
 export function upgrade(G, opt) {
   opt = opt || {};
-  if ((G.v || 1) >= 2) return G;
+  if ((G.v || 1) < 2) up2(G, opt);
+  // v3 (21 nov.) : la fédération rivale et les missions du propriétaire
+  if (G.v < 3) { initRival(G); initMissions(G); G._ach = []; G.v = 3; }
+  return G;
+}
+function up2(G, opt) {
   const D = udata(), st = D.st || {};
   const dead = {}; Object.keys(st.dead || {}).forEach(n => { dead[norm(n)] = [n, st.dead[n]]; });
   const out = new Set((st.out || []).map(norm)), ret = new Set((st.ret || []).map(norm));

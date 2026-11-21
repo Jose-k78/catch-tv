@@ -12,7 +12,7 @@ import { setMentor, setTrain } from "./crea.js";
 import { retireW } from "./life.js";
 import { release, part, partAdd, hireLegend } from "./deal.js";
 import { metaAll, loadSlot, delSlot } from "./save.js";
-import { U, go, redraw, persist, shell, tabs, chips, face, crest, imgFed, imgEv, imgT, imgW, imgBtn, unread, audTxt, autoPlay } from "./core.js";
+import { U, go, redraw, persist, shell, tabs, chips, face, crest, mailAv, wnH, teamH, sidesH, whoIn, imgFed, imgEv, imgT, imgW, imgBtn, unread, audTxt, autoPlay } from "./core.js";
 import { searchBody, statTxt, signal, legendBox, relBody } from "./ui3.js";
 import { hofBody, magBody, encBody, homeExtra, tutoCheck } from "./ui5.js";
 
@@ -89,8 +89,8 @@ export function homeView() {
   const newsL = G.news.slice().reverse().slice(0, 3), cur = G.fin.cur, month = cur.tv + cur.tix + cur.merch + cur.pub - cur.sal - cur.prod;
   const body = (today ? '<div class="uvalert"><b>Ce soir : ' + esc(today.n) + '</b><div class="uvrow2"><a class="uvbtn pri" href="#/univers/ev/' + encodeURIComponent(today.id) + '">Préparer la carte</a><button type="button" class="uvbtn" data-act="uvautolive" data-id="' + esc(today.id) + '">Vivre en direct</button><button type="button" class="uvbtn ghost" data-act="uvautoplay" data-id="' + esc(today.id) + '">Laisser l’IA faire</button></div></div>' : "") +
     '<div class="uvfedrow big">' + crest(G, G.me, 46) + "<div><b>" + esc(f.n) + "</b><small>" + (rank ? rank + "e sur " + feds.length + " à l’audience" : "") + " · " + fmtK(f.money) + " en banque · réputation " + Math.round(G.rep || 50) + "</small></div></div>" +
-    homeExtra(G) +
-    '<a class="uvtile" href="#/univers/courrier"><div class="uvth">Courrier <i>' + unread(G) + " non lu" + (unread(G) > 1 ? "s" : "") + "</i></div>" + mails.map(m => '<div class="uvline"><span class="uvav ini" style="width:28px;height:28px;background:' + esc(m.c || "#a3abbd") + '">' + esc(m.ini || "") + "</span><span class=\"uvgrow\">" + esc(m.subj) + "</span>" + (m.read ? "" : '<span class="uvdot" aria-label="non lu"></span>') + "</div>").join("") + "</a>" +
+    (U.homeV3 ? U.homeV3(G) : "") + homeExtra(G) +
+    '<a class="uvtile" href="#/univers/courrier"><div class="uvth">Courrier <i>' + unread(G) + " non lu" + (unread(G) > 1 ? "s" : "") + "</i></div>" + mails.map(m => '<div class="uvline">' + mailAv(G, m, 28) + "<span class=\"uvgrow\">" + esc(m.subj) + "</span>" + (m.read ? "" : '<span class="uvdot" aria-label="non lu"></span>') + "</div>").join("") + "</a>" +
     '<div class="uvtile"><div class="uvth">Audience <i>' + (last ? "dernier show" : "pas encore de show") + "</i></div>" + (last ? '<div class="uvaud"><div><div class="uvbig">' + fmtM(last.aud) + '</div><div class="uvmut">' + esc(last.n) + " · " + esc(dayLabel(last.d)) + " · " + stars(last.r) + '</div><div class="uvsm">Objectif du diffuseur : ' + fmtM(f.tv.min) + (last.aud >= f.tv.min ? ' <span class="uvok">✓ atteint</span>' : ' <span class="uvko">✗ raté</span>') + '</div></div><div class="uvbars" role="img" aria-label="Audience des derniers shows">' + aud.map((v, i) => '<span style="height:' + Math.max(6, Math.round(v / mx * 60)) + "px" + (i === aud.length - 1 ? ";background:#f5b13d" : "") + '"></span>').join("") + "</div></div>" : '<p class="uvmut">Ton premier show arrive bientôt.</p>') + '<a class="uvsm" href="#/univers/activite/aud">Audiences de la semaine ›</a></div>' +
     '<div class="uvtile"><div class="uvth">Popularité <i>' + Math.round(f.pop) + " / 100</i></div>" + pctBar(f.pop) + '<p class="uvmut">' + (f.pop < 45 ? "Locale" : f.pop < 65 ? "Nationale" : f.pop < 80 ? "Internationale" : "Mondiale") + " · plus elle monte, plus tu peux signer des stars</p>" +
     top3.map(w => '<a class="uvline" href="#/univers/c/' + esc(w.id) + '">' + face(G, w, 28) + '<span class="uvgrow">' + esc(w.n) + "</span><b>" + Math.round(w.pop) + "</b></a>").join("") + "</div>" +
@@ -140,16 +140,20 @@ const MACTS = {
   bankrupt: m => [["Menu général", "go", "#/univers/g"]],
   retrole: m => [["Lui proposer un rôle", "go", "#/univers/c/" + m.w + "/c"], ["Le laisser partir", "ok"]],
   mag: m => [["Lire le " + "magazine", "go", "#/univers/monde/mag"]],
+  war: m => [["Voir la rivale", "go", "#/univers/bureau/riv"], ["OK", "ok"]],
+  taunt: m => [["Lui répondre au micro", "tauntyes"], ["Ne pas répondre", "tauntno"]],
   info: m => OK
 };
-const MCAT = { aud: "audience", tv: "offres", tvoffers: "offres", sponsor: "offres", celeb: "offres", city: "offres", partoffer: "offres", job: "offres", agent: "catcheurs", demand: "catcheurs", fa: "catcheurs", req: "catcheurs", playhurt: "catcheurs", retire: "catcheurs", askrel: "catcheurs", crowd: "catcheurs", boo: "catcheurs", team: "catcheurs", rumor: "catcheurs", scandal: "catcheurs", scout: "catcheurs", retrole: "catcheurs" };
+const MCAT = { war: "audience", taunt: "offres", aud: "audience", tv: "offres", tvoffers: "offres", sponsor: "offres", celeb: "offres", city: "offres", partoffer: "offres", job: "offres", agent: "catcheurs", demand: "catcheurs", fa: "catcheurs", req: "catcheurs", playhurt: "catcheurs", retire: "catcheurs", askrel: "catcheurs", crowd: "catcheurs", boo: "catcheurs", team: "catcheurs", rumor: "catcheurs", scandal: "catcheurs", scout: "catcheurs", retrole: "catcheurs" };
 export function courrierView(id) {
   const G = U.G, m = id && G.mail.find(x => x.id === id);
   if (m) {
     if (!m.read) { m.read = true; persist(); }
+    const dk = U.deckCard ? U.deckCard(G, m) : "";
+    if (dk) return shell("courrier", "Courrier", "", '<a class="uvback" href="#/univers/courrier">‹ Tous les messages</a>' + dk);
     const ev = m.k === "show" && G.ev.find(e => e.id === m.ev), acts = m.k === "show" && ev && ev.done ? [["Voir les résultats", "go", "#/univers/ev/" + encodeURIComponent(ev.id)]] : (MACTS[m.k] || MACTS.info)(m);
     const ids = m.ids || [], w = m.w && G.W[m.w];
-    const body = '<a class="uvback" href="#/univers/courrier">‹ Tous les messages</a><div class="uvfrom"><span class="uvav ini" style="width:40px;height:40px;background:' + esc(m.c || "#a3abbd") + '">' + esc(m.ini || "") + "</span><div><b>" + esc(m.from) + '</b><small>' + esc(m.role || "") + " · " + esc(dayLabel(m.d)) + "</small></div></div>" +
+    const body = '<a class="uvback" href="#/univers/courrier">‹ Tous les messages</a><div class="uvfrom">' + mailAv(G, m, 40) + "<div><b>" + esc(m.from) + '</b><small>' + esc(m.role || "") + " · " + esc(dayLabel(m.d)) + "</small></div></div>" +
       '<h2 class="uvh2">' + esc(m.subj) + '</h2><p class="uvbody">' + esc(m.body || "") + "</p>" +
       (w && m.k !== "scout" ? '<a class="uvw" href="#/univers/c/' + esc(w.id) + '">' + face(G, w, 32) + '<span class="uvgrow"><b>' + esc(w.n) + "</b><small>" + esc(fedN(G, w.fed)) + "</small></span></a>" : "") +
       ids.map(i => G.W[i] ? '<a class="uvw" href="#/univers/nego/' + esc(i) + '">' + face(G, G.W[i], 32) + '<span class="uvgrow"><b>' + esc(G.W[i].n) + "</b><small>" + esc(signal(G, G.W[i])[0] || "") + "</small></span></a>" : "").join("") +
@@ -159,10 +163,13 @@ export function courrierView(id) {
   }
   const cat = U.f.mail, L = G.mail.slice().reverse().filter(x => cat === "tout" || (MCAT[x.k] || "perso") === cat);
   const body = chips("mail", [["tout", "Tout"], ["perso", "Personnel"], ["catcheurs", "Catcheurs"], ["audience", "Audiences"], ["offres", "Offres"]], cat) +
-    (L.length ? '<div class="uvlist">' + L.slice(0, 80).map(x => '<a class="uvmsg' + (x.read ? "" : " new") + '" href="#/univers/courrier/' + esc(x.id) + '"><span class="uvav ini" style="width:36px;height:36px;background:' + esc(x.c || "#a3abbd") + '">' + esc(x.ini || "") + '</span><span class="uvgrow"><b>' + esc(x.from) + (x.read ? "" : ' <span class="uvdot" aria-label="non lu"></span>') + "<i>" + esc(shortDate(x.d)) + "</i></b><span>" + esc(x.subj) + "</span>" + (x.done ? "<small>✓ " + esc(x.done) + "</small>" : "") + "</span></a>").join("") + "</div>" : '<p class="uvempty">Pas de message ici.</p>') +
+    (L.length ? '<div class="uvlist">' + L.slice(0, 80).map(x => '<a class="uvmsg' + (x.read ? "" : " new") + '" href="#/univers/courrier/' + esc(x.id) + '">' + mailAv(G, x, 36) + '<span class="uvgrow"><b>' + esc(x.from) + (x.read ? "" : ' <span class="uvdot" aria-label="non lu"></span>') + "<i>" + esc(shortDate(x.d)) + "</i></b><span>" + esc(x.subj) + "</span>" + (x.done ? "<small>✓ " + esc(x.done) + "</small>" : "") + "</span></a>").join("") + "</div>" : '<p class="uvempty">Pas de message ici.</p>') +
     (G.mail.some(x => !x.read) ? '<button type="button" class="uvbtn ghost" data-act="uvreadall">Tout marquer comme lu</button>' : "");
   return shell("courrier", "Courrier", "", body);
 }
+// effet de chaque décision sur la confiance du propriétaire
+const PATRON = { spons: 2, sponsneg: 1, tvok: 2, tvneg: 1, cityyes: 2, celebyes: 1, partyes: 1, punish: 1, ignore: -1, scsusp: 1, scno: -3, stormcancel: -2, pressres: 1, farewell: 1, heal: 1, tauntyes: 1 };
+export { MACTS };
 ACT.uvreadall = () => { U.G.mail.forEach(m => { m.read = true; }); persist(); redraw(); };
 ACT.uvmail = el => {
   const G = U.G, m = G.mail.find(x => x.id === el.dataset.id), a = el.dataset.a; if (!m) return;
@@ -218,7 +225,12 @@ ACT.uvmail = el => {
     case "cityyes": if (ev) { ev.city = m.city; ev.bonus = 150; out = ev.n + " aura lieu là-bas (+150 k$ le soir du show)."; } break;
     case "partyes": { const o = G.F[m.fed]; if (!o) break; partAdd(G, o.id, 20); part(G, o.id).deal = { until: G.day + 365 }; out = "Partenariat signé avec " + o.n + " (Activité › Partenaires)."; } break;
     case "partno": if (m.fed) partAdd(G, m.fed, -5); out = "Offre refusée."; break;
+    // la rivale se moque de toi
+    case "tauntyes": { const nb = nextMyEvents(G, 20).find(e => e.kind !== "tv"); if (nb) G.hype[nb.id] = clamp((G.hype[nb.id] || 3) + 1, 0, 10); f.pop = clamp(f.pop + 0.3, 5, 99); if (rnd() < 0.25) { G.rep = clamp((G.rep || 50) - 1); out = "Ta réponse fait le buzz… mais certains la trouvent déplacée."; } else out = "Ta réponse fait le buzz : les fans adorent la guerre !"; } break;
+    case "tauntno": G.rep = clamp((G.rep || 50) + 1); out = "Tu restes au-dessus de ça : ta réputation monte."; break;
   }
+  // le propriétaire suit tes décisions (mode carrière)
+  const ps = PATRON[a]; if (ps && G.obj && G.mode !== "sandbox") G.obj.sec = clamp(G.obj.sec + ps, 0, 100);
   m.done = out; persist(); redraw();
 };
 function nameModal(title, cur, fn) {
@@ -241,7 +253,7 @@ export function actuView() {
   const L = G.news.slice().reverse().filter(n => n.seg === seg && (fl === "tout" || n.f === fl));
   const TAG = { nous: ["Ta fédé", "#f5b13d"], autres: ["Monde", "#eef1f6"], transferts: ["Transfert", "#6fb3ff"], blessures: ["Blessure", "#ff8a7e"], rumeurs: ["Rumeur", "#c9a7ff"] };
   const body = '<div class="uvseg" role="group"><button type="button" class="' + (seg === "coul" ? "on" : "") + '" aria-pressed="' + (seg === "coul") + '" data-act="uvseg" data-v="coul">En coulisses</button><button type="button" class="' + (seg === "ecran" ? "on" : "") + '" aria-pressed="' + (seg === "ecran") + '" data-act="uvseg" data-v="ecran">À l’écran (kayfabe)</button></div>' +
-    chips("actuF", cs, fl) + (L.length ? L.slice(0, 60).map(n => { const t = TAG[n.f] || TAG.autres; return '<article class="uvart"><span class="uvtag" style="background:' + t[1] + '">' + t[0] + "</span><h2>" + esc(n.t) + "</h2><p>" + esc(n.txt || "") + "</p><small>" + esc(dayLabel(n.d)) + "</small></article>"; }).join("") : '<p class="uvempty">Rien pour l’instant. Avance les jours pour voir le monde bouger.</p>');
+    chips("actuF", cs, fl) + (L.length ? L.slice(0, 60).map(n => { const t = TAG[n.f] || TAG.autres, pw = (n.w && G.W[n.w]) || whoIn(G, n.t) || whoIn(G, n.txt); return '<article class="uvart">' + (pw ? face(G, pw, 44, "uvartp") : "") + '<span class="uvtag" style="background:' + t[1] + '">' + t[0] + "</span><h2>" + esc(n.t) + "</h2><p>" + esc(n.txt || "") + "</p><small>" + esc(dayLabel(n.d)) + "</small></article>"; }).join("") : '<p class="uvempty">Rien pour l’instant. Avance les jours pour voir le monde bouger.</p>');
   return shell("actu", "Actualité", "", body);
 }
 ACT.uvseg = el => { U.f.actu = el.dataset.v; U.f.actuF = "tout"; redraw(); };
@@ -253,7 +265,7 @@ export function buzzView() {
   const body = (nb ? '<div class="uvtile"><div class="uvth">Hype de ' + esc(nb.n) + "</div>" + '<div class="uvmeter" role="img" aria-label="Hype ' + hype + ' sur 10">' + Array.from({ length: 10 }, (x, i) => "<span" + (i < hype ? ' class="f"' : "") + "></span>").join("") + '</div><p class="uvmut">Plus la hype monte, plus il y a de monde et d’achats. Les storylines chaudes la font monter.</p></div>' : "") +
     '<div class="uvtile"><div class="uvth">Tendances</div><div class="uvtrend">' + tags.map(t => "<span>" + esc(t) + "</span>").join("") + "</div></div>" +
     chips("buzz", [["tout", "Tout"], ["nous", "Nos catcheurs"], ["fans", "Fans"]], fl) +
-    (L.length ? L.slice(0, 50).map(b => '<div class="uvpost"><span class="uvav ini" style="width:36px;height:36px;background:' + esc(b.c || "#6fb3ff") + '">' + esc(b.ini || "") + '</span><div class="uvgrow"><b>' + esc(b.who) + " <small>" + esc(b.at || "") + " · " + esc(shortDate(b.d)) + "</small></b><p>" + esc(b.txt) + '</p><button type="button" class="uvlike' + (b.lk ? " on" : "") + '" aria-pressed="' + !!b.lk + '" data-act="uvlike" data-id="' + esc(b.id) + '">♥ ' + (b.n + (b.lk ? 1 : 0)) + "</button></div></div>").join("") : '<p class="uvempty">Le buzz arrive après tes premiers shows.</p>');
+    (L.length ? L.slice(0, 50).map(b => { const bw = b.f !== "fans" && whoIn(G, b.who); return '<div class="uvpost">' + (bw ? face(G, bw, 36) : '<span class="uvav ini" style="width:36px;height:36px;background:' + esc(b.c || "#6fb3ff") + '">' + esc(b.ini || "") + "</span>") + '<div class="uvgrow"><b>' + esc(b.who) + " <small>" + esc(b.at || "") + " · " + esc(shortDate(b.d)) + "</small></b><p>" + esc(b.txt) + '</p><button type="button" class="uvlike' + (b.lk ? " on" : "") + '" aria-pressed="' + !!b.lk + '" data-act="uvlike" data-id="' + esc(b.id) + '">♥ ' + (b.n + (b.lk ? 1 : 0)) + "</button></div></div>"; }).join("") : '<p class="uvempty">Le buzz arrive après tes premiers shows.</p>');
   return shell("buzz", "Buzz", "", body);
 }
 ACT.uvlike = el => { const b = U.G.buzz.find(x => x.id === el.dataset.id); if (b) { b.lk = !b.lk; persist(); redraw(); } };
@@ -268,7 +280,7 @@ export function mondeView(tab) {
     const L = Object.values(G.F).map(f => ({ f: f, a: f.aud.length ? f.aud.slice(-4).reduce((s, v) => s + v, 0) / f.aud.slice(-4).length : f.aud0 })).sort((a, b) => b.a - a.a);
     body = L.map((x, i) => { const f = x.f, champs = Object.values(G.T).filter(t => t.fed === f.id && t.div !== "tag").slice(0, 3); return '<div class="uvfed' + (f.id === G.me ? " me" : "") + '"><a class="uvfedrow" href="#/univers/fed/' + esc(f.id) + '">' + crest(G, f.id, 42) + '<div class="uvgrow"><b>' + esc(f.n) + "</b><small>" + (f.id === G.me ? "Toi" : "Gérée par l’IA") + '</small></div><span class="uvrank">#' + (i + 1) + "</span></a>" +
       '<div class="uvkv3"><div><b>' + fmtM(x.a) + "</b>audience</div><div><b>" + roster(G, f.id).length + "</b>catcheurs</div><div><b>" + Math.round(f.pop) + "</b>prestige</div></div>" +
-      (champs.length ? '<div class="uvchamps">' + champs.map(t => '<span>' + (imgT(G, t) ? '<img src="' + esc(imgT(G, t)) + '" alt="">' : "") + "<i>" + esc(t.n) + " : <b>" + esc(champIds(t).length ? teamName(G, champIds(t)) : "vacant") + "</b></i></span>").join("") + "</div>" : "") + '<div class="uvrow2">' + imgBtn("f:" + f.id, "🖼️ Logo") + "</div></div>"; }).join("");
+      (champs.length ? '<div class="uvchamps">' + champs.map(t => '<span>' + (imgT(G, t) ? '<img src="' + esc(imgT(G, t)) + '" alt="">' : "") + "<i>" + esc(t.n) + " : <b>" + (champIds(t).length ? teamH(G, champIds(t)) : "vacant") + "</b></i></span>").join("") + "</div>" : "") + '<div class="uvrow2">' + imgBtn("f:" + f.id, "🖼️ Logo") + "</div></div>"; }).join("");
   } else if (tab === "a") {
     const y = dateOf(G.day).y, A = awardsOf(G, y);
     body = '<p class="uvmut">Awards de l’Année ' + y + " : remis le 31 décembre. En tête pour l’instant :</p>" + A.map(a => '<div class="uvaw"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5v1a3 3 0 0 0 3 3M16 6h3v1a3 3 0 0 1-3 3M12 13v4M8 20h8M10 17h4"></path></svg><div><small>' + esc(a.cat) + "</small><b>" + esc(a.who) + "</b></div></div>").join("") +

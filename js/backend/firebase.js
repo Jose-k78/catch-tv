@@ -399,3 +399,10 @@ export function txTcgx(id, fn) {
 }
 // toutes les notes des membres pour un show (page d'un show déjà sorti)
 export async function showRates(k, d) { const r = await F.getDocs(F.query(F.collection(db, "activity"), F.where("k", "==", k), F.where("d", "==", d), F.limit(200))); return r.docs.map(s => { const x = data(s); x.id = s.id; x.at = ms(x.at); return x; }).filter(x => x.kind === "rate"); }
+
+// ---- Jeu « Qui suis-je ? » (21 nov.) : qsj/{AAAA-MM-JJ} = choix du modo pour ce jour ; qsjp/{uid} = partie de chaque joueur ----
+export async function qsjDays(days) { const R = await Promise.all(days.map(d => F.getDoc(F.doc(db, "qsj", d)).then(s => s.exists() ? [d, data(s)] : null).catch(() => null))); const o = {}; R.forEach(x => { if (x) o[x[0]] = x[1]; }); return o; }
+export function qsjSetDay(day, o) { return o ? F.setDoc(F.doc(db, "qsj", day), o) : F.deleteDoc(F.doc(db, "qsj", day)); }
+export async function qsjGet(uid) { const s = await F.getDoc(F.doc(db, "qsjp", uid)); return s.exists() ? data(s) : null; }
+export function qsjSave(uid, d) { return F.setDoc(F.doc(db, "qsjp", uid), Object.assign({}, d, { at: F.serverTimestamp() })); }
+export async function qsjList() { const r = await F.getDocs(F.query(F.collection(db, "qsjp"), F.orderBy("pts", "desc"), F.limit(100))); return r.docs.map(s => { const d = data(s); return { uid: s.id, name: d.name || "", pts: d.pts || 0, n: d.n || 0, g: d.g || 0 }; }); }

@@ -49,6 +49,7 @@ import { loadPushCfg, syncPush, resetPushSync } from "./push.js";
 import "./share.js";
 import { wantView, syncWants } from "./want.js";
 import { jeuxView, GAMES_ICON } from "./views/jeux.js";
+import { qsjView } from "./views/qsj.js";
 import { universView, univOn } from "./views/univers.js";
 
 let route = { name: "home" }, routeSubs = [], userSubs = [], dirty = false, searchFocused = false;
@@ -63,7 +64,7 @@ const REL = {
   members: ["activity", "areplies", "polls", "pollVotes", "picks", "content", "history", "users", "friends", "feuds", "blocks", "profiles", "auth", "tick"], favs: ["profile", "profiles", "friends", "auth", "content"], hl: ["history", "spoil", "content"],
   event: ["event", "history", "auth", "activity", "links", "profiles", "content"], want: ["history", "auth", "content", "tick"], cal: ["content", "history", "auth", "images", "spoil", "tick", "picks"],
   polls: ["polls", "pollVotes", "auth", "blocks", "hof", "content", "profiles"], picks: ["content", "picks", "profiles", "auth", "blocks", "tick"], pick: ["content", "picks", "profiles", "auth", "blocks", "tick"],
-  ideas: ["ideas", "profiles", "auth", "blocks"], jeux: ["auth"], univers: ["univ", "auth"],
+  ideas: ["ideas", "profiles", "auth", "blocks"], jeux: ["auth", "qsj"], univers: ["univ", "auth"], qsj: ["auth", "qsj", "content", "profile"],
   trophies: ["profile", "profiles", "history", "pollVotes", "picks", "friends", "feuds", "ideas", "myact", "slammys", "auth", "content"],
 };
 
@@ -88,6 +89,7 @@ function parse() {
     case "tccg": return { name: "tccg", tab: parts[1] || "", sub: parts[2] || "", id: parts[3] || "" };
     case "autre": return { name: "autre" };
     case "jeux": return { name: "jeux" };
+    case "qsj": return { name: "qsj", tab: parts[1] || "" };
     case "univers": return { name: "univers", a: parts[1] || "", b: parts[2] || "", c: parts[3] || "" };
     case "passes": return { name: "passes", k: parts[1] || "", n: parts[2] || "" };
     case "tournois": return parts[1] ? { name: "serie", id: parts[1] } : { name: "tournois" };
@@ -214,6 +216,7 @@ function render() {
     case "tccg": h = tccgView(route.tab, route.sub, route.id); break;
     case "autre": h = autreView(); break;
     case "jeux": h = jeuxView(); break;
+    case "qsj": h = qsjView(route.tab); break;
     case "univers": h = universView(route.a, route.b, route.c); break;
     case "passes": h = pastView(route.k, route.n); break;
     case "tournois": h = tournoisView(); break;
@@ -261,7 +264,7 @@ function navOn(id) {
   if (id === "home") return r === "home" || r === "promo" || r === "titles" || r === "title" || r === "matches" || r === "hl" || r === "polls" || r === "picks" || r === "pick" || r === "cal";
   if (id === "search") return r === "search" || r === "wrestler" || r === "event";
   if (id === "player") return r === "player";
-  if (id === "jeux") return r === "jeux" || r === "univers";
+  if (id === "jeux") return r === "jeux" || r === "univers" || r === "qsj";
   if (id === "members") return r === "members" || (r === "profile" && S.user && route.uid && route.uid !== S.user.uid);
   if (id === "chat") return r === "chat" || r === "conv" || r === "newchat" || r === "convinfo";
   if (id === "me") return (r === "profile" && (!S.user || !route.uid || route.uid === S.user.uid)) || r === "settings" || r === "editprofile" || r === "auth" || r === "ideas" || r === "trophies";
