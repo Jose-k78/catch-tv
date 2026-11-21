@@ -1,13 +1,6 @@
 {
- "at": "2026-11-21T16:16:11.819Z",
+ "at": "2026-11-21T17:16:42.075Z",
  "items": [
-  {
-   "t": "FinalSlam a « bouleversé le catch professionnel » selon Raj Dhesi",
-   "u": "https://www.catch-newz.com/international/newz/61504-finalslam-a-boulverse-le-catch-professionnel-selon-raj-dhesi",
-   "s": "Catch-Newz",
-   "d": "2026-11-21",
-   "tags": []
-  },
   {
    "t": "Preview : AEW Collision du 21 novembre 2026",
    "u": "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
@@ -37,6 +30,13 @@
     "WWE",
     "SmackDown"
    ]
+  },
+  {
+   "t": "FinalSlam a « bouleversé le catch professionnel » selon Raj Dhesi",
+   "u": "https://www.catch-newz.com/international/newz/61504-finalslam-a-boulverse-le-catch-professionnel-selon-raj-dhesi",
+   "s": "Catch-Newz",
+   "d": "2026-11-21",
+   "tags": []
   },
   {
    "t": "Carte de Beyond Wrestling Rent Free",
@@ -1312,10 +1312,10 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61495-wwe-smackdown-20-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61504-finalslam-a-boulverse-le-catch-professionnel-selon-raj-dhesi",
    "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61496-preview-aaa-lucha-libre-21-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61491-preview-wwe-smackdown-20-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61504-finalslam-a-boulverse-le-catch-professionnel-selon-raj-dhesi",
    "https://www.catch-newz.com/wwe/resultats/61487-resultats-et-streaming-wwe-evolve-18-novembre-2026",
    "https://www.catch-newz.com/international/newz/61482-carte-de-beyond-wrestling-rent-free",
    "https://www.catch-newz.com/international/newz/61407-carte-du-jour-6-de-la-njpw-world-tag-league-2026",
@@ -1614,7 +1614,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "8 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
