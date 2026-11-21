@@ -1,5 +1,5 @@
 {
- "at": "2026-11-21T08:09:06.062Z",
+ "at": "2026-11-21T10:19:44.073Z",
  "items": [
   {
    "t": "Preview : AAA Lucha Libre du 21 novembre 2026",
@@ -9,6 +9,15 @@
    "tags": [
     "WWE",
     "AAA"
+   ]
+  },
+  {
+   "t": "Carte du jour 6 de la NJPW World Tag League 2026",
+   "u": "https://www.catch-newz.com/international/newz/61407-carte-du-jour-6-de-la-njpw-world-tag-league-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-21",
+   "tags": [
+    "NJPW"
    ]
   },
   {
@@ -489,13 +498,6 @@
   {
    "t": "Résultats de Beyond Wrestling Open Series 253",
    "u": "https://www.catch-newz.com/international/resultats/61440-resultats-de-beyond-wrestling-open-series-253",
-   "s": "Catch-Newz",
-   "d": "2026-11-19",
-   "tags": []
-  },
-  {
-   "t": "Résultats de PWK Now Or Never V",
-   "u": "https://www.catch-newz.com/international/resultats/61437-resultats-de-pwk-now-or-never-v",
    "s": "Catch-Newz",
    "d": "2026-11-19",
    "tags": []
@@ -1312,6 +1314,7 @@
    "https://www.catch-newz.com/wwe/newz/61496-preview-aaa-lucha-libre-21-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61491-preview-wwe-smackdown-20-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61487-resultats-et-streaming-wwe-evolve-18-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61407-carte-du-jour-6-de-la-njpw-world-tag-league-2026",
    "https://www.catch-newz.com/international/newz/61481-carte-de-beyond-wrestling-still-alive",
    "https://www.catch-newz.com/international/newz/61484-carte-de-cmll-viernes-espectacular-du-20-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61503-gunther-subit-sa-premiere-defaite-en-match-simple-sans-titre-en-jeu-a-la-wwe",
@@ -1606,8 +1609,7 @@
    "https://www.catch-newz.com/international/resultats/61209-resultats-de-vcw-queen-of-the-commonwealth-2026",
    "https://www.catch-newz.com/wwe/newz/61221-mason-rook-fait-son-retour-et-attaque-le-champion-nxt-grayson-waller",
    "https://www.catch-newz.com/international/resultats/61207-resultats-du-jour-1-du-noah-junior-grand-prix-2-legacy-rise-2026",
-   "https://www.catch-newz.com/wwe/resultats/61192-wwe-main-event-4-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61220-kairi-sane-remonte-sur-le-ring-a-la-chris-jericho-cruise"
+   "https://www.catch-newz.com/wwe/resultats/61192-wwe-main-event-4-novembre-2026"
   ]
  },
  "diag": {
