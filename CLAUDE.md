@@ -349,7 +349,10 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
 - **Lot du 21 nov.** (photos) : dossier de Jose « Beyond\people » (mod Steam de Pro Wrestling Simulator, PNG 500 × 500, `Nom.png` + `Nom_altN.png`) :
   seules les photos de base des catcheurs connus de l'app (rosters, fiches, groupes, photos existantes) ; les personnages fictifs, célébrités (« !USER »)
   et catcheurs absents de l'app ne sont pas installés. Photo identique à une version existante (comparaison d'image, décalage toléré) = pas installée ;
-  sinon `slug-vN.webp` mise en avant, l'ancienne gardée dans `v` (choix de Jose : en avant pour tous, même si la photo du dossier est souvent plus ancienne).
+  ATTENTION : dans ce dossier, `Nom.png` est souvent la photo la PLUS ANCIENNE et l'ordre des `_altN` n'est pas fiable (souvent chronologique,
+  mais des photos d'époque sont ajoutées à la fin) ; il ne dit pas quelle photo est la plus récente. Jose veut toujours la version la plus récente :
+  les photos déjà dans l'app (venues du pack Pro Wrestling Simulator) étaient les récentes, elles ont été remises en avant ; les 38 catcheurs sans
+  photo ont reçu la version la plus récente choisie à l'œil. Pour un catcheur précis, montrer toutes ses versions à Jose avant de changer.
   Faux catcheurs « Nom V2 / V3 » (créés par le robot à partir d'une version ajoutée depuis l'app) retirés de photos.json et rattachés dans `merged`.
   `merged` avait été perdu (le robot réécrivait photos.json sans lui) : remis + robot corrigé (`photos.mjs` garde les autres champs et rattache
   `nom-vN.webp` au même catcheur). Vieux noms : « Jungle Boy » = Jack Perry, « La Sombra » = Andrade (photo en version + alias, pas de doublon).
