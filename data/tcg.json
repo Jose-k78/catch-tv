@@ -3979,6 +3979,19 @@
    },
    "gimmick": "",
    "medalOf": "Jacari Ball"
+  },
+  "joseph-sawyer": {
+   "k": "TNA",
+   "r": "R",
+   "max": "SR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Joseph Sawyer"
   }
  },
  "bgm": {
