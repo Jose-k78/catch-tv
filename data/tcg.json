@@ -3953,6 +3953,19 @@
    },
    "gimmick": "",
    "medalOf": "Road Warrior Hawk"
+  },
+  "dick-togo": {
+   "k": "NJPW",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Sho"
   }
  },
  "bgm": {
