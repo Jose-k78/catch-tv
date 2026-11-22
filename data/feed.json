@@ -1,6 +1,16 @@
 {
- "at": "2026-11-22T17:16:55.928Z",
+ "at": "2026-11-22T18:12:04.490Z",
  "items": [
+  {
+   "t": "MJF demande le licenciement de Brody King suite à AEW Collision",
+   "u": "https://www.catch-newz.com/aew/newz/61534-mjf-demande-le-licenciement-de-brody-king-suite-a-aew-collision",
+   "s": "Catch-Newz",
+   "d": "2026-11-22",
+   "tags": [
+    "AEW",
+    "Collision"
+   ]
+  },
   {
    "t": "Preview : WWE RAW du 23 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61536-preview-wwe-raw-23-novembre-2026",
@@ -9,6 +19,15 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Carte de CMLL Domingo Familiar du 22 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61516-carte-de-cmll-domingo-familiar-du-22-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-22",
+   "tags": [
+    "CMLL"
    ]
   },
   {
@@ -44,15 +63,6 @@
    "tags": [
     "AEW",
     "TNA"
-   ]
-  },
-  {
-   "t": "Carte de CMLL Domingo Familiar du 22 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61516-carte-de-cmll-domingo-familiar-du-22-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-22",
-   "tags": [
-    "CMLL"
    ]
   },
   {
@@ -501,15 +511,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-20",
    "tags": []
-  },
-  {
-   "t": "Résultats de CMLL x NFL Noche de Cascos y Máscaras",
-   "u": "https://www.catch-newz.com/international/resultats/61480-resultats-de-cmll-x-nfl-noche-de-cascos-y-mascaras",
-   "s": "Catch-Newz",
-   "d": "2026-11-20",
-   "tags": [
-    "CMLL"
-   ]
   }
  ],
  "yt": {
@@ -1362,17 +1363,18 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61495-wwe-smackdown-20-novembre-2026",
+   "https://www.catch-newz.com/aew/newz/61534-mjf-demande-le-licenciement-de-brody-king-suite-a-aew-collision",
    "https://www.catch-newz.com/wwe/newz/61536-preview-wwe-raw-23-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61533-jake-hager-na-pas-retrouve-la-vision-a-100",
-   "https://www.catch-newz.com/wwe/newz/61535-jeff-hardy-est-ouvert-a-une-ultime-rivalite-contre-cm-punk-a-la-wwe",
-   "https://www.catch-newz.com/aew/newz/61532-brody-king-sexprime-apres-la-blessure-de-daniel-garcia",
-   "https://www.catch-newz.com/aew/newz/61531-une-programmation-speciale-pour-laew-et-la-tna-en-raison-de-thanksgiving",
    "https://www.catch-newz.com/international/resultats/61528-resultats-de-iwrg-aaa-du-19-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61505-resultats-et-streaming-aaa-lucha-libre-21-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61511-aew-collision-21-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61519-resultats-de-roh-du-19-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61509-resultats-de-wwe-road-to-survivor-series-du-19-novembre-2026",
    "https://www.catch-newz.com/international/newz/61516-carte-de-cmll-domingo-familiar-du-22-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61533-jake-hager-na-pas-retrouve-la-vision-a-100",
+   "https://www.catch-newz.com/wwe/newz/61535-jeff-hardy-est-ouvert-a-une-ultime-rivalite-contre-cm-punk-a-la-wwe",
+   "https://www.catch-newz.com/aew/newz/61532-brody-king-sexprime-apres-la-blessure-de-daniel-garcia",
+   "https://www.catch-newz.com/aew/newz/61531-une-programmation-speciale-pour-laew-et-la-tna-en-raison-de-thanksgiving",
    "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61530-resultats-de-njpw-road-to-world-tag-league-2026",
    "https://www.catch-newz.com/international/resultats/61529-resultats-de-njpw-bound-for-unbound",
@@ -1659,12 +1661,11 @@
    "https://www.catch-newz.com/international/newz/61252-trois-francaises-dans-le-pwi-250-de-2026",
    "https://www.catch-newz.com/wwe/newz/61251-stephanie-vaquer-finit-premiere-du-pwi-250-de-2026",
    "https://www.catch-newz.com/international/newz/61250-finalslam-2026-heure-et-chaines-pour-regarder-le-show-en-direct",
-   "https://www.catch-newz.com/international/newz/61234-carte-de-cmll-jueves-arena-coliseo-du-12-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61249-il-y-a-8-ans-cette-blessure-a-change-la-carriere-de-becky-lynch"
+   "https://www.catch-newz.com/international/newz/61234-carte-de-cmll-jueves-arena-coliseo-du-12-novembre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 12 nouveaux articles lus sur la page d'accueil (12 liens)",
+  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
