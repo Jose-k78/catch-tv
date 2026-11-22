@@ -1,5 +1,5 @@
 {
- "at": "2026-11-22T00:09:12.888Z",
+ "at": "2026-11-22T03:52:00.758Z",
  "items": [
   {
    "t": "Carte du jour 3 de la AJPW Real World Tag League 2026",
@@ -1287,6 +1287,46 @@
     "id": "JOyxbl2OubM",
     "t": "Full SmackDown highlights: Nov. 20, 2026"
    }
+  ],
+  "AAA|Lucha Libre AAA|2026-11-21": [
+   {
+    "id": "9RsTFfj5jIw",
+    "t": "Daga, Angel & Berto contre La Parka, El Grande & Rey Fenix"
+   },
+   {
+    "id": "2HaA2c3Kzro",
+    "t": "La Catalina saves Faby Apache from Las Tóxicas: Lucha Libre AAA highlights: Nov. 21, 2026"
+   },
+   {
+    "id": "XEEPa9W42r4",
+    "t": "Los Wagner Brothers get attacked by Texano Jr. and a mysterious partner: Lucha Libre AAA highlights"
+   }
+  ],
+  "AEW|Collision|2026-11-21": [
+   {
+    "id": "1r2dZlqSqxE",
+    "t": "AZM contre Laynie Luck"
+   },
+   {
+    "id": "3MiYgAaPX9c",
+    "t": "Konosuke Takeshita contre Trent Beretta"
+   },
+   {
+    "id": "tzSoqQFzlNk",
+    "t": "Ilja Dragunov contre El Clon"
+   },
+   {
+    "id": "3EUGV6g1I2Q",
+    "t": "Ilja Dragunov contre El Clon"
+   },
+   {
+    "id": "ng76cdDq8Mk",
+    "t": "Tommaso Ciampa contre The Jet"
+   },
+   {
+    "id": "y2adEyymqXs",
+    "t": "Tommaso Ciampa contre The Jet"
+   }
   ]
  },
  "rss": {
@@ -1604,8 +1644,8 @@
   "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
-  "YouTube WWE": "0 nouvelles vidéos",
-  "YouTube AEW": "0 nouvelles vidéos",
+  "YouTube WWE": "3 nouvelles vidéos",
+  "YouTube AEW": "6 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
   "YouTube TNA": "0 nouvelles vidéos",
