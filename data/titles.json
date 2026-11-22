@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21",
+ "updated": "2026-11-22",
  "note": "Champions actuels : peut révéler des résultats récents.",
  "titles": [
   {
@@ -956,8 +956,14 @@
    ],
    "src": "Wrestle Purists",
    "u": "https://wrestlepurists.com/aew-full-gear-2026-results-mjf-returns-will-ospreay-retains/",
-   "defs": [],
-   "def": 0
+   "defs": [
+    {
+     "d": "2026-11-21",
+     "ev": "Collision",
+     "vs": "El Clon"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "aew-tag",
