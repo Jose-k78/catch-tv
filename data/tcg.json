@@ -4070,6 +4070,19 @@
    },
    "gimmick": "",
    "medalOf": "Shota Umino"
+  },
+  "dani-luna": {
+   "k": "AEW",
+   "r": "R",
+   "max": "SR",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Soumission",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Dani Luna"
   }
  },
  "bgm": {
