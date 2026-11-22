@@ -4005,6 +4005,19 @@
    },
    "gimmick": "",
    "medalOf": "El Clon"
+  },
+  "konami": {
+   "k": "Stardom",
+   "r": "SR",
+   "max": "UR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Syuri"
   }
  },
  "bgm": {
