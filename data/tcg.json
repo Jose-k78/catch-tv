@@ -3966,6 +3966,19 @@
    },
    "gimmick": "",
    "medalOf": "Sho"
+  },
+  "jacari-ball": {
+   "k": "WWE",
+   "r": "N",
+   "max": "R",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Spear",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Jacari Ball"
   }
  },
  "bgm": {
