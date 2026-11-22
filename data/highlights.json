@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21",
+ "updated": "2026-11-22",
  "note": "Vidéos des chaînes officielles uniquement. res = résultats (spoilers, affichés seulement à la demande). m = résumé match par match (promotions japonaises).",
  "items": {
   "WWE|Raw|2026-10-26": {
@@ -81,17 +81,6 @@
    ],
    "s": "Fightful",
    "u": "https://www.fightful.com/wrestling/aew-collision-results-10-24-2026-mcmg-vs-ftr-divine-dominion-vs-wrathlander-jay-white-speak-swerve-strickalnd-more/"
-  },
-  "TNA|Impact|2026-10-22": {
-   "v": [],
-   "res": [
-    "Indi Hartwell a battu Xia Brookside et conserve le titre mondial des Knockouts, puis Shayna Baszler et Zoey Serrano l’ont attaquée",
-    "Cedric Alexander a remporté le match à quatre et devient aspirant n°1 au titre X-Division",
-    "Avery Styles a battu Joe Alonzo",
-    "Jason Hotch a battu Mustafa Ali en deux tombés sur trois et conserve le titre International"
-   ],
-   "s": "Wrestling Inc.",
-   "u": "https://www.wrestlinginc.com/2293763/tna-thursday-night-impact-october-22-2026-results/"
   },
   "AAA|PLE|2026-10-24": {
    "v": [],
@@ -1379,6 +1368,95 @@
    ],
    "s": "Wrestling Inc.",
    "u": "https://www.wrestlinginc.com/2321436/tna-thursday-night-impact-november-19-2026-results/"
+  },
+  "WWE|SmackDown|2026-11-20": {
+   "res": [
+    "Jade Cargill a battu Charlotte Flair par tombé dans le match pour l'avantage de WarGames féminin.",
+    "The War Raiders (Erik et Ivar) ont battu Bakusai (Shinsuke Nakamura et Kyoki).",
+    "Trick Williams a battu Damian Priest par disqualification.",
+    "Rey Fenix a battu Kit Wilson par tombé.",
+    "Kevin Owens a battu GUNTHER par tombé."
+   ],
+   "seg": [
+    {
+     "k": "Promo",
+     "t": "Kevin Owens réclame un match pour le titre Undisputed WWE face à Sami Zayn ; le GM Nick Aldis officialise plutôt Owens contre GUNTHER, et GUNTHER prévient Owens de ne pas se mettre sur son chemin."
+    },
+    {
+     "k": "Interview",
+     "t": "Cathy Kelley interroge Jade Cargill et Charlotte Flair avant leur match pour l'avantage de WarGames."
+    },
+    {
+     "k": "Attaque",
+     "t": "Tama Tonga et Talla Tonga attaquent Nakamura et Kyoki après le match par équipe."
+    },
+    {
+     "k": "Attaque",
+     "t": "Chelsea Green récupère sa bague de Women's Crown Jewel, gifle Blake Monroe, puis Tiffany Stratton l'attaque par derrière et lui reprend la bague."
+    },
+    {
+     "k": "Backstage",
+     "t": "The Miz et Kit Wilson interrompent Cody Rhodes et Rey Fenix chez Nick Aldis ; Wilson lit un poème moqueur sur Fenix."
+    },
+    {
+     "k": "Autre",
+     "t": "Hommage vidéo à « Cowboy » Bill Watts après l'annonce de son décès."
+    },
+    {
+     "k": "Annonce",
+     "t": "CM Punk choisit « Hacksaw » Jim Duggan comme 5e membre de la Team USA, qui refuse ; Trick Williams et Lil Yachty se proposent et Williams devient le 5e membre pour Survivor Series."
+    },
+    {
+     "k": "Blessure",
+     "t": "Après le match, Damian Priest s'en prend au genou gauche de Trick Williams, qui est examiné par les médecins."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après la victoire d'Owens, Sami Zayn le frappe d'un Helluva Kick et brandit la ceinture Undisputed WWE."
+    }
+   ],
+   "s": "Wrestling Inc.",
+   "u": "https://www.wrestlinginc.com/2323064/wwe-smackdown-november-20-2026-results/"
+  },
+  "AEW|Collision|2026-11-21": {
+   "res": [
+    "Kevin Knight a battu Tommaso Ciampa (Continental Classic, Gold League).",
+    "Divine Dominion (Megan Bayne et Lena Kross) ont battu Viva Van et VertVixen.",
+    "Brody King a battu Daniel Garcia par arrêt de l'arbitre (Continental Classic, Blue League).",
+    "Ilja Dragunov a battu El Clon et conserve le titre AEW National.",
+    "Konosuke Takeshita a battu Trent Beretta.",
+    "AZM a battu Laynie Luck.",
+    "The Death Riders (Claudio Castagnoli, Wheeler Yuta, Gabe Kidd et Marina Shafir) ont battu Shane Taylor Promotions (Shane Taylor, Shawn Dean, Carlie Bravo et Trish Adora).",
+    "Jay White a battu Ricochet (Continental Classic, Blue League)."
+   ],
+   "seg": [
+    {
+     "k": "Retour",
+     "t": "Trent Beretta lance un défi à tous ceux qui ont quitté la Don Callis Family : Konosuke Takeshita fait son retour et l'affronte aussitôt."
+    },
+    {
+     "k": "Blessure",
+     "t": "Daniel Garcia ne peut pas continuer après le boulet de canon de Brody King ; Tony Schiavone annonce une blessure au bras, sans gravité."
+    },
+    {
+     "k": "Attaque",
+     "t": "Kris Statlander et Harley Cameron, venues observer leurs challengers, interviennent quand Divine Dominion s'acharne après le match ; la sécurité sépare la bagarre avant leur match de mercredi."
+    },
+    {
+     "k": "Promo",
+     "t": "Britt Baker et Persephone laissent entendre qu'elles visent les titres féminins par équipe."
+    },
+    {
+     "k": "Promo",
+     "t": "Le Triangle of Madness (Thekla, Julia Hart et Skye Blue) défie AZM de trouver deux partenaires pour un match à six."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Jay White interrompt la célébration des Death Riders et nargue Claudio Castagnoli, retenu par les officiels."
+    }
+   ],
+   "s": "Wrestlepurists",
+   "u": "https://wrestlepurists.com/aew-collision-results-november-21-2026-ilja-dragunov-retains-konosuke-takeshita-returns/"
   }
  }
 }
