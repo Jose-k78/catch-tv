@@ -4057,6 +4057,19 @@
    "gimmick": "",
    "medalOf": "Harley Race",
    "leg": true
+  },
+  "shota-umino": {
+   "k": "NJPW",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Aggressor",
+   "al": "",
+   "fin": {
+    "n": "Death Rider",
+    "e": "Boost"
+   },
+   "gimmick": "",
+   "medalOf": "Shota Umino"
   }
  },
  "bgm": {
