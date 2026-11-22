@@ -104,6 +104,41 @@ function styleOf(x, k) {
 // salaire demandé (k$ par an) selon la cote du catcheur
 export const salOf = w => Math.round((30 + Math.pow(w.st[5] / 100, 3) * 2400 + w.pop * 4) / 10) * 10;
 
+// un catcheur de l'univers d'après sa carte (p = rang de 0 à 1, k = sa fédération ou "" pour un agent libre, r = sa place dans les rosters)
+// (22 nov.) aussi pour les nouveaux venus ajoutés aux parties déjà commencées (v2.js addNewcomers)
+let DBY = null, DBYof = null;
+const debutOf = nm => { const src = S.bdd && S.bdd.y; if (!src) return 0; if (DBYof !== src) { DBYof = src; DBY = new Map(); Object.keys(src).forEach(k => DBY.set(norm(k), src[k])); } return DBY.get(norm(nm)) || 0; };
+// rang des catcheurs de NOAH, TJPW et des promotions du 22 nov. : leur popularité dans la base de données du jeu de Jose (bdd.json « p »)
+export function popRank(L) {
+  const pp = (S.bdd && S.bdd.p) || {}, T = L.filter(x => x.late).sort((a, b) => ((pp[a.rn] || 0) - (pp[b.rn] || 0)) || (a.score - b.score)), m = new Map();
+  T.forEach((c, i) => m.set(c.id, T.length > 1 ? 0.12 + 0.72 * i / (T.length - 1) : 0.4));
+  return m;
+}
+export function mkW(x, p, k, r, fem) {
+  const h = i => h01(x.rn + "|" + i);
+  const debut = parseInt(String(x.years || "").slice(0, 4), 10) || debutOf(x.rn);
+  const age = debut ? clamp(19 + (2026 - debut) + Math.round(h(9) * 3), 18, 62) : clamp(22 + h(10) * 16, 18, 60);
+  const sty = styleOf(x, k);
+  const st = [
+    clamp(40 + p * 35 + h(1) * 25), clamp(42 + p * 38 + h(2) * 18 + (sty === "tec" ? 6 : sty === "pur" ? 5 : sty === "aer" ? 4 : 0)),
+    clamp(30 + p * 45 + h(3) * 22 + (x.arch === "Showman" ? 8 : 0)), clamp(35 + p * 45 + h(4) * 18),
+    clamp(45 + h(5) * 35 + p * 15 + (sty === "pur" ? 6 : 0) - Math.max(0, age - 40) * 1.5, 20), clamp(25 + p * 70 + h(6) * 5), clamp(45 + h(7) * 45 + p * 8)
+  ];
+  const id = x.id, n = norm(x.rn);
+  const w = {
+    id: id, n: x.rn, pic: x.pic || "", fed: k, br: k === "WWE" && r ? r.g : "", sx: fem.has(n) ? "f" : "h", st: st, sty: sty,
+    al: x.al === "heel" ? "heel" : x.al === "face" ? "face" : (h(11) < 0.55 ? "face" : "heel"),
+    pop: clamp(15 + p * 80 + h(8) * 6, 5, 99), en: clamp(80 + h(12) * 20), mor: clamp(58 + h(13) * 25), age: age,
+    rec: [0, 0, 0], car: [Math.round((age - 18) * (8 + h(14) * 20) * 0.6), Math.round((age - 18) * (5 + h(15) * 12) * 0.6), Math.round((age - 18) * h(16) * 1.2)],
+    pers: [TRAITS[hash(x.rn + "t1") % TRAITS.length]].concat(h(17) < 0.5 ? [TRAITS[hash(x.rn + "t2") % TRAITS.length]] : []).filter((v, i, a) => a.indexOf(v) === i),
+    inj: null, hist: [], ct: null, p0: 0, last: -99
+  };
+  w.p0 = w.pop;
+  if (x.inj) w.inj = { until: 14 + Math.round(h(18) * 42), what: "Blessure (avant le début de la partie)", grave: false };
+  if (k) w.ct = { sal: Math.round(salOf(w) * (k === "WWE" ? 1.3 : FEDS0[k].pres / 80) / 10) * 10, end: 60 + Math.round(h(19) * 660), role: "mid" };
+  return w;
+}
+
 export function newWorld(opt) {
   // opt = { take: "WWE" } (prendre une fédération) ou { create: { n, sh, c, show, wd } } (créer la sienne)
   const fem = femaleSet();
@@ -112,31 +147,11 @@ export function newWorld(opt) {
   const sorted = L.slice().sort((a, b) => a.score - b.score), N = sorted.length;
   const pct = new Map(); sorted.forEach((c, i) => pct.set(c.id, N > 1 ? i / (N - 1) : 0.5));
   const W = {};
+  const lp = popRank(L);
   L.forEach(x => {
     const n = norm(x.rn), r = ro.get(n) || ((x.w && Array.isArray(x.w.a)) ? x.w.a.map(a => ro.get(norm(a))).find(Boolean) : null);
     const k = r && FEDS0[r.k] ? r.k : "";
-    const p = pct.get(x.id), h = i => h01(x.rn + "|" + i);
-    const debut = parseInt(String(x.years || "").slice(0, 4), 10);
-    const age = debut ? clamp(19 + (2026 - debut) + Math.round(h(9) * 3), 18, 62) : clamp(22 + h(10) * 16, 18, 60);
-    const sty = styleOf(x, k);
-    const st = [
-      clamp(40 + p * 35 + h(1) * 25), clamp(42 + p * 38 + h(2) * 18 + (sty === "tec" ? 6 : sty === "pur" ? 5 : sty === "aer" ? 4 : 0)),
-      clamp(30 + p * 45 + h(3) * 22 + (x.arch === "Showman" ? 8 : 0)), clamp(35 + p * 45 + h(4) * 18),
-      clamp(45 + h(5) * 35 + p * 15 + (sty === "pur" ? 6 : 0) - Math.max(0, age - 40) * 1.5, 20), clamp(25 + p * 70 + h(6) * 5), clamp(45 + h(7) * 45 + p * 8)
-    ];
-    const id = x.id;
-    const w = {
-      id: id, n: x.rn, pic: x.pic || "", fed: k, br: k === "WWE" && r ? r.g : "", sx: fem.has(n) ? "f" : "h", st: st, sty: sty,
-      al: x.al === "heel" ? "heel" : x.al === "face" ? "face" : (h(11) < 0.55 ? "face" : "heel"),
-      pop: clamp(15 + p * 80 + h(8) * 6, 5, 99), en: clamp(80 + h(12) * 20), mor: clamp(58 + h(13) * 25), age: age,
-      rec: [0, 0, 0], car: [Math.round((age - 18) * (8 + h(14) * 20) * 0.6), Math.round((age - 18) * (5 + h(15) * 12) * 0.6), Math.round((age - 18) * h(16) * 1.2)],
-      pers: [TRAITS[hash(x.rn + "t1") % TRAITS.length]].concat(h(17) < 0.5 ? [TRAITS[hash(x.rn + "t2") % TRAITS.length]] : []).filter((v, i, a) => a.indexOf(v) === i),
-      inj: null, hist: [], ct: null, p0: 0, last: -99
-    };
-    w.p0 = w.pop;
-    if (x.inj) w.inj = { until: 14 + Math.round(h(18) * 42), what: "Blessure (avant le début de la partie)", grave: false };
-    if (k) w.ct = { sal: Math.round(salOf(w) * (k === "WWE" ? 1.3 : FEDS0[k].pres / 80) / 10) * 10, end: 60 + Math.round(h(19) * 660), role: "mid" };
-    W[id] = w;
+    W[x.id] = mkW(x, lp.has(x.id) ? lp.get(x.id) : pct.get(x.id), k, r, fem);
   });
   // fédérations
   const F = {};

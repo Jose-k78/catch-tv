@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21",
+ "updated": "2026-11-22",
  "note": "Membres tenus à jour par la mise à jour du soir (19 h 23).",
  "items": {
   "946": {
@@ -2902,6 +2902,929 @@
    ],
    "a": [
     "Up Up Girls (Pro-Wrestling)"
+   ]
+  },
+  "amboss": {
+   "n": "Amboss",
+   "k": "wXw",
+   "on": 1,
+   "m": [
+    "Robert Dreissker",
+    "Icarus",
+    "Laurance Roman"
+   ],
+   "lg": "Amboss"
+  },
+  "baka-no-jidai": {
+   "n": "Baka No Jidai",
+   "k": "AJPW",
+   "on": 1,
+   "m": [
+    "Hikaru Sato",
+    "Daisuke Sekimoto",
+    "Kengo Mashimo",
+    "Yuko Miyamoto",
+    "Hideki Suzuki",
+    "Yuma Aoyagi",
+    "Seigo Tachibana",
+    "Fuminori Abe"
+   ]
+  },
+  "contra-unit": {
+   "n": "Contra Unit",
+   "k": "MLW",
+   "on": 1,
+   "m": [
+    "Kushida",
+    "Ikuro Kwon",
+    "Mads Krule Krügger"
+   ],
+   "lg": "Contra Unit"
+  },
+  "damnation-t-a": {
+   "n": "DAMNATION T.A",
+   "k": "DDT",
+   "on": 1,
+   "m": [
+    "Daisuke Sasaki",
+    "Demus",
+    "MJ Paul",
+    "Hideki Okatani",
+    "Ilusion"
+   ],
+   "lg": "DAMNATION T.A"
+  },
+  "love-and-peace": {
+   "n": "LOVE & PEACE",
+   "k": "Dragon Gate",
+   "on": 1,
+   "m": [
+    "Ben-K",
+    "Hyo",
+    "Jacky Kamei",
+    "Riiita",
+    "Mochizuki Jr."
+   ]
+  },
+  "lana-austin-experience": {
+   "n": "Lana Austin Experience",
+   "k": "PROGRESS",
+   "on": 1,
+   "m": [
+    "Lana Austin",
+    "Skye Smitson"
+   ],
+   "lg": "The Lana Austin Experience"
+  },
+  "las-fresa-de-egoistas": {
+   "n": "Las Fresa de Egoistas",
+   "k": "SEAdLINNNG",
+   "on": 1,
+   "m": [
+    "Makoto",
+    "Mima Shimoda",
+    "VENY",
+    "Ayame Sasamura"
+   ]
+  },
+  "natural-vibes": {
+   "n": "Natural Vibes",
+   "k": "Dragon Gate",
+   "on": 1,
+   "m": [
+    "Kzy",
+    "U-T",
+    "Strong Machine J",
+    "GuC",
+    "@KEY"
+   ],
+   "lg": "Natural Vibes"
+  },
+  "paradox": {
+   "n": "PARADOX",
+   "k": "Dragon Gate",
+   "on": 1,
+   "m": [
+    "BxB Hulk",
+    "YAMATO",
+    "KAGETORA",
+    "Susumu Yokosuka",
+    "Dragon Kid"
+   ]
+  },
+  "rogue-horsemen": {
+   "n": "Rogue Horsemen",
+   "k": "MLW",
+   "on": 1,
+   "m": [
+    "Brock Anderson",
+    "CW Anderson"
+   ],
+   "lg": "Rogue Horsemen"
+  },
+  "sovereign": {
+   "n": "Sovereign",
+   "k": "DEFY",
+   "on": 1,
+   "m": [
+    "Judas Icarus",
+    "Travis Williams",
+    "Evan Rivers"
+   ]
+  },
+  "the-37kamiina": {
+   "n": "The 37KAMIINA",
+   "k": "DDT",
+   "on": 1,
+   "m": [
+    "Shunma Katsumata",
+    "Yuki Ueno",
+    "To~y"
+   ],
+   "lg": "The 37KAMIINA"
+  },
+  "the-cut-throat-collective": {
+   "n": "The Cut Throat Collective",
+   "k": "RevPro",
+   "on": 1,
+   "m": [
+    "Nina Samuels",
+    "Mercedez Blaze",
+    "Lizzy Evo",
+    "Safire Reed"
+   ],
+   "lg": "The Cut Throat Collective"
+  },
+  "the-saito-brothers": {
+   "n": "The Saito Brothers",
+   "k": "AJPW",
+   "on": 1,
+   "m": [
+    "Señor Saito",
+    "Naruki Doi",
+    "Rei Saito",
+    "Jun Saito"
+   ]
+  },
+  "gajadokuro": {
+   "n": "Gajadokuro",
+   "k": "Dragon Gate",
+   "on": 1,
+   "m": [
+    "KAI",
+    "BIG BOSS Shimizu",
+    "Jason Lee",
+    "Madoka Kikuta",
+    "ISHIN",
+    "Ryu Fuda",
+    "Yoshiki Kato"
+   ]
+  },
+  "havoc": {
+   "n": "HAVOC",
+   "k": "AJPW",
+   "on": 1,
+   "m": [
+    "Shotaro Ashino",
+    "Oddyssey",
+    "Xyon",
+    "Cal Bloom",
+    "Masayuki Kono"
+   ]
+  },
+  "vndl48": {
+   "n": "VNDL48",
+   "k": "GCW",
+   "on": 1,
+   "m": [
+    "Eddy Only",
+    "Atticus Cogar",
+    "Bobby Beverly",
+    "Otis Cogar",
+    "Christian Napier"
+   ]
+  },
+  "fantomes-dramatic": {
+   "n": "Fantomes Dramatic",
+   "k": "DDT",
+   "on": 1,
+   "m": [
+    "Antonio Honda",
+    "HARASHIMA",
+    "Chris Brookes",
+    "Hinata Kasai"
+   ],
+   "lg": "Fantomes Dramatic"
+  },
+  "st-claire-monster-corporation": {
+   "n": "St. Claire Monster Corporation",
+   "k": "JCW",
+   "on": 1,
+   "m": [
+    "Kongo Kong",
+    "Mr. Happy",
+    "Beastman",
+    "Jasmin St. Claire"
+   ]
+  },
+  "strange-love-connection": {
+   "n": "STRANGE LOVE CONNECTION",
+   "k": "DDT",
+   "on": 1,
+   "m": [
+    "MAO",
+    "Yuki Iino",
+    "Yukio Naya",
+    "KANON",
+    "Viento Levante",
+    "Kimihiro"
+   ],
+   "lg": "STRANGE LOVE CONNECTION"
+  },
+  "nwa-jr": {
+   "n": "NwA Jr.",
+   "k": "DDT",
+   "on": 1,
+   "m": [
+    "Yuni",
+    "Kazuma Sumi"
+   ],
+   "lg": "NwA Jr."
+  },
+  "paleyouth": {
+   "n": "paleyouth",
+   "k": "DDT",
+   "on": 1,
+   "m": [
+    "Yuya Koroku",
+    "Takeshi Masada",
+    "Daichi Sato"
+   ],
+   "lg": "paleyouth"
+  },
+  "luciano-family-enterprises": {
+   "n": "Luciano Family Enterprises",
+   "k": "JCW",
+   "on": 1,
+   "m": [
+    "Mickie Knuckles",
+    "PCO",
+    "Big Vito"
+   ]
+  },
+  "gbot": {
+   "n": "GBOT",
+   "k": "MLW",
+   "on": 1,
+   "m": [
+    "Joe Coffey",
+    "Wolfgang",
+    "Mark Coffey"
+   ]
+  },
+  "diamond-eyes": {
+   "n": "Diamond Eyes",
+   "k": "PROGRESS",
+   "on": 1,
+   "m": [
+    "Connor Mills",
+    "Nico Angelo",
+    "Jay Joshua"
+   ]
+  },
+  "cpf": {
+   "n": "CPF",
+   "k": "RevPro",
+   "on": 1,
+   "m": [
+    "Joe Lando",
+    "Maverick Mayhew",
+    "Danny Black"
+   ],
+   "lg": "CPF"
+  },
+  "juggalo-world-order": {
+   "n": "Juggalo World Order",
+   "k": "JCW",
+   "on": 1,
+   "m": [
+    "Willie Mack",
+    "Violent J",
+    "2 Tuff Tony"
+   ]
+  },
+  "xeniss": {
+   "n": "XenisS",
+   "k": "Dragon Gate",
+   "on": 1,
+   "m": [
+    "Yuki Yoshioka",
+    "Kota Minoura",
+    "El Cielo"
+   ]
+  },
+  "xenostal-nova": {
+   "n": "XENOSTAL NOVA",
+   "k": "Dragon Gate",
+   "on": 1,
+   "m": [
+    "Ryoya Tanaka",
+    "Homare",
+    "Kazuma Kimura"
+   ]
+  },
+  "1st-faction": {
+   "n": "1st Faction",
+   "k": "MLP",
+   "on": 1,
+   "m": [
+    "Brent Banks",
+    "Sheldon Jean"
+   ]
+  },
+  "fight-or-flight": {
+   "n": "Fight or Flight",
+   "k": "C4",
+   "on": 1,
+   "m": [
+    "Gabriel Fuerza",
+    "Vaughn Vertigo"
+   ]
+  },
+  "the-bollywood-boyz": {
+   "n": "The Bollywood Boyz",
+   "k": "DEFY",
+   "on": 1,
+   "m": [
+    "Harv Sihra",
+    "Gurv Sihra"
+   ]
+  },
+  "beast-friend": {
+   "n": "Beast Friend",
+   "k": "DDT",
+   "on": 1,
+   "m": [
+    "Aja Kong",
+    "Hiroyo Matsumoto"
+   ]
+  },
+  "twin-towers": {
+   "n": "Twin Towers",
+   "k": "Marvelous",
+   "on": 1,
+   "m": [
+    "Kohei Sato",
+    "Shuji Ishikawa"
+   ]
+  },
+  "strong-bj": {
+   "n": "Strong BJ",
+   "k": "Marvelous",
+   "on": 1,
+   "m": [
+    "Daisuke Sekimoto",
+    "Yuji Okabayashi"
+   ]
+  },
+  "beauty-bear": {
+   "n": "Beauty Bear",
+   "k": "DDT",
+   "on": 1,
+   "m": [
+    "Chihiro Hashimoto",
+    "Mika Iwata"
+   ]
+  },
+  "astronauts": {
+   "n": "Astronauts",
+   "k": "DDT",
+   "on": 1,
+   "m": [
+    "Takuya Nomura",
+    "Fuminori Abe"
+   ]
+  },
+  "calamari-drunken-kings": {
+   "n": "Calamari Drunken Kings",
+   "k": "ChocoPro",
+   "on": 1,
+   "m": [
+    "Chris Brookes",
+    "Masa Takanashi"
+   ]
+  },
+  "midnight-heat": {
+   "n": "Midnight Heat",
+   "k": "DEFY",
+   "on": 1,
+   "m": [
+    "Ricky Gibson",
+    "Eddie Pearl"
+   ]
+  },
+  "addicted-2-adrenaline": {
+   "n": "Addicted 2 Adrenaline",
+   "k": "RevPro",
+   "on": 1,
+   "m": [
+    "Joe Lando",
+    "Maverick Mayhew"
+   ]
+  },
+  "greedy-souls": {
+   "n": "Greedy Souls",
+   "k": "wXw",
+   "on": 1,
+   "m": [
+    "Brendan White",
+    "Danny Jones"
+   ]
+  },
+  "team-200kg": {
+   "n": "Team 200kg",
+   "k": "DDT",
+   "on": 1,
+   "m": [
+    "Chihiro Hashimoto",
+    "Yuu"
+   ]
+  },
+  "business-tag-team": {
+   "n": "Business Tag Team",
+   "k": "AJPW",
+   "on": 1,
+   "m": [
+    "Kento Miyahara",
+    "Yuma Aoyagi"
+   ]
+  },
+  "bestbros": {
+   "n": "BestBros",
+   "k": "ChocoPro",
+   "on": 1,
+   "m": [
+    "Baliyan Akki",
+    "Mei Suruga"
+   ]
+  },
+  "locked-and-loaded": {
+   "n": "Locked and Loaded",
+   "k": "C4",
+   "on": 1,
+   "m": [
+    "Jessie V",
+    "Mark Wheeler"
+   ]
+  },
+  "warm-caterpillars": {
+   "n": "Warm Caterpillars",
+   "k": "ChocoPro",
+   "on": 1,
+   "m": [
+    "Mei Suruga",
+    "Chie Koishikawa"
+   ]
+  },
+  "rock-and-hawk-connection": {
+   "n": "Rock And Hawk Connection",
+   "k": "DEFY",
+   "on": 1,
+   "m": [
+    "Randy Myers",
+    "Ricky Gibson"
+   ]
+  },
+  "c4": {
+   "n": "C4",
+   "k": "DEFY",
+   "on": 1,
+   "m": [
+    "Cody Chhun",
+    "Guillermo Rosas"
+   ]
+  },
+  "romance-dawn": {
+   "n": "Romance Dawn",
+   "k": "DDT",
+   "on": 1,
+   "m": [
+    "Soma Takao",
+    "Shota"
+   ]
+  },
+  "daisuke-sasaki-and-mj-paul": {
+   "n": "Daisuke Sasaki & MJ Paul",
+   "k": "DDT",
+   "on": 1,
+   "m": [
+    "Daisuke Sasaki",
+    "MJ Paul"
+   ]
+  },
+  "mystic-young-fox": {
+   "n": "Mystic Young Fox",
+   "k": "Marvelous",
+   "on": 1,
+   "m": [
+    "Ai Houzan",
+    "Yurika Oka"
+   ]
+  },
+  "japan-ganbare-union": {
+   "n": "Japan Ganbare Union",
+   "k": "Ice Ribbon",
+   "on": 1,
+   "m": [
+    "Yuna Manase",
+    "YuuRI"
+   ]
+  },
+  "seiki-yoshioka-and-yuya-susumu": {
+   "n": "Seiki Yoshioka & Yuya Susumu",
+   "k": "AJPW",
+   "on": 1,
+   "m": [
+    "Seiki Yoshioka",
+    "Yuya Susumu"
+   ]
+  },
+  "big-dekai": {
+   "n": "BIG DEKAI",
+   "k": "Ice Ribbon",
+   "on": 1,
+   "m": [
+    "Totoro Satsuki",
+    "Yuna Manase"
+   ]
+  },
+  "higuchi-and-yoshimura": {
+   "n": "Higuchi & Yoshimura",
+   "k": "DDT",
+   "on": 1,
+   "m": [
+    "Kazusada Higuchi",
+    "Naomi Yoshimura"
+   ]
+  },
+  "atsuki-aoyagi-and-yuma-aoyagi": {
+   "n": "Atsuki Aoyagi & Yuma Aoyagi",
+   "k": "AJPW",
+   "on": 1,
+   "m": [
+    "Atsuki Aoyagi",
+    "Yuma Aoyagi"
+   ]
+  },
+  "dan-tamura-and-hikaru-sato": {
+   "n": "Dan Tamura & Hikaru Sato",
+   "k": "AJPW",
+   "on": 1,
+   "m": [
+    "Dan Tamura",
+    "Hikaru Sato"
+   ]
+  },
+  "7upp": {
+   "n": "7Upp",
+   "k": "DDT",
+   "on": 1,
+   "m": [
+    "Nanae Takahashi",
+    "Yuu"
+   ]
+  },
+  "state-of-emergency": {
+   "n": "State of Emergency",
+   "k": "DEFY",
+   "on": 1,
+   "m": [
+    "Miles Deville",
+    "Sebastian Wolfe"
+   ]
+  },
+  "sinner-and-saint": {
+   "n": "Sinner and Saint",
+   "k": "DEFY",
+   "on": 1,
+   "m": [
+    "Judas Icarus",
+    "Travis Williams"
+   ]
+  },
+  "hawkestepper": {
+   "n": "Hawkestepper",
+   "k": "C4",
+   "on": 1,
+   "m": [
+    "Macrae Martin",
+    "Shayne Hawke"
+   ]
+  },
+  "m62-wrecking-crew": {
+   "n": "M62 Wrecking Crew",
+   "k": "RevPro",
+   "on": 1,
+   "m": [
+    "Alexxis Falcon",
+    "Lizzy Evo"
+   ]
+  },
+  "the-mack-attack": {
+   "n": "The Mack Attack",
+   "k": "JCW",
+   "on": 1,
+   "m": [
+    "Willie Mack",
+    "Ninja Mack"
+   ]
+  },
+  "chon-shiryu-and-shin-suzuki": {
+   "n": "Chon Shiryu & Shin Suzuki",
+   "k": "ChocoPro",
+   "on": 1,
+   "m": [
+    "Chon Shiryu",
+    "Shin Suzuki"
+   ]
+  },
+  "the-brothers-of-funstruction": {
+   "n": "The Brothers of Funstruction",
+   "k": "JCW",
+   "on": 1,
+   "m": [
+    "Yabo the Clown",
+    "Ruffo the Clown"
+   ]
+  },
+  "queen-valkyrie": {
+   "n": "QUEEN VALKYRIE",
+   "k": "Ice Ribbon",
+   "on": 1,
+   "m": [
+    "Ancham",
+    "YuuRI"
+   ]
+  },
+  "triple-dragon": {
+   "n": "Triple Dragon",
+   "k": "C4",
+   "on": 1,
+   "m": [
+    "Pretty Ricky Willdy",
+    "Puf"
+   ]
+  },
+  "the-cogar-brothers": {
+   "n": "The Cogar Brothers",
+   "k": "GCW",
+   "on": 1,
+   "m": [
+    "Atticus Cogar",
+    "Otis Cogar"
+   ]
+  },
+  "fresh-air": {
+   "n": "Fresh Air",
+   "k": "C4",
+   "on": 1,
+   "m": [
+    "Junior Benito",
+    "Macrae Martin"
+   ]
+  },
+  "the-andersons": {
+   "n": "The Andersons",
+   "k": "MLW",
+   "on": 1,
+   "m": [
+    "CW Anderson",
+    "Brock Anderson"
+   ]
+  },
+  "bryant-brothers": {
+   "n": "Bryant Brothers",
+   "k": "RevPro",
+   "on": 1,
+   "m": [
+    "Leland Bryant",
+    "Zander Bryant"
+   ]
+  },
+  "flying-bryant-brothers": {
+   "n": "Flying Bryant Brothers",
+   "k": "RevPro",
+   "on": 1,
+   "m": [
+    "Leland Bryant",
+    "Zander Bryant"
+   ]
+  },
+  "tokyo-yankees": {
+   "n": "Tokyo Yankees",
+   "k": "AJPW",
+   "on": 1,
+   "m": [
+    "Kuroshio TOKYO Japan",
+    "Seigo Tachibana"
+   ]
+  },
+  "the-cowboy-way": {
+   "n": "The Cowboy Way",
+   "k": "RevPro",
+   "on": 1,
+   "m": [
+    "Thomas Shire",
+    "1 Called Manders"
+   ]
+  },
+  "rogue-squadron": {
+   "n": "Rogue Squadron",
+   "k": "MLP",
+   "on": 1,
+   "m": [
+    "Rohit Raju",
+    "Sheldon Jean"
+   ]
+  },
+  "the-bryant-bros": {
+   "n": "The Bryant Bros",
+   "k": "RevPro",
+   "on": 1,
+   "m": [
+    "Nino Bryant",
+    "Zander Bryant"
+   ]
+  },
+  "planet-gojirah": {
+   "n": "Planet Gojirah",
+   "k": "wXw",
+   "on": 1,
+   "m": [
+    "Marc Empire",
+    "Robert Dreissker"
+   ]
+  },
+  "project-8100": {
+   "n": "PROJECT 8100",
+   "k": "C4",
+   "on": 1,
+   "m": [
+    "Dexter Doom",
+    "HADDY"
+   ]
+  },
+  "pretty-psycho": {
+   "n": "Pretty Psycho",
+   "k": "RevPro",
+   "on": 1,
+   "m": [
+    "Amira Blair",
+    "Zoe Lucas"
+   ]
+  },
+  "flowe-caine": {
+   "n": "Flowe Caine",
+   "k": "JCW",
+   "on": 1,
+   "m": [
+    "Steven Flowe",
+    "CoKane"
+   ]
+  },
+  "the-outbreak": {
+   "n": "The Outbreak",
+   "k": "JCW",
+   "on": 1,
+   "m": [
+    "Jacksyn Crowley",
+    "Abel Booker"
+   ]
+  },
+  "mu-chan-and-sei-chan": {
+   "n": "Mu-Chan & Sei-Chan",
+   "k": "AJPW",
+   "on": 1,
+   "m": [
+    "MUSASHI",
+    "Seiki Yoshioka"
+   ]
+  },
+  "team-204kg": {
+   "n": "Team 204kg",
+   "k": "Dragon Gate",
+   "on": 1,
+   "m": [
+    "ISHIN",
+    "Yoshiki Kato"
+   ]
+  },
+  "the-neon-blondes": {
+   "n": "The Neon Blondes",
+   "k": "JCW",
+   "on": 1,
+   "m": [
+    "Facade",
+    "Dani Mo"
+   ]
+  },
+  "deathwish": {
+   "n": "Deathwish",
+   "k": "JCW",
+   "on": 1,
+   "m": [
+    "Steven Flowe",
+    "CoKane"
+   ]
+  },
+  "10-10-next-level": {
+   "n": "10/10 Next Level",
+   "k": "wXw",
+   "on": 1,
+   "m": [
+    "Alex Duke",
+    "Aleksander Bellamy"
+   ]
+  },
+  "top-team": {
+   "n": "Top Team",
+   "k": "GCW",
+   "on": 1,
+   "m": [
+    "Terry Yaki",
+    "Jay Lucas"
+   ]
+  },
+  "the-rogues": {
+   "n": "The Rogues",
+   "k": "C4",
+   "on": 1,
+   "m": [
+    "Elliot Tyler",
+    "Casey Ferreira"
+   ]
+  },
+  "choppa-city": {
+   "n": "Choppa City",
+   "k": "JCW",
+   "on": 1,
+   "m": [
+    "Bruce Wayans",
+    "Atiba"
+   ]
+  },
+  "hyperactive": {
+   "n": "Hyperactive",
+   "k": "Sendai Girls",
+   "on": 1,
+   "m": [
+    "Safire Reed",
+    "Anita Vaughan"
+   ]
+  },
+  "bang-bang-pierrots": {
+   "n": "BANG BANG PIERROTS",
+   "k": "Dragon Gate",
+   "on": 1,
+   "m": [
+    "Tsujiguchi Big Circus",
+    "Lucky Oshima"
+   ]
+  },
+  "top-tier": {
+   "n": "Top Tier",
+   "k": "RevPro",
+   "on": 1,
+   "m": [
+    "James Ellis",
+    "Josh Holly"
+   ]
+  },
+  "northern-thunder": {
+   "n": "Northern Thunder",
+   "k": "C4",
+   "on": 1,
+   "m": [
+    "London Lightning",
+    "Storm Ryder"
+   ]
+  },
+  "csi": {
+   "n": "CSI",
+   "k": "wXw",
+   "on": 1,
+   "m": [
+    "Luca de Leone",
+    "Nordino"
+   ]
+  },
+  "street-meat-express": {
+   "n": "Street Meat Express",
+   "k": "C4",
+   "on": 1,
+   "m": [
+    "Dexter Doom",
+    "HADDY"
    ]
   }
  }

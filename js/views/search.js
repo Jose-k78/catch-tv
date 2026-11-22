@@ -32,6 +32,8 @@ function localResults(q) {
     const sh = S.P[k].s || {};
     Object.keys(sh).forEach(x => { if (norm(x).indexOf(n) >= 0 || norm(k + " " + x).indexOf(n) >= 0) out.push({ t: x, s: k + " · " + sh[x].j, h: "#/p/" + encodeURIComponent(k) + "/" + encodeURIComponent(x) }); });
   });
+  // promotions sans calendrier (rosters du 22 nov. : DDT, GCW, TJPW…) : leur roster
+  Object.keys(S.rosters || {}).filter(k => !S.P[k]).forEach(k => { if (norm(k).indexOf(n) >= 0) out.push({ t: k, s: "Promotion · roster", h: "#/roster/" + encodeURIComponent(k) }); });
   allPle().forEach(e => { if (norm(e.t).indexOf(n) >= 0) out.push({ t: e.t, s: e.k + " · " + fmt(e.d) + (e.w && e.w !== "—" ? " · " + e.w : ""), h: evHref(e) }); });
   return out.slice(0, 12);
 }

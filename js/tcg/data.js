@@ -142,8 +142,20 @@ let BASE = null, BKEY = "";
 export const realKey = c => norm(c.rn || c.name);
 // même nom de fichier que le robot des photos : quand Jose ajoute la photo, la carte garde son identifiant
 export const slugOf = s => String(s).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/&/g, "-and-").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "carte";
+// promotions ajoutées le 22 nov. (base de données du jeu de Jose) ; NOAH et TJPW (21 nov.) prennent aussi leur rareté de la base
+export const NEWK = new Set(["DDT", "AJPW", "Dragon Gate", "GCW", "MLW", "JCW", "RevPro", "PROGRESS", "wXw", "C4", "MLP", "DEFY", "Marvelous", "Sendai Girls", "Ice Ribbon", "SEAdLINNNG", "ChocoPro"]);
+const POPK = new Set(["NOAH", "TJPW"]);
+// 2 = nouveau dans l'app le 22 nov. (bdd.json « nw » : hors du classement des autres cartes), 1 = NOAH / TJPW sans fiche
+let NW = null, NWof = null;
+// groupes comptés dans le score : pas ceux des promotions du 22 nov. (le rang des cartes déjà là ne bouge pas)
+const gN = ids => ids.filter(id => { const g = groupById(id); return !(g && NEWK.has(g.k)); }).length;
+// (être dans un roster du 22 nov. ne compte pas dans le score : le rang des cartes déjà là ne bouge pas)
+const lateOf = (w, ro, name) => {
+  const src = (S.bdd && S.bdd.nw) || []; if (NWof !== src) { NWof = src; NW = new Set(src.map(norm)); }
+  return NW.has(norm(name)) ? 2 : (!w && ro && POPK.has(ro.k)) ? 1 : 0;
+};
 export function baseCards() {
-  const c = cfg(), key = Object.keys(S.photos || {}).length + "|" + (S.titles || []).length + "|" + Object.keys(S.wrestlers || {}).length + "|" + Object.keys(S.finishers || {}).length + "|" + JSON.stringify(c.cards || {}).length + "|" + (c.custom || []).length + "|" + Object.keys(S.rosters || {}).length + "|" + Object.keys(S.bank || {}).length;
+  const c = cfg(), key = Object.keys(S.photos || {}).length + "|" + (S.titles || []).length + "|" + Object.keys(S.wrestlers || {}).length + "|" + Object.keys(S.finishers || {}).length + "|" + JSON.stringify(c.cards || {}).length + "|" + (c.custom || []).length + "|" + Object.keys(S.rosters || {}).length + "|" + Object.keys(S.bank || {}).length + "|" + (S.bdd ? 1 : 0);
   if (BASE && BKEY === key) return BASE;
   const champs = champsNow();
   const hasRo = Object.keys(S.rosters || {}).length > 0;
@@ -156,8 +168,8 @@ export function baseCards() {
     if (w) score += 3 + (Array.isArray(w.ref) ? Math.min(2, w.ref.length / 3) : 0);
     if (champs.has(n)) score += 2.5;
     const y = parseInt((String((w && (w.era || w.debut)) || "").match(/(19|20)\d{2}/) || [])[0], 10); if (y) score += Math.min(4, (2026 - y) / 4);
-    score += Math.min(3, pal.reduce((a, x) => a + (x.x || 1), 0) * 0.6) + Math.min(2, gs.cur.length + gs.past.length * 0.5) + (ro ? 1 : 0) + (w && w.dc ? 2 : 0) + (hashN(name) % 100) / 1000;
-    list.push({ id: slug, name: name, pic: photoOf(name), k: (w && w.k) || (ro && ro.k) || "", score: score, al: (al && al.k) || "", inj: !!(al && al.inj), w: w, gs: gs, years: y ? y + "–" : "" });
+    score += Math.min(3, pal.reduce((a, x) => a + (x.x || 1), 0) * 0.6) + Math.min(2, gN(gs.cur) + gN(gs.past) * 0.5) + (ro && !NEWK.has(ro.k) ? 1 : 0) + (w && w.dc ? 2 : 0) + (hashN(name) % 100) / 1000;
+    list.push({ id: slug, name: name, pic: photoOf(name), k: (w && w.k) || (ro && ro.k) || "", score: score, late: lateOf(w, ro, name), al: (al && al.k) || "", inj: !!(al && al.inj), w: w, gs: gs, years: y ? y + "–" : "" });
   });
   // catcheurs sans photo (rosters et fiches) : carte vide, le modo mettra l'image
   const seen = new Set(), ids = new Set(list.map(x => x.id));
@@ -172,21 +184,28 @@ export function baseCards() {
     const ro = roster.get(n), al = alignOf(name), gs = groupsOf(name), pal = palmaresOf(name);
     let score = 0; if (w) score += 3; if (champs.has(n)) score += 2.5;
     const y = parseInt((String((w && (w.era || w.debut)) || "").match(/(19|20)\d{2}/) || [])[0], 10); if (y) score += Math.min(4, (2026 - y) / 4);
-    score += Math.min(3, pal.reduce((a, x) => a + (x.x || 1), 0) * 0.6) + Math.min(2, gs.cur.length + gs.past.length * 0.5) + (ro ? 1 : 0) + (hashN(name) % 100) / 1000;
-    list.push({ id: id, name: name, pic: "", nopic: true, k: (w && w.k) || (ro && ro.k) || "", score: score, al: (al && al.k) || "", inj: !!(al && al.inj), w: w, gs: gs, years: y ? y + "–" : "" });
+    score += Math.min(3, pal.reduce((a, x) => a + (x.x || 1), 0) * 0.6) + Math.min(2, gN(gs.cur) + gN(gs.past) * 0.5) + (ro && !NEWK.has(ro.k) ? 1 : 0) + (hashN(name) % 100) / 1000;
+    list.push({ id: id, name: name, pic: "", nopic: true, k: (w && w.k) || (ro && ro.k) || "", score: score, late: lateOf(w, ro, name), al: (al && al.k) || "", inj: !!(al && al.inj), w: w, gs: gs, years: y ? y + "–" : "" });
   });
   (c.custom || []).forEach(x => { if (x && x.id && x.name) list.push({ id: x.id, name: x.name, pic: x.img || "", k: x.k || "", score: -1, al: x.al || "", custom: true, w: null, gs: { cur: [], past: [] }, years: x.years || "" }); });
   // rareté de base selon le rang de célébrité : 2 % SSR à potentiel LR, 8 % SSR, 20 % SR, 35 % R, le reste N
   // (le rang se calcule sur les cartes avec photo ; une carte sans photo prend la rareté de son score)
   list.sort((a, b) => b.score - a.score);
-  const PH = list.filter(x => !x.custom && !x.nopic), N = PH.length, cut = [0.02, 0.10, 0.30, 0.65].map(p => Math.round(N * p));
+  // (les promotions ajoutées le 22 nov. restent hors de ce classement : la rareté des autres cartes ne bouge pas)
+  const PH = list.filter(x => !x.custom && !x.nopic && x.late !== 2), N = PH.length, cut = [0.02, 0.10, 0.30, 0.65].map(p => Math.round(N * p));
   const th = cut.map(k => (PH[Math.max(0, k - 1)] || { score: 0 }).score);
   let i = 0;
   list.forEach(x => {
     if (x.custom) { x.r = "N"; return; }
+    if (x.late === 2) return;
     if (x.nopic) { x.r = x.score >= th[1] ? "SSR" : x.score >= th[2] ? "SR" : x.score >= th[3] ? "R" : "N"; x.lrPot = x.score >= th[0]; return; }
     x.r = i < cut[1] ? "SSR" : i < cut[2] ? "SR" : i < cut[3] ? "R" : "N"; x.lrPot = i < cut[0]; i++;
   });
+  // NOAH, TJPW et promotions du 22 nov. (sans fiche) : rareté d'après leur popularité dans la base de données du jeu de Jose
+  // (data/bdd.json « p ») : 3 % SSR, 12 % SR, 30 % R, le reste N
+  const pp = (S.bdd && S.bdd.p) || {}, LP = list.filter(x => x.late).sort((a, b) => ((pp[b.name] || 0) - (pp[a.name] || 0)) || (b.score - a.score));
+  // (une carte NOAH / TJPW déjà là ne descend jamais sous sa rareté d'avant : rien n'est retiré aux joueurs)
+  LP.forEach((x, j) => { const q = j / LP.length, r = q < 0.03 ? "SSR" : q < 0.15 ? "SR" : q < 0.45 ? "R" : "N"; x.r = x.late === 1 && RAR.indexOf(x.r) > RAR.indexOf(r) ? x.r : r; x.lrPot = x.late === 1 && !!x.lrPot; x.pop = pp[x.name] || 0; });
   list.forEach(x => {
     const ov = (c.cards || {})[x.id] || (x.custom ? (c.custom || []).find(y => y.id === x.id) : null) || {};
     x.rn = x.name; if (ov.name && !x.custom) x.name = String(ov.name);

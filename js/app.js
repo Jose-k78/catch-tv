@@ -6,7 +6,7 @@ import { loadContent } from "./content.js";
 import { TPLAY_ICON } from "./links.js";
 import { tournoisView, serieView, tournoiView } from "./views/tournois.js";
 import { ICON, toast, lsGet, lsSet } from "./util.js";
-import { homeView, promoView, showView, tabsView, evPageView, autreView, pastView } from "./views/catalog.js";
+import { homeView, promoView, showView, tabsView, evPageView, autreView, joshiAutreView, pastView } from "./views/catalog.js";
 import { matchesView } from "./views/matches.js";
 import { titlesView, titleView, beltView } from "./views/titles.js";
 import { groupView } from "./views/groups.js";
@@ -73,7 +73,7 @@ function parse() {
   const parts = (location.hash || "").replace(/^#\/?/, "").split("/").filter(Boolean).map(s => { try { return decodeURIComponent(s); } catch (e) { return s; } });
   switch (parts[0]) {
     case undefined: return { name: "home" };
-    case "p": return S.P[parts[1]] ? { name: "promo", k: parts[1], n: parts[2] || "" } : { name: "home" };
+    case "p": return parts[1] === "Joshi" ? { name: "promo", k: "Joshi", n: "Autre" } : S.P[parts[1]] ? { name: "promo", k: parts[1], n: parts[2] || "" } : { name: "home" };
     case "connexion": case "inscription": case "oubli": return { name: "auth", mode: parts[0] };
     case "parametres": return { name: "settings", sub: parts[1] || "", x: parts[2] || "" };
     case "profil": return { name: "profile", uid: parts[1] || "" };
@@ -106,7 +106,7 @@ function parse() {
     case "trophees": return { name: "trophies", uid: parts[1] || "" };
     case "aregarder": return { name: "want" };
     case "storyline": return { name: "storyline", id: parts[1] || "" };
-    case "roster": return S.P[parts[1]] ? { name: "roster", k: parts[1], g: parts[2] || "" } : { name: "home" };
+    case "roster": return S.P[parts[1]] || (S.rosters || {})[parts[1]] ? { name: "roster", k: parts[1], g: parts[2] || "" } : { name: "home" };
     case "hl": return S.P[parts[1]] ? { name: "hl", k: parts[1], show: parts[2] || "PLE", d: parts[3] || "" } : { name: "home" };
     case "evenement": return parts[1] ? { name: "event", ref: parts.slice(1).join("/").slice(0, 160) } : { name: "search", q: "" };
     case "ev": return S.P[parts[1]] ? { name: "cal", k: parts[1], show: parts[2] || "PLE", d: parts[3] || "", t: parts[3] === "-" ? (parts[4] || "") : "" } : { name: "home" };
@@ -197,7 +197,7 @@ function render() {
   if (waiting) h = '<p class="empty">Chargement…</p>';
   else switch (route.name) {
     case "home": h = homeView(); break;
-    case "promo": h = route.n ? showView(route.k, route.n) : promoView(route.k); break;
+    case "promo": h = route.k === "Joshi" ? joshiAutreView() : route.n ? showView(route.k, route.n) : promoView(route.k); break;
     case "auth": h = authView(route.mode); break;
     case "settings": h = settingsView(route.sub, route.x); break;
     case "profile": h = profileView(route.uid); break;
@@ -477,7 +477,7 @@ async function refreshContent() {
     S.P = c.P; S.news = c.news; S.recaps = c.recaps || {}; S.matches = c.matches || []; S.titles = c.titles || []; S.titlesUpdated = c.titlesUpdated || "";
     S.highlights = c.highlights || {}; S.wrestlers = c.wrestlers || {}; S.storylines = c.storylines || []; S.rosters = c.rosters || {}; S.rostersSrc = c.rostersSrc || {};
     const mediaNew = c.media && JSON.stringify(c.media) !== JSON.stringify(S.media);
-    S.sources = c.sources || []; S.updated = c.updated || {}; S.polls = c.polls || []; if (mediaNew) S.media = c.media; S.photos = c.photos || S.photos; S.bank = c.bank || S.bank || {}; S.photosMerged = c.photosMerged || S.photosMerged || {}; S.art = c.art || S.art; S.groups = c.groups || S.groups; S.patch = c.patch || S.patch; S.links = c.links || S.links; S.tournaments = c.tournaments || S.tournaments; S.tcgCfg = c.tcgCfg || S.tcgCfg; S.finishers = c.finishers || S.finishers; S.palmares = c.palmares || S.palmares;
+    S.sources = c.sources || []; S.updated = c.updated || {}; S.polls = c.polls || []; if (mediaNew) S.media = c.media; S.photos = c.photos || S.photos; S.bank = c.bank || S.bank || {}; S.photosMerged = c.photosMerged || S.photosMerged || {}; S.art = c.art || S.art; S.groups = c.groups || S.groups; S.patch = c.patch || S.patch; S.links = c.links || S.links; S.tournaments = c.tournaments || S.tournaments; S.tcgCfg = c.tcgCfg || S.tcgCfg; S.finishers = c.finishers || S.finishers; S.palmares = c.palmares || S.palmares; S.bdd = c.bdd || S.bdd;
     mergeFeed(c.feed);
     changed("content"); if (mediaNew) changed("media");
     const more = ((S.news && S.news.items) || []).length - oldNews;
@@ -492,7 +492,7 @@ async function boot() {
   document.getElementById("favbtn").innerHTML = ICON.starF;
   const c = await loadContent(); S.P = c.P; S.news = c.news; S.recaps = c.recaps || {}; S.matches = c.matches || []; S.titles = c.titles || []; S.titlesUpdated = c.titlesUpdated || "";
   S.highlights = c.highlights || {}; S.wrestlers = c.wrestlers || {}; S.storylines = c.storylines || []; S.rosters = c.rosters || {}; S.rostersSrc = c.rostersSrc || {};
-  S.sources = c.sources || []; S.updated = c.updated || {}; S.polls = c.polls || []; S.media = c.media || { bg: {}, music: null }; S.photos = c.photos || {}; S.bank = c.bank || {}; S.photosMerged = c.photosMerged || {}; S.art = c.art || {}; S.groups = c.groups || {}; S.patch = c.patch || []; S.links = c.links || {}; S.tournaments = c.tournaments || {}; S.tcgCfg = c.tcgCfg || {}; S.finishers = c.finishers || {}; S.palmares = c.palmares || null;
+  S.sources = c.sources || []; S.updated = c.updated || {}; S.polls = c.polls || []; S.media = c.media || { bg: {}, music: null }; S.photos = c.photos || {}; S.bank = c.bank || {}; S.photosMerged = c.photosMerged || {}; S.art = c.art || {}; S.groups = c.groups || {}; S.patch = c.patch || []; S.links = c.links || {}; S.tournaments = c.tournaments || {}; S.tcgCfg = c.tcgCfg || {}; S.finishers = c.finishers || {}; S.palmares = c.palmares || null; S.bdd = c.bdd || null;
   mergeFeed(c.feed); contentSig = sigOf(c);
   tick(); setInterval(tick, 60000);
   loadPushCfg();

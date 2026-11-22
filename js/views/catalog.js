@@ -31,7 +31,7 @@ export function recapOf(e) {
   const r = S.recaps[e.k + "|" + (e.show || "PLE") + "|" + (e.d || "")];
   return r && typeof r.txt === "string" ? r : null;
 }
-export function colorOf(k, n) { const pr = S.P[k], s = n && pr.s && pr.s[n]; return (s && s.c) || pr.c; }
+export function colorOf(k, n) { const pr = S.P[k] || { c: ["#6a6a7a", "#2a2a33"] }, s = n && pr.s && pr.s[n]; return (s && s.c) || pr.c; }
 
 function pleOf(k) {
   const pr = S.P[k];
@@ -658,13 +658,26 @@ function tab(label, href, on, logo) {
 export const PARENT = { AAA: "WWE", ROH: "AEW", "NJPW Strong": "NJPW" };
 const AFTER = { AAA: "NXT", ROH: "Collision" };
 export const hostOf = k => (PARENT[k] && S.P[PARENT[k]] ? PARENT[k] : k);
+// Onglet « Joshi » (22 nov., Jose) : Stardom et Marigold réunis, sous-onglets Stardom, Marigold et « Autre »
+// (TJPW, Marvelous, Sendai Girls, Ice Ribbon, SEAdLINNNG, ChocoPro : rosters de la base de données de son jeu)
+export const JHOST = { Stardom: "Joshi", Marigold: "Joshi" };
+export const JOSHI_AUTRE = ["TJPW", "Marvelous", "Sendai Girls", "Ice Ribbon", "SEAdLINNNG", "ChocoPro"];
+const JOSHI_TAB = "data:image/svg+xml;base64," + btoa('<svg xmlns="http://www.w3.org/2000/svg" width="200" height="70" viewBox="0 0 200 70"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe3f1"/><stop offset=".55" stop-color="#ff5fa8"/><stop offset="1" stop-color="#b0125f"/></linearGradient></defs><text x="100" y="54" text-anchor="middle" font-family="Impact,Anton,Arial Black,sans-serif" font-size="58" font-weight="900" letter-spacing="3" fill="url(#g)" stroke="#2a0f3a" stroke-width="4" paint-order="stroke">JOSHI</text></svg>');
+const joshiHref = () => (S.P.Stardom ? "#/p/Stardom" : S.P.Marigold ? "#/p/Marigold" : "#/p/Joshi/Autre");
 export function tabsView(route) {
-  const cur = route.name === "promo" ? hostOf(route.k) : "Accueil";
-  const ORDER = ["WWE", "AEW", "TNA", "NJPW", "CMLL", "Stardom", "Marigold"];
-  const top = Object.keys(S.P).filter(k => hostOf(k) === k).sort((a, b) => (ORDER.indexOf(a) + 1 || 99) - (ORDER.indexOf(b) + 1 || 99));
-  const tabsL = ["Accueil"].concat(top).map(t => tab(t, t === "Accueil" ? "#/" : "#/p/" + encodeURIComponent(t), t === cur, t === "Accueil" ? "" : logoOf(t, "")));
+  const isJ = route.name === "promo" && (JHOST[route.k] || route.k === "Joshi");
+  const cur = route.name === "promo" ? (isJ ? "Joshi" : hostOf(route.k)) : "Accueil";
+  const ORDER = ["WWE", "AEW", "TNA", "NJPW", "CMLL", "Joshi"];
+  const top = Object.keys(S.P).filter(k => hostOf(k) === k).map(k => JHOST[k] || k).filter((k, i, a) => a.indexOf(k) === i).sort((a, b) => (ORDER.indexOf(a) + 1 || 99) - (ORDER.indexOf(b) + 1 || 99));
+  if (top.indexOf("Joshi") < 0) top.push("Joshi");
+  const tabsL = ["Accueil"].concat(top).map(t => t === "Joshi" ? tab("Joshi", joshiHref(), cur === "Joshi", logoOf("Joshi", "") || JOSHI_TAB) : tab(t, t === "Accueil" ? "#/" : "#/p/" + encodeURIComponent(t), t === cur, t === "Accueil" ? "" : logoOf(t, "")));
   let h = '<nav class="tabs">' + tabsL.join("") +
     '<a class="tab' + (route.name === "autre" ? " on" : "") + '" href="#/autre">Autre</a></nav>';
+  if (isJ) {
+    h += '<nav class="tabs sub">' + ["Stardom", "Marigold"].filter(k => S.P[k]).map(k => tab(k, "#/p/" + encodeURIComponent(k), route.k === k, logoOf(k, ""))).join("") +
+      tab("Autre", "#/p/Joshi/Autre", route.k === "Joshi", "") + "</nav>";
+    return h;
+  }
   if (route.name === "promo" && S.P[cur]) {
     const kids = Object.keys(PARENT).filter(c => PARENT[c] === cur && S.P[c]), shows = Object.keys(S.P[cur].s || {});
     // ordre : Tout, les shows, et chaque promotion rangée juste après le show indiqué (sinon à la fin)
@@ -685,9 +698,28 @@ export function tabsView(route) {
   return h;
 }
 
-// Onglet « Autre » : autres promotions bientôt + légendes WCW / ECW / WWF (archives)
+// Une promotion sans calendrier dans l'app (rosters de la base de données du jeu de Jose, 22 nov.) : logo, nom complet, roster
+const PFULL = { TJPW: "Tokyo Joshi Pro-Wrestling · Tokyo", Marvelous: "Marvelous That’s Women Pro Wrestling · Tokyo", "Sendai Girls": "Sendai Girls’ Pro Wrestling · Sendai", "Ice Ribbon": "Ice Ribbon · Tokyo", SEAdLINNNG: "SEAdLINNNG · Tokyo", ChocoPro: "ChocoPro (Gatoh Move) · Tokyo",
+  NOAH: "Pro Wrestling NOAH · Tokyo", DDT: "DDT Pro-Wrestling · Tokyo", AJPW: "All Japan Pro Wrestling · Tokyo", "Dragon Gate": "Dragongate · Kobe",
+  GCW: "Game Changer Wrestling · États-Unis", MLW: "Major League Wrestling · États-Unis", JCW: "Juggalo Championship Wrestling · États-Unis", RevPro: "Revolution Pro Wrestling · Royaume-Uni", PROGRESS: "PROGRESS Wrestling · Royaume-Uni",
+  wXw: "westside Xtreme wrestling · Allemagne", C4: "Capital City Championship Combat · Canada", MLP: "Maple Leaf Pro Wrestling · Canada", DEFY: "DEFY Wrestling · États-Unis" };
+function promoBlock(k) {
+  const r = (S.rosters || {})[k]; if (!r) return "";
+  const lg = showLogo(k, ""), n = new Set([].concat.apply([], Object.keys(r).map(g => r[g] || []))).size;
+  return '<a class="item" href="#/roster/' + encodeURIComponent(k) + '">' + (lg ? '<img class="glogo0" src="' + esc(lg) + '" alt="" loading="lazy">' : '<span class="wnone">🏟</span>') +
+    '<span class="lbl"><b>' + esc(k) + "</b><small>" + esc(PFULL[k] || "") + " · roster de " + n + " catcheurs et catcheuses</small></span><span class=\"chev\">›</span></a>";
+}
+export function joshiAutreView() {
+  return '<section class="autre"><h1>Joshi : les autres promotions</h1><p class="note">Le catch féminin japonais au-delà de Stardom et Marigold. Touche une promotion pour voir son roster.</p>' +
+    '<div class="list">' + JOSHI_AUTRE.map(promoBlock).join("") + "</div></section>";
+}
+
+// Onglet « Autre » : puroresu et indy (rosters de la base de données du jeu de Jose, 22 nov.) + légendes WCW / ECW / WWF (archives)
 export function autreView() {
-  return '<section class="autre"><h1>Autres promotions</h1><p class="note">Bientôt disponible : d’autres promotions arrivent dans l’app.</p>' +
+  return '<section class="autre"><h1>Autres promotions</h1>' +
+    "<h2>Puroresu</h2>" + '<div class="list">' + ["NOAH", "DDT", "AJPW", "Dragon Gate"].map(promoBlock).join("") + "</div>" +
+    "<h2>Indy</h2>" + '<div class="list">' + ["GCW", "MLW", "JCW", "RevPro", "PROGRESS", "wXw", "C4", "MLP", "DEFY"].map(promoBlock).join("") + "</div>" +
+    '<p class="note small">Le catch féminin japonais (TJPW, Marvelous, Sendai Girls…) est dans l’onglet <a href="#/p/Joshi/Autre">Joshi › Autre</a>.</p>' +
     "<h2>Les légendes : WWF · WCW · ECW</h2>" + '<div class="list">' + [["WWF", "La WWE avant 2002 : Attitude Era, Hulkamania…"], ["WCW", "World Championship Wrestling (1988–2001) : nWo, Monday Nitro…"], ["ECW", "Extreme Championship Wrestling (1992–2001) : le catch hardcore de Philadelphie"]]
     .map(x => '<a class="item" href="#/player/k/' + x[0] + '"><span class="lbl"><b>' + x[0] + "</b><small>" + x[1] + '</small></span><span class="chev">›</span></a>').join("") + "</div>" +
     '<p class="note small" style="margin-top:10px">Leurs grands shows et matchs sont dans le TCC Play, rubrique Archives.</p></section>';

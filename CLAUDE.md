@@ -300,6 +300,31 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
   d'événements NOAH / TJPW ; groupes NOAH (Team 2000X, Team Noah, Passion Ratel’s, White Raven Sqwad, Los Tranquilos de Japón) et TJPW (Up Up Girls).
   Les logos des shows des promotions de l'app venaient déjà du même dossier Beyond\logos (rien à changer). Sans photo dans les dossiers : Owadasan,
   Hiroto Tsuruya, Midori Takahashi, Katsumi Inahata, Yuto Koyanagi, Chieri Sakimori, Momo Sato, Yui Musubi.
+- **Lot du 22 nov. (heure du codage) : base de données du jeu de Jose** (Pro Wrestling Simulator, sauvegarde `StardustWrestling.db`, monde
+  « 2026.11 - Chronicles », lue en lecture seule sur son PC ; images de ses dossiers People / Beyond\people, Logos, Stables) :
+  - rosters `DDT`, `AJPW`, `Dragon Gate`, `GCW`, `MLW`, `JCW`, `RevPro`, `PROGRESS`, `wXw`, `C4`, `MLP`, `DEFY`, `Marvelous`, `Sendai Girls`,
+    `Ice Ribbon`, `SEAdLINNNG`, `ChocoPro` (« Roster masculin » / « Roster féminin ») + catcheurs de la base ajoutés à NOAH (« Sans unité ») et TJPW.
+    Seulement les lutteurs (pas arbitres, annonceurs, staff) et pas ceux déjà dans un autre roster de l'app. `src` = la base de données :
+    **pas de mise à jour automatique de ces rosters ni de leurs groupes** (pas de source web) sauf demande de Jose. 442 photos (`photos.json`),
+    logos carrés + icônes `(icône)` (logos.json « shows »), 30 clans et 65 équipes (`groups.json`, `k` = la promotion) ; PROMO (assets.js).
+  - `data/bdd.json` (chargé dans `S.bdd`) : `t` titres [nom, promotion, id titles.json, « t » = tournoi], `pal` palmarès { nom : [[titre, fois,
+    jours, années]] } jusqu'au 1er nov. 2026 (`upto`), `y` année des débuts, `p` popularité (0-100) des catcheurs NOAH / TJPW / nouveaux,
+    `nw` = catcheurs nouveaux dans l'app le 22 nov.
+  - palmarès (`palmaresOf` de palmares.js) : fiche `tt` > palmarès WWE (palmares.json, prioritaire pour les titres WWE) + base de données + règnes
+    de l'app après `upto` ; titre hors app = ligne sans lien ; `palmaresOf(nom, true)` = sans la base (tirages figés de Qui suis-je).
+    Le rang des cartes TCCCG utilise toujours `palmaresBase` (sans la base) : la rareté des cartes déjà là ne bouge pas.
+  - TCCCG (data.js) : `late` = 2 (nom dans `nw` : hors du classement des autres cartes), 1 (NOAH / TJPW sans fiche) ; rareté de ces cartes
+    d'après `p` (3 % SSR, 12 % SR, 30 % R, reste N ; une carte `late` 1 ne descend jamais sous son ancienne rareté) ; être dans un roster
+    ou un groupe d'une promotion `NEWK` ne compte pas dans le score. Packs **Puroresu** (`p:Puroresu` : NOAH, DDT, AJPW, Dragon Gate) et
+    **Indy** (`p:Indy` : 9 promotions), logos SVG `packLogo` (callup.js).
+  - Accueil (catalog.js `tabsView`) : onglet virtuel **Joshi** (`JHOST`) = Stardom + Marigold, sous-onglets Stardom, Marigold, Autre
+    (`#/p/Joshi/Autre` → `joshiAutreView`, `JOSHI_AUTRE`) ; onglet Autre (`autreView`) : Puroresu et Indy (`promoBlock` → `#/roster/<k>`,
+    la route roster accepte les rosters sans calendrier ; retour vers Joshi › Autre ou Autre). Recherche : ces promotions → leur roster.
+  - Qui suis-je : plus d'indice « type de carte TCCCG » ; niveau 1 « J’ai débuté en AAAA » (fiche ou `bdd.y`, sinon les années) et
+    « J’ai remporté : … ». Tirages du 21 et du 22 nov. figés (`PIN`, anciens indices `cluesOf(c, true)`) ; les nouveaux (`late` 2) entrent
+    dans le tirage à partir du 23 nov. (`NEWDAY`). Babies du mois automatique : rosters du 22 nov. seulement à partir de décembre 2026.
+  - Univers : `mkW` / `popRank` (world.js, rang des `late` d'après `p`, âge d'après `bdd.y`) ; `addNewcomers` (v2.js, `G.nwv`) ajoute une fois
+    aux parties commencées les cartes `late` absentes comme agents libres (+ news).
 - **TCCCG, 21 nov. (soir)** : packs de départ (`boosters` de callup.js) : plus de « NJPW Strong Pack » (Strong est dans le NJPW Pack via le groupe
   « NJPW Strong et partenaires ») ; Stardom + Marigold + TJPW = un seul **Joshi Pack** (`p:Joshi`, `ks` = JOSHI, logo SVG `JOSHI_LOGO` en base64,
   aussi chargé par Phaser). Pas de pack NOAH pour l'instant (choix de Jose).
@@ -496,8 +521,10 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
     (titres et tournois gagnés, Royal Rumble… seulement des promotions de l'app) ;
   - groupes : membres de The 946 (WWE, depuis 2026), MFT, The Bloodline 2026.
   - rosters NOAH (par unité) et TJPW (« Roster féminin ») ajoutés le 21 nov. à la demande de Jose : les tenir à jour d'après `src` de
-    data/rosters.json. Ce ne sont pas des promotions de l'app (pas d'onglet, pas de page roster) : ils servent à la recherche, aux cartes
-    TCCCG, à la Babies du mois (TJPW) et aux agents libres du mode Univers. Photos seulement depuis le dossier « people » de Jose.
+    data/rosters.json (sans retirer les catcheurs venus de la base de données de son jeu le 22 nov.). Pas de calendrier : page roster
+    depuis l'onglet Autre (NOAH) et Joshi › Autre (TJPW) ; ils servent aussi à la recherche, aux cartes TCCCG, à la Babies du mois (TJPW) et
+    aux agents libres du mode Univers. Photos seulement depuis le dossier « people » de Jose. Les rosters du 22 nov. (DDT, GCW, Marvelous…)
+    ne sont pas mis à jour par le soir.
   - résumés des PLE / PPV : s'aider aussi de https://mibih.wordpress.com/category/wrestling-reviews/latest-wrestling-ppv-reviews/ (réécrire en français, ne pas copier) ;
   - shows déplacés : `no` (dates sans épisode) et `e` (épisode spécial à une autre date) dans `data/calendar.json` ; heures toujours
     données dans le fuseau du show (`h` + `tz`) : le changement d'heure est calculé par l'app ;

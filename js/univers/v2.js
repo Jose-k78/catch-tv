@@ -5,9 +5,10 @@ import { dnaInit, DNA_OF } from "./dna.js";
 import { calUpgrade, sisterLink } from "./cal.js";
 import { S } from "../state.js";
 import { norm } from "../wrestlers.js";
-import { clamp, rnd, pick, uid, h01, hash, dateOf, salOf } from "./world.js";
+import { clamp, rnd, pick, uid, h01, hash, dateOf, salOf, mkW, popRank, femaleSet } from "./world.js";
+import { baseCards } from "../tcg/data.js";
 import { udata, GT, GNAME, TRAD0, STRAT0, CITIES } from "./data.js";
-import { relAdd, champIds, roster, mail } from "./base.js";
+import { relAdd, champIds, roster, mail, news } from "./base.js";
 
 const FN = { h: ["Marc", "Julien", "Kevin", "Antoine", "Rico", "Hiro", "Pablo", "Steve", "Omar", "Victor", "Bruno", "Dante", "Takeshi", "Mike", "Lionel"],
   f: ["Sarah", "Camille", "Nina", "Aya", "Paula", "Jess", "Mei", "Laura", "Elena", "Kim", "Sofia", "Clara", "Rina", "Tess", "Lola"] };
@@ -63,7 +64,26 @@ export function upgrade(G, opt) {
   if (!G.dna && G.me) dnaInit(G, DNA_OF[G.me] || "wwe");
   if (!opt || !opt.fresh) calUpgrade(G); else G.calv = 1;   // vrai calendrier (21 nov.)
   sisterLink(G);   // ADN (21 nov.) : les anciennes parties prennent celui de leur fédération
+  if (!opt || !opt.fresh) addNewcomers(G); else G.nwv = NWV;
   return G;
+}
+// 22 nov. (Jose) : les catcheurs et catcheuses ajoutés à TCC TV (NOAH, TJPW, DDT, GCW, Marvelous… d'après la base de données
+// de son jeu) arrivent aussi dans les parties déjà commencées, comme agents libres ; une seule fois par lot (G.nwv)
+const NWV = "2026-11-22";
+function addNewcomers(G) {
+  if (G.nwv === NWV || !G.W) return;
+  const nw = (S.bdd && S.bdd.nw) || []; if (!nw.length) return;   // données pas encore chargées : à la prochaine ouverture
+  const have = new Set();
+  Object.values(G.W).forEach(w => { have.add(norm(w.n)); if (w.rn0) have.add(norm(w.rn0)); });
+  Object.values(G.staff || {}).forEach(x => have.add(norm(x.n))); (G.hof || []).forEach(x => have.add(norm(x.n)));
+  const L = baseCards().filter(c => c.late && !c.custom && c.rn), lp = popRank(L), fem = femaleSet(), yr = Math.floor((G.day || 0) / 365), add = [];
+  L.forEach(x => {
+    if (G.W[x.id] || have.has(norm(x.rn))) return;
+    const w = mkW(x, lp.has(x.id) ? lp.get(x.id) : 0.3, "", null, fem);
+    w.age = clamp(w.age + yr, 16, 70); G.W[w.id] = w; add.push(w);
+  });
+  G.nwv = NWV;
+  if (add.length) news(G, { seg: "coul", f: "transferts", t: add.length + " nouveaux agents libres", txt: "Des catcheurs et catcheuses de NOAH, DDT, All Japan, Dragon Gate, GCW, MLW, RevPro, PROGRESS, Marvelous, Sendai Girls, Ice Ribbon… sont libres de signer : " + add.sort((a, b) => b.pop - a.pop).slice(0, 6).map(w => w.n).join(", ") + "…" });
 }
 // 21 nov. (2e lot) : à chaque ouverture, si data/statuts.json a changé : vraies années de naissance (born), catcheuses (fem),
 // retraités (ret : jamais actifs), décès (Hall of Fame), personnel (staff)

@@ -2,6 +2,30 @@
  "updated": "2026-11-22",
  "items": [
   {
+   "id": "2026-11-22-puro-indy",
+   "d": "2026-11-22",
+   "t": "Puroresu, Indy et l’onglet Joshi",
+   "txt": [
+    "🌸 À l’accueil, Stardom et Marigold sont réunis dans le nouvel onglet Joshi, avec trois sous-onglets : Stardom, Marigold et Autre (TJPW, Marvelous, Sendai Girls, Ice Ribbon, SEAdLINNNG, ChocoPro).",
+    "🗾 L’onglet Autre présente maintenant le puroresu (NOAH, DDT, All Japan, Dragon Gate) et l’indy (GCW, MLW, JCW, RevPro, PROGRESS, wXw, C4, MLP, DEFY) : touche une promotion pour voir son roster.",
+    "🆕 Près de 600 nouveaux catcheurs et catcheuses, avec plus de 440 nouvelles photos : fiches, recherche, cartes TCCCG et nouveaux groupes (DAMNATION T.A, The 37KAMIINA, Natural Vibes, Contra Unit…).",
+    "🃏 TCCCG : deux nouveaux boosters de départ, le Puroresu Pack (NOAH, DDT, All Japan, Dragon Gate) et l’Indy Pack (9 promotions indépendantes). La rareté de leurs cartes suit la popularité de chaque catcheur. Tes cartes déjà gagnées ne changent pas ; certaines cartes NOAH et TJPW deviennent plus rares.",
+    "🏆 Palmarès bien plus complets : tous les titres et tournois de la carrière (GHC, KO-D, Open the Dream Gate, G1 Climax, King of DDT…), pas seulement ceux des promotions de l’app.",
+    "❓ Qui suis-je : plus d’indice sur le type de carte TCCCG. À la place : « J’ai débuté en… » (l’année) et « J’ai remporté… » (un titre ou un tournoi). Les nouveaux catcheurs entrent dans le tirage dès demain ; les parties d’hier et d’aujourd’hui ne changent pas."
+   ]
+  },
+  {
+   "id": "2026-11-22-univers-fa",
+   "d": "2026-11-22",
+   "mod": true,
+   "t": "Mode Univers : des centaines de nouveaux agents libres",
+   "txt": [
+    "🆓 Les catcheurs et catcheuses de NOAH, TJPW, DDT, All Japan, Dragon Gate, GCW, MLW, RevPro, PROGRESS, Marvelous, Sendai Girls, Ice Ribbon et des autres nouvelles promotions arrivent comme agents libres.",
+    "💾 Aussi dans les parties déjà commencées : à l’ouverture, une seule fois, avec une news « nouveaux agents libres ».",
+    "📊 Leur niveau suit leur popularité dans la base de données (les grands noms comme Kaito Kiyomiya, HARASHIMA ou Daisuke Harada arrivent avec une belle cote), et leur âge leur année de débuts."
+   ]
+  },
+  {
    "id": "2026-11-22-noah-tjpw",
    "d": "2026-11-22",
    "t": "NOAH et TJPW : photos, logos et groupes",

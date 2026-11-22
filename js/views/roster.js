@@ -2,7 +2,7 @@
 import { faceImg } from "../photos.js";
 import { S } from "../state.js";
 import { esc, ICON, okHttp, shAttr } from "../util.js";
-import { plain, colorOf } from "./catalog.js";
+import { plain, colorOf, JOSHI_AUTRE } from "./catalog.js";
 import { isFav } from "./favs.js";
 import { alignOf } from "../wrestlers.js";
 
@@ -29,7 +29,9 @@ export function rosterTile(k, n) {
 let lastQ = "";
 export function rosterView(k, g) {
   const r = rosterOf(k);
-  let h = '<a class="back" href="#/p/' + encodeURIComponent(k) + (g && S.P[k] && S.P[k].s && S.P[k].s[g] ? "/" + encodeURIComponent(g) : "") + '">' + ICON.back + " " + esc(g && S.P[k] && S.P[k].s && S.P[k].s[g] ? g : k) + "</a><h1>Roster " + esc(k) + "</h1>";
+  // promotion sans calendrier (22 nov.) : retour vers Joshi › Autre ou l'onglet Autre
+  const bk = S.P[k] ? "#/p/" + encodeURIComponent(k) + (g && S.P[k].s && S.P[k].s[g] ? "/" + encodeURIComponent(g) : "") : JOSHI_AUTRE.indexOf(k) >= 0 ? "#/p/Joshi/Autre" : "#/autre";
+  let h = '<a class="back" href="' + bk + '">' + ICON.back + " " + esc(S.P[k] ? (g && S.P[k].s && S.P[k].s[g] ? g : k) : JOSHI_AUTRE.indexOf(k) >= 0 ? "Joshi" : "Autres promotions") + "</a><h1>Roster " + esc(k) + "</h1>";
   if (!r) return h + '<p class="note">Le roster de cette promotion arrive bientôt.</p>';
   const ch = champs(), q = norm(lastQ);
   const order = Object.keys(r).sort((a, b) => (a === g ? -1 : b === g ? 1 : 0));

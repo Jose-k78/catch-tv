@@ -17,14 +17,16 @@ const ROUND = ["Quart de finale", "Quart de finale", "Quart de finale", "Quart d
 export const bkId = m => "bk-" + m;
 // catcheuses de la base de données (rosters féminins : AEW, ROH, AAA, TNA Knockouts, CMLL Amazonas, Stardom, Marigold)
 const FEM = /f[ée]minin|knockouts|amazonas/i;
-export function femalePool() {
+// (rosters du 22 nov. : DDT, Marvelous, Sendai Girls, Ice Ribbon… seulement à partir de décembre 2026, pour ne pas changer le tournoi de novembre)
+const NEWR = ["DDT", "AJPW", "Dragon Gate", "GCW", "MLW", "JCW", "RevPro", "PROGRESS", "wXw", "C4", "MLP", "DEFY", "Marvelous", "Sendai Girls", "Ice Ribbon", "SEAdLINNNG", "ChocoPro"];
+export function femalePool(all) {
   const out = new Set();
-  Object.keys(S.rosters || {}).forEach(k => { const r = S.rosters[k] || {}; Object.keys(r).forEach(g => { if (FEM.test(g) || k === "Stardom" || k === "Marigold") (r[g] || []).forEach(n => { if (n && !/\(/.test(n)) out.add(n); }); }); });
+  Object.keys(S.rosters || {}).filter(k => all || NEWR.indexOf(k) < 0).forEach(k => { const r = S.rosters[k] || {}; Object.keys(r).forEach(g => { if (FEM.test(g) || k === "Stardom" || k === "Marigold") (r[g] || []).forEach(n => { if (n && !/\(/.test(n)) out.add(n); }); }); });
   return Array.from(out).sort();
 }
 // 8 noms tirés au hasard (toujours les mêmes pour un mois donné : tout le monde voit le même tableau)
-export function randomEight(seedTxt) {
-  const pool = femalePool(); let seed = 0; String(seedTxt).split("").forEach(ch => { seed = (seed * 31 + ch.charCodeAt(0)) >>> 0; });
+export function randomEight(seedTxt, all) {
+  const pool = femalePool(all); let seed = 0; String(seedTxt).split("").forEach(ch => { seed = (seed * 31 + ch.charCodeAt(0)) >>> 0; });
   const rnd = () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; };
   const a = pool.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
   return a.slice(0, 8);
@@ -33,7 +35,7 @@ export function bracketCfg(m) {
   const p = (S.fsPolls || []).find(x => x && x.id === bkId(m) && !x.del);
   if (p && Array.isArray(p.opts) && p.opts.length === 8) return p;
   // sans choix du modo : 8 catcheuses au hasard dans la base de données, tournoi lancé le 1er du mois
-  const auto = randomEight("babies-" + m);
+  const auto = randomEight("babies-" + m, m >= "2026-12");
   return auto.length === 8 ? { id: bkId(m), opts: auto, d: m + "-01", auto: true } : null;
 }
 const dayIdx = (start, day) => Math.round((Date.parse(day + "T12:00:00Z") - Date.parse(start + "T12:00:00Z")) / 864e5);
@@ -108,7 +110,7 @@ ACT.bknew = () => {
       '<button class="btn wide">Lancer le tournoi</button></form><button class="btn wide ghost" data-close>Annuler</button>';
     box.addEventListener("click", ev => {
       if (ev.target.closest("[data-close]")) close();
-      if (ev.target.closest("[data-rnd]")) { const r = randomEight("x" + Date.now()); r.forEach((n, i) => { box.querySelector("[name=n" + i + "]").value = n; }); }
+      if (ev.target.closest("[data-rnd]")) { const r = randomEight("x" + Date.now(), true); r.forEach((n, i) => { box.querySelector("[name=n" + i + "]").value = n; }); }
     });
     box.querySelector("[data-bkf]").addEventListener("submit", async ev => {
       ev.preventDefault();

@@ -23,7 +23,10 @@ export function artVersions(sec, name) {
 // ---------- logos des shows et des promotions ----------
 const SHOW = { Raw: "RAW", SmackDown: "Smackdown", NXT: "NXT", Evolve: "EVOLVE", Dynamite: "Dynamite", Collision: "AEW Collision", Rampage: "Rampage",
   "Lucha Libre AAA": "AAA", "ROH TV": "ROH", Impact: "TNA", "205 Live": "205" };
-const PROMO = { WWE: "WWE", AEW: "AEW", AAA: "AAA", ROH: "ROH", TNA: "TNA", CMLL: "CMLL", NJPW: "NJPW", Stardom: "STARDOM", Marigold: "Marigold", NOAH: "NOAH", TJPW: "TJPW" };
+const PROMO = { WWE: "WWE", AEW: "AEW", AAA: "AAA", ROH: "ROH", TNA: "TNA", CMLL: "CMLL", NJPW: "NJPW", Stardom: "STARDOM", Marigold: "Marigold", NOAH: "NOAH", TJPW: "TJPW",
+  // promotions ajoutées le 22 nov. (base de données du jeu de Jose) : même nom dans logos.json « shows »
+  DDT: "DDT", AJPW: "AJPW", "Dragon Gate": "Dragon Gate", GCW: "GCW", MLW: "MLW", JCW: "JCW", RevPro: "RevPro", PROGRESS: "PROGRESS", wXw: "wXw", C4: "C4", MLP: "MLP", DEFY: "DEFY",
+  Marvelous: "Marvelous", "Sendai Girls": "Sendai Girls", "Ice Ribbon": "Ice Ribbon", SEAdLINNNG: "SEAdLINNNG", ChocoPro: "ChocoPro" };
 export function showLogo(k, n) {
   if (n && SHOW[n] && art("shows", SHOW[n])) return art("shows", SHOW[n]);
   if (n && art("shows", n)) return art("shows", n);

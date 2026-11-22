@@ -204,6 +204,115 @@
   },
   "EVOLVE (icône)": {
    "f": "evolve-icone.webp"
+  },
+  "AJPW": {
+   "f": "ajpw.webp",
+   "v": [
+    "ajpw-v2.webp"
+   ]
+  },
+  "AJPW (icône)": {
+   "f": "ajpw-icone.webp"
+  },
+  "DDT": {
+   "f": "ddt.webp",
+   "v": [
+    "ddt-v2.webp",
+    "ddt-v3.webp"
+   ]
+  },
+  "DDT (icône)": {
+   "f": "ddt-icone.webp"
+  },
+  "Dragon Gate": {
+   "f": "dragon-gate.webp"
+  },
+  "GCW": {
+   "f": "gcw.webp",
+   "v": [
+    "gcw-v2.webp"
+   ]
+  },
+  "GCW (icône)": {
+   "f": "gcw-icone.webp"
+  },
+  "MLW": {
+   "f": "mlw.webp",
+   "v": [
+    "mlw-v2.webp"
+   ]
+  },
+  "JCW": {
+   "f": "jcw.webp"
+  },
+  "RevPro": {
+   "f": "revpro.webp",
+   "v": [
+    "revpro-v2.webp"
+   ]
+  },
+  "RevPro (icône)": {
+   "f": "revpro-icone.webp"
+  },
+  "PROGRESS": {
+   "f": "progress.webp",
+   "v": [
+    "progress-v2.webp"
+   ]
+  },
+  "wXw": {
+   "f": "wxw.webp",
+   "v": [
+    "wxw-v2.webp"
+   ]
+  },
+  "wXw (icône)": {
+   "f": "wxw-icone.webp"
+  },
+  "C4": {
+   "f": "c4.webp",
+   "v": [
+    "c4-v2.webp"
+   ]
+  },
+  "MLP": {
+   "f": "mlp.webp",
+   "v": [
+    "mlp-v2.webp"
+   ]
+  },
+  "MLP (icône)": {
+   "f": "mlp-icone.webp"
+  },
+  "DEFY": {
+   "f": "defy.webp",
+   "v": [
+    "defy-v2.webp"
+   ]
+  },
+  "Marvelous": {
+   "f": "marvelous.webp"
+  },
+  "Sendai Girls": {
+   "f": "sendai-girls.webp"
+  },
+  "Ice Ribbon": {
+   "f": "ice-ribbon.webp",
+   "v": [
+    "ice-ribbon-v2.webp"
+   ]
+  },
+  "SEAdLINNNG": {
+   "f": "seadlinnng.webp",
+   "v": [
+    "seadlinnng-v2.webp"
+   ]
+  },
+  "ChocoPro": {
+   "f": "chocopro.webp"
+  },
+  "Ice Ribbon (icône)": {
+   "f": "ice-ribbon-icone.webp"
   }
  },
  "events": {
@@ -6247,6 +6356,27 @@
   },
   "YANS": {
    "f": "yans.webp"
+  },
+  "DAMNATION T.A": {
+   "f": "damnation-t-a.webp"
+  },
+  "The 37KAMIINA": {
+   "f": "the-37kamiina.webp"
+  },
+  "The Cut Throat Collective": {
+   "f": "the-cut-throat-collective.webp"
+  },
+  "Fantomes Dramatic": {
+   "f": "fantomes-dramatic.webp"
+  },
+  "STRANGE LOVE CONNECTION": {
+   "f": "strange-love-connection.webp"
+  },
+  "NwA Jr.": {
+   "f": "nwa-jr.webp"
+  },
+  "paleyouth": {
+   "f": "paleyouth.webp"
   }
  }
 }

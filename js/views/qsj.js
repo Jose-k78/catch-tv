@@ -13,7 +13,7 @@ import { photoOf } from "../photos.js";
 import { knownNames, norm } from "../wrestlers.js";
 import { showLogo, groupById, groupLogo, beltOf } from "../assets.js";
 import { palmaresOf } from "./palmares.js";
-import { baseCards, cardByName } from "../tcg/data.js";
+import { baseCards, cardByName, NEWK } from "../tcg/data.js";
 import { commit } from "../tcg/store.js";
 import { loadUData, udata, GT } from "../univers/data.js";
 import { femaleSet } from "../univers/world.js";
@@ -28,8 +28,11 @@ const MOIS = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août"
 const dTxt = d => { const p = d.split("-"); return +p[2] + " " + MOIS[+p[1] - 1]; };
 
 // ---------- les indices d'un catcheur ----------
+// année des débuts : fiche, sinon la base de données du jeu de Jose (data/bdd.json « y », 22 nov.)
+let DY = null, DYof = null;
 const STYLE = { Dominator: "Dominateur (la puissance)", Aggressor: "Agressif (la bagarre)", Technician: "Technicien (les prises)", Opportunist: "Opportuniste (la ruse)", Showman: "Showman (le spectacle)" };
-const yearOf = c => { const w = c.w || {}; const m = String(w.debut || w.era || c.years || "").match(/(19|20)\d{2}/); return m ? +m[0] : 0; };
+const dbYear = c => { const src = S.bdd && S.bdd.y; if (!src) return 0; if (DYof !== src) { DY = new Map(); DYof = src; Object.keys(src).forEach(n => DY.set(norm(n), src[n])); } for (const n of namesOf(c)) { const y = DY.get(norm(n)); if (y) return y; } return 0; };
+const yearOf = (c, old) => { const w = c.w || {}; const m = String(w.debut || w.era || c.years || "").match(/(19|20)\d{2}/); return m ? +m[0] : old ? 0 : dbYear(c); };
 function namesOf(c) { const L = [c.rn || c.name, c.name]; ((S.photos || {})[c.id] || {}).n && L.push(...S.photos[c.id].n); if (c.w && Array.isArray(c.w.a)) L.push(...c.w.a); return L.filter(Boolean); }
 function leaks(c, txt) {
   const t = " " + norm(txt).replace(/[^a-z0-9]+/g, " ") + " ";
@@ -44,9 +47,10 @@ function rosterOf(c) {
   return null;
 }
 const isF = c => { rosterOf(c); return namesOf(c).some(n => FEMS.has(norm(n))); };
-function cluesOf(c) {
+// old : les indices d'avant le 22 nov. (type de carte TCCCG, sans la base de données), pour les tirages déjà joués (PIN)
+function cluesOf(c, old) {
   const w = c.w || {}, L = { 1: [], 2: [], 3: [], 4: [] }, add = (l, o) => { if (o.t && !leaks(c, o.t)) L[l].push(o); };
-  const ro = rosterOf(c), fem = isF(c), gm = (udata().gm || {})[c.rn || c.name] || null;
+  const ro0 = rosterOf(c), ro = old && ro0 && NEWK.has(ro0[0]) ? null : ro0, fem = isF(c), gm = (udata().gm || {})[c.rn || c.name] || null;
   if (fem) add(1, { t: "Je suis une catcheuse.", ic: "♀" }); else if (ro && /masculin|poids lourds|juniors/i.test(ro[1])) add(1, { t: "Je suis un catcheur.", ic: "♂" });
   if (ro && ro[0] === "WWE" && /^(Raw|SmackDown|NXT)$/.test(ro[1])) add(2, { t: "Mon show à la WWE : " + ro[1] + ".", img: showLogo("WWE", ro[1]) || "", ic: "📺" });
   else if (ro && ro[0] === "NJPW") add(2, { t: "Ma division à la NJPW : " + ro[1] + ".", ic: "⚖" });
@@ -57,19 +61,24 @@ function cluesOf(c) {
   // 1 : le plus vaste
   if (c.fa) add(1, { t: "Je n’ai pas de contrat en ce moment : je suis agent libre.", ic: "⛓" });
   else if (c.k) add(1, { t: "Aujourd’hui, je catche à : " + c.k + ".", img: showLogo(c.k, "") || "", ic: "🏟" });
-  const y = yearOf(c); if (y) add(1, { t: "J’ai fait mes débuts dans les années " + Math.floor(y / 10) * 10 + ".", ic: "🗓" });
+  // 22 nov. (Jose) : l'année exacte des débuts (fiche ou base de données) remplace les « années 2000 » quand on la connaît
+  const y = yearOf(c, old), yx = old ? 0 : dbYear(c) || y;
+  if (yx) add(1, { t: "J’ai débuté en " + yx + ".", ic: "📅" }); else if (y) add(1, { t: "J’ai fait mes débuts dans les années " + Math.floor(y / 10) * 10 + ".", ic: "🗓" });
   if (c.al === "face") add(1, { t: "En ce moment, le public me voit comme un gentil (face).", ic: "😇" }); else if (c.al === "heel") add(1, { t: "En ce moment, je joue les méchants (heel).", ic: "😈" });
-  if (STYLE[c.arch]) add(1, { t: "Mon type de carte au TCCCG : " + STYLE[c.arch] + ".", ic: "🃏" });
+  // (22 nov., Jose : plus d'indice lié au TCCCG, remplacé par l'année des débuts et « J’ai remporté » ; gardé pour les tirages figés)
+  if (old && STYLE[c.arch]) add(1, { t: "Mon type de carte au TCCCG : " + STYLE[c.arch] + ".", ic: "🃏" });
   // 2
   if (w.from) add(2, { t: "Je viens de " + w.from + ".", ic: "📍" });
   if (w.trainer) add(2, { t: "J’ai été entraîné par " + w.trainer + ".", ic: "🎓" });
   if (w.ht && w.wt) add(2, { t: "Je mesure " + w.ht + " pour " + w.wt + ".", ic: "📏" });
   ((c.gs && c.gs.past) || []).slice(0, 2).forEach(id => { const g = groupById(id); if (g && g.n) add(2, { t: "J’ai fait partie de « " + g.n + " ».", img: groupLogo(id) || "", ic: "🤝" }); });
   // 3 : un titre (jamais un règne de moins de 7 jours : pas de spoiler), le groupe actuel, un grand match
-  const pal = palmaresOf(c.rn || c.name).filter(x => !(x.cur && (x.j == null || x.j < 7)));
+  const pal = palmaresOf(c.rn || c.name, old).filter(x => !(x.cur && (x.j == null || x.j < 7)));
   const ti = pal.find(x => !x.ty) , tu = pal.find(x => x.ty);
   if (ti) add(3, { t: "J’ai été champion : " + ti.t + (ti.x > 1 ? " (" + ti.x + " fois)." : "."), img: (ti.id && beltOf(ti.id)) || "", ic: "🏆" });
   if (tu) add(3, { t: "J’ai gagné : " + tu.t + (tu.y ? " (" + tu.y + ")." : "."), ic: "🎖" });
+  const tw = !old && pal.find(x => x !== ti && x !== tu);
+  if (tw) add(1, { t: "J’ai remporté : " + tw.t + (tw.y ? " (" + tw.y + ")." : "."), img: (tw.id && beltOf(tw.id)) || "", ic: tw.ty ? "🎖" : "🏆" });
   ((c.gs && c.gs.cur) || []).slice(0, 1).forEach(id => { const g = groupById(id); if (g && g.n) add(3, { t: "Je fais partie de « " + g.n + " ».", img: groupLogo(id) || "", ic: "🤝" }); });
   const ref = Array.isArray(w.ref) && w.ref[0];
   if (ref && ref.t) { const opp = ref.t.split(/\s+—\s+/)[0].split(/\s+contre\s+|\s+et\s+|,\s*/).map(s => s.trim()).filter(s => s && !namesOf(c).some(n => N(n) === N(s))); if (opp.length) add(3, { t: "Un de mes grands matchs : contre " + opp.join(" et ") + (ref.ev ? " (" + ref.ev + ")." : "."), ic: "🎬" }); }
@@ -80,7 +89,7 @@ function cluesOf(c) {
 }
 // les 5 tuiles (tirage fixé par le jour et le nom)
 function tilesOf(c, day) {
-  const L = cluesOf(c), h = k => hashS(day + "|" + c.id + "|" + k), take = (lv, k) => { for (const l of lv) { const a = L[l]; if (a.length) return a.splice(h(k) % a.length, 1)[0]; } return null; };
+  const L = cluesOf(c, day < NEWDAY), h = k => hashS(day + "|" + c.id + "|" + k), take = (lv, k) => { for (const l of lv) { const a = L[l]; if (a.length) return a.splice(h(k) % a.length, 1)[0]; } return null; };
   const nm = c.rn || c.name, words = nm.split(/\s+/).filter(Boolean), letters = N(nm).length;
   const T = [take([1, 2], 1), take([1, 2], 2), take([3, 2], 3), take([4, 3], 4)];
   if (!T[2]) T[2] = { t: "Mon nom de ring compte " + letters + " lettres.", ic: "🔤" };
@@ -96,8 +105,12 @@ const goodFor = c => { const r = realClues(c); return r.all >= 4 && r.deep >= 2;
 
 // ---------- le tirage du jour ----------
 let POOL = null, PKEY = "";
-function pools() {
-  const B0 = baseCards(), key = B0.length + "|" + Object.keys(S.photos || {}).length + "|" + Object.keys(udata().gm || {}).length;
+// catcheurs ajoutés le 22 nov. (DDT, GCW…) : dans le tirage à partir du 23 nov. (le tirage du 22 ne change pas en cours de journée)
+const NEWDAY = "2026-11-23";
+// tirages d'hier et d'aujourd'hui figés tels qu'ils étaient avant l'arrivée des nouveaux catcheurs (les parties en cours ne changent pas)
+const PIN = { "2026-11-21": { e: "trish-stratus", m: "shawn-spears", h: "thea-hail" }, "2026-11-22": { e: "kenny-omega", m: "saya-iida", h: "matt-cardona" } };
+function pools(withNew) {
+  const B0 = baseCards().filter(x => withNew || x.late !== 2), key = B0.length + "|" + Object.keys(S.photos || {}).length + "|" + Object.keys(udata().gm || {}).length + "|" + (withNew ? 1 : 0);
   if (POOL && PKEY === key) return POOL;
   // jamais les personnes exclues partout (data/statuts.json « out »)
   const out = new Set(((udata().st || {}).out || []).map(norm));
@@ -114,9 +127,10 @@ const CACHE = {};
 export function picks(day) {
   const ov = ((S.qsj && S.qsj.days) || {})[day] || {}, key = day + "|" + JSON.stringify(ov) + "|" + PKEY + "|" + Object.keys(udata().gm || {}).length;
   if (CACHE[day] && CACHE[day].k === key) return CACHE[day].v;
-  const P = pools(), D = dayNum(day), v = {};
+  const P = pools(day >= NEWDAY), D = dayNum(day), v = {};
   LV.forEach(l => {
     const k = l[0]; let c = ov[k] ? cardByName(ov[k]) : null;
+    if (!c && PIN[day] && PIN[day][k]) c = baseCards().find(x => x.id === PIN[day][k]) || null;
     if (!c) { const A = P[k]; if (A.length) c = A[((D % A.length) + A.length) % A.length]; }
     v[k] = c ? { c: c, tiles: tilesOf(c, day), mod: !!ov[k] } : null;
   });
