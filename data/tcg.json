@@ -4044,6 +4044,19 @@
    },
    "gimmick": "",
    "medalOf": "Kiera Hogan"
+  },
+  "harley-race": {
+   "r": "N",
+   "max": "R",
+   "arch": "Technician",
+   "al": "",
+   "fin": {
+    "n": "Diving Headbutt",
+    "e": "Révélation"
+   },
+   "gimmick": "",
+   "medalOf": "Harley Race",
+   "leg": true
   }
  },
  "bgm": {
