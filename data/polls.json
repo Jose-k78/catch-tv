@@ -1,6 +1,46 @@
 {
-  "updated": "2026-11-21",
+  "updated": "2026-11-22",
   "items": [
+    {
+      "id": "p-20261122-gunther-ko",
+      "d": "2026-11-22",
+      "type": "",
+      "k": "WWE",
+      "q": "Gunther perd pour la première fois un match simple sans titre en jeu face à Kevin Owens : que doit-il faire ?",
+      "opts": [
+        "Exiger une revanche",
+        "Passer à autre chose"
+      ],
+      "other": true,
+      "end": ""
+    },
+    {
+      "id": "p-20261122-gable-ic",
+      "d": "2026-11-22",
+      "type": "",
+      "k": "WWE",
+      "q": "Chad Gable veut récupérer le titre Intercontinental : il y arrivera ?",
+      "opts": [
+        "Oui, bientôt",
+        "Non, pas cette fois"
+      ],
+      "other": false,
+      "end": ""
+    },
+    {
+      "id": "p-20261122-debut",
+      "d": "2026-11-22",
+      "type": "",
+      "k": "",
+      "q": "Quels sont les plus grands débuts de l'histoire du catch ?",
+      "opts": [
+        "L'Undertaker (Survivor Series 1990)",
+        "Kane (Badd Blood 1997)",
+        "Brock Lesnar (2002)"
+      ],
+      "other": true,
+      "end": ""
+    },
     {
       "id": "p-20261121-team-usa",
       "d": "2026-11-21",
@@ -397,33 +437,6 @@
       "end": "2026-11-14"
     },
     {
-      "id": "p-20261112-japon-rivalite",
-      "d": "2026-11-12",
-      "type": "",
-      "k": "",
-      "q": "La plus grande rivalité du catch japonais ?",
-      "opts": [
-        "Misawa contre Kobashi",
-        "Okada contre Omega",
-        "Mayu Iwatani contre Io Shirai"
-      ],
-      "other": true,
-      "end": ""
-    },
-    {
-      "id": "p-20261112-dream",
-      "d": "2026-11-12",
-      "type": "match",
-      "k": "",
-      "q": "Dream match : Trish Stratus contre Mayu Iwatani, qui gagne ?",
-      "opts": [
-        "Trish Stratus",
-        "Mayu Iwatani"
-      ],
-      "other": false,
-      "end": "2026-11-15"
-    },
-    {
       "id": "p-20261112-babies",
       "d": "2026-11-12",
       "type": "babies",
@@ -435,19 +448,6 @@
       ],
       "other": false,
       "end": "2026-11-14"
-    },
-    {
-      "id": "p-20261111-ic-page",
-      "d": "2026-11-11",
-      "type": "",
-      "k": "WWE",
-      "q": "Rey Fenix est challenger n°1 : qui sera le prochain champion Intercontinental ?",
-      "opts": [
-        "Ethan Page (il garde son titre)",
-        "Rey Fenix"
-      ],
-      "other": true,
-      "end": ""
     },
     {
       "id": "p-20261108-babies",
