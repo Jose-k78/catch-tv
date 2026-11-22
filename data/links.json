@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T10:17:27.718Z",
+ "updated": "2026-11-22T10:17:43.634Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "m:statlight kid vs suzu suzuki": [
@@ -439,7 +439,8 @@
     "t": "",
     "u": "https://www.youtube.com/live/Te8oBa2cHPY?is=iPcEcFz4rIt78tfI",
     "p": "YouTube",
-    "at": "2026-11-22"
+    "at": "2026-11-22",
+    "def": true
    }
   ]
  }
