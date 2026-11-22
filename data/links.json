@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T10:15:22.475Z",
+ "updated": "2026-11-22T10:15:46.774Z",
  "note": "Liens ajoutés par le modérateur (Autre visionnage, entrances, tournois). Modifié depuis l’app avec la clé GitHub du modo.",
  "items": {
   "m:statlight kid vs suzu suzuki": [
@@ -424,6 +424,14 @@
     "p": "VK",
     "at": "2026-11-22",
     "def": true
+   }
+  ],
+  "ev:AEW|Collision|2026-11-21": [
+   {
+    "t": "",
+    "u": "https://vkvideo.ru/video-231961829_456240073",
+    "p": "VK",
+    "at": "2026-11-22"
    }
   ]
  }
