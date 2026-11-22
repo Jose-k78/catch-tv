@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21",
+ "updated": "2026-11-22",
  "note": "Catcheurs suivis (champions, cartes annoncées, favoris des membres) et catcheurs à découvrir (disc = true, toutes fédérations et époques). txt = petit résumé en français, era = époque, ref = matchs de référence, last = 3 derniers matchs (r = résultat, spoiler), v = vidéo YouTube d'une chaîne officielle.",
  "items": {
   "Roman Reigns": {
@@ -2201,6 +2201,43 @@
    ],
    "al": "face",
    "alD": "2018-01-26"
+  },
+  "Aja Kong": {
+   "k": "AJW · GAEA · Oz Academy",
+   "disc": true,
+   "era": "depuis 1986",
+   "a": [
+    "Erika Shishido"
+   ],
+   "from": "Tokyo Tachikawa",
+   "ht": "1,65 m",
+   "wt": "103 kg",
+   "debut": "1986",
+   "trainer": "Jaguar Yokota",
+   "teams": "Gokuaku Domei, Jungle Jack (avec Bison Kimura), W Kong (avec Amazing Kong)",
+   "txt": "Pilier du joshi depuis ses débuts à l'All Japan Women en 1986, Aja Kong a battu Bull Nakano pour le titre WWWA en 1992 avant de briller à GAEA Japan et à l'Oz Academy. En 1995, elle a été la dernière survivante du match à élimination féminin des Survivor Series de la WWF.",
+   "ref": [
+    {
+     "t": "Aja Kong contre Bull Nakano — titre WWWA World Single",
+     "ev": "AJW, 1992"
+    },
+    {
+     "t": "Équipe d'Aja Kong contre équipe d'Alundra Blayze — match à élimination",
+     "ev": "Survivor Series, 1995"
+    },
+    {
+     "t": "Aja Kong et Bison Kimura contre Bull Nakano et Kyoko Inoue — cheveux contre cheveux",
+     "ev": "AJW, 1991"
+    },
+    {
+     "t": "Aja Kong contre Ayako Hamada",
+     "ev": "Chikara JoshiMania, 2011"
+    },
+    {
+     "t": "Aja Kong contre Ryo Mizunami — Women's World Championship Eliminator",
+     "ev": "AEW Dynamite, 2021"
+    }
+   ]
   }
  }
 }
