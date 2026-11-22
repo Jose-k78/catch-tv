@@ -3915,6 +3915,19 @@
    },
    "gimmick": "",
    "medalOf": "Hirooki Goto"
+  },
+  "andrade-el-idolo": {
+   "k": "AEW",
+   "r": "SSR",
+   "max": "UR",
+   "arch": "Dominator",
+   "al": "",
+   "fin": {
+    "n": "Hammerlock DDT",
+    "e": "Stun"
+   },
+   "gimmick": "",
+   "medalOf": "Andrade El Ídolo"
   }
  },
  "bgm": {
