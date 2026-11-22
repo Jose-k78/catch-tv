@@ -3992,6 +3992,19 @@
    },
    "gimmick": "",
    "medalOf": "Joseph Sawyer"
+  },
+  "el-clon": {
+   "k": "AEW",
+   "r": "R",
+   "max": "SSR",
+   "arch": "Opportunist",
+   "al": "",
+   "fin": {
+    "n": "Roll-up",
+    "e": "Vol de tour"
+   },
+   "gimmick": "",
+   "medalOf": "El Clon"
   }
  },
  "bgm": {
