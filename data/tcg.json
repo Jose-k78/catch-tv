@@ -3943,8 +3943,8 @@
    "medalOf": "Bobby Lashley"
   },
   "road-warrior-animal": {
-   "r": "SR",
-   "max": "SSR",
+   "r": "R",
+   "max": "SR",
    "arch": "Technician",
    "al": "",
    "fin": {
@@ -3952,8 +3952,7 @@
     "e": "Révélation"
    },
    "gimmick": "",
-   "medalOf": "Road Warrior Hawk",
-   "leg": true
+   "medalOf": "Road Warrior Hawk"
   }
  },
  "bgm": {
