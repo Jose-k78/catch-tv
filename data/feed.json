@@ -1,5 +1,5 @@
 {
- "at": "2026-11-22T08:10:58.173Z",
+ "at": "2026-11-22T09:20:11.048Z",
  "items": [
   {
    "t": "Carte du jour 7 du NOAH Junior Grand Prix 2 - Lethal Odyssey Tour 2026",
@@ -42,6 +42,16 @@
    "tags": []
   },
   {
+   "t": "WWE SmackDown du 20 novembre : Kevin Owens vs. Gunther, Nouveau membre pour la Team USA",
+   "u": "https://www.voxcatch.fr/2026/11/21/resultats-wwe-smackdown-20-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-21",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
+  },
+  {
    "t": "Résultats et streaming de AAA Lucha Libre du 21 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/resultats/61505-resultats-et-streaming-aaa-lucha-libre-21-novembre-2026",
    "s": "Catch-Newz",
@@ -77,16 +87,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-21",
    "tags": []
-  },
-  {
-   "t": "WWE SmackDown du 20 novembre : Kevin Owens vs. Gunther, Nouveau membre pour la Team USA",
-   "u": "https://www.voxcatch.fr/2026/11/21/resultats-wwe-smackdown-20-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-21",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
   },
   {
    "t": "Preview : AAA Lucha Libre du 21 novembre 2026",
@@ -440,6 +440,16 @@
    "tags": []
   },
   {
+   "t": "AEW Dynamite du 18 novembre : Début du Continental Classic, le championnat TBS en jeu",
+   "u": "https://www.voxcatch.fr/2026/11/19/resultats-aew-dynamite-18-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-19",
+   "tags": [
+    "AEW",
+    "Dynamite"
+   ]
+  },
+  {
    "t": "Résultats de ROH du 19 novembre 2026",
    "u": "https://www.catch-newz.com/aew/resultats/61519-resultats-de-roh-du-19-novembre-2026",
    "s": "Catch-Newz",
@@ -456,16 +466,6 @@
    "d": "2026-11-19",
    "tags": [
     "WWE"
-   ]
-  },
-  {
-   "t": "AEW Dynamite du 18 novembre : Début du Continental Classic, le championnat TBS en jeu",
-   "u": "https://www.voxcatch.fr/2026/11/19/resultats-aew-dynamite-18-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-19",
-   "tags": [
-    "AEW",
-    "Dynamite"
    ]
   },
   {
@@ -1664,7 +1664,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 0 nouveaux articles lus sur la page d'accueil (0 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
