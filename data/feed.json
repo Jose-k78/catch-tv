@@ -1,5 +1,5 @@
 {
- "at": "2026-11-22T19:26:34.995Z",
+ "at": "2026-11-22T20:18:39.995Z",
  "items": [
   {
    "t": "WWE RAW du 23 novembre 2026 sera marqué par Survivor Series",
@@ -9,15 +9,6 @@
    "tags": [
     "WWE",
     "Raw"
-   ]
-  },
-  {
-   "t": "Charlotte Flair est loin d'avoir terminé sa carrière à la WWE",
-   "u": "https://www.catch-newz.com/wwe/newz/61540-charlotte-flair-est-loin-davoir-termine-sa-carriere-a-la-wwe",
-   "s": "Catch-Newz",
-   "d": "2026-11-22",
-   "tags": [
-    "WWE"
    ]
   },
   {
@@ -31,12 +22,37 @@
    ]
   },
   {
+   "t": "Carte de CMLL Domingo De Glamour du 22 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61542-carte-de-cmll-domingo-de-glamour-du-22-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-22",
+   "tags": [
+    "CMLL"
+   ]
+  },
+  {
+   "t": "TLB s'exprime après son match fou contre TLB à KHAO Anarchie",
+   "u": "https://www.catch-newz.com/international/newz/61541-tlb-sexprime-apres-son-match-fou-contre-tlb-a-khao-anarchie",
+   "s": "Catch-Newz",
+   "d": "2026-11-22",
+   "tags": []
+  },
+  {
    "t": "Carte de CMLL Domingo Familiar du 22 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61516-carte-de-cmll-domingo-familiar-du-22-novembre-2026",
    "s": "Catch-Newz",
    "d": "2026-11-22",
    "tags": [
     "CMLL"
+   ]
+  },
+  {
+   "t": "Charlotte Flair est loin d'avoir terminé sa carrière à la WWE",
+   "u": "https://www.catch-newz.com/wwe/newz/61540-charlotte-flair-est-loin-davoir-termine-sa-carriere-a-la-wwe",
+   "s": "Catch-Newz",
+   "d": "2026-11-22",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -497,25 +513,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-20",
    "tags": []
-  },
-  {
-   "t": "Jade Cargill était « une trop grande star » pour faire ses débuts à NXT avant le roster principal ?",
-   "u": "https://www.catch-newz.com/wwe/newz/61488-jade-cargill-etait-une-trop-grande-star-pour-faire-ses-debuts-a-nxt-avant-le-roster-principal",
-   "s": "Catch-Newz",
-   "d": "2026-11-20",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
-  },
-  {
-   "t": "Résultats de NJPW Tanahashi Jam 2",
-   "u": "https://www.catch-newz.com/international/resultats/61479-resultats-de-njpw-tanahashi-jam-2",
-   "s": "Catch-Newz",
-   "d": "2026-11-20",
-   "tags": [
-    "NJPW"
-   ]
   }
  ],
  "yt": {
@@ -1369,14 +1366,16 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61495-wwe-smackdown-20-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61538-wwe-raw-du-23-novembre-2026-sera-marque-par-survivor-series",
-   "https://www.catch-newz.com/wwe/newz/61540-charlotte-flair-est-loin-davoir-termine-sa-carriere-a-la-wwe",
    "https://www.catch-newz.com/wwe/newz/61536-preview-wwe-raw-23-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61528-resultats-de-iwrg-aaa-du-19-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61505-resultats-et-streaming-aaa-lucha-libre-21-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61511-aew-collision-21-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61519-resultats-de-roh-du-19-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61542-carte-de-cmll-domingo-de-glamour-du-22-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61541-tlb-sexprime-apres-son-match-fou-contre-tlb-a-khao-anarchie",
    "https://www.catch-newz.com/international/resultats/61539-resultats-de-cmll-sabado-de-coliseo-du-21-novembre-2026",
    "https://www.catch-newz.com/international/newz/61516-carte-de-cmll-domingo-familiar-du-22-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61540-charlotte-flair-est-loin-davoir-termine-sa-carriere-a-la-wwe",
    "https://www.catch-newz.com/aew/newz/61534-mjf-demande-le-licenciement-de-brody-king-suite-a-aew-collision",
    "https://www.catch-newz.com/wwe/resultats/61509-resultats-de-wwe-road-to-survivor-series-du-19-novembre-2026",
    "https://www.catch-newz.com/international/newz/61533-jake-hager-na-pas-retrouve-la-vision-a-100",
@@ -1664,13 +1663,11 @@
    "https://www.catch-newz.com/wwe/newz/61255-pourquoi-wwe-smackdown-du-27-novembre-ne-sera-pas-en-direct",
    "https://www.catch-newz.com/international/newz/61235-carte-de-cmll-viernes-espectacular-du-13-novembre-2026",
    "https://www.catch-newz.com/international/newz/61253-quel-avenir-pour-killer-kross-apres-sa-perte-du-championnat-mlw",
-   "https://www.catch-newz.com/wwe/resultats/61239-wwe-main-event-11-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61236-carte-de-gcw-massacre-in-missoula-2026",
-   "https://www.catch-newz.com/international/newz/61252-trois-francaises-dans-le-pwi-250-de-2026"
+   "https://www.catch-newz.com/wwe/resultats/61239-wwe-main-event-11-novembre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 10 nouveaux articles lus sur la page d'accueil (10 liens)",
+  "Catch-Newz": "pas de flux RSS : 11 nouveaux articles lus sur la page d'accueil (11 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
