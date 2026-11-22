@@ -2738,7 +2738,7 @@
   },
   "otm": {
    "n": "OTM",
-   "lg": "",
+   "lg": "OTM",
    "k": "WWE NXT",
    "y": "depuis 2024",
    "on": 1,
@@ -2811,6 +2811,97 @@
    "m": [
     "Nathan Frazer",
     "Axiom"
+   ]
+  },
+  "team-2000x": {
+   "n": "Team 2000X",
+   "lg": "Team 2000X",
+   "k": "NOAH",
+   "on": 1,
+   "m": [
+    "Ozawa",
+    "Takashi Sugiura",
+    "Masa Kitamiya",
+    "Alpha Wolf",
+    "Jun Masaoka",
+    "Kai Fujimura",
+    "Knull",
+    "Owadasan",
+    "Tadasuke",
+    "Yo-Hey",
+    "Yoshi Tatsu"
+   ],
+   "a": [
+    "2000X"
+   ]
+  },
+  "team-noah": {
+   "n": "Team Noah",
+   "lg": "Team NOAH",
+   "k": "NOAH",
+   "on": 1,
+   "m": [
+    "Atsushi Kotoge",
+    "Hajime Ohara",
+    "Hi69",
+    "Muhammad Yone"
+   ]
+  },
+  "passion-ratels": {
+   "n": "Passion Ratel’s",
+   "k": "NOAH",
+   "on": 1,
+   "m": [
+    "Manabu Soya",
+    "Daiki Inaba",
+    "Saxon Huxley",
+    "Yuki Iino"
+   ],
+   "a": [
+    "Passion Ratel's",
+    "Passion Ratels"
+   ]
+  },
+  "white-raven-sqwad": {
+   "n": "White Raven Sqwad",
+   "k": "NOAH",
+   "on": 1,
+   "m": [
+    "Kenta",
+    "Hayata",
+    "Shane Haste",
+    "Tetsuya Endo"
+   ],
+   "a": [
+    "WRS"
+   ]
+  },
+  "los-tranquilos-de-japon": {
+   "n": "Los Tranquilos de Japón",
+   "k": "NOAH",
+   "on": 1,
+   "m": [
+    "Tetsuya Naito",
+    "Bushi",
+    "Ryusei"
+   ],
+   "a": [
+    "Los Tranquilos de Japon"
+   ]
+  },
+  "up-up-girls": {
+   "n": "Up Up Girls",
+   "lg": "Up Up Girls",
+   "k": "TJPW",
+   "on": 1,
+   "m": [
+    "Miu Watanabe",
+    "Raku",
+    "Shino Suzuki",
+    "Uta Takami"
+   ],
+   "a": [
+    "Up Up Girls (Pro-Wrestling)"
    ]
   }
  }

@@ -294,6 +294,12 @@ admin (modérateur) `gYOlkXsJc3WedSykoBNyeWg2ELx1`.
     `ACT.tcgmqzero`). `fightNow()` exporté pour les tests.
   - Agents libres : `x.fa` (catcheur dans aucun roster, alias compris) → chaîne brisée `faMark` à la place du logo ; boosters `fa` et `mitb` :
     `.tpk-fa` (HTML) et le même symbole dessiné dans `paintPack`.
+- **Images du 22 nov.** (dossiers de Jose : People + Beyond\people, Logos + Beyond\logos, Events, Stables) : photos NOAH / TJPW (choisies à l'œil,
+  la plus récente en avant, 1-2 autres versions), « Doc Gallows » rattaché à luke-gallows (`merged`) ; logos `NOAH` / `TJPW` (shows) ; icônes détourées
+  `<PROMO> (icône)` dans logos.json « shows » → `promoIcon(k)` (assets.js) = pastille des cartes TCCCG (`promoLogo`), sinon le logo carré ; images
+  d'événements NOAH / TJPW ; groupes NOAH (Team 2000X, Team Noah, Passion Ratel’s, White Raven Sqwad, Los Tranquilos de Japón) et TJPW (Up Up Girls).
+  Les logos des shows des promotions de l'app venaient déjà du même dossier Beyond\logos (rien à changer). Sans photo dans les dossiers : Owadasan,
+  Hiroto Tsuruya, Midori Takahashi, Katsumi Inahata, Yuto Koyanagi, Chieri Sakimori, Momo Sato, Yui Musubi.
 - **TCCCG, 21 nov. (soir)** : packs de départ (`boosters` de callup.js) : plus de « NJPW Strong Pack » (Strong est dans le NJPW Pack via le groupe
   « NJPW Strong et partenaires ») ; Stardom + Marigold + TJPW = un seul **Joshi Pack** (`p:Joshi`, `ks` = JOSHI, logo SVG `JOSHI_LOGO` en base64,
   aussi chargé par Phaser). Pas de pack NOAH pour l'instant (choix de Jose).

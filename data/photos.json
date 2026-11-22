@@ -1,6 +1,613 @@
 {
- "updated": "2026-11-21",
+ "updated": "2026-11-22",
  "items": {
+  "kaito-kiyomiya": {
+   "f": "kaito-kiyomiya.webp",
+   "n": [
+    "Kaito Kiyomiya"
+   ],
+   "v": [
+    "kaito-kiyomiya-v2.webp",
+    "kaito-kiyomiya-v3.webp"
+   ]
+  },
+  "kenoh": {
+   "f": "kenoh.webp",
+   "n": [
+    "Kenoh"
+   ],
+   "v": [
+    "kenoh-v2.webp"
+   ]
+  },
+  "yoshiki-inamura": {
+   "f": "yoshiki-inamura.webp",
+   "n": [
+    "Yoshiki Inamura"
+   ],
+   "v": [
+    "yoshiki-inamura-v2.webp"
+   ]
+  },
+  "kazuyuki-fujita": {
+   "f": "kazuyuki-fujita.webp",
+   "n": [
+    "Kazuyuki Fujita"
+   ],
+   "v": [
+    "kazuyuki-fujita-v2.webp"
+   ]
+  },
+  "shuhei-taniguchi": {
+   "f": "shuhei-taniguchi.webp",
+   "n": [
+    "Shuhei Taniguchi"
+   ],
+   "v": [
+    "shuhei-taniguchi-v2.webp"
+   ]
+  },
+  "shuji-kondo": {
+   "f": "shuji-kondo.webp",
+   "n": [
+    "Shuji Kondo"
+   ],
+   "v": [
+    "shuji-kondo-v2.webp"
+   ]
+  },
+  "alejandro": {
+   "f": "alejandro.webp",
+   "n": [
+    "Alejandro"
+   ],
+   "v": [
+    "alejandro-v2.webp"
+   ]
+  },
+  "amakusa": {
+   "f": "amakusa.webp",
+   "n": [
+    "Amakusa"
+   ],
+   "v": [
+    "amakusa-v2.webp"
+   ]
+  },
+  "black-menso-re": {
+   "f": "black-menso-re.webp",
+   "n": [
+    "Black Menso-re",
+    "Black Mensore"
+   ],
+   "v": [
+    "black-menso-re-v2.webp"
+   ]
+  },
+  "daiki-odashima": {
+   "f": "daiki-odashima.webp",
+   "n": [
+    "Daiki Odashima"
+   ]
+  },
+  "dragon-bane": {
+   "f": "dragon-bane.webp",
+   "n": [
+    "Dragon Bane"
+   ],
+   "v": [
+    "dragon-bane-v2.webp",
+    "dragon-bane-v3.webp"
+   ]
+  },
+  "eita": {
+   "f": "eita.webp",
+   "n": [
+    "Eita",
+    "Eita Kobayashi"
+   ],
+   "v": [
+    "eita-v2.webp",
+    "eita-v3.webp"
+   ]
+  },
+  "harutoki": {
+   "f": "harutoki.webp",
+   "n": [
+    "Harutoki"
+   ]
+  },
+  "jack-morris": {
+   "f": "jack-morris.webp",
+   "n": [
+    "Jack Morris"
+   ],
+   "v": [
+    "jack-morris-v2.webp"
+   ]
+  },
+  "junta-miyawaki": {
+   "f": "junta-miyawaki.webp",
+   "n": [
+    "Junta Miyawaki"
+   ],
+   "v": [
+    "junta-miyawaki-v2.webp"
+   ]
+  },
+  "super-crazy": {
+   "f": "super-crazy.webp",
+   "n": [
+    "Super Crazy"
+   ],
+   "v": [
+    "super-crazy-v2.webp"
+   ]
+  },
+  "yuto-kikuchi": {
+   "f": "yuto-kikuchi.webp",
+   "n": [
+    "Yuto Kikuchi"
+   ]
+  },
+  "ozawa": {
+   "f": "ozawa.webp",
+   "n": [
+    "Ozawa"
+   ],
+   "v": [
+    "ozawa-v2.webp"
+   ]
+  },
+  "masa-kitamiya": {
+   "f": "masa-kitamiya.webp",
+   "n": [
+    "Masa Kitamiya"
+   ],
+   "v": [
+    "masa-kitamiya-v2.webp"
+   ]
+  },
+  "alpha-wolf": {
+   "f": "alpha-wolf.webp",
+   "n": [
+    "Alpha Wolf"
+   ],
+   "v": [
+    "alpha-wolf-v2.webp",
+    "alpha-wolf-v3.webp"
+   ]
+  },
+  "jun-masaoka": {
+   "f": "jun-masaoka.webp",
+   "n": [
+    "Jun Masaoka"
+   ],
+   "v": [
+    "jun-masaoka-v2.webp"
+   ]
+  },
+  "kai-fujimura": {
+   "f": "kai-fujimura.webp",
+   "n": [
+    "Kai Fujimura"
+   ],
+   "v": [
+    "kai-fujimura-v2.webp"
+   ]
+  },
+  "knull": {
+   "f": "knull.webp",
+   "n": [
+    "Knull"
+   ]
+  },
+  "tadasuke": {
+   "f": "tadasuke.webp",
+   "n": [
+    "Tadasuke"
+   ],
+   "v": [
+    "tadasuke-v2.webp"
+   ]
+  },
+  "yo-hey": {
+   "f": "yo-hey.webp",
+   "n": [
+    "Yo-Hey"
+   ],
+   "v": [
+    "yo-hey-v2.webp",
+    "yo-hey-v3.webp"
+   ]
+  },
+  "yoshi-tatsu": {
+   "f": "yoshi-tatsu.webp",
+   "n": [
+    "Yoshi Tatsu",
+    "Yoshitatsu"
+   ],
+   "v": [
+    "yoshi-tatsu-v2.webp"
+   ]
+  },
+  "manabu-soya": {
+   "f": "manabu-soya.webp",
+   "n": [
+    "Manabu Soya"
+   ],
+   "v": [
+    "manabu-soya-v2.webp"
+   ]
+  },
+  "daiki-inaba": {
+   "f": "daiki-inaba.webp",
+   "n": [
+    "Daiki Inaba"
+   ],
+   "v": [
+    "daiki-inaba-v2.webp"
+   ]
+  },
+  "saxon-huxley": {
+   "f": "saxon-huxley.webp",
+   "n": [
+    "Saxon Huxley"
+   ],
+   "v": [
+    "saxon-huxley-v2.webp"
+   ]
+  },
+  "yuki-iino": {
+   "f": "yuki-iino.webp",
+   "n": [
+    "Yuki Iino"
+   ],
+   "v": [
+    "yuki-iino-v2.webp"
+   ]
+  },
+  "atsushi-kotoge": {
+   "f": "atsushi-kotoge.webp",
+   "n": [
+    "Atsushi Kotoge"
+   ],
+   "v": [
+    "atsushi-kotoge-v2.webp"
+   ]
+  },
+  "hajime-ohara": {
+   "f": "hajime-ohara.webp",
+   "n": [
+    "Hajime Ohara"
+   ],
+   "v": [
+    "hajime-ohara-v2.webp"
+   ]
+  },
+  "hi69": {
+   "f": "hi69.webp",
+   "n": [
+    "Hi69"
+   ],
+   "v": [
+    "hi69-v2.webp"
+   ]
+  },
+  "muhammad-yone": {
+   "f": "muhammad-yone.webp",
+   "n": [
+    "Muhammad Yone"
+   ],
+   "v": [
+    "muhammad-yone-v2.webp"
+   ]
+  },
+  "hayata": {
+   "f": "hayata.webp",
+   "n": [
+    "Hayata"
+   ],
+   "v": [
+    "hayata-v2.webp"
+   ]
+  },
+  "shane-haste": {
+   "f": "shane-haste.webp",
+   "n": [
+    "Shane Haste"
+   ],
+   "v": [
+    "shane-haste-v2.webp",
+    "shane-haste-v3.webp"
+   ]
+  },
+  "tetsuya-endo": {
+   "f": "tetsuya-endo.webp",
+   "n": [
+    "Tetsuya Endo"
+   ],
+   "v": [
+    "tetsuya-endo-v2.webp"
+   ]
+  },
+  "ryusei": {
+   "f": "ryusei.webp",
+   "n": [
+    "Ryusei"
+   ]
+  },
+  "kid-lykos": {
+   "f": "kid-lykos.webp",
+   "n": [
+    "Kid Lykos"
+   ],
+   "v": [
+    "kid-lykos-v2.webp"
+   ]
+  },
+  "kid-lykos-ii": {
+   "f": "kid-lykos-ii.webp",
+   "n": [
+    "Kid Lykos II"
+   ],
+   "v": [
+    "kid-lykos-ii-v2.webp"
+   ]
+  },
+  "kieron-lacey": {
+   "f": "kieron-lacey.webp",
+   "n": [
+    "Kieron Lacey"
+   ],
+   "v": [
+    "kieron-lacey-v2.webp"
+   ]
+  },
+  "mark-trew": {
+   "f": "mark-trew.webp",
+   "n": [
+    "Mark Trew"
+   ],
+   "v": [
+    "mark-trew-v2.webp"
+   ]
+  },
+  "miyu-yamashita": {
+   "f": "miyu-yamashita.webp",
+   "n": [
+    "Miyu Yamashita"
+   ],
+   "v": [
+    "miyu-yamashita-v2.webp",
+    "miyu-yamashita-v3.webp"
+   ]
+  },
+  "shoko-nakajima": {
+   "f": "shoko-nakajima.webp",
+   "n": [
+    "Shoko Nakajima"
+   ],
+   "v": [
+    "shoko-nakajima-v2.webp",
+    "shoko-nakajima-v3.webp"
+   ]
+  },
+  "rika-tatsumi": {
+   "f": "rika-tatsumi.webp",
+   "n": [
+    "Rika Tatsumi"
+   ],
+   "v": [
+    "rika-tatsumi-v2.webp"
+   ]
+  },
+  "mizuki": {
+   "f": "mizuki.webp",
+   "n": [
+    "Mizuki"
+   ],
+   "v": [
+    "mizuki-v2.webp"
+   ]
+  },
+  "yuki-arai": {
+   "f": "yuki-arai.webp",
+   "n": [
+    "Yuki Arai"
+   ],
+   "v": [
+    "yuki-arai-v2.webp"
+   ]
+  },
+  "miu-watanabe": {
+   "f": "miu-watanabe.webp",
+   "n": [
+    "Miu Watanabe"
+   ],
+   "v": [
+    "miu-watanabe-v2.webp"
+   ]
+  },
+  "hyper-misao": {
+   "f": "hyper-misao.webp",
+   "n": [
+    "Hyper Misao"
+   ],
+   "v": [
+    "hyper-misao-v2.webp"
+   ]
+  },
+  "suzume": {
+   "f": "suzume.webp",
+   "n": [
+    "Suzume"
+   ],
+   "v": [
+    "suzume-v2.webp",
+    "suzume-v3.webp"
+   ]
+  },
+  "arisu-endo": {
+   "f": "arisu-endo.webp",
+   "n": [
+    "Arisu Endo"
+   ],
+   "v": [
+    "arisu-endo-v2.webp",
+    "arisu-endo-v3.webp"
+   ]
+  },
+  "yuki-kamifuku": {
+   "f": "yuki-kamifuku.webp",
+   "n": [
+    "Yuki Kamifuku"
+   ],
+   "v": [
+    "yuki-kamifuku-v2.webp"
+   ]
+  },
+  "yuki-aino": {
+   "f": "yuki-aino.webp",
+   "n": [
+    "Yuki Aino"
+   ],
+   "v": [
+    "yuki-aino-v2.webp"
+   ]
+  },
+  "raku": {
+   "f": "raku.webp",
+   "n": [
+    "Raku"
+   ],
+   "v": [
+    "raku-v2.webp"
+   ]
+  },
+  "pom-harajuku": {
+   "f": "pom-harajuku.webp",
+   "n": [
+    "Pom Harajuku"
+   ],
+   "v": [
+    "pom-harajuku-v2.webp"
+   ]
+  },
+  "haru-kazashiro": {
+   "f": "haru-kazashiro.webp",
+   "n": [
+    "Haru Kazashiro"
+   ],
+   "v": [
+    "haru-kazashiro-v2.webp"
+   ]
+  },
+  "himawari": {
+   "f": "himawari.webp",
+   "n": [
+    "Himawari",
+    "HIMAWARI"
+   ],
+   "v": [
+    "himawari-v2.webp"
+   ]
+  },
+  "mahiro-kiryu": {
+   "f": "mahiro-kiryu.webp",
+   "n": [
+    "Mahiro Kiryu"
+   ],
+   "v": [
+    "mahiro-kiryu-v2.webp"
+   ]
+  },
+  "sakura-hattori": {
+   "f": "sakura-hattori.webp",
+   "n": [
+    "Sakura Hattori",
+    "Kaya Toribami"
+   ],
+   "v": [
+    "sakura-hattori-v2.webp",
+    "sakura-hattori-v3.webp"
+   ]
+  },
+  "wakana-uehara": {
+   "f": "wakana-uehara.webp",
+   "n": [
+    "Wakana Uehara"
+   ],
+   "v": [
+    "wakana-uehara-v2.webp"
+   ]
+  },
+  "shino-suzuki": {
+   "f": "shino-suzuki.webp",
+   "n": [
+    "Shino Suzuki"
+   ],
+   "v": [
+    "shino-suzuki-v2.webp"
+   ]
+  },
+  "toga": {
+   "f": "toga.webp",
+   "n": [
+    "Toga"
+   ],
+   "v": [
+    "toga-v2.webp"
+   ]
+  },
+  "mifu-ashida": {
+   "f": "mifu-ashida.webp",
+   "n": [
+    "Mifu Ashida"
+   ],
+   "v": [
+    "mifu-ashida-v2.webp"
+   ]
+  },
+  "uta-takami": {
+   "f": "uta-takami.webp",
+   "n": [
+    "Uta Takami"
+   ],
+   "v": [
+    "uta-takami-v2.webp"
+   ]
+  },
+  "kira-summer": {
+   "f": "kira-summer.webp",
+   "n": [
+    "Kira Summer"
+   ],
+   "v": [
+    "kira-summer-v2.webp"
+   ]
+  },
+  "chika-nanase": {
+   "f": "chika-nanase.webp",
+   "n": [
+    "Chika Nanase"
+   ],
+   "v": [
+    "chika-nanase-v2.webp"
+   ]
+  },
+  "ren-konatsu": {
+   "f": "ren-konatsu.webp",
+   "n": [
+    "Ren Konatsu"
+   ]
+  },
+  "shion-kanzaki": {
+   "f": "shion-kanzaki.webp",
+   "n": [
+    "Shion Kanzaki"
+   ]
+  },
   "akam": {
    "f": "akam.webp",
    "n": [
@@ -8113,13 +8720,16 @@
    ]
   },
   "luke-gallows": {
-   "f": "luke-gallows.webp",
+   "f": "luke-gallows-v3.webp",
    "n": [
     "Luke Gallows",
-    "Doc"
+    "Doc",
+    "Doc Gallows"
    ],
    "v": [
-    "doc.webp"
+    "luke-gallows.webp",
+    "doc.webp",
+    "luke-gallows-v4.webp"
    ]
   },
   "scotty-2-hotty": {
@@ -8358,6 +8968,7 @@
   "mike-santana": "cruz-montana",
   "mike-draztik": "cruz-montana",
   "drew-kasper": "brutus-creed",
-  "jacob-kasper": "julius-creed"
+  "jacob-kasper": "julius-creed",
+  "doc-gallows": "luke-gallows"
  }
 }

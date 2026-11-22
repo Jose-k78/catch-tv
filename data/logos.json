@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08",
+ "updated": "2026-11-22",
  "shows": {
   "205": {
    "f": "205.webp"
@@ -138,6 +138,72 @@
    "v": [
     "wwe-v2.webp"
    ]
+  },
+  "NOAH": {
+   "f": "noah.webp",
+   "v": [
+    "noah-v2.webp",
+    "noah-v3.webp",
+    "noah-v4.webp"
+   ]
+  },
+  "TJPW": {
+   "f": "tjpw.webp",
+   "v": [
+    "tjpw-v2.webp",
+    "tjpw-v3.webp",
+    "tjpw-v4.webp"
+   ]
+  },
+  "NJPW (icône)": {
+   "f": "njpw-icone.webp",
+   "v": [
+    "njpw-icone-v2.webp",
+    "njpw-icone-v3.webp",
+    "njpw-icone-v4.webp"
+   ]
+  },
+  "STARDOM (icône)": {
+   "f": "stardom-icone.webp",
+   "v": [
+    "stardom-icone-v2.webp"
+   ]
+  },
+  "Marigold (icône)": {
+   "f": "marigold-icone.webp"
+  },
+  "AAA (icône)": {
+   "f": "aaa-icone.webp",
+   "v": [
+    "aaa-icone-v2.webp",
+    "aaa-icone-v3.webp"
+   ]
+  },
+  "CMLL (icône)": {
+   "f": "cmll-icone.webp",
+   "v": [
+    "cmll-icone-v2.webp",
+    "cmll-icone-v3.webp"
+   ]
+  },
+  "TNA (icône)": {
+   "f": "tna-icone.webp",
+   "v": [
+    "tna-icone-v2.webp",
+    "tna-icone-v3.webp"
+   ]
+  },
+  "NOAH (icône)": {
+   "f": "noah-icone.webp",
+   "v": [
+    "noah-icone-v2.webp"
+   ]
+  },
+  "TJPW (icône)": {
+   "f": "tjpw-icone.webp"
+  },
+  "EVOLVE (icône)": {
+   "f": "evolve-icone.webp"
   }
  },
  "events": {
@@ -3563,6 +3629,135 @@
   },
   "WWE WrestleMania XL": {
    "f": "wwe-wrestlemania-xl-p.webp"
+  },
+  "TJPW Yes Wonderland": {
+   "f": "tjpw-yes-wonderland.webp"
+  },
+  "TJPW Year End Party": {
+   "f": "tjpw-year-end-party.webp"
+  },
+  "TJPW Wrestle Princess": {
+   "f": "tjpw-wrestle-princess.webp"
+  },
+  "TJPW Wrestle Princess VI": {
+   "f": "tjpw-wrestle-princess-vi.webp"
+  },
+  "TJPW Wrestle Princess 3": {
+   "f": "tjpw-wrestle-princess-3.webp"
+  },
+  "TJPW Wrestle Princess 2": {
+   "f": "tjpw-wrestle-princess-2.webp"
+  },
+  "TJPW Tokyo Princess Cup": {
+   "f": "tjpw-tokyo-princess-cup.webp"
+  },
+  "TJPW The Mountain Top": {
+   "f": "tjpw-the-mountain-top.webp"
+  },
+  "TJPW Summer Sun Princess": {
+   "f": "tjpw-summer-sun-princess.webp",
+   "v": [
+    "tjpw-summer-sun-princess-p.webp"
+   ]
+  },
+  "TJPW Summer Princess": {
+   "f": "tjpw-summer-princess.webp"
+  },
+  "TJPW Max Heart 5": {
+   "f": "tjpw-max-heart-5.webp"
+  },
+  "TJPW Live Tour": {
+   "f": "tjpw-live-tour.webp"
+  },
+  "TJPW Inspiration": {
+   "f": "tjpw-inspiration.webp"
+  },
+  "TJPW Grand Princess": {
+   "f": "tjpw-grand-princess.webp"
+  },
+  "TJPW Grand Princess 25": {
+   "f": "tjpw-grand-princess-25.webp"
+  },
+  "TJPW Grand Princess 2": {
+   "f": "tjpw-grand-princess-2.webp"
+  },
+  "TJPW Futari Wa Princess Max Heart": {
+   "f": "tjpw-futari-wa-princess-max-heart.webp"
+  },
+  "TJPW City Circuit": {
+   "f": "tjpw-city-circuit.webp"
+  },
+  "TJPW All Rise": {
+   "f": "tjpw-all-rise.webp"
+  },
+  "TJPW 11th Birthday Show": {
+   "f": "tjpw-11th-birthday-show.webp"
+  },
+  "TJPW 10th Anniversary": {
+   "f": "tjpw-10th-anniversary.webp"
+  },
+  "NOAH on PPV": {
+   "f": "noah-on-ppv.webp"
+  },
+  "NOAH Victory Challenge Tag League": {
+   "f": "noah-victory-challenge-tag-league.webp"
+  },
+  "NOAH Wrestle Magic": {
+   "f": "noah-wrestle-magic.webp"
+  },
+  "NOAH Victory Challenge Tag League 2": {
+   "f": "noah-victory-challenge-tag-league-2.webp"
+  },
+  "NOAH The New Year": {
+   "f": "noah-the-new-year.webp"
+  },
+  "NOAH The New Year 25": {
+   "f": "noah-the-new-year-25.webp"
+  },
+  "NOAH Sunny Voyage": {
+   "f": "noah-sunny-voyage.webp"
+  },
+  "NOAH Sunny Voyage 3": {
+   "f": "noah-sunny-voyage-3.webp"
+  },
+  "NOAH Sunny Voyage 2": {
+   "f": "noah-sunny-voyage-2.webp"
+  },
+  "NOAH Star Navigation": {
+   "f": "noah-star-navigation.webp"
+  },
+  "NOAH One Night Dream 2": {
+   "f": "noah-one-night-dream-2.webp"
+  },
+  "NOAH N 1 Victory": {
+   "f": "noah-n-1-victory.webp"
+  },
+  "NOAH New Year Reboot": {
+   "f": "noah-new-year-reboot.webp"
+  },
+  "NOAH Monday Magic Season": {
+   "f": "noah-monday-magic-season.webp"
+  },
+  "NOAH N 1 Victory 2": {
+   "f": "noah-n-1-victory-2.webp"
+  },
+  "NOAH Limit Break": {
+   "f": "noah-limit-break.webp"
+  },
+  "NOAH Grand Ship": {
+   "f": "noah-grand-ship.webp"
+  },
+  "NOAH Cross Over": {
+   "f": "noah-cross-over.webp"
+  },
+  "NOAH Destination": {
+   "f": "noah-destination.webp"
+  },
+  "NOAH Great Voyage": {
+   "f": "noah-great-voyage.webp"
+  },
+  "NOAH Departure": {
+   "f": "noah-departure.webp"
   }
  },
  "titles": {
@@ -6043,6 +6238,15 @@
   },
   "wXw Academy": {
    "f": "wxw-academy-p.webp"
+  },
+  "ANGRY MONSTERS": {
+   "f": "angry-monsters.webp"
+  },
+  "G RIZE": {
+   "f": "g-rize.webp"
+  },
+  "YANS": {
+   "f": "yans.webp"
   }
  }
 }

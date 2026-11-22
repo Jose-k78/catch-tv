@@ -4,7 +4,7 @@ import { S } from "../state.js";
 import { fmt } from "../util.js";
 import { photoOf } from "../photos.js";
 import { wInfo, alignOf, norm } from "../wrestlers.js";
-import { groupsOf, groupById, showLogo } from "../assets.js";
+import { groupsOf, groupById, showLogo, promoIcon } from "../assets.js";
 import { palmaresBase as palmaresOf } from "../views/palmares.js";
 import { resultWinner, sideNames } from "../views/mrate.js";
 
@@ -355,6 +355,6 @@ export function statsOf(inst, def) {
 // PV d'une carte = la somme de ses stats : en combat, la vie de l'équipe = les PV de toutes ses cartes additionnés (13 nov.)
 export const hpOf = st => st.reduce((a, b) => a + b, 0);
 export const isChampLive = def => !!def && champsNow().has(realKey(def));
-export const promoLogo = k => (k && showLogo(k, "")) || "";
+export const promoLogo = k => (k && promoIcon(k)) || "";
 // lien entre deux cartes (même groupe / équipe) : bonus de soutien
 export function linked(a, b) { if (!a || !b) return false; const A = (a.gs || {}).cur || [], Bg = (b.gs || {}).cur || []; return A.some(g => Bg.indexOf(g) >= 0) || ((a.gs || {}).past || []).some(g => (b.gs.past || []).concat(Bg).indexOf(g) >= 0); }

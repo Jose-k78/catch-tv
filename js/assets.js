@@ -23,15 +23,20 @@ export function artVersions(sec, name) {
 // ---------- logos des shows et des promotions ----------
 const SHOW = { Raw: "RAW", SmackDown: "Smackdown", NXT: "NXT", Evolve: "EVOLVE", Dynamite: "Dynamite", Collision: "AEW Collision", Rampage: "Rampage",
   "Lucha Libre AAA": "AAA", "ROH TV": "ROH", Impact: "TNA", "205 Live": "205" };
-const PROMO = { WWE: "WWE", AEW: "AEW", AAA: "AAA", ROH: "ROH", TNA: "TNA", CMLL: "CMLL", NJPW: "NJPW", Stardom: "STARDOM", Marigold: "Marigold" };
+const PROMO = { WWE: "WWE", AEW: "AEW", AAA: "AAA", ROH: "ROH", TNA: "TNA", CMLL: "CMLL", NJPW: "NJPW", Stardom: "STARDOM", Marigold: "Marigold", NOAH: "NOAH", TJPW: "TJPW" };
 export function showLogo(k, n) {
   if (n && SHOW[n] && art("shows", SHOW[n])) return art("shows", SHOW[n]);
   if (n && art("shows", n)) return art("shows", n);
   return PROMO[k] ? art("shows", PROMO[k]) : "";
 }
 
+// petite icône d'une promotion (logo détouré « NJPW (icône) » des dossiers de Jose, sinon le logo carré) : pastille des cartes TCCCG
+export function promoIcon(k) {
+  const p = PROMO[k] || k; return (p && art("shows", p + " (icône)")) || showLogo(k, "");
+}
+
 // ---------- logos des grands événements (Royal Rumble, Wrestle Kingdom…) ----------
-const EVP = { WWE: ["WWE", "NXT", "NXTUK"], AEW: ["AEW"], ROH: ["ROH"], TNA: ["TNA", "Impact", "IMPACT"], NJPW: ["NJPW", "NJoA"], Stardom: ["STARDOM"], Marigold: ["Marigold"], AAA: ["AAA"], CMLL: ["CMLL"] };
+const EVP = { WWE: ["WWE", "NXT", "NXTUK"], AEW: ["AEW"], ROH: ["ROH"], TNA: ["TNA", "Impact", "IMPACT"], NJPW: ["NJPW", "NJoA"], Stardom: ["STARDOM"], Marigold: ["Marigold", "MARIGOLD"], AAA: ["AAA"], CMLL: ["CMLL"], NOAH: ["NOAH"], TJPW: ["TJPW"] };
 let evIdx = null, evOf = null;
 function evIndex() {
   const E = (S.art || {}).events || {};
