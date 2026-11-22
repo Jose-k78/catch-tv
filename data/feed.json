@@ -1,6 +1,51 @@
 {
- "at": "2026-11-22T13:31:27.051Z",
+ "at": "2026-11-22T17:16:55.928Z",
  "items": [
+  {
+   "t": "Preview : WWE RAW du 23 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61536-preview-wwe-raw-23-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-22",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
+  {
+   "t": "Jake Hager n'a pas retrouvé la vision à 100%",
+   "u": "https://www.catch-newz.com/international/newz/61533-jake-hager-na-pas-retrouve-la-vision-a-100",
+   "s": "Catch-Newz",
+   "d": "2026-11-22",
+   "tags": []
+  },
+  {
+   "t": "Jeff Hardy est ouvert à une ultime rivalité contre CM Punk à la WWE",
+   "u": "https://www.catch-newz.com/wwe/newz/61535-jeff-hardy-est-ouvert-a-une-ultime-rivalite-contre-cm-punk-a-la-wwe",
+   "s": "Catch-Newz",
+   "d": "2026-11-22",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Brody King s'exprime après la blessure de Daniel Garcia",
+   "u": "https://www.catch-newz.com/aew/newz/61532-brody-king-sexprime-apres-la-blessure-de-daniel-garcia",
+   "s": "Catch-Newz",
+   "d": "2026-11-22",
+   "tags": [
+    "AEW"
+   ]
+  },
+  {
+   "t": "Une programmation spéciale pour l'AEW et la TNA en raison de Thanksgiving",
+   "u": "https://www.catch-newz.com/aew/newz/61531-une-programmation-speciale-pour-laew-et-la-tna-en-raison-de-thanksgiving",
+   "s": "Catch-Newz",
+   "d": "2026-11-22",
+   "tags": [
+    "AEW",
+    "TNA"
+   ]
+  },
   {
    "t": "Carte de CMLL Domingo Familiar du 22 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61516-carte-de-cmll-domingo-familiar-du-22-novembre-2026",
@@ -96,16 +141,6 @@
    ]
   },
   {
-   "t": "Preview : AEW Collision du 21 novembre 2026",
-   "u": "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-21",
-   "tags": [
-    "AEW",
-    "Collision"
-   ]
-  },
-  {
    "t": "WWE SmackDown du 20 novembre : Kevin Owens vs. Gunther, Nouveau membre pour la Team USA",
    "u": "https://www.voxcatch.fr/2026/11/21/resultats-wwe-smackdown-20-novembre-2026/",
    "s": "VOXcatch",
@@ -113,6 +148,16 @@
    "tags": [
     "WWE",
     "SmackDown"
+   ]
+  },
+  {
+   "t": "Preview : AEW Collision du 21 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-21",
+   "tags": [
+    "AEW",
+    "Collision"
    ]
   },
   {
@@ -464,51 +509,6 @@
    "d": "2026-11-20",
    "tags": [
     "CMLL"
-   ]
-  },
-  {
-   "t": "Carte du jour 5 du NOAH Junior Grand Prix 2 - Lethal Odyssey Tour 2026",
-   "u": "https://www.catch-newz.com/international/newz/61473-carte-du-jour-5-du-noah-junior-grand-prix-2-lethal-odyssey-tour-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-20",
-   "tags": []
-  },
-  {
-   "t": "Résultats de IWRG/AAA du 19 novembre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61528-resultats-de-iwrg-aaa-du-19-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-19",
-   "tags": [
-    "AAA"
-   ]
-  },
-  {
-   "t": "Résultats de ROH du 19 novembre 2026",
-   "u": "https://www.catch-newz.com/aew/resultats/61519-resultats-de-roh-du-19-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-19",
-   "tags": [
-    "AEW",
-    "ROH"
-   ]
-  },
-  {
-   "t": "Résultats de WWE Road To Survivor Series du 19 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61509-resultats-de-wwe-road-to-survivor-series-du-19-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-19",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "AEW Dynamite du 18 novembre : Début du Continental Classic, le championnat TBS en jeu",
-   "u": "https://www.voxcatch.fr/2026/11/19/resultats-aew-dynamite-18-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-19",
-   "tags": [
-    "AEW",
-    "Dynamite"
    ]
   }
  ],
@@ -1362,13 +1362,18 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61495-wwe-smackdown-20-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61536-preview-wwe-raw-23-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61533-jake-hager-na-pas-retrouve-la-vision-a-100",
+   "https://www.catch-newz.com/wwe/newz/61535-jeff-hardy-est-ouvert-a-une-ultime-rivalite-contre-cm-punk-a-la-wwe",
+   "https://www.catch-newz.com/aew/newz/61532-brody-king-sexprime-apres-la-blessure-de-daniel-garcia",
+   "https://www.catch-newz.com/aew/newz/61531-une-programmation-speciale-pour-laew-et-la-tna-en-raison-de-thanksgiving",
    "https://www.catch-newz.com/international/resultats/61528-resultats-de-iwrg-aaa-du-19-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61505-resultats-et-streaming-aaa-lucha-libre-21-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61511-aew-collision-21-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61519-resultats-de-roh-du-19-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61509-resultats-de-wwe-road-to-survivor-series-du-19-novembre-2026",
-   "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
    "https://www.catch-newz.com/international/newz/61516-carte-de-cmll-domingo-familiar-du-22-novembre-2026",
+   "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61530-resultats-de-njpw-road-to-world-tag-league-2026",
    "https://www.catch-newz.com/international/resultats/61529-resultats-de-njpw-bound-for-unbound",
    "https://www.catch-newz.com/international/newz/61527-les-membres-didolatry-deviennent-les-premiers-champions-trio-de-khao",
@@ -1655,16 +1660,11 @@
    "https://www.catch-newz.com/wwe/newz/61251-stephanie-vaquer-finit-premiere-du-pwi-250-de-2026",
    "https://www.catch-newz.com/international/newz/61250-finalslam-2026-heure-et-chaines-pour-regarder-le-show-en-direct",
    "https://www.catch-newz.com/international/newz/61234-carte-de-cmll-jueves-arena-coliseo-du-12-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61249-il-y-a-8-ans-cette-blessure-a-change-la-carriere-de-becky-lynch",
-   "https://www.catch-newz.com/aew/newz/61248-aew-full-gear-2026-heure-et-chaine-pour-regarder-le-show-en-direct",
-   "https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61233-resultats-de-cmll-martes-populares-du-10-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61232-resultats-de-cmll-martes-de-glamour-du-10-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61247-rikishi-je-suis-fier-de-vous-tous"
+   "https://www.catch-newz.com/wwe/newz/61249-il-y-a-8-ans-cette-blessure-a-change-la-carriere-de-becky-lynch"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 12 nouveaux articles lus sur la page d'accueil (12 liens)",
   "VOXcatch": "6 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
