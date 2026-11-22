@@ -1,6 +1,20 @@
 {
- "at": "2026-11-22T05:54:23.885Z",
+ "at": "2026-11-22T07:01:55.938Z",
  "items": [
+  {
+   "t": "Carte du jour 7 du NOAH Junior Grand Prix 2 - Lethal Odyssey Tour 2026",
+   "u": "https://www.catch-newz.com/international/newz/61525-carte-du-jour-7-du-noah-junior-grand-prix-2-lethal-odyssey-tour-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-22",
+   "tags": []
+  },
+  {
+   "t": "Carte de Sendai Girls Pro Wrestling 20th Anniversary Tour In Korakuen Hall",
+   "u": "https://www.catch-newz.com/international/newz/61526-carte-de-sendai-girls-pro-wrestling-20th-anniversary-tour-in-korakuen-hall",
+   "s": "Catch-Newz",
+   "d": "2026-11-22",
+   "tags": []
+  },
   {
    "t": "La WWE trouve un nouveau roster pour Kiana James",
    "u": "https://www.catch-newz.com/wwe/newz/61524-la-wwe-trouve-un-nouveau-roster-pour-kiana-james",
@@ -493,20 +507,6 @@
   {
    "t": "Résultats de Beyond Wrestling Open Series 254",
    "u": "https://www.catch-newz.com/international/resultats/61477-resultats-de-beyond-wrestling-open-series-254",
-   "s": "Catch-Newz",
-   "d": "2026-11-19",
-   "tags": []
-  },
-  {
-   "t": "Résultats du jour 3 du NOAH Junior Grand Prix 2 - Lethal Odyssey Tour 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61472-resultats-du-jour-3-du-noah-junior-grand-prix-2-lethal-odyssey-tour-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-19",
-   "tags": []
-  },
-  {
-   "t": "Résultats de Max Proad Homenaje A Numa Y Zafiro Infernal",
-   "u": "https://www.catch-newz.com/international/resultats/61475-resultats-de-max-proad-homenaje-a-numa-y-zafiro-infernal",
    "s": "Catch-Newz",
    "d": "2026-11-19",
    "tags": []
@@ -1362,14 +1362,16 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61495-wwe-smackdown-20-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61524-la-wwe-trouve-un-nouveau-roster-pour-kiana-james",
-   "https://www.catch-newz.com/aew/newz/61523-aew-collision-daniel-garcia-blesse-pendant-le-continental-classic",
    "https://www.catch-newz.com/wwe/resultats/61505-resultats-et-streaming-aaa-lucha-libre-21-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61511-aew-collision-21-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61519-resultats-de-roh-du-19-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61509-resultats-de-wwe-road-to-survivor-series-du-19-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61458-preview-aew-collision-21-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61525-carte-du-jour-7-du-noah-junior-grand-prix-2-lethal-odyssey-tour-2026",
+   "https://www.catch-newz.com/international/newz/61526-carte-de-sendai-girls-pro-wrestling-20th-anniversary-tour-in-korakuen-hall",
    "https://www.catch-newz.com/international/resultats/61510-resultats-de-khao-anarchie-du-21-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61524-la-wwe-trouve-un-nouveau-roster-pour-kiana-james",
+   "https://www.catch-newz.com/aew/newz/61523-aew-collision-daniel-garcia-blesse-pendant-le-continental-classic",
    "https://www.catch-newz.com/wwe/newz/61496-preview-aaa-lucha-libre-21-novembre-2026",
    "https://www.catch-newz.com/international/newz/61522-carte-du-jour-3-de-la-ajpw-real-world-tag-league-2026",
    "https://www.catch-newz.com/international/newz/61514-carte-de-cmll-sabado-de-coliseo-du-21-novembre-2026",
@@ -1658,9 +1660,7 @@
    "https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61246-cody-rhodes-attend-la-validation-de-lequipe-creative-de-la-wwe-pour-faire-son-heel-turn",
    "https://www.catch-newz.com/culture/cineserie/60928-dave-batista-prend-10-kilos-pour-son-role-de-kratos",
-   "https://www.catch-newz.com/wwe/newz/61245-zilla-fatu-lorsque-john-cena-a-parle-dumaga-jai-eu-le-coeur-serre",
-   "https://www.catch-newz.com/wwe/newz/61244-becky-lynch-liv-morgan-ne-peut-rien-faire-toute-seule",
-   "https://www.catch-newz.com/wwe/newz/61222-audiences-wwe-aew-et-tna-26-octobre-au-1er-novembre-2026"
+   "https://www.catch-newz.com/wwe/newz/61245-zilla-fatu-lorsque-john-cena-a-parle-dumaga-jai-eu-le-coeur-serre"
   ]
  },
  "diag": {
