@@ -1,7 +1,43 @@
 {
-  "updated": "2026-11-21",
+  "updated": "2026-11-22",
   "note": "Une storyline par jour (la plus récente en premier) : grandes histoires, rivalités, anecdotes de coulisses, faits marquants. txt = paragraphes écrits en français à partir des sources ; v = vidéos officielles ; q = recherches sur la chaîne officielle.",
   "items": [
+    {
+      "id": "undertaker-debut-1990",
+      "d": "2026-11-22",
+      "type": "Fait marquant",
+      "t": "22 novembre 1990 : l'Undertaker apparaît pour la première fois à la WWF",
+      "k": "WWE",
+      "years": "1990-2020",
+      "hook": "Un soir de Thanksgiving, Ted DiBiase présente son « partenaire mystère » : un géant au teint blafard qui ne ressent rien. Trente ans plus tard, jour pour jour, il fera ses adieux.",
+      "txt": [
+        "Le 22 novembre 1990, la WWF organise Survivor Series au Hartford Civic Center, dans le Connecticut, le soir de Thanksgiving. Dans le match par élimination entre la Million Dollar Team de Ted DiBiase et la Dream Team de Dusty Rhodes, DiBiase a promis un partenaire mystère pour accompagner The Honky Tonk Man et Greg Valentine.",
+        "Ce partenaire arrive aux côtés du manager Brother Love : un colosse vêtu de noir, chapeau sur la tête, qui avance lentement vers le ring. Le catcheur derrière le personnage, Mark Calaway, avait déjà lutté sous d'autres noms, notamment « Mean Mark » Callous à la WCW, mais c'est ici que naît le personnage qui va le rendre célèbre. Au début, on le présente même brièvement sous le nom de « Kane the Undertaker ».",
+        "Sur le ring, l'effet est immédiat : il élimine Koko B. Ware avec un Tombstone Piledriver, puis Dusty Rhodes, avant d'être compté à l'extérieur en continuant à s'en prendre à Rhodes. Ted DiBiase termine seul survivant de son équipe. Le public découvre un catcheur qui ne vend presque pas les coups et se relève comme si de rien n'était.",
+        "Quelques mois plus tard, Paul Bearer remplace Brother Love à ses côtés et le personnage du croque-mort prend toute sa dimension, avec l'urne, l'ambiance funèbre et les lumières éteintes. Un an après ses débuts, à Survivor Series 1991, il bat Hulk Hogan et devient champion de la WWF.",
+        "La suite est connue : la série de victoires à WrestleMania, les rivalités avec Kane, Shawn Michaels ou Mankind, le passage au personnage de motard « American Badass » puis le retour du Deadman. Et le 22 novembre 2020, exactement trente ans après sa première apparition, Survivor Series lui offre son « Final Farewell », une cérémonie d'adieu sur le ring."
+      ],
+      "key": "Ted DiBiase dévoile son partenaire mystère : l'Undertaker entre pour la première fois sur un ring de la WWF et élimine deux adversaires dès son premier soir.",
+      "v": [],
+      "q": [
+        "Undertaker debut Survivor Series 1990 WWE",
+        "Undertaker Final Farewell Survivor Series 2020"
+      ],
+      "src": [
+        {
+          "n": "Wikipedia (anglais) – Survivor Series (1990)",
+          "u": "https://www.wikipedia.org/wiki/Survivor_Series_(1990)"
+        },
+        {
+          "n": "Sky Sports – The Undertaker's dramatic debut",
+          "u": "https://skysports.com/wwe/news/14203/11553873/wwe-survivor-series-gold-the-undertakers-dramatic-debut-28-years-ago"
+        },
+        {
+          "n": "ESPN – Survivor Series moments: Dead Man born",
+          "u": "https://africa.espn.com/wwe/story/_/id/18048403/wwe-survivor-series-moments-dead-man-born"
+        }
+      ]
+    },
     {
       "id": "crush-gals",
       "d": "2026-11-21",
