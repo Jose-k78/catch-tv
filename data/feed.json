@@ -1,15 +1,6 @@
 {
- "at": "2026-11-23T06:39:57.555Z",
+ "at": "2026-11-23T08:33:24.325Z",
  "items": [
-  {
-   "t": "Des nouvelles de Mark Briscoe pendant son absence de l'AEW",
-   "u": "https://www.catch-newz.com/aew/newz/61558-des-nouvelles-de-mark-briscoe-pendant-son-absence-de-laew",
-   "s": "Catch-Newz",
-   "d": "2026-11-23",
-   "tags": [
-    "AEW"
-   ]
-  },
   {
    "t": "Preview : WWE NXT du 24 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026",
@@ -38,6 +29,22 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Résultats de Sendai Girls Pro Wrestling 20th Anniversary Tour In Korakuen Hall",
+   "u": "https://www.catch-newz.com/international/resultats/61552-resultats-de-sendai-girls-pro-wrestling-20th-anniversary-tour-in-korakuen-hall",
+   "s": "Catch-Newz",
+   "d": "2026-11-23",
+   "tags": []
+  },
+  {
+   "t": "Des nouvelles de Mark Briscoe pendant son absence de l'AEW",
+   "u": "https://www.catch-newz.com/aew/newz/61558-des-nouvelles-de-mark-briscoe-pendant-son-absence-de-laew",
+   "s": "Catch-Newz",
+   "d": "2026-11-23",
+   "tags": [
+    "AEW"
    ]
   },
   {
@@ -494,13 +501,6 @@
   {
    "t": "Carte du jour 6 du NOAH Junior Grand Prix 2 - Lethal Odyssey Tour 2026",
    "u": "https://www.catch-newz.com/international/newz/61501-carte-du-jour-6-du-noah-junior-grand-prix-2-lethal-odyssey-tour-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-20",
-   "tags": []
-  },
-  {
-   "t": "Carte de NHB PitFighter X21: Because The Night - A Tribute To Jeff Cannonball",
-   "u": "https://www.catch-newz.com/international/newz/61500-carte-de-nhb-pitfighter-x21-because-the-night-a-tribute-to-jeff-cannonball",
    "s": "Catch-Newz",
    "d": "2026-11-20",
    "tags": []
@@ -1356,14 +1356,15 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61495-wwe-smackdown-20-novembre-2026",
-   "https://www.catch-newz.com/aew/newz/61558-des-nouvelles-de-mark-briscoe-pendant-son-absence-de-laew",
    "https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61538-wwe-raw-du-23-novembre-2026-sera-marque-par-survivor-series",
    "https://www.catch-newz.com/wwe/newz/61536-preview-wwe-raw-23-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61528-resultats-de-iwrg-aaa-du-19-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61505-resultats-et-streaming-aaa-lucha-libre-21-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61511-aew-collision-21-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61552-resultats-de-sendai-girls-pro-wrestling-20th-anniversary-tour-in-korakuen-hall",
    "https://www.catch-newz.com/international/newz/61547-carte-de-invasion-indy-domingo-popular-du-22-novembre-2026",
+   "https://www.catch-newz.com/aew/newz/61558-des-nouvelles-de-mark-briscoe-pendant-son-absence-de-laew",
    "https://www.catch-newz.com/international/newz/61549-carte-de-iwrg-funcion-espectacular-du-22-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61519-resultats-de-roh-du-19-novembre-2026",
    "https://www.catch-newz.com/international/newz/61551-carte-du-jour-8-du-noah-junior-grand-prix-2-lethal-odyssey-tour-2026",
@@ -1653,12 +1654,11 @@
    "https://www.catch-newz.com/aew/newz/61254-une-organisation-difficile-a-aew-dynamite-le-11-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61265-bayley-sera-presente-a-smackdown-ce-vendredi-a-deux-semaines-des-survivor-series-wargames",
    "https://www.catch-newz.com/wwe/newz/61264-joe-hendry-je-suis-dans-une-situation-difficile-en-ce-moment",
-   "https://www.catch-newz.com/wwe/newz/61263-selon-vic-joseph-chelsea-green-est-la-catcheuse-la-plus-tenace-a-la-wwe",
-   "https://www.catch-newz.com/wwe/newz/61262-natalya-jai-limpression-que-tout-lui-vient-trop-facilement"
+   "https://www.catch-newz.com/wwe/newz/61263-selon-vic-joseph-chelsea-green-est-la-catcheuse-la-plus-tenace-a-la-wwe"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 10 nouveaux articles lus sur la page d'accueil (10 liens)",
+  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
   "VOXcatch": "4 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
