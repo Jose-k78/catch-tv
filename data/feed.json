@@ -1,5 +1,5 @@
 {
- "at": "2026-11-23T16:58:34.561Z",
+ "at": "2026-11-23T17:56:18.007Z",
  "items": [
   {
    "t": "Preview : WWE RAW du 23 novembre 2026",
@@ -12,8 +12,17 @@
    ]
   },
   {
-   "t": "Le retour de Rhea Ripley à la WWE s'approche",
-   "u": "https://www.catch-newz.com/wwe/newz/61562-le-retour-de-rhea-ripley-a-la-wwe-sapproche",
+   "t": "Quels matchs des Survivor Series ont marqué la dernière décennie ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61566-quels-matchs-des-survivor-series-ont-marque-la-derniere-decennie",
+   "s": "Catch-Newz",
+   "d": "2026-11-23",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Cody Rhodes reste ouvert à un heel turn",
+   "u": "https://www.catch-newz.com/wwe/newz/61565-cody-rhodes-reste-ouvert-a-un-heel-turn",
    "s": "Catch-Newz",
    "d": "2026-11-23",
    "tags": [
@@ -51,8 +60,8 @@
    ]
   },
   {
-   "t": "Le nom Mid-South Wrestling fera son retour en 2027",
-   "u": "https://www.catch-newz.com/international/newz/61563-le-nom-mid-south-wrestling-fera-son-retour-en-2027",
+   "t": "Résultats de SUP Fear & Trembling",
+   "u": "https://www.catch-newz.com/international/resultats/61555-resultats-de-sup-fear-trembling",
    "s": "Catch-Newz",
    "d": "2026-11-23",
    "tags": []
@@ -65,6 +74,22 @@
    "tags": [
     "CMLL"
    ]
+  },
+  {
+   "t": "Le retour de Rhea Ripley à la WWE s'approche",
+   "u": "https://www.catch-newz.com/wwe/newz/61562-le-retour-de-rhea-ripley-a-la-wwe-sapproche",
+   "s": "Catch-Newz",
+   "d": "2026-11-23",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Le nom Mid-South Wrestling fera son retour en 2027",
+   "u": "https://www.catch-newz.com/international/newz/61563-le-nom-mid-south-wrestling-fera-son-retour-en-2027",
+   "s": "Catch-Newz",
+   "d": "2026-11-23",
+   "tags": []
   },
   {
    "t": "Trick Williams rêve d'affronter Cody Rhodes dans un main event de WrestleMania ?",
@@ -474,29 +499,6 @@
   {
    "t": "FinalSlam a « bouleversé le catch professionnel » selon Raj Dhesi",
    "u": "https://www.catch-newz.com/international/newz/61504-finalslam-a-boulverse-le-catch-professionnel-selon-raj-dhesi",
-   "s": "Catch-Newz",
-   "d": "2026-11-21",
-   "tags": []
-  },
-  {
-   "t": "Carte de Beyond Wrestling Rent Free",
-   "u": "https://www.catch-newz.com/international/newz/61482-carte-de-beyond-wrestling-rent-free",
-   "s": "Catch-Newz",
-   "d": "2026-11-21",
-   "tags": []
-  },
-  {
-   "t": "Carte du jour 6 de la NJPW World Tag League 2026",
-   "u": "https://www.catch-newz.com/international/newz/61407-carte-du-jour-6-de-la-njpw-world-tag-league-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-21",
-   "tags": [
-    "NJPW"
-   ]
-  },
-  {
-   "t": "Carte de Beyond Wrestling Still Alive",
-   "u": "https://www.catch-newz.com/international/newz/61481-carte-de-beyond-wrestling-still-alive",
    "s": "Catch-Newz",
    "d": "2026-11-21",
    "tags": []
@@ -1353,12 +1355,15 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/61536-preview-wwe-raw-23-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61495-wwe-smackdown-20-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61562-le-retour-de-rhea-ripley-a-la-wwe-sapproche",
+   "https://www.catch-newz.com/wwe/newz/61566-quels-matchs-des-survivor-series-ont-marque-la-derniere-decennie",
+   "https://www.catch-newz.com/wwe/newz/61565-cody-rhodes-reste-ouvert-a-un-heel-turn",
    "https://www.catch-newz.com/aew/newz/61537-preview-aew-dynamite-25-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61538-wwe-raw-du-23-novembre-2026-sera-marque-par-survivor-series",
-   "https://www.catch-newz.com/international/newz/61563-le-nom-mid-south-wrestling-fera-son-retour-en-2027",
+   "https://www.catch-newz.com/international/resultats/61555-resultats-de-sup-fear-trembling",
    "https://www.catch-newz.com/international/newz/61517-carte-de-cmll-lunes-clasico-du-23-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61562-le-retour-de-rhea-ripley-a-la-wwe-sapproche",
+   "https://www.catch-newz.com/international/newz/61563-le-nom-mid-south-wrestling-fera-son-retour-en-2027",
    "https://www.catch-newz.com/wwe/newz/61561-trick-williams-reve-daffronter-cody-rhodes-dans-un-main-event-de-wrestlemania",
    "https://www.catch-newz.com/international/resultats/61528-resultats-de-iwrg-aaa-du-19-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61554-resultats-de-beyond-wrestling-rent-free",
@@ -1647,14 +1652,11 @@
    "https://www.catch-newz.com/international/resultats/61284-resultats-de-pws-meaner-than-ever",
    "https://www.catch-newz.com/international/resultats/61283-resultats-de-zero1-random-lottery-zero1-tag-strongest-tournament-2026",
    "https://www.catch-newz.com/international/newz/61276-carte-de-cmll-sabado-de-coliseo-du-14-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61259-tna-impact-12-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61282-resultats-de-wxw-we-love-wrestling-du-7-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61278-resultats-de-iwrg-thursday-night-wrestling-du-12-novembre-2026-party-random",
-   "https://www.catch-newz.com/international/resultats/61275-resultats-de-cmll-jueves-arena-coliseo-du-12-novembre-2026"
+   "https://www.catch-newz.com/international/resultats/61259-tna-impact-12-novembre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
   "VOXcatch": "4 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
