@@ -1,33 +1,7 @@
 {
- "at": "2026-11-22T21:16:48.358Z",
+ "at": "2026-11-23T06:39:57.606Z",
  "sa": true,
  "sent": {
-  "a:https://www.catch-newz.com/aew/newz/61114-carte-de-eve-157-elite-encounters-2": "2026-11-08",
-  "a:https://www.catch-newz.com/aew/resultats/61121-aew-collision-7-novembre-2026": "2026-11-08",
-  "a:https://www.catch-newz.com/wwe/resultats/61122-resultats-et-streaming-aaa-heroes-inmortales-7-novembre-2026": "2026-11-08",
-  "a:https://www.catch-newz.com/aew/newz/61125-tommaso-ciampa-remporte-le-championnat-national-a-aew-collision-du-bateau": "2026-11-08",
-  "a:https://www.catch-newz.com/wwe/newz/61124-rey-mysterio-suspendu-de-la-aaa-et-accuse-dinfidelite": "2026-11-08",
-  "poll:p-20261108-cody-wargames": "2026-11-08",
-  "poll:p-20261108-ciampa-national": "2026-11-08",
-  "poll:p-20261108-charlotte-retour": "2026-11-08",
-  "poll:p-20261108-babies": "2026-11-08",
-  "story:mayu-io": "2026-11-08",
-  "t:wwe-wtt:2026-11-07:c": "2026-11-08",
-  "t:wwe-wc:2026-11-07:c": "2026-11-08",
-  "t:aew-nat:2026-11-07:c": "2026-11-08",
-  "a:https://www.catch-newz.com/international/resultats/61100-resultats-de-dominion-wrestling-hail-to-the-king-2026": "2026-11-08",
-  "a:https://www.catch-newz.com/wwe/newz/61126-combien-de-billets-vendus-pour-finalslam": "2026-11-08",
-  "a:https://www.catch-newz.com/wwe/newz/61128-elton-prince-de-retour-sur-x-comment-va-t-il": "2026-11-08",
-  "a:https://www.catch-newz.com/wwe/newz/61127-chelsea-green-jai-perdu-mon-titre-mais-jai-aussi-perdu-une-amie": "2026-11-08",
-  "a:https://www.catch-newz.com/wwe/newz/61130-une-attaque-de-missiles-sur-riyad-apres-wwe-crown-jewel-2026": "2026-11-08",
-  "a:https://www.catch-newz.com/international/newz/61075-carte-de-cmll-domingo-familiar-du-8-novembre-2026": "2026-11-08",
-  "a:https://www.catch-newz.com/wwe/newz/61131-les-catcheurs-auront-besoin-de-jetons-pour-le-john-cena-classic": "2026-11-08",
-  "a:https://www.catch-newz.com/wwe/newz/61132-zilla-fatu-devoile-un-cadeau-de-john-cena-pour-la-competition-classic": "2026-11-08",
-  "a:https://www.catch-newz.com/wwe/newz/61134-randy-orton-promet-de-revenir-apres-wwe-crown-jewel-2026": "2026-11-08",
-  "a:https://www.catch-newz.com/international/resultats/61136-resultats-de-cmll-sabado-de-coliseo-du-7-novembre-2026": "2026-11-08",
-  "fr:2026-11-08": "2026-11-08",
-  "a:https://www.catch-newz.com/wwe/newz/61014-preview-wwe-nxt-10-novembre-2026": "2026-11-08",
-  "a:https://www.catch-newz.com/wwe/newz/61129-combien-de-temps-va-durer-finalslam": "2026-11-08",
   "a:https://www.catch-newz.com/wwe/newz/61152-nikki-bella-quand-je-partirai-elles-vont-toutes-me-manquer": "2026-11-09",
   "a:https://www.catch-newz.com/wwe/newz/61151-cruz-montana-sort-enfin-du-silence-apres-avoir-rejoint-946-la-semaine-derniere": "2026-11-09",
   "a:https://www.catch-newz.com/wwe/newz/61154-randy-orton-na-gagne-que-3-matchs-en-ple-depuis-son-retour-en-2023": "2026-11-09",
@@ -376,7 +350,19 @@
   "c:ROH:2026-12-04:r7zpja": "2026-11-22",
   "a:https://www.catch-newz.com/international/newz/61542-carte-de-cmll-domingo-de-glamour-du-22-novembre-2026": "2026-11-22",
   "fr:2026-11-22": "2026-11-22",
-  "a:https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026": "2026-11-22"
+  "a:https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026": "2026-11-22",
+  "a:https://www.catch-newz.com/aew/newz/61558-des-nouvelles-de-mark-briscoe-pendant-son-absence-de-laew": "2026-11-23"
  },
- "pend": {}
+ "pend": {
+  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
+   {
+    "cat": "info",
+    "title": "📰 Nouvelle info · Catch-Newz",
+    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "1 nouvelle info"
+   }
+  ]
+ }
 }
