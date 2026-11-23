@@ -1,5 +1,5 @@
 {
- "at": "2026-11-23T17:56:18.007Z",
+ "at": "2026-11-23T18:56:47.712Z",
  "items": [
   {
    "t": "Preview : WWE RAW du 23 novembre 2026",
@@ -12,22 +12,11 @@
    ]
   },
   {
-   "t": "Quels matchs des Survivor Series ont marqué la dernière décennie ?",
-   "u": "https://www.catch-newz.com/wwe/newz/61566-quels-matchs-des-survivor-series-ont-marque-la-derniere-decennie",
+   "t": "Le titre Final Rumble de Nate Prince remis en jeu en Belgique",
+   "u": "https://www.catch-newz.com/international/newz/61567-le-titre-final-rumble-de-nate-prince-remis-en-jeu-en-belgique",
    "s": "Catch-Newz",
    "d": "2026-11-23",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Cody Rhodes reste ouvert à un heel turn",
-   "u": "https://www.catch-newz.com/wwe/newz/61565-cody-rhodes-reste-ouvert-a-un-heel-turn",
-   "s": "Catch-Newz",
-   "d": "2026-11-23",
-   "tags": [
-    "WWE"
-   ]
+   "tags": []
   },
   {
    "t": "Preview : AEW Dynamite du 25 novembre 2026",
@@ -57,6 +46,33 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Résultats du jour 1 de la NJPW World Tag League 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61557-resultats-du-jour-1-de-la-njpw-world-tag-league-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-23",
+   "tags": [
+    "NJPW"
+   ]
+  },
+  {
+   "t": "Quels matchs des Survivor Series ont marqué la dernière décennie ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61566-quels-matchs-des-survivor-series-ont-marque-la-derniere-decennie",
+   "s": "Catch-Newz",
+   "d": "2026-11-23",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Cody Rhodes reste ouvert à un heel turn",
+   "u": "https://www.catch-newz.com/wwe/newz/61565-cody-rhodes-reste-ouvert-a-un-heel-turn",
+   "s": "Catch-Newz",
+   "d": "2026-11-23",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -486,22 +502,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "The Rock fait passer Pat McAfee à travers d'une table avant Survivor Series",
-   "u": "https://www.catch-newz.com/wwe/newz/61506-the-rock-fait-passer-pat-mcafee-a-travers-dune-table-avant-survivor-series",
-   "s": "Catch-Newz",
-   "d": "2026-11-21",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "FinalSlam a « bouleversé le catch professionnel » selon Raj Dhesi",
-   "u": "https://www.catch-newz.com/international/newz/61504-finalslam-a-boulverse-le-catch-professionnel-selon-raj-dhesi",
-   "s": "Catch-Newz",
-   "d": "2026-11-21",
-   "tags": []
   }
  ],
  "yt": {
@@ -1355,11 +1355,13 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/61536-preview-wwe-raw-23-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61495-wwe-smackdown-20-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61566-quels-matchs-des-survivor-series-ont-marque-la-derniere-decennie",
-   "https://www.catch-newz.com/wwe/newz/61565-cody-rhodes-reste-ouvert-a-un-heel-turn",
+   "https://www.catch-newz.com/international/newz/61567-le-titre-final-rumble-de-nate-prince-remis-en-jeu-en-belgique",
    "https://www.catch-newz.com/aew/newz/61537-preview-aew-dynamite-25-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61538-wwe-raw-du-23-novembre-2026-sera-marque-par-survivor-series",
+   "https://www.catch-newz.com/international/resultats/61557-resultats-du-jour-1-de-la-njpw-world-tag-league-2026",
+   "https://www.catch-newz.com/wwe/newz/61566-quels-matchs-des-survivor-series-ont-marque-la-derniere-decennie",
+   "https://www.catch-newz.com/wwe/newz/61565-cody-rhodes-reste-ouvert-a-un-heel-turn",
    "https://www.catch-newz.com/international/resultats/61555-resultats-de-sup-fear-trembling",
    "https://www.catch-newz.com/international/newz/61517-carte-de-cmll-lunes-clasico-du-23-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61562-le-retour-de-rhea-ripley-a-la-wwe-sapproche",
@@ -1650,13 +1652,11 @@
    "https://www.catch-newz.com/international/newz/61286-carte-de-ddt-shout-your-love-in-the-yokohama-ring-2026",
    "https://www.catch-newz.com/international/newz/61287-carte-du-jour-2-du-noah-junior-grand-prix-2-legacy-rise-2026",
    "https://www.catch-newz.com/international/resultats/61284-resultats-de-pws-meaner-than-ever",
-   "https://www.catch-newz.com/international/resultats/61283-resultats-de-zero1-random-lottery-zero1-tag-strongest-tournament-2026",
-   "https://www.catch-newz.com/international/newz/61276-carte-de-cmll-sabado-de-coliseo-du-14-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61259-tna-impact-12-novembre-2026"
+   "https://www.catch-newz.com/international/resultats/61283-resultats-de-zero1-random-lottery-zero1-tag-strongest-tournament-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "4 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
