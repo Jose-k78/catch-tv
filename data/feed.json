@@ -1,6 +1,24 @@
 {
- "at": "2026-11-23T11:04:10.625Z",
+ "at": "2026-11-23T13:11:25.374Z",
  "items": [
+  {
+   "t": "Le Royal Rumble féminin 2027 sera le plus grand de tous les temps ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61560-le-royal-rumble-feminin-2027-sera-le-plus-grand-de-tous-les-temps",
+   "s": "Catch-Newz",
+   "d": "2026-11-23",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Jey Uso : le véritable Mister WarGames ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61559-jey-uso-le-veritable-mister-wargames",
+   "s": "Catch-Newz",
+   "d": "2026-11-23",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Preview : WWE NXT du 24 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026",
@@ -269,6 +287,16 @@
    "tags": []
   },
   {
+   "t": "WWE SmackDown du 20 novembre : Kevin Owens vs. Gunther, Nouveau membre pour la Team USA",
+   "u": "https://www.voxcatch.fr/2026/11/21/resultats-wwe-smackdown-20-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-21",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
+  },
+  {
    "t": "Résultats et streaming de AAA Lucha Libre du 21 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/resultats/61505-resultats-et-streaming-aaa-lucha-libre-21-novembre-2026",
    "s": "Catch-Newz",
@@ -286,16 +314,6 @@
    "tags": [
     "AEW",
     "Collision"
-   ]
-  },
-  {
-   "t": "WWE SmackDown du 20 novembre : Kevin Owens vs. Gunther, Nouveau membre pour la Team USA",
-   "u": "https://www.voxcatch.fr/2026/11/21/resultats-wwe-smackdown-20-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-21",
-   "tags": [
-    "WWE",
-    "SmackDown"
    ]
   },
   {
@@ -487,23 +505,6 @@
     "WWE",
     "SmackDown"
    ]
-  },
-  {
-   "t": "Carte de CMLL Viernes Espectacular du 20 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61484-carte-de-cmll-viernes-espectacular-du-20-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-20",
-   "tags": [
-    "CMLL",
-    "Viernes Espectacular"
-   ]
-  },
-  {
-   "t": "Des prises de catch dans GTA 6",
-   "u": "https://www.catch-newz.com/culture/gaming/61498-des-prises-de-catch-dans-gta-6",
-   "s": "Catch-Newz",
-   "d": "2026-11-20",
-   "tags": []
   }
  ],
  "yt": {
@@ -1356,6 +1357,8 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61495-wwe-smackdown-20-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61560-le-royal-rumble-feminin-2027-sera-le-plus-grand-de-tous-les-temps",
+   "https://www.catch-newz.com/wwe/newz/61559-jey-uso-le-veritable-mister-wargames",
    "https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61538-wwe-raw-du-23-novembre-2026-sera-marque-par-survivor-series",
    "https://www.catch-newz.com/wwe/newz/61536-preview-wwe-raw-23-novembre-2026",
@@ -1652,13 +1655,11 @@
    "https://www.catch-newz.com/wwe/newz/61272-cm-punk-est-un-choix-envisageable-pour-remplacer-shawn-michaels-a-wwe-nxt",
    "https://www.catch-newz.com/international/newz/61270-trey-miguel-en-fin-de-contrat-pour-tna-destination-x",
    "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
-   "https://www.catch-newz.com/aew/newz/61254-une-organisation-difficile-a-aew-dynamite-le-11-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61265-bayley-sera-presente-a-smackdown-ce-vendredi-a-deux-semaines-des-survivor-series-wargames",
-   "https://www.catch-newz.com/wwe/newz/61264-joe-hendry-je-suis-dans-une-situation-difficile-en-ce-moment"
+   "https://www.catch-newz.com/aew/newz/61254-une-organisation-difficile-a-aew-dynamite-le-11-novembre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "4 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
