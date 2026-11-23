@@ -1,5 +1,5 @@
 {
- "at": "2026-11-23T19:59:27.648Z",
+ "at": "2026-11-23T20:50:15.231Z",
  "items": [
   {
    "t": "Preview : WWE RAW du 23 novembre 2026",
@@ -9,6 +9,26 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Résultats de ROH Fortnight To Final Battle",
+   "u": "https://www.catch-newz.com/aew/resultats/61568-resultats-de-roh-fortnight-to-final-battle",
+   "s": "Catch-Newz",
+   "d": "2026-11-23",
+   "tags": [
+    "AEW",
+    "ROH"
+   ]
+  },
+  {
+   "t": "Une première baisse de prix sur SmackDown en Belgique en 2027",
+   "u": "https://www.catch-newz.com/wwe/newz/61564-une-premiere-baisse-de-prix-sur-smackdown-en-belgique-en-2027",
+   "s": "Catch-Newz",
+   "d": "2026-11-23",
+   "tags": [
+    "WWE",
+    "SmackDown"
    ]
   },
   {
@@ -40,6 +60,13 @@
     "WWE",
     "Raw"
    ]
+  },
+  {
+   "t": "Résultats du jour 7 du NOAH Junior Grand Prix 2 - Lethal Odyssey Tour 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61569-resultats-du-jour-7-du-noah-junior-grand-prix-2-lethal-odyssey-tour-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-23",
+   "tags": []
   },
   {
    "t": "Le titre Final Rumble de Nate Prince remis en jeu en Belgique",
@@ -474,34 +501,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-21",
    "tags": []
-  },
-  {
-   "t": "Chad Gable veut récupérer son titre Intercontinental",
-   "u": "https://www.catch-newz.com/wwe/newz/61515-chad-gable-veut-recuperer-son-titre-intercontinental",
-   "s": "Catch-Newz",
-   "d": "2026-11-21",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Le dernier membre de Team USA sera annoncé à WWE RAW le 23 novembre",
-   "u": "https://www.catch-newz.com/wwe/newz/61507-le-dernier-membre-de-team-usa-sera-annonce-a-wwe-raw-le-23-novembre",
-   "s": "Catch-Newz",
-   "d": "2026-11-21",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
-  },
-  {
-   "t": "The Rock : ''Je serai aux Survivor Series pour dire merci''",
-   "u": "https://www.catch-newz.com/wwe/newz/61508-the-rock-je-serai-aux-survivor-series-pour-dire-merci",
-   "s": "Catch-Newz",
-   "d": "2026-11-21",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -1359,9 +1358,12 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/newz/61536-preview-wwe-raw-23-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61495-wwe-smackdown-20-novembre-2026",
+   "https://www.catch-newz.com/aew/resultats/61568-resultats-de-roh-fortnight-to-final-battle",
+   "https://www.catch-newz.com/wwe/newz/61564-une-premiere-baisse-de-prix-sur-smackdown-en-belgique-en-2027",
    "https://www.catch-newz.com/aew/newz/61537-preview-aew-dynamite-25-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61538-wwe-raw-du-23-novembre-2026-sera-marque-par-survivor-series",
+   "https://www.catch-newz.com/international/resultats/61569-resultats-du-jour-7-du-noah-junior-grand-prix-2-lethal-odyssey-tour-2026",
    "https://www.catch-newz.com/international/newz/61567-le-titre-final-rumble-de-nate-prince-remis-en-jeu-en-belgique",
    "https://www.catch-newz.com/international/resultats/61557-resultats-du-jour-1-de-la-njpw-world-tag-league-2026",
    "https://www.catch-newz.com/wwe/newz/61566-quels-matchs-des-survivor-series-ont-marque-la-derniere-decennie",
@@ -1653,17 +1655,14 @@
    "https://www.catch-newz.com/wwe/newz/61289-elio-lefleur-a-combattu-a-wwe-main-event",
    "https://www.catch-newz.com/international/newz/61288-la-scene-de-finalslam-devoilee",
    "https://www.catch-newz.com/international/resultats/61280-resultats-de-mlw-fusion-du-12-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61286-carte-de-ddt-shout-your-love-in-the-yokohama-ring-2026",
-   "https://www.catch-newz.com/international/newz/61287-carte-du-jour-2-du-noah-junior-grand-prix-2-legacy-rise-2026",
-   "https://www.catch-newz.com/international/resultats/61284-resultats-de-pws-meaner-than-ever",
-   "https://www.catch-newz.com/international/resultats/61283-resultats-de-zero1-random-lottery-zero1-tag-strongest-tournament-2026"
+   "https://www.catch-newz.com/international/newz/61286-carte-de-ddt-shout-your-love-in-the-yokohama-ring-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "4 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
-  "YouTube WWE": "1 nouvelles vidéos",
+  "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
