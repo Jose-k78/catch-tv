@@ -1,24 +1,6 @@
 {
- "at": "2026-11-23T13:11:25.374Z",
+ "at": "2026-11-23T14:40:13.432Z",
  "items": [
-  {
-   "t": "Le Royal Rumble féminin 2027 sera le plus grand de tous les temps ?",
-   "u": "https://www.catch-newz.com/wwe/newz/61560-le-royal-rumble-feminin-2027-sera-le-plus-grand-de-tous-les-temps",
-   "s": "Catch-Newz",
-   "d": "2026-11-23",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Jey Uso : le véritable Mister WarGames ?",
-   "u": "https://www.catch-newz.com/wwe/newz/61559-jey-uso-le-veritable-mister-wargames",
-   "s": "Catch-Newz",
-   "d": "2026-11-23",
-   "tags": [
-    "WWE"
-   ]
-  },
   {
    "t": "Preview : WWE NXT du 24 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026",
@@ -47,6 +29,40 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Résultats de Beyond Wrestling Rent Free",
+   "u": "https://www.catch-newz.com/international/resultats/61554-resultats-de-beyond-wrestling-rent-free",
+   "s": "Catch-Newz",
+   "d": "2026-11-23",
+   "tags": []
+  },
+  {
+   "t": "Carte de CMLL Lunes Clasico du 23 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61517-carte-de-cmll-lunes-clasico-du-23-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-23",
+   "tags": [
+    "CMLL"
+   ]
+  },
+  {
+   "t": "Le Royal Rumble féminin 2027 sera le plus grand de tous les temps ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61560-le-royal-rumble-feminin-2027-sera-le-plus-grand-de-tous-les-temps",
+   "s": "Catch-Newz",
+   "d": "2026-11-23",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Jey Uso : le véritable Mister WarGames ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61559-jey-uso-le-veritable-mister-wargames",
+   "s": "Catch-Newz",
+   "d": "2026-11-23",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -479,26 +495,6 @@
   {
    "t": "Résultats de WWE SmackDown du 20 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/resultats/61495-wwe-smackdown-20-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-20",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
-  },
-  {
-   "t": "Résultats de CMLL Viernes Espectacular du 20 novembre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61513-resultats-de-cmll-viernes-espectacular-du-20-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-20",
-   "tags": [
-    "CMLL",
-    "Viernes Espectacular"
-   ]
-  },
-  {
-   "t": "Preview : WWE SmackDown du 20 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61491-preview-wwe-smackdown-20-novembre-2026",
    "s": "Catch-Newz",
    "d": "2026-11-20",
    "tags": [
@@ -1357,12 +1353,14 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61495-wwe-smackdown-20-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61560-le-royal-rumble-feminin-2027-sera-le-plus-grand-de-tous-les-temps",
-   "https://www.catch-newz.com/wwe/newz/61559-jey-uso-le-veritable-mister-wargames",
    "https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61538-wwe-raw-du-23-novembre-2026-sera-marque-par-survivor-series",
    "https://www.catch-newz.com/wwe/newz/61536-preview-wwe-raw-23-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61528-resultats-de-iwrg-aaa-du-19-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61554-resultats-de-beyond-wrestling-rent-free",
+   "https://www.catch-newz.com/international/newz/61517-carte-de-cmll-lunes-clasico-du-23-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61560-le-royal-rumble-feminin-2027-sera-le-plus-grand-de-tous-les-temps",
+   "https://www.catch-newz.com/wwe/newz/61559-jey-uso-le-veritable-mister-wargames",
    "https://www.catch-newz.com/wwe/resultats/61505-resultats-et-streaming-aaa-lucha-libre-21-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61511-aew-collision-21-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61553-resultats-de-beyond-wrestling-still-alive",
@@ -1653,9 +1651,7 @@
    "https://www.catch-newz.com/international/newz/61279-carte-de-west-coast-pro-8",
    "https://www.catch-newz.com/wwe/newz/61274-john-cena-fait-le-point-sur-sa-tenue-de-retraite",
    "https://www.catch-newz.com/wwe/newz/61272-cm-punk-est-un-choix-envisageable-pour-remplacer-shawn-michaels-a-wwe-nxt",
-   "https://www.catch-newz.com/international/newz/61270-trey-miguel-en-fin-de-contrat-pour-tna-destination-x",
-   "https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026",
-   "https://www.catch-newz.com/aew/newz/61254-une-organisation-difficile-a-aew-dynamite-le-11-novembre-2026"
+   "https://www.catch-newz.com/international/newz/61270-trey-miguel-en-fin-de-contrat-pour-tna-destination-x"
   ]
  },
  "diag": {
