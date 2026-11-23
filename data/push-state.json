@@ -1,20 +1,7 @@
 {
- "at": "2026-11-23T20:50:15.280Z",
+ "at": "2026-11-23T23:48:29.388Z",
  "sa": true,
  "sent": {
-  "a:https://www.catch-newz.com/wwe/newz/61152-nikki-bella-quand-je-partirai-elles-vont-toutes-me-manquer": "2026-11-09",
-  "a:https://www.catch-newz.com/wwe/newz/61151-cruz-montana-sort-enfin-du-silence-apres-avoir-rejoint-946-la-semaine-derniere": "2026-11-09",
-  "a:https://www.catch-newz.com/wwe/newz/61154-randy-orton-na-gagne-que-3-matchs-en-ple-depuis-son-retour-en-2023": "2026-11-09",
-  "a:https://www.catch-newz.com/aew/newz/61123-preview-aew-dynamite-11-novembre-2026": "2026-11-09",
-  "a:https://www.catch-newz.com/wwe/newz/61153-allons-nous-enfin-voir-jessika-carr-sur-un-ring-de-la-wwe-prochainement": "2026-11-09",
-  "a:https://www.catch-newz.com/international/newz/61156-la-jeune-catcheuse-de-la-tna-jada-stone-a-eu-un-accident-de-voiture-ce-vendredi": "2026-11-09",
-  "a:https://www.catch-newz.com/wwe/newz/61155-paige-japprecie-vraiment-chaque-seconde-que-je-passe-a-la-tele-et-sur-ce-ring": "2026-11-09",
-  "a:https://www.catch-newz.com/international/newz/61113-carte-de-cmll-lunes-clasico-du-9-novembre-2026": "2026-11-09",
-  "a:https://www.catch-newz.com/wwe/newz/61158-preview-wwe-raw-9-novembre-2026": "2026-11-09",
-  "a:https://www.catch-newz.com/wwe/newz/61157-r-truth-annonce-le-triste-deces-de-son-papa": "2026-11-09",
-  "a:https://www.catch-newz.com/wwe/newz/61160-comment-sera-couronne-le-gagnant-du-wwe-john-cena-classic": "2026-11-09",
-  "a:https://www.catch-newz.com/wwe/newz/61159-john-cena-en-conge-apres-le-john-cena-classic": "2026-11-09",
-  "fr:2026-11-09": "2026-11-09",
   "a:https://www.catch-newz.com/wwe/newz/61183-wwe-raw-the-vision-poursuivi-par-oba-femi-penta-et-jevon-evans": "2026-11-10",
   "a:https://www.catch-newz.com/wwe/resultats/61168-wwe-raw-9-novembre-2026": "2026-11-10",
   "a:https://www.catch-newz.com/wwe/newz/61186-wwe-raw-cm-punk-integre-la-team-usa-aux-cotes-de-cody-rhodes": "2026-11-10",
@@ -366,7 +353,20 @@
   "a:https://www.catch-newz.com/international/resultats/61557-resultats-du-jour-1-de-la-njpw-world-tag-league-2026": "2026-11-23",
   "a:https://www.catch-newz.com/aew/resultats/61568-resultats-de-roh-fortnight-to-final-battle": "2026-11-23",
   "a:https://www.catch-newz.com/wwe/newz/61564-une-premiere-baisse-de-prix-sur-smackdown-en-belgique-en-2027": "2026-11-23",
-  "fr:2026-11-23": "2026-11-23"
+  "fr:2026-11-23": "2026-11-23",
+  "a:https://www.catch-newz.com/wwe/newz/61582-wwe-raw-ethan-page-reussit-sa-premiere-defense-de-titre-en-battant-rey-fenix": "2026-11-24",
+  "a:https://www.catch-newz.com/wwe/resultats/61576-wwe-raw-23-novembre-2026": "2026-11-24"
  },
- "pend": {}
+ "pend": {
+  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
+   }
+  ]
+ }
 }
