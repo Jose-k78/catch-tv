@@ -1,15 +1,6 @@
 {
- "at": "2026-11-24T21:54:48.136Z",
+ "at": "2026-11-24T22:55:48.327Z",
  "items": [
-  {
-   "t": "Triste nouvelle concernant Eugene, ancien catcheur de la WWE",
-   "u": "https://www.catch-newz.com/wwe/newz/61598-triste-nouvelle-concernant-eugene-ancien-catcheur-de-la-wwe",
-   "s": "Catch-Newz",
-   "d": "2026-11-24",
-   "tags": [
-    "WWE"
-   ]
-  },
   {
    "t": "Swerve Strickland débarque en France, à l'APC le 9 janvier 2027 à Gennevilliers",
    "u": "https://www.catch-newz.com/international/newz/61596-swerve-strickland-debarque-en-france-a-lapc-le-9-janvier-2027-a-gennevilliers",
@@ -38,6 +29,48 @@
    ]
   },
   {
+   "t": "Résultats de NHB PitFighter X21: Because The Night - A Tribute To Jeff Cannonball",
+   "u": "https://www.catch-newz.com/international/resultats/61602-resultats-de-nhb-pitfighter-x21-because-the-night-a-tribute-to-jeff-cannonball",
+   "s": "Catch-Newz",
+   "d": "2026-11-24",
+   "tags": []
+  },
+  {
+   "t": "Résultats du jour 2 de la NJPW World Tag League 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61600-resultats-du-jour-2-de-la-njpw-world-tag-league-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-24",
+   "tags": [
+    "NJPW"
+   ]
+  },
+  {
+   "t": "Résultats de Grind Time Pro Wrestling Friday Night Grind Episode 7",
+   "u": "https://www.catch-newz.com/international/resultats/61601-resultats-de-grind-time-pro-wrestling-friday-night-grind-episode-7",
+   "s": "Catch-Newz",
+   "d": "2026-11-24",
+   "tags": []
+  },
+  {
+   "t": "WWE Raw du 23 novembre : Seth Rollins dans la Team USA, derniers face-à-face avant Survivor Series",
+   "u": "https://www.voxcatch.fr/2026/11/24/wwe-raw-23-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-24",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
+  {
+   "t": "Triste nouvelle concernant Eugene, ancien catcheur de la WWE",
+   "u": "https://www.catch-newz.com/wwe/newz/61598-triste-nouvelle-concernant-eugene-ancien-catcheur-de-la-wwe",
+   "s": "Catch-Newz",
+   "d": "2026-11-24",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
    "t": "Carte de CMLL Martes De Glamour du 24 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61578-carte-de-cmll-martes-de-glamour-du-24-novembre-2026",
    "s": "Catch-Newz",
@@ -53,16 +86,6 @@
    "d": "2026-11-24",
    "tags": [
     "CMLL"
-   ]
-  },
-  {
-   "t": "WWE Raw du 23 novembre : Seth Rollins dans la Team USA, derniers face-à-face avant Survivor Series",
-   "u": "https://www.voxcatch.fr/2026/11/24/wwe-raw-23-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-24",
-   "tags": [
-    "WWE",
-    "Raw"
    ]
   },
   {
@@ -214,6 +237,15 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Résultats de CMLL Lunes Clasico du 23 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61599-resultats-de-cmll-lunes-clasico-du-23-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-23",
+   "tags": [
+    "CMLL"
    ]
   },
   {
@@ -481,36 +513,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-22",
    "tags": []
-  },
-  {
-   "t": "Carte de PPL Neon Genesis Cibernetico",
-   "u": "https://www.catch-newz.com/international/newz/61546-carte-de-ppl-neon-genesis-cibernetico",
-   "s": "Catch-Newz",
-   "d": "2026-11-22",
-   "tags": []
-  },
-  {
-   "t": "Carte de PWJ Loyalty Over Everything",
-   "u": "https://www.catch-newz.com/international/newz/61545-carte-de-pwj-loyalty-over-everything",
-   "s": "Catch-Newz",
-   "d": "2026-11-22",
-   "tags": []
-  },
-  {
-   "t": "Carte du jour 4 de la AJPW Real World Tag League 2026",
-   "u": "https://www.catch-newz.com/international/newz/61543-carte-du-jour-4-de-la-ajpw-real-world-tag-league-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-22",
-   "tags": []
-  },
-  {
-   "t": "Carte de CMLL Domingo De Glamour du 22 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61542-carte-de-cmll-domingo-de-glamour-du-22-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-22",
-   "tags": [
-    "CMLL"
-   ]
   }
  ],
  "yt": {
@@ -1421,11 +1423,15 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/wwe/newz/61598-triste-nouvelle-concernant-eugene-ancien-catcheur-de-la-wwe",
    "https://www.catch-newz.com/international/newz/61596-swerve-strickland-debarque-en-france-a-lapc-le-9-janvier-2027-a-gennevilliers",
    "https://www.catch-newz.com/wwe/resultats/61576-wwe-raw-23-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61591-spoilers-wwe-smackdown-27-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61602-resultats-de-nhb-pitfighter-x21-because-the-night-a-tribute-to-jeff-cannonball",
+   "https://www.catch-newz.com/international/resultats/61600-resultats-du-jour-2-de-la-njpw-world-tag-league-2026",
+   "https://www.catch-newz.com/international/resultats/61599-resultats-de-cmll-lunes-clasico-du-23-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61601-resultats-de-grind-time-pro-wrestling-friday-night-grind-episode-7",
+   "https://www.catch-newz.com/wwe/newz/61598-triste-nouvelle-concernant-eugene-ancien-catcheur-de-la-wwe",
    "https://www.catch-newz.com/international/newz/61578-carte-de-cmll-martes-de-glamour-du-24-novembre-2026",
    "https://www.catch-newz.com/international/newz/61573-carte-de-cmll-martes-populares-du-24-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61580-resultats-de-alto-voltaje-cmll-du-22-novembre-2026",
@@ -1716,15 +1722,11 @@
    "https://www.catch-newz.com/international/newz/61316-finalslam-nate-prince-detruit-le-reve-de-maxime-biaggi",
    "https://www.catch-newz.com/international/newz/61315-carte-de-fsw-high-octane-calm-before-the-storm-2026",
    "https://www.catch-newz.com/international/newz/61314-finalslam-djilsi-accepte-lopen-challenge-de-raj-dhesi-jinder-mahal",
-   "https://www.catch-newz.com/international/newz/61313-carte-de-aull-dinamita-pura",
-   "https://www.catch-newz.com/international/resultats/61311-resultats-de-west-coast-pro-8",
-   "https://www.catch-newz.com/international/resultats/61304-resultats-de-finalslam-2026",
-   "https://www.catch-newz.com/international/newz/61309-tna-destination-x-2026-est-maintenu-mais-avec-des-changements",
-   "https://www.catch-newz.com/international/newz/61307-carte-du-jour-2-de-tew-next-order-of-business-2026"
+   "https://www.catch-newz.com/international/newz/61313-carte-de-aull-dinamita-pura"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",

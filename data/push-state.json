@@ -1,5 +1,5 @@
 {
- "at": "2026-11-24T21:54:48.175Z",
+ "at": "2026-11-24T22:55:48.370Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/61183-wwe-raw-the-vision-poursuivi-par-oba-femi-penta-et-jevon-evans": "2026-11-10",
@@ -374,7 +374,20 @@
   "a:https://www.catch-newz.com/wwe/newz/61595-lundertaker-prete-sa-voix-pour-lintro-des-wwe-survivor-series-2026": "2026-11-24",
   "a:https://www.catch-newz.com/wwe/newz/61597-tyson-fury-devoile-souffrir-de-schizophrenie": "2026-11-24",
   "fr:2026-11-24": "2026-11-24",
-  "a:https://www.catch-newz.com/wwe/newz/61598-triste-nouvelle-concernant-eugene-ancien-catcheur-de-la-wwe": "2026-11-24"
+  "a:https://www.catch-newz.com/wwe/newz/61598-triste-nouvelle-concernant-eugene-ancien-catcheur-de-la-wwe": "2026-11-24",
+  "a:https://www.catch-newz.com/international/resultats/61600-resultats-du-jour-2-de-la-njpw-world-tag-league-2026": "2026-11-24",
+  "a:https://www.catch-newz.com/international/resultats/61599-resultats-de-cmll-lunes-clasico-du-23-novembre-2026": "2026-11-24"
  },
- "pend": {}
+ "pend": {
+  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
+   }
+  ]
+ }
 }
