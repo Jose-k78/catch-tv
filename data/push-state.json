@@ -1,5 +1,5 @@
 {
- "at": "2026-11-24T06:27:28.234Z",
+ "at": "2026-11-24T07:55:51.076Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/61183-wwe-raw-the-vision-poursuivi-par-oba-femi-penta-et-jevon-evans": "2026-11-10",
@@ -363,40 +363,5 @@
   "a:https://www.catch-newz.com/wwe/newz/61587-wwe-raw-stephanie-vaquer-et-bayley-affaiblissent-fatal-influence-quelques-jours-avant-les-wargames": "2026-11-24",
   "a:https://www.catch-newz.com/wwe/newz/61588-spoiler-wwe-smackdown-une-fin-de-regne-avant-survivor-series": "2026-11-24"
  },
- "pend": {
-  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
-   {
-    "cat": "info",
-    "title": "📰 2 nouvelles infos",
-    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "2 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 3 nouvelles infos",
-    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "3 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 2 nouvelles infos",
-    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "2 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Nouvelle info · Catch-Newz",
-    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "1 nouvelle info"
-   }
-  ]
- }
+ "pend": {}
 }
