@@ -1,6 +1,15 @@
 {
- "at": "2026-11-24T20:51:06.234Z",
+ "at": "2026-11-24T21:54:48.136Z",
  "items": [
+  {
+   "t": "Triste nouvelle concernant Eugene, ancien catcheur de la WWE",
+   "u": "https://www.catch-newz.com/wwe/newz/61598-triste-nouvelle-concernant-eugene-ancien-catcheur-de-la-wwe",
+   "s": "Catch-Newz",
+   "d": "2026-11-24",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Swerve Strickland débarque en France, à l'APC le 9 janvier 2027 à Gennevilliers",
    "u": "https://www.catch-newz.com/international/newz/61596-swerve-strickland-debarque-en-france-a-lapc-le-9-janvier-2027-a-gennevilliers",
@@ -502,13 +511,6 @@
    "tags": [
     "CMLL"
    ]
-  },
-  {
-   "t": "TLB s'exprime après son match fou contre TLB à KHAO Anarchie",
-   "u": "https://www.catch-newz.com/international/newz/61541-tlb-sexprime-apres-son-match-fou-contre-tlb-a-khao-anarchie",
-   "s": "Catch-Newz",
-   "d": "2026-11-22",
-   "tags": []
   }
  ],
  "yt": {
@@ -1419,6 +1421,7 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/newz/61598-triste-nouvelle-concernant-eugene-ancien-catcheur-de-la-wwe",
    "https://www.catch-newz.com/international/newz/61596-swerve-strickland-debarque-en-france-a-lapc-le-9-janvier-2027-a-gennevilliers",
    "https://www.catch-newz.com/wwe/resultats/61576-wwe-raw-23-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026",
@@ -1717,19 +1720,18 @@
    "https://www.catch-newz.com/international/resultats/61311-resultats-de-west-coast-pro-8",
    "https://www.catch-newz.com/international/resultats/61304-resultats-de-finalslam-2026",
    "https://www.catch-newz.com/international/newz/61309-tna-destination-x-2026-est-maintenu-mais-avec-des-changements",
-   "https://www.catch-newz.com/international/newz/61307-carte-du-jour-2-de-tew-next-order-of-business-2026",
-   "https://www.catch-newz.com/international/newz/61310-carte-de-tnt-ignition-aftershock-2026"
+   "https://www.catch-newz.com/international/newz/61307-carte-du-jour-2-de-tew-next-order-of-business-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
-  "YouTube TNA": "1 nouvelles vidéos",
+  "YouTube TNA": "0 nouvelles vidéos",
   "YouTube NJPW": "0 nouvelles vidéos",
   "YouTube Stardom": "0 nouvelles vidéos",
   "YouTube Marigold": "chaîne introuvable"
