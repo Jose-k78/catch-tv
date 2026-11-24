@@ -1,6 +1,16 @@
 {
- "at": "2026-11-24T08:59:29.848Z",
+ "at": "2026-11-24T10:05:01.927Z",
  "items": [
+  {
+   "t": "WWE Raw du 23 novembre : Seth Rollins dans la Team USA, derniers face-à-face avant Survivor Series",
+   "u": "https://www.voxcatch.fr/2026/11/24/wwe-raw-23-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-24",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
   {
    "t": "Spoiler WWE SmackDown : Une fin de règne avant Survivor Series",
    "u": "https://www.catch-newz.com/wwe/newz/61588-spoiler-wwe-smackdown-une-fin-de-regne-avant-survivor-series",
@@ -495,13 +505,6 @@
   {
    "t": "Carte du jour 7 du NOAH Junior Grand Prix 2 - Lethal Odyssey Tour 2026",
    "u": "https://www.catch-newz.com/international/newz/61525-carte-du-jour-7-du-noah-junior-grand-prix-2-lethal-odyssey-tour-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-22",
-   "tags": []
-  },
-  {
-   "t": "Carte de Sendai Girls Pro Wrestling 20th Anniversary Tour In Korakuen Hall",
-   "u": "https://www.catch-newz.com/international/newz/61526-carte-de-sendai-girls-pro-wrestling-20th-anniversary-tour-in-korakuen-hall",
    "s": "Catch-Newz",
    "d": "2026-11-22",
    "tags": []
@@ -1715,7 +1718,7 @@
  },
  "diag": {
   "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
-  "VOXcatch": "4 articles (7 j)",
+  "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
