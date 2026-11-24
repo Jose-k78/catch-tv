@@ -1,11 +1,51 @@
 {
- "at": "2026-11-24T22:55:48.327Z",
+ "at": "2026-11-24T23:47:50.973Z",
  "items": [
   {
    "t": "Swerve Strickland débarque en France, à l'APC le 9 janvier 2027 à Gennevilliers",
    "u": "https://www.catch-newz.com/international/newz/61596-swerve-strickland-debarque-en-france-a-lapc-le-9-janvier-2027-a-gennevilliers",
    "s": "Catch-Newz",
-   "d": "2026-11-24",
+   "d": "2026-11-25",
+   "tags": []
+  },
+  {
+   "t": "Spoilers de WWE SmackDown du 27 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/61591-spoilers-wwe-smackdown-27-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-25",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
+  },
+  {
+   "t": "Carte du jour 5 de la AJPW Real World Tag League 2026",
+   "u": "https://www.catch-newz.com/international/newz/61606-carte-du-jour-5-de-la-ajpw-real-world-tag-league-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-25",
+   "tags": []
+  },
+  {
+   "t": "Carte de IWRG/CMLL/LLB Lucha Revolución 2.0",
+   "u": "https://www.catch-newz.com/international/newz/61605-carte-de-iwrg-cmll-llb-lucha-revolucion-2-0",
+   "s": "Catch-Newz",
+   "d": "2026-11-25",
+   "tags": [
+    "CMLL"
+   ]
+  },
+  {
+   "t": "Résultats de CSW Second City Showdown VI",
+   "u": "https://www.catch-newz.com/international/resultats/61604-resultats-de-csw-second-city-showdown-vi",
+   "s": "Catch-Newz",
+   "d": "2026-11-25",
+   "tags": []
+  },
+  {
+   "t": "Résultats du jour 2 de la AJPW Real World Tag League 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61603-resultats-du-jour-2-de-la-ajpw-real-world-tag-league-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-25",
    "tags": []
   },
   {
@@ -19,13 +59,13 @@
    ]
   },
   {
-   "t": "Spoilers de WWE SmackDown du 27 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61591-spoilers-wwe-smackdown-27-novembre-2026",
-   "s": "Catch-Newz",
+   "t": "WWE Raw du 23 novembre : Seth Rollins dans la Team USA, derniers face-à-face avant Survivor Series",
+   "u": "https://www.voxcatch.fr/2026/11/24/wwe-raw-23-novembre-2026/",
+   "s": "VOXcatch",
    "d": "2026-11-24",
    "tags": [
     "WWE",
-    "SmackDown"
+    "Raw"
    ]
   },
   {
@@ -50,16 +90,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-24",
    "tags": []
-  },
-  {
-   "t": "WWE Raw du 23 novembre : Seth Rollins dans la Team USA, derniers face-à-face avant Survivor Series",
-   "u": "https://www.voxcatch.fr/2026/11/24/wwe-raw-23-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-24",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
   },
   {
    "t": "Triste nouvelle concernant Eugene, ancien catcheur de la WWE",
@@ -485,34 +515,6 @@
    "tags": [
     "CMLL"
    ]
-  },
-  {
-   "t": "Carte de Invasion Indy Domingo Popular du 22 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61547-carte-de-invasion-indy-domingo-popular-du-22-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-22",
-   "tags": []
-  },
-  {
-   "t": "Carte de IWRG Función Espectacular du 22 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61549-carte-de-iwrg-funcion-espectacular-du-22-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-22",
-   "tags": []
-  },
-  {
-   "t": "Carte de OVW Chained Carnage 2026",
-   "u": "https://www.catch-newz.com/international/newz/61544-carte-de-ovw-chained-carnage-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-22",
-   "tags": []
-  },
-  {
-   "t": "Résultats du jour 5 du NOAH Junior Grand Prix 2 - Lethal Odyssey Tour 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61548-resultats-du-jour-5-du-noah-junior-grand-prix-2-lethal-odyssey-tour-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-22",
-   "tags": []
   }
  ],
  "yt": {
@@ -1427,6 +1429,10 @@
    "https://www.catch-newz.com/wwe/resultats/61576-wwe-raw-23-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61591-spoilers-wwe-smackdown-27-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61606-carte-du-jour-5-de-la-ajpw-real-world-tag-league-2026",
+   "https://www.catch-newz.com/international/newz/61605-carte-de-iwrg-cmll-llb-lucha-revolucion-2-0",
+   "https://www.catch-newz.com/international/resultats/61604-resultats-de-csw-second-city-showdown-vi",
+   "https://www.catch-newz.com/international/resultats/61603-resultats-du-jour-2-de-la-ajpw-real-world-tag-league-2026",
    "https://www.catch-newz.com/international/resultats/61602-resultats-de-nhb-pitfighter-x21-because-the-night-a-tribute-to-jeff-cannonball",
    "https://www.catch-newz.com/international/resultats/61600-resultats-du-jour-2-de-la-njpw-world-tag-league-2026",
    "https://www.catch-newz.com/international/resultats/61599-resultats-de-cmll-lunes-clasico-du-23-novembre-2026",
@@ -1718,16 +1724,12 @@
    "https://www.catch-newz.com/international/newz/61319-finalslam-premiere-reaction-daminematue-apres-sa-victoire-contre-squeezie",
    "https://www.catch-newz.com/international/newz/61318-finalslam-squeezie-veut-deja-une-revanche-contre-aminematue",
    "https://www.catch-newz.com/international/newz/61317-finalslam-match-exceptionnel-entre-squeezie-et-aminematue-un-champion-couronne",
-   "https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61316-finalslam-nate-prince-detruit-le-reve-de-maxime-biaggi",
-   "https://www.catch-newz.com/international/newz/61315-carte-de-fsw-high-octane-calm-before-the-storm-2026",
-   "https://www.catch-newz.com/international/newz/61314-finalslam-djilsi-accepte-lopen-challenge-de-raj-dhesi-jinder-mahal",
-   "https://www.catch-newz.com/international/newz/61313-carte-de-aull-dinamita-pura"
+   "https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026"
   ]
  },
  "diag": {
   "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
-  "VOXcatch": "5 articles (7 j)",
+  "VOXcatch": "4 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
