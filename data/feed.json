@@ -1,6 +1,33 @@
 {
- "at": "2026-11-24T13:10:54.914Z",
+ "at": "2026-11-24T15:38:22.678Z",
  "items": [
+  {
+   "t": "Le sacre de Charlotte Flair à WrestleMania 32 en 2016 a profondément marqué Charlotte Flair",
+   "u": "https://www.catch-newz.com/wwe/newz/61590-le-sacre-de-charlotte-flair-a-wrestlemania-32-en-2016-a-profondement-marque-charlotte-flair",
+   "s": "Catch-Newz",
+   "d": "2026-11-24",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Qu'est-ce qu'aime le plus Chelsea Green dans le métier de catcheuse ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61589-quest-ce-quaime-le-plus-chelsea-green-dans-le-metier-de-catcheuse",
+   "s": "Catch-Newz",
+   "d": "2026-11-24",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Carte de CMLL Martes De Glamour du 24 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61578-carte-de-cmll-martes-de-glamour-du-24-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-24",
+   "tags": [
+    "CMLL"
+   ]
+  },
   {
    "t": "Carte de CMLL Martes Populares du 24 novembre 2026",
    "u": "https://www.catch-newz.com/international/newz/61573-carte-de-cmll-martes-populares-du-24-novembre-2026",
@@ -485,31 +512,6 @@
     "AEW",
     "TNA"
    ]
-  },
-  {
-   "t": "Résultats de NJPW Road To World Tag League 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61530-resultats-de-njpw-road-to-world-tag-league-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-22",
-   "tags": [
-    "NJPW"
-   ]
-  },
-  {
-   "t": "Résultats de NJPW Bound For Unbound",
-   "u": "https://www.catch-newz.com/international/resultats/61529-resultats-de-njpw-bound-for-unbound",
-   "s": "Catch-Newz",
-   "d": "2026-11-22",
-   "tags": [
-    "NJPW"
-   ]
-  },
-  {
-   "t": "Les membres d'Idolatry deviennent les premiers champions Trio de KHAO",
-   "u": "https://www.catch-newz.com/international/newz/61527-les-membres-didolatry-deviennent-les-premiers-champions-trio-de-khao",
-   "s": "Catch-Newz",
-   "d": "2026-11-22",
-   "tags": []
   }
  ],
  "yt": {
@@ -1417,7 +1419,10 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61576-wwe-raw-23-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61590-le-sacre-de-charlotte-flair-a-wrestlemania-32-en-2016-a-profondement-marque-charlotte-flair",
+   "https://www.catch-newz.com/wwe/newz/61589-quest-ce-quaime-le-plus-chelsea-green-dans-le-metier-de-catcheuse",
    "https://www.catch-newz.com/international/resultats/61572-resultats-de-cmll-domingo-familiar-du-22-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61578-carte-de-cmll-martes-de-glamour-du-24-novembre-2026",
    "https://www.catch-newz.com/international/newz/61573-carte-de-cmll-martes-populares-du-24-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61580-resultats-de-alto-voltaje-cmll-du-22-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61577-resultats-de-iwrg-funcion-espectacular-du-22-novembre-2026",
@@ -1712,14 +1717,11 @@
    "https://www.catch-newz.com/international/resultats/61295-resultats-de-bjw-du-23-octobre-2026",
    "https://www.catch-newz.com/international/newz/61299-les-ceintures-de-finalslam-devoilees",
    "https://www.catch-newz.com/aew/resultats/61281-resultats-de-roh-du-12-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61297-resultats-de-beyond-wrestling-open-series-250",
-   "https://www.catch-newz.com/wwe/newz/61241-damian-priest-explique-pourquoi-il-a-soudainement-disparu-de-la-aaa",
-   "https://www.catch-newz.com/wwe/resultats/61269-resultats-de-wwe-road-to-survivor-series-du-12-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61294-resultats-du-jour-1-de-dg-the-gate-of-evolution-2026"
+   "https://www.catch-newz.com/international/resultats/61297-resultats-de-beyond-wrestling-open-series-250"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
