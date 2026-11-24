@@ -1,5 +1,5 @@
 {
- "at": "2026-11-24T02:14:56.618Z",
+ "at": "2026-11-24T03:26:58.290Z",
  "items": [
   {
    "t": "WWE RAW : Grosse bagarre entre la Bloodline et 946 avant les WarGames",
@@ -1387,6 +1387,18 @@
    {
     "id": "CBZLJly1fik",
     "t": "Rey Mysterio and Americano take down Dominik Mysterio and JD McDonagh: Raw highlights, Nov. 23, 2026"
+   },
+   {
+    "id": "ySifeUCad2I",
+    "t": "The Bloodline and The 946 get into an epic standoff: Raw highlights, Nov. 23, 2026"
+   },
+   {
+    "id": "mjoZdTCR_-Q",
+    "t": "Stephanie Vaquer and Bayley clash against Fatal Influence: Raw highlights, Nov. 23, 2026"
+   },
+   {
+    "id": "QMGCJm7Hmsk",
+    "t": "Liv Morgan and Becky Lynch prepare for Survivor Series: Raw highlights, Nov. 23, 2026"
    }
   ]
  },
@@ -1400,11 +1412,11 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61576-wwe-raw-23-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61579-wwe-raw-grosse-bagarre-entre-la-bloodline-et-946-avant-les-wargames",
-   "https://www.catch-newz.com/wwe/newz/61587-wwe-raw-stephanie-vaquer-et-bayley-affaiblissent-fatal-influence-quelques-jours-avant-les-wargames",
    "https://www.catch-newz.com/international/resultats/61572-resultats-de-cmll-domingo-familiar-du-22-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61577-resultats-de-iwrg-funcion-espectacular-du-22-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61575-resultats-de-tochi-pro-du-20-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61579-wwe-raw-grosse-bagarre-entre-la-bloodline-et-946-avant-les-wargames",
+   "https://www.catch-newz.com/wwe/newz/61587-wwe-raw-stephanie-vaquer-et-bayley-affaiblissent-fatal-influence-quelques-jours-avant-les-wargames",
    "https://www.catch-newz.com/wwe/resultats/61495-wwe-smackdown-20-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61586-wwe-raw-lyra-valkyria-perd-son-match-apres-le-sol-snatcher-de-sa-rivale-sol-ruca",
    "https://www.catch-newz.com/wwe/newz/61585-wwe-raw-seth-rollins-est-bien-le-5eme-membre-de-la-team-usa",
@@ -1702,10 +1714,10 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "4 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
-  "YouTube WWE": "5 nouvelles vidéos",
+  "YouTube WWE": "3 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
