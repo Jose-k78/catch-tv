@@ -1,5 +1,5 @@
 {
- "at": "2026-11-24T17:51:40.938Z",
+ "at": "2026-11-24T18:56:29.723Z",
  "items": [
   {
    "t": "Swerve Strickland débarque en France, à l'APC le 9 janvier 2027 à Gennevilliers",
@@ -9,8 +9,8 @@
    "tags": []
   },
   {
-   "t": "L'Undertaker prête sa voix pour l'intro des WWE Survivor Series 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61595-lundertaker-prete-sa-voix-pour-lintro-des-wwe-survivor-series-2026",
+   "t": "Tyson Fury dévoile souffrir de schizophrénie",
+   "u": "https://www.catch-newz.com/wwe/newz/61597-tyson-fury-devoile-souffrir-de-schizophrenie",
    "s": "Catch-Newz",
    "d": "2026-11-24",
    "tags": [
@@ -63,6 +63,15 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "L'Undertaker prête sa voix pour l'intro des WWE Survivor Series 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61595-lundertaker-prete-sa-voix-pour-lintro-des-wwe-survivor-series-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-24",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -500,15 +509,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-22",
    "tags": []
-  },
-  {
-   "t": "Carte de CMLL Domingo Familiar du 22 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61516-carte-de-cmll-domingo-familiar-du-22-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-22",
-   "tags": [
-    "CMLL"
-   ]
   }
  ],
  "yt": {
@@ -1417,13 +1417,14 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/international/newz/61596-swerve-strickland-debarque-en-france-a-lapc-le-9-janvier-2027-a-gennevilliers",
    "https://www.catch-newz.com/wwe/resultats/61576-wwe-raw-23-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61595-lundertaker-prete-sa-voix-pour-lintro-des-wwe-survivor-series-2026",
+   "https://www.catch-newz.com/wwe/newz/61597-tyson-fury-devoile-souffrir-de-schizophrenie",
    "https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61591-spoilers-wwe-smackdown-27-novembre-2026",
    "https://www.catch-newz.com/international/newz/61578-carte-de-cmll-martes-de-glamour-du-24-novembre-2026",
    "https://www.catch-newz.com/international/newz/61573-carte-de-cmll-martes-populares-du-24-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61580-resultats-de-alto-voltaje-cmll-du-22-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61577-resultats-de-iwrg-funcion-espectacular-du-22-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61595-lundertaker-prete-sa-voix-pour-lintro-des-wwe-survivor-series-2026",
    "https://www.catch-newz.com/wwe/newz/61594-deux-dates-pour-decouvrir-les-derniers-participants-du-john-cena-classic",
    "https://www.catch-newz.com/aew/newz/61593-laew-annonce-le-remplacant-de-daniel-garcia-pour-le-continental-classic",
    "https://www.catch-newz.com/culture/cineserie/61592-liv-morgan-aura-un-role-dans-le-film-hooters",
@@ -1713,8 +1714,7 @@
    "https://www.catch-newz.com/international/resultats/61304-resultats-de-finalslam-2026",
    "https://www.catch-newz.com/international/newz/61309-tna-destination-x-2026-est-maintenu-mais-avec-des-changements",
    "https://www.catch-newz.com/international/newz/61307-carte-du-jour-2-de-tew-next-order-of-business-2026",
-   "https://www.catch-newz.com/international/newz/61310-carte-de-tnt-ignition-aftershock-2026",
-   "https://www.catch-newz.com/wwe/newz/61301-spike-dudley-signe-un-contrat-de-legende-avec-la-wwe"
+   "https://www.catch-newz.com/international/newz/61310-carte-de-tnt-ignition-aftershock-2026"
   ]
  },
  "diag": {
