@@ -1,6 +1,16 @@
 {
- "at": "2026-11-24T03:26:58.290Z",
+ "at": "2026-11-24T06:27:28.177Z",
  "items": [
+  {
+   "t": "Spoiler WWE SmackDown : Une fin de règne avant Survivor Series",
+   "u": "https://www.catch-newz.com/wwe/newz/61588-spoiler-wwe-smackdown-une-fin-de-regne-avant-survivor-series",
+   "s": "Catch-Newz",
+   "d": "2026-11-24",
+   "tags": [
+    "WWE",
+    "SmackDown"
+   ]
+  },
   {
    "t": "WWE RAW : Grosse bagarre entre la Bloodline et 946 avant les WarGames",
    "u": "https://www.catch-newz.com/wwe/newz/61579-wwe-raw-grosse-bagarre-entre-la-bloodline-et-946-avant-les-wargames",
@@ -494,16 +504,6 @@
    "d": "2026-11-22",
    "tags": [
     "WWE"
-   ]
-  },
-  {
-   "t": "AEW Collision : Daniel Garcia blessé pendant le Continental Classic",
-   "u": "https://www.catch-newz.com/aew/newz/61523-aew-collision-daniel-garcia-blesse-pendant-le-continental-classic",
-   "s": "Catch-Newz",
-   "d": "2026-11-22",
-   "tags": [
-    "AEW",
-    "Collision"
    ]
   }
  ],
@@ -1412,6 +1412,7 @@
  "seen": {
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61576-wwe-raw-23-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61588-spoiler-wwe-smackdown-une-fin-de-regne-avant-survivor-series",
    "https://www.catch-newz.com/international/resultats/61572-resultats-de-cmll-domingo-familiar-du-22-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61577-resultats-de-iwrg-funcion-espectacular-du-22-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61575-resultats-de-tochi-pro-du-20-novembre-2026",
@@ -1709,15 +1710,14 @@
    "https://www.catch-newz.com/wwe/resultats/61269-resultats-de-wwe-road-to-survivor-series-du-12-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61294-resultats-du-jour-1-de-dg-the-gate-of-evolution-2026",
    "https://www.catch-newz.com/wwe/newz/61290-carlito-jai-limpression-que-la-wwe-ne-croyait-pas-en-liv-morgan",
-   "https://www.catch-newz.com/wwe/resultats/61268-resultats-et-streaming-de-wwe-evolve-du-11-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61266-mila-smidt-cory-zero-et-jgu-mises-a-lhonneur-dans-le-pwi-250-feminin-2026"
+   "https://www.catch-newz.com/wwe/resultats/61268-resultats-et-streaming-de-wwe-evolve-du-11-novembre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "4 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
-  "YouTube WWE": "3 nouvelles vidéos",
+  "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
