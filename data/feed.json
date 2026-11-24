@@ -1,6 +1,15 @@
 {
- "at": "2026-11-24T10:05:01.927Z",
+ "at": "2026-11-24T13:10:54.914Z",
  "items": [
+  {
+   "t": "Carte de CMLL Martes Populares du 24 novembre 2026",
+   "u": "https://www.catch-newz.com/international/newz/61573-carte-de-cmll-martes-populares-du-24-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-24",
+   "tags": [
+    "CMLL"
+   ]
+  },
   {
    "t": "WWE Raw du 23 novembre : Seth Rollins dans la Team USA, derniers face-à-face avant Survivor Series",
    "u": "https://www.voxcatch.fr/2026/11/24/wwe-raw-23-novembre-2026/",
@@ -498,13 +507,6 @@
   {
    "t": "Les membres d'Idolatry deviennent les premiers champions Trio de KHAO",
    "u": "https://www.catch-newz.com/international/newz/61527-les-membres-didolatry-deviennent-les-premiers-champions-trio-de-khao",
-   "s": "Catch-Newz",
-   "d": "2026-11-22",
-   "tags": []
-  },
-  {
-   "t": "Carte du jour 7 du NOAH Junior Grand Prix 2 - Lethal Odyssey Tour 2026",
-   "u": "https://www.catch-newz.com/international/newz/61525-carte-du-jour-7-du-noah-junior-grand-prix-2-lethal-odyssey-tour-2026",
    "s": "Catch-Newz",
    "d": "2026-11-22",
    "tags": []
@@ -1416,6 +1418,7 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61576-wwe-raw-23-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61572-resultats-de-cmll-domingo-familiar-du-22-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61573-carte-de-cmll-martes-populares-du-24-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61580-resultats-de-alto-voltaje-cmll-du-22-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61577-resultats-de-iwrg-funcion-espectacular-du-22-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61575-resultats-de-tochi-pro-du-20-novembre-2026",
@@ -1712,8 +1715,7 @@
    "https://www.catch-newz.com/international/resultats/61297-resultats-de-beyond-wrestling-open-series-250",
    "https://www.catch-newz.com/wwe/newz/61241-damian-priest-explique-pourquoi-il-a-soudainement-disparu-de-la-aaa",
    "https://www.catch-newz.com/wwe/resultats/61269-resultats-de-wwe-road-to-survivor-series-du-12-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61294-resultats-du-jour-1-de-dg-the-gate-of-evolution-2026",
-   "https://www.catch-newz.com/wwe/newz/61290-carlito-jai-limpression-que-la-wwe-ne-croyait-pas-en-liv-morgan"
+   "https://www.catch-newz.com/international/resultats/61294-resultats-du-jour-1-de-dg-the-gate-of-evolution-2026"
   ]
  },
  "diag": {
