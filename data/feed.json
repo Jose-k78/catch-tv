@@ -1,5 +1,5 @@
 {
- "at": "2026-11-24T07:55:51.026Z",
+ "at": "2026-11-24T08:59:29.848Z",
  "items": [
   {
    "t": "Spoiler WWE SmackDown : Une fin de règne avant Survivor Series",
@@ -324,6 +324,15 @@
    ]
   },
   {
+   "t": "Résultats de Alto Voltaje/CMLL du 22 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61580-resultats-de-alto-voltaje-cmll-du-22-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-22",
+   "tags": [
+    "CMLL"
+   ]
+  },
+  {
    "t": "Résultats de IWRG Función Espectacular du 22 novembre 2026",
    "u": "https://www.catch-newz.com/international/resultats/61577-resultats-de-iwrg-funcion-espectacular-du-22-novembre-2026",
    "s": "Catch-Newz",
@@ -496,15 +505,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-22",
    "tags": []
-  },
-  {
-   "t": "La WWE trouve un nouveau roster pour Kiana James",
-   "u": "https://www.catch-newz.com/wwe/newz/61524-la-wwe-trouve-un-nouveau-roster-pour-kiana-james",
-   "s": "Catch-Newz",
-   "d": "2026-11-22",
-   "tags": [
-    "WWE"
-   ]
   }
  ],
  "yt": {
@@ -1413,6 +1413,7 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61576-wwe-raw-23-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61572-resultats-de-cmll-domingo-familiar-du-22-novembre-2026",
+   "https://www.catch-newz.com/international/resultats/61580-resultats-de-alto-voltaje-cmll-du-22-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61577-resultats-de-iwrg-funcion-espectacular-du-22-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61575-resultats-de-tochi-pro-du-20-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61588-spoiler-wwe-smackdown-une-fin-de-regne-avant-survivor-series",
@@ -1709,12 +1710,11 @@
    "https://www.catch-newz.com/wwe/newz/61241-damian-priest-explique-pourquoi-il-a-soudainement-disparu-de-la-aaa",
    "https://www.catch-newz.com/wwe/resultats/61269-resultats-de-wwe-road-to-survivor-series-du-12-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61294-resultats-du-jour-1-de-dg-the-gate-of-evolution-2026",
-   "https://www.catch-newz.com/wwe/newz/61290-carlito-jai-limpression-que-la-wwe-ne-croyait-pas-en-liv-morgan",
-   "https://www.catch-newz.com/wwe/resultats/61268-resultats-et-streaming-de-wwe-evolve-du-11-novembre-2026"
+   "https://www.catch-newz.com/wwe/newz/61290-carlito-jai-limpression-que-la-wwe-ne-croyait-pas-en-liv-morgan"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "4 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
