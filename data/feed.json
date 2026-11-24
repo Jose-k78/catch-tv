@@ -1,9 +1,29 @@
 {
- "at": "2026-11-23T23:48:29.335Z",
+ "at": "2026-11-24T01:00:25.306Z",
  "items": [
   {
-   "t": "WWE RAW : Ethan Page réussit sa première défense de titre en battant Rey Fenix",
-   "u": "https://www.catch-newz.com/wwe/newz/61582-wwe-raw-ethan-page-reussit-sa-premiere-defense-de-titre-en-battant-rey-fenix",
+   "t": "WWE RAW : Lyra Valkyria perd son match après le Sol Snatcher de sa rivale Sol Ruca",
+   "u": "https://www.catch-newz.com/wwe/newz/61586-wwe-raw-lyra-valkyria-perd-son-match-apres-le-sol-snatcher-de-sa-rivale-sol-ruca",
+   "s": "Catch-Newz",
+   "d": "2026-11-24",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
+  {
+   "t": "WWE RAW : Seth Rollins est bien le 5ème membre de la team USA",
+   "u": "https://www.catch-newz.com/wwe/newz/61585-wwe-raw-seth-rollins-est-bien-le-5eme-membre-de-la-team-usa",
+   "s": "Catch-Newz",
+   "d": "2026-11-24",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
+  {
+   "t": "WWE RAW : El Grande Americano rejoint team Mexico pour aider Rey Mysterio",
+   "u": "https://www.catch-newz.com/wwe/newz/61583-wwe-raw-el-grande-americano-rejoint-team-mexico-pour-aider-rey-mysterio",
    "s": "Catch-Newz",
    "d": "2026-11-24",
    "tags": [
@@ -19,6 +39,16 @@
    "tags": [
     "AEW",
     "Dynamite"
+   ]
+  },
+  {
+   "t": "WWE RAW : Ethan Page réussit sa première défense de titre en battant Rey Fenix",
+   "u": "https://www.catch-newz.com/wwe/newz/61582-wwe-raw-ethan-page-reussit-sa-premiere-defense-de-titre-en-battant-rey-fenix",
+   "s": "Catch-Newz",
+   "d": "2026-11-24",
+   "tags": [
+    "WWE",
+    "Raw"
    ]
   },
   {
@@ -471,35 +501,6 @@
    "tags": [
     "WWE",
     "SmackDown"
-   ]
-  },
-  {
-   "t": "Résultats et streaming de AAA Lucha Libre du 21 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61505-resultats-et-streaming-aaa-lucha-libre-21-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-21",
-   "tags": [
-    "WWE",
-    "AAA"
-   ]
-  },
-  {
-   "t": "Résultats de AEW Collision du 21 novembre 2026",
-   "u": "https://www.catch-newz.com/aew/resultats/61511-aew-collision-21-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-21",
-   "tags": [
-    "AEW",
-    "Collision"
-   ]
-  },
-  {
-   "t": "Résultats de CMLL Sabado De Coliseo du 21 novembre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61539-resultats-de-cmll-sabado-de-coliseo-du-21-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-21",
-   "tags": [
-    "CMLL"
    ]
   }
  ],
@@ -1345,6 +1346,25 @@
     "id": "K9eL42h1E_s",
     "t": "MIXED TAG TEAM ACTION! Death Riders contre Shane Taylor Promotions"
    }
+  ],
+  "WWE|Raw|2026-11-23": [
+   {
+    "id": "RX3wc0zKb_g",
+    "t": "Lyra Valkyria and Sol Ruca confront IYO SKY: Raw highlights, Nov. 23, 2026"
+   },
+   {
+    "id": "aNsut1Wo3lw",
+    "t": "Rey Mysterio reveals El Grande Americano for Team Mexico: Raw highlights, Nov. 23, 2026"
+   },
+   {
+    "id": "hP8gA_MDHFA",
+    "t": "Ethan Page retains Intercontinental Title against Rey Fenix: Raw highlights, Nov. 23, 2026",
+    "sp": true
+   },
+   {
+    "id": "_asYiUT2XOw",
+    "t": "The 946 vow to take everything from The Bloodline: Raw highlights, Nov. 23, 2026"
+   }
   ]
  },
  "rss": {
@@ -1358,12 +1378,15 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/wwe/resultats/61576-wwe-raw-23-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61495-wwe-smackdown-20-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61582-wwe-raw-ethan-page-reussit-sa-premiere-defense-de-titre-en-battant-rey-fenix",
+   "https://www.catch-newz.com/wwe/newz/61586-wwe-raw-lyra-valkyria-perd-son-match-apres-le-sol-snatcher-de-sa-rivale-sol-ruca",
+   "https://www.catch-newz.com/wwe/newz/61585-wwe-raw-seth-rollins-est-bien-le-5eme-membre-de-la-team-usa",
+   "https://www.catch-newz.com/wwe/newz/61583-wwe-raw-el-grande-americano-rejoint-team-mexico-pour-aider-rey-mysterio",
    "https://www.catch-newz.com/international/resultats/61572-resultats-de-cmll-domingo-familiar-du-22-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61537-preview-aew-dynamite-25-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61577-resultats-de-iwrg-funcion-espectacular-du-22-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61575-resultats-de-tochi-pro-du-20-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61582-wwe-raw-ethan-page-reussit-sa-premiere-defense-de-titre-en-battant-rey-fenix",
+   "https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61536-preview-wwe-raw-23-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61538-wwe-raw-du-23-novembre-2026-sera-marque-par-survivor-series",
    "https://www.catch-newz.com/international/resultats/61571-resultats-de-amw-showdown-61",
@@ -1652,17 +1675,14 @@
    "https://www.catch-newz.com/wwe/resultats/61268-resultats-et-streaming-de-wwe-evolve-du-11-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61266-mila-smidt-cory-zero-et-jgu-mises-a-lhonneur-dans-le-pwi-250-feminin-2026",
    "https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61273-que-faut-il-penser-des-critiques-virulentes-du-videaste-cine-regelegorila-a-propos-de-final-slam",
-   "https://www.catch-newz.com/wwe/newz/61267-preview-aaa-lucha-libre-14-novembre-2026",
-   "https://www.catch-newz.com/international/newz/60668-carte-finalslam-2026",
-   "https://www.catch-newz.com/wwe/newz/61293-charlotte-flair-et-fatal-influence-invitees-au-john-cena-classic-a-smackdown"
+   "https://www.catch-newz.com/international/newz/61273-que-faut-il-penser-des-critiques-virulentes-du-videaste-cine-regelegorila-a-propos-de-final-slam"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
   "VOXcatch": "4 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
-  "YouTube WWE": "0 nouvelles vidéos",
+  "YouTube WWE": "4 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",

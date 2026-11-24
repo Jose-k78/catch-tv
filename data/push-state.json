@@ -1,5 +1,5 @@
 {
- "at": "2026-11-23T23:48:29.388Z",
+ "at": "2026-11-24T01:00:25.347Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/61183-wwe-raw-the-vision-poursuivi-par-oba-femi-penta-et-jevon-evans": "2026-11-10",
@@ -355,7 +355,10 @@
   "a:https://www.catch-newz.com/wwe/newz/61564-une-premiere-baisse-de-prix-sur-smackdown-en-belgique-en-2027": "2026-11-23",
   "fr:2026-11-23": "2026-11-23",
   "a:https://www.catch-newz.com/wwe/newz/61582-wwe-raw-ethan-page-reussit-sa-premiere-defense-de-titre-en-battant-rey-fenix": "2026-11-24",
-  "a:https://www.catch-newz.com/wwe/resultats/61576-wwe-raw-23-novembre-2026": "2026-11-24"
+  "a:https://www.catch-newz.com/wwe/resultats/61576-wwe-raw-23-novembre-2026": "2026-11-24",
+  "a:https://www.catch-newz.com/wwe/newz/61586-wwe-raw-lyra-valkyria-perd-son-match-apres-le-sol-snatcher-de-sa-rivale-sol-ruca": "2026-11-24",
+  "a:https://www.catch-newz.com/wwe/newz/61585-wwe-raw-seth-rollins-est-bien-le-5eme-membre-de-la-team-usa": "2026-11-24",
+  "a:https://www.catch-newz.com/wwe/newz/61583-wwe-raw-el-grande-americano-rejoint-team-mexico-pour-aider-rey-mysterio": "2026-11-24"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -366,6 +369,14 @@
     "url": "#/",
     "tag": "art",
     "short": "2 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 3 nouvelles infos",
+    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "3 nouvelles infos"
    }
   ]
  }
