@@ -1,22 +1,31 @@
 {
- "at": "2026-11-25T15:00:23.628Z",
+ "at": "2026-11-25T17:02:18.947Z",
  "items": [
+  {
+   "t": "Les meilleurs cadeaux WWE du temps des fêtes 2026 pour les fans de catch",
+   "u": "https://www.catch-newz.com/wwe/newz/61584-les-meilleurs-cadeaux-wwe-du-temps-des-fetes-2026-pour-les-fans-de-catch",
+   "s": "Catch-Newz",
+   "d": "2026-11-25",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Preview : AEW Dynamite du 25 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/newz/61537-preview-aew-dynamite-25-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-25",
+   "tags": [
+    "AEW",
+    "Dynamite"
+   ]
+  },
   {
    "t": "Swerve Strickland débarque en France, à l'APC le 9 janvier 2027 à Gennevilliers",
    "u": "https://www.catch-newz.com/international/newz/61596-swerve-strickland-debarque-en-france-a-lapc-le-9-janvier-2027-a-gennevilliers",
    "s": "Catch-Newz",
    "d": "2026-11-25",
    "tags": []
-  },
-  {
-   "t": "Spoilers de WWE SmackDown du 27 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61591-spoilers-wwe-smackdown-27-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-25",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
   },
   {
    "t": "WWE NXT du 24 novembre : Nouvelle championne d’Amérique du Nord",
@@ -26,6 +35,16 @@
    "tags": [
     "WWE",
     "NXT"
+   ]
+  },
+  {
+   "t": "Spoilers de WWE SmackDown du 27 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/61591-spoilers-wwe-smackdown-27-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-25",
+   "tags": [
+    "WWE",
+    "SmackDown"
    ]
   },
   {
@@ -305,16 +324,6 @@
    ]
   },
   {
-   "t": "Preview : AEW Dynamite du 25 novembre 2026",
-   "u": "https://www.catch-newz.com/aew/newz/61537-preview-aew-dynamite-25-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-24",
-   "tags": [
-    "AEW",
-    "Dynamite"
-   ]
-  },
-  {
    "t": "WWE RAW : Ethan Page réussit sa première défense de titre en battant Rey Fenix",
    "u": "https://www.catch-newz.com/wwe/newz/61582-wwe-raw-ethan-page-reussit-sa-premiere-defense-de-titre-en-battant-rey-fenix",
    "s": "Catch-Newz",
@@ -515,13 +524,6 @@
   {
    "t": "Résultats de Beyond Wrestling Still Alive",
    "u": "https://www.catch-newz.com/international/resultats/61553-resultats-de-beyond-wrestling-still-alive",
-   "s": "Catch-Newz",
-   "d": "2026-11-23",
-   "tags": []
-  },
-  {
-   "t": "Résultats de Sendai Girls Pro Wrestling 20th Anniversary Tour In Korakuen Hall",
-   "u": "https://www.catch-newz.com/international/resultats/61552-resultats-de-sendai-girls-pro-wrestling-20th-anniversary-tour-in-korakuen-hall",
    "s": "Catch-Newz",
    "d": "2026-11-23",
    "tags": []
@@ -1471,10 +1473,12 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/newz/61584-les-meilleurs-cadeaux-wwe-du-temps-des-fetes-2026-pour-les-fans-de-catch",
+   "https://www.catch-newz.com/aew/newz/61537-preview-aew-dynamite-25-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61607-wwe-nxt-24-novembre-2026",
    "https://www.catch-newz.com/international/newz/61596-swerve-strickland-debarque-en-france-a-lapc-le-9-janvier-2027-a-gennevilliers",
-   "https://www.catch-newz.com/wwe/resultats/61576-wwe-raw-23-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026",
+   "https://www.catch-newz.com/wwe/resultats/61576-wwe-raw-23-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61591-spoilers-wwe-smackdown-27-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61611-royce-keys-menace-the-rock-en-amont-des-survivor-series",
    "https://www.catch-newz.com/wwe/newz/61610-trick-williams-gunther-sest-fait-botter-le-c-un-point-cest-tout",
@@ -1510,7 +1514,6 @@
    "https://www.catch-newz.com/wwe/newz/61586-wwe-raw-lyra-valkyria-perd-son-match-apres-le-sol-snatcher-de-sa-rivale-sol-ruca",
    "https://www.catch-newz.com/wwe/newz/61585-wwe-raw-seth-rollins-est-bien-le-5eme-membre-de-la-team-usa",
    "https://www.catch-newz.com/wwe/newz/61583-wwe-raw-el-grande-americano-rejoint-team-mexico-pour-aider-rey-mysterio",
-   "https://www.catch-newz.com/aew/newz/61537-preview-aew-dynamite-25-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61582-wwe-raw-ethan-page-reussit-sa-premiere-defense-de-titre-en-battant-rey-fenix",
    "https://www.catch-newz.com/wwe/newz/61536-preview-wwe-raw-23-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61538-wwe-raw-du-23-novembre-2026-sera-marque-par-survivor-series",
@@ -1769,8 +1772,7 @@
    "https://www.catch-newz.com/aew/newz/61322-ilja-dragunov-remporte-son-premier-championnat-a-aew-full-gear-2026",
    "https://www.catch-newz.com/international/newz/61325-carte-du-jour-1-de-la-ajpw-real-world-tag-league-2026",
    "https://www.catch-newz.com/international/newz/61324-carte-du-jour-3-du-noah-junior-grand-prix-2-lethal-odyssey-tour-2026",
-   "https://www.catch-newz.com/aew/resultats/61305-aew-full-gear-2026",
-   "https://www.catch-newz.com/aew/newz/61321-les-kasper-brothers-creed-brothers-signent-a-laew"
+   "https://www.catch-newz.com/aew/resultats/61305-aew-full-gear-2026"
   ]
  },
  "diag": {
