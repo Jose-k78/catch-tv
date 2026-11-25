@@ -1,5 +1,5 @@
 {
- "at": "2026-11-25T17:49:24.187Z",
+ "at": "2026-11-25T18:50:02.240Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/61205-si-le-john-cena-classic-est-nul-il-ne-reviendra-pas-en-2027": "2026-11-11",
@@ -375,7 +375,10 @@
   "a:https://www.catch-newz.com/international/newz/61612-les-hardy-boyz-en-fin-contrat-a-la-tna-pour-terminer-2026": "2026-11-25",
   "a:https://www.catch-newz.com/aew/newz/61613-les-kasper-brothers-repondent-aux-critiques-de-leur-finisher": "2026-11-25",
   "a:https://www.catch-newz.com/international/resultats/61614-resultats-du-jour-3-de-la-njpw-world-tag-league-2026": "2026-11-25",
-  "a:https://www.catch-newz.com/international/resultats/61616-resultats-de-cmll-martes-de-glamour-du-24-novembre-2026": "2026-11-25"
+  "a:https://www.catch-newz.com/international/resultats/61616-resultats-de-cmll-martes-de-glamour-du-24-novembre-2026": "2026-11-25",
+  "a:https://www.catch-newz.com/international/resultats/61619-resultats-de-cmll-martes-populares-du-24-novembre-2026": "2026-11-25",
+  "c:WWE:2026-11-28:1uiafpu": "2026-11-25",
+  "c:ROH:2026-12-04:1bj2i91": "2026-11-25"
  },
  "pend": {}
 }

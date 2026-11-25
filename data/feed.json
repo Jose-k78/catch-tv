@@ -1,15 +1,6 @@
 {
- "at": "2026-11-25T17:49:24.135Z",
+ "at": "2026-11-25T18:50:02.192Z",
  "items": [
-  {
-   "t": "Le retour de Logan Paul à la WWE annoncé en décembre",
-   "u": "https://www.catch-newz.com/wwe/newz/61618-le-retour-de-logan-paul-a-la-wwe-annonce-en-decembre",
-   "s": "Catch-Newz",
-   "d": "2026-11-25",
-   "tags": [
-    "WWE"
-   ]
-  },
   {
    "t": "Preview : AEW Dynamite du 25 novembre 2026",
    "u": "https://www.catch-newz.com/aew/newz/61537-preview-aew-dynamite-25-novembre-2026",
@@ -18,6 +9,32 @@
    "tags": [
     "AEW",
     "Dynamite"
+   ]
+  },
+  {
+   "t": "Swerve Strickland débarque en France, à l'APC le 9 janvier 2027 à Gennevilliers",
+   "u": "https://www.catch-newz.com/international/newz/61596-swerve-strickland-debarque-en-france-a-lapc-le-9-janvier-2027-a-gennevilliers",
+   "s": "Catch-Newz",
+   "d": "2026-11-25",
+   "tags": []
+  },
+  {
+   "t": "WWE NXT du 24 novembre : Nouvelle championne d’Amérique du Nord",
+   "u": "https://www.voxcatch.fr/2026/11/25/resultats-wwe-nxt-24-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-25",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
+   "t": "Le retour de Logan Paul à la WWE annoncé en décembre",
+   "u": "https://www.catch-newz.com/wwe/newz/61618-le-retour-de-logan-paul-a-la-wwe-annonce-en-decembre",
+   "s": "Catch-Newz",
+   "d": "2026-11-25",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -39,29 +56,12 @@
    ]
   },
   {
-   "t": "Swerve Strickland débarque en France, à l'APC le 9 janvier 2027 à Gennevilliers",
-   "u": "https://www.catch-newz.com/international/newz/61596-swerve-strickland-debarque-en-france-a-lapc-le-9-janvier-2027-a-gennevilliers",
-   "s": "Catch-Newz",
-   "d": "2026-11-25",
-   "tags": []
-  },
-  {
    "t": "Résultats du jour 3 de la NJPW World Tag League 2026",
    "u": "https://www.catch-newz.com/international/resultats/61614-resultats-du-jour-3-de-la-njpw-world-tag-league-2026",
    "s": "Catch-Newz",
    "d": "2026-11-25",
    "tags": [
     "NJPW"
-   ]
-  },
-  {
-   "t": "WWE NXT du 24 novembre : Nouvelle championne d’Amérique du Nord",
-   "u": "https://www.voxcatch.fr/2026/11/25/resultats-wwe-nxt-24-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-25",
-   "tags": [
-    "WWE",
-    "NXT"
    ]
   },
   {
@@ -166,6 +166,15 @@
    "tags": [
     "WWE",
     "NXT"
+   ]
+  },
+  {
+   "t": "Résultats de CMLL Martes Populares du 24 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61619-resultats-de-cmll-martes-populares-du-24-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-24",
+   "tags": [
+    "CMLL"
    ]
   },
   {
@@ -522,15 +531,6 @@
    "d": "2026-11-23",
    "tags": [
     "CMLL"
-   ]
-  },
-  {
-   "t": "Le retour de Rhea Ripley à la WWE s'approche",
-   "u": "https://www.catch-newz.com/wwe/newz/61562-le-retour-de-rhea-ripley-a-la-wwe-sapproche",
-   "s": "Catch-Newz",
-   "d": "2026-11-23",
-   "tags": [
-    "WWE"
    ]
   }
  ],
@@ -1478,15 +1478,16 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
-   "https://www.catch-newz.com/wwe/newz/61618-le-retour-de-logan-paul-a-la-wwe-annonce-en-decembre",
    "https://www.catch-newz.com/aew/newz/61537-preview-aew-dynamite-25-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61607-wwe-nxt-24-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61612-les-hardy-boyz-en-fin-contrat-a-la-tna-pour-terminer-2026",
-   "https://www.catch-newz.com/aew/newz/61613-les-kasper-brothers-repondent-aux-critiques-de-leur-finisher",
    "https://www.catch-newz.com/international/newz/61596-swerve-strickland-debarque-en-france-a-lapc-le-9-janvier-2027-a-gennevilliers",
-   "https://www.catch-newz.com/international/resultats/61614-resultats-du-jour-3-de-la-njpw-world-tag-league-2026",
+   "https://www.catch-newz.com/international/resultats/61619-resultats-de-cmll-martes-populares-du-24-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61616-resultats-de-cmll-martes-de-glamour-du-24-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61615-resultats-de-cmll-nueva-era-producciones-du-23-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61618-le-retour-de-logan-paul-a-la-wwe-annonce-en-decembre",
+   "https://www.catch-newz.com/international/newz/61612-les-hardy-boyz-en-fin-contrat-a-la-tna-pour-terminer-2026",
+   "https://www.catch-newz.com/aew/newz/61613-les-kasper-brothers-repondent-aux-critiques-de-leur-finisher",
+   "https://www.catch-newz.com/international/resultats/61614-resultats-du-jour-3-de-la-njpw-world-tag-league-2026",
    "https://www.catch-newz.com/wwe/newz/61584-les-meilleurs-cadeaux-wwe-du-temps-des-fetes-2026-pour-les-fans-de-catch",
    "https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61576-wwe-raw-23-novembre-2026",
@@ -1776,12 +1777,11 @@
    "https://www.catch-newz.com/international/resultats/61336-resultats-de-tnt-ignition-aftershock-2026",
    "https://www.catch-newz.com/international/newz/61329-ruby-hardy-fille-de-jeff-hardy-sentraine-avec-son-pere",
    "https://www.catch-newz.com/international/newz/61277-carte-de-cmll-domingo-familiar-du-15-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61326-quel-score-pour-finalslam-sur-tmc",
-   "https://www.catch-newz.com/international/newz/61328-squeezie-jai-tout-donne-jespere-que-le-divertissement-aura-ete-a-la-hauteur"
+   "https://www.catch-newz.com/international/newz/61326-quel-score-pour-finalslam-sur-tmc"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
