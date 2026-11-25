@@ -1,5 +1,5 @@
 {
- "at": "2026-11-24T23:47:50.973Z",
+ "at": "2026-11-25T02:22:22.820Z",
  "items": [
   {
    "t": "Swerve Strickland débarque en France, à l'APC le 9 janvier 2027 à Gennevilliers",
@@ -1414,6 +1414,20 @@
     "id": "QMGCJm7Hmsk",
     "t": "Liv Morgan and Becky Lynch prepare for Survivor Series: Raw highlights, Nov. 23, 2026"
    }
+  ],
+  "WWE|NXT|2026-11-24": [
+   {
+    "id": "QBXVpkizHTA",
+    "t": "Zilla Fatu and more lay down challenge to Jackson Drake: NXT highlights, Nov 24, 2026"
+   },
+   {
+    "id": "q5OWpk0JUM4",
+    "t": "Myka Lockwood dominates in Eight-Person Tag Team Match: NXT highlights, Nov 24, 2026"
+   },
+   {
+    "id": "7SGkZ3hxlQg",
+    "t": "Kelani Jordan will face Kendal Grey in a TLC Match: NXT highlights, Nov 24, 2026"
+   }
   ]
  },
  "rss": {
@@ -1728,10 +1742,10 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "4 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
-  "YouTube WWE": "0 nouvelles vidéos",
+  "YouTube WWE": "3 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
