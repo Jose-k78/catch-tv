@@ -1,6 +1,47 @@
 {
-  "updated": "2026-11-22",
+  "updated": "2026-11-25",
   "items": [
+    {
+      "id": "p-20261125-cc-vainqueur",
+      "d": "2026-11-25",
+      "type": "",
+      "k": "AEW",
+      "q": "Continental Classic 2026 : qui va remporter le tournoi ?",
+      "opts": [
+        "Jon Moxley",
+        "Adam Page",
+        "Bandido"
+      ],
+      "other": true,
+      "end": "2026-12-19"
+    },
+    {
+      "id": "p-20261125-bret-shawn",
+      "d": "2026-11-25",
+      "type": "",
+      "k": "WWE",
+      "q": "Bret Hart ou Shawn Michaels : qui était le meilleur catcheur ?",
+      "opts": [
+        "Bret Hart",
+        "Shawn Michaels"
+      ],
+      "other": false,
+      "end": ""
+    },
+    {
+      "id": "p-20261125-montreal",
+      "d": "2026-11-25",
+      "type": "",
+      "k": "WWE",
+      "q": "Montreal Screwjob : qui est le plus responsable selon toi ?",
+      "opts": [
+        "Vince McMahon",
+        "Shawn Michaels",
+        "Bret Hart"
+      ],
+      "other": true,
+      "end": ""
+    },
     {
       "id": "p-20261122-gunther-ko",
       "d": "2026-11-22",
@@ -395,46 +436,6 @@
       ],
       "other": false,
       "end": ""
-    },
-    {
-      "id": "p-20261113-pwi-vaquer",
-      "d": "2026-11-13",
-      "type": "",
-      "k": "",
-      "q": "Stephanie Vaquer finit première du PWI 250 de 2026 : qui méritait la 1re place ?",
-      "opts": [
-        "Stephanie Vaquer",
-        "Mercedes Moné",
-        "Saya Kamitani"
-      ],
-      "other": true,
-      "end": "2026-11-20"
-    },
-    {
-      "id": "p-20261112-fg-ospreay",
-      "d": "2026-11-12",
-      "type": "",
-      "k": "AEW",
-      "q": "Full Gear : qui repart avec le titre mondial de l’AEW ?",
-      "opts": [
-        "Will Ospreay (il garde son titre)",
-        "Kyle Fletcher"
-      ],
-      "other": false,
-      "end": "2026-11-14"
-    },
-    {
-      "id": "p-20261112-fg-mone",
-      "d": "2026-11-12",
-      "type": "",
-      "k": "AEW",
-      "q": "Full Gear : Mercedes Moné garde-t-elle son titre face à Marina Shafir ?",
-      "opts": [
-        "Oui",
-        "Non"
-      ],
-      "other": false,
-      "end": "2026-11-14"
     },
     {
       "id": "p-20261112-babies",
