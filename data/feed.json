@@ -1,5 +1,5 @@
 {
- "at": "2026-11-25T20:53:42.606Z",
+ "at": "2026-11-25T21:55:18.672Z",
  "items": [
   {
    "t": "Preview : AEW Dynamite du 25 novembre 2026",
@@ -19,15 +19,15 @@
    "tags": []
   },
   {
-   "t": "Carte de LLL All Tomorrow's Parties",
-   "u": "https://www.catch-newz.com/international/newz/61623-carte-de-lll-all-tomorrows-parties",
+   "t": "Résultats du jour 3 de la AJPW Real World Tag League 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61625-resultats-du-jour-3-de-la-ajpw-real-world-tag-league-2026",
    "s": "Catch-Newz",
    "d": "2026-11-25",
    "tags": []
   },
   {
-   "t": "Carte de GFW Midnight Girlfight - Pajamas & Piledrivers",
-   "u": "https://www.catch-newz.com/international/newz/61622-carte-de-gfw-midnight-girlfight-pajamas-piledrivers",
+   "t": "Résultats de New Texas Pro Wrestling Texas Contenders Series 71",
+   "u": "https://www.catch-newz.com/international/resultats/61624-resultats-de-new-texas-pro-wrestling-texas-contenders-series-71",
    "s": "Catch-Newz",
    "d": "2026-11-25",
    "tags": []
@@ -41,6 +41,20 @@
     "WWE",
     "NXT"
    ]
+  },
+  {
+   "t": "Carte de LLL All Tomorrow's Parties",
+   "u": "https://www.catch-newz.com/international/newz/61623-carte-de-lll-all-tomorrows-parties",
+   "s": "Catch-Newz",
+   "d": "2026-11-25",
+   "tags": []
+  },
+  {
+   "t": "Carte de GFW Midnight Girlfight - Pajamas & Piledrivers",
+   "u": "https://www.catch-newz.com/international/newz/61622-carte-de-gfw-midnight-girlfight-pajamas-piledrivers",
+   "s": "Catch-Newz",
+   "d": "2026-11-25",
+   "tags": []
   },
   {
    "t": "Elio LeFleur fera son retour à WWE Main Event ce soir",
@@ -516,22 +530,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-23",
    "tags": []
-  },
-  {
-   "t": "Le titre Final Rumble de Nate Prince remis en jeu en Belgique",
-   "u": "https://www.catch-newz.com/international/newz/61567-le-titre-final-rumble-de-nate-prince-remis-en-jeu-en-belgique",
-   "s": "Catch-Newz",
-   "d": "2026-11-23",
-   "tags": []
-  },
-  {
-   "t": "Résultats du jour 1 de la NJPW World Tag League 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61557-resultats-du-jour-1-de-la-njpw-world-tag-league-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-23",
-   "tags": [
-    "NJPW"
-   ]
   }
  ],
  "yt": {
@@ -1481,9 +1479,11 @@
    "https://www.catch-newz.com/aew/newz/61537-preview-aew-dynamite-25-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61607-wwe-nxt-24-novembre-2026",
    "https://www.catch-newz.com/international/newz/61596-swerve-strickland-debarque-en-france-a-lapc-le-9-janvier-2027-a-gennevilliers",
+   "https://www.catch-newz.com/international/resultats/61625-resultats-du-jour-3-de-la-ajpw-real-world-tag-league-2026",
+   "https://www.catch-newz.com/international/resultats/61624-resultats-de-new-texas-pro-wrestling-texas-contenders-series-71",
+   "https://www.catch-newz.com/international/resultats/61619-resultats-de-cmll-martes-populares-du-24-novembre-2026",
    "https://www.catch-newz.com/international/newz/61623-carte-de-lll-all-tomorrows-parties",
    "https://www.catch-newz.com/international/newz/61622-carte-de-gfw-midnight-girlfight-pajamas-piledrivers",
-   "https://www.catch-newz.com/international/resultats/61619-resultats-de-cmll-martes-populares-du-24-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61621-elio-lefleur-fera-son-retour-a-wwe-main-event-ce-soir",
    "https://www.catch-newz.com/aew/newz/61617-les-kasper-brothers-ont-refuse-des-offres-de-la-wwe-avant-de-rejoindre-laew",
    "https://www.catch-newz.com/international/resultats/61616-resultats-de-cmll-martes-de-glamour-du-24-novembre-2026",
@@ -1775,9 +1775,7 @@
    "https://www.catch-newz.com/international/resultats/61335-resultats-de-cmll-sabado-de-coliseo-du-14-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61340-laew-lance-le-teasing-du-retour-de-toni-storm",
    "https://www.catch-newz.com/wwe/newz/61339-rey-fenix-et-el-carnicero-blesses-pendant-aaa-lucha-libre",
-   "https://www.catch-newz.com/international/newz/61332-la-fille-deddie-guerrero-remporte-son-premier-match",
-   "https://www.catch-newz.com/wwe/newz/61334-lavantage-wargames-sera-en-jeu-a-wwe-raw-du-16-novembre",
-   "https://www.catch-newz.com/wwe/newz/61331-cm-punk-veut-continuer-a-catcher-encore-au-moins-5-ans"
+   "https://www.catch-newz.com/international/newz/61332-la-fille-deddie-guerrero-remporte-son-premier-match"
   ]
  },
  "diag": {
