@@ -1,5 +1,5 @@
 {
- "at": "2026-11-25T04:40:57.406Z",
+ "at": "2026-11-25T05:58:34.751Z",
  "items": [
   {
    "t": "Swerve Strickland débarque en France, à l'APC le 9 janvier 2027 à Gennevilliers",
@@ -17,6 +17,13 @@
     "WWE",
     "SmackDown"
    ]
+  },
+  {
+   "t": "Carte du jour 6 de la AJPW Real World Tag League 2026",
+   "u": "https://www.catch-newz.com/international/newz/61213-carte-du-jour-6-de-la-ajpw-real-world-tag-league-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-25",
+   "tags": []
   },
   {
    "t": "John Cena fait ses dernières annonces à WWE NXT pour le Classic",
@@ -510,13 +517,6 @@
   {
    "t": "Résultats du jour 6 du NOAH Junior Grand Prix 2 - Lethal Odyssey Tour 2026",
    "u": "https://www.catch-newz.com/international/resultats/61550-resultats-du-jour-6-du-noah-junior-grand-prix-2-lethal-odyssey-tour-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-23",
-   "tags": []
-  },
-  {
-   "t": "Résultats de Grind Time Pro Wrestling Sunday Night Grit 1",
-   "u": "https://www.catch-newz.com/international/resultats/61556-resultats-de-grind-time-pro-wrestling-sunday-night-grit-1",
    "s": "Catch-Newz",
    "d": "2026-11-23",
    "tags": []
@@ -1471,6 +1471,7 @@
    "https://www.catch-newz.com/wwe/resultats/61576-wwe-raw-23-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61591-spoilers-wwe-smackdown-27-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61213-carte-du-jour-6-de-la-ajpw-real-world-tag-league-2026",
    "https://www.catch-newz.com/wwe/newz/61609-john-cena-fait-ses-dernieres-annonces-a-wwe-nxt-pour-le-classic",
    "https://www.catch-newz.com/wwe/newz/61608-deux-matchs-se-confirment-pour-wwe-nxt-tlc-2026",
    "https://www.catch-newz.com/international/newz/61606-carte-du-jour-5-de-la-ajpw-real-world-tag-league-2026",
@@ -1764,15 +1765,14 @@
    "https://www.catch-newz.com/aew/resultats/61305-aew-full-gear-2026",
    "https://www.catch-newz.com/aew/newz/61321-les-kasper-brothers-creed-brothers-signent-a-laew",
    "https://www.catch-newz.com/international/resultats/61296-resultats-de-cmll-viernes-espectacular-du-13-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61320-combien-de-spectateurs-pour-finalslam",
-   "https://www.catch-newz.com/international/newz/61319-finalslam-premiere-reaction-daminematue-apres-sa-victoire-contre-squeezie"
+   "https://www.catch-newz.com/international/newz/61320-combien-de-spectateurs-pour-finalslam"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "4 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
-  "YouTube WWE": "2 nouvelles vidéos",
+  "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
