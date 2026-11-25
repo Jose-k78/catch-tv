@@ -1,5 +1,5 @@
 {
- "at": "2026-11-25T13:52:57.760Z",
+ "at": "2026-11-25T15:00:23.628Z",
  "items": [
   {
    "t": "Swerve Strickland débarque en France, à l'APC le 9 janvier 2027 à Gennevilliers",
@@ -7,15 +7,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-25",
    "tags": []
-  },
-  {
-   "t": "Royce Keys menace The Rock en amont des Survivor Series ?",
-   "u": "https://www.catch-newz.com/wwe/newz/61611-royce-keys-menace-the-rock-en-amont-des-survivor-series",
-   "s": "Catch-Newz",
-   "d": "2026-11-25",
-   "tags": [
-    "WWE"
-   ]
   },
   {
    "t": "Spoilers de WWE SmackDown du 27 novembre 2026",
@@ -35,6 +26,15 @@
    "tags": [
     "WWE",
     "NXT"
+   ]
+  },
+  {
+   "t": "Royce Keys menace The Rock en amont des Survivor Series ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61611-royce-keys-menace-the-rock-en-amont-des-survivor-series",
+   "s": "Catch-Newz",
+   "d": "2026-11-25",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -1474,9 +1474,9 @@
    "https://www.catch-newz.com/wwe/resultats/61607-wwe-nxt-24-novembre-2026",
    "https://www.catch-newz.com/international/newz/61596-swerve-strickland-debarque-en-france-a-lapc-le-9-janvier-2027-a-gennevilliers",
    "https://www.catch-newz.com/wwe/resultats/61576-wwe-raw-23-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61611-royce-keys-menace-the-rock-en-amont-des-survivor-series",
    "https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61591-spoilers-wwe-smackdown-27-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61611-royce-keys-menace-the-rock-en-amont-des-survivor-series",
    "https://www.catch-newz.com/wwe/newz/61610-trick-williams-gunther-sest-fait-botter-le-c-un-point-cest-tout",
    "https://www.catch-newz.com/international/newz/61213-carte-du-jour-6-de-la-ajpw-real-world-tag-league-2026",
    "https://www.catch-newz.com/wwe/newz/61609-john-cena-fait-ses-dernieres-annonces-a-wwe-nxt-pour-le-classic",
@@ -1774,7 +1774,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
