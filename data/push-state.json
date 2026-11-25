@@ -1,5 +1,5 @@
 {
- "at": "2026-11-25T03:33:51.943Z",
+ "at": "2026-11-25T07:12:59.211Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/61205-si-le-john-cena-classic-est-nul-il-ne-reviendra-pas-en-2027": "2026-11-11",
@@ -359,34 +359,11 @@
   "a:https://www.catch-newz.com/international/newz/61605-carte-de-iwrg-cmll-llb-lucha-revolucion-2-0": "2026-11-25",
   "a:https://www.catch-newz.com/wwe/newz/61609-john-cena-fait-ses-dernieres-annonces-a-wwe-nxt-pour-le-classic": "2026-11-25",
   "a:https://www.catch-newz.com/wwe/newz/61608-deux-matchs-se-confirment-pour-wwe-nxt-tlc-2026": "2026-11-25",
-  "a:https://www.catch-newz.com/wwe/resultats/61607-wwe-nxt-24-novembre-2026": "2026-11-25"
+  "a:https://www.catch-newz.com/wwe/resultats/61607-wwe-nxt-24-novembre-2026": "2026-11-25",
+  "poll:p-20261125-cc-vainqueur": "2026-11-25",
+  "poll:p-20261125-bret-shawn": "2026-11-25",
+  "poll:p-20261125-montreal": "2026-11-25",
+  "story:bret-shawn-1992": "2026-11-25"
  },
- "pend": {
-  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
-   {
-    "cat": "info",
-    "title": "📰 2 nouvelles infos",
-    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "2 nouvelles infos"
-   },
-   {
-    "cat": "info",
-    "title": "📰 Nouvelle info · Catch-Newz",
-    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "1 nouvelle info"
-   },
-   {
-    "cat": "info",
-    "title": "📰 3 nouvelles infos",
-    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "3 nouvelles infos"
-   }
-  ]
- }
+ "pend": {}
 }
