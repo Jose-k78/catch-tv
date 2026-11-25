@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22",
+ "updated": "2026-11-25",
  "note": "Champions actuels : peut révéler des résultats récents.",
  "titles": [
   {
@@ -326,8 +326,14 @@
    ],
    "src": "Fightful",
    "u": "https://www.fightful.com/wrestling/wwe-raw-results-11-2-2026-solo-sikoa-vs-royce-keys-john-cena-roman-reigns-more/",
-   "defs": [],
-   "def": 0
+   "defs": [
+    {
+     "d": "2026-11-23",
+     "ev": "Raw",
+     "vs": "Rey Fenix"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "wwe-wic",
@@ -659,15 +665,25 @@
    "k": "WWE",
    "show": "NXT",
    "n": "NXT Women’s North American Championship",
-   "c": "Zaria",
+   "c": "Izzi Dame",
    "who": [
-    "Zaria"
+    "Izzi Dame"
    ],
-   "since": "2026-06-09",
-   "ev": "",
-   "hist": [],
-   "src": "The SmackDown Hotel",
-   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe",
+   "since": "2026-11-24",
+   "ev": "NXT",
+   "hist": [
+    {
+     "c": "Zaria",
+     "who": [
+      "Zaria"
+     ],
+     "d": "2026-06-09",
+     "ev": "",
+     "j": 168
+    }
+   ],
+   "src": "WrestlePurists",
+   "u": "https://wrestlepurists.com/wwe-nxt-results-november-24-2026-izzi-dame-wins-north-american-title-thea-hail-shaves-her-head/",
    "defs": [],
    "def": 0
   },
