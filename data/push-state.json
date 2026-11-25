@@ -1,5 +1,5 @@
 {
- "at": "2026-11-25T20:53:42.647Z",
+ "at": "2026-11-25T22:52:39.220Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/61205-si-le-john-cena-classic-est-nul-il-ne-reviendra-pas-en-2027": "2026-11-11",
@@ -381,7 +381,20 @@
   "c:ROH:2026-12-04:1bj2i91": "2026-11-25",
   "a:https://www.catch-newz.com/wwe/newz/61621-elio-lefleur-fera-son-retour-a-wwe-main-event-ce-soir": "2026-11-25",
   "a:https://www.catch-newz.com/aew/newz/61617-les-kasper-brothers-ont-refuse-des-offres-de-la-wwe-avant-de-rejoindre-laew": "2026-11-25",
-  "fr:2026-11-25": "2026-11-25"
+  "fr:2026-11-25": "2026-11-25",
+  "a:https://www.catch-newz.com/aew/newz/61626-plusieurs-matchs-sajoutent-a-la-carte-de-roh-final-battle-2026": "2026-11-25",
+  "a:https://www.catch-newz.com/international/resultats/61629-resultats-de-mr-miss-cmll-2026": "2026-11-25"
  },
- "pend": {}
+ "pend": {
+  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
+   {
+    "cat": "info",
+    "title": "📰 2 nouvelles infos",
+    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "2 nouvelles infos"
+   }
+  ]
+ }
 }

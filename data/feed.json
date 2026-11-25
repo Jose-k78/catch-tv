@@ -1,5 +1,5 @@
 {
- "at": "2026-11-25T21:55:18.672Z",
+ "at": "2026-11-25T22:52:39.172Z",
  "items": [
   {
    "t": "Preview : AEW Dynamite du 25 novembre 2026",
@@ -9,6 +9,35 @@
    "tags": [
     "AEW",
     "Dynamite"
+   ]
+  },
+  {
+   "t": "Plusieurs matchs s'ajoutent à la carte de ROH Final Battle 2026",
+   "u": "https://www.catch-newz.com/aew/newz/61626-plusieurs-matchs-sajoutent-a-la-carte-de-roh-final-battle-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-25",
+   "tags": [
+    "AEW",
+    "ROH"
+   ]
+  },
+  {
+   "t": "Résultats de Mr. & Miss CMLL 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61629-resultats-de-mr-miss-cmll-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-25",
+   "tags": [
+    "CMLL"
+   ]
+  },
+  {
+   "t": "WWE NXT du 24 novembre : Nouvelle championne d’Amérique du Nord",
+   "u": "https://www.voxcatch.fr/2026/11/25/resultats-wwe-nxt-24-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-25",
+   "tags": [
+    "WWE",
+    "NXT"
    ]
   },
   {
@@ -31,16 +60,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-25",
    "tags": []
-  },
-  {
-   "t": "WWE NXT du 24 novembre : Nouvelle championne d’Amérique du Nord",
-   "u": "https://www.voxcatch.fr/2026/11/25/resultats-wwe-nxt-24-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-25",
-   "tags": [
-    "WWE",
-    "NXT"
-   ]
   },
   {
    "t": "Carte de LLL All Tomorrow's Parties",
@@ -217,15 +236,6 @@
    ]
   },
   {
-   "t": "Résultats de CMLL Martes Populares du 24 novembre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61619-resultats-de-cmll-martes-populares-du-24-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-24",
-   "tags": [
-    "CMLL"
-   ]
-  },
-  {
    "t": "WWE Raw du 23 novembre : Seth Rollins dans la Team USA, derniers face-à-face avant Survivor Series",
    "u": "https://www.voxcatch.fr/2026/11/24/wwe-raw-23-novembre-2026/",
    "s": "VOXcatch",
@@ -233,6 +243,15 @@
    "tags": [
     "WWE",
     "Raw"
+   ]
+  },
+  {
+   "t": "Résultats de CMLL Martes Populares du 24 novembre 2026",
+   "u": "https://www.catch-newz.com/international/resultats/61619-resultats-de-cmll-martes-populares-du-24-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-24",
+   "tags": [
+    "CMLL"
    ]
   },
   {
@@ -513,23 +532,6 @@
     "AEW",
     "ROH"
    ]
-  },
-  {
-   "t": "Une première baisse de prix sur SmackDown en Belgique en 2027",
-   "u": "https://www.catch-newz.com/wwe/newz/61564-une-premiere-baisse-de-prix-sur-smackdown-en-belgique-en-2027",
-   "s": "Catch-Newz",
-   "d": "2026-11-23",
-   "tags": [
-    "WWE",
-    "SmackDown"
-   ]
-  },
-  {
-   "t": "Résultats du jour 7 du NOAH Junior Grand Prix 2 - Lethal Odyssey Tour 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61569-resultats-du-jour-7-du-noah-junior-grand-prix-2-lethal-odyssey-tour-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-23",
-   "tags": []
   }
  ],
  "yt": {
@@ -1478,6 +1480,8 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/newz/61537-preview-aew-dynamite-25-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61607-wwe-nxt-24-novembre-2026",
+   "https://www.catch-newz.com/aew/newz/61626-plusieurs-matchs-sajoutent-a-la-carte-de-roh-final-battle-2026",
+   "https://www.catch-newz.com/international/resultats/61629-resultats-de-mr-miss-cmll-2026",
    "https://www.catch-newz.com/international/newz/61596-swerve-strickland-debarque-en-france-a-lapc-le-9-janvier-2027-a-gennevilliers",
    "https://www.catch-newz.com/international/resultats/61625-resultats-du-jour-3-de-la-ajpw-real-world-tag-league-2026",
    "https://www.catch-newz.com/international/resultats/61624-resultats-de-new-texas-pro-wrestling-texas-contenders-series-71",
@@ -1773,13 +1777,11 @@
    "https://www.catch-newz.com/international/resultats/61337-resultats-du-jour-2-de-tew-next-order-of-business-2026",
    "https://www.catch-newz.com/international/newz/61342-carte-de-fwa-mainstage-2",
    "https://www.catch-newz.com/international/resultats/61335-resultats-de-cmll-sabado-de-coliseo-du-14-novembre-2026",
-   "https://www.catch-newz.com/aew/newz/61340-laew-lance-le-teasing-du-retour-de-toni-storm",
-   "https://www.catch-newz.com/wwe/newz/61339-rey-fenix-et-el-carnicero-blesses-pendant-aaa-lucha-libre",
-   "https://www.catch-newz.com/international/newz/61332-la-fille-deddie-guerrero-remporte-son-premier-match"
+   "https://www.catch-newz.com/aew/newz/61340-laew-lance-le-teasing-du-retour-de-toni-storm"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
