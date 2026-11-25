@@ -1,5 +1,5 @@
 {
- "at": "2026-11-25T02:22:22.820Z",
+ "at": "2026-11-25T03:33:51.896Z",
  "items": [
   {
    "t": "Swerve Strickland débarque en France, à l'APC le 9 janvier 2027 à Gennevilliers",
@@ -7,6 +7,26 @@
    "s": "Catch-Newz",
    "d": "2026-11-25",
    "tags": []
+  },
+  {
+   "t": "John Cena fait ses dernières annonces à WWE NXT pour le Classic",
+   "u": "https://www.catch-newz.com/wwe/newz/61609-john-cena-fait-ses-dernieres-annonces-a-wwe-nxt-pour-le-classic",
+   "s": "Catch-Newz",
+   "d": "2026-11-25",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
+  },
+  {
+   "t": "Deux matchs se confirment pour WWE NXT TLC 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61608-deux-matchs-se-confirment-pour-wwe-nxt-tlc-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-25",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
   },
   {
    "t": "Spoilers de WWE SmackDown du 27 novembre 2026",
@@ -47,6 +67,16 @@
    "s": "Catch-Newz",
    "d": "2026-11-25",
    "tags": []
+  },
+  {
+   "t": "Résultats de WWE NXT du 24 novembre 2026",
+   "u": "https://www.catch-newz.com/wwe/resultats/61607-wwe-nxt-24-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-24",
+   "tags": [
+    "WWE",
+    "NXT"
+   ]
   },
   {
    "t": "Preview : WWE NXT du 24 novembre 2026",
@@ -490,31 +520,6 @@
    "s": "Catch-Newz",
    "d": "2026-11-23",
    "tags": []
-  },
-  {
-   "t": "Résultats de Alto Voltaje/CMLL du 22 novembre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61580-resultats-de-alto-voltaje-cmll-du-22-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-22",
-   "tags": [
-    "CMLL"
-   ]
-  },
-  {
-   "t": "Résultats de IWRG Función Espectacular du 22 novembre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61577-resultats-de-iwrg-funcion-espectacular-du-22-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-22",
-   "tags": []
-  },
-  {
-   "t": "Résultats de CMLL Domingo Familiar du 22 novembre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61572-resultats-de-cmll-domingo-familiar-du-22-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-22",
-   "tags": [
-    "CMLL"
-   ]
   }
  ],
  "yt": {
@@ -1427,6 +1432,20 @@
    {
     "id": "7SGkZ3hxlQg",
     "t": "Kelani Jordan will face Kendal Grey in a TLC Match: NXT highlights, Nov 24, 2026"
+   },
+   {
+    "id": "NveCaqSKRws",
+    "t": "DarkState help BirthRight defeat Perros del Mal: NXT highlights, Nov 24, 2026",
+    "sp": true
+   },
+   {
+    "id": "c_xKWx1yC5g",
+    "t": "Thea Hail shaves her head in emotional moment: NXT highlights, Nov 24, 2026"
+   },
+   {
+    "id": "LXd6qsWjHpw",
+    "t": "Mason Rook defeats Shiloh Hill to become No. 1 Contender: NXT highlights, Nov 24, 2026",
+    "sp": true
    }
   ]
  },
@@ -1439,8 +1458,11 @@
  },
  "seen": {
   "https://www.catch-newz.com/": [
+   "https://www.catch-newz.com/wwe/resultats/61607-wwe-nxt-24-novembre-2026",
    "https://www.catch-newz.com/international/newz/61596-swerve-strickland-debarque-en-france-a-lapc-le-9-janvier-2027-a-gennevilliers",
    "https://www.catch-newz.com/wwe/resultats/61576-wwe-raw-23-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61609-john-cena-fait-ses-dernieres-annonces-a-wwe-nxt-pour-le-classic",
+   "https://www.catch-newz.com/wwe/newz/61608-deux-matchs-se-confirment-pour-wwe-nxt-tlc-2026",
    "https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61591-spoilers-wwe-smackdown-27-novembre-2026",
    "https://www.catch-newz.com/international/newz/61606-carte-du-jour-5-de-la-ajpw-real-world-tag-league-2026",
@@ -1735,14 +1757,11 @@
    "https://www.catch-newz.com/aew/newz/61321-les-kasper-brothers-creed-brothers-signent-a-laew",
    "https://www.catch-newz.com/international/resultats/61296-resultats-de-cmll-viernes-espectacular-du-13-novembre-2026",
    "https://www.catch-newz.com/international/newz/61320-combien-de-spectateurs-pour-finalslam",
-   "https://www.catch-newz.com/international/newz/61319-finalslam-premiere-reaction-daminematue-apres-sa-victoire-contre-squeezie",
-   "https://www.catch-newz.com/international/newz/61318-finalslam-squeezie-veut-deja-une-revanche-contre-aminematue",
-   "https://www.catch-newz.com/international/newz/61317-finalslam-match-exceptionnel-entre-squeezie-et-aminematue-un-champion-couronne",
-   "https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026"
+   "https://www.catch-newz.com/international/newz/61319-finalslam-premiere-reaction-daminematue-apres-sa-victoire-contre-squeezie"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 4 nouveaux articles lus sur la page d'accueil (4 liens)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
   "VOXcatch": "4 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "3 nouvelles vidéos",
