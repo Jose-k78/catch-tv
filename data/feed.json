@@ -1,5 +1,5 @@
 {
- "at": "2026-11-25T05:58:34.751Z",
+ "at": "2026-11-25T10:10:37.168Z",
  "items": [
   {
    "t": "Swerve Strickland débarque en France, à l'APC le 9 janvier 2027 à Gennevilliers",
@@ -76,6 +76,16 @@
    "tags": []
   },
   {
+   "t": "WWE Raw du 23 novembre : Seth Rollins dans la Team USA, derniers face-à-face avant Survivor Series",
+   "u": "https://www.voxcatch.fr/2026/11/24/wwe-raw-23-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-24",
+   "tags": [
+    "WWE",
+    "Raw"
+   ]
+  },
+  {
    "t": "Résultats de WWE NXT du 24 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/resultats/61607-wwe-nxt-24-novembre-2026",
    "s": "Catch-Newz",
@@ -93,16 +103,6 @@
    "tags": [
     "WWE",
     "NXT"
-   ]
-  },
-  {
-   "t": "WWE Raw du 23 novembre : Seth Rollins dans la Team USA, derniers face-à-face avant Survivor Series",
-   "u": "https://www.voxcatch.fr/2026/11/24/wwe-raw-23-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-24",
-   "tags": [
-    "WWE",
-    "Raw"
    ]
   },
   {
@@ -1769,7 +1769,7 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 0 nouveaux articles lus sur la page d'accueil (0 liens)",
   "VOXcatch": "4 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
