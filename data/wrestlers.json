@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22",
+ "updated": "2026-11-25",
  "note": "Catcheurs suivis (champions, cartes annoncées, favoris des membres) et catcheurs à découvrir (disc = true, toutes fédérations et époques). txt = petit résumé en français, era = époque, ref = matchs de référence, last = 3 derniers matchs (r = résultat, spoiler), v = vidéo YouTube d'une chaîne officielle.",
  "items": {
   "Roman Reigns": {
@@ -2236,6 +2236,37 @@
     {
      "t": "Aja Kong contre Ryo Mizunami — Women's World Championship Eliminator",
      "ev": "AEW Dynamite, 2021"
+    }
+   ]
+  },
+  "Último Dragón": {
+   "k": "NJPW · CMLL · WWE",
+   "a": [
+    "Yoshihiro Asai",
+    "Ultimate Dragon",
+    "Tiger Dragon"
+   ],
+   "era": "depuis 1987 (WCW 1996–1999, WWE 2003–2004)",
+   "disc": true,
+   "txt": "Pionnier japonais formé entre le Japon et le Mexique, il a popularisé l'Asai Moonsault et fondé l'école Toryumon, d'où est née Dragon Gate. À la WCW, il a tenu jusqu'à dix titres en même temps dans les années 1990.",
+   "from": "Mexico (Mexique) / Nagoya (Japon)",
+   "ht": "1,73 m",
+   "wt": "84 kg",
+   "debut": "1987-05-13",
+   "fin": "Asai DDT, Asai Moonsault",
+   "trainer": "Gran Hamada, Kotetsu Yamamoto, dojo de la NJPW",
+   "ref": [
+    {
+     "t": "Último Dragón contre Rey Misterio Jr. — titre Cruiserweight de la WCW",
+     "ev": "WCW Hog Wild, 1996"
+    },
+    {
+     "t": "Último Dragón contre Dean Malenko — titre Cruiserweight de la WCW",
+     "ev": "WCW Starrcade, 1996"
+    },
+    {
+     "t": "Último Dragón contre Black Tiger V — masque contre masque",
+     "ev": "DragonMania VI, 2011"
     }
    ]
   }
