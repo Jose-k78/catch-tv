@@ -1,7 +1,44 @@
 {
-  "updated": "2026-11-22",
+  "updated": "2026-11-25",
   "note": "Une storyline par jour (la plus récente en premier) : grandes histoires, rivalités, anecdotes de coulisses, faits marquants. txt = paragraphes écrits en français à partir des sources ; v = vidéos officielles ; q = recherches sur la chaîne officielle.",
   "items": [
+    {
+      "id": "bret-shawn-1992",
+      "d": "2026-11-25",
+      "type": "Rivalité",
+      "t": "Bret Hart contre Shawn Michaels : la rivalité qui a commencé un 25 novembre",
+      "k": "WWE",
+      "years": "1992-2010",
+      "hook": "Le 25 novembre 1992, deux jeunes champions s'affrontent pour la première fois en tête d'affiche d'un PPV : cinq ans plus tard, leur rivalité finira par l'histoire la plus célèbre des coulisses du catch.",
+      "txt": [
+        "À l'automne 1992, la WWF change d'époque. Les géants des années 80 laissent la place à une nouvelle génération plus petite, plus rapide, plus technique. Bret « The Hitman » Hart, venu des tag teams avec la Hart Foundation, vient de remporter le titre de la WWF face à Ric Flair. En face, Shawn Michaels, ancien membre des Rockers devenu un « Heartbreak Kid » arrogant, détient le titre Intercontinental.",
+        "Le 25 novembre 1992, aux Survivor Series de Richfield, dans l'Ohio, les deux hommes se retrouvent en tête d'affiche, titre de la WWF en jeu. C'est leur premier grand duel en PPV : un match long, technique, que Bret remporte en faisant abandonner Shawn sur son Sharpshooter. Pour la WWF, c'est le signe que ces deux-là peuvent porter la compagnie.",
+        "Les années suivantes, ils deviennent les deux piliers de la « New Generation ». Le 31 mars 1996, à WrestleMania XII, ils s'affrontent dans un Iron Man match de 60 minutes pour le titre de Bret : personne ne marque de point dans le temps réglementaire, le match repart en prolongation et Shawn gagne enfin son premier titre mondial, réalisant son « rêve d'enfant ».",
+        "En 1997, la rivalité déborde dans les coulisses. Les deux hommes ne se supportent plus, se lancent des piques au micro qui deviennent très personnelles et finissent par se battre dans un vestiaire. Bret, champion, a signé un contrat à la WCW et doit quitter la WWF ; il refuse de perdre son titre contre Shawn au Canada.",
+        "Le 9 novembre 1997, aux Survivor Series de Montréal, Shawn place Bret dans son propre Sharpshooter et Vince McMahon fait sonner la cloche alors que Bret n'a pas abandonné : c'est le « Montreal Screwjob ». Bret crache sur Vince, détruit le matériel et part à la WCW, persuadé d'avoir été trahi par tous.",
+        "Il faudra plus de douze ans pour tourner la page. Le 4 janvier 2010, Bret Hart revient à Raw et, devant le public, serre la main de Shawn Michaels puis le prend dans ses bras. La rivalité qui avait commencé un 25 novembre se termine ainsi sur une réconciliation."
+      ],
+      "key": "Le 9 novembre 1997, à Montréal, la cloche sonne pendant que Bret Hart est pris dans son propre Sharpshooter : c'est le Montreal Screwjob.",
+      "v": [],
+      "q": [
+        "Bret Hart vs Shawn Michaels Survivor Series 1992 full match",
+        "Bret Hart Shawn Michaels WrestleMania XII Iron Man match"
+      ],
+      "src": [
+        {
+          "n": "F4W Online – Daily Pro Wrestling History (11/25) : WWF Survivor Series 1992",
+          "u": "https://www.f4wonline.com/news/other-wrestling/daily-pro-wrestling-history-wwf-survivor-series-1992"
+        },
+        {
+          "n": "Wrestling Inc – Today In History (11/25) : Bret Hart vs Shawn Michaels",
+          "u": "https://www.wrestlinginc.com/news/2016/11/today-in-history-1125-bret-hart-vs-shawn-michaels-619708/"
+        },
+        {
+          "n": "Wikipédia – Montreal Screwjob",
+          "u": "https://fr.wikipedia.org/wiki/Montreal_Screwjob"
+        }
+      ]
+    },
     {
       "id": "undertaker-debut-1990",
       "d": "2026-11-22",
