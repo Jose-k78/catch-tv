@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22",
+ "updated": "2026-11-25",
  "items": {
   "WWE|Raw|2026-10-26": {
    "txt": "Depuis le Save Mart Center de Fresno. Becky Lynch et Stephanie Vaquer se disputent la place d’aspirante n°1 au titre mondial féminin. Bayley et Lyra Valkyria règlent leurs comptes dans un match sans disqualification, IYO SKY affronte la championne intercontinentale Raquel Rodriguez sans titre en jeu (avec une chance au titre en vue), et Chad Gable et Dragon Lee font équipe contre Big Cass et Ethan Page.",
@@ -15,11 +15,6 @@
    "txt": "Dernier épisode avant Halloween Havoc, au Performance Center d’Orlando. Jackson Drake met le titre nord-américain en jeu face à E.K. Prosper. Les demi-finales du Dusty Rhodes Tag Team Classic opposent Brad Baylor et Ricky Smokes à Noam Dar et Romeo Moreno, puis Hank Walker et Tank Ledger à El Hijo de Dr. Wagner Jr. et Galeno. Aussi au programme : Lizzy Rain contre Chantel Monroe et Saquon Shugars contre Sean Legacy.",
    "s": "PWTorch",
    "u": "https://www.pwtorch.com/site/2026/10/27/nxt-preview-10-27-announced-matches-location-how-to-watch/"
-  },
-  "WWE|PLE|2026-10-10": {
-   "txt": "À la Smoothie King Center de La Nouvelle-Orléans. Deux échelles Money in the Bank : chez les hommes avec CM Punk, Kevin Owens, Bron Breakker, Je’Von Evans, Penta et Trick Williams, chez les femmes avec Sol Ruca, Lola Vice, Jacy Jayne, Roxanne Perez, Lash Legend et Tiffany Stratton. Stephanie Vaquer défend le titre mondial féminin face à Becky Lynch et Liv Morgan, Roman Reigns défend le titre mondial poids lourd contre LA Knight, et Oba Femi affronte Bronson Reed.",
-   "s": "Wrestling Inc.",
-   "u": "https://www.wrestlinginc.com/2281834/wwe-money-in-the-bank-2026-full-final-card-matches/"
   },
   "WWE|PLE|2026-10-31": {
    "txt": "Au Performance Center d’Orlando. Kelani Jordan défend le titre féminin de NXT face à Wren Sinclair, et Grayson Waller met le titre de NXT en jeu contre Tony D’Angelo ou Myles Borne. Carte encore susceptible d’évoluer.",
@@ -195,6 +190,16 @@
    "txt": "Raw s'installe à l'INTRUST Bank Arena de Wichita (Kansas), sur une soirée qui accueille aussi l'enregistrement du SmackDown du 27 novembre. C'est le dernier Raw avant Survivor Series: WarGames, le 28 novembre à Houston : les équipes de WarGames doivent encore se préciser, avec la guerre entre The Bloodline et The 946 au premier plan. Roman Reigns, Cody Rhodes, CM Punk, Oba Femi, Liv Morgan et Dominik Mysterio sont mis en avant par WWE pour la soirée.",
    "s": "Sacnilk",
    "u": "https://www.sacnilk.com/news/wwe-raw-112326-predictions-preview-match-card-and-how-to-watch"
+  },
+  "AEW|Dynamite|2026-11-25": {
+   "txt": "Dynamite de la veille de Thanksgiving, en direct du LFCU Arena d'Omaha (Nebraska), avec un épisode de Collision enregistré dans la même salle. Le Continental Classic 2026 bat son plein et chaque rencontre de poule pèse lourd dans la course aux places qualificatives. La carte doit être complétée par AEW dans les derniers jours.",
+   "s": "Sacnilk / PWTorch",
+   "u": "https://www.sacnilk.com/news/aew-dynamite-november-25-2026-match-card-predictions-date-start-time-and-how-to-watch"
+  },
+  "WWE|NXT|2026-11-24": {
+   "txt": "NXT au Performance Center d'Orlando, à quelques semaines de TLC. ZARIA met en jeu le titre Women's North American face à Izzi Dame, Mason Rook et Shiloh Hill s'affrontent pour devenir aspirant n°1 au titre NXT de Grayson Waller, et Los Perros del Mal sont aussi en action.",
+   "s": "Fightful",
+   "u": "https://www.fightful.com/wrestling/wwe-nxt-results-11-24-2026-zaria-vs-izzi-dame-perros-del-mal-mason-rook-more/"
   }
  }
 }
