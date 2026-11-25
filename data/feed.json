@@ -1,5 +1,5 @@
 {
- "at": "2026-11-25T10:10:37.168Z",
+ "at": "2026-11-25T11:29:20.380Z",
  "items": [
   {
    "t": "Swerve Strickland débarque en France, à l'APC le 9 janvier 2027 à Gennevilliers",
@@ -9,6 +9,15 @@
    "tags": []
   },
   {
+   "t": "Trick Williams : « Gunther s'est fait botter le c**. Un point c'est tout »",
+   "u": "https://www.catch-newz.com/wwe/newz/61610-trick-williams-gunther-sest-fait-botter-le-c-un-point-cest-tout",
+   "s": "Catch-Newz",
+   "d": "2026-11-25",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
    "t": "Spoilers de WWE SmackDown du 27 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/resultats/61591-spoilers-wwe-smackdown-27-novembre-2026",
    "s": "Catch-Newz",
@@ -16,6 +25,16 @@
    "tags": [
     "WWE",
     "SmackDown"
+   ]
+  },
+  {
+   "t": "WWE NXT du 24 novembre : Nouvelle championne d’Amérique du Nord",
+   "u": "https://www.voxcatch.fr/2026/11/25/resultats-wwe-nxt-24-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-25",
+   "tags": [
+    "WWE",
+    "NXT"
    ]
   },
   {
@@ -76,16 +95,6 @@
    "tags": []
   },
   {
-   "t": "WWE Raw du 23 novembre : Seth Rollins dans la Team USA, derniers face-à-face avant Survivor Series",
-   "u": "https://www.voxcatch.fr/2026/11/24/wwe-raw-23-novembre-2026/",
-   "s": "VOXcatch",
-   "d": "2026-11-24",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
-  },
-  {
    "t": "Résultats de WWE NXT du 24 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/resultats/61607-wwe-nxt-24-novembre-2026",
    "s": "Catch-Newz",
@@ -103,6 +112,16 @@
    "tags": [
     "WWE",
     "NXT"
+   ]
+  },
+  {
+   "t": "WWE Raw du 23 novembre : Seth Rollins dans la Team USA, derniers face-à-face avant Survivor Series",
+   "u": "https://www.voxcatch.fr/2026/11/24/wwe-raw-23-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-24",
+   "tags": [
+    "WWE",
+    "Raw"
    ]
   },
   {
@@ -506,20 +525,6 @@
    "tags": [
     "AEW"
    ]
-  },
-  {
-   "t": "Carte du jour 8 du NOAH Junior Grand Prix 2 - Lethal Odyssey Tour 2026",
-   "u": "https://www.catch-newz.com/international/newz/61551-carte-du-jour-8-du-noah-junior-grand-prix-2-lethal-odyssey-tour-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-23",
-   "tags": []
-  },
-  {
-   "t": "Résultats du jour 6 du NOAH Junior Grand Prix 2 - Lethal Odyssey Tour 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61550-resultats-du-jour-6-du-noah-junior-grand-prix-2-lethal-odyssey-tour-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-23",
-   "tags": []
   }
  ],
  "yt": {
@@ -1469,6 +1474,7 @@
    "https://www.catch-newz.com/wwe/resultats/61607-wwe-nxt-24-novembre-2026",
    "https://www.catch-newz.com/international/newz/61596-swerve-strickland-debarque-en-france-a-lapc-le-9-janvier-2027-a-gennevilliers",
    "https://www.catch-newz.com/wwe/resultats/61576-wwe-raw-23-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61610-trick-williams-gunther-sest-fait-botter-le-c-un-point-cest-tout",
    "https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61591-spoilers-wwe-smackdown-27-novembre-2026",
    "https://www.catch-newz.com/international/newz/61213-carte-du-jour-6-de-la-ajpw-real-world-tag-league-2026",
@@ -1764,13 +1770,12 @@
    "https://www.catch-newz.com/international/newz/61324-carte-du-jour-3-du-noah-junior-grand-prix-2-lethal-odyssey-tour-2026",
    "https://www.catch-newz.com/aew/resultats/61305-aew-full-gear-2026",
    "https://www.catch-newz.com/aew/newz/61321-les-kasper-brothers-creed-brothers-signent-a-laew",
-   "https://www.catch-newz.com/international/resultats/61296-resultats-de-cmll-viernes-espectacular-du-13-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61320-combien-de-spectateurs-pour-finalslam"
+   "https://www.catch-newz.com/international/resultats/61296-resultats-de-cmll-viernes-espectacular-du-13-novembre-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 0 nouveaux articles lus sur la page d'accueil (0 liens)",
-  "VOXcatch": "4 articles (7 j)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
