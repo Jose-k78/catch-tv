@@ -1,5 +1,5 @@
 {
- "at": "2026-11-25T18:50:02.192Z",
+ "at": "2026-11-25T19:54:43.989Z",
  "items": [
   {
    "t": "Preview : AEW Dynamite du 25 novembre 2026",
@@ -9,6 +9,26 @@
    "tags": [
     "AEW",
     "Dynamite"
+   ]
+  },
+  {
+   "t": "Elio LeFleur fera son retour à WWE Main Event ce soir",
+   "u": "https://www.catch-newz.com/wwe/newz/61621-elio-lefleur-fera-son-retour-a-wwe-main-event-ce-soir",
+   "s": "Catch-Newz",
+   "d": "2026-11-25",
+   "tags": [
+    "WWE",
+    "Main Event"
+   ]
+  },
+  {
+   "t": "Les Kasper Brothers ont refusé des offres de la WWE avant de rejoindre l'AEW",
+   "u": "https://www.catch-newz.com/aew/newz/61617-les-kasper-brothers-ont-refuse-des-offres-de-la-wwe-avant-de-rejoindre-laew",
+   "s": "Catch-Newz",
+   "d": "2026-11-25",
+   "tags": [
+    "WWE",
+    "AEW"
    ]
   },
   {
@@ -515,22 +535,6 @@
    "d": "2026-11-23",
    "tags": [
     "WWE"
-   ]
-  },
-  {
-   "t": "Résultats de SUP Fear & Trembling",
-   "u": "https://www.catch-newz.com/international/resultats/61555-resultats-de-sup-fear-trembling",
-   "s": "Catch-Newz",
-   "d": "2026-11-23",
-   "tags": []
-  },
-  {
-   "t": "Carte de CMLL Lunes Clasico du 23 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61517-carte-de-cmll-lunes-clasico-du-23-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-23",
-   "tags": [
-    "CMLL"
    ]
   }
  ],
@@ -1480,6 +1484,8 @@
   "https://www.catch-newz.com/": [
    "https://www.catch-newz.com/aew/newz/61537-preview-aew-dynamite-25-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61607-wwe-nxt-24-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61621-elio-lefleur-fera-son-retour-a-wwe-main-event-ce-soir",
+   "https://www.catch-newz.com/aew/newz/61617-les-kasper-brothers-ont-refuse-des-offres-de-la-wwe-avant-de-rejoindre-laew",
    "https://www.catch-newz.com/international/newz/61596-swerve-strickland-debarque-en-france-a-lapc-le-9-janvier-2027-a-gennevilliers",
    "https://www.catch-newz.com/international/resultats/61619-resultats-de-cmll-martes-populares-du-24-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61616-resultats-de-cmll-martes-de-glamour-du-24-novembre-2026",
@@ -1775,13 +1781,11 @@
    "https://www.catch-newz.com/wwe/newz/61334-lavantage-wargames-sera-en-jeu-a-wwe-raw-du-16-novembre",
    "https://www.catch-newz.com/wwe/newz/61331-cm-punk-veut-continuer-a-catcher-encore-au-moins-5-ans",
    "https://www.catch-newz.com/international/resultats/61336-resultats-de-tnt-ignition-aftershock-2026",
-   "https://www.catch-newz.com/international/newz/61329-ruby-hardy-fille-de-jeff-hardy-sentraine-avec-son-pere",
-   "https://www.catch-newz.com/international/newz/61277-carte-de-cmll-domingo-familiar-du-15-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61326-quel-score-pour-finalslam-sur-tmc"
+   "https://www.catch-newz.com/international/newz/61329-ruby-hardy-fille-de-jeff-hardy-sentraine-avec-son-pere"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
+  "Catch-Newz": "pas de flux RSS : 8 nouveaux articles lus sur la page d'accueil (8 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
