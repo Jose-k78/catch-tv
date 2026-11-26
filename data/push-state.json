@@ -1,30 +1,7 @@
 {
- "at": "2026-11-25T22:52:39.220Z",
+ "at": "2026-11-26T01:06:03.421Z",
  "sa": true,
  "sent": {
-  "a:https://www.catch-newz.com/wwe/newz/61205-si-le-john-cena-classic-est-nul-il-ne-reviendra-pas-en-2027": "2026-11-11",
-  "a:https://www.catch-newz.com/wwe/newz/61218-john-cena-recrute-une-premiere-catcheuse-pour-le-cena-classic-a-wwe-nxt": "2026-11-11",
-  "a:https://www.catch-newz.com/wwe/resultats/61217-wwe-nxt-10-novembre-2026": "2026-11-11",
-  "poll:p-20261111-ic-page": "2026-11-11",
-  "poll:p-20261111-trick-gunther": "2026-11-11",
-  "poll:p-20261111-surprise": "2026-11-11",
-  "story:leon-ruff-2020": "2026-11-11",
-  "a:https://www.catch-newz.com/wwe/newz/61221-mason-rook-fait-son-retour-et-attaque-le-champion-nxt-grayson-waller": "2026-11-11",
-  "ple:Stardom:2026-11-11": "2026-11-11",
-  "a:https://www.catch-newz.com/wwe/newz/61224-une-longue-absence-pour-randy-orton-apres-crown-jewel": "2026-11-11",
-  "a:https://www.catch-newz.com/wwe/newz/61223-preview-wwe-smackdown-du-13-novembre-2026": "2026-11-11",
-  "a:https://www.catch-newz.com/aew/newz/61225-tay-melo-quitte-officiellement-laew": "2026-11-11",
-  "a:https://www.catch-newz.com/international/newz/61229-preview-tna-impact-12-novembre-2026": "2026-11-11",
-  "a:https://www.catch-newz.com/wwe/newz/61226-le-pont-en-memoire-de-stu-hart-ouvre-a-calgary": "2026-11-11",
-  "a:https://www.catch-newz.com/wwe/newz/61227-jacob-fatu-va-participer-a-un-show-indy-le-14-novembre": "2026-11-11",
-  "c:WWE:2026-11-28:1fxhr26": "2026-11-11",
-  "c:WWE:2026-11-28:eqkvkn": "2026-11-11",
-  "c:WWE:2026-11-28:aepw39": "2026-11-11",
-  "c:AEW:2026-11-14:rn1m9": "2026-11-11",
-  "a:https://www.catch-newz.com/wwe/newz/61230-carmelo-hayes-toujours-vivant-apres-wwe-raw": "2026-11-11",
-  "fr:2026-11-11": "2026-11-11",
-  "a:https://www.catch-newz.com/international/resultats/61233-resultats-de-cmll-martes-populares-du-10-novembre-2026": "2026-11-11",
-  "a:https://www.catch-newz.com/international/resultats/61232-resultats-de-cmll-martes-de-glamour-du-10-novembre-2026": "2026-11-11",
   "a:https://www.catch-newz.com/international/newz/61234-carte-de-cmll-jueves-arena-coliseo-du-12-novembre-2026": "2026-11-12",
   "a:https://www.catch-newz.com/aew/resultats/61238-aew-dynamite-11-novembre-2026": "2026-11-12",
   "a:https://www.catch-newz.com/wwe/resultats/61239-wwe-main-event-11-novembre-2026": "2026-11-12",
@@ -383,7 +360,8 @@
   "a:https://www.catch-newz.com/aew/newz/61617-les-kasper-brothers-ont-refuse-des-offres-de-la-wwe-avant-de-rejoindre-laew": "2026-11-25",
   "fr:2026-11-25": "2026-11-25",
   "a:https://www.catch-newz.com/aew/newz/61626-plusieurs-matchs-sajoutent-a-la-carte-de-roh-final-battle-2026": "2026-11-25",
-  "a:https://www.catch-newz.com/international/resultats/61629-resultats-de-mr-miss-cmll-2026": "2026-11-25"
+  "a:https://www.catch-newz.com/international/resultats/61629-resultats-de-mr-miss-cmll-2026": "2026-11-25",
+  "a:https://www.catch-newz.com/aew/resultats/61634-aew-dynamite-25-novembre-2026": "2026-11-26"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -394,6 +372,14 @@
     "url": "#/",
     "tag": "art",
     "short": "2 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Nouvelle info · Catch-Newz",
+    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "1 nouvelle info"
    }
   ]
  }
