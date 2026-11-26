@@ -1,6 +1,25 @@
 {
- "at": "2026-11-26T03:32:45.807Z",
+ "at": "2026-11-26T04:38:56.201Z",
  "items": [
+  {
+   "t": "La WWE vient s'interposer dans le relancement de la Mid-South Wrestling",
+   "u": "https://www.catch-newz.com/wwe/newz/61641-la-wwe-vient-sinterposer-dans-le-relancement-de-la-mid-south-wrestling",
+   "s": "Catch-Newz",
+   "d": "2026-11-26",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Preview : AEW Collision du 26 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/newz/61636-preview-aew-collision-26-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-26",
+   "tags": [
+    "AEW",
+    "Collision"
+   ]
+  },
   {
    "t": "Will Ospreay accepte le challenge de MJF pour AEW Worlds End 2026",
    "u": "https://www.catch-newz.com/aew/newz/61638-will-ospreay-accepte-le-challenge-de-mjf-pour-aew-worlds-end-2026",
@@ -516,26 +535,6 @@
    "d": "2026-11-23",
    "tags": [
     "CMLL"
-   ]
-  },
-  {
-   "t": "Preview : WWE RAW du 23 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61536-preview-wwe-raw-23-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-23",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
-  },
-  {
-   "t": "WWE RAW du 23 novembre 2026 sera marqué par Survivor Series",
-   "u": "https://www.catch-newz.com/wwe/newz/61538-wwe-raw-du-23-novembre-2026-sera-marque-par-survivor-series",
-   "s": "Catch-Newz",
-   "d": "2026-11-23",
-   "tags": [
-    "WWE",
-    "Raw"
    ]
   }
  ],
@@ -1472,6 +1471,44 @@
     "id": "8y8ir1Xlklg",
     "t": "Full NXT highlights: Nov 24, 2026"
    }
+  ],
+  "AEW|Dynamite|2026-11-25": [
+   {
+    "id": "1Uv8Yp7OYgc",
+    "t": "Kyle Fletcher contre Andrade El Ídolo"
+   },
+   {
+    "id": "krOCbgVmd_A",
+    "t": "Kyle Fletcher contre Andrade El Ídolo"
+   },
+   {
+    "id": "OiFXX0I5cJw",
+    "t": "Wrathlander contre Divine Dominion"
+   },
+   {
+    "id": "aJL918aTbYc",
+    "t": "Wrathlander contre Divine Dominion"
+   },
+   {
+    "id": "38uZ40FpUs4",
+    "t": "\"Switchblade\" Jay White contre Hangman Page"
+   },
+   {
+    "id": "39gdbTDhQZ4",
+    "t": "\"Switchblade\" Jay White contre Hangman Page"
+   },
+   {
+    "id": "8QOeq0CCbQM",
+    "t": "Jon Moxley contre \"The Jet\" Kevin Knight"
+   },
+   {
+    "id": "dQMSeKZEC7E",
+    "t": "Jon Moxley contre \"The Jet\" Kevin Knight"
+   },
+   {
+    "id": "7mCr8OLSwbM",
+    "t": "Orange Cassidy contre Mike Bailey"
+   }
   ]
  },
  "rss": {
@@ -1486,8 +1523,10 @@
    "https://www.catch-newz.com/wwe/resultats/61635-wwe-main-event-25-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61634-aew-dynamite-25-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61607-wwe-nxt-24-novembre-2026",
-   "https://www.catch-newz.com/aew/newz/61638-will-ospreay-accepte-le-challenge-de-mjf-pour-aew-worlds-end-2026",
+   "https://www.catch-newz.com/wwe/newz/61641-la-wwe-vient-sinterposer-dans-le-relancement-de-la-mid-south-wrestling",
+   "https://www.catch-newz.com/aew/newz/61636-preview-aew-collision-26-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61537-preview-aew-dynamite-25-novembre-2026",
+   "https://www.catch-newz.com/aew/newz/61638-will-ospreay-accepte-le-challenge-de-mjf-pour-aew-worlds-end-2026",
    "https://www.catch-newz.com/international/resultats/61633-resultats-du-jour-1-de-wsw-megamania",
    "https://www.catch-newz.com/aew/newz/61626-plusieurs-matchs-sajoutent-a-la-carte-de-roh-final-battle-2026",
    "https://www.catch-newz.com/international/resultats/61629-resultats-de-mr-miss-cmll-2026",
@@ -1780,17 +1819,15 @@
    "https://www.catch-newz.com/international/newz/61343-carte-de-iwrg-funcion-espectacular-du-15-novembre-2026",
    "https://www.catch-newz.com/chroniques/nos-interviews/61327-interview-exclusive-avec-princesse-lauriana-son-match-contre-kay-lee-ray-aew-grand-slam-france-ses-blessures",
    "https://www.catch-newz.com/international/resultats/61345-resultats-de-freelance-wrestling-hadouken",
-   "https://www.catch-newz.com/international/resultats/61341-resultats-de-tnt-cold-day-in-hell-2026",
-   "https://www.catch-newz.com/wwe/resultats/61306-resultats-et-streaming-aaa-lucha-libre-14-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61338-resultats-de-gcw-massacre-in-missoula-2026"
+   "https://www.catch-newz.com/international/resultats/61341-resultats-de-tnt-cold-day-in-hell-2026"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
+  "Catch-Newz": "pas de flux RSS : 6 nouveaux articles lus sur la page d'accueil (6 liens)",
   "VOXcatch": "4 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
-  "YouTube AEW": "0 nouvelles vidéos",
+  "YouTube AEW": "9 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
   "YouTube TNA": "0 nouvelles vidéos",
