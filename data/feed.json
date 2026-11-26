@@ -1,12 +1,14 @@
 {
- "at": "2026-11-26T17:54:59.337Z",
+ "at": "2026-11-26T18:55:56.952Z",
  "items": [
   {
-   "t": "Ce samedi à BZW Alcatraz 2, Griff affronte Gabe Kidd dans le match de sa vie",
-   "u": "https://www.catch-newz.com/international/newz/61654-ce-samedi-a-bzw-alcatraz-2-griff-affronte-gabe-kidd-dans-le-match-de-sa-vie",
+   "t": "The Rock fait mousser les ventes de WWE Survivor Series 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61659-the-rock-fait-mousser-les-ventes-de-wwe-survivor-series-2026",
    "s": "Catch-Newz",
    "d": "2026-11-26",
-   "tags": []
+   "tags": [
+    "WWE"
+   ]
   },
   {
    "t": "Spoilers de AEW Collision du 26 novembre 2026",
@@ -84,6 +86,13 @@
    "tags": [
     "WWE"
    ]
+  },
+  {
+   "t": "Ce samedi à BZW Alcatraz 2, Griff affronte Gabe Kidd dans le match de sa vie",
+   "u": "https://www.catch-newz.com/international/newz/61654-ce-samedi-a-bzw-alcatraz-2-griff-affronte-gabe-kidd-dans-le-match-de-sa-vie",
+   "s": "Catch-Newz",
+   "d": "2026-11-26",
+   "tags": []
   },
   {
    "t": "Charlotte Flair : « Rhea Ripley manque à toute la division »",
@@ -526,13 +535,6 @@
     "WWE",
     "NXT"
    ]
-  },
-  {
-   "t": "Résultats de NHB PitFighter X21: Because The Night - A Tribute To Jeff Cannonball",
-   "u": "https://www.catch-newz.com/international/resultats/61602-resultats-de-nhb-pitfighter-x21-because-the-night-a-tribute-to-jeff-cannonball",
-   "s": "Catch-Newz",
-   "d": "2026-11-24",
-   "tags": []
   }
  ],
  "yt": {
@@ -1520,13 +1522,14 @@
    "https://www.catch-newz.com/wwe/resultats/61635-wwe-main-event-25-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61634-aew-dynamite-25-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61607-wwe-nxt-24-novembre-2026",
-   "https://www.catch-newz.com/international/newz/61654-ce-samedi-a-bzw-alcatraz-2-griff-affronte-gabe-kidd-dans-le-match-de-sa-vie",
+   "https://www.catch-newz.com/wwe/newz/61659-the-rock-fait-mousser-les-ventes-de-wwe-survivor-series-2026",
    "https://www.catch-newz.com/aew/resultats/61655-spoilers-aew-collision-26-novembre-2026",
    "https://www.catch-newz.com/international/newz/61637-preview-tna-impact-26-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61652-preview-wwe-raw-30-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61650-preview-wwe-smackdown-du-27-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61631-carte-de-cmll-jueves-de-glamour-du-26-novembre-2026",
    "https://www.catch-newz.com/international/newz/61630-carte-de-cmll-jueves-arena-coliseo-du-26-novembre-2026",
+   "https://www.catch-newz.com/international/newz/61654-ce-samedi-a-bzw-alcatraz-2-griff-affronte-gabe-kidd-dans-le-match-de-sa-vie",
    "https://www.catch-newz.com/wwe/newz/61658-charlotte-flair-rhea-ripley-manque-a-toute-la-division",
    "https://www.catch-newz.com/aew/newz/61657-brian-cage-frustre-par-son-booking-a-laew",
    "https://www.catch-newz.com/wwe/newz/61653-la-promo-larmoyante-de-thea-hail-emeut-le-monde-du-catch",
@@ -1815,8 +1818,7 @@
    "https://www.catch-newz.com/international/newz/61367-brawks-a-eu-seulement-10-jours-pour-devenir-catcheur",
    "https://www.catch-newz.com/international/resultats/61356-resultats-de-beyond-wrestling-open-ri-72",
    "https://www.catch-newz.com/wwe/newz/61366-iyo-sky-absente-des-survivor-series-wargames-pour-la-premiere-fois-cette-annee",
-   "https://www.catch-newz.com/international/resultats/61350-resultats-de-bjw-du-30-octobre-2026",
-   "https://www.catch-newz.com/aew/newz/61365-les-premiers-mots-dilja-dragunov-apres-son-sacre-a-aew-full-gear"
+   "https://www.catch-newz.com/international/resultats/61350-resultats-de-bjw-du-30-octobre-2026"
   ]
  },
  "diag": {
