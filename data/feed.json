@@ -1,13 +1,32 @@
 {
- "at": "2026-11-26T15:58:43.080Z",
+ "at": "2026-11-26T17:04:05.948Z",
  "items": [
   {
-   "t": "La promo larmoyante de Thea Hail émeut le monde du catch",
-   "u": "https://www.catch-newz.com/wwe/newz/61653-la-promo-larmoyante-de-thea-hail-emeut-le-monde-du-catch",
+   "t": "Charlotte Flair : « Rhea Ripley manque à toute la division »",
+   "u": "https://www.catch-newz.com/wwe/newz/61658-charlotte-flair-rhea-ripley-manque-a-toute-la-division",
    "s": "Catch-Newz",
    "d": "2026-11-26",
    "tags": [
     "WWE"
+   ]
+  },
+  {
+   "t": "Brian Cage frustré par son booking à l'AEW",
+   "u": "https://www.catch-newz.com/aew/newz/61657-brian-cage-frustre-par-son-booking-a-laew",
+   "s": "Catch-Newz",
+   "d": "2026-11-26",
+   "tags": [
+    "AEW"
+   ]
+  },
+  {
+   "t": "Spoilers de AEW Collision du 26 novembre 2026",
+   "u": "https://www.catch-newz.com/aew/resultats/61655-spoilers-aew-collision-26-novembre-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-26",
+   "tags": [
+    "AEW",
+    "Collision"
    ]
   },
   {
@@ -66,6 +85,24 @@
    "tags": [
     "AEW",
     "Dynamite"
+   ]
+  },
+  {
+   "t": "Dustin Rhodes annonce le décès de son petit-fils de 3 ans Rowan",
+   "u": "https://www.catch-arena.com/dustin-rhodes-annonce-le-deces-de-son-petit-fils-de-3-ans-rowan/",
+   "s": "Catch Arena",
+   "d": "2026-11-26",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "La promo larmoyante de Thea Hail émeut le monde du catch",
+   "u": "https://www.catch-newz.com/wwe/newz/61653-la-promo-larmoyante-de-thea-hail-emeut-le-monde-du-catch",
+   "s": "Catch-Newz",
+   "d": "2026-11-26",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -497,40 +534,6 @@
    "d": "2026-11-24",
    "tags": [
     "NJPW"
-   ]
-  },
-  {
-   "t": "Résultats de Grind Time Pro Wrestling Friday Night Grind Episode 7",
-   "u": "https://www.catch-newz.com/international/resultats/61601-resultats-de-grind-time-pro-wrestling-friday-night-grind-episode-7",
-   "s": "Catch-Newz",
-   "d": "2026-11-24",
-   "tags": []
-  },
-  {
-   "t": "Triste nouvelle concernant Eugene, ancien catcheur de la WWE",
-   "u": "https://www.catch-newz.com/wwe/newz/61598-triste-nouvelle-concernant-eugene-ancien-catcheur-de-la-wwe",
-   "s": "Catch-Newz",
-   "d": "2026-11-24",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Carte de CMLL Martes De Glamour du 24 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61578-carte-de-cmll-martes-de-glamour-du-24-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-24",
-   "tags": [
-    "CMLL"
-   ]
-  },
-  {
-   "t": "Carte de CMLL Martes Populares du 24 novembre 2026",
-   "u": "https://www.catch-newz.com/international/newz/61573-carte-de-cmll-martes-populares-du-24-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-24",
-   "tags": [
-    "CMLL"
    ]
   }
  ],
@@ -1519,12 +1522,15 @@
    "https://www.catch-newz.com/wwe/resultats/61635-wwe-main-event-25-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61634-aew-dynamite-25-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61607-wwe-nxt-24-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61653-la-promo-larmoyante-de-thea-hail-emeut-le-monde-du-catch",
+   "https://www.catch-newz.com/wwe/newz/61658-charlotte-flair-rhea-ripley-manque-a-toute-la-division",
+   "https://www.catch-newz.com/aew/newz/61657-brian-cage-frustre-par-son-booking-a-laew",
+   "https://www.catch-newz.com/aew/resultats/61655-spoilers-aew-collision-26-novembre-2026",
    "https://www.catch-newz.com/international/newz/61637-preview-tna-impact-26-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61652-preview-wwe-raw-30-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61650-preview-wwe-smackdown-du-27-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61631-carte-de-cmll-jueves-de-glamour-du-26-novembre-2026",
    "https://www.catch-newz.com/international/newz/61630-carte-de-cmll-jueves-arena-coliseo-du-26-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61653-la-promo-larmoyante-de-thea-hail-emeut-le-monde-du-catch",
    "https://www.catch-newz.com/aew/newz/61581-carte-de-roh-final-battle-2026",
    "https://www.catch-newz.com/wwe/newz/61651-avant-wwe-main-event-johnny-gargano-navait-pas-gagne-de-match-solo-depuis-14-mois",
    "https://www.catch-newz.com/aew/newz/61636-preview-aew-collision-26-novembre-2026",
@@ -1812,16 +1818,13 @@
    "https://www.catch-newz.com/wwe/newz/61366-iyo-sky-absente-des-survivor-series-wargames-pour-la-premiere-fois-cette-annee",
    "https://www.catch-newz.com/international/resultats/61350-resultats-de-bjw-du-30-octobre-2026",
    "https://www.catch-newz.com/aew/newz/61365-les-premiers-mots-dilja-dragunov-apres-son-sacre-a-aew-full-gear",
-   "https://www.catch-newz.com/wwe/newz/61363-ethan-page-toutes-les-federations-precedentes-nont-pas-su-reconnaitre-qui-jetais-ni-ce-que-japportais",
-   "https://www.catch-newz.com/wwe/newz/61362-quelles-sont-les-adversaires-ideales-pour-paige",
-   "https://www.catch-newz.com/international/newz/61361-philippe-chereau-une-seule-chose-a-dire-simplement-merci",
-   "https://www.catch-newz.com/international/resultats/61353-resultats-du-jour-2-de-dg-the-gate-of-evolution-2026-partie-2"
+   "https://www.catch-newz.com/wwe/newz/61363-ethan-page-toutes-les-federations-precedentes-nont-pas-su-reconnaitre-qui-jetais-ni-ce-que-japportais"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
+  "Catch-Newz": "pas de flux RSS : 11 nouveaux articles lus sur la page d'accueil (11 liens)",
   "VOXcatch": "5 articles (7 j)",
-  "Catch Arena": "0 articles (7 j)",
+  "Catch Arena": "1 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
