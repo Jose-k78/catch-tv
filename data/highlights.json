@@ -1,1528 +1,1535 @@
 {
-  "updated": "2026-11-25",
-  "note": "Vidéos des chaînes officielles uniquement. res = résultats (spoilers, affichés seulement à la demande). m = résumé match par match (promotions japonaises).",
-  "items": {
-    "WWE|Raw|2026-10-26": {
-      "v": [
-        {
-          "id": "YsK4AsNyxbA",
-          "t": "Je’Von Evans face à Sami Zayn"
-        },
-        {
-          "id": "OUDC43vqCBI",
-          "t": "Sami Zayn contre Je’Von Evans — titre incontesté de la WWE"
-        },
-        {
-          "id": "yCmeKlPzfWE",
-          "t": "The Vision, Penta et Je’Von Evans : l’après-match"
-        },
-        {
-          "id": "GJ7M7aZt-YA",
-          "t": "Bayley contre Lyra Valkyria — sans disqualification"
-        },
-        {
-          "id": "TsTbp1YYTJI",
-          "t": "IYO SKY contre Raquel Rodriguez"
-        },
-        {
-          "id": "4O2hDs54I2U",
-          "t": "Chad Gable et Dragon Lee contre Ethan Page et Big Cass"
-        }
-      ],
-      "res": [
-        "Sami Zayn a battu Je’Von Evans et conserve le titre incontesté de la WWE, sur une fin contestée (Penta a tenté d’encaisser sa mallette, Bron Breakker l’en a empêché)",
-        "Après le match, Bron Breakker et Bronson Reed ont attaqué Penta et Je’Von Evans",
-        "Bayley a battu Lyra Valkyria par soumission dans un match sans disqualification",
-        "IYO SKY a battu Raquel Rodriguez (sans titre en jeu), puis Raquel Rodriguez et Roxanne Perez l’ont attaquée",
-        "Ethan Page et Big Cass ont battu Chad Gable et Dragon Lee",
-        "Becky Lynch a battu Liv Morgan par disqualification après l’intervention du Judgment Day : Liv Morgan conserve le titre mondial féminin",
-        "Tiffany Stratton a tenté d’encaisser sa mallette sur Liv Morgan, mais Dominik Mysterio l’a mise à l’abri"
-      ],
-      "s": "WWE.com",
-      "u": "https://www.wwe.com/shows/raw/2026-10-26"
+ "updated": "2026-11-26",
+ "note": "Vidéos des chaînes officielles uniquement. res = résultats (spoilers, affichés seulement à la demande). m = résumé match par match (promotions japonaises).",
+ "items": {
+  "WWE|NXT|2026-10-27": {
+   "v": [],
+   "res": [
+    "Noam Dar et Romeo Moreno ont battu The Vanity Project (Brad Baylor et Ricky Smokes) en demi-finale du Dusty Rhodes Tag Team Classic et se qualifient pour la finale",
+    "Chantel Monroe, venue d’Evolve, a battu Lizzy Rain pour ses débuts à NXT",
+    "Sean Legacy a battu Saquon Shugars",
+    "Myles Borne et Tavion Heights se sont fait face : ils s’affronteront dans un Weapons Wild Match à Halloween Havoc",
+    "Hank Walker et Tank Ledger ont battu les Wagner Brothers (Galeno et El Hijo de Dr. Wagner Jr.) en demi-finale du Dusty Classic et rejoignent la finale",
+    "Robert Stone a annoncé un Unsanctioned Match entre Dion Lennox et Cruz Montana la semaine prochaine",
+    "Jackson Drake a battu EK Prosper et conserve le titre nord-américain de NXT, après que Kam Hendrix a poussé Prosper du coin",
+    "Le show s’est terminé sur une bagarre entre Grayson Waller et Tony D’Angelo sur un parking"
+   ],
+   "s": "PWTorch",
+   "u": "https://www.pwtorch.com/site/2026/10/27/nxt-tv-results-10-27-wellss-live-report-on-ek-prosper-vs-jackson-drake-dusty-classic-semifinals-evolves-chantel-monroe-debuts-more/"
+  },
+  "AEW|Dynamite|2026-10-28": {
+   "v": [],
+   "res": [
+    "The Cut (Jay White et David Finlay) a battu les Death Riders (Jon Moxley et Daniel Garcia)",
+    "The Cut et leurs alliés ont attaqué les Death Riders après le match ; Claudio Castagnoli est venu à la rescousse",
+    "Kyle Fletcher a battu Jungle Jack Perry",
+    "Les Motor City Machine Guns (Alex Shelley et Chris Sabin) ont battu FTR (Dax Harwood et Cash Wheeler) dans le 3e match de leur série au meilleur des cinq (2-1 pour MCMG)",
+    "Marina Shafir a battu Rachel Armstrong par soumission",
+    "Darby Allin a battu Josh Alexander et conserve le titre TNT",
+    "Queen Aminata a battu Persephone et remporte le titre TBS",
+    "Will Ospreay contre Kyle Fletcher pour le titre mondial AEW officialisé pour Full Gear ; Swerve Strickland réclame un Texas Death Match à Full Gear",
+    "Jay White a projeté Jon Moxley sur le béton ; Claudio Castagnoli évacué sur civière après une bagarre générale"
+   ],
+   "s": "WrestleView",
+   "u": "https://www.wrestleview.com/top-story/396143-aew-fright-night-dynamite-results-two-title-matches-10-28-26/"
+  },
+  "TNA|Impact|2026-10-29": {
+   "res": [
+    "M By Elegance a battu Jada Stone et conserve le titre Knockouts TV",
+    "Zero a battu BDE",
+    "Amazing Red a battu Cedric Alexander et conserve le titre X-Division",
+    "AJ Francis a battu John Skyler",
+    "Elijah a battu Ryan Nemeth"
+   ],
+   "seg": [
+    {
+     "k": "Backstage",
+     "t": "Au sein de The System, Eddie Edwards soutient Cedric Alexander avant son match pour le titre X-Division ; Eddie et Bear Bronson se disputent jusqu’à l’intervention de Brian Myers."
     },
-    "WWE|NXT|2026-10-27": {
-      "v": [],
-      "res": [
-        "Noam Dar et Romeo Moreno ont battu The Vanity Project (Brad Baylor et Ricky Smokes) en demi-finale du Dusty Rhodes Tag Team Classic et se qualifient pour la finale",
-        "Chantel Monroe, venue d’Evolve, a battu Lizzy Rain pour ses débuts à NXT",
-        "Sean Legacy a battu Saquon Shugars",
-        "Myles Borne et Tavion Heights se sont fait face : ils s’affronteront dans un Weapons Wild Match à Halloween Havoc",
-        "Hank Walker et Tank Ledger ont battu les Wagner Brothers (Galeno et El Hijo de Dr. Wagner Jr.) en demi-finale du Dusty Classic et rejoignent la finale",
-        "Robert Stone a annoncé un Unsanctioned Match entre Dion Lennox et Cruz Montana la semaine prochaine",
-        "Jackson Drake a battu EK Prosper et conserve le titre nord-américain de NXT, après que Kam Hendrix a poussé Prosper du coin",
-        "Le show s’est terminé sur une bagarre entre Grayson Waller et Tony D’Angelo sur un parking"
-      ],
-      "s": "PWTorch",
-      "u": "https://www.pwtorch.com/site/2026/10/27/nxt-tv-results-10-27-wellss-live-report-on-ek-prosper-vs-jackson-drake-dusty-classic-semifinals-evolves-chantel-monroe-debuts-more/"
+    {
+     "k": "Annonce",
+     "t": "Ricky Sosa annonce qu’il représentera la Belgique à la TNA World X Cup ; Fabian Aichner représentera aussi son pays."
     },
-    "AEW|Dynamite|2026-10-28": {
-      "v": [],
-      "res": [
-        "The Cut (Jay White et David Finlay) a battu les Death Riders (Jon Moxley et Daniel Garcia)",
-        "The Cut et leurs alliés ont attaqué les Death Riders après le match ; Claudio Castagnoli est venu à la rescousse",
-        "Kyle Fletcher a battu Jungle Jack Perry",
-        "Les Motor City Machine Guns (Alex Shelley et Chris Sabin) ont battu FTR (Dax Harwood et Cash Wheeler) dans le 3e match de leur série au meilleur des cinq (2-1 pour MCMG)",
-        "Marina Shafir a battu Rachel Armstrong par soumission",
-        "Darby Allin a battu Josh Alexander et conserve le titre TNT",
-        "Queen Aminata a battu Persephone et remporte le titre TBS",
-        "Will Ospreay contre Kyle Fletcher pour le titre mondial AEW officialisé pour Full Gear ; Swerve Strickland réclame un Texas Death Match à Full Gear",
-        "Jay White a projeté Jon Moxley sur le béton ; Claudio Castagnoli évacué sur civière après une bagarre générale"
-      ],
-      "s": "WrestleView",
-      "u": "https://www.wrestleview.com/top-story/396143-aew-fright-night-dynamite-results-two-title-matches-10-28-26/"
+    {
+     "k": "Backstage",
+     "t": "Elayna Black demande à Heather By Elegance jusqu’à quand elle supportera M et annonce qu’elle vise le titre Knockouts TV."
     },
-    "TNA|Impact|2026-10-29": {
-      "res": [
-        "M By Elegance a battu Jada Stone et conserve le titre Knockouts TV",
-        "Zero a battu BDE",
-        "Amazing Red a battu Cedric Alexander et conserve le titre X-Division",
-        "AJ Francis a battu John Skyler",
-        "Elijah a battu Ryan Nemeth"
-      ],
-      "seg": [
-        {
-          "k": "Backstage",
-          "t": "Au sein de The System, Eddie Edwards soutient Cedric Alexander avant son match pour le titre X-Division ; Eddie et Bear Bronson se disputent jusqu’à l’intervention de Brian Myers."
-        },
-        {
-          "k": "Annonce",
-          "t": "Ricky Sosa annonce qu’il représentera la Belgique à la TNA World X Cup ; Fabian Aichner représentera aussi son pays."
-        },
-        {
-          "k": "Backstage",
-          "t": "Elayna Black demande à Heather By Elegance jusqu’à quand elle supportera M et annonce qu’elle vise le titre Knockouts TV."
-        },
-        {
-          "k": "Annonce",
-          "t": "Après une attaque de Zoey Serrano sur un agent de sécurité et une menace de Shayna Baszler, Daria Rae annonce Indi Hartwell contre Shayna Baszler pour le titre mondial des Knockouts."
-        },
-        {
-          "k": "Promo",
-          "t": "Kiera Hogan et Tasha Steelz évoquent le retour de Fire & Flava et défient Shotzi Blackheart et Allie."
-        },
-        {
-          "k": "Contrat",
-          "t": "Bear Bronson défie Eddie Edwards : le vainqueur prendra le contrôle de The System. Eddie accepte."
-        },
-        {
-          "k": "Face-à-face",
-          "t": "Leon Slater invite Trey Miguel sur le ring ; après avoir parlé de leurs carrières, ils se serrent la main puis se fixent du regard."
-        },
-        {
-          "k": "Promo",
-          "t": "Mustafa Ali prévient Frankie Kazarian qu’Avery Styles finira par le trahir."
-        },
-        {
-          "k": "Attaque",
-          "t": "Après le match d’Elijah, Nic Nemeth l’attaque ; Elijah brise ensuite une guitare sur la tête de Ryan Nemeth."
-        },
-        {
-          "k": "Autre",
-          "t": "Match cinématique « Slaughterhouse Syx » entre les Hardys et Syx : Jeff Hardy finit coincé sous une poubelle après une attaque à la hache."
-        }
-      ],
-      "s": "PWTorch",
-      "u": "https://www.pwtorch.com/site/2026/10/29/tna-impact-tv-results-10-29-hardys-vs-syx-red-vs-alexander-elijah-vs-nemeth-skyler-vs-francis/"
+    {
+     "k": "Annonce",
+     "t": "Après une attaque de Zoey Serrano sur un agent de sécurité et une menace de Shayna Baszler, Daria Rae annonce Indi Hartwell contre Shayna Baszler pour le titre mondial des Knockouts."
     },
-    "WWE|SmackDown|2026-10-30": {
-      "res": [
-        "Chelsea Green a battu Nikki Bella et conserve le titre féminin de la WWE.",
-        "Rey Fénix a battu Ricky Saints et conserve le titre AAA Cruiserweight.",
-        "Jade Cargill a battu Tatum Paxley.",
-        "Sami Zayn a battu Trick Williams et conserve le titre incontesté de la WWE."
-      ],
-      "seg": [
-        {
-          "k": "Annonce",
-          "t": "Danhausen anime le show spécial veille d’Halloween et présente la carte, dont Zayn contre Williams et Green contre Bella pour les titres."
-        },
-        {
-          "k": "Promo",
-          "t": "Cody Rhodes parle de Randy Orton, de Crown Jewel et de son match Last Man Standing, laissant entendre que le vainqueur deviendra aspirant n°1."
-        },
-        {
-          "k": "Backstage",
-          "t": "Tiffany Stratton prévoit d’encaisser sa mallette sur Liv Morgan dès qu’elle sera seule ; elle refuse l’échange proposé par Danhausen."
-        },
-        {
-          "k": "Attaque",
-          "t": "Liv Morgan félicite puis nargue Chelsea Green avant Crown Jewel ; Roxanne Perez attaque Stratton, Green, Morgan et Raquel Rodriguez s’en prennent à elle, et IYO SKY vient à son secours."
-        },
-        {
-          "k": "Interview",
-          "t": "Blake Monroe veut repartir de l’avant après sa rivalité avec Giulia et se moque du règne de Chelsea Green."
-        },
-        {
-          "k": "Backstage",
-          "t": "Trick Williams promet de repartir avec deux titres et de défier Roman Reigns ; l’expérience de Danhausen fait fuir Lil Yachty."
-        },
-        {
-          "k": "Backstage",
-          "t": "Damian Priest, furieux de la chance donnée à Trick Williams, est confronté par FrAxiom pour son attaque sur R-Truth : un match se prépare."
-        },
-        {
-          "k": "Attaque",
-          "t": "Gunther passe Danhausen à travers une table, puis le Demon Balor apparaît, frappe Gunther à l’échelle et l’achève d’un Coup de Grâce."
-        },
-        {
-          "k": "Annonce",
-          "t": "Rappel du match No Holds Barred entre Kevin Owens et CM Punk, vendredi prochain au Barclays Center."
-        },
-        {
-          "k": "Autre",
-          "t": "Le main event est d’abord donné vainqueur par disqualification pour Williams, puis relancé sans disqualification par Nick Aldis ; Zayn s’impose après un coup bas et un coup de ceinture."
-        }
-      ],
-      "s": "Wrestling Inc.",
-      "u": "https://www.wrestlinginc.com/2302585/wwe-smackdown-october-30-2026-results/"
+    {
+     "k": "Promo",
+     "t": "Kiera Hogan et Tasha Steelz évoquent le retour de Fire & Flava et défient Shotzi Blackheart et Allie."
     },
-    "WWE|Raw|2026-11-02": {
-      "res": [
-        "Ethan Page a battu Chad Gable et remporte le titre Intercontinental.",
-        "Liv Morgan, Raquel Rodriguez et Roxanne Perez ont battu Chelsea Green, IYO SKY et Tiffany Stratton.",
-        "Bronson Reed, Austin Theory et Bron Breakker ont battu Penta, Je’Von Evans et Dragon Lee.",
-        "Solo Sikoa a battu Royce Keys par disqualification."
-      ],
-      "seg": [
-        {
-          "k": "Face-à-face",
-          "t": "Roman Reigns ouvre le show, Sami Zayn l’interrompt : échange d’insultes, Reigns promet de faire reconnaître Zayn à Crown Jewel."
-        },
-        {
-          "k": "Promo",
-          "t": "Joe Hendry promet de remonter tout en haut."
-        },
-        {
-          "k": "Annonce",
-          "t": "John Cena annonce le John Cena Classic au Raw spécial du 14 décembre à Disney World, avec Cody Rhodes comme premier participant."
-        },
-        {
-          "k": "Face-à-face",
-          "t": "Randy Orton interrompt Cody Rhodes et menace de mettre fin à sa carrière comme il l’avait fait avec Dusty Rhodes."
-        },
-        {
-          "k": "Attaque",
-          "t": "Bayley dit à Adam Pearce ne pas respecter Jade Cargill, Michin et B-Fab, qui l’attaquent ensuite en coulisses."
-        },
-        {
-          "k": "Débuts",
-          "t": "Après le main event, bagarre entre The 946 et The Bloodline : un homme encapuchonné, Cruz Montana, stoppe Roman Reigns d’un lariat et rejoint The 946."
-        },
-        {
-          "k": "Attaque",
-          "t": "Sami Zayn achève la soirée en frappant Roman Reigns d’un Helluva Kick."
-        }
-      ],
-      "s": "Fightful",
-      "u": "https://www.fightful.com/wrestling/wwe-raw-results-11-2-2026-solo-sikoa-vs-royce-keys-john-cena-roman-reigns-more/"
+    {
+     "k": "Contrat",
+     "t": "Bear Bronson défie Eddie Edwards : le vainqueur prendra le contrôle de The System. Eddie accepte."
     },
-    "NJPW|PLE|2026-11-03": {
-      "res": [
-        "Aaron Wolf, Master Wato et KUUKAI ont battu Francesco Akira, Jakob Austin Young et Zane Jay.",
-        "Mistico, KUSHIDA et Masatora Yasuda ont battu Titan, Gedo et Daiki Nagai.",
-        "Ryohei Oiwa et Hartley Jackson ont battu Lee Johnson et Blake Christian.",
-        "Yuya Uemura, Toru Yano, Ryusuke Taguchi et Kazuma Sumi ont battu Ren Narita, Shun Skywalker, DOUKI et Yoshinobu Kanemaru.",
-        "YOH, Hyo et Shota Umino ont battu SHO, Dick Togo et Yujiro Takahashi.",
-        "Shingo Takagi et Jeff Cobb ont battu Jon Moxley et Wheeler Yuta.",
-        "Yuto-Ice et OSKAR ont battu Callum Newman et Will Ospreay par disqualification et conservent le titre IWGP par équipe.",
-        "Kenny Omega a battu Yota Tsuji et Boltin Oleg.",
-        "Taiji Ishimori et Robbie X ont battu Robbie Eagles et Kosei Fujita en finale de la Super Jr. Tag League.",
-        "Gabe Kidd a battu Taichi et conserve le titre IWGP Global."
-      ],
-      "m": [
-        {
-          "t": "Aaron Wolf, Master Wato et KUUKAI contre United Empire",
-          "r": "Aaron Wolf, Master Wato et KUUKAI l’emportent."
-        },
-        {
-          "t": "Mistico, KUSHIDA et Masatora Yasuda contre Unbound Co.",
-          "r": "Mistico, KUSHIDA et Masatora Yasuda l’emportent."
-        },
-        {
-          "t": "TMDK (Ryohei Oiwa et Hartley Jackson) contre The Swirl",
-          "r": "TMDK gagne ; MJF défie ensuite Oiwa en vidéo pour Wrestle Kingdom 21, défi accepté."
-        },
-        {
-          "t": "Uemura, Yano, Taguchi et Sumi contre HOUSE OF TORTURE",
-          "r": "Yuya Uemura, Toru Yano, Ryusuke Taguchi et Kazuma Sumi l’emportent."
-        },
-        {
-          "t": "YOH, Hyo et Shota Umino contre HOUSE OF TORTURE",
-          "r": "Victoire de YOH, Hyo et Umino ; SHO, démasqué, défie YOH pour le titre IWGP Junior à Wrestle Kingdom, avec départ de NJPW ou retour de Roppongi 3K en jeu."
-        },
-        {
-          "t": "Shingo Takagi et Jeff Cobb contre Jon Moxley et Wheeler Yuta",
-          "r": "Takagi et Cobb gagnent ; Takagi défie Moxley pour Wrestle Kingdom 21."
-        },
-        {
-          "t": "Titres IWGP par équipe : Knockout Bros. contre Callum Newman et Will Ospreay",
-          "r": "Les Knockout Bros. conservent les titres par disqualification ; Newman se retourne contre Ospreay et le défie pour Wrestle Kingdom 21."
-        },
-        {
-          "t": "Kenny Omega contre Yota Tsuji contre Boltin Oleg",
-          "r": "Kenny Omega gagne et donne rendez-vous à Tsuji au Tokyo Dome."
-        },
-        {
-          "t": "Finale de la Super Jr. Tag League : Taiji Ishimori et Robbie X contre Robbie Eagles et Kosei Fujita",
-          "r": "Ishimori et Robbie X remportent le tournoi ; les titres IWGP Junior par équipe sont déclarés vacants (blessure d’El Desperado)."
-        },
-        {
-          "t": "Titre IWGP Global : Gabe Kidd contre Taichi",
-          "r": "Gabe Kidd conserve le titre ; il attaque ensuite Hiroshi Tanahashi, et Jon Moxley se joint à lui pour semer le chaos."
-        }
-      ],
-      "seg": [
-        {
-          "k": "Annonce",
-          "t": "Mistico annonce que les titres IWGP Junior par équipe sont vacants à cause de la blessure d’El Desperado ; Ishimori propose un match à trois pour les nouveaux champions."
-        },
-        {
-          "k": "Attaque",
-          "t": "Après le main event, Gabe Kidd frappe Tanahashi d’un piledriver ; Uemura et Takagi interviennent, mais Kidd et Moxley les mettent au sol et donnent rendez-vous au Tokyo Dome."
-        }
-      ],
-      "s": "Fightful",
-      "u": "https://www.fightful.com/wrestling/njpw-power-struggle-results-11-3-kenny-omega-yota-tsuji-jon-moxley-compete/"
+    {
+     "k": "Face-à-face",
+     "t": "Leon Slater invite Trey Miguel sur le ring ; après avoir parlé de leurs carrières, ils se serrent la main puis se fixent du regard."
     },
-    "WWE|PLE|2026-10-31": {
-      "res": [
-        "Myles Borne a battu Tavion Heights dans un match Weapons Wild.",
-        "Izzi Dame a battu Zaria.",
-        "Zilla Fatu a battu Charlie Dempsey dans un match « Very Nice Very Evil » (Falls Count Anywhere).",
-        "Kelani Jordan a battu Wren Sinclair et conserve le titre féminin de la NXT.",
-        "Shiloh Hill a battu Naraku.",
-        "Grayson Waller a battu Tony D'Angelo et conserve le titre de la NXT."
-      ],
-      "seg": [
-        {
-          "k": "Autre",
-          "t": "NXT Halloween Havoc au Performance Center d'Orlando, animé par Danhausen."
-        },
-        {
-          "k": "Annonce",
-          "t": "La roue (Spin the Wheel) désigne un match « Very Nice Very Evil » pour Zilla Fatu contre Charlie Dempsey."
-        },
-        {
-          "k": "Annonce",
-          "t": "Michael Chandler sera l'arbitre du match sans règles entre Cruz Montana et Dion Lennox le mercredi suivant."
-        },
-        {
-          "k": "Attaque",
-          "t": "EK Prosper s'en prend à Kam Hendrix pendant un segment avec Danhausen."
-        },
-        {
-          "k": "Promo",
-          "t": "Après le main event, CM Punk apparaît à l'écran et réclame un match pour le titre de la NXT dès le mercredi suivant."
-        }
-      ],
-      "s": "PWTorch",
-      "u": "https://www.pwtorch.com/site/2026/10/31/nxt-halloween-havoc-results-10-31-grayson-waller-vs-tony-dangelo-kelani-jordan-vs-wren-sinclair-two-spin-the-wheel-matches-more/"
+    {
+     "k": "Promo",
+     "t": "Mustafa Ali prévient Frankie Kazarian qu’Avery Styles finira par le trahir."
     },
-    "WWE|NXT|2026-11-04": {
-      "res": [
-        "Chad Gable, Rey Fenix et Dragon Lee ont battu The Vanity Project.",
-        "Kelani Jordan a battu Paige et conserve le titre féminin de la NXT.",
-        "Romeo Moreno et Noam Dar ont battu Hank et Tank en finale du Dusty Rhodes Tag Team Classic.",
-        "Cruz Montana a battu Dion Lennox dans un match sans règles.",
-        "Grayson Waller a battu CM Punk et conserve le titre de la NXT."
-      ],
-      "seg": [
-        {
-          "k": "Backstage",
-          "t": "CM Punk promet à Shiloh Hill la première chance au titre une fois champion de la NXT."
-        },
-        {
-          "k": "Retour",
-          "t": "Paige fait son retour comme challenger mystère de Kelani Jordan pour le titre féminin."
-        },
-        {
-          "k": "Célébration",
-          "t": "Cody Rhodes, aux commentaires de la finale, remet la Dusty Cup ; les vainqueurs obtiennent un match pour les titres par équipe de la NXT la semaine suivante."
-        },
-        {
-          "k": "Attaque",
-          "t": "Pendant le match sans règles, Royce Keys et The 946 s'en prennent à Osiris Griffin et Cutler James venus interférer."
-        },
-        {
-          "k": "Annonce",
-          "t": "John Cena invite Zilla Fatu au John Cena Classic du 14 décembre, en hommage à son père Umaga, et refuse la demande de Kam Hendrix."
-        },
-        {
-          "k": "Attaque",
-          "t": "Kevin Owens tente de rejoindre le ring pendant le main event, retenu par la sécurité : sa présence distrait CM Punk."
-        }
-      ],
-      "s": "Sports Illustrated",
-      "u": "https://www.si.com/fannation/wrestling/wwe/wwe-nxt-results-john-cena-hands-out-new-invite-waller-shocks-punk-nov4"
+    {
+     "k": "Attaque",
+     "t": "Après le match d’Elijah, Nic Nemeth l’attaque ; Elijah brise ensuite une guitare sur la tête de Ryan Nemeth."
     },
-    "AEW|Dynamite|2026-11-04": {
-      "res": [
-        "Queen Aminata, Willow Nightingale, The Brawling Birds et WrathLander ont battu Divine Dominion, Persephone et Triangle of Madness dans un match Blood & Guts.",
-        "La Don Callis Family a battu Will Ospreay, Adam Copeland, Darby Allin, Steven Borden et The Young Bucks dans un match Blood & Guts."
-      ],
-      "seg": [
-        {
-          "k": "Autre",
-          "t": "Dynamite spécial Blood & Guts au VyStar Veterans Memorial Arena de Jacksonville."
-        },
-        {
-          "k": "Interview",
-          "t": "Don Callis et son clan, puis l'équipe d'Ospreay avec Mick Foley, présentent le Blood & Guts ; Ospreay met en garde Kyle Fletcher."
-        },
-        {
-          "k": "Promo",
-          "t": "Andrade parle de son match pour le titre National contre Tommaso Ciampa à Collision et de sa future chance au titre mondial."
-        },
-        {
-          "k": "Backstage",
-          "t": "Une dispute entre Swerve Strickland, Austin Creed, Bandido et Kofi tourne à la bagarre ; Bandido réclame un Texas Death match."
-        },
-        {
-          "k": "Face-à-face",
-          "t": "Mercedes Moné appelle Marina Shafir : l'échange tourne à la bagarre, séparée par la sécurité."
-        },
-        {
-          "k": "Attaque",
-          "t": "Après la victoire, Kyle Fletcher promet d'en finir à Full Gear ; Wardlow envoie Darby Allin à travers une pile de tables."
-        }
-      ],
-      "s": "Slam Wrestling",
-      "u": "https://slamwrestling.net/news/aew-dynamite-blood-and-guts-results-november-4th-2026/"
-    },
-    "TNA|Impact|2026-11-05": {
-      "res": [
-        "Frankie Kazarian et Avery Styles ont battu Hunter James et Alexander Lev (Spiral Tap de Styles).",
-        "Eddie Edwards a battu Bear Bronson et garde le contrôle de The System.",
-        "Shotzi et Allie ont battu Fire N Flava (Tasha Steelz et Kiera Hogan).",
-        "Nic et Ryan Nemeth ont battu Leon Slater et Amazing Red et conservent le titre TNA World Tag Team (Danger Zone de Nic Nemeth sur Red)."
-      ],
-      "seg": [
-        {
-          "k": "Promo",
-          "t": "Moose défie Syx, qui l'avait attaqué ; Joseph Sawyer et Samul Shaw s'en prennent à lui, puis Matt Hardy arrive avec un tuyau et Syx s'enfuit."
-        },
-        {
-          "k": "Backstage",
-          "t": "Trey Miguel serre la main de Leon Slater et Amazing Red, puis se dispute avec Slater et annonce qu'il commentera le main event."
-        },
-        {
-          "k": "Face-à-face",
-          "t": "Indi Hartwell et Daria Rae se font face en coulisses ; Brian Johnson retient Daria."
-        },
-        {
-          "k": "Attaque",
-          "t": "Mustafa Ali, aux commentaires, monte sur le ring après le premier match et se fait sortir d'un coup de poing par Frankie Kazarian."
-        },
-        {
-          "k": "Backstage",
-          "t": "Alisha Edwards reproche à Cedric Alexander et Brian Myers d'avoir laissé The System se faire attaquer."
-        },
-        {
-          "k": "Célébration",
-          "t": "Après le match, Alexander et Myers rejoignent Eddie Edwards et Bear Bronson : les quatre lèvent les bras ensemble."
-        },
-        {
-          "k": "Blessure",
-          "t": "Rapport médical : Jeff Hardy (traumatisme à la tête après l'attaque de la semaine passée), Avery Styles et BDE."
-        },
-        {
-          "k": "Attaque",
-          "t": "Après leur défaite, Fire N Flava attaquent Shotzi et Allie."
-        },
-        {
-          "k": "Backstage",
-          "t": "Elayna Black dit à Heather que M se sert d'elle ; Heather la défie pour un match la semaine prochaine."
-        },
-        {
-          "k": "Trahison",
-          "t": "Pendant l'initiation de Harley Hudson chez The Righteous, Xia Brookside l'attaque d'un DDT puis repart avec le groupe."
-        },
-        {
-          "k": "Annonce",
-          "t": "Matt Hardy et Moose jurent de se venger de Syx : ils l'affronteront à Destination X."
-        },
-        {
-          "k": "Attaque",
-          "t": "Après le main event, Elijah descend avec sa guitare et les Nemeth s'enfuient."
-        },
-        {
-          "k": "Autre",
-          "t": "Harley Hudson regrette d'avoir rejoint The Righteous ; elle trouve une maison de poupée et Taryn Terrell l'accueille dans « la Doll House »."
-        }
-      ],
-      "s": "PWTorch",
-      "u": "https://www.pwtorch.com/site/2026/11/05/tna-impact-tv-results-11-5-nemeths-vs-slater-red-blackheart-allie-vs-steelz-hogan-edwards-vs-bronson/"
-    },
-    "WWE|SmackDown|2026-11-06": {
-      "res": [
-        "Shinsuke Nakamura a battu Tama Tonga.",
-        "Fatal Influence a battu The Baddies (Michin et B-Fab) par disqualification après l’intervention d’Alexa Bliss et Tatum Paxley ; The Baddies conserve le titre féminin par équipe.",
-        "Damian Priest a battu Nathan Frazer par arrêt de l’arbitre.",
-        "Kevin Owens a battu CM Punk dans un match No Holds Barred."
-      ],
-      "seg": [
-        {
-          "k": "Face-à-face",
-          "t": "GUNTHER ouvre le show, Finn Bálor l’interrompt sans son personnage du Demon : bagarre, Bálor reste debout à la fin."
-        },
-        {
-          "k": "Face-à-face",
-          "t": "Après le match par équipe, Charlotte Flair et Bayley arrivent : la confrontation laisse entrevoir un match WarGames féminin."
-        },
-        {
-          "k": "Promo",
-          "t": "Chelsea Green prend le micro, Liv Morgan l’interrompt."
-        },
-        {
-          "k": "Attaque",
-          "t": "Jimmy Uso interrompt la promo de Sami Zayn, The 946 l’attaque sous les yeux de Zayn."
-        },
-        {
-          "k": "Autre",
-          "t": "Le No Holds Barred déborde dans toute la salle : poubelle sur la tête, chariot, et les deux hommes passent à travers la table des commentateurs."
-        }
-      ],
-      "s": "Sacnilk (spoilers des enregistrements du 2 nov. à Brooklyn)",
-      "u": "https://www.sacnilk.com/news/wwe-smackdown-spoilers-november-6-2026-taped-results-winners"
-    },
-    "AEW|Collision|2026-11-07": {
-      "res": [
-        "Chris Jericho a battu Blake Christian.",
-        "FTR (Dax Harwood et Cash Wheeler) ont battu The Motor City Machine Guns (Chris Sabin et Alex Shelley) dans un match de leur série au meilleur des cinq.",
-        "Nick Wayne a battu Marcus Mathers.",
-        "The Death Riders (Jon Moxley, Gabe Kidd et Daniel Garcia) ont battu Shane Taylor Promotions (Shane Taylor, Shawn Dean et Carlie Bravo).",
-        "Persephone a battu Mina Shirakawa.",
-        "Tommaso Ciampa a battu Andrade El Idolo et remporte le titre National de la AEW."
-      ],
-      "seg": [
-        {
-          "k": "Promo",
-          "t": "Nick Wayne affirme qu’il va prendre le contrôle de la croisière de Jericho après l’avoir battu deux fois."
-        },
-        {
-          "k": "Promo",
-          "t": "The New Level (Kofi Kingston et Creed) avec Lexy annoncent que le problème de Bandido est désormais le leur et visent les titres trios la semaine prochaine."
-        },
-        {
-          "k": "Promo",
-          "t": "Après sa victoire, Nick Wayne se proclame capitaine du bateau et nargue le public."
-        },
-        {
-          "k": "Promo",
-          "t": "Jon Moxley prévient que Jay White et The Cut devront mériter leur victoire face aux Death Riders."
-        },
-        {
-          "k": "Promo",
-          "t": "Mercedes Moné demande où est Marina, l’accuse d’avoir quitté le navire et promet de l’humilier à Full Gear."
-        },
-        {
-          "k": "Attaque",
-          "t": "The Cut (Jay White, Mercedes Moné et leurs alliés) attaquent les Death Riders : Moné piétine Moxley et White place un Blade Runner."
-        },
-        {
-          "k": "Attaque",
-          "t": "Après son match, Persephone s’acharne sur Mina Shirakawa, mais Queen Aminata accourt pour l’en empêcher."
-        },
-        {
-          "k": "Backstage",
-          "t": "Juice Robinson est transporté à l’hôpital ; Jay White accuse les Death Riders et promet de se venger."
-        },
-        {
-          "k": "Promo",
-          "t": "Davis et Doyle promettent de ramener les titres par équipe à la Don Callis Family."
-        },
-        {
-          "k": "Célébration",
-          "t": "Tommaso Ciampa fête son nouveau titre avec sa fille dans le public, tandis que Speedball vient voir Andrade."
-        }
-      ],
-      "s": "PWTorch",
-      "u": "https://www.pwtorch.com/site/2026/11/07/aew-collision-results-11-7-andrade-vs-ciampa-for-the-national-title-persephone-vs-mina-shirakawa-ftr-vs-mcmg-death-riders-jericho-and-nick-wayne-in-action/"
-    },
-    "ROH|ROH TV|2026-11-05": {
-      "res": [
-        "Lee Moriarty et AR Fox font match nul à la limite de temps de 10 minutes ; Lee Moriarty conserve le titre Pure de ROH.",
-        "Robyn Renegade a battu Rachael Ellering.",
-        "Adam Priest et El Phantasmo ont battu Dante Casanova et Kiran Grey.",
-        "Shane Taylor Promotions ont battu TJ Crawford, Ori Gold, Hadar Horvitz et Sean Maluta.",
-        "Mark Davis a battu Marcus Mathers.",
-        "Darius Martin a battu QT Marshall.",
-        "Deonna Purrazzo a battu Jody Threat et conserve le titre Women’s Pure de ROH.",
-        "Eddie Kingston et Ortiz ont battu RPG Vice (Rocky Romero et Trent Beretta)."
-      ],
-      "seg": [
-        {
-          "k": "Annonce",
-          "t": "AR Fox, grâce au match nul du Proving Ground, obtient un match pour le titre Pure."
-        },
-        {
-          "k": "Attaque",
-          "t": "Action Andretti frappe Adam Priest avec la ceinture de champion TV de ROH, El Phantasmo le fait fuir."
-        },
-        {
-          "k": "Débuts",
-          "t": "Marcus Mathers fait ses débuts à ROH et raconte qu’il allait voir les shows de ROH à Philadelphie enfant."
-        },
-        {
-          "k": "Annonce",
-          "t": "En coulisses, Athena reproche à Diamanté et Billie Starkz de l’avoir lâchée, annonce que Hyan rejoint son groupe et aura un match pour le titre mondial féminin à Final Battle."
-        },
-        {
-          "k": "Attaque",
-          "t": "Après le match de Darius Martin, Bryan Keith, The Grizzled Young Veterans, RPG Vice et The Kingdom attaquent, avant d’être repoussés par Big Boom AJ, Scorpio Sky, Matt Sydal et Bustah & The Brain."
-        }
-      ],
-      "s": "Solowrestling",
-      "u": "https://solowrestling.com/us/new/150878-results-roh-ring-of-honor-november-5-2026"
-    },
-    "CMLL|Viernes Espectacular|2026-11-06": {
-      "res": [
-        "Alexius et Péndulo ont battu Makara et Poseidón.",
-        "Cerebro Negro Jr., Feroz et Infarto ont battu El Hijo del Pantera, Infinito et Pantera Jr. (2 tombés à 1).",
-        "Yutani a battu Rey Pegasus.",
-        "La Fuerza Poblana (Guerrero Maya Jr. et Xelhua) ont battu Galeón Fantasma (Difunto et Zandokan Jr.) (2 tombés à 1).",
-        "Las Fieras del Ring (Black Tiger et Rugido) ont battu Los Depredadores (Vegas Depredador et Volador Jr.) (2 tombés à 0).",
-        "Bandido, Neón et Titán ont battu Averno, Bárbaro Cavernario et Soberano Jr. (2 tombés à 1)."
-      ],
-      "seg": [
-        {
-          "k": "Attaque",
-          "t": "Soberano Jr. arrache le masque de Bandido pendant le match puis s’acharne sur lui ; après le combat, il détruit les masques lancés par le public : la rivalité appelle un match à plus gros enjeu."
-        }
-      ],
-      "m": [
-        {
-          "t": "Alexius et Péndulo contre Makara et Poseidón",
-          "r": "Victoire d’Alexius et Péndulo en ouverture."
-        },
-        {
-          "t": "Cerebro Negro Jr., Feroz et Infarto contre El Hijo del Pantera, Infinito et Pantera Jr.",
-          "r": "Cerebro Negro Jr., Feroz et Infarto l’emportent 2 tombés à 1."
-        },
-        {
-          "t": "Yutani contre Rey Pegasus",
-          "r": "Yutani gagne ce match éclair."
-        },
-        {
-          "t": "La Fuerza Poblana contre Galeón Fantasma",
-          "r": "Guerrero Maya Jr. et Xelhua gagnent 2 tombés à 1."
-        },
-        {
-          "t": "Las Fieras del Ring contre Los Depredadores",
-          "r": "Black Tiger et Rugido gagnent 2 tombés à 0."
-        },
-        {
-          "t": "Bandido, Neón et Titán contre Averno, Bárbaro Cavernario et Soberano Jr.",
-          "r": "L’équipe de Bandido gagne 2 tombés à 1, mais Bandido finit sans masque après l’attaque de Soberano Jr."
-        }
-      ],
-      "s": "Dos Dos Solo Dos",
-      "u": "https://dosdossolodos.com/2026/11/07/resultados-cmll-viernes-espectacular-06-noviembre-2026/"
-    },
-    "WWE|PLE|2026-11-07": {
-      "res": [
-        "Cody Rhodes a battu Randy Orton dans un Last Man Standing match.",
-        "Penta et Je’Von Evans ont battu Bron Breakker et Austin Theory et remportent le titre mondial par équipe.",
-        "Chelsea Green a battu Liv Morgan dans un match champion contre championne et remporte le titre Crown Jewel féminin.",
-        "Tiffany Stratton a battu Chelsea Green en encaissant sa mallette Money in the Bank et remporte le titre féminin de la WWE.",
-        "Roman Reigns a battu Sami Zayn dans un match champion contre champion et remporte le titre Crown Jewel masculin."
-      ],
-      "seg": [
-        {
-          "k": "Attaque",
-          "t": "Pendant le match par équipe, Maxxine Dupri aide Theory et Bronson Reed attaque Evans et Penta, avant qu’Oba Femi ne surgisse et projette Reed de la scène à travers une table."
-        },
-        {
-          "k": "Attaque",
-          "t": "Après la victoire de Chelsea Green, Liv Morgan l’attaque."
-        },
-        {
-          "k": "Trahison",
-          "t": "Tiffany Stratton frappe Chelsea Green avec la mallette Money in the Bank et encaisse aussitôt son contrat."
-        },
-        {
-          "k": "Célébration",
-          "t": "Après leur match, Roman Reigns et Sami Zayn se prennent dans les bras."
-        }
-      ],
-      "s": "WWE.com",
-      "u": "https://www.wwe.com/complete-crown-jewel-2026-results"
-    },
-    "WWE|Raw|2026-11-09": {
-      "res": [
-        "Oba Femi a battu Bron Breakker par disqualification après l’intervention d’Austin Theory et Logan Paul.",
-        "Rey Fenix a battu Chad Gable et Big Cass dans un match à trois et devient aspirant n°1 au titre Intercontinental.",
-        "Bayley a battu Michin.",
-        "IYO SKY et Becky Lynch ont battu Roxanne Perez et Raquel Rodriguez."
-      ],
-      "seg": [
-        {
-          "k": "Célébration",
-          "t": "Penta et Je’Von Evans, nouveaux champions du monde par équipe, fêtent leur titre ; Bron Breakker les attaque et appelle Oba Femi."
-        },
-        {
-          "k": "Promo",
-          "t": "Chad Gable, Big Cass et Rey Fenix réclament chacun une chance au titre Intercontinental ; Adam Pearce organise un match à trois."
-        },
-        {
-          "k": "Attaque",
-          "t": "The 946 attaquent Fenix, Cass et Gable ; Royce Keys exige que Roman Reigns le reconnaisse avant la fin de la soirée."
-        },
-        {
-          "k": "Annonce",
-          "t": "Cody Rhodes revient sur sa victoire en Last Man Standing contre Randy Orton et annonce un 5 contre 5 Team USA contre Team Mexico aux Survivor Series, avec Rey Mysterio capitaine de Team Mexico."
-        },
-        {
-          "k": "Autre",
-          "t": "Dominik Mysterio et JD McDonagh proposent leurs services à Team USA, Rhodes refuse ; CM Punk rejoint l’équipe et attaque Dominik et McDonagh avec Rhodes."
-        },
-        {
-          "k": "Backstage",
-          "t": "Rey Mysterio recrute Penta dans Team Mexico, alors que Je’Von Evans est invité dans Team USA : les deux partenaires seront adversaires."
-        },
-        {
-          "k": "Attaque",
-          "t": "Jade Cargill, B-Fab, Michin et Fatal Influence s’allient et attaquent Charlotte Flair, Tatum Paxley et Alexa Bliss."
-        },
-        {
-          "k": "Annonce",
-          "t": "Becky Lynch défie Liv Morgan : Lynch contre Morgan pour le titre mondial féminin aux Survivor Series, et Raquel Rodriguez contre IYO SKY pour le titre Intercontinental féminin la semaine prochaine."
-        },
-        {
-          "k": "Retour",
-          "t": "Face-à-face entre Roman Reigns et Royce Keys ; The Bloodline (les Usos, Solo Sikoa et Jacob Fatu, de retour) brûlent la caravane de The 946 et les attaquent, Fatu fait traverser la table des commentateurs à Carmelo Hayes. Reigns lance un défi pour un WarGames aux Survivor Series."
-        }
-      ],
-      "s": "Wrestling Inc.",
-      "u": "https://www.wrestlinginc.com/2310917/wwe-raw-november-9-2026-results/"
-    },
-    "WWE|NXT|2026-11-10": {
-      "res": [
-        "EK Prosper a battu Kam Hendrix.",
-        "Izzi Dame a battu Wren Sinclair.",
-        "Lizzy Rain a battu Chantel Monroe.",
-        "The Vanity Project (Brad Baylor et Ricky Smokes) ont battu Hank et Tank et conserve le titre NXT Tag Team."
-      ],
-      "seg": [
-        {
-          "k": "Promo",
-          "t": "Le champion NXT Grayson Waller se moque de CM Punk en entrant sur sa musique."
-        },
-        {
-          "k": "Retour",
-          "t": "Mason Rook fait son retour et attaque Grayson Waller, rejoint par Shiloh Hill."
-        },
-        {
-          "k": "Autre",
-          "t": "Après sa défaite, Kam Hendrix pète les plombs et jette des chaises dans le ring."
-        },
-        {
-          "k": "Attaque",
-          "t": "Zaria, championne North American féminine de NXT, attaque Izzi Dame après sa victoire."
-        },
-        {
-          "k": "Promo",
-          "t": "Kendal Grey défie la championne NXT Kelani Jordan pour un match de championnat."
-        },
-        {
-          "k": "Attaque",
-          "t": "Hank et Tank attaquent Ricky Smokes et Brad Baylor avant le match de championnat ; Noam Dar et Romeo Moreno interviennent ensuite, sans succès."
-        },
-        {
-          "k": "Attaque",
-          "t": "Los Perros del Mal, DarkState et BirthRight interrompent le discours de Zilla Fatu : énorme bagarre générale."
-        }
-      ],
-      "s": "WWE.com",
-      "u": "https://www.wwe.com/shows/wwenxt/2026-11-10"
-    },
-    "AEW|Dynamite|2026-11-11": {
-      "res": [
-        "Brodido (Bandido et Brody King) et The New Level (Austin Creed et Kofi) ont fait double décompte à l’extérieur ; Brodido conserve le titre AEW World Trios.",
-        "David Finlay a battu Orange Cassidy.",
-        "Persephone a battu Gypsy Mac.",
-        "Motor City Machine Guns (Alex Shelley et Chris Sabin) ont battu FTR dans le 5e match de leur série et deviennent aspirants n°1 au titre AEW World Tag Team.",
-        "Tommaso Ciampa a battu « Speedball » Mike Bailey et conserve le titre AEW National.",
-        "Jon Moxley et Marina Shafir ont battu Mercedes Moné et Jay White."
-      ],
-      "seg": [
-        {
-          "k": "Backstage",
-          "t": "Images inédites d’Adam Copeland quittant son équipe après Blood and Guts ; il reproche à Ospreay et aux autres d’avoir abandonné."
-        },
-        {
-          "k": "Face-à-face",
-          "t": "Face-à-face entre le champion du monde AEW Will Ospreay et Kyle Fletcher : Fletcher gifle Ospreay, qui a le dernier mot."
-        },
-        {
-          "k": "Annonce",
-          "t": "Kazuchika Okada défendra le titre AEW International contre Adam Copeland à Full Gear."
-        },
-        {
-          "k": "Attaque",
-          "t": "Clark Connors attaque Orange Cassidy par surprise après son match."
-        },
-        {
-          "k": "Promo",
-          "t": "Andrade El Ídolo, après avoir perdu le titre National, promet de devenir le premier champion du monde AEW latino."
-        },
-        {
-          "k": "Promo",
-          "t": "Hangman Adam Page et Brodido parlent de leur Texas Death match à Full Gear."
-        },
-        {
-          "k": "Annonce",
-          "t": "Ilja Dragunov défie Tommaso Ciampa pour le titre National à Full Gear ; Ciampa lui fait un doigt d’honneur."
-        },
-        {
-          "k": "Attaque",
-          "t": "Après le match mixte, Mercedes Moné attaque Marina Shafir et The Cut s’en prend aux Death Riders ; Orange Cassidy intervient et Moxley lui serre la main, puis Moné frappe Shafir avec sa ceinture."
-        }
-      ],
-      "s": "AEW",
-      "u": "https://www.allelitewrestling.com/post/aew-dynamite-collision-results-november-11-2026"
-    },
-    "AEW|Collision|2026-11-11": {
-      "res": [
-        "Les Young Bucks et « Jungle » Jack Perry ont battu Kevin Knight, Brian Cage et El Clon.",
-        "Wardlow a battu Nick Comoroto.",
-        "El SkyTeam (Místico et Máscara Dorada) ont battu The Swirl (Lee Johnson et Blake Christian) et conserve le titre ROH World Tag Team.",
-        "Queen Aminata a battu Hyan et Skye Blue et conserve le titre TBS."
-      ],
-      "seg": [
-        {
-          "k": "Promo",
-          "t": "Divine Dominion réagit à sa défaite à Blood and Guts."
-        },
-        {
-          "k": "Promo",
-          "t": "Jack Perry et les Young Bucks parlent de leurs matchs à Full Gear."
-        },
-        {
-          "k": "Autre",
-          "t": "Nick Wayne interrompt le match du titre ROH par équipe en affirmant avoir battu Chris Jericho."
-        },
-        {
-          "k": "Attaque",
-          "t": "Après le match à trois, Persephone attaque Queen Aminata grâce à une distraction de Britt Baker ; Maya World vient en aide : Aminata défendra le titre TBS contre Persephone et Maya World à Tailgate Brawl."
-        }
-      ],
-      "s": "AEW",
-      "u": "https://www.allelitewrestling.com/post/aew-dynamite-collision-results-november-11-2026"
-    },
-    "TNA|Impact|2026-11-12": {
-      "res": [
-        "Elayna Black a battu Heather By Elegance.",
-        "Apex (Shayna Baszler et Zoey Serrano) ont battu The King Bees (Charity King et Danni Bee).",
-        "Moose a battu Samuel Shaw par disqualification.",
-        "Mustafa Ali a battu Frankie Kazarian.",
-        "Nic Nemeth a battu Harley Hudson."
-      ],
-      "seg": [
-        {
-          "k": "Annonce",
-          "t": "Santino ajoute The Nemeths au match Matt Hardy et Moose contre syX à Destination X, qui devient un match pour les titres TNA World Tag Team."
-        },
-        {
-          "k": "Backstage",
-          "t": "Brian Johnson interrompt Daria Rae au téléphone ; elle estime qu'ils sont partis du mauvais pied à cause de Santino et craint les critiques d'Indi Hartwell aux commentaires."
-        },
-        {
-          "k": "Promo",
-          "t": "syX avertissent Hardy et Moose ainsi que The Nemeths."
-        },
-        {
-          "k": "Face-à-face",
-          "t": "John Hotch parle de la meilleure période de sa carrière ; Expressions et AJ Francis l'interrompent et AJ Francis vise le titre TNA International."
-        },
-        {
-          "k": "Attaque",
-          "t": "Après le match de Moose, syX l'attaquent et Matt Hardy vient à son secours."
-        },
-        {
-          "k": "Backstage",
-          "t": "Heather By Elegance demande pourquoi elle n'est pas en couverture du magazine avec M By Elegance et lui demande son aide pour gagner l'Ultimate X des Knockouts."
-        },
-        {
-          "k": "Face-à-face",
-          "t": "Nic Nemeth s'emporte contre Santino, qui lui impose de défendre les titres par équipe à Destination X ; Santino ajoute un enjeu pour Elijah à leur match de la soirée."
-        },
-        {
-          "k": "Promo",
-          "t": "The System affirment être sur la même longueur d'onde ; Xia Brookside annonce l'arrivée des Righteous."
-        },
-        {
-          "k": "Autre",
-          "t": "Court documentaire sur Trey Miguel et Leon Slater avant Destination X."
-        },
-        {
-          "k": "Annonce",
-          "t": "Harley Hudson et Mila Moore rejoignent The Dollhouse."
-        }
-      ],
-      "s": "Fightful",
-      "u": "https://www.fightful.com/wrestling-news/tna-impact-results-11-12-nic-nemeth-elijah-moose-compete"
-    },
-    "ROH|ROH TV|2026-11-12": {
-      "res": [
-        "The Premier Athletes (Ariya Daivari et Tony Nese) ont battu Serpentico et Orlando Colon.",
-        "Lee Moriarty a battu A.R. Fox et conserve le titre ROH Pure.",
-        "Athena a battu B3CCA dans un match Proving Ground pour le titre ROH Women's World.",
-        "Bryan Keith a battu Matt Mako.",
-        "Shane Taylor et Tehuti Miles ont battu Kiran Grey et Darian Bengston.",
-        "The Infantry (Capt. Shawn Dean et Carlie Bravo) ont battu Isaiah Broner et Ren Jones.",
-        "Robyn Renegade a battu Sirena Linton.",
-        "Bandido a battu Bishop Kaun et conserve le titre ROH World."
-      ],
-      "seg": [
-        {
-          "k": "Annonce",
-          "t": "Après le match de Robyn Renegade, Big Boom AJ et QT Marshall défient RPG Vice pour AEW Full Gear."
-        }
-      ],
-      "s": "Fightful",
-      "u": "https://www.fightful.com/wrestling-news/roh-tv-results-11-12-multiple-title-matches"
-    },
-    "WWE|SmackDown|2026-11-13": {
-      "res": [
-        "Le match pour le titre WWE Tag Team entre MFT (Tama Tonga et Talla Tonga) et Bakusai (Shinsuke Nakamura et Kyoki) s'est terminé en no contest après l'intervention des War Raiders : MFT conserve le titre WWE Tag Team.",
-        "Damian Priest a battu Axiom.",
-        "Charlotte Flair a battu Jacy Jayne (titre United States non mis en jeu).",
-        "Gunther a battu Finn Bálor."
-      ],
-      "seg": [
-        {
-          "k": "Promo",
-          "t": "John Cena ouvre le show : le titre du John Cena Classic sera décerné le 14 décembre, avec un record de débuts de talents de NXT à Raw. Il invite Charlotte Flair, émue, qui promet de gagner."
-        },
-        {
-          "k": "Backstage",
-          "t": "Rey Mysterio et Cody Rhodes demandent à Nick Aldis un membre de SmackDown pour le match 5 contre 5 Team Mexico contre Team USA des Survivor Series."
-        },
-        {
-          "k": "Attaque",
-          "t": "Les War Raiders interrompent le match pour le titre par équipe et attaquent les quatre catcheurs."
-        },
-        {
-          "k": "Backstage",
-          "t": "CM Punk, furieux d'avoir raté une chance au titre à cause de Kevin Owens, promet d'en finir avec lui."
-        },
-        {
-          "k": "Backstage",
-          "t": "Fatal Influence se moque du choix de Charlotte Flair ; John Cena les invite à entrer dans le tournoi."
-        },
-        {
-          "k": "Face-à-face",
-          "t": "Kevin Owens interrompt Sami Zayn (avec Johnny Gargano et Candice LeRae) et réclame un match pour le titre ; Gargano l'attaque, Owens lui place un Stunner et prévient Zayn que son règne est en sursis."
-        },
-        {
-          "k": "Annonce",
-          "t": "Rey Mysterio présente Rey Fénix comme nouveau membre de la Team Mexico pour les Survivor Series."
-        },
-        {
-          "k": "Retour",
-          "t": "Le match de Charlotte Flair tourne à la bagarre générale entre deux camps de catcheuses, avec le retour de Stephanie Vaquer ; Flair annonce un match WarGames au micro."
-        },
-        {
-          "k": "Promo",
-          "t": "Tiffany Stratton, nouvelle championne WWE féminine, dédie son règne à Chelsea Green, qu'elle a trahie à Crown Jewel ; Green l'attaque, mais Stratton la frappe avec la bague de Crown Jewel."
-        },
-        {
-          "k": "Backstage",
-          "t": "Paige console Chelsea Green avant que Blake Monroe vienne se moquer d'elle."
-        },
-        {
-          "k": "Autre",
-          "t": "En fin de show, Gunther pousse Finn Bálor sur l'arbitre et profite de son absence pour un coup bas, ce qui laisse la porte ouverte à une revanche."
-        }
-      ],
-      "s": "Khel Now",
-      "u": "https://khelnow.com/wwe/wwe-smackdown-results-winners-november-13-202611"
-    },
-    "AEW|PLE|2026-11-14": {
-      "res": [
-        "Jack Perry a battu The Beast Mortos (avant-show).",
-        "Kevin Knight, Wardlow et El Clon ont battu Jordan Cruz, Jaden Monroe et RJ Wylde (avant-show).",
-        "Big Boom! A.J., QT Marshall, Darius Martin et Matt Sydal ont battu Lance Archer, Josh Alexander, Rocky Romero et Trent Beretta (avant-show).",
-        "Queen Aminata a battu Persephone, Skye Blue et Hyan et conserve le titre TBS (avant-show).",
-        "Kazuchika Okada a battu Adam Copeland et conserve le titre International de la AEW.",
-        "The Young Bucks ont battu Mark Davis et Jake Doyle et conservent le titre mondial par équipe de la AEW.",
-        "Swerve Strickland, Kofi et Austin Creed ont battu Hangman Adam Page, Brody King et Bandido dans un Texas Death Match et remportent le titre mondial des trios de la AEW.",
-        "Kris Statlander et Harley Cameron ont battu Jamie Hayter et Alex Windsor et remportent le titre mondial féminin par équipe de la AEW.",
-        "Ilja Dragunov a battu Tommaso Ciampa et remporte le titre National de la AEW.",
-        "Mercedes Moné a battu Marina Shafir et conserve le titre mondial féminin de la AEW.",
-        "The Cut ont battu The Death Riders et The Conglomeration dans l’Anarchy in the Arena.",
-        "Will Ospreay a battu Kyle Fletcher et conserve le titre mondial de la AEW."
-      ],
-      "seg": [
-        {
-          "k": "Annonce",
-          "t": "Après sa victoire en avant-show, Jack Perry envoie un message à Samoa Joe, qui le défie pour une revanche à Dynamite le 18 novembre."
-        },
-        {
-          "k": "Autre",
-          "t": "Maya World ne peut pas rejoindre Phoenix à cause d’une interdiction de vol nationale : le match pour le titre TBS se dispute à quatre sans elle."
-        },
-        {
-          "k": "Attaque",
-          "t": "Après la défense des Young Bucks, les Motor City Machine Guns viennent leur serrer la main, mais Jacob et Drew Kasper attaquent les deux équipes ; FTR s’en mêle et Stokely Hathaway accueille les Kasper."
-        },
-        {
-          "k": "Autre",
-          "t": "Les ceintures des trios sont redessinées avec des plaques en hommage à PAC."
-        },
-        {
-          "k": "Autre",
-          "t": "Pendant l’Anarchy in the Arena, Wheeler Yuta, Claudio Castagnoli et KeMalito interviennent ; Jay White fait le tombé sur Jon Moxley."
-        },
-        {
-          "k": "Face-à-face",
-          "t": "Avant le main event, Will Ospreay lorgne le contrat pour le titre mondial d’Andrade El Idolo avant que les deux hommes ne se serrent dans les bras."
-        },
-        {
-          "k": "Retour",
-          "t": "Après le main event, un homme masqué attaque Will Ospreay : c’est MJF, de retour pour la première fois depuis All In, qui piétine la ceinture mondiale de la AEW et s’enfuit par la foule."
-        }
-      ],
-      "s": "Wrestle Purists",
-      "u": "https://wrestlepurists.com/aew-full-gear-2026-results-mjf-returns-will-ospreay-retains/"
-    },
-    "CMLL|Viernes Espectacular|2026-11-13": {
-      "res": [
-        "Los Viajeros del Espacio (Hombre Bala Jr., Max Star, Valiente Jr. et Futuro) ont battu Virus, Cancerbero, Carnífice et Inquisidor.",
-        "God's Eye (Syuri et Ami Sohrei) ont battu Thunder Rosa et Kira.",
-        "Rugido a battu Vegas Depredador.",
-        "Volador Jr. a battu Black Tiger.",
-        "Bandido et Brillante Jr. ont battu Bárbaro Cavernario et Yutani (2 tombés sur 3).",
-        "Le Sky Team (Místico, Máscara Dorada et Neón) a battu Hechicero, Zandokan Jr. et Ángel de Oro (2 tombés sur 3)."
-      ],
-      "seg": [
-        {
-          "k": "Retour",
-          "t": "Le Sky Team (Místico, Máscara Dorada et Neón) se reforme pour le combat principal, accompagné de KeMonito, face au trio de Hechicero accompagné de KeMalito."
-        },
-        {
-          "k": "Autre",
-          "t": "Yota Tsuji (NJPW) fait une apparition à l'Arena México, en vue de l'événement CMLL / NJPW Lucha Kingdom."
-        }
-      ],
-      "m": [
-        {
-          "t": "Huit hommes : Viajeros del Espacio contre Virus, Cancerbero, Carnífice et Inquisidor",
-          "r": "Victoire des Viajeros del Espacio."
-        },
-        {
-          "t": "Équipes féminines : God's Eye contre Thunder Rosa et Kira",
-          "r": "Syuri et Ami Sohrei l'emportent."
-        },
-        {
-          "t": "Simple : Rugido contre Vegas Depredador",
-          "r": "Victoire de Rugido."
-        },
-        {
-          "t": "Simple : Volador Jr. contre Black Tiger",
-          "r": "Victoire de Volador Jr."
-        },
-        {
-          "t": "2 tombés sur 3 : Bandido et Brillante Jr. contre Bárbaro Cavernario et Yutani",
-          "r": "Bandido et Brillante Jr. gagnent."
-        },
-        {
-          "t": "2 tombés sur 3 : Sky Team contre Hechicero, Zandokan Jr. et Ángel de Oro",
-          "r": "Le Sky Team réuni l'emporte."
-        }
-      ],
-      "s": "Fightful",
-      "u": "https://www.fightful.com/wrestling-news/cmll-viernes-espectacular-results-11-13-2026-sky-team-reunites-yota-tsuji-appears-bandido-syuri-more"
-    },
-    "AAA|Lucha Libre AAA|2026-11-14": {
-      "w": [
-        {
-          "n": "YouTube (épisode complet)",
-          "u": "https://www.youtube.com/watch?v=saYGiwAv9FU"
-        }
-      ],
-      "s": "Fightful",
-      "u": "https://www.fightful.com/wrestling-news/watch-full-episode-lucha-libre-aaa-november-14-2026"
-    },
-    "WWE|Raw|2026-11-16": {
-      "res": [
-        "LA Knight a battu The Miz (avec Kit Wilson) et devient le 4e membre de l'équipe USA pour Survivor Series.",
-        "Stephanie Vaquer a battu Jacy Jayne par disqualification après l'intervention de Fallon Henley et Lainey Reid (Fatal Influence).",
-        "IYO SKY a battu Raquel Rodriguez et remporte le titre Intercontinental féminin.",
-        "The 946 (Carmelo Hayes et Cruz Montana) ont battu The Usos (Jey et Jimmy Uso) et gagnent l'avantage pour le WarGames masculin."
-      ],
-      "seg": [
-        {
-          "k": "Annonce",
-          "t": "Adam Pearce prévient The Bloodline : toute intervention extérieure dans le match pour l'avantage du WarGames donnera l'avantage à l'autre équipe."
-        },
-        {
-          "k": "Promo",
-          "t": "Cody Rhodes parle du match à 5 contre 5 USA contre Mexique de Survivor Series ; CM Punk le rejoint, puis The Miz et Kit Wilson demandent à entrer dans l'équipe."
-        },
-        {
-          "k": "Promo",
-          "t": "LA Knight arrive et propose un match contre The Miz pour trancher ; après le match, Punk et Rhodes s'en prennent à Kit Wilson."
-        },
-        {
-          "k": "Annonce",
-          "t": "John Cena présente Liv Morgan comme nouvelle invitée de la John Cena Classic."
-        },
-        {
-          "k": "Promo",
-          "t": "Becky Lynch s'en prend à Liv Morgan et l'invite à l'attaquer ; Morgan s'échappe, un match entre elles à Survivor Series se dessine."
-        },
-        {
-          "k": "Attaque",
-          "t": "Fatal Influence attaque Stephanie Vaquer après son match ; Bayley vient l'aider mais Fatal Influence reste debout, un WarGames féminin se profile."
-        },
-        {
-          "k": "Backstage",
-          "t": "Jacob Fatu s'énerve des conditions du match pour l'avantage, Solo Sikoa tente de le calmer."
-        },
-        {
-          "k": "Promo",
-          "t": "Oba Femi annonce qu'il va s'occuper de The Vision après leur attaque sur Penta et Je'Von Evans."
-        },
-        {
-          "k": "Annonce",
-          "t": "Rey Mysterio révèle que Dragon Lee est le 4e membre de l'équipe Mexique."
-        },
-        {
-          "k": "Backstage",
-          "t": "Ethan Page, champion Intercontinental, confronte Rey Fénix, son prétendant n° 1."
-        },
-        {
-          "k": "Face-à-face",
-          "t": "Après la victoire de The 946, Solo Sikoa et Jacob Fatu rejoignent The Usos sur le ring pour un face-à-face."
-        },
-        {
-          "k": "Annonce",
-          "t": "Raw de la semaine prochaine commencera plus tôt (double enregistrement avec SmackDown) ; Sol Ruca contre Lyra Valkyria est annoncé."
-        }
-      ],
-      "s": "Wrestling Inc.",
-      "u": "https://www.wrestlinginc.com/2317253/wwe-raw-november-16-2026-results/"
-    },
-    "TNA|PLE|2026-11-15": {
-      "res": [
-        "Elijah a battu Vincent (pré-show).",
-        "Tasha Steelz a battu M By Elegance, Heather By Elegance, Shotzi Blackheart, Kiera Hogan et Shayna Baszler dans un Ultimate X et devient prétendante n° 1 au titre Knockouts.",
-        "Matt Hardy a battu Joseph Sawyer dans un match sans disqualification.",
-        "Ricky Sosa a battu Fabian Aichner, Amir Jordan, The Home Town Man et Jason Hotch dans un match à 5 par élimination et remporte la World X-Cup 2026.",
-        "Frankie Kazarian contre Mustafa Ali (Call Your Shot Trophy) : sans résultat (no contest).",
-        "KC Navarro a battu Cedric Alexander, John Skyler, Joe Alonzo, A.J. Francis et TJP dans un Ultimate X et devient prétendant n° 1 au titre X-Division.",
-        "Leon Slater a battu Trey Miguel et conserve le titre mondial de la TNA."
-      ],
-      "seg": [
-        {
-          "k": "Attaque",
-          "t": "Vincent attaque Elijah pendant sa chanson avant leur match ; Santino Marella chauffe ensuite la salle."
-        },
-        {
-          "k": "Attaque",
-          "t": "Joseph Sawyer attaque Matt Hardy pendant sa promo ; la sécurité les sépare et Santino Marella lance le match sans disqualification."
-        },
-        {
-          "k": "Annonce",
-          "t": "La World X-Cup, prévue en tournoi, devient un match à 5 à cause de problèmes de voyage."
-        },
-        {
-          "k": "Attaque",
-          "t": "Après le no contest, Mustafa Ali frappe Kazarian avec la cloche et une chaise, puis s'en prend au public au micro."
-        },
-        {
-          "k": "Annonce",
-          "t": "Une vidéo annonce Taryn Terrell, Mila Moore et Harley Hudson à Impact jeudi."
-        },
-        {
-          "k": "Promo",
-          "t": "Leon Slater défie ses prétendants au bord du ring avant que Trey Miguel n'arrive dans les coulisses juste avant le match."
-        }
-      ],
-      "s": "Wrestling Inc.",
-      "u": "https://www.wrestlinginc.com/2316787/tna-destination-x-november-15-2026-results/"
-    },
-    "WWE|NXT|2026-11-17": {
-      "res": [
-        "Kam Hendrix a battu Tony D'Angelo après une distraction de Myles Borne.",
-        "Chantel Monroe a battu Layla Diggs.",
-        "Zilla Fatu a battu Dion Lennox (avec Osiris Griffin et Cutler James).",
-        "Tristan Angels a battu Saquon Shugars et Sean Legacy dans un match à trois.",
-        "Kelani Jordan a battu Kendal Grey (avec Wren Sinclair) par arrêt de l'arbitre et conserve le titre NXT Women's."
-      ],
-      "seg": [
-        {
-          "k": "Annonce",
-          "t": "Une vidéo montre John Cena invitant Izzi Dame à la John Cena Classic ; Zaria, furieuse, file vers le ring."
-        },
-        {
-          "k": "Attaque",
-          "t": "Zaria appelle Izzi Dame et l'étend au sol ; Dame éclate de rire, allongée sur le ring."
-        },
-        {
-          "k": "Annonce",
-          "t": "John Cena invite aussi Shiloh Hill à la John Cena Classic."
-        },
-        {
-          "k": "Backstage",
-          "t": "Grayson Waller interrompt Mason Rook et Robert Stone pour réclamer un match pour le titre NXT face à Shiloh Hill ; Rook prévient que Hill ne passera pas avant lui."
-        },
-        {
-          "k": "Face-à-face",
-          "t": "Thea Hail confronte Chantel Monroe, qui se vante de sa victoire, dans le vestiaire des femmes."
-        },
-        {
-          "k": "Autre",
-          "t": "Hommage à « Cowboy » Bill Watts, dont le décès vient d'être annoncé."
-        },
-        {
-          "k": "Promo",
-          "t": "Noam Dar et Romeo Moreno appellent le Vanity Project ; Hank Walker et Tank Ledger s'en mêlent et Jackson Drake met son titre North American en jeu."
-        },
-        {
-          "k": "Annonce",
-          "t": "Robert Stone annonce un match par équipes à 8 : Dar, Moreno, Walker et Ledger contre le Vanity Project, dont Myka Lockwood se déclare la 4e membre."
-        },
-        {
-          "k": "Backstage",
-          "t": "BirthRight et Los Perros del Mal (AAA) s'accrochent en coulisses."
-        },
-        {
-          "k": "Annonce",
-          "t": "La semaine prochaine : Zaria contre Izzi Dame pour le titre Women's North American, Shiloh Hill contre Mason Rook pour devenir aspirant n°1 au titre NXT, et le match à 8."
-        }
-      ],
-      "s": "Wrestling Inc.",
-      "u": "https://www.wrestlinginc.com/2318773/wwe-nxt-november-17-2026-results/"
-    },
-    "AEW|Dynamite|2026-11-18": {
-      "res": [
-        "Orange Cassidy a battu Jon Moxley (Continental Classic, Gold League).",
-        "Nick Wayne a battu « Speedball » Mike Bailey (Continental Classic, Gold League).",
-        "Les Kasper Brothers (Drew Kasper et Jacob Kasper) ont battu deux catcheurs locaux.",
-        "Samoa Joe a battu Jack Perry.",
-        "Queen Aminata a battu AZM, Maya World et Mina Shirakawa et conserve le titre TBS de la AEW.",
-        "Bandido a battu Hangman Adam Page (Continental Classic, Blue League)."
-      ],
-      "seg": [
-        {
-          "k": "Promo",
-          "t": "Après la victoire de Cassidy, Nick Wayne interrompt, traite Cassidy et Moxley de « vieux » et promet de gagner le Continental Classic."
-        },
-        {
-          "k": "Promo",
-          "t": "Darby Allin envoie un message : il vient pour Wardlow et Kyle Fletcher."
-        },
-        {
-          "k": "Promo",
-          "t": "Don Callis affirme avoir un plan pour s'emparer de tous les titres de la AEW."
-        },
-        {
-          "k": "Annonce",
-          "t": "Les Young Bucks et MCMG défient FTR et les Kasper Brothers pour « Winter is Coming » ; Stokely Hathaway accepte."
-        },
-        {
-          "k": "Promo",
-          "t": "MJF revient sur ses histoires avec Ospreay et se proclame le seul vrai champion de la AEW."
-        },
-        {
-          "k": "Backstage",
-          "t": "Les Death Riders s'en prennent verbalement à The Dogs : pour Garcia, c'est l'heure des « playoffs »."
-        },
-        {
-          "k": "Annonce",
-          "t": "Ilja Dragunov refuse de rejoindre la Family de Don Callis mais défendra son titre contre n'importe lequel de ses membres ; Callis annonce Dragunov contre El Clon à Collision."
-        },
-        {
-          "k": "Célébration",
-          "t": "Swerve Strickland et The New Level fêtent leurs titres Trios ; ils refusent l'offre de Callis, la Family encercle le ring et Prince Nana les rebaptise The Dangerous New Level."
-        },
-        {
-          "k": "Célébration",
-          "t": "The Cut et Mercedes Moné fêtent leurs victoires de Full Gear avec l'équipe féminine de lutte des États-Unis, mais AZM gâche la fête."
-        },
-        {
-          "k": "Backstage",
-          "t": "Swerve Strickland interrompt une interview de Hangman Page pour lui rappeler qu'il lui doit encore quelque chose."
-        },
-        {
-          "k": "Face-à-face",
-          "t": "Andrade El Idolo vise le titre mondial ; Kyle Fletcher réclame une revanche contre Ospreay et défie Andrade pour la semaine prochaine."
-        }
-      ],
-      "s": "Fightful",
-      "u": "https://www.fightful.com/wrestling/aew-dynamite-results-11-18-2026-hangman-page-vs-bandido-tbs-title-match-mjf-mercedes-mone-more/"
-    },
-    "TNA|Impact|2026-11-19": {
-      "res": [
-        "KC Navarro a battu Bear Bronson.",
-        "Apex (Shayna Baszler et Zoey Serrano) et Fire 'N Flava (Tasha Steelz et Kiera Hogan) ont battu Indi Hartwell, Gabby Forza et Shotzi Blackheart.",
-        "Xia Brookside a battu Sofia Sivan.",
-        "Leon Slater a battu Nic Nemeth et conserve le titre mondial de la TNA."
-      ],
-      "seg": [
-        {
-          "k": "Interview",
-          "t": "Nic Nemeth promet en coulisses qu'il quittera Calgary avec le titre mondial de la TNA."
-        },
-        {
-          "k": "Promo",
-          "t": "Trey Miguel revient sur sa défaite à Destination X contre Leon Slater, perturbée selon lui par des retards de voyage."
-        },
-        {
-          "k": "Attaque",
-          "t": "Nic et Ryan Nemeth s'en prennent à Trey Miguel ; Leon Slater accourt et promet de battre Nic."
-        },
-        {
-          "k": "Backstage",
-          "t": "Heather By Elegance et M By Elegance se disputent après le match Ultimate X."
-        },
-        {
-          "k": "Attaque",
-          "t": "Allie est agressée en coulisses par un inconnu avant le match par équipes."
-        },
-        {
-          "k": "Retour",
-          "t": "The Dollhouse (Taryn Terrell, avec Harley Hudson et Mila Moore) fait son retour dans une promo."
-        },
-        {
-          "k": "Promo",
-          "t": "Mustafa Ali réclame un match pour le titre mondial face à Leon Slater."
-        },
-        {
-          "k": "Attaque",
-          "t": "Après son match, Xia Brookside et The Righteous s'acharnent sur la cheville de Sofia Sivan avec une chaise et une planche."
-        },
-        {
-          "k": "Face-à-face",
-          "t": "Fabian Aichner confronte Jason Hotch au sujet du titre International, rejoints par A.J. Francis et Ricky Sosa."
-        },
-        {
-          "k": "Annonce",
-          "t": "Santino Marella annonce une émission spéciale de Thanksgiving et un Triple Threat Revolver pour désigner l'aspirant n°1 au titre mondial."
-        }
-      ],
-      "s": "Wrestling Inc.",
-      "u": "https://www.wrestlinginc.com/2321436/tna-thursday-night-impact-november-19-2026-results/"
-    },
-    "WWE|SmackDown|2026-11-20": {
-      "res": [
-        "Jade Cargill a battu Charlotte Flair par tombé dans le match pour l'avantage de WarGames féminin.",
-        "The War Raiders (Erik et Ivar) ont battu Bakusai (Shinsuke Nakamura et Kyoki).",
-        "Trick Williams a battu Damian Priest par disqualification.",
-        "Rey Fenix a battu Kit Wilson par tombé.",
-        "Kevin Owens a battu GUNTHER par tombé."
-      ],
-      "seg": [
-        {
-          "k": "Promo",
-          "t": "Kevin Owens réclame un match pour le titre Undisputed WWE face à Sami Zayn ; le GM Nick Aldis officialise plutôt Owens contre GUNTHER, et GUNTHER prévient Owens de ne pas se mettre sur son chemin."
-        },
-        {
-          "k": "Interview",
-          "t": "Cathy Kelley interroge Jade Cargill et Charlotte Flair avant leur match pour l'avantage de WarGames."
-        },
-        {
-          "k": "Attaque",
-          "t": "Tama Tonga et Talla Tonga attaquent Nakamura et Kyoki après le match par équipe."
-        },
-        {
-          "k": "Attaque",
-          "t": "Chelsea Green récupère sa bague de Women's Crown Jewel, gifle Blake Monroe, puis Tiffany Stratton l'attaque par derrière et lui reprend la bague."
-        },
-        {
-          "k": "Backstage",
-          "t": "The Miz et Kit Wilson interrompent Cody Rhodes et Rey Fenix chez Nick Aldis ; Wilson lit un poème moqueur sur Fenix."
-        },
-        {
-          "k": "Autre",
-          "t": "Hommage vidéo à « Cowboy » Bill Watts après l'annonce de son décès."
-        },
-        {
-          "k": "Annonce",
-          "t": "CM Punk choisit « Hacksaw » Jim Duggan comme 5e membre de la Team USA, qui refuse ; Trick Williams et Lil Yachty se proposent et Williams devient le 5e membre pour Survivor Series."
-        },
-        {
-          "k": "Blessure",
-          "t": "Après le match, Damian Priest s'en prend au genou gauche de Trick Williams, qui est examiné par les médecins."
-        },
-        {
-          "k": "Attaque",
-          "t": "Après la victoire d'Owens, Sami Zayn le frappe d'un Helluva Kick et brandit la ceinture Undisputed WWE."
-        }
-      ],
-      "s": "Wrestling Inc.",
-      "u": "https://www.wrestlinginc.com/2323064/wwe-smackdown-november-20-2026-results/"
-    },
-    "AEW|Collision|2026-11-21": {
-      "res": [
-        "Kevin Knight a battu Tommaso Ciampa (Continental Classic, Gold League).",
-        "Divine Dominion (Megan Bayne et Lena Kross) ont battu Viva Van et VertVixen.",
-        "Brody King a battu Daniel Garcia par arrêt de l'arbitre (Continental Classic, Blue League).",
-        "Ilja Dragunov a battu El Clon et conserve le titre AEW National.",
-        "Konosuke Takeshita a battu Trent Beretta.",
-        "AZM a battu Laynie Luck.",
-        "The Death Riders (Claudio Castagnoli, Wheeler Yuta, Gabe Kidd et Marina Shafir) ont battu Shane Taylor Promotions (Shane Taylor, Shawn Dean, Carlie Bravo et Trish Adora).",
-        "Jay White a battu Ricochet (Continental Classic, Blue League)."
-      ],
-      "seg": [
-        {
-          "k": "Retour",
-          "t": "Trent Beretta lance un défi à tous ceux qui ont quitté la Don Callis Family : Konosuke Takeshita fait son retour et l'affronte aussitôt."
-        },
-        {
-          "k": "Blessure",
-          "t": "Daniel Garcia ne peut pas continuer après le boulet de canon de Brody King ; Tony Schiavone annonce une blessure au bras, sans gravité."
-        },
-        {
-          "k": "Attaque",
-          "t": "Kris Statlander et Harley Cameron, venues observer leurs challengers, interviennent quand Divine Dominion s'acharne après le match ; la sécurité sépare la bagarre avant leur match de mercredi."
-        },
-        {
-          "k": "Promo",
-          "t": "Britt Baker et Persephone laissent entendre qu'elles visent les titres féminins par équipe."
-        },
-        {
-          "k": "Promo",
-          "t": "Le Triangle of Madness (Thekla, Julia Hart et Skye Blue) défie AZM de trouver deux partenaires pour un match à six."
-        },
-        {
-          "k": "Face-à-face",
-          "t": "Jay White interrompt la célébration des Death Riders et nargue Claudio Castagnoli, retenu par les officiels."
-        }
-      ],
-      "s": "Wrestlepurists",
-      "u": "https://wrestlepurists.com/aew-collision-results-november-21-2026-ilja-dragunov-retains-konosuke-takeshita-returns/"
-    },
-    "WWE|Raw|2026-11-23": {
-      "res": [
-        "Ethan Page a battu Rey Fenix et conserve le titre Intercontinental.",
-        "El Grande Americano et Rey Mysterio ont battu Dominik Mysterio et JD McDonagh (Judgment Day).",
-        "Sol Ruca a battu Lyra Valkyria.",
-        "Bayley et Stephanie Vaquer ont battu Fallon Henley et Lainey Reid (Fatal Influence)."
-      ],
-      "seg": [
-        {
-          "k": "Attaque",
-          "t": "En ouverture, The 946 met KO l'Alpha Academy ; Carmelo Hayes appelle The Bloodline et Royce Keys promet de s'en prendre ensuite à Roman Reigns."
-        },
-        {
-          "k": "Annonce",
-          "t": "Rey Mysterio présente le 5e membre de la Team Mexico pour Survivor Series ; Judgment Day l'interrompt et Dominik se propose, mais Rey choisit El Grande Americano."
-        },
-        {
-          "k": "Annonce",
-          "t": "La Team USA (Cody Rhodes, Je'Von Evans, LA Knight, CM Punk) dévoile son 5e membre : Seth Rollins, à la grande surprise de CM Punk."
-        },
-        {
-          "k": "Backstage",
-          "t": "Iyo Sky est interrompue par Lyra Valkyria, puis Sol Ruca confronte Valkyria, ce qui mène à leur match."
-        },
-        {
-          "k": "Promo",
-          "t": "Liv Morgan jure de tout prendre à Becky Lynch à Survivor Series ; plus tard, Becky Lynch lui répond qu'elle remportera le titre."
-        },
-        {
-          "k": "Promo",
-          "t": "Oba Femi lance un ultimatum à The Vision : s'écarter ou être mis au tapis."
-        },
-        {
-          "k": "Backstage",
-          "t": "Big Cass confronte Chad Gable en coulisses."
-        },
-        {
-          "k": "Attaque",
-          "t": "The Bloodline et The 946 se bagarrent pour clore l'émission."
-        }
-      ],
-      "s": "Fightful",
-      "u": "https://www.fightful.com/wrestling/wwe-raw-results-11-23-2026-roman-reigns-appears-intercontinental-title-match-more/"
-    },
-    "WWE|NXT|2026-11-24": {
-      "res": [
-        "Myka Lockwood, Jackson Drake, Brad Baylor et Ricky Smokes (Vanity Project) ont battu Noam Dar, Romeo Moreno, Hank Walker et Tank Ledger.",
-        "Mason Rook a battu Shiloh Hill et devient aspirant n°1 au titre NXT.",
-        "Stacks et Uriah Connors (BirthRight) ont battu Angel et Berto (Los Perros del Mal).",
-        "Izzi Dame a battu ZARIA et remporte le titre Women's North American de la NXT."
-      ],
-      "seg": [
-        {
-          "k": "Annonce",
-          "t": "Kendal Grey réclame sa revanche pour le titre féminin NXT ; Kelani Jordan avoue avoir cherché une suspension, mais Robert Stone refuse et officialise Jordan contre Grey en match TLC."
-        },
-        {
-          "k": "Interview",
-          "t": "L'interview d'Izzi Dame est interrompue par Lizzy Rain et Kali Armstrong, qui visent le titre North American."
-        },
-        {
-          "k": "Célébration",
-          "t": "Vanity Project fête sa victoire ; Zilla Fatu, EK Prosper, Kam Hendrix et Tristan Angels réclament tous une chance pour le titre North American."
-        },
-        {
-          "k": "Promo",
-          "t": "Myles Borne dit étudier Tony D'Angelo, s'estime volé lors de leur dernier duel et trouve un mot de D'Angelo lui donnant rendez-vous la semaine prochaine."
-        },
-        {
-          "k": "Promo",
-          "t": "Thea Hail parle de son alopécie et se rase la tête sur le ring avec le soutien du public, après les moqueries de Chantel Monroe."
-        },
-        {
-          "k": "Face-à-face",
-          "t": "Après le match, Grayson Waller bouscule Shiloh Hill ; Mason Rook lui place une Blue Thunder Bomb et pose avec le titre NXT, leur match est prévu à TLC."
-        },
-        {
-          "k": "Annonce",
-          "t": "Wren Sinclair et Kendal Grey sont invitées au John Cena Classic et complètent le groupe de huit de la NXT."
-        }
-      ],
-      "s": "Fightful / WrestlePurists",
-      "u": "https://wrestlepurists.com/wwe-nxt-results-november-24-2026-izzi-dame-wins-north-american-title-thea-hail-shaves-her-head/"
-    },
-    "CMLL|Viernes Espectacular|2026-11-20": {
-      "res": [
-        "Thunder Rosa, Marcela et Skadi ont battu Princesa Sugehit, Hera et Olympia.",
-        "KUSHIDA, Máster Wato et Okumura ont battu Valiente Jr., Pantera Jr. et Capitán Suicida.",
-        "Templario et Francesco Akira (United Empire) ont battu Guerrero Maya Jr. et Xelhua (Reyes del Inframundo).",
-        "Máscara Dorada et Neón (Sky Team) ont battu Titán et Taiji Ishimori (Unbound Co.).",
-        "Hechicero et Bárbaro Cavernario ont battu Místico, Ángel de Oro, Blue Panther, Euforia, Terrible, Atlantis, Último Guerrero et Toscano et se qualifient pour la finale de la Leyenda Azul."
-      ],
-      "seg": [
-        {
-          "k": "Célébration",
-          "t": "Hommage à Blue Demon avant l'éliminatoire de la Leyenda Azul, qui réunit dix anciens vainqueurs ; Toscano fait son retour."
-        },
-        {
-          "k": "Annonce",
-          "t": "Bárbaro Cavernario élimine Místico en dernier : la finale Hechicero contre Bárbaro Cavernario aura lieu la semaine prochaine."
-        }
-      ],
-      "m": [
-        {
-          "t": "Six femmes : Thunder Rosa, Marcela et Skadi contre Princesa Sugehit, Hera et Olympia",
-          "r": "Victoire de Thunder Rosa, Marcela et Skadi après 8 min 53, Hera étant coincée dans les cordes."
-        },
-        {
-          "t": "Trios : KUSHIDA, Máster Wato et Okumura contre Valiente Jr., Pantera Jr. et Capitán Suicida",
-          "r": "Victoire de KUSHIDA, Máster Wato et Okumura (11 min 57)."
-        },
-        {
-          "t": "Duo : United Empire contre Reyes del Inframundo",
-          "r": "Templario et Francesco Akira l'emportent (13 min 35)."
-        },
-        {
-          "t": "Duo : Sky Team contre Unbound Co.",
-          "r": "Neón conclut d'un Swanton Bomb sur Titán (10 min 05)."
-        },
-        {
-          "t": "Leyenda Azul, éliminatoire",
-          "r": "Hechicero et Bárbaro Cavernario restent les derniers après 36 min 05 ; Cavernario élimine Místico en dernier."
-        }
-      ],
-      "s": "Superluchas",
-      "u": "https://superluchas.com/cmll-arena-mexico-20-de-noviembre-de-2026-la-leyenda-azul-comienza/"
+    {
+     "k": "Autre",
+     "t": "Match cinématique « Slaughterhouse Syx » entre les Hardys et Syx : Jeff Hardy finit coincé sous une poubelle après une attaque à la hache."
     }
+   ],
+   "s": "PWTorch",
+   "u": "https://www.pwtorch.com/site/2026/10/29/tna-impact-tv-results-10-29-hardys-vs-syx-red-vs-alexander-elijah-vs-nemeth-skyler-vs-francis/"
+  },
+  "WWE|SmackDown|2026-10-30": {
+   "res": [
+    "Chelsea Green a battu Nikki Bella et conserve le titre féminin de la WWE.",
+    "Rey Fénix a battu Ricky Saints et conserve le titre AAA Cruiserweight.",
+    "Jade Cargill a battu Tatum Paxley.",
+    "Sami Zayn a battu Trick Williams et conserve le titre incontesté de la WWE."
+   ],
+   "seg": [
+    {
+     "k": "Annonce",
+     "t": "Danhausen anime le show spécial veille d’Halloween et présente la carte, dont Zayn contre Williams et Green contre Bella pour les titres."
+    },
+    {
+     "k": "Promo",
+     "t": "Cody Rhodes parle de Randy Orton, de Crown Jewel et de son match Last Man Standing, laissant entendre que le vainqueur deviendra aspirant n°1."
+    },
+    {
+     "k": "Backstage",
+     "t": "Tiffany Stratton prévoit d’encaisser sa mallette sur Liv Morgan dès qu’elle sera seule ; elle refuse l’échange proposé par Danhausen."
+    },
+    {
+     "k": "Attaque",
+     "t": "Liv Morgan félicite puis nargue Chelsea Green avant Crown Jewel ; Roxanne Perez attaque Stratton, Green, Morgan et Raquel Rodriguez s’en prennent à elle, et IYO SKY vient à son secours."
+    },
+    {
+     "k": "Interview",
+     "t": "Blake Monroe veut repartir de l’avant après sa rivalité avec Giulia et se moque du règne de Chelsea Green."
+    },
+    {
+     "k": "Backstage",
+     "t": "Trick Williams promet de repartir avec deux titres et de défier Roman Reigns ; l’expérience de Danhausen fait fuir Lil Yachty."
+    },
+    {
+     "k": "Backstage",
+     "t": "Damian Priest, furieux de la chance donnée à Trick Williams, est confronté par FrAxiom pour son attaque sur R-Truth : un match se prépare."
+    },
+    {
+     "k": "Attaque",
+     "t": "Gunther passe Danhausen à travers une table, puis le Demon Balor apparaît, frappe Gunther à l’échelle et l’achève d’un Coup de Grâce."
+    },
+    {
+     "k": "Annonce",
+     "t": "Rappel du match No Holds Barred entre Kevin Owens et CM Punk, vendredi prochain au Barclays Center."
+    },
+    {
+     "k": "Autre",
+     "t": "Le main event est d’abord donné vainqueur par disqualification pour Williams, puis relancé sans disqualification par Nick Aldis ; Zayn s’impose après un coup bas et un coup de ceinture."
+    }
+   ],
+   "s": "Wrestling Inc.",
+   "u": "https://www.wrestlinginc.com/2302585/wwe-smackdown-october-30-2026-results/"
+  },
+  "WWE|Raw|2026-11-02": {
+   "res": [
+    "Ethan Page a battu Chad Gable et remporte le titre Intercontinental.",
+    "Liv Morgan, Raquel Rodriguez et Roxanne Perez ont battu Chelsea Green, IYO SKY et Tiffany Stratton.",
+    "Bronson Reed, Austin Theory et Bron Breakker ont battu Penta, Je’Von Evans et Dragon Lee.",
+    "Solo Sikoa a battu Royce Keys par disqualification."
+   ],
+   "seg": [
+    {
+     "k": "Face-à-face",
+     "t": "Roman Reigns ouvre le show, Sami Zayn l’interrompt : échange d’insultes, Reigns promet de faire reconnaître Zayn à Crown Jewel."
+    },
+    {
+     "k": "Promo",
+     "t": "Joe Hendry promet de remonter tout en haut."
+    },
+    {
+     "k": "Annonce",
+     "t": "John Cena annonce le John Cena Classic au Raw spécial du 14 décembre à Disney World, avec Cody Rhodes comme premier participant."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Randy Orton interrompt Cody Rhodes et menace de mettre fin à sa carrière comme il l’avait fait avec Dusty Rhodes."
+    },
+    {
+     "k": "Attaque",
+     "t": "Bayley dit à Adam Pearce ne pas respecter Jade Cargill, Michin et B-Fab, qui l’attaquent ensuite en coulisses."
+    },
+    {
+     "k": "Débuts",
+     "t": "Après le main event, bagarre entre The 946 et The Bloodline : un homme encapuchonné, Cruz Montana, stoppe Roman Reigns d’un lariat et rejoint The 946."
+    },
+    {
+     "k": "Attaque",
+     "t": "Sami Zayn achève la soirée en frappant Roman Reigns d’un Helluva Kick."
+    }
+   ],
+   "s": "Fightful",
+   "u": "https://www.fightful.com/wrestling/wwe-raw-results-11-2-2026-solo-sikoa-vs-royce-keys-john-cena-roman-reigns-more/"
+  },
+  "NJPW|PLE|2026-11-03": {
+   "res": [
+    "Aaron Wolf, Master Wato et KUUKAI ont battu Francesco Akira, Jakob Austin Young et Zane Jay.",
+    "Mistico, KUSHIDA et Masatora Yasuda ont battu Titan, Gedo et Daiki Nagai.",
+    "Ryohei Oiwa et Hartley Jackson ont battu Lee Johnson et Blake Christian.",
+    "Yuya Uemura, Toru Yano, Ryusuke Taguchi et Kazuma Sumi ont battu Ren Narita, Shun Skywalker, DOUKI et Yoshinobu Kanemaru.",
+    "YOH, Hyo et Shota Umino ont battu SHO, Dick Togo et Yujiro Takahashi.",
+    "Shingo Takagi et Jeff Cobb ont battu Jon Moxley et Wheeler Yuta.",
+    "Yuto-Ice et OSKAR ont battu Callum Newman et Will Ospreay par disqualification et conservent le titre IWGP par équipe.",
+    "Kenny Omega a battu Yota Tsuji et Boltin Oleg.",
+    "Taiji Ishimori et Robbie X ont battu Robbie Eagles et Kosei Fujita en finale de la Super Jr. Tag League.",
+    "Gabe Kidd a battu Taichi et conserve le titre IWGP Global."
+   ],
+   "m": [
+    {
+     "t": "Aaron Wolf, Master Wato et KUUKAI contre United Empire",
+     "r": "Aaron Wolf, Master Wato et KUUKAI l’emportent."
+    },
+    {
+     "t": "Mistico, KUSHIDA et Masatora Yasuda contre Unbound Co.",
+     "r": "Mistico, KUSHIDA et Masatora Yasuda l’emportent."
+    },
+    {
+     "t": "TMDK (Ryohei Oiwa et Hartley Jackson) contre The Swirl",
+     "r": "TMDK gagne ; MJF défie ensuite Oiwa en vidéo pour Wrestle Kingdom 21, défi accepté."
+    },
+    {
+     "t": "Uemura, Yano, Taguchi et Sumi contre HOUSE OF TORTURE",
+     "r": "Yuya Uemura, Toru Yano, Ryusuke Taguchi et Kazuma Sumi l’emportent."
+    },
+    {
+     "t": "YOH, Hyo et Shota Umino contre HOUSE OF TORTURE",
+     "r": "Victoire de YOH, Hyo et Umino ; SHO, démasqué, défie YOH pour le titre IWGP Junior à Wrestle Kingdom, avec départ de NJPW ou retour de Roppongi 3K en jeu."
+    },
+    {
+     "t": "Shingo Takagi et Jeff Cobb contre Jon Moxley et Wheeler Yuta",
+     "r": "Takagi et Cobb gagnent ; Takagi défie Moxley pour Wrestle Kingdom 21."
+    },
+    {
+     "t": "Titres IWGP par équipe : Knockout Bros. contre Callum Newman et Will Ospreay",
+     "r": "Les Knockout Bros. conservent les titres par disqualification ; Newman se retourne contre Ospreay et le défie pour Wrestle Kingdom 21."
+    },
+    {
+     "t": "Kenny Omega contre Yota Tsuji contre Boltin Oleg",
+     "r": "Kenny Omega gagne et donne rendez-vous à Tsuji au Tokyo Dome."
+    },
+    {
+     "t": "Finale de la Super Jr. Tag League : Taiji Ishimori et Robbie X contre Robbie Eagles et Kosei Fujita",
+     "r": "Ishimori et Robbie X remportent le tournoi ; les titres IWGP Junior par équipe sont déclarés vacants (blessure d’El Desperado)."
+    },
+    {
+     "t": "Titre IWGP Global : Gabe Kidd contre Taichi",
+     "r": "Gabe Kidd conserve le titre ; il attaque ensuite Hiroshi Tanahashi, et Jon Moxley se joint à lui pour semer le chaos."
+    }
+   ],
+   "seg": [
+    {
+     "k": "Annonce",
+     "t": "Mistico annonce que les titres IWGP Junior par équipe sont vacants à cause de la blessure d’El Desperado ; Ishimori propose un match à trois pour les nouveaux champions."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après le main event, Gabe Kidd frappe Tanahashi d’un piledriver ; Uemura et Takagi interviennent, mais Kidd et Moxley les mettent au sol et donnent rendez-vous au Tokyo Dome."
+    }
+   ],
+   "s": "Fightful",
+   "u": "https://www.fightful.com/wrestling/njpw-power-struggle-results-11-3-kenny-omega-yota-tsuji-jon-moxley-compete/"
+  },
+  "WWE|PLE|2026-10-31": {
+   "res": [
+    "Myles Borne a battu Tavion Heights dans un match Weapons Wild.",
+    "Izzi Dame a battu Zaria.",
+    "Zilla Fatu a battu Charlie Dempsey dans un match « Very Nice Very Evil » (Falls Count Anywhere).",
+    "Kelani Jordan a battu Wren Sinclair et conserve le titre féminin de la NXT.",
+    "Shiloh Hill a battu Naraku.",
+    "Grayson Waller a battu Tony D'Angelo et conserve le titre de la NXT."
+   ],
+   "seg": [
+    {
+     "k": "Autre",
+     "t": "NXT Halloween Havoc au Performance Center d'Orlando, animé par Danhausen."
+    },
+    {
+     "k": "Annonce",
+     "t": "La roue (Spin the Wheel) désigne un match « Very Nice Very Evil » pour Zilla Fatu contre Charlie Dempsey."
+    },
+    {
+     "k": "Annonce",
+     "t": "Michael Chandler sera l'arbitre du match sans règles entre Cruz Montana et Dion Lennox le mercredi suivant."
+    },
+    {
+     "k": "Attaque",
+     "t": "EK Prosper s'en prend à Kam Hendrix pendant un segment avec Danhausen."
+    },
+    {
+     "k": "Promo",
+     "t": "Après le main event, CM Punk apparaît à l'écran et réclame un match pour le titre de la NXT dès le mercredi suivant."
+    }
+   ],
+   "s": "PWTorch",
+   "u": "https://www.pwtorch.com/site/2026/10/31/nxt-halloween-havoc-results-10-31-grayson-waller-vs-tony-dangelo-kelani-jordan-vs-wren-sinclair-two-spin-the-wheel-matches-more/"
+  },
+  "WWE|NXT|2026-11-04": {
+   "res": [
+    "Chad Gable, Rey Fenix et Dragon Lee ont battu The Vanity Project.",
+    "Kelani Jordan a battu Paige et conserve le titre féminin de la NXT.",
+    "Romeo Moreno et Noam Dar ont battu Hank et Tank en finale du Dusty Rhodes Tag Team Classic.",
+    "Cruz Montana a battu Dion Lennox dans un match sans règles.",
+    "Grayson Waller a battu CM Punk et conserve le titre de la NXT."
+   ],
+   "seg": [
+    {
+     "k": "Backstage",
+     "t": "CM Punk promet à Shiloh Hill la première chance au titre une fois champion de la NXT."
+    },
+    {
+     "k": "Retour",
+     "t": "Paige fait son retour comme challenger mystère de Kelani Jordan pour le titre féminin."
+    },
+    {
+     "k": "Célébration",
+     "t": "Cody Rhodes, aux commentaires de la finale, remet la Dusty Cup ; les vainqueurs obtiennent un match pour les titres par équipe de la NXT la semaine suivante."
+    },
+    {
+     "k": "Attaque",
+     "t": "Pendant le match sans règles, Royce Keys et The 946 s'en prennent à Osiris Griffin et Cutler James venus interférer."
+    },
+    {
+     "k": "Annonce",
+     "t": "John Cena invite Zilla Fatu au John Cena Classic du 14 décembre, en hommage à son père Umaga, et refuse la demande de Kam Hendrix."
+    },
+    {
+     "k": "Attaque",
+     "t": "Kevin Owens tente de rejoindre le ring pendant le main event, retenu par la sécurité : sa présence distrait CM Punk."
+    }
+   ],
+   "s": "Sports Illustrated",
+   "u": "https://www.si.com/fannation/wrestling/wwe/wwe-nxt-results-john-cena-hands-out-new-invite-waller-shocks-punk-nov4"
+  },
+  "AEW|Dynamite|2026-11-04": {
+   "res": [
+    "Queen Aminata, Willow Nightingale, The Brawling Birds et WrathLander ont battu Divine Dominion, Persephone et Triangle of Madness dans un match Blood & Guts.",
+    "La Don Callis Family a battu Will Ospreay, Adam Copeland, Darby Allin, Steven Borden et The Young Bucks dans un match Blood & Guts."
+   ],
+   "seg": [
+    {
+     "k": "Autre",
+     "t": "Dynamite spécial Blood & Guts au VyStar Veterans Memorial Arena de Jacksonville."
+    },
+    {
+     "k": "Interview",
+     "t": "Don Callis et son clan, puis l'équipe d'Ospreay avec Mick Foley, présentent le Blood & Guts ; Ospreay met en garde Kyle Fletcher."
+    },
+    {
+     "k": "Promo",
+     "t": "Andrade parle de son match pour le titre National contre Tommaso Ciampa à Collision et de sa future chance au titre mondial."
+    },
+    {
+     "k": "Backstage",
+     "t": "Une dispute entre Swerve Strickland, Austin Creed, Bandido et Kofi tourne à la bagarre ; Bandido réclame un Texas Death match."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Mercedes Moné appelle Marina Shafir : l'échange tourne à la bagarre, séparée par la sécurité."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après la victoire, Kyle Fletcher promet d'en finir à Full Gear ; Wardlow envoie Darby Allin à travers une pile de tables."
+    }
+   ],
+   "s": "Slam Wrestling",
+   "u": "https://slamwrestling.net/news/aew-dynamite-blood-and-guts-results-november-4th-2026/"
+  },
+  "TNA|Impact|2026-11-05": {
+   "res": [
+    "Frankie Kazarian et Avery Styles ont battu Hunter James et Alexander Lev (Spiral Tap de Styles).",
+    "Eddie Edwards a battu Bear Bronson et garde le contrôle de The System.",
+    "Shotzi et Allie ont battu Fire N Flava (Tasha Steelz et Kiera Hogan).",
+    "Nic et Ryan Nemeth ont battu Leon Slater et Amazing Red et conservent le titre TNA World Tag Team (Danger Zone de Nic Nemeth sur Red)."
+   ],
+   "seg": [
+    {
+     "k": "Promo",
+     "t": "Moose défie Syx, qui l'avait attaqué ; Joseph Sawyer et Samul Shaw s'en prennent à lui, puis Matt Hardy arrive avec un tuyau et Syx s'enfuit."
+    },
+    {
+     "k": "Backstage",
+     "t": "Trey Miguel serre la main de Leon Slater et Amazing Red, puis se dispute avec Slater et annonce qu'il commentera le main event."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Indi Hartwell et Daria Rae se font face en coulisses ; Brian Johnson retient Daria."
+    },
+    {
+     "k": "Attaque",
+     "t": "Mustafa Ali, aux commentaires, monte sur le ring après le premier match et se fait sortir d'un coup de poing par Frankie Kazarian."
+    },
+    {
+     "k": "Backstage",
+     "t": "Alisha Edwards reproche à Cedric Alexander et Brian Myers d'avoir laissé The System se faire attaquer."
+    },
+    {
+     "k": "Célébration",
+     "t": "Après le match, Alexander et Myers rejoignent Eddie Edwards et Bear Bronson : les quatre lèvent les bras ensemble."
+    },
+    {
+     "k": "Blessure",
+     "t": "Rapport médical : Jeff Hardy (traumatisme à la tête après l'attaque de la semaine passée), Avery Styles et BDE."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après leur défaite, Fire N Flava attaquent Shotzi et Allie."
+    },
+    {
+     "k": "Backstage",
+     "t": "Elayna Black dit à Heather que M se sert d'elle ; Heather la défie pour un match la semaine prochaine."
+    },
+    {
+     "k": "Trahison",
+     "t": "Pendant l'initiation de Harley Hudson chez The Righteous, Xia Brookside l'attaque d'un DDT puis repart avec le groupe."
+    },
+    {
+     "k": "Annonce",
+     "t": "Matt Hardy et Moose jurent de se venger de Syx : ils l'affronteront à Destination X."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après le main event, Elijah descend avec sa guitare et les Nemeth s'enfuient."
+    },
+    {
+     "k": "Autre",
+     "t": "Harley Hudson regrette d'avoir rejoint The Righteous ; elle trouve une maison de poupée et Taryn Terrell l'accueille dans « la Doll House »."
+    }
+   ],
+   "s": "PWTorch",
+   "u": "https://www.pwtorch.com/site/2026/11/05/tna-impact-tv-results-11-5-nemeths-vs-slater-red-blackheart-allie-vs-steelz-hogan-edwards-vs-bronson/"
+  },
+  "WWE|SmackDown|2026-11-06": {
+   "res": [
+    "Shinsuke Nakamura a battu Tama Tonga.",
+    "Fatal Influence a battu The Baddies (Michin et B-Fab) par disqualification après l’intervention d’Alexa Bliss et Tatum Paxley ; The Baddies conserve le titre féminin par équipe.",
+    "Damian Priest a battu Nathan Frazer par arrêt de l’arbitre.",
+    "Kevin Owens a battu CM Punk dans un match No Holds Barred."
+   ],
+   "seg": [
+    {
+     "k": "Face-à-face",
+     "t": "GUNTHER ouvre le show, Finn Bálor l’interrompt sans son personnage du Demon : bagarre, Bálor reste debout à la fin."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Après le match par équipe, Charlotte Flair et Bayley arrivent : la confrontation laisse entrevoir un match WarGames féminin."
+    },
+    {
+     "k": "Promo",
+     "t": "Chelsea Green prend le micro, Liv Morgan l’interrompt."
+    },
+    {
+     "k": "Attaque",
+     "t": "Jimmy Uso interrompt la promo de Sami Zayn, The 946 l’attaque sous les yeux de Zayn."
+    },
+    {
+     "k": "Autre",
+     "t": "Le No Holds Barred déborde dans toute la salle : poubelle sur la tête, chariot, et les deux hommes passent à travers la table des commentateurs."
+    }
+   ],
+   "s": "Sacnilk (spoilers des enregistrements du 2 nov. à Brooklyn)",
+   "u": "https://www.sacnilk.com/news/wwe-smackdown-spoilers-november-6-2026-taped-results-winners"
+  },
+  "AEW|Collision|2026-11-07": {
+   "res": [
+    "Chris Jericho a battu Blake Christian.",
+    "FTR (Dax Harwood et Cash Wheeler) ont battu The Motor City Machine Guns (Chris Sabin et Alex Shelley) dans un match de leur série au meilleur des cinq.",
+    "Nick Wayne a battu Marcus Mathers.",
+    "The Death Riders (Jon Moxley, Gabe Kidd et Daniel Garcia) ont battu Shane Taylor Promotions (Shane Taylor, Shawn Dean et Carlie Bravo).",
+    "Persephone a battu Mina Shirakawa.",
+    "Tommaso Ciampa a battu Andrade El Idolo et remporte le titre National de la AEW."
+   ],
+   "seg": [
+    {
+     "k": "Promo",
+     "t": "Nick Wayne affirme qu’il va prendre le contrôle de la croisière de Jericho après l’avoir battu deux fois."
+    },
+    {
+     "k": "Promo",
+     "t": "The New Level (Kofi Kingston et Creed) avec Lexy annoncent que le problème de Bandido est désormais le leur et visent les titres trios la semaine prochaine."
+    },
+    {
+     "k": "Promo",
+     "t": "Après sa victoire, Nick Wayne se proclame capitaine du bateau et nargue le public."
+    },
+    {
+     "k": "Promo",
+     "t": "Jon Moxley prévient que Jay White et The Cut devront mériter leur victoire face aux Death Riders."
+    },
+    {
+     "k": "Promo",
+     "t": "Mercedes Moné demande où est Marina, l’accuse d’avoir quitté le navire et promet de l’humilier à Full Gear."
+    },
+    {
+     "k": "Attaque",
+     "t": "The Cut (Jay White, Mercedes Moné et leurs alliés) attaquent les Death Riders : Moné piétine Moxley et White place un Blade Runner."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après son match, Persephone s’acharne sur Mina Shirakawa, mais Queen Aminata accourt pour l’en empêcher."
+    },
+    {
+     "k": "Backstage",
+     "t": "Juice Robinson est transporté à l’hôpital ; Jay White accuse les Death Riders et promet de se venger."
+    },
+    {
+     "k": "Promo",
+     "t": "Davis et Doyle promettent de ramener les titres par équipe à la Don Callis Family."
+    },
+    {
+     "k": "Célébration",
+     "t": "Tommaso Ciampa fête son nouveau titre avec sa fille dans le public, tandis que Speedball vient voir Andrade."
+    }
+   ],
+   "s": "PWTorch",
+   "u": "https://www.pwtorch.com/site/2026/11/07/aew-collision-results-11-7-andrade-vs-ciampa-for-the-national-title-persephone-vs-mina-shirakawa-ftr-vs-mcmg-death-riders-jericho-and-nick-wayne-in-action/"
+  },
+  "ROH|ROH TV|2026-11-05": {
+   "res": [
+    "Lee Moriarty et AR Fox font match nul à la limite de temps de 10 minutes ; Lee Moriarty conserve le titre Pure de ROH.",
+    "Robyn Renegade a battu Rachael Ellering.",
+    "Adam Priest et El Phantasmo ont battu Dante Casanova et Kiran Grey.",
+    "Shane Taylor Promotions ont battu TJ Crawford, Ori Gold, Hadar Horvitz et Sean Maluta.",
+    "Mark Davis a battu Marcus Mathers.",
+    "Darius Martin a battu QT Marshall.",
+    "Deonna Purrazzo a battu Jody Threat et conserve le titre Women’s Pure de ROH.",
+    "Eddie Kingston et Ortiz ont battu RPG Vice (Rocky Romero et Trent Beretta)."
+   ],
+   "seg": [
+    {
+     "k": "Annonce",
+     "t": "AR Fox, grâce au match nul du Proving Ground, obtient un match pour le titre Pure."
+    },
+    {
+     "k": "Attaque",
+     "t": "Action Andretti frappe Adam Priest avec la ceinture de champion TV de ROH, El Phantasmo le fait fuir."
+    },
+    {
+     "k": "Débuts",
+     "t": "Marcus Mathers fait ses débuts à ROH et raconte qu’il allait voir les shows de ROH à Philadelphie enfant."
+    },
+    {
+     "k": "Annonce",
+     "t": "En coulisses, Athena reproche à Diamanté et Billie Starkz de l’avoir lâchée, annonce que Hyan rejoint son groupe et aura un match pour le titre mondial féminin à Final Battle."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après le match de Darius Martin, Bryan Keith, The Grizzled Young Veterans, RPG Vice et The Kingdom attaquent, avant d’être repoussés par Big Boom AJ, Scorpio Sky, Matt Sydal et Bustah & The Brain."
+    }
+   ],
+   "s": "Solowrestling",
+   "u": "https://solowrestling.com/us/new/150878-results-roh-ring-of-honor-november-5-2026"
+  },
+  "CMLL|Viernes Espectacular|2026-11-06": {
+   "res": [
+    "Alexius et Péndulo ont battu Makara et Poseidón.",
+    "Cerebro Negro Jr., Feroz et Infarto ont battu El Hijo del Pantera, Infinito et Pantera Jr. (2 tombés à 1).",
+    "Yutani a battu Rey Pegasus.",
+    "La Fuerza Poblana (Guerrero Maya Jr. et Xelhua) ont battu Galeón Fantasma (Difunto et Zandokan Jr.) (2 tombés à 1).",
+    "Las Fieras del Ring (Black Tiger et Rugido) ont battu Los Depredadores (Vegas Depredador et Volador Jr.) (2 tombés à 0).",
+    "Bandido, Neón et Titán ont battu Averno, Bárbaro Cavernario et Soberano Jr. (2 tombés à 1)."
+   ],
+   "seg": [
+    {
+     "k": "Attaque",
+     "t": "Soberano Jr. arrache le masque de Bandido pendant le match puis s’acharne sur lui ; après le combat, il détruit les masques lancés par le public : la rivalité appelle un match à plus gros enjeu."
+    }
+   ],
+   "m": [
+    {
+     "t": "Alexius et Péndulo contre Makara et Poseidón",
+     "r": "Victoire d’Alexius et Péndulo en ouverture."
+    },
+    {
+     "t": "Cerebro Negro Jr., Feroz et Infarto contre El Hijo del Pantera, Infinito et Pantera Jr.",
+     "r": "Cerebro Negro Jr., Feroz et Infarto l’emportent 2 tombés à 1."
+    },
+    {
+     "t": "Yutani contre Rey Pegasus",
+     "r": "Yutani gagne ce match éclair."
+    },
+    {
+     "t": "La Fuerza Poblana contre Galeón Fantasma",
+     "r": "Guerrero Maya Jr. et Xelhua gagnent 2 tombés à 1."
+    },
+    {
+     "t": "Las Fieras del Ring contre Los Depredadores",
+     "r": "Black Tiger et Rugido gagnent 2 tombés à 0."
+    },
+    {
+     "t": "Bandido, Neón et Titán contre Averno, Bárbaro Cavernario et Soberano Jr.",
+     "r": "L’équipe de Bandido gagne 2 tombés à 1, mais Bandido finit sans masque après l’attaque de Soberano Jr."
+    }
+   ],
+   "s": "Dos Dos Solo Dos",
+   "u": "https://dosdossolodos.com/2026/11/07/resultados-cmll-viernes-espectacular-06-noviembre-2026/"
+  },
+  "WWE|PLE|2026-11-07": {
+   "res": [
+    "Cody Rhodes a battu Randy Orton dans un Last Man Standing match.",
+    "Penta et Je’Von Evans ont battu Bron Breakker et Austin Theory et remportent le titre mondial par équipe.",
+    "Chelsea Green a battu Liv Morgan dans un match champion contre championne et remporte le titre Crown Jewel féminin.",
+    "Tiffany Stratton a battu Chelsea Green en encaissant sa mallette Money in the Bank et remporte le titre féminin de la WWE.",
+    "Roman Reigns a battu Sami Zayn dans un match champion contre champion et remporte le titre Crown Jewel masculin."
+   ],
+   "seg": [
+    {
+     "k": "Attaque",
+     "t": "Pendant le match par équipe, Maxxine Dupri aide Theory et Bronson Reed attaque Evans et Penta, avant qu’Oba Femi ne surgisse et projette Reed de la scène à travers une table."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après la victoire de Chelsea Green, Liv Morgan l’attaque."
+    },
+    {
+     "k": "Trahison",
+     "t": "Tiffany Stratton frappe Chelsea Green avec la mallette Money in the Bank et encaisse aussitôt son contrat."
+    },
+    {
+     "k": "Célébration",
+     "t": "Après leur match, Roman Reigns et Sami Zayn se prennent dans les bras."
+    }
+   ],
+   "s": "WWE.com",
+   "u": "https://www.wwe.com/complete-crown-jewel-2026-results"
+  },
+  "WWE|Raw|2026-11-09": {
+   "res": [
+    "Oba Femi a battu Bron Breakker par disqualification après l’intervention d’Austin Theory et Logan Paul.",
+    "Rey Fenix a battu Chad Gable et Big Cass dans un match à trois et devient aspirant n°1 au titre Intercontinental.",
+    "Bayley a battu Michin.",
+    "IYO SKY et Becky Lynch ont battu Roxanne Perez et Raquel Rodriguez."
+   ],
+   "seg": [
+    {
+     "k": "Célébration",
+     "t": "Penta et Je’Von Evans, nouveaux champions du monde par équipe, fêtent leur titre ; Bron Breakker les attaque et appelle Oba Femi."
+    },
+    {
+     "k": "Promo",
+     "t": "Chad Gable, Big Cass et Rey Fenix réclament chacun une chance au titre Intercontinental ; Adam Pearce organise un match à trois."
+    },
+    {
+     "k": "Attaque",
+     "t": "The 946 attaquent Fenix, Cass et Gable ; Royce Keys exige que Roman Reigns le reconnaisse avant la fin de la soirée."
+    },
+    {
+     "k": "Annonce",
+     "t": "Cody Rhodes revient sur sa victoire en Last Man Standing contre Randy Orton et annonce un 5 contre 5 Team USA contre Team Mexico aux Survivor Series, avec Rey Mysterio capitaine de Team Mexico."
+    },
+    {
+     "k": "Autre",
+     "t": "Dominik Mysterio et JD McDonagh proposent leurs services à Team USA, Rhodes refuse ; CM Punk rejoint l’équipe et attaque Dominik et McDonagh avec Rhodes."
+    },
+    {
+     "k": "Backstage",
+     "t": "Rey Mysterio recrute Penta dans Team Mexico, alors que Je’Von Evans est invité dans Team USA : les deux partenaires seront adversaires."
+    },
+    {
+     "k": "Attaque",
+     "t": "Jade Cargill, B-Fab, Michin et Fatal Influence s’allient et attaquent Charlotte Flair, Tatum Paxley et Alexa Bliss."
+    },
+    {
+     "k": "Annonce",
+     "t": "Becky Lynch défie Liv Morgan : Lynch contre Morgan pour le titre mondial féminin aux Survivor Series, et Raquel Rodriguez contre IYO SKY pour le titre Intercontinental féminin la semaine prochaine."
+    },
+    {
+     "k": "Retour",
+     "t": "Face-à-face entre Roman Reigns et Royce Keys ; The Bloodline (les Usos, Solo Sikoa et Jacob Fatu, de retour) brûlent la caravane de The 946 et les attaquent, Fatu fait traverser la table des commentateurs à Carmelo Hayes. Reigns lance un défi pour un WarGames aux Survivor Series."
+    }
+   ],
+   "s": "Wrestling Inc.",
+   "u": "https://www.wrestlinginc.com/2310917/wwe-raw-november-9-2026-results/"
+  },
+  "WWE|NXT|2026-11-10": {
+   "res": [
+    "EK Prosper a battu Kam Hendrix.",
+    "Izzi Dame a battu Wren Sinclair.",
+    "Lizzy Rain a battu Chantel Monroe.",
+    "The Vanity Project (Brad Baylor et Ricky Smokes) ont battu Hank et Tank et conserve le titre NXT Tag Team."
+   ],
+   "seg": [
+    {
+     "k": "Promo",
+     "t": "Le champion NXT Grayson Waller se moque de CM Punk en entrant sur sa musique."
+    },
+    {
+     "k": "Retour",
+     "t": "Mason Rook fait son retour et attaque Grayson Waller, rejoint par Shiloh Hill."
+    },
+    {
+     "k": "Autre",
+     "t": "Après sa défaite, Kam Hendrix pète les plombs et jette des chaises dans le ring."
+    },
+    {
+     "k": "Attaque",
+     "t": "Zaria, championne North American féminine de NXT, attaque Izzi Dame après sa victoire."
+    },
+    {
+     "k": "Promo",
+     "t": "Kendal Grey défie la championne NXT Kelani Jordan pour un match de championnat."
+    },
+    {
+     "k": "Attaque",
+     "t": "Hank et Tank attaquent Ricky Smokes et Brad Baylor avant le match de championnat ; Noam Dar et Romeo Moreno interviennent ensuite, sans succès."
+    },
+    {
+     "k": "Attaque",
+     "t": "Los Perros del Mal, DarkState et BirthRight interrompent le discours de Zilla Fatu : énorme bagarre générale."
+    }
+   ],
+   "s": "WWE.com",
+   "u": "https://www.wwe.com/shows/wwenxt/2026-11-10"
+  },
+  "AEW|Dynamite|2026-11-11": {
+   "res": [
+    "Brodido (Bandido et Brody King) et The New Level (Austin Creed et Kofi) ont fait double décompte à l’extérieur ; Brodido conserve le titre AEW World Trios.",
+    "David Finlay a battu Orange Cassidy.",
+    "Persephone a battu Gypsy Mac.",
+    "Motor City Machine Guns (Alex Shelley et Chris Sabin) ont battu FTR dans le 5e match de leur série et deviennent aspirants n°1 au titre AEW World Tag Team.",
+    "Tommaso Ciampa a battu « Speedball » Mike Bailey et conserve le titre AEW National.",
+    "Jon Moxley et Marina Shafir ont battu Mercedes Moné et Jay White."
+   ],
+   "seg": [
+    {
+     "k": "Backstage",
+     "t": "Images inédites d’Adam Copeland quittant son équipe après Blood and Guts ; il reproche à Ospreay et aux autres d’avoir abandonné."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Face-à-face entre le champion du monde AEW Will Ospreay et Kyle Fletcher : Fletcher gifle Ospreay, qui a le dernier mot."
+    },
+    {
+     "k": "Annonce",
+     "t": "Kazuchika Okada défendra le titre AEW International contre Adam Copeland à Full Gear."
+    },
+    {
+     "k": "Attaque",
+     "t": "Clark Connors attaque Orange Cassidy par surprise après son match."
+    },
+    {
+     "k": "Promo",
+     "t": "Andrade El Ídolo, après avoir perdu le titre National, promet de devenir le premier champion du monde AEW latino."
+    },
+    {
+     "k": "Promo",
+     "t": "Hangman Adam Page et Brodido parlent de leur Texas Death match à Full Gear."
+    },
+    {
+     "k": "Annonce",
+     "t": "Ilja Dragunov défie Tommaso Ciampa pour le titre National à Full Gear ; Ciampa lui fait un doigt d’honneur."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après le match mixte, Mercedes Moné attaque Marina Shafir et The Cut s’en prend aux Death Riders ; Orange Cassidy intervient et Moxley lui serre la main, puis Moné frappe Shafir avec sa ceinture."
+    }
+   ],
+   "s": "AEW",
+   "u": "https://www.allelitewrestling.com/post/aew-dynamite-collision-results-november-11-2026"
+  },
+  "AEW|Collision|2026-11-11": {
+   "res": [
+    "Les Young Bucks et « Jungle » Jack Perry ont battu Kevin Knight, Brian Cage et El Clon.",
+    "Wardlow a battu Nick Comoroto.",
+    "El SkyTeam (Místico et Máscara Dorada) ont battu The Swirl (Lee Johnson et Blake Christian) et conserve le titre ROH World Tag Team.",
+    "Queen Aminata a battu Hyan et Skye Blue et conserve le titre TBS."
+   ],
+   "seg": [
+    {
+     "k": "Promo",
+     "t": "Divine Dominion réagit à sa défaite à Blood and Guts."
+    },
+    {
+     "k": "Promo",
+     "t": "Jack Perry et les Young Bucks parlent de leurs matchs à Full Gear."
+    },
+    {
+     "k": "Autre",
+     "t": "Nick Wayne interrompt le match du titre ROH par équipe en affirmant avoir battu Chris Jericho."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après le match à trois, Persephone attaque Queen Aminata grâce à une distraction de Britt Baker ; Maya World vient en aide : Aminata défendra le titre TBS contre Persephone et Maya World à Tailgate Brawl."
+    }
+   ],
+   "s": "AEW",
+   "u": "https://www.allelitewrestling.com/post/aew-dynamite-collision-results-november-11-2026"
+  },
+  "TNA|Impact|2026-11-12": {
+   "res": [
+    "Elayna Black a battu Heather By Elegance.",
+    "Apex (Shayna Baszler et Zoey Serrano) ont battu The King Bees (Charity King et Danni Bee).",
+    "Moose a battu Samuel Shaw par disqualification.",
+    "Mustafa Ali a battu Frankie Kazarian.",
+    "Nic Nemeth a battu Harley Hudson."
+   ],
+   "seg": [
+    {
+     "k": "Annonce",
+     "t": "Santino ajoute The Nemeths au match Matt Hardy et Moose contre syX à Destination X, qui devient un match pour les titres TNA World Tag Team."
+    },
+    {
+     "k": "Backstage",
+     "t": "Brian Johnson interrompt Daria Rae au téléphone ; elle estime qu'ils sont partis du mauvais pied à cause de Santino et craint les critiques d'Indi Hartwell aux commentaires."
+    },
+    {
+     "k": "Promo",
+     "t": "syX avertissent Hardy et Moose ainsi que The Nemeths."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "John Hotch parle de la meilleure période de sa carrière ; Expressions et AJ Francis l'interrompent et AJ Francis vise le titre TNA International."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après le match de Moose, syX l'attaquent et Matt Hardy vient à son secours."
+    },
+    {
+     "k": "Backstage",
+     "t": "Heather By Elegance demande pourquoi elle n'est pas en couverture du magazine avec M By Elegance et lui demande son aide pour gagner l'Ultimate X des Knockouts."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Nic Nemeth s'emporte contre Santino, qui lui impose de défendre les titres par équipe à Destination X ; Santino ajoute un enjeu pour Elijah à leur match de la soirée."
+    },
+    {
+     "k": "Promo",
+     "t": "The System affirment être sur la même longueur d'onde ; Xia Brookside annonce l'arrivée des Righteous."
+    },
+    {
+     "k": "Autre",
+     "t": "Court documentaire sur Trey Miguel et Leon Slater avant Destination X."
+    },
+    {
+     "k": "Annonce",
+     "t": "Harley Hudson et Mila Moore rejoignent The Dollhouse."
+    }
+   ],
+   "s": "Fightful",
+   "u": "https://www.fightful.com/wrestling-news/tna-impact-results-11-12-nic-nemeth-elijah-moose-compete"
+  },
+  "ROH|ROH TV|2026-11-12": {
+   "res": [
+    "The Premier Athletes (Ariya Daivari et Tony Nese) ont battu Serpentico et Orlando Colon.",
+    "Lee Moriarty a battu A.R. Fox et conserve le titre ROH Pure.",
+    "Athena a battu B3CCA dans un match Proving Ground pour le titre ROH Women's World.",
+    "Bryan Keith a battu Matt Mako.",
+    "Shane Taylor et Tehuti Miles ont battu Kiran Grey et Darian Bengston.",
+    "The Infantry (Capt. Shawn Dean et Carlie Bravo) ont battu Isaiah Broner et Ren Jones.",
+    "Robyn Renegade a battu Sirena Linton.",
+    "Bandido a battu Bishop Kaun et conserve le titre ROH World."
+   ],
+   "seg": [
+    {
+     "k": "Annonce",
+     "t": "Après le match de Robyn Renegade, Big Boom AJ et QT Marshall défient RPG Vice pour AEW Full Gear."
+    }
+   ],
+   "s": "Fightful",
+   "u": "https://www.fightful.com/wrestling-news/roh-tv-results-11-12-multiple-title-matches"
+  },
+  "WWE|SmackDown|2026-11-13": {
+   "res": [
+    "Le match pour le titre WWE Tag Team entre MFT (Tama Tonga et Talla Tonga) et Bakusai (Shinsuke Nakamura et Kyoki) s'est terminé en no contest après l'intervention des War Raiders : MFT conserve le titre WWE Tag Team.",
+    "Damian Priest a battu Axiom.",
+    "Charlotte Flair a battu Jacy Jayne (titre United States non mis en jeu).",
+    "Gunther a battu Finn Bálor."
+   ],
+   "seg": [
+    {
+     "k": "Promo",
+     "t": "John Cena ouvre le show : le titre du John Cena Classic sera décerné le 14 décembre, avec un record de débuts de talents de NXT à Raw. Il invite Charlotte Flair, émue, qui promet de gagner."
+    },
+    {
+     "k": "Backstage",
+     "t": "Rey Mysterio et Cody Rhodes demandent à Nick Aldis un membre de SmackDown pour le match 5 contre 5 Team Mexico contre Team USA des Survivor Series."
+    },
+    {
+     "k": "Attaque",
+     "t": "Les War Raiders interrompent le match pour le titre par équipe et attaquent les quatre catcheurs."
+    },
+    {
+     "k": "Backstage",
+     "t": "CM Punk, furieux d'avoir raté une chance au titre à cause de Kevin Owens, promet d'en finir avec lui."
+    },
+    {
+     "k": "Backstage",
+     "t": "Fatal Influence se moque du choix de Charlotte Flair ; John Cena les invite à entrer dans le tournoi."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Kevin Owens interrompt Sami Zayn (avec Johnny Gargano et Candice LeRae) et réclame un match pour le titre ; Gargano l'attaque, Owens lui place un Stunner et prévient Zayn que son règne est en sursis."
+    },
+    {
+     "k": "Annonce",
+     "t": "Rey Mysterio présente Rey Fénix comme nouveau membre de la Team Mexico pour les Survivor Series."
+    },
+    {
+     "k": "Retour",
+     "t": "Le match de Charlotte Flair tourne à la bagarre générale entre deux camps de catcheuses, avec le retour de Stephanie Vaquer ; Flair annonce un match WarGames au micro."
+    },
+    {
+     "k": "Promo",
+     "t": "Tiffany Stratton, nouvelle championne WWE féminine, dédie son règne à Chelsea Green, qu'elle a trahie à Crown Jewel ; Green l'attaque, mais Stratton la frappe avec la bague de Crown Jewel."
+    },
+    {
+     "k": "Backstage",
+     "t": "Paige console Chelsea Green avant que Blake Monroe vienne se moquer d'elle."
+    },
+    {
+     "k": "Autre",
+     "t": "En fin de show, Gunther pousse Finn Bálor sur l'arbitre et profite de son absence pour un coup bas, ce qui laisse la porte ouverte à une revanche."
+    }
+   ],
+   "s": "Khel Now",
+   "u": "https://khelnow.com/wwe/wwe-smackdown-results-winners-november-13-202611"
+  },
+  "AEW|PLE|2026-11-14": {
+   "res": [
+    "Jack Perry a battu The Beast Mortos (avant-show).",
+    "Kevin Knight, Wardlow et El Clon ont battu Jordan Cruz, Jaden Monroe et RJ Wylde (avant-show).",
+    "Big Boom! A.J., QT Marshall, Darius Martin et Matt Sydal ont battu Lance Archer, Josh Alexander, Rocky Romero et Trent Beretta (avant-show).",
+    "Queen Aminata a battu Persephone, Skye Blue et Hyan et conserve le titre TBS (avant-show).",
+    "Kazuchika Okada a battu Adam Copeland et conserve le titre International de la AEW.",
+    "The Young Bucks ont battu Mark Davis et Jake Doyle et conservent le titre mondial par équipe de la AEW.",
+    "Swerve Strickland, Kofi et Austin Creed ont battu Hangman Adam Page, Brody King et Bandido dans un Texas Death Match et remportent le titre mondial des trios de la AEW.",
+    "Kris Statlander et Harley Cameron ont battu Jamie Hayter et Alex Windsor et remportent le titre mondial féminin par équipe de la AEW.",
+    "Ilja Dragunov a battu Tommaso Ciampa et remporte le titre National de la AEW.",
+    "Mercedes Moné a battu Marina Shafir et conserve le titre mondial féminin de la AEW.",
+    "The Cut ont battu The Death Riders et The Conglomeration dans l’Anarchy in the Arena.",
+    "Will Ospreay a battu Kyle Fletcher et conserve le titre mondial de la AEW."
+   ],
+   "seg": [
+    {
+     "k": "Annonce",
+     "t": "Après sa victoire en avant-show, Jack Perry envoie un message à Samoa Joe, qui le défie pour une revanche à Dynamite le 18 novembre."
+    },
+    {
+     "k": "Autre",
+     "t": "Maya World ne peut pas rejoindre Phoenix à cause d’une interdiction de vol nationale : le match pour le titre TBS se dispute à quatre sans elle."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après la défense des Young Bucks, les Motor City Machine Guns viennent leur serrer la main, mais Jacob et Drew Kasper attaquent les deux équipes ; FTR s’en mêle et Stokely Hathaway accueille les Kasper."
+    },
+    {
+     "k": "Autre",
+     "t": "Les ceintures des trios sont redessinées avec des plaques en hommage à PAC."
+    },
+    {
+     "k": "Autre",
+     "t": "Pendant l’Anarchy in the Arena, Wheeler Yuta, Claudio Castagnoli et KeMalito interviennent ; Jay White fait le tombé sur Jon Moxley."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Avant le main event, Will Ospreay lorgne le contrat pour le titre mondial d’Andrade El Idolo avant que les deux hommes ne se serrent dans les bras."
+    },
+    {
+     "k": "Retour",
+     "t": "Après le main event, un homme masqué attaque Will Ospreay : c’est MJF, de retour pour la première fois depuis All In, qui piétine la ceinture mondiale de la AEW et s’enfuit par la foule."
+    }
+   ],
+   "s": "Wrestle Purists",
+   "u": "https://wrestlepurists.com/aew-full-gear-2026-results-mjf-returns-will-ospreay-retains/"
+  },
+  "CMLL|Viernes Espectacular|2026-11-13": {
+   "res": [
+    "Los Viajeros del Espacio (Hombre Bala Jr., Max Star, Valiente Jr. et Futuro) ont battu Virus, Cancerbero, Carnífice et Inquisidor.",
+    "God's Eye (Syuri et Ami Sohrei) ont battu Thunder Rosa et Kira.",
+    "Rugido a battu Vegas Depredador.",
+    "Volador Jr. a battu Black Tiger.",
+    "Bandido et Brillante Jr. ont battu Bárbaro Cavernario et Yutani (2 tombés sur 3).",
+    "Le Sky Team (Místico, Máscara Dorada et Neón) a battu Hechicero, Zandokan Jr. et Ángel de Oro (2 tombés sur 3)."
+   ],
+   "seg": [
+    {
+     "k": "Retour",
+     "t": "Le Sky Team (Místico, Máscara Dorada et Neón) se reforme pour le combat principal, accompagné de KeMonito, face au trio de Hechicero accompagné de KeMalito."
+    },
+    {
+     "k": "Autre",
+     "t": "Yota Tsuji (NJPW) fait une apparition à l'Arena México, en vue de l'événement CMLL / NJPW Lucha Kingdom."
+    }
+   ],
+   "m": [
+    {
+     "t": "Huit hommes : Viajeros del Espacio contre Virus, Cancerbero, Carnífice et Inquisidor",
+     "r": "Victoire des Viajeros del Espacio."
+    },
+    {
+     "t": "Équipes féminines : God's Eye contre Thunder Rosa et Kira",
+     "r": "Syuri et Ami Sohrei l'emportent."
+    },
+    {
+     "t": "Simple : Rugido contre Vegas Depredador",
+     "r": "Victoire de Rugido."
+    },
+    {
+     "t": "Simple : Volador Jr. contre Black Tiger",
+     "r": "Victoire de Volador Jr."
+    },
+    {
+     "t": "2 tombés sur 3 : Bandido et Brillante Jr. contre Bárbaro Cavernario et Yutani",
+     "r": "Bandido et Brillante Jr. gagnent."
+    },
+    {
+     "t": "2 tombés sur 3 : Sky Team contre Hechicero, Zandokan Jr. et Ángel de Oro",
+     "r": "Le Sky Team réuni l'emporte."
+    }
+   ],
+   "s": "Fightful",
+   "u": "https://www.fightful.com/wrestling-news/cmll-viernes-espectacular-results-11-13-2026-sky-team-reunites-yota-tsuji-appears-bandido-syuri-more"
+  },
+  "AAA|Lucha Libre AAA|2026-11-14": {
+   "w": [
+    {
+     "n": "YouTube (épisode complet)",
+     "u": "https://www.youtube.com/watch?v=saYGiwAv9FU"
+    }
+   ],
+   "s": "Fightful",
+   "u": "https://www.fightful.com/wrestling-news/watch-full-episode-lucha-libre-aaa-november-14-2026"
+  },
+  "WWE|Raw|2026-11-16": {
+   "res": [
+    "LA Knight a battu The Miz (avec Kit Wilson) et devient le 4e membre de l'équipe USA pour Survivor Series.",
+    "Stephanie Vaquer a battu Jacy Jayne par disqualification après l'intervention de Fallon Henley et Lainey Reid (Fatal Influence).",
+    "IYO SKY a battu Raquel Rodriguez et remporte le titre Intercontinental féminin.",
+    "The 946 (Carmelo Hayes et Cruz Montana) ont battu The Usos (Jey et Jimmy Uso) et gagnent l'avantage pour le WarGames masculin."
+   ],
+   "seg": [
+    {
+     "k": "Annonce",
+     "t": "Adam Pearce prévient The Bloodline : toute intervention extérieure dans le match pour l'avantage du WarGames donnera l'avantage à l'autre équipe."
+    },
+    {
+     "k": "Promo",
+     "t": "Cody Rhodes parle du match à 5 contre 5 USA contre Mexique de Survivor Series ; CM Punk le rejoint, puis The Miz et Kit Wilson demandent à entrer dans l'équipe."
+    },
+    {
+     "k": "Promo",
+     "t": "LA Knight arrive et propose un match contre The Miz pour trancher ; après le match, Punk et Rhodes s'en prennent à Kit Wilson."
+    },
+    {
+     "k": "Annonce",
+     "t": "John Cena présente Liv Morgan comme nouvelle invitée de la John Cena Classic."
+    },
+    {
+     "k": "Promo",
+     "t": "Becky Lynch s'en prend à Liv Morgan et l'invite à l'attaquer ; Morgan s'échappe, un match entre elles à Survivor Series se dessine."
+    },
+    {
+     "k": "Attaque",
+     "t": "Fatal Influence attaque Stephanie Vaquer après son match ; Bayley vient l'aider mais Fatal Influence reste debout, un WarGames féminin se profile."
+    },
+    {
+     "k": "Backstage",
+     "t": "Jacob Fatu s'énerve des conditions du match pour l'avantage, Solo Sikoa tente de le calmer."
+    },
+    {
+     "k": "Promo",
+     "t": "Oba Femi annonce qu'il va s'occuper de The Vision après leur attaque sur Penta et Je'Von Evans."
+    },
+    {
+     "k": "Annonce",
+     "t": "Rey Mysterio révèle que Dragon Lee est le 4e membre de l'équipe Mexique."
+    },
+    {
+     "k": "Backstage",
+     "t": "Ethan Page, champion Intercontinental, confronte Rey Fénix, son prétendant n° 1."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Après la victoire de The 946, Solo Sikoa et Jacob Fatu rejoignent The Usos sur le ring pour un face-à-face."
+    },
+    {
+     "k": "Annonce",
+     "t": "Raw de la semaine prochaine commencera plus tôt (double enregistrement avec SmackDown) ; Sol Ruca contre Lyra Valkyria est annoncé."
+    }
+   ],
+   "s": "Wrestling Inc.",
+   "u": "https://www.wrestlinginc.com/2317253/wwe-raw-november-16-2026-results/"
+  },
+  "TNA|PLE|2026-11-15": {
+   "res": [
+    "Elijah a battu Vincent (pré-show).",
+    "Tasha Steelz a battu M By Elegance, Heather By Elegance, Shotzi Blackheart, Kiera Hogan et Shayna Baszler dans un Ultimate X et devient prétendante n° 1 au titre Knockouts.",
+    "Matt Hardy a battu Joseph Sawyer dans un match sans disqualification.",
+    "Ricky Sosa a battu Fabian Aichner, Amir Jordan, The Home Town Man et Jason Hotch dans un match à 5 par élimination et remporte la World X-Cup 2026.",
+    "Frankie Kazarian contre Mustafa Ali (Call Your Shot Trophy) : sans résultat (no contest).",
+    "KC Navarro a battu Cedric Alexander, John Skyler, Joe Alonzo, A.J. Francis et TJP dans un Ultimate X et devient prétendant n° 1 au titre X-Division.",
+    "Leon Slater a battu Trey Miguel et conserve le titre mondial de la TNA."
+   ],
+   "seg": [
+    {
+     "k": "Attaque",
+     "t": "Vincent attaque Elijah pendant sa chanson avant leur match ; Santino Marella chauffe ensuite la salle."
+    },
+    {
+     "k": "Attaque",
+     "t": "Joseph Sawyer attaque Matt Hardy pendant sa promo ; la sécurité les sépare et Santino Marella lance le match sans disqualification."
+    },
+    {
+     "k": "Annonce",
+     "t": "La World X-Cup, prévue en tournoi, devient un match à 5 à cause de problèmes de voyage."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après le no contest, Mustafa Ali frappe Kazarian avec la cloche et une chaise, puis s'en prend au public au micro."
+    },
+    {
+     "k": "Annonce",
+     "t": "Une vidéo annonce Taryn Terrell, Mila Moore et Harley Hudson à Impact jeudi."
+    },
+    {
+     "k": "Promo",
+     "t": "Leon Slater défie ses prétendants au bord du ring avant que Trey Miguel n'arrive dans les coulisses juste avant le match."
+    }
+   ],
+   "s": "Wrestling Inc.",
+   "u": "https://www.wrestlinginc.com/2316787/tna-destination-x-november-15-2026-results/"
+  },
+  "WWE|NXT|2026-11-17": {
+   "res": [
+    "Kam Hendrix a battu Tony D'Angelo après une distraction de Myles Borne.",
+    "Chantel Monroe a battu Layla Diggs.",
+    "Zilla Fatu a battu Dion Lennox (avec Osiris Griffin et Cutler James).",
+    "Tristan Angels a battu Saquon Shugars et Sean Legacy dans un match à trois.",
+    "Kelani Jordan a battu Kendal Grey (avec Wren Sinclair) par arrêt de l'arbitre et conserve le titre NXT Women's."
+   ],
+   "seg": [
+    {
+     "k": "Annonce",
+     "t": "Une vidéo montre John Cena invitant Izzi Dame à la John Cena Classic ; Zaria, furieuse, file vers le ring."
+    },
+    {
+     "k": "Attaque",
+     "t": "Zaria appelle Izzi Dame et l'étend au sol ; Dame éclate de rire, allongée sur le ring."
+    },
+    {
+     "k": "Annonce",
+     "t": "John Cena invite aussi Shiloh Hill à la John Cena Classic."
+    },
+    {
+     "k": "Backstage",
+     "t": "Grayson Waller interrompt Mason Rook et Robert Stone pour réclamer un match pour le titre NXT face à Shiloh Hill ; Rook prévient que Hill ne passera pas avant lui."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Thea Hail confronte Chantel Monroe, qui se vante de sa victoire, dans le vestiaire des femmes."
+    },
+    {
+     "k": "Autre",
+     "t": "Hommage à « Cowboy » Bill Watts, dont le décès vient d'être annoncé."
+    },
+    {
+     "k": "Promo",
+     "t": "Noam Dar et Romeo Moreno appellent le Vanity Project ; Hank Walker et Tank Ledger s'en mêlent et Jackson Drake met son titre North American en jeu."
+    },
+    {
+     "k": "Annonce",
+     "t": "Robert Stone annonce un match par équipes à 8 : Dar, Moreno, Walker et Ledger contre le Vanity Project, dont Myka Lockwood se déclare la 4e membre."
+    },
+    {
+     "k": "Backstage",
+     "t": "BirthRight et Los Perros del Mal (AAA) s'accrochent en coulisses."
+    },
+    {
+     "k": "Annonce",
+     "t": "La semaine prochaine : Zaria contre Izzi Dame pour le titre Women's North American, Shiloh Hill contre Mason Rook pour devenir aspirant n°1 au titre NXT, et le match à 8."
+    }
+   ],
+   "s": "Wrestling Inc.",
+   "u": "https://www.wrestlinginc.com/2318773/wwe-nxt-november-17-2026-results/"
+  },
+  "AEW|Dynamite|2026-11-18": {
+   "res": [
+    "Orange Cassidy a battu Jon Moxley (Continental Classic, Gold League).",
+    "Nick Wayne a battu « Speedball » Mike Bailey (Continental Classic, Gold League).",
+    "Les Kasper Brothers (Drew Kasper et Jacob Kasper) ont battu deux catcheurs locaux.",
+    "Samoa Joe a battu Jack Perry.",
+    "Queen Aminata a battu AZM, Maya World et Mina Shirakawa et conserve le titre TBS de la AEW.",
+    "Bandido a battu Hangman Adam Page (Continental Classic, Blue League)."
+   ],
+   "seg": [
+    {
+     "k": "Promo",
+     "t": "Après la victoire de Cassidy, Nick Wayne interrompt, traite Cassidy et Moxley de « vieux » et promet de gagner le Continental Classic."
+    },
+    {
+     "k": "Promo",
+     "t": "Darby Allin envoie un message : il vient pour Wardlow et Kyle Fletcher."
+    },
+    {
+     "k": "Promo",
+     "t": "Don Callis affirme avoir un plan pour s'emparer de tous les titres de la AEW."
+    },
+    {
+     "k": "Annonce",
+     "t": "Les Young Bucks et MCMG défient FTR et les Kasper Brothers pour « Winter is Coming » ; Stokely Hathaway accepte."
+    },
+    {
+     "k": "Promo",
+     "t": "MJF revient sur ses histoires avec Ospreay et se proclame le seul vrai champion de la AEW."
+    },
+    {
+     "k": "Backstage",
+     "t": "Les Death Riders s'en prennent verbalement à The Dogs : pour Garcia, c'est l'heure des « playoffs »."
+    },
+    {
+     "k": "Annonce",
+     "t": "Ilja Dragunov refuse de rejoindre la Family de Don Callis mais défendra son titre contre n'importe lequel de ses membres ; Callis annonce Dragunov contre El Clon à Collision."
+    },
+    {
+     "k": "Célébration",
+     "t": "Swerve Strickland et The New Level fêtent leurs titres Trios ; ils refusent l'offre de Callis, la Family encercle le ring et Prince Nana les rebaptise The Dangerous New Level."
+    },
+    {
+     "k": "Célébration",
+     "t": "The Cut et Mercedes Moné fêtent leurs victoires de Full Gear avec l'équipe féminine de lutte des États-Unis, mais AZM gâche la fête."
+    },
+    {
+     "k": "Backstage",
+     "t": "Swerve Strickland interrompt une interview de Hangman Page pour lui rappeler qu'il lui doit encore quelque chose."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Andrade El Idolo vise le titre mondial ; Kyle Fletcher réclame une revanche contre Ospreay et défie Andrade pour la semaine prochaine."
+    }
+   ],
+   "s": "Fightful",
+   "u": "https://www.fightful.com/wrestling/aew-dynamite-results-11-18-2026-hangman-page-vs-bandido-tbs-title-match-mjf-mercedes-mone-more/"
+  },
+  "TNA|Impact|2026-11-19": {
+   "res": [
+    "KC Navarro a battu Bear Bronson.",
+    "Apex (Shayna Baszler et Zoey Serrano) et Fire 'N Flava (Tasha Steelz et Kiera Hogan) ont battu Indi Hartwell, Gabby Forza et Shotzi Blackheart.",
+    "Xia Brookside a battu Sofia Sivan.",
+    "Leon Slater a battu Nic Nemeth et conserve le titre mondial de la TNA."
+   ],
+   "seg": [
+    {
+     "k": "Interview",
+     "t": "Nic Nemeth promet en coulisses qu'il quittera Calgary avec le titre mondial de la TNA."
+    },
+    {
+     "k": "Promo",
+     "t": "Trey Miguel revient sur sa défaite à Destination X contre Leon Slater, perturbée selon lui par des retards de voyage."
+    },
+    {
+     "k": "Attaque",
+     "t": "Nic et Ryan Nemeth s'en prennent à Trey Miguel ; Leon Slater accourt et promet de battre Nic."
+    },
+    {
+     "k": "Backstage",
+     "t": "Heather By Elegance et M By Elegance se disputent après le match Ultimate X."
+    },
+    {
+     "k": "Attaque",
+     "t": "Allie est agressée en coulisses par un inconnu avant le match par équipes."
+    },
+    {
+     "k": "Retour",
+     "t": "The Dollhouse (Taryn Terrell, avec Harley Hudson et Mila Moore) fait son retour dans une promo."
+    },
+    {
+     "k": "Promo",
+     "t": "Mustafa Ali réclame un match pour le titre mondial face à Leon Slater."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après son match, Xia Brookside et The Righteous s'acharnent sur la cheville de Sofia Sivan avec une chaise et une planche."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Fabian Aichner confronte Jason Hotch au sujet du titre International, rejoints par A.J. Francis et Ricky Sosa."
+    },
+    {
+     "k": "Annonce",
+     "t": "Santino Marella annonce une émission spéciale de Thanksgiving et un Triple Threat Revolver pour désigner l'aspirant n°1 au titre mondial."
+    }
+   ],
+   "s": "Wrestling Inc.",
+   "u": "https://www.wrestlinginc.com/2321436/tna-thursday-night-impact-november-19-2026-results/"
+  },
+  "WWE|SmackDown|2026-11-20": {
+   "res": [
+    "Jade Cargill a battu Charlotte Flair par tombé dans le match pour l'avantage de WarGames féminin.",
+    "The War Raiders (Erik et Ivar) ont battu Bakusai (Shinsuke Nakamura et Kyoki).",
+    "Trick Williams a battu Damian Priest par disqualification.",
+    "Rey Fenix a battu Kit Wilson par tombé.",
+    "Kevin Owens a battu GUNTHER par tombé."
+   ],
+   "seg": [
+    {
+     "k": "Promo",
+     "t": "Kevin Owens réclame un match pour le titre Undisputed WWE face à Sami Zayn ; le GM Nick Aldis officialise plutôt Owens contre GUNTHER, et GUNTHER prévient Owens de ne pas se mettre sur son chemin."
+    },
+    {
+     "k": "Interview",
+     "t": "Cathy Kelley interroge Jade Cargill et Charlotte Flair avant leur match pour l'avantage de WarGames."
+    },
+    {
+     "k": "Attaque",
+     "t": "Tama Tonga et Talla Tonga attaquent Nakamura et Kyoki après le match par équipe."
+    },
+    {
+     "k": "Attaque",
+     "t": "Chelsea Green récupère sa bague de Women's Crown Jewel, gifle Blake Monroe, puis Tiffany Stratton l'attaque par derrière et lui reprend la bague."
+    },
+    {
+     "k": "Backstage",
+     "t": "The Miz et Kit Wilson interrompent Cody Rhodes et Rey Fenix chez Nick Aldis ; Wilson lit un poème moqueur sur Fenix."
+    },
+    {
+     "k": "Autre",
+     "t": "Hommage vidéo à « Cowboy » Bill Watts après l'annonce de son décès."
+    },
+    {
+     "k": "Annonce",
+     "t": "CM Punk choisit « Hacksaw » Jim Duggan comme 5e membre de la Team USA, qui refuse ; Trick Williams et Lil Yachty se proposent et Williams devient le 5e membre pour Survivor Series."
+    },
+    {
+     "k": "Blessure",
+     "t": "Après le match, Damian Priest s'en prend au genou gauche de Trick Williams, qui est examiné par les médecins."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après la victoire d'Owens, Sami Zayn le frappe d'un Helluva Kick et brandit la ceinture Undisputed WWE."
+    }
+   ],
+   "s": "Wrestling Inc.",
+   "u": "https://www.wrestlinginc.com/2323064/wwe-smackdown-november-20-2026-results/"
+  },
+  "AEW|Collision|2026-11-21": {
+   "res": [
+    "Kevin Knight a battu Tommaso Ciampa (Continental Classic, Gold League).",
+    "Divine Dominion (Megan Bayne et Lena Kross) ont battu Viva Van et VertVixen.",
+    "Brody King a battu Daniel Garcia par arrêt de l'arbitre (Continental Classic, Blue League).",
+    "Ilja Dragunov a battu El Clon et conserve le titre AEW National.",
+    "Konosuke Takeshita a battu Trent Beretta.",
+    "AZM a battu Laynie Luck.",
+    "The Death Riders (Claudio Castagnoli, Wheeler Yuta, Gabe Kidd et Marina Shafir) ont battu Shane Taylor Promotions (Shane Taylor, Shawn Dean, Carlie Bravo et Trish Adora).",
+    "Jay White a battu Ricochet (Continental Classic, Blue League)."
+   ],
+   "seg": [
+    {
+     "k": "Retour",
+     "t": "Trent Beretta lance un défi à tous ceux qui ont quitté la Don Callis Family : Konosuke Takeshita fait son retour et l'affronte aussitôt."
+    },
+    {
+     "k": "Blessure",
+     "t": "Daniel Garcia ne peut pas continuer après le boulet de canon de Brody King ; Tony Schiavone annonce une blessure au bras, sans gravité."
+    },
+    {
+     "k": "Attaque",
+     "t": "Kris Statlander et Harley Cameron, venues observer leurs challengers, interviennent quand Divine Dominion s'acharne après le match ; la sécurité sépare la bagarre avant leur match de mercredi."
+    },
+    {
+     "k": "Promo",
+     "t": "Britt Baker et Persephone laissent entendre qu'elles visent les titres féminins par équipe."
+    },
+    {
+     "k": "Promo",
+     "t": "Le Triangle of Madness (Thekla, Julia Hart et Skye Blue) défie AZM de trouver deux partenaires pour un match à six."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Jay White interrompt la célébration des Death Riders et nargue Claudio Castagnoli, retenu par les officiels."
+    }
+   ],
+   "s": "Wrestlepurists",
+   "u": "https://wrestlepurists.com/aew-collision-results-november-21-2026-ilja-dragunov-retains-konosuke-takeshita-returns/"
+  },
+  "WWE|Raw|2026-11-23": {
+   "res": [
+    "Ethan Page a battu Rey Fenix et conserve le titre Intercontinental.",
+    "El Grande Americano et Rey Mysterio ont battu Dominik Mysterio et JD McDonagh (Judgment Day).",
+    "Sol Ruca a battu Lyra Valkyria.",
+    "Bayley et Stephanie Vaquer ont battu Fallon Henley et Lainey Reid (Fatal Influence)."
+   ],
+   "seg": [
+    {
+     "k": "Attaque",
+     "t": "En ouverture, The 946 met KO l'Alpha Academy ; Carmelo Hayes appelle The Bloodline et Royce Keys promet de s'en prendre ensuite à Roman Reigns."
+    },
+    {
+     "k": "Annonce",
+     "t": "Rey Mysterio présente le 5e membre de la Team Mexico pour Survivor Series ; Judgment Day l'interrompt et Dominik se propose, mais Rey choisit El Grande Americano."
+    },
+    {
+     "k": "Annonce",
+     "t": "La Team USA (Cody Rhodes, Je'Von Evans, LA Knight, CM Punk) dévoile son 5e membre : Seth Rollins, à la grande surprise de CM Punk."
+    },
+    {
+     "k": "Backstage",
+     "t": "Iyo Sky est interrompue par Lyra Valkyria, puis Sol Ruca confronte Valkyria, ce qui mène à leur match."
+    },
+    {
+     "k": "Promo",
+     "t": "Liv Morgan jure de tout prendre à Becky Lynch à Survivor Series ; plus tard, Becky Lynch lui répond qu'elle remportera le titre."
+    },
+    {
+     "k": "Promo",
+     "t": "Oba Femi lance un ultimatum à The Vision : s'écarter ou être mis au tapis."
+    },
+    {
+     "k": "Backstage",
+     "t": "Big Cass confronte Chad Gable en coulisses."
+    },
+    {
+     "k": "Attaque",
+     "t": "The Bloodline et The 946 se bagarrent pour clore l'émission."
+    }
+   ],
+   "s": "Fightful",
+   "u": "https://www.fightful.com/wrestling/wwe-raw-results-11-23-2026-roman-reigns-appears-intercontinental-title-match-more/"
+  },
+  "WWE|NXT|2026-11-24": {
+   "res": [
+    "Myka Lockwood, Jackson Drake, Brad Baylor et Ricky Smokes (Vanity Project) ont battu Noam Dar, Romeo Moreno, Hank Walker et Tank Ledger.",
+    "Mason Rook a battu Shiloh Hill et devient aspirant n°1 au titre NXT.",
+    "Stacks et Uriah Connors (BirthRight) ont battu Angel et Berto (Los Perros del Mal).",
+    "Izzi Dame a battu ZARIA et remporte le titre Women's North American de la NXT."
+   ],
+   "seg": [
+    {
+     "k": "Annonce",
+     "t": "Kendal Grey réclame sa revanche pour le titre féminin NXT ; Kelani Jordan avoue avoir cherché une suspension, mais Robert Stone refuse et officialise Jordan contre Grey en match TLC."
+    },
+    {
+     "k": "Interview",
+     "t": "L'interview d'Izzi Dame est interrompue par Lizzy Rain et Kali Armstrong, qui visent le titre North American."
+    },
+    {
+     "k": "Célébration",
+     "t": "Vanity Project fête sa victoire ; Zilla Fatu, EK Prosper, Kam Hendrix et Tristan Angels réclament tous une chance pour le titre North American."
+    },
+    {
+     "k": "Promo",
+     "t": "Myles Borne dit étudier Tony D'Angelo, s'estime volé lors de leur dernier duel et trouve un mot de D'Angelo lui donnant rendez-vous la semaine prochaine."
+    },
+    {
+     "k": "Promo",
+     "t": "Thea Hail parle de son alopécie et se rase la tête sur le ring avec le soutien du public, après les moqueries de Chantel Monroe."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Après le match, Grayson Waller bouscule Shiloh Hill ; Mason Rook lui place une Blue Thunder Bomb et pose avec le titre NXT, leur match est prévu à TLC."
+    },
+    {
+     "k": "Annonce",
+     "t": "Wren Sinclair et Kendal Grey sont invitées au John Cena Classic et complètent le groupe de huit de la NXT."
+    }
+   ],
+   "s": "Fightful / WrestlePurists",
+   "u": "https://wrestlepurists.com/wwe-nxt-results-november-24-2026-izzi-dame-wins-north-american-title-thea-hail-shaves-her-head/"
+  },
+  "CMLL|Viernes Espectacular|2026-11-20": {
+   "res": [
+    "Thunder Rosa, Marcela et Skadi ont battu Princesa Sugehit, Hera et Olympia.",
+    "KUSHIDA, Máster Wato et Okumura ont battu Valiente Jr., Pantera Jr. et Capitán Suicida.",
+    "Templario et Francesco Akira (United Empire) ont battu Guerrero Maya Jr. et Xelhua (Reyes del Inframundo).",
+    "Máscara Dorada et Neón (Sky Team) ont battu Titán et Taiji Ishimori (Unbound Co.).",
+    "Hechicero et Bárbaro Cavernario ont battu Místico, Ángel de Oro, Blue Panther, Euforia, Terrible, Atlantis, Último Guerrero et Toscano et se qualifient pour la finale de la Leyenda Azul."
+   ],
+   "seg": [
+    {
+     "k": "Célébration",
+     "t": "Hommage à Blue Demon avant l'éliminatoire de la Leyenda Azul, qui réunit dix anciens vainqueurs ; Toscano fait son retour."
+    },
+    {
+     "k": "Annonce",
+     "t": "Bárbaro Cavernario élimine Místico en dernier : la finale Hechicero contre Bárbaro Cavernario aura lieu la semaine prochaine."
+    }
+   ],
+   "m": [
+    {
+     "t": "Six femmes : Thunder Rosa, Marcela et Skadi contre Princesa Sugehit, Hera et Olympia",
+     "r": "Victoire de Thunder Rosa, Marcela et Skadi après 8 min 53, Hera étant coincée dans les cordes."
+    },
+    {
+     "t": "Trios : KUSHIDA, Máster Wato et Okumura contre Valiente Jr., Pantera Jr. et Capitán Suicida",
+     "r": "Victoire de KUSHIDA, Máster Wato et Okumura (11 min 57)."
+    },
+    {
+     "t": "Duo : United Empire contre Reyes del Inframundo",
+     "r": "Templario et Francesco Akira l'emportent (13 min 35)."
+    },
+    {
+     "t": "Duo : Sky Team contre Unbound Co.",
+     "r": "Neón conclut d'un Swanton Bomb sur Titán (10 min 05)."
+    },
+    {
+     "t": "Leyenda Azul, éliminatoire",
+     "r": "Hechicero et Bárbaro Cavernario restent les derniers après 36 min 05 ; Cavernario élimine Místico en dernier."
+    }
+   ],
+   "s": "Superluchas",
+   "u": "https://superluchas.com/cmll-arena-mexico-20-de-noviembre-de-2026-la-leyenda-azul-comienza/"
+  },
+  "AEW|Dynamite|2026-11-25": {
+   "res": [
+    "Mike Bailey a battu Orange Cassidy (Continental Classic, Gold League).",
+    "Jon Moxley a battu Kevin Knight par soumission (Continental Classic, Gold League).",
+    "Kazuchika Okada, Wardlow, Brian Cage, Hechicero, Josh Alexander, Mark Davis, Jake Doyle, Rocky Romero et Trent Beretta ont battu leurs neuf adversaires dans un match par équipes à 18.",
+    "Jay White a battu Hangman Page (Continental Classic, Blue League).",
+    "Kris Statlander et Harley Cameron ont battu Megan Bayne et Lena Kross et conservent le titre AEW Women's World Tag Team.",
+    "Kyle Fletcher a battu Andrade El Idolo."
+   ],
+   "seg": [
+    {
+     "k": "Annonce",
+     "t": "Will Ospreay, en vidéo, accepte le défi titre contre titre de MJF pour Worlds End, mais avec une stipulation échelle validée par Tony Khan ; MJF refuse, puis le match à l'échelle est officialisé."
+    },
+    {
+     "k": "Attaque",
+     "t": "Megan Bayne et Lena Kross attaquent les championnes après le match ; Jamie Hayter et Alex Windsor viennent les sauver et font comprendre qu'elles veulent les titres."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Swerve Strickland, Kofi et Austin Creed interrompent Don Callis et offrent un match pour les titres Trios à Collision ; Josh Alexander, Rocky Romero et Hechicero relèvent le défi."
+    },
+    {
+     "k": "Backstage",
+     "t": "Les Kasper Brothers demandent à Stokely Hathaway d'avancer à la semaine prochaine leur match à huit contre les Young Bucks et les Motor City Machine Guns."
+    },
+    {
+     "k": "Promo",
+     "t": "Des images montrent Adam Copeland s'interroger sur son avenir ; Callis et Okada annoncent une « fête de retraite » de Copeland pour mercredi prochain."
+    },
+    {
+     "k": "Promo",
+     "t": "Mercedes Moné se dit prête à défendre le titre mondial féminin AEW contre AZM quand elle le voudra."
+    },
+    {
+     "k": "Contrat",
+     "t": "Don Callis propose le double à Ilja Dragunov pour rejoindre sa famille et attend sa réponse à Collision."
+    },
+    {
+     "k": "Autre",
+     "t": "Pendant le main event, Callis tend un tournevis à Kyle Fletcher ; Andrade l'intercepte et chasse Callis, puis Fletcher demande des comptes à Callis."
+    }
+   ],
+   "s": "Wrestle Purists",
+   "u": "https://wrestlepurists.com/aew-dynamite-results-november-25-2026-ospreay-vs-mjf-ladder-match-set-kyle-fletcher-beats-andrade/"
   }
+ }
 }
