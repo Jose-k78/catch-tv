@@ -1,7 +1,44 @@
 {
-  "updated": "2026-11-25",
+  "updated": "2026-11-26",
   "note": "Une storyline par jour (la plus récente en premier) : grandes histoires, rivalités, anecdotes de coulisses, faits marquants. txt = paragraphes écrits en français à partir des sources ; v = vidéos officielles ; q = recherches sur la chaîne officielle.",
   "items": [
+    {
+      "id": "thanksgiving-1987",
+      "d": "2026-11-26",
+      "type": "Fait marquant",
+      "t": "Survivor Series contre Starrcade : la guerre de Thanksgiving 1987",
+      "k": "WWE",
+      "years": "1987-1988",
+      "hook": "Le 26 novembre 1987, Vince McMahon crée un nouvel événement le même soir que le grand rendez-vous de son rival… et met les chaînes câblées au pied du mur.",
+      "txt": [
+        "Depuis 1983, le soir de Thanksgiving appartient à Jim Crockett Promotions et à la NWA : c'est la date de Starrcade, leur plus grand show de l'année. En 1987, Crockett veut en faire son premier vrai rendez-vous en pay-per-view à l'échelle nationale, avec Ric Flair en tête d'affiche.",
+        "Vince McMahon riposte en créant un tout nouvel événement, les Survivor Series, programmé le même soir, le 26 novembre 1987. Le concept tranche avec tout ce qui existe : des matchs par équipes de cinq à élimination.",
+        "Surtout, la WWF prévient les câblo-opérateurs : ceux qui diffuseront Starrcade ne pourront pas proposer le futur WrestleMania IV. Face à cette menace, la plupart des chaînes choisissent la WWF ; seule une poignée garde Starrcade, et Crockett avance l'heure de son show pour limiter les dégâts.",
+        "À Richfield, dans l'Ohio, le main event des Survivor Series oppose l'équipe de Hulk Hogan à celle d'André the Giant, un prolongement de leur rivalité de WrestleMania III : André est le dernier survivant après le décompte à l'extérieur de Hogan. À Chicago, sous le nom de « Chi-Town Heat », Ric Flair reprend le titre mondial NWA à Ronnie Garvin dans une cage.",
+        "La WWF gagne nettement la bataille des recettes. En janvier 1988, elle récidive en diffusant gratuitement le premier Royal Rumble sur USA Network face au pay-per-view « Bunkhouse Stampede » de Crockett. Affaiblie, Jim Crockett Promotions est vendue fin 1988 à Ted Turner et devient la WCW.",
+        "Les Survivor Series, elles, sont devenues l'un des « quatre grands » rendez-vous de la WWE, tandis que Starrcade a quitté Thanksgiving dès 1988 pour s'installer en décembre."
+      ],
+      "key": "Les chaînes câblées doivent choisir entre Starrcade et le futur WrestleMania IV : la WWF remporte la guerre du pay-per-view de Thanksgiving 1987.",
+      "v": [],
+      "q": [
+        "Survivor Series 1987 Hulk Hogan André the Giant",
+        "Starrcade 1987 Ric Flair Ronnie Garvin cage"
+      ],
+      "src": [
+        {
+          "n": "Wikipédia (EN) – Survivor Series (1987)",
+          "u": "https://en.wikipedia.org/wiki/Survivor_Series_(1987)"
+        },
+        {
+          "n": "Wikipédia (EN) – Starrcade '87: Chi-Town Heat",
+          "u": "https://en.wikipedia.org/wiki/Starrcade_1987"
+        },
+        {
+          "n": "Bleacher Report – Starrcade vs. Survivor Series",
+          "u": "https://bleacherreport.com/articles/1868129-starrcade-vs-survivor-series-the-fight-for-thanksgiving-that-changed-wrestling"
+        }
+      ]
+    },
     {
       "id": "bret-shawn-1992",
       "d": "2026-11-25",
