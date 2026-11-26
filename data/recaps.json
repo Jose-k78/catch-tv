@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25",
+ "updated": "2026-11-26",
  "items": {
   "WWE|Raw|2026-10-26": {
    "txt": "Depuis le Save Mart Center de Fresno. Becky Lynch et Stephanie Vaquer se disputent la place d’aspirante n°1 au titre mondial féminin. Bayley et Lyra Valkyria règlent leurs comptes dans un match sans disqualification, IYO SKY affronte la championne intercontinentale Raquel Rodriguez sans titre en jeu (avec une chance au titre en vue), et Chad Gable et Dragon Lee font équipe contre Big Cass et Ethan Page.",
@@ -45,11 +45,6 @@
    "txt": "Jason Hotch défend le titre International contre Mustafa Ali dans un match au meilleur des trois tombés. Avery Styles fait ses débuts à Impact face à Joe Alonzo, quatre lutteurs se battent pour une chance au titre X-Division, et Daria Rae, de retour de suspension, ouvre l’émission. L’épisode prépare Destination X.",
    "s": "Khel Now",
    "u": "https://khelnow.com/pro-wrestling/tna-impact-preview-october-22-202610"
-  },
-  "TNA|PLE|2026-10-11": {
-   "txt": "Au Yuengling Center de Tampa. En tête d’affiche, Nic Nemeth met le titre mondial de la TNA en jeu face à Leon Slater, qui a utilisé son « Option C » pour obtenir ce match.",
-   "s": "Wikipédia",
-   "u": "https://en.wikipedia.org/wiki/Bound_for_Glory_(2026)"
   },
   "AAA|PLE|2026-10-24": {
    "txt": "Au Gimnasio Olímpico Juan de la Barrera, à Mexico, et diffusé sur plusieurs semaines dans Lucha Libre AAA. Au programme notamment El Grande Americano face à Dominik Mysterio et un match pour le titre Mega de la AAA. La présidente Marisela Peña fait son entrée au Hall of Fame.",
@@ -200,6 +195,11 @@
    "txt": "NXT au Performance Center d'Orlando, à quelques semaines de TLC. ZARIA met en jeu le titre Women's North American face à Izzi Dame, Mason Rook et Shiloh Hill s'affrontent pour devenir aspirant n°1 au titre NXT de Grayson Waller, et Los Perros del Mal sont aussi en action.",
    "s": "Fightful",
    "u": "https://www.fightful.com/wrestling/wwe-nxt-results-11-24-2026-zaria-vs-izzi-dame-perros-del-mal-mason-rook-more/"
+  },
+  "AEW|Collision|2026-11-26": {
+   "txt": "Collision spécial Thanksgiving : The Dangerous New Level met en jeu le titre AEW World Trios face à Josh Alexander, Rocky Romero et Hechicero de la famille de Don Callis. Au Continental Classic, Konosuke Takeshita affronte Bandido et Brody King défie Ricochet (Blue League), tandis que Tommaso Ciampa croise Nick Wayne (Gold League). Queen Aminata et Mina Shirakawa font équipe contre Athena et Billie Starkz, et Ilja Dragunov doit donner sa réponse à l'offre de Callis.",
+   "s": "Wrestle Purists",
+   "u": "https://wrestlepurists.com/aew-dynamite-results-november-25-2026-ospreay-vs-mjf-ladder-match-set-kyle-fletcher-beats-andrade/"
   }
  }
 }
