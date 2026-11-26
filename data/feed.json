@@ -1,6 +1,15 @@
 {
- "at": "2026-11-26T20:00:53.638Z",
+ "at": "2026-11-26T20:52:25.677Z",
  "items": [
+  {
+   "t": "Carte de AEW Worlds End 2026",
+   "u": "https://www.catch-newz.com/aew/newz/61640-carte-aew-worlds-end-2026",
+   "s": "Catch-Newz",
+   "d": "2026-11-26",
+   "tags": [
+    "AEW"
+   ]
+  },
   {
    "t": "Spoilers de AEW Collision du 26 novembre 2026",
    "u": "https://www.catch-newz.com/aew/resultats/61655-spoilers-aew-collision-26-novembre-2026",
@@ -524,16 +533,6 @@
    "d": "2026-11-24",
    "tags": [
     "CMLL"
-   ]
-  },
-  {
-   "t": "Preview : WWE NXT du 24 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61425-preview-wwe-nxt-24-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-24",
-   "tags": [
-    "WWE",
-    "NXT"
    ]
   }
  ],
@@ -1532,6 +1531,7 @@
    "https://www.catch-newz.com/wwe/resultats/61635-wwe-main-event-25-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61634-aew-dynamite-25-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61607-wwe-nxt-24-novembre-2026",
+   "https://www.catch-newz.com/aew/newz/61640-carte-aew-worlds-end-2026",
    "https://www.catch-newz.com/aew/resultats/61655-spoilers-aew-collision-26-novembre-2026",
    "https://www.catch-newz.com/international/newz/61637-preview-tna-impact-26-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61652-preview-wwe-raw-30-novembre-2026",
@@ -1827,15 +1827,14 @@
    "https://www.catch-newz.com/international/newz/61368-finalslam-des-streamers-se-sont-desistes-en-decouvrant-quil-fallait-un-entrainement-incroyable",
    "https://www.catch-newz.com/international/newz/61367-brawks-a-eu-seulement-10-jours-pour-devenir-catcheur",
    "https://www.catch-newz.com/international/resultats/61356-resultats-de-beyond-wrestling-open-ri-72",
-   "https://www.catch-newz.com/wwe/newz/61366-iyo-sky-absente-des-survivor-series-wargames-pour-la-premiere-fois-cette-annee",
-   "https://www.catch-newz.com/international/resultats/61350-resultats-de-bjw-du-30-octobre-2026"
+   "https://www.catch-newz.com/wwe/newz/61366-iyo-sky-absente-des-survivor-series-wargames-pour-la-premiere-fois-cette-annee"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
+  "Catch-Newz": "pas de flux RSS : 10 nouveaux articles lus sur la page d'accueil (10 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "1 articles (7 j)",
-  "YouTube WWE": "2 nouvelles vidéos",
+  "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
