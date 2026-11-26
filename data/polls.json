@@ -1,6 +1,61 @@
 {
-  "updated": "2026-11-25",
+  "updated": "2026-11-26",
   "items": [
+    {
+      "id": "p-20261126-logan-paul",
+      "d": "2026-11-26",
+      "type": "",
+      "k": "WWE",
+      "q": "Le retour de Logan Paul à la WWE est annoncé pour décembre : face à qui doit-il revenir ?",
+      "opts": [
+        "Cody Rhodes",
+        "Jey Uso",
+        "Randy Orton"
+      ],
+      "other": true,
+      "end": ""
+    },
+    {
+      "id": "p-20261126-hardys",
+      "d": "2026-11-26",
+      "type": "",
+      "k": "TNA",
+      "q": "Les Hardy Boyz arrivent en fin de contrat avec la TNA : où doivent-ils aller en 2027 ?",
+      "opts": [
+        "Rester à la TNA",
+        "Revenir à la WWE",
+        "Retourner à l'AEW"
+      ],
+      "other": true,
+      "end": ""
+    },
+    {
+      "id": "p-20261126-keys-rock",
+      "d": "2026-11-26",
+      "type": "",
+      "k": "WWE",
+      "q": "Royce Keys menace The Rock avant les Survivor Series : tu veux voir un match entre eux ?",
+      "opts": [
+        "Oui, tout de suite",
+        "Oui, mais plus tard",
+        "Non"
+      ],
+      "other": false,
+      "end": "2026-11-28"
+    },
+    {
+      "id": "p-20261126-dream-bull-rhea",
+      "d": "2026-11-26",
+      "type": "match",
+      "k": "",
+      "q": "Dream match : Bull Nakano contre Rhea Ripley, qui gagne ?",
+      "opts": [
+        "Bull Nakano",
+        "Rhea Ripley"
+      ],
+      "other": false,
+      "end": "2026-11-29"
+    },
     {
       "id": "p-20261125-cc-vainqueur",
       "d": "2026-11-25",
@@ -373,32 +428,6 @@
       "end": "2026-11-28"
     },
     {
-      "id": "p-20261114-destx-slater",
-      "d": "2026-11-14",
-      "type": "",
-      "k": "TNA",
-      "q": "Destination X : qui repart avec le titre mondial de la TNA ?",
-      "opts": [
-        "Leon Slater (il garde son titre)",
-        "Trey Miguel"
-      ],
-      "other": false,
-      "end": "2026-11-15"
-    },
-    {
-      "id": "p-20261114-nxt-punk",
-      "d": "2026-11-14",
-      "type": "",
-      "k": "WWE",
-      "q": "CM Punk est envisagé pour remplacer Shawn Michaels à la tête de NXT : qui voudrais-tu ?",
-      "opts": [
-        "CM Punk",
-        "Triple H qui revient à NXT"
-      ],
-      "other": true,
-      "end": ""
-    },
-    {
       "id": "p-20261114-babies",
       "d": "2026-11-14",
       "type": "babies",
@@ -410,32 +439,6 @@
       ],
       "other": false,
       "end": "2026-11-16"
-    },
-    {
-      "id": "p-20261113-ciampa-dragunov",
-      "d": "2026-11-13",
-      "type": "",
-      "k": "AEW",
-      "q": "Full Gear : qui gagne entre Tommaso Ciampa et Ilja Dragunov ?",
-      "opts": [
-        "Tommaso Ciampa",
-        "Ilja Dragunov"
-      ],
-      "other": false,
-      "end": "2026-11-14"
-    },
-    {
-      "id": "p-20261113-cody-heel",
-      "d": "2026-11-13",
-      "type": "",
-      "k": "WWE",
-      "q": "La rumeur parle d’un heel turn de Cody Rhodes : tu es pour ?",
-      "opts": [
-        "Oui, il est temps",
-        "Non, il doit rester face"
-      ],
-      "other": false,
-      "end": ""
     },
     {
       "id": "p-20261112-babies",
