@@ -1,25 +1,9 @@
 {
- "at": "2026-11-26T10:59:53.190Z",
+ "at": "2026-11-26T11:57:37.252Z",
  "items": [
   {
-   "t": "Braun Strowman de retour sur les rings aux côtés d'Erik Rowan",
-   "u": "https://www.catch-newz.com/international/newz/61646-braun-strowman-de-retour-sur-les-rings-aux-cotes-derik-rowan",
-   "s": "Catch-Newz",
-   "d": "2026-11-26",
-   "tags": []
-  },
-  {
-   "t": "Robert Stone avait décelé le potentiel de Kendal Grey dès ses premiers pas au Performance Center",
-   "u": "https://www.catch-newz.com/wwe/newz/61645-robert-stone-avait-decele-le-potentiel-de-kendal-grey-des-ses-premiers-pas-au-performance-center",
-   "s": "Catch-Newz",
-   "d": "2026-11-26",
-   "tags": [
-    "WWE"
-   ]
-  },
-  {
-   "t": "Roxanne Perez va-t-elle tourner le dos à Liv Morgan ce week-end aux Survivor Series ?",
-   "u": "https://www.catch-newz.com/wwe/newz/61644-roxanne-perez-va-t-elle-tourner-le-dos-a-liv-morgan-ce-week-end-aux-survivor-series",
+   "t": "Giulia remporte son premier match à la WWE depuis le mois de juillet",
+   "u": "https://www.catch-newz.com/wwe/newz/61647-giulia-remporte-son-premier-match-a-la-wwe-depuis-le-mois-de-juillet",
    "s": "Catch-Newz",
    "d": "2026-11-26",
    "tags": [
@@ -44,6 +28,31 @@
    "tags": [
     "AEW",
     "Dynamite"
+   ]
+  },
+  {
+   "t": "Braun Strowman de retour sur les rings aux côtés d'Erik Rowan",
+   "u": "https://www.catch-newz.com/international/newz/61646-braun-strowman-de-retour-sur-les-rings-aux-cotes-derik-rowan",
+   "s": "Catch-Newz",
+   "d": "2026-11-26",
+   "tags": []
+  },
+  {
+   "t": "Robert Stone avait décelé le potentiel de Kendal Grey dès ses premiers pas au Performance Center",
+   "u": "https://www.catch-newz.com/wwe/newz/61645-robert-stone-avait-decele-le-potentiel-de-kendal-grey-des-ses-premiers-pas-au-performance-center",
+   "s": "Catch-Newz",
+   "d": "2026-11-26",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Roxanne Perez va-t-elle tourner le dos à Liv Morgan ce week-end aux Survivor Series ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61644-roxanne-perez-va-t-elle-tourner-le-dos-a-liv-morgan-ce-week-end-aux-survivor-series",
+   "s": "Catch-Newz",
+   "d": "2026-11-26",
+   "tags": [
+    "WWE"
    ]
   },
   {
@@ -515,16 +524,6 @@
   {
    "t": "WWE RAW : Stephanie Vaquer et Bayley affaiblissent Fatal Influence quelques jours avant les WarGames",
    "u": "https://www.catch-newz.com/wwe/newz/61587-wwe-raw-stephanie-vaquer-et-bayley-affaiblissent-fatal-influence-quelques-jours-avant-les-wargames",
-   "s": "Catch-Newz",
-   "d": "2026-11-24",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
-  },
-  {
-   "t": "WWE RAW : Lyra Valkyria perd son match après le Sol Snatcher de sa rivale Sol Ruca",
-   "u": "https://www.catch-newz.com/wwe/newz/61586-wwe-raw-lyra-valkyria-perd-son-match-apres-le-sol-snatcher-de-sa-rivale-sol-ruca",
    "s": "Catch-Newz",
    "d": "2026-11-24",
    "tags": [
@@ -1518,10 +1517,11 @@
    "https://www.catch-newz.com/wwe/resultats/61635-wwe-main-event-25-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61634-aew-dynamite-25-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61607-wwe-nxt-24-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61647-giulia-remporte-son-premier-match-a-la-wwe-depuis-le-mois-de-juillet",
+   "https://www.catch-newz.com/aew/newz/61636-preview-aew-collision-26-novembre-2026",
    "https://www.catch-newz.com/international/newz/61646-braun-strowman-de-retour-sur-les-rings-aux-cotes-derik-rowan",
    "https://www.catch-newz.com/wwe/newz/61645-robert-stone-avait-decele-le-potentiel-de-kendal-grey-des-ses-premiers-pas-au-performance-center",
    "https://www.catch-newz.com/wwe/newz/61644-roxanne-perez-va-t-elle-tourner-le-dos-a-liv-morgan-ce-week-end-aux-survivor-series",
-   "https://www.catch-newz.com/aew/newz/61636-preview-aew-collision-26-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61643-cm-punk-au-cours-de-ces-trois-annees-jai-realise-le-meilleur-travail-de-toute-ma-carriere",
    "https://www.catch-newz.com/wwe/newz/61642-stone-cold-steve-austin-bientot-de-retour-pour-placer-un-stunner",
    "https://www.catch-newz.com/aew/newz/61537-preview-aew-dynamite-25-novembre-2026",
@@ -1813,12 +1813,11 @@
    "https://www.catch-newz.com/international/resultats/61354-resultats-de-aull-dinamita-pura",
    "https://www.catch-newz.com/international/newz/61348-carte-de-arena-del-valle-carnaval-2026",
    "https://www.catch-newz.com/international/resultats/61352-resultats-du-jour-2-de-dg-the-gate-of-evolution-2026-partie-1",
-   "https://www.catch-newz.com/international/newz/61347-carte-de-robles-promotions-revolucion-en-la-lucha-libre",
-   "https://www.catch-newz.com/international/resultats/61349-resultats-de-bjw-du-24-octobre-2026"
+   "https://www.catch-newz.com/international/newz/61347-carte-de-robles-promotions-revolucion-en-la-lucha-libre"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
