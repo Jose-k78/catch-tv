@@ -1,6 +1,24 @@
 {
- "at": "2026-11-26T05:58:50.565Z",
+ "at": "2026-11-26T10:06:43.649Z",
  "items": [
+  {
+   "t": "CM Punk : « Au cours de ces trois années, j’ai réalisé le meilleur travail de toute ma carrière »",
+   "u": "https://www.catch-newz.com/wwe/newz/61643-cm-punk-au-cours-de-ces-trois-annees-jai-realise-le-meilleur-travail-de-toute-ma-carriere",
+   "s": "Catch-Newz",
+   "d": "2026-11-26",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "Stone Cold Steve Austin bientôt de retour pour placer un Stunner ?",
+   "u": "https://www.catch-newz.com/wwe/newz/61642-stone-cold-steve-austin-bientot-de-retour-pour-placer-un-stunner",
+   "s": "Catch-Newz",
+   "d": "2026-11-26",
+   "tags": [
+    "WWE"
+   ]
+  },
   {
    "t": "Preview : AEW Collision du 26 novembre 2026",
    "u": "https://www.catch-newz.com/aew/newz/61636-preview-aew-collision-26-novembre-2026",
@@ -9,6 +27,16 @@
    "tags": [
     "AEW",
     "Collision"
+   ]
+  },
+  {
+   "t": "AEW Dynamite du 25 novembre : Continental Classic, MJF contre Will Ospreay dans un Ladder Match à Worlds End",
+   "u": "https://www.voxcatch.fr/2026/11/26/resultats-aew-dynamite-25-novembre-2026/",
+   "s": "VOXcatch",
+   "d": "2026-11-26",
+   "tags": [
+    "AEW",
+    "Dynamite"
    ]
   },
   {
@@ -507,34 +535,6 @@
    "tags": [
     "WWE",
     "Raw"
-   ]
-  },
-  {
-   "t": "Résultats de CMLL/Nueva Era Producciones du 23 novembre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61615-resultats-de-cmll-nueva-era-producciones-du-23-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-23",
-   "tags": [
-    "CMLL"
-   ]
-  },
-  {
-   "t": "Résultats de WWE RAW du 23 novembre 2026",
-   "u": "https://www.catch-newz.com/wwe/resultats/61576-wwe-raw-23-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-23",
-   "tags": [
-    "WWE",
-    "Raw"
-   ]
-  },
-  {
-   "t": "Résultats de CMLL Lunes Clasico du 23 novembre 2026",
-   "u": "https://www.catch-newz.com/international/resultats/61599-resultats-de-cmll-lunes-clasico-du-23-novembre-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-23",
-   "tags": [
-    "CMLL"
    ]
   }
  ],
@@ -1523,6 +1523,8 @@
    "https://www.catch-newz.com/wwe/resultats/61635-wwe-main-event-25-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61634-aew-dynamite-25-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61607-wwe-nxt-24-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61643-cm-punk-au-cours-de-ces-trois-annees-jai-realise-le-meilleur-travail-de-toute-ma-carriere",
+   "https://www.catch-newz.com/wwe/newz/61642-stone-cold-steve-austin-bientot-de-retour-pour-placer-un-stunner",
    "https://www.catch-newz.com/aew/newz/61636-preview-aew-collision-26-novembre-2026",
    "https://www.catch-newz.com/aew/newz/61537-preview-aew-dynamite-25-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61641-la-wwe-vient-sinterposer-dans-le-relancement-de-la-mid-south-wrestling",
@@ -1817,14 +1819,12 @@
    "https://www.catch-newz.com/international/resultats/61349-resultats-de-bjw-du-24-octobre-2026",
    "https://www.catch-newz.com/international/newz/61346-carte-de-max-proad-homenaje-a-numa-y-zafiro-infernal",
    "https://www.catch-newz.com/international/newz/61343-carte-de-iwrg-funcion-espectacular-du-15-novembre-2026",
-   "https://www.catch-newz.com/chroniques/nos-interviews/61327-interview-exclusive-avec-princesse-lauriana-son-match-contre-kay-lee-ray-aew-grand-slam-france-ses-blessures",
-   "https://www.catch-newz.com/international/resultats/61345-resultats-de-freelance-wrestling-hadouken",
-   "https://www.catch-newz.com/international/resultats/61341-resultats-de-tnt-cold-day-in-hell-2026"
+   "https://www.catch-newz.com/chroniques/nos-interviews/61327-interview-exclusive-avec-princesse-lauriana-son-match-contre-kay-lee-ray-aew-grand-slam-france-ses-blessures"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 5 nouveaux articles lus sur la page d'accueil (5 liens)",
-  "VOXcatch": "4 articles (7 j)",
+  "Catch-Newz": "pas de flux RSS : 7 nouveaux articles lus sur la page d'accueil (7 liens)",
+  "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "0 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
