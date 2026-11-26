@@ -1,15 +1,6 @@
 {
- "at": "2026-11-26T18:55:56.952Z",
+ "at": "2026-11-26T20:00:53.638Z",
  "items": [
-  {
-   "t": "The Rock fait mousser les ventes de WWE Survivor Series 2026",
-   "u": "https://www.catch-newz.com/wwe/newz/61659-the-rock-fait-mousser-les-ventes-de-wwe-survivor-series-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-26",
-   "tags": [
-    "WWE"
-   ]
-  },
   {
    "t": "Spoilers de AEW Collision du 26 novembre 2026",
    "u": "https://www.catch-newz.com/aew/resultats/61655-spoilers-aew-collision-26-novembre-2026",
@@ -82,6 +73,15 @@
    "t": "Dustin Rhodes annonce le décès de son petit-fils de 3 ans Rowan",
    "u": "https://www.catch-arena.com/dustin-rhodes-annonce-le-deces-de-son-petit-fils-de-3-ans-rowan/",
    "s": "Catch Arena",
+   "d": "2026-11-26",
+   "tags": [
+    "WWE"
+   ]
+  },
+  {
+   "t": "The Rock fait mousser les ventes de WWE Survivor Series 2026",
+   "u": "https://www.catch-newz.com/wwe/newz/61659-the-rock-fait-mousser-les-ventes-de-wwe-survivor-series-2026",
+   "s": "Catch-Newz",
    "d": "2026-11-26",
    "tags": [
     "WWE"
@@ -1508,6 +1508,16 @@
     "id": "7mCr8OLSwbM",
     "t": "Orange Cassidy contre Mike Bailey"
    }
+  ],
+  "WWE|Main Event|2026-11-25": [
+   {
+    "id": "jxAqfC3Nk9o",
+    "t": "Giulia tames Nikkita Lyons: WWE Main Event highlights, Nov. 25, 2026"
+   },
+   {
+    "id": "544Bq-n1UD8",
+    "t": "Tatum Paxley takes Michin to Cemetery Drive: WWE Main Event highlights, Nov. 25, 2026"
+   }
   ]
  },
  "rss": {
@@ -1522,13 +1532,13 @@
    "https://www.catch-newz.com/wwe/resultats/61635-wwe-main-event-25-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61634-aew-dynamite-25-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61607-wwe-nxt-24-novembre-2026",
-   "https://www.catch-newz.com/wwe/newz/61659-the-rock-fait-mousser-les-ventes-de-wwe-survivor-series-2026",
    "https://www.catch-newz.com/aew/resultats/61655-spoilers-aew-collision-26-novembre-2026",
    "https://www.catch-newz.com/international/newz/61637-preview-tna-impact-26-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61652-preview-wwe-raw-30-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61650-preview-wwe-smackdown-du-27-novembre-2026",
    "https://www.catch-newz.com/international/resultats/61631-carte-de-cmll-jueves-de-glamour-du-26-novembre-2026",
    "https://www.catch-newz.com/international/newz/61630-carte-de-cmll-jueves-arena-coliseo-du-26-novembre-2026",
+   "https://www.catch-newz.com/wwe/newz/61659-the-rock-fait-mousser-les-ventes-de-wwe-survivor-series-2026",
    "https://www.catch-newz.com/international/newz/61654-ce-samedi-a-bzw-alcatraz-2-griff-affronte-gabe-kidd-dans-le-match-de-sa-vie",
    "https://www.catch-newz.com/wwe/newz/61658-charlotte-flair-rhea-ripley-manque-a-toute-la-division",
    "https://www.catch-newz.com/aew/newz/61657-brian-cage-frustre-par-son-booking-a-laew",
@@ -1822,10 +1832,10 @@
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 10 nouveaux articles lus sur la page d'accueil (10 liens)",
+  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
   "VOXcatch": "5 articles (7 j)",
   "Catch Arena": "1 articles (7 j)",
-  "YouTube WWE": "0 nouvelles vidéos",
+  "YouTube WWE": "2 nouvelles vidéos",
   "YouTube AEW": "0 nouvelles vidéos",
   "YouTube ROH": "0 nouvelles vidéos",
   "YouTube CMLL": "0 nouvelles vidéos",
