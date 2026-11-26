@@ -1,5 +1,5 @@
 {
- "at": "2026-11-26T01:06:03.421Z",
+ "at": "2026-11-26T02:21:48.624Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/international/newz/61234-carte-de-cmll-jueves-arena-coliseo-du-12-novembre-2026": "2026-11-12",
@@ -361,7 +361,9 @@
   "fr:2026-11-25": "2026-11-25",
   "a:https://www.catch-newz.com/aew/newz/61626-plusieurs-matchs-sajoutent-a-la-carte-de-roh-final-battle-2026": "2026-11-25",
   "a:https://www.catch-newz.com/international/resultats/61629-resultats-de-mr-miss-cmll-2026": "2026-11-25",
-  "a:https://www.catch-newz.com/aew/resultats/61634-aew-dynamite-25-novembre-2026": "2026-11-26"
+  "a:https://www.catch-newz.com/aew/resultats/61634-aew-dynamite-25-novembre-2026": "2026-11-26",
+  "a:https://www.catch-newz.com/wwe/resultats/61635-wwe-main-event-25-novembre-2026": "2026-11-26",
+  "c:WWE:2026-11-28:eqkvkn": "2026-11-26"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -372,6 +374,14 @@
     "url": "#/",
     "tag": "art",
     "short": "2 nouvelles infos"
+   },
+   {
+    "cat": "info",
+    "title": "📰 Nouvelle info · Catch-Newz",
+    "body": "Ouvre TCC TV pour la lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "1 nouvelle info"
    },
    {
     "cat": "info",
