@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25",
+ "updated": "2026-11-26",
  "note": "Champions actuels : peut révéler des résultats récents.",
  "titles": [
   {
@@ -1071,8 +1071,14 @@
    ],
    "src": "Wrestle Purists",
    "u": "https://wrestlepurists.com/aew-full-gear-2026-results-mjf-returns-will-ospreay-retains/",
-   "defs": [],
-   "def": 0
+   "defs": [
+    {
+     "d": "2026-11-25",
+     "ev": "Dynamite",
+     "vs": "Divine Dominion (Megan Bayne et Lena Kross)"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "tna-world",
