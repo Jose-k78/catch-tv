@@ -1,22 +1,7 @@
 {
- "updated": "2026-11-26",
+ "updated": "2026-11-27",
  "note": "Vidéos des chaînes officielles uniquement. res = résultats (spoilers, affichés seulement à la demande). m = résumé match par match (promotions japonaises).",
  "items": {
-  "WWE|NXT|2026-10-27": {
-   "v": [],
-   "res": [
-    "Noam Dar et Romeo Moreno ont battu The Vanity Project (Brad Baylor et Ricky Smokes) en demi-finale du Dusty Rhodes Tag Team Classic et se qualifient pour la finale",
-    "Chantel Monroe, venue d’Evolve, a battu Lizzy Rain pour ses débuts à NXT",
-    "Sean Legacy a battu Saquon Shugars",
-    "Myles Borne et Tavion Heights se sont fait face : ils s’affronteront dans un Weapons Wild Match à Halloween Havoc",
-    "Hank Walker et Tank Ledger ont battu les Wagner Brothers (Galeno et El Hijo de Dr. Wagner Jr.) en demi-finale du Dusty Classic et rejoignent la finale",
-    "Robert Stone a annoncé un Unsanctioned Match entre Dion Lennox et Cruz Montana la semaine prochaine",
-    "Jackson Drake a battu EK Prosper et conserve le titre nord-américain de NXT, après que Kam Hendrix a poussé Prosper du coin",
-    "Le show s’est terminé sur une bagarre entre Grayson Waller et Tony D’Angelo sur un parking"
-   ],
-   "s": "PWTorch",
-   "u": "https://www.pwtorch.com/site/2026/10/27/nxt-tv-results-10-27-wellss-live-report-on-ek-prosper-vs-jackson-drake-dusty-classic-semifinals-evolves-chantel-monroe-debuts-more/"
-  },
   "AEW|Dynamite|2026-10-28": {
    "v": [],
    "res": [
@@ -1530,6 +1515,45 @@
    ],
    "s": "Wrestle Purists",
    "u": "https://wrestlepurists.com/aew-dynamite-results-november-25-2026-ospreay-vs-mjf-ladder-match-set-kyle-fletcher-beats-andrade/"
+  },
+  "AEW|Collision|2026-11-26": {
+   "res": [
+    "The Dangerous New Level (l'équipe de Swerve Strickland) a battu Josh Alexander, Hechicero et Rocky Romero et conserve le titre AEW World Trios.",
+    "Julia Hart et Skye Blue (Sisters of Sin) ont battu Nixi XS et Anna Ray.",
+    "Ricochet a battu Brody King (Continental Classic, Blue League).",
+    "Konosuke Takeshita et Bandido ont fait match nul à la limite des 20 minutes (Continental Classic, Blue League).",
+    "Les Kasper Brothers ont battu Atlas Armstrong et Talon Graves.",
+    "Athena et Billie Starkz ont battu Queen Aminata et Mina Shirakawa.",
+    "Tommaso Ciampa a battu Nick Wayne (Continental Classic, Gold League)."
+   ],
+   "seg": [
+    {
+     "k": "Attaque",
+     "t": "En coulisses, les Death Riders menés par Marina Shafir sont attaqués par Mercedes Moné et The Cut ; Jon Moxley arrive pour rééquilibrer, mais Mercedes et The Cut restent debout à la fin de la bagarre."
+    },
+    {
+     "k": "Promo",
+     "t": "Dans une vidéo, Jungle Jack Perry assure qu'il se rapproche du titre mondial de l'AEW malgré sa défaite contre Samoa Joe."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Don Callis pose un ultimatum à Ilja Dragunov et lui offre un contrat à sept chiffres pour rejoindre la Don Callis Family ; Dragunov déchire le chèque et le lui jette au visage."
+    },
+    {
+     "k": "Backstage",
+     "t": "Les Brawling Birds veulent parler aux championnes par équipe Wrathlander avant de les affronter à nouveau pour les titres."
+    },
+    {
+     "k": "Annonce",
+     "t": "Après sa victoire avec Athena, Billie Starkz obtient un match pour le titre TBS."
+    },
+    {
+     "k": "Blessure",
+     "t": "Tommaso Ciampa se tient le genou après son match et est aidé jusqu'aux coulisses, sous le regard de l'arbitre Aubrey Edwards."
+    }
+   ],
+   "s": "Sports Illustrated",
+   "u": "https://www.si.com/fannation/wrestling/aew/aew-collision-thanksgiving-results-booking-grades"
   }
  }
 }
