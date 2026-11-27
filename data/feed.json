@@ -1,13 +1,6 @@
 {
- "at": "2026-11-26T23:53:53.103Z",
+ "at": "2026-11-27T01:11:38.813Z",
  "items": [
-  {
-   "t": "Résultats de PWJ Loyalty Over Everything",
-   "u": "https://www.catch-newz.com/international/resultats/61665-resultats-de-pwj-loyalty-over-everything",
-   "s": "Catch-Newz",
-   "d": "2026-11-27",
-   "tags": []
-  },
   {
    "t": "Preview : WWE RAW du 30 novembre 2026",
    "u": "https://www.catch-newz.com/wwe/newz/61652-preview-wwe-raw-30-novembre-2026",
@@ -27,6 +20,20 @@
     "WWE",
     "SmackDown"
    ]
+  },
+  {
+   "t": "''Protection (très) rapprochée'' avec CM Punk débarque sur Netflix",
+   "u": "https://www.catch-newz.com/culture/cineserie/61374-protection-tres-rapprochee-avec-cm-punk-debarque-sur-netflix",
+   "s": "Catch-Newz",
+   "d": "2026-11-27",
+   "tags": []
+  },
+  {
+   "t": "Résultats de PWJ Loyalty Over Everything",
+   "u": "https://www.catch-newz.com/international/resultats/61665-resultats-de-pwj-loyalty-over-everything",
+   "s": "Catch-Newz",
+   "d": "2026-11-27",
+   "tags": []
   },
   {
    "t": "Carte de Beyond Wrestling Open Series 256",
@@ -518,13 +525,6 @@
    "tags": [
     "WWE"
    ]
-  },
-  {
-   "t": "Carte du jour 6 de la AJPW Real World Tag League 2026",
-   "u": "https://www.catch-newz.com/international/newz/61213-carte-du-jour-6-de-la-ajpw-real-world-tag-league-2026",
-   "s": "Catch-Newz",
-   "d": "2026-11-25",
-   "tags": []
   }
  ],
  "yt": {
@@ -1516,12 +1516,13 @@
    "https://www.catch-newz.com/wwe/resultats/61635-wwe-main-event-25-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61634-aew-dynamite-25-novembre-2026",
    "https://www.catch-newz.com/wwe/resultats/61607-wwe-nxt-24-novembre-2026",
-   "https://www.catch-newz.com/international/resultats/61665-resultats-de-pwj-loyalty-over-everything",
    "https://www.catch-newz.com/aew/newz/61627-preview-roh-du-26-novembre-2026",
    "https://www.catch-newz.com/aew/resultats/61655-spoilers-aew-collision-26-novembre-2026",
    "https://www.catch-newz.com/international/newz/61637-preview-tna-impact-26-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61652-preview-wwe-raw-30-novembre-2026",
    "https://www.catch-newz.com/wwe/newz/61650-preview-wwe-smackdown-27-novembre-2026",
+   "https://www.catch-newz.com/culture/cineserie/61374-protection-tres-rapprochee-avec-cm-punk-debarque-sur-netflix",
+   "https://www.catch-newz.com/international/resultats/61665-resultats-de-pwj-loyalty-over-everything",
    "https://www.catch-newz.com/international/newz/61666-carte-de-beyond-wrestling-open-series-256",
    "https://www.catch-newz.com/international/resultats/61667-resultats-du-jour-6-de-dg-the-gate-of-evolution-2026",
    "https://www.catch-newz.com/international/resultats/61663-resultats-de-ppl-neon-genesis-cibernetico",
@@ -1811,12 +1812,11 @@
    "https://www.catch-newz.com/international/newz/61376-lonni-pourrait-continuer-le-catch-apres-finalslam",
    "https://www.catch-newz.com/international/newz/61375-byilhan-montre-comment-il-sest-blesse-avant-finalslam",
    "https://www.catch-newz.com/international/newz/61377-amine-blessure",
-   "https://www.catch-newz.com/international/newz/61378-carte-de-beyond-wrestling-open-ri-76",
-   "https://www.catch-newz.com/international/newz/61344-carte-de-cmll-revolucion-de-campeones-lunes-clasico-du-16-novembre-2026"
+   "https://www.catch-newz.com/international/newz/61378-carte-de-beyond-wrestling-open-ri-76"
   ]
  },
  "diag": {
-  "Catch-Newz": "pas de flux RSS : 13 nouveaux articles lus sur la page d'accueil (13 liens)",
+  "Catch-Newz": "pas de flux RSS : 9 nouveaux articles lus sur la page d'accueil (9 liens)",
   "VOXcatch": "4 articles (7 j)",
   "Catch Arena": "2 articles (7 j)",
   "YouTube WWE": "0 nouvelles vidéos",

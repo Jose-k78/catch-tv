@@ -1,5 +1,5 @@
 {
- "at": "2026-11-26T23:53:53.157Z",
+ "at": "2026-11-27T01:11:38.864Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-pour-le-4-janvier-2027": "2026-11-13",
@@ -363,7 +363,9 @@
   "a:https://www.catch-newz.com/aew/newz/61640-carte-aew-worlds-end-2026": "2026-11-26",
   "a:https://www.catch-newz.com/aew/newz/61627-preview-roh-du-26-novembre-2026": "2026-11-26",
   "a:https://www.catch-arena.com/jeff-cobb-revient-sur-son-depart-anticipe-de-njpw-pour-wwe-et-la-confusion-liee/": "2026-11-26",
-  "a:https://www.catch-newz.com/wwe/newz/61650-preview-wwe-smackdown-27-novembre-2026": "2026-11-27"
+  "a:https://www.catch-newz.com/wwe/newz/61650-preview-wwe-smackdown-27-novembre-2026": "2026-11-27",
+  "c:WWE:2026-11-28:x0cj1i": "2026-11-27",
+  "c:ROH:2026-12-04:tnr858": "2026-11-27"
  },
  "pend": {
   "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
@@ -382,6 +384,14 @@
     "url": "#/",
     "tag": "art",
     "short": "1 nouvelle info"
+   },
+   {
+    "cat": "fav",
+    "title": "⭐ Roman Reigns annoncé à Survivor Series: WarGames",
+    "body": "WarGames : The Bloodline (Roman Reigns, Jey Uso, Jimmy Uso, Jacob Fatu et Solo Sikoa) contre The 946 (Royce Keys, Carmelo Hayes, Cruz Montana, Bronco Nima et Lucien Price)",
+    "url": "#/ev/WWE/PLE/2026-11-28",
+    "tag": "fav-WWE2026-11-28",
+    "short": "⭐ Roman Reigns à Survivor Series: WarGames"
    }
   ]
  }
