@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26",
+ "updated": "2026-11-27",
  "note": "Champions actuels : peut révéler des résultats récents.",
  "titles": [
   {
@@ -1037,8 +1037,14 @@
    ],
    "src": "Wrestle Purists",
    "u": "https://wrestlepurists.com/aew-full-gear-2026-results-mjf-returns-will-ospreay-retains/",
-   "defs": [],
-   "def": 0
+   "defs": [
+    {
+     "d": "2026-11-26",
+     "ev": "Collision",
+     "vs": "Josh Alexander, Hechicero et Rocky Romero"
+    }
+   ],
+   "def": 1
   },
   {
    "id": "aew-wtag",
