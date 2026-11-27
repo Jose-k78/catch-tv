@@ -1,6 +1,46 @@
 {
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "items": [
+    {
+      "id": "p-20261127-liv-becky",
+      "d": "2026-11-27",
+      "type": "",
+      "k": "WWE",
+      "q": "Survivor Series : qui gagne entre Liv Morgan et Becky Lynch ?",
+      "opts": [
+        "Liv Morgan",
+        "Becky Lynch"
+      ],
+      "other": false,
+      "end": "2026-11-28"
+    },
+    {
+      "id": "p-20261127-usa-mexique",
+      "d": "2026-11-27",
+      "type": "",
+      "k": "WWE",
+      "q": "Survivor Series : Team USA ou Team Mexico, quelle équipe l'emporte ?",
+      "opts": [
+        "Team USA",
+        "Team Mexico"
+      ],
+      "other": false,
+      "end": "2026-11-28"
+    },
+    {
+      "id": "p-20261127-meilleur-ss",
+      "d": "2026-11-27",
+      "type": "",
+      "k": "WWE",
+      "q": "Quelle est la plus grande soirée de l'histoire des Survivor Series ?",
+      "opts": [
+        "1991 : l'Undertaker bat Hulk Hogan",
+        "1997 : le Montreal Screwjob",
+        "2011 : le retour de The Rock"
+      ],
+      "other": true,
+      "end": ""
+    },
     {
       "id": "p-20261126-logan-paul",
       "d": "2026-11-26",
@@ -386,46 +426,6 @@
       ],
       "other": true,
       "end": ""
-    },
-    {
-      "id": "p-20261115-owens-zayn",
-      "d": "2026-11-15",
-      "type": "",
-      "k": "WWE",
-      "q": "Kevin Owens défie Sami Zayn à SmackDown : qui doit gagner cette nouvelle bataille ?",
-      "opts": [
-        "Kevin Owens",
-        "Sami Zayn"
-      ],
-      "other": false,
-      "end": ""
-    },
-    {
-      "id": "p-20261115-raw-4janvier",
-      "d": "2026-11-15",
-      "type": "",
-      "k": "WWE",
-      "q": "La WWE prépare un Raw spécial le 4 janvier 2027 : qu’aimerais-tu y voir ?",
-      "opts": [
-        "Un grand retour surprise",
-        "Un changement de titre",
-        "Un dream match inédit"
-      ],
-      "other": true,
-      "end": "2027-01-04"
-    },
-    {
-      "id": "p-20261114-wargames-femmes",
-      "d": "2026-11-14",
-      "type": "",
-      "k": "WWE",
-      "q": "WarGames féminin aux Survivor Series : l’équipe de Charlotte Flair (avec Stephanie Vaquer) va-t-elle gagner ?",
-      "opts": [
-        "Oui",
-        "Non"
-      ],
-      "other": false,
-      "end": "2026-11-28"
     },
     {
       "id": "p-20261114-babies",
