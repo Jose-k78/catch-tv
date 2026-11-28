@@ -1,6 +1,47 @@
 {
-  "updated": "2026-11-27",
+  "updated": "2026-11-28",
   "items": [
+    {
+      "id": "p-20261128-cody-clan",
+      "d": "2026-11-28",
+      "type": "",
+      "k": "WWE",
+      "q": "Cody Rhodes aimerait avoir son propre clan : avec qui doit-il le former ?",
+      "opts": [
+        "Jey Uso",
+        "Drew McIntyre",
+        "Sami Zayn"
+      ],
+      "other": true,
+      "end": ""
+    },
+    {
+      "id": "p-20261128-jacy-face",
+      "d": "2026-11-28",
+      "type": "",
+      "k": "WWE",
+      "q": "Jacy Jayne se dit ouverte à un rôle de gentille : tu veux la voir passer babyface ?",
+      "opts": [
+        "Oui",
+        "Non, elle est parfaite en heel"
+      ],
+      "other": false,
+      "end": ""
+    },
+    {
+      "id": "p-20261128-iquit",
+      "d": "2026-11-28",
+      "type": "",
+      "k": "",
+      "q": "Quel est le plus grand « I Quit » match de l'histoire ?",
+      "opts": [
+        "Magnum T.A. contre Tully Blanchard (1985)",
+        "The Rock contre Mankind (1999)",
+        "John Cena contre JBL (2005)"
+      ],
+      "other": true,
+      "end": ""
+    },
     {
       "id": "p-20261127-liv-becky",
       "d": "2026-11-27",
@@ -384,45 +425,6 @@
       "opts": [
         "Mercedes Moné",
         "Marina Shafir"
-      ],
-      "other": true,
-      "end": ""
-    },
-    {
-      "id": "p-20261116-punk-5ans",
-      "d": "2026-11-16",
-      "type": "",
-      "k": "WWE",
-      "q": "CM Punk veut catcher encore au moins 5 ans : tu y crois ?",
-      "opts": [
-        "Oui",
-        "Non"
-      ],
-      "other": false,
-      "end": ""
-    },
-    {
-      "id": "p-20261116-dream-austin-moxley",
-      "d": "2026-11-16",
-      "type": "match",
-      "k": "",
-      "q": "Dream match : Stone Cold Steve Austin contre Jon Moxley, qui gagne ?",
-      "opts": [
-        "Stone Cold Steve Austin",
-        "Jon Moxley"
-      ],
-      "other": false,
-      "end": "2026-11-19"
-    },
-    {
-      "id": "p-20261115-kasper-aew",
-      "d": "2026-11-15",
-      "type": "",
-      "k": "AEW",
-      "q": "Les Kasper Brothers (ex-Creed Brothers) signent à l’AEW : contre quelle équipe doivent-ils commencer ?",
-      "opts": [
-        "FTR",
-        "The Young Bucks"
       ],
       "other": true,
       "end": ""
