@@ -1,5 +1,5 @@
 {
- "at": "2026-11-28T02:07:22.593Z",
+ "at": "2026-11-28T10:15:24.274Z",
  "sa": true,
  "sent": {
   "a:https://www.catch-newz.com/wwe/newz/61289-elio-lefleur-a-combattu-a-wwe-main-event": "2026-11-14",
@@ -365,18 +365,19 @@
   "a:https://www.catch-newz.com/wwe/newz/61689-wwe-smackdown-alexa-bliss-et-tatum-paxley-recuperent-deja-les-titres-par-equipe-en-battant-michin-b-fab": "2026-11-28",
   "a:https://www.catch-newz.com/wwe/newz/61681-preview-aaa-lucha-libre-28-novembre-2026": "2026-11-28",
   "a:https://www.voxcatch.fr/2026/11/28/wwe-bronson-reed-deces/": "2026-11-28",
-  "a:https://www.catch-newz.com/wwe/resultats/61682-wwe-smackdown-27-novembre-2026": "2026-11-28"
+  "a:https://www.catch-newz.com/wwe/resultats/61682-wwe-smackdown-27-novembre-2026": "2026-11-28",
+  "a:https://www.catch-newz.com/wwe/newz/61691-kevin-owens-rend-hommage-au-regrette-bronson-reed-lors-dun-live-event-a-athens-en-georgie": "2026-11-28",
+  "a:https://www.catch-newz.com/wwe/newz/61690-wwe-smackdown-blake-monroe-subit-sa-premiere-defaite-en-roster-principal": "2026-11-28",
+  "a:https://www.catch-arena.com/rob-van-dam-exprime-ses-regrets-sur-linfluence-du-catch-moderne/": "2026-11-28",
+  "a:https://www.catch-arena.com/rey-mysterio-pensait-que-chad-gable-rejoindrait-team-usa-a-survivor-series/": "2026-11-28",
+  "t:wwe-wtag:2026-11-27:c": "2026-11-28",
+  "ple:WWE:2026-11-28": "2026-11-28",
+  "ple:NJPW:2026-11-28": "2026-11-28",
+  "ple:Stardom:2026-11-28": "2026-11-28",
+  "poll:p-20261128-cody-clan": "2026-11-28",
+  "poll:p-20261128-jacy-face": "2026-11-28",
+  "poll:p-20261128-iquit": "2026-11-28",
+  "story:magnum-tully-iquit-1985": "2026-11-28"
  },
- "pend": {
-  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
-   {
-    "cat": "info",
-    "title": "📰 5 nouvelles infos",
-    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
-    "url": "#/",
-    "tag": "art",
-    "short": "5 nouvelles infos"
-   }
-  ]
- }
+ "pend": {}
 }
