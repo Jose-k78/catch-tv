@@ -1,7 +1,44 @@
 {
- "updated": "2026-11-27",
+ "updated": "2026-11-28",
  "note": "Une storyline par jour (la plus récente en premier) : grandes histoires, rivalités, anecdotes de coulisses, faits marquants. txt = paragraphes écrits en français à partir des sources ; v = vidéos officielles ; q = recherches sur la chaîne officielle.",
  "items": [
+  {
+   "id": "magnum-tully-iquit-1985",
+   "d": "2026-11-28",
+   "type": "Rivalité",
+   "t": "Magnum T.A. contre Tully Blanchard : le « I Quit » de Starrcade 1985",
+   "k": "WCW",
+   "years": "1985",
+   "hook": "Le 28 novembre 1985, dans une cage d'acier, un bout de chaise brisée a décidé de l'un des matchs les plus violents de son époque.",
+   "txt": [
+    "En 1985, la Jim Crockett Promotions, membre de la NWA, compte deux étoiles montantes aux styles opposés. Magnum T.A., jeune héros moustachu adoré du public de Caroline, incarne la force tranquille. Tully Blanchard, futur membre des Four Horsemen, est l'arrogant par excellence, accompagné de sa valette Baby Doll, toujours prête à l'aider à tricher.",
+    "Toute l'année, les deux hommes se disputent le championnat des États-Unis de la NWA. Les tricheries de Blanchard et de Baby Doll font monter la colère de Magnum et du public. Pour en finir, un match spécial est annoncé à Starrcade '85, « The Gathering » : un « I Quit » dans une cage d'acier, où le seul moyen de gagner est de faire dire « j'abandonne » à son adversaire au micro.",
+    "Starrcade a lieu le soir de Thanksgiving, le 28 novembre 1985, réparti entre deux salles : le Greensboro Coliseum en Caroline du Nord et l'Omni d'Atlanta. Le match entre Magnum et Blanchard se déroule à Greensboro, devant un public chauffé à blanc.",
+    "Le combat est d'une rare brutalité pour l'époque : coups contre la cage, visages en sang, prises de soumission tenues de longues secondes. Baby Doll glisse une chaise dans la cage pour son protégé. Blanchard la brise et tente de planter un éclat de bois dans le visage de Magnum.",
+    "Magnum renverse la situation, s'empare du morceau de chaise et l'enfonce contre le front de Blanchard. Hurlant de douleur, Tully finit par crier « I quit » au micro. Magnum T.A. redevient champion des États-Unis, et le match devient une référence absolue du genre.",
+    "Ce triomphe semblait lancer Magnum vers le titre mondial de la NWA, mais un grave accident de voiture en octobre 1986 met fin à sa carrière. Tully Blanchard, lui, devient une pièce maîtresse des Four Horsemen et entre plus tard au Hall of Fame de la WWE avec le groupe. Leur « I Quit » reste l'un des plus grands matchs de l'histoire de Starrcade."
+   ],
+   "key": "Dans la cage, Magnum T.A. retourne contre Tully Blanchard l'éclat de chaise que celui-ci voulait utiliser, jusqu'à lui arracher un « I quit ».",
+   "v": [],
+   "q": [
+    "Magnum TA vs Tully Blanchard I Quit Starrcade 1985",
+    "Starrcade 1985 The Gathering"
+   ],
+   "src": [
+    {
+     "n": "Wikipédia (anglais) — Starrcade '85: The Gathering",
+     "u": "https://en.wikipedia.org/wiki/Starrcade_%2785:_The_Gathering"
+    },
+    {
+     "n": "Wikipédia (anglais) — \"I Quit\" match",
+     "u": "https://en.wikipedia.org/wiki/%22I_Quit%22_match"
+    },
+    {
+     "n": "F4W — Daily Pro Wrestling History (11/28)",
+     "u": "https://www.f4wonline.com/other-wrestling/daily-pro-wrestling-history-1128-starrcade-1985-247041"
+    }
+   ]
+  },
   {
    "id": "taker-hogan-1991",
    "d": "2026-11-27",
