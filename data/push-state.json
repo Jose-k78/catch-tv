@@ -1,36 +1,7 @@
 {
- "at": "2026-11-27T19:25:18.403Z",
+ "at": "2026-11-28T02:07:22.593Z",
  "sa": true,
  "sent": {
-  "a:https://www.catch-newz.com/wwe/newz/61256-la-wwe-prepare-un-raw-special-pour-le-4-janvier-2027": "2026-11-13",
-  "c:AEW:2026-11-14:1dn2fqs": "2026-11-13",
-  "c:AEW:2026-11-14:1a3mg41": "2026-11-13",
-  "c:TNA:2026-11-15:1bzxiz3": "2026-11-13",
-  "a:https://www.catch-newz.com/international/newz/60640-carte-tna-destination-x-2026": "2026-11-13",
-  "a:https://www.catch-newz.com/international/resultats/61259-tna-impact-12-novembre-2026": "2026-11-13",
-  "a:https://www.catch-newz.com/international/newz/61260-lei-ying-lee-quitte-la-tna": "2026-11-13",
-  "poll:p-20261113-ciampa-dragunov": "2026-11-13",
-  "poll:p-20261113-cody-heel": "2026-11-13",
-  "poll:p-20261113-pwi-vaquer": "2026-11-13",
-  "story:n2r-1993": "2026-11-13",
-  "a:https://www.catch-newz.com/wwe/newz/61262-natalya-jai-limpression-que-tout-lui-vient-trop-facilement": "2026-11-13",
-  "a:https://www.catch-newz.com/wwe/newz/61261-damian-priest-en-a-ras-le-bol-de-voir-toujours-les-memes-personnes-au-sommet-a-la-wwe": "2026-11-13",
-  "t:roh-world:2026-11-12:doge32x": "2026-11-13",
-  "t:roh-pure:2026-11-12:d1qy0sdd": "2026-11-13",
-  "a:https://www.catch-newz.com/wwe/newz/61263-selon-vic-joseph-chelsea-green-est-la-catcheuse-la-plus-tenace-a-la-wwe": "2026-11-13",
-  "a:https://www.catch-newz.com/wwe/newz/61264-joe-hendry-je-suis-dans-une-situation-difficile-en-ce-moment": "2026-11-13",
-  "a:https://www.catch-newz.com/wwe/newz/61265-bayley-sera-presente-a-smackdown-ce-vendredi-a-deux-semaines-des-survivor-series-wargames": "2026-11-13",
-  "a:https://www.voxcatch.fr/2026/11/13/comment-regarder-aew-full-gear-2026-en-france/": "2026-11-13",
-  "a:https://www.catch-newz.com/wwe/newz/61267-preview-aaa-lucha-libre-14-novembre-2026": "2026-11-13",
-  "a:https://www.catch-newz.com/wwe/resultats/61269-resultats-de-wwe-road-to-survivor-series-du-12-novembre-2026": "2026-11-13",
-  "a:https://www.catch-newz.com/wwe/newz/61272-cm-punk-est-un-choix-envisageable-pour-remplacer-shawn-michaels-a-wwe-nxt": "2026-11-13",
-  "a:https://www.catch-newz.com/international/newz/61270-trey-miguel-en-fin-de-contrat-pour-tna-destination-x": "2026-11-13",
-  "c:WWE:2026-11-28:ywmgzs": "2026-11-13",
-  "a:https://www.catch-newz.com/wwe/newz/61274-john-cena-fait-le-point-sur-sa-tenue-de-retraite": "2026-11-13",
-  "a:https://www.catch-newz.com/international/resultats/61275-resultats-de-cmll-jueves-arena-coliseo-du-12-novembre-2026": "2026-11-13",
-  "fr:2026-11-13": "2026-11-13",
-  "a:https://www.catch-newz.com/international/newz/61276-carte-de-cmll-sabado-de-coliseo-du-14-novembre-2026": "2026-11-13",
-  "a:https://www.catch-newz.com/aew/resultats/61281-resultats-de-roh-du-12-novembre-2026": "2026-11-13",
   "a:https://www.catch-newz.com/wwe/newz/61289-elio-lefleur-a-combattu-a-wwe-main-event": "2026-11-14",
   "a:https://www.catch-newz.com/wwe/resultats/61271-wwe-smackdown-13-novembre-2026": "2026-11-14",
   "a:https://www.catch-newz.com/wwe/newz/61291-stephanie-vaquer-rejoint-lequipe-de-charlotte-flair-le-wargames-feminin-est-officiel-pour-les-survivor-series": "2026-11-14",
@@ -389,7 +360,23 @@
   "a:https://www.catch-newz.com/wwe/newz/61675-drew-mcintyre-je-vis-une-relation-toxique-avec-les-fans-de-la-wwe-depuis-tres-longtemps": "2026-11-27",
   "a:https://www.catch-arena.com/jacy-jayne-ouverte-a-un-role-de-babyface-dans-sa-carriere-wwe/": "2026-11-27",
   "a:https://www.catch-arena.com/aew-dustin-rhodes-annonce-la-mort-de-son-jeune-petit-fils-rowan/": "2026-11-27",
-  "a:https://www.catch-arena.com/mattel-devoile-les-figurines-big-boss-man-et-bam-bam-bigelow-coliseum-collection/": "2026-11-27"
+  "a:https://www.catch-arena.com/mattel-devoile-les-figurines-big-boss-man-et-bam-bam-bigelow-coliseum-collection/": "2026-11-27",
+  "a:https://www.catch-newz.com/wwe/newz/61687-bronson-reed-decede-a-lage-de-38-ans": "2026-11-28",
+  "a:https://www.catch-newz.com/wwe/newz/61689-wwe-smackdown-alexa-bliss-et-tatum-paxley-recuperent-deja-les-titres-par-equipe-en-battant-michin-b-fab": "2026-11-28",
+  "a:https://www.catch-newz.com/wwe/newz/61681-preview-aaa-lucha-libre-28-novembre-2026": "2026-11-28",
+  "a:https://www.voxcatch.fr/2026/11/28/wwe-bronson-reed-deces/": "2026-11-28",
+  "a:https://www.catch-newz.com/wwe/resultats/61682-wwe-smackdown-27-novembre-2026": "2026-11-28"
  },
- "pend": {}
+ "pend": {
+  "UL5oOcltrRaff2dyZN6QZBaqd8J2": [
+   {
+    "cat": "info",
+    "title": "📰 5 nouvelles infos",
+    "body": "Ouvre TCC TV pour les lire (sans spoiler ici).",
+    "url": "#/",
+    "tag": "art",
+    "short": "5 nouvelles infos"
+   }
+  ]
+ }
 }
