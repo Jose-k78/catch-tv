@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27",
+ "updated": "2026-11-28",
  "note": "Champions actuels : peut révéler des résultats récents.",
  "titles": [
   {
@@ -532,28 +532,33 @@
    "k": "WWE",
    "show": "",
    "n": "Women’s Tag Team Championship (Raw et SmackDown)",
-   "c": "The Baddies (Michin et B-Fab)",
+   "c": "Tatum Paxley et Alexa Bliss",
    "who": [
-    "Michin",
-    "B-Fab"
+    "Tatum Paxley",
+    "Alexa Bliss"
    ],
-   "since": "2026-10-23",
+   "since": "2026-11-27",
    "ev": "SmackDown",
-   "hist": [],
-   "src": "The SmackDown Hotel",
-   "u": "https://www.thesmackdownhotel.com/roster/current-champions/?promotion=wwe",
+   "hist": [
+    {
+     "c": "The Baddies (Michin et B-Fab)",
+     "who": [
+      "Michin",
+      "B-Fab"
+     ],
+     "d": "2026-10-23",
+     "ev": "SmackDown",
+     "j": 35
+    }
+   ],
+   "src": "WWE.com",
+   "u": "https://www.wwe.com/shows/smackdown/2026-11-27",
    "shows": [
     "Raw",
     "SmackDown"
    ],
-   "defs": [
-    {
-     "d": "2026-11-06",
-     "ev": "SmackDown",
-     "vs": "Fatal Influence (disqualification)"
-    }
-   ],
-   "def": 1
+   "defs": [],
+   "def": 0
   },
   {
    "id": "nxt",
