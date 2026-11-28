@@ -1,23 +1,7 @@
 {
- "updated": "2026-11-27",
+ "updated": "2026-11-28",
  "note": "Vidéos des chaînes officielles uniquement. res = résultats (spoilers, affichés seulement à la demande). m = résumé match par match (promotions japonaises).",
  "items": {
-  "AEW|Dynamite|2026-10-28": {
-   "v": [],
-   "res": [
-    "The Cut (Jay White et David Finlay) a battu les Death Riders (Jon Moxley et Daniel Garcia)",
-    "The Cut et leurs alliés ont attaqué les Death Riders après le match ; Claudio Castagnoli est venu à la rescousse",
-    "Kyle Fletcher a battu Jungle Jack Perry",
-    "Les Motor City Machine Guns (Alex Shelley et Chris Sabin) ont battu FTR (Dax Harwood et Cash Wheeler) dans le 3e match de leur série au meilleur des cinq (2-1 pour MCMG)",
-    "Marina Shafir a battu Rachel Armstrong par soumission",
-    "Darby Allin a battu Josh Alexander et conserve le titre TNT",
-    "Queen Aminata a battu Persephone et remporte le titre TBS",
-    "Will Ospreay contre Kyle Fletcher pour le titre mondial AEW officialisé pour Full Gear ; Swerve Strickland réclame un Texas Death Match à Full Gear",
-    "Jay White a projeté Jon Moxley sur le béton ; Claudio Castagnoli évacué sur civière après une bagarre générale"
-   ],
-   "s": "WrestleView",
-   "u": "https://www.wrestleview.com/top-story/396143-aew-fright-night-dynamite-results-two-title-matches-10-28-26/"
-  },
   "TNA|Impact|2026-10-29": {
    "res": [
     "M By Elegance a battu Jada Stone et conserve le titre Knockouts TV",
@@ -1554,6 +1538,86 @@
    ],
    "s": "Sports Illustrated",
    "u": "https://www.si.com/fannation/wrestling/aew/aew-collision-thanksgiving-results-booking-grades"
+  },
+  "WWE|SmackDown|2026-11-27": {
+   "res": [
+    "Tatum Paxley et Alexa Bliss ont battu Michin et B-Fab et remportent le titre Women's Tag Team WWE.",
+    "Chelsea Green a battu Blake Monroe.",
+    "Sami Zayn et GUNTHER ont battu Kevin Owens et Finn Bálor."
+   ],
+   "seg": [
+    {
+     "k": "Promo",
+     "t": "CM Punk, agacé, dit que le plaisir a disparu dans la Team USA avant Survivor Series: WarGames ; Cody Rhodes lui demande s'il veut des excuses, Punk refuse et l'interroge sur Seth Rollins."
+    },
+    {
+     "k": "Face-à-face",
+     "t": "Seth Rollins arrive avec la planche offerte à Punk par Duggan ; Rhodes la reprend et la rend à Punk, Rollins se moque de Punk au sujet du rôle de co-capitaine."
+    },
+    {
+     "k": "Promo",
+     "t": "LA Knight et Je'Von Evans soutiennent la Team USA et taclent Punk ; Rhodes serre la main de tout le monde, Punk finit par lui serrer la main et part mécontent."
+    },
+    {
+     "k": "Backstage",
+     "t": "Paxley, Bliss et Charlotte Flair regrettent de ne pas avoir l'avantage dans le WarGames féminin."
+    },
+    {
+     "k": "Attaque",
+     "t": "Fatal Influence attaque Paxley, Bliss et Flair ; Bayley et Stephanie Vaquer viennent rétablir l'équilibre et Jade Cargill place un Jaded sur Flair."
+    },
+    {
+     "k": "Backstage",
+     "t": "Kevin Owens et Finn Bálor parlent de leur match face à Sami Zayn et GUNTHER et échangent leurs t-shirts."
+    },
+    {
+     "k": "Attaque",
+     "t": "Après le match, Tiffany Stratton et Blake Monroe attaquent Chelsea Green jusqu'à l'arrivée de Paige."
+    },
+    {
+     "k": "Autre",
+     "t": "Danhausen organise un « Friendsgiving » léger avec Ricky Saints en invité."
+    },
+    {
+     "k": "Autre",
+     "t": "Vidéo de MFT et Haku adressée à Bakusai, la tension monte entre les deux équipes."
+    }
+   ],
+   "s": "WWE / Wrestling Inc.",
+   "u": "https://www.wwe.com/shows/smackdown/2026-11-27"
+  },
+  "TNA|Impact|2026-11-26": {
+   "res": [
+    "Matt Hardy a battu AJ Francis.",
+    "Ricky Sosa a battu Ryan Nemeth.",
+    "Moose a battu Bear Bronson dans un Mile High Street Fight.",
+    "Joe Alonzo a battu The Home Town Man et conserve le titre AAW.",
+    "The Hardys (Matt et Jeff Hardy), Ricky Sosa et Moose ont battu The Nemeths (Nic et Ryan Nemeth), Frankie Kazarian et AJ Francis."
+   ],
+   "seg": [
+    {
+     "k": "Promo",
+     "t": "AJ Francis lance un défi ouvert dans l'iMPACT! Zone, Matt Hardy l'accepte."
+    },
+    {
+     "k": "Autre",
+     "t": "Spécial Thanksgiving : retour en images sur le dîner de Rockstar Spud en 2013 interrompu par Kurt Angle et sur le Turkey Suit Challenge."
+    },
+    {
+     "k": "Annonce",
+     "t": "Leon Slater affrontera Jeff Hardy à El Paso les 18 et 19 décembre, avec le titre mondial TNA en jeu."
+    },
+    {
+     "k": "Annonce",
+     "t": "La semaine prochaine : Gabby Forza contre Zoey Serrano, Jason Hotch contre Fabian Aichner pour le titre International, et un Triple Threat Revolver pour devenir n°1 aspirant au titre mondial."
+    },
+    {
+     "k": "Attaque",
+     "t": "Pendant le main event, Nic Nemeth frappe l'arbitre et Moose ; Leon Slater surgit et met hors de combat les Nemeth et Kazarian avant le tombé de Jeff Hardy."
+    }
+   ],
+   "s": "TNA Wrestling",
+   "u": "https://tnawrestling.com/news/tna-thursday-night-impact-on-amc-thanksgiving-special-results-november-26-2026"
   }
  }
 }
